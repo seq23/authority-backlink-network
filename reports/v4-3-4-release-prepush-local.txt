@@ -1,0 +1,270 @@
+
+> authority-network@4.3.4 release:prepush:local
+> printf "release:prepush profile: LOCAL
+> " && npm run validate:all
+
+release:prepush profile: LOCAL
+
+> authority-network@4.3.4 validate:all
+> npm run validate:json && npm run validate:python && npm run trace:github-actions && npm run review && npm run audit:links && npm run social:dry-run
+
+
+> authority-network@4.3.4 validate:json
+> python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool data/social-brand-policy.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null
+
+
+> authority-network@4.3.4 validate:python
+> python3 -m py_compile scripts/*.py
+
+
+> authority-network@4.3.4 trace:github-actions
+> python3 scripts/trace_github_actions.py
+
+{
+  "status": "PASS",
+  "scope": "static workflow data trace plus local command-equivalent validation wiring",
+  "live_github_actions_execution": "NOT_EXECUTED_IN_ARTIFACT_CONTAINER",
+  "errors": [],
+  "warnings": [],
+  "workflows": [
+    {
+      "workflow": "authority-v4-autopilot.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/authority_v4_autopilot.py": true,
+        "python3 scripts/hostile_review.py": true,
+        "python3 scripts/link_audit.py": true,
+        "python3 scripts/social_publisher.py": true
+      },
+      "secrets": {
+        "GEMINI_API_KEY": true,
+        "LINKEDIN_ACCESS_TOKEN": true,
+        "LINKEDIN_AUTHOR_URN": true,
+        "X_API_KEY": true,
+        "X_API_SECRET": true,
+        "X_ACCESS_TOKEN": true,
+        "X_ACCESS_TOKEN_SECRET": true
+      },
+      "vars": {
+        "DAILY_PAGE_LIMIT": true,
+        "ENABLE_LINKEDIN_POSTING": true,
+        "ENABLE_X_POSTING": true,
+        "LINKEDIN_DAILY_LIMIT": true,
+        "X_DAILY_LIMIT": true
+      },
+      "guards": {
+        "contents: write": true,
+        "issues: write": true,
+        "stefanzweifel/git-auto-commit-action@v5": true,
+        "dacbd/create-issue-action@v2": true,
+        "shared_social_concurrency": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    },
+    {
+      "workflow": "social-autopost.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/social_publisher.py": true
+      },
+      "secrets": {
+        "LINKEDIN_ACCESS_TOKEN": true,
+        "LINKEDIN_AUTHOR_URN": true,
+        "X_API_KEY": true,
+        "X_API_SECRET": true,
+        "X_ACCESS_TOKEN": true,
+        "X_ACCESS_TOKEN_SECRET": true
+      },
+      "vars": {
+        "ENABLE_LINKEDIN_POSTING": true,
+        "ENABLE_X_POSTING": true,
+        "LINKEDIN_DAILY_LIMIT": true,
+        "X_DAILY_LIMIT": true,
+        "SOCIAL_DRY_RUN": true
+      },
+      "guards": {
+        "contents: write": true,
+        "issues: write": true,
+        "stefanzweifel/git-auto-commit-action@v5": true,
+        "dacbd/create-issue-action@v2": true,
+        "shared_social_concurrency": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    },
+    {
+      "workflow": "hostile-review.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/hostile_review.py": true,
+        "python3 scripts/link_audit.py": true
+      },
+      "secrets": {},
+      "vars": {},
+      "guards": {
+        "actions/upload-artifact@v4": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    }
+  ],
+  "notes": [
+    "Cloudflare deployment is intentionally not run by GitHub Actions; Cloudflare Git integration handles deploys.",
+    "Autopilot and social-only workflows share one concurrency group to prevent simultaneous social posting races.",
+    "Secrets are referenced but not validated live until GitHub repository secrets are added."
+  ]
+}
+
+> authority-network@4.3.4 review
+> python3 scripts/hostile_review.py
+
+{
+  "status": "PASS",
+  "target_domains_locked": [
+    "aplayermode.com",
+    "billionairehighperformancecoach.com",
+    "dentistryguides.com",
+    "hicksconsulting.org",
+    "hormonesivhair.com",
+    "horselegalguide.com",
+    "neuroevalguides.com",
+    "porchandparty901.com",
+    "theaccidentguides.com",
+    "theindustryguides.com",
+    "uscisexam.com",
+    "virtualagency-os.com",
+    "westpeekproductions.com"
+  ],
+  "publication_domains_assumed": [
+    "founderoperatorlibrary.com",
+    "memphisvendorlibrary.com",
+    "professionalresourcelibrary.com"
+  ],
+  "errors": [],
+  "warnings": [],
+  "hostile_questions": [
+    "Would this page still deserve to exist if Google did not exist?",
+    "Is the link editorially justified for a human reader?",
+    "Does this page pretend to be independent when it is affiliated?",
+    "Does it make YMYL claims without boundaries?",
+    "Is any anchor text over-optimized or repetitive?",
+    "Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?"
+  ]
+}
+
+> authority-network@4.3.4 audit:links
+> python3 scripts/link_audit.py
+
+{
+  "status": "PASS",
+  "total_links": 200,
+  "violations": 0
+}
+
+> authority-network@4.3.4 social:dry-run
+> SOCIAL_DRY_RUN=true python3 scripts/social_publisher.py
+
+{
+  "date": "2026-06-27",
+  "dry_run": true,
+  "enabled": {
+    "linkedin": true,
+    "x": true
+  },
+  "secret_skips": {},
+  "limits": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "attempts": [
+    {
+      "index": 56,
+      "platform": "linkedin",
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
+    },
+    {
+      "index": 60,
+      "platform": "x",
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
+    },
+    {
+      "index": 52,
+      "platform": "x",
+      "brand": "Billionaire High Performance Coach",
+      "preview": "A useful question before choosing in AI executive coaching / prompt OS: what would change your decision if the answer we"
+    },
+    {
+      "index": 92,
+      "platform": "x",
+      "brand": "Hicks Consulting",
+      "preview": "A useful question before choosing in therapy coaching consulting and workplace mental health training: what would change"
+    },
+    {
+      "index": 28,
+      "platform": "x",
+      "brand": "Hormone Optimization Guides",
+      "preview": "A useful question before choosing in TRT IV hydration hair-loss peptide educational guides: what would change your decis"
+    },
+    {
+      "index": 84,
+      "platform": "x",
+      "brand": "Horse Legal Guide",
+      "preview": "A useful question before choosing in equine legal education: what would change your decision if the answer were differen"
+    }
+  ],
+  "successes": [
+    {
+      "index": 56,
+      "platform": "linkedin",
+      "brand": "A Player Mode",
+      "id": "dry-0b67be48c83e",
+      "dry_run": true
+    },
+    {
+      "index": 60,
+      "platform": "x",
+      "brand": "A Player Mode",
+      "id": "dry-0ad4f2362a9b",
+      "dry_run": true
+    },
+    {
+      "index": 52,
+      "platform": "x",
+      "brand": "Billionaire High Performance Coach",
+      "id": "dry-f3b1448d8426",
+      "dry_run": true
+    },
+    {
+      "index": 92,
+      "platform": "x",
+      "brand": "Hicks Consulting",
+      "id": "dry-ab924e74ccdf",
+      "dry_run": true
+    },
+    {
+      "index": 28,
+      "platform": "x",
+      "brand": "Hormone Optimization Guides",
+      "id": "dry-e6d5d25b20d3",
+      "dry_run": true
+    },
+    {
+      "index": 84,
+      "platform": "x",
+      "brand": "Horse Legal Guide",
+      "id": "dry-5389c46c733c",
+      "dry_run": true
+    }
+  ],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "brand_rotation_policy": {
+    "quota_count": 13,
+    "daily_rotation_offset": 739794
+  },
+  "status": "ok"
+}

@@ -200,14 +200,17 @@ def main():
     posted_today = {'linkedin': 0, 'x': 0}
     attempts, successes, failures, skipped = [], [], [], []
 
+    platform_secret_skips = {}
     if enable_li and not dry_run:
         missing = validate_required_secrets('linkedin')
-        if missing and require_secrets:
-            raise SystemExit(f'Missing LinkedIn secrets: {", ".join(missing)}')
+        if missing:
+            platform_secret_skips['linkedin'] = missing
+            enable_li = False
     if enable_x and not dry_run:
         missing = validate_required_secrets('x')
-        if missing and require_secrets:
-            raise SystemExit(f'Missing X secrets: {", ".join(missing)}')
+        if missing:
+            platform_secret_skips['x'] = missing
+            enable_x = False
 
     bodies_today_by_platform = defaultdict(list)
     posted_by_brand_platform = defaultdict(int)
@@ -329,6 +332,7 @@ def main():
         'date': TODAY,
         'dry_run': dry_run,
         'enabled': {'linkedin': enable_li, 'x': enable_x},
+        'secret_skips': platform_secret_skips,
         'limits': {'linkedin': li_limit, 'x': x_limit},
         'attempts': attempts,
         'successes': successes,

@@ -328,7 +328,7 @@ def main():
         scores.append(score)
 
     for _, pub in PANTRY['publications'].items():
-        domain = os.getenv(pub['domain_env'], pub['default_domain'])
+        domain = os.getenv(pub['domain_env']) or pub['default_domain']
         if (ROOT/pub['site_path']).exists():
             update_sitemap(pub['site_path'], domain)
 
@@ -343,7 +343,7 @@ def main():
     li_limit = int(os.getenv('LINKEDIN_DAILY_LIMIT', '1'))
     x_limit = int(os.getenv('X_DAILY_LIMIT', '5'))
     for item in published[:li_limit]:
-        domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env'], PANTRY['publications'][item['publication']]['default_domain'])
+        domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
         social.append({'date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking.", 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
@@ -360,7 +360,7 @@ def main():
         for t_idx, tmpl in enumerate(x_templates):
             x_pool.append((item, tmpl, idx, t_idx))
     for item, tmpl, idx, t_idx in x_pool[:x_limit]:
-        domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env'], PANTRY['publications'][item['publication']]['default_domain'])
+        domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
         social.append({'date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': tmpl.format(title=item['title']), 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
