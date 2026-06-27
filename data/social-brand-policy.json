@@ -1,0 +1,28 @@
+{
+  "version": "4.3.3",
+  "purpose": "Prevent long-term starvation of smaller brands across one LinkedIn account and one X account while preserving daily platform caps.",
+  "daily_limits": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "rotation": {
+    "method": "weighted_round_robin_with_daily_offset",
+    "rule": "Sort by prior posted count divided by quota weight, then rotate the brand start position by date ordinal.",
+    "guarantee": "No brand is permanently locked behind earlier queue order when eligible posts exist."
+  },
+  "brand_quotas": {
+    "The Industry Guides": 1.3,
+    "The Accident Guides": 1.0,
+    "The Dentistry Guides": 1.0,
+    "Hormone Optimization Guides": 1.0,
+    "Neuro Evaluation Guides": 1.0,
+    "USCIS Exam Guides": 1.0,
+    "Billionaire High Performance Coach": 1.15,
+    "A Player Mode": 1.15,
+    "Virtual Agency OS": 1.15,
+    "West Peek Productions": 1.15,
+    "Horse Legal Guide": 1.15,
+    "Hicks Consulting": 1.15,
+    "Porch & Party": 1.0
+  }
+}

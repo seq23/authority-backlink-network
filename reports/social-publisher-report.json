@@ -11,28 +11,28 @@
   },
   "attempts": [
     {
-      "index": 0,
+      "index": 56,
       "platform": "linkedin",
-      "brand": "The Industry Guides",
-      "preview": "A useful question before choosing in parent decision-support publisher: what would change your decision if the answer we"
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
     },
     {
-      "index": 4,
+      "index": 60,
       "platform": "x",
-      "brand": "The Industry Guides",
-      "preview": "A useful question before choosing in parent decision-support publisher: what would change your decision if the answer we"
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
     },
     {
-      "index": 12,
+      "index": 52,
       "platform": "x",
-      "brand": "The Accident Guides",
-      "preview": "A useful question before choosing in personal injury educational guides: what would change your decision if the answer w"
+      "brand": "Billionaire High Performance Coach",
+      "preview": "A useful question before choosing in AI executive coaching / prompt OS: what would change your decision if the answer we"
     },
     {
-      "index": 20,
+      "index": 92,
       "platform": "x",
-      "brand": "The Dentistry Guides",
-      "preview": "A useful question before choosing in dentistry educational guides: what would change your decision if the answer were di"
+      "brand": "Hicks Consulting",
+      "preview": "A useful question before choosing in therapy coaching consulting and workplace mental health training: what would change"
     },
     {
       "index": 28,
@@ -41,47 +41,53 @@
       "preview": "A useful question before choosing in TRT IV hydration hair-loss peptide educational guides: what would change your decis"
     },
     {
-      "index": 36,
+      "index": 84,
       "platform": "x",
-      "brand": "Neuro Evaluation Guides",
-      "preview": "A useful question before choosing in ADHD autism neuropsych evaluation education: what would change your decision if the"
+      "brand": "Horse Legal Guide",
+      "preview": "A useful question before choosing in equine legal education: what would change your decision if the answer were differen"
     }
   ],
   "successes": [
     {
-      "index": 0,
+      "index": 56,
       "platform": "linkedin",
-      "id": "dry-9f6caf3fc4a6",
+      "brand": "A Player Mode",
+      "id": "dry-0b67be48c83e",
       "dry_run": true
     },
     {
-      "index": 4,
+      "index": 60,
       "platform": "x",
-      "id": "dry-9f6caf3fc4a6",
+      "brand": "A Player Mode",
+      "id": "dry-0ad4f2362a9b",
       "dry_run": true
     },
     {
-      "index": 12,
+      "index": 52,
       "platform": "x",
-      "id": "dry-46a8269d6a7b",
+      "brand": "Billionaire High Performance Coach",
+      "id": "dry-f3b1448d8426",
       "dry_run": true
     },
     {
-      "index": 20,
+      "index": 92,
       "platform": "x",
-      "id": "dry-2a7ecbe467be",
+      "brand": "Hicks Consulting",
+      "id": "dry-ab924e74ccdf",
       "dry_run": true
     },
     {
       "index": 28,
       "platform": "x",
-      "id": "dry-fa0436a3dfc0",
+      "brand": "Hormone Optimization Guides",
+      "id": "dry-e6d5d25b20d3",
       "dry_run": true
     },
     {
-      "index": 36,
+      "index": 84,
       "platform": "x",
-      "id": "dry-6edcab65154b",
+      "brand": "Horse Legal Guide",
+      "id": "dry-5389c46c733c",
       "dry_run": true
     }
   ],
@@ -90,6 +96,10 @@
   "posted_today": {
     "linkedin": 1,
     "x": 5
+  },
+  "brand_rotation_policy": {
+    "quota_count": 13,
+    "daily_rotation_offset": 739794
   },
   "status": "ok"
 }

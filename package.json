@@ -1,19 +1,20 @@
 {
   "name": "authority-network",
   "private": true,
-  "version": "4.3.2",
+  "version": "4.3.3",
   "scripts": {
     "review": "python3 scripts/hostile_review.py",
     "audit:links": "python3 scripts/link_audit.py",
     "social:drafts": "python3 scripts/generate_social_queue.py",
     "autopilot": "python3 scripts/authority_v4_autopilot.py",
     "social:dry-run": "SOCIAL_DRY_RUN=true python3 scripts/social_publisher.py",
-    "validate:json": "python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null",
+    "validate:json": "python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool data/social-brand-policy.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null",
     "validate:python": "python3 -m py_compile scripts/*.py",
-    "validate:all": "npm run validate:json && npm run validate:python && npm run review && npm run audit:links && npm run social:dry-run",
+    "validate:all": "npm run validate:json && npm run validate:python && npm run trace:github-actions && npm run review && npm run audit:links && npm run social:dry-run",
     "release:prepush": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
     "release:prepush:local": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
-    "check": "npm run validate:all"
+    "check": "npm run validate:all",
+    "trace:github-actions": "python3 scripts/trace_github_actions.py"
   },
   "devDependencies": {}
 }

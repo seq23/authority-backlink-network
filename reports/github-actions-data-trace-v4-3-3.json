@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": "static workflow data trace plus local command-equivalent validation wiring",
+  "live_github_actions_execution": "NOT_EXECUTED_IN_ARTIFACT_CONTAINER",
+  "errors": [],
+  "warnings": [],
+  "workflows": [
+    {
+      "workflow": "authority-v4-autopilot.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/authority_v4_autopilot.py": true,
+        "python3 scripts/hostile_review.py": true,
+        "python3 scripts/link_audit.py": true,
+        "python3 scripts/social_publisher.py": true
+      },
+      "secrets": {
+        "GEMINI_API_KEY": true,
+        "LINKEDIN_ACCESS_TOKEN": true,
+        "LINKEDIN_AUTHOR_URN": true,
+        "X_API_KEY": true,
+        "X_API_SECRET": true,
+        "X_ACCESS_TOKEN": true,
+        "X_ACCESS_TOKEN_SECRET": true
+      },
+      "vars": {
+        "DAILY_PAGE_LIMIT": true,
+        "ENABLE_LINKEDIN_POSTING": true,
+        "ENABLE_X_POSTING": true,
+        "LINKEDIN_DAILY_LIMIT": true,
+        "X_DAILY_LIMIT": true
+      },
+      "guards": {
+        "contents: write": true,
+        "issues: write": true,
+        "stefanzweifel/git-auto-commit-action@v5": true,
+        "dacbd/create-issue-action@v2": true,
+        "shared_social_concurrency": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    },
+    {
+      "workflow": "social-autopost.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/social_publisher.py": true
+      },
+      "secrets": {
+        "LINKEDIN_ACCESS_TOKEN": true,
+        "LINKEDIN_AUTHOR_URN": true,
+        "X_API_KEY": true,
+        "X_API_SECRET": true,
+        "X_ACCESS_TOKEN": true,
+        "X_ACCESS_TOKEN_SECRET": true
+      },
+      "vars": {
+        "ENABLE_LINKEDIN_POSTING": true,
+        "ENABLE_X_POSTING": true,
+        "LINKEDIN_DAILY_LIMIT": true,
+        "X_DAILY_LIMIT": true,
+        "SOCIAL_DRY_RUN": true
+      },
+      "guards": {
+        "contents: write": true,
+        "issues: write": true,
+        "stefanzweifel/git-auto-commit-action@v5": true,
+        "dacbd/create-issue-action@v2": true,
+        "shared_social_concurrency": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    },
+    {
+      "workflow": "hostile-review.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/hostile_review.py": true,
+        "python3 scripts/link_audit.py": true
+      },
+      "secrets": {},
+      "vars": {},
+      "guards": {
+        "actions/upload-artifact@v4": true,
+        "no_direct_cloudflare_deploy": true
+      }
+    }
+  ],
+  "notes": [
+    "Cloudflare deployment is intentionally not run by GitHub Actions; Cloudflare Git integration handles deploys.",
+    "Autopilot and social-only workflows share one concurrency group to prevent simultaneous social posting races.",
+    "Secrets are referenced but not validated live until GitHub repository secrets are added."
+  ]
+}

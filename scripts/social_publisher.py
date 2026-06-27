@@ -20,6 +20,7 @@ QUEUE_PATH = ROOT / 'data/social-queue.json'
 REPORT_DIR = ROOT / 'reports'
 REPORT_DIR.mkdir(exist_ok=True)
 TODAY = date.today().isoformat()
+TODAY_ORDINAL = date.today().toordinal()
 
 POSTED_STATUSES = {'posted', 'skipped_duplicate', 'failed_permanent'}
 POSTABLE_STATUSES = {'queued_for_auto_post', 'approved_for_auto_post'}
@@ -169,7 +170,9 @@ def post_item(item, dry_run=False):
     if not text:
         return {'ok': False, 'error': 'empty_body'}
     if dry_run:
-        return {'ok': True, 'dry_run': True, 'id': f'dry-{hashlib.sha1(text.encode()).hexdigest()[:12]}', 'text': text}
+        
+        dry_key = f"{platform}|{item.get('brand','')}|{item.get('post_type','')}|{item.get('source_path','')}|{text}"
+        return {'ok': True, 'dry_run': True, 'id': f"dry-{hashlib.sha1(dry_key.encode()).hexdigest()[:12]}", 'text': text}
     if platform == 'linkedin':
         return linkedin_post(text)
     if platform == 'x':
@@ -222,6 +225,26 @@ def main():
 
     raw_eligible = [i for i, item in enumerate(queue) if item.get('status') in POSTABLE_STATUSES]
 
+    def load_brand_policy():
+        policy_path = ROOT / 'data/social-brand-policy.json'
+        policy = read_json(policy_path, {})
+        quotas = policy.get('brand_quotas', {}) if isinstance(policy, dict) else {}
+        rotation = policy.get('rotation', {}) if isinstance(policy, dict) else {}
+        return quotas, rotation
+
+    brand_quotas, rotation_policy = load_brand_policy()
+
+    def brand_weight(brand):
+        try:
+            return float(brand_quotas.get(brand, 1.0))
+        except Exception:
+            return 1.0
+
+    def weighted_posted_score(platform, brand):
+        # Lower score gets priority. This makes brands with fewer prior posts relative
+        # to their configured quota surface earlier, preventing portfolio starvation.
+        return posted_by_brand_platform[(platform, brand)] / max(brand_weight(brand), 0.01)
+
     def item_priority(i):
         item = queue[i]
         return (
@@ -245,7 +268,13 @@ def main():
     eligible_indices = []
     for platform in ('linkedin', 'x'):
         brand_keys = [key for key in platform_brand_groups if key[0] == platform]
-        brand_keys.sort(key=lambda key: (posted_by_brand_platform[key], seen_order.get(key[1], 9999), key[1]))
+        
+        rotation_offset = TODAY_ORDINAL % max(len(brand_keys), 1)
+        brand_keys.sort(key=lambda key: (
+            weighted_posted_score(key[0], key[1]),
+            (seen_order.get(key[1], 9999) - rotation_offset) % max(len(brand_keys), 1),
+            key[1]
+        ))
         more = True
         while more:
             more = False
@@ -279,7 +308,7 @@ def main():
                 item['post_result'] = {'dry_run': result.get('dry_run', False), 'status': result.get('status')}
                 posted_today[platform] += 1
                 bodies_today_by_platform[platform].append(body)
-                successes.append({'index': idx, 'platform': platform, 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
+                successes.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
             else:
                 item['status'] = 'post_failed'
                 item['last_error'] = result.get('error', 'unknown_error')
@@ -306,6 +335,7 @@ def main():
         'failures': failures,
         'skipped': skipped,
         'posted_today': posted_today,
+        'brand_rotation_policy': {'quota_count': len(brand_quotas), 'daily_rotation_offset': TODAY_ORDINAL},
         'status': 'ok' if not failures else 'partial_failure'
     }
     write_json(REPORT_DIR/'social-publisher-report.json', report)
