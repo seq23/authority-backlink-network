@@ -1,0 +1,1 @@
+{"name":"real-authority-network","private":true,"version":"1.0.0","scripts":{"review":"python3 scripts/hostile_review.py","social:drafts":"python3 scripts/generate_social_queue.py","audit:links":"python3 scripts/link_audit.py","check":"npm run review && npm run audit:links"},"devDependencies":{}}

@@ -1,0 +1,390 @@
+[
+  {
+    "id": "the-industry-guides",
+    "name": "The Industry Guides",
+    "domain": "theindustryguides.com",
+    "url": "https://theindustryguides.com",
+    "lane": "professional",
+    "category": "parent decision-support publisher",
+    "compliance": "YMYL-high",
+    "link_policy": "Parent routes to canonical domains only; canonicals do not link back.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://theindustryguides.com/",
+        "anchor": "The Industry Guides"
+      },
+      {
+        "url": "https://theindustryguides.com/methodology.html",
+        "anchor": "The Industry Guides methodology"
+      },
+      {
+        "url": "https://theindustryguides.com/tools/",
+        "anchor": "provider comparison tools"
+      }
+    ],
+    "forbidden": [
+      "best lawyer",
+      "best dentist",
+      "guaranteed results",
+      "official provider endorsement"
+    ]
+  },
+  {
+    "id": "accident-guides",
+    "name": "The Accident Guides",
+    "domain": "theaccidentguides.com",
+    "url": "https://theaccidentguides.com",
+    "lane": "professional",
+    "category": "personal injury educational guides",
+    "compliance": "legal-YMYL",
+    "link_policy": "Can be cited from professional resource publication and The Industry Guides only where relevant.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://theaccidentguides.com/",
+        "anchor": "The Accident Guides"
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/",
+        "anchor": "personal injury educational guides"
+      },
+      {
+        "url": "https://theaccidentguides.com/personal-injury/",
+        "anchor": "personal injury state guide hub"
+      }
+    ],
+    "forbidden": [
+      "best personal injury lawyer",
+      "hire this lawyer",
+      "legal advice",
+      "guaranteed settlement"
+    ]
+  },
+  {
+    "id": "dentistry-guides",
+    "name": "The Dentistry Guides",
+    "domain": "dentistryguides.com",
+    "url": "https://dentistryguides.com",
+    "lane": "professional",
+    "category": "dentistry educational guides",
+    "compliance": "medical-YMYL",
+    "link_policy": "Can be cited for dental decision-support resources; avoid clinical advice.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://dentistryguides.com/",
+        "anchor": "The Dentistry Guides"
+      },
+      {
+        "url": "https://dentistryguides.com/guides/",
+        "anchor": "dental decision guides"
+      },
+      {
+        "url": "https://dentistryguides.com/guides/questions-to-ask/",
+        "anchor": "questions before major dental work"
+      }
+    ],
+    "forbidden": [
+      "best dentist",
+      "medical advice",
+      "guaranteed treatment outcome"
+    ]
+  },
+  {
+    "id": "hormones-iv-hair",
+    "name": "Hormone Optimization Guides",
+    "domain": "hormonesivhair.com",
+    "url": "https://hormonesivhair.com",
+    "lane": "professional",
+    "category": "TRT IV hydration hair-loss peptide educational guides",
+    "compliance": "medical-YMYL",
+    "link_policy": "Can be cited for clinic evaluation questions and red flags; no treatment claims.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://hormonesivhair.com/",
+        "anchor": "Hormone Optimization Guides"
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/",
+        "anchor": "hormone and wellness clinic evaluation guides"
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+        "anchor": "IV hydration red flags"
+      }
+    ],
+    "forbidden": [
+      "cures",
+      "safe for everyone",
+      "medical advice",
+      "guaranteed results"
+    ]
+  },
+  {
+    "id": "neuro-eval-guides",
+    "name": "Neuro Evaluation Guides",
+    "domain": "neuroevalguides.com",
+    "url": "https://neuroevalguides.com",
+    "lane": "professional",
+    "category": "ADHD autism neuropsych evaluation education",
+    "compliance": "medical-mental-health-YMYL",
+    "link_policy": "Can be cited for evaluation process education; avoid diagnosis or provider endorsement.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://neuroevalguides.com/",
+        "anchor": "Neuro Evaluation Guides"
+      },
+      {
+        "url": "https://neuroevalguides.com/guides/",
+        "anchor": "neuro evaluation guides"
+      },
+      {
+        "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+        "anchor": "questions before neuro testing"
+      }
+    ],
+    "forbidden": [
+      "diagnose",
+      "best provider",
+      "therapy advice",
+      "guaranteed evaluation outcome"
+    ]
+  },
+  {
+    "id": "uscis-exam-guides",
+    "name": "USCIS Exam Guides",
+    "domain": "uscisexam.com",
+    "url": "https://uscisexam.com",
+    "lane": "professional",
+    "category": "USCIS medical exam educational guides",
+    "compliance": "legal-medical-YMYL",
+    "link_policy": "Can be cited for Form I-693 and civil surgeon process education; no immigration/legal advice.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://uscisexam.com/",
+        "anchor": "USCIS Exam Guides"
+      },
+      {
+        "url": "https://uscisexam.com/guides/",
+        "anchor": "USCIS medical exam guides"
+      },
+      {
+        "url": "https://uscisexam.com/guides/costs-and-timeframes/",
+        "anchor": "USCIS medical exam costs and timeframes"
+      }
+    ],
+    "forbidden": [
+      "immigration advice",
+      "guaranteed approval",
+      "best civil surgeon"
+    ]
+  },
+  {
+    "id": "bhpc",
+    "name": "Billionaire High Performance Coach",
+    "domain": "billionairehighperformancecoach.com",
+    "url": "https://billionairehighperformancecoach.com",
+    "lane": "founder",
+    "category": "AI executive coaching / prompt OS",
+    "compliance": "medium",
+    "link_policy": "Can be cited for AI coaching, executive operating systems, execution frameworks; no wealth/mental health promises.",
+    "approved_publications": [
+      "founder"
+    ],
+    "approved_links": [
+      {
+        "url": "https://billionairehighperformancecoach.com/",
+        "anchor": "Billionaire High Performance Coach"
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+        "anchor": "AI coach vs human coach comparison"
+      }
+    ],
+    "forbidden": [
+      "guaranteed billionaire",
+      "therapy",
+      "medical advice",
+      "financial advice"
+    ]
+  },
+  {
+    "id": "aplayer-mode",
+    "name": "A Player Mode",
+    "domain": "aplayermode.com",
+    "url": "https://www.aplayermode.com",
+    "lane": "founder",
+    "category": "AI execution system / operator manual",
+    "compliance": "medium",
+    "link_policy": "Can be cited for founder execution, AI accountability, operating systems.",
+    "approved_publications": [
+      "founder"
+    ],
+    "approved_links": [
+      {
+        "url": "https://www.aplayermode.com/",
+        "anchor": "A Player Mode"
+      }
+    ],
+    "forbidden": [
+      "guaranteed success",
+      "medical advice",
+      "therapy replacement"
+    ]
+  },
+  {
+    "id": "virtual-agency-os",
+    "name": "Virtual Agency OS",
+    "domain": "virtualagency-os.com",
+    "url": "https://virtualagency-os.com",
+    "lane": "founder",
+    "category": "virtual event and AI marketing education layer",
+    "compliance": "low-medium",
+    "link_policy": "Can be cited for virtual event production education; routes services to West Peek Productions.",
+    "approved_publications": [
+      "founder"
+    ],
+    "approved_links": [
+      {
+        "url": "https://virtualagency-os.com/learn/",
+        "anchor": "Virtual Agency OS learning library"
+      },
+      {
+        "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+        "anchor": "what virtual event production means"
+      },
+      {
+        "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+        "anchor": "virtual event production cost guide"
+      }
+    ],
+    "forbidden": [
+      "fake case study",
+      "guaranteed attendance",
+      "unsupported client claims"
+    ]
+  },
+  {
+    "id": "west-peek-productions",
+    "name": "West Peek Productions",
+    "domain": "westpeekproductions.com",
+    "url": "https://westpeekproductions.com",
+    "lane": "founder",
+    "category": "virtual/hybrid event production and audience growth services",
+    "compliance": "low-medium",
+    "link_policy": "Commercial destination for event production and storytelling work.",
+    "approved_publications": [
+      "founder"
+    ],
+    "approved_links": [
+      {
+        "url": "https://westpeekproductions.com/",
+        "anchor": "West Peek Productions"
+      }
+    ],
+    "forbidden": [
+      "unsupported client claims",
+      "guaranteed results"
+    ]
+  },
+  {
+    "id": "horse-legal-guide",
+    "name": "Horse Legal Guide",
+    "domain": "horselegalguide.com",
+    "url": "https://horselegalguide.com",
+    "lane": "professional",
+    "category": "equine legal education",
+    "compliance": "legal-YMYL",
+    "link_policy": "Can be cited in professional resource publication under equine/legal section only; must not provide legal advice.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://horselegalguide.com/",
+        "anchor": "Horse Legal Guide"
+      }
+    ],
+    "forbidden": [
+      "legal advice",
+      "guaranteed contract protection",
+      "best equine lawyer"
+    ]
+  },
+  {
+    "id": "hicks-consulting",
+    "name": "Hicks Consulting",
+    "domain": "hicksconsulting.org",
+    "url": "https://www.hicksconsulting.org",
+    "lane": "professional",
+    "category": "therapy coaching consulting and workplace mental health training",
+    "compliance": "mental-health-YMYL",
+    "link_policy": "Can be cited for therapy/coaching/training resources; must not diagnose or promise clinical outcomes.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://www.hicksconsulting.org/",
+        "anchor": "Hicks Consulting"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/therapy/",
+        "anchor": "virtual therapy in Tennessee"
+      },
+      {
+        "url": "https://www.hicksconsulting.org/faq/",
+        "anchor": "Hicks Consulting FAQ"
+      }
+    ],
+    "forbidden": [
+      "diagnosis",
+      "guaranteed healing",
+      "medical advice"
+    ]
+  },
+  {
+    "id": "porch-party",
+    "name": "Porch & Party",
+    "domain": "porchandparty901.com",
+    "url": "https://porchandparty901.com",
+    "lane": "memphis",
+    "category": "Memphis porch decorating hotel decor party styling grazing tables",
+    "compliance": "local-service",
+    "link_policy": "Can be cited in Memphis/local vendor publication and local citation assets.",
+    "approved_publications": [
+      "memphis"
+    ],
+    "approved_links": [
+      {
+        "url": "https://porchandparty901.com/",
+        "anchor": "Porch & Party"
+      },
+      {
+        "url": "https://porchandparty901.com/pricing.html",
+        "anchor": "Porch & Party pricing"
+      }
+    ],
+    "forbidden": [
+      "fake reviews",
+      "best in Memphis without proof",
+      "guaranteed availability"
+    ]
+  }
+]

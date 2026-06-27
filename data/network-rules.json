@@ -1,0 +1,43 @@
+{
+  "network_mode": "THREE_PUBLICATIONS_MAX_VELOCITY",
+  "targets_are_locked_to_listed_owned_sites_only": true,
+  "new_publication_domains_assumed_to_buy": [
+    "founderoperatorlibrary.com",
+    "memphisvendorlibrary.com",
+    "professionalresourcelibrary.com"
+  ],
+  "absolute_link_direction_rules": [
+    "The Industry Guides may link to canonical sites.",
+    "Canonical sites must not link back to The Industry Guides.",
+    "Founder publication may point only to A Player Mode, BHPC, Virtual Agency OS, and West Peek Productions.",
+    "Memphis publication may point only to Porch & Party from the listed target set.",
+    "Professional publication may point only to The Industry Guides, its five canonicals, Horse Legal Guide, and Hicks Consulting from the listed target set.",
+    "Do not link every target from every publication.",
+    "No fake independent reviews or fake rankings."
+  ],
+  "publishing_gates": {
+    "auto_publish_allowed": [
+      "technical fixes",
+      "sitemap regeneration",
+      "schema regeneration",
+      "broken internal link repairs",
+      "typo fixes below risk threshold"
+    ],
+    "human_review_required": [
+      "new AI-generated content",
+      "legal/medical/mental-health/immigration pages",
+      "best/ranking/comparison pages",
+      "external social posting",
+      "new target domains",
+      "new outbound links not in registry"
+    ]
+  },
+  "hostile_review_questions": [
+    "Would this page still deserve to exist if Google did not exist?",
+    "Is the link editorially justified for a human reader?",
+    "Does this page pretend to be independent when it is affiliated?",
+    "Does it make YMYL claims without boundaries?",
+    "Is any anchor text over-optimized or repetitive?",
+    "Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?"
+  ]
+}
