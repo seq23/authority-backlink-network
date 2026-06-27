@@ -1,3 +1,71 @@
+
+> authority-network@4.3.2 release:prepush:local
+> printf "release:prepush profile: LOCAL
+> " && npm run validate:all
+
+release:prepush profile: LOCAL
+
+> authority-network@4.3.2 validate:all
+> npm run validate:json && npm run validate:python && npm run review && npm run audit:links && npm run social:dry-run
+
+
+> authority-network@4.3.2 validate:json
+> python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null
+
+
+> authority-network@4.3.2 validate:python
+> python3 -m py_compile scripts/*.py
+
+
+> authority-network@4.3.2 review
+> python3 scripts/hostile_review.py
+
+{
+  "status": "PASS",
+  "target_domains_locked": [
+    "aplayermode.com",
+    "billionairehighperformancecoach.com",
+    "dentistryguides.com",
+    "hicksconsulting.org",
+    "hormonesivhair.com",
+    "horselegalguide.com",
+    "neuroevalguides.com",
+    "porchandparty901.com",
+    "theaccidentguides.com",
+    "theindustryguides.com",
+    "uscisexam.com",
+    "virtualagency-os.com",
+    "westpeekproductions.com"
+  ],
+  "publication_domains_assumed": [
+    "founderoperatorlibrary.com",
+    "memphisvendorlibrary.com",
+    "professionalresourcelibrary.com"
+  ],
+  "errors": [],
+  "warnings": [],
+  "hostile_questions": [
+    "Would this page still deserve to exist if Google did not exist?",
+    "Is the link editorially justified for a human reader?",
+    "Does this page pretend to be independent when it is affiliated?",
+    "Does it make YMYL claims without boundaries?",
+    "Is any anchor text over-optimized or repetitive?",
+    "Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?"
+  ]
+}
+
+> authority-network@4.3.2 audit:links
+> python3 scripts/link_audit.py
+
+{
+  "status": "PASS",
+  "total_links": 200,
+  "violations": 0
+}
+
+> authority-network@4.3.2 social:dry-run
+> SOCIAL_DRY_RUN=true python3 scripts/social_publisher.py
+
 {
   "date": "2026-06-27",
   "dry_run": true,

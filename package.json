@@ -1,7 +1,7 @@
 {
   "name": "authority-network",
   "private": true,
-  "version": "4.3.1",
+  "version": "4.3.2",
   "scripts": {
     "review": "python3 scripts/hostile_review.py",
     "audit:links": "python3 scripts/link_audit.py",
@@ -11,8 +11,8 @@
     "validate:json": "python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null",
     "validate:python": "python3 -m py_compile scripts/*.py",
     "validate:all": "npm run validate:json && npm run validate:python && npm run review && npm run audit:links && npm run social:dry-run",
-    "release:prepush": "npm run validate:all",
-    "release:prepush:local": "npm run validate:all",
+    "release:prepush": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
+    "release:prepush:local": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
     "check": "npm run validate:all"
   },
   "devDependencies": {}

@@ -35,6 +35,7 @@
   "dirty_tree_policy": "refuse",
   "notes": [
     "Updater applies full snapshot, validates locally, commits, and pushes automatically only after validation passes.",
-    "Cloudflare deployment is handled by existing Git integration; no Cloudflare API deploy workflows are included."
+    "Cloudflare deployment is handled by existing Git integration; no Cloudflare API deploy workflows are included.",
+    "v4.3.2 emits explicit local prepush profile attestation for the v3.1 updater."
   ]
 }

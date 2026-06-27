@@ -11,6 +11,7 @@ Safety model:
 - Supports SOCIAL_DRY_RUN=true for validation without network calls.
 """
 import base64, copy, hashlib, hmac, json, os, re, time, urllib.parse, urllib.request, urllib.error
+from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
 
@@ -205,16 +206,54 @@ def main():
         if missing and require_secrets:
             raise SystemExit(f'Missing X secrets: {", ".join(missing)}')
 
-    bodies_today = []
-    for existing in queue:
+    bodies_today_by_platform = defaultdict(list)
+    posted_by_brand_platform = defaultdict(int)
+    seen_order = {}
+    for i, existing in enumerate(queue):
+        brand = existing.get('brand') or existing.get('domain') or 'unknown'
+        seen_order.setdefault(brand, len(seen_order))
+        platform = existing.get('platform')
+        if existing.get('status') == 'posted':
+            posted_by_brand_platform[(platform, brand)] += 1
         if existing.get('posted_at','').startswith(TODAY):
-            platform = existing.get('platform')
             if platform in posted_today:
                 posted_today[platform] += 1
-            bodies_today.append(existing.get('body',''))
+            bodies_today_by_platform[platform].append(existing.get('body',''))
 
-    eligible_indices = [i for i, item in enumerate(queue) if item.get('status') in POSTABLE_STATUSES]
-    eligible_indices.sort(key=lambda i: (queue[i].get('date') == TODAY, bool(queue[i].get('source_url')), queue[i].get('date','')), reverse=True)
+    raw_eligible = [i for i, item in enumerate(queue) if item.get('status') in POSTABLE_STATUSES]
+
+    def item_priority(i):
+        item = queue[i]
+        return (
+            item.get('last_attempt_at', ''),
+            0 if item.get('date') == TODAY else 1,
+            0 if item.get('source_url') else 1,
+            i
+        )
+
+    # Round-robin by platform and brand. This prevents X from burning several daily
+    # slots on the same brand just because that brand appears first in social-queue.json.
+    platform_brand_groups = defaultdict(list)
+    for i in raw_eligible:
+        item = queue[i]
+        platform = item.get('platform')
+        brand = item.get('brand') or item.get('domain') or 'unknown'
+        platform_brand_groups[(platform, brand)].append(i)
+    for key in platform_brand_groups:
+        platform_brand_groups[key].sort(key=item_priority)
+
+    eligible_indices = []
+    for platform in ('linkedin', 'x'):
+        brand_keys = [key for key in platform_brand_groups if key[0] == platform]
+        brand_keys.sort(key=lambda key: (posted_by_brand_platform[key], seen_order.get(key[1], 9999), key[1]))
+        more = True
+        while more:
+            more = False
+            for key in brand_keys:
+                group = platform_brand_groups[key]
+                if group:
+                    eligible_indices.append(group.pop(0))
+                    more = True
 
     for idx in eligible_indices:
         item = queue[idx]
@@ -224,12 +263,13 @@ def main():
         if platform == 'x' and (not enable_x or posted_today['x'] >= x_limit):
             continue
         body = append_url(item.get('body',''), item)
-        if any(jaccard_text(body, old) > max_sim for old in bodies_today):
+        if any(jaccard_text(body, old) > max_sim for old in bodies_today_by_platform[platform]):
             item['status'] = 'skipped_duplicate'
             item['skipped_at'] = datetime.now(timezone.utc).isoformat()
             skipped.append({'index': idx, 'platform': platform, 'reason': 'same_day_similarity'})
             continue
-        attempts.append({'index': idx, 'platform': platform, 'preview': body[:120]})
+        item['last_attempt_at'] = datetime.now(timezone.utc).isoformat()
+        attempts.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'preview': body[:120]})
         try:
             result = post_item(item, dry_run=dry_run)
             if result.get('ok'):
@@ -238,7 +278,7 @@ def main():
                 item['post_id'] = result.get('id', '')
                 item['post_result'] = {'dry_run': result.get('dry_run', False), 'status': result.get('status')}
                 posted_today[platform] += 1
-                bodies_today.append(body)
+                bodies_today_by_platform[platform].append(body)
                 successes.append({'index': idx, 'platform': platform, 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
             else:
                 item['status'] = 'post_failed'
