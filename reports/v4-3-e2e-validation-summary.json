@@ -1,0 +1,65 @@
+{
+  "version": "V4.3 autopost hostile-reviewed baseline",
+  "review_date": "2026-06-27",
+  "status": "PASS_AFTER_FIX_LOOP",
+  "fixes_applied": [
+    "social_publisher now counts same-day posted_at items before posting so autopilot + social-only workflows cannot exceed daily caps"
+  ],
+  "tests": [
+    {
+      "test": "test-01-pycompile",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-02-workflow-static",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-03-autopilot-generation",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-04-hostile-review",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-05-link-audit",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-06-social-dry-run-first",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-07-social-daily-cap-second-run",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    },
+    {
+      "test": "test-08-social-secret-guard",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "pass": true
+    },
+    {
+      "test": "test-09-json-integrity",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "pass": true
+    }
+  ],
+  "overall_pass": true
+}

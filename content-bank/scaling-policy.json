@@ -1,0 +1,51 @@
+{
+  "version": "v4-adaptive-scale-policy",
+  "goal": "Maximize useful SEO/AEO/GEO surfaces without scaled-content spam footprint.",
+  "default_launch_date": "auto-created on first run if data/autopilot-state.json is missing",
+  "daily_rules": [
+    {
+      "days": "1-14",
+      "target_pages_per_day": 3,
+      "notes": "Warm-up. One page per publication."
+    },
+    {
+      "days": "15-45",
+      "target_pages_per_day": 6,
+      "condition": "last_7_day_pass_rate >= 0.85 and duplicate_warnings == 0, else 3"
+    },
+    {
+      "days": "46-90",
+      "target_pages_per_day": 6,
+      "condition": "hold at 6 unless pass rate drops below 0.75, then 3"
+    },
+    {
+      "days": "91-180",
+      "target_pages_per_day": "6-9",
+      "condition": "9 only if last_14_day_pass_rate >= 0.85, avg_quality >= 85, duplicate_warnings == 0"
+    },
+    {
+      "days": "181-365",
+      "target_pages_per_day": "6-9",
+      "condition": "9 if quality remains healthy; 6 if mixed; 3 if failures rise"
+    }
+  ],
+  "hard_limits": {
+    "absolute_max_pages_per_day": 9,
+    "max_duplicate_similarity": 0.15,
+    "min_publish_score": 72,
+    "auto_publish_score": 85
+  },
+  "social_rules": {
+    "linkedin_daily_limit": 1,
+    "x_daily_limit": 5,
+    "do_not_post_every_page_to_linkedin": true
+  },
+  "gemini_policy": {
+    "required": false,
+    "publish_if_gemini_fails": true,
+    "rewrite_only_for_scores_between": [
+      72,
+      84
+    ]
+  }
+}

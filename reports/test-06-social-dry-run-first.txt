@@ -1,0 +1,89 @@
+{
+  "date": "2026-06-27",
+  "dry_run": true,
+  "enabled": {
+    "linkedin": true,
+    "x": true
+  },
+  "limits": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "attempts": [
+    {
+      "index": 104,
+      "platform": "linkedin",
+      "preview": "A useful resource does not need to pretend every answer is universal. New note: Productivity Recovery After Missed Days:"
+    },
+    {
+      "index": 105,
+      "platform": "x",
+      "preview": "New resource: Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers. Better questions, fe"
+    },
+    {
+      "index": 106,
+      "platform": "x",
+      "preview": "Not every resource page needs a hot take. This one is built to help compare the decision: Productivity Recovery After Mi"
+    },
+    {
+      "index": 107,
+      "platform": "x",
+      "preview": "Useful citation, not fake ranking: Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers."
+    },
+    {
+      "index": 108,
+      "platform": "x",
+      "preview": "Decision aid added: Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers. The point is c"
+    },
+    {
+      "index": 109,
+      "platform": "x",
+      "preview": "Added a practical resource: Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers. Built "
+    }
+  ],
+  "successes": [
+    {
+      "index": 104,
+      "platform": "linkedin",
+      "id": "dry-88eb719a7fb1",
+      "dry_run": true
+    },
+    {
+      "index": 105,
+      "platform": "x",
+      "id": "dry-1720f387c45f",
+      "dry_run": true
+    },
+    {
+      "index": 106,
+      "platform": "x",
+      "id": "dry-e684ef62058b",
+      "dry_run": true
+    },
+    {
+      "index": 107,
+      "platform": "x",
+      "id": "dry-b86c0788a6d7",
+      "dry_run": true
+    },
+    {
+      "index": 108,
+      "platform": "x",
+      "id": "dry-c4cae7b115c6",
+      "dry_run": true
+    },
+    {
+      "index": 109,
+      "platform": "x",
+      "id": "dry-467bebe0bfe4",
+      "dry_run": true
+    }
+  ],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "status": "ok"
+}

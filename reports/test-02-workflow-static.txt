@@ -1,0 +1,16 @@
+workflow_count 3
+--- .github/workflows/authority-v4-autopilot.yml
+has_checkout True
+has_python True
+has_permissions True
+missing_required_tokens []
+--- .github/workflows/hostile-review.yml
+has_checkout True
+has_python True
+has_permissions False
+missing_required_tokens []
+--- .github/workflows/social-autopost.yml
+has_checkout True
+has_python True
+has_permissions True
+missing_required_tokens []

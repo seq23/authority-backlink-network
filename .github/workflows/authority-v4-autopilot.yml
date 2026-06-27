@@ -1,0 +1,67 @@
+name: Authority Network V4.2 Autopilot + Social Auto-Post
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '22 14 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  autopilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate and publish authority pages
+        env:
+          DAILY_PAGE_LIMIT: ${{ vars.DAILY_PAGE_LIMIT || '3' }}
+          ABSOLUTE_MAX_PAGES_PER_DAY: ${{ vars.ABSOLUTE_MAX_PAGES_PER_DAY || '9' }}
+          MIN_BASE_PUBLISH_SCORE: ${{ vars.MIN_BASE_PUBLISH_SCORE || '72' }}
+          ENABLE_GEMINI_REWRITE: ${{ vars.ENABLE_GEMINI_REWRITE || 'false' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          FOUNDER_PUBLICATION_DOMAIN: ${{ vars.FOUNDER_PUBLICATION_DOMAIN }}
+          MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
+          PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
+        run: python3 scripts/authority_v4_autopilot.py
+      - name: Hostile review
+        run: python3 scripts/hostile_review.py
+      - name: Link audit
+        run: python3 scripts/link_audit.py
+      - name: Auto-post social queue
+        env:
+          ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}
+          ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING || 'true' }}
+          REQUIRE_SOCIAL_SECRETS: ${{ vars.REQUIRE_SOCIAL_SECRETS || 'true' }}
+          FAIL_ON_SOCIAL_POST_FAILURE: ${{ vars.FAIL_ON_SOCIAL_POST_FAILURE || 'false' }}
+          SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN || 'false' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          MAX_SOCIAL_SIMILARITY: ${{ vars.MAX_SOCIAL_SIMILARITY || '0.86' }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION || '202606' }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: python3 scripts/social_publisher.py
+      - name: Commit generated content, reports, and social ledger
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Authority V4.2 autopilot: pages, validation, social auto-post ledger"
+          file_pattern: "sites/** data/** reports/**"
+      - name: Create failure issue
+        if: failure()
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ github.token }}
+          title: "Authority V4.2 autopilot failed"
+          body: "The daily authority autopilot or social auto-poster failed. Review this workflow run before increasing publishing volume."

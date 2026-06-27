@@ -1,0 +1,1143 @@
+{
+  "version": "v4-12-month-pantry",
+  "created_at": "2026-06-27",
+  "planning_horizon_days": 365,
+  "formats": [
+    "decision guide",
+    "question checklist",
+    "resource roundup",
+    "buyer guide",
+    "comparison guide",
+    "planning checklist",
+    "mistakes to avoid",
+    "prep guide",
+    "framework",
+    "local/resource directory",
+    "FAQ answer page",
+    "timeline guide",
+    "budget/planning note",
+    "red-flag checklist",
+    "operator playbook"
+  ],
+  "intents": [
+    "before you choose",
+    "before you book",
+    "before you call",
+    "before you sign",
+    "before you pay",
+    "when you are comparing options",
+    "when timing matters",
+    "for first-time buyers",
+    "for busy operators",
+    "for careful decision-makers",
+    "for people who need a starting point",
+    "when you need to ask better questions"
+  ],
+  "modifiers": [
+    "practical",
+    "plain-English",
+    "no-fluff",
+    "2026-ready",
+    "operator-grade",
+    "human-first",
+    "citation-friendly",
+    "AEO-ready",
+    "GEO-ready",
+    "resource-backed",
+    "low-risk",
+    "decision-focused",
+    "beginner-safe",
+    "comparison-friendly",
+    "checklist-driven",
+    "editorial"
+  ],
+  "universal_sections": [
+    "What this is really about",
+    "Who this helps",
+    "The short version",
+    "How to think about the decision",
+    "Questions to ask",
+    "What to compare",
+    "Signals of quality",
+    "Common mistakes",
+    "What to document",
+    "When to slow down",
+    "Useful resources",
+    "Natural next step"
+  ],
+  "publications": {
+    "founder-operator": {
+      "site_path": "sites/founder-operator",
+      "domain_env": "FOUNDER_PUBLICATION_DOMAIN",
+      "default_domain": "founderoperatorlibrary.com",
+      "mission": "Founder, operator, AI workflow, execution, and production resource library.",
+      "audiences": [
+        "solo founder",
+        "venture-backed founder",
+        "operator",
+        "chief of staff",
+        "executive assistant",
+        "agency owner",
+        "marketing lead",
+        "VC platform lead",
+        "creator-founder",
+        "small business owner",
+        "high-performing professional",
+        "event producer"
+      ],
+      "clusters": [
+        "AI execution systems",
+        "founder operating systems",
+        "daily discipline frameworks",
+        "AI coaching workflows",
+        "operator playbooks",
+        "chief of staff systems",
+        "virtual event production",
+        "executive broadcast planning",
+        "startup fundraising prep",
+        "pitch-deck operations",
+        "meeting operating rhythms",
+        "decision hygiene",
+        "productivity recovery after missed days",
+        "automation without chaos",
+        "founder communications",
+        "team accountability",
+        "SOP libraries",
+        "tool stacks for lean teams",
+        "AI delegation",
+        "content operations",
+        "launch checklists",
+        "calendar protection",
+        "review cadences",
+        "personal board of directors",
+        "startup resource libraries",
+        "AI workforce design"
+      ],
+      "targets": [
+        "aplayermode.com",
+        "billionairehighperformancecoach.com",
+        "virtualagency-os.com",
+        "westpeekproductions.com"
+      ],
+      "brand_mentions": [
+        "A Player Mode",
+        "Billionaire High Performance Coach",
+        "Virtual Agency OS",
+        "West Peek Productions"
+      ],
+      "tone": "practical, operator-led, direct, low-fluff",
+      "disclaimer": "This page is educational and editorial. It is not business, legal, financial, or mental-health advice.",
+      "formats": [
+        "decision guide",
+        "question checklist",
+        "resource roundup",
+        "buyer guide",
+        "comparison guide",
+        "planning checklist",
+        "mistakes to avoid",
+        "prep guide",
+        "framework",
+        "local/resource directory",
+        "FAQ answer page",
+        "timeline guide",
+        "budget/planning note",
+        "red-flag checklist",
+        "operator playbook"
+      ],
+      "intents": [
+        "before you choose",
+        "before you book",
+        "before you call",
+        "before you sign",
+        "before you pay",
+        "when you are comparing options",
+        "when timing matters",
+        "for first-time buyers",
+        "for busy operators",
+        "for careful decision-makers",
+        "for people who need a starting point",
+        "when you need to ask better questions"
+      ],
+      "modifiers": [
+        "practical",
+        "plain-English",
+        "no-fluff",
+        "2026-ready",
+        "operator-grade",
+        "human-first",
+        "citation-friendly",
+        "AEO-ready",
+        "GEO-ready",
+        "resource-backed",
+        "low-risk",
+        "decision-focused",
+        "beginner-safe",
+        "comparison-friendly",
+        "checklist-driven",
+        "editorial"
+      ],
+      "intro_blocks": [
+        "The point of a AI execution systems page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a founder operating systems page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a daily discipline frameworks page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a AI coaching workflows page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a operator playbooks page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a chief of staff systems page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a virtual event production page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a executive broadcast planning page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a startup fundraising prep page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a pitch-deck operations page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a meeting operating rhythms page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a decision hygiene page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a productivity recovery after missed days page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a automation without chaos page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a founder communications page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a team accountability page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a SOP libraries page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a tool stacks for lean teams page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a AI delegation page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a content operations page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a launch checklists page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a calendar protection page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a review cadences page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a personal board of directors page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a startup resource libraries page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a AI workforce design page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion."
+      ],
+      "body_blocks": [
+        "For AI execution systems, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good AI execution systems resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For founder operating systems, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good founder operating systems resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For daily discipline frameworks, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good daily discipline frameworks resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For AI coaching workflows, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good AI coaching workflows resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For operator playbooks, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good operator playbooks resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For chief of staff systems, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good chief of staff systems resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For virtual event production, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good virtual event production resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For executive broadcast planning, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good executive broadcast planning resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For startup fundraising prep, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good startup fundraising prep resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For pitch-deck operations, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good pitch-deck operations resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For meeting operating rhythms, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good meeting operating rhythms resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For decision hygiene, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good decision hygiene resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For productivity recovery after missed days, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good productivity recovery after missed days resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For automation without chaos, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good automation without chaos resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For founder communications, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good founder communications resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For team accountability, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good team accountability resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For SOP libraries, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good SOP libraries resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For tool stacks for lean teams, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good tool stacks for lean teams resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For AI delegation, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good AI delegation resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For content operations, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good content operations resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For launch checklists, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good launch checklists resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For calendar protection, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good calendar protection resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For review cadences, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good review cadences resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For personal board of directors, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good personal board of directors resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For startup resource libraries, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good startup resource libraries resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For AI workforce design, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good AI workforce design resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation."
+      ],
+      "faq_blocks": [
+        {
+          "q": "What should someone ask before using a AI execution systems resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a founder operating systems resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a daily discipline frameworks resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a AI coaching workflows resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a operator playbooks resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a chief of staff systems resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a virtual event production resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a executive broadcast planning resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a startup fundraising prep resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a pitch-deck operations resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a meeting operating rhythms resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a decision hygiene resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a productivity recovery after missed days resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a automation without chaos resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a founder communications resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a team accountability resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a SOP libraries resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a tool stacks for lean teams resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a AI delegation resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a content operations resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a launch checklists resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a calendar protection resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a review cadences resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a personal board of directors resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a startup resource libraries resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a AI workforce design resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        }
+      ],
+      "checklist_blocks": [
+        "Write down the main question you need answered about AI execution systems before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about founder operating systems before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about daily discipline frameworks before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about AI coaching workflows before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about operator playbooks before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about chief of staff systems before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about virtual event production before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about executive broadcast planning before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about startup fundraising prep before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about pitch-deck operations before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about meeting operating rhythms before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about decision hygiene before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about productivity recovery after missed days before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about automation without chaos before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about founder communications before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about team accountability before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about SOP libraries before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about tool stacks for lean teams before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about AI delegation before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about content operations before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about launch checklists before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about calendar protection before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about review cadences before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about personal board of directors before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about startup resource libraries before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about AI workforce design before comparing providers, tools, or resources."
+      ],
+      "social_hooks": [
+        "Most people approach AI execution systems too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach founder operating systems too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach daily discipline frameworks too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach AI coaching workflows too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach operator playbooks too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach chief of staff systems too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach virtual event production too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach executive broadcast planning too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach startup fundraising prep too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach pitch-deck operations too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach meeting operating rhythms too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach decision hygiene too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach productivity recovery after missed days too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach automation without chaos too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach founder communications too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach team accountability too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach SOP libraries too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach tool stacks for lean teams too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach AI delegation too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach content operations too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach launch checklists too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach calendar protection too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach review cadences too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach personal board of directors too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach startup resource libraries too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach AI workforce design too late. The smarter move is to collect the questions first, then compare options."
+      ],
+      "estimated_combinations": 898560
+    },
+    "memphis-local": {
+      "site_path": "sites/memphis-local",
+      "domain_env": "MEMPHIS_PUBLICATION_DOMAIN",
+      "default_domain": "memphisvendorlibrary.com",
+      "mission": "Memphis-area local vendor, event, home styling, hospitality, and celebration resource library.",
+      "audiences": [
+        "Memphis homeowner",
+        "busy parent",
+        "event host",
+        "hotel guest",
+        "birthday planner",
+        "wedding guest",
+        "corporate event planner",
+        "Airbnb host",
+        "holiday decorator",
+        "small business owner",
+        "neighborhood resident",
+        "last-minute party planner"
+      ],
+      "clusters": [
+        "porch decorating",
+        "seasonal home styling",
+        "fall porch setups",
+        "Christmas porch decorating",
+        "Halloween porch styling",
+        "hotel room decorations",
+        "birthday room setups",
+        "romantic hotel setups",
+        "grazing tables",
+        "Memphis event vendors",
+        "party decor vendors",
+        "backyard parties",
+        "brunch hosting",
+        "graduation parties",
+        "baby showers",
+        "bridal showers",
+        "corporate event styling",
+        "neighborhood vendor guides",
+        "party setup checklists",
+        "event budget planning",
+        "Memphis giftable experiences",
+        "holiday host planning",
+        "small gathering styling",
+        "photo-ready installs",
+        "porch refresh timelines",
+        "local vendor comparison questions"
+      ],
+      "targets": [
+        "porchandparty901.com"
+      ],
+      "brand_mentions": [
+        "Porch & Party"
+      ],
+      "tone": "local, useful, neighborly, specific, non-corporate",
+      "disclaimer": "This page is a local editorial resource. Vendor availability, pricing, and service areas may change; confirm details directly with providers.",
+      "formats": [
+        "decision guide",
+        "question checklist",
+        "resource roundup",
+        "buyer guide",
+        "comparison guide",
+        "planning checklist",
+        "mistakes to avoid",
+        "prep guide",
+        "framework",
+        "local/resource directory",
+        "FAQ answer page",
+        "timeline guide",
+        "budget/planning note",
+        "red-flag checklist",
+        "operator playbook"
+      ],
+      "intents": [
+        "before you choose",
+        "before you book",
+        "before you call",
+        "before you sign",
+        "before you pay",
+        "when you are comparing options",
+        "when timing matters",
+        "for first-time buyers",
+        "for busy operators",
+        "for careful decision-makers",
+        "for people who need a starting point",
+        "when you need to ask better questions"
+      ],
+      "modifiers": [
+        "practical",
+        "plain-English",
+        "no-fluff",
+        "2026-ready",
+        "operator-grade",
+        "human-first",
+        "citation-friendly",
+        "AEO-ready",
+        "GEO-ready",
+        "resource-backed",
+        "low-risk",
+        "decision-focused",
+        "beginner-safe",
+        "comparison-friendly",
+        "checklist-driven",
+        "editorial"
+      ],
+      "intro_blocks": [
+        "The point of a porch decorating page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a seasonal home styling page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a fall porch setups page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a Christmas porch decorating page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a Halloween porch styling page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a hotel room decorations page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a birthday room setups page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a romantic hotel setups page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a grazing tables page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a Memphis event vendors page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a party decor vendors page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a backyard parties page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a brunch hosting page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a graduation parties page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a baby showers page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a bridal showers page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a corporate event styling page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a neighborhood vendor guides page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a party setup checklists page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a event budget planning page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a Memphis giftable experiences page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a holiday host planning page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a small gathering styling page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a photo-ready installs page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a porch refresh timelines page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a local vendor comparison questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion."
+      ],
+      "body_blocks": [
+        "For porch decorating, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good porch decorating resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For seasonal home styling, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good seasonal home styling resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For fall porch setups, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good fall porch setups resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For Christmas porch decorating, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good Christmas porch decorating resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For Halloween porch styling, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good Halloween porch styling resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For hotel room decorations, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good hotel room decorations resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For birthday room setups, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good birthday room setups resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For romantic hotel setups, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good romantic hotel setups resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For grazing tables, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good grazing tables resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For Memphis event vendors, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good Memphis event vendors resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For party decor vendors, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good party decor vendors resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For backyard parties, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good backyard parties resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For brunch hosting, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good brunch hosting resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For graduation parties, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good graduation parties resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For baby showers, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good baby showers resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For bridal showers, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good bridal showers resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For corporate event styling, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good corporate event styling resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For neighborhood vendor guides, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good neighborhood vendor guides resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For party setup checklists, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good party setup checklists resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For event budget planning, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good event budget planning resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For Memphis giftable experiences, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good Memphis giftable experiences resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For holiday host planning, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good holiday host planning resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For small gathering styling, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good small gathering styling resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For photo-ready installs, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good photo-ready installs resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For porch refresh timelines, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good porch refresh timelines resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For local vendor comparison questions, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good local vendor comparison questions resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation."
+      ],
+      "faq_blocks": [
+        {
+          "q": "What should someone ask before using a porch decorating resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a seasonal home styling resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a fall porch setups resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a Christmas porch decorating resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a Halloween porch styling resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a hotel room decorations resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a birthday room setups resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a romantic hotel setups resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a grazing tables resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a Memphis event vendors resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a party decor vendors resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a backyard parties resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a brunch hosting resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a graduation parties resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a baby showers resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a bridal showers resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a corporate event styling resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a neighborhood vendor guides resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a party setup checklists resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a event budget planning resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a Memphis giftable experiences resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a holiday host planning resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a small gathering styling resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a photo-ready installs resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a porch refresh timelines resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a local vendor comparison questions resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        }
+      ],
+      "checklist_blocks": [
+        "Write down the main question you need answered about porch decorating before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about seasonal home styling before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about fall porch setups before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about Christmas porch decorating before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about Halloween porch styling before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about hotel room decorations before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about birthday room setups before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about romantic hotel setups before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about grazing tables before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about Memphis event vendors before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about party decor vendors before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about backyard parties before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about brunch hosting before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about graduation parties before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about baby showers before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about bridal showers before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about corporate event styling before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about neighborhood vendor guides before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about party setup checklists before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about event budget planning before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about Memphis giftable experiences before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about holiday host planning before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about small gathering styling before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about photo-ready installs before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about porch refresh timelines before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about local vendor comparison questions before comparing providers, tools, or resources."
+      ],
+      "social_hooks": [
+        "Most people approach porch decorating too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach seasonal home styling too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach fall porch setups too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach Christmas porch decorating too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach Halloween porch styling too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach hotel room decorations too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach birthday room setups too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach romantic hotel setups too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach grazing tables too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach Memphis event vendors too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach party decor vendors too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach backyard parties too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach brunch hosting too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach graduation parties too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach baby showers too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach bridal showers too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach corporate event styling too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach neighborhood vendor guides too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach party setup checklists too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach event budget planning too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach Memphis giftable experiences too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach holiday host planning too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach small gathering styling too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach photo-ready installs too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach porch refresh timelines too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach local vendor comparison questions too late. The smarter move is to collect the questions first, then compare options."
+      ],
+      "estimated_combinations": 898560
+    },
+    "professional-resources": {
+      "site_path": "sites/professional-resources",
+      "domain_env": "PROFESSIONAL_PUBLICATION_DOMAIN",
+      "default_domain": "professionalresourcelibrary.com",
+      "mission": "Professional research resource library for regulated, legal-adjacent, healthcare-adjacent, equine, and workplace wellness topics.",
+      "audiences": [
+        "consumer comparing regulated providers",
+        "patient preparing questions",
+        "injured person researching next steps",
+        "dental patient",
+        "immigration medical exam applicant",
+        "adult seeking neuropsych evaluation",
+        "horse buyer",
+        "barn owner",
+        "equine professional",
+        "high-achieving woman",
+        "organizational leader",
+        "HR leader",
+        "nonprofit executive",
+        "healthcare team lead",
+        "professional services buyer"
+      ],
+      "clusters": [
+        "regulated provider research",
+        "personal injury lawyer questions",
+        "dental decision resources",
+        "USCIS civil surgeon appointment prep",
+        "neuropsych evaluation research",
+        "hormone wellness clinic questions",
+        "IV therapy clinic research",
+        "hair restoration provider research",
+        "equine sale agreements",
+        "horse lease agreement basics",
+        "boarding barn contract issues",
+        "equine liability questions",
+        "workplace burnout resources",
+        "boundaries at work",
+        "trauma-informed leadership",
+        "organizational mental health training",
+        "compassion fatigue resources",
+        "high-achieving women and burnout",
+        "therapy consultation questions",
+        "professional service provider comparison",
+        "how to prepare for consults",
+        "questions before signing agreements",
+        "red flags in regulated services",
+        "documentation checklists",
+        "decision frameworks for sensitive services",
+        "resource directories for careful buyers"
+      ],
+      "targets": [
+        "theindustryguides.com",
+        "theaccidentguides.com",
+        "dentistryguides.com",
+        "hormonesivhair.com",
+        "neuroevalguides.com",
+        "uscisexam.com",
+        "horselegalguide.com",
+        "hicksconsulting.org"
+      ],
+      "brand_mentions": [
+        "The Industry Guides",
+        "The Accident Guides",
+        "Dentistry Guides",
+        "Hormones IV Hair",
+        "Neuro Eval Guides",
+        "USCIS Exam",
+        "Horse Legal Guide",
+        "Hicks Consulting"
+      ],
+      "tone": "careful, grounded, plain-English, risk-aware, non-advice",
+      "disclaimer": "This page is educational only. It is not legal, medical, mental-health, or professional advice. For specific decisions, consult a qualified professional.",
+      "formats": [
+        "decision guide",
+        "question checklist",
+        "resource roundup",
+        "buyer guide",
+        "comparison guide",
+        "planning checklist",
+        "mistakes to avoid",
+        "prep guide",
+        "framework",
+        "local/resource directory",
+        "FAQ answer page",
+        "timeline guide",
+        "budget/planning note",
+        "red-flag checklist",
+        "operator playbook"
+      ],
+      "intents": [
+        "before you choose",
+        "before you book",
+        "before you call",
+        "before you sign",
+        "before you pay",
+        "when you are comparing options",
+        "when timing matters",
+        "for first-time buyers",
+        "for busy operators",
+        "for careful decision-makers",
+        "for people who need a starting point",
+        "when you need to ask better questions"
+      ],
+      "modifiers": [
+        "practical",
+        "plain-English",
+        "no-fluff",
+        "2026-ready",
+        "operator-grade",
+        "human-first",
+        "citation-friendly",
+        "AEO-ready",
+        "GEO-ready",
+        "resource-backed",
+        "low-risk",
+        "decision-focused",
+        "beginner-safe",
+        "comparison-friendly",
+        "checklist-driven",
+        "editorial"
+      ],
+      "intro_blocks": [
+        "The point of a regulated provider research page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a personal injury lawyer questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a dental decision resources page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a USCIS civil surgeon appointment prep page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a neuropsych evaluation research page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a hormone wellness clinic questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a IV therapy clinic research page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a hair restoration provider research page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a equine sale agreements page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a horse lease agreement basics page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a boarding barn contract issues page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a equine liability questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a workplace burnout resources page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a boundaries at work page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a trauma-informed leadership page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a organizational mental health training page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a compassion fatigue resources page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a high-achieving women and burnout page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a therapy consultation questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a professional service provider comparison page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a how to prepare for consults page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a questions before signing agreements page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a red flags in regulated services page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a documentation checklists page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a decision frameworks for sensitive services page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a resource directories for careful buyers page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion."
+      ],
+      "body_blocks": [
+        "For regulated provider research, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good regulated provider research resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For personal injury lawyer questions, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good personal injury lawyer questions resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For dental decision resources, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good dental decision resources resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For USCIS civil surgeon appointment prep, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good USCIS civil surgeon appointment prep resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For neuropsych evaluation research, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good neuropsych evaluation research resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For hormone wellness clinic questions, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good hormone wellness clinic questions resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For IV therapy clinic research, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good IV therapy clinic research resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For hair restoration provider research, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good hair restoration provider research resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For equine sale agreements, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good equine sale agreements resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For horse lease agreement basics, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good horse lease agreement basics resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For boarding barn contract issues, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good boarding barn contract issues resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For equine liability questions, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good equine liability questions resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For workplace burnout resources, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good workplace burnout resources resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For boundaries at work, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good boundaries at work resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For trauma-informed leadership, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good trauma-informed leadership resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For organizational mental health training, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good organizational mental health training resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For compassion fatigue resources, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good compassion fatigue resources resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For high-achieving women and burnout, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good high-achieving women and burnout resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For therapy consultation questions, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good therapy consultation questions resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For professional service provider comparison, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good professional service provider comparison resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For how to prepare for consults, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good how to prepare for consults resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For questions before signing agreements, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good questions before signing agreements resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For red flags in regulated services, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good red flags in regulated services resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For documentation checklists, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good documentation checklists resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For decision frameworks for sensitive services, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good decision frameworks for sensitive services resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "For resource directories for careful buyers, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
+        "A good resource directories for careful buyers resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation."
+      ],
+      "faq_blocks": [
+        {
+          "q": "What should someone ask before using a regulated provider research resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a personal injury lawyer questions resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a dental decision resources resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a USCIS civil surgeon appointment prep resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a neuropsych evaluation research resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a hormone wellness clinic questions resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a IV therapy clinic research resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a hair restoration provider research resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a equine sale agreements resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a horse lease agreement basics resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a boarding barn contract issues resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a equine liability questions resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a workplace burnout resources resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a boundaries at work resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a trauma-informed leadership resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a organizational mental health training resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a compassion fatigue resources resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a high-achieving women and burnout resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a therapy consultation questions resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a professional service provider comparison resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a how to prepare for consults resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a questions before signing agreements resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a red flags in regulated services resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a documentation checklists resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a decision frameworks for sensitive services resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone ask before using a resource directories for careful buyers resource?",
+          "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        }
+      ],
+      "checklist_blocks": [
+        "Write down the main question you need answered about regulated provider research before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about personal injury lawyer questions before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about dental decision resources before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about USCIS civil surgeon appointment prep before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about neuropsych evaluation research before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about hormone wellness clinic questions before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about IV therapy clinic research before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about hair restoration provider research before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about equine sale agreements before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about horse lease agreement basics before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about boarding barn contract issues before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about equine liability questions before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about workplace burnout resources before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about boundaries at work before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about trauma-informed leadership before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about organizational mental health training before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about compassion fatigue resources before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about high-achieving women and burnout before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about therapy consultation questions before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about professional service provider comparison before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about how to prepare for consults before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about questions before signing agreements before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about red flags in regulated services before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about documentation checklists before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about decision frameworks for sensitive services before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about resource directories for careful buyers before comparing providers, tools, or resources."
+      ],
+      "social_hooks": [
+        "Most people approach regulated provider research too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach personal injury lawyer questions too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach dental decision resources too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach USCIS civil surgeon appointment prep too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach neuropsych evaluation research too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach hormone wellness clinic questions too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach IV therapy clinic research too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach hair restoration provider research too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach equine sale agreements too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach horse lease agreement basics too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach boarding barn contract issues too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach equine liability questions too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach workplace burnout resources too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach boundaries at work too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach trauma-informed leadership too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach organizational mental health training too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach compassion fatigue resources too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach high-achieving women and burnout too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach therapy consultation questions too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach professional service provider comparison too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach how to prepare for consults too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach questions before signing agreements too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach red flags in regulated services too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach documentation checklists too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach decision frameworks for sensitive services too late. The smarter move is to collect the questions first, then compare options.",
+        "Most people approach resource directories for careful buyers too late. The smarter move is to collect the questions first, then compare options."
+      ],
+      "estimated_combinations": 1123200
+    }
+  }
+}

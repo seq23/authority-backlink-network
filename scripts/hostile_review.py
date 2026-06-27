@@ -92,7 +92,7 @@ for pub, folder in PUB_FOLDERS.items():
     if not base.exists():
         errors.append(f'Missing publication folder: {folder}')
         continue
-    for path in sorted(base.glob('*.html')):
+    for path in sorted(base.rglob('*.html')):
         rel = str(path.relative_to(ROOT))
         txt = path.read_text(errors='ignore')
         lower = txt.lower()
@@ -145,7 +145,7 @@ for b in brands:
             if 'theindustryguides.com' in link.get('url',''):
                 errors.append(f"{b['id']}: canonical approved_links cannot point back to The Industry Guides")
 
-# Validate social queue is draft-only and not duplicated.
+# Validate social queue is safe for auto-posting and not duplicated.
 social_path = ROOT / 'data/social-queue.json'
 if social_path.exists():
     social = json.loads(social_path.read_text())
@@ -157,11 +157,11 @@ if social_path.exists():
         if key in seen:
             errors.append(f'data/social-queue.json item {i}: duplicate {platform} body')
         seen.add(key)
-        if item.get('status') != 'draft_requires_human_approval':
-            errors.append(f'data/social-queue.json item {i}: status must remain draft_requires_human_approval')
-        target_url = item.get('target_url') or ''
-        if target_url.startswith('http') and norm_domain(target_url) not in ALL_TARGET_DOMAINS:
-            errors.append(f'data/social-queue.json item {i}: social target domain not in target registry: {target_url}')
+        if item.get('status') not in {'draft_requires_human_approval','queued_for_auto_post','approved_for_auto_post','posted','post_failed','skipped_duplicate','failed_permanent'}:
+            errors.append(f'data/social-queue.json item {i}: unsupported social status: {item.get("status")}')
+        target_url = item.get('target_url') or item.get('source_url') or ''
+        if target_url.startswith('http') and norm_domain(target_url) not in (ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS):
+            errors.append(f'data/social-queue.json item {i}: social target/source domain not in registry: {target_url}')
         for phrase in BANNED_PHRASES:
             if phrase in body_key:
                 errors.append(f'data/social-queue.json item {i}: banned phrase in social body: {phrase}')

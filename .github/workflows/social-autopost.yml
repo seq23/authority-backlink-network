@@ -1,0 +1,49 @@
+name: Social Auto-Post Only
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 16 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  social-autopost:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Post queued social items
+        env:
+          ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}
+          ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING || 'true' }}
+          REQUIRE_SOCIAL_SECRETS: ${{ vars.REQUIRE_SOCIAL_SECRETS || 'true' }}
+          FAIL_ON_SOCIAL_POST_FAILURE: ${{ vars.FAIL_ON_SOCIAL_POST_FAILURE || 'false' }}
+          SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN || 'false' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          MAX_SOCIAL_SIMILARITY: ${{ vars.MAX_SOCIAL_SIMILARITY || '0.86' }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION || '202606' }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: python3 scripts/social_publisher.py
+      - name: Commit social ledger
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Authority V4.2 social auto-post ledger"
+          file_pattern: "data/social-queue.json reports/social-publisher-report.json"
+      - name: Create failure issue
+        if: failure()
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ github.token }}
+          title: "Authority social auto-post failed"
+          body: "The social auto-post workflow failed. Check secrets, platform permissions, and reports/social-publisher-report.json."

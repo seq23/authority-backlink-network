@@ -86,3 +86,13 @@ npm run check
 ```
 
 Current expected status: PASS with zero link violations and zero hostile-review warnings.
+
+## V4.2 Social Auto-Posting
+
+This baseline includes hands-off social auto-posting for one LinkedIn account and one X account. See:
+
+- `docs/SOCIAL-AUTOPOST-SECRETS.md`
+- `docs/AUTOPOST-END-TO-END-TRACE.md`
+- `docs/V4-2-END-TO-END-HOSTILE-REVIEW.md`
+
+Cloudflare deploy remains handled by Cloudflare Git integration. GitHub Actions generates pages, validates them, queues social posts, auto-posts eligible items, commits ledgers/reports, and lets Cloudflare deploy site changes.

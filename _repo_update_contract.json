@@ -1,0 +1,40 @@
+{
+  "repo_name": "authority-network",
+  "expected_branch": "main",
+  "package_manager": "npm",
+  "artifact_status": "STRUCTURALLY CHECKED \u2014 LOCAL VALIDATION REQUIRED",
+  "update_model": "snapshot_baseline",
+  "cloudflare_deploy": "git_integration_only",
+  "commands": {
+    "prepush": "npm run release:prepush",
+    "prepush_local": "npm run release:prepush:local",
+    "postpush": "gh run list --repo seq23/authority-network --limit 10",
+    "live_proof": "manual Cloudflare Pages deployment verification for founderoperatorlibrary, memphisvendorlibrary, professionalresourcelibrary",
+    "cleanup": ""
+  },
+  "required_root_files": [
+    ".gitignore",
+    "README.md",
+    "package.json",
+    "_repo_update_contract.json",
+    "_repo_validation_matrix.json"
+  ],
+  "required_directories": [
+    ".github/workflows",
+    "scripts",
+    "data",
+    "content-bank",
+    "content-recipes",
+    "sites",
+    "docs"
+  ],
+  "accepted_modes": [
+    "snapshot"
+  ],
+  "zip_naming": "authority-network-main_BASELINE_MM-DD-YY_<sha>.zip",
+  "dirty_tree_policy": "refuse",
+  "notes": [
+    "Updater applies full snapshot, validates locally, commits, and pushes automatically only after validation passes.",
+    "Cloudflare deployment is handled by existing Git integration; no Cloudflare API deploy workflows are included."
+  ]
+}

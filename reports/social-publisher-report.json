@@ -1,0 +1,95 @@
+{
+  "date": "2026-06-27",
+  "dry_run": true,
+  "enabled": {
+    "linkedin": true,
+    "x": true
+  },
+  "limits": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "attempts": [
+    {
+      "index": 0,
+      "platform": "linkedin",
+      "preview": "A useful question before choosing in parent decision-support publisher: what would change your decision if the answer we"
+    },
+    {
+      "index": 5,
+      "platform": "x",
+      "preview": "Resource note: The Industry Guides is useful when someone needs plain-English context on parent decision-support publish"
+    },
+    {
+      "index": 6,
+      "platform": "x",
+      "preview": "Building useful authority is slower than spam, but it survives review. Today’s focus: The Industry Guides.\n\nhttps://thei"
+    },
+    {
+      "index": 7,
+      "platform": "x",
+      "preview": "If this is the decision in front of you, start with The Industry Guides: https://theindustryguides.com"
+    },
+    {
+      "index": 12,
+      "platform": "x",
+      "preview": "A useful question before choosing in personal injury educational guides: what would change your decision if the answer w"
+    },
+    {
+      "index": 13,
+      "platform": "x",
+      "preview": "Resource note: The Accident Guides is useful when someone needs plain-English context on personal injury educational gui"
+    }
+  ],
+  "successes": [
+    {
+      "index": 0,
+      "platform": "linkedin",
+      "id": "dry-9f6caf3fc4a6",
+      "dry_run": true
+    },
+    {
+      "index": 5,
+      "platform": "x",
+      "id": "dry-7c19bfef7868",
+      "dry_run": true
+    },
+    {
+      "index": 6,
+      "platform": "x",
+      "id": "dry-fcd511a8e1ae",
+      "dry_run": true
+    },
+    {
+      "index": 7,
+      "platform": "x",
+      "id": "dry-5d9855dd37d5",
+      "dry_run": true
+    },
+    {
+      "index": 12,
+      "platform": "x",
+      "id": "dry-46a8269d6a7b",
+      "dry_run": true
+    },
+    {
+      "index": 13,
+      "platform": "x",
+      "id": "dry-39ffe1a982d5",
+      "dry_run": true
+    }
+  ],
+  "failures": [],
+  "skipped": [
+    {
+      "index": 4,
+      "platform": "x",
+      "reason": "same_day_similarity"
+    }
+  ],
+  "posted_today": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "status": "ok"
+}

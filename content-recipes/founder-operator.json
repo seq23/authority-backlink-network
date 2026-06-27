@@ -1,0 +1,69 @@
+{
+  "publication": "founder-operator",
+  "site_path": "sites/founder-operator",
+  "allowed_target_domains": [
+    "aplayermode.com",
+    "billionairehighperformancecoach.com",
+    "virtualagency-os.com",
+    "westpeekproductions.com"
+  ],
+  "approved_publication_domain_env": "FOUNDER_PUBLICATION_DOMAIN",
+  "default_publication_domain": "founderoperatorlibrary.com",
+  "page_types": [
+    {
+      "type": "decision_guide",
+      "word_count_min": 1000,
+      "word_count_max": 1800,
+      "risk": "medium"
+    },
+    {
+      "type": "resource_roundup",
+      "word_count_min": 1200,
+      "word_count_max": 2200,
+      "risk": "medium"
+    },
+    {
+      "type": "faq_aeo_page",
+      "word_count_min": 800,
+      "word_count_max": 1300,
+      "risk": "low"
+    },
+    {
+      "type": "comparison_guide",
+      "word_count_min": 1500,
+      "word_count_max": 2500,
+      "risk": "high"
+    },
+    {
+      "type": "checklist",
+      "word_count_min": 700,
+      "word_count_max": 1200,
+      "risk": "low"
+    },
+    {
+      "type": "ultimate_guide",
+      "word_count_min": 2500,
+      "word_count_max": 4000,
+      "risk": "high"
+    }
+  ],
+  "required_sections": [
+    "short_answer",
+    "who_this_is_for",
+    "main_context",
+    "decision_framework",
+    "checklist",
+    "faq",
+    "resources",
+    "disclaimer"
+  ],
+  "forbidden": [
+    "fake reviews",
+    "fake rankings",
+    "fake clients",
+    "unsupported legal/medical/mental health claims",
+    "forced backlinks",
+    "exact-match anchor stuffing"
+  ],
+  "disclaimer": "This page is educational and editorial. It is not business, legal, financial, or mental-health advice."
+}

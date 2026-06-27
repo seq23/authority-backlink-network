@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-27",
+  "dry_run": true,
+  "enabled": {
+    "linkedin": true,
+    "x": true
+  },
+  "limits": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "attempts": [],
+  "successes": [],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 1,
+    "x": 5
+  },
+  "status": "ok"
+}

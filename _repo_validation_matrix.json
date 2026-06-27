@@ -1,0 +1,55 @@
+{
+  "repo": "authority-network",
+  "commands": [
+    {
+      "command": "npm run validate:json",
+      "tier": "1",
+      "severity": "HARD FAIL",
+      "purpose": "JSON registry and pantry parse validation"
+    },
+    {
+      "command": "npm run validate:python",
+      "tier": "1",
+      "severity": "HARD FAIL",
+      "purpose": "Python script syntax validation"
+    },
+    {
+      "command": "npm run review",
+      "tier": "1",
+      "severity": "HARD FAIL",
+      "purpose": "Hostile review of generated pages, policy gates, and content contracts"
+    },
+    {
+      "command": "npm run audit:links",
+      "tier": "1",
+      "severity": "HARD FAIL",
+      "purpose": "Internal/link registry audit"
+    },
+    {
+      "command": "npm run social:dry-run",
+      "tier": "1",
+      "severity": "HARD FAIL",
+      "purpose": "Social autopost dry-run validates queue, caps, duplicate suppression, and no live network posting"
+    },
+    {
+      "command": "npm run release:prepush:local",
+      "tier": "2-local-updater",
+      "severity": "HARD FAIL",
+      "purpose": "Local updater prepush entrypoint"
+    }
+  ],
+  "not_applicable": [
+    {
+      "stage": "browser_visual_proof",
+      "reason": "Static multi-site publication; Cloudflare Pages render verification is manual/live after deploy."
+    },
+    {
+      "stage": "auth_vault",
+      "reason": "No authenticated app surface in this repo."
+    },
+    {
+      "stage": "provider_cleanup",
+      "reason": "No test fixtures created on external providers by validation."
+    }
+  ]
+}
