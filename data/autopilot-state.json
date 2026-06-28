@@ -3,17 +3,26 @@
   "published_hashes": [
     "a880fe6778417a806572e280acde1059943925b1fc8163ecf721ae3d3ee71ab1",
     "f8c0e601f695a9ae59036be3b0b5a7da885f29a800842e13f50aed19078dea22",
-    "8b894a0e0b44fbabb2a43f6e8b236e88c08fbcc29f02910a09659e4959ea6745"
+    "8b894a0e0b44fbabb2a43f6e8b236e88c08fbcc29f02910a09659e4959ea6745",
+    "0b40ca5e8788e4b0ca7cc77aa2c47e42f3f399bdac978cf087b82d5fa44fa848",
+    "7840063855442a0f12502d03595a7c98b5076cf9cfc623e71083160a4879107f",
+    "ce600d0312f8b85724904322ab6d41b273c44ea684f2ce16710256dd26b7d5b6"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
     "2b06d2cfdfbe62f75da539778d4750beebec49723237040e14c57270a7fe39db",
-    "b9bbbe4458ec291e48abd616fb1498dbb41c0e795d614a607cfd2875ed9df2cd"
+    "b9bbbe4458ec291e48abd616fb1498dbb41c0e795d614a607cfd2875ed9df2cd",
+    "65a7395044df912562fdd2e56b79ace3deadab9a155d522cfac1bbfafe4391e9",
+    "4bb25ca0ce323a314501ad6e90cd6fb01b9678158a033397d5a4f03ff9842f62",
+    "0ee1a01bed1d8eb592ae7bc9e350a36ba22d0821ac8de7abea47f4998d313ff0"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
     "Grazing Tables: 2026-Ready Timeline Guide For Careful Decision-Makers",
-    "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers"
+    "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers",
+    "Automation Without Chaos: Geo-Ready Framework Before You Book",
+    "Halloween Porch Styling: Operator-Grade Operator Playbook Before You Sign",
+    "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign"
   ],
   "history": [
     {
@@ -32,6 +41,26 @@
       "stats_before": {
         "pass_rate": 1.0,
         "avg_quality": 85,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-06-28",
+      "day_index": 2,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
         "duplicate_warnings": 0,
         "hard_fails": 0
       }

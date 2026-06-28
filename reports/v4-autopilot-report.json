@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-06-27",
-    "day_index": 1,
+    "date": "2026-06-28",
+    "day_index": 2,
     "target_volume": 3,
     "generated": 3,
     "published": 3,
@@ -15,24 +15,15 @@
     "hard_fails": 0,
     "stats_before": {
       "pass_rate": 1.0,
-      "avg_quality": 85,
+      "avg_quality": 88.0,
       "duplicate_warnings": 0,
       "hard_fails": 0
     }
   },
   "generated": [
     {
-      "title": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
+      "title": "Automation Without Chaos: Geo-Ready Framework Before You Book",
       "publication": "founder-operator",
-      "score": 88,
-      "words": 1103,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
-    },
-    {
-      "title": "Grazing Tables: 2026-Ready Timeline Guide For Careful Decision-Makers",
-      "publication": "memphis-local",
       "score": 88,
       "words": 1100,
       "rewrite_status": "not_needed",
@@ -40,10 +31,19 @@
       "hard_fails": []
     },
     {
-      "title": "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers",
+      "title": "Halloween Porch Styling: Operator-Grade Operator Playbook Before You Sign",
+      "publication": "memphis-local",
+      "score": 88,
+      "words": 1105,
+      "rewrite_status": "not_needed",
+      "warnings": [],
+      "hard_fails": []
+    },
+    {
+      "title": "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign",
       "publication": "professional-resources",
       "score": 88,
-      "words": 1132,
+      "words": 1135,
       "rewrite_status": "not_needed",
       "warnings": [],
       "hard_fails": []
@@ -51,39 +51,39 @@
   ],
   "published": [
     {
-      "title": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
+      "title": "Automation Without Chaos: Geo-Ready Framework Before You Book",
       "publication": "founder-operator",
-      "score": 88,
-      "words": 1103,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "path": "sites/founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
-      "target_domain": "aplayermode.com",
-      "brand": "A Player Mode"
-    },
-    {
-      "title": "Grazing Tables: 2026-Ready Timeline Guide For Careful Decision-Makers",
-      "publication": "memphis-local",
       "score": 88,
       "words": 1100,
       "rewrite_status": "not_needed",
       "warnings": [],
       "hard_fails": [],
-      "path": "sites/memphis-local/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html",
+      "path": "sites/founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "target_domain": "aplayermode.com",
+      "brand": "A Player Mode"
+    },
+    {
+      "title": "Halloween Porch Styling: Operator-Grade Operator Playbook Before You Sign",
+      "publication": "memphis-local",
+      "score": 88,
+      "words": 1105,
+      "rewrite_status": "not_needed",
+      "warnings": [],
+      "hard_fails": [],
+      "path": "sites/memphis-local/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign.html",
       "target_domain": "porchandparty901.com",
       "brand": "Porch & Party"
     },
     {
-      "title": "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers",
+      "title": "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign",
       "publication": "professional-resources",
       "score": 88,
-      "words": 1132,
+      "words": 1135,
       "rewrite_status": "not_needed",
       "warnings": [],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
-      "target_domain": "dentistryguides.com",
+      "path": "sites/professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
+      "target_domain": "hicksconsulting.org",
       "brand": "Horse Legal Guide"
     }
   ],
