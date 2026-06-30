@@ -9,7 +9,10 @@
     "ce600d0312f8b85724904322ab6d41b273c44ea684f2ce16710256dd26b7d5b6",
     "5e7e0e5765ba59065a65601bcf07d96caa8a38afeaf715082bc84ebc003fe2eb",
     "135e5f8bc686534b45986be5de42c9d46279ccfc97c9b1c611de23ac2c24b98f",
-    "e9bdd8d19a42fac4bd820c34f6b6d26d311edb29de227e7a5f7f745a59fbd69a"
+    "e9bdd8d19a42fac4bd820c34f6b6d26d311edb29de227e7a5f7f745a59fbd69a",
+    "1837706f2de99f4983ea26ca18d3626ba436d03e21f0a17017def91a43e17723",
+    "f74cf560c56f61dcb22f3067901b60d009be142cd0d4c57f1fabd8c52739d5ed",
+    "d456c2ee562c410b207e0e3f697891e8edae2cada42a620394cb5f1a7bc3048f"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -20,7 +23,10 @@
     "0ee1a01bed1d8eb592ae7bc9e350a36ba22d0821ac8de7abea47f4998d313ff0",
     "44dad5823eb8babc8b1c1bfdfc124578cc1563c1e81b6e5118bcd8d81c662b9e",
     "6c084c8496b716cd02c199879c244116c1cead85344c9d65197943c1f19fa3a5",
-    "519a178208c823bffdd7f9a561d3135d95e12d396c58b4e3c8130d5cdc38b610"
+    "519a178208c823bffdd7f9a561d3135d95e12d396c58b4e3c8130d5cdc38b610",
+    "4bcd4613cae27de3c54766399f1e790d2356b3a1e36e173d2ff5c865bfe9f7bf",
+    "478324a9c6622db99027da6bb65a66f1ef5858b1344a2988368ece9ba194ae24",
+    "a623f17218388134f2162014584f2c4191dce7d80ac50996a0c575cc42283490"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -31,7 +37,10 @@
     "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign",
     "Ai Execution Systems: Decision-Focused Local/Resource Directory For First-Time Buyers",
     "Party Decor Vendors: Operator-Grade Operator Playbook For People Who Need A Starting Point",
-    "High-Achieving Women And Burnout: Practical Faq Answer Page For First-Time Buyers"
+    "High-Achieving Women And Burnout: Practical Faq Answer Page For First-Time Buyers",
+    "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose",
+    "Corporate Event Styling: Comparison-Friendly Budget/Planning Note Before You Sign",
+    "Organizational Mental Health Training: Decision-Focused Red-Flag Checklist Before You Choose"
   ],
   "history": [
     {
@@ -77,6 +86,26 @@
     {
       "date": "2026-06-29",
       "day_index": 3,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-06-30",
+      "day_index": 4,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
