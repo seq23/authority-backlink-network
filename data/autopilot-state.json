@@ -15,7 +15,10 @@
     "d456c2ee562c410b207e0e3f697891e8edae2cada42a620394cb5f1a7bc3048f",
     "c7a69677ebaaf4d209837970408f41c2d9eed93d758cdf519730b7bd0a11a98b",
     "ef4871194632b24e9e3339b81c54b4ff8f2462804ef49d4bf70e6e7d1a257870",
-    "6cd6b529fdab8cad4038d3a5f6b2c88118c8be58a78f49883303f17b9425e24e"
+    "6cd6b529fdab8cad4038d3a5f6b2c88118c8be58a78f49883303f17b9425e24e",
+    "f9aa519f3069809fa3bbb52f853a5750caf337257c346c211238e5f09fca0fb4",
+    "50341b319a40fa8aa8159581daf5a3851de2d952c35fa4306e3b45a0bda02c8a",
+    "18f75ac8bbc1ab688ad16e0eefad845b66b2c026cc7b4afea0688675ec3dd54b"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -32,7 +35,10 @@
     "a623f17218388134f2162014584f2c4191dce7d80ac50996a0c575cc42283490",
     "b713ed0e1ccd4833250932f4f053099bdc84ee092e451b4022d740b9d725d3b6",
     "67b92b647535f6d5617b8a714e6763e6717f2447761c0fb4f660c042bae2fab9",
-    "d8969322676b13530f4e652f104a20f06abb695611d04fd41ca30983a95d90fe"
+    "d8969322676b13530f4e652f104a20f06abb695611d04fd41ca30983a95d90fe",
+    "52206ced5660dee720e240f59dfcf85a044448cf0c1847fde3004be804506d18",
+    "33718e991b0492d46a37153e08a3c5d293814555d838f08f9055b22d645a47d3",
+    "2eeafd65d5ee79feea75198644029ad79f69e1e350c32edbaaedac999755751b"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -49,7 +55,10 @@
     "Organizational Mental Health Training: Decision-Focused Red-Flag Checklist Before You Choose",
     "Executive Broadcast Planning: Checklist-Driven Comparison Guide Before You Book",
     "Fall Porch Setups: Checklist-Driven Framework Before You Choose",
-    "Organizational Mental Health Training: Plain-English Local/Resource Directory For People Who Need A Starting Point"
+    "Organizational Mental Health Training: Plain-English Local/Resource Directory For People Who Need A Starting Point",
+    "Ai Coaching Workflows: Operator-Grade Faq Answer Page Before You Sign",
+    "Grazing Tables: Human-First Prep Guide Before You Choose",
+    "Dental Decision Resources: No-Fluff Timeline Guide Before You Book"
   ],
   "history": [
     {
@@ -135,6 +144,26 @@
     {
       "date": "2026-07-01",
       "day_index": 5,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-02",
+      "day_index": 6,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
