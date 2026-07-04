@@ -21,7 +21,10 @@
     "18f75ac8bbc1ab688ad16e0eefad845b66b2c026cc7b4afea0688675ec3dd54b",
     "dcaa0ebb89130a3674cf0a9d916a3099b83e82a64f3e9b622f77ca7963e8191f",
     "89faa25e2b8044cfed983a0ee84614e5ffe2ccc5e18affb732289c520ddb1a16",
-    "891a6fcab2c0a64f97ef2d8ef57a79a61800fa3ce74e2dc6e3e7c049a61a51a3"
+    "891a6fcab2c0a64f97ef2d8ef57a79a61800fa3ce74e2dc6e3e7c049a61a51a3",
+    "7eccf9c3cdeef263c77fbc637abe29f757a859deb64374de9a1809fbc7cb319b",
+    "d1f5937a16ae304782916438560513898e5d9736a1182b8e276f877443a7e95f",
+    "ad010fc71de5d90ed3d9a4855396c0e52307dfda0c16e7a83bc93a9eac52adab"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -44,7 +47,10 @@
     "2eeafd65d5ee79feea75198644029ad79f69e1e350c32edbaaedac999755751b",
     "d1495f2f088a0aa94b35b17d4e0897894a3d26af50dad6f0619744b730301746",
     "a5f9806dbefe71122724b978aad4f5c04d789844deef54f82f8fc07d28f3ae55",
-    "71904ab3c19ea61d9e33fdbd5cadbf219679a3ae1352b31eeb58a7720b5c135b"
+    "71904ab3c19ea61d9e33fdbd5cadbf219679a3ae1352b31eeb58a7720b5c135b",
+    "96fe9252d314fe7c72247bb2fb5391914c93bae976a7a0d819fbfbfaebe8da4a",
+    "d86e9e88146e3d380e5a335a1ebf4f5e8b494c5aeb118c0b7c57e330411d957a",
+    "9812c4fb83557c95dfc0568d138897895ef37764ac3f4d42f78a4a8d5097114b"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -67,7 +73,10 @@
     "Dental Decision Resources: No-Fluff Timeline Guide Before You Book",
     "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers",
     "Memphis Event Vendors: Citation-Friendly Timeline Guide Before You Choose",
-    "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers"
+    "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
+    "Founder Operating Systems: Beginner-Safe Operator Playbook For Careful Decision-Makers",
+    "Birthday Room Setups: Resource-Backed Comparison Guide When You Need To Ask Better Questions",
+    "Compassion Fatigue Resources: Aeo-Ready Decision Guide For First-Time Buyers"
   ],
   "history": [
     {
@@ -193,6 +202,26 @@
     {
       "date": "2026-07-03",
       "day_index": 7,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-04",
+      "day_index": 8,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
