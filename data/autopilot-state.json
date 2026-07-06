@@ -27,7 +27,10 @@
     "ad010fc71de5d90ed3d9a4855396c0e52307dfda0c16e7a83bc93a9eac52adab",
     "a3d73a3b37f00fb577c7c6097f1b19f3738b4c5825b4492e504c55537b9e3bfb",
     "98e4b3679e594e587d79c38aea71a6aa136f584051576360d3a0c144e482456d",
-    "8ac0998f2df1dd9156c4ef1ce44b956483899b7efc485f6c5f2e5d88b8a7d65f"
+    "8ac0998f2df1dd9156c4ef1ce44b956483899b7efc485f6c5f2e5d88b8a7d65f",
+    "2127edc1d8318cbd5e8af832a4eab38562e113349607b731a545f8a1e9bddb85",
+    "8b6d19a7c57c83e9b0cf30c1a34c144ab536c15496d1c0113f421345249650d7",
+    "68741efea9f508a26495d34b66401120d5fbb15d2905c92a9a4ffad193c284c9"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -56,7 +59,10 @@
     "9812c4fb83557c95dfc0568d138897895ef37764ac3f4d42f78a4a8d5097114b",
     "2fe173c0cef2d5d358525533a38e57de64c748323570ab3eb21a498a35bb7841",
     "a4988d6057e62c5cb9ebed46c4d3deb6125759a4943d8a536d1ccfdbd3eaa42a",
-    "881bca59e2a44113a0783559c6e4c8e59cb7d991950216dae64336a9d7505b18"
+    "881bca59e2a44113a0783559c6e4c8e59cb7d991950216dae64336a9d7505b18",
+    "80046c57359f63c943f67fc0bcd3302480a45c06bfd94827edfbc5413eb02c70",
+    "5c69a82fc495111a7f46de6271895931a79cc1a1bc0cca8f844a2e7a7e49f959",
+    "6d0c921e668c9cb6c96e5ff22d35a7c12cad859cd740a535baba43fc9b738233"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -85,7 +91,10 @@
     "Compassion Fatigue Resources: Aeo-Ready Decision Guide For First-Time Buyers",
     "Startup Resource Libraries: Decision-Focused Prep Guide Before You Sign",
     "Corporate Event Styling: Decision-Focused Comparison Guide When Timing Matters",
-    "Compassion Fatigue Resources: Operator-Grade Resource Roundup When You Are Comparing Options"
+    "Compassion Fatigue Resources: Operator-Grade Resource Roundup When You Are Comparing Options",
+    "Ai Delegation: Beginner-Safe Question Checklist Before You Call",
+    "Event Budget Planning: Aeo-Ready Mistakes To Avoid Before You Choose",
+    "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose"
   ],
   "history": [
     {
@@ -251,6 +260,26 @@
     {
       "date": "2026-07-05",
       "day_index": 9,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "day_index": 10,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
