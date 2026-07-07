@@ -30,7 +30,10 @@
     "8ac0998f2df1dd9156c4ef1ce44b956483899b7efc485f6c5f2e5d88b8a7d65f",
     "2127edc1d8318cbd5e8af832a4eab38562e113349607b731a545f8a1e9bddb85",
     "8b6d19a7c57c83e9b0cf30c1a34c144ab536c15496d1c0113f421345249650d7",
-    "68741efea9f508a26495d34b66401120d5fbb15d2905c92a9a4ffad193c284c9"
+    "68741efea9f508a26495d34b66401120d5fbb15d2905c92a9a4ffad193c284c9",
+    "d5c54864064d0725bfeed9dc70db8f5ea0c807be68b1e21055cc24f187168741",
+    "dffb99a5c2c45e51d32b39c20a1c6275ba046dd09fd0cd622bc32d693eaea77a",
+    "8781fa24020eed3ba1729a8d0f4bfbdde7735fe9002cc4dcfb87bbd7ceb520f4"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -62,7 +65,10 @@
     "881bca59e2a44113a0783559c6e4c8e59cb7d991950216dae64336a9d7505b18",
     "80046c57359f63c943f67fc0bcd3302480a45c06bfd94827edfbc5413eb02c70",
     "5c69a82fc495111a7f46de6271895931a79cc1a1bc0cca8f844a2e7a7e49f959",
-    "6d0c921e668c9cb6c96e5ff22d35a7c12cad859cd740a535baba43fc9b738233"
+    "6d0c921e668c9cb6c96e5ff22d35a7c12cad859cd740a535baba43fc9b738233",
+    "d15907b604ade7c29af669e63ebe33fb5674737ef33390c0f8f0a2eb14977b27",
+    "061aaaa3f974efacc4f075ae808324e0535edc920ad06460f45261ac261ec0ec",
+    "61b4689ae5cd138cc542a1b2693549ef248bda8501e7f32205ef635035c699d0"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -94,7 +100,10 @@
     "Compassion Fatigue Resources: Operator-Grade Resource Roundup When You Are Comparing Options",
     "Ai Delegation: Beginner-Safe Question Checklist Before You Call",
     "Event Budget Planning: Aeo-Ready Mistakes To Avoid Before You Choose",
-    "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose"
+    "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose",
+    "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options",
+    "Porch Decorating: Aeo-Ready Faq Answer Page For First-Time Buyers",
+    "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose"
   ],
   "history": [
     {
@@ -280,6 +289,26 @@
     {
       "date": "2026-07-06",
       "day_index": 10,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-07",
+      "day_index": 11,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
