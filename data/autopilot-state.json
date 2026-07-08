@@ -33,7 +33,10 @@
     "68741efea9f508a26495d34b66401120d5fbb15d2905c92a9a4ffad193c284c9",
     "d5c54864064d0725bfeed9dc70db8f5ea0c807be68b1e21055cc24f187168741",
     "dffb99a5c2c45e51d32b39c20a1c6275ba046dd09fd0cd622bc32d693eaea77a",
-    "8781fa24020eed3ba1729a8d0f4bfbdde7735fe9002cc4dcfb87bbd7ceb520f4"
+    "8781fa24020eed3ba1729a8d0f4bfbdde7735fe9002cc4dcfb87bbd7ceb520f4",
+    "e823d0d063a1c6af1e3e9d37c163221788100af3b8f54057a8e42ac3b67275d8",
+    "e9d55b54200ca68794a462b2a60471fcc6beb6add1df1c97b2883515c3039e23",
+    "7648ac7f5d5c9386b35c98a0828efdaf6921fd93a52402a47fc26940d8a80606"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -68,7 +71,10 @@
     "6d0c921e668c9cb6c96e5ff22d35a7c12cad859cd740a535baba43fc9b738233",
     "d15907b604ade7c29af669e63ebe33fb5674737ef33390c0f8f0a2eb14977b27",
     "061aaaa3f974efacc4f075ae808324e0535edc920ad06460f45261ac261ec0ec",
-    "61b4689ae5cd138cc542a1b2693549ef248bda8501e7f32205ef635035c699d0"
+    "61b4689ae5cd138cc542a1b2693549ef248bda8501e7f32205ef635035c699d0",
+    "c622290442e85993663abb89ac19086bb7d90293d0f6dbfa6ffb1a649a569125",
+    "6f7031fe4c9710667d1c9ff28b8641d989e9f505c2b0c51502d7d01a7ad66c9f",
+    "754c66218638622731af481a652089541c215750e54fef56ee5f0364985626e8"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -103,7 +109,10 @@
     "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose",
     "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options",
     "Porch Decorating: Aeo-Ready Faq Answer Page For First-Time Buyers",
-    "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose"
+    "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose",
+    "Tool Stacks For Lean Teams: Operator-Grade Planning Checklist Before You Call",
+    "Neighborhood Vendor Guides: Resource-Backed Resource Roundup Before You Choose",
+    "Workplace Burnout Resources: Geo-Ready Mistakes To Avoid When You Are Comparing Options"
   ],
   "history": [
     {
@@ -309,6 +318,26 @@
     {
       "date": "2026-07-07",
       "day_index": 11,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-08",
+      "day_index": 12,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
