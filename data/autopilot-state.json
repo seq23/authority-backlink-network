@@ -36,7 +36,10 @@
     "8781fa24020eed3ba1729a8d0f4bfbdde7735fe9002cc4dcfb87bbd7ceb520f4",
     "e823d0d063a1c6af1e3e9d37c163221788100af3b8f54057a8e42ac3b67275d8",
     "e9d55b54200ca68794a462b2a60471fcc6beb6add1df1c97b2883515c3039e23",
-    "7648ac7f5d5c9386b35c98a0828efdaf6921fd93a52402a47fc26940d8a80606"
+    "7648ac7f5d5c9386b35c98a0828efdaf6921fd93a52402a47fc26940d8a80606",
+    "d1157869940a832cc5f4fd2ed243b55dad474761a78b74d80fbac682fa4b6e9a",
+    "dba0f3ba3a0fad38c8f0de918b89425c84b75edc14bd9e38d336b1c3aaa19e1c",
+    "8378db400e3d56e6ec72551a42c8fad9410deae78dc2a879ff87ec30aba15eb7"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -74,7 +77,10 @@
     "61b4689ae5cd138cc542a1b2693549ef248bda8501e7f32205ef635035c699d0",
     "c622290442e85993663abb89ac19086bb7d90293d0f6dbfa6ffb1a649a569125",
     "6f7031fe4c9710667d1c9ff28b8641d989e9f505c2b0c51502d7d01a7ad66c9f",
-    "754c66218638622731af481a652089541c215750e54fef56ee5f0364985626e8"
+    "754c66218638622731af481a652089541c215750e54fef56ee5f0364985626e8",
+    "3d336eab8986568824f1bad04b7bcd17b4bff676df556f9acb537ced9276f62f",
+    "8292b287c4bace4d9fcbf8050e83845fdb229ff28074f7d98827940aa2c3fe93",
+    "862d6f94e77b4ecc476ec5bb556fab03395ea18f6e8020a57f48a5e07afceceb"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -112,7 +118,10 @@
     "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose",
     "Tool Stacks For Lean Teams: Operator-Grade Planning Checklist Before You Call",
     "Neighborhood Vendor Guides: Resource-Backed Resource Roundup Before You Choose",
-    "Workplace Burnout Resources: Geo-Ready Mistakes To Avoid When You Are Comparing Options"
+    "Workplace Burnout Resources: Geo-Ready Mistakes To Avoid When You Are Comparing Options",
+    "Startup Resource Libraries: Checklist-Driven Framework For First-Time Buyers",
+    "Hotel Room Decorations: Aeo-Ready Decision Guide Before You Sign",
+    "Uscis Civil Surgeon Appointment Prep: Comparison-Friendly Framework Before You Choose"
   ],
   "history": [
     {
@@ -338,6 +347,26 @@
     {
       "date": "2026-07-08",
       "day_index": 12,
+      "target_volume": 3,
+      "generated": 3,
+      "published": 3,
+      "scores": [
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-09",
+      "day_index": 13,
       "target_volume": 3,
       "generated": 3,
       "published": 3,
