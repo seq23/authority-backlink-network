@@ -1,4 +1,4 @@
-# Real Authority Network — Targeted SEO/AEO/GEO Engine
+# Real Authority Network — BACKLINKS - Targeted SEO/AEO/GEO Engine
 
 This repo is built only for the domains Sequoia Taylor listed. It is not a generic backlink scaffold.
 
