@@ -1,6 +1,6 @@
 {
   "version": "v4-adaptive-scale-policy",
-  "goal": "Maximize useful SEO/AEO/GEO surfaces without scaled-content spam footprint.",
+  "goal": "Maximize useful SEO/AEO/GEO surfaces with an aggressive Approval Prep publishing priority, practical editorial judgment, and tolerant operating margins.",
   "default_launch_date": "auto-created on first run if data/autopilot-state.json is missing",
   "daily_rules": [
     {
@@ -11,7 +11,7 @@
     {
       "days": "15-45",
       "target_pages_per_day": 6,
-      "condition": "last_7_day_pass_rate >= 0.85 and duplicate_warnings == 0, else 3"
+      "condition": "last_7_day_pass_rate >= 0.85 and duplicate warnings are diagnostic only, else 3"
     },
     {
       "days": "46-90",
@@ -21,7 +21,7 @@
     {
       "days": "91-180",
       "target_pages_per_day": "6-9",
-      "condition": "9 only if last_14_day_pass_rate >= 0.85, avg_quality >= 85, duplicate_warnings == 0"
+      "condition": "9 only if last_14_day_pass_rate >= 0.85, avg_quality >= 85, duplicate warnings are diagnostic only"
     },
     {
       "days": "181-365",
@@ -30,10 +30,12 @@
     }
   ],
   "hard_limits": {
-    "absolute_max_pages_per_day": 9,
+    "absolute_max_pages_per_day": 12,
     "max_duplicate_similarity": 0.15,
-    "min_publish_score": 72,
-    "auto_publish_score": 85
+    "min_publish_score": 60,
+    "auto_publish_score": 85,
+    "approval_prep_min_pages_per_day": 4,
+    "approval_prep_max_pages_per_day": 9
   },
   "social_rules": {
     "linkedin_daily_limit": 1,
@@ -47,5 +49,17 @@
       72,
       84
     ]
-  }
+  },
+  "priority_targets": [
+    {
+      "brand_id": "approval-prep",
+      "publication": "professional-resources",
+      "pages_per_day": 6,
+      "minimum": 4,
+      "maximum": 9,
+      "start_immediately": true,
+      "quality_policy": "Aim for 5-8 pages daily and preserve aggressive momentum. Daily variation, word counts, page counts, anchor length, and product mix are warning-only; only structural corruption, false evidence, wrong-domain routing, or clearly prohibited claims may block publication.",
+      "preferred_range": "5-8"
+    }
+  ]
 }

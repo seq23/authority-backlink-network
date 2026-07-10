@@ -9,7 +9,8 @@
     "neuroevalguides.com",
     "uscisexam.com",
     "horselegalguide.com",
-    "hicksconsulting.org"
+    "hicksconsulting.org",
+    "approvalprep.com"
   ],
   "approved_publication_domain_env": "PROFESSIONAL_PUBLICATION_DOMAIN",
   "default_publication_domain": "professionalresourcelibrary.com",
@@ -69,5 +70,19 @@
     "forced backlinks",
     "exact-match anchor stuffing"
   ],
-  "disclaimer": "This page is educational only. It is not legal, medical, mental-health, or professional advice. For specific decisions, consult a qualified professional."
+  "disclaimer": "This page is educational only. It is not legal, medical, mental-health, financial, credit-repair, or professional advice. It does not promise approval, deletion, or score improvement. For specific decisions, consult a qualified professional.",
+  "approval_prep_content_formula": {
+    "1_situation": "Name the real pressure or request in plain language.",
+    "2_document_need": "Explain the letter or packet the reader may need to create.",
+    "3_free_guidance": "Give practical guidance using truthful facts and real supporting records.",
+    "4_product_match": "Connect the reader to the matching Approval Prep kit, guide, or free drafting tool.",
+    "5_boundary": "State that the user completes and sends the document and Approval Prep does not control approval."
+  },
+  "approval_prep_destination_types": [
+    "paid_product",
+    "free_creation_tool",
+    "educational_guide",
+    "trust_boundary"
+  ],
+  "approval_prep_primary_positioning": "Create the letter. Build the packet. Get ready before you apply."
 }

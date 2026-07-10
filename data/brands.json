@@ -386,5 +386,291 @@
       "best in Memphis without proof",
       "guaranteed availability"
     ]
+  },
+  {
+    "id": "approval-prep",
+    "name": "Approval Prep",
+    "domain": "approvalprep.com",
+    "url": "https://approvalprep.com/",
+    "lane": "professional",
+    "category": "self-service document creation and downloadable document kits",
+    "compliance": "consumer-finance-documentation-YMYL",
+    "link_policy": "Cite only when the page identifies a real document problem and routes to the matching Approval Prep kit, free drafting tool, guide, or boundary page. Do not imply Approval Prep controls approval decisions.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://approvalprep.com/letter-of-explanation",
+        "destination_type": "paid_product",
+        "product_id": "letter-of-explanation-kit",
+        "product_name": "Letter of Explanation Kit",
+        "anchor": "create a letter of explanation",
+        "topics": [
+          "letters of explanation",
+          "late payment explanation",
+          "job gap explanation",
+          "income change explanation",
+          "large deposit explanation",
+          "address issue explanation",
+          "application issue explanation"
+        ],
+        "product_message": "Create a clear letter of explanation with your real dates, facts, and supporting records."
+      },
+      {
+        "url": "https://approvalprep.com/income-employment-letter-kit",
+        "destination_type": "paid_product",
+        "product_id": "income-employment-letter-kit",
+        "product_name": "Income + Employment Letter Kit",
+        "anchor": "create a proof-of-income letter",
+        "topics": [
+          "proof of income letters",
+          "employment explanation letters",
+          "job gap explanation",
+          "income change explanation",
+          "self-employed income explanation",
+          "bank statement explanation"
+        ],
+        "product_message": "Create editable income and employment letters you complete and send yourself."
+      },
+      {
+        "url": "https://approvalprep.com/credit-letter-kit",
+        "destination_type": "paid_product",
+        "product_id": "credit-letter-kit",
+        "product_name": "Credit Letter Kit",
+        "anchor": "create a credit dispute letter",
+        "topics": [
+          "credit report errors",
+          "credit dispute letters",
+          "goodwill letters",
+          "late payment explanation",
+          "debt validation letters",
+          "credit explanation letters"
+        ],
+        "product_message": "Create your own dispute, goodwill, validation, and credit explanation letters using truthful information."
+      },
+      {
+        "url": "https://approvalprep.com/rental-application-kit",
+        "destination_type": "paid_product",
+        "product_id": "rental-application-kit",
+        "product_name": "Rental Application Kit",
+        "anchor": "build your rental application packet",
+        "topics": [
+          "apartment application paperwork",
+          "rental cover letters",
+          "rental history explanation",
+          "proof of income for renting",
+          "apartment denial review",
+          "rental application packet"
+        ],
+        "product_message": "Create rental letters, explanations, checklists, and a more organized application packet."
+      },
+      {
+        "url": "https://approvalprep.com/loan-prep-letter-kit",
+        "destination_type": "paid_product",
+        "product_id": "loan-prep-letter-kit",
+        "product_name": "Loan Prep Letter Kit",
+        "anchor": "create a loan explanation letter",
+        "topics": [
+          "car loan explanation",
+          "mortgage explanation",
+          "personal loan documents",
+          "lender document request",
+          "large deposit explanation",
+          "loan application packet"
+        ],
+        "product_message": "Create explanation letters and document checklists for car, mortgage, personal-loan, and lender review situations."
+      },
+      {
+        "url": "https://approvalprep.com/business-funding-prep-kit",
+        "destination_type": "paid_product",
+        "product_id": "business-funding-prep-kit",
+        "product_name": "Business Funding Prep Kit",
+        "anchor": "build a business funding packet",
+        "topics": [
+          "business funding documents",
+          "business loan explanation",
+          "cash flow explanation",
+          "business ownership documents",
+          "self-employed income explanation",
+          "business funding packet"
+        ],
+        "product_message": "Create business funding letters, explanations, and an organized supporting-document packet."
+      },
+      {
+        "url": "https://approvalprep.com/life-admin-letter-kit",
+        "destination_type": "paid_product",
+        "product_id": "life-admin-letter-kit",
+        "product_name": "Life Admin Letter Kit",
+        "anchor": "create an address explanation letter",
+        "topics": [
+          "address issue explanation",
+          "proof of residency letter",
+          "identity records explanation",
+          "name mismatch explanation",
+          "life admin documents"
+        ],
+        "product_message": "Create everyday letters for address, residency, identity, and records issues."
+      },
+      {
+        "url": "https://approvalprep.com/complete-approvalprep-bundle",
+        "destination_type": "paid_product",
+        "product_id": "complete-approvalprep-bundle",
+        "product_name": "Complete Approval Prep Bundle",
+        "anchor": "get the full document library",
+        "topics": [
+          "multiple application issues",
+          "complete document library",
+          "credit rental income and loan letters",
+          "full approval prep bundle"
+        ],
+        "product_message": "Get the full collection of Approval Prep letters, guides, checklists, and document kits."
+      },
+      {
+        "url": "https://approvalprep.com/letter-writing-studio",
+        "destination_type": "free_creation_tool",
+        "product_id": "letter-writing-studio",
+        "product_name": "Letter Writing Studio",
+        "anchor": "draft your letter for free",
+        "topics": [
+          "letters of explanation",
+          "credit dispute letters",
+          "employment explanation letters",
+          "rental cover letters",
+          "loan explanation letters",
+          "business explanation letters",
+          "life admin letters"
+        ],
+        "product_message": "Start a first draft in the browser, then review, edit, and send it yourself."
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/credit",
+        "destination_type": "educational_guide",
+        "product_id": "credit-explanation-guide",
+        "product_name": "Credit Letter of Explanation Guide",
+        "anchor": "how to explain a credit problem",
+        "topics": [
+          "credit explanation letters",
+          "late payment explanation",
+          "credit report issues"
+        ],
+        "product_message": "Learn what to include when a reviewer asks for a truthful credit explanation."
+      },
+      {
+        "url": "https://approvalprep.com/rental-application-checklist",
+        "destination_type": "educational_guide",
+        "product_id": "rental-application-guide",
+        "product_name": "Rental Application Checklist",
+        "anchor": "what to prepare for an apartment application",
+        "topics": [
+          "apartment application paperwork",
+          "rental application packet",
+          "proof of income for renting"
+        ],
+        "product_message": "Review the documents and details commonly needed before submitting a rental application."
+      },
+      {
+        "url": "https://approvalprep.com/documents-needed-for-car-loan",
+        "destination_type": "educational_guide",
+        "product_id": "car-loan-documents-guide",
+        "product_name": "Car Loan Documents Guide",
+        "anchor": "what documents a car lender may ask for",
+        "topics": [
+          "car loan explanation",
+          "loan application packet",
+          "lender document request"
+        ],
+        "product_message": "See which documents a car lender may request and where an explanation letter may fit."
+      },
+      {
+        "url": "https://approvalprep.com/sba-loan-checklist",
+        "destination_type": "educational_guide",
+        "product_id": "sba-loan-checklist",
+        "product_name": "SBA Loan Checklist",
+        "anchor": "what to prepare for an SBA loan",
+        "topics": [
+          "business funding documents",
+          "business funding packet",
+          "business loan explanation"
+        ],
+        "product_message": "Review common SBA application documents before building your funding packet."
+      },
+      {
+        "url": "https://approvalprep.com/mortgage-document-checklist",
+        "destination_type": "educational_guide",
+        "product_id": "mortgage-document-checklist",
+        "product_name": "Mortgage Document Checklist",
+        "anchor": "what to prepare for a mortgage review",
+        "topics": [
+          "mortgage explanation",
+          "loan application packet",
+          "large deposit explanation"
+        ],
+        "product_message": "Review common mortgage documents and explanation-letter situations before lender review."
+      },
+      {
+        "url": "https://approvalprep.com/",
+        "destination_type": "trust_boundary",
+        "product_id": "approval-prep-home",
+        "product_name": "Approval Prep",
+        "anchor": "Approval Prep",
+        "topics": [
+          "*"
+        ],
+        "product_message": "Create the letter. Build the packet. Get ready before you apply."
+      },
+      {
+        "url": "https://approvalprep.com/pricing",
+        "destination_type": "trust_boundary",
+        "product_id": "approval-prep-pricing",
+        "product_name": "Approval Prep Pricing",
+        "anchor": "compare Approval Prep document kits",
+        "topics": [
+          "complete document library",
+          "multiple application issues"
+        ],
+        "product_message": "Compare the self-service document kits and choose the situation that matches your needs."
+      },
+      {
+        "url": "https://approvalprep.com/methodology",
+        "destination_type": "trust_boundary",
+        "product_id": "approval-prep-methodology",
+        "product_name": "Approval Prep Methodology",
+        "anchor": "how Approval Prep document kits work",
+        "topics": [
+          "self-service document creation",
+          "truthful document preparation"
+        ],
+        "product_message": "See how Approval Prep builds self-service templates around truthful facts and user-controlled documents."
+      },
+      {
+        "url": "https://approvalprep.com/not-a-credit-repair-company",
+        "destination_type": "trust_boundary",
+        "product_id": "approval-prep-boundaries",
+        "product_name": "What Approval Prep Does and Does Not Do",
+        "anchor": "what Approval Prep does and does not do",
+        "topics": [
+          "credit report errors",
+          "credit dispute letters",
+          "truthful document preparation"
+        ],
+        "product_message": "Understand the boundaries: no credit repair, third-party contact, fake documents, professional advice, or approval promises."
+      }
+    ],
+    "forbidden": [
+      "credit repair service",
+      "guaranteed approval",
+      "guaranteed deletion",
+      "guaranteed score increase",
+      "remove accurate information",
+      "fake documents",
+      "fabricated income",
+      "verified income documents",
+      "lender-approved documents",
+      "legal advice",
+      "financial advice",
+      "third-party representation"
+    ],
+    "entity_description": "self-service editable letters, downloadable document kits, checklists, and application packets users complete and send themselves"
   }
 ]

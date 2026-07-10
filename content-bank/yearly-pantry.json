@@ -114,16 +114,83 @@
         "AI workforce design"
       ],
       "targets": [
-        "aplayermode.com",
-        "billionairehighperformancecoach.com",
-        "virtualagency-os.com",
-        "westpeekproductions.com"
-      ],
-      "brand_mentions": [
-        "A Player Mode",
-        "Billionaire High Performance Coach",
-        "Virtual Agency OS",
-        "West Peek Productions"
+        {
+          "brand_id": "aplayer-mode",
+          "brand": "A Player Mode",
+          "domain": "aplayermode.com",
+          "approved_links": [
+            {
+              "url": "https://www.aplayermode.com/",
+              "anchor": "A Player Mode",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "bhpc",
+          "brand": "Billionaire High Performance Coach",
+          "domain": "billionairehighperformancecoach.com",
+          "approved_links": [
+            {
+              "url": "https://billionairehighperformancecoach.com/",
+              "anchor": "Billionaire High Performance Coach",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+              "anchor": "AI coach vs human coach comparison",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "virtual-agency-os",
+          "brand": "Virtual Agency OS",
+          "domain": "virtualagency-os.com",
+          "approved_links": [
+            {
+              "url": "https://virtualagency-os.com/learn/",
+              "anchor": "Virtual Agency OS learning library",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+              "anchor": "what virtual event production means",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+              "anchor": "virtual event production cost guide",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "west-peek-productions",
+          "brand": "West Peek Productions",
+          "domain": "westpeekproductions.com",
+          "approved_links": [
+            {
+              "url": "https://westpeekproductions.com/",
+              "anchor": "West Peek Productions",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        }
       ],
       "tone": "practical, operator-led, direct, low-fluff",
       "disclaimer": "This page is educational and editorial. It is not business, legal, financial, or mental-health advice.",
@@ -470,10 +537,27 @@
         "local vendor comparison questions"
       ],
       "targets": [
-        "porchandparty901.com"
-      ],
-      "brand_mentions": [
-        "Porch & Party"
+        {
+          "brand_id": "porch-party",
+          "brand": "Porch & Party",
+          "domain": "porchandparty901.com",
+          "approved_links": [
+            {
+              "url": "https://porchandparty901.com/",
+              "anchor": "Porch & Party",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://porchandparty901.com/pricing.html",
+              "anchor": "Porch & Party pricing",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        }
       ],
       "tone": "local, useful, neighborly, specific, non-corporate",
       "disclaimer": "This page is a local editorial resource. Vendor availability, pricing, and service areas may change; confirm details directly with providers.",
@@ -820,30 +904,574 @@
         "red flags in regulated services",
         "documentation checklists",
         "decision frameworks for sensitive services",
-        "resource directories for careful buyers"
+        "resource directories for careful buyers",
+        "credit report errors",
+        "credit dispute letters",
+        "letters of explanation",
+        "apartment application paperwork",
+        "proof of income documents",
+        "mortgage paperwork",
+        "car loan documents",
+        "business funding documents",
+        "application document checklists",
+        "document consistency before applying",
+        "what to do after an application denial",
+        "self-service paperwork preparation",
+        "how to explain a late payment",
+        "how to explain a job gap",
+        "how to explain an income change",
+        "how to explain a large deposit",
+        "how to organize rental application documents",
+        "how to gather loan documents",
+        "how to check documents before submitting",
+        "how to avoid fake document services",
+        "what credit repair companies cannot promise",
+        "how to dispute information you believe is wrong",
+        "how to prepare before applying for an apartment",
+        "how to organize a proof-of-income packet"
       ],
       "targets": [
-        "theindustryguides.com",
-        "theaccidentguides.com",
-        "dentistryguides.com",
-        "hormonesivhair.com",
-        "neuroevalguides.com",
-        "uscisexam.com",
-        "horselegalguide.com",
-        "hicksconsulting.org"
-      ],
-      "brand_mentions": [
-        "The Industry Guides",
-        "The Accident Guides",
-        "Dentistry Guides",
-        "Hormones IV Hair",
-        "Neuro Eval Guides",
-        "USCIS Exam",
-        "Horse Legal Guide",
-        "Hicks Consulting"
+        {
+          "brand_id": "the-industry-guides",
+          "brand": "The Industry Guides",
+          "domain": "theindustryguides.com",
+          "approved_links": [
+            {
+              "url": "https://theindustryguides.com/",
+              "anchor": "The Industry Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://theindustryguides.com/methodology.html",
+              "anchor": "The Industry Guides methodology",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://theindustryguides.com/tools/",
+              "anchor": "provider comparison tools",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "accident-guides",
+          "brand": "The Accident Guides",
+          "domain": "theaccidentguides.com",
+          "approved_links": [
+            {
+              "url": "https://theaccidentguides.com/",
+              "anchor": "The Accident Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://theaccidentguides.com/guides/",
+              "anchor": "personal injury educational guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://theaccidentguides.com/personal-injury/",
+              "anchor": "personal injury state guide hub",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "dentistry-guides",
+          "brand": "The Dentistry Guides",
+          "domain": "dentistryguides.com",
+          "approved_links": [
+            {
+              "url": "https://dentistryguides.com/",
+              "anchor": "The Dentistry Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://dentistryguides.com/guides/",
+              "anchor": "dental decision guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://dentistryguides.com/guides/questions-to-ask/",
+              "anchor": "questions before major dental work",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "hormones-iv-hair",
+          "brand": "Hormone Optimization Guides",
+          "domain": "hormonesivhair.com",
+          "approved_links": [
+            {
+              "url": "https://hormonesivhair.com/",
+              "anchor": "Hormone Optimization Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://hormonesivhair.com/guides/",
+              "anchor": "hormone and wellness clinic evaluation guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+              "anchor": "IV hydration red flags",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "neuro-eval-guides",
+          "brand": "Neuro Evaluation Guides",
+          "domain": "neuroevalguides.com",
+          "approved_links": [
+            {
+              "url": "https://neuroevalguides.com/",
+              "anchor": "Neuro Evaluation Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://neuroevalguides.com/guides/",
+              "anchor": "neuro evaluation guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+              "anchor": "questions before neuro testing",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "uscis-exam-guides",
+          "brand": "USCIS Exam Guides",
+          "domain": "uscisexam.com",
+          "approved_links": [
+            {
+              "url": "https://uscisexam.com/",
+              "anchor": "USCIS Exam Guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://uscisexam.com/guides/",
+              "anchor": "USCIS medical exam guides",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://uscisexam.com/guides/costs-and-timeframes/",
+              "anchor": "USCIS medical exam costs and timeframes",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "horse-legal-guide",
+          "brand": "Horse Legal Guide",
+          "domain": "horselegalguide.com",
+          "approved_links": [
+            {
+              "url": "https://horselegalguide.com/",
+              "anchor": "Horse Legal Guide",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "hicks-consulting",
+          "brand": "Hicks Consulting",
+          "domain": "hicksconsulting.org",
+          "approved_links": [
+            {
+              "url": "https://www.hicksconsulting.org/",
+              "anchor": "Hicks Consulting",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/therapy/",
+              "anchor": "virtual therapy in Tennessee",
+              "topics": [
+                "*"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/faq/",
+              "anchor": "Hicks Consulting FAQ",
+              "topics": [
+                "*"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "approval-prep",
+          "brand": "Approval Prep",
+          "domain": "approvalprep.com",
+          "priority": true,
+          "eligible_clusters": [
+            "address issue explanation",
+            "apartment application paperwork",
+            "apartment denial review",
+            "application issue explanation",
+            "bank statement explanation",
+            "business explanation letters",
+            "business funding documents",
+            "business funding packet",
+            "business loan explanation",
+            "business ownership documents",
+            "car loan explanation",
+            "cash flow explanation",
+            "complete document library",
+            "credit dispute letters",
+            "credit explanation letters",
+            "credit rental income and loan letters",
+            "credit report errors",
+            "credit report issues",
+            "debt validation letters",
+            "employment explanation letters",
+            "full approval prep bundle",
+            "goodwill letters",
+            "identity records explanation",
+            "income change explanation",
+            "job gap explanation",
+            "large deposit explanation",
+            "late payment explanation",
+            "lender document request",
+            "letters of explanation",
+            "life admin documents",
+            "life admin letters",
+            "loan application packet",
+            "loan explanation letters",
+            "mortgage explanation",
+            "multiple application issues",
+            "name mismatch explanation",
+            "personal loan documents",
+            "proof of income for renting",
+            "proof of income letters",
+            "proof of residency letter",
+            "rental application packet",
+            "rental cover letters",
+            "rental history explanation",
+            "self-employed income explanation",
+            "self-service document creation",
+            "truthful document preparation"
+          ],
+          "approved_links": [
+            {
+              "url": "https://approvalprep.com/letter-of-explanation",
+              "destination_type": "paid_product",
+              "product_id": "letter-of-explanation-kit",
+              "product_name": "Letter of Explanation Kit",
+              "anchor": "create a letter of explanation",
+              "topics": [
+                "letters of explanation",
+                "late payment explanation",
+                "job gap explanation",
+                "income change explanation",
+                "large deposit explanation",
+                "address issue explanation",
+                "application issue explanation"
+              ],
+              "product_message": "Create a clear letter of explanation with your real dates, facts, and supporting records."
+            },
+            {
+              "url": "https://approvalprep.com/income-employment-letter-kit",
+              "destination_type": "paid_product",
+              "product_id": "income-employment-letter-kit",
+              "product_name": "Income + Employment Letter Kit",
+              "anchor": "create a proof-of-income letter",
+              "topics": [
+                "proof of income letters",
+                "employment explanation letters",
+                "job gap explanation",
+                "income change explanation",
+                "self-employed income explanation",
+                "bank statement explanation"
+              ],
+              "product_message": "Create editable income and employment letters you complete and send yourself."
+            },
+            {
+              "url": "https://approvalprep.com/credit-letter-kit",
+              "destination_type": "paid_product",
+              "product_id": "credit-letter-kit",
+              "product_name": "Credit Letter Kit",
+              "anchor": "create a credit dispute letter",
+              "topics": [
+                "credit report errors",
+                "credit dispute letters",
+                "goodwill letters",
+                "late payment explanation",
+                "debt validation letters",
+                "credit explanation letters"
+              ],
+              "product_message": "Create your own dispute, goodwill, validation, and credit explanation letters using truthful information."
+            },
+            {
+              "url": "https://approvalprep.com/rental-application-kit",
+              "destination_type": "paid_product",
+              "product_id": "rental-application-kit",
+              "product_name": "Rental Application Kit",
+              "anchor": "build your rental application packet",
+              "topics": [
+                "apartment application paperwork",
+                "rental cover letters",
+                "rental history explanation",
+                "proof of income for renting",
+                "apartment denial review",
+                "rental application packet"
+              ],
+              "product_message": "Create rental letters, explanations, checklists, and a more organized application packet."
+            },
+            {
+              "url": "https://approvalprep.com/loan-prep-letter-kit",
+              "destination_type": "paid_product",
+              "product_id": "loan-prep-letter-kit",
+              "product_name": "Loan Prep Letter Kit",
+              "anchor": "create a loan explanation letter",
+              "topics": [
+                "car loan explanation",
+                "mortgage explanation",
+                "personal loan documents",
+                "lender document request",
+                "large deposit explanation",
+                "loan application packet"
+              ],
+              "product_message": "Create explanation letters and document checklists for car, mortgage, personal-loan, and lender review situations."
+            },
+            {
+              "url": "https://approvalprep.com/business-funding-prep-kit",
+              "destination_type": "paid_product",
+              "product_id": "business-funding-prep-kit",
+              "product_name": "Business Funding Prep Kit",
+              "anchor": "build a business funding packet",
+              "topics": [
+                "business funding documents",
+                "business loan explanation",
+                "cash flow explanation",
+                "business ownership documents",
+                "self-employed income explanation",
+                "business funding packet"
+              ],
+              "product_message": "Create business funding letters, explanations, and an organized supporting-document packet."
+            },
+            {
+              "url": "https://approvalprep.com/life-admin-letter-kit",
+              "destination_type": "paid_product",
+              "product_id": "life-admin-letter-kit",
+              "product_name": "Life Admin Letter Kit",
+              "anchor": "create an address explanation letter",
+              "topics": [
+                "address issue explanation",
+                "proof of residency letter",
+                "identity records explanation",
+                "name mismatch explanation",
+                "life admin documents"
+              ],
+              "product_message": "Create everyday letters for address, residency, identity, and records issues."
+            },
+            {
+              "url": "https://approvalprep.com/complete-approvalprep-bundle",
+              "destination_type": "paid_product",
+              "product_id": "complete-approvalprep-bundle",
+              "product_name": "Complete Approval Prep Bundle",
+              "anchor": "get the full document library",
+              "topics": [
+                "multiple application issues",
+                "complete document library",
+                "credit rental income and loan letters",
+                "full approval prep bundle"
+              ],
+              "product_message": "Get the full collection of Approval Prep letters, guides, checklists, and document kits."
+            },
+            {
+              "url": "https://approvalprep.com/letter-writing-studio",
+              "destination_type": "free_creation_tool",
+              "product_id": "letter-writing-studio",
+              "product_name": "Letter Writing Studio",
+              "anchor": "draft your letter for free",
+              "topics": [
+                "letters of explanation",
+                "credit dispute letters",
+                "employment explanation letters",
+                "rental cover letters",
+                "loan explanation letters",
+                "business explanation letters",
+                "life admin letters"
+              ],
+              "product_message": "Start a first draft in the browser, then review, edit, and send it yourself."
+            },
+            {
+              "url": "https://approvalprep.com/letter-of-explanation/credit",
+              "destination_type": "educational_guide",
+              "product_id": "credit-explanation-guide",
+              "product_name": "Credit Letter of Explanation Guide",
+              "anchor": "how to explain a credit problem",
+              "topics": [
+                "credit explanation letters",
+                "late payment explanation",
+                "credit report issues"
+              ],
+              "product_message": "Learn what to include when a reviewer asks for a truthful credit explanation."
+            },
+            {
+              "url": "https://approvalprep.com/rental-application-checklist",
+              "destination_type": "educational_guide",
+              "product_id": "rental-application-guide",
+              "product_name": "Rental Application Checklist",
+              "anchor": "what to prepare for an apartment application",
+              "topics": [
+                "apartment application paperwork",
+                "rental application packet",
+                "proof of income for renting"
+              ],
+              "product_message": "Review the documents and details commonly needed before submitting a rental application."
+            },
+            {
+              "url": "https://approvalprep.com/documents-needed-for-car-loan",
+              "destination_type": "educational_guide",
+              "product_id": "car-loan-documents-guide",
+              "product_name": "Car Loan Documents Guide",
+              "anchor": "what documents a car lender may ask for",
+              "topics": [
+                "car loan explanation",
+                "loan application packet",
+                "lender document request"
+              ],
+              "product_message": "See which documents a car lender may request and where an explanation letter may fit."
+            },
+            {
+              "url": "https://approvalprep.com/sba-loan-checklist",
+              "destination_type": "educational_guide",
+              "product_id": "sba-loan-checklist",
+              "product_name": "SBA Loan Checklist",
+              "anchor": "what to prepare for an SBA loan",
+              "topics": [
+                "business funding documents",
+                "business funding packet",
+                "business loan explanation"
+              ],
+              "product_message": "Review common SBA application documents before building your funding packet."
+            },
+            {
+              "url": "https://approvalprep.com/mortgage-document-checklist",
+              "destination_type": "educational_guide",
+              "product_id": "mortgage-document-checklist",
+              "product_name": "Mortgage Document Checklist",
+              "anchor": "what to prepare for a mortgage review",
+              "topics": [
+                "mortgage explanation",
+                "loan application packet",
+                "large deposit explanation"
+              ],
+              "product_message": "Review common mortgage documents and explanation-letter situations before lender review."
+            },
+            {
+              "url": "https://approvalprep.com/",
+              "destination_type": "trust_boundary",
+              "product_id": "approval-prep-home",
+              "product_name": "Approval Prep",
+              "anchor": "Approval Prep",
+              "topics": [
+                "*"
+              ],
+              "product_message": "Create the letter. Build the packet. Get ready before you apply."
+            },
+            {
+              "url": "https://approvalprep.com/pricing",
+              "destination_type": "trust_boundary",
+              "product_id": "approval-prep-pricing",
+              "product_name": "Approval Prep Pricing",
+              "anchor": "compare Approval Prep document kits",
+              "topics": [
+                "complete document library",
+                "multiple application issues"
+              ],
+              "product_message": "Compare the self-service document kits and choose the situation that matches your needs."
+            },
+            {
+              "url": "https://approvalprep.com/methodology",
+              "destination_type": "trust_boundary",
+              "product_id": "approval-prep-methodology",
+              "product_name": "Approval Prep Methodology",
+              "anchor": "how Approval Prep document kits work",
+              "topics": [
+                "self-service document creation",
+                "truthful document preparation"
+              ],
+              "product_message": "See how Approval Prep builds self-service templates around truthful facts and user-controlled documents."
+            },
+            {
+              "url": "https://approvalprep.com/not-a-credit-repair-company",
+              "destination_type": "trust_boundary",
+              "product_id": "approval-prep-boundaries",
+              "product_name": "What Approval Prep Does and Does Not Do",
+              "anchor": "what Approval Prep does and does not do",
+              "topics": [
+                "credit report errors",
+                "credit dispute letters",
+                "truthful document preparation"
+              ],
+              "product_message": "Understand the boundaries: no credit repair, third-party contact, fake documents, professional advice, or approval promises."
+            }
+          ],
+          "social_hooks": [
+            "Need to explain what happened? Create the letter they asked for.",
+            "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+            "Do not know what to write? Start with your real facts.",
+            "Before you apply, create the letters and documents you may need.",
+            "Something on your credit report look wrong? Write your own dispute letter."
+          ],
+          "ctas": [
+            "Create My Letter",
+            "Build My Packet",
+            "Show Me the Right Kit",
+            "Draft My Letter for Free",
+            "See What I Need",
+            "Get the Full Document Library"
+          ],
+          "product_positioning": "Create the letter. Build the packet. Get ready before you apply."
+        }
       ],
       "tone": "careful, grounded, plain-English, risk-aware, non-advice",
-      "disclaimer": "This page is educational only. It is not legal, medical, mental-health, or professional advice. For specific decisions, consult a qualified professional.",
+      "disclaimer": "This page is educational only. It is not legal, medical, mental-health, immigration, financial, or professional advice. Verify details with a qualified professional before acting.",
       "formats": [
         "decision guide",
         "question checklist",
@@ -919,7 +1547,9 @@
         "The point of a red flags in regulated services page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
         "The point of a documentation checklists page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
         "The point of a decision frameworks for sensitive services page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
-        "The point of a resource directories for careful buyers page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion."
+        "The point of a resource directories for careful buyers page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "Start with the paperwork in front of you. The goal is not to promise an outcome. It is to make the facts clear, organized, and easier to review.",
+        "If something looks wrong or confusing, slow down and check the dates, names, amounts, and supporting records before you send anything."
       ],
       "body_blocks": [
         "For regulated provider research, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
@@ -973,7 +1603,13 @@
         "For decision frameworks for sensitive services, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
         "A good decision frameworks for sensitive services resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
         "For resource directories for careful buyers, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
-        "A good resource directories for careful buyers resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation."
+        "A good resource directories for careful buyers resource should separate facts from opinions, explain what belongs in a first conversation, and avoid pretending that every situation has the same answer. That is especially important when the topic touches money, legal exposure, health decisions, local logistics, or reputation.",
+        "Use plain language. Say what happened, when it happened, and what document supports the explanation.",
+        "Do not change numbers, invent income, or create records that did not exist. Clear and truthful beats polished and risky.",
+        "Keep copies of every letter, checklist, and supporting document you submit.",
+        "A checklist can help you prepare, but it cannot guarantee that a landlord, lender, bureau, or other reviewer will approve a request.",
+        "If information on a credit report appears wrong, focus on the specific error and the records that support your position.",
+        "Before applying, make sure names, dates, addresses, employers, and income details match across the documents you plan to use."
       ],
       "faq_blocks": [
         {
@@ -1079,6 +1715,18 @@
         {
           "q": "What should someone ask before using a resource directories for careful buyers resource?",
           "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "Can Approval Prep fix my credit?",
+          "a": "No. Approval Prep provides self-service letters, checklists, and document-preparation tools. It does not repair credit or contact third parties."
+        },
+        {
+          "q": "Will these documents guarantee approval?",
+          "a": "No. They can help you get organized and explain facts clearly, but no document can guarantee an approval or score change."
+        },
+        {
+          "q": "Can I use fake documents if I am missing something?",
+          "a": "No. Use truthful records only. Approval Prep does not create or support fake, altered, or fabricated documents."
         }
       ],
       "checklist_blocks": [
@@ -1107,7 +1755,13 @@
         "Write down the main question you need answered about red flags in regulated services before comparing providers, tools, or resources.",
         "Write down the main question you need answered about documentation checklists before comparing providers, tools, or resources.",
         "Write down the main question you need answered about decision frameworks for sensitive services before comparing providers, tools, or resources.",
-        "Write down the main question you need answered about resource directories for careful buyers before comparing providers, tools, or resources."
+        "Write down the main question you need answered about resource directories for careful buyers before comparing providers, tools, or resources.",
+        "Check that your name and contact details match across documents.",
+        "Use real dates, amounts, and records only.",
+        "Remove anything you cannot support with a truthful explanation.",
+        "Keep a copy of the final document and every attachment.",
+        "Read the request or denial reason before writing a response.",
+        "Do not promise an outcome in your own letter."
       ],
       "social_hooks": [
         "Most people approach regulated provider research too late. The smarter move is to collect the questions first, then compare options.",

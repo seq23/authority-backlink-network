@@ -114,7 +114,9 @@ def choose_volume(day, stats):
             return max(1, min(int(env), int(os.getenv('ABSOLUTE_MAX_PAGES_PER_DAY', '9'))))
         except Exception:
             pass
-    if stats.get('hard_fails', 0) > 0 or stats.get('duplicate_warnings', 0) > 0:
+    # Only verified structural/compliance failures may reduce global volume.
+    # Duplicate notices, quality scores, word counts, and cadence variance are diagnostics.
+    if stats.get('hard_fails', 0) > 0:
         return 3
     if day <= 14:
         return 3
@@ -138,22 +140,61 @@ def pick(arr, seed):
     return arr[rng.randrange(len(arr))]
 
 
-def build_brief(pub_key, slot, state, attempt=0):
+def normalize_target(target):
+    if isinstance(target, dict):
+        return target
+    return {'brand_id': '', 'brand': str(target), 'domain': str(target), 'approved_links': [{'url': f'https://{target}', 'anchor': str(target), 'topics': ['*']}]}
+
+
+def link_matches_cluster(link, cluster):
+    topics = link.get('topics') or ['*']
+    return '*' in topics or cluster in topics
+
+
+def product_match_strength(link, cluster):
+    if not link_matches_cluster(link, cluster):
+        return -1
+    return {'paid_product': 40, 'free_creation_tool': 30, 'educational_guide': 20, 'trust_boundary': 10}.get(link.get('destination_type'), 0)
+
+
+def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     pub = PANTRY['publications'][pub_key]
     seed = f'{TODAY}-{pub_key}-{slot}-{attempt}-{len(state.get("published_signatures", []))}'
-    cluster = pick(pub['clusters'], seed+'cluster')
+    if target_override is not None:
+        target_cfg = normalize_target(target_override)
+    else:
+        regular_targets = [t for t in pub['targets'] if not (isinstance(t, dict) and t.get('priority'))]
+        target_cfg = normalize_target(pick(regular_targets or pub['targets'], seed+'target'))
+    eligible_clusters = target_cfg.get('eligible_clusters') or pub['clusters']
+    cluster = pick(eligible_clusters, seed+'cluster')
     audience = pick(pub['audiences'], seed+'audience')
     fmt = pick(pub['formats'], seed+'format')
     intent = pick(pub['intents'], seed+'intent')
     modifier = pick(pub['modifiers'], seed+'modifier')
-    target = pick(pub['targets'], seed+'target')
-    brand = pick(pub['brand_mentions'], seed+'brand')
+    candidate_links = [link for link in target_cfg.get('approved_links', []) if link_matches_cluster(link, cluster)]
+    if not candidate_links:
+        candidate_links = target_cfg.get('approved_links', [])
+    if target_cfg.get('brand_id') == 'approval-prep':
+        strongest = max((product_match_strength(link, cluster) for link in candidate_links), default=-1)
+        candidate_links = [link for link in candidate_links if product_match_strength(link, cluster) == strongest]
+    selected_link = pick(candidate_links, seed+'approved-link')
+    target_domain = target_cfg.get('domain', '')
+    target_url = selected_link.get('url', f'https://{target_domain}') if isinstance(selected_link, dict) else f'https://{target_domain}'
+    anchor = selected_link.get('anchor', target_cfg.get('brand', target_domain)) if isinstance(selected_link, dict) else target_cfg.get('brand', target_domain)
+    brand = target_cfg.get('brand', target_domain)
+    brand_id = target_cfg.get('brand_id', '')
     title = f"{cluster.title()}: {modifier.title()} {fmt.title()} {intent.title()}"
-    signature = hashlib.sha256(f'{pub_key}|{cluster}|{audience}|{fmt}|{intent}|{modifier}|{target}|{brand}'.encode()).hexdigest()
+    signature = hashlib.sha256(f'{pub_key}|{cluster}|{audience}|{fmt}|{intent}|{modifier}|{target_url}|{anchor}|{brand_id}'.encode()).hexdigest()
     return {
         'publication': pub_key, 'cluster': cluster, 'audience': audience, 'format': fmt,
-        'intent': intent, 'modifier': modifier, 'title': title, 'target_domain': target,
-        'brand': brand, 'signature': signature
+        'intent': intent, 'modifier': modifier, 'title': title, 'target_domain': target_domain,
+        'target_url': target_url, 'anchor': anchor, 'brand_id': brand_id, 'brand': brand,
+        'social_hooks': target_cfg.get('social_hooks', []), 'ctas': target_cfg.get('ctas', []),
+        'destination_type': selected_link.get('destination_type','') if isinstance(selected_link, dict) else '',
+        'product_id': selected_link.get('product_id','') if isinstance(selected_link, dict) else '',
+        'product_name': selected_link.get('product_name','') if isinstance(selected_link, dict) else '',
+        'product_message': selected_link.get('product_message','') if isinstance(selected_link, dict) else '',
+        'signature': signature
     }
 
 
@@ -170,13 +211,20 @@ def generate_page(brief):
     cluster = brief['cluster']
     audience = brief['audience']
     target = brief['target_domain']
+    target_url = brief.get('target_url', f'https://{target}')
     brand = brief['brand']
+    anchor = brief.get('anchor') or brand
     intro = pick(pub['intro_blocks'], title+'intro')
     faq_items = section_blocks(pub, 'faq_blocks', title, 5)
     checklist = section_blocks(pub, 'checklist_blocks', title, 9)
     body = section_blocks(pub, 'body_blocks', title, 14)
-    anchor = brand if stable_int(title+'anchor') % 3 else target
     disclaimer = pub.get('disclaimer', 'This page is educational and editorial, not professional advice.')
+    product_section = ''
+    if brief.get('brand_id') == 'approval-prep':
+        disclaimer += ' Approval Prep is not a credit-repair company. It does not contact third parties, provide legal or financial advice, create fake documents, verify income, or guarantee approval, deletion, or score improvement.'
+        product_name = brief.get('product_name') or 'Approval Prep resource'
+        product_message = brief.get('product_message') or 'Create the letter. Build the packet. Get ready before you apply.'
+        product_section = f'<h2>What you can create</h2><p><strong>{html.escape(product_name)}:</strong> {html.escape(product_message)}</p><p>You complete the document with your own truthful facts, review it, and send it yourself. Approval Prep does not make the approval decision.</p>'
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
     slug = slugify(title)
     faq_html = ''.join('<h3>'+html.escape(f.get('q','Question'))+'</h3><p>'+html.escape(f.get('a','Use this as a starting point, then verify details for your situation.'))+'</p>' for f in faq_items)
@@ -197,7 +245,7 @@ def generate_page(brief):
 <h2>How to think about the decision</h2>{''.join('<p>'+html.escape(x)+'</p>' for x in body[:5])}
 <h2>Decision framework</h2><p>Use a four-part filter: fit, evidence, risk, and next step. Fit asks whether the resource matches your situation. Evidence asks what the claim is based on. Risk asks what could go wrong if you misunderstand the topic. Next step asks whether you need a checklist, a consult, a quote, or a qualified professional.</p>{''.join('<p>'+html.escape(x)+'</p>' for x in body[5:10])}
 <h2>Checklist</h2><ul>{''.join('<li>'+html.escape(x)+'</li>' for x in checklist)}</ul>
-<h2>Useful citation</h2><p>For readers comparing this category, <a href="https://{html.escape(target)}">{html.escape(anchor)}</a> may be a relevant next resource when it matches the situation. The link is included because it belongs in the topic area, not because every reader needs it.</p>
+{product_section}<h2>Useful citation</h2><p>For readers comparing this category, <a href="{html.escape(target_url)}">{html.escape(anchor)}</a> may be a relevant next resource when it matches the situation. The link is included because it belongs in the topic area, not because every reader needs it.</p>
 <h2>FAQ</h2>{faq_html}
 <h2>Editorial note</h2><p><strong>Affiliation disclosed:</strong> this publication may cite affiliated projects where the citation is topically relevant. {html.escape(disclaimer)} This page is not legal, medical, mental-health, immigration, financial, or professional advice. Verify details with a qualified professional before acting on sensitive decisions.</p><p class="meta">Generated by the Authority Network V4.2 programmatic editorial engine. Generated at {generated}.</p></article></main></body></html>'''
     return slug, page
@@ -210,9 +258,9 @@ def score_page(html_text, brief):
     hard_fails = []
     warnings = []
     if words < 850:
-        score -= 16; warnings.append('word_count_under_850')
-    if words < 700:
-        hard_fails.append('thin_page_under_700_words')
+        score -= 8; warnings.append('word_count_below_preferred_range')
+    if words < 550:
+        score -= 8; warnings.append('very_short_page_review_recommended')
     if any(p in txt for p in STOP_PHRASES):
         score -= 20; hard_fails.append('spam_or_ai_cliche_phrase')
     if len(re.findall(r'https://', html_text)) > 3:
@@ -226,7 +274,7 @@ def score_page(html_text, brief):
         score -= 25; hard_fails.append('ymyl_without_disclaimer')
     if re.search(r'fake review|fake ranking|guaranteed|#1|number one', txt, re.I):
         score -= 30; hard_fails.append('unsafe_claim_or_fake_review_language')
-    if brief['target_domain'] not in html_text:
+    if brief.get('target_url', brief['target_domain']) not in html_text:
         score -= 20; hard_fails.append('missing_target_citation')
     return max(0, min(100, score)), words, warnings, hard_fails
 
@@ -274,19 +322,32 @@ def main():
         state.setdefault(k, v if not isinstance(v, list) else [])
     day_index = days_since(state.get('launch_date', TODAY))
     stats = recent_stats(state)
-    volume = choose_volume(day_index, stats)
+    base_volume = choose_volume(day_index, stats)
     pubs = list(PANTRY['publications'].keys())
+    priority_jobs = []
+    for rule in SCALING.get('priority_targets', []):
+        pub_key = rule.get('publication')
+        target = next((t for t in PANTRY['publications'].get(pub_key, {}).get('targets', []) if isinstance(t, dict) and t.get('brand_id') == rule.get('brand_id')), None)
+        if not target:
+            continue
+        requested = int(os.getenv('APPROVAL_PREP_PAGES_PER_DAY', str(rule.get('pages_per_day', 6)))) if rule.get('brand_id') == 'approval-prep' else int(rule.get('pages_per_day', 1))
+        # The configured range is a planning target, not a validator. Allow normal daily variation
+        # while preserving the repository-wide absolute safety ceiling.
+        requested = max(1, min(requested, int(SCALING.get('hard_limits', {}).get('absolute_max_pages_per_day', 12))))
+        priority_jobs.extend([(pub_key, target)] * requested)
+    volume = min(base_volume + len(priority_jobs), int(SCALING.get('hard_limits', {}).get('absolute_max_pages_per_day', 12)))
     generated, published, scores = [], [], []
     duplicate_warnings = 0
     hard_fail_count = 0
-    min_score = int(os.getenv('MIN_BASE_PUBLISH_SCORE', '72'))
+    min_score = int(os.getenv('MIN_BASE_PUBLISH_SCORE', '60'))
     max_dup = float(os.getenv('MAX_DUPLICATE_SIMILARITY', '0.15'))
 
-    for i in range(volume):
-        pub_key = pubs[i % len(pubs)]
+    jobs = priority_jobs + [(pubs[i % len(pubs)], None) for i in range(base_volume)]
+    jobs = jobs[:volume]
+    for i, (pub_key, target_override) in enumerate(jobs):
         chosen = None
         for attempt in range(20):
-            brief = build_brief(pub_key, i, state, attempt=attempt)
+            brief = build_brief(pub_key, i, state, attempt=attempt, target_override=target_override)
             if brief['signature'] not in state.get('published_signatures', []):
                 chosen = brief
                 break
@@ -323,7 +384,7 @@ def main():
         state['published_hashes'].append(chash)
         state['published_signatures'].append(chosen['signature'])
         state['published_titles'].append(chosen['title'])
-        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_domain': chosen['target_domain'], 'brand': chosen['brand']}
+        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name','')}
         published.append(pub_item)
         scores.append(score)
 
@@ -335,7 +396,7 @@ def main():
     linkreg = read_json(ROOT/'data/link-registry.json', [])
     if isinstance(linkreg, dict): linkreg = linkreg.get('links', [])
     for item in published:
-        linkreg.append({'date': TODAY, 'source_path': item['path'], 'target_domain': item['target_domain'], 'brand': item['brand'], 'link_type': 'owned-authority-citation', 'status': 'published', 'score': item['score']})
+        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': item['publication'].replace('-operator','').replace('-local','').replace('-resources',''), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'link_type': 'owned-authority-citation', 'status': 'published', 'score': item['score']})
     write_json(ROOT/'data/link-registry.json', linkreg)
 
     social = read_json(ROOT/'data/social-queue.json', [])
@@ -346,7 +407,10 @@ def main():
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
-        social.append({'date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking.", 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
+        body = f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking."
+        if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
+            body = f"{pick(item['social_hooks'], item['title']+'linkedin')} {item['title']}"
+        social.append({'date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
     
     x_templates = [
         "New resource: {title}. Better questions, fewer loud claims.",
@@ -363,7 +427,11 @@ def main():
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
-        social.append({'date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': tmpl.format(title=item['title']), 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
+        body = tmpl.format(title=item['title'])
+        if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
+            hooks = item['social_hooks']
+            body = f"{hooks[t_idx % len(hooks)]} {item['title']} [{t_idx + 1}]"
+        social.append({'date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
     write_json(ROOT/'data/social-queue.json', social)
 
     run = {'date': TODAY, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'stats_before': stats}

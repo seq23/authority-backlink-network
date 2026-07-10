@@ -96,3 +96,12 @@ This baseline includes hands-off social auto-posting for one LinkedIn account an
 - `docs/V4-2-END-TO-END-HOSTILE-REVIEW.md`
 
 Cloudflare deploy remains handled by Cloudflare Git integration. GitHub Actions generates pages, validates them, queues social posts, auto-posts eligible items, commits ledgers/reports, and lets Cloudflare deploy site changes.
+
+
+## Approval Prep target
+
+Approval Prep (`approvalprep.com`) is a high-priority Professional Resource Library target. The autopilot aims for roughly 5–8 Approval Prep pages per day from launch, with normal daily variation and tolerant editorial review. The 90-day north star is 100,000 honest citation surfaces and impressions—not 100,000 claimed independent backlinks.
+
+## Approval Prep product-routing rule
+
+Approval Prep is a document-creation business, not primarily a checklist site. Authority pages must identify the reader's real document problem and route to the matching paid kit, free Letter Writing Studio, educational guide, or boundary page. The core positioning is: **Create the letter. Build the packet. Get ready before you apply.**

@@ -1,37 +1,106 @@
 {
-  "date": "2026-07-09",
-  "dry_run": false,
+  "date": "2026-07-10",
+  "dry_run": true,
   "enabled": {
-    "linkedin": false,
-    "x": false
+    "linkedin": true,
+    "x": true
   },
-  "secret_skips": {
-    "linkedin": [
-      "LINKEDIN_ACCESS_TOKEN",
-      "LINKEDIN_AUTHOR_URN"
-    ],
-    "x": [
-      "X_API_KEY",
-      "X_API_SECRET",
-      "X_ACCESS_TOKEN",
-      "X_ACCESS_TOKEN_SECRET"
-    ]
-  },
+  "secret_skips": {},
   "limits": {
     "linkedin": 1,
     "x": 5
   },
-  "attempts": [],
-  "successes": [],
+  "attempts": [
+    {
+      "index": 56,
+      "platform": "linkedin",
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
+    },
+    {
+      "index": 60,
+      "platform": "x",
+      "brand": "A Player Mode",
+      "preview": "A useful question before choosing in AI execution system / operator manual: what would change your decision if the answe"
+    },
+    {
+      "index": 52,
+      "platform": "x",
+      "brand": "Billionaire High Performance Coach",
+      "preview": "A useful question before choosing in AI executive coaching / prompt OS: what would change your decision if the answer we"
+    },
+    {
+      "index": 92,
+      "platform": "x",
+      "brand": "Hicks Consulting",
+      "preview": "A useful question before choosing in therapy coaching consulting and workplace mental health training: what would change"
+    },
+    {
+      "index": 28,
+      "platform": "x",
+      "brand": "Hormone Optimization Guides",
+      "preview": "A useful question before choosing in TRT IV hydration hair-loss peptide educational guides: what would change your decis"
+    },
+    {
+      "index": 84,
+      "platform": "x",
+      "brand": "Horse Legal Guide",
+      "preview": "A useful question before choosing in equine legal education: what would change your decision if the answer were differen"
+    }
+  ],
+  "successes": [
+    {
+      "index": 56,
+      "platform": "linkedin",
+      "brand": "A Player Mode",
+      "id": "dry-0b67be48c83e",
+      "dry_run": true
+    },
+    {
+      "index": 60,
+      "platform": "x",
+      "brand": "A Player Mode",
+      "id": "dry-0ad4f2362a9b",
+      "dry_run": true
+    },
+    {
+      "index": 52,
+      "platform": "x",
+      "brand": "Billionaire High Performance Coach",
+      "id": "dry-f3b1448d8426",
+      "dry_run": true
+    },
+    {
+      "index": 92,
+      "platform": "x",
+      "brand": "Hicks Consulting",
+      "id": "dry-ab924e74ccdf",
+      "dry_run": true
+    },
+    {
+      "index": 28,
+      "platform": "x",
+      "brand": "Hormone Optimization Guides",
+      "id": "dry-e6d5d25b20d3",
+      "dry_run": true
+    },
+    {
+      "index": 84,
+      "platform": "x",
+      "brand": "Horse Legal Guide",
+      "id": "dry-5389c46c733c",
+      "dry_run": true
+    }
+  ],
   "failures": [],
   "skipped": [],
   "posted_today": {
-    "linkedin": 0,
-    "x": 0
+    "linkedin": 1,
+    "x": 5
   },
   "brand_rotation_policy": {
-    "quota_count": 13,
-    "daily_rotation_offset": 739806
+    "quota_count": 14,
+    "daily_rotation_offset": 739807
   },
   "status": "ok"
 }

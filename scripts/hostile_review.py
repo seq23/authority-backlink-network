@@ -26,6 +26,8 @@ warnings = []
 PUB_FOLDERS = {p['id']: p['folder'] for p in publications}
 PUBLICATION_DOMAINS = {p['id']: p['working_domain'] for p in publications}
 TARGET_DOMAIN_TO_BRAND = {b['domain'].replace('www.', ''): b for b in brands}
+BRAND_BY_ID = {b['id']: b for b in brands}
+APPROVED_URLS_BY_DOMAIN = {norm: {link.get('url','').rstrip('/') for link in brand.get('approved_links', [])} for norm, brand in TARGET_DOMAIN_TO_BRAND.items()}
 ALL_TARGET_DOMAINS = set(TARGET_DOMAIN_TO_BRAND)
 ALL_PUBLICATION_DOMAINS = {d.replace('www.', '') for d in PUBLICATION_DOMAINS.values()}
 ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
@@ -86,6 +88,31 @@ for p in publications:
         if support not in known:
             errors.append(f"publication {p['id']} supports unknown brand id {support}")
 
+# Validate paired pantry targets against the brand registry.
+pantry = json.loads((ROOT / 'content-bank/yearly-pantry.json').read_text())
+for pantry_pub, config in pantry.get('publications', {}).items():
+    expected_pub = pantry_pub.replace('-operator', '').replace('-local', '').replace('-resources', '')
+    for target in config.get('targets', []):
+        if not isinstance(target, dict):
+            errors.append(f'{pantry_pub}: legacy unpaired target remains: {target}')
+            continue
+        brand_id = target.get('brand_id')
+        brand = BRAND_BY_ID.get(brand_id)
+        if not brand:
+            errors.append(f'{pantry_pub}: target references unknown brand id {brand_id}')
+            continue
+        domain = norm_domain(target.get('domain', ''))
+        if domain != norm_domain(brand.get('domain', '')):
+            errors.append(f'{pantry_pub}: brand/domain mismatch for {brand_id}: {domain} != {brand.get("domain")}')
+        if expected_pub not in brand.get('approved_publications', []):
+            errors.append(f'{pantry_pub}: {brand_id} is not approved for {expected_pub}')
+        links = target.get('approved_links') or []
+        if not links:
+            errors.append(f'{pantry_pub}: {brand_id} has no approved links')
+        for link in links:
+            if norm_domain(link.get('url', '')) != domain:
+                errors.append(f'{pantry_pub}: {brand_id} approved link uses wrong domain: {link.get("url")}')
+
 # Validate HTML pages.
 for pub, folder in PUB_FOLDERS.items():
     base = ROOT / folder
@@ -118,11 +145,45 @@ for pub, folder in PUB_FOLDERS.items():
                 anchor = clean_anchor(anchor_html)
                 if domain in ALL_TARGET_DOMAINS:
                     outbound_targets.append((domain, anchor, href))
-                    if len(anchor.split()) > 7:
-                        warnings.append(f'{rel}: long outbound anchor should be reviewed: {anchor}')
+                    if len(anchor.split()) > 14:
+                        warnings.append(f'{rel}: unusually long outbound anchor should be reviewed for clarity: {anchor}')
 
-        if len(outbound_targets) > 6:
-            warnings.append(f'{rel}: more than 6 outbound target links; review for stuffing')
+        if len(outbound_targets) > 8:
+            warnings.append(f'{rel}: high outbound-link count; review only if the page feels crowded')
+
+        # Product-aware Approval Prep routing. Missing or wrong-domain metadata is structural;
+        # topic fit is editorial judgment and therefore warning-only with normal margins.
+        approval_brand = TARGET_DOMAIN_TO_BRAND.get('approvalprep.com', {})
+        product_by_url = {x.get('url','').rstrip('/'): x for x in approval_brand.get('approved_links', [])}
+        for domain, anchor, href in outbound_targets:
+            if domain != 'approvalprep.com':
+                continue
+            meta = product_by_url.get(href.rstrip('/'))
+            if not meta:
+                errors.append(f'{rel}: Approval Prep destination has no registered product metadata: {href}')
+                continue
+            if not meta.get('destination_type') or not meta.get('product_id'):
+                errors.append(f'{rel}: Approval Prep destination missing destination_type/product_id: {href}')
+            topics = meta.get('topics') or []
+            if '*' not in topics and not any(topic.lower() in lower for topic in topics):
+                warnings.append(f'{rel}: Approval Prep product/topic fit should be reviewed: {href}')
+
+        # Approval Prep affirmative-claim boundaries. Boundary/disclaimer language is allowed.
+        if 'approvalprep.com' in lower or 'approval prep' in lower:
+            prohibited_patterns = [
+                r'approval prep (?:will |can )?repair(?:s)? your credit',
+                r'approval prep (?:will |can )?remove(?:s)? negative',
+                r'guaranteed (?:approval|deletion|score increase)',
+                r'raise your (?:credit )?score fast',
+                r'get approved today',
+                r'we contact (?:the )?(?:bureaus|creditors|landlords|lenders)',
+                r'(?:we|approval prep) (?:create|creates|provide|provides) (?:fake|fabricated|verified) (?:income )?documents'
+            ]
+            for pattern in prohibited_patterns:
+                if re.search(pattern, lower):
+                    errors.append(f'{rel}: prohibited Approval Prep claim: {pattern}')
+            if 'approval prep is not a credit-repair company' not in lower and 'approval prep does not repair credit' not in lower:
+                warnings.append(f'{rel}: Approval Prep page should state the no-credit-repair boundary clearly')
 
         # YMYL/spam phrase check.
         for phrase in BANNED_PHRASES:
