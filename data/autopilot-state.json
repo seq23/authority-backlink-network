@@ -48,7 +48,16 @@
     "a6bbcf78abc01547fffe7ba7ce9149b25b96b261246408ed73a491d55e8e9988",
     "8856ed86193913c3fa0279f94aafe8b8214ac988bef0dc71fd6db7eedba2f1c1",
     "ddc0e9609b82f2b6b3e52a24222fc0473057c72bb44eab84845c8e345bb74ca6",
-    "7a01d7b72c1f068422125f5156ff9af30490fb753282d01f1c6735662e478aef"
+    "7a01d7b72c1f068422125f5156ff9af30490fb753282d01f1c6735662e478aef",
+    "7ec324180e7ff2c8e0df18aa24aaf197a1b34ab72e6dc79967515178d5067ac1",
+    "d2a005e69a11fb7ba9043da205f02cf192a31ee86153ce4949a4322f3749c622",
+    "2f908d15271ea28d7a937fce6584cb1f03399b1008fde79ebfb7882058a47371",
+    "b845c7bc597afd87d7a01eb5ef101e5a60973e1e9ab133a0ee1d42cb82f6c134",
+    "299d1e3d07e771c197f164b35a23113f4f0d129e0c6538bbfec4d94a31832169",
+    "b16277f7518775b3c27339e4a56adde71c09a3898426c28248c20ca141c41de8",
+    "e73ddc9b2e5f3338e04da197cfffcff8356c8dafb4c45a8b4512d9f0b2ef2aa2",
+    "c54021e02aedb836d173195e2d7c2b8a9e44e726fdeab614dfa9b7aa76d13cec",
+    "2c2a50b03a0d7043e2d34af8b32640d6ccf653d50e2949b5eb6411be1e8c2c17"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -98,7 +107,16 @@
     "9baf30f48ba69444daccce77e6837a52d00cf33138f44a422eaa4abecd3bc628",
     "558c8eceb4ebde109ba0758ce497d9742c1078012667906d7e3cd0f097a94647",
     "5250b0278cac28987ffd8ee3daa363a8bb7d249bb8a8f70c8166eff74a8dfa45",
-    "855adcd1471004013ada721246a74113c79e8ea75937eb5c1d1dce4d3a976759"
+    "855adcd1471004013ada721246a74113c79e8ea75937eb5c1d1dce4d3a976759",
+    "da264bfe3c33f52a4e8c81caa69072af6790fdf39dd9e3d1b3bf9bb9d63f871e",
+    "68c69270e468706502ee76f9c53034d9ec4e45c5e64979522537a55ac6ae5970",
+    "9dffaec0d36e30eaba650bba7c2df2fc5263910175930d89441b50275e060b20",
+    "c70442087d91b20aa1a0379045c3f5ca05987a907e2b5c3621d9065f9b7f59e2",
+    "9138bafc81802bd2f711a947eb1d7348958936193ad0e3fb2480f985122a73b5",
+    "89da90857b06ece725aa73d40ab4b41b85561cef445caf1d89387c0272d7cdc2",
+    "32511c79f54ba62bf77fbbea50eb9df90f358414e4f86a50cfe37a6ea6dff84c",
+    "7ec3af2279352d6c8f2d964ee9297731709cbf2d4ceeddfedf4a5b8ca4caadff",
+    "81dadcdc477b5c564e6407e293bed6eccdae960a489e282f79c4a8786adb5124"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -148,7 +166,16 @@
     "Rental Application Packet: Beginner-Safe Red-Flag Checklist When Timing Matters",
     "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign",
     "Event Budget Planning: Operator-Grade Local/Resource Directory For Busy Operators",
-    "Compassion Fatigue Resources: Citation-Friendly Budget/Planning Note For Careful Decision-Makers"
+    "Compassion Fatigue Resources: Citation-Friendly Budget/Planning Note For Careful Decision-Makers",
+    "Bank Statement Explanation: Editorial Planning Checklist Before You Choose",
+    "Life Admin Letters: Human-First Operator Playbook When Timing Matters",
+    "Loan Explanation Letters: Editorial Buyer Guide Before You Sign",
+    "Apartment Application Paperwork: Beginner-Safe Comparison Guide Before You Pay",
+    "Life Admin Documents: Operator-Grade Planning Checklist When You Need To Ask Better Questions",
+    "Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers",
+    "Calendar Protection: Human-First Operator Playbook Before You Sign",
+    "Memphis Giftable Experiences: Aeo-Ready Decision Guide For First-Time Buyers",
+    "Regulated Provider Research: Citation-Friendly Budget/Planning Note For First-Time Buyers"
   ],
   "history": [
     {
@@ -414,6 +441,32 @@
     {
       "date": "2026-07-10",
       "day_index": 14,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-07-11",
+      "day_index": 15,
       "target_volume": 9,
       "generated": 9,
       "published": 9,
