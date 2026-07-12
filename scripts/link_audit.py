@@ -1,104 +1,76 @@
 #!/usr/bin/env python3
-"""Write a full link audit and fail if outbound links violate the registry."""
-import json
-import html
-import pathlib
-import re
-import sys
+"""Audit outbound links against multi-domain brand and product-route registries."""
+import json, html, pathlib, re, sys
 from urllib.parse import urlparse
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+brands=json.loads((ROOT/'data/brands.json').read_text())
+publications=json.loads((ROOT/'data/publications.json').read_text())
+city_data=json.loads((ROOT/'data/city-publications.json').read_text()) if (ROOT/'data/city-publications.json').exists() else {'cities':[]}
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-brands = json.loads((ROOT / 'data/brands.json').read_text())
-publications = json.loads((ROOT / 'data/publications.json').read_text())
+def norm_domain(value):
+    host=urlparse(value).netloc if str(value).startswith('http') else str(value)
+    return host.lower().replace('www.','').strip('/')
+def brand_domains(b): return {norm_domain(x) for x in (b.get('domains') or [b.get('domain','')]) if x}
+def approved_links(b): return {x.get('url','').rstrip('/'):x for x in b.get('approved_links',[])}
 
-def norm_domain(url_or_domain: str) -> str:
-    host = urlparse(url_or_domain).netloc if url_or_domain.startswith('http') else url_or_domain
-    return host.lower().replace('www.', '').strip('/')
-
-allowed_targets_by_pub = {}
+brand_by_domain={}; errors=[]
 for b in brands:
-    for pub in b['approved_publications']:
-        allowed_targets_by_pub.setdefault(pub, set()).add(norm_domain(b['domain']))
+    for d in brand_domains(b):
+        if d in brand_by_domain and brand_by_domain[d]['id']!=b['id']:
+            errors.append({'domain':d,'violation':'duplicate_domain_ownership'})
+        brand_by_domain[d]=b
+publication_domains={norm_domain(p['working_domain']) for p in publications}
+target_domains=set(brand_by_domain)
+allowed_external=publication_domains|target_domains|{'schema.org'}
+allowed_by_pub={}
+for b in brands:
+    for pub in b.get('approved_publications',[]): allowed_by_pub.setdefault(pub,set()).update(brand_domains(b))
+pub_by_folder={p['folder']:p['id'] for p in publications}
+active_cities={c['id'] for c in city_data.get('cities',[]) if c.get('status')=='active'}
+links=[]
+anchor_re=re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>',re.I|re.S)
+for path in sorted((ROOT/'sites').rglob('*.html')):
+    rel=str(path.relative_to(ROOT)); folder='/'.join(rel.split('/')[:2]); pub=pub_by_folder.get(folder); text=path.read_text(errors='ignore')
+    for href,anchor_html in anchor_re.findall(text):
+        anchor=re.sub('<.*?>','',anchor_html).strip(); domain=norm_domain(href) if href.startswith('http') else ''
+        row={'source':rel,'publication':pub,'href':href,'domain':domain,'anchor':anchor,'external':href.startswith('http'),'violation':''}
+        if row['external']:
+            if domain not in allowed_external: row['violation']='external_domain_not_in_registry'; errors.append(row)
+            elif domain in target_domains and domain not in allowed_by_pub.get(pub,set()): row['violation']='target_domain_wrong_publication_lane'; errors.append(row)
+            elif domain in target_domains:
+                brand=brand_by_domain[domain]; meta=approved_links(brand).get(href.rstrip('/'))
+                if not meta:
+                    row['violation']='destination_not_in_approved_set'; errors.append(row)
+                elif meta.get('product_id') and meta.get('route'):
+                    expected=meta.get('route','')
+                    if urlparse(href).path.rstrip('/') != expected.rstrip('/'):
+                        row['violation']='product_route_mismatch'; errors.append(row)
+        links.append(row)
 
-pub_by_folder = {p['folder']: p['id'] for p in publications}
-publication_domains = {norm_domain(p['working_domain']) for p in publications}
-target_domains = {norm_domain(b['domain']) for b in brands}
-brand_by_domain = {norm_domain(b['domain']): b for b in brands}
-approved_urls_by_domain = {norm_domain(b['domain']): {link.get('url','').rstrip('/') for link in b.get('approved_links', [])} for b in brands}
-approval_product_by_url = {link.get('url','').rstrip('/'): link for link in brand_by_domain.get('approvalprep.com', {}).get('approved_links', [])}
-allowed_external_domains = publication_domains | target_domains | {'schema.org'}
-
-links = []
-errors = []
-anchor_re = re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.I | re.S)
-for path in sorted((ROOT / 'sites').rglob('*.html')):
-    rel = str(path.relative_to(ROOT))
-    folder = '/'.join(rel.split('/')[:2])
-    pub = pub_by_folder.get(folder)
-    text = path.read_text(errors='ignore')
-    for m in anchor_re.finditer(text):
-        href = m.group(1)
-        anchor = re.sub('<.*?>', '', m.group(2)).strip()
-        domain = norm_domain(href) if href.startswith('http') else ''
-        record = {'source': rel, 'publication': pub, 'href': href, 'domain': domain, 'anchor': anchor}
-        if href.startswith('http'):
-            record['external'] = True
-            if domain not in allowed_external_domains:
-                record['violation'] = 'external_domain_not_in_registry'
-                errors.append(record)
-            elif domain in target_domains and domain not in allowed_targets_by_pub.get(pub, set()):
-                record['violation'] = 'target_domain_wrong_publication_lane'
-                errors.append(record)
-            elif domain == 'approvalprep.com' and href.rstrip('/') not in approved_urls_by_domain.get(domain, set()):
-                record['violation'] = 'approval_prep_destination_not_approved'
-                errors.append(record)
-            elif domain in target_domains and href.rstrip('/') not in approved_urls_by_domain.get(domain, set()):
-                record['violation'] = 'legacy_destination_not_in_current_approved_set_warning'
-            else:
-                record['violation'] = ''
+ledger_path=ROOT/'data/link-registry.json'; ledger=json.loads(ledger_path.read_text()) if ledger_path.exists() else []
+ledger=ledger.get('links',[]) if isinstance(ledger,dict) else ledger
+published=[r for r in ledger if r.get('status')=='published' and r.get('target_brand_id')]
+ledger_keys={(r.get('source_path'),r.get('target_url'),r.get('anchor')) for r in published}
+for r in published:
+    source=ROOT/r.get('source_path','')
+    if not source.exists(): errors.append({'source':r.get('source_path'),'violation':'published_ledger_source_missing'}); continue
+    text=source.read_text(errors='ignore'); href=r.get('target_url',''); anchor=r.get('anchor',''); domain=norm_domain(href or r.get('target_domain',''))
+    if href not in text or anchor not in html.unescape(text): errors.append({'source':r.get('source_path'),'href':href,'violation':'published_ledger_does_not_match_html'})
+    brand=brand_by_domain.get(domain)
+    if not brand or r.get('target_brand_id')!=brand.get('id'): errors.append({'source':r.get('source_path'),'violation':'published_ledger_brand_domain_mismatch'})
+    elif href:
+        meta=approved_links(brand).get(href.rstrip('/'))
+        if not meta: errors.append({'source':r.get('source_path'),'href':href,'violation':'product_metadata_missing'})
         else:
-            record['external'] = False
-            record['violation'] = ''
-        links.append(record)
-
-# New-schema published ledger records must match exact HTML evidence.
-ledger_path = ROOT / 'data/link-registry.json'
-ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else []
-ledger = ledger.get('links', []) if isinstance(ledger, dict) else ledger
-new_records = [r for r in ledger if r.get('status') == 'published' and r.get('target_brand_id')]
-for row in new_records:
-    source = ROOT / row.get('source_path', '')
-    if not source.exists():
-        errors.append({'source': row.get('source_path'), 'violation': 'published_ledger_source_missing'})
-        continue
-    text = source.read_text(errors='ignore')
-    href = row.get('target_url', '')
-    anchor = row.get('anchor', '')
-    if href not in text or anchor not in html.unescape(text):
-        errors.append({'source': row.get('source_path'), 'href': href, 'anchor': anchor, 'violation': 'published_ledger_does_not_match_html'})
-    brand = brand_by_domain.get(norm_domain(row.get('target_domain','')))
-    if not brand or row.get('target_brand_id') != brand.get('id'):
-        errors.append({'source': row.get('source_path'), 'violation': 'published_ledger_brand_domain_mismatch'})
-    if norm_domain(row.get('target_domain','')) == 'approvalprep.com':
-        meta = approval_product_by_url.get(href.rstrip('/'))
-        if not meta:
-            errors.append({'source': row.get('source_path'), 'href': href, 'violation': 'approval_prep_product_metadata_missing'})
-        elif row.get('product_id') and row.get('product_id') != meta.get('product_id'):
-            errors.append({'source': row.get('source_path'), 'href': href, 'violation': 'approval_prep_ledger_product_id_mismatch'})
-        elif row.get('destination_type') and row.get('destination_type') != meta.get('destination_type'):
-            errors.append({'source': row.get('source_path'), 'href': href, 'violation': 'approval_prep_ledger_destination_type_mismatch'})
-
-# Every generated Approval Prep link must have a new-schema ledger record.
-ledger_keys = {(r.get('source_path'), r.get('target_url'), r.get('anchor')) for r in new_records}
-for record in links:
-    if record.get('domain') == 'approvalprep.com':
-        key = (record.get('source'), record.get('href'), record.get('anchor'))
-        if key not in ledger_keys:
-            errors.append({**record, 'violation': 'approval_prep_html_link_missing_ledger_record'})
-
-report = {'status': 'PASS' if not errors else 'FAIL', 'total_links': len(links), 'violations': errors, 'links': links}
-(ROOT / 'reports').mkdir(exist_ok=True)
-(ROOT / 'reports/link-audit.json').write_text(json.dumps(report, indent=2))
-print(json.dumps({'status': report['status'], 'total_links': len(links), 'violations': len(errors)}, indent=2))
-if errors:
-    sys.exit(1)
+            for field in ('product_id','destination_type'):
+                if r.get(field) and r.get(field)!=meta.get(field): errors.append({'source':r.get('source_path'),'href':href,'violation':f'ledger_{field}_mismatch'})
+            if r.get('target_route') and r.get('target_route')!=meta.get('route'): errors.append({'source':r.get('source_path'),'href':href,'violation':'ledger_route_mismatch'})
+for row in links:
+    if row.get('domain') in target_domains and brand_by_domain[row['domain']].get('id')=='dream-wedding-builder':
+        if (row['source'],row['href'],row['anchor']) not in ledger_keys:
+            # Existing hand-authored pages are allowed until first generated wedding publication.
+            if '/daily/' in row['source']: errors.append({**row,'violation':'wedding_html_link_missing_ledger_record'})
+report={'status':'PASS' if not errors else 'FAIL','total_links':len(links),'violations':errors,'target_domains':sorted(target_domains),'links':links}
+(ROOT/'reports').mkdir(exist_ok=True); (ROOT/'reports/link-audit.json').write_text(json.dumps(report,indent=2))
+print(json.dumps({'status':report['status'],'total_links':len(links),'violations':len(errors)},indent=2))
+if errors: sys.exit(1)

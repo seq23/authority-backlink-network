@@ -7,14 +7,18 @@ Designed for three publication sites already deployed by Cloudflare Git integrat
 import os, json, re, hashlib, random, html, urllib.request
 from pathlib import Path
 from datetime import date, datetime, timezone
+from urllib.parse import urlparse
+from lib.authority_core import atomic_write_json, read_json
 
 ROOT = Path(__file__).resolve().parents[1]
 PANTRY = json.loads((ROOT/'content-bank/yearly-pantry.json').read_text(encoding='utf-8'))
 SCALING = json.loads((ROOT/'content-bank/scaling-policy.json').read_text(encoding='utf-8'))
+GROWTH = json.loads((ROOT/'data/brand-growth-profiles.json').read_text(encoding='utf-8'))
+GROWTH_BY_BRAND = {x['brand_id']: x for x in GROWTH.get('profiles', [])}
 STATE_PATH = ROOT/'data/autopilot-state.json'
 REPORT_DIR = ROOT/'reports'
 REPORT_DIR.mkdir(exist_ok=True)
-TODAY = date.today().isoformat()
+TODAY = os.getenv('BUILD_DATE') or date.today().isoformat()
 DEFAULT_STATE = {
     'launch_date': TODAY,
     'published_hashes': [],
@@ -22,6 +26,10 @@ DEFAULT_STATE = {
     'published_titles': [],
     'history': []
 }
+
+PUBLICATIONS = json.loads((ROOT/'data/publications.json').read_text(encoding='utf-8'))
+PUBLICATION_BY_FOLDER = {p['folder'].split('/')[-1]: p for p in PUBLICATIONS}
+PUBLICATION_BY_ID = {p['id']: p for p in PUBLICATIONS}
 
 STOP_PHRASES = [
     'in today\'s fast-paced world', 'game-changer', 'unlock your potential',
@@ -35,20 +43,8 @@ YMYL_TERMS = [
 ]
 
 
-def read_json(path, default):
-    p = Path(path)
-    if not p.exists():
-        return default
-    try:
-        return json.loads(p.read_text(encoding='utf-8'))
-    except Exception:
-        return default
-
-
 def write_json(path, data):
-    p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding='utf-8')
+    atomic_write_json(Path(path), data)
 
 
 def stable_int(value):
@@ -154,8 +150,45 @@ def link_matches_cluster(link, cluster):
 def product_match_strength(link, cluster):
     if not link_matches_cluster(link, cluster):
         return -1
-    return {'paid_product': 40, 'free_creation_tool': 30, 'educational_guide': 20, 'trust_boundary': 10}.get(link.get('destination_type'), 0)
+    base = {'paid_product': 40, 'free_tool': 35, 'free_creation_tool': 35, 'educational_guide': 20, 'trust_boundary': 10}.get(link.get('destination_type'), 0)
+    return base + (5 if link.get('preferred') else 0)
 
+
+
+def published_counts_by_brand():
+    records = read_json(ROOT/'data/link-registry.json', [])
+    if isinstance(records, dict):
+        records = records.get('links', [])
+    counts = {}
+    for row in records:
+        if row.get('status') in {'published','rendered','live_verified','discoverable','indexed'}:
+            bid = row.get('target_brand_id')
+            if bid:
+                counts[bid] = counts.get(bid, 0) + 1
+    return counts
+
+
+def choose_fair_target(pub_key, slot, counts):
+    """Choose the largest weighted portfolio deficit without forcing a link outside topic fit.
+
+    Targets guide scheduling only. The page generator still selects a contextually eligible
+    cluster and the validators may reject unsafe or contradictory output.
+    """
+    targets = [t for t in PANTRY['publications'][pub_key].get('targets', []) if isinstance(t, dict) and not t.get('priority')]
+    if not targets:
+        return None
+    scored = []
+    for target in targets:
+        bid = target.get('brand_id','')
+        profile = GROWTH_BY_BRAND.get(bid, {})
+        monthly = max(1, int(profile.get('target_authority_pages_per_month', 1)))
+        weight = float(profile.get('scheduler_weight', 1))
+        current = counts.get(bid, 0)
+        # Lower coverage relative to the configured target receives more scheduling weight.
+        deficit = weight * monthly / (current + 1)
+        tie = stable_int(f'{TODAY}|{pub_key}|{slot}|{bid}') / 10**15
+        scored.append((deficit + tie, target))
+    return max(scored, key=lambda x: x[0])[1]
 
 def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     pub = PANTRY['publications'][pub_key]
@@ -174,12 +207,16 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     candidate_links = [link for link in target_cfg.get('approved_links', []) if link_matches_cluster(link, cluster)]
     if not candidate_links:
         candidate_links = target_cfg.get('approved_links', [])
-    if target_cfg.get('brand_id') == 'approval-prep':
+    if any(isinstance(link, dict) and link.get('product_id') for link in candidate_links):
         strongest = max((product_match_strength(link, cluster) for link in candidate_links), default=-1)
         candidate_links = [link for link in candidate_links if product_match_strength(link, cluster) == strongest]
+        preferred = [link for link in candidate_links if link.get('preferred')]
+        if preferred:
+            candidate_links = preferred
     selected_link = pick(candidate_links, seed+'approved-link')
-    target_domain = target_cfg.get('domain', '')
-    target_url = selected_link.get('url', f'https://{target_domain}') if isinstance(selected_link, dict) else f'https://{target_domain}'
+    fallback_domain = target_cfg.get('domain', '')
+    target_url = selected_link.get('url', f'https://{fallback_domain}') if isinstance(selected_link, dict) else f'https://{fallback_domain}'
+    target_domain = urlparse(target_url).netloc.replace('www.','') if target_url.startswith('http') else fallback_domain
     anchor = selected_link.get('anchor', target_cfg.get('brand', target_domain)) if isinstance(selected_link, dict) else target_cfg.get('brand', target_domain)
     brand = target_cfg.get('brand', target_domain)
     brand_id = target_cfg.get('brand_id', '')
@@ -194,6 +231,9 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
         'product_id': selected_link.get('product_id','') if isinstance(selected_link, dict) else '',
         'product_name': selected_link.get('product_name','') if isinstance(selected_link, dict) else '',
         'product_message': selected_link.get('product_message','') if isinstance(selected_link, dict) else '',
+        'target_route': selected_link.get('route','') if isinstance(selected_link, dict) else '',
+        'preferred_domain': selected_link.get('preferred_domain','') if isinstance(selected_link, dict) else '',
+        'used_preferred_domain': bool(selected_link.get('preferred')) if isinstance(selected_link, dict) else False,
         'signature': signature
     }
 
@@ -312,8 +352,16 @@ def update_sitemap(site_path, domain):
         rel = f.relative_to(site).as_posix()
         loc = f'https://{domain}/' if rel == 'index.html' else f'https://{domain}/{rel}'
         urls.append(f'<url><loc>{loc}</loc><lastmod>{TODAY}</lastmod></url>')
-    (site/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>', encoding='utf-8')
-    (site/'llms.txt').write_text(f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {TODAY}.\n\nSitemap: https://{domain}/sitemap.xml\n', encoding='utf-8')
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
+    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {TODAY}.\n\nSitemap: https://{domain}/sitemap.xml\n'
+    tmp = site/'sitemap.xml.tmp'
+    with tmp.open('w', encoding='utf-8', newline='\n') as handle:
+        handle.write(sitemap)
+    tmp.replace(site/'sitemap.xml')
+    tmp = site/'llms.txt.tmp'
+    with tmp.open('w', encoding='utf-8', newline='\n') as handle:
+        handle.write(llms)
+    tmp.replace(site/'llms.txt')
 
 
 def main():
@@ -342,7 +390,12 @@ def main():
     min_score = int(os.getenv('MIN_BASE_PUBLISH_SCORE', '60'))
     max_dup = float(os.getenv('MAX_DUPLICATE_SIMILARITY', '0.15'))
 
-    jobs = priority_jobs + [(pubs[i % len(pubs)], None) for i in range(base_volume)]
+    portfolio_counts = published_counts_by_brand()
+    base_jobs = []
+    for i in range(base_volume):
+        pub_key = pubs[i % len(pubs)]
+        base_jobs.append((pub_key, choose_fair_target(pub_key, i, portfolio_counts)))
+    jobs = priority_jobs + base_jobs
     jobs = jobs[:volume]
     for i, (pub_key, target_override) in enumerate(jobs):
         chosen = None
@@ -380,11 +433,14 @@ def main():
         outdir = ROOT/site_path/'daily'
         outdir.mkdir(parents=True, exist_ok=True)
         fname = f'{TODAY}-{slug}.html'
-        (outdir/fname).write_text(page, encoding='utf-8')
+        tmp_page = outdir/(fname + '.tmp')
+        with tmp_page.open('w', encoding='utf-8', newline='\n') as handle:
+            handle.write(page)
+        tmp_page.replace(outdir/fname)
         state['published_hashes'].append(chash)
         state['published_signatures'].append(chosen['signature'])
         state['published_titles'].append(chosen['title'])
-        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name','')}
+        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name',''), 'target_route': chosen.get('target_route',''), 'preferred_domain': chosen.get('preferred_domain',''), 'used_preferred_domain': chosen.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)
 
@@ -396,7 +452,8 @@ def main():
     linkreg = read_json(ROOT/'data/link-registry.json', [])
     if isinstance(linkreg, dict): linkreg = linkreg.get('links', [])
     for item in published:
-        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': item['publication'].replace('-operator','').replace('-local','').replace('-resources',''), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'link_type': 'owned-authority-citation', 'status': 'published', 'score': item['score']})
+        pub_meta = PUBLICATION_BY_FOLDER.get(item['publication'], {})
+        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': pub_meta.get('id', item['publication']), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'target_route': item.get('target_route',''), 'preferred_domain': item.get('preferred_domain',''), 'used_preferred_domain': item.get('used_preferred_domain',False), 'publication_family_id': pub_meta.get('publication_family_id',''), 'city': pub_meta.get('city',''), 'link_type': 'owned-authority-citation', 'status': 'published', 'score': item['score']})
     write_json(ROOT/'data/link-registry.json', linkreg)
 
     social = read_json(ROOT/'data/social-queue.json', [])
@@ -433,6 +490,13 @@ def main():
             body = f"{hooks[t_idx % len(hooks)]} {item['title']} [{t_idx + 1}]"
         social.append({'date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
     write_json(ROOT/'data/social-queue.json', social)
+
+    # Refresh the portfolio dashboard after canonical state is written.
+    try:
+        import subprocess
+        subprocess.run([os.sys.executable, 'scripts/citation_control_plane.py', 'dashboard'], cwd=ROOT, check=False, capture_output=True, text=True)
+    except Exception:
+        pass
 
     run = {'date': TODAY, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'stats_before': stats}
     state.setdefault('history', []).append(run)

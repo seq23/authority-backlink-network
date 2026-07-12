@@ -19,3 +19,7 @@
 ## Approval Prep product model
 
 Approval Prep provides editable letters and downloadable document kits for credit issues, income and employment, renting, loans, business funding, and everyday records. Primary citations should point to the matching kit or free drafting flow, not default to generic checklists.
+
+
+## Dream Wedding Builder
+One brand owns four root domains and five shared product routes. See `docs/DREAM-WEDDING-BUILDER-AND-CITY-VENDOR.md`.

@@ -1,0 +1,17 @@
+{
+  "version": "4.4.1",
+  "status": "PASS",
+  "errors_remaining": 0,
+  "repairs": [
+    "Replaced handwritten validation chain with a one-level profile orchestrator.",
+    "PR workflow now runs the complete release profile.",
+    "Social dry-run fixtures now exercise both LinkedIn and X and prove queue non-mutation.",
+    "Missing required social secrets block before any platform post attempt.",
+    "Malformed social queue JSON now fails instead of silently becoming an empty queue.",
+    "Social draft generation preserves posting history and operator decisions.",
+    "Critical JSON writes are atomic.",
+    "Removed Memphis-specific backlink-ledger metadata hardcoding in autopilot.",
+    "Warnings remain nonblocking; hard failures are limited to real release/safety/integrity risks."
+  ],
+  "validation_receipt": "reports/validation-full.json"
+}

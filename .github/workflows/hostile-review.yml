@@ -1,20 +1,27 @@
-name: Hostile Review
+name: Release Validation
 on:
   pull_request:
   push:
     branches: [ main ]
 jobs:
-  hostile-review:
+  validate-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python3 scripts/hostile_review.py
-      - run: python3 scripts/link_audit.py
+      - name: Restore validation cache
+        uses: actions/cache@v4
+        with:
+          path: .validation-cache
+          key: authority-validation-v4.5-${{ runner.os }}-py311-${{ hashFiles('package-lock.json', 'validation/**', 'scripts/page_validation.py', 'scripts/validate.py') }}
+          restore-keys: |
+            authority-validation-v4.5-${{ runner.os }}-py311-
+      - name: Run one-level release validation
+        run: python3 scripts/validate.py release
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: authority-network-review-reports
+          name: authority-network-validation-receipts
           path: reports/

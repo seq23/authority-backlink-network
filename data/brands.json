@@ -672,5 +672,628 @@
       "third-party representation"
     ],
     "entity_description": "self-service editable letters, downloadable document kits, checklists, and application packets users complete and send themselves"
+  },
+  {
+    "id": "dream-wedding-builder",
+    "name": "Dream Wedding Builder",
+    "domain": "weddingchecklistpdf.com",
+    "domains": [
+      "weddingchecklistpdf.com",
+      "weddingbudgetspreadsheet.com",
+      "weddingtimelinetemplate.com",
+      "weddingseatingchartmaker.com"
+    ],
+    "url": "https://weddingchecklistpdf.com",
+    "lane": "memphis",
+    "category": "wedding planning tools, templates, and interactive planning resources",
+    "compliance": "consumer-commercial",
+    "publication_family_id": "city-vendor",
+    "link_policy": "City Vendor publications may cite one directly relevant Dream Wedding Builder product by default; no fake rankings, reviews, or guaranteed outcomes.",
+    "approved_publications": [
+      "memphis"
+    ],
+    "products": [
+      {
+        "id": "free-dream-wedding-builder",
+        "name": "Free Dream Wedding Builder",
+        "route": "/build",
+        "destination_type": "free_tool",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "topics": [
+          "wedding planning gaps",
+          "getting started with wedding planning",
+          "wedding planning foundation",
+          "organizing a wedding plan",
+          "wedding planning categories"
+        ],
+        "anchors": [
+          "Free Dream Wedding Builder",
+          "free wedding planning builder",
+          "identify gaps in the wedding plan"
+        ]
+      },
+      {
+        "id": "wedding-checklist-pdf",
+        "name": "Wedding Checklist PDF",
+        "route": "/products/checklist-pdf",
+        "destination_type": "paid_product",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "topics": [
+          "wedding planning deadlines",
+          "date-based wedding checklist",
+          "wedding responsibilities",
+          "wedding planning sequence",
+          "wedding-week checklist"
+        ],
+        "anchors": [
+          "Wedding Checklist PDF",
+          "date-based wedding planning checklist",
+          "build deadlines around the wedding date"
+        ]
+      },
+      {
+        "id": "wedding-budget-spreadsheet",
+        "name": "Wedding Budget Spreadsheet",
+        "route": "/products/budget-spreadsheet",
+        "destination_type": "paid_product",
+        "preferred_domain": "weddingbudgetspreadsheet.com",
+        "topics": [
+          "wedding budget planning",
+          "vendor deposits",
+          "vendor balances",
+          "wedding payment schedule",
+          "family contributions",
+          "wedding cash flow",
+          "taxes and gratuities"
+        ],
+        "anchors": [
+          "Wedding Budget Spreadsheet",
+          "editable wedding budget spreadsheet",
+          "organize vendor deposits and balances"
+        ]
+      },
+      {
+        "id": "wedding-timeline-template",
+        "name": "Wedding Timeline Template",
+        "route": "/products/timeline-template",
+        "destination_type": "paid_product",
+        "preferred_domain": "weddingtimelinetemplate.com",
+        "topics": [
+          "wedding-day timeline",
+          "vendor schedule",
+          "venue coordination",
+          "photographer timeline",
+          "ceremony schedule",
+          "reception schedule",
+          "transportation timing"
+        ],
+        "anchors": [
+          "Wedding Timeline Template",
+          "wedding-day timeline template",
+          "coordinate the venue and vendor schedule"
+        ]
+      },
+      {
+        "id": "wedding-seating-chart-maker",
+        "name": "Wedding Seating Chart Maker",
+        "route": "/products/seating-chart-maker",
+        "destination_type": "paid_product",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "topics": [
+          "wedding seating chart",
+          "reception table assignments",
+          "household grouping",
+          "meal selections",
+          "food allergies",
+          "accessibility needs",
+          "unassigned guests",
+          "plus-ones"
+        ],
+        "anchors": [
+          "Wedding Seating Chart Maker",
+          "reception seating-chart tool",
+          "identify guests who still need a table"
+        ]
+      }
+    ],
+    "approved_links": [
+      {
+        "url": "https://weddingchecklistpdf.com/build",
+        "destination_type": "free_tool",
+        "product_id": "free-dream-wedding-builder",
+        "product_name": "Free Dream Wedding Builder",
+        "route": "/build",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": true,
+        "anchor": "Free Dream Wedding Builder",
+        "anchor_options": [
+          "Free Dream Wedding Builder",
+          "free wedding planning builder",
+          "identify gaps in the wedding plan"
+        ],
+        "topics": [
+          "wedding planning gaps",
+          "getting started with wedding planning",
+          "wedding planning foundation",
+          "organizing a wedding plan",
+          "wedding planning categories"
+        ],
+        "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/build",
+        "destination_type": "free_tool",
+        "product_id": "free-dream-wedding-builder",
+        "product_name": "Free Dream Wedding Builder",
+        "route": "/build",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "free wedding planning builder",
+        "anchor_options": [
+          "Free Dream Wedding Builder",
+          "free wedding planning builder",
+          "identify gaps in the wedding plan"
+        ],
+        "topics": [
+          "wedding planning gaps",
+          "getting started with wedding planning",
+          "wedding planning foundation",
+          "organizing a wedding plan",
+          "wedding planning categories"
+        ],
+        "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/build",
+        "destination_type": "free_tool",
+        "product_id": "free-dream-wedding-builder",
+        "product_name": "Free Dream Wedding Builder",
+        "route": "/build",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "free wedding planning builder",
+        "anchor_options": [
+          "Free Dream Wedding Builder",
+          "free wedding planning builder",
+          "identify gaps in the wedding plan"
+        ],
+        "topics": [
+          "wedding planning gaps",
+          "getting started with wedding planning",
+          "wedding planning foundation",
+          "organizing a wedding plan",
+          "wedding planning categories"
+        ],
+        "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/build",
+        "destination_type": "free_tool",
+        "product_id": "free-dream-wedding-builder",
+        "product_name": "Free Dream Wedding Builder",
+        "route": "/build",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "free wedding planning builder",
+        "anchor_options": [
+          "Free Dream Wedding Builder",
+          "free wedding planning builder",
+          "identify gaps in the wedding plan"
+        ],
+        "topics": [
+          "wedding planning gaps",
+          "getting started with wedding planning",
+          "wedding planning foundation",
+          "organizing a wedding plan",
+          "wedding planning categories"
+        ],
+        "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+        "destination_type": "paid_product",
+        "product_id": "wedding-checklist-pdf",
+        "product_name": "Wedding Checklist PDF",
+        "route": "/products/checklist-pdf",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": true,
+        "anchor": "Wedding Checklist PDF",
+        "anchor_options": [
+          "Wedding Checklist PDF",
+          "date-based wedding planning checklist",
+          "build deadlines around the wedding date"
+        ],
+        "topics": [
+          "wedding planning deadlines",
+          "date-based wedding checklist",
+          "wedding responsibilities",
+          "wedding planning sequence",
+          "wedding-week checklist"
+        ],
+        "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/products/checklist-pdf",
+        "destination_type": "paid_product",
+        "product_id": "wedding-checklist-pdf",
+        "product_name": "Wedding Checklist PDF",
+        "route": "/products/checklist-pdf",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "date-based wedding planning checklist",
+        "anchor_options": [
+          "Wedding Checklist PDF",
+          "date-based wedding planning checklist",
+          "build deadlines around the wedding date"
+        ],
+        "topics": [
+          "wedding planning deadlines",
+          "date-based wedding checklist",
+          "wedding responsibilities",
+          "wedding planning sequence",
+          "wedding-week checklist"
+        ],
+        "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/products/checklist-pdf",
+        "destination_type": "paid_product",
+        "product_id": "wedding-checklist-pdf",
+        "product_name": "Wedding Checklist PDF",
+        "route": "/products/checklist-pdf",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "date-based wedding planning checklist",
+        "anchor_options": [
+          "Wedding Checklist PDF",
+          "date-based wedding planning checklist",
+          "build deadlines around the wedding date"
+        ],
+        "topics": [
+          "wedding planning deadlines",
+          "date-based wedding checklist",
+          "wedding responsibilities",
+          "wedding planning sequence",
+          "wedding-week checklist"
+        ],
+        "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/products/checklist-pdf",
+        "destination_type": "paid_product",
+        "product_id": "wedding-checklist-pdf",
+        "product_name": "Wedding Checklist PDF",
+        "route": "/products/checklist-pdf",
+        "preferred_domain": "weddingchecklistpdf.com",
+        "preferred": false,
+        "anchor": "date-based wedding planning checklist",
+        "anchor_options": [
+          "Wedding Checklist PDF",
+          "date-based wedding planning checklist",
+          "build deadlines around the wedding date"
+        ],
+        "topics": [
+          "wedding planning deadlines",
+          "date-based wedding checklist",
+          "wedding responsibilities",
+          "wedding planning sequence",
+          "wedding-week checklist"
+        ],
+        "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/products/budget-spreadsheet",
+        "destination_type": "paid_product",
+        "product_id": "wedding-budget-spreadsheet",
+        "product_name": "Wedding Budget Spreadsheet",
+        "route": "/products/budget-spreadsheet",
+        "preferred_domain": "weddingbudgetspreadsheet.com",
+        "preferred": false,
+        "anchor": "editable wedding budget spreadsheet",
+        "anchor_options": [
+          "Wedding Budget Spreadsheet",
+          "editable wedding budget spreadsheet",
+          "organize vendor deposits and balances"
+        ],
+        "topics": [
+          "wedding budget planning",
+          "vendor deposits",
+          "vendor balances",
+          "wedding payment schedule",
+          "family contributions",
+          "wedding cash flow",
+          "taxes and gratuities"
+        ],
+        "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+        "destination_type": "paid_product",
+        "product_id": "wedding-budget-spreadsheet",
+        "product_name": "Wedding Budget Spreadsheet",
+        "route": "/products/budget-spreadsheet",
+        "preferred_domain": "weddingbudgetspreadsheet.com",
+        "preferred": true,
+        "anchor": "Wedding Budget Spreadsheet",
+        "anchor_options": [
+          "Wedding Budget Spreadsheet",
+          "editable wedding budget spreadsheet",
+          "organize vendor deposits and balances"
+        ],
+        "topics": [
+          "wedding budget planning",
+          "vendor deposits",
+          "vendor balances",
+          "wedding payment schedule",
+          "family contributions",
+          "wedding cash flow",
+          "taxes and gratuities"
+        ],
+        "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/products/budget-spreadsheet",
+        "destination_type": "paid_product",
+        "product_id": "wedding-budget-spreadsheet",
+        "product_name": "Wedding Budget Spreadsheet",
+        "route": "/products/budget-spreadsheet",
+        "preferred_domain": "weddingbudgetspreadsheet.com",
+        "preferred": false,
+        "anchor": "editable wedding budget spreadsheet",
+        "anchor_options": [
+          "Wedding Budget Spreadsheet",
+          "editable wedding budget spreadsheet",
+          "organize vendor deposits and balances"
+        ],
+        "topics": [
+          "wedding budget planning",
+          "vendor deposits",
+          "vendor balances",
+          "wedding payment schedule",
+          "family contributions",
+          "wedding cash flow",
+          "taxes and gratuities"
+        ],
+        "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/products/budget-spreadsheet",
+        "destination_type": "paid_product",
+        "product_id": "wedding-budget-spreadsheet",
+        "product_name": "Wedding Budget Spreadsheet",
+        "route": "/products/budget-spreadsheet",
+        "preferred_domain": "weddingbudgetspreadsheet.com",
+        "preferred": false,
+        "anchor": "editable wedding budget spreadsheet",
+        "anchor_options": [
+          "Wedding Budget Spreadsheet",
+          "editable wedding budget spreadsheet",
+          "organize vendor deposits and balances"
+        ],
+        "topics": [
+          "wedding budget planning",
+          "vendor deposits",
+          "vendor balances",
+          "wedding payment schedule",
+          "family contributions",
+          "wedding cash flow",
+          "taxes and gratuities"
+        ],
+        "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/products/timeline-template",
+        "destination_type": "paid_product",
+        "product_id": "wedding-timeline-template",
+        "product_name": "Wedding Timeline Template",
+        "route": "/products/timeline-template",
+        "preferred_domain": "weddingtimelinetemplate.com",
+        "preferred": false,
+        "anchor": "wedding-day timeline template",
+        "anchor_options": [
+          "Wedding Timeline Template",
+          "wedding-day timeline template",
+          "coordinate the venue and vendor schedule"
+        ],
+        "topics": [
+          "wedding-day timeline",
+          "vendor schedule",
+          "venue coordination",
+          "photographer timeline",
+          "ceremony schedule",
+          "reception schedule",
+          "transportation timing"
+        ],
+        "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/products/timeline-template",
+        "destination_type": "paid_product",
+        "product_id": "wedding-timeline-template",
+        "product_name": "Wedding Timeline Template",
+        "route": "/products/timeline-template",
+        "preferred_domain": "weddingtimelinetemplate.com",
+        "preferred": false,
+        "anchor": "wedding-day timeline template",
+        "anchor_options": [
+          "Wedding Timeline Template",
+          "wedding-day timeline template",
+          "coordinate the venue and vendor schedule"
+        ],
+        "topics": [
+          "wedding-day timeline",
+          "vendor schedule",
+          "venue coordination",
+          "photographer timeline",
+          "ceremony schedule",
+          "reception schedule",
+          "transportation timing"
+        ],
+        "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/products/timeline-template",
+        "destination_type": "paid_product",
+        "product_id": "wedding-timeline-template",
+        "product_name": "Wedding Timeline Template",
+        "route": "/products/timeline-template",
+        "preferred_domain": "weddingtimelinetemplate.com",
+        "preferred": true,
+        "anchor": "Wedding Timeline Template",
+        "anchor_options": [
+          "Wedding Timeline Template",
+          "wedding-day timeline template",
+          "coordinate the venue and vendor schedule"
+        ],
+        "topics": [
+          "wedding-day timeline",
+          "vendor schedule",
+          "venue coordination",
+          "photographer timeline",
+          "ceremony schedule",
+          "reception schedule",
+          "transportation timing"
+        ],
+        "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/products/timeline-template",
+        "destination_type": "paid_product",
+        "product_id": "wedding-timeline-template",
+        "product_name": "Wedding Timeline Template",
+        "route": "/products/timeline-template",
+        "preferred_domain": "weddingtimelinetemplate.com",
+        "preferred": false,
+        "anchor": "wedding-day timeline template",
+        "anchor_options": [
+          "Wedding Timeline Template",
+          "wedding-day timeline template",
+          "coordinate the venue and vendor schedule"
+        ],
+        "topics": [
+          "wedding-day timeline",
+          "vendor schedule",
+          "venue coordination",
+          "photographer timeline",
+          "ceremony schedule",
+          "reception schedule",
+          "transportation timing"
+        ],
+        "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/products/seating-chart-maker",
+        "destination_type": "paid_product",
+        "product_id": "wedding-seating-chart-maker",
+        "product_name": "Wedding Seating Chart Maker",
+        "route": "/products/seating-chart-maker",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "preferred": false,
+        "anchor": "reception seating-chart tool",
+        "anchor_options": [
+          "Wedding Seating Chart Maker",
+          "reception seating-chart tool",
+          "identify guests who still need a table"
+        ],
+        "topics": [
+          "wedding seating chart",
+          "reception table assignments",
+          "household grouping",
+          "meal selections",
+          "food allergies",
+          "accessibility needs",
+          "unassigned guests",
+          "plus-ones"
+        ],
+        "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/products/seating-chart-maker",
+        "destination_type": "paid_product",
+        "product_id": "wedding-seating-chart-maker",
+        "product_name": "Wedding Seating Chart Maker",
+        "route": "/products/seating-chart-maker",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "preferred": false,
+        "anchor": "reception seating-chart tool",
+        "anchor_options": [
+          "Wedding Seating Chart Maker",
+          "reception seating-chart tool",
+          "identify guests who still need a table"
+        ],
+        "topics": [
+          "wedding seating chart",
+          "reception table assignments",
+          "household grouping",
+          "meal selections",
+          "food allergies",
+          "accessibility needs",
+          "unassigned guests",
+          "plus-ones"
+        ],
+        "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/products/seating-chart-maker",
+        "destination_type": "paid_product",
+        "product_id": "wedding-seating-chart-maker",
+        "product_name": "Wedding Seating Chart Maker",
+        "route": "/products/seating-chart-maker",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "preferred": false,
+        "anchor": "reception seating-chart tool",
+        "anchor_options": [
+          "Wedding Seating Chart Maker",
+          "reception seating-chart tool",
+          "identify guests who still need a table"
+        ],
+        "topics": [
+          "wedding seating chart",
+          "reception table assignments",
+          "household grouping",
+          "meal selections",
+          "food allergies",
+          "accessibility needs",
+          "unassigned guests",
+          "plus-ones"
+        ],
+        "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+        "destination_type": "paid_product",
+        "product_id": "wedding-seating-chart-maker",
+        "product_name": "Wedding Seating Chart Maker",
+        "route": "/products/seating-chart-maker",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "preferred": true,
+        "anchor": "Wedding Seating Chart Maker",
+        "anchor_options": [
+          "Wedding Seating Chart Maker",
+          "reception seating-chart tool",
+          "identify guests who still need a table"
+        ],
+        "topics": [
+          "wedding seating chart",
+          "reception table assignments",
+          "household grouping",
+          "meal selections",
+          "food allergies",
+          "accessibility needs",
+          "unassigned guests",
+          "plus-ones"
+        ],
+        "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+      }
+    ],
+    "forbidden": [
+      "best wedding tool",
+      "top wedding planner",
+      "guaranteed stress-free wedding",
+      "guaranteed results",
+      "independent review",
+      "only wedding tool you need"
+    ],
+    "entity_description": "one wedding-planning application with a free builder and four paid tools available on four owned domains"
   }
 ]

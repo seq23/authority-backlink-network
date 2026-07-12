@@ -1,55 +1,61 @@
 {
   "repo": "authority-network",
-  "commands": [
+  "version": "4.6.0",
+  "validation_tier": "V2 generated/content-heavy with provider-backed social boundary",
+  "release_decision": "blocked only when hard_failures > 0",
+  "profiles": [
     {
-      "command": "npm run validate:json",
-      "tier": "1",
-      "severity": "HARD FAIL",
-      "purpose": "JSON registry and pantry parse validation"
+      "command": "npm run validate:changed",
+      "severity": "REAL-RISK HARD FAILS; WARNINGS NONBLOCKING",
+      "purpose": "Fast cache-aware checks without mutation."
     },
     {
-      "command": "npm run validate:python",
-      "tier": "1",
-      "severity": "HARD FAIL",
-      "purpose": "Python script syntax validation"
+      "command": "npm run validate:release",
+      "severity": "REAL-RISK HARD FAILS; WARNINGS NONBLOCKING",
+      "purpose": "One safe page-repair pass, cache-aware audit, deterministic proof, policy and journey checks."
     },
     {
-      "command": "npm run review",
-      "tier": "1",
-      "severity": "HARD FAIL",
-      "purpose": "Hostile review of generated pages, policy gates, and content contracts"
+      "command": "npm run validate:full",
+      "severity": "REAL-RISK HARD FAILS; WARNINGS NONBLOCKING",
+      "purpose": "Full uncached page proof and hostile cache fixtures."
     },
     {
-      "command": "npm run audit:links",
-      "tier": "1",
-      "severity": "HARD FAIL",
-      "purpose": "Internal/link registry audit"
+      "command": "npm run validate:clean-rebuild",
+      "severity": "HARD FAIL ON NONDETERMINISTIC GOVERNED OUTPUT",
+      "purpose": "Two isolated deterministic derived builds must match."
     },
     {
-      "command": "npm run social:dry-run",
-      "tier": "1",
-      "severity": "HARD FAIL",
-      "purpose": "Social autopost dry-run validates queue, caps, duplicate suppression, and no live network posting"
-    },
-    {
-      "command": "npm run release:prepush:local",
-      "tier": "2-local-updater",
-      "severity": "HARD FAIL",
-      "purpose": "Local updater prepush entrypoint"
+      "command": "npm run validate:cache:self-test",
+      "severity": "HARD FAIL ON UNSAFE CACHE BEHAVIOR",
+      "purpose": "Proves cache miss, invalidation, failure non-reuse, and corruption handling."
     }
+  ],
+  "hard_fail_examples": [
+    "malformed canonical JSON",
+    "unsafe publication claim",
+    "wrong-domain routing",
+    "missing required evidence",
+    "secret exposure",
+    "broken social preflight",
+    "nondeterministic governed output",
+    "executable failure"
+  ],
+  "warning_examples": [
+    "word-count target",
+    "optional metadata",
+    "cadence variation",
+    "low cache hit rate",
+    "nonblocking editorial preference"
   ],
   "not_applicable": [
     {
       "stage": "browser_visual_proof",
-      "reason": "Static multi-site publication; Cloudflare Pages render verification is manual/live after deploy."
+      "reason": "Static publication rendering remains a post-deploy manual/live proof."
     },
     {
-      "stage": "auth_vault",
-      "reason": "No authenticated app surface in this repo."
-    },
-    {
-      "stage": "provider_cleanup",
-      "reason": "No test fixtures created on external providers by validation."
+      "stage": "authenticated_app_access",
+      "reason": "No authenticated public application surface exists in this repository."
     }
-  ]
+  ],
+  "v4_6_portfolio_citation_control": true
 }

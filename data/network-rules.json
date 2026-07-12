@@ -10,10 +10,14 @@
     "The Industry Guides may link to canonical sites.",
     "Canonical sites must not link back to The Industry Guides.",
     "Founder publication may point only to A Player Mode, BHPC, Virtual Agency OS, and West Peek Productions.",
-    "Memphis publication may point only to Porch & Party from the listed target set.",
+    "City Vendor publications may point to Porch & Party and Dream Wedding Builder products only when the destination directly supports the article intent.",
     "Professional publication may point only to The Industry Guides, its five canonicals, Horse Legal Guide, Hicks Consulting, and Approval Prep from the listed target set.",
     "Do not link every target from every publication.",
-    "No fake independent reviews or fake rankings."
+    "No fake independent reviews or fake rankings.",
+    "Dream Wedding Builder uses one brand id across four owned root domains and five registered product routes.",
+    "Use one primary Dream Wedding Builder product backlink per ordinary article by default.",
+    "Inactive City Vendor publication instances may not generate or publish backlinks.",
+    "Universal city content must have one declared owner publication unless another city adds material localization."
   ],
   "publishing_gates": {
     "auto_publish_allowed": [
@@ -38,6 +42,22 @@
     "Does this page pretend to be independent when it is affiliated?",
     "Does it make YMYL claims without boundaries?",
     "Is any anchor text over-optimized or repetitive?",
-    "Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?"
-  ]
+    "Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?",
+    "Would this page remain useful if the wedding-product link were removed?",
+    "Does the selected wedding tool materially help solve the stated planning problem?",
+    "Is this article meaningfully different from similar pages in other city publications?"
+  ],
+  "publication_families": {
+    "city-vendor": {
+      "name": "City Vendor Library",
+      "purpose": "Local-first wedding, party, celebration, hosting, event, and vendor resources",
+      "active_instances": [
+        "memphis"
+      ],
+      "supported_brands": [
+        "porch-party",
+        "dream-wedding-builder"
+      ]
+    }
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "schema": "authority-validation-receipt-v2",
+  "profile": "cache-self-test",
+  "status": "PASS",
+  "release_blocked": false,
+  "hard_failures": 0,
+  "strong_warnings": 0,
+  "soft_warnings": 0,
+  "results": [
+    {
+      "id": "python",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 1328,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "cache_self_test",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 1145,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"fixtures\": 5\n}\n",
+      "stderr_tail": ""
+    }
+  ]
+}

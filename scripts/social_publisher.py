@@ -16,9 +16,9 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
-QUEUE_PATH = ROOT / 'data/social-queue.json'
-REPORT_DIR = ROOT / 'reports'
-REPORT_DIR.mkdir(exist_ok=True)
+QUEUE_PATH = Path(os.getenv('SOCIAL_QUEUE_PATH', str(ROOT / 'data/social-queue.json')))
+REPORT_PATH = Path(os.getenv('SOCIAL_REPORT_PATH', str(ROOT / 'reports/social-publisher-report.json')))
+REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
 TODAY = date.today().isoformat()
 TODAY_ORDINAL = date.today().toordinal()
 
@@ -30,15 +30,12 @@ def read_json(path, default):
     p = Path(path)
     if not p.exists():
         return default
-    try:
-        return json.loads(p.read_text(encoding='utf-8'))
-    except Exception:
-        return default
+    return json.loads(p.read_text(encoding='utf-8'))
 
 
 def write_json(path, data):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding='utf-8')
+    from lib.authority_core import atomic_write_json
+    atomic_write_json(Path(path), data)
 
 
 def truthy(name, default='false'):
@@ -212,6 +209,20 @@ def main():
             platform_secret_skips['x'] = missing
             enable_x = False
 
+    if platform_secret_skips and require_secrets and not dry_run:
+        report = {
+            'date': TODAY, 'dry_run': False,
+            'enabled': {'linkedin': enable_li, 'x': enable_x},
+            'secret_skips': platform_secret_skips,
+            'limits': {'linkedin': li_limit, 'x': x_limit},
+            'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
+            'posted_today': {'linkedin': 0, 'x': 0},
+            'status': 'blocked_missing_secrets'
+        }
+        write_json(REPORT_PATH, report)
+        print(json.dumps(report, indent=2))
+        raise SystemExit('Required social secrets are missing; no posts attempted')
+
     bodies_today_by_platform = defaultdict(list)
     posted_by_brand_platform = defaultdict(int)
     seen_order = {}
@@ -340,9 +351,9 @@ def main():
         'skipped': skipped,
         'posted_today': posted_today,
         'brand_rotation_policy': {'quota_count': len(brand_quotas), 'daily_rotation_offset': TODAY_ORDINAL},
-        'status': 'ok' if not failures else 'partial_failure'
+        'status': ('blocked_missing_secrets' if platform_secret_skips and require_secrets and not dry_run else ('ok_with_secret_warning' if platform_secret_skips else ('ok' if not failures else 'partial_failure')))
     }
-    write_json(REPORT_DIR/'social-publisher-report.json', report)
+    write_json(REPORT_PATH, report)
     print(json.dumps(report, indent=2))
     if failures and truthy('FAIL_ON_SOCIAL_POST_FAILURE', 'false'):
         raise SystemExit('One or more social posts failed')

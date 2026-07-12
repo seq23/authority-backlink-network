@@ -1,0 +1,33 @@
+{
+  "schema": "authority-validation-receipt-v2",
+  "profile": "clean-rebuild",
+  "status": "PASS",
+  "release_blocked": false,
+  "hard_failures": 0,
+  "strong_warnings": 0,
+  "soft_warnings": 0,
+  "results": [
+    {
+      "id": "python",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 1504,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "deterministic_build",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 1327,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"build_date\": \"2026-01-01\",\n  \"artifacts\": 6,\n  \"differences\": []\n}\n",
+      "stderr_tail": ""
+    }
+  ]
+}

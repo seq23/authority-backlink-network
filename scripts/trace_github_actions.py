@@ -11,10 +11,10 @@ REPORT_DIR = ROOT/'reports'
 REPORT_DIR.mkdir(exist_ok=True)
 required = {
     'authority-v4-autopilot.yml': {
-        'commands': ['python3 scripts/authority_v4_autopilot.py','python3 scripts/hostile_review.py','python3 scripts/link_audit.py','python3 scripts/social_publisher.py'],
+        'commands': ['python3 scripts/authority_v4_autopilot.py','python3 scripts/validate.py release','python3 scripts/social_publisher.py'],
         'secrets': ['GEMINI_API_KEY','LINKEDIN_ACCESS_TOKEN','LINKEDIN_AUTHOR_URN','X_API_KEY','X_API_SECRET','X_ACCESS_TOKEN','X_ACCESS_TOKEN_SECRET'],
         'vars': ['DAILY_PAGE_LIMIT','ENABLE_LINKEDIN_POSTING','ENABLE_X_POSTING','LINKEDIN_DAILY_LIMIT','X_DAILY_LIMIT'],
-        'must_have': ['contents: write','issues: write','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2']
+        'must_have': ['contents: write','issues: write','actions/cache@v4','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2']
     },
     'social-autopost.yml': {
         'commands': ['python3 scripts/social_publisher.py'],
@@ -23,10 +23,10 @@ required = {
         'must_have': ['contents: write','issues: write','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2']
     },
     'hostile-review.yml': {
-        'commands': ['python3 scripts/hostile_review.py','python3 scripts/link_audit.py'],
+        'commands': ['python3 scripts/validate.py release'],
         'secrets': [],
         'vars': [],
-        'must_have': ['actions/upload-artifact@v4']
+        'must_have': ['actions/cache@v4','actions/upload-artifact@v4']
     }
 }
 errors=[]; warnings=[]; traces=[]
@@ -77,7 +77,7 @@ report={
         'Secrets are referenced but not validated live until GitHub repository secrets are added.'
     ]
 }
-(REPORT_DIR/'github-actions-data-trace-v4-3-3.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+(REPORT_DIR/'github-actions-data-trace.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report,indent=2))
 if errors:
     raise SystemExit(1)

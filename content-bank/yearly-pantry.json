@@ -493,7 +493,7 @@
       "site_path": "sites/memphis-local",
       "domain_env": "MEMPHIS_PUBLICATION_DOMAIN",
       "default_domain": "memphisvendorlibrary.com",
-      "mission": "Memphis-area local vendor, event, home styling, hospitality, and celebration resource library.",
+      "mission": "Local-first Memphis vendor, wedding, party, celebration, hosting, and event-planning resource library with broadly useful planning guidance where geography does not materially change the answer.",
       "audiences": [
         "Memphis homeowner",
         "busy parent",
@@ -506,7 +506,21 @@
         "holiday decorator",
         "small business owner",
         "neighborhood resident",
-        "last-minute party planner"
+        "last-minute party planner",
+        "engaged couple",
+        "couple planning without a coordinator",
+        "wedding planner",
+        "day-of coordinator",
+        "parent helping pay",
+        "maid or matron of honor",
+        "best man",
+        "venue coordinator",
+        "wedding photographer",
+        "caterer",
+        "florist",
+        "DJ or band leader",
+        "destination-wedding couple",
+        "couple managing a large guest list"
       ],
       "clusters": [
         "porch decorating",
@@ -534,7 +548,49 @@
         "small gathering styling",
         "photo-ready installs",
         "porch refresh timelines",
-        "local vendor comparison questions"
+        "local vendor comparison questions",
+        "wedding planning gaps",
+        "getting started with wedding planning",
+        "wedding planning foundation",
+        "organizing a wedding plan",
+        "wedding planning categories",
+        "wedding planning deadlines",
+        "date-based wedding checklist",
+        "wedding responsibilities",
+        "wedding planning sequence",
+        "wedding-week checklist",
+        "wedding budget planning",
+        "vendor deposits",
+        "vendor balances",
+        "wedding payment schedule",
+        "family contributions",
+        "wedding cash flow",
+        "taxes and gratuities",
+        "wedding-day timeline",
+        "vendor schedule",
+        "venue coordination",
+        "photographer timeline",
+        "ceremony schedule",
+        "reception schedule",
+        "transportation timing",
+        "wedding seating chart",
+        "reception table assignments",
+        "household grouping",
+        "meal selections",
+        "food allergies",
+        "accessibility needs",
+        "unassigned guests",
+        "plus-ones",
+        "wedding vendor handoffs",
+        "wedding contact sheets",
+        "wedding setup and teardown",
+        "vendor meals",
+        "rain-plan coordination",
+        "wedding accessibility planning",
+        "last-minute RSVP changes",
+        "rehearsal dinner planning",
+        "engagement party planning",
+        "wedding-week responsibility packet"
       ],
       "targets": [
         {
@@ -556,6 +612,558 @@
                 "*"
               ]
             }
+          ]
+        },
+        {
+          "brand_id": "dream-wedding-builder",
+          "brand": "Dream Wedding Builder",
+          "domain": "weddingchecklistpdf.com",
+          "domains": [
+            "weddingchecklistpdf.com",
+            "weddingbudgetspreadsheet.com",
+            "weddingtimelinetemplate.com",
+            "weddingseatingchartmaker.com"
+          ],
+          "approved_links": [
+            {
+              "url": "https://weddingchecklistpdf.com/build",
+              "destination_type": "free_tool",
+              "product_id": "free-dream-wedding-builder",
+              "product_name": "Free Dream Wedding Builder",
+              "route": "/build",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": true,
+              "anchor": "Free Dream Wedding Builder",
+              "anchor_options": [
+                "Free Dream Wedding Builder",
+                "free wedding planning builder",
+                "identify gaps in the wedding plan"
+              ],
+              "topics": [
+                "wedding planning gaps",
+                "getting started with wedding planning",
+                "wedding planning foundation",
+                "organizing a wedding plan",
+                "wedding planning categories"
+              ],
+              "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingbudgetspreadsheet.com/build",
+              "destination_type": "free_tool",
+              "product_id": "free-dream-wedding-builder",
+              "product_name": "Free Dream Wedding Builder",
+              "route": "/build",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "free wedding planning builder",
+              "anchor_options": [
+                "Free Dream Wedding Builder",
+                "free wedding planning builder",
+                "identify gaps in the wedding plan"
+              ],
+              "topics": [
+                "wedding planning gaps",
+                "getting started with wedding planning",
+                "wedding planning foundation",
+                "organizing a wedding plan",
+                "wedding planning categories"
+              ],
+              "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingtimelinetemplate.com/build",
+              "destination_type": "free_tool",
+              "product_id": "free-dream-wedding-builder",
+              "product_name": "Free Dream Wedding Builder",
+              "route": "/build",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "free wedding planning builder",
+              "anchor_options": [
+                "Free Dream Wedding Builder",
+                "free wedding planning builder",
+                "identify gaps in the wedding plan"
+              ],
+              "topics": [
+                "wedding planning gaps",
+                "getting started with wedding planning",
+                "wedding planning foundation",
+                "organizing a wedding plan",
+                "wedding planning categories"
+              ],
+              "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingseatingchartmaker.com/build",
+              "destination_type": "free_tool",
+              "product_id": "free-dream-wedding-builder",
+              "product_name": "Free Dream Wedding Builder",
+              "route": "/build",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "free wedding planning builder",
+              "anchor_options": [
+                "Free Dream Wedding Builder",
+                "free wedding planning builder",
+                "identify gaps in the wedding plan"
+              ],
+              "topics": [
+                "wedding planning gaps",
+                "getting started with wedding planning",
+                "wedding planning foundation",
+                "organizing a wedding plan",
+                "wedding planning categories"
+              ],
+              "product_message": "Use Free Dream Wedding Builder when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+              "destination_type": "paid_product",
+              "product_id": "wedding-checklist-pdf",
+              "product_name": "Wedding Checklist PDF",
+              "route": "/products/checklist-pdf",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": true,
+              "anchor": "Wedding Checklist PDF",
+              "anchor_options": [
+                "Wedding Checklist PDF",
+                "date-based wedding planning checklist",
+                "build deadlines around the wedding date"
+              ],
+              "topics": [
+                "wedding planning deadlines",
+                "date-based wedding checklist",
+                "wedding responsibilities",
+                "wedding planning sequence",
+                "wedding-week checklist"
+              ],
+              "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingbudgetspreadsheet.com/products/checklist-pdf",
+              "destination_type": "paid_product",
+              "product_id": "wedding-checklist-pdf",
+              "product_name": "Wedding Checklist PDF",
+              "route": "/products/checklist-pdf",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "date-based wedding planning checklist",
+              "anchor_options": [
+                "Wedding Checklist PDF",
+                "date-based wedding planning checklist",
+                "build deadlines around the wedding date"
+              ],
+              "topics": [
+                "wedding planning deadlines",
+                "date-based wedding checklist",
+                "wedding responsibilities",
+                "wedding planning sequence",
+                "wedding-week checklist"
+              ],
+              "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingtimelinetemplate.com/products/checklist-pdf",
+              "destination_type": "paid_product",
+              "product_id": "wedding-checklist-pdf",
+              "product_name": "Wedding Checklist PDF",
+              "route": "/products/checklist-pdf",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "date-based wedding planning checklist",
+              "anchor_options": [
+                "Wedding Checklist PDF",
+                "date-based wedding planning checklist",
+                "build deadlines around the wedding date"
+              ],
+              "topics": [
+                "wedding planning deadlines",
+                "date-based wedding checklist",
+                "wedding responsibilities",
+                "wedding planning sequence",
+                "wedding-week checklist"
+              ],
+              "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingseatingchartmaker.com/products/checklist-pdf",
+              "destination_type": "paid_product",
+              "product_id": "wedding-checklist-pdf",
+              "product_name": "Wedding Checklist PDF",
+              "route": "/products/checklist-pdf",
+              "preferred_domain": "weddingchecklistpdf.com",
+              "preferred": false,
+              "anchor": "date-based wedding planning checklist",
+              "anchor_options": [
+                "Wedding Checklist PDF",
+                "date-based wedding planning checklist",
+                "build deadlines around the wedding date"
+              ],
+              "topics": [
+                "wedding planning deadlines",
+                "date-based wedding checklist",
+                "wedding responsibilities",
+                "wedding planning sequence",
+                "wedding-week checklist"
+              ],
+              "product_message": "Use Wedding Checklist PDF when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingchecklistpdf.com/products/budget-spreadsheet",
+              "destination_type": "paid_product",
+              "product_id": "wedding-budget-spreadsheet",
+              "product_name": "Wedding Budget Spreadsheet",
+              "route": "/products/budget-spreadsheet",
+              "preferred_domain": "weddingbudgetspreadsheet.com",
+              "preferred": false,
+              "anchor": "editable wedding budget spreadsheet",
+              "anchor_options": [
+                "Wedding Budget Spreadsheet",
+                "editable wedding budget spreadsheet",
+                "organize vendor deposits and balances"
+              ],
+              "topics": [
+                "wedding budget planning",
+                "vendor deposits",
+                "vendor balances",
+                "wedding payment schedule",
+                "family contributions",
+                "wedding cash flow",
+                "taxes and gratuities"
+              ],
+              "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+              "destination_type": "paid_product",
+              "product_id": "wedding-budget-spreadsheet",
+              "product_name": "Wedding Budget Spreadsheet",
+              "route": "/products/budget-spreadsheet",
+              "preferred_domain": "weddingbudgetspreadsheet.com",
+              "preferred": true,
+              "anchor": "Wedding Budget Spreadsheet",
+              "anchor_options": [
+                "Wedding Budget Spreadsheet",
+                "editable wedding budget spreadsheet",
+                "organize vendor deposits and balances"
+              ],
+              "topics": [
+                "wedding budget planning",
+                "vendor deposits",
+                "vendor balances",
+                "wedding payment schedule",
+                "family contributions",
+                "wedding cash flow",
+                "taxes and gratuities"
+              ],
+              "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingtimelinetemplate.com/products/budget-spreadsheet",
+              "destination_type": "paid_product",
+              "product_id": "wedding-budget-spreadsheet",
+              "product_name": "Wedding Budget Spreadsheet",
+              "route": "/products/budget-spreadsheet",
+              "preferred_domain": "weddingbudgetspreadsheet.com",
+              "preferred": false,
+              "anchor": "editable wedding budget spreadsheet",
+              "anchor_options": [
+                "Wedding Budget Spreadsheet",
+                "editable wedding budget spreadsheet",
+                "organize vendor deposits and balances"
+              ],
+              "topics": [
+                "wedding budget planning",
+                "vendor deposits",
+                "vendor balances",
+                "wedding payment schedule",
+                "family contributions",
+                "wedding cash flow",
+                "taxes and gratuities"
+              ],
+              "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingseatingchartmaker.com/products/budget-spreadsheet",
+              "destination_type": "paid_product",
+              "product_id": "wedding-budget-spreadsheet",
+              "product_name": "Wedding Budget Spreadsheet",
+              "route": "/products/budget-spreadsheet",
+              "preferred_domain": "weddingbudgetspreadsheet.com",
+              "preferred": false,
+              "anchor": "editable wedding budget spreadsheet",
+              "anchor_options": [
+                "Wedding Budget Spreadsheet",
+                "editable wedding budget spreadsheet",
+                "organize vendor deposits and balances"
+              ],
+              "topics": [
+                "wedding budget planning",
+                "vendor deposits",
+                "vendor balances",
+                "wedding payment schedule",
+                "family contributions",
+                "wedding cash flow",
+                "taxes and gratuities"
+              ],
+              "product_message": "Use Wedding Budget Spreadsheet when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingchecklistpdf.com/products/timeline-template",
+              "destination_type": "paid_product",
+              "product_id": "wedding-timeline-template",
+              "product_name": "Wedding Timeline Template",
+              "route": "/products/timeline-template",
+              "preferred_domain": "weddingtimelinetemplate.com",
+              "preferred": false,
+              "anchor": "wedding-day timeline template",
+              "anchor_options": [
+                "Wedding Timeline Template",
+                "wedding-day timeline template",
+                "coordinate the venue and vendor schedule"
+              ],
+              "topics": [
+                "wedding-day timeline",
+                "vendor schedule",
+                "venue coordination",
+                "photographer timeline",
+                "ceremony schedule",
+                "reception schedule",
+                "transportation timing"
+              ],
+              "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingbudgetspreadsheet.com/products/timeline-template",
+              "destination_type": "paid_product",
+              "product_id": "wedding-timeline-template",
+              "product_name": "Wedding Timeline Template",
+              "route": "/products/timeline-template",
+              "preferred_domain": "weddingtimelinetemplate.com",
+              "preferred": false,
+              "anchor": "wedding-day timeline template",
+              "anchor_options": [
+                "Wedding Timeline Template",
+                "wedding-day timeline template",
+                "coordinate the venue and vendor schedule"
+              ],
+              "topics": [
+                "wedding-day timeline",
+                "vendor schedule",
+                "venue coordination",
+                "photographer timeline",
+                "ceremony schedule",
+                "reception schedule",
+                "transportation timing"
+              ],
+              "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingtimelinetemplate.com/products/timeline-template",
+              "destination_type": "paid_product",
+              "product_id": "wedding-timeline-template",
+              "product_name": "Wedding Timeline Template",
+              "route": "/products/timeline-template",
+              "preferred_domain": "weddingtimelinetemplate.com",
+              "preferred": true,
+              "anchor": "Wedding Timeline Template",
+              "anchor_options": [
+                "Wedding Timeline Template",
+                "wedding-day timeline template",
+                "coordinate the venue and vendor schedule"
+              ],
+              "topics": [
+                "wedding-day timeline",
+                "vendor schedule",
+                "venue coordination",
+                "photographer timeline",
+                "ceremony schedule",
+                "reception schedule",
+                "transportation timing"
+              ],
+              "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingseatingchartmaker.com/products/timeline-template",
+              "destination_type": "paid_product",
+              "product_id": "wedding-timeline-template",
+              "product_name": "Wedding Timeline Template",
+              "route": "/products/timeline-template",
+              "preferred_domain": "weddingtimelinetemplate.com",
+              "preferred": false,
+              "anchor": "wedding-day timeline template",
+              "anchor_options": [
+                "Wedding Timeline Template",
+                "wedding-day timeline template",
+                "coordinate the venue and vendor schedule"
+              ],
+              "topics": [
+                "wedding-day timeline",
+                "vendor schedule",
+                "venue coordination",
+                "photographer timeline",
+                "ceremony schedule",
+                "reception schedule",
+                "transportation timing"
+              ],
+              "product_message": "Use Wedding Timeline Template when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingchecklistpdf.com/products/seating-chart-maker",
+              "destination_type": "paid_product",
+              "product_id": "wedding-seating-chart-maker",
+              "product_name": "Wedding Seating Chart Maker",
+              "route": "/products/seating-chart-maker",
+              "preferred_domain": "weddingseatingchartmaker.com",
+              "preferred": false,
+              "anchor": "reception seating-chart tool",
+              "anchor_options": [
+                "Wedding Seating Chart Maker",
+                "reception seating-chart tool",
+                "identify guests who still need a table"
+              ],
+              "topics": [
+                "wedding seating chart",
+                "reception table assignments",
+                "household grouping",
+                "meal selections",
+                "food allergies",
+                "accessibility needs",
+                "unassigned guests",
+                "plus-ones"
+              ],
+              "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingbudgetspreadsheet.com/products/seating-chart-maker",
+              "destination_type": "paid_product",
+              "product_id": "wedding-seating-chart-maker",
+              "product_name": "Wedding Seating Chart Maker",
+              "route": "/products/seating-chart-maker",
+              "preferred_domain": "weddingseatingchartmaker.com",
+              "preferred": false,
+              "anchor": "reception seating-chart tool",
+              "anchor_options": [
+                "Wedding Seating Chart Maker",
+                "reception seating-chart tool",
+                "identify guests who still need a table"
+              ],
+              "topics": [
+                "wedding seating chart",
+                "reception table assignments",
+                "household grouping",
+                "meal selections",
+                "food allergies",
+                "accessibility needs",
+                "unassigned guests",
+                "plus-ones"
+              ],
+              "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingtimelinetemplate.com/products/seating-chart-maker",
+              "destination_type": "paid_product",
+              "product_id": "wedding-seating-chart-maker",
+              "product_name": "Wedding Seating Chart Maker",
+              "route": "/products/seating-chart-maker",
+              "preferred_domain": "weddingseatingchartmaker.com",
+              "preferred": false,
+              "anchor": "reception seating-chart tool",
+              "anchor_options": [
+                "Wedding Seating Chart Maker",
+                "reception seating-chart tool",
+                "identify guests who still need a table"
+              ],
+              "topics": [
+                "wedding seating chart",
+                "reception table assignments",
+                "household grouping",
+                "meal selections",
+                "food allergies",
+                "accessibility needs",
+                "unassigned guests",
+                "plus-ones"
+              ],
+              "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+            },
+            {
+              "url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+              "destination_type": "paid_product",
+              "product_id": "wedding-seating-chart-maker",
+              "product_name": "Wedding Seating Chart Maker",
+              "route": "/products/seating-chart-maker",
+              "preferred_domain": "weddingseatingchartmaker.com",
+              "preferred": true,
+              "anchor": "Wedding Seating Chart Maker",
+              "anchor_options": [
+                "Wedding Seating Chart Maker",
+                "reception seating-chart tool",
+                "identify guests who still need a table"
+              ],
+              "topics": [
+                "wedding seating chart",
+                "reception table assignments",
+                "household grouping",
+                "meal selections",
+                "food allergies",
+                "accessibility needs",
+                "unassigned guests",
+                "plus-ones"
+              ],
+              "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+            }
+          ],
+          "eligible_clusters": [
+            "accessibility needs",
+            "ceremony schedule",
+            "date-based wedding checklist",
+            "engagement party planning",
+            "family contributions",
+            "food allergies",
+            "getting started with wedding planning",
+            "household grouping",
+            "last-minute RSVP changes",
+            "meal selections",
+            "organizing a wedding plan",
+            "photographer timeline",
+            "plus-ones",
+            "rain-plan coordination",
+            "reception schedule",
+            "reception table assignments",
+            "rehearsal dinner planning",
+            "taxes and gratuities",
+            "transportation timing",
+            "unassigned guests",
+            "vendor balances",
+            "vendor deposits",
+            "vendor meals",
+            "vendor schedule",
+            "venue coordination",
+            "wedding accessibility planning",
+            "wedding budget planning",
+            "wedding cash flow",
+            "wedding contact sheets",
+            "wedding payment schedule",
+            "wedding planning categories",
+            "wedding planning deadlines",
+            "wedding planning foundation",
+            "wedding planning gaps",
+            "wedding planning sequence",
+            "wedding responsibilities",
+            "wedding seating chart",
+            "wedding setup and teardown",
+            "wedding vendor handoffs",
+            "wedding-day timeline",
+            "wedding-week checklist",
+            "wedding-week responsibility packet"
+          ],
+          "social_hooks": [
+            "A wedding plan gets easier when the missing pieces are visible.",
+            "The right planning tool should solve one clear problem, not add another system to manage."
+          ],
+          "ctas": [
+            "Use the product that matches the planning problem."
           ]
         }
       ],
@@ -636,7 +1244,49 @@
         "The point of a small gathering styling page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
         "The point of a photo-ready installs page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
         "The point of a porch refresh timelines page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
-        "The point of a local vendor comparison questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion."
+        "The point of a local vendor comparison questions page is not to push a single answer. It is to give a reader a practical way to compare options, notice tradeoffs, and choose a next step with less confusion.",
+        "The point of a wedding planning gaps resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a getting started with wedding planning resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding planning foundation resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a organizing a wedding plan resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding planning categories resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding planning deadlines resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a date-based wedding checklist resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding responsibilities resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding planning sequence resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding-week checklist resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding budget planning resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a vendor deposits resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a vendor balances resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding payment schedule resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a family contributions resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding cash flow resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a taxes and gratuities resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding-day timeline resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a vendor schedule resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a venue coordination resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a photographer timeline resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a ceremony schedule resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a reception schedule resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a transportation timing resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding seating chart resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a reception table assignments resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a household grouping resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a meal selections resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a food allergies resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a accessibility needs resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a unassigned guests resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a plus-ones resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding vendor handoffs resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding contact sheets resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding setup and teardown resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a vendor meals resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a rain-plan coordination resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding accessibility planning resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a last-minute RSVP changes resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a rehearsal dinner planning resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a engagement party planning resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers.",
+        "The point of a wedding-week responsibility packet resource is to help a reader organize the decision, identify missing information, and choose a practical next step without fake rankings or forced answers."
       ],
       "body_blocks": [
         "For porch decorating, the strongest starting point is usually a simple inventory: what the reader needs, what constraints matter, what risks are tolerable, and what information is still missing. A useful resource should make those tradeoffs visible instead of burying them in generic advice.",
@@ -796,6 +1446,174 @@
         {
           "q": "What should someone ask before using a local vendor comparison questions resource?",
           "a": "Ask what the resource is based on, when it was last updated, what assumptions it makes, and whether it points you toward a qualified provider when the situation requires professional judgment."
+        },
+        {
+          "q": "What should someone prepare before working on wedding planning gaps?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on getting started with wedding planning?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding planning foundation?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on organizing a wedding plan?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding planning categories?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding planning deadlines?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on date-based wedding checklist?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding responsibilities?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding planning sequence?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding-week checklist?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding budget planning?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on vendor deposits?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on vendor balances?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding payment schedule?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on family contributions?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding cash flow?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on taxes and gratuities?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding-day timeline?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on vendor schedule?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on venue coordination?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on photographer timeline?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on ceremony schedule?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on reception schedule?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on transportation timing?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding seating chart?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on reception table assignments?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on household grouping?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on meal selections?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on food allergies?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on accessibility needs?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on unassigned guests?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on plus-ones?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding vendor handoffs?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding contact sheets?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding setup and teardown?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on vendor meals?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on rain-plan coordination?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding accessibility planning?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on last-minute RSVP changes?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on rehearsal dinner planning?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on engagement party planning?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
+        },
+        {
+          "q": "What should someone prepare before working on wedding-week responsibility packet?",
+          "a": "Start with the facts, responsibilities, deadlines, and people involved. Then choose a tool only if it directly reduces confusion or missed handoffs."
         }
       ],
       "checklist_blocks": [
@@ -824,7 +1642,49 @@
         "Write down the main question you need answered about small gathering styling before comparing providers, tools, or resources.",
         "Write down the main question you need answered about photo-ready installs before comparing providers, tools, or resources.",
         "Write down the main question you need answered about porch refresh timelines before comparing providers, tools, or resources.",
-        "Write down the main question you need answered about local vendor comparison questions before comparing providers, tools, or resources."
+        "Write down the main question you need answered about local vendor comparison questions before comparing providers, tools, or resources.",
+        "Write down the main question you need answered about wedding planning gaps before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about getting started with wedding planning before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding planning foundation before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about organizing a wedding plan before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding planning categories before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding planning deadlines before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about date-based wedding checklist before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding responsibilities before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding planning sequence before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding-week checklist before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding budget planning before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about vendor deposits before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about vendor balances before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding payment schedule before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about family contributions before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding cash flow before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about taxes and gratuities before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding-day timeline before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about vendor schedule before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about venue coordination before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about photographer timeline before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about ceremony schedule before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about reception schedule before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about transportation timing before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding seating chart before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about reception table assignments before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about household grouping before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about meal selections before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about food allergies before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about accessibility needs before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about unassigned guests before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about plus-ones before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding vendor handoffs before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding contact sheets before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding setup and teardown before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about vendor meals before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about rain-plan coordination before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding accessibility planning before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about last-minute RSVP changes before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about rehearsal dinner planning before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about engagement party planning before comparing tools, providers, or planning methods.",
+        "Write down the main question you need answered about wedding-week responsibility packet before comparing tools, providers, or planning methods."
       ],
       "social_hooks": [
         "Most people approach porch decorating too late. The smarter move is to collect the questions first, then compare options.",
@@ -852,9 +1712,56 @@
         "Most people approach small gathering styling too late. The smarter move is to collect the questions first, then compare options.",
         "Most people approach photo-ready installs too late. The smarter move is to collect the questions first, then compare options.",
         "Most people approach porch refresh timelines too late. The smarter move is to collect the questions first, then compare options.",
-        "Most people approach local vendor comparison questions too late. The smarter move is to collect the questions first, then compare options."
+        "Most people approach local vendor comparison questions too late. The smarter move is to collect the questions first, then compare options.",
+        "Most planning mistakes around wedding planning gaps start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around getting started with wedding planning start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding planning foundation start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around organizing a wedding plan start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding planning categories start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding planning deadlines start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around date-based wedding checklist start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding responsibilities start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding planning sequence start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding-week checklist start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding budget planning start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around vendor deposits start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around vendor balances start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding payment schedule start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around family contributions start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding cash flow start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around taxes and gratuities start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding-day timeline start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around vendor schedule start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around venue coordination start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around photographer timeline start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around ceremony schedule start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around reception schedule start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around transportation timing start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding seating chart start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around reception table assignments start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around household grouping start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around meal selections start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around food allergies start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around accessibility needs start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around unassigned guests start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around plus-ones start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding vendor handoffs start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding contact sheets start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding setup and teardown start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around vendor meals start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around rain-plan coordination start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding accessibility planning start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around last-minute RSVP changes start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around rehearsal dinner planning start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around engagement party planning start with missing information. Collect the facts first, then choose the right next tool.",
+        "Most planning mistakes around wedding-week responsibility packet start with missing information. Collect the facts first, then choose the right next tool."
       ],
-      "estimated_combinations": 898560
+      "estimated_combinations": 898560,
+      "publication_family_id": "city-vendor",
+      "market_type": "city",
+      "city": "Memphis",
+      "state": "Tennessee",
+      "status": "active"
     },
     "professional-resources": {
       "site_path": "sites/professional-resources",

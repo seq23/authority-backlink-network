@@ -1,3 +1,29 @@
+# Authority Network v4.5
+
+Authority Network is a multi-publication content and backlink-governance system. It creates useful resource pages, routes only approved contextual links, prepares social posts, and records evidence for every generated or published action.
+
+## Start here
+
+- Plain-English system guide: [`docs/WHAT-THIS-SYSTEM-IS.md`](docs/WHAT-THIS-SYSTEM-IS.md)
+- Day-0 VA/operator guide: [`docs/DAY-0-VA-OPERATOR-GUIDE.md`](docs/DAY-0-VA-OPERATOR-GUIDE.md)
+- Validation/cache explanation: [`docs/VALIDATION-CACHE-PLAIN-ENGLISH.md`](docs/VALIDATION-CACHE-PLAIN-ENGLISH.md)
+- Technical validation architecture: [`docs/VALIDATION-ARCHITECTURE-V4-5.md`](docs/VALIDATION-ARCHITECTURE-V4-5.md)
+- Dream Wedding Builder and City Vendor architecture: [`docs/DREAM-WEDDING-BUILDER-AND-CITY-VENDOR.md`](docs/DREAM-WEDDING-BUILDER-AND-CITY-VENDOR.md)
+
+## Core commands
+
+```bash
+npm run validate:changed
+npm run validate:release
+npm run validate:full
+npm run validate:clean-rebuild
+npm run validate:cache:self-test
+```
+
+Only real integrity, safety, routing, secret, deterministic-build, or required-journey failures block a release. Word counts and similar editorial targets are warnings. Generated daily pages may receive one safe mechanical repair pass.
+
+---
+
 # Real Authority Network — BACKLINKS - Targeted SEO/AEO/GEO Engine
 
 This repo is built only for the domains Sequoia Taylor listed. It is not a generic backlink scaffold.
@@ -105,3 +131,14 @@ Approval Prep (`approvalprep.com`) is a high-priority Professional Resource Libr
 ## Approval Prep product-routing rule
 
 Approval Prep is a document-creation business, not primarily a checklist site. Authority pages must identify the reader's real document problem and route to the matching paid kit, free Letter Writing Studio, educational guide, or boundary page. The core positioning is: **Create the letter. Build the packet. Get ready before you apply.**
+
+
+## Dream Wedding Builder + City Vendor
+The network supports one multi-domain Dream Wedding Builder brand and a reusable City Vendor publication family. Memphis Vendor Library and Porch & Party remain intact. See `docs/DREAM-WEDDING-BUILDER-AND-CITY-VENDOR.md`.
+
+
+## Portfolio citation control plane (v4.6)
+
+This repository coordinates verified authority backlinks across the full brand portfolio while each product repository may continue producing its own owned content surfaces. The six-month objective is 100,000 combined citation/impression opportunities—not 100,000 fabricated backlinks.
+
+Use `npm run citation:dashboard` for the portfolio report, `npm run citation:verify-repo` to verify repository-rendered backlink evidence, and `npm run citation:import-manifests` to import configured product-repo surface manifests. Growth targets guide scheduling but do not create petty release blockers.

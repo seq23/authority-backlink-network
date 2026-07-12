@@ -1,0 +1,122 @@
+{
+  "version": "1.0",
+  "contract": "Each owned product repository may export a manifest of canonical, indexable content surfaces. Missing manifests are warning-only and never block Authority Network publication.",
+  "required_fields": [
+    "brand_id",
+    "canonical_url",
+    "topic",
+    "content_type",
+    "publication_date",
+    "indexability",
+    "schema_types",
+    "cluster",
+    "status"
+  ],
+  "repos": [
+    {
+      "brand_id": "the-industry-guides",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "accident-guides",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "dentistry-guides",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "hormones-iv-hair",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "neuro-eval-guides",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "uscis-exam-guides",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "bhpc",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "aplayer-mode",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "virtual-agency-os",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "west-peek-productions",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "horse-legal-guide",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "hicks-consulting",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "porch-party",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "approval-prep",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    },
+    {
+      "brand_id": "dream-wedding-builder",
+      "manifest_url": "",
+      "status": "awaiting_configuration",
+      "last_imported_at": null,
+      "surfaces": []
+    }
+  ]
+}

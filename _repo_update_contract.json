@@ -10,7 +10,12 @@
     "prepush_local": "npm run release:prepush:local",
     "postpush": "gh run list --repo seq23/authority-network --limit 10",
     "live_proof": "manual Cloudflare Pages deployment verification for founderoperatorlibrary, memphisvendorlibrary, professionalresourcelibrary",
-    "cleanup": ""
+    "cleanup": "",
+    "changed": "npm run validate:changed",
+    "release": "npm run validate:release",
+    "full": "npm run validate:full",
+    "clean_rebuild": "npm run validate:clean-rebuild",
+    "cache_self_test": "npm run validate:cache:self-test"
   },
   "required_root_files": [
     ".gitignore",
@@ -21,12 +26,13 @@
   ],
   "required_directories": [
     ".github/workflows",
-    "scripts",
-    "data",
     "content-bank",
     "content-recipes",
+    "data",
+    "docs",
+    "scripts",
     "sites",
-    "docs"
+    "validation"
   ],
   "accepted_modes": [
     "snapshot"
@@ -34,8 +40,11 @@
   "zip_naming": "authority-network-main_BASELINE_MM-DD-YY_<sha>.zip",
   "dirty_tree_policy": "refuse",
   "notes": [
-    "Updater applies full snapshot, validates locally, commits, and pushes automatically only after validation passes.",
-    "Cloudflare deployment is handled by existing Git integration; no Cloudflare API deploy workflows are included.",
-    "v4.3.2 emits explicit local prepush profile attestation for the v3.1 updater."
-  ]
+    "Updater applies the full snapshot, runs the one-level release profile locally, commits, and pushes only after real hard failures are clear.",
+    "Warnings such as word-count targets do not block release.",
+    "The validation cache is excluded from Git and ZIP artifacts and may be deleted safely.",
+    "Cloudflare deployment remains Git-integration only."
+  ],
+  "version": "4.6.0",
+  "v4_6_portfolio_citation_control": true
 }

@@ -23,11 +23,28 @@ rules = json.loads((ROOT / 'data/network-rules.json').read_text())
 errors = []
 warnings = []
 
+def _early_norm_domain(url_or_domain: str) -> str:
+    if str(url_or_domain).startswith('http'):
+        host = urlparse(str(url_or_domain)).netloc
+    else:
+        host = str(url_or_domain)
+    return host.lower().replace('www.', '').strip('/')
+
+
 PUB_FOLDERS = {p['id']: p['folder'] for p in publications}
 PUBLICATION_DOMAINS = {p['id']: p['working_domain'] for p in publications}
-TARGET_DOMAIN_TO_BRAND = {b['domain'].replace('www.', ''): b for b in brands}
 BRAND_BY_ID = {b['id']: b for b in brands}
-APPROVED_URLS_BY_DOMAIN = {norm: {link.get('url','').rstrip('/') for link in brand.get('approved_links', [])} for norm, brand in TARGET_DOMAIN_TO_BRAND.items()}
+
+def brand_domains(brand):
+    return {_early_norm_domain(x) for x in (brand.get('domains') or [brand.get('domain','')]) if x}
+
+TARGET_DOMAIN_TO_BRAND = {}
+for brand in brands:
+    for domain in brand_domains(brand):
+        if domain in TARGET_DOMAIN_TO_BRAND and TARGET_DOMAIN_TO_BRAND[domain]['id'] != brand['id']:
+            errors.append(f'duplicate domain ownership: {domain}')
+        TARGET_DOMAIN_TO_BRAND[domain] = brand
+APPROVED_URLS_BY_DOMAIN = {domain: {link.get('url','').rstrip('/') for link in brand.get('approved_links', []) if _early_norm_domain(link.get('url','')) == domain} for domain, brand in TARGET_DOMAIN_TO_BRAND.items()}
 ALL_TARGET_DOMAINS = set(TARGET_DOMAIN_TO_BRAND)
 ALL_PUBLICATION_DOMAINS = {d.replace('www.', '') for d in PUBLICATION_DOMAINS.values()}
 ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
@@ -35,7 +52,7 @@ ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
 ALLOWED_PUB_TARGETS = {}
 for b in brands:
     for pub in b['approved_publications']:
-        ALLOWED_PUB_TARGETS.setdefault(pub, set()).add(b['domain'].replace('www.', ''))
+        ALLOWED_PUB_TARGETS.setdefault(pub, set()).update(brand_domains(b))
 
 BANNED_PHRASES = [
     'guaranteed settlement', 'guaranteed results', 'guaranteed approval',
@@ -75,11 +92,30 @@ brand_ids = [b['id'] for b in brands]
 if len(brand_ids) != len(set(brand_ids)):
     errors.append('data/brands.json contains duplicate brand ids')
 for b in brands:
-    if norm_domain(b['domain']) not in norm_domain(b['url']):
-        warnings.append(f"{b['id']}: url/domain mismatch: {b['url']} vs {b['domain']}")
+    domains = brand_domains(b)
+    if not domains:
+        errors.append(f"{b['id']}: no registered domain")
+    if b.get('url') and norm_domain(b['url']) not in domains:
+        warnings.append(f"{b['id']}: url is not one of the registered domains: {b['url']}")
     for pub in b['approved_publications']:
         if pub not in PUB_FOLDERS:
             errors.append(f"{b['id']}: unknown approved publication {pub}")
+    for link in b.get('approved_links', []):
+        if norm_domain(link.get('url','')) not in domains:
+            errors.append(f"{b['id']}: approved link uses unowned domain: {link.get('url')}")
+    if b.get('id') == 'dream-wedding-builder':
+        expected_domains = {'weddingchecklistpdf.com','weddingbudgetspreadsheet.com','weddingtimelinetemplate.com','weddingseatingchartmaker.com'}
+        expected_routes = {'/build','/products/checklist-pdf','/products/budget-spreadsheet','/products/timeline-template','/products/seating-chart-maker'}
+        if domains != expected_domains:
+            errors.append(f'dream-wedding-builder: domain set mismatch: {sorted(domains)}')
+        products = b.get('products', [])
+        routes = {x.get('route') for x in products}
+        if routes != expected_routes:
+            errors.append(f'dream-wedding-builder: route set mismatch: {sorted(routes)}')
+        if sum(1 for x in products if x.get('destination_type') == 'free_tool') != 1:
+            errors.append('dream-wedding-builder: exactly one free_tool product is required')
+        if sum(1 for x in products if x.get('destination_type') == 'paid_product') != 4:
+            errors.append('dream-wedding-builder: exactly four paid_product records are required')
 
 # Validate publications only support known brand ids.
 known = set(brand_ids)
@@ -102,15 +138,15 @@ for pantry_pub, config in pantry.get('publications', {}).items():
             errors.append(f'{pantry_pub}: target references unknown brand id {brand_id}')
             continue
         domain = norm_domain(target.get('domain', ''))
-        if domain != norm_domain(brand.get('domain', '')):
-            errors.append(f'{pantry_pub}: brand/domain mismatch for {brand_id}: {domain} != {brand.get("domain")}')
+        if domain not in brand_domains(brand):
+            errors.append(f'{pantry_pub}: brand/domain mismatch for {brand_id}: {domain} not owned by brand')
         if expected_pub not in brand.get('approved_publications', []):
             errors.append(f'{pantry_pub}: {brand_id} is not approved for {expected_pub}')
         links = target.get('approved_links') or []
         if not links:
             errors.append(f'{pantry_pub}: {brand_id} has no approved links')
         for link in links:
-            if norm_domain(link.get('url', '')) != domain:
+            if norm_domain(link.get('url', '')) not in brand_domains(brand):
                 errors.append(f'{pantry_pub}: {brand_id} approved link uses wrong domain: {link.get("url")}')
 
 # Validate HTML pages.
@@ -151,22 +187,21 @@ for pub, folder in PUB_FOLDERS.items():
         if len(outbound_targets) > 8:
             warnings.append(f'{rel}: high outbound-link count; review only if the page feels crowded')
 
-        # Product-aware Approval Prep routing. Missing or wrong-domain metadata is structural;
-        # topic fit is editorial judgment and therefore warning-only with normal margins.
-        approval_brand = TARGET_DOMAIN_TO_BRAND.get('approvalprep.com', {})
-        product_by_url = {x.get('url','').rstrip('/'): x for x in approval_brand.get('approved_links', [])}
+        # Generic product-aware routing. Metadata is structural; topic fit is warning-only.
         for domain, anchor, href in outbound_targets:
-            if domain != 'approvalprep.com':
-                continue
+            brand = TARGET_DOMAIN_TO_BRAND.get(domain, {})
+            product_by_url = {x.get('url','').rstrip('/'): x for x in brand.get('approved_links', [])}
             meta = product_by_url.get(href.rstrip('/'))
             if not meta:
-                errors.append(f'{rel}: Approval Prep destination has no registered product metadata: {href}')
+                errors.append(f'{rel}: destination has no registered metadata: {href}')
                 continue
-            if not meta.get('destination_type') or not meta.get('product_id'):
-                errors.append(f'{rel}: Approval Prep destination missing destination_type/product_id: {href}')
+            if meta.get('product_id') and not meta.get('destination_type'):
+                errors.append(f'{rel}: product destination missing destination_type: {href}')
+            if brand.get('id') == 'dream-wedding-builder' and not meta.get('route'):
+                errors.append(f'{rel}: Dream Wedding Builder destination missing route: {href}')
             topics = meta.get('topics') or []
-            if '*' not in topics and not any(topic.lower() in lower for topic in topics):
-                warnings.append(f'{rel}: Approval Prep product/topic fit should be reviewed: {href}')
+            if topics and '*' not in topics and not any(topic.lower() in lower for topic in topics):
+                warnings.append(f'{rel}: product/topic fit should be reviewed: {href}')
 
         # Approval Prep affirmative-claim boundaries. Boundary/disclaimer language is allowed.
         if 'approvalprep.com' in lower or 'approval prep' in lower:
@@ -197,6 +232,25 @@ for pub, folder in PUB_FOLDERS.items():
         if any(term in lower for term in SENSITIVE_TERMS):
             if REQUIRED_DISCLOSURE_SNIPPETS[1] not in lower:
                 errors.append(f'{rel}: sensitive topic page missing full professional-advice disclaimer')
+
+# Validate City Vendor lifecycle and preservation.
+city_path = ROOT / 'data/city-publications.json'
+if not city_path.exists():
+    errors.append('data/city-publications.json is missing')
+else:
+    city_data = json.loads(city_path.read_text())
+    cities = city_data.get('cities', [])
+    memphis = next((c for c in cities if c.get('id') == 'memphis'), None)
+    if not memphis or memphis.get('status') != 'active':
+        errors.append('Memphis must remain an active City Vendor publication')
+    for c in cities:
+        if c.get('status') not in {'candidate','approved','building','active','paused','retired'}:
+            errors.append(f"city {c.get('id')}: invalid status {c.get('status')}")
+    memphis_pub = next((p for p in publications if p.get('id') == 'memphis'), {})
+    if 'porch-party' not in memphis_pub.get('supports', []):
+        errors.append('Memphis publication must continue to support Porch & Party')
+    if 'dream-wedding-builder' not in memphis_pub.get('supports', []):
+        errors.append('Memphis publication must support Dream Wedding Builder')
 
 # Validate no canonical target file links back to The Industry Guides in the registry.
 canonical_ids = {'accident-guides','dentistry-guides','hormones-iv-hair','neuro-eval-guides','uscis-exam-guides'}

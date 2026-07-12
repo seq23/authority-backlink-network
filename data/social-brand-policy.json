@@ -24,6 +24,14 @@
     "Horse Legal Guide": 1.15,
     "Hicks Consulting": 1.15,
     "Porch & Party": 1.0,
-    "Approval Prep": 1.5
+    "Approval Prep": 1.5,
+    "Dream Wedding Builder": 1.0
+  },
+  "ecosystem_rotation": {
+    "dream-wedding-builder": {
+      "allocation_unit": "brand",
+      "product_selection": "topic_match_then_preferred_domain",
+      "rule": "Four domains do not create four separate social allocations."
+    }
   }
 }

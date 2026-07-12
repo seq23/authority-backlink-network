@@ -1,0 +1,55 @@
+{
+  "version": 3,
+  "architecture": "One orchestrator, one page audit engine, one cache service, one bounded repair pass, and one portfolio citation control plane.",
+  "severity_policy": {
+    "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
+    "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
+    "soft_warning": "Word-count targets, optional metadata, cadence variance, low cache hit rate, and editorial preferences.",
+    "self_repair": "Generated daily pages receive one deterministic mechanical repair pass and one final audit. No recursive repair loops."
+  },
+  "profiles": {
+    "changed": [
+      "json",
+      "python",
+      "pages_changed",
+      "hostile",
+      "citation_control",
+      "citation_contract",
+      "links",
+      "social_contract"
+    ],
+    "release": [
+      "json",
+      "python",
+      "workflow_trace",
+      "pages_release",
+      "deterministic_build",
+      "hostile",
+      "citation_control",
+      "citation_contract",
+      "links",
+      "social_contract"
+    ],
+    "full": [
+      "json",
+      "python",
+      "workflow_trace",
+      "pages_full",
+      "deterministic_build",
+      "hostile",
+      "links",
+      "citation_control",
+      "citation_contract",
+      "social_contract",
+      "cache_self_test"
+    ],
+    "cache-self-test": [
+      "python",
+      "cache_self_test"
+    ],
+    "clean-rebuild": [
+      "python",
+      "deterministic_build"
+    ]
+  }
+}

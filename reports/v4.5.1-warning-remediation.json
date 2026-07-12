@@ -1,0 +1,11 @@
+{
+  "version": "4.5.1",
+  "change": "Resolved all 23 reported soft warnings: expanded 22 thin pages with page-specific useful content and fixed duplicate warning aggregation in scripts/validate.py.",
+  "warnings_before": 23,
+  "actual_page_findings_before": 22,
+  "aggregation_defects_fixed": 1,
+  "warnings_after": 0,
+  "hard_failures_after": 0,
+  "strong_warnings_after": 0,
+  "pages_audited": 79
+}

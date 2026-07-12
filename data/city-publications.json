@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "activation_rule": "Only active records may publish or form backlinks. Candidate scores never auto-activate a city.",
+  "roi_factors": [
+    "metro_population",
+    "population_growth",
+    "wedding_search_demand",
+    "average_wedding_spend",
+    "vendor_density",
+    "destination_wedding_demand",
+    "competition",
+    "domain_availability",
+    "content_differentiation",
+    "local_access",
+    "monetization_potential",
+    "operating_cost"
+  ],
+  "minimum_launch_inventory": {
+    "city_specific_cornerstones": 5,
+    "planning_pages": 5,
+    "required_global_pages": [
+      "about",
+      "contact",
+      "privacy",
+      "editorial-policy",
+      "disclosure",
+      "methodology"
+    ]
+  },
+  "cities": [
+    {
+      "id": "memphis",
+      "publication_family_id": "city-vendor",
+      "title": "Memphis Vendor Library",
+      "domain": "memphisvendorlibrary.com",
+      "city": "Memphis",
+      "state": "Tennessee",
+      "metro": "Memphis metropolitan area",
+      "status": "active",
+      "launch_tier": 0,
+      "roi_score": null,
+      "approved_brands": [
+        "porch-party",
+        "dream-wedding-builder"
+      ],
+      "recipe_base": "content-recipes/city-vendor-base.json",
+      "recipe_override": "content-recipes/memphis-local.json",
+      "universal_topic_owner": true
+    },
+    {
+      "id": "nashville",
+      "publication_family_id": "city-vendor",
+      "title": "Nashville Vendor Library",
+      "domain": "",
+      "city": "Nashville",
+      "state": "Tennessee",
+      "status": "candidate",
+      "launch_tier": 1,
+      "roi_score": null
+    },
+    {
+      "id": "atlanta",
+      "publication_family_id": "city-vendor",
+      "title": "Atlanta Vendor Library",
+      "domain": "",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "status": "candidate",
+      "launch_tier": 1,
+      "roi_score": null
+    },
+    {
+      "id": "dallas-fort-worth",
+      "publication_family_id": "city-vendor",
+      "title": "Dallas–Fort Worth Vendor Library",
+      "domain": "",
+      "city": "Dallas–Fort Worth",
+      "state": "Texas",
+      "status": "candidate",
+      "launch_tier": 1,
+      "roi_score": null
+    },
+    {
+      "id": "houston",
+      "publication_family_id": "city-vendor",
+      "title": "Houston Vendor Library",
+      "domain": "",
+      "city": "Houston",
+      "state": "Texas",
+      "status": "candidate",
+      "launch_tier": 1,
+      "roi_score": null
+    },
+    {
+      "id": "charlotte",
+      "publication_family_id": "city-vendor",
+      "title": "Charlotte Vendor Library",
+      "domain": "",
+      "city": "Charlotte",
+      "state": "North Carolina",
+      "status": "candidate",
+      "launch_tier": 2,
+      "roi_score": null
+    },
+    {
+      "id": "phoenix",
+      "publication_family_id": "city-vendor",
+      "title": "Phoenix Vendor Library",
+      "domain": "",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "status": "candidate",
+      "launch_tier": 2,
+      "roi_score": null
+    },
+    {
+      "id": "new-orleans",
+      "publication_family_id": "city-vendor",
+      "title": "New Orleans Vendor Library",
+      "domain": "",
+      "city": "New Orleans",
+      "state": "Louisiana",
+      "status": "candidate",
+      "launch_tier": 2,
+      "roi_score": null
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "v4-adaptive-scale-policy",
-  "goal": "Maximize useful SEO/AEO/GEO surfaces with an aggressive Approval Prep publishing priority, practical editorial judgment, and tolerant operating margins.",
+  "version": "v4.6-portfolio-citation-control",
+  "goal": "Pursue 100,000 portfolio citation/impression opportunities in six months while preserving truthful evidence, contextual usefulness, and measured backlink quality.",
   "default_launch_date": "auto-created on first run if data/autopilot-state.json is missing",
   "daily_rules": [
     {
@@ -61,5 +61,44 @@
       "quality_policy": "Aim for 5-8 pages daily and preserve aggressive momentum. Daily variation, word counts, page counts, anchor length, and product mix are warning-only; only structural corruption, false evidence, wrong-domain routing, or clearly prohibited claims may block publication.",
       "preferred_range": "5-8"
     }
-  ]
+  ],
+  "city_vendor_expansion": {
+    "publication_family_id": "city-vendor",
+    "active_only": true,
+    "candidate_cities_do_not_generate": true,
+    "universal_topic_owner_required": true,
+    "minimum_launch_inventory": {
+      "city_specific_cornerstones": 5,
+      "planning_pages": 5
+    },
+    "no_automatic_activation_from_roi_score": true
+  },
+  "portfolio_citation_objective": {
+    "target": 100000,
+    "window_days": 180,
+    "components": [
+      "owned_product_repo_surfaces",
+      "authority_network_pages",
+      "rendered_backlinks",
+      "live_verified_backlinks",
+      "indexed_referring_pages",
+      "independent_external_mentions",
+      "search_impressions",
+      "ai_citations_or_mentions"
+    ],
+    "targets_are_nonblocking": true,
+    "never_equate_generated_with_indexed_or_cited": true,
+    "growth_profiles_path": "data/brand-growth-profiles.json",
+    "product_manifest_path": "data/product-repo-manifests.json",
+    "dashboard_path": "reports/citation-portfolio-dashboard.json"
+  },
+  "portfolio_scheduler": {
+    "enabled": true,
+    "method": "weighted_deficit_by_publication",
+    "preserve_contextual_fit": true,
+    "allow_no_link_when_no_fit": true,
+    "minimum_presence_is_guidance_only": true,
+    "maximum_share_is_guidance_only": true,
+    "do_not_force_backlink": true
+  }
 }

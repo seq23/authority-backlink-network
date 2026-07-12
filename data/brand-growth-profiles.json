@@ -1,0 +1,232 @@
+{
+  "version": "1.0",
+  "objective": "Pursue 100,000 portfolio citation/impression opportunities within six months through owned content surfaces, verified authority backlinks, independent mentions, and measurable discovery. Targets guide scheduling and reporting; they are not release blockers.",
+  "measurement_law": "Never label a generated page as indexed, cited, or externally verified without evidence.",
+  "profiles": [
+    {
+      "brand_id": "the-industry-guides",
+      "brand_name": "The Industry Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 2
+    },
+    {
+      "brand_id": "accident-guides",
+      "brand_name": "The Accident Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 18,
+      "target_verified_backlinks_per_month": 14,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 1
+    },
+    {
+      "brand_id": "dentistry-guides",
+      "brand_name": "The Dentistry Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 3
+    },
+    {
+      "brand_id": "hormones-iv-hair",
+      "brand_name": "Hormone Optimization Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 18,
+      "target_verified_backlinks_per_month": 14,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 1
+    },
+    {
+      "brand_id": "neuro-eval-guides",
+      "brand_name": "Neuro Evaluation Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 3
+    },
+    {
+      "brand_id": "uscis-exam-guides",
+      "brand_name": "USCIS Exam Guides",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 3
+    },
+    {
+      "brand_id": "bhpc",
+      "brand_name": "Billionaire High Performance Coach",
+      "growth_status": "standard",
+      "approved_publications": [
+        "founder"
+      ],
+      "target_authority_pages_per_month": 10,
+      "target_verified_backlinks_per_month": 8,
+      "minimum_monthly_presence": 2,
+      "maximum_share_of_publication": 0.25,
+      "scheduler_weight": 1,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 4
+    },
+    {
+      "brand_id": "aplayer-mode",
+      "brand_name": "A Player Mode",
+      "growth_status": "growth",
+      "approved_publications": [
+        "founder"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 3
+    },
+    {
+      "brand_id": "virtual-agency-os",
+      "brand_name": "Virtual Agency OS",
+      "growth_status": "growth",
+      "approved_publications": [
+        "founder"
+      ],
+      "target_authority_pages_per_month": 15,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 3
+    },
+    {
+      "brand_id": "west-peek-productions",
+      "brand_name": "West Peek Productions",
+      "growth_status": "standard",
+      "approved_publications": [
+        "founder"
+      ],
+      "target_authority_pages_per_month": 10,
+      "target_verified_backlinks_per_month": 8,
+      "minimum_monthly_presence": 2,
+      "maximum_share_of_publication": 0.25,
+      "scheduler_weight": 1,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 5
+    },
+    {
+      "brand_id": "horse-legal-guide",
+      "brand_name": "Horse Legal Guide",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 18,
+      "target_verified_backlinks_per_month": 14,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 1
+    },
+    {
+      "brand_id": "hicks-consulting",
+      "brand_name": "Hicks Consulting",
+      "growth_status": "growth",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 18,
+      "target_verified_backlinks_per_month": 14,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.2,
+      "scheduler_weight": 2,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 1
+    },
+    {
+      "brand_id": "porch-party",
+      "brand_name": "Porch & Party",
+      "growth_status": "standard",
+      "approved_publications": [
+        "memphis"
+      ],
+      "target_authority_pages_per_month": 10,
+      "target_verified_backlinks_per_month": 8,
+      "minimum_monthly_presence": 2,
+      "maximum_share_of_publication": 0.25,
+      "scheduler_weight": 1,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 15
+    },
+    {
+      "brand_id": "approval-prep",
+      "brand_name": "Approval Prep",
+      "growth_status": "priority",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 150,
+      "target_verified_backlinks_per_month": 120,
+      "minimum_monthly_presence": 60,
+      "maximum_share_of_publication": 0.45,
+      "scheduler_weight": 5,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 12
+    },
+    {
+      "brand_id": "dream-wedding-builder",
+      "brand_name": "Dream Wedding Builder",
+      "growth_status": "launch",
+      "approved_publications": [
+        "memphis"
+      ],
+      "target_authority_pages_per_month": 60,
+      "target_verified_backlinks_per_month": 48,
+      "minimum_monthly_presence": 20,
+      "maximum_share_of_publication": 0.3,
+      "scheduler_weight": 4,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 0
+    }
+  ]
+}

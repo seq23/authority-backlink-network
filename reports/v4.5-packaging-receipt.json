@@ -1,0 +1,41 @@
+{
+  "version": "4.5.0",
+  "source_zip": "authority-network-main-v4.4.1-hostile-hardened.zip",
+  "status": "STRUCTURALLY CHECKED \u2014 LOCAL VALIDATION REQUIRED",
+  "validation": {
+    "full_profile": "PASS_WITH_SOFT_WARNING",
+    "release_blocked": false,
+    "hard_failures": 0,
+    "strong_warnings": 0,
+    "soft_warnings": 23,
+    "cold_pages": {
+      "hits": 0,
+      "misses": 79
+    },
+    "warm_pages": {
+      "hits": 79,
+      "misses": 0
+    },
+    "cold_warm_verdict_equivalent": true,
+    "clean_rebuild": "PASS",
+    "cache_self_test": "PASS",
+    "link_violations": 0
+  },
+  "implemented": [
+    "shared page audit engine",
+    "bounded generated-page repair",
+    "content-addressed validation cache",
+    "dependency-aware fingerprints",
+    "cold/warm proof",
+    "deterministic derived build parity",
+    "CI cache wiring",
+    "README and Day-0 VA/operator docs",
+    "plain-English system and cache guides"
+  ],
+  "not_implemented": [
+    "live provider credentials",
+    "deployment",
+    "new city activation",
+    "OAuth credential broker"
+  ]
+}

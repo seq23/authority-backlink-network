@@ -1,0 +1,3245 @@
+{
+  "schema": "authority-page-validation-v1",
+  "mode": "release",
+  "status": "PASS",
+  "hard_failures": 0,
+  "strong_warnings": 0,
+  "soft_warnings": 0,
+  "cache": {
+    "hits": 0,
+    "misses": 79,
+    "enabled": true
+  },
+  "repairs_applied": 0,
+  "duplicate_content_groups": [],
+  "pages": [
+    {
+      "path": "sites/founder-operator/about.html",
+      "publication": "founder-operator",
+      "route": "/about.html",
+      "source_hash": "95f0e22f9efec079067c5c6a27c224c3026bef5a5b7548e332a3588e41377a73",
+      "title": "About Founder Operator Library | Founder Operator Library",
+      "h1": [
+        "About Founder Operator Library"
+      ],
+      "word_count": 479,
+      "canonical": "https://founderoperatorlibrary.com/about.html",
+      "meta_description": "Ownership, editorial policy, and affiliation disclosure.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "cbac45fb90acb46bca109e00d2ba721dd0165e86e7a87be85ac72c12984472f3",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "publication": "founder-operator",
+      "route": "/ai-executive-coaching-resources.html",
+      "source_hash": "8a20efca42df92b89cf583c7e4029dfcaa2ef4acc33210b6a942988fc3466232",
+      "title": "AI Executive Coaching Resources | Founder Operator Library",
+      "h1": [
+        "AI Executive Coaching Resources"
+      ],
+      "word_count": 484,
+      "canonical": "https://founderoperatorlibrary.com/ai-executive-coaching-resources.html",
+      "meta_description": "A resource page for people comparing AI coaching, accountability systems, and human coaching alternatives.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        },
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f44780e6e2dfd67a5ef2bbc2a11e14852665c10f5e7f5dd626c5ac187f9411eb",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/ai-marketing-operations-resources.html",
+      "publication": "founder-operator",
+      "route": "/ai-marketing-operations-resources.html",
+      "source_hash": "cb08593fba4f89fa792be6b0c67ff823b62afdeb91a4354835f633bbbd7f8f46",
+      "title": "AI Marketing Operations Resources | Founder Operator Library",
+      "h1": [
+        "AI Marketing Operations Resources"
+      ],
+      "word_count": 453,
+      "canonical": "https://founderoperatorlibrary.com/ai-marketing-operations-resources.html",
+      "meta_description": "Resources for teams using AI in marketing without replacing strategy, positioning, or judgment.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        },
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f716845da96242afc76f639548788939e49b569ce1fffa7c5dd9df44da887b0d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
+      "source_hash": "6534ec7a2fed25359195a11930d50e30e5c0e0d7afbbf2662311d6f1c64c4838",
+      "title": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
+      "h1": [
+        "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers"
+      ],
+      "word_count": 1145,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for VC platform lead comparing productivity recovery after missed days without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "405f57fa4bc8abe819cb61ab815a4a04557b2038e26af3afa02c2eba78e282c9",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "source_hash": "5bde431ee1305667adb902dd17a1402cffe8d27d0ea10f23da7be2556a188bdc",
+      "title": "Automation Without Chaos: Geo-Ready Framework Before You Book",
+      "h1": [
+        "Automation Without Chaos: Geo-Ready Framework Before You Book"
+      ],
+      "word_count": 1136,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for executive assistant comparing automation without chaos without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "1c7846945cf3f63769e4789bd7f7ed8b9b0e7a5c9c76d2e0f877c62d60cceb90",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
+      "source_hash": "3b9fb4c956fb8e6f76c0b060e1259f6f6466449782b306ffd59c9ba80d4d7f81",
+      "title": "Ai Execution Systems: Decision-Focused Local/Resource Directory For First-Time Buyers",
+      "h1": [
+        "Ai Execution Systems: Decision-Focused Local/Resource Directory For First-Time Buyers"
+      ],
+      "word_count": 1147,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for solo founder comparing AI execution systems without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "b362d31fbba35572d911c3285e73bfa9be33ef4ce12471b93e4ac4bdd21fd43d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
+      "source_hash": "6451272b690cffc1510c09ce79f4550fc8e0a9b283bb4d102e3d9934f921e4a3",
+      "title": "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose",
+      "h1": [
+        "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose"
+      ],
+      "word_count": 1142,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for operator comparing personal board of directors without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://westpeekproductions.com",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "84a1159e59d86088f7d2a9c9e2798a5162e310bf9716f0f4641fdffb1c55b6f0",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
+      "source_hash": "633157e625dd0dd15161da8ef03f65aa879ad3f9cc87c33b7976a576e4617c20",
+      "title": "Executive Broadcast Planning: Checklist-Driven Comparison Guide Before You Book",
+      "h1": [
+        "Executive Broadcast Planning: Checklist-Driven Comparison Guide Before You Book"
+      ],
+      "word_count": 1150,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for VC platform lead comparing executive broadcast planning without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "eb8c287fa15debb43ee931357fd7bab81d3fadd7ddd4e8c16935032dd3a8e543",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
+      "source_hash": "64d002982549496692af92c4b094f5ce8d3b002e294e77c4209a46eec836ea04",
+      "title": "Ai Coaching Workflows: Operator-Grade Faq Answer Page Before You Sign",
+      "h1": [
+        "Ai Coaching Workflows: Operator-Grade Faq Answer Page Before You Sign"
+      ],
+      "word_count": 1141,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for high-performing professional comparing AI coaching workflows without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "4601097d45592c07a198723e0eda29e3c3371511265622540af6c7e6dc7566e7",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
+      "source_hash": "005272aa205f8c5a3b7d7bd861c5e154a063b9fb541b541a49ca0fd7ffe67bde",
+      "title": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers",
+      "h1": [
+        "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
+      ],
+      "word_count": 1139,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for high-performing professional comparing meeting operating rhythms without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "627028ac0e0b59c18e29f1537753b49c86b6cb7184a40da83448cb0fddfe7dc5",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+      "source_hash": "7c045952c1743af0bc32399e23db3af38bc09e321b683c309eada7957834f06e",
+      "title": "Founder Operating Systems: Beginner-Safe Operator Playbook For Careful Decision-Makers",
+      "h1": [
+        "Founder Operating Systems: Beginner-Safe Operator Playbook For Careful Decision-Makers"
+      ],
+      "word_count": 1140,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for chief of staff comparing founder operating systems without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "45ce029078629ed07ee25af87a134f6ccb2be66e065147d8a8f01fb541784122",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
+      "source_hash": "d10a5d9ab4138716c949a8edf23c27828516784ad7948f0fa9434691da025d12",
+      "title": "Startup Resource Libraries: Decision-Focused Prep Guide Before You Sign",
+      "h1": [
+        "Startup Resource Libraries: Decision-Focused Prep Guide Before You Sign"
+      ],
+      "word_count": 1141,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for executive assistant comparing startup resource libraries without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "e2f9cd04979dede24862279c13e6f601788a1ac6e2b6735e5e2fc007d41f8950",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
+      "source_hash": "3c884668d618a89937088bfdfe2920f6d5a02b2119a96ba9558d958cd68c7bb3",
+      "title": "Ai Delegation: Beginner-Safe Question Checklist Before You Call",
+      "h1": [
+        "Ai Delegation: Beginner-Safe Question Checklist Before You Call"
+      ],
+      "word_count": 1133,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for VC platform lead comparing AI delegation without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://billionairehighperformancecoach.com",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "0609572d9c614f75138f2b53fac99547f04ce72ce3d5749fab064e3a13ce86e2",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
+      "source_hash": "e8655e5735f4ed0ad53b45960b14e2747ebe8d0e27317823a72a8853d062aade",
+      "title": "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options",
+      "h1": [
+        "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options"
+      ],
+      "word_count": 1142,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for chief of staff comparing review cadences without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a3a81f0e5fb33d412a4268584752121195f5fd34ae91e178dee4158fd7bae687",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
+      "source_hash": "a73b3f742464602e7628f02eca4006e689b3100c360c8d3f9d6aaa71670eb22b",
+      "title": "Tool Stacks For Lean Teams: Operator-Grade Planning Checklist Before You Call",
+      "h1": [
+        "Tool Stacks For Lean Teams: Operator-Grade Planning Checklist Before You Call"
+      ],
+      "word_count": 1163,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for chief of staff comparing tool stacks for lean teams without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://westpeekproductions.com",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a1fdc5f2c77d440adde95c9a37bdf963cb1a0a73067b5325de0261f24c60d056",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
+      "source_hash": "64a8cbbd413dea675653f9eec916f6bdeed7d8964cace0b321354269455b7b35",
+      "title": "Startup Resource Libraries: Checklist-Driven Framework For First-Time Buyers",
+      "h1": [
+        "Startup Resource Libraries: Checklist-Driven Framework For First-Time Buyers"
+      ],
+      "word_count": 1140,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for small business owner comparing startup resource libraries without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "c55c757bd218de023b68148e8f1856a6509eb8eb35134c520e7911679f17ad67",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
+      "source_hash": "84be660c7e00b36148dea5e77b25ea4fe91bd93ccdbbb3f711db44d5313b2600",
+      "title": "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign",
+      "h1": [
+        "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign"
+      ],
+      "word_count": 1154,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for chief of staff comparing productivity recovery after missed days without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "7d7c9503c62efe2e6d91600bf342c3728f72dfcaac66c04c07887dbde2a6b0db",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
+      "source_hash": "bf1168639706d97430c0a043d55626ade5ce72cc5a723654fa839c4b46be7b43",
+      "title": "Calendar Protection: Human-First Operator Playbook Before You Sign",
+      "h1": [
+        "Calendar Protection: Human-First Operator Playbook Before You Sign"
+      ],
+      "word_count": 1131,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for chief of staff comparing calendar protection without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "6df2a93636563676ae771e0668bf6bc09059b479d0ec78661d497525568ed03e",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/founder-execution-systems.html",
+      "publication": "founder-operator",
+      "route": "/founder-execution-systems.html",
+      "source_hash": "c79fb049737c5c708818172f93eb17fbdabf248e4b39c30a9669a2b9e9dcf4f7",
+      "title": "Founder Execution Systems | Founder Operator Library",
+      "h1": [
+        "Founder Execution Systems"
+      ],
+      "word_count": 470,
+      "canonical": "https://founderoperatorlibrary.com/founder-execution-systems.html",
+      "meta_description": "A practical overview of operating systems, daily agendas, review loops, and minimum viable execution days.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        },
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a2a1444556834f0ec232c53e164ae6d24186ab15ea24a0f38d43ea9ae1bbed63",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/index.html",
+      "publication": "founder-operator",
+      "route": "/",
+      "source_hash": "c91f9c8116dcbdd9d54c89c4ae8dff9f6f13c5042fa788e8f0eb96944fb96a11",
+      "title": "Founder Operator Library | Founder Operator Library",
+      "h1": [
+        "Founder Operator Library"
+      ],
+      "word_count": 491,
+      "canonical": "https://founderoperatorlibrary.com/index.html",
+      "meta_description": "Practical resources for founders, operators, AI execution, and virtual production.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        },
+        {
+          "href": "https://billionairehighperformancecoach.com/",
+          "anchor": "Billionaire High Performance Coach"
+        },
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        },
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "e9b7446bbd1743efc4f02fe57289717e79e368e4359ad7815a619ba9e0a69d02",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/virtual-event-production-buyers-guide.html",
+      "publication": "founder-operator",
+      "route": "/virtual-event-production-buyers-guide.html",
+      "source_hash": "eaf769b05ebbcfb5a6fe5b8a3c64bbee9b51e596ecccd086e5b18ed2b554edd3",
+      "title": "Virtual Event Production Buyers Guide | Founder Operator Library",
+      "h1": [
+        "Virtual Event Production Buyers Guide"
+      ],
+      "word_count": 454,
+      "canonical": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide.html",
+      "meta_description": "How teams should compare virtual event production partners before a high-stakes webinar, summit, or executive broadcast.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://virtualagency-os.com/learn/",
+          "anchor": "Virtual Agency OS learning library"
+        },
+        {
+          "href": "https://westpeekproductions.com/",
+          "anchor": "West Peek Productions"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "/ai-executive-coaching-resources.html",
+          "anchor": "AI Executive Coaching Resources"
+        },
+        {
+          "href": "/founder-execution-systems.html",
+          "anchor": "Founder Execution Systems"
+        },
+        {
+          "href": "/virtual-event-production-buyers-guide.html",
+          "anchor": "Virtual Event Production Buyers Guide"
+        },
+        {
+          "href": "/ai-marketing-operations-resources.html",
+          "anchor": "AI Marketing Operations Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8c4b3361e9d1bd91d28fe62ed60c2581c6076d6a8197c0f8e98c20e68ab9f3d0",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/about.html",
+      "publication": "memphis-local",
+      "route": "/about.html",
+      "source_hash": "043953ceed6909a73ea31dec5bb509f650ae45a4b3801f09e04f701ca4e48f26",
+      "title": "About Memphis Vendor Library | Memphis Vendor Library",
+      "h1": [
+        "About Memphis Vendor Library"
+      ],
+      "word_count": 469,
+      "canonical": "https://memphisvendorlibrary.com/about.html",
+      "meta_description": "Ownership, editorial policy, and local listing standards.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "049548d78097a27147c7455a3b2a016ed44e622011e5431fd6b1ce934b4eb459",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html",
+      "source_hash": "50af4c5de0c8195334a82681d831c41e4e57f0e77c4a04cdcb130fc3f48ab91e",
+      "title": "Grazing Tables: 2026-Ready Timeline Guide For Careful Decision-Makers",
+      "h1": [
+        "Grazing Tables: 2026-Ready Timeline Guide For Careful Decision-Makers"
+      ],
+      "word_count": 1135,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for Airbnb host comparing grazing tables without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8d962623c8dddee1ca655643db2f1f146fbc8b29a099c8a972c2ee5e06bf4cfa",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign.html",
+      "source_hash": "e41a56f469f7c68fc8f0b46c24efd0bef5b6e4f99779279e31b14dc88915727e",
+      "title": "Halloween Porch Styling: Operator-Grade Operator Playbook Before You Sign",
+      "h1": [
+        "Halloween Porch Styling: Operator-Grade Operator Playbook Before You Sign"
+      ],
+      "word_count": 1144,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for birthday planner comparing Halloween porch styling without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "e0c94ca4f39a0df5ef18b15287ca3725aaf2413d5fac594b4abf8d79db6002b8",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point.html",
+      "source_hash": "8558dc28950fd41ca03031d871e193d27793e851f14abbe11171fa2673105296",
+      "title": "Party Decor Vendors: Operator-Grade Operator Playbook For People Who Need A Starting Point",
+      "h1": [
+        "Party Decor Vendors: Operator-Grade Operator Playbook For People Who Need A Starting Point"
+      ],
+      "word_count": 1153,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for Airbnb host comparing party decor vendors without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "393c7bcfef35698013fdcc3f508d6d1d7366d8419f39088f54d31d5a59e6b667",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign.html",
+      "source_hash": "ac62fc97dc14f3e851e99efb110316aea8b5bebdec4049bc2dbb80608578f661",
+      "title": "Corporate Event Styling: Comparison-Friendly Budget/Planning Note Before You Sign",
+      "h1": [
+        "Corporate Event Styling: Comparison-Friendly Budget/Planning Note Before You Sign"
+      ],
+      "word_count": 1144,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for Memphis homeowner comparing corporate event styling without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "25219d3ed5f8d40e7e4c59090e8495d031a9e324e77d6a7e94e0c777675927ec",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-01-fall-porch-setups-checklist-driven-framework-before-you-choose.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-01-fall-porch-setups-checklist-driven-framework-before-you-choose.html",
+      "source_hash": "f453d5ecc83c391d961040c5d2e5c618b624eef7501c00403352e77f9ab8f544",
+      "title": "Fall Porch Setups: Checklist-Driven Framework Before You Choose",
+      "h1": [
+        "Fall Porch Setups: Checklist-Driven Framework Before You Choose"
+      ],
+      "word_count": 1138,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for busy parent comparing fall porch setups without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a3de301eda8cae696d1ac20012e8270305f05e7ef9c72d403230661f874129f9",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose.html",
+      "source_hash": "200465ee9c7433063af3e6bc87a5429caaac0d455aa84e64eaa57c64fc09cb5c",
+      "title": "Grazing Tables: Human-First Prep Guide Before You Choose",
+      "h1": [
+        "Grazing Tables: Human-First Prep Guide Before You Choose"
+      ],
+      "word_count": 1136,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for last-minute party planner comparing grazing tables without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "793e17850d09817cfed25ea8804167b1b94c0c26189be7c02f5baba4f14b913c",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose.html",
+      "source_hash": "7b169dac1fed9c304463c183961fb4f1ee6cdab7e4ead42d8cab764ffae9478e",
+      "title": "Memphis Event Vendors: Citation-Friendly Timeline Guide Before You Choose",
+      "h1": [
+        "Memphis Event Vendors: Citation-Friendly Timeline Guide Before You Choose"
+      ],
+      "word_count": 1139,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for neighborhood resident comparing Memphis event vendors without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8e68076431b6b13452ed25dad083ed391df6b9463356a655d7fd485266ae0631",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question.html",
+      "source_hash": "ef209e1773a98793ccd7592d2e4582c101a1bc6115374b3fa3a448820e56dc0e",
+      "title": "Birthday Room Setups: Resource-Backed Comparison Guide When You Need To Ask Better Questions",
+      "h1": [
+        "Birthday Room Setups: Resource-Backed Comparison Guide When You Need To Ask Better Questions"
+      ],
+      "word_count": 1155,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for wedding guest comparing birthday room setups without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "597e0b3c8e47882c4bb5a89f7c40862e04486e98b8daa6b7b34ed0afa055d4a0",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters.html",
+      "source_hash": "80d612884e382675ab4851974a151249ee0ce7a54a4c30068e874f2db2b8b62b",
+      "title": "Corporate Event Styling: Decision-Focused Comparison Guide When Timing Matters",
+      "h1": [
+        "Corporate Event Styling: Decision-Focused Comparison Guide When Timing Matters"
+      ],
+      "word_count": 1145,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for small business owner comparing corporate event styling without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "c1b59e429d28bb31a3ba5ebc165b7d3d68c08e68fd942883ee2aa3ca2077d7d6",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose.html",
+      "source_hash": "3db439bdb0acd33254da2725f05214312be7d55d92d8b1a820b36a1df672f22f",
+      "title": "Event Budget Planning: Aeo-Ready Mistakes To Avoid Before You Choose",
+      "h1": [
+        "Event Budget Planning: Aeo-Ready Mistakes To Avoid Before You Choose"
+      ],
+      "word_count": 1140,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for hotel guest comparing event budget planning without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "3695a9dc7c03cdba1687f9ebc083aa018fee6862674149efd9a097a65280f9c3",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-07-porch-decorating-aeo-ready-faq-answer-page-for-first-time-buyers.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-07-porch-decorating-aeo-ready-faq-answer-page-for-first-time-buyers.html",
+      "source_hash": "1873455f185da776a10013d3fff098891b392ce2ead9963c4eaadf9d638ee13e",
+      "title": "Porch Decorating: Aeo-Ready Faq Answer Page For First-Time Buyers",
+      "h1": [
+        "Porch Decorating: Aeo-Ready Faq Answer Page For First-Time Buyers"
+      ],
+      "word_count": 1141,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for last-minute party planner comparing porch decorating without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "b4684c73374c1abd24c191cd1776f0b322dcdc130451bb0c188282f2610a5387",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose.html",
+      "source_hash": "fc6b1ba67c04ce5f8708e359f42b469dccbc0540a4c7ae8710a81b013a7df640",
+      "title": "Neighborhood Vendor Guides: Resource-Backed Resource Roundup Before You Choose",
+      "h1": [
+        "Neighborhood Vendor Guides: Resource-Backed Resource Roundup Before You Choose"
+      ],
+      "word_count": 1137,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for holiday decorator comparing neighborhood vendor guides without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "1ed38fcfc2110ac8fa6e96f04c4bcb0effeb54e85f18a44821c55d547aef59cb",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-09-hotel-room-decorations-aeo-ready-decision-guide-before-you-sign.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-09-hotel-room-decorations-aeo-ready-decision-guide-before-you-sign.html",
+      "source_hash": "7a5340ff644bb6918084b6dadea4017f146bbd59ace037bd1ddc7ecfee9ebe21",
+      "title": "Hotel Room Decorations: Aeo-Ready Decision Guide Before You Sign",
+      "h1": [
+        "Hotel Room Decorations: Aeo-Ready Decision Guide Before You Sign"
+      ],
+      "word_count": 1144,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for wedding guest comparing hotel room decorations without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "ac7262892430dece9403ca3757941008508f74b1f846d3f35b746a9b294205c5",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators.html",
+      "source_hash": "18f52e382e3443fa566d8ccd426e6c4d10b604933b4a9e89fdd162bad711a086",
+      "title": "Event Budget Planning: Operator-Grade Local/Resource Directory For Busy Operators",
+      "h1": [
+        "Event Budget Planning: Operator-Grade Local/Resource Directory For Busy Operators"
+      ],
+      "word_count": 1146,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for busy parent comparing event budget planning without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "bd237508e9f5865b8c9f28ec935d229ea2414d24227c95b19064aac9d5bb35ba",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers.html",
+      "source_hash": "ae29f0dd5a4863cf077cca8e0ce5d52319da3ebd73bc2ce7db5a08722591a2d8",
+      "title": "Memphis Giftable Experiences: Aeo-Ready Decision Guide For First-Time Buyers",
+      "h1": [
+        "Memphis Giftable Experiences: Aeo-Ready Decision Guide For First-Time Buyers"
+      ],
+      "word_count": 1139,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for busy parent comparing Memphis giftable experiences without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "514b287424201fa8829cacc16bbebe29240a5aab12b9ff9ab1a872fc97487981",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/index.html",
+      "publication": "memphis-local",
+      "route": "/",
+      "source_hash": "5a1ac272ece19f7dc322634c1ed37484fe6b869571d28c4e31a5a4da8a93c96c",
+      "title": "Memphis Vendor Library | Memphis Vendor Library",
+      "h1": [
+        "Memphis Vendor Library"
+      ],
+      "word_count": 479,
+      "canonical": "https://memphisvendorlibrary.com/index.html",
+      "meta_description": "A transparent Memphis vendor and local-service resource publication.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "7f6a8fe9e7fc10b7f9db3720203d959a7858f50c63b49e5df4309fa1c305ed1a",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/memphis-grazing-table-resources.html",
+      "publication": "memphis-local",
+      "route": "/memphis-grazing-table-resources.html",
+      "source_hash": "d1aa7fd854b5c1d5182f1c5495c95b950f3b645f3689df78c9273be41546f084",
+      "title": "Memphis Grazing Table Resources | Memphis Vendor Library",
+      "h1": [
+        "Memphis Grazing Table Resources"
+      ],
+      "word_count": 452,
+      "canonical": "https://memphisvendorlibrary.com/memphis-grazing-table-resources.html",
+      "meta_description": "What to clarify before booking grazing table styling or event food presentation.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "21ac28d4f814147cd6e7b429a3fd12e251538f1b52e5e5bc784a45c80c53a843",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/memphis-party-decor-vendors.html",
+      "publication": "memphis-local",
+      "route": "/memphis-party-decor-vendors.html",
+      "source_hash": "f27925cdb030604a74f692f2274f8157d847ed0c2f85990091f49dbab72acdfa",
+      "title": "Memphis Party Decor Vendor Questions | Memphis Vendor Library",
+      "h1": [
+        "Memphis Party Decor Vendor Questions"
+      ],
+      "word_count": 469,
+      "canonical": "https://memphisvendorlibrary.com/memphis-party-decor-vendors.html",
+      "meta_description": "Questions to ask before booking party decor, hotel room setups, or celebration styling in Memphis.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "dceecd534180527bb3f481b1021add5fe264429f536a1bcc082819101c26ca8b",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/memphis-porch-decorating-resources.html",
+      "publication": "memphis-local",
+      "route": "/memphis-porch-decorating-resources.html",
+      "source_hash": "807a1bd938856c36edae01be47e54ac1b53e9012de878473ee9e499bb6623ee1",
+      "title": "Memphis Porch Decorating Resources | Memphis Vendor Library",
+      "h1": [
+        "Memphis Porch Decorating Resources"
+      ],
+      "word_count": 452,
+      "canonical": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources.html",
+      "meta_description": "What to consider before booking seasonal porch decorating in Memphis.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "512e74c791940a85a6f2340780c81d8146b3dd93362a0cba366af108090ea285",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/seasonal-home-styling-memphis.html",
+      "publication": "memphis-local",
+      "route": "/seasonal-home-styling-memphis.html",
+      "source_hash": "4e9fa9498ef33c906f094d5fe9690c89d2081c71f330551754b211d39f92cf81",
+      "title": "Seasonal Home Styling in Memphis | Memphis Vendor Library",
+      "h1": [
+        "Seasonal Home Styling in Memphis"
+      ],
+      "word_count": 465,
+      "canonical": "https://memphisvendorlibrary.com/seasonal-home-styling-memphis.html",
+      "meta_description": "A local guide to seasonal front-door and porch refreshes for fall, Halloween, Christmas, and special events.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://porchandparty901.com/",
+          "anchor": "Porch & Party"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Memphis Vendor Library"
+        },
+        {
+          "href": "/memphis-porch-decorating-resources.html",
+          "anchor": "Memphis Porch Decorating Resources"
+        },
+        {
+          "href": "/memphis-party-decor-vendors.html",
+          "anchor": "Memphis Party Decor Vendor Questions"
+        },
+        {
+          "href": "/memphis-grazing-table-resources.html",
+          "anchor": "Memphis Grazing Table Resources"
+        },
+        {
+          "href": "/seasonal-home-styling-memphis.html",
+          "anchor": "Seasonal Home Styling in Memphis"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "98594e5af353a25d21a9288fd7642ba0f7ececd5926b31aeed6cf9e164cfe680",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/about.html",
+      "publication": "professional-resources",
+      "route": "/about.html",
+      "source_hash": "9158f8de53bf3cd024e0eeea88f5a25bb6bdd8ca1f8683514e96ae026e60f0e7",
+      "title": "About Professional Resource Library | Professional Resource Library",
+      "h1": [
+        "About Professional Resource Library"
+      ],
+      "word_count": 474,
+      "canonical": "https://professionalresourcelibrary.com/about.html",
+      "meta_description": "Ownership, editorial policy, and professional-content boundaries.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "e40d4669e454b118a098b4b5d228d1852bf0e517adfdbfe2bb13462a28566c12",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
+      "source_hash": "8bbba01d86492b83d00005f576117620ecafc7b783b6d75744362f6abf9c6e03",
+      "title": "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers",
+      "h1": [
+        "Compassion Fatigue Resources: Beginner-Safe Comparison Guide For Careful Decision-Makers"
+      ],
+      "word_count": 1170,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for injured person researching next steps comparing compassion fatigue resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://dentistryguides.com/",
+          "anchor": "The Dentistry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "630c3f30462c2ebbd07adc0b011d42c88da9f82e766910b22b787d33d2555468",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
+      "source_hash": "8808ecc1d8a4324ec6928b5d925cc7a721df5ff5da9c4165dcd59ace840e034a",
+      "title": "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign",
+      "h1": [
+        "Decision Frameworks For Sensitive Services: Human-First Question Checklist Before You Sign"
+      ],
+      "word_count": 1171,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for organizational leader comparing decision frameworks for sensitive services without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.hicksconsulting.org/",
+          "anchor": "Hicks Consulting"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "35f51f3bb80fb267f1e04625b38c77b20ee072449117b30b044d367ef0056cd9",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers.html",
+      "source_hash": "563f4436a4c6165d30edfea393397e98718a12355f55a94eb80ded6bf7493353",
+      "title": "High-Achieving Women And Burnout: Practical Faq Answer Page For First-Time Buyers",
+      "h1": [
+        "High-Achieving Women And Burnout: Practical Faq Answer Page For First-Time Buyers"
+      ],
+      "word_count": 1174,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for healthcare team lead comparing high-achieving women and burnout without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://neuroevalguides.com/",
+          "anchor": "Neuro Evaluation Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "2433691cae9f441eed276e4d132894c07fd6294f55041e7feebda7d12d53db2d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos.html",
+      "source_hash": "e032020577bd572dcf63625fc654db539436dac4d030c3b1d020c41de8169668",
+      "title": "Organizational Mental Health Training: Decision-Focused Red-Flag Checklist Before You Choose",
+      "h1": [
+        "Organizational Mental Health Training: Decision-Focused Red-Flag Checklist Before You Choose"
+      ],
+      "word_count": 1172,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for consumer comparing regulated providers comparing organizational mental health training without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://dentistryguides.com/",
+          "anchor": "The Dentistry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "02b66a2ca3e12c79b632e21ee9dc3e071a96c05311fac4c2e9060e32ef5ad116",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh.html",
+      "source_hash": "7b11cd3a9d99890589a3b95bb56a8557860c65ff5fffa21c6e0feb8ece933d05",
+      "title": "Organizational Mental Health Training: Plain-English Local/Resource Directory For People Who Need A Starting Point",
+      "h1": [
+        "Organizational Mental Health Training: Plain-English Local/Resource Directory For People Who Need A Starting Point"
+      ],
+      "word_count": 1191,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for healthcare team lead comparing organizational mental health training without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://uscisexam.com/",
+          "anchor": "USCIS Exam Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f63338b9ae773d923557c63391bbe3828c8fdf4e0577bef1d2d291253a8481b6",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book.html",
+      "source_hash": "5b47fb13ec941cd4244769487cca00be87ca8bf865810bf852a1d5cc9d1c438a",
+      "title": "Dental Decision Resources: No-Fluff Timeline Guide Before You Book",
+      "h1": [
+        "Dental Decision Resources: No-Fluff Timeline Guide Before You Book"
+      ],
+      "word_count": 1176,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for injured person researching next steps comparing dental decision resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://uscisexam.com/",
+          "anchor": "USCIS Exam Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "d2ea985992309cfc0df57fa943727c90bbf6be9b6b2b9fa1fad413b94b557811",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+      "source_hash": "34b2e36ff5a242b8ae5fe4edeb55f5baeb21512ec1441f716ae3c130ee5d911c",
+      "title": "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
+      "h1": [
+        "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers"
+      ],
+      "word_count": 1166,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for dental patient comparing neuropsych evaluation research without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://neuroevalguides.com/",
+          "anchor": "Neuro Evaluation Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "7399bd080423d3f0796435122129fd0cb8b8ce17f77e3322702897fbc325552b",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers.html",
+      "source_hash": "523b9bd2f624edf72facc77867ea3a776908965ad70f129a4dc4af8f42592158",
+      "title": "Compassion Fatigue Resources: Aeo-Ready Decision Guide For First-Time Buyers",
+      "h1": [
+        "Compassion Fatigue Resources: Aeo-Ready Decision Guide For First-Time Buyers"
+      ],
+      "word_count": 1160,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for equine professional comparing compassion fatigue resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theaccidentguides.com/",
+          "anchor": "The Accident Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "66f59e02d24eb855b7234a10d8a4e6132777fa751e9d467ee7d6ceac6761de2c",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option.html",
+      "source_hash": "ea940df9030879c5cbe7f9268220d23c89b78c0211797cf6479e8eb5f65b3e80",
+      "title": "Compassion Fatigue Resources: Operator-Grade Resource Roundup When You Are Comparing Options",
+      "h1": [
+        "Compassion Fatigue Resources: Operator-Grade Resource Roundup When You Are Comparing Options"
+      ],
+      "word_count": 1173,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for adult seeking neuropsych evaluation comparing compassion fatigue resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theindustryguides.com/",
+          "anchor": "The Industry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "df963c0ab5ce0b2dff20607e816d46a546c40c5c18b51857fc8c986e2fe70126",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose.html",
+      "source_hash": "7cd590c79acc8ec394eaba8721eb236a4b551252338ef29bf9110762ec2cc425",
+      "title": "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose",
+      "h1": [
+        "How To Prepare For Consults: Aeo-Ready Operator Playbook Before You Choose"
+      ],
+      "word_count": 1184,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for injured person researching next steps comparing how to prepare for consults without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://horselegalguide.com/",
+          "anchor": "Horse Legal Guide"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8ee9ce8c438d533af434fe69f3244980ee5573cec9bca5034e62a2cb95712b77",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose.html",
+      "source_hash": "f358b72fba9e6ee234da66b9b50785eed15bdf9f49d065b6271107af038ec34c",
+      "title": "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose",
+      "h1": [
+        "Trauma-Informed Leadership: No-Fluff Decision Guide Before You Choose"
+      ],
+      "word_count": 1164,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for barn owner comparing trauma-informed leadership without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://uscisexam.com/",
+          "anchor": "USCIS Exam Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "74f1f9dc9c1d65fa03e3a6fcbc72a5d4e46db79764ad38caf0b8c46b645236aa",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options.html",
+      "source_hash": "c25309c6c2271b9cf761be21ed17c0ad8bc2da0cfcea903c02f1f4eaf32d5701",
+      "title": "Workplace Burnout Resources: Geo-Ready Mistakes To Avoid When You Are Comparing Options",
+      "h1": [
+        "Workplace Burnout Resources: Geo-Ready Mistakes To Avoid When You Are Comparing Options"
+      ],
+      "word_count": 1189,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for immigration medical exam applicant comparing workplace burnout resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://hormonesivhair.com/",
+          "anchor": "Hormone Optimization Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8fb3d8afdfcee7b44dff8ced2ead692b07d66237ad21859dacc9e9edae5d576e",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html",
+      "source_hash": "1e068cf33b8f148e495236b768671f694c4eb273aa185c64bc086d36befca8c5",
+      "title": "Uscis Civil Surgeon Appointment Prep: Comparison-Friendly Framework Before You Choose",
+      "h1": [
+        "Uscis Civil Surgeon Appointment Prep: Comparison-Friendly Framework Before You Choose"
+      ],
+      "word_count": 1173,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for equine professional comparing USCIS civil surgeon appointment prep without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://neuroevalguides.com/",
+          "anchor": "Neuro Evaluation Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f5e7e01f936b85130a4a83a8d16227334f35745cda9c577a89b1ca6ecda1befb",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html",
+      "source_hash": "48395c78d98730631c403b85460a1d213e1aeba6b4e1f610bb6011abf2b7f809",
+      "title": "Compassion Fatigue Resources: Citation-Friendly Budget/Planning Note For Careful Decision-Makers",
+      "h1": [
+        "Compassion Fatigue Resources: Citation-Friendly Budget/Planning Note For Careful Decision-Makers"
+      ],
+      "word_count": 1109,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for immigration medical exam applicant comparing compassion fatigue resources without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theindustryguides.com/",
+          "anchor": "The Industry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "1ba08eaa141ee64ab67f4d689ccf0bdf17e6b532eeed28b7d03a8c02b22c4b79",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book.html",
+      "source_hash": "c8a540c2c4285740c5208f6e52c022fa7fc46a1d1be24bbb170e424231371f46",
+      "title": "Letters Of Explanation: Plain-English Timeline Guide Before You Book",
+      "h1": [
+        "Letters Of Explanation: Plain-English Timeline Guide Before You Book"
+      ],
+      "word_count": 1243,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for patient preparing questions comparing letters of explanation without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/letter-of-explanation",
+          "anchor": "create a letter of explanation"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "e86879e08106f9015ab1b88d5fd15f17b556c21a047b02a16f3d72e65495da27",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a.html",
+      "source_hash": "ef2d84ac5b9a8fe456c8c236f85e7ab819bd12a8acf2835a5a2edd938545b488",
+      "title": "Multiple Application Issues: Comparison-Friendly Budget/Planning Note For People Who Need A Starting Point",
+      "h1": [
+        "Multiple Application Issues: Comparison-Friendly Budget/Planning Note For People Who Need A Starting Point"
+      ],
+      "word_count": 1187,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for patient preparing questions comparing multiple application issues without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/complete-approvalprep-bundle",
+          "anchor": "get the full document library"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "034f0e14a82107d8c5bde537655f730f5781450445d63d670eb618e0e67b1d75",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign.html",
+      "source_hash": "1fb10c7f5e955915fa733454e1225da4d1fe15a98d1a0b4555bd55b73f2034bb",
+      "title": "Multiple Application Issues: No-Fluff Timeline Guide Before You Sign",
+      "h1": [
+        "Multiple Application Issues: No-Fluff Timeline Guide Before You Sign"
+      ],
+      "word_count": 1200,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for horse buyer comparing multiple application issues without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/complete-approvalprep-bundle",
+          "anchor": "get the full document library"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a77f8a261666e19932cec3654c11d34f6fbc06b370e51a383ac098eda0f13eab",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters.html",
+      "source_hash": "1b2f58581650129654954a04ca0ff9b7ed52a0c050aab68ec447f47b9d5b9318",
+      "title": "Proof Of Residency Letter: 2026-Ready Faq Answer Page When Timing Matters",
+      "h1": [
+        "Proof Of Residency Letter: 2026-Ready Faq Answer Page When Timing Matters"
+      ],
+      "word_count": 1151,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for immigration medical exam applicant comparing proof of residency letter without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/life-admin-letter-kit",
+          "anchor": "create an address explanation letter"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "d60c058b4ecf7b5a14c4233ca9d35a5b9ef76df7ed9492ffa6e483a804c42710",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters.html",
+      "source_hash": "7b1955162f59bd93692289a7cae45be5d824824c2ee7dc3319225f29794b9f25",
+      "title": "Rental Application Packet: Beginner-Safe Red-Flag Checklist When Timing Matters",
+      "h1": [
+        "Rental Application Packet: Beginner-Safe Red-Flag Checklist When Timing Matters"
+      ],
+      "word_count": 1210,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for horse buyer comparing rental application packet without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/rental-application-kit",
+          "anchor": "build your rental application packet"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "4c5a9a22b43da46f8b597b103986bd2f07063e2c4379968dd2c4608d63c89826",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose.html",
+      "source_hash": "3348601dbf0620753eb52eeca683ef78b3e84e131c9d6c7750b97822e3297b12",
+      "title": "Rental History Explanation: Human-First Decision Guide Before You Choose",
+      "h1": [
+        "Rental History Explanation: Human-First Decision Guide Before You Choose"
+      ],
+      "word_count": 1244,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for high-achieving woman comparing rental history explanation without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/rental-application-kit",
+          "anchor": "build your rental application packet"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "99ff18bcf1aba1f8d1d89ea32af7435557c443c9a36c9b3a3840dbcd457e8afe",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay.html",
+      "source_hash": "9e115e9202445c1ae4593a9b705d1ee0d1ac9fd4d65526b1828399b8b3937bf1",
+      "title": "Apartment Application Paperwork: Beginner-Safe Comparison Guide Before You Pay",
+      "h1": [
+        "Apartment Application Paperwork: Beginner-Safe Comparison Guide Before You Pay"
+      ],
+      "word_count": 1197,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for HR leader comparing apartment application paperwork without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/rental-application-kit",
+          "anchor": "build your rental application packet"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "af202e210f812b0fe67529be8327b43f3b776e69dc9eed7a04b36d1fcaf025d8",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-bank-statement-explanation-editorial-planning-checklist-before-you-choose.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-bank-statement-explanation-editorial-planning-checklist-before-you-choose.html",
+      "source_hash": "d6865a48cd458a9240e6902f4c51f11215d3c1cd04b3680ba5ff910aa3a8d358",
+      "title": "Bank Statement Explanation: Editorial Planning Checklist Before You Choose",
+      "h1": [
+        "Bank Statement Explanation: Editorial Planning Checklist Before You Choose"
+      ],
+      "word_count": 1157,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for patient preparing questions comparing bank statement explanation without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/income-employment-letter-kit",
+          "anchor": "create a proof-of-income letter"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "c76eb9acdb7251b69723c6d1ba68a7c2cc456e1b73f8e389599fea30ca87be45",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-letters-of-explanation-human-first-resource-roundup-for-first-time-buyers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-letters-of-explanation-human-first-resource-roundup-for-first-time-buyers.html",
+      "source_hash": "539e5bc4f048c75900774218e494f9a085be9a7edff6ac23bcd922fd4339c40d",
+      "title": "Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers",
+      "h1": [
+        "Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers"
+      ],
+      "word_count": 1201,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for professional services buyer comparing letters of explanation without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/letter-of-explanation",
+          "anchor": "create a letter of explanation"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "2ff0a721b7534d4468c0fd8558a62dbef67ee4e8cb52787e5b75050d120305da",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-life-admin-documents-operator-grade-planning-checklist-when-you-need-to-ask-better-questio.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-life-admin-documents-operator-grade-planning-checklist-when-you-need-to-ask-better-questio.html",
+      "source_hash": "1f8007ce0eefdf6f5bf1ae59f02974f7f664becd23a94ae7667b75c0db705b0b",
+      "title": "Life Admin Documents: Operator-Grade Planning Checklist When You Need To Ask Better Questions",
+      "h1": [
+        "Life Admin Documents: Operator-Grade Planning Checklist When You Need To Ask Better Questions"
+      ],
+      "word_count": 1216,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for professional services buyer comparing life admin documents without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/life-admin-letter-kit",
+          "anchor": "create an address explanation letter"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "3fc24000054eaa4f200c5bcbebbaa190fef19dbea9e49d094ae5b3938d293b5d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-life-admin-letters-human-first-operator-playbook-when-timing-matters.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-life-admin-letters-human-first-operator-playbook-when-timing-matters.html",
+      "source_hash": "58633898d6f38086b85042a3c63e8152d2ee9031f76f268955ebd3ba357a32a7",
+      "title": "Life Admin Letters: Human-First Operator Playbook When Timing Matters",
+      "h1": [
+        "Life Admin Letters: Human-First Operator Playbook When Timing Matters"
+      ],
+      "word_count": 1204,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for equine professional comparing life admin letters without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/letter-writing-studio",
+          "anchor": "draft your letter for free"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "9970f582171b2c10b15830d6863a569c6959e0a4b9c551ffe6d858316f7361eb",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-loan-explanation-letters-editorial-buyer-guide-before-you-sign.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-loan-explanation-letters-editorial-buyer-guide-before-you-sign.html",
+      "source_hash": "b208c50593f0509fc9dd454ee410d3bdc48e251170ad180ec0c2ea227521d280",
+      "title": "Loan Explanation Letters: Editorial Buyer Guide Before You Sign",
+      "h1": [
+        "Loan Explanation Letters: Editorial Buyer Guide Before You Sign"
+      ],
+      "word_count": 1231,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for healthcare team lead comparing loan explanation letters without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://approvalprep.com/letter-writing-studio",
+          "anchor": "draft your letter for free"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "aca050c5f3ab5bbe181c54c9c734d7231dadaec1921467207c21dda5bd91db32",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
+      "source_hash": "b7c97bdd65bccf9214667f015409819f74f28b698670f9bf45259b5c85d85dc8",
+      "title": "Regulated Provider Research: Citation-Friendly Budget/Planning Note For First-Time Buyers",
+      "h1": [
+        "Regulated Provider Research: Citation-Friendly Budget/Planning Note For First-Time Buyers"
+      ],
+      "word_count": 1159,
+      "canonical": "",
+      "meta_description": "A practical, human-first resource for healthcare team lead comparing regulated provider research without fake rankings or forced answers.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://dentistryguides.com/guides/questions-to-ask/",
+          "anchor": "questions before major dental work"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "6602ff3eb95ee4ac1fbc99f2cd8853829647fd3b8682afb82a80dc65739f6457",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/dental-decision-resources.html",
+      "publication": "professional-resources",
+      "route": "/dental-decision-resources.html",
+      "source_hash": "872ada14c4c99c6d43e02d6c81c124fe335954a4789e750745490632e8e9c2c9",
+      "title": "Dental Decision Resources | Professional Resource Library",
+      "h1": [
+        "Dental Decision Resources"
+      ],
+      "word_count": 450,
+      "canonical": "https://professionalresourcelibrary.com/dental-decision-resources.html",
+      "meta_description": "Questions and comparison points before major dental work.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://dentistryguides.com/",
+          "anchor": "The Dentistry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "310d18393ea7e03e97a794b70fee4232232ece2311221c2cfa06d77bbe34726d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/equine-legal-resource-library.html",
+      "publication": "professional-resources",
+      "route": "/equine-legal-resource-library.html",
+      "source_hash": "b126b3f6a59a6402a84f5a436c14a81dc66ff1b4d3562b57c9a7701e757a3e34",
+      "title": "Equine Legal Resource Library | Professional Resource Library",
+      "h1": [
+        "Equine Legal Resource Library"
+      ],
+      "word_count": 469,
+      "canonical": "https://professionalresourcelibrary.com/equine-legal-resource-library.html",
+      "meta_description": "Educational resources for horse ownership, sales, boarding, leases, and liability questions.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://horselegalguide.com/",
+          "anchor": "Horse Legal Guide"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "30ec08225a6c86494e34c2cb4283420df453a6799b9091a8138792fa56995c5d",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/hormone-wellness-clinic-research.html",
+      "publication": "professional-resources",
+      "route": "/hormone-wellness-clinic-research.html",
+      "source_hash": "b3178e832fc186eda2b4acced8ebd7827e058a2d864a222564bca6deda16db7c",
+      "title": "Hormone and Wellness Clinic Research | Professional Resource Library",
+      "h1": [
+        "Hormone and Wellness Clinic Research"
+      ],
+      "word_count": 477,
+      "canonical": "https://professionalresourcelibrary.com/hormone-wellness-clinic-research.html",
+      "meta_description": "Questions to ask before comparing TRT, IV hydration, hair-loss, peptide, or weight-loss clinics.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://hormonesivhair.com/",
+          "anchor": "Hormone Optimization Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "fb1ebd48d687922aac8e1e4e49042d0cc1907f6514686999f6c7c16fc729b9a4",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/index.html",
+      "publication": "professional-resources",
+      "route": "/",
+      "source_hash": "13a10e8bd57006fe9a4347bd0282306e233b78db949b0b7d9afbd422f0bd5457",
+      "title": "Professional Resource Library | Professional Resource Library",
+      "h1": [
+        "Professional Resource Library"
+      ],
+      "word_count": 458,
+      "canonical": "https://professionalresourcelibrary.com/index.html",
+      "meta_description": "Separated educational resources for regulated services, equine legal topics, and workplace mental-health support.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theindustryguides.com/",
+          "anchor": "The Industry Guides"
+        },
+        {
+          "href": "https://horselegalguide.com/",
+          "anchor": "Horse Legal Guide"
+        },
+        {
+          "href": "https://www.hicksconsulting.org/",
+          "anchor": "Hicks Consulting"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "aab961e1d7c5db93f3c0c3b5cad1cee076b5f4041683c8a9016e6190a7f83670",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/neuro-evaluation-research.html",
+      "publication": "professional-resources",
+      "route": "/neuro-evaluation-research.html",
+      "source_hash": "208eecbe6e14202841f56fa19ea42e9fcac36eee971640451c6f114cd2c65cbb",
+      "title": "Neuro Evaluation Research | Professional Resource Library",
+      "h1": [
+        "Neuro Evaluation Research"
+      ],
+      "word_count": 453,
+      "canonical": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
+      "meta_description": "How to think about ADHD, autism, neuropsych, and therapy-next-step evaluation questions.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://neuroevalguides.com/",
+          "anchor": "Neuro Evaluation Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "7199b79950d08ad47e24704f36a3add34f60d4764f6f89a922b5ad47f5c8bd30",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/personal-injury-research-resources.html",
+      "publication": "professional-resources",
+      "route": "/personal-injury-research-resources.html",
+      "source_hash": "d636996b74323867e74a3d5ab76011224f6c8bde137125b1339f2f9ea4d2b1ac",
+      "title": "Personal Injury Research Resources | Professional Resource Library",
+      "h1": [
+        "Personal Injury Research Resources"
+      ],
+      "word_count": 456,
+      "canonical": "https://professionalresourcelibrary.com/personal-injury-research-resources.html",
+      "meta_description": "Educational resources for comparing post-accident decisions and personal injury process questions.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theaccidentguides.com/",
+          "anchor": "The Accident Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a1d5c27880607b0abf466026bc2c6dc44de2bb18b4d2ba217f9b44c94c24acc1",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/regulated-service-provider-research.html",
+      "publication": "professional-resources",
+      "route": "/regulated-service-provider-research.html",
+      "source_hash": "737f32e3e9f5b591b3a4145b2bc8116fb1fdd58b77755be7ee4e7ddf11944f5c",
+      "title": "Regulated Service Provider Research | Professional Resource Library",
+      "h1": [
+        "Regulated Service Provider Research"
+      ],
+      "word_count": 462,
+      "canonical": "https://professionalresourcelibrary.com/regulated-service-provider-research.html",
+      "meta_description": "How to compare regulated local service providers without relying on slogans.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://theindustryguides.com/",
+          "anchor": "The Industry Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "33700de8a090c60971b2053bcf9ac8686aa81b16c8815321be1ed154c9525bbc",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/uscis-medical-exam-resources.html",
+      "publication": "professional-resources",
+      "route": "/uscis-medical-exam-resources.html",
+      "source_hash": "832578d3769ccc719c8845955a84ca0a95bc1af1225c46812b67c7b53833a875",
+      "title": "USCIS Medical Exam Resources | Professional Resource Library",
+      "h1": [
+        "USCIS Medical Exam Resources"
+      ],
+      "word_count": 454,
+      "canonical": "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html",
+      "meta_description": "Questions to ask before booking a USCIS medical exam with a civil surgeon.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://uscisexam.com/",
+          "anchor": "USCIS Exam Guides"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "50d61476b4d2ca0afbc83f7e410d9931e31a07b8fc36bc1ab251fe554f672142",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "publication": "professional-resources",
+      "route": "/workplace-burnout-and-boundaries.html",
+      "source_hash": "c6f1549d0098f6e7661d705ef672e3c4ee05090dcde6e14de6567cb1c5146e0a",
+      "title": "Workplace Burnout and Boundaries Resources | Professional Resource Library",
+      "h1": [
+        "Workplace Burnout and Boundaries Resources"
+      ],
+      "word_count": 453,
+      "canonical": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries.html",
+      "meta_description": "Resources for high-achieving women, teams, and organizations thinking about burnout, boundaries, emotional wellness, and training.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://www.hicksconsulting.org/",
+          "anchor": "Hicks Consulting"
+        }
+      ],
+      "internal_links": [
+        {
+          "href": "/index.html",
+          "anchor": "Professional Resource Library"
+        },
+        {
+          "href": "/regulated-service-provider-research.html",
+          "anchor": "Regulated Service Provider Research"
+        },
+        {
+          "href": "/personal-injury-research-resources.html",
+          "anchor": "Personal Injury Research Resources"
+        },
+        {
+          "href": "/dental-decision-resources.html",
+          "anchor": "Dental Decision Resources"
+        },
+        {
+          "href": "/hormone-wellness-clinic-research.html",
+          "anchor": "Hormone and Wellness Clinic Research"
+        },
+        {
+          "href": "/neuro-evaluation-research.html",
+          "anchor": "Neuro Evaluation Research"
+        },
+        {
+          "href": "/uscis-medical-exam-resources.html",
+          "anchor": "USCIS Medical Exam Resources"
+        },
+        {
+          "href": "/equine-legal-resource-library.html",
+          "anchor": "Equine Legal Resource Library"
+        },
+        {
+          "href": "/workplace-burnout-and-boundaries.html",
+          "anchor": "Workplace Burnout and Boundaries Resources"
+        },
+        {
+          "href": "/about.html",
+          "anchor": "About Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "bfc1d95726f762ff6ebf8ee282c59108cd652a896b418a856d6df8611ae1a9b9",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    }
+  ]
+}

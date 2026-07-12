@@ -1,0 +1,218 @@
+{
+  "schema": "authority-portfolio-dashboard-v1",
+  "as_of": "2026-07-12",
+  "objective": {
+    "target": 100000,
+    "window_days": 180,
+    "components": [
+      "owned_product_repo_surfaces",
+      "authority_network_pages",
+      "rendered_backlinks",
+      "live_verified_backlinks",
+      "indexed_referring_pages",
+      "independent_external_mentions",
+      "search_impressions",
+      "ai_citations_or_mentions"
+    ],
+    "targets_are_nonblocking": true,
+    "never_equate_generated_with_indexed_or_cited": true,
+    "growth_profiles_path": "data/brand-growth-profiles.json",
+    "product_manifest_path": "data/product-repo-manifests.json",
+    "dashboard_path": "reports/citation-portfolio-dashboard.json"
+  },
+  "definitions": {
+    "authority_backlinks": "Repository-rendered outbound links recorded in the Authority Network ledger.",
+    "owned_manifest_surfaces": "Canonical surfaces reported by product repositories.",
+    "live_verified": "Observed at the deployed publication URL.",
+    "indexed": "Evidence-backed index observation only.",
+    "citation_impression_objective": "Combined opportunity metric; not a claim of 100,000 independent backlinks."
+  },
+  "totals": {
+    "registered_brands": 15,
+    "authority_publications": 3,
+    "authority_backlinks": 57,
+    "approved_destinations_waiting_for_context": 23,
+    "owned_manifest_surfaces": 0,
+    "live_verified": 0,
+    "discoverable": 0,
+    "indexed": 0,
+    "ai_cited": 0
+  },
+  "by_brand": [
+    {
+      "brand_id": "the-industry-guides",
+      "brand_name": "The Industry Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 2,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "accident-guides",
+      "brand_name": "The Accident Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 18,
+      "monthly_verified_backlink_target": 14,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "dentistry-guides",
+      "brand_name": "The Dentistry Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "hormones-iv-hair",
+      "brand_name": "Hormone Optimization Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 18,
+      "monthly_verified_backlink_target": 14,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "neuro-eval-guides",
+      "brand_name": "Neuro Evaluation Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "uscis-exam-guides",
+      "brand_name": "USCIS Exam Guides",
+      "growth_status": "growth",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "bhpc",
+      "brand_name": "Billionaire High Performance Coach",
+      "growth_status": "standard",
+      "authority_backlinks": 4,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 10,
+      "monthly_verified_backlink_target": 8,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "aplayer-mode",
+      "brand_name": "A Player Mode",
+      "growth_status": "growth",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "virtual-agency-os",
+      "brand_name": "Virtual Agency OS",
+      "growth_status": "growth",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 15,
+      "monthly_verified_backlink_target": 12,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "west-peek-productions",
+      "brand_name": "West Peek Productions",
+      "growth_status": "standard",
+      "authority_backlinks": 5,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 10,
+      "monthly_verified_backlink_target": 8,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "horse-legal-guide",
+      "brand_name": "Horse Legal Guide",
+      "growth_status": "growth",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 18,
+      "monthly_verified_backlink_target": 14,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "hicks-consulting",
+      "brand_name": "Hicks Consulting",
+      "growth_status": "growth",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 18,
+      "monthly_verified_backlink_target": 14,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "porch-party",
+      "brand_name": "Porch & Party",
+      "growth_status": "standard",
+      "authority_backlinks": 15,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 10,
+      "monthly_verified_backlink_target": 8,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "approval-prep",
+      "brand_name": "Approval Prep",
+      "growth_status": "priority",
+      "authority_backlinks": 12,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 150,
+      "monthly_verified_backlink_target": 120,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "dream-wedding-builder",
+      "brand_name": "Dream Wedding Builder",
+      "growth_status": "launch",
+      "authority_backlinks": 0,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 60,
+      "monthly_verified_backlink_target": 48,
+      "target_variance_blocks_release": false
+    }
+  ],
+  "by_domain": {
+    "aplayermode.com": 3,
+    "porchandparty901.com": 15,
+    "dentistryguides.com": 3,
+    "hicksconsulting.org": 1,
+    "billionairehighperformancecoach.com": 4,
+    "neuroevalguides.com": 3,
+    "westpeekproductions.com": 5,
+    "virtualagency-os.com": 3,
+    "uscisexam.com": 3,
+    "theaccidentguides.com": 1,
+    "theindustryguides.com": 2,
+    "horselegalguide.com": 1,
+    "hormonesivhair.com": 1,
+    "approvalprep.com": 12
+  },
+  "by_publication": {
+    "unknown": 39,
+    "professional": 14,
+    "founder": 2,
+    "memphis": 2
+  },
+  "lifecycle": {
+    "rendered_in_repository": 57
+  }
+}

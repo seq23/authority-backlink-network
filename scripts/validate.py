@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""Authority Network v4.5 single-level validation orchestrator.
+
+There is one orchestration layer. Validators return evidence; only real release risk blocks.
+"""
+from __future__ import annotations
+import argparse
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+PLAN = json.loads((ROOT / "validation/plan.json").read_text(encoding="utf-8"))
+
+COMMANDS = {
+    "json": [sys.executable, "tests/validate_json_contracts.py"],
+    "python": [sys.executable, "-m", "py_compile"],
+    "workflow_trace": [sys.executable, "scripts/trace_github_actions.py"],
+    "pages_changed": [sys.executable, "scripts/page_validation.py", "changed", "--no-repair"],
+    "pages_release": [sys.executable, "scripts/page_validation.py", "release"],
+    "pages_full": [sys.executable, "scripts/page_validation.py", "full"],
+    "deterministic_build": [sys.executable, "scripts/deterministic_build.py"],
+    "hostile": [sys.executable, "scripts/hostile_review.py"],
+    "links": [sys.executable, "scripts/link_audit.py"],
+    "social_contract": [sys.executable, "tests/test_social_contract.py"],
+    "cache_self_test": [sys.executable, "scripts/cache_self_test.py"],
+    "citation_control": [sys.executable, "scripts/citation_control_plane.py", "verify-repo"],
+    "citation_contract": [sys.executable, "tests/test_citation_control_plane.py"],
+}
+
+
+def python_compile_command() -> list[str]:
+    files = sorted(
+        [*ROOT.glob("scripts/**/*.py"), *ROOT.glob("tests/**/*.py"), *ROOT.glob("validation/**/*.py")],
+        key=lambda p: p.as_posix(),
+    )
+    return [sys.executable, "-m", "py_compile", *[str(p.relative_to(ROOT)) for p in files]]
+
+
+def parse_child_receipt(stdout: str) -> dict:
+    try:
+        value = json.loads(stdout)
+        return value if isinstance(value, dict) else {}
+    except json.JSONDecodeError:
+        return {}
+
+
+def run_check(check: str) -> dict:
+    cmd = python_compile_command() if check == "python" else COMMANDS[check]
+    started = time.time()
+    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
+    child = parse_child_receipt(proc.stdout)
+    child_status = child.get("status", "")
+    status = "FAIL" if proc.returncode else (child_status if child_status.startswith("PASS_WITH_") else "PASS")
+    return {
+        "id": check,
+        "status": status,
+        "exit_code": proc.returncode,
+        "duration_ms": round((time.time() - started) * 1000),
+        "hard_failures": int(child.get("hard_failures", 0)),
+        "strong_warnings": int(child.get("strong_warnings", 0)),
+        "soft_warnings": int(child.get("soft_warnings", 0)),
+        "stdout_tail": proc.stdout[-4000:],
+        "stderr_tail": proc.stderr[-4000:],
+    }
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("profile", choices=PLAN["profiles"])
+    args = ap.parse_args()
+    results: list[dict] = []
+
+    for check in PLAN["profiles"][args.profile]:
+        result = run_check(check)
+        results.append(result)
+        if result["exit_code"] != 0:
+            break
+
+    hard_failures = sum(1 for r in results if r["exit_code"] != 0) + sum(r["hard_failures"] for r in results)
+    # Child receipts already provide warning counts. Do not count the aggregate status a second time.
+    strong_warnings = sum(r["strong_warnings"] for r in results)
+    soft_warnings = sum(r["soft_warnings"] for r in results)
+    status = "FAIL" if hard_failures else ("PASS_WITH_STRONG_WARNING" if strong_warnings else ("PASS_WITH_SOFT_WARNING" if soft_warnings else "PASS"))
+    receipt = {
+        "schema": "authority-validation-receipt-v2",
+        "profile": args.profile,
+        "status": status,
+        "release_blocked": hard_failures > 0,
+        "hard_failures": hard_failures,
+        "strong_warnings": strong_warnings,
+        "soft_warnings": soft_warnings,
+        "results": results,
+    }
+    out = ROOT / "reports" / f"validation-{args.profile}.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(receipt, indent=2))
+    raise SystemExit(1 if hard_failures else 0)
+
+
+if __name__ == "__main__":
+    main()

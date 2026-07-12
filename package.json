@@ -1,20 +1,28 @@
 {
   "name": "authority-network",
   "private": true,
-  "version": "4.3.6",
+  "version": "4.6.1",
   "scripts": {
+    "validate:changed": "python3 scripts/validate.py changed",
+    "validate:release": "python3 scripts/validate.py release",
+    "validate:full": "python3 scripts/validate.py full",
+    "validate:all": "npm run validate:release",
+    "release:prepush": "npm run validate:release",
+    "release:prepush:local": "npm run validate:release",
+    "check": "npm run validate:changed",
     "review": "python3 scripts/hostile_review.py",
     "audit:links": "python3 scripts/link_audit.py",
     "social:drafts": "python3 scripts/generate_social_queue.py",
     "autopilot": "python3 scripts/authority_v4_autopilot.py",
     "social:dry-run": "SOCIAL_DRY_RUN=true python3 scripts/social_publisher.py",
-    "validate:json": "python3 -m json.tool data/brands.json >/dev/null && python3 -m json.tool data/publications.json >/dev/null && python3 -m json.tool data/network-rules.json >/dev/null && python3 -m json.tool data/social-brand-policy.json >/dev/null && python3 -m json.tool content-bank/yearly-pantry.json >/dev/null && python3 -m json.tool content-bank/scaling-policy.json >/dev/null",
-    "validate:python": "python3 -m py_compile scripts/*.py",
-    "validate:all": "npm run validate:json && npm run validate:python && npm run trace:github-actions && npm run review && npm run audit:links && npm run social:dry-run",
-    "release:prepush": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
-    "release:prepush:local": "printf \"release:prepush profile: LOCAL\n\" && npm run validate:all",
-    "check": "npm run validate:all",
-    "trace:github-actions": "python3 scripts/trace_github_actions.py"
+    "trace:github-actions": "python3 scripts/trace_github_actions.py",
+    "validate:cache:self-test": "python3 scripts/validate.py cache-self-test",
+    "validate:clean-rebuild": "python3 scripts/validate.py clean-rebuild",
+    "build:deterministic": "python3 scripts/deterministic_build.py --write",
+    "cache:clear": "python3 -c \"from validation.cache import clear; clear(); print('Validation cache cleared')\"",
+    "citation:dashboard": "python3 scripts/citation_control_plane.py dashboard",
+    "citation:verify-repo": "python3 scripts/citation_control_plane.py verify-repo",
+    "citation:import-manifests": "python3 scripts/citation_control_plane.py import-manifests"
   },
   "devDependencies": {}
 }

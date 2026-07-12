@@ -21,6 +21,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Restore validation cache
+        uses: actions/cache@v4
+        with:
+          path: .validation-cache
+          key: authority-validation-v4.5-${{ runner.os }}-py311-${{ hashFiles('package-lock.json', 'validation/**', 'scripts/page_validation.py', 'scripts/validate.py') }}
+          restore-keys: |
+            authority-validation-v4.5-${{ runner.os }}-py311-
       - name: Generate and publish authority pages
         env:
           DAILY_PAGE_LIMIT: ${{ vars.DAILY_PAGE_LIMIT || '3' }}
@@ -35,10 +42,8 @@ jobs:
           MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
           PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
         run: python3 scripts/authority_v4_autopilot.py
-      - name: Hostile review
-        run: python3 scripts/hostile_review.py
-      - name: Link audit
-        run: python3 scripts/link_audit.py
+      - name: Validate generated release
+        run: python3 scripts/validate.py release
       - name: Auto-post social queue
         env:
           ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}

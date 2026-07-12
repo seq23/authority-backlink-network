@@ -1,0 +1,121 @@
+{
+  "schema": "authority-validation-receipt-v2",
+  "profile": "release",
+  "status": "PASS",
+  "release_blocked": false,
+  "hard_failures": 0,
+  "strong_warnings": 0,
+  "soft_warnings": 0,
+  "results": [
+    {
+      "id": "json",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 18,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"files\": 11}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "python",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 40,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "workflow_trace",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 19,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"scope\": \"static workflow data trace plus local command-equivalent validation wiring\",\n  \"live_github_actions_execution\": \"NOT_EXECUTED_IN_ARTIFACT_CONTAINER\",\n  \"errors\": [],\n  \"warnings\": [],\n  \"workflows\": [\n    {\n      \"workflow\": \"authority-v4-autopilot.yml\",\n      \"status\": \"PASS\",\n      \"commands\": {\n        \"python3 scripts/authority_v4_autopilot.py\": true,\n        \"python3 scripts/validate.py release\": true,\n        \"python3 scripts/social_publisher.py\": true\n      },\n      \"secrets\": {\n        \"GEMINI_API_KEY\": true,\n        \"LINKEDIN_ACCESS_TOKEN\": true,\n        \"LINKEDIN_AUTHOR_URN\": true,\n        \"X_API_KEY\": true,\n        \"X_API_SECRET\": true,\n        \"X_ACCESS_TOKEN\": true,\n        \"X_ACCESS_TOKEN_SECRET\": true\n      },\n      \"vars\": {\n        \"DAILY_PAGE_LIMIT\": true,\n        \"ENABLE_LINKEDIN_POSTING\": true,\n        \"ENABLE_X_POSTING\": true,\n        \"LINKEDIN_DAILY_LIMIT\": true,\n        \"X_DAILY_LIMIT\": true\n      },\n      \"guards\": {\n        \"contents: write\": true,\n        \"issues: write\": true,\n        \"actions/cache@v4\": true,\n        \"stefanzweifel/git-auto-commit-action@v5\": true,\n        \"dacbd/create-issue-action@v2\": true,\n        \"shared_social_concurrency\": true,\n        \"no_direct_cloudflare_deploy\": true\n      }\n    },\n    {\n      \"workflow\": \"social-autopost.yml\",\n      \"status\": \"PASS\",\n      \"commands\": {\n        \"python3 scripts/social_publisher.py\": true\n      },\n      \"secrets\": {\n        \"LINKEDIN_ACCESS_TOKEN\": true,\n        \"LINKEDIN_AUTHOR_URN\": true,\n        \"X_API_KEY\": true,\n        \"X_API_SECRET\": true,\n        \"X_ACCESS_TOKEN\": true,\n        \"X_ACCESS_TOKEN_SECRET\": true\n      },\n      \"vars\": {\n        \"ENABLE_LINKEDIN_POSTING\": true,\n        \"ENABLE_X_POSTING\": true,\n        \"LINKEDIN_DAILY_LIMIT\": true,\n        \"X_DAILY_LIMIT\": true,\n        \"SOCIAL_DRY_RUN\": true\n      },\n      \"guards\": {\n        \"contents: write\": true,\n        \"issues: write\": true,\n        \"stefanzweifel/git-auto-commit-action@v5\": true,\n        \"dacbd/create-issue-action@v2\": true,\n        \"shared_social_concurrency\": true,\n        \"no_direct_cloudflare_deploy\": true\n      }\n    },\n    {\n      \"workflow\": \"hostile-review.yml\",\n      \"status\": \"PASS\",\n      \"commands\": {\n        \"python3 scripts/validate.py release\": true\n      },\n      \"secrets\": {},\n      \"vars\": {},\n      \"guards\": {\n        \"actions/cache@v4\": true,\n        \"actions/upload-artifact@v4\": true,\n        \"no_direct_cloudflare_deploy\": true\n      }\n    }\n  ],\n  \"notes\": [\n    \"Cloudflare deployment is intentionally not run by GitHub Actions; Cloudflare Git integration handles deploys.\",\n    \"Autopilot and social-only workflows share one concurrency group to prevent simultaneous social posting races.\",\n    \"Secrets are referenced but not validated live until GitHub repository secrets are added.\"\n  ]\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "pages_release",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 292,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"schema\": \"authority-page-validation-v1\",\n  \"mode\": \"release\",\n  \"status\": \"PASS\",\n  \"hard_failures\": 0,\n  \"strong_warnings\": 0,\n  \"soft_warnings\": 0,\n  \"cache\": {\n    \"hits\": 0,\n    \"misses\": 79,\n    \"enabled\": true\n  },\n  \"repairs_applied\": 0,\n  \"duplicate_content_groups\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "deterministic_build",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 51,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"build_date\": \"2026-01-01\",\n  \"artifacts\": 6,\n  \"differences\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "hostile",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 37,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"target_domains_locked\": [\n    \"aplayermode.com\",\n    \"approvalprep.com\",\n    \"billionairehighperformancecoach.com\",\n    \"dentistryguides.com\",\n    \"hicksconsulting.org\",\n    \"hormonesivhair.com\",\n    \"horselegalguide.com\",\n    \"neuroevalguides.com\",\n    \"porchandparty901.com\",\n    \"theaccidentguides.com\",\n    \"theindustryguides.com\",\n    \"uscisexam.com\",\n    \"virtualagency-os.com\",\n    \"weddingbudgetspreadsheet.com\",\n    \"weddingchecklistpdf.com\",\n    \"weddingseatingchartmaker.com\",\n    \"weddingtimelinetemplate.com\",\n    \"westpeekproductions.com\"\n  ],\n  \"publication_domains_assumed\": [\n    \"founderoperatorlibrary.com\",\n    \"memphisvendorlibrary.com\",\n    \"professionalresourcelibrary.com\"\n  ],\n  \"errors\": [],\n  \"warnings\": [],\n  \"hostile_questions\": [\n    \"Would this page still deserve to exist if Google did not exist?\",\n    \"Is the link editorially justified for a human reader?\",\n    \"Does this page pretend to be independent when it is affiliated?\",\n    \"Does it make YMYL claims without boundaries?\",\n    \"Is any anchor text over-optimized or repetitive?\",\n    \"Could this embarrass the brand if shown to Google, LinkedIn, X, or a real prospect?\",\n    \"Would this page remain useful if the wedding-product link were removed?\",\n    \"Does the selected wedding tool materially help solve the stated planning problem?\",\n    \"Is this article meaningfully different from similar pages in other city publications?\"\n  ]\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "citation_control",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 39,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"schema\": \"authority-citation-control-v1\",\n  \"status\": \"PASS\",\n  \"hard_failures\": 0,\n  \"strong_warnings\": 0,\n  \"soft_warnings\": 0,\n  \"rendered_links_verified\": 57,\n  \"failures\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "citation_contract",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 38,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"brands\": 15, \"objective\": 100000, \"scheduler_publications\": 3}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "links",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 26,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"total_links\": 314,\n  \"violations\": 0\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "social_contract",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_ms": 96,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"fixtures\": [\"dry_run_nonmutation\", \"both_platforms_exercised\", \"required_secret_block\"]}\n",
+      "stderr_tail": ""
+    }
+  ]
+}
