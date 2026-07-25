@@ -1,0 +1,32 @@
+{
+  "schema": "authority-network-backlink-only-validation-v1",
+  "status": "PASS",
+  "scope": "Backlink routing, source-page presence, duplicate safety, WPP domain lock, and Dianne publication placement only.",
+  "checks": {
+    "wpp_campaign_rows_checked": 21,
+    "wpp_campaign_urls_checked": 18,
+    "wpp_campaign_unique_targets": [
+      "https://www.westpeekproductions.com/"
+    ],
+    "wpp_rendered_backlinks": 7,
+    "wpp_community_backlinks": 5,
+    "wpp_commercial_backlinks": 2,
+    "all_html_wpp_links_checked": 10,
+    "publications": [
+      "founder",
+      "memphis",
+      "professional"
+    ],
+    "dianne_seed_pages": 4,
+    "dianne_backlink_records": 4,
+    "dianne_publication": "professional",
+    "dianne_new_publication_created": false,
+    "published_backlink_records": 89,
+    "modern_backlink_records": 32,
+    "duplicate_modern_ids": 0,
+    "duplicate_source_target_anchor": 0,
+    "missing_source_files": 0,
+    "legacy_records_without_ids": 80
+  },
+  "errors": []
+}

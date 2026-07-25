@@ -24,8 +24,8 @@ def norm_domain(v):
     return host.lower().replace('www.','').strip('/')
 
 def verify_repo():
-    links=read('data/link-registry.json',[]); brands=read('data/brands.json',[]); pubs=read('data/publications.json',[])
-    brand_ids={b['id'] for b in brands}; pub_ids={p['id'] for p in pubs}; failures=[]; warnings=[]; rendered=0
+    links=read('data/link-registry.json',[]); brands=read('data/brands.json',[]); pubs=read('data/publications.json',[]); campaigns=read('data/portfolio-backlink-campaigns.json',{}).get('campaigns',[])
+    brand_ids={b['id'] for b in brands}; pub_ids={p['id'] for p in pubs}; campaign_ids={c['id'] for c in campaigns}; failures=[]; warnings=[]; rendered=0
     for i,x in enumerate(links):
         bid=x.get('target_brand_id')
         if bid and bid not in brand_ids: failures.append(f'link[{i}] unknown brand {bid}')
@@ -38,14 +38,17 @@ def verify_repo():
             url=x.get('target_url') or ''
             if url and url not in text: failures.append(f'link[{i}] target URL not rendered in source: {url}')
             else: rendered+=1
+        if x.get('campaign_id') and x.get('campaign_id') not in campaign_ids and x.get('campaign_id') != 'legacy-context-repair': failures.append(f"link[{i}] unknown campaign {x.get('campaign_id')}")
         ev=x.get('evidence',{})
+        if ev.get('live_verified') and not ev.get('deployed'): failures.append(f'link[{i}] live verified without deployed evidence')
+        if ev.get('discoverable') and not ev.get('live_verified'): failures.append(f'link[{i}] discoverable without live verification')
         if ev.get('indexed') and not ev.get('live_verified'): failures.append(f'link[{i}] indexed without live verification')
         if ev.get('ai_cited') and not ev.get('discoverable'): warnings.append(f'link[{i}] AI citation evidence should include discoverability context')
     receipt={'schema':'authority-citation-control-v1','status':'FAIL' if failures else ('PASS_WITH_SOFT_WARNING' if warnings else 'PASS'),'hard_failures':len(failures),'strong_warnings':0,'soft_warnings':len(warnings),'rendered_links_verified':rendered,'failures':failures,'warnings':warnings}
     write('reports/citation-control-verification.json',receipt); print(json.dumps(receipt,indent=2)); raise SystemExit(1 if failures else 0)
 
 def dashboard():
-    links=read('data/link-registry.json',[]); brands=read('data/brands.json',[]); pubs=read('data/publications.json',[]); profiles=read('data/brand-growth-profiles.json',{}).get('profiles',[]); manifests=read('data/product-repo-manifests.json',{}).get('repos',[])
+    links=read('data/link-registry.json',[]); brands=read('data/brands.json',[]); pubs=read('data/publications.json',[]); profiles=read('data/brand-growth-profiles.json',{}).get('profiles',[]); manifests=read('data/product-repo-manifests.json',{}).get('repos',[]); campaign_health=read('data/portfolio-campaign-health.json',{}).get('campaigns',[]); observations=read('data/distribution/observation-feedback.json',{})
     by_brand=Counter(); by_domain=Counter(); by_pub=Counter(); lifecycle=Counter(); evidence=Counter(); approved=0
     for x in links:
         if x.get('status')=='approved_target_not_auto_published': approved+=1; continue
@@ -61,7 +64,7 @@ def dashboard():
         bid=b['id']; p=profile_map.get(bid,{})
         rows.append({'brand_id':bid,'brand_name':b['name'],'growth_status':p.get('growth_status','unconfigured'),'authority_backlinks':by_brand.get(bid,0),'owned_manifest_surfaces':surface_by_brand.get(bid,0),'monthly_authority_target':p.get('target_authority_pages_per_month'),'monthly_verified_backlink_target':p.get('target_verified_backlinks_per_month'),'target_variance_blocks_release':False})
     objective=read('content-bank/scaling-policy.json',{}).get('portfolio_citation_objective',{})
-    dash={'schema':'authority-portfolio-dashboard-v1','as_of':date.today().isoformat(),'objective':objective,'definitions':{'authority_backlinks':'Repository-rendered outbound links recorded in the Authority Network ledger.','owned_manifest_surfaces':'Canonical surfaces reported by product repositories.','live_verified':'Observed at the deployed publication URL.','indexed':'Evidence-backed index observation only.','citation_impression_objective':'Combined opportunity metric; not a claim of 100,000 independent backlinks.'},'totals':{'registered_brands':len(brands),'authority_publications':len(pubs),'authority_backlinks':sum(by_brand.values()),'approved_destinations_waiting_for_context':approved,'owned_manifest_surfaces':sum(surface_by_brand.values()),'live_verified':evidence.get('live_verified',0),'discoverable':evidence.get('discoverable',0),'indexed':evidence.get('indexed',0),'ai_cited':evidence.get('ai_cited',0)},'by_brand':rows,'by_domain':dict(by_domain),'by_publication':dict(by_pub),'lifecycle':dict(lifecycle)}
+    dash={'schema':'authority-portfolio-dashboard-v1','as_of':date.today().isoformat(),'objective':objective,'definitions':{'authority_backlinks':'Repository-rendered outbound links recorded in the Authority Network ledger.','owned_manifest_surfaces':'Canonical surfaces reported by product repositories.','live_verified':'Observed at the deployed publication URL.','indexed':'Evidence-backed index observation only.','citation_impression_objective':'Combined opportunity metric; not a claim of 100,000 independent backlinks.'},'totals':{'registered_brands':len(brands),'authority_publications':len(pubs),'authority_backlinks':sum(by_brand.values()),'approved_destinations_waiting_for_context':approved,'owned_manifest_surfaces':sum(surface_by_brand.values()),'live_verified':evidence.get('live_verified',0),'discoverable':evidence.get('discoverable',0),'indexed':evidence.get('indexed',0),'ai_cited':evidence.get('ai_cited',0)},'by_brand':rows,'by_domain':dict(by_domain),'by_publication':dict(by_pub),'lifecycle':dict(lifecycle),'campaign_health':campaign_health,'distribution_observation':observations.get('portfolio_totals',{})}
     write('reports/citation-portfolio-dashboard.json',dash)
     lines=['# Authority Network Citation Portfolio Dashboard','',f"As of: {dash['as_of']}",'',f"- Registered brands: {len(brands)}",f"- Authority publications: {len(pubs)}",f"- Repository-rendered authority backlinks: {sum(by_brand.values())}",f"- Owned product-repo surfaces imported: {sum(surface_by_brand.values())}",f"- Live verified backlinks: {evidence.get('live_verified',0)}",f"- Indexed referring pages with evidence: {evidence.get('indexed',0)}",'', '## By brand','', '| Brand | Status | Authority backlinks | Owned surfaces | Monthly authority target |','|---|---:|---:|---:|---:|']
     for r in rows: lines.append(f"| {r['brand_name']} | {r['growth_status']} | {r['authority_backlinks']} | {r['owned_manifest_surfaces']} | {r['monthly_authority_target']} |")

@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "owned_network_label": "affiliated_editorial_backlink",
+  "states": [
+    "approved_destination",
+    "published_in_repository",
+    "deployed",
+    "live_verified",
+    "source_discovered",
+    "source_indexed",
+    "search_visibility_observed",
+    "external_surfacing_observed"
+  ],
+  "promotion_requirements": {
+    "published_in_repository": ["source file exists", "approved target and anchor rendered", "affiliation disclosed"],
+    "deployed": ["deployed source URL returns acceptable HTTP response"],
+    "live_verified": ["deployed", "target link present", "anchor present", "source page indexable"],
+    "source_discovered": ["live_verified", "source URL present in publication sitemap or provider observation"],
+    "source_indexed": ["live_verified", "GSC inspection returns an index-compatible observation"],
+    "search_visibility_observed": ["provider or manual evidence retained"],
+    "external_surfacing_observed": ["external evidence retained"]
+  },
+  "forbidden_equivalences": [
+    "rendered is not deployed",
+    "deployed is not indexed",
+    "submitted is not indexed",
+    "indexed is not ranking",
+    "affiliated backlink is not independent earned media",
+    "backlink is not verified citation",
+    "opportunity is not external outcome"
+  ],
+  "verified_external_citations_initial_state": 0
+}

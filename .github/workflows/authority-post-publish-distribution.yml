@@ -1,0 +1,90 @@
+name: Authority Network Post-Publish Distribution
+
+on:
+  workflow_run:
+    workflows:
+      - Authority Network V4.2 Autopilot + Social Auto-Post
+    types:
+      - completed
+  workflow_dispatch:
+  schedule:
+    - cron: '37 15 * * *'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: authority-network-distribution-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  distribute:
+    if: >-
+      ${{
+        github.event_name != 'workflow_run' ||
+        github.event.workflow_run.conclusion == 'success'
+      }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore validation cache
+        uses: actions/cache@v4
+        with:
+          path: .validation-cache
+          key: authority-distribution-v1-${{ runner.os }}-py311-${{ hashFiles('validation/**', 'scripts/post_publish_distribution.py', 'scripts/portfolio_backlink_engine.py') }}
+          restore-keys: |
+            authority-distribution-v1-${{ runner.os }}-py311-
+      - name: Refresh, self-heal, and validate publication assets
+        env:
+          INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+        run: |
+          python3 scripts/prepare_indexnow_keys.py
+          python3 scripts/portfolio_backlink_engine.py seed
+          python3 scripts/portfolio_backlink_engine.py repair
+          python3 scripts/portfolio_backlink_engine.py verify-local
+          python3 scripts/portfolio_backlink_engine.py health
+          python3 scripts/validate.py release
+      - name: Commit any safe seed or self-heal changes before live verification
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Authority Network: backlink seed and safe self-heal"
+          file_pattern: "sites/** data/link-registry.json data/portfolio-campaign-health.json data/backlink-self-heal-latest.json reports/backlink-local-verification.json"
+      - name: Run post-publish distribution and live backlink verification
+        env:
+          INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+          INDEXNOW_KEY_LOCATION_TEMPLATE: ${{ vars.INDEXNOW_KEY_LOCATION_TEMPLATE || 'https://{domain}/{key}.txt' }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URLS_JSON: ${{ vars.GSC_SITE_URLS_JSON || '{}' }}
+          GSC_INSPECTION_LIMIT: ${{ vars.GSC_INSPECTION_LIMIT || '20' }}
+          AUTHORITY_PUBLICATION_BASE_URLS_JSON: ${{ vars.AUTHORITY_PUBLICATION_BASE_URLS_JSON || '{}' }}
+          LIVE_BACKLINK_VERIFY: ${{ vars.LIVE_BACKLINK_VERIFY || 'true' }}
+          FAIL_ON_PROVIDER_ERROR: ${{ vars.FAIL_ON_PROVIDER_ERROR || 'false' }}
+          DEPLOYMENT_SETTLE_SECONDS: ${{ vars.DEPLOYMENT_SETTLE_SECONDS || '90' }}
+        run: python3 scripts/post_publish_distribution.py
+      - name: Commit durable distribution receipts and observations
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Authority Network: post-publish distribution and backlink observations"
+          file_pattern: "data/link-registry.json data/portfolio-campaign-health.json data/distribution/** reports/post-publish-distribution-latest.json sites/**/sitemap.xml sites/**/llms.txt"
+      - name: Upload distribution receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: authority-network-distribution-${{ github.run_id }}
+          path: |
+            data/distribution/
+            reports/post-publish-distribution-latest.json
+          if-no-files-found: warn
+      - name: Create failure issue
+        if: failure()
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ github.token }}
+          title: "Authority Network post-publish distribution failed"
+          body: "The post-publish sitemap, IndexNow, GSC, live backlink verification, or observation chain failed. Review the workflow receipt before changing publication velocity."

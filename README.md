@@ -142,3 +142,34 @@ The network supports one multi-domain Dream Wedding Builder brand and a reusable
 This repository coordinates verified authority backlinks across the full brand portfolio while each product repository may continue producing its own owned content surfaces. The six-month objective is 100,000 combined citation/impression opportunities—not 100,000 fabricated backlinks.
 
 Use `npm run citation:dashboard` for the portfolio report, `npm run citation:verify-repo` to verify repository-rendered backlink evidence, and `npm run citation:import-manifests` to import configured product-repo surface manifests. Growth targets guide scheduling but do not create petty release blockers.
+
+## Portfolio Backlink Autopilot (v5.0)
+
+Authority Network now governs 15 portfolio backlink campaigns across all modernized product repos. It preserves the three existing publication properties and adds:
+
+- SHA-traceable product destination snapshots;
+- Community-as-a-Service authority and WPP commercial campaign separation;
+- SEO/AEO/GEO seed-page quality contracts;
+- contextual gap and yield scheduling;
+- safe local self-healing;
+- successful-publish-gated IndexNow and Google Search Console distribution;
+- priority URL Inspection;
+- live deployed backlink verification;
+- durable provider and observation receipts;
+- truthful rendered/deployed/live/indexed/cited lifecycle states.
+
+Start with [`docs/runbooks/AUTHORITY_NETWORK_BACKLINK_AUTOPILOT.md`](docs/runbooks/AUTHORITY_NETWORK_BACKLINK_AUTOPILOT.md).
+
+Core commands:
+
+```bash
+npm run backlinks:seed
+npm run backlinks:repair
+npm run backlinks:verify
+npm run backlinks:health
+npm run distribution:prepare-indexnow
+npm run distribution:run
+npm run validate:release
+```
+
+Cloudflare deployment remains handled by Cloudflare Git integration. The post-publish distribution workflow runs only after successful Authority Network publication, plus manual and scheduled retry paths.

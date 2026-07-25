@@ -1,0 +1,411 @@
+{
+  "version": "1.0",
+  "autonomy_model": "FULL_SAFE_AUTONOMY",
+  "coverage_law": "A campaign may generate only contextually useful pages. Floors prioritize legitimate gaps but never force a bad placement.",
+  "lifecycle": [
+    "planned",
+    "generated",
+    "validated",
+    "published_in_repository",
+    "deployed",
+    "live_verified",
+    "source_discovered",
+    "source_indexed",
+    "search_visibility_observed",
+    "external_surfacing_observed"
+  ],
+  "campaigns": [
+    {
+      "id": "virtual-agency-os-authority",
+      "brand_id": "virtual-agency-os",
+      "publication": "founder",
+      "name": "Virtual Agency OS Event and Operations Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 4,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "virtual event production",
+        "executive broadcast planning",
+        "agency operating systems",
+        "lean-team tool stacks"
+      ],
+      "eligible_clusters": [
+        "virtual event production",
+        "executive broadcast planning",
+        "automation without chaos",
+        "tool stacks for lean teams"
+      ],
+      "destination_urls": [
+        "https://virtualagency-os.com/learn/",
+        "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+        "https://virtualagency-os.com/answers/what-is-virtual-event-production"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "wpp-community-authority",
+      "brand_id": "west-peek-productions",
+      "publication": "founder",
+      "name": "West Peek Productions Community as a Service Coverage",
+      "status": "temporary_priority",
+      "minimum_rendered_coverage": 5,
+      "minimum_distinct_destinations": 1,
+      "topic_keywords": [
+        "community as a service",
+        "community operations",
+        "community platform",
+        "community ROI",
+        "community staffing",
+        "community retention",
+        "community moderation",
+        "brand community"
+      ],
+      "eligible_clusters": [
+        "community as a service",
+        "community platform selection",
+        "community metrics and measurement",
+        "community staffing model",
+        "community retention",
+        "community moderation strategy",
+        "community launch strategy",
+        "outsourced community management"
+      ],
+      "destination_urls": [
+        "https://www.westpeekproductions.com/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "wpp-commercial",
+      "brand_id": "west-peek-productions",
+      "publication": "founder",
+      "name": "West Peek Productions Commercial Services",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 1,
+      "topic_keywords": [
+        "managed community partner",
+        "virtual event production partner",
+        "executive broadcast production"
+      ],
+      "eligible_clusters": [
+        "virtual event production",
+        "executive broadcast planning",
+        "when to outsource community management"
+      ],
+      "destination_urls": [
+        "https://www.westpeekproductions.com/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "dream-planning-tools",
+      "brand_id": "dream-wedding-builder",
+      "publication": "memphis",
+      "name": "Dream Wedding Planning Tools",
+      "status": "temporary_priority",
+      "minimum_rendered_coverage": 6,
+      "minimum_distinct_destinations": 5,
+      "topic_keywords": [
+        "wedding budget",
+        "wedding timeline",
+        "wedding checklist",
+        "wedding seating chart",
+        "wedding planning builder"
+      ],
+      "eligible_clusters": [
+        "wedding budget planning",
+        "wedding-day timeline",
+        "wedding checklist planning",
+        "wedding seating chart",
+        "wedding planning tools"
+      ],
+      "destination_urls": [
+        "https://weddingchecklistpdf.com/build",
+        "https://weddingbudgetspreadsheet.com/build",
+        "https://weddingtimelinetemplate.com/build",
+        "https://weddingseatingchartmaker.com/build",
+        "https://weddingchecklistpdf.com/products/checklist-pdf",
+        "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+        "https://weddingtimelinetemplate.com/products/timeline-template",
+        "https://weddingseatingchartmaker.com/products/seating-chart-maker"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "dianne-recovery-resources",
+      "brand_id": "diannes-place",
+      "publication": "professional",
+      "name": "Dianne's Place Recovery Housing Resources",
+      "status": "temporary_priority",
+      "minimum_rendered_coverage": 4,
+      "minimum_distinct_destinations": 4,
+      "topic_keywords": [
+        "recovery housing",
+        "referral guidance",
+        "family recovery support",
+        "treatment-to-housing transition"
+      ],
+      "eligible_clusters": [
+        "recovery housing",
+        "recovery referrals",
+        "family recovery support",
+        "community reintegration"
+      ],
+      "destination_urls": [
+        "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+        "https://www.diannesplacerecoveryservices.com/referrals/",
+        "https://www.diannesplacerecoveryservices.com/resources/",
+        "https://www.diannesplacerecoveryservices.com/answers/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "hicks-workplace-wellbeing",
+      "brand_id": "hicks-consulting",
+      "publication": "professional",
+      "name": "Hicks Workplace Wellbeing Resources",
+      "status": "temporary_priority",
+      "minimum_rendered_coverage": 4,
+      "minimum_distinct_destinations": 4,
+      "topic_keywords": [
+        "workplace burnout",
+        "organizational wellbeing",
+        "mental health training",
+        "leadership wellbeing"
+      ],
+      "eligible_clusters": [
+        "workplace burnout resources",
+        "organizational mental health training",
+        "trauma-informed leadership",
+        "compassion fatigue resources"
+      ],
+      "destination_urls": [
+        "https://www.hicksconsulting.org/",
+        "https://www.hicksconsulting.org/resources/",
+        "https://www.hicksconsulting.org/corporate-speaking/",
+        "https://www.hicksconsulting.org/organizational-training-inquiry/",
+        "https://www.hicksconsulting.org/therapy/",
+        "https://www.hicksconsulting.org/coaching/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "horse-equine-legal",
+      "brand_id": "horse-legal-guide",
+      "publication": "professional",
+      "name": "Horse Legal Education Resources",
+      "status": "temporary_priority",
+      "minimum_rendered_coverage": 4,
+      "minimum_distinct_destinations": 4,
+      "topic_keywords": [
+        "horse boarding agreement",
+        "horse purchase agreement",
+        "equine contract review",
+        "horse dispute preparation"
+      ],
+      "eligible_clusters": [
+        "equine legal research",
+        "horse contract preparation",
+        "boarding agreement questions",
+        "horse dispute preparation"
+      ],
+      "destination_urls": [
+        "https://horselegalguide.com/",
+        "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+        "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+        "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+        "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "the-industry-guides-authority",
+      "brand_id": "the-industry-guides",
+      "publication": "professional",
+      "name": "The Industry Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "parent decision-support publisher"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://theindustryguides.com/",
+        "https://theindustryguides.com/methodology.html",
+        "https://theindustryguides.com/tools/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "accident-guides-authority",
+      "brand_id": "accident-guides",
+      "publication": "professional",
+      "name": "The Accident Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "personal injury educational guides"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://theaccidentguides.com/",
+        "https://theaccidentguides.com/guides/",
+        "https://theaccidentguides.com/personal-injury/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "dentistry-guides-authority",
+      "brand_id": "dentistry-guides",
+      "publication": "professional",
+      "name": "The Dentistry Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "dentistry educational guides"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://dentistryguides.com/",
+        "https://dentistryguides.com/guides/",
+        "https://dentistryguides.com/guides/questions-to-ask/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "hormones-iv-hair-authority",
+      "brand_id": "hormones-iv-hair",
+      "publication": "professional",
+      "name": "Hormone Optimization Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "TRT IV hydration hair-loss peptide educational guides"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://hormonesivhair.com/",
+        "https://hormonesivhair.com/guides/",
+        "https://hormonesivhair.com/guides/iv-hydration-red-flags/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "neuro-eval-guides-authority",
+      "brand_id": "neuro-eval-guides",
+      "publication": "professional",
+      "name": "Neuro Evaluation Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "ADHD autism neuropsych evaluation education"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://neuroevalguides.com/",
+        "https://neuroevalguides.com/guides/",
+        "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "uscis-exam-guides-authority",
+      "brand_id": "uscis-exam-guides",
+      "publication": "professional",
+      "name": "USCIS Exam Guides Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "USCIS medical exam educational guides"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://uscisexam.com/",
+        "https://uscisexam.com/guides/",
+        "https://uscisexam.com/guides/costs-and-timeframes/"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "bhpc-authority",
+      "brand_id": "bhpc",
+      "publication": "founder",
+      "name": "Billionaire High Performance Coach Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "AI executive coaching / prompt OS"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://billionairehighperformancecoach.com/",
+        "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "approval-prep-authority",
+      "brand_id": "approval-prep",
+      "publication": "professional",
+      "name": "Approval Prep Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "self-service document creation and downloadable document kits"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://approvalprep.com/letter-of-explanation",
+        "https://approvalprep.com/income-employment-letter-kit",
+        "https://approvalprep.com/credit-letter-kit",
+        "https://approvalprep.com/rental-application-kit",
+        "https://approvalprep.com/loan-prep-letter-kit",
+        "https://approvalprep.com/business-funding-prep-kit",
+        "https://approvalprep.com/life-admin-letter-kit",
+        "https://approvalprep.com/complete-approvalprep-bundle",
+        "https://approvalprep.com/letter-writing-studio",
+        "https://approvalprep.com/letter-of-explanation/credit",
+        "https://approvalprep.com/rental-application-checklist",
+        "https://approvalprep.com/documents-needed-for-car-loan",
+        "https://approvalprep.com/sba-loan-checklist",
+        "https://approvalprep.com/mortgage-document-checklist",
+        "https://approvalprep.com/",
+        "https://approvalprep.com/pricing",
+        "https://approvalprep.com/methodology",
+        "https://approvalprep.com/not-a-credit-repair-company"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    },
+    {
+      "id": "porch-party-authority",
+      "brand_id": "porch-party",
+      "publication": "memphis",
+      "name": "Porch & Party Authority Coverage",
+      "status": "active",
+      "minimum_rendered_coverage": 2,
+      "minimum_distinct_destinations": 2,
+      "topic_keywords": [
+        "Memphis porch decorating hotel decor party styling grazing tables"
+      ],
+      "eligible_clusters": [],
+      "destination_urls": [
+        "https://porchandparty901.com/",
+        "https://porchandparty901.com/services/porch-decorating.html",
+        "https://porchandparty901.com/services/party-decor-memphis.html",
+        "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+        "https://porchandparty901.com/services/grazing-tables-memphis.html",
+        "https://porchandparty901.com/pricing.html"
+      ],
+      "truth_label": "affiliated_editorial_backlink"
+    }
+  ]
+}

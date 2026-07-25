@@ -82,6 +82,38 @@
         "actions/upload-artifact@v4": true,
         "no_direct_cloudflare_deploy": true
       }
+    },
+    {
+      "workflow": "authority-post-publish-distribution.yml",
+      "status": "PASS",
+      "commands": {
+        "python3 scripts/portfolio_backlink_engine.py repair": true,
+        "python3 scripts/validate.py release": true,
+        "python3 scripts/post_publish_distribution.py": true
+      },
+      "secrets": {
+        "GSC_SERVICE_ACCOUNT_JSON": true
+      },
+      "vars": {
+        "INDEXNOW_KEY": true,
+        "GSC_SITE_URLS_JSON": true,
+        "GSC_INSPECTION_LIMIT": true,
+        "AUTHORITY_PUBLICATION_BASE_URLS_JSON": true,
+        "LIVE_BACKLINK_VERIFY": true,
+        "FAIL_ON_PROVIDER_ERROR": true,
+        "DEPLOYMENT_SETTLE_SECONDS": true
+      },
+      "guards": {
+        "contents: write": true,
+        "issues: write": true,
+        "workflow_run:": true,
+        "github.event.workflow_run.conclusion == 'success'": true,
+        "actions/cache@v4": true,
+        "actions/upload-artifact@v4": true,
+        "stefanzweifel/git-auto-commit-action@v5": true,
+        "dacbd/create-issue-action@v2": true,
+        "no_direct_cloudflare_deploy": true
+      }
     }
   ],
   "notes": [

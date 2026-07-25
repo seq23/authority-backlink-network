@@ -1,122 +1,1275 @@
 {
-  "version": "1.0",
-  "contract": "Each owned product repository may export a manifest of canonical, indexable content surfaces. Missing manifests are warning-only and never block Authority Network publication.",
+  "version": "2.0",
+  "contract": "SHA-traceable destination snapshots imported from the latest delivered product-repo baselines. A surface is an approved destination, not proof of indexing, backlinking, or citation.",
   "required_fields": [
     "brand_id",
     "canonical_url",
     "topic",
     "content_type",
-    "publication_date",
     "indexability",
-    "schema_types",
     "cluster",
-    "status"
+    "status",
+    "source_artifact",
+    "source_sha256"
   ],
   "repos": [
     {
-      "brand_id": "the-industry-guides",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
       "brand_id": "accident-guides",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
       "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "dentistry-guides",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "hormones-iv-hair",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "neuro-eval-guides",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "uscis-exam-guides",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "bhpc",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://theaccidentguides.com/personal-injury/",
+          "topic": "personal injury guide hub",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "personal injury",
+          "status": "published",
+          "source_path": "personal-injury/index.html"
+        },
+        {
+          "canonical_url": "https://theaccidentguides.com/comparative-negligence-vs-contributory-negligence/",
+          "topic": "comparative vs contributory negligence",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "personal injury",
+          "status": "published",
+          "source_path": "comparative-negligence-vs-contributory-negligence/index.html"
+        },
+        {
+          "canonical_url": "https://theaccidentguides.com/settlement-demand-vs-lawsuit-filing/",
+          "topic": "settlement demand vs lawsuit filing",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "personal injury",
+          "status": "published",
+          "source_path": "settlement-demand-vs-lawsuit-filing/index.html"
+        }
+      ]
     },
     {
       "brand_id": "aplayer-mode",
+      "source_repo_key": "registry-only",
+      "source_artifact": null,
+      "source_sha256": null,
       "manifest_url": "",
-      "status": "awaiting_configuration",
+      "status": "registry_only_no_current_zip",
       "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "virtual-agency-os",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "west-peek-productions",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "horse-legal-guide",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "hicks-consulting",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
-    },
-    {
-      "brand_id": "porch-party",
-      "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
+      "surface_count": 1,
+      "surfaces": [
+        {
+          "canonical_url": "https://www.aplayermode.com/",
+          "topic": "A Player Mode",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "execution systems",
+          "status": "published",
+          "source_path": "registry"
+        }
+      ]
     },
     {
       "brand_id": "approval-prep",
+      "source_repo_key": "approval",
+      "source_artifact": "approvalprep-main_BASELINE_07-24-26_66f379782610.zip",
+      "source_sha256": "66f37978261058c47710e6a15379fb08cb630104a0e860025c217e5fbb7382de",
       "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 18,
+      "surfaces": [
+        {
+          "canonical_url": "https://approvalprep.com/letter-of-explanation",
+          "topic": "Letter of Explanation Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/income-employment-letter-kit",
+          "topic": "Income + Employment Letter Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/credit-letter-kit",
+          "topic": "Credit Letter Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/rental-application-kit",
+          "topic": "Rental Application Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/loan-prep-letter-kit",
+          "topic": "Loan Prep Letter Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/business-funding-prep-kit",
+          "topic": "Business Funding Prep Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/life-admin-letter-kit",
+          "topic": "Life Admin Letter Kit",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/complete-approvalprep-bundle",
+          "topic": "Complete Approval Prep Bundle",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/letter-writing-studio",
+          "topic": "Letter Writing Studio",
+          "content_type": "free_creation_tool",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/letter-of-explanation/credit",
+          "topic": "Credit Letter of Explanation Guide",
+          "content_type": "educational_guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/rental-application-checklist",
+          "topic": "Rental Application Checklist",
+          "content_type": "educational_guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/documents-needed-for-car-loan",
+          "topic": "Car Loan Documents Guide",
+          "content_type": "educational_guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/sba-loan-checklist",
+          "topic": "SBA Loan Checklist",
+          "content_type": "educational_guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/mortgage-document-checklist",
+          "topic": "Mortgage Document Checklist",
+          "content_type": "educational_guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/",
+          "topic": "Approval Prep",
+          "content_type": "trust_boundary",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/pricing",
+          "topic": "Approval Prep Pricing",
+          "content_type": "trust_boundary",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/methodology",
+          "topic": "Approval Prep Methodology",
+          "content_type": "trust_boundary",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        },
+        {
+          "canonical_url": "https://approvalprep.com/not-a-credit-repair-company",
+          "topic": "What Approval Prep Does and Does Not Do",
+          "content_type": "trust_boundary",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "document readiness",
+          "status": "published",
+          "source_path": "data/backlink_handoff/anchor_targets.json"
+        }
+      ]
+    },
+    {
+      "brand_id": "bhpc",
+      "source_repo_key": "spry",
+      "source_artifact": "sprylabs-hpc-site-main_BASELINE_07-24-26_981631978eb3.zip",
+      "source_sha256": "981631978eb370975a9ce8c97fbcf34e36a18f4f6c788e07d80a768059260c5e",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 4,
+      "surfaces": [
+        {
+          "canonical_url": "https://billionairehighperformancecoach.com/",
+          "topic": "AI executive coaching system",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "AI executive coaching",
+          "status": "published",
+          "source_path": "index.html"
+        },
+        {
+          "canonical_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+          "topic": "AI coach vs human coach",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "AI executive coaching",
+          "status": "published",
+          "source_path": "ai-coach-vs-human-coach.html"
+        },
+        {
+          "canonical_url": "https://billionairehighperformancecoach.com/how-to-build-a-performance-system-with-ai.html",
+          "topic": "build a performance system with AI",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "execution systems",
+          "status": "published",
+          "source_path": "how-to-build-a-performance-system-with-ai.html"
+        },
+        {
+          "canonical_url": "https://billionairehighperformancecoach.com/burnout-recovery-and-execution-systems.html",
+          "topic": "burnout recovery and execution systems",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "execution continuity",
+          "status": "published",
+          "source_path": "burnout-recovery-and-execution-systems.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "dentistry-guides",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://dentistryguides.com/dentistry/",
+          "topic": "dentistry guide hub",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "dentistry",
+          "status": "published",
+          "source_path": "dentistry/index.html"
+        },
+        {
+          "canonical_url": "https://dentistryguides.com/dental-implant-vs-bridge-vs-denture/",
+          "topic": "implant vs bridge vs denture",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "dentistry",
+          "status": "published",
+          "source_path": "dental-implant-vs-bridge-vs-denture/index.html"
+        },
+        {
+          "canonical_url": "https://dentistryguides.com/dentist-vs-oral-surgeon-vs-endodontist/",
+          "topic": "dentist vs oral surgeon vs endodontist",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "dentistry",
+          "status": "published",
+          "source_path": "dentist-vs-oral-surgeon-vs-endodontist/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "diannes-place",
+      "source_repo_key": "dianne",
+      "source_artifact": "dianne-place-recovery-services-main_BASELINE_07-25-26_2ef212d0e9b4.zip",
+      "source_sha256": "2ef212d0e9b4919289e8b549528d20701a25118161e1516ab1fb16e300ffd1dc",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 5,
+      "surfaces": [
+        {
+          "canonical_url": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+          "topic": "recovery housing information",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "recovery housing and referrals",
+          "status": "published",
+          "source_path": "app/recovery-housing/page.tsx"
+        },
+        {
+          "canonical_url": "https://www.diannesplacerecoveryservices.com/referrals/",
+          "topic": "recovery housing referral guidance",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "recovery housing and referrals",
+          "status": "published",
+          "source_path": "app/referrals/page.tsx"
+        },
+        {
+          "canonical_url": "https://www.diannesplacerecoveryservices.com/resources/",
+          "topic": "recovery support resources",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "recovery housing and referrals",
+          "status": "published",
+          "source_path": "app/resources/page.tsx"
+        },
+        {
+          "canonical_url": "https://www.diannesplacerecoveryservices.com/answers/",
+          "topic": "plain-language recovery housing answers",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "recovery housing and referrals",
+          "status": "published",
+          "source_path": "app/answers/page.tsx"
+        },
+        {
+          "canonical_url": "https://www.diannesplacerecoveryservices.com/medical-disclaimer/",
+          "topic": "medical and service-boundary information",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "recovery housing and referrals",
+          "status": "published",
+          "source_path": "app/medical-disclaimer/page.tsx"
+        }
+      ]
     },
     {
       "brand_id": "dream-wedding-builder",
+      "source_repo_key": "dream",
+      "source_artifact": "dream-wedding-builder-main_BASELINE_07-24-26_70edeb07acaa.zip",
+      "source_sha256": "70edeb07acaa204d00eee708a75a091f9825d20f5ae98d7dab417acf5f9a5630",
       "manifest_url": "",
-      "status": "awaiting_configuration",
-      "last_imported_at": null,
-      "surfaces": []
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 8,
+      "surfaces": [
+        {
+          "canonical_url": "https://weddingchecklistpdf.com/build",
+          "topic": "Free Dream Wedding Builder",
+          "content_type": "free_tool",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingbudgetspreadsheet.com/build",
+          "topic": "Free Dream Wedding Builder",
+          "content_type": "free_tool",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingtimelinetemplate.com/build",
+          "topic": "Free Dream Wedding Builder",
+          "content_type": "free_tool",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingseatingchartmaker.com/build",
+          "topic": "Free Dream Wedding Builder",
+          "content_type": "free_tool",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+          "topic": "Wedding Checklist PDF",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+          "topic": "Wedding Budget Spreadsheet",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+          "topic": "Wedding Timeline Template",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        },
+        {
+          "canonical_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+          "topic": "Wedding Seating Chart Maker",
+          "content_type": "paid_product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wedding planning tools",
+          "status": "published",
+          "source_path": "data/atlas/route_admission_manifest.json"
+        }
+      ]
+    },
+    {
+      "brand_id": "hicks-consulting",
+      "source_repo_key": "hicks",
+      "source_artifact": "hicks-consulting-canonical-main_BASELINE_07-25-26_df2e1a5748c3.zip",
+      "source_sha256": "df2e1a5748c316d13ca0548936c16abe629621e565a95a5b7ddd908a20ca3822",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 7,
+      "surfaces": [
+        {
+          "canonical_url": "https://www.hicksconsulting.org/",
+          "topic": "Hicks Consulting",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/resources/",
+          "topic": "workplace wellbeing resource library",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/resources/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/corporate-speaking/",
+          "topic": "workplace mental-health speaking programs",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/corporate-speaking/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+          "topic": "organizational wellbeing training inquiry",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/organizational-training-inquiry/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/therapy/",
+          "topic": "virtual therapy information in Tennessee",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/therapy/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/coaching/",
+          "topic": "coaching support information",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/coaching/index.html"
+        },
+        {
+          "canonical_url": "https://www.hicksconsulting.org/faq/",
+          "topic": "Hicks Consulting FAQ",
+          "content_type": "resource",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "workplace wellbeing",
+          "status": "published",
+          "source_path": "pages/faq/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "hormones-iv-hair",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://hormonesivhair.com/trt/",
+          "topic": "TRT guide hub",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "hormone wellness",
+          "status": "published",
+          "source_path": "trt/index.html"
+        },
+        {
+          "canonical_url": "https://hormonesivhair.com/trt-vs-peptide-therapy/",
+          "topic": "TRT vs peptide therapy",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "hormone wellness",
+          "status": "published",
+          "source_path": "trt-vs-peptide-therapy/index.html"
+        },
+        {
+          "canonical_url": "https://hormonesivhair.com/telehealth-trt-vs-in-person-trt/",
+          "topic": "telehealth TRT vs in-person TRT",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "hormone wellness",
+          "status": "published",
+          "source_path": "telehealth-trt-vs-in-person-trt/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "horse-legal-guide",
+      "source_repo_key": "horse",
+      "source_artifact": "horse-legal-guide-velocity-main_BASELINE_07-25-26_0dbf2b6398a8.zip",
+      "source_sha256": "0dbf2b6398a899c8952c7f099232537e20e1dff0c942189527fa3d988a9edb25",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 5,
+      "surfaces": [
+        {
+          "canonical_url": "https://horselegalguide.com/",
+          "topic": "Horse Legal Guide",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "equine legal education",
+          "status": "published",
+          "source_path": "dist/index.html"
+        },
+        {
+          "canonical_url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+          "topic": "horse boarding agreement checklist",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "equine legal education",
+          "status": "published",
+          "source_path": "dist/boarding/what-should-be-included-in-a-horse-boarding-agreement/index.html"
+        },
+        {
+          "canonical_url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+          "topic": "horse purchase agreement versus bill of sale",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "equine legal education",
+          "status": "published",
+          "source_path": "dist/compare/horse-purchase-agreement-vs-bill-of-sale/index.html"
+        },
+        {
+          "canonical_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+          "topic": "contract review versus a DIY horse agreement",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "equine legal education",
+          "status": "published",
+          "source_path": "dist/compare/contract-review-vs-diy-horse-agreement/index.html"
+        },
+        {
+          "canonical_url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+          "topic": "steps to prepare after receiving a demand letter",
+          "content_type": "guide",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "equine legal education",
+          "status": "published",
+          "source_path": "dist/disputes/what-should-i-do-if-i-receive-a-demand-letter/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "neuro-eval-guides",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://neuroevalguides.com/neuro/",
+          "topic": "neuro evaluation guide hub",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "neuro evaluations",
+          "status": "published",
+          "source_path": "neuro/index.html"
+        },
+        {
+          "canonical_url": "https://neuroevalguides.com/adhd-evaluation-vs-neuropsychological-evaluation/",
+          "topic": "ADHD vs neuropsychological evaluation",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "neuro evaluations",
+          "status": "published",
+          "source_path": "adhd-evaluation-vs-neuropsychological-evaluation/index.html"
+        },
+        {
+          "canonical_url": "https://neuroevalguides.com/school-iep-evaluation-vs-private-neuropsych-evaluation/",
+          "topic": "school IEP vs private neuropsych evaluation",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "neuro evaluations",
+          "status": "published",
+          "source_path": "school-iep-evaluation-vs-private-neuropsych-evaluation/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "porch-party",
+      "source_repo_key": "pnp",
+      "source_artifact": "p-n-p-main_BASELINE_07-24-26_2d98d9ae5024.zip",
+      "source_sha256": "2d98d9ae50245746606d35b499990d22eddfc8b2259ff8a3f608fe9e5b09a7e3",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 6,
+      "surfaces": [
+        {
+          "canonical_url": "https://porchandparty901.com/",
+          "topic": "Porch & Party",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "index.html"
+        },
+        {
+          "canonical_url": "https://porchandparty901.com/services/porch-decorating.html",
+          "topic": "Memphis porch decorating services",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "services/porch-decorating.html"
+        },
+        {
+          "canonical_url": "https://porchandparty901.com/services/party-decor-memphis.html",
+          "topic": "party decor in Memphis",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "services/party-decor-memphis.html"
+        },
+        {
+          "canonical_url": "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+          "topic": "hotel-room decor in Memphis",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "services/hotel-room-decor-memphis.html"
+        },
+        {
+          "canonical_url": "https://porchandparty901.com/services/grazing-tables-memphis.html",
+          "topic": "grazing tables in Memphis",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "services/grazing-tables-memphis.html"
+        },
+        {
+          "canonical_url": "https://porchandparty901.com/pricing.html",
+          "topic": "Porch & Party pricing information",
+          "content_type": "service",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "Memphis event decor",
+          "status": "published",
+          "source_path": "pricing.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "the-industry-guides",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://theindustryguides.com/",
+          "topic": "industry decision-support guides",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "methodology",
+          "status": "published",
+          "source_path": "index.html"
+        },
+        {
+          "canonical_url": "https://theindustryguides.com/methodology.html",
+          "topic": "editorial methodology",
+          "content_type": "methodology",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "methodology",
+          "status": "published",
+          "source_path": "methodology.html"
+        },
+        {
+          "canonical_url": "https://theindustryguides.com/tools/",
+          "topic": "provider comparison tools",
+          "content_type": "tool-hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "decision tools",
+          "status": "published",
+          "source_path": "tools/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "uscis-exam-guides",
+      "source_repo_key": "velocity",
+      "source_artifact": "local-guides-citation-velocity-main_BASELINE_07-24-26_6fae29a32822.zip",
+      "source_sha256": "6fae29a32822d53c82519c61570f074fadf5f497fb278e4652b57a464c726dbd",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 3,
+      "surfaces": [
+        {
+          "canonical_url": "https://uscisexam.com/uscis-medical/",
+          "topic": "USCIS medical exam guide hub",
+          "content_type": "hub",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "USCIS medical",
+          "status": "published",
+          "source_path": "uscis-medical/index.html"
+        },
+        {
+          "canonical_url": "https://uscisexam.com/civil-surgeon-vs-panel-physician/",
+          "topic": "civil surgeon vs panel physician",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "USCIS medical",
+          "status": "published",
+          "source_path": "civil-surgeon-vs-panel-physician/index.html"
+        },
+        {
+          "canonical_url": "https://uscisexam.com/i-693-rejection-vs-denial-vs-rfe/",
+          "topic": "I-693 rejection vs denial vs RFE",
+          "content_type": "comparison",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "USCIS medical",
+          "status": "published",
+          "source_path": "i-693-rejection-vs-denial-vs-rfe/index.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "virtual-agency-os",
+      "source_repo_key": "wpp",
+      "source_artifact": "WPP-llm-main_BASELINE_07-24-26_6004453ddfbc.zip",
+      "source_sha256": "6004453ddfbcb29738eed391eeadc49fd27e7c75af20cd98a4ae73d7953211e4",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 9,
+      "surfaces": [
+        {
+          "canonical_url": "https://virtualagency-os.com/community-as-a-service",
+          "topic": "Community as a Service overview",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "community-as-a-service.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/what-is-community-as-a-service",
+          "topic": "what Community as a Service means",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/what-is-community-as-a-service.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/community-as-a-service-vs-in-house",
+          "topic": "Community as a Service versus an in-house team",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/community-as-a-service-vs-in-house.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/how-to-choose-community-platform",
+          "topic": "community platform selection framework",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/how-to-choose-community-platform.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/how-to-measure-community-roi",
+          "topic": "community ROI measurement framework",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/how-to-measure-community-roi.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/community-staffing-model",
+          "topic": "community staffing model",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/community-staffing-model.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/community-member-retention",
+          "topic": "community member retention guidance",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/community-member-retention.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/community-moderation-governance",
+          "topic": "community moderation and governance guidance",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/community-moderation-governance.html"
+        },
+        {
+          "canonical_url": "https://virtualagency-os.com/answers/how-long-to-launch-brand-community",
+          "topic": "brand community launch timeline",
+          "content_type": "authority-page",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "community-as-a-service",
+          "status": "published",
+          "source_path": "answers/how-long-to-launch-brand-community.html"
+        }
+      ]
+    },
+    {
+      "brand_id": "west-peek-productions",
+      "source_repo_key": "wpp",
+      "source_artifact": "WPP-llm-main_BASELINE_07-24-26_6004453ddfbc.zip",
+      "source_sha256": "6004453ddfbcb29738eed391eeadc49fd27e7c75af20cd98a4ae73d7953211e4",
+      "manifest_url": "",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-07-24",
+      "surface_count": 1,
+      "surfaces": [
+        {
+          "canonical_url": "https://www.westpeekproductions.com/",
+          "topic": "West Peek Productions services",
+          "content_type": "commercial",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "production and managed services",
+          "status": "published",
+          "source_path": "commercial-destination"
+        }
+      ]
     }
   ]
 }

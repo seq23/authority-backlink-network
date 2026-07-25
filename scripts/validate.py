@@ -29,6 +29,9 @@ COMMANDS = {
     "cache_self_test": [sys.executable, "scripts/cache_self_test.py"],
     "citation_control": [sys.executable, "scripts/citation_control_plane.py", "verify-repo"],
     "citation_contract": [sys.executable, "tests/test_citation_control_plane.py"],
+    "portfolio_backlinks": [sys.executable, "tests/test_portfolio_backlink_system.py"],
+    "backlink_local": [sys.executable, "scripts/portfolio_backlink_engine.py", "verify-local"],
+    "distribution_chain": [sys.executable, "tests/test_distribution_chain.py"],
 }
 
 

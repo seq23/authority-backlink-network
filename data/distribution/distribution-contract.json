@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "trigger": "successful Authority Network autopilot workflow, manual dispatch, or daily retry",
+  "automatic_chain": [
+    "successful_publish",
+    "sitemap_refresh",
+    "llms_refresh",
+    "release_validation",
+    "deployment_settle",
+    "indexnow",
+    "gsc_sitemap_submission",
+    "priority_url_inspection",
+    "live_backlink_verification",
+    "durable_receipt",
+    "observation_feedback"
+  ],
+  "publication_properties": [
+    "founderoperatorlibrary.com",
+    "memphisvendorlibrary.com",
+    "professionalresourcelibrary.com"
+  ],
+  "provider_configuration": {
+    "INDEXNOW_KEY": "GitHub repository variable; public verification token",
+    "GSC_SERVICE_ACCOUNT_JSON": "GitHub repository secret",
+    "GSC_SITE_URLS_JSON": "GitHub repository variable",
+    "AUTHORITY_PUBLICATION_BASE_URLS_JSON": "optional GitHub repository variable"
+  },
+  "failure_behavior": "bounded retry, durable failure receipt, no false lifecycle promotion, continue unrelated safe work",
+  "direct_cloudflare_deploy": false,
+  "cloudflare_deployment_owner": "Cloudflare Git integration"
+}

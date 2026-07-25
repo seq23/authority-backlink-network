@@ -1,0 +1,191 @@
+{
+  "schema": "authority-network-observation-feedback-v1",
+  "observed_at": null,
+  "source_receipt_id": "baseline-not-configured",
+  "publication_health": [
+    {
+      "publication_id": "founder",
+      "domain": "founderoperatorlibrary.com",
+      "rendered_backlinks": 23,
+      "live_verified_backlinks": 0,
+      "indexed_referring_pages": 0,
+      "indexnow_status": "NOT_CONFIGURED",
+      "gsc_sitemap_status": "NOT_CONFIGURED",
+      "gsc_inspection_status": "NOT_CONFIGURED"
+    },
+    {
+      "publication_id": "memphis",
+      "domain": "memphisvendorlibrary.com",
+      "rendered_backlinks": 22,
+      "live_verified_backlinks": 0,
+      "indexed_referring_pages": 0,
+      "indexnow_status": "NOT_CONFIGURED",
+      "gsc_sitemap_status": "NOT_CONFIGURED",
+      "gsc_inspection_status": "NOT_CONFIGURED"
+    },
+    {
+      "publication_id": "professional",
+      "domain": "professionalresourcelibrary.com",
+      "rendered_backlinks": 44,
+      "live_verified_backlinks": 0,
+      "indexed_referring_pages": 0,
+      "indexnow_status": "NOT_CONFIGURED",
+      "gsc_sitemap_status": "NOT_CONFIGURED",
+      "gsc_inspection_status": "NOT_CONFIGURED"
+    }
+  ],
+  "campaign_health": [
+    {
+      "campaign_id": "virtual-agency-os-authority",
+      "brand_id": "virtual-agency-os",
+      "rendered": 4,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "wpp-community-authority",
+      "brand_id": "west-peek-productions",
+      "rendered": 5,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "wpp-commercial",
+      "brand_id": "west-peek-productions",
+      "rendered": 2,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "dream-planning-tools",
+      "brand_id": "dream-wedding-builder",
+      "rendered": 6,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "dianne-recovery-resources",
+      "brand_id": "diannes-place",
+      "rendered": 4,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "hicks-workplace-wellbeing",
+      "brand_id": "hicks-consulting",
+      "rendered": 5,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "horse-equine-legal",
+      "brand_id": "horse-legal-guide",
+      "rendered": 5,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "the-industry-guides-authority",
+      "brand_id": "the-industry-guides",
+      "rendered": 3,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "accident-guides-authority",
+      "brand_id": "accident-guides",
+      "rendered": 2,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "dentistry-guides-authority",
+      "brand_id": "dentistry-guides",
+      "rendered": 3,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "hormones-iv-hair-authority",
+      "brand_id": "hormones-iv-hair",
+      "rendered": 2,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "neuro-eval-guides-authority",
+      "brand_id": "neuro-eval-guides",
+      "rendered": 4,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "uscis-exam-guides-authority",
+      "brand_id": "uscis-exam-guides",
+      "rendered": 4,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "bhpc-authority",
+      "brand_id": "bhpc",
+      "rendered": 4,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "approval-prep-authority",
+      "brand_id": "approval-prep",
+      "rendered": 12,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "porch-party-authority",
+      "brand_id": "porch-party",
+      "rendered": 16,
+      "deployed": 0,
+      "live_verified": 0,
+      "indexed": 0,
+      "verified_external_citations": 0
+    }
+  ],
+  "portfolio_totals": {
+    "rendered_backlinks": 89,
+    "live_verified_backlinks": 0,
+    "indexed_referring_pages": 0,
+    "verified_external_citations": 0
+  },
+  "recommended_action": "CONFIGURE_PROVIDER_CREDENTIALS_AND_DEPLOY_PUBLICATION_PROPERTIES",
+  "truth_boundary": "Rendered, deployed, live-verified, discovered, indexed, independently referenced, LLM-surfaced, and cited are separate evidence states. Provider submission is not proof of indexing or citation."
+}

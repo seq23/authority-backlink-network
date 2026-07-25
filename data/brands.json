@@ -254,9 +254,9 @@
     "domain": "virtualagency-os.com",
     "url": "https://virtualagency-os.com",
     "lane": "founder",
-    "category": "virtual event and AI marketing education layer",
+    "category": "virtual event, community operations, and AI marketing education layer",
     "compliance": "low-medium",
-    "link_policy": "Can be cited for virtual event production education; routes services to West Peek Productions.",
+    "link_policy": "Virtual Agency OS is a separate education brand. It must not receive backlinks assigned to West Peek Productions campaigns.",
     "approved_publications": [
       "founder"
     ],
@@ -284,18 +284,29 @@
     "id": "west-peek-productions",
     "name": "West Peek Productions",
     "domain": "westpeekproductions.com",
-    "url": "https://westpeekproductions.com",
+    "url": "https://www.westpeekproductions.com",
     "lane": "founder",
-    "category": "virtual/hybrid event production and audience growth services",
+    "category": "virtual/hybrid event production, managed community operations, and audience growth services",
     "compliance": "low-medium",
-    "link_policy": "Commercial destination for event production and storytelling work.",
+    "link_policy": "All West Peek Productions backlink campaigns, including Community as a Service, must target the official West Peek Productions domain only.",
     "approved_publications": [
       "founder"
     ],
     "approved_links": [
       {
-        "url": "https://westpeekproductions.com/",
-        "anchor": "West Peek Productions"
+        "url": "https://www.westpeekproductions.com/",
+        "anchor": "West Peek Productions",
+        "topics": [
+          "community as a service",
+          "managed community operations",
+          "community platform strategy",
+          "community ROI",
+          "community staffing",
+          "virtual event production",
+          "executive broadcast planning"
+        ],
+        "campaign_id": "wpp-community-authority",
+        "destination_type": "official_commercial_destination"
       }
     ],
     "forbidden": [
@@ -318,7 +329,43 @@
     "approved_links": [
       {
         "url": "https://horselegalguide.com/",
-        "anchor": "Horse Legal Guide"
+        "anchor": "Horse Legal Guide",
+        "topics": [
+          "equine legal education",
+          "prepare for consults"
+        ]
+      },
+      {
+        "url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+        "anchor": "horse boarding agreement checklist",
+        "topics": [
+          "horse boarding agreements",
+          "boarding contract preparation"
+        ]
+      },
+      {
+        "url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+        "anchor": "horse purchase agreement versus bill of sale",
+        "topics": [
+          "horse purchase documents",
+          "horse sale contracts"
+        ]
+      },
+      {
+        "url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+        "anchor": "contract review versus a DIY horse agreement",
+        "topics": [
+          "equine contract preparation",
+          "attorney consultation preparation"
+        ]
+      },
+      {
+        "url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+        "anchor": "steps to prepare after receiving a demand letter",
+        "topics": [
+          "horse dispute preparation",
+          "demand letter response preparation"
+        ]
       }
     ],
     "forbidden": [
@@ -342,15 +389,61 @@
     "approved_links": [
       {
         "url": "https://www.hicksconsulting.org/",
-        "anchor": "Hicks Consulting"
+        "anchor": "Hicks Consulting",
+        "topics": [
+          "workplace wellbeing",
+          "mental health resources",
+          "decision frameworks for sensitive services",
+          "workplace burnout and boundaries"
+        ]
+      },
+      {
+        "url": "https://www.hicksconsulting.org/resources/",
+        "anchor": "workplace wellbeing resource library",
+        "topics": [
+          "workplace burnout resources",
+          "leadership wellbeing"
+        ]
+      },
+      {
+        "url": "https://www.hicksconsulting.org/corporate-speaking/",
+        "anchor": "workplace mental-health speaking programs",
+        "topics": [
+          "workplace mental health training",
+          "leadership education"
+        ]
+      },
+      {
+        "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+        "anchor": "organizational wellbeing training inquiry",
+        "topics": [
+          "organizational mental health training",
+          "workplace wellbeing programs"
+        ]
       },
       {
         "url": "https://www.hicksconsulting.org/therapy/",
-        "anchor": "virtual therapy in Tennessee"
+        "anchor": "virtual therapy information in Tennessee",
+        "topics": [
+          "therapy information",
+          "support options"
+        ]
+      },
+      {
+        "url": "https://www.hicksconsulting.org/coaching/",
+        "anchor": "coaching support information",
+        "topics": [
+          "professional coaching",
+          "leadership support"
+        ]
       },
       {
         "url": "https://www.hicksconsulting.org/faq/",
-        "anchor": "Hicks Consulting FAQ"
+        "anchor": "Hicks Consulting FAQ",
+        "topics": [
+          "therapy and coaching questions",
+          "service boundaries"
+        ]
       }
     ],
     "forbidden": [
@@ -374,11 +467,63 @@
     "approved_links": [
       {
         "url": "https://porchandparty901.com/",
-        "anchor": "Porch & Party"
+        "anchor": "Porch & Party",
+        "topics": [
+          "Memphis event decor",
+          "Memphis porch decorating",
+          "grazing tables",
+          "Halloween porch styling",
+          "party decor vendors",
+          "corporate event styling",
+          "fall porch setups",
+          "Memphis event vendors",
+          "birthday room setups",
+          "event budget planning",
+          "porch decorating",
+          "neighborhood vendor guides",
+          "hotel room decorations",
+          "Memphis giftable experiences"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/porch-decorating.html",
+        "anchor": "Memphis porch decorating services",
+        "topics": [
+          "porch decorating",
+          "seasonal porch styling"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/party-decor-memphis.html",
+        "anchor": "party decor in Memphis",
+        "topics": [
+          "party decor",
+          "celebration setup"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+        "anchor": "hotel-room decor in Memphis",
+        "topics": [
+          "hotel room decor",
+          "romantic surprise setup"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/grazing-tables-memphis.html",
+        "anchor": "grazing tables in Memphis",
+        "topics": [
+          "grazing tables",
+          "styled events"
+        ]
       },
       {
         "url": "https://porchandparty901.com/pricing.html",
-        "anchor": "Porch & Party pricing"
+        "anchor": "Porch & Party pricing information",
+        "topics": [
+          "event decor budget",
+          "decor pricing"
+        ]
       }
     ],
     "forbidden": [
@@ -1295,5 +1440,71 @@
       "only wedding tool you need"
     ],
     "entity_description": "one wedding-planning application with a free builder and four paid tools available on four owned domains"
+  },
+  {
+    "id": "diannes-place",
+    "name": "Dianne's Place Recovery Services",
+    "domain": "diannesplacerecoveryservices.com",
+    "domains": [
+      "diannesplacerecoveryservices.com"
+    ],
+    "url": "https://www.diannesplacerecoveryservices.com",
+    "lane": "professional",
+    "category": "recovery housing, referral guidance, and recovery-support education",
+    "compliance": "addiction-recovery-housing-YMYL",
+    "link_policy": "Educational and referral-context links only. Never describe Dianne's Place as detox, treatment, clinical care, emergency care, or a licensed provider unless the site itself explicitly changes licensure mode.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+        "anchor": "recovery housing information",
+        "topics": [
+          "recovery housing",
+          "sober living transition"
+        ]
+      },
+      {
+        "url": "https://www.diannesplacerecoveryservices.com/referrals/",
+        "anchor": "recovery housing referral guidance",
+        "topics": [
+          "recovery referrals",
+          "treatment-to-housing transition"
+        ]
+      },
+      {
+        "url": "https://www.diannesplacerecoveryservices.com/resources/",
+        "anchor": "recovery support resources",
+        "topics": [
+          "recovery resources",
+          "family support"
+        ]
+      },
+      {
+        "url": "https://www.diannesplacerecoveryservices.com/answers/",
+        "anchor": "plain-language recovery housing answers",
+        "topics": [
+          "recovery housing questions",
+          "family and referral guidance"
+        ]
+      },
+      {
+        "url": "https://www.diannesplacerecoveryservices.com/medical-disclaimer/",
+        "anchor": "medical and service-boundary information",
+        "topics": [
+          "recovery housing boundaries",
+          "medical disclaimer"
+        ]
+      }
+    ],
+    "forbidden": [
+      "medical treatment",
+      "detox services",
+      "guaranteed recovery",
+      "licensed treatment provider",
+      "clinical outcomes",
+      "emergency care"
+    ]
   }
 ]

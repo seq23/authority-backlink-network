@@ -15,6 +15,8 @@ PANTRY = json.loads((ROOT/'content-bank/yearly-pantry.json').read_text(encoding=
 SCALING = json.loads((ROOT/'content-bank/scaling-policy.json').read_text(encoding='utf-8'))
 GROWTH = json.loads((ROOT/'data/brand-growth-profiles.json').read_text(encoding='utf-8'))
 GROWTH_BY_BRAND = {x['brand_id']: x for x in GROWTH.get('profiles', [])}
+CAMPAIGNS = json.loads((ROOT/'data/portfolio-backlink-campaigns.json').read_text(encoding='utf-8')) if (ROOT/'data/portfolio-backlink-campaigns.json').exists() else {'campaigns': []}
+CAMPAIGN_BY_ID = {x['id']: x for x in CAMPAIGNS.get('campaigns', [])}
 STATE_PATH = ROOT/'data/autopilot-state.json'
 REPORT_DIR = ROOT/'reports'
 REPORT_DIR.mkdir(exist_ok=True)
@@ -161,10 +163,13 @@ def published_counts_by_brand():
         records = records.get('links', [])
     counts = {}
     for row in records:
-        if row.get('status') in {'published','rendered','live_verified','discoverable','indexed'}:
+        if row.get('status') in {'published','rendered','live_verified','discoverable','indexed'} or row.get('lifecycle_stage') in {'published_in_repository','rendered_in_repository','deployed','live_verified','source_discovered','source_indexed'}:
             bid = row.get('target_brand_id')
             if bid:
                 counts[bid] = counts.get(bid, 0) + 1
+            cid = row.get('campaign_id')
+            if cid:
+                counts['campaign:'+cid] = counts.get('campaign:'+cid, 0) + 1
     return counts
 
 
@@ -183,7 +188,8 @@ def choose_fair_target(pub_key, slot, counts):
         profile = GROWTH_BY_BRAND.get(bid, {})
         monthly = max(1, int(profile.get('target_authority_pages_per_month', 1)))
         weight = float(profile.get('scheduler_weight', 1))
-        current = counts.get(bid, 0)
+        campaign_id = target.get('campaign_id','')
+        current = counts.get('campaign:'+campaign_id, 0) if campaign_id else counts.get(bid, 0)
         # Lower coverage relative to the configured target receives more scheduling weight.
         deficit = weight * monthly / (current + 1)
         tie = stable_int(f'{TODAY}|{pub_key}|{slot}|{bid}') / 10**15
@@ -233,6 +239,7 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
         'product_message': selected_link.get('product_message','') if isinstance(selected_link, dict) else '',
         'target_route': selected_link.get('route','') if isinstance(selected_link, dict) else '',
         'preferred_domain': selected_link.get('preferred_domain','') if isinstance(selected_link, dict) else '',
+        'campaign_id': target_cfg.get('campaign_id') or (selected_link.get('campaign_id','') if isinstance(selected_link, dict) else ''),
         'used_preferred_domain': bool(selected_link.get('preferred')) if isinstance(selected_link, dict) else False,
         'signature': signature
     }
@@ -267,6 +274,7 @@ def generate_page(brief):
         product_section = f'<h2>What you can create</h2><p><strong>{html.escape(product_name)}:</strong> {html.escape(product_message)}</p><p>You complete the document with your own truthful facts, review it, and send it yourself. Approval Prep does not make the approval decision.</p>'
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
     slug = slugify(title)
+    canonical_url = f"https://{pub['default_domain']}/daily/{TODAY}-{slug}.html"
     faq_html = ''.join('<h3>'+html.escape(f.get('q','Question'))+'</h3><p>'+html.escape(f.get('a','Use this as a starting point, then verify details for your situation.'))+'</p>' for f in faq_items)
     schema = {
         '@context': 'https://schema.org',
@@ -276,10 +284,11 @@ def generate_page(brief):
         'dateModified': TODAY,
         'author': {'@type': 'Organization', 'name': f"{pub['default_domain']} editorial desk"},
         'about': cluster,
-        'audience': {'@type': 'Audience', 'audienceType': audience}
+        'audience': {'@type': 'Audience', 'audienceType': audience},
+        'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical_url}
     }
     page = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, human-first resource for {html.escape(audience)} comparing {html.escape(cluster)} without fake rankings or forced answers."><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, human-first resource for {html.escape(audience)} comparing {html.escape(cluster)} without fake rankings or forced answers."><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
 <body><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(intro)}</p><p><em>Last updated: {TODAY}. Built for {html.escape(audience)}.</em></p>
 <h2>Who this helps</h2><p>This page is for a reader who needs a grounded starting point for {html.escape(cluster)}. It does not crown a winner, manufacture urgency, or pretend one provider fits every situation. The goal is to help you ask better questions and compare options with more discipline.</p>
 <h2>How to think about the decision</h2>{''.join('<p>'+html.escape(x)+'</p>' for x in body[:5])}
@@ -375,8 +384,12 @@ def main():
     priority_jobs = []
     for rule in SCALING.get('priority_targets', []):
         pub_key = rule.get('publication')
-        target = next((t for t in PANTRY['publications'].get(pub_key, {}).get('targets', []) if isinstance(t, dict) and t.get('brand_id') == rule.get('brand_id')), None)
+        target = next((t for t in PANTRY['publications'].get(pub_key, {}).get('targets', []) if isinstance(t, dict) and t.get('brand_id') == rule.get('brand_id') and (not rule.get('campaign_id') or t.get('campaign_id') == rule.get('campaign_id'))), None)
         if not target:
+            continue
+        campaign_id = rule.get('campaign_id') or target.get('campaign_id','')
+        current_campaign = published_counts_by_brand().get('campaign:'+campaign_id, 0) if campaign_id else published_counts_by_brand().get(rule.get('brand_id',''), 0)
+        if rule.get('until_rendered_coverage') is not None and current_campaign >= int(rule.get('until_rendered_coverage')):
             continue
         requested = int(os.getenv('APPROVAL_PREP_PAGES_PER_DAY', str(rule.get('pages_per_day', 6)))) if rule.get('brand_id') == 'approval-prep' else int(rule.get('pages_per_day', 1))
         # The configured range is a planning target, not a validator. Allow normal daily variation
@@ -440,7 +453,7 @@ def main():
         state['published_hashes'].append(chash)
         state['published_signatures'].append(chosen['signature'])
         state['published_titles'].append(chosen['title'])
-        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name',''), 'target_route': chosen.get('target_route',''), 'preferred_domain': chosen.get('preferred_domain',''), 'used_preferred_domain': chosen.get('used_preferred_domain',False)}
+        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name',''), 'target_route': chosen.get('target_route',''), 'campaign_id': chosen.get('campaign_id',''), 'preferred_domain': chosen.get('preferred_domain',''), 'used_preferred_domain': chosen.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)
 
@@ -453,7 +466,7 @@ def main():
     if isinstance(linkreg, dict): linkreg = linkreg.get('links', [])
     for item in published:
         pub_meta = PUBLICATION_BY_FOLDER.get(item['publication'], {})
-        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': pub_meta.get('id', item['publication']), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'target_route': item.get('target_route',''), 'preferred_domain': item.get('preferred_domain',''), 'used_preferred_domain': item.get('used_preferred_domain',False), 'publication_family_id': pub_meta.get('publication_family_id',''), 'city': pub_meta.get('city',''), 'link_type': 'owned-authority-citation', 'status': 'published', 'score': item['score']})
+        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': pub_meta.get('id', item['publication']), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'target_route': item.get('target_route',''), 'preferred_domain': item.get('preferred_domain',''), 'used_preferred_domain': item.get('used_preferred_domain',False), 'publication_family_id': pub_meta.get('publication_family_id',''), 'city': pub_meta.get('city',''), 'campaign_id': item.get('campaign_id',''), 'authority_page_contract_version': 'v5', 'link_type': 'affiliated-editorial-backlink', 'status': 'published', 'lifecycle_stage': 'published_in_repository', 'evidence': {'repository_rendered': True, 'deployed': False, 'live_verified': False, 'discoverable': False, 'indexed': False, 'search_visibility_observed': False, 'ai_cited': False}, 'score': item['score']})
     write_json(ROOT/'data/link-registry.json', linkreg)
 
     social = read_json(ROOT/'data/social-queue.json', [])

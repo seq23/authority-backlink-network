@@ -1,5 +1,247 @@
 {
-  "version": "1.0",
-  "purpose": "Coordinate product-repo surfaces, authority pages, city/local pages, and external acquisition targets without duplicating the same intent.",
-  "topics": []
+  "version": "2.0",
+  "purpose": "Coordinate product-repo surfaces, authority pages, campaigns, and observed evidence without duplicating intent.",
+  "topics": [
+    {
+      "campaign_id": "wpp-community-authority",
+      "brand_id": "west-peek-productions",
+      "publication": "founder",
+      "keywords": [
+        "community as a service",
+        "community operations",
+        "community platform",
+        "community ROI",
+        "community staffing",
+        "community retention",
+        "community moderation",
+        "brand community"
+      ],
+      "destinations": [
+        "https://www.westpeekproductions.com/"
+      ]
+    },
+    {
+      "campaign_id": "wpp-commercial",
+      "brand_id": "west-peek-productions",
+      "publication": "founder",
+      "keywords": [
+        "managed community partner",
+        "virtual event production partner",
+        "executive broadcast production"
+      ],
+      "destinations": [
+        "https://www.westpeekproductions.com/"
+      ]
+    },
+    {
+      "campaign_id": "dream-planning-tools",
+      "brand_id": "dream-wedding-builder",
+      "publication": "memphis",
+      "keywords": [
+        "wedding budget",
+        "wedding timeline",
+        "wedding checklist",
+        "wedding seating chart",
+        "wedding planning builder"
+      ],
+      "destinations": [
+        "https://weddingchecklistpdf.com/build",
+        "https://weddingbudgetspreadsheet.com/build",
+        "https://weddingtimelinetemplate.com/build",
+        "https://weddingseatingchartmaker.com/build",
+        "https://weddingchecklistpdf.com/products/checklist-pdf",
+        "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+        "https://weddingtimelinetemplate.com/products/timeline-template",
+        "https://weddingseatingchartmaker.com/products/seating-chart-maker"
+      ]
+    },
+    {
+      "campaign_id": "dianne-recovery-resources",
+      "brand_id": "diannes-place",
+      "publication": "professional",
+      "keywords": [
+        "recovery housing",
+        "referral guidance",
+        "family recovery support",
+        "treatment-to-housing transition"
+      ],
+      "destinations": [
+        "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+        "https://www.diannesplacerecoveryservices.com/referrals/",
+        "https://www.diannesplacerecoveryservices.com/resources/",
+        "https://www.diannesplacerecoveryservices.com/answers/"
+      ]
+    },
+    {
+      "campaign_id": "hicks-workplace-wellbeing",
+      "brand_id": "hicks-consulting",
+      "publication": "professional",
+      "keywords": [
+        "workplace burnout",
+        "organizational wellbeing",
+        "mental health training",
+        "leadership wellbeing"
+      ],
+      "destinations": [
+        "https://www.hicksconsulting.org/",
+        "https://www.hicksconsulting.org/resources/",
+        "https://www.hicksconsulting.org/corporate-speaking/",
+        "https://www.hicksconsulting.org/organizational-training-inquiry/",
+        "https://www.hicksconsulting.org/therapy/",
+        "https://www.hicksconsulting.org/coaching/"
+      ]
+    },
+    {
+      "campaign_id": "horse-equine-legal",
+      "brand_id": "horse-legal-guide",
+      "publication": "professional",
+      "keywords": [
+        "horse boarding agreement",
+        "horse purchase agreement",
+        "equine contract review",
+        "horse dispute preparation"
+      ],
+      "destinations": [
+        "https://horselegalguide.com/",
+        "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+        "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+        "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+        "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/"
+      ]
+    },
+    {
+      "campaign_id": "the-industry-guides-authority",
+      "brand_id": "the-industry-guides",
+      "publication": "professional",
+      "keywords": [
+        "parent decision-support publisher"
+      ],
+      "destinations": [
+        "https://theindustryguides.com/",
+        "https://theindustryguides.com/methodology.html",
+        "https://theindustryguides.com/tools/"
+      ]
+    },
+    {
+      "campaign_id": "accident-guides-authority",
+      "brand_id": "accident-guides",
+      "publication": "professional",
+      "keywords": [
+        "personal injury educational guides"
+      ],
+      "destinations": [
+        "https://theaccidentguides.com/",
+        "https://theaccidentguides.com/guides/",
+        "https://theaccidentguides.com/personal-injury/"
+      ]
+    },
+    {
+      "campaign_id": "dentistry-guides-authority",
+      "brand_id": "dentistry-guides",
+      "publication": "professional",
+      "keywords": [
+        "dentistry educational guides"
+      ],
+      "destinations": [
+        "https://dentistryguides.com/",
+        "https://dentistryguides.com/guides/",
+        "https://dentistryguides.com/guides/questions-to-ask/"
+      ]
+    },
+    {
+      "campaign_id": "hormones-iv-hair-authority",
+      "brand_id": "hormones-iv-hair",
+      "publication": "professional",
+      "keywords": [
+        "TRT IV hydration hair-loss peptide educational guides"
+      ],
+      "destinations": [
+        "https://hormonesivhair.com/",
+        "https://hormonesivhair.com/guides/",
+        "https://hormonesivhair.com/guides/iv-hydration-red-flags/"
+      ]
+    },
+    {
+      "campaign_id": "neuro-eval-guides-authority",
+      "brand_id": "neuro-eval-guides",
+      "publication": "professional",
+      "keywords": [
+        "ADHD autism neuropsych evaluation education"
+      ],
+      "destinations": [
+        "https://neuroevalguides.com/",
+        "https://neuroevalguides.com/guides/",
+        "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/"
+      ]
+    },
+    {
+      "campaign_id": "uscis-exam-guides-authority",
+      "brand_id": "uscis-exam-guides",
+      "publication": "professional",
+      "keywords": [
+        "USCIS medical exam educational guides"
+      ],
+      "destinations": [
+        "https://uscisexam.com/",
+        "https://uscisexam.com/guides/",
+        "https://uscisexam.com/guides/costs-and-timeframes/"
+      ]
+    },
+    {
+      "campaign_id": "bhpc-authority",
+      "brand_id": "bhpc",
+      "publication": "founder",
+      "keywords": [
+        "AI executive coaching / prompt OS"
+      ],
+      "destinations": [
+        "https://billionairehighperformancecoach.com/",
+        "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html"
+      ]
+    },
+    {
+      "campaign_id": "approval-prep-authority",
+      "brand_id": "approval-prep",
+      "publication": "professional",
+      "keywords": [
+        "self-service document creation and downloadable document kits"
+      ],
+      "destinations": [
+        "https://approvalprep.com/letter-of-explanation",
+        "https://approvalprep.com/income-employment-letter-kit",
+        "https://approvalprep.com/credit-letter-kit",
+        "https://approvalprep.com/rental-application-kit",
+        "https://approvalprep.com/loan-prep-letter-kit",
+        "https://approvalprep.com/business-funding-prep-kit",
+        "https://approvalprep.com/life-admin-letter-kit",
+        "https://approvalprep.com/complete-approvalprep-bundle",
+        "https://approvalprep.com/letter-writing-studio",
+        "https://approvalprep.com/letter-of-explanation/credit",
+        "https://approvalprep.com/rental-application-checklist",
+        "https://approvalprep.com/documents-needed-for-car-loan",
+        "https://approvalprep.com/sba-loan-checklist",
+        "https://approvalprep.com/mortgage-document-checklist",
+        "https://approvalprep.com/",
+        "https://approvalprep.com/pricing",
+        "https://approvalprep.com/methodology",
+        "https://approvalprep.com/not-a-credit-repair-company"
+      ]
+    },
+    {
+      "campaign_id": "porch-party-authority",
+      "brand_id": "porch-party",
+      "publication": "memphis",
+      "keywords": [
+        "Memphis porch decorating hotel decor party styling grazing tables"
+      ],
+      "destinations": [
+        "https://porchandparty901.com/",
+        "https://porchandparty901.com/services/porch-decorating.html",
+        "https://porchandparty901.com/services/party-decor-memphis.html",
+        "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+        "https://porchandparty901.com/services/grazing-tables-memphis.html",
+        "https://porchandparty901.com/pricing.html"
+      ]
+    }
+  ]
 }

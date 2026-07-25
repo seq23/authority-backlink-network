@@ -42,6 +42,15 @@ jobs:
           MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
           PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
         run: python3 scripts/authority_v4_autopilot.py
+      - name: Materialize public IndexNow key files when configured
+        env:
+          INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+        run: python3 scripts/prepare_indexnow_keys.py
+      - name: Self-heal and verify portfolio backlinks
+        run: |
+          python3 scripts/portfolio_backlink_engine.py repair
+          python3 scripts/portfolio_backlink_engine.py verify-local
+          python3 scripts/portfolio_backlink_engine.py health
       - name: Validate generated release
         run: python3 scripts/validate.py release
       - name: Auto-post social queue

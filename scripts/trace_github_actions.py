@@ -27,6 +27,12 @@ required = {
         'secrets': [],
         'vars': [],
         'must_have': ['actions/cache@v4','actions/upload-artifact@v4']
+    },
+    'authority-post-publish-distribution.yml': {
+        'commands': ['python3 scripts/portfolio_backlink_engine.py repair','python3 scripts/validate.py release','python3 scripts/post_publish_distribution.py'],
+        'secrets': ['GSC_SERVICE_ACCOUNT_JSON'],
+        'vars': ['INDEXNOW_KEY','GSC_SITE_URLS_JSON','GSC_INSPECTION_LIMIT','AUTHORITY_PUBLICATION_BASE_URLS_JSON','LIVE_BACKLINK_VERIFY','FAIL_ON_PROVIDER_ERROR','DEPLOYMENT_SETTLE_SECONDS'],
+        'must_have': ['contents: write','issues: write','workflow_run:',"github.event.workflow_run.conclusion == 'success'",'actions/cache@v4','actions/upload-artifact@v4','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2']
     }
 }
 errors=[]; warnings=[]; traces=[]

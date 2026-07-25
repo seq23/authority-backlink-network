@@ -1,0 +1,148 @@
+{
+  "schema": "authority-network-post-publish-distribution-v1",
+  "receipt_id": "baseline-not-configured",
+  "attempted_at": null,
+  "chain": [
+    "successful_publish",
+    "sitemap_refresh",
+    "indexnow",
+    "gsc_sitemap_submission",
+    "priority_url_inspection_where_configured",
+    "durable_distribution_receipt",
+    "live_backlink_verification",
+    "observation_feedback"
+  ],
+  "trigger_contract": "AUTOMATIC_ONLY_AFTER_AUTHORITY_AUTOPILOT_WORKFLOW_SUCCESS; manual dispatch and scheduled retry are also allowed.",
+  "publications": [
+    {
+      "publication_id": "founder",
+      "domain": "founderoperatorlibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/founder-operator/sitemap.xml",
+        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
+        "sha256": "b4e319ac1a16e4e0ba439d4d93faf12bc2104b24c4a336b43d76d95f6185f38e",
+        "url_count": 29
+      },
+      "indexnow": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "submitted_urls": 0
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:founderoperatorlibrary.com",
+        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 20,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "Production publication deployment has not been verified in the artifact container."
+          }
+        ]
+      }
+    },
+    {
+      "publication_id": "memphis",
+      "domain": "memphisvendorlibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/memphis-local/sitemap.xml",
+        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
+        "sha256": "7ad496208b7a0317dfb28e91209f5c67a80a1924d8c48fadb8930fabe1c8c08a",
+        "url_count": 28
+      },
+      "indexnow": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "submitted_urls": 0
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:memphisvendorlibrary.com",
+        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 20,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "Production publication deployment has not been verified in the artifact container."
+          }
+        ]
+      }
+    },
+    {
+      "publication_id": "professional",
+      "domain": "professionalresourcelibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/professional-resources/sitemap.xml",
+        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
+        "sha256": "6260bdd089f24806c50b8f5b73f66757243bd10f05733e9775634527884375c4",
+        "url_count": 54
+      },
+      "indexnow": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "submitted_urls": 0
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:professionalresourcelibrary.com",
+        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 20,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "Production publication deployment has not been verified in the artifact container."
+          }
+        ]
+      }
+    }
+  ],
+  "durable_receipt": {
+    "latest": "data/distribution/provider-receipt.json",
+    "history": "data/distribution/receipts/<runtime-receipt-id>.json"
+  },
+  "provider_success_claimed": false,
+  "verified_external_citations_delta": 0,
+  "truth_boundary": "Rendered, deployed, live-verified, discovered, indexed, independently referenced, LLM-surfaced, and cited are separate evidence states. Provider submission is not proof of indexing or citation."
+}

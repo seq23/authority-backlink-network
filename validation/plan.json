@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "architecture": "One orchestrator, one page audit engine, one cache service, one bounded repair pass, and one portfolio citation control plane.",
+  "version": 4,
+  "architecture": "One orchestrator, one page audit engine, one cache service, one bounded repair pass, one portfolio citation/backlink control plane, and one post-publish distribution observation chain.",
   "severity_policy": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -15,6 +15,9 @@
       "hostile",
       "citation_control",
       "citation_contract",
+      "portfolio_backlinks",
+      "backlink_local",
+      "distribution_chain",
       "links",
       "social_contract"
     ],
@@ -27,6 +30,9 @@
       "hostile",
       "citation_control",
       "citation_contract",
+      "portfolio_backlinks",
+      "backlink_local",
+      "distribution_chain",
       "links",
       "social_contract"
     ],
@@ -40,6 +46,9 @@
       "links",
       "citation_control",
       "citation_contract",
+      "portfolio_backlinks",
+      "backlink_local",
+      "distribution_chain",
       "social_contract",
       "cache_self_test"
     ],

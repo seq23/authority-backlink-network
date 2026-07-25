@@ -111,7 +111,16 @@
         "review cadences",
         "personal board of directors",
         "startup resource libraries",
-        "AI workforce design"
+        "AI workforce design",
+        "community as a service",
+        "community platform selection",
+        "community metrics and measurement",
+        "community staffing model",
+        "community retention",
+        "community moderation strategy",
+        "community launch strategy",
+        "outsourced community management",
+        "managed community operations"
       ],
       "targets": [
         {
@@ -147,33 +156,32 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "bhpc-authority"
         },
         {
           "brand_id": "virtual-agency-os",
           "brand": "Virtual Agency OS",
           "domain": "virtualagency-os.com",
+          "campaign_id": "virtual-agency-os-authority",
+          "eligible_clusters": [
+            "virtual event production",
+            "executive broadcast planning",
+            "automation without chaos",
+            "tool stacks for lean teams"
+          ],
           "approved_links": [
             {
               "url": "https://virtualagency-os.com/learn/",
-              "anchor": "Virtual Agency OS learning library",
-              "topics": [
-                "*"
-              ]
+              "anchor": "Virtual Agency OS learning library"
             },
             {
               "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
-              "anchor": "what virtual event production means",
-              "topics": [
-                "*"
-              ]
+              "anchor": "what virtual event production means"
             },
             {
               "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
-              "anchor": "virtual event production cost guide",
-              "topics": [
-                "*"
-              ]
+              "anchor": "virtual event production cost guide"
             }
           ]
         },
@@ -181,13 +189,55 @@
           "brand_id": "west-peek-productions",
           "brand": "West Peek Productions",
           "domain": "westpeekproductions.com",
+          "campaign_id": "wpp-community-authority",
+          "eligible_clusters": [
+            "community as a service",
+            "community platform selection",
+            "community metrics and measurement",
+            "community staffing model",
+            "community retention",
+            "community moderation strategy",
+            "community launch strategy",
+            "outsourced community management"
+          ],
           "approved_links": [
             {
-              "url": "https://westpeekproductions.com/",
+              "url": "https://www.westpeekproductions.com/",
               "anchor": "West Peek Productions",
               "topics": [
-                "*"
-              ]
+                "community as a service",
+                "managed community operations",
+                "community platform strategy",
+                "community ROI",
+                "community staffing"
+              ],
+              "campaign_id": "wpp-community-authority",
+              "destination_type": "official_commercial_destination"
+            }
+          ]
+        },
+        {
+          "brand_id": "west-peek-productions",
+          "brand": "West Peek Productions",
+          "domain": "westpeekproductions.com",
+          "campaign_id": "wpp-commercial",
+          "eligible_clusters": [
+            "virtual event production",
+            "executive broadcast planning",
+            "managed community operations"
+          ],
+          "approved_links": [
+            {
+              "url": "https://www.westpeekproductions.com/",
+              "anchor": "West Peek Productions",
+              "topics": [
+                "virtual event production",
+                "executive broadcast planning",
+                "managed community operations",
+                "when to outsource community management"
+              ],
+              "campaign_id": "wpp-commercial",
+              "destination_type": "commercial_service"
             }
           ]
         }
@@ -590,26 +640,72 @@
         "last-minute RSVP changes",
         "rehearsal dinner planning",
         "engagement party planning",
-        "wedding-week responsibility packet"
+        "wedding-week responsibility packet",
+        "wedding checklist planning",
+        "wedding planning tools"
       ],
       "targets": [
         {
           "brand_id": "porch-party",
           "brand": "Porch & Party",
           "domain": "porchandparty901.com",
+          "campaign_id": "porch-party-authority",
+          "eligible_clusters": [
+            "porch decorating",
+            "fall porch setups",
+            "Halloween porch styling",
+            "party decor vendors",
+            "grazing tables",
+            "hotel room decorations",
+            "corporate event styling"
+          ],
           "approved_links": [
             {
               "url": "https://porchandparty901.com/",
               "anchor": "Porch & Party",
               "topics": [
-                "*"
+                "Memphis event decor",
+                "Memphis porch decorating"
+              ]
+            },
+            {
+              "url": "https://porchandparty901.com/services/porch-decorating.html",
+              "anchor": "Memphis porch decorating services",
+              "topics": [
+                "porch decorating",
+                "seasonal porch styling"
+              ]
+            },
+            {
+              "url": "https://porchandparty901.com/services/party-decor-memphis.html",
+              "anchor": "party decor in Memphis",
+              "topics": [
+                "party decor",
+                "celebration setup"
+              ]
+            },
+            {
+              "url": "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+              "anchor": "hotel-room decor in Memphis",
+              "topics": [
+                "hotel room decor",
+                "romantic surprise setup"
+              ]
+            },
+            {
+              "url": "https://porchandparty901.com/services/grazing-tables-memphis.html",
+              "anchor": "grazing tables in Memphis",
+              "topics": [
+                "grazing tables",
+                "styled events"
               ]
             },
             {
               "url": "https://porchandparty901.com/pricing.html",
-              "anchor": "Porch & Party pricing",
+              "anchor": "Porch & Party pricing information",
               "topics": [
-                "*"
+                "event decor budget",
+                "decor pricing"
               ]
             }
           ]
@@ -618,11 +714,13 @@
           "brand_id": "dream-wedding-builder",
           "brand": "Dream Wedding Builder",
           "domain": "weddingchecklistpdf.com",
-          "domains": [
-            "weddingchecklistpdf.com",
-            "weddingbudgetspreadsheet.com",
-            "weddingtimelinetemplate.com",
-            "weddingseatingchartmaker.com"
+          "campaign_id": "dream-planning-tools",
+          "eligible_clusters": [
+            "wedding budget planning",
+            "wedding-day timeline",
+            "wedding checklist planning",
+            "wedding seating chart",
+            "wedding planning tools"
           ],
           "approved_links": [
             {
@@ -1113,57 +1211,6 @@
               ],
               "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
             }
-          ],
-          "eligible_clusters": [
-            "accessibility needs",
-            "ceremony schedule",
-            "date-based wedding checklist",
-            "engagement party planning",
-            "family contributions",
-            "food allergies",
-            "getting started with wedding planning",
-            "household grouping",
-            "last-minute RSVP changes",
-            "meal selections",
-            "organizing a wedding plan",
-            "photographer timeline",
-            "plus-ones",
-            "rain-plan coordination",
-            "reception schedule",
-            "reception table assignments",
-            "rehearsal dinner planning",
-            "taxes and gratuities",
-            "transportation timing",
-            "unassigned guests",
-            "vendor balances",
-            "vendor deposits",
-            "vendor meals",
-            "vendor schedule",
-            "venue coordination",
-            "wedding accessibility planning",
-            "wedding budget planning",
-            "wedding cash flow",
-            "wedding contact sheets",
-            "wedding payment schedule",
-            "wedding planning categories",
-            "wedding planning deadlines",
-            "wedding planning foundation",
-            "wedding planning gaps",
-            "wedding planning sequence",
-            "wedding responsibilities",
-            "wedding seating chart",
-            "wedding setup and teardown",
-            "wedding vendor handoffs",
-            "wedding-day timeline",
-            "wedding-week checklist",
-            "wedding-week responsibility packet"
-          ],
-          "social_hooks": [
-            "A wedding plan gets easier when the missing pieces are visible.",
-            "The right planning tool should solve one clear problem, not add another system to manage."
-          ],
-          "ctas": [
-            "Use the product that matches the planning problem."
           ]
         }
       ],
@@ -1835,7 +1882,15 @@
         "what credit repair companies cannot promise",
         "how to dispute information you believe is wrong",
         "how to prepare before applying for an apartment",
-        "how to organize a proof-of-income packet"
+        "how to organize a proof-of-income packet",
+        "recovery housing",
+        "recovery referrals",
+        "family recovery support",
+        "community reintegration",
+        "equine legal research",
+        "horse contract preparation",
+        "boarding agreement questions",
+        "horse dispute preparation"
       ],
       "targets": [
         {
@@ -1864,7 +1919,8 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "the-industry-guides-authority"
         },
         {
           "brand_id": "accident-guides",
@@ -1892,7 +1948,8 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "accident-guides-authority"
         },
         {
           "brand_id": "dentistry-guides",
@@ -1920,7 +1977,8 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "dentistry-guides-authority"
         },
         {
           "brand_id": "hormones-iv-hair",
@@ -1948,7 +2006,8 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "hormones-iv-hair-authority"
         },
         {
           "brand_id": "neuro-eval-guides",
@@ -1976,7 +2035,8 @@
                 "*"
               ]
             }
-          ]
+          ],
+          "campaign_id": "neuro-eval-guides-authority"
         },
         {
           "brand_id": "uscis-exam-guides",
@@ -2004,49 +2064,8 @@
                 "*"
               ]
             }
-          ]
-        },
-        {
-          "brand_id": "horse-legal-guide",
-          "brand": "Horse Legal Guide",
-          "domain": "horselegalguide.com",
-          "approved_links": [
-            {
-              "url": "https://horselegalguide.com/",
-              "anchor": "Horse Legal Guide",
-              "topics": [
-                "*"
-              ]
-            }
-          ]
-        },
-        {
-          "brand_id": "hicks-consulting",
-          "brand": "Hicks Consulting",
-          "domain": "hicksconsulting.org",
-          "approved_links": [
-            {
-              "url": "https://www.hicksconsulting.org/",
-              "anchor": "Hicks Consulting",
-              "topics": [
-                "*"
-              ]
-            },
-            {
-              "url": "https://www.hicksconsulting.org/therapy/",
-              "anchor": "virtual therapy in Tennessee",
-              "topics": [
-                "*"
-              ]
-            },
-            {
-              "url": "https://www.hicksconsulting.org/faq/",
-              "anchor": "Hicks Consulting FAQ",
-              "topics": [
-                "*"
-              ]
-            }
-          ]
+          ],
+          "campaign_id": "uscis-exam-guides-authority"
         },
         {
           "brand_id": "approval-prep",
@@ -2374,7 +2393,185 @@
             "See What I Need",
             "Get the Full Document Library"
           ],
-          "product_positioning": "Create the letter. Build the packet. Get ready before you apply."
+          "product_positioning": "Create the letter. Build the packet. Get ready before you apply.",
+          "campaign_id": "approval-prep-authority"
+        },
+        {
+          "brand_id": "horse-legal-guide",
+          "brand": "Horse Legal Guide",
+          "domain": "horselegalguide.com",
+          "campaign_id": "horse-equine-legal",
+          "eligible_clusters": [
+            "equine legal research",
+            "horse contract preparation",
+            "boarding agreement questions",
+            "horse dispute preparation"
+          ],
+          "approved_links": [
+            {
+              "url": "https://horselegalguide.com/",
+              "anchor": "Horse Legal Guide",
+              "topics": [
+                "equine legal education"
+              ]
+            },
+            {
+              "url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+              "anchor": "horse boarding agreement checklist",
+              "topics": [
+                "horse boarding agreements",
+                "boarding contract preparation"
+              ]
+            },
+            {
+              "url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+              "anchor": "horse purchase agreement versus bill of sale",
+              "topics": [
+                "horse purchase documents",
+                "horse sale contracts"
+              ]
+            },
+            {
+              "url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+              "anchor": "contract review versus a DIY horse agreement",
+              "topics": [
+                "equine contract preparation",
+                "attorney consultation preparation"
+              ]
+            },
+            {
+              "url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+              "anchor": "steps to prepare after receiving a demand letter",
+              "topics": [
+                "horse dispute preparation",
+                "demand letter response preparation"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "hicks-consulting",
+          "brand": "Hicks Consulting",
+          "domain": "hicksconsulting.org",
+          "campaign_id": "hicks-workplace-wellbeing",
+          "eligible_clusters": [
+            "workplace burnout resources",
+            "organizational mental health training",
+            "trauma-informed leadership",
+            "compassion fatigue resources"
+          ],
+          "approved_links": [
+            {
+              "url": "https://www.hicksconsulting.org/",
+              "anchor": "Hicks Consulting",
+              "topics": [
+                "workplace wellbeing",
+                "mental health resources"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/resources/",
+              "anchor": "workplace wellbeing resource library",
+              "topics": [
+                "workplace burnout resources",
+                "leadership wellbeing"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/corporate-speaking/",
+              "anchor": "workplace mental-health speaking programs",
+              "topics": [
+                "workplace mental health training",
+                "leadership education"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+              "anchor": "organizational wellbeing training inquiry",
+              "topics": [
+                "organizational mental health training",
+                "workplace wellbeing programs"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/therapy/",
+              "anchor": "virtual therapy information in Tennessee",
+              "topics": [
+                "therapy information",
+                "support options"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/coaching/",
+              "anchor": "coaching support information",
+              "topics": [
+                "professional coaching",
+                "leadership support"
+              ]
+            },
+            {
+              "url": "https://www.hicksconsulting.org/faq/",
+              "anchor": "Hicks Consulting FAQ",
+              "topics": [
+                "therapy and coaching questions",
+                "service boundaries"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "diannes-place",
+          "brand": "Dianne's Place Recovery Services",
+          "domain": "diannesplacerecoveryservices.com",
+          "campaign_id": "dianne-recovery-resources",
+          "eligible_clusters": [
+            "recovery housing",
+            "recovery referrals",
+            "family recovery support",
+            "community reintegration"
+          ],
+          "approved_links": [
+            {
+              "url": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+              "anchor": "recovery housing information",
+              "topics": [
+                "recovery housing",
+                "sober living transition"
+              ]
+            },
+            {
+              "url": "https://www.diannesplacerecoveryservices.com/referrals/",
+              "anchor": "recovery housing referral guidance",
+              "topics": [
+                "recovery referrals",
+                "treatment-to-housing transition"
+              ]
+            },
+            {
+              "url": "https://www.diannesplacerecoveryservices.com/resources/",
+              "anchor": "recovery support resources",
+              "topics": [
+                "recovery resources",
+                "family support"
+              ]
+            },
+            {
+              "url": "https://www.diannesplacerecoveryservices.com/answers/",
+              "anchor": "plain-language recovery housing answers",
+              "topics": [
+                "recovery housing questions",
+                "family and referral guidance"
+              ]
+            },
+            {
+              "url": "https://www.diannesplacerecoveryservices.com/medical-disclaimer/",
+              "anchor": "medical and service-boundary information",
+              "topics": [
+                "recovery housing boundaries",
+                "medical disclaimer"
+              ]
+            }
+          ]
         }
       ],
       "tone": "careful, grounded, plain-English, risk-aware, non-advice",

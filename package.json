@@ -1,7 +1,7 @@
 {
   "name": "authority-network",
   "private": true,
-  "version": "4.6.1",
+  "version": "5.0.0",
   "scripts": {
     "validate:changed": "python3 scripts/validate.py changed",
     "validate:release": "python3 scripts/validate.py release",
@@ -22,7 +22,13 @@
     "cache:clear": "python3 -c \"from validation.cache import clear; clear(); print('Validation cache cleared')\"",
     "citation:dashboard": "python3 scripts/citation_control_plane.py dashboard",
     "citation:verify-repo": "python3 scripts/citation_control_plane.py verify-repo",
-    "citation:import-manifests": "python3 scripts/citation_control_plane.py import-manifests"
+    "citation:import-manifests": "python3 scripts/citation_control_plane.py import-manifests",
+    "backlinks:seed": "python3 scripts/portfolio_backlink_engine.py seed",
+    "backlinks:repair": "python3 scripts/portfolio_backlink_engine.py repair",
+    "backlinks:verify": "python3 scripts/portfolio_backlink_engine.py verify-local",
+    "backlinks:health": "python3 scripts/portfolio_backlink_engine.py health",
+    "distribution:prepare-indexnow": "python3 scripts/prepare_indexnow_keys.py",
+    "distribution:run": "python3 scripts/post_publish_distribution.py"
   },
   "devDependencies": {}
 }

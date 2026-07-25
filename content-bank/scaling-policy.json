@@ -60,6 +60,51 @@
       "start_immediately": true,
       "quality_policy": "Aim for 5-8 pages daily and preserve aggressive momentum. Daily variation, word counts, page counts, anchor length, and product mix are warning-only; only structural corruption, false evidence, wrong-domain routing, or clearly prohibited claims may block publication.",
       "preferred_range": "5-8"
+    },
+    {
+      "brand_id": "west-peek-productions",
+      "campaign_id": "wpp-community-authority",
+      "publication": "founder-operator",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 5,
+      "start_immediately": true,
+      "quality_policy": "Only contextually relevant Community as a Service pages."
+    },
+    {
+      "brand_id": "dream-wedding-builder",
+      "campaign_id": "dream-planning-tools",
+      "publication": "memphis-local",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 6,
+      "start_immediately": true,
+      "quality_policy": "Only real wedding planning problems and matching product destinations."
+    },
+    {
+      "brand_id": "diannes-place",
+      "campaign_id": "dianne-recovery-resources",
+      "publication": "professional-resources",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 4,
+      "start_immediately": true,
+      "quality_policy": "Recovery housing education only; preserve clinical and licensure boundaries."
+    },
+    {
+      "brand_id": "hicks-consulting",
+      "campaign_id": "hicks-workplace-wellbeing",
+      "publication": "professional-resources",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 4,
+      "start_immediately": true,
+      "quality_policy": "Workplace and service education without diagnosis or outcome claims."
+    },
+    {
+      "brand_id": "horse-legal-guide",
+      "campaign_id": "horse-equine-legal",
+      "publication": "professional-resources",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 4,
+      "start_immediately": true,
+      "quality_policy": "Equine legal education only; no legal advice."
     }
   ],
   "city_vendor_expansion": {
@@ -99,6 +144,10 @@
     "allow_no_link_when_no_fit": true,
     "minimum_presence_is_guidance_only": true,
     "maximum_share_is_guidance_only": true,
-    "do_not_force_backlink": true
+    "do_not_force_backlink": true,
+    "campaign_registry_path": "data/portfolio-backlink-campaigns.json",
+    "priority_method": "campaign_deficit_then_contextual_fit_then_yield",
+    "live_evidence_never_required_to_generate_but_required_to_claim_live": true,
+    "owned_network_links_truth_label": "affiliated_editorial_backlink"
   }
 }

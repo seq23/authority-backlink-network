@@ -151,7 +151,7 @@
       "maximum_share_of_publication": 0.25,
       "scheduler_weight": 1,
       "targets_are_nonblocking": true,
-      "current_published_backlinks_at_v46_baseline": 5
+      "current_published_backlinks_at_v46_baseline": 0
     },
     {
       "brand_id": "horse-legal-guide",
@@ -225,6 +225,21 @@
       "minimum_monthly_presence": 20,
       "maximum_share_of_publication": 0.3,
       "scheduler_weight": 4,
+      "targets_are_nonblocking": true,
+      "current_published_backlinks_at_v46_baseline": 0
+    },
+    {
+      "brand_id": "diannes-place",
+      "brand_name": "Dianne's Place Recovery Services",
+      "growth_status": "launch",
+      "approved_publications": [
+        "professional"
+      ],
+      "target_authority_pages_per_month": 18,
+      "target_verified_backlinks_per_month": 12,
+      "minimum_monthly_presence": 4,
+      "maximum_share_of_publication": 0.18,
+      "scheduler_weight": 3,
       "targets_are_nonblocking": true,
       "current_published_backlinks_at_v46_baseline": 0
     }
