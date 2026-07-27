@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-07-26T16-31-00.643910Z-30210596920",
-  "attempted_at": "2026-07-26T16:31:00.643910Z",
+  "receipt_id": "2026-07-27T17-19-17.084598Z-30288697287",
+  "attempted_at": "2026-07-27T17:19:17.084598Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "4b6b3bd5f06b0cbc31331534839db03ce3bac6bb893ad76098b4034bf028d534",
+        "sha256": "97f345e3b743dcd74550b2783034cbc470531621f1972b24ad160f994d66b4f9",
         "url_count": 29
       },
       "indexnow": {
@@ -39,7 +39,7 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 0,
         "inspected_urls": 0,
         "results": []
       },
@@ -358,7 +358,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "678dfb52723e5adeac3559814c4b355be563b7c7a411fa01e0964cdf1555dbb6",
+        "sha256": "10546f0a371aafb1deb5ed418fc28109312e5a46ec36008fb3653aabd3356ca5",
         "url_count": 28
       },
       "indexnow": {
@@ -375,7 +375,7 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 0,
         "inspected_urls": 0,
         "results": []
       },
@@ -681,7 +681,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "f60acf7b391b3917d74977beb0eafe4324e667616a5f879abf9ca144cd24cd05",
+        "sha256": "d1a81dcb7c1270ab2e56050735e35f83e9fa49c657003a40024a2ab9fc49df25",
         "url_count": 54
       },
       "indexnow": {
@@ -698,7 +698,7 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 0,
         "inspected_urls": 0,
         "results": []
       },
@@ -1285,7 +1285,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-07-26T16-31-00.643910Z-30210596920.json"
+    "history": "data/distribution/receipts/2026-07-27T17-19-17.084598Z-30288697287.json"
   },
   "provider_success_claimed": false,
   "verified_external_citations_delta": 0,
