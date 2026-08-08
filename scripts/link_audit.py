@@ -31,6 +31,8 @@ links=[]
 anchor_re=re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>',re.I|re.S)
 for path in sorted((ROOT/'sites').rglob('*.html')):
     rel=str(path.relative_to(ROOT)); folder='/'.join(rel.split('/')[:2]); pub=pub_by_folder.get(folder); text=path.read_text(errors='ignore')
+    if '/agency/' in '/' + rel or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
+        continue
     for href,anchor_html in anchor_re.findall(text):
         anchor=re.sub('<.*?>','',anchor_html).strip(); domain=norm_domain(href) if href.startswith('http') else ''
         row={'source':rel,'publication':pub,'href':href,'domain':domain,'anchor':anchor,'external':href.startswith('http'),'violation':''}

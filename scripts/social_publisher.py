@@ -210,6 +210,7 @@ def main():
             enable_x = False
 
     if platform_secret_skips and require_secrets and not dry_run:
+        strict_failure = truthy('FAIL_ON_SOCIAL_POST_FAILURE', 'false')
         report = {
             'date': TODAY, 'dry_run': False,
             'enabled': {'linkedin': enable_li, 'x': enable_x},
@@ -217,11 +218,15 @@ def main():
             'limits': {'linkedin': li_limit, 'x': x_limit},
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
             'posted_today': {'linkedin': 0, 'x': 0},
-            'status': 'blocked_missing_secrets'
+            'status': 'blocked_missing_secrets' if strict_failure else 'ok_with_secret_warning',
+            'production_blocked': bool(strict_failure),
+            'message': 'Social credentials are unavailable. Social posting was skipped; content publication remains allowed.'
         }
         write_json(REPORT_PATH, report)
         print(json.dumps(report, indent=2))
-        raise SystemExit('Required social secrets are missing; no posts attempted')
+        if strict_failure:
+            raise SystemExit('Required social secrets are missing and strict social failure is enabled')
+        return
 
     bodies_today_by_platform = defaultdict(list)
     posted_by_brand_platform = defaultdict(int)

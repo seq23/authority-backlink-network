@@ -35,6 +35,11 @@ Dream Wedding Builder is one multi-domain product ecosystem. It owns four domain
 
 The system normally uses the domain that best matches the selected product, but it validates every approved domain/route combination.
 
+
+## Owner /agency operations view
+
+`https://founderoperatorlibrary.com/agency/` is the generated owner/operator view for this repository. It is intentionally omitted from public navigation and public discovery artifacts. It lists the three canonical publication operators, every canonical runtime/workflow operator, every approved target URL, and every recorded Authority Network editorial/backlink for each target. It is a read-only view over canonical repository data, not a second control plane.
+
 ## What runs automatically
 
 Depending on repository and GitHub settings, automation can:

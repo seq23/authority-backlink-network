@@ -51,9 +51,12 @@ jobs:
           python3 scripts/portfolio_backlink_engine.py repair
           python3 scripts/portfolio_backlink_engine.py verify-local
           python3 scripts/portfolio_backlink_engine.py health
+      - name: Refresh owner agency dashboard
+        run: python3 scripts/build_agency_dashboard.py
       - name: Validate generated release
         run: python3 scripts/validate.py release
-      - name: Auto-post social queue
+      - name: Auto-post social queue (non-blocking)
+        continue-on-error: true
         env:
           ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}
           ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING || 'true' }}

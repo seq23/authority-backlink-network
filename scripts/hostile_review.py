@@ -159,6 +159,8 @@ for pub, folder in PUB_FOLDERS.items():
         rel = str(path.relative_to(ROOT))
         txt = path.read_text(errors='ignore')
         lower = txt.lower()
+        if '/agency/' in '/' + rel or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', txt, re.I):
+            continue
 
         if 'affiliation disclosed' not in lower:
             errors.append(f'{rel}: missing affiliation disclosure')

@@ -21,6 +21,7 @@ STATE_PATH = ROOT/'data/autopilot-state.json'
 REPORT_DIR = ROOT/'reports'
 REPORT_DIR.mkdir(exist_ok=True)
 TODAY = os.getenv('BUILD_DATE') or date.today().isoformat()
+RELEASE_DATE = os.getenv('PUBLIC_RELEASE_DATE') or TODAY
 DEFAULT_STATE = {
     'launch_date': TODAY,
     'published_hashes': [],
@@ -85,7 +86,7 @@ def jaccard(a, b):
 
 def days_since(start):
     try:
-        return (date.today() - date.fromisoformat(start)).days + 1
+        return (date.fromisoformat(TODAY) - date.fromisoformat(start)).days + 1
     except Exception:
         return 1
 
@@ -272,7 +273,7 @@ def generate_page(brief):
         product_name = brief.get('product_name') or 'Approval Prep resource'
         product_message = brief.get('product_message') or 'Create the letter. Build the packet. Get ready before you apply.'
         product_section = f'<h2>What you can create</h2><p><strong>{html.escape(product_name)}:</strong> {html.escape(product_message)}</p><p>You complete the document with your own truthful facts, review it, and send it yourself. Approval Prep does not make the approval decision.</p>'
-    generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+    generated = (f'{RELEASE_DATE}T00:00:00Z' if os.getenv('PUBLIC_RELEASE_DATE') else datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'))
     slug = slugify(title)
     canonical_url = f"https://{pub['default_domain']}/daily/{TODAY}-{slug}.html"
     faq_html = ''.join('<h3>'+html.escape(f.get('q','Question'))+'</h3><p>'+html.escape(f.get('a','Use this as a starting point, then verify details for your situation.'))+'</p>' for f in faq_items)
@@ -280,8 +281,8 @@ def generate_page(brief):
         '@context': 'https://schema.org',
         '@type': 'Article',
         'headline': title,
-        'datePublished': TODAY,
-        'dateModified': TODAY,
+        'datePublished': RELEASE_DATE,
+        'dateModified': RELEASE_DATE,
         'author': {'@type': 'Organization', 'name': f"{pub['default_domain']} editorial desk"},
         'about': cluster,
         'audience': {'@type': 'Audience', 'audienceType': audience},
@@ -289,7 +290,7 @@ def generate_page(brief):
     }
     page = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, human-first resource for {html.escape(audience)} comparing {html.escape(cluster)} without fake rankings or forced answers."><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
-<body><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(intro)}</p><p><em>Last updated: {TODAY}. Built for {html.escape(audience)}.</em></p>
+<body><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(intro)}</p><p><em>Last updated: {RELEASE_DATE}. Built for {html.escape(audience)}.</em></p>
 <h2>Who this helps</h2><p>This page is for a reader who needs a grounded starting point for {html.escape(cluster)}. It does not crown a winner, manufacture urgency, or pretend one provider fits every situation. The goal is to help you ask better questions and compare options with more discipline.</p>
 <h2>How to think about the decision</h2>{''.join('<p>'+html.escape(x)+'</p>' for x in body[:5])}
 <h2>Decision framework</h2><p>Use a four-part filter: fit, evidence, risk, and next step. Fit asks whether the resource matches your situation. Evidence asks what the claim is based on. Risk asks what could go wrong if you misunderstand the topic. Next step asks whether you need a checklist, a consult, a quote, or a qualified professional.</p>{''.join('<p>'+html.escape(x)+'</p>' for x in body[5:10])}
@@ -359,10 +360,13 @@ def update_sitemap(site_path, domain):
     urls = []
     for f in sorted(site.rglob('*.html')):
         rel = f.relative_to(site).as_posix()
+        text = f.read_text(encoding='utf-8', errors='ignore')
+        if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
+            continue
         loc = f'https://{domain}/' if rel == 'index.html' else f'https://{domain}/{rel}'
-        urls.append(f'<url><loc>{loc}</loc><lastmod>{TODAY}</lastmod></url>')
+        urls.append(f'<url><loc>{loc}</loc><lastmod>{RELEASE_DATE}</lastmod></url>')
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
-    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {TODAY}.\n\nSitemap: https://{domain}/sitemap.xml\n'
+    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {RELEASE_DATE}.\n\nSitemap: https://{domain}/sitemap.xml\n'
     tmp = site/'sitemap.xml.tmp'
     with tmp.open('w', encoding='utf-8', newline='\n') as handle:
         handle.write(sitemap)
@@ -401,7 +405,10 @@ def main():
     duplicate_warnings = 0
     hard_fail_count = 0
     min_score = int(os.getenv('MIN_BASE_PUBLISH_SCORE', '60'))
-    max_dup = float(os.getenv('MAX_DUPLICATE_SIMILARITY', '0.15'))
+    max_self_heal_attempts = max(1, int(os.getenv('SELF_HEAL_MAX_ATTEMPTS', '96')))
+    self_heal_recoveries = 0
+    self_heal_attempts = 0
+    blocked_slots = []
 
     portfolio_counts = published_counts_by_brand()
     base_jobs = []
@@ -411,49 +418,66 @@ def main():
     jobs = priority_jobs + base_jobs
     jobs = jobs[:volume]
     for i, (pub_key, target_override) in enumerate(jobs):
-        chosen = None
-        for attempt in range(20):
+        accepted = None
+        attempt_findings = []
+        for attempt in range(max_self_heal_attempts):
             brief = build_brief(pub_key, i, state, attempt=attempt, target_override=target_override)
-            if brief['signature'] not in state.get('published_signatures', []):
-                chosen = brief
-                break
-        if not chosen:
-            duplicate_warnings += 1
-            continue
-        slug, page = generate_page(chosen)
-        score, words, warnings, hard_fails = score_page(page, chosen)
-        rewrite_status = 'not_needed'
-        if 72 <= score < 85 and not hard_fails:
-            rewritten, rewrite_status = maybe_gemini_rewrite(chosen['title'], page)
-            new_score, new_words, new_warnings, new_hard_fails = score_page(rewritten, chosen)
-            if new_score >= score and not new_hard_fails:
-                page, score, words, warnings, hard_fails = rewritten, new_score, new_words, new_warnings, new_hard_fails
-        item = {'title': chosen['title'], 'publication': pub_key, 'score': score, 'words': words, 'rewrite_status': rewrite_status, 'warnings': warnings, 'hard_fails': hard_fails}
-        generated.append(item)
-        if hard_fails:
+            if brief['signature'] in state.get('published_signatures', []):
+                attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_signature'})
+                continue
+            slug, page = generate_page(brief)
+            score, words, warnings, hard_fails = score_page(page, brief)
+            rewrite_status = 'not_needed'
+            if 72 <= score < 85 and not hard_fails:
+                rewritten, rewrite_status = maybe_gemini_rewrite(brief['title'], page)
+                new_score, new_words, new_warnings, new_hard_fails = score_page(rewritten, brief)
+                if new_score >= score and not new_hard_fails:
+                    page, score, words, warnings, hard_fails = rewritten, new_score, new_words, new_warnings, new_hard_fails
+            chash = content_hash(page)
+            site_path = PANTRY['publications'][pub_key]['site_path']
+            fname = f'{TODAY}-{slug}.html'
+            output_path = ROOT/site_path/'daily'/fname
+            if hard_fails:
+                attempt_findings.append({'attempt': attempt, 'reason': 'hard_fail', 'codes': hard_fails})
+                continue
+            if score < min_score:
+                attempt_findings.append({'attempt': attempt, 'reason': 'score_below_floor', 'score': score})
+                continue
+            if chash in state.get('published_hashes', []):
+                attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_content_hash'})
+                continue
+            if output_path.exists():
+                attempt_findings.append({'attempt': attempt, 'reason': 'existing_output_path'})
+                continue
+            accepted = (brief, slug, page, score, words, warnings, rewrite_status, chash, site_path, fname, output_path, attempt)
+            break
+
+        self_heal_attempts += len(attempt_findings)
+        if not accepted:
             hard_fail_count += 1
+            blocked_slots.append({'slot': i, 'publication': pub_key, 'attempts': max_self_heal_attempts, 'findings': attempt_findings[-12:]})
+            generated.append({'publication': pub_key, 'slot': i, 'status': 'blocked_after_self_heal', 'repair_attempts': len(attempt_findings), 'hard_fails': [x.get('reason') for x in attempt_findings[-12:]]})
             continue
-        if score < min_score:
-            continue
-        chash = content_hash(page)
-        if chash in state.get('published_hashes', []):
-            duplicate_warnings += 1
-            continue
-        # Full-page Jaccard is intentionally not used as a hard fail because all pages share
-        # editorial boilerplate, disclaimers, and schema. Duplicate protection is handled by
-        # exact normalized hashes and durable topic signatures.
-        site_path = PANTRY['publications'][pub_key]['site_path']
-        outdir = ROOT/site_path/'daily'
-        outdir.mkdir(parents=True, exist_ok=True)
-        fname = f'{TODAY}-{slug}.html'
-        tmp_page = outdir/(fname + '.tmp')
+
+        brief, slug, page, score, words, warnings, rewrite_status, chash, site_path, fname, output_path, accepted_attempt = accepted
+        if accepted_attempt > 0:
+            self_heal_recoveries += 1
+        item = {
+            'title': brief['title'], 'publication': pub_key, 'score': score, 'words': words,
+            'rewrite_status': rewrite_status, 'warnings': warnings, 'hard_fails': [],
+            'self_healed': accepted_attempt > 0, 'repair_attempts': accepted_attempt,
+            'repair_history': attempt_findings
+        }
+        generated.append(item)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_page = output_path.with_suffix(output_path.suffix + '.tmp')
         with tmp_page.open('w', encoding='utf-8', newline='\n') as handle:
             handle.write(page)
-        tmp_page.replace(outdir/fname)
+        tmp_page.replace(output_path)
         state['published_hashes'].append(chash)
-        state['published_signatures'].append(chosen['signature'])
-        state['published_titles'].append(chosen['title'])
-        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': chosen.get('brand_id',''), 'target_domain': chosen['target_domain'], 'target_url': chosen.get('target_url'), 'anchor': chosen.get('anchor'), 'brand': chosen['brand'], 'social_hooks': chosen.get('social_hooks', []), 'destination_type': chosen.get('destination_type',''), 'product_id': chosen.get('product_id',''), 'product_name': chosen.get('product_name',''), 'target_route': chosen.get('target_route',''), 'campaign_id': chosen.get('campaign_id',''), 'preferred_domain': chosen.get('preferred_domain',''), 'used_preferred_domain': chosen.get('used_preferred_domain',False)}
+        state['published_signatures'].append(brief['signature'])
+        state['published_titles'].append(brief['title'])
+        pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': brief.get('brand_id',''), 'target_domain': brief['target_domain'], 'target_url': brief.get('target_url'), 'anchor': brief.get('anchor'), 'brand': brief['brand'], 'social_hooks': brief.get('social_hooks', []), 'destination_type': brief.get('destination_type',''), 'product_id': brief.get('product_id',''), 'product_name': brief.get('product_name',''), 'target_route': brief.get('target_route',''), 'campaign_id': brief.get('campaign_id',''), 'preferred_domain': brief.get('preferred_domain',''), 'used_preferred_domain': brief.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)
 
@@ -466,7 +490,7 @@ def main():
     if isinstance(linkreg, dict): linkreg = linkreg.get('links', [])
     for item in published:
         pub_meta = PUBLICATION_BY_FOLDER.get(item['publication'], {})
-        linkreg.append({'date': TODAY, 'source_path': item['path'], 'source_publication': pub_meta.get('id', item['publication']), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'target_route': item.get('target_route',''), 'preferred_domain': item.get('preferred_domain',''), 'used_preferred_domain': item.get('used_preferred_domain',False), 'publication_family_id': pub_meta.get('publication_family_id',''), 'city': pub_meta.get('city',''), 'campaign_id': item.get('campaign_id',''), 'authority_page_contract_version': 'v5', 'link_type': 'affiliated-editorial-backlink', 'status': 'published', 'lifecycle_stage': 'published_in_repository', 'evidence': {'repository_rendered': True, 'deployed': False, 'live_verified': False, 'discoverable': False, 'indexed': False, 'search_visibility_observed': False, 'ai_cited': False}, 'score': item['score']})
+        linkreg.append({'date': TODAY, 'scheduled_content_date': TODAY, 'release_date': RELEASE_DATE, 'source_path': item['path'], 'source_publication': pub_meta.get('id', item['publication']), 'target_brand_id': item.get('target_brand_id',''), 'target_domain': item['target_domain'], 'target_url': item.get('target_url') or f"https://{item['target_domain']}", 'anchor': item.get('anchor') or item['brand'], 'brand': item['brand'], 'destination_type': item.get('destination_type',''), 'product_id': item.get('product_id',''), 'product_name': item.get('product_name',''), 'target_route': item.get('target_route',''), 'preferred_domain': item.get('preferred_domain',''), 'used_preferred_domain': item.get('used_preferred_domain',False), 'publication_family_id': pub_meta.get('publication_family_id',''), 'city': pub_meta.get('city',''), 'campaign_id': item.get('campaign_id',''), 'authority_page_contract_version': 'v5', 'link_type': 'affiliated-editorial-backlink', 'status': 'published', 'lifecycle_stage': 'published_in_repository', 'evidence': {'repository_rendered': True, 'deployed': False, 'live_verified': False, 'discoverable': False, 'indexed': False, 'search_visibility_observed': False, 'ai_cited': False}, 'score': item['score']})
     write_json(ROOT/'data/link-registry.json', linkreg)
 
     social = read_json(ROOT/'data/social-queue.json', [])
@@ -480,7 +504,7 @@ def main():
         body = f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking."
         if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
             body = f"{pick(item['social_hooks'], item['title']+'linkedin')} {item['title']}"
-        social.append({'date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
+        social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
     
     x_templates = [
         "New resource: {title}. Better questions, fewer loud claims.",
@@ -501,7 +525,7 @@ def main():
         if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
             hooks = item['social_hooks']
             body = f"{hooks[t_idx % len(hooks)]} {item['title']} [{t_idx + 1}]"
-        social.append({'date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
+        social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
     write_json(ROOT/'data/social-queue.json', social)
 
     # Refresh the portfolio dashboard after canonical state is written.
@@ -511,7 +535,7 @@ def main():
     except Exception:
         pass
 
-    run = {'date': TODAY, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'stats_before': stats}
+    run = {'date': TODAY, 'release_date': RELEASE_DATE, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'self_heal_recoveries': self_heal_recoveries, 'self_heal_attempts': self_heal_attempts, 'blocked_slots': blocked_slots, 'stats_before': stats}
     state.setdefault('history', []).append(run)
     write_json(STATE_PATH, state)
     write_json(REPORT_DIR/'v4-autopilot-report.json', {'status': 'ok', 'run': run, 'generated': generated, 'published': published, 'scaling_policy': SCALING})

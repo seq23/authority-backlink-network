@@ -21,7 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Post queued social items
+      - name: Post queued social items (non-blocking)
+        continue-on-error: true
         env:
           ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}
           ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING || 'true' }}

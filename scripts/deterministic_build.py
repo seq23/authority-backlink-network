@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import shutil
+import re
 import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -34,6 +35,9 @@ def build_into(out: Path) -> dict[str, str]:
         urls = []
         for page in html_files:
             rel = page.relative_to(source).as_posix()
+            text = page.read_text(encoding="utf-8", errors="ignore")
+            if rel.startswith("agency/") or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
+                continue
             loc = f"https://{domain}/" if rel == "index.html" else f"https://{domain}/{rel}"
             urls.append(f"<url><loc>{escape(loc)}</loc><lastmod>{BUILD_DATE}</lastmod></url>")
         sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"

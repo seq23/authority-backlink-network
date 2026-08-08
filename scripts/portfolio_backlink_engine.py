@@ -91,7 +91,9 @@ def refresh_assets():
   folder=ROOT/pub['folder']; domain=pub['working_domain']; pages=sorted(folder.rglob('*.html'))
   urls=[]; llms=[f"# {pub['title']}",pub['mission'],'',f"Sitemap: https://{domain}/sitemap.xml",'','## Pages']
   for p in pages:
-   rel=p.relative_to(folder).as_posix(); url=f'https://{domain}/' if rel=='index.html' else f'https://{domain}/{rel}'
+   rel=p.relative_to(folder).as_posix(); text=p.read_text(encoding='utf-8',errors='ignore')
+   if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex',text,re.I): continue
+   url=f'https://{domain}/' if rel=='index.html' else f'https://{domain}/{rel}'
    urls.append(f'<url><loc>{escape(url)}</loc><lastmod>{date.today().isoformat()}</lastmod></url>'); llms.append(f'- {url}')
   sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(urls)+'\n</urlset>\n'
   (folder/'sitemap.xml').write_text(sitemap,encoding='utf-8'); (folder/'llms.txt').write_text('\n'.join(llms)+'\n',encoding='utf-8')

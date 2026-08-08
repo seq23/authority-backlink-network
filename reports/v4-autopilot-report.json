@@ -1,128 +1,182 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-07-11",
-    "day_index": 15,
+    "date": "2026-08-07",
+    "release_date": "2026-08-08",
+    "day_index": 42,
     "target_volume": 9,
     "generated": 9,
     "published": 9,
     "scores": [
-      88,
-      88,
-      88,
-      88,
-      88,
-      88,
-      88,
-      88,
-      88
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80,
+      80
     ],
     "duplicate_warnings": 0,
     "hard_fails": 0,
+    "self_heal_recoveries": 0,
+    "self_heal_attempts": 0,
+    "blocked_slots": [],
     "stats_before": {
       "pass_rate": 1.0,
-      "avg_quality": 88.0,
+      "avg_quality": 80.0,
       "duplicate_warnings": 0,
       "hard_fails": 0
     }
   },
   "generated": [
     {
-      "title": "Bank Statement Explanation: Editorial Planning Checklist Before You Choose",
+      "title": "Self-Service Document Creation: 2026-Ready Planning Checklist When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1119,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1115,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Life Admin Letters: Human-First Operator Playbook When Timing Matters",
+      "title": "Life Admin Letters: Plain-English Prep Guide When You Need To Ask Better Questions",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1171,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
-    },
-    {
-      "title": "Loan Explanation Letters: Editorial Buyer Guide Before You Sign",
-      "publication": "professional-resources",
-      "score": 88,
+      "score": 80,
       "words": 1191,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Apartment Application Paperwork: Beginner-Safe Comparison Guide Before You Pay",
+      "title": "Business Funding Packet: Checklist-Driven Prep Guide When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1161,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1169,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Life Admin Documents: Operator-Grade Planning Checklist When You Need To Ask Better Questions",
+      "title": "Late Payment Explanation: Resource-Backed Mistakes To Avoid When You Need To Ask Better Questions",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1175,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1215,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers",
+      "title": "Business Explanation Letters: 2026-Ready Prep Guide When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1164,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1160,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Calendar Protection: Human-First Operator Playbook Before You Sign",
+      "title": "Personal Loan Documents: Citation-Friendly Prep Guide For Careful Decision-Makers",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1174,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    },
+    {
+      "title": "Calendar Protection: 2026-Ready Resource Roundup Before You Pay",
       "publication": "founder-operator",
-      "score": 88,
-      "words": 1093,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1096,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Memphis Giftable Experiences: Aeo-Ready Decision Guide For First-Time Buyers",
+      "title": "Wedding Planning Tools: Geo-Ready Comparison Guide For First-Time Buyers",
       "publication": "memphis-local",
-      "score": 88,
-      "words": 1104,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1073,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     },
     {
-      "title": "Regulated Provider Research: Citation-Friendly Budget/Planning Note For First-Time Buyers",
+      "title": "Red Flags In Regulated Services: Comparison-Friendly Budget/Planning Note For First-Time Buyers",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1123,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": []
+      "score": 80,
+      "words": 1088,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
     }
   ],
   "published": [
     {
-      "title": "Bank Statement Explanation: Editorial Planning Checklist Before You Choose",
+      "title": "Self-Service Document Creation: 2026-Ready Planning Checklist When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1119,
-      "rewrite_status": "not_needed",
-      "warnings": [],
+      "score": 80,
+      "words": 1115,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-bank-statement-explanation-editorial-planning-checklist-before-you-choose.html",
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-self-service-document-creation-2026-ready-planning-checklist-when-you-are-comparing-option.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/income-employment-letter-kit",
-      "anchor": "create a proof-of-income letter",
+      "target_url": "https://approvalprep.com/",
+      "anchor": "Approval Prep",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -131,44 +185,28 @@
         "Before you apply, create the letters and documents you may need.",
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
-      "destination_type": "paid_product",
-      "product_id": "income-employment-letter-kit",
-      "product_name": "Income + Employment Letter Kit"
+      "destination_type": "trust_boundary",
+      "product_id": "approval-prep-home",
+      "product_name": "Approval Prep",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
     },
     {
-      "title": "Life Admin Letters: Human-First Operator Playbook When Timing Matters",
+      "title": "Life Admin Letters: Plain-English Prep Guide When You Need To Ask Better Questions",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1171,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-life-admin-letters-human-first-operator-playbook-when-timing-matters.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/letter-writing-studio",
-      "anchor": "draft your letter for free",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "free_creation_tool",
-      "product_id": "letter-writing-studio",
-      "product_name": "Letter Writing Studio"
-    },
-    {
-      "title": "Loan Explanation Letters: Editorial Buyer Guide Before You Sign",
-      "publication": "professional-resources",
-      "score": 88,
+      "score": 80,
       "words": 1191,
-      "rewrite_status": "not_needed",
-      "warnings": [],
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-loan-explanation-letters-editorial-buyer-guide-before-you-sign.html",
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-life-admin-letters-plain-english-prep-guide-when-you-need-to-ask-better-questions.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
       "target_url": "https://approvalprep.com/letter-writing-studio",
@@ -183,21 +221,30 @@
       ],
       "destination_type": "free_creation_tool",
       "product_id": "letter-writing-studio",
-      "product_name": "Letter Writing Studio"
+      "product_name": "Letter Writing Studio",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
     },
     {
-      "title": "Apartment Application Paperwork: Beginner-Safe Comparison Guide Before You Pay",
+      "title": "Business Funding Packet: Checklist-Driven Prep Guide When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1161,
-      "rewrite_status": "not_needed",
-      "warnings": [],
+      "score": 80,
+      "words": 1169,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay.html",
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-business-funding-packet-checklist-driven-prep-guide-when-you-are-comparing-options.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/rental-application-kit",
-      "anchor": "build your rental application packet",
+      "target_url": "https://approvalprep.com/business-funding-prep-kit",
+      "anchor": "build a business funding packet",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -207,43 +254,27 @@
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
       "destination_type": "paid_product",
-      "product_id": "rental-application-kit",
-      "product_name": "Rental Application Kit"
+      "product_id": "business-funding-prep-kit",
+      "product_name": "Business Funding Prep Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
     },
     {
-      "title": "Life Admin Documents: Operator-Grade Planning Checklist When You Need To Ask Better Questions",
+      "title": "Late Payment Explanation: Resource-Backed Mistakes To Avoid When You Need To Ask Better Questions",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1175,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-life-admin-documents-operator-grade-planning-checklist-when-you-need-to-ask-better-questio.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/life-admin-letter-kit",
-      "anchor": "create an address explanation letter",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
+      "score": 80,
+      "words": 1215,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
       ],
-      "destination_type": "paid_product",
-      "product_id": "life-admin-letter-kit",
-      "product_name": "Life Admin Letter Kit"
-    },
-    {
-      "title": "Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers",
-      "publication": "professional-resources",
-      "score": 88,
-      "words": 1164,
-      "rewrite_status": "not_needed",
-      "warnings": [],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-letters-of-explanation-human-first-resource-roundup-for-first-time-buyers.html",
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-late-payment-explanation-resource-backed-mistakes-to-avoid-when-you-need-to-ask-better-que.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
       "target_url": "https://approvalprep.com/letter-of-explanation",
@@ -258,69 +289,168 @@
       ],
       "destination_type": "paid_product",
       "product_id": "letter-of-explanation-kit",
-      "product_name": "Letter of Explanation Kit"
+      "product_name": "Letter of Explanation Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
     },
     {
-      "title": "Calendar Protection: Human-First Operator Playbook Before You Sign",
-      "publication": "founder-operator",
-      "score": 88,
-      "words": 1093,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "path": "sites/founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
-      "target_brand_id": "west-peek-productions",
-      "target_domain": "westpeekproductions.com",
-      "target_url": "https://www.westpeekproductions.com/",
-      "anchor": "West Peek Productions",
-      "brand": "West Peek Productions",
-      "social_hooks": [],
-      "destination_type": "",
-      "product_id": "",
-      "product_name": ""
-    },
-    {
-      "title": "Memphis Giftable Experiences: Aeo-Ready Decision Guide For First-Time Buyers",
-      "publication": "memphis-local",
-      "score": 88,
-      "words": 1104,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "path": "sites/memphis-local/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers.html",
-      "target_brand_id": "porch-party",
-      "target_domain": "porchandparty901.com",
-      "target_url": "https://porchandparty901.com/",
-      "anchor": "Porch & Party",
-      "brand": "Porch & Party",
-      "social_hooks": [],
-      "destination_type": "",
-      "product_id": "",
-      "product_name": ""
-    },
-    {
-      "title": "Regulated Provider Research: Citation-Friendly Budget/Planning Note For First-Time Buyers",
+      "title": "Business Explanation Letters: 2026-Ready Prep Guide When You Are Comparing Options",
       "publication": "professional-resources",
-      "score": 88,
-      "words": 1123,
-      "rewrite_status": "not_needed",
-      "warnings": [],
+      "score": 80,
+      "words": 1160,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
       "hard_fails": [],
-      "path": "sites/professional-resources/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
-      "target_brand_id": "dentistry-guides",
-      "target_domain": "dentistryguides.com",
-      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
-      "anchor": "questions before major dental work",
-      "brand": "The Dentistry Guides",
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-business-explanation-letters-2026-ready-prep-guide-when-you-are-comparing-options.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/letter-writing-studio",
+      "anchor": "draft your letter for free",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "free_creation_tool",
+      "product_id": "letter-writing-studio",
+      "product_name": "Letter Writing Studio",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Personal Loan Documents: Citation-Friendly Prep Guide For Careful Decision-Makers",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1174,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-personal-loan-documents-citation-friendly-prep-guide-for-careful-decision-makers.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/loan-prep-letter-kit",
+      "anchor": "create a loan explanation letter",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "paid_product",
+      "product_id": "loan-prep-letter-kit",
+      "product_name": "Loan Prep Letter Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Calendar Protection: 2026-Ready Resource Roundup Before You Pay",
+      "publication": "founder-operator",
+      "score": 80,
+      "words": 1096,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/founder-operator/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay.html",
+      "target_brand_id": "aplayer-mode",
+      "target_domain": "aplayermode.com",
+      "target_url": "https://www.aplayermode.com/",
+      "anchor": "A Player Mode",
+      "brand": "A Player Mode",
       "social_hooks": [],
       "destination_type": "",
       "product_id": "",
-      "product_name": ""
+      "product_name": "",
+      "target_route": "",
+      "campaign_id": "",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Wedding Planning Tools: Geo-Ready Comparison Guide For First-Time Buyers",
+      "publication": "memphis-local",
+      "score": 80,
+      "words": 1073,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/memphis-local/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers.html",
+      "target_brand_id": "dream-wedding-builder",
+      "target_domain": "weddingchecklistpdf.com",
+      "target_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "anchor": "Wedding Checklist PDF",
+      "brand": "Dream Wedding Builder",
+      "social_hooks": [],
+      "destination_type": "paid_product",
+      "product_id": "wedding-checklist-pdf",
+      "product_name": "Wedding Checklist PDF",
+      "target_route": "/products/checklist-pdf",
+      "campaign_id": "dream-planning-tools",
+      "preferred_domain": "weddingchecklistpdf.com",
+      "used_preferred_domain": true
+    },
+    {
+      "title": "Red Flags In Regulated Services: Comparison-Friendly Budget/Planning Note For First-Time Buyers",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1088,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html",
+      "target_brand_id": "uscis-exam-guides",
+      "target_domain": "uscisexam.com",
+      "target_url": "https://uscisexam.com/",
+      "anchor": "USCIS Exam Guides",
+      "brand": "USCIS Exam Guides",
+      "social_hooks": [],
+      "destination_type": "",
+      "product_id": "",
+      "product_name": "",
+      "target_route": "",
+      "campaign_id": "uscis-exam-guides-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
     }
   ],
   "scaling_policy": {
-    "version": "v4-adaptive-scale-policy",
-    "goal": "Maximize useful SEO/AEO/GEO surfaces with an aggressive Approval Prep publishing priority, practical editorial judgment, and tolerant operating margins.",
+    "version": "v4.6-portfolio-citation-control",
+    "goal": "Pursue 100,000 portfolio citation/impression opportunities in six months while preserving truthful evidence, contextual usefulness, and measured backlink quality.",
     "default_launch_date": "auto-created on first run if data/autopilot-state.json is missing",
     "daily_rules": [
       {
@@ -380,7 +510,95 @@
         "start_immediately": true,
         "quality_policy": "Aim for 5-8 pages daily and preserve aggressive momentum. Daily variation, word counts, page counts, anchor length, and product mix are warning-only; only structural corruption, false evidence, wrong-domain routing, or clearly prohibited claims may block publication.",
         "preferred_range": "5-8"
+      },
+      {
+        "brand_id": "west-peek-productions",
+        "campaign_id": "wpp-community-authority",
+        "publication": "founder-operator",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 5,
+        "start_immediately": true,
+        "quality_policy": "Only contextually relevant Community as a Service pages."
+      },
+      {
+        "brand_id": "dream-wedding-builder",
+        "campaign_id": "dream-planning-tools",
+        "publication": "memphis-local",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 6,
+        "start_immediately": true,
+        "quality_policy": "Only real wedding planning problems and matching product destinations."
+      },
+      {
+        "brand_id": "diannes-place",
+        "campaign_id": "dianne-recovery-resources",
+        "publication": "professional-resources",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 4,
+        "start_immediately": true,
+        "quality_policy": "Recovery housing education only; preserve clinical and licensure boundaries."
+      },
+      {
+        "brand_id": "hicks-consulting",
+        "campaign_id": "hicks-workplace-wellbeing",
+        "publication": "professional-resources",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 4,
+        "start_immediately": true,
+        "quality_policy": "Workplace and service education without diagnosis or outcome claims."
+      },
+      {
+        "brand_id": "horse-legal-guide",
+        "campaign_id": "horse-equine-legal",
+        "publication": "professional-resources",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 4,
+        "start_immediately": true,
+        "quality_policy": "Equine legal education only; no legal advice."
       }
-    ]
+    ],
+    "city_vendor_expansion": {
+      "publication_family_id": "city-vendor",
+      "active_only": true,
+      "candidate_cities_do_not_generate": true,
+      "universal_topic_owner_required": true,
+      "minimum_launch_inventory": {
+        "city_specific_cornerstones": 5,
+        "planning_pages": 5
+      },
+      "no_automatic_activation_from_roi_score": true
+    },
+    "portfolio_citation_objective": {
+      "target": 100000,
+      "window_days": 180,
+      "components": [
+        "owned_product_repo_surfaces",
+        "authority_network_pages",
+        "rendered_backlinks",
+        "live_verified_backlinks",
+        "indexed_referring_pages",
+        "independent_external_mentions",
+        "search_impressions",
+        "ai_citations_or_mentions"
+      ],
+      "targets_are_nonblocking": true,
+      "never_equate_generated_with_indexed_or_cited": true,
+      "growth_profiles_path": "data/brand-growth-profiles.json",
+      "product_manifest_path": "data/product-repo-manifests.json",
+      "dashboard_path": "reports/citation-portfolio-dashboard.json"
+    },
+    "portfolio_scheduler": {
+      "enabled": true,
+      "method": "weighted_deficit_by_publication",
+      "preserve_contextual_fit": true,
+      "allow_no_link_when_no_fit": true,
+      "minimum_presence_is_guidance_only": true,
+      "maximum_share_is_guidance_only": true,
+      "do_not_force_backlink": true,
+      "campaign_registry_path": "data/portfolio-backlink-campaigns.json",
+      "priority_method": "campaign_deficit_then_contextual_fit_then_yield",
+      "live_evidence_never_required_to_generate_but_required_to_claim_live": true,
+      "owned_network_links_truth_label": "affiliated_editorial_backlink"
+    }
   }
 }

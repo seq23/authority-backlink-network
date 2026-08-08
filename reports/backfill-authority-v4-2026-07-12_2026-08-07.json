@@ -1,0 +1,178 @@
+{
+  "schema": "authority-v4-backfill-receipt-v1",
+  "status": "PASS",
+  "start": "2026-07-12",
+  "end": "2026-08-07",
+  "release_date": "2026-08-08",
+  "scheduled_days": 27,
+  "expected_per_day": 9,
+  "expected_total": 243,
+  "published_total": 243,
+  "self_healed_slots": 12,
+  "self_heal_attempts": 29,
+  "unresolved_days": [],
+  "days": [
+    {
+      "date": "2026-07-12",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-13",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-14",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-15",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-16",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-17",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-18",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-19",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-20",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-21",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-22",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-23",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-24",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-25",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-26",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-27",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-07-28",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-29",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-30",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-07-31",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-01",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-02",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-03",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-04",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-05",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    },
+    {
+      "date": "2026-08-06",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 1
+    },
+    {
+      "date": "2026-08-07",
+      "status": "ALREADY_COMPLETE",
+      "published": 9,
+      "self_heal_recoveries": 0
+    }
+  ]
+}

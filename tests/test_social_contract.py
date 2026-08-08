@@ -11,8 +11,12 @@ with tempfile.TemporaryDirectory() as td:
     assert p.returncode==0,(p.stdout,p.stderr)
     assert json.loads(queue.read_text())==original,'dry run mutated queue'
     r=json.loads(report.read_text()); assert len(r['attempts'])==2 and len(r['successes'])==2,'dry run did not exercise both platforms'
-    env.update({'SOCIAL_DRY_RUN':'false','REQUIRE_SOCIAL_SECRETS':'true','ENABLE_LINKEDIN_POSTING':'true','ENABLE_X_POSTING':'false'})
+    env.update({'SOCIAL_DRY_RUN':'false','REQUIRE_SOCIAL_SECRETS':'true','FAIL_ON_SOCIAL_POST_FAILURE':'false','ENABLE_LINKEDIN_POSTING':'true','ENABLE_X_POSTING':'false'})
     for key in ['LINKEDIN_ACCESS_TOKEN','LINKEDIN_AUTHOR_URN']: env.pop(key,None)
     p=subprocess.run([sys.executable,'scripts/social_publisher.py'],cwd=ROOT,env=env,text=True,capture_output=True)
-    assert p.returncode!=0,'required missing secrets did not block'
-print(json.dumps({'status':'PASS','fixtures':['dry_run_nonmutation','both_platforms_exercised','required_secret_block']}))
+    assert p.returncode==0,(p.stdout,p.stderr)
+    r=json.loads(report.read_text()); assert r['status']=='ok_with_secret_warning' and r['production_blocked'] is False,'missing secrets should degrade safely'
+    env['FAIL_ON_SOCIAL_POST_FAILURE']='true'
+    p=subprocess.run([sys.executable,'scripts/social_publisher.py'],cwd=ROOT,env=env,text=True,capture_output=True)
+    assert p.returncode!=0,'strict social failure did not block'
+print(json.dumps({'status':'PASS','fixtures':['dry_run_nonmutation','both_platforms_exercised','missing_secrets_nonblocking_by_default','strict_social_failure_opt_in']}))

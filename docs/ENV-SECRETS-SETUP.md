@@ -38,7 +38,7 @@ If Gemini fails, is missing, or rate-limits, the base deterministic page is stil
 
 ## LinkedIn Secrets for one account
 
-Only needed if a future patch enables auto-posting.
+Only needed when LinkedIn auto-posting should actually send posts. Content generation and backlink publication never depend on these credentials.
 
 Gather:
 
@@ -64,11 +64,11 @@ How to retrieve:
 4. Save the returned access token as `LINKEDIN_ACCESS_TOKEN`.
 5. Save the person or organization URN as `LINKEDIN_AUTHOR_URN`.
 
-Current repo status: LinkedIn auto-posting is not enabled. Social items are draft-only.
+Current behavior: when LinkedIn posting is enabled but credentials are absent, LinkedIn is skipped and the social report records a nonblocking warning. Core content/backlink publication continues.
 
 ## X Secrets for one account
 
-Only needed if a future patch enables auto-posting.
+Only needed when X auto-posting should actually send posts. Content generation and backlink publication never depend on these credentials.
 
 Gather from the X Developer Portal for the one posting account/app:
 
@@ -78,13 +78,16 @@ Gather from the X Developer Portal for the one posting account/app:
 - `X_ACCESS_TOKEN_SECRET`
 - `X_BEARER_TOKEN` optional depending on posting method
 
-Current repo status: X auto-posting is not enabled. X items are draft-only.
+Current behavior: when X posting is enabled but credentials are absent, X is skipped and the social report records a nonblocking warning. Core content/backlink publication continues.
 
-## Posting safety recommendation
+## Posting failure policy
 
-Keep these false until the social publisher patch is intentionally installed:
+Social distribution is subordinate to content publication. The shipped workflows may attempt social posting when the enable flags are true, but missing credentials or provider posting failures do not block generated pages, backlinks, validation, or the commit step.
 
-- `ENABLE_LINKEDIN_POSTING=false`
-- `ENABLE_X_POSTING=false`
+- `ENABLE_LINKEDIN_POSTING=true|false` controls LinkedIn attempts.
+- `ENABLE_X_POSTING=true|false` controls X attempts.
+- `REQUIRE_SOCIAL_SECRETS=true` records missing credentials explicitly.
+- `FAIL_ON_SOCIAL_POST_FAILURE=false` is the normal production setting and keeps social failures nonblocking.
+- Set `FAIL_ON_SOCIAL_POST_FAILURE=true` only when the owner intentionally wants social failure to become a hard workflow failure.
 
-The current baseline is designed to generate social drafts, not publish them.
+The social-only workflow follows the same nonblocking policy and still writes its ledger/report for diagnosis.

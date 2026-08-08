@@ -28,7 +28,8 @@
     "backlinks:verify": "python3 scripts/portfolio_backlink_engine.py verify-local",
     "backlinks:health": "python3 scripts/portfolio_backlink_engine.py health",
     "distribution:prepare-indexnow": "python3 scripts/prepare_indexnow_keys.py",
-    "distribution:run": "python3 scripts/post_publish_distribution.py"
+    "distribution:run": "python3 scripts/post_publish_distribution.py",
+    "agency:build": "python3 scripts/build_agency_dashboard.py"
   },
   "devDependencies": {}
 }

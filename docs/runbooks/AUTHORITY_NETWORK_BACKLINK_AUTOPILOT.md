@@ -91,6 +91,15 @@ Runs automatically only when the Authority autopilot completes successfully. It 
 
 Cloudflare deployment remains owned by Cloudflare Git integration. GitHub Actions does not perform direct Cloudflare deployment.
 
+
+## 4.1 Social failure isolation
+
+Social distribution is subordinate to content and backlink publication. Missing LinkedIn/X credentials and provider posting failures are recorded in the social report but do not block generated content, backlink validation, the commit step, or post-publish distribution when `FAIL_ON_SOCIAL_POST_FAILURE=false` (the normal production setting). The autopilot workflow also marks the social step `continue-on-error` so an unexpected social-process exit cannot strand otherwise-valid generated content.
+
+Strict social failure is opt-in only: set `FAIL_ON_SOCIAL_POST_FAILURE=true` when the owner intentionally wants social delivery to become release-blocking.
+
+The owner backlink/operator view is regenerated at `founderoperatorlibrary.com/agency/` after autopilot and after post-publish distribution so evidence status stays aligned with the canonical link ledger.
+
 ## 5. Safe self-healing
 
 Automatic repairs are limited to deterministic safe defects:

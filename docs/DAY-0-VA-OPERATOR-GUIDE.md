@@ -103,7 +103,7 @@ A missing cache is not an error. A corrupt cache is ignored and the page is vali
 
 Social posting requires real GitHub secrets. A ChatGPT connection does not expose raw LinkedIn or X credentials.
 
-Never paste secrets into source files, reports, screenshots, or chat logs. If credentials are missing, the preflight blocks before either platform posts.
+Never paste secrets into source files, reports, screenshots, or chat logs. If credentials are missing, social posting is skipped and recorded as a warning; content generation, backlink publication, validation, and commit continue. Social failures become release-blocking only when `FAIL_ON_SOCIAL_POST_FAILURE=true` is explicitly configured.
 
 ## When to escalate
 
@@ -117,6 +117,28 @@ Escalate when:
 - the clean rebuild differs.
 
 Do not escalate ordinary soft warnings unless they become a persistent editorial quality problem.
+
+
+## Owner agency dashboard
+
+The owner-facing backlink/operator inventory is generated at:
+
+`https://founderoperatorlibrary.com/agency/`
+
+It is intentionally `noindex` and omitted from public navigation/sitemaps. It shows:
+
+- all canonical publication operators;
+- every canonical `npm run` operator currently declared in `package.json`;
+- active GitHub workflow operators and schedules;
+- every approved target URL, including targets with zero backlinks;
+- every Authority Network editorial/backlink recorded for each target URL;
+- current repository/live/index evidence state without fabricating external outcomes.
+
+Rebuild it locally with:
+
+```bash
+npm run agency:build
+```
 
 ## v4.6 portfolio citation operations
 

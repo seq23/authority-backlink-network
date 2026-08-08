@@ -67,11 +67,13 @@ jobs:
           FAIL_ON_PROVIDER_ERROR: ${{ vars.FAIL_ON_PROVIDER_ERROR || 'false' }}
           DEPLOYMENT_SETTLE_SECONDS: ${{ vars.DEPLOYMENT_SETTLE_SECONDS || '90' }}
         run: python3 scripts/post_publish_distribution.py
+      - name: Refresh owner agency dashboard with latest backlink evidence
+        run: python3 scripts/build_agency_dashboard.py
       - name: Commit durable distribution receipts and observations
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Authority Network: post-publish distribution and backlink observations"
-          file_pattern: "data/link-registry.json data/portfolio-campaign-health.json data/distribution/** reports/post-publish-distribution-latest.json sites/**/sitemap.xml sites/**/llms.txt"
+          file_pattern: "data/link-registry.json data/portfolio-campaign-health.json data/agency-dashboard.json data/distribution/** reports/post-publish-distribution-latest.json sites/founder-operator/agency/** sites/**/sitemap.xml sites/**/llms.txt"
       - name: Upload distribution receipts
         if: always()
         uses: actions/upload-artifact@v4
