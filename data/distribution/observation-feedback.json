@@ -1,13 +1,13 @@
 {
   "schema": "authority-network-observation-feedback-v1",
-  "observed_at": "2026-08-08T15:46:40.337158Z",
-  "source_receipt_id": "2026-08-08T15-46-40.337158Z-31265303122",
+  "observed_at": "2026-08-09T15:47:11.366542Z",
+  "source_receipt_id": "2026-08-09T15-47-11.366542Z-31322026570",
   "publication_health": [
     {
       "publication_id": "founder",
       "domain": "founderoperatorlibrary.com",
-      "rendered_backlinks": 23,
-      "live_verified_backlinks": 23,
+      "rendered_backlinks": 51,
+      "live_verified_backlinks": 51,
       "indexed_referring_pages": 0,
       "indexnow_status": "NOT_CONFIGURED",
       "gsc_sitemap_status": "NOT_CONFIGURED",
@@ -16,8 +16,8 @@
     {
       "publication_id": "memphis",
       "domain": "memphisvendorlibrary.com",
-      "rendered_backlinks": 22,
-      "live_verified_backlinks": 22,
+      "rendered_backlinks": 50,
+      "live_verified_backlinks": 50,
       "indexed_referring_pages": 0,
       "indexnow_status": "NOT_CONFIGURED",
       "gsc_sitemap_status": "NOT_CONFIGURED",
@@ -26,8 +26,8 @@
     {
       "publication_id": "professional",
       "domain": "professionalresourcelibrary.com",
-      "rendered_backlinks": 44,
-      "live_verified_backlinks": 44,
+      "rendered_backlinks": 240,
+      "live_verified_backlinks": 240,
       "indexed_referring_pages": 0,
       "indexnow_status": "NOT_CONFIGURED",
       "gsc_sitemap_status": "NOT_CONFIGURED",
@@ -38,9 +38,9 @@
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 4,
-      "deployed": 4,
-      "live_verified": 4,
+      "rendered": 16,
+      "deployed": 16,
+      "live_verified": 16,
       "indexed": 0,
       "verified_external_citations": 0
     },
@@ -56,15 +56,87 @@
     {
       "campaign_id": "wpp-commercial",
       "brand_id": "west-peek-productions",
-      "rendered": 2,
-      "deployed": 2,
-      "live_verified": 2,
+      "rendered": 5,
+      "deployed": 5,
+      "live_verified": 5,
       "indexed": 0,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
+      "rendered": 34,
+      "deployed": 34,
+      "live_verified": 34,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "dianne-recovery-resources",
+      "brand_id": "diannes-place",
+      "rendered": 10,
+      "deployed": 10,
+      "live_verified": 10,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "hicks-workplace-wellbeing",
+      "brand_id": "hicks-consulting",
+      "rendered": 7,
+      "deployed": 7,
+      "live_verified": 7,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "horse-equine-legal",
+      "brand_id": "horse-legal-guide",
+      "rendered": 7,
+      "deployed": 7,
+      "live_verified": 7,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "the-industry-guides-authority",
+      "brand_id": "the-industry-guides",
+      "rendered": 5,
+      "deployed": 5,
+      "live_verified": 5,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "accident-guides-authority",
+      "brand_id": "accident-guides",
+      "rendered": 7,
+      "deployed": 7,
+      "live_verified": 7,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "dentistry-guides-authority",
+      "brand_id": "dentistry-guides",
+      "rendered": 5,
+      "deployed": 5,
+      "live_verified": 5,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "hormones-iv-hair-authority",
+      "brand_id": "hormones-iv-hair",
+      "rendered": 7,
+      "deployed": 7,
+      "live_verified": 7,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "neuro-eval-guides-authority",
+      "brand_id": "neuro-eval-guides",
       "rendered": 6,
       "deployed": 6,
       "live_verified": 6,
@@ -72,101 +144,29 @@
       "verified_external_citations": 0
     },
     {
-      "campaign_id": "dianne-recovery-resources",
-      "brand_id": "diannes-place",
-      "rendered": 4,
-      "deployed": 4,
-      "live_verified": 4,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "hicks-workplace-wellbeing",
-      "brand_id": "hicks-consulting",
-      "rendered": 5,
-      "deployed": 5,
-      "live_verified": 5,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "horse-equine-legal",
-      "brand_id": "horse-legal-guide",
-      "rendered": 5,
-      "deployed": 5,
-      "live_verified": 5,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "the-industry-guides-authority",
-      "brand_id": "the-industry-guides",
-      "rendered": 3,
-      "deployed": 3,
-      "live_verified": 3,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "accident-guides-authority",
-      "brand_id": "accident-guides",
-      "rendered": 2,
-      "deployed": 2,
-      "live_verified": 2,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "dentistry-guides-authority",
-      "brand_id": "dentistry-guides",
-      "rendered": 3,
-      "deployed": 3,
-      "live_verified": 3,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "hormones-iv-hair-authority",
-      "brand_id": "hormones-iv-hair",
-      "rendered": 2,
-      "deployed": 2,
-      "live_verified": 2,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
-      "campaign_id": "neuro-eval-guides-authority",
-      "brand_id": "neuro-eval-guides",
-      "rendered": 4,
-      "deployed": 4,
-      "live_verified": 4,
-      "indexed": 0,
-      "verified_external_citations": 0
-    },
-    {
       "campaign_id": "uscis-exam-guides-authority",
       "brand_id": "uscis-exam-guides",
-      "rendered": 4,
-      "deployed": 4,
-      "live_verified": 4,
+      "rendered": 6,
+      "deployed": 6,
+      "live_verified": 6,
       "indexed": 0,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
-      "rendered": 4,
-      "deployed": 4,
-      "live_verified": 4,
+      "rendered": 5,
+      "deployed": 5,
+      "live_verified": 5,
       "indexed": 0,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 12,
-      "deployed": 12,
-      "live_verified": 12,
+      "rendered": 180,
+      "deployed": 180,
+      "live_verified": 180,
       "indexed": 0,
       "verified_external_citations": 0
     },
@@ -181,8 +181,8 @@
     }
   ],
   "portfolio_totals": {
-    "rendered_backlinks": 89,
-    "live_verified_backlinks": 89,
+    "rendered_backlinks": 341,
+    "live_verified_backlinks": 341,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   },
