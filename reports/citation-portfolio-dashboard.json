@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-09",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,7 +30,7 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 332,
+    "authority_backlinks": 341,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
     "live_verified": 89,
@@ -83,7 +83,7 @@
       "brand_id": "neuro-eval-guides",
       "brand_name": "Neuro Evaluation Guides",
       "growth_status": "growth",
-      "authority_backlinks": 5,
+      "authority_backlinks": 6,
       "owned_manifest_surfaces": 3,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -113,7 +113,7 @@
       "brand_id": "aplayer-mode",
       "brand_name": "A Player Mode",
       "growth_status": "growth",
-      "authority_backlinks": 16,
+      "authority_backlinks": 17,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 174,
+      "authority_backlinks": 180,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 33,
+      "authority_backlinks": 34,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -201,35 +201,35 @@
     }
   ],
   "by_domain": {
-    "aplayermode.com": 16,
+    "aplayermode.com": 17,
     "porchandparty901.com": 16,
     "dentistryguides.com": 5,
     "hicksconsulting.org": 7,
     "billionairehighperformancecoach.com": 7,
-    "neuroevalguides.com": 5,
+    "neuroevalguides.com": 6,
     "virtualagency-os.com": 17,
     "uscisexam.com": 6,
     "theaccidentguides.com": 7,
     "theindustryguides.com": 5,
     "horselegalguide.com": 7,
     "hormonesivhair.com": 7,
-    "approvalprep.com": 174,
+    "approvalprep.com": 180,
     "westpeekproductions.com": 10,
     "weddingbudgetspreadsheet.com": 10,
-    "weddingtimelinetemplate.com": 13,
+    "weddingtimelinetemplate.com": 14,
     "weddingseatingchartmaker.com": 4,
     "weddingchecklistpdf.com": 6,
     "diannesplacerecoveryservices.com": 10
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 220,
-    "founder": 37,
-    "memphis": 36
+    "professional": 227,
+    "founder": 38,
+    "memphis": 37
   },
   "lifecycle": {
     "live_verified": 89,
-    "published_in_repository": 243
+    "published_in_repository": 252
   },
   "campaign_health": [
     {

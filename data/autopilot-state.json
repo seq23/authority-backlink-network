@@ -300,7 +300,16 @@
     "7998a1da7f19de772597b5948cbd6b1c56c770319d9d720ea338f5b6798aa588",
     "962afd423f9a7ec0078dd8d6bae0c211930b7d5d943963826a790f013309c7d9",
     "1dd463127f91ab251b107064a723c987444416616b63c8ac13bf78d57f974f4a",
-    "bb48970f0cde0b2585c34e6074d12bc7b856deafac3e5e31939d143718e62d5a"
+    "bb48970f0cde0b2585c34e6074d12bc7b856deafac3e5e31939d143718e62d5a",
+    "42504fb17ce72a88f8c1a3484def2579927e2f3bfcd939357dd51d36d3b4cda2",
+    "cd5e41396a6b063155eec9c91838aae2e9940085009ac8a20dc62959cfbdaaaa",
+    "4cfeea692e3be227d5e38e162dc9e7b421ee042c418505137f5d8203f31e8b55",
+    "f8a5c692f7a3feb5b65bce4954cf897d3a9b60e78385cd3839f1939c09a696ce",
+    "3b95f1bda43a7af935ddf135f53a5912d0172b258165c237412356fc000eb882",
+    "8b75d44bb34b834fb25ea38848ed37bee865108636319ffcb437f2e7c40a1bf3",
+    "a9e02b3cde71b269aaa1fee280bf076fe0cd0c97dce8d01b8ae6387fc5ac91a2",
+    "36a870caa9f373f4db171ed2d1d22be1cd9919634c192c400757eba4489af132",
+    "645c42df0b87fdec372a84e3b868661e19322c8d93684f487f654db12d267426"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -602,7 +611,16 @@
     "382018a68c0c43f7c4f9a3dcbad50ce5020d32820c2b791c38e0b67226422ca7",
     "195c05e20a79202578be08173e08995a4db05b09249714b9834e6b04d64ffb14",
     "ca6a19983f5aeb60a31243626adc74a9327d3b615653f3b8a30ff75d4f9c4df0",
-    "f6ed199692aa7f36c045fdf012a64e5740ddbb37193991b3784f573ababa822e"
+    "f6ed199692aa7f36c045fdf012a64e5740ddbb37193991b3784f573ababa822e",
+    "e2493afb03f8df4a071be66b38a29d33051c80a4c6ee9f4ddeb9558f5f1de8aa",
+    "4f873a1ae5026f2967bee3a36cb3a866876b6bcab8fdde43bf97feb6af65421d",
+    "5378e296fbb2781e888308e65aea50933c22d95584ecaea5e367b9e8382dce8a",
+    "100133705518ae43f15e57838450b6b77002263005427170beaeb328df2e0051",
+    "959d69a0f9c7957bccdf42c4ed887e86559ae7b31a6d03b90c3bb20862dc234c",
+    "a13988d94b2621ea8335ad072eb7843c10acd2163ffb20bdf0db2d3d0c5fcd63",
+    "37b011fb01ff67ddc95a5065889018e5168e0e7c6dd7ef6690b5f2ffb93c5ad5",
+    "41ab6413235fecb44d4e9d16ae3f370faeaadb7e34b32b5459e6099644adc16f",
+    "4bb8868a72030e089911f267555d0054044766e186b7eb6d0b7f6c54bd400737"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -904,7 +922,16 @@
     "Personal Loan Documents: Citation-Friendly Prep Guide For Careful Decision-Makers",
     "Calendar Protection: 2026-Ready Resource Roundup Before You Pay",
     "Wedding Planning Tools: Geo-Ready Comparison Guide For First-Time Buyers",
-    "Red Flags In Regulated Services: Comparison-Friendly Budget/Planning Note For First-Time Buyers"
+    "Red Flags In Regulated Services: Comparison-Friendly Budget/Planning Note For First-Time Buyers",
+    "Business Loan Explanation: Citation-Friendly Timeline Guide When Timing Matters",
+    "Complete Document Library: Editorial Mistakes To Avoid When Timing Matters",
+    "Business Funding Packet: Citation-Friendly Budget/Planning Note For Careful Decision-Makers",
+    "Job Gap Explanation: Resource-Backed Red-Flag Checklist For Careful Decision-Makers",
+    "Business Explanation Letters: Aeo-Ready Mistakes To Avoid For Careful Decision-Makers",
+    "Credit Report Issues: Resource-Backed Planning Checklist Before You Sign",
+    "Automation Without Chaos: Beginner-Safe Resource Roundup For People Who Need A Starting Point",
+    "Wedding-Day Timeline: Comparison-Friendly Decision Guide Before You Book",
+    "How To Organize A Proof-Of-Income Packet: Resource-Backed Faq Answer Page Before You Book"
   ],
   "history": [
     {
@@ -2003,6 +2030,36 @@
       "date": "2026-08-07",
       "release_date": "2026-08-08",
       "day_index": 42,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "release_date": "2026-08-09",
+      "day_index": 44,
       "target_volume": 9,
       "generated": 9,
       "published": 9,
