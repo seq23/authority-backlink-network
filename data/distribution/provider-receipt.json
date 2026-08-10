@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-08-09T15-47-11.366542Z-31322026570",
-  "attempted_at": "2026-08-09T15:47:11.366542Z",
+  "receipt_id": "2026-08-10T15-56-16.974807Z-31406244571",
+  "attempted_at": "2026-08-10T15:56:16.974807Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,8 +22,8 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "07ad4bff7b149c9c0be7df1491724733a44307c14b816e94fae751825d010320",
-        "url_count": 57
+        "sha256": "189d9b82e55b432455664c83721b013fcdbf923e9e84a9a1930052c12105f2de",
+        "url_count": 58
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -39,14 +39,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 1,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 51,
-        "verified": 51,
+        "checked": 52,
+        "verified": 52,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
@@ -710,6 +710,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
+            "target_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+            "anchor": "what virtual event production means",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -722,8 +735,8 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "f028c759f347a402c117496461264f10308611a1a4e3ac04bba6926c57cab114",
-        "url_count": 56
+        "sha256": "60e75d5080994157b5e686895cae96a44ab9ce849fd593356a5f1b2ede35ff82",
+        "url_count": 57
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -739,14 +752,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 1,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 50,
-        "verified": 50,
+        "checked": 51,
+        "verified": 51,
         "results": [
           {
             "source_url": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html",
@@ -1397,6 +1410,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers.html",
+            "target_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+            "anchor": "Wedding Seating Chart Maker",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -1409,8 +1435,8 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "7848fec645510ec8d305f4a60644b3e8d5a615cd4c39db9807888997e4f6ef33",
-        "url_count": 250
+        "sha256": "46dd0cc8bb820939f6cfb8e620e2f460b960eec6e945e60281569d32338cf63c",
+        "url_count": 257
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -1426,14 +1452,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 20,
+        "requested_urls": 7,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 240,
-        "verified": 240,
+        "checked": 247,
+        "verified": 247,
         "results": [
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
@@ -4554,6 +4580,97 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-proof-of-income-for-renting-2026-ready-resource-roundup-for-people-who-need-a-starting-poi.html",
+            "target_url": "https://approvalprep.com/rental-application-kit",
+            "anchor": "build your rental application packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-proof-of-income-for-renting-2026-ready-resource-roundup-for-people-who-need-a-starting-poi",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book.html",
+            "target_url": "https://approvalprep.com/life-admin-letter-kit",
+            "anchor": "create an address explanation letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point.html",
+            "target_url": "https://approvalprep.com/credit-letter-kit",
+            "anchor": "create a credit dispute letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters.html",
+            "target_url": "https://approvalprep.com/life-admin-letter-kit",
+            "anchor": "create an address explanation letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-credit-dispute-letters-human-first-faq-answer-page-for-careful-decision-makers.html",
+            "target_url": "https://approvalprep.com/credit-letter-kit",
+            "anchor": "create a credit dispute letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-credit-dispute-letters-human-first-faq-answer-page-for-careful-decision-makers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers.html",
+            "target_url": "https://approvalprep.com/income-employment-letter-kit",
+            "anchor": "create a proof-of-income letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-neuropsych-evaluation-research-decision-focused-question-checklist-before-you-sign.html",
+            "target_url": "https://dentistryguides.com/",
+            "anchor": "The Dentistry Guides",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-10-neuropsych-evaluation-research-decision-focused-question-checklist-before-you-sign",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -4561,7 +4678,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-08-09T15-47-11.366542Z-31322026570.json"
+    "history": "data/distribution/receipts/2026-08-10T15-56-16.974807Z-31406244571.json"
   },
   "provider_success_claimed": false,
   "verified_external_citations_delta": 0,
