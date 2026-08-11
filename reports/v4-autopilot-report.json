@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-08-10",
-    "release_date": "2026-08-10",
-    "day_index": 45,
+    "date": "2026-08-11",
+    "release_date": "2026-08-11",
+    "day_index": 46,
     "target_volume": 9,
     "generated": 9,
     "published": 9,
@@ -20,8 +20,8 @@
     ],
     "duplicate_warnings": 0,
     "hard_fails": 0,
-    "self_heal_recoveries": 0,
-    "self_heal_attempts": 0,
+    "self_heal_recoveries": 1,
+    "self_heal_attempts": 1,
     "blocked_slots": [],
     "stats_before": {
       "pass_rate": 1.0,
@@ -32,10 +32,10 @@
   },
   "generated": [
     {
-      "title": "Proof Of Income For Renting: 2026-Ready Resource Roundup For People Who Need A Starting Point",
+      "title": "Name Mismatch Explanation: 2026-Ready Framework Before You Book",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1182,
+      "words": 1207,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -46,10 +46,10 @@
       "repair_history": []
     },
     {
-      "title": "Identity Records Explanation: Human-First Question Checklist Before You Book",
+      "title": "Employment Explanation Letters: No-Fluff Operator Playbook For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1180,
+      "words": 1171,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -60,49 +60,7 @@
       "repair_history": []
     },
     {
-      "title": "Late Payment Explanation: Low-Risk Faq Answer Page For People Who Need A Starting Point",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1200,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "title": "Life Admin Documents: Decision-Focused Operator Playbook When Timing Matters",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1063,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "title": "Credit Dispute Letters: Human-First Faq Answer Page For Careful Decision-Makers",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1198,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "title": "Bank Statement Explanation: Human-First Timeline Guide For Careful Decision-Makers",
+      "title": "Business Explanation Letters: No-Fluff Resource Roundup When You Need To Ask Better Questions",
       "publication": "professional-resources",
       "score": 80,
       "words": 1150,
@@ -116,38 +74,88 @@
       "repair_history": []
     },
     {
-      "title": "Tool Stacks For Lean Teams: Editorial Comparison Guide Before You Pay",
-      "publication": "founder-operator",
-      "score": 80,
-      "words": 1107,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "title": "Wedding Seating Chart: Human-First Buyer Guide For First-Time Buyers",
-      "publication": "memphis-local",
-      "score": 80,
-      "words": 1092,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "title": "Neuropsych Evaluation Research: Decision-Focused Question Checklist Before You Sign",
+      "title": "Large Deposit Explanation: Human-First Question Checklist For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1094,
+      "words": 1171,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    },
+    {
+      "title": "Loan Explanation Letters: Decision-Focused Comparison Guide Before You Pay",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1186,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    },
+    {
+      "title": "Credit Report Errors: Human-First Decision Guide For People Who Need A Starting Point",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1180,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    },
+    {
+      "title": "Ai Workforce Design: Plain-English Buyer Guide Before You Pay",
+      "publication": "founder-operator",
+      "score": 80,
+      "words": 1102,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    },
+    {
+      "title": "Wedding Planning Tools: Operator-Grade Resource Roundup Before You Book",
+      "publication": "memphis-local",
+      "score": 80,
+      "words": 1070,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": true,
+      "repair_attempts": 1,
+      "repair_history": [
+        {
+          "attempt": 0,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family Recovery Support: Checklist-Driven Decision Guide Before You Call",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1124,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -160,10 +168,10 @@
   ],
   "published": [
     {
-      "title": "Proof Of Income For Renting: 2026-Ready Resource Roundup For People Who Need A Starting Point",
+      "title": "Name Mismatch Explanation: 2026-Ready Framework Before You Book",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1182,
+      "words": 1207,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -172,41 +180,7 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-proof-of-income-for-renting-2026-ready-resource-roundup-for-people-who-need-a-starting-poi.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/rental-application-kit",
-      "anchor": "build your rental application packet",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "paid_product",
-      "product_id": "rental-application-kit",
-      "product_name": "Rental Application Kit",
-      "target_route": "",
-      "campaign_id": "approval-prep-authority",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Identity Records Explanation: Human-First Question Checklist Before You Book",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1180,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book.html",
+      "path": "sites/professional-resources/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
       "target_url": "https://approvalprep.com/life-admin-letter-kit",
@@ -228,10 +202,10 @@
       "used_preferred_domain": false
     },
     {
-      "title": "Late Payment Explanation: Low-Risk Faq Answer Page For People Who Need A Starting Point",
+      "title": "Employment Explanation Letters: No-Fluff Operator Playbook For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1200,
+      "words": 1171,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -240,109 +214,7 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/credit-letter-kit",
-      "anchor": "create a credit dispute letter",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "paid_product",
-      "product_id": "credit-letter-kit",
-      "product_name": "Credit Letter Kit",
-      "target_route": "",
-      "campaign_id": "approval-prep-authority",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Life Admin Documents: Decision-Focused Operator Playbook When Timing Matters",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1063,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/life-admin-letter-kit",
-      "anchor": "create an address explanation letter",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "paid_product",
-      "product_id": "life-admin-letter-kit",
-      "product_name": "Life Admin Letter Kit",
-      "target_route": "",
-      "campaign_id": "approval-prep-authority",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Credit Dispute Letters: Human-First Faq Answer Page For Careful Decision-Makers",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1198,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-credit-dispute-letters-human-first-faq-answer-page-for-careful-decision-makers.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/credit-letter-kit",
-      "anchor": "create a credit dispute letter",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "paid_product",
-      "product_id": "credit-letter-kit",
-      "product_name": "Credit Letter Kit",
-      "target_route": "",
-      "campaign_id": "approval-prep-authority",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Bank Statement Explanation: Human-First Timeline Guide For Careful Decision-Makers",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1150,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers.html",
+      "path": "sites/professional-resources/daily/2026-08-11-employment-explanation-letters-no-fluff-operator-playbook-for-busy-operators.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
       "target_url": "https://approvalprep.com/income-employment-letter-kit",
@@ -364,10 +236,10 @@
       "used_preferred_domain": false
     },
     {
-      "title": "Tool Stacks For Lean Teams: Editorial Comparison Guide Before You Pay",
-      "publication": "founder-operator",
+      "title": "Business Explanation Letters: No-Fluff Resource Roundup When You Need To Ask Better Questions",
+      "publication": "professional-resources",
       "score": 80,
-      "words": 1107,
+      "words": 1150,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -376,54 +248,32 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/founder-operator/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
-      "target_brand_id": "virtual-agency-os",
-      "target_domain": "virtualagency-os.com",
-      "target_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
-      "anchor": "what virtual event production means",
-      "brand": "Virtual Agency OS",
-      "social_hooks": [],
-      "destination_type": "",
-      "product_id": "",
-      "product_name": "",
+      "path": "sites/professional-resources/daily/2026-08-11-business-explanation-letters-no-fluff-resource-roundup-when-you-need-to-ask-better-questio.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/letter-writing-studio",
+      "anchor": "draft your letter for free",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "free_creation_tool",
+      "product_id": "letter-writing-studio",
+      "product_name": "Letter Writing Studio",
       "target_route": "",
-      "campaign_id": "virtual-agency-os-authority",
+      "campaign_id": "approval-prep-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     },
     {
-      "title": "Wedding Seating Chart: Human-First Buyer Guide For First-Time Buyers",
-      "publication": "memphis-local",
-      "score": 80,
-      "words": 1092,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/memphis-local/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers.html",
-      "target_brand_id": "dream-wedding-builder",
-      "target_domain": "weddingseatingchartmaker.com",
-      "target_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "anchor": "Wedding Seating Chart Maker",
-      "brand": "Dream Wedding Builder",
-      "social_hooks": [],
-      "destination_type": "paid_product",
-      "product_id": "wedding-seating-chart-maker",
-      "product_name": "Wedding Seating Chart Maker",
-      "target_route": "/products/seating-chart-maker",
-      "campaign_id": "dream-planning-tools",
-      "preferred_domain": "weddingseatingchartmaker.com",
-      "used_preferred_domain": true
-    },
-    {
-      "title": "Neuropsych Evaluation Research: Decision-Focused Question Checklist Before You Sign",
+      "title": "Large Deposit Explanation: Human-First Question Checklist For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1094,
+      "words": 1171,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -432,18 +282,184 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-10-neuropsych-evaluation-research-decision-focused-question-checklist-before-you-sign.html",
-      "target_brand_id": "dentistry-guides",
-      "target_domain": "dentistryguides.com",
-      "target_url": "https://dentistryguides.com/",
-      "anchor": "The Dentistry Guides",
-      "brand": "The Dentistry Guides",
+      "path": "sites/professional-resources/daily/2026-08-11-large-deposit-explanation-human-first-question-checklist-for-busy-operators.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/letter-of-explanation",
+      "anchor": "create a letter of explanation",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "paid_product",
+      "product_id": "letter-of-explanation-kit",
+      "product_name": "Letter of Explanation Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Loan Explanation Letters: Decision-Focused Comparison Guide Before You Pay",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1186,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-11-loan-explanation-letters-decision-focused-comparison-guide-before-you-pay.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/letter-writing-studio",
+      "anchor": "draft your letter for free",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "free_creation_tool",
+      "product_id": "letter-writing-studio",
+      "product_name": "Letter Writing Studio",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Credit Report Errors: Human-First Decision Guide For People Who Need A Starting Point",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1180,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-11-credit-report-errors-human-first-decision-guide-for-people-who-need-a-starting-point.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/credit-letter-kit",
+      "anchor": "create a credit dispute letter",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "paid_product",
+      "product_id": "credit-letter-kit",
+      "product_name": "Credit Letter Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Ai Workforce Design: Plain-English Buyer Guide Before You Pay",
+      "publication": "founder-operator",
+      "score": 80,
+      "words": 1102,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/founder-operator/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
+      "target_brand_id": "aplayer-mode",
+      "target_domain": "aplayermode.com",
+      "target_url": "https://www.aplayermode.com/",
+      "anchor": "A Player Mode",
+      "brand": "A Player Mode",
       "social_hooks": [],
       "destination_type": "",
       "product_id": "",
       "product_name": "",
       "target_route": "",
-      "campaign_id": "dentistry-guides-authority",
+      "campaign_id": "",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Wedding Planning Tools: Operator-Grade Resource Roundup Before You Book",
+      "publication": "memphis-local",
+      "score": 80,
+      "words": 1070,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": true,
+      "repair_attempts": 1,
+      "repair_history": [
+        {
+          "attempt": 0,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
+        }
+      ],
+      "path": "sites/memphis-local/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book.html",
+      "target_brand_id": "dream-wedding-builder",
+      "target_domain": "weddingbudgetspreadsheet.com",
+      "target_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "anchor": "Wedding Budget Spreadsheet",
+      "brand": "Dream Wedding Builder",
+      "social_hooks": [],
+      "destination_type": "paid_product",
+      "product_id": "wedding-budget-spreadsheet",
+      "product_name": "Wedding Budget Spreadsheet",
+      "target_route": "/products/budget-spreadsheet",
+      "campaign_id": "dream-planning-tools",
+      "preferred_domain": "weddingbudgetspreadsheet.com",
+      "used_preferred_domain": true
+    },
+    {
+      "title": "Family Recovery Support: Checklist-Driven Decision Guide Before You Call",
+      "publication": "professional-resources",
+      "score": 80,
+      "words": 1124,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/professional-resources/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
+      "target_brand_id": "the-industry-guides",
+      "target_domain": "theindustryguides.com",
+      "target_url": "https://theindustryguides.com/tools/",
+      "anchor": "provider comparison tools",
+      "brand": "The Industry Guides",
+      "social_hooks": [],
+      "destination_type": "",
+      "product_id": "",
+      "product_name": "",
+      "target_route": "",
+      "campaign_id": "the-industry-guides-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     }

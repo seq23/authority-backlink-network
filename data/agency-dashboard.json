@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-11",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 373,
-    "unique_source_editorials": 350,
+    "backlink_rows": 382,
+    "unique_source_editorials": 359,
     "live_verified_rows": 350,
     "indexed_rows": 0
   },
@@ -314,10 +314,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 18,
+      "backlink_count": 19,
       "live_verified_count": 17,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
+          "source_title": "Ai Workforce Design: Plain-English Buyer Guide Before You Pay",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html",
@@ -1694,10 +1714,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 19,
+      "backlink_count": 20,
       "live_verified_count": 19,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-credit-report-errors-human-first-decision-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-credit-report-errors-human-first-decision-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Credit Report Errors: Human-First Decision Guide For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point.html",
@@ -2113,10 +2153,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 23,
+      "backlink_count": 24,
       "live_verified_count": 23,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-employment-explanation-letters-no-fluff-operator-playbook-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-employment-explanation-letters-no-fluff-operator-playbook-for-busy-operators.html",
+          "source_title": "Employment Explanation Letters: No-Fluff Operator Playbook For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers.html",
@@ -2593,10 +2653,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 18,
+      "backlink_count": 19,
       "live_verified_count": 18,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-large-deposit-explanation-human-first-question-checklist-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-large-deposit-explanation-human-first-question-checklist-for-busy-operators.html",
+          "source_title": "Large Deposit Explanation: Human-First Question Checklist For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "create a letter of explanation",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-07-late-payment-explanation-resource-backed-mistakes-to-avoid-when-you-need-to-ask-better-que.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-07-late-payment-explanation-resource-backed-mistakes-to-avoid-when-you-need-to-ask-better-que.html",
@@ -3073,10 +3153,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 10,
+      "backlink_count": 12,
       "live_verified_count": 10,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-loan-explanation-letters-decision-focused-comparison-guide-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-loan-explanation-letters-decision-focused-comparison-guide-before-you-pay.html",
+          "source_title": "Loan Explanation Letters: Decision-Focused Comparison Guide Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-business-explanation-letters-no-fluff-resource-roundup-when-you-need-to-ask-better-questio.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-business-explanation-letters-no-fluff-resource-roundup-when-you-need-to-ask-better-questio.html",
+          "source_title": "Business Explanation Letters: No-Fluff Resource Roundup When You Need To Ask Better Questions",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-09-business-explanation-letters-aeo-ready-mistakes-to-avoid-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-09-business-explanation-letters-aeo-ready-mistakes-to-avoid-for-careful-decision-makers.html",
@@ -3293,10 +3413,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 14,
+      "backlink_count": 15,
       "live_verified_count": 14,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html",
+          "source_title": "Name Mismatch Explanation: 2026-Ready Framework Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters.html",
@@ -5327,10 +5467,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 9,
+      "backlink_count": 10,
       "live_verified_count": 9,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book.html",
+          "source_title": "Wedding Planning Tools: Operator-Grade Resource Roundup Before You Book",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "Wedding Budget Spreadsheet",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers.html",
@@ -8508,10 +8668,30 @@
       "campaign_ids": [
         "the-industry-guides-authority"
       ],
-      "backlink_count": 1,
+      "backlink_count": 2,
       "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
+          "source_title": "Family Recovery Support: Checklist-Driven Decision Guide Before You Call",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-11",
+          "release_date": "2026-08-11",
+          "anchor": "provider comparison tools",
+          "campaign_id": "the-industry-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-19-iv-therapy-clinic-research-citation-friendly-question-checklist-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-19-iv-therapy-clinic-research-citation-friendly-question-checklist-before-you-book.html",
