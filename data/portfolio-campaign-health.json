@@ -1,12 +1,12 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-11",
+  "as_of": "2026-08-12",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 17,
+      "rendered": 18,
       "live_verified": 17,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -45,8 +45,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 36,
-      "live_verified": 35,
+      "rendered": 37,
+      "live_verified": 36,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -58,7 +58,7 @@
     {
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
-      "rendered": 10,
+      "rendered": 11,
       "live_verified": 10,
       "indexed": 0,
       "distinct_destinations": 4,
@@ -98,7 +98,7 @@
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
       "rendered": 6,
-      "live_verified": 5,
+      "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -188,8 +188,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 192,
-      "live_verified": 186,
+      "rendered": 198,
+      "live_verified": 192,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
