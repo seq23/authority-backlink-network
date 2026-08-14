@@ -1,12 +1,12 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-08-13
+As of: 2026-08-14
 
 - Registered brands: 16
 - Authority publications: 3
-- Repository-rendered authority backlinks: 377
+- Repository-rendered authority backlinks: 386
 - Owned product-repo surfaces imported: 82
-- Live verified backlinks: 368
+- Live verified backlinks: 377
 - Indexed referring pages with evidence: 0
 
 ## By brand
@@ -22,10 +22,10 @@ As of: 2026-08-13
 | Billionaire High Performance Coach | standard | 8 | 4 | 10 |
 | A Player Mode | growth | 18 | 1 | 15 |
 | Virtual Agency OS | growth | 19 | 9 | 15 |
-| West Peek Productions | standard | 10 | 1 | 10 |
+| West Peek Productions | standard | 11 | 1 | 10 |
 | Horse Legal Guide | growth | 7 | 5 | 18 |
 | Hicks Consulting | growth | 8 | 7 | 18 |
 | Porch & Party | standard | 16 | 6 | 10 |
-| Approval Prep | priority | 204 | 18 | 150 |
-| Dream Wedding Builder | launch | 38 | 8 | 60 |
-| Dianne's Place Recovery Services | launch | 11 | 5 | 18 |
+| Approval Prep | priority | 210 | 18 | 150 |
+| Dream Wedding Builder | launch | 39 | 8 | 60 |
+| Dianne's Place Recovery Services | launch | 12 | 5 | 18 |

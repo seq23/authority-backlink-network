@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-13",
+  "as_of": "2026-08-14",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 377,
+    "authority_backlinks": 386,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
-    "live_verified": 368,
-    "discoverable": 368,
+    "live_verified": 377,
+    "discoverable": 377,
     "indexed": 0,
     "ai_cited": 0
   },
@@ -133,7 +133,7 @@
       "brand_id": "west-peek-productions",
       "brand_name": "West Peek Productions",
       "growth_status": "standard",
-      "authority_backlinks": 10,
+      "authority_backlinks": 11,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 10,
       "monthly_verified_backlink_target": 8,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 204,
+      "authority_backlinks": 210,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 38,
+      "authority_backlinks": 39,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -193,7 +193,7 @@
       "brand_id": "diannes-place",
       "brand_name": "Dianne's Place Recovery Services",
       "growth_status": "launch",
-      "authority_backlinks": 11,
+      "authority_backlinks": 12,
       "owned_manifest_surfaces": 5,
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 12,
@@ -213,22 +213,22 @@
     "theindustryguides.com": 6,
     "horselegalguide.com": 7,
     "hormonesivhair.com": 7,
-    "approvalprep.com": 204,
-    "westpeekproductions.com": 10,
-    "weddingbudgetspreadsheet.com": 12,
+    "approvalprep.com": 210,
+    "westpeekproductions.com": 11,
+    "weddingbudgetspreadsheet.com": 13,
     "weddingtimelinetemplate.com": 14,
     "weddingseatingchartmaker.com": 6,
     "weddingchecklistpdf.com": 6,
-    "diannesplacerecoveryservices.com": 11
+    "diannesplacerecoveryservices.com": 12
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 255,
-    "founder": 42,
-    "memphis": 41
+    "professional": 262,
+    "founder": 43,
+    "memphis": 42
   },
   "lifecycle": {
-    "live_verified": 368,
+    "live_verified": 377,
     "published_in_repository": 9
   },
   "campaign_health": [
@@ -236,7 +236,7 @@
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
       "rendered": 18,
-      "live_verified": 17,
+      "live_verified": 18,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -274,8 +274,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 37,
-      "live_verified": 36,
+      "rendered": 38,
+      "live_verified": 37,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -288,7 +288,7 @@
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
       "rendered": 11,
-      "live_verified": 10,
+      "live_verified": 11,
       "indexed": 0,
       "distinct_destinations": 4,
       "distinct_anchors": 4,
@@ -300,7 +300,7 @@
     {
       "campaign_id": "hicks-workplace-wellbeing",
       "brand_id": "hicks-consulting",
-      "rendered": 7,
+      "rendered": 8,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 5,
@@ -404,7 +404,7 @@
     {
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
-      "rendered": 5,
+      "rendered": 6,
       "live_verified": 5,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -417,8 +417,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 198,
-      "live_verified": 192,
+      "rendered": 204,
+      "live_verified": 198,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -442,8 +442,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 368,
-    "live_verified_backlinks": 368,
+    "rendered_backlinks": 377,
+    "live_verified_backlinks": 377,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   }
