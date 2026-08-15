@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-14",
+  "as_of": "2026-08-15",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 409,
-    "unique_source_editorials": 386,
+    "backlink_rows": 418,
+    "unique_source_editorials": 395,
     "live_verified_rows": 386,
     "indexed_rows": 0
   },
@@ -314,10 +314,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 19,
+      "backlink_count": 20,
       "live_verified_count": 18,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html",
+          "source_title": "Productivity Recovery After Missed Days: Decision-Focused Buyer Guide Before You Pay",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
@@ -814,10 +834,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 21,
+      "backlink_count": 23,
       "live_verified_count": 21,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-business-funding-documents-editorial-operator-playbook-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-business-funding-documents-editorial-operator-playbook-before-you-book.html",
+          "source_title": "Business Funding Documents: Editorial Operator Playbook Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-business-funding-documents-checklist-driven-decision-guide-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-business-funding-documents-checklist-driven-decision-guide-when-timing-matters.html",
+          "source_title": "Business Funding Documents: Checklist-Driven Decision Guide When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-12-business-loan-explanation-human-first-comparison-guide-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-12-business-loan-explanation-human-first-comparison-guide-when-timing-matters.html",
@@ -2293,10 +2353,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 28,
+      "backlink_count": 30,
       "live_verified_count": 28,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-self-employed-income-explanation-editorial-framework-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-self-employed-income-explanation-editorial-framework-when-you-are-comparing-options.html",
+          "source_title": "Self-Employed Income Explanation: Editorial Framework When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-employment-explanation-letters-operator-grade-resource-roundup-when-you-are-comparing-opti.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-employment-explanation-letters-operator-grade-resource-roundup-when-you-are-comparing-opti.html",
+          "source_title": "Employment Explanation Letters: Operator-Grade Resource Roundup When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-14-income-change-explanation-resource-backed-buyer-guide-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-14-income-change-explanation-resource-backed-buyer-guide-before-you-choose.html",
@@ -3413,10 +3513,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 13,
+      "backlink_count": 14,
       "live_verified_count": 13,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-loan-explanation-letters-practical-resource-roundup-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-loan-explanation-letters-practical-resource-roundup-when-you-are-comparing-options.html",
+          "source_title": "Loan Explanation Letters: Practical Resource Roundup When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-13-business-explanation-letters-editorial-red-flag-checklist-for-busy-operators.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-13-business-explanation-letters-editorial-red-flag-checklist-for-busy-operators.html",
@@ -4013,10 +4133,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 29,
+      "backlink_count": 30,
       "live_verified_count": 29,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-personal-loan-documents-citation-friendly-comparison-guide-for-careful-decision-makers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-personal-loan-documents-citation-friendly-comparison-guide-for-careful-decision-makers.html",
+          "source_title": "Personal Loan Documents: Citation-Friendly Comparison Guide For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-13-personal-loan-documents-beginner-safe-buyer-guide-for-busy-operators.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-13-personal-loan-documents-beginner-safe-buyer-guide-for-busy-operators.html",
@@ -6204,10 +6344,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 1,
+      "backlink_count": 2,
       "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Wedding Planning Tools: No-Fluff Buyer Guide For People Who Need A Starting Point",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "Free Dream Wedding Builder",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
@@ -7751,10 +7911,30 @@
       "campaign_ids": [
         "horse-equine-legal"
       ],
-      "backlink_count": 2,
+      "backlink_count": 3,
       "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-15-horse-contract-preparation-low-risk-budget-planning-note-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-horse-contract-preparation-low-risk-budget-planning-note-for-busy-operators.html",
+          "source_title": "Horse Contract Preparation: Low-Risk Budget/Planning Note For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-15",
+          "release_date": "2026-08-15",
+          "anchor": "horse purchase agreement versus bill of sale",
+          "campaign_id": "horse-equine-legal",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",

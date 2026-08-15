@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-14",
+  "as_of": "2026-08-15",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 386,
+    "authority_backlinks": 395,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
-    "live_verified": 377,
-    "discoverable": 377,
+    "live_verified": 386,
+    "discoverable": 386,
     "indexed": 0,
     "ai_cited": 0
   },
@@ -113,7 +113,7 @@
       "brand_id": "aplayer-mode",
       "brand_name": "A Player Mode",
       "growth_status": "growth",
-      "authority_backlinks": 18,
+      "authority_backlinks": 19,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -143,7 +143,7 @@
       "brand_id": "horse-legal-guide",
       "brand_name": "Horse Legal Guide",
       "growth_status": "growth",
-      "authority_backlinks": 7,
+      "authority_backlinks": 8,
       "owned_manifest_surfaces": 5,
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 14,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 210,
+      "authority_backlinks": 216,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 39,
+      "authority_backlinks": 40,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -201,7 +201,7 @@
     }
   ],
   "by_domain": {
-    "aplayermode.com": 18,
+    "aplayermode.com": 19,
     "porchandparty901.com": 16,
     "dentistryguides.com": 6,
     "hicksconsulting.org": 8,
@@ -211,24 +211,24 @@
     "uscisexam.com": 6,
     "theaccidentguides.com": 7,
     "theindustryguides.com": 6,
-    "horselegalguide.com": 7,
+    "horselegalguide.com": 8,
     "hormonesivhair.com": 7,
-    "approvalprep.com": 210,
+    "approvalprep.com": 216,
     "westpeekproductions.com": 11,
     "weddingbudgetspreadsheet.com": 13,
     "weddingtimelinetemplate.com": 14,
     "weddingseatingchartmaker.com": 6,
-    "weddingchecklistpdf.com": 6,
+    "weddingchecklistpdf.com": 7,
     "diannesplacerecoveryservices.com": 12
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 262,
-    "founder": 43,
-    "memphis": 42
+    "professional": 269,
+    "founder": 44,
+    "memphis": 43
   },
   "lifecycle": {
-    "live_verified": 377,
+    "live_verified": 386,
     "published_in_repository": 9
   },
   "campaign_health": [
@@ -248,11 +248,11 @@
     {
       "campaign_id": "wpp-community-authority",
       "brand_id": "west-peek-productions",
-      "rendered": 5,
+      "rendered": 6,
       "live_verified": 5,
       "indexed": 0,
       "distinct_destinations": 1,
-      "distinct_anchors": 5,
+      "distinct_anchors": 6,
       "rendered_floor": 5,
       "destination_floor": 1,
       "coverage_status": "HEALTHY_RENDERED",
@@ -274,8 +274,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 38,
-      "live_verified": 37,
+      "rendered": 39,
+      "live_verified": 38,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -287,7 +287,7 @@
     {
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
-      "rendered": 11,
+      "rendered": 12,
       "live_verified": 11,
       "indexed": 0,
       "distinct_destinations": 4,
@@ -301,7 +301,7 @@
       "campaign_id": "hicks-workplace-wellbeing",
       "brand_id": "hicks-consulting",
       "rendered": 8,
-      "live_verified": 7,
+      "live_verified": 8,
       "indexed": 0,
       "distinct_destinations": 5,
       "distinct_anchors": 5,
@@ -405,7 +405,7 @@
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
       "rendered": 6,
-      "live_verified": 5,
+      "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 2,
@@ -417,8 +417,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 204,
-      "live_verified": 198,
+      "rendered": 210,
+      "live_verified": 204,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -442,8 +442,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 377,
-    "live_verified_backlinks": 377,
+    "rendered_backlinks": 386,
+    "live_verified_backlinks": 386,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   }
