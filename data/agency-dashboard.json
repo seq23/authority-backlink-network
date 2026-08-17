@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-16",
+  "as_of": "2026-08-17",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 427,
-    "unique_source_editorials": 404,
+    "backlink_rows": 436,
+    "unique_source_editorials": 413,
     "live_verified_rows": 404,
     "indexed_rows": 0
   },
@@ -834,10 +834,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 23,
+      "backlink_count": 24,
       "live_verified_count": 23,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html",
+          "source_title": "Business Funding Packet: Practical Resource Roundup For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-15-business-funding-documents-editorial-operator-playbook-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-business-funding-documents-editorial-operator-playbook-before-you-book.html",
@@ -1314,10 +1334,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 25,
+      "backlink_count": 26,
       "live_verified_count": 25,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html",
+          "source_title": "Multiple Application Issues: Human-First Faq Answer Page Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-12-credit-rental-income-and-loan-letters-practical-budget-planning-note-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-12-credit-rental-income-and-loan-letters-practical-budget-planning-note-before-you-book.html",
@@ -1834,10 +1874,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 24,
+      "backlink_count": 25,
       "live_verified_count": 24,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html",
+          "source_title": "Debt Validation Letters: Practical Mistakes To Avoid Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-14-credit-dispute-letters-geo-ready-resource-roundup-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-14-credit-dispute-letters-geo-ready-resource-roundup-before-you-choose.html",
@@ -3833,10 +3893,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 15,
+      "backlink_count": 17,
       "live_verified_count": 15,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html",
+          "source_title": "Proof Of Residency Letter: Human-First Prep Guide Before You Call",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-address-issue-explanation-checklist-driven-framework-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-address-issue-explanation-checklist-driven-framework-when-you-are-comparing-options.html",
+          "source_title": "Address Issue Explanation: Checklist-Driven Framework When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html",
@@ -5009,10 +5109,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 24,
+      "backlink_count": 25,
       "live_verified_count": 24,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html",
+          "source_title": "Apartment Application Paperwork: Practical Faq Answer Page For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "build your rental application packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-16-rental-history-explanation-plain-english-faq-answer-page-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-16-rental-history-explanation-plain-english-faq-answer-page-before-you-choose.html",
@@ -6147,10 +6267,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 12,
+      "backlink_count": 13,
       "live_verified_count": 12,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
+          "source_title": "Wedding Checklist Planning: Editorial Red-Flag Checklist Before You Call",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "Wedding Budget Spreadsheet",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers.html",
@@ -7711,10 +7851,30 @@
       "campaign_ids": [
         "hormones-iv-hair-authority"
       ],
-      "backlink_count": 5,
+      "backlink_count": 6,
       "live_verified_count": 4,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",
+          "source_title": "Trauma-Informed Leadership: Human-First Budget/Planning Note Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "hormone and wellness clinic evaluation guides",
+          "campaign_id": "hormones-iv-hair-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-03-credit-dispute-letters-citation-friendly-local-resource-directory-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-03-credit-dispute-letters-citation-friendly-local-resource-directory-before-you-pay.html",
@@ -10128,10 +10288,30 @@
       "campaign_ids": [
         "virtual-agency-os-authority"
       ],
-      "backlink_count": 6,
+      "backlink_count": 7,
       "live_verified_count": 5,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
+          "source_title": "Virtual Event Production: Decision-Focused Resource Roundup Before You Call",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "what virtual event production means",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
