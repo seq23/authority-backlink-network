@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-08-17",
-    "release_date": "2026-08-17",
-    "day_index": 52,
+    "date": "2026-08-18",
+    "release_date": "2026-08-18",
+    "day_index": 53,
     "target_volume": 9,
     "generated": 9,
     "published": 9,
@@ -21,7 +21,7 @@
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 1,
-    "self_heal_attempts": 1,
+    "self_heal_attempts": 3,
     "blocked_slots": [],
     "stats_before": {
       "pass_rate": 1.0,
@@ -32,10 +32,10 @@
   },
   "generated": [
     {
-      "title": "Multiple Application Issues: Human-First Faq Answer Page Before You Pay",
+      "title": "Loan Explanation Letters: Resource-Backed Prep Guide When Timing Matters",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1199,
+      "words": 1180,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -46,10 +46,10 @@
       "repair_history": []
     },
     {
-      "title": "Business Funding Packet: Practical Resource Roundup For Busy Operators",
+      "title": "Life Admin Letters: Geo-Ready Red-Flag Checklist Before You Choose",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1157,
+      "words": 1178,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -60,10 +60,10 @@
       "repair_history": []
     },
     {
-      "title": "Address Issue Explanation: Checklist-Driven Framework When You Are Comparing Options",
+      "title": "Self-Service Document Creation: Checklist-Driven Faq Answer Page Before You Book",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1152,
+      "words": 1106,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -74,10 +74,10 @@
       "repair_history": []
     },
     {
-      "title": "Apartment Application Paperwork: Practical Faq Answer Page For Careful Decision-Makers",
+      "title": "Debt Validation Letters: Aeo-Ready Framework When You Need To Ask Better Questions",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1167,
+      "words": 1132,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -88,10 +88,10 @@
       "repair_history": []
     },
     {
-      "title": "Debt Validation Letters: Practical Mistakes To Avoid Before You Book",
+      "title": "Car Loan Explanation: Geo-Ready Buyer Guide For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1127,
+      "words": 1128,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -102,10 +102,10 @@
       "repair_history": []
     },
     {
-      "title": "Proof Of Residency Letter: Human-First Prep Guide Before You Call",
+      "title": "Large Deposit Explanation: Operator-Grade Timeline Guide Before You Choose",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1151,
+      "words": 1190,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -116,10 +116,10 @@
       "repair_history": []
     },
     {
-      "title": "Virtual Event Production: Decision-Focused Resource Roundup Before You Call",
+      "title": "Executive Broadcast Planning: Operator-Grade Red-Flag Checklist For Busy Operators",
       "publication": "founder-operator",
       "score": 80,
-      "words": 1102,
+      "words": 1100,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -130,20 +130,34 @@
       "repair_history": []
     },
     {
-      "title": "Wedding Checklist Planning: Editorial Red-Flag Checklist Before You Call",
+      "title": "Wedding Planning Tools: Operator-Grade Red-Flag Checklist When Timing Matters",
       "publication": "memphis-local",
       "score": 80,
-      "words": 1091,
+      "words": 1098,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
       ],
       "hard_fails": [],
       "self_healed": true,
-      "repair_attempts": 1,
+      "repair_attempts": 3,
       "repair_history": [
         {
           "attempt": 0,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
+        },
+        {
+          "attempt": 1,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
+        },
+        {
+          "attempt": 2,
           "reason": "hard_fail",
           "codes": [
             "unsafe_claim_or_fake_review_language"
@@ -152,10 +166,10 @@
       ]
     },
     {
-      "title": "Trauma-Informed Leadership: Human-First Budget/Planning Note Before You Pay",
+      "title": "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1132,
+      "words": 1048,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -168,10 +182,10 @@
   ],
   "published": [
     {
-      "title": "Multiple Application Issues: Human-First Faq Answer Page Before You Pay",
+      "title": "Loan Explanation Letters: Resource-Backed Prep Guide When Timing Matters",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1199,
+      "words": 1180,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -180,11 +194,11 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html",
+      "path": "sites/professional-resources/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/complete-approvalprep-bundle",
-      "anchor": "get the full document library",
+      "target_url": "https://approvalprep.com/letter-writing-studio",
+      "anchor": "draft your letter for free",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -193,19 +207,19 @@
         "Before you apply, create the letters and documents you may need.",
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
-      "destination_type": "paid_product",
-      "product_id": "complete-approvalprep-bundle",
-      "product_name": "Complete Approval Prep Bundle",
+      "destination_type": "free_creation_tool",
+      "product_id": "letter-writing-studio",
+      "product_name": "Letter Writing Studio",
       "target_route": "",
       "campaign_id": "approval-prep-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     },
     {
-      "title": "Business Funding Packet: Practical Resource Roundup For Busy Operators",
+      "title": "Life Admin Letters: Geo-Ready Red-Flag Checklist Before You Choose",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1157,
+      "words": 1178,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -214,11 +228,11 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html",
+      "path": "sites/professional-resources/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/business-funding-prep-kit",
-      "anchor": "build a business funding packet",
+      "target_url": "https://approvalprep.com/letter-writing-studio",
+      "anchor": "draft your letter for free",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -227,19 +241,19 @@
         "Before you apply, create the letters and documents you may need.",
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
-      "destination_type": "paid_product",
-      "product_id": "business-funding-prep-kit",
-      "product_name": "Business Funding Prep Kit",
+      "destination_type": "free_creation_tool",
+      "product_id": "letter-writing-studio",
+      "product_name": "Letter Writing Studio",
       "target_route": "",
       "campaign_id": "approval-prep-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     },
     {
-      "title": "Address Issue Explanation: Checklist-Driven Framework When You Are Comparing Options",
+      "title": "Self-Service Document Creation: Checklist-Driven Faq Answer Page Before You Book",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1152,
+      "words": 1106,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -248,11 +262,11 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-address-issue-explanation-checklist-driven-framework-when-you-are-comparing-options.html",
+      "path": "sites/professional-resources/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/life-admin-letter-kit",
-      "anchor": "create an address explanation letter",
+      "target_url": "https://approvalprep.com/",
+      "anchor": "Approval Prep",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -261,19 +275,19 @@
         "Before you apply, create the letters and documents you may need.",
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
-      "destination_type": "paid_product",
-      "product_id": "life-admin-letter-kit",
-      "product_name": "Life Admin Letter Kit",
+      "destination_type": "trust_boundary",
+      "product_id": "approval-prep-home",
+      "product_name": "Approval Prep",
       "target_route": "",
       "campaign_id": "approval-prep-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     },
     {
-      "title": "Apartment Application Paperwork: Practical Faq Answer Page For Careful Decision-Makers",
+      "title": "Debt Validation Letters: Aeo-Ready Framework When You Need To Ask Better Questions",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1167,
+      "words": 1132,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -282,41 +296,7 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html",
-      "target_brand_id": "approval-prep",
-      "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/rental-application-kit",
-      "anchor": "build your rental application packet",
-      "brand": "Approval Prep",
-      "social_hooks": [
-        "Need to explain what happened? Create the letter they asked for.",
-        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
-        "Do not know what to write? Start with your real facts.",
-        "Before you apply, create the letters and documents you may need.",
-        "Something on your credit report look wrong? Write your own dispute letter."
-      ],
-      "destination_type": "paid_product",
-      "product_id": "rental-application-kit",
-      "product_name": "Rental Application Kit",
-      "target_route": "",
-      "campaign_id": "approval-prep-authority",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Debt Validation Letters: Practical Mistakes To Avoid Before You Book",
-      "publication": "professional-resources",
-      "score": 80,
-      "words": 1127,
-      "rewrite_status": "disabled",
-      "warnings": [
-        "too_many_links"
-      ],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html",
+      "path": "sites/professional-resources/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
       "target_url": "https://approvalprep.com/credit-letter-kit",
@@ -338,10 +318,10 @@
       "used_preferred_domain": false
     },
     {
-      "title": "Proof Of Residency Letter: Human-First Prep Guide Before You Call",
+      "title": "Car Loan Explanation: Geo-Ready Buyer Guide For Busy Operators",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1151,
+      "words": 1128,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -350,11 +330,11 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html",
+      "path": "sites/professional-resources/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators.html",
       "target_brand_id": "approval-prep",
       "target_domain": "approvalprep.com",
-      "target_url": "https://approvalprep.com/life-admin-letter-kit",
-      "anchor": "create an address explanation letter",
+      "target_url": "https://approvalprep.com/loan-prep-letter-kit",
+      "anchor": "create a loan explanation letter",
       "brand": "Approval Prep",
       "social_hooks": [
         "Need to explain what happened? Create the letter they asked for.",
@@ -364,18 +344,18 @@
         "Something on your credit report look wrong? Write your own dispute letter."
       ],
       "destination_type": "paid_product",
-      "product_id": "life-admin-letter-kit",
-      "product_name": "Life Admin Letter Kit",
+      "product_id": "loan-prep-letter-kit",
+      "product_name": "Loan Prep Letter Kit",
       "target_route": "",
       "campaign_id": "approval-prep-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     },
     {
-      "title": "Virtual Event Production: Decision-Focused Resource Roundup Before You Call",
-      "publication": "founder-operator",
+      "title": "Large Deposit Explanation: Operator-Grade Timeline Guide Before You Choose",
+      "publication": "professional-resources",
       "score": 80,
-      "words": 1102,
+      "words": 1190,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -384,11 +364,45 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
+      "path": "sites/professional-resources/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html",
+      "target_brand_id": "approval-prep",
+      "target_domain": "approvalprep.com",
+      "target_url": "https://approvalprep.com/loan-prep-letter-kit",
+      "anchor": "create a loan explanation letter",
+      "brand": "Approval Prep",
+      "social_hooks": [
+        "Need to explain what happened? Create the letter they asked for.",
+        "Trying to rent, buy, borrow, or fund a business? Build the document packet first.",
+        "Do not know what to write? Start with your real facts.",
+        "Before you apply, create the letters and documents you may need.",
+        "Something on your credit report look wrong? Write your own dispute letter."
+      ],
+      "destination_type": "paid_product",
+      "product_id": "loan-prep-letter-kit",
+      "product_name": "Loan Prep Letter Kit",
+      "target_route": "",
+      "campaign_id": "approval-prep-authority",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    },
+    {
+      "title": "Executive Broadcast Planning: Operator-Grade Red-Flag Checklist For Busy Operators",
+      "publication": "founder-operator",
+      "score": 80,
+      "words": 1100,
+      "rewrite_status": "disabled",
+      "warnings": [
+        "too_many_links"
+      ],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/founder-operator/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html",
       "target_brand_id": "virtual-agency-os",
       "target_domain": "virtualagency-os.com",
-      "target_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
-      "anchor": "what virtual event production means",
+      "target_url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+      "anchor": "virtual event production cost guide",
       "brand": "Virtual Agency OS",
       "social_hooks": [],
       "destination_type": "",
@@ -400,17 +414,17 @@
       "used_preferred_domain": false
     },
     {
-      "title": "Wedding Checklist Planning: Editorial Red-Flag Checklist Before You Call",
+      "title": "Wedding Planning Tools: Operator-Grade Red-Flag Checklist When Timing Matters",
       "publication": "memphis-local",
       "score": 80,
-      "words": 1091,
+      "words": 1098,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
       ],
       "hard_fails": [],
       "self_healed": true,
-      "repair_attempts": 1,
+      "repair_attempts": 3,
       "repair_history": [
         {
           "attempt": 0,
@@ -418,28 +432,42 @@
           "codes": [
             "unsafe_claim_or_fake_review_language"
           ]
+        },
+        {
+          "attempt": 1,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
+        },
+        {
+          "attempt": 2,
+          "reason": "hard_fail",
+          "codes": [
+            "unsafe_claim_or_fake_review_language"
+          ]
         }
       ],
-      "path": "sites/memphis-local/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
+      "path": "sites/memphis-local/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
       "target_brand_id": "dream-wedding-builder",
-      "target_domain": "weddingbudgetspreadsheet.com",
-      "target_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "anchor": "Wedding Budget Spreadsheet",
+      "target_domain": "weddingtimelinetemplate.com",
+      "target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "anchor": "Wedding Timeline Template",
       "brand": "Dream Wedding Builder",
       "social_hooks": [],
       "destination_type": "paid_product",
-      "product_id": "wedding-budget-spreadsheet",
-      "product_name": "Wedding Budget Spreadsheet",
-      "target_route": "/products/budget-spreadsheet",
+      "product_id": "wedding-timeline-template",
+      "product_name": "Wedding Timeline Template",
+      "target_route": "/products/timeline-template",
       "campaign_id": "dream-planning-tools",
-      "preferred_domain": "weddingbudgetspreadsheet.com",
+      "preferred_domain": "weddingtimelinetemplate.com",
       "used_preferred_domain": true
     },
     {
-      "title": "Trauma-Informed Leadership: Human-First Budget/Planning Note Before You Pay",
+      "title": "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers",
       "publication": "professional-resources",
       "score": 80,
-      "words": 1132,
+      "words": 1048,
       "rewrite_status": "disabled",
       "warnings": [
         "too_many_links"
@@ -448,18 +476,18 @@
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",
-      "target_brand_id": "hormones-iv-hair",
-      "target_domain": "hormonesivhair.com",
-      "target_url": "https://hormonesivhair.com/guides/",
-      "anchor": "hormone and wellness clinic evaluation guides",
-      "brand": "Hormone Optimization Guides",
+      "path": "sites/professional-resources/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
+      "target_brand_id": "neuro-eval-guides",
+      "target_domain": "neuroevalguides.com",
+      "target_url": "https://neuroevalguides.com/",
+      "anchor": "Neuro Evaluation Guides",
+      "brand": "Neuro Evaluation Guides",
       "social_hooks": [],
       "destination_type": "",
       "product_id": "",
       "product_name": "",
       "target_route": "",
-      "campaign_id": "hormones-iv-hair-authority",
+      "campaign_id": "neuro-eval-guides-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     }

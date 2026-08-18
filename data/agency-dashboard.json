@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-17",
+  "as_of": "2026-08-18",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 436,
-    "unique_source_editorials": 413,
+    "backlink_rows": 445,
+    "unique_source_editorials": 422,
     "live_verified_rows": 413,
     "indexed_rows": 0
   },
@@ -734,10 +734,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 4,
+      "backlink_count": 5,
       "live_verified_count": 4,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html",
+          "source_title": "Self-Service Document Creation: Checklist-Driven Faq Answer Page Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "Approval Prep",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-07-self-service-document-creation-2026-ready-planning-checklist-when-you-are-comparing-option.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-07-self-service-document-creation-2026-ready-planning-checklist-when-you-are-comparing-option.html",
@@ -1874,10 +1894,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 25,
+      "backlink_count": 26,
       "live_verified_count": 25,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
+          "source_title": "Debt Validation Letters: Aeo-Ready Framework When You Need To Ask Better Questions",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html",
@@ -3593,10 +3633,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 14,
+      "backlink_count": 16,
       "live_verified_count": 14,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html",
+          "source_title": "Loan Explanation Letters: Resource-Backed Prep Guide When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose.html",
+          "source_title": "Life Admin Letters: Geo-Ready Red-Flag Checklist Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-15-loan-explanation-letters-practical-resource-roundup-when-you-are-comparing-options.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-loan-explanation-letters-practical-resource-roundup-when-you-are-comparing-options.html",
@@ -4253,10 +4333,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 34,
+      "backlink_count": 36,
       "live_verified_count": 34,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html",
+          "source_title": "Large Deposit Explanation: Operator-Grade Timeline Guide Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators.html",
+          "source_title": "Car Loan Explanation: Geo-Ready Buyer Guide For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-16-personal-loan-documents-checklist-driven-question-checklist-for-busy-operators.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-16-personal-loan-documents-checklist-driven-question-checklist-for-busy-operators.html",
@@ -7153,10 +7273,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 14,
+      "backlink_count": 15,
       "live_verified_count": 14,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
+          "source_title": "Wedding Planning Tools: Operator-Grade Red-Flag Checklist When Timing Matters",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "Wedding Timeline Template",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html",
@@ -8331,10 +8471,30 @@
       "campaign_ids": [
         "neuro-eval-guides-authority"
       ],
-      "backlink_count": 4,
+      "backlink_count": 5,
       "live_verified_count": 3,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
+          "source_title": "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "Neuro Evaluation Guides",
+          "campaign_id": "neuro-eval-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html",
@@ -10208,10 +10368,30 @@
       "campaign_ids": [
         "virtual-agency-os-authority"
       ],
-      "backlink_count": 3,
+      "backlink_count": 4,
       "live_verified_count": 3,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html",
+          "source_title": "Executive Broadcast Planning: Operator-Grade Red-Flag Checklist For Busy Operators",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-18",
+          "release_date": "2026-08-18",
+          "anchor": "virtual event production cost guide",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
