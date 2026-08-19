@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-08-18T15-46-56.196657Z-32156492149",
-  "attempted_at": "2026-08-18T15:46:56.196657Z",
+  "receipt_id": "2026-08-19T15-46-51.480674Z-32272059543",
+  "attempted_at": "2026-08-19T15:46:51.480674Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,8 +22,8 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "6e50188b28ce9a14e4953396ab79e56425a12f7d9d276cbe1b2d7d5e3d9d676b",
-        "url_count": 66
+        "sha256": "9831b547691a0748a4fa3cf7270612dac3f9ab8e7966ec66916a2425801c39cc",
+        "url_count": 67
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -45,8 +45,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 60,
-        "verified": 60,
+        "checked": 61,
+        "verified": 61,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
@@ -827,6 +827,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -839,8 +852,8 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "d9cec37b6cdc08d035c10dc88a09bf193e6590a3c1c7f74ea8e03f4e2bf7e459",
-        "url_count": 65
+        "sha256": "3a2b5fbac39fced7ef031a14891b70fa6f7ffaddd3a35aae3032680213928bdd",
+        "url_count": 66
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -862,8 +875,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 59,
-        "verified": 59,
+        "checked": 60,
+        "verified": 60,
         "results": [
           {
             "source_url": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html",
@@ -1631,6 +1644,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
+            "target_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+            "anchor": "Wedding Budget Spreadsheet",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -1643,8 +1669,8 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "454218fb31fbefdd383c6fca72b763da61d4812275d7ffa5a74d1ad390e584be",
-        "url_count": 313
+        "sha256": "be3cc02bd65be5fcef4971b7d06dba839154a20954e1ba3f6ad69968454efbfc",
+        "url_count": 320
       },
       "indexnow": {
         "status": "NOT_CONFIGURED",
@@ -1666,8 +1692,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 303,
-        "verified": 303,
+        "checked": 310,
+        "verified": 310,
         "results": [
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
@@ -5607,6 +5633,97 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html",
+            "target_url": "https://approvalprep.com/business-funding-prep-kit",
+            "anchor": "build a business funding packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point.html",
+            "target_url": "https://approvalprep.com/business-funding-prep-kit",
+            "anchor": "build a business funding packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options.html",
+            "target_url": "https://approvalprep.com/income-employment-letter-kit",
+            "anchor": "create a proof-of-income letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html",
+            "target_url": "https://approvalprep.com/income-employment-letter-kit",
+            "anchor": "create a proof-of-income letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html",
+            "target_url": "https://approvalprep.com/complete-approvalprep-bundle",
+            "anchor": "get the full document library",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html",
+            "target_url": "https://approvalprep.com/loan-prep-letter-kit",
+            "anchor": "create a loan explanation letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters.html",
+            "target_url": "https://theindustryguides.com/tools/",
+            "anchor": "provider comparison tools",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -5614,7 +5731,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-08-18T15-46-56.196657Z-32156492149.json"
+    "history": "data/distribution/receipts/2026-08-19T15-46-51.480674Z-32272059543.json"
   },
   "provider_success_claimed": false,
   "verified_external_citations_delta": 0,
