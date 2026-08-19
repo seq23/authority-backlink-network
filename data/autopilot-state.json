@@ -390,7 +390,16 @@
     "7e44d0e939ae23d01ce034da1e05a60e77220b9dca9772728833b2d7d6c165dc",
     "c1e0f0c0b16b833237b6292e3f369316f45cc13c87f25110ea59ac9e7b15f43a",
     "edf137ab44418081d2512c18daa787b6711e2db4025c9254bf972db4836cd482",
-    "7d67b5b5090b21dae8cf6d9648e8738abb70a687bac22f87d2ed57c3b28645dc"
+    "7d67b5b5090b21dae8cf6d9648e8738abb70a687bac22f87d2ed57c3b28645dc",
+    "c2e526a7f6401c6a3bf5be9170efef276bf8874ebeac1249e3a7743667b78853",
+    "6ceb5bf6de4393ab208f2279eb2472e1e08afc5a88f3d124cf5091faaa520063",
+    "7f85e3e31d6d32f6e6f19548e73afb6242a4c0c858871eb7c39b12b7829688cc",
+    "f07d8d954b2cd910043eaf5f6a1a8fd9b119672a66af97a00acecaebe55dce0b",
+    "8b97377f0b3f7ef7896a2eefe60850704fab4adbfc0ce46648fc38c667c968a7",
+    "486b3f65bf301ddffe8ba97032e4b36dae998f5717027b664f9ade65ab0e168a",
+    "99f7c0faf6c2ef030c1bfd0f60a70f00256615a4a573f2c031d341409c09ac36",
+    "2690ca992d83190fa1d231a6c90dc44512cbd254c108a4d1aefe5bdbfd59ebe6",
+    "c24f2efe781d827d11c898a19013fffe93df025182404d66345b57e48521f644"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -782,7 +791,16 @@
     "6d86e0cb536fbbab447885fb870cb572747766e82a7fe47333b98853c29e676b",
     "77b04597492b56a758b0e796059700493d82bccd6985aa070816571a8fae76eb",
     "fa0ac85cb75e0d3e16f9677993a5debebef708886d1992c34ba4846dc465a740",
-    "aa2e873506e52425a6e88a97f6fa10fbd0f9f6d53f69b2ecf532b334dd59666e"
+    "aa2e873506e52425a6e88a97f6fa10fbd0f9f6d53f69b2ecf532b334dd59666e",
+    "5b3c1c7fb7873404d9747bf6dd4762257979bcfd79d3ecd6312059e83a75fd96",
+    "5851e4ff45eccf07db70e424687098d79f67bafbeac05e9586e2e15527aafada",
+    "d8fa8a1ba055ed031193c97a804128f9913914a2ac7e5e3107887957334c281e",
+    "dfa6adbdcfcdc832edd9e775837bacacdcdc30036147802267e7e10d04e8c281",
+    "5d0dfef9d501d428490433aab504e478bc81472fa42314a3b488ebdf95765acc",
+    "1218fe6812f7cec8798a2d0208f41d82cb7972af1667e2f80b355c49e4ec1b9c",
+    "953e3d0b99a658db67a905a9a5137da79e8f4cfcc8086cd232cd12a1688c5310",
+    "c10fc8ef192d9eeb4e706dbe5d751565a282d038732b15bcf2f64bccc56e74fa",
+    "295bca7b0cd5ee9b43a6042f203d7922843d675cf7d6ef0550d8dd24e6505ed0"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1174,7 +1192,16 @@
     "Large Deposit Explanation: Operator-Grade Timeline Guide Before You Choose",
     "Executive Broadcast Planning: Operator-Grade Red-Flag Checklist For Busy Operators",
     "Wedding Planning Tools: Operator-Grade Red-Flag Checklist When Timing Matters",
-    "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers"
+    "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers",
+    "Self-Employed Income Explanation: Human-First Planning Checklist For Careful Decision-Makers",
+    "Business Funding Packet: 2026-Ready Resource Roundup For People Who Need A Starting Point",
+    "Job Gap Explanation: Resource-Backed Faq Answer Page When You Are Comparing Options",
+    "Proof Of Income Letters: Editorial Budget/Planning Note Before You Pay",
+    "Complete Document Library: No-Fluff Local/Resource Directory When You Are Comparing Options",
+    "Personal Loan Documents: 2026-Ready Prep Guide When You Are Comparing Options",
+    "Community As A Service: Low-Risk Framework For People Who Need A Starting Point",
+    "Wedding Budget Planning: Plain-English Question Checklist When Timing Matters",
+    "Apartment Application Paperwork: Resource-Backed Prep Guide When Timing Matters"
   ],
   "history": [
     {
@@ -2591,6 +2618,36 @@
       "hard_fails": 0,
       "self_heal_recoveries": 1,
       "self_heal_attempts": 3,
+      "blocked_slots": [],
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "release_date": "2026-08-19",
+      "day_index": 54,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
       "blocked_slots": [],
       "stats_before": {
         "pass_rate": 1.0,

@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-18",
+  "as_of": "2026-08-19",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 445,
-    "unique_source_editorials": 422,
+    "backlink_rows": 454,
+    "unique_source_editorials": 431,
     "live_verified_rows": 422,
     "indexed_rows": 0
   },
@@ -314,10 +314,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 20,
+      "backlink_count": 21,
       "live_verified_count": 19,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
+          "source_title": "Community As A Service: Low-Risk Framework For People Who Need A Starting Point",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html",
@@ -854,10 +874,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 24,
+      "backlink_count": 26,
       "live_verified_count": 24,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html",
+          "source_title": "Self-Employed Income Explanation: Human-First Planning Checklist For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point.html",
+          "source_title": "Business Funding Packet: 2026-Ready Resource Roundup For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html",
@@ -1354,10 +1414,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 26,
+      "backlink_count": 27,
       "live_verified_count": 26,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html",
+          "source_title": "Complete Document Library: No-Fluff Local/Resource Directory When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html",
@@ -2453,10 +2533,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 30,
+      "backlink_count": 32,
       "live_verified_count": 30,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html",
+          "source_title": "Proof Of Income Letters: Editorial Budget/Planning Note Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options.html",
+          "source_title": "Job Gap Explanation: Resource-Backed Faq Answer Page When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-15-self-employed-income-explanation-editorial-framework-when-you-are-comparing-options.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-15-self-employed-income-explanation-editorial-framework-when-you-are-comparing-options.html",
@@ -4333,10 +4453,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 36,
+      "backlink_count": 37,
       "live_verified_count": 36,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html",
+          "source_title": "Personal Loan Documents: 2026-Ready Prep Guide When You Are Comparing Options",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html",
@@ -6387,10 +6527,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 13,
+      "backlink_count": 14,
       "live_verified_count": 13,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
+          "source_title": "Wedding Budget Planning: Plain-English Question Checklist When Timing Matters",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "Wedding Budget Spreadsheet",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
@@ -9828,10 +9988,30 @@
       "campaign_ids": [
         "the-industry-guides-authority"
       ],
-      "backlink_count": 2,
+      "backlink_count": 3,
       "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters.html",
+          "source_title": "Apartment Application Paperwork: Resource-Backed Prep Guide When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-19",
+          "release_date": "2026-08-19",
+          "anchor": "provider comparison tools",
+          "campaign_id": "the-industry-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
