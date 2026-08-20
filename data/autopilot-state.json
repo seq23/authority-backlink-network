@@ -399,7 +399,16 @@
     "486b3f65bf301ddffe8ba97032e4b36dae998f5717027b664f9ade65ab0e168a",
     "99f7c0faf6c2ef030c1bfd0f60a70f00256615a4a573f2c031d341409c09ac36",
     "2690ca992d83190fa1d231a6c90dc44512cbd254c108a4d1aefe5bdbfd59ebe6",
-    "c24f2efe781d827d11c898a19013fffe93df025182404d66345b57e48521f644"
+    "c24f2efe781d827d11c898a19013fffe93df025182404d66345b57e48521f644",
+    "2db4adafb704a0e294a22b7b495408f59e2bc5c528724b5c788e9b10a436edf9",
+    "42e24bcda62e1e4def9c3ffee61bf22d47755620461b62bcd8ea34543b45b1ef",
+    "2841ea10d9943999b6d7044282c56652e15db3c94b85ec440308c9eb5194a81e",
+    "70a20d89a66aa402544047da5624d289416b379adb47faa190d934d892378af5",
+    "84dca0fe7e44b5add29ed91bce70acddd401a16a52ee265ceac5c596d1f631e8",
+    "5b59c1133211df2fd53a1f6707d002bd42b249a6a7dc6b9d855e530ed7c8d60b",
+    "c133e218308fcb29f7d16d3f56b5dde5af34f793a6ea936ead3a57b0eb73705e",
+    "1e39b72d15b27a3b3cae6d3a1916898738e98ed5dddd0309ad8e3b89c5253109",
+    "3c3fd44d6fcd0c9c674fe77552d81cb1c957b7126f8b808316a7c5603237024c"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -800,7 +809,16 @@
     "1218fe6812f7cec8798a2d0208f41d82cb7972af1667e2f80b355c49e4ec1b9c",
     "953e3d0b99a658db67a905a9a5137da79e8f4cfcc8086cd232cd12a1688c5310",
     "c10fc8ef192d9eeb4e706dbe5d751565a282d038732b15bcf2f64bccc56e74fa",
-    "295bca7b0cd5ee9b43a6042f203d7922843d675cf7d6ef0550d8dd24e6505ed0"
+    "295bca7b0cd5ee9b43a6042f203d7922843d675cf7d6ef0550d8dd24e6505ed0",
+    "d026b81193defdace152e958caf582df7699dbb1d5658c1eca1c2d2f30c43650",
+    "752694186bba9d69f9f371bc929bfebcba459fe49333a378c07380ec8a04fbe9",
+    "4002c5d69135c52c45cd169cd4b6781e4ad3d6c1f3825a223b296a7ad151da99",
+    "e8b699850b2678f299f195ad2824ec875d9cb97bbb48a1d9fd8b70116924cb11",
+    "044058c157630121391710d2e3b8838aa85e592dbffe2bc2a6db2b33de2b4b82",
+    "88662a6195bfc3725c9b8cfc29b86aedb48cb4061943478e0c2d77055e5fceff",
+    "285ba0014f62335a7ddda1d2c3d21fcb316423b400ce836e3110d736ce39b57a",
+    "6b2ae193faf3953f9b8dd8ef75e32b63d4e9fea53dfb071c301a6dfe148a0fd1",
+    "84be40be5c46a56c424ed42b5957af785bea821ab41e5bec35a15889790a73b2"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1201,7 +1219,16 @@
     "Personal Loan Documents: 2026-Ready Prep Guide When You Are Comparing Options",
     "Community As A Service: Low-Risk Framework For People Who Need A Starting Point",
     "Wedding Budget Planning: Plain-English Question Checklist When Timing Matters",
-    "Apartment Application Paperwork: Resource-Backed Prep Guide When Timing Matters"
+    "Apartment Application Paperwork: Resource-Backed Prep Guide When Timing Matters",
+    "Proof Of Residency Letter: No-Fluff Operator Playbook Before You Pay",
+    "Name Mismatch Explanation: 2026-Ready Framework Before You Choose",
+    "Credit Dispute Letters: Geo-Ready Comparison Guide For People Who Need A Starting Point",
+    "Business Ownership Documents: Aeo-Ready Budget/Planning Note Before You Call",
+    "Large Deposit Explanation: Geo-Ready Decision Guide For First-Time Buyers",
+    "Bank Statement Explanation: Plain-English Budget/Planning Note Before You Call",
+    "Executive Broadcast Planning: Geo-Ready Operator Playbook When You Need To Ask Better Questions",
+    "Wedding Budget Planning: Beginner-Safe Operator Playbook For Careful Decision-Makers",
+    "High-Achieving Women And Burnout: No-Fluff Mistakes To Avoid For Careful Decision-Makers"
   ],
   "history": [
     {
@@ -2630,6 +2657,36 @@
       "date": "2026-08-19",
       "release_date": "2026-08-19",
       "day_index": 54,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "release_date": "2026-08-20",
+      "day_index": 55,
       "target_volume": 9,
       "generated": 9,
       "published": 9,

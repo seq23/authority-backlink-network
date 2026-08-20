@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-19",
+  "as_of": "2026-08-20",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 431,
+    "authority_backlinks": 440,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
-    "live_verified": 422,
-    "discoverable": 422,
+    "live_verified": 431,
+    "discoverable": 431,
     "indexed": 0,
     "ai_cited": 0
   },
@@ -63,7 +63,7 @@
       "brand_id": "dentistry-guides",
       "brand_name": "The Dentistry Guides",
       "growth_status": "growth",
-      "authority_backlinks": 6,
+      "authority_backlinks": 7,
       "owned_manifest_surfaces": 3,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -123,7 +123,7 @@
       "brand_id": "virtual-agency-os",
       "brand_name": "Virtual Agency OS",
       "growth_status": "growth",
-      "authority_backlinks": 21,
+      "authority_backlinks": 22,
       "owned_manifest_surfaces": 9,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 240,
+      "authority_backlinks": 246,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 44,
+      "authority_backlinks": 45,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -203,19 +203,19 @@
   "by_domain": {
     "aplayermode.com": 20,
     "porchandparty901.com": 16,
-    "dentistryguides.com": 6,
+    "dentistryguides.com": 7,
     "hicksconsulting.org": 8,
     "billionairehighperformancecoach.com": 8,
     "neuroevalguides.com": 7,
-    "virtualagency-os.com": 21,
+    "virtualagency-os.com": 22,
     "uscisexam.com": 6,
     "theaccidentguides.com": 8,
     "theindustryguides.com": 7,
     "horselegalguide.com": 8,
     "hormonesivhair.com": 8,
-    "approvalprep.com": 240,
+    "approvalprep.com": 246,
     "westpeekproductions.com": 12,
-    "weddingbudgetspreadsheet.com": 15,
+    "weddingbudgetspreadsheet.com": 16,
     "weddingtimelinetemplate.com": 15,
     "weddingseatingchartmaker.com": 7,
     "weddingchecklistpdf.com": 7,
@@ -223,12 +223,12 @@
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 297,
-    "founder": 48,
-    "memphis": 47
+    "professional": 304,
+    "founder": 49,
+    "memphis": 48
   },
   "lifecycle": {
-    "live_verified": 422,
+    "live_verified": 431,
     "published_in_repository": 9
   },
   "campaign_health": [
@@ -236,7 +236,7 @@
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
       "rendered": 20,
-      "live_verified": 19,
+      "live_verified": 20,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -274,8 +274,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 43,
-      "live_verified": 42,
+      "rendered": 44,
+      "live_verified": 43,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -326,7 +326,7 @@
     {
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
-      "rendered": 6,
+      "rendered": 7,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -379,7 +379,7 @@
       "campaign_id": "neuro-eval-guides-authority",
       "brand_id": "neuro-eval-guides",
       "rendered": 7,
-      "live_verified": 6,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -417,8 +417,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 234,
-      "live_verified": 228,
+      "rendered": 240,
+      "live_verified": 234,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -442,8 +442,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 422,
-    "live_verified_backlinks": 422,
+    "rendered_backlinks": 431,
+    "live_verified_backlinks": 431,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   }

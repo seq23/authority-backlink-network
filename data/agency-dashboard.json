@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-19",
+  "as_of": "2026-08-20",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 454,
-    "unique_source_editorials": 431,
+    "backlink_rows": 463,
+    "unique_source_editorials": 440,
     "live_verified_rows": 431,
     "indexed_rows": 0
   },
@@ -874,10 +874,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 26,
+      "backlink_count": 27,
       "live_verified_count": 26,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call.html",
+          "source_title": "Business Ownership Documents: Aeo-Ready Budget/Planning Note Before You Call",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html",
@@ -1974,10 +1994,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 26,
+      "backlink_count": 27,
       "live_verified_count": 26,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Credit Dispute Letters: Geo-Ready Comparison Guide For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
@@ -2533,10 +2573,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 32,
+      "backlink_count": 33,
       "live_verified_count": 32,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call.html",
+          "source_title": "Bank Statement Explanation: Plain-English Budget/Planning Note Before You Call",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html",
@@ -4093,10 +4153,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 17,
+      "backlink_count": 19,
       "live_verified_count": 17,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay.html",
+          "source_title": "Proof Of Residency Letter: No-Fluff Operator Playbook Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose.html",
+          "source_title": "Name Mismatch Explanation: 2026-Ready Framework Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html",
@@ -4453,10 +4553,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 37,
+      "backlink_count": 38,
       "live_verified_count": 37,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers.html",
+          "source_title": "Large Deposit Explanation: Geo-Ready Decision Guide For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html",
@@ -6527,10 +6647,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 14,
+      "backlink_count": 15,
       "live_verified_count": 14,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+          "source_title": "Wedding Budget Planning: Beginner-Safe Operator Playbook For Careful Decision-Makers",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "Wedding Budget Spreadsheet",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
@@ -9788,10 +9928,30 @@
       "campaign_ids": [
         "dentistry-guides-authority"
       ],
-      "backlink_count": 1,
+      "backlink_count": 2,
       "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers.html",
+          "source_title": "High-Achieving Women And Burnout: No-Fluff Mistakes To Avoid For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "questions before major dental work",
+          "campaign_id": "dentistry-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
@@ -10648,10 +10808,30 @@
       "campaign_ids": [
         "virtual-agency-os-authority"
       ],
-      "backlink_count": 7,
+      "backlink_count": 8,
       "live_verified_count": 6,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest.html",
+          "source_title": "Executive Broadcast Planning: Geo-Ready Operator Playbook When You Need To Ask Better Questions",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-20",
+          "release_date": "2026-08-20",
+          "anchor": "what virtual event production means",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
