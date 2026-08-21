@@ -1,13 +1,13 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-20",
+  "as_of": "2026-08-21",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 21,
-      "live_verified": 20,
+      "rendered": 22,
+      "live_verified": 21,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -45,8 +45,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 45,
-      "live_verified": 44,
+      "rendered": 46,
+      "live_verified": 45,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -124,7 +124,7 @@
       "campaign_id": "dentistry-guides-authority",
       "brand_id": "dentistry-guides",
       "rendered": 7,
-      "live_verified": 6,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 3,
@@ -162,7 +162,7 @@
     {
       "campaign_id": "uscis-exam-guides-authority",
       "brand_id": "uscis-exam-guides",
-      "rendered": 6,
+      "rendered": 7,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -188,8 +188,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 246,
-      "live_verified": 240,
+      "rendered": 252,
+      "live_verified": 246,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,

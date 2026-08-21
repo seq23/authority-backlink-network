@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-20",
+  "as_of": "2026-08-21",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 463,
-    "unique_source_editorials": 440,
+    "backlink_rows": 472,
+    "unique_source_editorials": 449,
     "live_verified_rows": 440,
     "indexed_rows": 0
   },
@@ -874,10 +874,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 27,
+      "backlink_count": 28,
       "live_verified_count": 27,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers.html",
+          "source_title": "Business Funding Documents: Comparison-Friendly Timeline Guide For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call.html",
@@ -1434,10 +1454,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 27,
+      "backlink_count": 29,
       "live_verified_count": 27,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers.html",
+          "source_title": "Multiple Application Issues: Editorial Operator Playbook For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign.html",
+          "source_title": "Complete Document Library: Low-Risk Timeline Guide Before You Sign",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html",
@@ -3813,10 +3873,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 16,
+      "backlink_count": 17,
       "live_verified_count": 16,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book.html",
+          "source_title": "Loan Explanation Letters: Aeo-Ready Faq Answer Page Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html",
@@ -4153,10 +4233,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 19,
+      "backlink_count": 20,
       "live_verified_count": 19,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters.html",
+          "source_title": "Name Mismatch Explanation: Low-Risk Question Checklist When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "create an address explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay.html",
@@ -5489,10 +5589,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 25,
+      "backlink_count": 26,
       "live_verified_count": 25,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators.html",
+          "source_title": "Rental History Explanation: Decision-Focused Timeline Guide For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "build your rental application packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html",
@@ -7573,10 +7693,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 15,
+      "backlink_count": 16,
       "live_verified_count": 15,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html",
+          "source_title": "Wedding-Day Timeline: 2026-Ready Decision Guide Before You Pay",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "Wedding Timeline Template",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
@@ -10228,10 +10368,30 @@
       "campaign_ids": [
         "uscis-exam-guides-authority"
       ],
-      "backlink_count": 5,
+      "backlink_count": 6,
       "live_verified_count": 4,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign.html",
+          "source_title": "Application Document Checklists: No-Fluff Resource Roundup Before You Sign",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "USCIS Exam Guides",
+          "campaign_id": "uscis-exam-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html",
@@ -10448,10 +10608,30 @@
       "campaign_ids": [
         "virtual-agency-os-authority"
       ],
-      "backlink_count": 12,
+      "backlink_count": 13,
       "live_verified_count": 11,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi.html",
+          "source_title": "Automation Without Chaos: Geo-Ready Budget/Planning Note For People Who Need A Starting Point",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-21",
+          "release_date": "2026-08-21",
+          "anchor": "Virtual Agency OS learning library",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",

@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-20",
+  "as_of": "2026-08-21",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 440,
+    "authority_backlinks": 449,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
-    "live_verified": 431,
-    "discoverable": 431,
+    "live_verified": 440,
+    "discoverable": 440,
     "indexed": 0,
     "ai_cited": 0
   },
@@ -93,7 +93,7 @@
       "brand_id": "uscis-exam-guides",
       "brand_name": "USCIS Exam Guides",
       "growth_status": "growth",
-      "authority_backlinks": 6,
+      "authority_backlinks": 7,
       "owned_manifest_surfaces": 3,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -123,7 +123,7 @@
       "brand_id": "virtual-agency-os",
       "brand_name": "Virtual Agency OS",
       "growth_status": "growth",
-      "authority_backlinks": 22,
+      "authority_backlinks": 23,
       "owned_manifest_surfaces": 9,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 246,
+      "authority_backlinks": 252,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 45,
+      "authority_backlinks": 46,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -207,35 +207,35 @@
     "hicksconsulting.org": 8,
     "billionairehighperformancecoach.com": 8,
     "neuroevalguides.com": 7,
-    "virtualagency-os.com": 22,
-    "uscisexam.com": 6,
+    "virtualagency-os.com": 23,
+    "uscisexam.com": 7,
     "theaccidentguides.com": 8,
     "theindustryguides.com": 7,
     "horselegalguide.com": 8,
     "hormonesivhair.com": 8,
-    "approvalprep.com": 246,
+    "approvalprep.com": 252,
     "westpeekproductions.com": 12,
     "weddingbudgetspreadsheet.com": 16,
-    "weddingtimelinetemplate.com": 15,
+    "weddingtimelinetemplate.com": 16,
     "weddingseatingchartmaker.com": 7,
     "weddingchecklistpdf.com": 7,
     "diannesplacerecoveryservices.com": 12
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 304,
-    "founder": 49,
-    "memphis": 48
+    "professional": 311,
+    "founder": 50,
+    "memphis": 49
   },
   "lifecycle": {
-    "live_verified": 431,
+    "live_verified": 440,
     "published_in_repository": 9
   },
   "campaign_health": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 20,
+      "rendered": 21,
       "live_verified": 20,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -274,8 +274,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 44,
-      "live_verified": 43,
+      "rendered": 45,
+      "live_verified": 44,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -327,7 +327,7 @@
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
       "rendered": 7,
-      "live_verified": 6,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -352,7 +352,7 @@
     {
       "campaign_id": "dentistry-guides-authority",
       "brand_id": "dentistry-guides",
-      "rendered": 6,
+      "rendered": 7,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -417,8 +417,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 240,
-      "live_verified": 234,
+      "rendered": 246,
+      "live_verified": 240,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -442,8 +442,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 431,
-    "live_verified_backlinks": 431,
+    "rendered_backlinks": 440,
+    "live_verified_backlinks": 440,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   }
