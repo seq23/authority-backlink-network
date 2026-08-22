@@ -1,13 +1,13 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-21",
+  "as_of": "2026-08-22",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
       "rendered": 22,
-      "live_verified": 21,
+      "live_verified": 22,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -19,7 +19,7 @@
     {
       "campaign_id": "wpp-community-authority",
       "brand_id": "west-peek-productions",
-      "rendered": 6,
+      "rendered": 7,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 1,
@@ -45,8 +45,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 46,
-      "live_verified": 45,
+      "rendered": 47,
+      "live_verified": 46,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -58,7 +58,7 @@
     {
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
-      "rendered": 12,
+      "rendered": 13,
       "live_verified": 12,
       "indexed": 0,
       "distinct_destinations": 4,
@@ -163,7 +163,7 @@
       "campaign_id": "uscis-exam-guides-authority",
       "brand_id": "uscis-exam-guides",
       "rendered": 7,
-      "live_verified": 6,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 3,
@@ -188,8 +188,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 252,
-      "live_verified": 246,
+      "rendered": 258,
+      "live_verified": 252,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
