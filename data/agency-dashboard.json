@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-22",
+  "as_of": "2026-08-23",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 481,
-    "unique_source_editorials": 458,
+    "backlink_rows": 490,
+    "unique_source_editorials": 467,
     "live_verified_rows": 458,
     "indexed_rows": 0
   },
@@ -314,10 +314,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 21,
+      "backlink_count": 22,
       "live_verified_count": 20,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html",
+          "source_title": "Daily Discipline Frameworks: Citation-Friendly Resource Roundup Before You Book",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
@@ -1474,10 +1494,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 29,
+      "backlink_count": 30,
       "live_verified_count": 29,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
+          "source_title": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers.html",
@@ -2074,10 +2114,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 28,
+      "backlink_count": 29,
       "live_verified_count": 28,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters.html",
+          "source_title": "Goodwill Letters: Resource-Backed Mistakes To Avoid When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay.html",
@@ -2673,10 +2733,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 34,
+      "backlink_count": 36,
       "live_verified_count": 34,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html",
+          "source_title": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers.html",
+          "source_title": "Bank Statement Explanation: Practical Question Checklist For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "create a proof-of-income letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign.html",
@@ -3373,10 +3473,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 24,
+      "backlink_count": 25,
       "live_verified_count": 24,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker.html",
+          "source_title": "Income Change Explanation: Comparison-Friendly Operator Playbook For Careful Decision-Makers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "create a letter of explanation",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions.html",
@@ -4753,10 +4873,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 39,
+      "backlink_count": 40,
       "live_verified_count": 39,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign.html",
+          "source_title": "Lender Document Request: 2026-Ready Resource Roundup Before You Sign",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers.html",
@@ -6907,10 +7047,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 15,
+      "backlink_count": 16,
       "live_verified_count": 15,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call.html",
+          "source_title": "Wedding Budget Planning: Beginner-Safe Decision Guide Before You Call",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "Wedding Budget Spreadsheet",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html",
@@ -8591,10 +8751,30 @@
       "campaign_ids": [
         "hormones-iv-hair-authority"
       ],
-      "backlink_count": 6,
+      "backlink_count": 7,
       "live_verified_count": 5,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators.html",
+          "source_title": "Boarding Barn Contract Issues: Operator-Grade Prep Guide For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-23",
+          "release_date": "2026-08-23",
+          "anchor": "hormone and wellness clinic evaluation guides",
+          "campaign_id": "hormones-iv-hair-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",

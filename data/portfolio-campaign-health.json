@@ -1,6 +1,6 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-22",
+  "as_of": "2026-08-23",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
@@ -20,7 +20,7 @@
       "campaign_id": "wpp-community-authority",
       "brand_id": "west-peek-productions",
       "rendered": 7,
-      "live_verified": 6,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 1,
       "distinct_anchors": 6,
@@ -45,8 +45,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 47,
-      "live_verified": 46,
+      "rendered": 48,
+      "live_verified": 47,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -59,7 +59,7 @@
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
       "rendered": 13,
-      "live_verified": 12,
+      "live_verified": 13,
       "indexed": 0,
       "distinct_destinations": 4,
       "distinct_anchors": 4,
@@ -136,7 +136,7 @@
     {
       "campaign_id": "hormones-iv-hair-authority",
       "brand_id": "hormones-iv-hair",
-      "rendered": 8,
+      "rendered": 9,
       "live_verified": 8,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -188,8 +188,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 258,
-      "live_verified": 252,
+      "rendered": 264,
+      "live_verified": 258,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
