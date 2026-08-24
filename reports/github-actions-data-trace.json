@@ -79,7 +79,7 @@
       "vars": {},
       "guards": {
         "actions/cache@v4": true,
-        "actions/upload-artifact@v4": true,
+        "actions/upload-artifact@": true,
         "no_direct_cloudflare_deploy": true
       }
     },
@@ -109,7 +109,7 @@
         "workflow_run:": true,
         "github.event.workflow_run.conclusion == 'success'": true,
         "actions/cache@v4": true,
-        "actions/upload-artifact@v4": true,
+        "actions/upload-artifact@": true,
         "stefanzweifel/git-auto-commit-action@v5": true,
         "dacbd/create-issue-action@v2": true,
         "no_direct_cloudflare_deploy": true
