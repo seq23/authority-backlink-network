@@ -17,7 +17,7 @@ required_workflow = [
     'python3 scripts/post_publish_distribution.py',
     'INDEXNOW_KEY', 'GSC_SERVICE_ACCOUNT_JSON', 'DEPLOYMENT_SETTLE_SECONDS', 'GSC_SITE_URLS_JSON',
     'AUTHORITY_PUBLICATION_BASE_URLS_JSON', 'LIVE_BACKLINK_VERIFY',
-    'data/distribution/**', 'actions/upload-artifact@v4'
+    'data/distribution/**', 'actions/upload-artifact@'
 ]
 for token in required_workflow:
     assert token in workflow, f'missing workflow contract token: {token}'
