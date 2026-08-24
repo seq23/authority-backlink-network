@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-23",
+  "as_of": "2026-08-24",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 60,
-    "backlink_rows": 490,
-    "unique_source_editorials": 467,
+    "backlink_rows": 499,
+    "unique_source_editorials": 476,
     "live_verified_rows": 467,
     "indexed_rows": 0
   },
@@ -774,10 +774,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 5,
+      "backlink_count": 6,
       "live_verified_count": 5,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose.html",
+          "source_title": "Self-Service Document Creation: No-Fluff Timeline Guide Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "Approval Prep",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html",
@@ -894,10 +914,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 29,
+      "backlink_count": 30,
       "live_verified_count": 29,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p.html",
+          "source_title": "Business Ownership Documents: Aeo-Ready Planning Checklist For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "build a business funding packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers.html",
@@ -2114,10 +2154,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 29,
+      "backlink_count": 31,
       "live_verified_count": 29,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters.html",
+          "source_title": "Credit Report Errors: Low-Risk Framework When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters.html",
+          "source_title": "Credit Dispute Letters: Operator-Grade Framework When Timing Matters",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters.html",
@@ -3473,10 +3553,50 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 25,
+      "backlink_count": 27,
       "live_verified_count": 25,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators.html",
+          "source_title": "Letters Of Explanation: Beginner-Safe Operator Playbook For Busy Operators",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "create a letter of explanation",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Address Issue Explanation: Editorial Comparison Guide For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "create a letter of explanation",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker.html",
@@ -7738,10 +7858,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 7,
+      "backlink_count": 8,
       "live_verified_count": 7,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html",
+          "source_title": "Wedding Seating Chart: Checklist-Driven Timeline Guide When You Are Comparing Options",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "Wedding Seating Chart Maker",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators.html",
@@ -9091,10 +9231,30 @@
       "campaign_ids": [
         "horse-equine-legal"
       ],
-      "backlink_count": 1,
+      "backlink_count": 2,
       "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting.html",
+          "source_title": "Boarding Agreement Questions: Human-First Planning Checklist For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "contract review versus a DIY horse agreement",
+          "campaign_id": "horse-equine-legal",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
@@ -11509,10 +11669,30 @@
         "wpp-commercial",
         "wpp-community-authority"
       ],
-      "backlink_count": 14,
+      "backlink_count": 15,
       "live_verified_count": 13,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html",
+          "source_title": "Managed Community Operations: 2026-Ready Decision Guide Before You Call",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-24",
+          "release_date": "2026-08-24",
+          "anchor": "West Peek Productions",
+          "campaign_id": "wpp-commercial",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay.html",

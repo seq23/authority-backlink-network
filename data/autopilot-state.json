@@ -435,7 +435,16 @@
     "1d535cbb9f593dbfc3d783e41200c155a6a0584278d7fddc866c4ea150af1f3b",
     "86a575547408105f2aa1dc86fb6e3e508d0fd8e8a77be9a7f458067259278e3a",
     "3c55436bdb8a853271cab2132aa2a28ab3661bdd9794cd217e49edaecf09f488",
-    "dc4c591ec77df2e8bb86e96c819d7d6cc1d1eb23ab99c76f4eb5aa211b93e837"
+    "dc4c591ec77df2e8bb86e96c819d7d6cc1d1eb23ab99c76f4eb5aa211b93e837",
+    "fb44e451cc896b455efbb6cfedac3608024d55ecaddce86a38f137917c0fa1e1",
+    "7ca7c83d1c48060c6bb4486a769b8e9e9c37fa9a68f0523cc42b7275b19456ee",
+    "0f8234f65c7e6138c8808b39b705e9c071ee1168a84325e46625b6a0cbc28a7f",
+    "a7f3c38c05e41820b386e196115138b9b85ba22ba83eec5868e123e006e1d94a",
+    "e12dbc1610daff2fee6c9391fc877744d7275fb2c281f1b62573d6c123b82191",
+    "f4c49dd1b494c69f393668f5f89d93e481576ac1430c844a59d7846db9e3c1ae",
+    "7a412cde9a8b5eea1eed10e416d11a1ecacf9b5d10a902c6f6ce70f0019d4209",
+    "7a5fddc3459fa54e1f0a2e62d32aa17685f1bfd82c2107a97d7b791c087fdb0c",
+    "9293f36293ef4d105b0d584019882e366d1d60defe249bc1d926279aecaabbaa"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -872,7 +881,16 @@
     "3c13216eb8d39351d12f65a9e8577433c03fae3639692d9a42e6170dd155d445",
     "b5c986f822856920cbb2b58bed3f43be3e6b6e14514ec9cd7507944bd9572e38",
     "08ad6231c3032ea949a8ffa09548c7c3b0a7cf5e1f80fe78d34a9247320f960d",
-    "f27b95bb5dbed4df7d472206a77179ee44d16cabfc8af2a21368537a33115087"
+    "f27b95bb5dbed4df7d472206a77179ee44d16cabfc8af2a21368537a33115087",
+    "ac5f002feaaf41a163bc120615b5c45154d367ddc1e4213da2e2d0712b614854",
+    "35798355fde364b59fa133949a97748fbd819112a695b1d00885a06d376b17fc",
+    "0b4ff4b792fef262f70dabc2d26e1f49eb576158bcc51e1209bdde4c3f34924a",
+    "13140d87b19f33896c4e968f2c2f5ecb08fd74628d6a8801678e36a70e22dffc",
+    "6041f010ba015fdbb1c143f26f7481c85ad61ece56178abb053ee93c28b83e52",
+    "3e38f24f8ad82b8d5667bee9fa843e4bb2d103075c12f2203c2b4dea8b70a34e",
+    "33d008659a54ef7ea7a9768304340cd2ecc8f54fbb3a6834a2ccd5c2eec54a5c",
+    "7550ad50a663c7015d8899146b5ab7df133c95cc401a8053f4432d59369bb27b",
+    "99e47efdada3d9a268c791b3e6d04f350e17b59b4a50bc3ff60ae8c5b7dd987d"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1309,7 +1327,16 @@
     "Goodwill Letters: Resource-Backed Mistakes To Avoid When Timing Matters",
     "Daily Discipline Frameworks: Citation-Friendly Resource Roundup Before You Book",
     "Wedding Budget Planning: Beginner-Safe Decision Guide Before You Call",
-    "Boarding Barn Contract Issues: Operator-Grade Prep Guide For Busy Operators"
+    "Boarding Barn Contract Issues: Operator-Grade Prep Guide For Busy Operators",
+    "Business Ownership Documents: Aeo-Ready Planning Checklist For People Who Need A Starting Point",
+    "Address Issue Explanation: Editorial Comparison Guide For People Who Need A Starting Point",
+    "Credit Report Errors: Low-Risk Framework When Timing Matters",
+    "Credit Dispute Letters: Operator-Grade Framework When Timing Matters",
+    "Letters Of Explanation: Beginner-Safe Operator Playbook For Busy Operators",
+    "Self-Service Document Creation: No-Fluff Timeline Guide Before You Choose",
+    "Managed Community Operations: 2026-Ready Decision Guide Before You Call",
+    "Wedding Seating Chart: Checklist-Driven Timeline Guide When You Are Comparing Options",
+    "Boarding Agreement Questions: Human-First Planning Checklist For People Who Need A Starting Point"
   ],
   "history": [
     {
@@ -2858,6 +2885,36 @@
       "date": "2026-08-23",
       "release_date": "2026-08-23",
       "day_index": 58,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 1,
+      "self_heal_attempts": 2,
+      "blocked_slots": [],
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "release_date": "2026-08-24",
+      "day_index": 59,
       "target_volume": 9,
       "generated": 9,
       "published": 9,
