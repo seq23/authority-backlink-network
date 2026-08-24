@@ -27,7 +27,7 @@ jobs:
       }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
       - uses: actions/setup-python@v5
@@ -76,7 +76,7 @@ jobs:
           file_pattern: "data/link-registry.json data/portfolio-campaign-health.json data/agency-dashboard.json data/distribution/** reports/post-publish-distribution-latest.json sites/founder-operator/agency/** sites/**/sitemap.xml sites/**/llms.txt"
       - name: Upload distribution receipts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: authority-network-distribution-${{ github.run_id }}
           path: |
