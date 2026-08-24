@@ -7,7 +7,7 @@ jobs:
   validate-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -20,7 +20,7 @@ jobs:
             authority-validation-v4.5-${{ runner.os }}-py311-
       - name: Run one-level release validation
         run: python3 scripts/validate.py release
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: authority-network-validation-receipts
