@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-24",
+  "as_of": "2026-08-25",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 27,
+    "runtime_operators": 28,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -221,6 +221,12 @@
       "command": "npm run validate:all",
       "implementation": "npm run validate:release",
       "category": "Validation / release"
+    },
+    {
+      "operator": "validation:matrix",
+      "command": "npm run validation:matrix",
+      "implementation": "python3 scripts/generate_validation_matrix.py",
+      "category": "Other"
     }
   ],
   "release_operators": [

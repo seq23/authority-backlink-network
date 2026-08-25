@@ -63,5 +63,80 @@
       "python",
       "deterministic_build"
     ]
+  },
+  "severity_matrix": {
+    "json": {
+      "severity": "HARD_FAIL",
+      "rationale": "Malformed JSON is corruption; every downstream registry reads it."
+    },
+    "python": {
+      "severity": "HARD_FAIL",
+      "rationale": "Compile failure is executable failure."
+    },
+    "workflow_trace": {
+      "severity": "HARD_FAIL",
+      "rationale": "Workflow safety: a broken trace means release automation cannot be reasoned about."
+    },
+    "pages_changed": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication: page audit over changed output."
+    },
+    "pages_release": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication: page audit over release output."
+    },
+    "pages_full": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication: full page audit. Self-reports hard/strong/soft counts."
+    },
+    "deterministic_build": {
+      "severity": "HARD_FAIL",
+      "rationale": "Nondeterministic governed output, named verbatim in severity_policy."
+    },
+    "hostile": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication; already separates advisory fit notes from failures."
+    },
+    "links": {
+      "severity": "HARD_FAIL",
+      "rationale": "Broken required journeys and wrong-domain routing."
+    },
+    "citation_control": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence. Self-reports hard/strong/soft counts."
+    },
+    "citation_contract": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence in the citation control plane."
+    },
+    "portfolio_backlinks": {
+      "severity": "HARD_FAIL",
+      "rationale": "Wrong-domain routing and affiliation-disclosure integrity across 476 published backlinks."
+    },
+    "backlink_local": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence: verifies each published backlink actually resolves."
+    },
+    "cache_self_test": {
+      "severity": "HARD_FAIL",
+      "rationale": "Cache corruption would serve wrong bytes for governed output."
+    },
+    "recovery_agency": {
+      "severity": "STRONG_WARNING",
+      "rationale": "Backfill and self-heal accounting is administrative drift; a gap is repairable and does not make published output wrong."
+    },
+    "distribution_chain": {
+      "severity": "STRONG_WARNING",
+      "rationale": "Post-publish observation. Passes today with 0 verified citations, so it measures reach rather than correctness, and depends on secrets that are absent in local runs."
+    },
+    "social_contract": {
+      "severity": "SOFT_WARNING",
+      "rationale": "Declares missing_secrets_nonblocking_by_default and strict_social_failure_opt_in - non-blocking by its own contract."
+    }
+  },
+  "severity_matrix_policy": {
+    "default": "HARD_FAIL",
+    "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
+    "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   }
 }

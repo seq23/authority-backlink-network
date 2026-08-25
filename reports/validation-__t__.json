@@ -1,0 +1,27 @@
+{
+  "schema": "authority-validation-receipt-v2",
+  "profile": "__t__",
+  "status": "FAIL",
+  "release_blocked": true,
+  "hard_failures": 1,
+  "blocking_failures": 1,
+  "nonblocking_failures": 0,
+  "strict": true,
+  "strong_warnings": 0,
+  "soft_warnings": 0,
+  "results": [
+    {
+      "id": "__forced_soft__",
+      "status": "FAIL",
+      "exit_code": 1,
+      "duration_ms": 3,
+      "hard_failures": 0,
+      "strong_warnings": 0,
+      "soft_warnings": 0,
+      "stdout_tail": "",
+      "stderr_tail": "",
+      "severity": "SOFT_WARNING",
+      "blocking": true
+    }
+  ]
+}

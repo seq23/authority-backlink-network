@@ -59,8 +59,16 @@ assert agency_approved == approved_urls
 assert agency['summary']['backlink_rows'] == len([r for r in links if r.get('target_url')])
 assert len(agency.get('publication_operators', [])) == len(publications)
 assert {x['id'] for x in agency['publication_operators']} == {x['id'] for x in publications}
-assert len(agency.get('runtime_operators', [])) == len(package.get('scripts', {}))
-assert {x['operator'] for x in agency['runtime_operators']} == set(package.get('scripts', {}))
+# Set equality is the real contract and subsumes the count. Asserting the two
+# lengths first only produced a bare AssertionError that named neither side, so
+# adding one npm script failed the suite without saying which operator was
+# missing.
+_runtime_ops = {x['operator'] for x in agency['runtime_operators']}
+_npm_scripts = set(package.get('scripts', {}))
+assert _runtime_ops == _npm_scripts, (
+    f"agency runtime_operators out of sync with package.json scripts; "
+    f"missing from dashboard: {sorted(_npm_scripts - _runtime_ops)}; "
+    f"stale in dashboard: {sorted(_runtime_ops - _npm_scripts)}")
 assert {x['operator'] for x in agency['release_operators']} == set(update_contract.get('commands', {}))
 
 page = (ROOT / 'sites/founder-operator/agency/index.html').read_text(encoding='utf-8')

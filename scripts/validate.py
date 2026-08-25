@@ -72,21 +72,41 @@ def run_check(check: str) -> dict:
     }
 
 
+SEVERITY_MATRIX = PLAN.get("severity_matrix", {})
+SEVERITY_DEFAULT = PLAN.get("severity_matrix_policy", {}).get("default", "HARD_FAIL")
+
+
+def severity_for(check: str) -> str:
+    # Unclassified checks fail safe. An absent entry means nobody has reasoned
+    # about the check, which is not a reason to let it through quietly.
+    return SEVERITY_MATRIX.get(check, {}).get("severity", SEVERITY_DEFAULT)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("profile", choices=PLAN["profiles"])
+    ap.add_argument("--strict", action="store_true",
+                    help="Promote STRONG_WARNING and SOFT_WARNING failures to blocking.")
     args = ap.parse_args()
     results: list[dict] = []
 
     for check in PLAN["profiles"][args.profile]:
         result = run_check(check)
+        result["severity"] = severity_for(check)
+        result["blocking"] = args.strict or result["severity"] == "HARD_FAIL"
         results.append(result)
-        if result["exit_code"] != 0:
+        # Stop at the first genuinely blocking failure. A non-blocking one keeps
+        # the run going: reporting only the first defect and hiding the rest is
+        # how a repo gets fixed one round-trip at a time.
+        if result["exit_code"] != 0 and result["blocking"]:
             break
 
-    hard_failures = sum(1 for r in results if r["exit_code"] != 0) + sum(r["hard_failures"] for r in results)
+    blocking_failures = sum(1 for r in results if r["exit_code"] != 0 and r["blocking"])
+    nonblocking_failures = sum(1 for r in results if r["exit_code"] != 0 and not r["blocking"])
+    hard_failures = blocking_failures + sum(r["hard_failures"] for r in results)
     # Child receipts already provide warning counts. Do not count the aggregate status a second time.
-    strong_warnings = sum(r["strong_warnings"] for r in results)
+    strong_warnings = sum(r["strong_warnings"] for r in results) + sum(
+        1 for r in results if r["exit_code"] != 0 and not r["blocking"])
     soft_warnings = sum(r["soft_warnings"] for r in results)
     status = "FAIL" if hard_failures else ("PASS_WITH_STRONG_WARNING" if strong_warnings else ("PASS_WITH_SOFT_WARNING" if soft_warnings else "PASS"))
     receipt = {
@@ -95,6 +115,9 @@ def main() -> None:
         "status": status,
         "release_blocked": hard_failures > 0,
         "hard_failures": hard_failures,
+        "blocking_failures": blocking_failures,
+        "nonblocking_failures": nonblocking_failures,
+        "strict": args.strict,
         "strong_warnings": strong_warnings,
         "soft_warnings": soft_warnings,
         "results": results,
