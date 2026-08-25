@@ -1,0 +1,20 @@
+/*
+  X-Content-Type-Options: nosniff
+
+# Cloudflare Pages is serving this project from the repository root, so files
+# tracked in git are publicly reachable (README.md, AGENTS.md and package.json
+# all return 200). Markdown sources that duplicate published HTML are the
+# WO-15 duplicate-content risk; the rest is internal governance and build
+# config that should not be in an index.
+#
+# robots.txt allows everything here, so noindex is served as a header:
+# disallowing the paths would stop crawlers reading the directive and leave
+# anything already indexed in place.
+/*.md
+  X-Robots-Tag: noindex, nofollow
+
+/package.json
+  X-Robots-Tag: noindex, nofollow
+
+/package-lock.json
+  X-Robots-Tag: noindex, nofollow
