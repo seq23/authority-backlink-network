@@ -356,6 +356,13 @@ def maybe_gemini_rewrite(title, html_text):
 
 
 def update_sitemap(site_path, domain):
+    # Guard the same failure deterministic_build.py hit: a missing domain
+    # formats into the URLs below as a literal "https://None/...", producing a
+    # syntactically valid sitemap that points every page at an unresolvable
+    # host. Fail the build instead - that is recoverable; a silently broken
+    # sitemap is not noticed until Search Console reports it months later.
+    if not domain:
+        raise SystemExit(f'update_sitemap: no domain resolved for {site_path}')
     site = ROOT/site_path
     urls = []
     for f in sorted(site.rglob('*.html')):
