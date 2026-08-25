@@ -24,6 +24,60 @@ def atomic_text(path: Path, text: str) -> None:
     tmp.replace(path)
 
 
+
+def render_404(source: Path, domain: str) -> str:
+    """Build a 404 page that inherits the site's own styles.
+
+    Cloudflare Pages answers HTTP 200 with the site index for any unmatched
+    path when the output directory has no 404.html. Every nonexistent URL on
+    these domains was serving a duplicate of the homepage under a 200, which
+    lets search engines index unlimited synthetic URLs. Deriving the shell from
+    index.html keeps the page on-brand without restating design tokens here.
+    """
+    index = (source / "index.html").read_text(encoding="utf-8", errors="ignore")
+    styles = "\n".join(
+        re.findall(r"<style[\s\S]*?</style>", index, re.I)
+        + re.findall(r'<link[^>]+rel=["\']stylesheet["\'][^>]*>', index, re.I)
+    )
+    title_match = re.search(r"<title>([^<]*)</title>", index, re.I)
+    site_name = re.split(r"\s+[|\u2014-]\s+", title_match.group(1))[0].strip() if title_match else domain
+    footer_match = re.search(r"<footer[\s\S]*?</footer>", index, re.I)
+    footer = footer_match.group(0) if footer_match else ""
+    ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": f"Page not found \u00b7 {site_name}",
+        "@id": f"https://{domain}/404.html",
+        "url": f"https://{domain}/404.html",
+        "isPartOf": {"@type": "WebSite", "name": site_name, "url": f"https://{domain}/"},
+    }, indent=2)
+    return (
+        "<!doctype html>\n<html lang=\"en\">\n<head>\n"
+        '  <meta charset="utf-8">\n'
+        '  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f"  <title>Page not found &middot; {escape(site_name)}</title>\n"
+        '  <meta name="robots" content="noindex, follow">\n'
+        f'  <meta name="description" content="That page could not be found on {escape(site_name)}. '
+        'The address may be mistyped, or the page may have been moved or retired.">\n'
+        f'  <link rel="canonical" href="https://{domain}/404.html">\n'
+        f"{styles}\n"
+        "  <style>\n"
+        "    .nf-wrap { max-width: 40rem; margin: 0 auto; padding: 4rem 1.25rem; }\n"
+        "    .nf-code { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin: 0 0 .75rem; }\n"
+        "    .nf-wrap h1 { margin: 0 0 .75rem; text-wrap: balance; }\n"
+        "    .nf-wrap p { margin: 0 0 1.5rem; max-width: 34rem; }\n"
+        "  </style>\n</head>\n<body>\n  <main class=\"nf-wrap\">\n"
+        '    <p class="nf-code">Error 404</p>\n'
+        "    <h1>We couldn&rsquo;t find that page</h1>\n"
+        "    <p>The address may be mistyped, or the page may have been moved or retired since it was linked.</p>\n"
+        f'    <p><a href="/">Return to {escape(site_name)}</a></p>\n'
+        "  </main>\n"
+        f"{footer}\n"
+        f'  <script type="application/ld+json">{ld}</script>\n'
+        "</body>\n</html>\n"
+    )
+
+
 def build_into(out: Path) -> dict[str, str]:
     hashes: dict[str, str] = {}
     for pub in sorted(PUBLICATIONS, key=lambda x: x["id"]):
@@ -55,7 +109,8 @@ def build_into(out: Path) -> dict[str, str]:
             urls.append(f"<url><loc>{escape(loc)}</loc><lastmod>{BUILD_DATE}</lastmod></url>")
         sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"
         llms = f"# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {BUILD_DATE}.\n\nSitemap: https://{domain}/sitemap.xml\n"
-        for name, value in (("sitemap.xml", sitemap), ("llms.txt", llms)):
+        not_found = render_404(source, domain)
+        for name, value in (("sitemap.xml", sitemap), ("llms.txt", llms), ("404.html", not_found)):
             path = target / name
             atomic_text(path, value)
             hashes[f'{pub["folder"]}/{name}'] = hashlib.sha256(value.encode()).hexdigest()

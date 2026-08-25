@@ -1,18 +1,53 @@
 {
   "schema": "authority-page-validation-v1",
   "mode": "release",
-  "status": "PASS",
+  "status": "PASS_WITH_SOFT_WARNING",
   "hard_failures": 0,
   "strong_warnings": 0,
-  "soft_warnings": 0,
+  "soft_warnings": 3,
   "cache": {
     "hits": 0,
-    "misses": 499,
+    "misses": 502,
     "enabled": true
   },
   "repairs_applied": 0,
   "duplicate_content_groups": [],
   "pages": [
+    {
+      "path": "sites/founder-operator/404.html",
+      "publication": "founder-operator",
+      "route": "/404.html",
+      "source_hash": "5274d4a0b6b5f756006bbbe016ee41e2a70d3dd47bd82ab28b46f5d8ae61063e",
+      "title": "Page not found \u00b7 Founder Operator Library",
+      "h1": [
+        "We couldn\u2019t find that page"
+      ],
+      "word_count": 129,
+      "canonical": "https://founderoperatorlibrary.com/404.html",
+      "meta_description": "That page could not be found on Founder Operator Library. The address may be mistyped, or the page may have been moved or retired.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/",
+          "anchor": "Return to Founder Operator Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "4e38d94d64069a4583ca54d07b84eab594a6f7f39243b8f4ad8f7d1cb6063d16",
+      "findings": [
+        {
+          "code": "LOW_WORD_COUNT",
+          "severity": "SOFT_WARNING",
+          "message": "Word count 129 is below the editorial target 450.",
+          "repairable": false
+        }
+      ],
+      "repair_count": 0,
+      "status": "PASS_WITH_SOFT_WARNING",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
     {
       "path": "sites/founder-operator/about.html",
       "publication": "founder-operator",
@@ -65,12 +100,12 @@
       "path": "sites/founder-operator/agency/index.html",
       "publication": "founder-operator",
       "route": "/agency/index.html",
-      "source_hash": "4eb033dd7cd07646007b6beaf242660a80fe03a0dfa9d78f7b59f0afc966b639",
+      "source_hash": "0f71feb594bad95ce4aa3a0e0611208363fa9d888b0543585e182e7b23ed6e37",
       "title": "Authority Network Agency | Backlink Operations",
       "h1": [
         "Targets, backlinks, and canonical operators"
       ],
-      "word_count": 14731,
+      "word_count": 14742,
       "canonical": "https://founderoperatorlibrary.com/agency/",
       "meta_description": "Owner operational view of Authority Network target URLs, editorial backlinks, publication operators, and canonical commands.",
       "html_lang": "en",
@@ -2343,7 +2378,7 @@
         }
       ],
       "schema_count": 0,
-      "duplicate_fingerprint": "3c21e8c30894ee424a2802c1523381a1ec830881ef5cfc42770f3e4b181709cf",
+      "duplicate_fingerprint": "7fc28295374f36df00c7186b2081259d0ea4dc6ee5cc55e16f5cebc0a0384c57",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4822,6 +4857,41 @@
       "cache_status": "MISS"
     },
     {
+      "path": "sites/memphis-local/404.html",
+      "publication": "memphis-local",
+      "route": "/404.html",
+      "source_hash": "b63668b3c7ade946da9cdf3b7958eb90471079c1124a0e06f0f5f3b74627c0e1",
+      "title": "Page not found \u00b7 Memphis Vendor Library",
+      "h1": [
+        "We couldn\u2019t find that page"
+      ],
+      "word_count": 129,
+      "canonical": "https://memphisvendorlibrary.com/404.html",
+      "meta_description": "That page could not be found on Memphis Vendor Library. The address may be mistyped, or the page may have been moved or retired.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/",
+          "anchor": "Return to Memphis Vendor Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "939b0fa0ec18f4ba423cbddee8a5519ee2f05b119fe13b878fc84dbd9054ce7f",
+      "findings": [
+        {
+          "code": "LOW_WORD_COUNT",
+          "severity": "SOFT_WARNING",
+          "message": "Word count 129 is below the editorial target 450.",
+          "repairable": false
+        }
+      ],
+      "repair_count": 0,
+      "status": "PASS_WITH_SOFT_WARNING",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
       "path": "sites/memphis-local/about.html",
       "publication": "memphis-local",
       "route": "/about.html",
@@ -7276,6 +7346,41 @@
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/404.html",
+      "publication": "professional-resources",
+      "route": "/404.html",
+      "source_hash": "40e90fb221eaa242ea3c5ff148353cb6f3c2c3e8197f7c2f739eabecc947d1ef",
+      "title": "Page not found \u00b7 Professional Resource Library",
+      "h1": [
+        "We couldn\u2019t find that page"
+      ],
+      "word_count": 129,
+      "canonical": "https://professionalresourcelibrary.com/404.html",
+      "meta_description": "That page could not be found on Professional Resource Library. The address may be mistyped, or the page may have been moved or retired.",
+      "html_lang": "en",
+      "external_links": [],
+      "internal_links": [
+        {
+          "href": "/",
+          "anchor": "Return to Professional Resource Library"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "422c0cfcf4fa7dcb84e9daeec06fe958998c92fbda4cdd9e22cc82b4105ee683",
+      "findings": [
+        {
+          "code": "LOW_WORD_COUNT",
+          "severity": "SOFT_WARNING",
+          "message": "Word count 129 is below the editorial target 450.",
+          "repairable": false
+        }
+      ],
+      "repair_count": 0,
+      "status": "PASS_WITH_SOFT_WARNING",
       "repairs": [],
       "cache_status": "MISS"
     },
