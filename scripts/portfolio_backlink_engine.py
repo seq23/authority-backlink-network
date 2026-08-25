@@ -81,7 +81,7 @@ def render(article,pub):
 <h2>Questions worth asking</h2><p>Ask the same core questions of every option so the answers can be compared honestly. Record the response rather than relying on memory or sales language.</p><ul>{qlist}</ul>
 <h2>A simple five-step decision path</h2><ol>{steps}</ol><p>Do not skip the final documentation step. A decision becomes easier to maintain when the assumptions, exclusions, owner, and review date are visible. That record also makes it easier to repair the plan if circumstances change.</p>
 <h2>Common mistakes</h2><ul>{mistakes}</ul>
-<h2>How to use the related resource</h2><p>The following resource is included because it directly addresses this article’s decision area. Review its scope and boundaries before using it: <a href="{html.escape(target)}">{html.escape(anchor)}</a>. The link is an affiliated editorial reference, not an independent endorsement, ranking, or guarantee.</p><p>A useful next step is to compare the resource against the questions above. Confirm that the destination is current, that its stated purpose matches your situation, and that any legal, medical, financial, contractual, or clinical question is handled by an appropriately qualified person.</p>
+<h2>How to use the related resource</h2><p>The following resource is included because it directly addresses this article’s decision area. Review its scope and boundaries before using it: <a href="{html.escape(target)}"{rel_attr(target)}>{html.escape(anchor)}</a>. The link is an affiliated editorial reference, not an independent endorsement, ranking, or guarantee.</p><p>A useful next step is to compare the resource against the questions above. Confirm that the destination is current, that its stated purpose matches your situation, and that any legal, medical, financial, contractual, or clinical question is handled by an appropriately qualified person.</p>
 <h2>Frequently asked questions</h2>{''.join(faqs)}
 <h2>Editorial and affiliation note</h2><p>{disclosure}</p><p class="meta">Authority Network campaign: {html.escape(article['campaign_id'])}. Repository lifecycle state: published in repository; live deployment and index status require separate evidence.</p></article></main></body></html>'''
 
@@ -136,7 +136,7 @@ def repair():
   t=p.read_text(encoding='utf-8')
   if 'target_link_missing' in f:
    marker='<h2>Editorial note</h2>'
-   insertion=f'<h2>Related resource</h2><p><a href="{html.escape(row["target_url"])}">{html.escape(row.get("anchor") or row["target_url"])}</a> is included as an affiliated editorial reference when it directly supports the topic.</p>'
+   insertion=f'<h2>Related resource</h2><p><a href="{html.escape(row["target_url"])}"{rel_attr(row["target_url"])}>{html.escape(row.get("anchor") or row["target_url"])}</a> is included as an affiliated editorial reference when it directly supports the topic.</p>'
    t=t.replace(marker,insertion+marker) if marker in t else t.replace('</article>',insertion+'</article>')
   if 'affiliation_disclosure_missing' in f:
    t=t.replace('</article>','<h2>Affiliation note</h2><p><strong>Affiliation disclosed:</strong> this page may reference an affiliated project when directly relevant. The link is not an independent ranking, award, or guarantee.</p></article>')
