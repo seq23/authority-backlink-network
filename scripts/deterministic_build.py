@@ -30,7 +30,20 @@ def build_into(out: Path) -> dict[str, str]:
         source = ROOT / pub["folder"]
         target = out / pub["folder"]
         target.mkdir(parents=True, exist_ok=True)
-        domain = pub.get("domain") or pub.get("default_domain")
+        # data/publications.json stores the host under "working_domain". Reading
+        # only "domain"/"default_domain" yielded None for every publication, and
+        # the f-strings below turned that into a literal "https://None/..." for
+        # every URL - so all three sitemaps and llms.txt files shipped pointing at
+        # an unresolvable host. Google reported 355 errors on
+        # professionalresourcelibrary.com; the other two had not been re-read yet.
+        domain = pub.get("working_domain") or pub.get("domain") or pub.get("default_domain")
+        if not domain:
+            # Never emit a sitemap addressed to a host we could not resolve. A
+            # loud build failure is recoverable; a silently broken sitemap is
+            # invisible until someone reads Search Console months later.
+            raise SystemExit(
+                f'publication {pub.get("id")!r} has no domain '
+                '(expected "working_domain" in data/publications.json)')
         html_files = sorted(source.rglob("*.html"), key=lambda p: p.relative_to(source).as_posix())
         urls = []
         for page in html_files:
