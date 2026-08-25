@@ -27,13 +27,17 @@ for b in brands:
     for pub in b.get('approved_publications',[]): allowed_by_pub.setdefault(pub,set()).update(brand_domains(b))
 pub_by_folder={p['folder']:p['id'] for p in publications}
 active_cities={c['id'] for c in city_data.get('cities',[]) if c.get('status')=='active'}
+affiliated_all={d for b in brands for d in brand_domains(b)}
 links=[]
-anchor_re=re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>',re.I|re.S)
+# Capture the whole opening tag, not just href and inner HTML, so rel is
+# inspectable. Without the tag we cannot tell a followed affiliated link from
+# a nofollowed one, which is the entire point of the sponsored-nofollow rule.
+anchor_re=re.compile(r'<a\s+([^>]*?href="([^"]+)"[^>]*?)>(.*?)</a>',re.I|re.S)
 for path in sorted((ROOT/'sites').rglob('*.html')):
     rel=str(path.relative_to(ROOT)); folder='/'.join(rel.split('/')[:2]); pub=pub_by_folder.get(folder); text=path.read_text(errors='ignore')
     if '/agency/' in '/' + rel or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
         continue
-    for href,anchor_html in anchor_re.findall(text):
+    for open_tag,href,anchor_html in anchor_re.findall(text):
         anchor=re.sub('<.*?>','',anchor_html).strip(); domain=norm_domain(href) if href.startswith('http') else ''
         row={'source':rel,'publication':pub,'href':href,'domain':domain,'anchor':anchor,'external':href.startswith('http'),'violation':''}
         if row['external']:
@@ -47,6 +51,12 @@ for path in sorted((ROOT/'sites').rglob('*.html')):
                     expected=meta.get('route','')
                     if urlparse(href).path.rstrip('/') != expected.rstrip('/'):
                         row['violation']='product_route_mismatch'; errors.append(row)
+        if row['external'] and domain in allowed_external and not row['violation']:
+            rel_tokens = set()
+            m_rel = re.search(r'rel="([^"]*)"', open_tag, re.I)
+            if m_rel: rel_tokens = {t.lower() for t in m_rel.group(1).split()}
+            if domain in affiliated_all and not {'sponsored','nofollow'} <= rel_tokens:
+                row['violation']='affiliated_link_missing_sponsored_nofollow'; errors.append(row)
         links.append(row)
 
 ledger_path=ROOT/'data/link-registry.json'; ledger=json.loads(ledger_path.read_text()) if ledger_path.exists() else []
