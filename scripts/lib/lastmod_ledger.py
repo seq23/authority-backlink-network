@@ -40,8 +40,10 @@ a step that is actually writing artifacts into the repository.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 import os
+import re
 from datetime import date
 from pathlib import Path
 
@@ -70,10 +72,40 @@ def build_date() -> str:
     return os.getenv("BUILD_DATE") or date.today().isoformat()
 
 
+# Blocks whose contents are chrome, metadata, or machine payload rather than the
+# thing a reader came for. Stripped before hashing so that changing any of them
+# does not move a freshness date.
+_CHROME_BLOCKS = re.compile(
+    r"<(script|style|head|nav|footer|svg)\b[^>]*>.*?</\1\s*>", re.I | re.S)
+_TAG = re.compile(r"<[^>]+>")
+
+
+def visible_text(payload: str | bytes) -> str:
+    """What a reader actually sees on the page, normalised for comparison.
+
+    Hashing the whole file makes every mechanical edit look like new content.
+    Re-pointing 565 canonicals at the extensionless URL form, or adding a
+    breadcrumb to every page, changes every byte-level hash and therefore
+    collapses all 565 lastmod values onto one build day - erasing the real dates
+    reconstructed from git history and telling a crawler that the entire library
+    changed on the same afternoon.
+
+    So the hash is taken over visible text only. <head> covers title, meta,
+    canonical and link tags; <script> covers JSON-LD and analytics; <nav> and
+    <footer> cover site chrome, which is exactly where added internal navigation
+    lives. A prose edit still moves the hash, because prose is what is left.
+    """
+    if isinstance(payload, bytes):
+        payload = payload.decode("utf-8", errors="replace")
+    text = _CHROME_BLOCKS.sub(" ", payload)
+    text = _TAG.sub(" ", text)
+    text = html.unescape(text)
+    return " ".join(text.split())
+
+
 def content_hash(payload: str | bytes) -> str:
-    if isinstance(payload, str):
-        payload = payload.encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
+    """Content hash of a page: its visible text, not its bytes."""
+    return hashlib.sha256(visible_text(payload).encode("utf-8")).hexdigest()
 
 
 def load(path: Path = LEDGER_PATH) -> dict:
