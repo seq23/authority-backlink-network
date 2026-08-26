@@ -123,6 +123,28 @@ def main() -> None:
         "soft_warnings": soft_warnings,
         "results": results,
     }
+    # Sweep unreachable cache receipts now that every check has finished. The
+    # index keeps one object per page, so each revalidation of a changed page
+    # strands the receipt it replaced; without this the store reached 3,129
+    # objects behind 569 live entries. Never allowed to affect the verdict - a
+    # failed sweep is a disk-space problem, not a validation failure.
+    try:
+        # validate.py runs from scripts/, so the repo root is not on sys.path and
+        # a bare `from validation import cache` resolves to nothing.
+        if str(ROOT) not in sys.path:
+            sys.path.insert(0, str(ROOT))
+        from validation import cache as _cache
+        receipt_prune = _cache.prune()
+        # stderr, never stdout: parse_child_receipt() does json.loads() on a
+        # child's entire stdout, so a single stray line here would make every
+        # receipt parse fail and silently zero the child's failure and warning
+        # counts.
+        print(f"[cache:prune] PASS: scanned={receipt_prune['objects_scanned']}; "
+              f"kept={receipt_prune['objects_kept']}; removed={receipt_prune['objects_removed']}; "
+              f"reclaimed={receipt_prune['bytes_reclaimed'] / 1048576:.1f}MB", file=sys.stderr)
+    except Exception as exc:  # noqa: BLE001 - reclaiming disk must never block release
+        print(f"[cache:prune] SKIPPED: {exc}", file=sys.stderr)
+
     out = ROOT / "reports" / f"validation-{args.profile}.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")

@@ -84,6 +84,85 @@ def get(path: str, fp: str) -> dict | None:
     return receipt
 
 
+def _object_path(object_hash: str) -> Path:
+    return OBJECTS / object_hash[:2] / f"{object_hash}.json"
+
+
+def _drop_object(object_hash: str | None) -> None:
+    """Delete a superseded receipt.
+
+    get() resolves objects only through the index, so once an entry stops
+    pointing at an object hash nothing can ever read it again. Leaving it on
+    disk is pure dead weight.
+    """
+    if not object_hash:
+        return
+    try:
+        _object_path(object_hash).unlink()
+    except OSError:
+        pass
+
+
+def prune(dry_run: bool = False) -> dict:
+    """Mark-and-sweep the object store against the index.
+
+    The index holds exactly one object hash per page, so every revalidation of a
+    changed page stranded the receipt it replaced and nothing ever collected it.
+    That is how 3,129 objects accumulated behind 569 live entries - about 82%
+    unreachable, since get() can only reach an object the index still names.
+
+    put() now drops what it displaces, so this sweep exists for the cases it
+    cannot see: pages deleted from the site, entries removed by a rotated epoch,
+    and receipts stranded by an interrupted run.
+    """
+    index = load_index()
+    live = {entry.get("object_hash") for entry in index.values() if isinstance(entry, dict)}
+    live.discard(None)
+
+    scanned = removed = kept = reclaimed = 0
+    if OBJECTS.exists():
+        for shard in sorted(OBJECTS.iterdir()):
+            if not shard.is_dir():
+                continue
+            for obj in sorted(shard.iterdir()):
+                if not obj.is_file():
+                    continue
+                scanned += 1
+                if obj.stem in live and obj.suffix == ".json":
+                    kept += 1
+                    continue
+                try:
+                    size = obj.stat().st_size
+                except OSError:
+                    size = 0
+                if not dry_run:
+                    try:
+                        obj.unlink()
+                    except OSError:
+                        continue
+                removed += 1
+                reclaimed += size
+            # Drop shard directories the sweep emptied rather than leaving stubs.
+            if not dry_run:
+                try:
+                    if not any(shard.iterdir()):
+                        shard.rmdir()
+                except OSError:
+                    pass
+
+    return {
+        "status": "PASS",
+        "mode": "dry-run" if dry_run else "apply",
+        "epoch": VALIDATION_EPOCH,
+        "live_entries": len(index),
+        "live_objects": len(live),
+        "objects_scanned": scanned,
+        "objects_kept": kept,
+        "objects_removed": removed,
+        "bytes_reclaimed": reclaimed,
+    }
+
+
 def put(path: str, fp: str, result: dict) -> dict:
     status = result.get("status")
     if status not in {"PASS", "PASS_WITH_SOFT_WARNING", "PASS_WITH_STRONG_WARNING"}:
@@ -97,11 +176,19 @@ def put(path: str, fp: str, result: dict) -> dict:
         "result": result,
     }
     object_hash = digest(receipt)
-    object_path = OBJECTS / object_hash[:2] / f"{object_hash}.json"
-    atomic_write(object_path, json.dumps(receipt, indent=2, sort_keys=True).encode() + b"\n")
+    atomic_write(_object_path(object_hash), json.dumps(receipt, indent=2, sort_keys=True).encode() + b"\n")
     index = load_index()
+    # The index keeps only the current object per page, so whatever it pointed at
+    # before this write becomes unreachable the moment the index is saved. Not
+    # deleting it is what let the store grow to 3,129 objects behind 569 entries.
+    prior = index.get(path) or {}
+    prior_hash = prior.get("object_hash") if isinstance(prior, dict) else None
     index[path] = {"fingerprint": fp, "object_hash": object_hash}
     save_index(index)
+    # Only after the index no longer references it, so an interrupted put cannot
+    # leave a live entry pointing at a deleted object.
+    if prior_hash and prior_hash != object_hash:
+        _drop_object(prior_hash)
     return receipt
 
 
