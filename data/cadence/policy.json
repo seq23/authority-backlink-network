@@ -1,0 +1,9 @@
+{
+  "refresh_window_days": 91,
+  "high_value_window_days": 30,
+  "stale_tolerance_pct": 20,
+  "require_lastmod": true,
+  "new_pages_per_week": 3,
+  "refresh_capacity_per_week": 25,
+  "_why": "13 weeks is the point where pages become markedly more likely to lose AI citations, and recency is the strongest single correlate of being cited. The ceiling is refresh capacity times that window: publish faster than the library can be maintained and the tail ages out of citability."
+}

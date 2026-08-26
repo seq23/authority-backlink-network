@@ -35,7 +35,8 @@
     "selfheal": "python3 scripts/heal_until_clean.py release",
     "selfheal:dry": "python3 scripts/heal_until_clean.py release --dry-run",
     "cadence:headroom": "node scripts/cadence/publish_headroom.mjs",
-    "validate:operator-doc-currency": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks"
+    "validate:operator-doc-currency": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
+    "cadence:gate": "node scripts/cadence_gate.js"
   },
   "devDependencies": {}
 }
