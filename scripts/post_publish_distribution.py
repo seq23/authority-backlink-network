@@ -13,6 +13,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import tempfile
 import time
 import urllib.error
@@ -24,6 +25,9 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from lib import site_urls  # noqa: E402
+
 DATA = ROOT / "data"
 REPORTS = ROOT / "reports"
 USER_AGENT = "AuthorityNetworkDistribution/1.0 (+https://founderoperatorlibrary.com/)"
@@ -159,10 +163,17 @@ def google_access_token() -> tuple[str | None, str]:
 
 
 def public_url(publication: dict[str, Any], source_path: str, base_overrides: dict[str, str]) -> str:
+    """The URL this repository path is served at.
+
+    Built through lib.site_urls so it matches the sitemap and the canonical tag.
+    It used to append the repository filename, which named the .html form: live
+    verification followed a 308 on every request, and a GSC URL inspection would
+    have been asking about a URL that redirects rather than the one indexed.
+    """
     base = base_overrides.get(publication["id"], f"https://{publication['working_domain']}").rstrip("/")
     folder = publication["folder"].rstrip("/") + "/"
     rel = source_path[len(folder):] if source_path.startswith(folder) else Path(source_path).name
-    return f"{base}/{rel.lstrip('/')}"
+    return f"{base}/{site_urls.url_path(rel.lstrip('/'))}"
 
 
 def parse_sitemap_urls(path: Path) -> list[str]:
@@ -191,7 +202,20 @@ def main() -> None:
     live_verify = os.getenv("LIVE_BACKLINK_VERIFY", "true").lower() not in {"0", "false", "no"}
     deployment_settle_seconds = max(0, min(int(os.getenv("DEPLOYMENT_SETTLE_SECONDS", "0")), 900))
     inspection_limit = max(0, min(int(os.getenv("GSC_INSPECTION_LIMIT", "20")), 200))
+    # IndexNow keys are public verification tokens, not credentials, and this
+    # repository commits one at data/indexnow_key.txt and serves it from all
+    # three publication roots. Reading only the environment variable - which is
+    # not set anywhere - made every receipt say NOT_CONFIGURED with
+    # submitted_urls 0, so the lane had never once run.
+    # scripts/prepare_indexnow_keys.py already has this fallback; this is the
+    # same resolution order, so the file it writes is the key that gets used.
     key = os.getenv("INDEXNOW_KEY", "").strip()
+    key_source = "env"
+    if not key:
+        committed = ROOT / "data/indexnow_key.txt"
+        if committed.is_file():
+            key = committed.read_text(encoding="utf-8").strip()
+            key_source = "data/indexnow_key.txt"
     key_location_template = os.getenv("INDEXNOW_KEY_LOCATION_TEMPLATE", "https://{domain}/{key}.txt")
     token, token_source = google_access_token()
 
@@ -232,10 +256,10 @@ def main() -> None:
                 indexnow = {"status": "FAILED", "attempted": False, "submitted_urls": 0, "key_location": key_location, "error": f"Missing or mismatched public key file: {public_key_file.relative_to(ROOT)}"}
             else:
                 result = request_json(indexnow_endpoint, method="POST", payload={"host": domain, "key": key, "keyLocation": key_location, "urlList": sitemap_urls[:10000]})
-                indexnow = {"status": "SUCCESS" if result.get("ok") else "FAILED", "attempted": True, "http_status": result.get("http_status"), "submitted_urls": len(sitemap_urls[:10000]), "key_location": key_location, "key_file": str(public_key_file.relative_to(ROOT))}
+                indexnow = {"status": "SUCCESS" if result.get("ok") else "FAILED", "attempted": True, "http_status": result.get("http_status"), "submitted_urls": len(sitemap_urls[:10000]), "key_source": key_source, "key_location": key_location, "key_file": str(public_key_file.relative_to(ROOT))}
                 if result.get("error"): indexnow["error"] = result["error"]
         else:
-            indexnow = {"status": "NOT_CONFIGURED", "attempted": False, "submitted_urls": 0}
+            indexnow = {"status": "NOT_CONFIGURED", "attempted": False, "submitted_urls": 0, "reason": "no INDEXNOW_KEY in the environment and no data/indexnow_key.txt"}
 
         site_url = gsc_sites.get(pub_id, f"sc-domain:{domain}")
         if token:
