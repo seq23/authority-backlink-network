@@ -47,7 +47,13 @@ for brand in brands:
 APPROVED_URLS_BY_DOMAIN = {domain: {link.get('url','').rstrip('/') for link in brand.get('approved_links', []) if _early_norm_domain(link.get('url','')) == domain} for domain, brand in TARGET_DOMAIN_TO_BRAND.items()}
 ALL_TARGET_DOMAINS = set(TARGET_DOMAIN_TO_BRAND)
 ALL_PUBLICATION_DOMAINS = {d.replace('www.', '') for d in PUBLICATION_DOMAINS.values()}
-ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
+# Analytics and schema hosts are infrastructure, not editorial destinations. They
+# are referenced from <script>/<link> rather than linked to, so the outbound-link
+# rules below do not apply, but the domain lock still sees them in the raw text.
+# Listed explicitly so the lock stays a real allowlist rather than being widened.
+INFRASTRUCTURE_DOMAINS = {'clarity.ms', 'www.clarity.ms'}
+
+ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS | INFRASTRUCTURE_DOMAINS
 
 ALLOWED_PUB_TARGETS = {}
 for b in brands:
