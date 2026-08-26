@@ -1,63 +1,91 @@
-# Where AI citations actually come from
+# What this network can and cannot do
 
 Recorded because it changes what this repo is for, and because the intuitive
-answer - publish more, on more owned domains - is the one the evidence rejects.
+answer — publish more, on more owned domains — is the one the structure rejects.
 
-## The numbers
+## Correction, 2026-08-26
 
-| Finding | Value |
+An earlier version of this file opened with a table of precise figures: 85% of
+brand mentions on third-party pages, 84% of AI citations from third-party sites,
+a 6.5x visibility multiplier, and correlations of r = 0.664 for mentions against
+r = 0.218 for backlinks. It then derived from those last two that mentions
+"predict AI citation roughly three times more strongly than backlinks."
+
+Those figures are removed. Three problems, in increasing order of seriousness:
+
+1. **No source was recorded for any of them.** They came from third-party
+   summaries during research and cannot now be traced to a study, a sample size,
+   or a methodology. A number quoted to three decimal places with no provenance
+   is worse than no number, because it invites decisions it cannot support.
+2. **The derivation was invalid.** Dividing one correlation coefficient by
+   another does not yield a statement of relative predictive strength. 0.664 /
+   0.218 is arithmetic, not inference.
+3. **It was load-bearing.** That sentence was the stated basis for a network
+   strategy. Strategy built on an unsourceable statistic is strategy built on
+   nothing.
+
+What follows uses only figures measured from this repository, plus directional
+claims that are labelled as unverified where they are unverified.
+
+## What is measured here
+
+Counted from `sites/`, excluding the internal `agency/` surface, on
+2026-08-26:
+
+| Measure | Value |
 |---|---|
-| Brand mentions originating on third-party pages, not owned domains | 85% |
-| AI citations from third-party sites | 84% |
-| Relative likelihood of AI visibility, strong off-site presence vs owned content | 6.5x |
-| Correlation of brand mentions with AI citation | r = 0.664 |
-| Correlation of backlinks with AI citation | r = 0.218 |
+| Public pages across the three publications | 560 |
+| External links on those pages | 562 |
+| Links carrying `rel="sponsored nofollow"` | 562 of 562 |
+| Links with no `rel` attribute at all | 0 |
+| Distinct destination hostnames | 19 |
+| Destination hostnames owned by this portfolio | 19 of 19 |
+| Share of links pointing at a domain we own | 100% |
+| Largest single destination | approvalprep.com, 276 links (49%) |
 
-Most-cited domains across engines: Reddit, LinkedIn, Wikipedia, Medium, YouTube.
+Per publication:
 
-Per engine: ChatGPT takes about 47.9% of its top citations from Wikipedia and
-encyclopedic sources; Perplexity takes about 46.7% from Reddit; Google AI
-Overviews take about 23.3% from YouTube and multi-modal content. Only about 11%
-of cited domains overlap between ChatGPT and Perplexity - they are reading
-different parts of the web, and a single owned surface cannot satisfy both.
+| Publication | Pages | Brands linked | Topical range |
+|---|---|---|---|
+| founder-operator | 92 | 4 | One world: AI execution, coaching, agency operations |
+| memphis-local | 88 | 5 | One world: Memphis events and weddings |
+| professional-resources | 380 | 10 | Equine legal, personal injury, TRT, recovery housing, workplace mental health, document kits |
 
-About 90% of third-party brand mentions occur in listicles, comparison pages and
-review roundups, and roughly 80% of mentioned brands appear in the first three
-positions of such a page.
+## What that structure means
 
-## What this means for this network
+**Every link in this network is nofollow, by our own design, and every
+destination is a domain we own.** That is not a defect — the attributes are
+correct disclosure for affiliated links, and correct disclosure is not optional.
+But it fixes the ceiling. A closed loop of owned domains linking to owned domains
+with nofollow attributes cannot manufacture third-party endorsement, because
+there is no third party in it.
 
-This portfolio already owns sixteen domains. Adding a fourth, fifth or tenth
-publication multiplies the roughly 15% channel - the one that matters least.
-"More published surfaces" is right; "more published surfaces we own" is not.
+So the thing this network can do is **be a good publication**: cover a topic
+thoroughly enough to be worth reading and worth citing on its own merits. The
+thing it cannot do is substitute for being mentioned somewhere we do not control.
 
-It also corrects an earlier conclusion recorded in this work: that the ceiling
-was independent referring domains. Mentions predict AI citation roughly three
-times more strongly than backlinks do. Being named in a comparison roundup is
-worth more than being linked from one.
+**The count of publications is not the lever.** A fourth owned domain adds a
+fourth closed loop. What the three we have are actually limited by is topical
+coherence: founder-operator and memphis-local each cover one world, and
+professional-resources covers at least five unrelated ones — equine legal sitting
+beside compassion fatigue, with 276 of its links going to a document-kit product
+from pages about burnout. That is the constraint worth fixing, and fixing it is a
+split, not an addition.
 
-That does not make this network pointless. Its articles are legitimate citation
-surfaces and they are correctly disclosed - every affiliated link carries
-rel=sponsored nofollow and every page discloses affiliation. But its ceiling is
-structural, and no amount of additional volume raises it.
+## Directional claims, explicitly unverified
 
-## What actually raises the ceiling, in order
+These informed earlier thinking and are recorded so the reasoning is legible.
+None is sourced, none should be quoted as fact, and none should be used as the
+basis for a decision without checking it first:
 
-1. **Wikidata.** The single highest-leverage item available, because
-   encyclopedic sources are ChatGPT's largest citation pool. A submission-ready
-   draft for three linked entities exists at
-   join-west-peek-main/docs/wikidata-entity-draft.md. It needs a human to submit
-   it and to confirm the three facts marked CONFIRM.
-2. **Reddit.** Around 40% of citations across engines and 46.7% on Perplexity.
-   This means genuine participation in the communities that already discuss
-   these categories. Posting links would be counterproductive and is not what
-   the data rewards.
-3. **YouTube.** About 23.3% of AI Overview citations, and the portfolio has no
-   video surface at all.
-4. **Third-party listicles, comparison pages and review roundups.** Roughly 90%
-   of third-party mentions, with position in the first three entries mattering.
-   This is outreach, not publishing.
+- Most brand mentions that AI systems surface are said to originate on pages the
+  brand does not own.
+- Reddit, LinkedIn, Wikipedia, Medium and YouTube are said to be disproportionately
+  represented among cited domains.
+- Different engines are said to draw on substantially different domain sets, so a
+  single owned surface is unlikely to satisfy all of them.
+- Listicles, comparison pages and review roundups are said to carry most
+  third-party brand mentions.
 
-None of these are things this repository can generate. That is the finding.
-
-Reviewed: 2026-08-26.
+If any of these is going to drive spend, it needs a real source attached to it
+first. Until then they are hypotheses, and they are labelled as such.
