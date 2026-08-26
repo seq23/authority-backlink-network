@@ -6,8 +6,8 @@
   "undated": 0,
   "stale_over_window": 0,
   "stale_pct": 0,
-  "fresh_within_30d": 565,
-  "lastmod_within_7d": 565,
+  "fresh_within_30d": 488,
+  "lastmod_within_7d": 167,
   "new_since_last_run": 0,
   "ledger_initialised": true,
   "maintainable_ceiling": 325,
@@ -22,8 +22,7 @@
   },
   "blocking": [],
   "warnings": [
-    "library_over_ceiling: 565 pages against a ceiling of 325 (25 substantive refreshes per week held inside 91 days). 240 pages cannot be kept current at this capacity.",
-    "uniform_lastmod: 565 of 565 pages share a lastmod inside 7 days - that is a date bump pattern, not a refresh, and it makes the freshness signal meaningless"
+    "library_over_ceiling: 565 pages against a ceiling of 325 (25 substantive refreshes per week held inside 91 days). 240 pages cannot be kept current at this capacity."
   ],
   "status": "CLEAR"
 }

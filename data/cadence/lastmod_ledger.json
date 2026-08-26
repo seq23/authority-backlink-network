@@ -1,139 +1,140 @@
 {
   "schema": "lastmod-ledger-v1",
-  "note": "Per-URL content hash and the date that content last changed. lastmod only advances for a URL whose hash changed; see scripts/lib/lastmod_ledger.py. Seeded from the tree as it stood on seeded_on - no historical dates were reconstructed, because none are recorded anywhere in this repository.",
+  "note": "Per-URL content hash and the date that content last changed. lastmod only advances for a URL whose hash changed; see scripts/lib/lastmod_ledger.py. Dates were reseeded from real git history by scripts/reseed_lastmod_from_git.py: a page's lastmod is the date its visible text last changed in a commit that did not change more than a tenth of the published library at once, or the date the page was added where that never happened. No date here was invented.",
   "seeded_on": "2026-08-26",
+  "reseeded_from_git_on": "2026-08-26",
   "entries": {
     "https://founderoperatorlibrary.com/": {
       "hash": "45bc92a2576c9584fc06e67a59ed005b686285df306d5a72e9e2703384b6db2a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://founderoperatorlibrary.com/about.html": {
       "hash": "a6c28a741809d66ac8e85150298265f9d4d8ba1bacdc5e63179dc154d0675a41",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://founderoperatorlibrary.com/ai-executive-coaching-resources.html": {
       "hash": "513ca1c07324083fcae364f56902aa76ce831ace5fce8eea23f5e4f087e66261",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://founderoperatorlibrary.com/ai-marketing-operations-resources.html": {
       "hash": "6f4b58025416e7b35d37b245fdc2f07bbddf45a53836652728353c15ac4f74e9",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html": {
-      "hash": "dadfc3c594b809f720119460ee6d606a9cf5fee68335be85918069c9e7281c2b",
-      "lastmod": "2026-08-26"
+      "hash": "343ada387b29b636dde227fd9d4866f9929492a1845535e3f528af9f25b1b9ff",
+      "lastmod": "2026-06-27"
     },
     "https://founderoperatorlibrary.com/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html": {
-      "hash": "367f4b387d6bd5fe76e312a2b99c6ee161537a6ff137b278501c8c4be6609f5f",
-      "lastmod": "2026-08-26"
+      "hash": "a8a5caf3346ee7b5097f9e5e071364dd8ea247450dccb6e465d2388455cf091a",
+      "lastmod": "2026-06-28"
     },
     "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html": {
-      "hash": "a9a70801dbfc4bdc4ac3c4ff6edf93096dd83daf390f5ff4511b1e53ae03857c",
-      "lastmod": "2026-08-26"
+      "hash": "5b036ce48f8c45926a30495f62411ef8929f15a6a3a0741cf79f168c82a520cd",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html": {
-      "hash": "3b71823f393434aa4de02506aad180a8f3d6bc8cb2474e2641071ad2f4ffb4df",
-      "lastmod": "2026-08-26"
+      "hash": "8224e4c66514af5fb041dc7e3fb2d927d067f65781455e5d318978bbf5846bf1",
+      "lastmod": "2026-07-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html": {
-      "hash": "64c0e567ace3543e1980b10b481c489cc16b7ecc78db4bf9d9dd0115649be825",
-      "lastmod": "2026-08-26"
+      "hash": "97ab2c4d6acf6a435d9f90a77b6542976c569cdad23575b2dea75b70300c8b93",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html": {
-      "hash": "e99eb6bae84a15196fec9299956a66eed4d7945b6a1be5e2125f5d4b509bd4ef",
-      "lastmod": "2026-08-26"
+      "hash": "837c9b12394e757c511efea4eca8c2fbee282ec7336e5a3115e58bf8a814066d",
+      "lastmod": "2026-07-02"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html": {
-      "hash": "4d14cd39f47abe1aeffd927e709a0a4338ca4db29553ff085fe33441c1611e8a",
-      "lastmod": "2026-08-26"
+      "hash": "69eb53011d348b8cca3dd96f1096cbb3138fcacd9ced1faa424d840dbcdca41f",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html": {
-      "hash": "833f900da972c31f582803523bc0d2a2eb536c0cc9d5d3ca923e79ccd10e285d",
-      "lastmod": "2026-08-26"
+      "hash": "dbd03b31e9446a04cc1786d64ea9b6577cffb5affcb2267a4d5d197a19aaee73",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html": {
-      "hash": "0648dbc76b83ef52f99204021e51bc44b6441321c381b94a621b7b815e7a1497",
-      "lastmod": "2026-08-26"
+      "hash": "81db1db5289703842f164985afd551b962dc6f214f3db18e6f2d0910b4a2affe",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html": {
-      "hash": "0a19644401faa3a2a97bf450ef14ee614c175fe5333578c0d973020c21049a76",
-      "lastmod": "2026-08-26"
+      "hash": "eddae7139b72b4f2a7982e529d56e8fc62e64f247212adc3e800d9c8a6b2dcad",
+      "lastmod": "2026-07-06"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html": {
-      "hash": "c9d3e6a74624db31d592912468a4ab85aa3feeccd4f3d827c1498d2d60acccb0",
-      "lastmod": "2026-08-26"
+      "hash": "46c81d2cb1d2c7c660ca3505551ca34a74ecaa648fa5f746fe2bf60d4d4d4093",
+      "lastmod": "2026-07-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html": {
-      "hash": "096daff0c774fafa67d3f32d8897dff735496cc719c395e8b562944b90261d79",
-      "lastmod": "2026-08-26"
+      "hash": "374c889e26092a7e724466c7cb4692ad0ece95d55327ddcce4f43f222cfddeec",
+      "lastmod": "2026-07-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html": {
-      "hash": "7e6bd8161f4f2baeb84deba24070c41f17de2643e49419d1a32e8b6d366d04ac",
-      "lastmod": "2026-08-26"
+      "hash": "eb99945e2522237d13f2a84e2c31d9c4c9beaf85e0b192180225d61304082679",
+      "lastmod": "2026-07-10"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html": {
-      "hash": "8ae2bd2355a389b88e277d881cf858d5fdd56a290b66851b2212abc411466070",
-      "lastmod": "2026-08-26"
+      "hash": "1593ff6e9e34af42f9a28d9386e90059aabd257e390a47d5edea4d2f9243c851",
+      "lastmod": "2026-07-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html": {
-      "hash": "ed0004dbdf4d3c13655d81588bf1270fc2fbd48daf6f8da207afaaab703ef44b",
-      "lastmod": "2026-08-26"
+      "hash": "02cb39476c61b25960724d89ab0ca0836a665f8f678f9a5f6851bfd99cd176ca",
+      "lastmod": "2026-07-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html": {
-      "hash": "fdcbe5ba37da6b3b501defe56d108336d082c0c6df7b9be1770fa11054da44ba",
-      "lastmod": "2026-08-26"
+      "hash": "3a72ddb94c874015143acbcb3954c7394a5d75346534e79f9e331d5baab0e9a7",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html": {
-      "hash": "b3b1f7a9e66beef3f898317e917b2013c69b3e3ed24644a7fe57fa9cfe9df113",
-      "lastmod": "2026-08-26"
+      "hash": "303fb48180a68fdcf757a6a3c4452ea4c7eb37f70e3b242d46b2361f22606394",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "ee85ea227419a831771ae52ee90a48384eeb023581cf2d065267cff9a0611f6d",
-      "lastmod": "2026-08-26"
+      "hash": "e26075365247252ead15f6df76a4ccbfb9a96bedbf2cae8de7bdec074a7d15ac",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html": {
-      "hash": "53cdd36bed99dd1715796a2d140b25a2a18ccdaeae8cb797cb5f358b9649fe0a",
-      "lastmod": "2026-08-26"
+      "hash": "09f7dc992dd7fdbe4e2416bc43ca0b643add711ef24b48fd68c8f6d0f49ec178",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html": {
-      "hash": "5456a53bc82579278507c80a1f9b5f10271a603c1c02dab335ec6330d0da3747",
-      "lastmod": "2026-08-26"
+      "hash": "1e49ef950bd5472678424980ca9e006ef06406a7cffcc284749536d3748dcddc",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "9774669e493032e82859f801fc281a7d7986fdc3b4976979b146d49be15238cc",
-      "lastmod": "2026-08-26"
+      "hash": "5911abb1c177c30af643a76e02a1cb93d43d60eceb2b71f02cc799f81fa19822",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html": {
-      "hash": "af7f397e06964cb2667c306c25024de0a4a7563100e39e199ae8220baa497ccd",
-      "lastmod": "2026-08-26"
+      "hash": "957ceaa9651bc9f95dd6c3351198122ad74361079db9ae621ebe221fd67f6be5",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html": {
-      "hash": "91b881970c8f90e01c90c3894745c5e078fbfa28d13e3ced271532a0f7330ee1",
-      "lastmod": "2026-08-26"
+      "hash": "95a177d6717e4c24b7a51053c0547d5a36c4e83a150d9c8eee239c53b86d16a7",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html": {
-      "hash": "1630f42744dd5cf76b668b67f29b5da304480ee28824a9e83e457f8a1205da4a",
+      "hash": "b6816c1df635af66ac5c70e0937de4171f174c93228974712c71e5ebf756ad9e",
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html": {
-      "hash": "46ebaea61d8dd55f5f804baa1dc7eb6c668c17f3e2d52c4c3f454b6035f92e08",
-      "lastmod": "2026-08-26"
+      "hash": "ac3907f49ff885fbd809a09e65d95936759f9a55637e11f857ff9e49f2896079",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose.html": {
-      "hash": "e33bd34348e3de3a0bebc09b9eb729dbd45e8bc7aa26fdab38f3f4ede6ad5304",
-      "lastmod": "2026-08-26"
+      "hash": "45484d0eecf6f2f9c9be52aee87bc83bc0864f3d410b5f44e0de2e24d3ec7d5a",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html": {
-      "hash": "7d5646d1d446fa2ced727a70ac32d73baa03e892e29c1d73236ea4fcda1c7d99",
-      "lastmod": "2026-08-26"
+      "hash": "40a6f2203e11c49cfc9547f880ac3afcb8ed2cecd4b6a0c11129e1b0bb364e41",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html": {
       "hash": "b60beb27cb93cdf88fa36af09a642d8009166240f2fde07d1c35dbb581d0d4dc",
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators.html": {
-      "hash": "e13d0d7918e1d88f329d4cd7649effeb670bc2e3f543299a0e1d5fe73bcb6fa9",
-      "lastmod": "2026-08-26"
+      "hash": "8e1e45466f398cb774d1fe259623b65bd45cb93786b821ee4bcfee4286795242",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html": {
       "hash": "81a1f1ab98017e88b1fdc421e664198c036e94d40dda7465f3d41d5ba60020eb",
@@ -164,324 +165,324 @@
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po.html": {
-      "hash": "ac4e7a7132ab86dfdab2e2d2c30786cb4bec0cc4dfe24ebef28b391d907d10d4",
-      "lastmod": "2026-08-26"
+      "hash": "60ec0eb8a746dcc4246bffcc74b8549a77cf1d22deff9bcb3bf36bc934828029",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html": {
-      "hash": "40d9cf34843674069b68354594e79067918b3779c8ac6ece805182b6f5768e90",
-      "lastmod": "2026-08-26"
+      "hash": "96d0eba2cb9820bfd9add5cc3e9ab3bbf9defb7d0635009cfcd7c2b310fb18ad",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay.html": {
-      "hash": "3986635c3b9ac773d0a46606cc50b85d264e8f78773fb52a0a948a4e1d3754df",
-      "lastmod": "2026-08-26"
+      "hash": "1b8407d327f9cd64b8ede4c747940f2877a750bef6f2ac50910cfb69469a6dd0",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio.html": {
-      "hash": "653481d54cee83596df8da6350ef8577da11bb072e0c3ae05d57949a1988e520",
-      "lastmod": "2026-08-26"
+      "hash": "9ef5aed3fa0c995a5e99f7d90b28f6df3305dfc4e189d072cd3db620a0c7f14c",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters.html": {
-      "hash": "45869e1828c60609aea15f91fc1289d09e88ed0804a70a4b7a824368aa1d9285",
-      "lastmod": "2026-08-26"
+      "hash": "fb1165afa5516620d23898c8936577d1b806eeb09354f2185aca08f62b68c5b0",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters.html": {
-      "hash": "8f350fe5adf1ec8c1ed5988035bd5d6c10ce1c0d7976a9cdbf8c96c7aaa7418c",
-      "lastmod": "2026-08-26"
+      "hash": "a2b862a54ca8a017b4adea06a731fb0a76e39abe9b469f9c1ce71b3f4ea6ce24",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html": {
-      "hash": "444d81861d297938d39c36b5b37a3940ef91da60f5b64ac6c44150d7fb3125e3",
-      "lastmod": "2026-08-26"
+      "hash": "586aeb35af93c184c4abd3cd5d318c5275abda7f87db270afe60d4b1bfdbeabb",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book.html": {
-      "hash": "d338bd6f2f1d372959004058d841fe95e04d1312665c2064a5b7f6cebff4d4ea",
-      "lastmod": "2026-08-26"
+      "hash": "be9a9b90335f05c38b04fb1bd4ffe65761c36dd708b0e88a3f18763ca0c75afd",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker.html": {
-      "hash": "89d9cc8b6b625f9cccacda2ad95dbda0ddd88a6312957cd8db435e5249f86220",
-      "lastmod": "2026-08-26"
+      "hash": "561ed334eda1dc7d7f38ef34304bea57c6d3d8bf902e8fcb809a5f4dd9165a81",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book.html": {
-      "hash": "8c4facb1c23d5f74692686dcc4c29dd984b6429f57701a28d1c410037bc6eed1",
-      "lastmod": "2026-08-26"
+      "hash": "25a10eb59f1e5766b162e869819004b605f5ee0e1881048ed50418c63a9237c5",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign.html": {
-      "hash": "347b85281944a55aacb84e2646df46ec88d7b33a08c1c67155437bd8c421e057",
-      "lastmod": "2026-08-26"
+      "hash": "9bb2ee79148b6c3130f8cbdbd2d592cbb1717fbc6bf261f39400bb6f9642e9c5",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay.html": {
-      "hash": "7272a71bb40a3ce76f1d98987d53fee8b8632ab192122b682356b1efe8df169f",
-      "lastmod": "2026-08-26"
+      "hash": "7586447e1d7f820b01f7ea52734fcc0d462e0bfe1040424d94748a08355caded",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators.html": {
-      "hash": "cf4e6b4025a76565b38c558dc3fde24aec7ac27173d84ef74cbef9df47041c2e",
-      "lastmod": "2026-08-26"
+      "hash": "8f4a3e8c57482f30c3ae5cdc509811e597b7383068c742b4cfeecf3b508fd86c",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay.html": {
-      "hash": "8cf6e7d0c0722fc99c7dc38c3d663f517054d9a89a55fd7a57e52c4042a1445c",
-      "lastmod": "2026-08-26"
+      "hash": "8da8f2ba4583c348be125d0d2be1cefe10775bfab503d7c18ea4b961b06fd8b0",
+      "lastmod": "2026-08-08"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html": {
-      "hash": "197998a623f0ffe2b720cf785fd3bada4b399136d8a4622907c1d11fd4130661",
-      "lastmod": "2026-08-26"
+      "hash": "7d694fee2af7bc7d2289e1e3d677fcdebf8e2017bdaf512de94bf9f8887fbb56",
+      "lastmod": "2026-08-09"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html": {
-      "hash": "907bfef9d649f7f2cb693f715a5bc91e7ccdc8d5a500b047177471a1cc534059",
+      "hash": "f42ac01aab0941301fca9891700fb754e9374092efa081285268cce4e437282b",
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html": {
-      "hash": "b0a242e99dbf21a5dcf0046621c39242be750b789318d8c96ea4652a6648927d",
-      "lastmod": "2026-08-26"
+      "hash": "071ed7f31252e1efebf14283792dc63fef221bcdcfeca638ee520125a2b7bc81",
+      "lastmod": "2026-08-11"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html": {
-      "hash": "ee5957ab25c083f2a86227b050fbb0b8599d08971ae8720cf1a697ba2f2de8b5",
-      "lastmod": "2026-08-26"
+      "hash": "1178baa3f94a79b184e9dadae1bb8a5daa05546e10022e9a2698b1876d826e18",
+      "lastmod": "2026-08-12"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html": {
-      "hash": "bf851649a1bf40455a856f855047695e61e8051748388d1c949a3353b7ba2c40",
-      "lastmod": "2026-08-26"
+      "hash": "dac2c028f9ab14c0a4cbdf9f87d38c3505b4a1c254c18002b0164902fb4b1f47",
+      "lastmod": "2026-08-13"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-14-community-retention-plain-english-framework-before-you-call.html": {
-      "hash": "76b45833a4c8bbacd1ad403cdd89c5047e8fe4eb32137397de1546031711802c",
-      "lastmod": "2026-08-26"
+      "hash": "990f3b15c9cac20270f44a21f655236305b79ea8c98fef94647578d3443e252c",
+      "lastmod": "2026-08-14"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html": {
-      "hash": "64271ba4bec3fb6b8932bb9cfa3af85370405140e0a2e7bae8592ff4c820b0c2",
-      "lastmod": "2026-08-26"
+      "hash": "6c10433fa0c3b0df55bd08af1b3444e39673b449b6f60c9163acb922a9df6004",
+      "lastmod": "2026-08-15"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html": {
-      "hash": "4df433e8cdeaec753f26fb7752c8f2297082fb6d546b67f8770de4e21fbf6787",
-      "lastmod": "2026-08-26"
+      "hash": "908158bfcb1df76e0d2ad9635873308c42e2fba55e7f832e2a8489451610e03a",
+      "lastmod": "2026-08-16"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html": {
-      "hash": "5d04d896feeddf86d1f1657d2561c9ef63696ec2fc86cb55c96b7310d0f429e3",
-      "lastmod": "2026-08-26"
+      "hash": "4a0710d015ac3554898d24ce88698b5ad86f63ef45b113c6e2e1b14b8066184d",
+      "lastmod": "2026-08-17"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html": {
-      "hash": "32a0f525aff620d67844872bcb2dcb6a9e48b265422fb6198f613e1d56721dda",
+      "hash": "89bd49064db641bbd158613a0f07966d97e98bbbe9e7aecb8c7bda3a97da0fcf",
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html": {
-      "hash": "dea64cfa7e6d377e5d0ecc31906d2e06b0c8791719b933939b0677dffe88a3cd",
-      "lastmod": "2026-08-26"
+      "hash": "d975ba0c2eb06092ef1308743ece563d5a4e07a62c7136efd9b97a6c9668fbc4",
+      "lastmod": "2026-08-19"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest.html": {
-      "hash": "b58af1037a6b60da19f5c84586158db109e78381600b6b59fe832dd9f86dc3ed",
-      "lastmod": "2026-08-26"
+      "hash": "988fe1678c7af493d562382fe14f4d7bcac27dad40f8579545eea3a4121f5e7d",
+      "lastmod": "2026-08-20"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi.html": {
-      "hash": "6e4e0641d099cbd9d30595e60486a93ecd61cfb9592f1ed9fb8b38ac6d0adec8",
-      "lastmod": "2026-08-26"
+      "hash": "62d5378cfb05f0b536273981197510bd07b22cdb407cfc719bab0efc670451fa",
+      "lastmod": "2026-08-21"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay.html": {
-      "hash": "672154bed2992bd50c2341444e54b773cdde8ea7554d175ccda1fb94cd7a00d1",
-      "lastmod": "2026-08-26"
+      "hash": "b2106b516fa78911f7be2abd7759111bbeebabde189c8bfd9cd2d5a3c98104ae",
+      "lastmod": "2026-08-22"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html": {
-      "hash": "e3a3de28173670bab09ddc5e2525cd12c7562342023ebba820491bfb6044873a",
-      "lastmod": "2026-08-26"
+      "hash": "31feaee371fab15df2f3282912ca7827a26637b52e55a8437692a2a089e688fa",
+      "lastmod": "2026-08-23"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html": {
-      "hash": "d4668886f64390dc0b3f939456b3b44c9e3cbc4070c299ecaaa9aea669d20b68",
-      "lastmod": "2026-08-26"
+      "hash": "c6482c9c55e7ef2789b27481e63088f43257938f0d0ffd31f117658fc83c7ca7",
+      "lastmod": "2026-08-24"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options.html": {
-      "hash": "a02fe8a2e575dd30be54ed1435128769f293953840083baa7ca810522f3d44c8",
-      "lastmod": "2026-08-26"
+      "hash": "eab577fab36dd0768ea9120b55c431055e86db8d6c79ef3cdfe53ccc52e83157",
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo.html": {
-      "hash": "def37d9e32769d05c9f6644d3262316fb47f4f5a9425b395df7a22af6b4388aa",
-      "lastmod": "2026-08-26"
+      "hash": "8780b7e3934f6cfca8c07f5eb28207e02ac1fa5603c1425847d72851c2a051df",
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book.html": {
-      "hash": "6425a0224005d1e9ed0276f82f83dfde31569a55c75389c85e3b3ab4c804dc54",
+      "hash": "a32bdad1e327c758891e76f9500a95c3a7f443e62153c1c6645350ac570fa5e7",
       "lastmod": "2026-08-26"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview.html": {
       "hash": "aa766128181bc6b85e2e010ce4b651c8ebe96a3aa8917e50c75608352fdaae11",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html": {
       "hash": "df48146fdafafb74d6ce7cbc4b756b4988881ec335e0b42704323e31b35174e5",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit.html": {
       "hash": "0331e1ac810d5c03b1cc5db99ba87f1f59de6234c8ed15bfe31ab35e55fe48b6",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html": {
       "hash": "00dc33d0f2d7a4d628b1b56a8ba8066cb486531e1df250f8be6f383c4536e013",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html": {
       "hash": "b910681d8c5861445f593e70003e669a5c43d937f9ad012c16396be414d9f7ea",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html": {
       "hash": "79cad79c70071ad89653b43b8465cf0bd166f1025eddd1ff7c8f0cab594ed6e5",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html": {
       "hash": "053cd3bed838db0daff14a49b3a4c394d058934e78caacf88bff9647f3d3a380",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html": {
       "hash": "ec72e25204e7d5de88036f01650f3402de937b5bfde7ead18652f045fa11aadc",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event.html": {
       "hash": "837b627279eb8c0c6965f0e90da97745c0280c600ddbe8931e9472e812511b9a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html": {
       "hash": "4fb782fd33e97b2ef5fe01cc8bf4f888cc3bae70acbda4fb78d2a7ddfd3cefb7",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html": {
       "hash": "a90bcdc988a82c0402d959dc44dc75c66d70ca750d0a2ae24010ba7929d5b1a3",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html": {
       "hash": "d7e368297b45669ee944944f7aa78d072890c26c4a72c9f251c27a31143c9e5f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform.html": {
       "hash": "b068517522bcf1636022253fda53f3ef61f278e8e14b439d9775652a028b4ae7",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html": {
       "hash": "e94db373bf3664de6abfcdeb87fdba40b93dbe120cac252e3db222039fc9ac6a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership.html": {
       "hash": "9c3c67dc8ccea4040009466697509b914041e70e951b3137f2b0a1df1aa05c4a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html": {
       "hash": "4f2e34e3b9e8c82be8a0aa8df70434a9871702fdff78b0814031150551c294ce",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://founderoperatorlibrary.com/founder-execution-systems.html": {
       "hash": "510e698a22444df7fa795d50210b6fdba1268b2d8cc748756e68381b5098dce6",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide.html": {
       "hash": "8ee975e2108bcbdbea8636ab16181521a5a0d899bb22f71d9926a9bdb6de8d6c",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/": {
       "hash": "a7410e01b7673707b17d1a81ff806ac18a48aa0a71354472cef84c9299a45e00",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/about.html": {
       "hash": "67f7c2383a23be9b3e03ef0a5d2f6d655fdb4dea34c77aad09718ec0e4a705ff",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers.html": {
-      "hash": "c31ead1584d97b1b937c4973bd21e53970008eef4590031617deff4df723b5e6",
-      "lastmod": "2026-08-26"
+      "hash": "af3cdc8c1672b70834b922217edac1fd79c5b894bf5b57b81000cff356bcce3e",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign.html": {
-      "hash": "8faa34064e3e89501241f9ffcebaaf7e2db19d5c33728912640434f59e2bc0db",
-      "lastmod": "2026-08-26"
+      "hash": "0946062d2c43c3d3ce5e2be04bab0774796edf81023d2f06655920e79aa56fa9",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point.html": {
-      "hash": "b2b30ead0591b1330b3a2ba726f45053406e01dd586c78e5fa3a3701e557a916",
-      "lastmod": "2026-08-26"
+      "hash": "8bcff30a5d9130f8b6867e93fca11915cb9cb14a868d0e64d224237438fbb623",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign.html": {
-      "hash": "a90ee0f90ab1c55645b45e7502093aaeeecdcd5a909ee409b38ac88a002a98bc",
-      "lastmod": "2026-08-26"
+      "hash": "45586f9ace47d1d978be4e68339d7b46eb6d0fc49b9d4ed4f544cf9c4702580f",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-01-fall-porch-setups-checklist-driven-framework-before-you-choose.html": {
-      "hash": "f7774e2c5609973b7f76b2bcadff9937a16645deae390c3970f7b620888627d4",
-      "lastmod": "2026-08-26"
+      "hash": "4d20956999c452e7d4d5476447f53e9dc38542fd596c76ff8f52d8eb544caa20",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose.html": {
-      "hash": "5aae84025f2e049b2df9ea2541337f2827481ac3826011bb2e59cb70cd692ef9",
-      "lastmod": "2026-08-26"
+      "hash": "fa770529da174479b51748038a70293a39df9710edf2b995e28b9020eda565e3",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose.html": {
-      "hash": "064d8c0b1a53d48eb0e6cddfaa01c5aed3299251cfa88c6747cc797c068f3717",
-      "lastmod": "2026-08-26"
+      "hash": "ebc39c3c3adf9547c8f483778f6664e8c9d18ac59858f22efebf7e2278ae0cb4",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question.html": {
-      "hash": "b7158429f91ac480013bbe870d745ee75d33a58b69b60ea39578458202e40e65",
-      "lastmod": "2026-08-26"
+      "hash": "853f2d0af0ecddd84f66ba472edda8bb9d85db395aa32d876edc4a0638834fe7",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters.html": {
-      "hash": "f7e0085f821a286387fee06dc0d288664b341c71d4d05d0fdd4b47aa61fb7aee",
-      "lastmod": "2026-08-26"
+      "hash": "20b8026812ebf01b037db05b212a94b57f89a290320a4666ec8691280d036ede",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose.html": {
-      "hash": "cc04ac51fdf624397b5552b01fce13ad1b7ff502b9044f911a543d4c03de681c",
-      "lastmod": "2026-08-26"
+      "hash": "12bf5dda094909f2935f2fde4a701a648286b956fb5c0b833aa6b9639326e761",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-07-porch-decorating-aeo-ready-faq-answer-page-for-first-time-buyers.html": {
-      "hash": "4114dcfa566f870d011cf26760358baf40eb90649e31539526a8ee57e63667ea",
-      "lastmod": "2026-08-26"
+      "hash": "4fbe5fd1c76a1a9675a5b2ee71487b41285318cafdd11d8e32115292003c0b1d",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose.html": {
-      "hash": "8e702dae6659908b1f0a18becca5a3bec0c6884edc81e9df622ed5fc1e85374f",
-      "lastmod": "2026-08-26"
+      "hash": "361a1bc321c81c62f393edf20a0da9757e6090ae0cdf5e4d777be77f9adf5730",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-09-hotel-room-decorations-aeo-ready-decision-guide-before-you-sign.html": {
-      "hash": "f58c64fc30fd419d0db29ee4e8fecfe564239a9bbf4dbe0fd60c460c0a2d9155",
-      "lastmod": "2026-08-26"
+      "hash": "a3e00d1f540d6b91158ca3f31abd71c4041da61d7666c2c065af7f1257e783e2",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators.html": {
-      "hash": "c12fc826774d9f628445e32c6463d4b1c6004577fa62377578ffd67fe1cb3374",
-      "lastmod": "2026-08-26"
+      "hash": "a94d9433914529313f1ad156b926d4e6ed34a9b788b1651f662545d446c8272e",
+      "lastmod": "2026-07-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers.html": {
-      "hash": "c9a73ece19e7e30055f4b484d12a28db64ec07c28fbd5cf087a33a7098bba90c",
-      "lastmod": "2026-08-26"
+      "hash": "624ff91ab47e9ba59a0fba41ab8e3c5b992db674d832cb65640e2bc3351ada9d",
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers.html": {
-      "hash": "84e1a8d839034e02dae066ccc14070d9c505eee04f3e03e9faecf9d20e292067",
-      "lastmod": "2026-08-26"
+      "hash": "f238474da03c6e79206b20dc655afe70552d9a5c625cd73dea1e7e6a6edafba1",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay.html": {
-      "hash": "f6439096cee033e9325f83448216fa2bb925f4709b77157ddf231d0917b83569",
-      "lastmod": "2026-08-26"
+      "hash": "9b5ba1e0084f4a2fa85f1916566790001cb553998118bcc40df6e868e8995d03",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators.html": {
-      "hash": "749e9e55774e0f55a672711cadbcd4362aaaf1c47332b0d985f50bd11041a894",
-      "lastmod": "2026-08-26"
+      "hash": "3fdd2610827d74cfd630c57589853a224848e156d5f730e966d03be884268822",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call.html": {
-      "hash": "e303e6174e1bbdd3b5453b6055964f18538b123ea839e1f8bd569507e73c616d",
-      "lastmod": "2026-08-26"
+      "hash": "d4f95cbc52513972c3e8c276aa7cc3d0effaf10e038ef1f580bac845c326e4d3",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign.html": {
-      "hash": "fea5c30c392ec2951ee4344924c6c7ed2b28e168c072ae3c6814251707a9ed7d",
-      "lastmod": "2026-08-26"
+      "hash": "82c9c0f97fa2c70dceb1f4b5111df2a766d0aba41a5ea5f0a13c36da08fa2e40",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-17-wedding-planning-tools-operator-grade-comparison-guide-before-you-pay.html": {
-      "hash": "6a3df869b7802f2324aaf1cbc2aa5961f3456ce84433fd8aea159808ee81e001",
-      "lastmod": "2026-08-26"
+      "hash": "082796f5fa05557f34d783248924a12954a13cfef9bcb61a794a6bb705660124",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-18-wedding-planning-tools-beginner-safe-planning-checklist-for-busy-operators.html": {
-      "hash": "deba86849e6096b9708839d067b59a21e9c0a0d2a14f57971a25735115355cdc",
-      "lastmod": "2026-08-26"
+      "hash": "7f693843909913ebf64ea3cbe2c3a4b2db82fd69cfb24baa84db5a914f96f60b",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html": {
-      "hash": "688a9f1e1b4a76d04cf601c8e73894471e4330b78e599e8e698d8728748acdfa",
-      "lastmod": "2026-08-26"
+      "hash": "09b3f1f6f3e0f07cd7b989ca791648245b83246a5181823a82d1cc1c98f887c4",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-20-wedding-checklist-planning-operator-grade-comparison-guide-when-timing-matters.html": {
-      "hash": "243a4d2757a9e19c89d05d8a93c4f0210a1da909cbe9a8ffd3579e01b47c995e",
-      "lastmod": "2026-08-26"
+      "hash": "6467534eb43de6d6f3ef2d3b346c5c2b8f1f4dc1036d6b12576c7f32314e5995",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-21-wedding-seating-chart-citation-friendly-operator-playbook-for-careful-decision-makers.html": {
-      "hash": "140363073177521bfee33a38b415c2dfe4be20b38fb1287a3e1c112180183628",
-      "lastmod": "2026-08-26"
+      "hash": "4ef7ca2bbdc4835e442d9cb31d7d5ea1fd27baf28f439c37a116f0ba4db66491",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-22-wedding-checklist-planning-operator-grade-local-resource-directory-when-you-need-to-ask-be.html": {
-      "hash": "d968e311036dad263a15709991df1eaad3d8d517287546f5dc119b7042cf76a7",
-      "lastmod": "2026-08-26"
+      "hash": "4214e337c4307227eeee19ed1a970430ff6673992ddd9fa5d1a221d0e67a651a",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-23-wedding-budget-planning-2026-ready-faq-answer-page-before-you-call.html": {
-      "hash": "7e033dd252b159b89bd8d0fce99248b6e73c895acf480e4ae905f99ff0a0b755",
-      "lastmod": "2026-08-26"
+      "hash": "bf7205c26bf5452a6935e3640fd236201fa579de6c56cee11ffa717cfd71eace",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html": {
       "hash": "0d8232d4938022e2a17852703b9e60ced2880846e13674cc0c01c9c0b0284b08",
@@ -508,684 +509,684 @@
       "lastmod": "2026-08-26"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-24-wedding-planning-tools-resource-backed-decision-guide-for-first-time-buyers.html": {
-      "hash": "1f7cf966b1255876ad3f47af70ad98db2c33ad0049b0089a8d997ecf327269ce",
-      "lastmod": "2026-08-26"
+      "hash": "ca22ef6bd10e20f04d1ce9fd5c87f421cc60b28dcff6ac7dabc7ada861c3960d",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html": {
       "hash": "05a205f2ad8f289b6ce89eb138a05b614bf4c44d230ede0e08eb7048ff832fec",
       "lastmod": "2026-08-26"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-25-wedding-budget-planning-checklist-driven-buyer-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "95b36c3617cc00c8200c090ca123473373e35ca2cc8ae9669d004ac49f584fd3",
-      "lastmod": "2026-08-26"
+      "hash": "e3a1ceda6b2d1d3991520981a176fae2762ae9ab708b1aba906e388b505c9805",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-26-wedding-planning-tools-practical-budget-planning-note-for-busy-operators.html": {
-      "hash": "1adf78a0d9d8dd9a4865bb8ed39e729c6838a7b853fae3af92f82ed32cab99ae",
-      "lastmod": "2026-08-26"
+      "hash": "88f2f240e8195b12ab1e5ec71f91627cc231abe728869d8373829e05153ba595",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-27-wedding-seating-chart-geo-ready-red-flag-checklist-when-you-are-comparing-options.html": {
-      "hash": "f28da96920766f5f0b76f27f452379c896e90093f1d384d1ad7bc7ddc635394e",
-      "lastmod": "2026-08-26"
+      "hash": "96ec338c6ed8fcb66cb6d48d03c942ab815ae5805654c7bb86ba2fbb50ac0a9a",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-28-wedding-checklist-planning-beginner-safe-question-checklist-before-you-book.html": {
-      "hash": "e6c26244bdb82f1942af350e126a0b589cbd7ce2d816cd317d7125b5a07fbc0f",
-      "lastmod": "2026-08-26"
+      "hash": "7503397248c1f1f9b2b44cc4b0716a71217668aca8c0d8106f8f1c6f4316ef0f",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-29-wedding-checklist-planning-no-fluff-faq-answer-page-before-you-call.html": {
-      "hash": "11ff62324ff4ae1c871c30d878e8e84d9a16255f03cc1475110a7d30b206abe5",
-      "lastmod": "2026-08-26"
+      "hash": "cc6adecb6e96459fa83d274c5823337f52486d5700d50a56dd85e23dd50d217c",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call.html": {
-      "hash": "88d86d0017c545e3c955c9c3a73ce62ef40dd2131e94d5146e0f4fd9f29c38ba",
-      "lastmod": "2026-08-26"
+      "hash": "f87cdaad8c95ed53225f0c86efbd313586d32017b0e919d905568656481c9e82",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-07-31-wedding-planning-tools-geo-ready-red-flag-checklist-for-people-who-need-a-starting-point.html": {
-      "hash": "6159f30d126e10ca314e5e388873e552712576c18a17cf72924c93f7682bf414",
-      "lastmod": "2026-08-26"
+      "hash": "ed8ea8012308dc14aec07cd94d6519401a2c412d61854d5828c7f471abcda0fb",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-01-wedding-seating-chart-operator-grade-local-resource-directory-when-you-need-to-ask-better.html": {
-      "hash": "983a2a87c703c20e68bdcec8e0f35919c1bdf42cc50f9c790890d7060fe487b5",
-      "lastmod": "2026-08-26"
+      "hash": "e2347ceb9e97e261279057532dc4fbe31e85d88a98e303a8f4d77ded83587a9b",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-02-wedding-checklist-planning-human-first-resource-roundup-before-you-call.html": {
-      "hash": "a47b2f63894fb610cd4b518a52967015350a9ca84fa3b52cfd34644fbbcef7a7",
-      "lastmod": "2026-08-26"
+      "hash": "5d07f6037e7e874eed01c8f0951c8978633a5b4896e9bcac6413cf56de7cd9c8",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "bfdcf2a783bb203e9fae02fb2d6e1d103e3c6c3139f4eca68f501f6da2941a36",
-      "lastmod": "2026-08-26"
+      "hash": "7600935c4ac6efae3e8a737339448d460d5117ac21efda7bb5725658e60a632b",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-04-wedding-planning-tools-citation-friendly-question-checklist-for-busy-operators.html": {
-      "hash": "9ef19d1e847cae829f0dc028aa8ab33aa765dfacef0e020af0a7f1039b76c6b9",
-      "lastmod": "2026-08-26"
+      "hash": "2d6fd4754aaeaef973738b5d43932785037f644033fe72d3a77883f2ecfd6462",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay.html": {
-      "hash": "b79b933b25220d44b5998c27a4d783f3a31f696d97454c5c8e988b9f162b3cbc",
-      "lastmod": "2026-08-26"
+      "hash": "fb50fe4a5d9ffff7a670621b1a90a7a599c13db0b8e016cb0117e5be4aeb2577",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers.html": {
-      "hash": "fbb317c942a0b5846bcea78b025879e03c58a2198b3eff77ea3f96136452ee64",
-      "lastmod": "2026-08-26"
+      "hash": "836794b0562eece4e04d8288f46c71466e90a701da84226dc75ba8e16750fb06",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers.html": {
-      "hash": "010860bbb91d8a233155a7eca445c10a0f57f735f215c49a46368411d604aaf8",
-      "lastmod": "2026-08-26"
+      "hash": "38ffd627d0abde2751e11941e273ab0d234dc170300a0b07bc63ddea0a2a74c6",
+      "lastmod": "2026-08-08"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html": {
-      "hash": "a6b10423145b6102a93999bd04ee44e5d728cd07247edb1a687f92fbee43d03d",
-      "lastmod": "2026-08-26"
+      "hash": "cbee8ce7c785a34ed0fa9c94cdd363a76e6fb3a39f7be70aac1cc96a3b61dcec",
+      "lastmod": "2026-08-09"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers.html": {
-      "hash": "7da792a1932f82bb9662df84b17ed0e010cb0e76814bbf5d0ff30b346e58787b",
-      "lastmod": "2026-08-26"
+      "hash": "3d641d308748344ccb5834cdca2cde2176f27ceb94e9c57da8c136ef1c9283f3",
+      "lastmod": "2026-08-10"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book.html": {
-      "hash": "646d56cfa3da22bafc53b5afee45bb9cba0144f61063125da0925adc67f4ab2e",
-      "lastmod": "2026-08-26"
+      "hash": "5445455c655bd4af98c5a1b5ae1edeaed44fcfcf5d770bd9655df627f416dd2d",
+      "lastmod": "2026-08-11"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-12-wedding-seating-chart-practical-budget-planning-note-before-you-choose.html": {
-      "hash": "6413c7c159bbf07b64afbe19282a1770c232af10f588c3b82072e49aabf3ae69",
-      "lastmod": "2026-08-26"
+      "hash": "9a4a6b1e9fb834d98593da3240debe4a2309839e7fc2c32b899ad6f03de52e31",
+      "lastmod": "2026-08-12"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-13-wedding-budget-planning-comparison-friendly-question-checklist-before-you-choose.html": {
-      "hash": "c8c80c6bd17c01396f64140e666060ab4e7cd0b054ee75fdee3149df3d9c8ecb",
-      "lastmod": "2026-08-26"
+      "hash": "7992ab35f9944d65980560ef4a048cccb452a10d2b44e8fd54a22dfa35cc6526",
+      "lastmod": "2026-08-13"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers.html": {
-      "hash": "ecfe7ca7266e0088f712df6931dfcc0fd15bada29339438f1b33d45fdae64648",
-      "lastmod": "2026-08-26"
+      "hash": "64516ed308fc028f69129bc35a11f08545fd3c3785d1c6399b7aa84612e99801",
+      "lastmod": "2026-08-14"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "c3b709310bc111e87a90e1f8ebc10766cf43fdd0b12c03fb583f3a52b0043797",
-      "lastmod": "2026-08-26"
+      "hash": "9ffbb1388e474c3cb141be070952f71366cd7b22d6f7044125719d6d1c1ebac2",
+      "lastmod": "2026-08-15"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators.html": {
-      "hash": "3bdaa887e98468c1e635a20340dcc7b7098baf6a08af09d376782546cd23de26",
-      "lastmod": "2026-08-26"
+      "hash": "2790bd58a9d6fd0b293acfa6860dee571f3d7d029de3aecc3cd5c46ce83e48de",
+      "lastmod": "2026-08-16"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html": {
-      "hash": "3fc8c43d0a05ca50dfc26c9cf60f7a11bf9441120bde2237d86742afdab5596a",
-      "lastmod": "2026-08-26"
+      "hash": "01f05d02e115099e2b6218b1bccfb2ac5adf1872d868227759f3ecc5b67a8c79",
+      "lastmod": "2026-08-17"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html": {
-      "hash": "4e3b4ea1eb024f3c1b3ef2a63fa948a785ed04065509bd92df068174e38fb17a",
-      "lastmod": "2026-08-26"
+      "hash": "d19181e14eae35a7da0d71d1e438393490109318e67f0f3169be293224be3e0e",
+      "lastmod": "2026-08-18"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html": {
-      "hash": "9f7af513a7a18057f823f11850160ccb4ceb6f1f2731ccf013ed74e0e88047b3",
-      "lastmod": "2026-08-26"
+      "hash": "44e0fa535339e1d7bde1a10a197282b47067ab493121dc6bc9b3574e2df74542",
+      "lastmod": "2026-08-19"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html": {
-      "hash": "181fadbc0b5c3f8944d9dc8626f9fa836e75e001ba9fb10c73976c4f53c63353",
-      "lastmod": "2026-08-26"
+      "hash": "1e3e25a088f4d409f4bf34d339846086d24495531725f70699e464a80bd09568",
+      "lastmod": "2026-08-20"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html": {
-      "hash": "3024b116f41a9495a635bce3c564ff16ce3c5614100a62ed7425e394813a96e0",
-      "lastmod": "2026-08-26"
+      "hash": "25ce4ff4849b812b54d81997a325b571dffba57897ccb9779a56b212824293bc",
+      "lastmod": "2026-08-21"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html": {
-      "hash": "20f5e9ea3e7ad34ade00309bdd6288e8b2a08641acae4e55206cc96d368b1f9d",
-      "lastmod": "2026-08-26"
+      "hash": "b3bd60fb1aad362c8b1b58d358f2a18049e368fa6b0a7c9cf1812a5225c404f4",
+      "lastmod": "2026-08-22"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call.html": {
-      "hash": "441375801b88bc13661f53ea858297002c5a6da390558214517eef327530317f",
-      "lastmod": "2026-08-26"
+      "hash": "9fa00bdb4aa1328cd854be9adfcb72984e46c4b2aa25a1ba262c0b73b908cd99",
+      "lastmod": "2026-08-23"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html": {
-      "hash": "6aef699232aca59ce74ac1561c4b2f825ea5e323547fdc20f9d266892dca98d6",
-      "lastmod": "2026-08-26"
+      "hash": "9265c24f7ce801888943c7710f5ac95f4b78daaffee9bbbf77054ec66d811816",
+      "lastmod": "2026-08-24"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-budget-planning-comparison-friendly-budget-planning-note-for-busy-operators.html": {
-      "hash": "62a0970f94da53fb3e22f116877ddd4e1e5ba2a67e017a567a1d7b64b1e51e63",
-      "lastmod": "2026-08-26"
+      "hash": "39b3f79584604ca57175472155eed3413b193aafb5ea02c376e3a573081c5b67",
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-day-timeline-beginner-safe-framework-when-you-need-to-ask-better-questions.html": {
-      "hash": "71a4b8f382b3ab95dd6c56189d9dd3d56aa23ae970b78331027ee5be97f7aed9",
-      "lastmod": "2026-08-26"
+      "hash": "3c448dc4a36cf759ded3f29881568a69a9a887cf4824d86f09b311c497014f50",
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-26-how-sun-wind-and-humidity-change-outdoor-decor-material-choices.html": {
       "hash": "50786d137cef67455d483117d7bfc56c0b1eeca91ed676ce31c42d4446e7f31d",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display.html": {
       "hash": "4364283de939b925d9daf061589f05000352ff7fe116697efd6cf1dc75ca1580",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers.html": {
-      "hash": "6f51fd9339b227c5ee2fce7c1025007d6ca7ab11aa57c7a604d49e2c175e171f",
+      "hash": "28a58703f5d3d6befe486f4223b7b53eaaef84c447550290f0d6b4ccfbdc4a58",
       "lastmod": "2026-08-26"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want.html": {
       "hash": "0351f3ad3b4b89c66ceae62bec8e696431d8c0bba043ccbfe006aa66f24c4901",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html": {
       "hash": "77b71362fa4c920162d1891d768858c78879a9381e77ce32a443038230a3a50f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html": {
       "hash": "7c038dd01f362e8bd7e1aa7f6f7812a6319effe5eed1804b1d83a86d5703fd1b",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html": {
       "hash": "fc3e5704e9bb8b433bfe9697cde28229f189206f26a5a590224725eacb7f8e62",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html": {
       "hash": "6f814a4197909bfbe6c8fbb586668e9f85bd9146866c4a6adc468d62c6064ae0",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify.html": {
       "hash": "fb2a0ee729774ef49611dc1562bf93bf255a156663315477bf0ff28e158123cb",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html": {
       "hash": "88baa654571094a6e9c4d64d49dd63532e9a8cb385b6565931f8d9660c81af87",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-30-questions-to-ask-a-grazing-table-vendor-about-food-handling.html": {
       "hash": "c2bce6ee3584e15e786723141b83419fc9a8e4a461eb2c9c647e3dfa7b5318b3",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen.html": {
       "hash": "fd1654b443646489f77fccfd6e0d694dffcd3858a18c986230677809fb9ee0fb",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting.html": {
       "hash": "591dec52725c35c6a236c028903ecc57dbfb03a821790ca1dcd1978c325b0313",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration.html": {
       "hash": "120ef0ed6acdcdd043ad4809d97509697945c60ab618053356e6bb465d610bfe",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different.html": {
       "hash": "d46280c459ab9e64cc4d21d0f776f679fa48d41a2305faa0f29e711d4f482163",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://memphisvendorlibrary.com/memphis-grazing-table-resources.html": {
       "hash": "fa265d8af7666b5d7614c97b4e6be3f39d8cfa5ba2e88a7f8cb8ad4dec4f97b3",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/memphis-party-decor-vendors.html": {
       "hash": "4b4456f986d8ebbebc763c38843c70f8228ab0c15a823210dfa04d990807b13f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/memphis-porch-decorating-resources.html": {
       "hash": "29ffd6ee6e34230ec75d625dd01995b675d62d6c3a1e9b3234e3c6a8cad03172",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://memphisvendorlibrary.com/seasonal-home-styling-memphis.html": {
       "hash": "e288d814cc7dc5605ca477c8023a00d27598ec3c4822c8cfa66e4348f74f579a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/": {
       "hash": "cd4f6bc6894d57049c41fd6d557a0a74089820514385325d4eccf8073007b4e4",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/about.html": {
       "hash": "fed631e9a598385861f30c9073ccf624204d530476505122021563e2d575ab6e",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html": {
-      "hash": "f11abb41b0441e771639816b9d0a9f04dc1fc9a70cda525a0ef0933bd46cb501",
-      "lastmod": "2026-08-26"
+      "hash": "4c83da7cce2e288f63466198af02ef3735eeb9fb51176ef5f62bfec11dbd4ca2",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html": {
-      "hash": "d8fddf0bbcb079c03252159119d58e80dbd2856cde246508ceeb252343752d7d",
-      "lastmod": "2026-08-26"
+      "hash": "f0dcbdd1bf192aca31e7f47bcdc809c0637ed4221fc3e597e9a655074f225bef",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers.html": {
-      "hash": "562608182b2321291b0ce686221e4c36fe293de19135125aba702c8a20c2b55c",
-      "lastmod": "2026-08-26"
+      "hash": "81d516c7bd385f53b9b20f14bb58975a043e863a985f8067367491d30684c8a6",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos.html": {
-      "hash": "3556463275f1da1bb4898fb269aec77cd15d0bb8ea92778411e469f7da097523",
-      "lastmod": "2026-08-26"
+      "hash": "b05545ba0c46442d27b12b15e33063de7d533ab85b5873d521f1da3f190699df",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh.html": {
-      "hash": "eaf0c53a256dcabcb05e8344a822092cc7a01888793ce3e73a627ea8ee8f47b1",
-      "lastmod": "2026-08-26"
+      "hash": "841b0fd7fb1c4fdfb0759984dbc0e663f7eca7c1af3bb8e92b1625ed43c66255",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book.html": {
-      "hash": "c33efd4d335790e36136aaaa3cf2d8038f3f87b93c1d06adb835030df5d1394e",
-      "lastmod": "2026-08-26"
+      "hash": "235b2b1b36babd9b44e9326129117612bf777041ffb81cc987dd82f74de588a8",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html": {
-      "hash": "a1f3bdff8314465eb701381443d44a21dda0bc67d890416a9707f8501fc72153",
-      "lastmod": "2026-08-26"
+      "hash": "c1e6cef9ff4f9e7c1c1ec5642fb3558729d913570c5560989e445ac8ec6214b7",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers.html": {
-      "hash": "49cf561987e849be0cd43bb1ee93879c2e19acedd51d3135405c46596be8c682",
-      "lastmod": "2026-08-26"
+      "hash": "30db0311e24d949b424211cbdb63cae7c3b5d40336d4f0e4ecc01e0c080835dd",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option.html": {
-      "hash": "fd7fc25cf31e14d16930a5aaf2dafffa6186853d07c9fc4a77e1a2968309e3ac",
-      "lastmod": "2026-08-26"
+      "hash": "a145389c6b19026c9994fb99dd31a9d5291a54d920c21fff5cacfdc756640aac",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose.html": {
-      "hash": "2acc2a55cec999faafdbd7f4471ee14aebca2d0e313636d3e570ebcbdcbdbc24",
+      "hash": "68f651766a7beb87c512b0c4fc48bfc85056210531d2794991e6d1300df4f7ba",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose.html": {
-      "hash": "48cdac89212545cdccec77775eb87d29a219233f2f7efd0f260d0c5befd8cd44",
-      "lastmod": "2026-08-26"
+      "hash": "3e514a2f3f27dc21e34d8406df5d16eb72da1b4be977865fd62f8c2b4d20b8b6",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options.html": {
-      "hash": "d9f452addd86b6ece010972908d6bcfcf808913285ee6c4f02308c0e30be0ad6",
-      "lastmod": "2026-08-26"
+      "hash": "d0a126c28882b0b82116b9f9a2a6c83520aef3a12362041638848e7c6c25c835",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html": {
-      "hash": "3899a8fed8f29e43e17a7eec54f7296013789439a8067d7ffdb376897c291664",
-      "lastmod": "2026-08-26"
+      "hash": "43f5853dded10c0c760fc098f9f296322cf7aef1b1ca07d591c9b9bfa6269c2c",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html": {
-      "hash": "b0786532187cbdde6dd81d95ef22bf46e7808c4f10d9b6b64257f9c2cd4b9ff3",
-      "lastmod": "2026-08-26"
+      "hash": "785f4edbc974b25ea89f7136a72e6dd525613793ff3204bf54a3fe0cb6efab13",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book.html": {
-      "hash": "b5a0614dde14634289d3160c1990efcdd9373c71514db5e99e9ba66ae071fa58",
-      "lastmod": "2026-08-26"
+      "hash": "cc37cef9d730d29b36155d442839186420ccda0f9f243cf09162d3033c3b09aa",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a.html": {
-      "hash": "c49c50650f5be255cf9d311f4eb20704cffc43986fb11a479d83861726f3950c",
-      "lastmod": "2026-08-26"
+      "hash": "7a42d91fa28f9a834db5c917cdbaafce00691db3e74eacb273b0cedf7c5db576",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign.html": {
-      "hash": "cd62538fcdad05db092b3b641fd636339566cc949c8a47dde327a98705e2b20c",
-      "lastmod": "2026-08-26"
+      "hash": "eec687e5f578292926d1c0c549ac30d21c85ab3de6349aabaf6e246b7fcb868a",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters.html": {
-      "hash": "dec914af30098d2d1aa11b623ee1b6eb3c426aa5b103660541be7b969f68f957",
-      "lastmod": "2026-08-26"
+      "hash": "a495ab5d947c0ecfb6f8cb41921b7f3abeb301d86a697dff4d4ad36f8b707a0f",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters.html": {
-      "hash": "a9518db35e9781b0ab493861bdea1c5767e95f1127a44b8fc8095eb4e2767eb8",
-      "lastmod": "2026-08-26"
+      "hash": "7b90741aa2d5220a273e945504d4c020f7aa1cc8e0f406e667a5a7c5e155fcac",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose.html": {
-      "hash": "bcbfb05784afdd4c90e4c6d48d501f8b3aea040b418795c723a149c97a6f21a5",
-      "lastmod": "2026-08-26"
+      "hash": "6e5ddbd69e9522fa6681d33cb8799036b9fc4e259482085fc4e70411e82421f6",
+      "lastmod": "2026-07-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay.html": {
-      "hash": "33ae8fbe187219b073748432a143d06deb122cb7eafaeb7d820daa43e05a5d74",
-      "lastmod": "2026-08-26"
+      "hash": "60df09c397bc052edc1aad91526e97b2334b82cadf77a6a3831a01ce929ac464",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-bank-statement-explanation-editorial-planning-checklist-before-you-choose.html": {
-      "hash": "03484397375b01c82934fd032e9dd5cba9790bca544e67804f65bddaa9ccbf1d",
-      "lastmod": "2026-08-26"
+      "hash": "1863745babd3b1cdf7db15d1453fa2d2d1a1760023e54a615afab3028d59ee7b",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-letters-of-explanation-human-first-resource-roundup-for-first-time-buyers.html": {
-      "hash": "96a6658d9d05c4b533c954291b982fb23b670586326a134893effabfed6ee67d",
-      "lastmod": "2026-08-26"
+      "hash": "697d1da93fbe7d407f18d097139e2f8cca257d05510a6da4cf7d3ac58601bf16",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-life-admin-documents-operator-grade-planning-checklist-when-you-need-to-ask-better-questio.html": {
-      "hash": "392da4135cc9029fbf211e0f75a01511cb7673122dbdeccab2b841a2f5c0dfa1",
+      "hash": "94b538ef316076e87c59f1681a0c76af8df38ecd5792487c86cfccde3f1d11be",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-life-admin-letters-human-first-operator-playbook-when-timing-matters.html": {
-      "hash": "79596361c7ba8eb1243bf6c18ac7e147153db116c0d872813d698dfed07db511",
-      "lastmod": "2026-08-26"
+      "hash": "ba17757e40f5212f09c2314f0286a73d5227b7a96df723a61dfcdf2562dfebfb",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-loan-explanation-letters-editorial-buyer-guide-before-you-sign.html": {
-      "hash": "5df5881d7e914f96ff570a2b13725e6f7f129b440f1151814e446939526be7b8",
-      "lastmod": "2026-08-26"
+      "hash": "07d936820e8341e7795ae2facb1537e1c50b803dec55c912c25d39352bcb5582",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html": {
-      "hash": "19b23844ade6982fc75ce637e0dfdb63c6dad7f9646ae98abd3e9a38ce2eb8d6",
-      "lastmod": "2026-08-26"
+      "hash": "728e09a28256426af7f42c01afd6bf40efdd92407ff4e4c52523e567b943ea68",
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-apartment-application-paperwork-beginner-safe-resource-roundup-for-first-time-buyers.html": {
-      "hash": "2ce008ab1e642bd296965046caa9e18a9a47ecc7d5bbd905a8fdd4e8acab361b",
-      "lastmod": "2026-08-26"
+      "hash": "0c4f7a18f1294fa26f1040b65ca6adb5150b8ad519313da631967a9ed7ecf755",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-business-loan-explanation-beginner-safe-faq-answer-page-when-you-need-to-ask-better-questi.html": {
-      "hash": "154e83b5bf6a0f61e8b734b95efd0782d7c597a963c949ad70f4bfcacbf671b1",
-      "lastmod": "2026-08-26"
+      "hash": "4eb3d1c6fd700bbf9ea12eabd24725e02d04b507315c4e530ae1bade79eca4a4",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-documentation-checklists-practical-framework-before-you-choose.html": {
-      "hash": "49f2b815d560338fc3139a1fc3f43297ac1a4aa8bdedd29f89de98262efdb9a8",
-      "lastmod": "2026-08-26"
+      "hash": "a817e4e20ea9beaa6a3f0d12aa6b4a534ba6db25b6553ead63a04c5793ff8c4a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-goodwill-letters-citation-friendly-framework-when-you-need-to-ask-better-questions.html": {
-      "hash": "7edf2288636c8a85a39b1f0b842faf21ccb6a08e98b74c3479319a64384186cb",
-      "lastmod": "2026-08-26"
+      "hash": "4157ed4b69c787a3a036344ca2f4d01c3fde8e97adaeff4ebf9bdad233571726",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-late-payment-explanation-decision-focused-decision-guide-before-you-book.html": {
-      "hash": "f8b828e50d24649d9bc6068020ab450b39e1bc9fe866337eb0f7d0afc10a4cdc",
-      "lastmod": "2026-08-26"
+      "hash": "ca14a1f46083825301554a18308c94e8c0cabe382540ddf3d21413f41d9d2eee",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-personal-loan-documents-geo-ready-framework-when-timing-matters.html": {
-      "hash": "f9427439c5247f1e96833e6ad1d6b1d7c888cd292693047bc466c2047c016730",
-      "lastmod": "2026-08-26"
+      "hash": "c253d69d737e75c6b8adc0f44e48b6af2bcb3e84d6cd4e8d43ee7e803b4f98bb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-12-rental-history-explanation-low-risk-mistakes-to-avoid-when-timing-matters.html": {
-      "hash": "862faa68aa47f44ed0fe0c2dfb2cfbac8d6a47ee52bbea92a57ba8931ed88317",
-      "lastmod": "2026-08-26"
+      "hash": "3f08ebad804d177ef30ff5e682f7c0412d2ad48d7513399a970610f4975f321d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-bank-statement-explanation-human-first-comparison-guide-before-you-pay.html": {
-      "hash": "5075cb66b41f70f220ae8601da7334a360d4a095c2db30052bb9099b49890053",
-      "lastmod": "2026-08-26"
+      "hash": "0e25804cd26250f87387dc55d7fa43c7264b90fc26febd527a43a755d7d0ed60",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-business-ownership-documents-citation-friendly-resource-roundup-for-people-who-need-a-star.html": {
-      "hash": "15115ecfc201df4ba32e6a8ebac4d287dbedc0813734195643ff0b810d0791ba",
-      "lastmod": "2026-08-26"
+      "hash": "9a62624e227c0580fa6b50bdcd5fa7bb40663fdf8ebdcd45a4c340f77c2a27f5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-complete-document-library-operator-grade-question-checklist-before-you-pay.html": {
-      "hash": "8cda4842dcb5f96a4bf7fbc554697607fdedf8979a235df3c9cdd8f598d557df",
-      "lastmod": "2026-08-26"
+      "hash": "b1f0929703af69ea0edc1683b2c4bfc4525fea6fcb4ee31a394b81cd47bdd8ed",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-employment-explanation-letters-operator-grade-red-flag-checklist-when-timing-matters.html": {
-      "hash": "0ed2b5c63ebadf214c5a30787cd39be3465a61e45083f0eb59b523df8cde4bbe",
+      "hash": "edebc90b5ce1a0e845f49182a588a45355f3ab42fa9ffd1177421c3c64795203",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-equine-liability-questions-no-fluff-operator-playbook-when-you-need-to-ask-better-question.html": {
-      "hash": "2486a9fb64f2e8678463aaa324a0837a944c40e91b4f6ce06b2165e37906a82b",
-      "lastmod": "2026-08-26"
+      "hash": "fd0cf6904c6ae4152b222b923b41ad3c56dd6688ae6353e444c5c43edecaf8bd",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-life-admin-letters-plain-english-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "cdf70b7e476c4778a4e4b8d8b27ee261f533f8050df9bcfdca81de350062efc2",
-      "lastmod": "2026-08-26"
+      "hash": "232c3dc80d14065a7d459fa7fd7f7eb343c25bff0ccbd932f9c26d7efbc25f79",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-13-personal-loan-documents-resource-backed-mistakes-to-avoid-before-you-choose.html": {
-      "hash": "4e21611694167ff9ee727441e3a3123e88a91c21e346e9e839d554d5bf5e0eb5",
-      "lastmod": "2026-08-26"
+      "hash": "78146592e721bc136e5266e9348e577b560d17a0747f89298f061b96c19fb296",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-apartment-denial-review-operator-grade-comparison-guide-before-you-choose.html": {
-      "hash": "376538a7ea1fd5875be340478c539bdced540ee1b7e882286a5854912df398fe",
-      "lastmod": "2026-08-26"
+      "hash": "15343f64d145010624c2589bffa93424a8909575b59a4e6b7ae60c7f16b014a6",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-business-funding-packet-aeo-ready-budget-planning-note-before-you-book.html": {
-      "hash": "c91841faf157c2d3b46159b42775e6ea8df020a9ffef5d6951fa254ee0e98050",
-      "lastmod": "2026-08-26"
+      "hash": "972194db4cfa366ec3dec922811d7100908bdfd1f2ce25ad62f4cd1555a570c2",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-car-loan-explanation-operator-grade-local-resource-directory-when-you-are-comparing-option.html": {
-      "hash": "05fee81ae6f0966fdb89ce4d4504b3431e5e8dd78f5628c06f9b1398a213d8ba",
-      "lastmod": "2026-08-26"
+      "hash": "047b0ca73d11ea045e209b1bae0ff261e2ea98187dafcf74741be660f200bc74",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-community-reintegration-2026-ready-operator-playbook-for-people-who-need-a-starting-point.html": {
-      "hash": "e4c0bd65a3f0d1c9f15cb1223ef9b26121505565e13eca7b5c1f8e2ba2b34c53",
-      "lastmod": "2026-08-26"
+      "hash": "ce514f02a2420401e8a256c86713127eba435a1c11617f6a133f2da16ef5e102",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-full-approval-prep-bundle-aeo-ready-framework-before-you-pay.html": {
-      "hash": "6510fbc51f52de06ec5cbb9a04b0477a2b8236bb90fed326f4f9d647bff1737f",
-      "lastmod": "2026-08-26"
+      "hash": "fa1dd5eec1ab2c094e26ec6726c0e385bad2016833b10c6f2509345295d1b9a9",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-lender-document-request-aeo-ready-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "d8653843b8e1dc54b6f90e4b19adccd8b8b6a59501f5603f5895d392dbbe4589",
-      "lastmod": "2026-08-26"
+      "hash": "58e708976d9b8cec45a05dcf66d578ae15e2fab5e18f97953d273f1c65aa1a27",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-14-personal-loan-documents-aeo-ready-buyer-guide-for-busy-operators.html": {
-      "hash": "562d96d02e6545a860ef863c810b574e9f3564c545e2ea0d79420f16c58113b9",
-      "lastmod": "2026-08-26"
+      "hash": "ac5ca066a24d54e9ef119b7a0d559982627aad8a33bd30bbbb4c6869cbb8ae53",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-full-approval-prep-bundle-low-risk-buyer-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "892ee3dd5bdb31937655c252298be8c573caa01991a733364d7e11fe6780dfe2",
-      "lastmod": "2026-08-26"
+      "hash": "fde79874239b9d07f1cdc311a3588c35ee6e46d91c83911712531a1196423f98",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-letters-of-explanation-low-risk-buyer-guide-for-careful-decision-makers.html": {
-      "hash": "40be7e0e7920f5479222b5e96af94967546d091aa43e4b702b356f181902a31d",
-      "lastmod": "2026-08-26"
+      "hash": "5e92944072ef093b689e158413b42ef53ae8f16da1500257be82a87e7a60f915",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-multiple-application-issues-no-fluff-decision-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "d3584b633777bea57b591358ccc497666e6957598c1694f5eb2fdce4538ffab5",
-      "lastmod": "2026-08-26"
+      "hash": "d213e03d556e3985e58227cb36aeee5f715ce85b3a997c4a9ad14b6a4d6e7512",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-personal-loan-documents-comparison-friendly-planning-checklist-when-you-are-comparing-opti.html": {
-      "hash": "584e0486c8d6cae152398aa23ba4efbc4dd15de988e0568f30d9d54db62873f0",
-      "lastmod": "2026-08-26"
+      "hash": "f48572c57097ce77e8555a80c7cc19a696a5b15fd544207e13979b0f1b4e6a95",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-proof-of-income-letters-human-first-framework-for-first-time-buyers.html": {
-      "hash": "d15f3fd87924ab91f7ab4817ad7b9a1373d64817f7fcd09dd5ffc71d0513a441",
-      "lastmod": "2026-08-26"
+      "hash": "5b589e3c055a64c8c9ab1f8b70f3ea2542c71692e2e71bdb8ccd9f8e33f2c336",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-recovery-housing-aeo-ready-timeline-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "8c8e25dbd011c5e9d792c50e013ae5b5ea0ebbecda2735a8ad4e0a642dee540b",
+      "hash": "a67d0a1d292369f9bd890ba57b90fa4f42cdbc18dbebea1990e6aa3f114f68a6",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-15-truthful-document-preparation-operator-grade-comparison-guide-before-you-sign.html": {
-      "hash": "535daead9bd567d21a469299dee0b730fba13993d0f704e1ebba3f32f900914e",
-      "lastmod": "2026-08-26"
+      "hash": "6fa6632cd6c7d781aff0ea431f4ccdacbe75d6370bf26363e8dfabb5eeba6180",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "09576a46d849d40a9a7f377b6342fad183da70448eae36ca5b6abf8416503b1f",
+      "hash": "9296e7c9d8522234076d142b0c7e9946807f85c0f86f446cb4dc4c9c4f6b7d0c",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-credit-rental-income-and-loan-letters-comparison-friendly-budget-planning-note-before-you.html": {
-      "hash": "9234f8529e0f8adb2bde6dc0cae172c11a1d768169e92f98850f77fb3bbcd536",
-      "lastmod": "2026-08-26"
+      "hash": "71f24e09f57ce1129108d5132349f99b64ab53a6ae81b344fbe20f943e77df16",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-proof-of-income-for-renting-human-first-red-flag-checklist-for-first-time-buyers.html": {
-      "hash": "ce333be585d29d01f8714774c2e436989f626d11f883cb9c48362ab560944a01",
-      "lastmod": "2026-08-26"
+      "hash": "74e30605953b6b4aa7c1b2c8ecd3de499f8fae35a514fc772294c6f3fa6744f7",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-proof-of-income-letters-aeo-ready-question-checklist-before-you-call.html": {
-      "hash": "689a929e8f7d85f7521230fe975bab9fe107aabb176c08b500e5d49ddb39adcb",
-      "lastmod": "2026-08-26"
+      "hash": "e4e13a2a0329fe630d1f991b0198d87b5231fa6f93bc93f3bbe1f238fe75281f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-rental-application-packet-editorial-question-checklist-for-busy-operators.html": {
-      "hash": "4c7334edda59f7ed445df1cd26922b4749a165596549ac43cf42821ac57f4d61",
-      "lastmod": "2026-08-26"
+      "hash": "a027ecc9cdc9ba2ce3f9f41fee13eb0935a0170866338798cb1292e722deffbb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-therapy-consultation-questions-comparison-friendly-framework-for-busy-operators.html": {
-      "hash": "33d82062d4f8c46b5ef818b33f545c4de41ad485a6998e94ca8afdcaa50c3282",
-      "lastmod": "2026-08-26"
+      "hash": "2b7e7c10793450ed0d9f6af75b216f392357c964d404b148b6970012896c1459",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-16-truthful-document-preparation-operator-grade-operator-playbook-before-you-pay.html": {
-      "hash": "6d401b5541419e59450ce47d9cb8ad6a07fadd94b785733b6b52c9c763b79c3f",
-      "lastmod": "2026-08-26"
+      "hash": "6dbc04c27d3ba9743e0cf8f54f96617e091e89285f2d68f44d4bda826282f1a2",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-apartment-application-paperwork-beginner-safe-budget-planning-note-when-you-are-comparing.html": {
-      "hash": "9a63a4bd6d1f383f0af02130398e88c81244dcdfc4efd8aecdd5eb0062eba338",
-      "lastmod": "2026-08-26"
+      "hash": "1f0e806817d38234ac78cb40deeb31ad495be0a685bbc5f80970e235ef8017a3",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-apartment-application-paperwork-operator-grade-budget-planning-note-before-you-book.html": {
-      "hash": "35c714f3d7b0761b4c6b64bbef6408b24488d7a7cbedc16153d12f2ba9ef7660",
-      "lastmod": "2026-08-26"
+      "hash": "675ff5c27da6935c1c56858d7d868174df6a7a9ba934a7ab560dac4d3888cf5e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-application-issue-explanation-editorial-framework-for-people-who-need-a-starting-point.html": {
-      "hash": "a139717384f5de13af4ce748886487656d9f8335c7a92232676b56257f35d062",
-      "lastmod": "2026-08-26"
+      "hash": "b0dd91c0a0977e2f297b896db4569feea4b227fd308d5e9644076712285b5a65",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-credit-report-errors-operator-grade-operator-playbook-before-you-call.html": {
-      "hash": "92ce14fa82fdc1fc2c0126b34e487d22112233a1d4b0b1b3089a9b79e976e279",
-      "lastmod": "2026-08-26"
+      "hash": "4089b7af77c3c26632458cc11d89d02fb32065b6e2fa575034fb8813b9c10718",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-documentation-checklists-plain-english-operator-playbook-before-you-choose.html": {
-      "hash": "86e56fe04f44482c9e310a048201cfa62286500a02fa5a5e5fa2b626b25d2bc5",
-      "lastmod": "2026-08-26"
+      "hash": "cb4b68345310771de3b07fd44a82172de7d33e9b2dd79ccfea0010d3b44beb4a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-employment-explanation-letters-practical-planning-checklist-for-people-who-need-a-starting.html": {
-      "hash": "3bd891ec66d9170885d5dba82141707dd09f445dc747b2cde66ea88aad2519bd",
-      "lastmod": "2026-08-26"
+      "hash": "92cf3e9b99c0581fe3a00db624b6a44c5e7600526611a8237c672816fbdbb5e5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-17-large-deposit-explanation-low-risk-framework-before-you-pay.html": {
-      "hash": "9839a8f3860e2ed513cc810daba45ad9098e0ad480f0ccd79ce1845d2f5c628e",
-      "lastmod": "2026-08-26"
+      "hash": "b1f3a0e4c469f43142b93b13c1a29ca2f080135798d51ae0c6b42b3ee1d706c8",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-business-funding-packet-geo-ready-prep-guide-for-first-time-buyers.html": {
-      "hash": "42fac0d20f48c66b917a76a655102d8cb8dd29d234f72fdfd7e9e8ac7e51da34",
-      "lastmod": "2026-08-26"
+      "hash": "c1f79c78c4712944311745ee9bae577a76d067caed08c580d26c9555967168ed",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-complete-document-library-citation-friendly-timeline-guide-for-first-time-buyers.html": {
-      "hash": "8a859e51375668ae63edf465eb902356e4f1833c0a356a7359eef15aa01208fe",
-      "lastmod": "2026-08-26"
+      "hash": "cd628c3975507b81f3d9ba034397560c393b6314d31036b5f33ae8575c15dfac",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-employment-explanation-letters-decision-focused-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "ba9ef5515cbed1630aa90b0e6a33ecefdd1a93b1f15bf38f6e15b064fde90ab3",
-      "lastmod": "2026-08-26"
+      "hash": "a3c3986a42335c7aa831d14c9f5baa2b175c0ad4947a933adc0838d94cd9c1d6",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-family-recovery-support-practical-timeline-guide-for-busy-operators.html": {
-      "hash": "644a10eabfb2c2fa617f497b9011989d5935b4aaeaf202053eda1e6caa73a660",
-      "lastmod": "2026-08-26"
+      "hash": "a23c4c528ad6ba155dfe1d8daaf3860188889e7c7784ff9bc58daa0838adc9ea",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-letters-of-explanation-resource-backed-planning-checklist-for-first-time-buyers.html": {
-      "hash": "5a4e8f20276a7254dbb7367514e47fc0d7c3a95f7bc7e91c140f8bff7539b4d6",
-      "lastmod": "2026-08-26"
+      "hash": "fbd7b7ea32f606d96077bdeea699f4b455e56cea655a77624ca51b13b6f1b1ff",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-name-mismatch-explanation-plain-english-buyer-guide-before-you-pay.html": {
-      "hash": "652938e77f79a1c12388c1ee5c1fdd1e9eefafc8b9169de20debd381db0d3531",
-      "lastmod": "2026-08-26"
+      "hash": "64ea2ba5040e884d8ef6f0a60a2ed03fc3dda5a27fd24cb2f7b2123d8547ae36",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-18-proof-of-income-letters-plain-english-buyer-guide-before-you-call.html": {
-      "hash": "e662a00dfc47e6ac4e6ea6e9c68d5f7c058206cc249015f94f23278870625bd5",
-      "lastmod": "2026-08-26"
+      "hash": "e65b46f91761bfad174664b6cefac1ad7781551307db005c4ef7d5424b1e71ba",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-credit-report-issues-human-first-question-checklist-before-you-sign.html": {
-      "hash": "3b5ed61aac485df688019c560c01dbad5b95f7ae77b2dd87e7b31ec181b190de",
-      "lastmod": "2026-08-26"
+      "hash": "9f727f5416ff414d7a6530a89caeab12c241c133f6bf19678d169f8f87a5328d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-identity-records-explanation-geo-ready-operator-playbook-before-you-call.html": {
-      "hash": "35f864dc7bb825d6441cf4bd72032534058701bc45537924139f5b3862fe412c",
-      "lastmod": "2026-08-26"
+      "hash": "6d2045c5db66cfd29099353b2e03c50156ab63ca565236afaf2d657028fb681f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-income-change-explanation-operator-grade-operator-playbook-before-you-sign.html": {
-      "hash": "6556678fb4c9f3ca7fa8dd6dd62be37bba1ea40d80ea0b509752f455a45925c2",
-      "lastmod": "2026-08-26"
+      "hash": "41d89bf7cee38eb99d490458d6e0f4a458ac77af81fef850690f91558a0f86b0",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-iv-therapy-clinic-research-citation-friendly-question-checklist-before-you-book.html": {
-      "hash": "ee7cbe02e66a6601372b81e3d0f8f8b81db0da94de3c1d22a98cb73cc61fed52",
-      "lastmod": "2026-08-26"
+      "hash": "73da3559924de33f31b1f49453716b5a0e207b97658cab8cf62480d108391e9b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-loan-application-packet-human-first-prep-guide-for-first-time-buyers.html": {
-      "hash": "09f1639e6f76c340da7956bb3c1bdacf730f84fb41bf4f4018c50d9082426e6c",
-      "lastmod": "2026-08-26"
+      "hash": "98bb9d675c67dc1fff2b0cf4a4a23a5e0d104e895bbaa556db26480b2e0b349a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-multiple-application-issues-no-fluff-local-resource-directory-for-people-who-need-a-starti.html": {
-      "hash": "b07ffe385350d376ff2c3dc8f8f15b109311758855bd9439c4ebd813b038dd3d",
-      "lastmod": "2026-08-26"
+      "hash": "d8d179270832114953f9e504c125e8808bf29abb1237cc555461d2bf8ec3b816",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-19-self-service-document-creation-2026-ready-planning-checklist-for-careful-decision-makers.html": {
-      "hash": "7c11b27b74a43a5027b7727f677afba14c1295196be36c5d1b69cb6d111e0b69",
-      "lastmod": "2026-08-26"
+      "hash": "480504729d4a5e0c153d78d2c5412f70d68df308f28449008df1c61777509691",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-bank-statement-explanation-no-fluff-buyer-guide-for-careful-decision-makers.html": {
-      "hash": "b41e0009e5129ab4c65d43d6d758b753ed9ce5b29ef6052eced935620d4a6d8c",
-      "lastmod": "2026-08-26"
+      "hash": "4a7c85d370e7275574435805759b7321f2c23f6dc57a8b6b2829e0d4006f677d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-bank-statement-explanation-practical-buyer-guide-before-you-choose.html": {
-      "hash": "e1e48ea6585999b57cd3cc425bd02ab1c6de592aabf2c56e5a4eae397490779e",
-      "lastmod": "2026-08-26"
+      "hash": "d4b235318a435da007873ed16f6e55656d8486cc1bdab252f70c5ef7d84485f4",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-credit-dispute-letters-2026-ready-budget-planning-note-for-careful-decision-makers.html": {
-      "hash": "6337c1f3ae42654e01808c373a5848b6cdd0dcbe46dcf3eb88648078cc2edca0",
-      "lastmod": "2026-08-26"
+      "hash": "53093c8c314923fb9a66c83d883b7816ca09a3d771577f33d22ff1d9f79b3c2d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers.html": {
-      "hash": "5ebfd0ebf302cc7f7060d8764efb768439c76deadc736e4cb30a8dde3b4a1da2",
-      "lastmod": "2026-08-26"
+      "hash": "3e2d0276786d0f842adb3d5315b3ae16c49c3b5a024f5d192d7d784cf8f7a523",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-credit-report-errors-human-first-planning-checklist-when-timing-matters.html": {
-      "hash": "8fe767127dafcfc9546d6f059966823fd02468f47396f53aae14c73d08dcccfb",
-      "lastmod": "2026-08-26"
+      "hash": "e8913f595728ba382df49477c3160981e38e32bca015bfdcf8c95053a667f834",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-income-change-explanation-resource-backed-comparison-guide-before-you-pay.html": {
-      "hash": "02da886358dda0ad145137ac21c7ec7c9d22fb16c510ce8a36acaa42e665b87a",
-      "lastmod": "2026-08-26"
+      "hash": "c4827efbf59019249337df801254a9c4b4a4c0a2a83ae27e378ab3a3b60c5968",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-20-self-employed-income-explanation-citation-friendly-local-resource-directory-before-you-cal.html": {
-      "hash": "da5c0d5541489adb0841439f95e09ee22535843e1a7360f796ccef0f2a05d9bc",
-      "lastmod": "2026-08-26"
+      "hash": "46bc7d5ad2755b53a4d6228cd0003f79690f016eebcea33e972e65d4ccb7a3d5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call.html": {
-      "hash": "fba28ef8ae0a2c78e9979a84c61a9fe81f5808a4bd178558f3bf783514fe2e1f",
-      "lastmod": "2026-08-26"
+      "hash": "03445254a38bfe283b10867d6eb34be0bf5f88b826dc8667415a6c0ae7994ddb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-business-funding-documents-operator-grade-budget-planning-note-for-people-who-need-a-start.html": {
-      "hash": "2aa37a0cf5792fa81a10b2237f305c439423e8a44a6c8b675929d57fc7c4dfdd",
+      "hash": "090013938f45c0cc803d517351b21ac8038ad4b05630bdeb439e56eddb032753",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-business-ownership-documents-2026-ready-local-resource-directory-for-people-who-need-a-sta.html": {
-      "hash": "c3f28a80aa7e3ad467f26ff5bb64ff5e753eea5377f0cf7ea6070efec4d8214a",
-      "lastmod": "2026-08-26"
+      "hash": "bffb134e87945f00ce8ba805598e1eb9e726c84243891514a3b23c52597f4ec0",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-complete-document-library-decision-focused-question-checklist-when-you-need-to-ask-better.html": {
-      "hash": "48e6f3485be6218b40dc08b407d80f5633d6e1c777309245c66d40dd4d8a1d67",
-      "lastmod": "2026-08-26"
+      "hash": "bfaf97bdc40eb3f873d7ebacc0b5ae88704def3a2678d75fa683fa2f994baa28",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-credit-report-errors-no-fluff-decision-guide-when-you-are-comparing-options.html": {
-      "hash": "4328c84b9a0b66cbfff6880d56ecc79273e4458b743b3c5144e633605b65a336",
-      "lastmod": "2026-08-26"
+      "hash": "3f9ff0d79bd4a9fedfe351ef473fd92c0986c40299b6ef4dc9bd59c6153d8f2d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-decision-frameworks-for-sensitive-services-operator-grade-resource-roundup-before-you-call.html": {
-      "hash": "1cd0ca9f4663b7b95e1a78bdcef729cd399544e73dda0ed804bed65d28aba066",
-      "lastmod": "2026-08-26"
+      "hash": "5bd806dada83a166ef4050e8d05b1c36a31cb90934cbad4eafc206644490ff50",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-21-lender-document-request-operator-grade-local-resource-directory-before-you-sign.html": {
-      "hash": "09d5154b07ec07139a46cd18a52acae8f5096ea8f331905a3775cedb9ad8f20e",
-      "lastmod": "2026-08-26"
+      "hash": "5b4b27b035ce86dba7c0e39c8e6f18853cb040aa79cf008fd444791edddf5d39",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-family-recovery-support-operator-grade-mistakes-to-avoid-before-you-call.html": {
-      "hash": "a49d72f765bddf956bea97b3aab231c94e7488c82072043ded1806d037a8a654",
+      "hash": "c0df7106efcdf19958fb3d146e7dc467c66c11f09065b58cc1e69d421c05bc0b",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-full-approval-prep-bundle-human-first-buyer-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "06a50f772dd1bb019a095d14ba7dea66a38ca1f98e566fff4d264126dbaa3727",
-      "lastmod": "2026-08-26"
+      "hash": "9a6140cfdb12de4480a06200eb043a81191d4c238d175ecf2473e9ffafe2cd88",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-lender-document-request-low-risk-decision-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "1e8c4ff480fc91f3c56d6d6c0c56b94486f94f18a71822607dcbfa0d004d46a3",
-      "lastmod": "2026-08-26"
+      "hash": "9924bc91372c6c3739edafc236c702da9c8819b0eb120801d996ab739b851fee",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-loan-explanation-letters-comparison-friendly-timeline-guide-when-timing-matters.html": {
-      "hash": "b7a35e553d3ae93c69b637ef7651b9284552fada0bfb066064a49b191ee794a0",
-      "lastmod": "2026-08-26"
+      "hash": "45ea0ca7fc958c4400c1f68b0abfd55c36d41eecd6c9cf1217aa73fb7da76f15",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-mortgage-explanation-no-fluff-budget-planning-note-for-busy-operators.html": {
-      "hash": "96cb62ce71add3348e3c3a2873c65c91a247b9893b6be32f63fdb817b445ef5a",
-      "lastmod": "2026-08-26"
+      "hash": "973f053be24b8754f6af715dc3b6021c6affab314347aa020bd0df4bab90d94a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-name-mismatch-explanation-operator-grade-buyer-guide-before-you-sign.html": {
-      "hash": "63f1ed3f0bb55e0e75f677a69f4015034ef6d2734812f58f17292f921a069329",
-      "lastmod": "2026-08-26"
+      "hash": "36f4f3ae34d0db50a23fcf4bd200920834238eecade4ff1ff2743472c1182493",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-22-rental-application-packet-operator-grade-operator-playbook-before-you-call.html": {
-      "hash": "290260596e9c76099243ecfb8d5e536a7d58729c15697f8faf6e3741df3ed9f4",
-      "lastmod": "2026-08-26"
+      "hash": "b5f2ca785b6bf13aa5d1df43b5cc8720f368b16a02f4e89524c77795d8a8d54d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-address-issue-explanation-practical-local-resource-directory-when-you-are-comparing-option.html": {
-      "hash": "ba07898e43884dc7376cb056aeb41d214dc263cd92d1fc04cef8b03d500023af",
-      "lastmod": "2026-08-26"
+      "hash": "548d10544e89f9aea8d27fec06ee9c74308de33570285546fa6e2cf3b759100f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-cash-flow-explanation-beginner-safe-resource-roundup-for-careful-decision-makers.html": {
-      "hash": "8a825fd15b7280b8b86488312e10f698729a98e7716677809563f4422bcea5e4",
-      "lastmod": "2026-08-26"
+      "hash": "dc47e14c0521c920a7915336983c02831da736d6d118f9a8f0ebfad9a8202768",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-cash-flow-explanation-practical-planning-checklist-before-you-pay.html": {
-      "hash": "4506292c2fb3f5304ab0389ff1914e287fb5a700a60ea63b83de2fac644001ac",
-      "lastmod": "2026-08-26"
+      "hash": "131e1608649363c2febc6bfa45389b6ddce52f37ca29fdf3353b31c6c1102c1b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-community-reintegration-human-first-resource-roundup-before-you-pay.html": {
-      "hash": "779637cdbde437fc1adf628980295a4c7141af6ce2c7e243393369bc2de98285",
-      "lastmod": "2026-08-26"
+      "hash": "75e4c3634568e1db16f765a0fbed2163530f52f3dfe3ef40508e17ae02fe1bc0",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-full-approval-prep-bundle-aeo-ready-faq-answer-page-before-you-choose.html": {
-      "hash": "5fe72ac39f2f1236cef25f3fbb61da7414f5cc728fe3fd719d103d58d30bb30c",
-      "lastmod": "2026-08-26"
+      "hash": "ab13d47a9ad2802d073909b9c741aa2479451e05ee68c0c32d39c10fff978652",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-full-approval-prep-bundle-aeo-ready-red-flag-checklist-for-people-who-need-a-starting-poin.html": {
-      "hash": "23cfa50fa4a85636cc1e9bd7031859770b24d4387b7bfa6a3ea184abedd09f32",
+      "hash": "d07100988df07d3aed6dcdf03ecbd346103c0eed456988961a62fce55217f796",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-23-loan-application-packet-operator-grade-buyer-guide-for-first-time-buyers.html": {
-      "hash": "ddb3f015cf814bf9da482affe30f32b26eb4488df03aca92b4dea0df419ea63d",
-      "lastmod": "2026-08-26"
+      "hash": "640e6846df4cc2162df56d6441e3580f8f4001bb0b083faef0db0ffbdec8d9da",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html": {
       "hash": "1cbb2bb92bd8ea18af47274ca18a80707de11adecc85636a61734e3678b976b7",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-complete-document-library-citation-friendly-planning-checklist-when-timing-matters.html": {
-      "hash": "bcd207d3697e9419f46ad741fc8b1a7f4ee2e6d8e41ac12dde12d34b37e77e6e",
-      "lastmod": "2026-08-26"
+      "hash": "f0af308652156f4cb454df612825650a0ebf27fcc17ae813f8beb49862572252",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-credit-dispute-letters-no-fluff-operator-playbook-for-careful-decision-makers.html": {
-      "hash": "25adaeeca1114caa20afe2a2c2d30808a461dcd90bf6020bda0f8905b94c7d9e",
-      "lastmod": "2026-08-26"
+      "hash": "70db38f37d2e6f7705b0a19461ea6f53fd997658b28acef73a4c96599fc93870",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-employment-explanation-letters-aeo-ready-mistakes-to-avoid-for-people-who-need-a-starting.html": {
-      "hash": "fcba1f157e1f9a9628a2f5d534a7dfcda5ee2b2c7424643327d987e39ae7bb72",
-      "lastmod": "2026-08-26"
+      "hash": "0c75473cc0c72db3d1b931cbb4c5b5c4f08b2be40724f470f6ce161e8efdee84",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html": {
       "hash": "8a889c87f8cbf4ebbc11f95f0cf31661682d5cb19b9aebb9697e840522b84845",
@@ -1220,20 +1221,20 @@
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-identity-records-explanation-no-fluff-local-resource-directory-before-you-pay.html": {
-      "hash": "5e314a2465c09f457043dfbdbea22bdb945d4818b0f449efc5ce5c177e044cf4",
-      "lastmod": "2026-08-26"
+      "hash": "4ed9ff4080c426f8a6df158ac77bcec12f50af393f3abb2fd3944ad3d07117b2",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-iv-therapy-clinic-research-decision-focused-comparison-guide-before-you-pay.html": {
-      "hash": "7c56bc10b63420416741afb483474dab419d990f9d071147616158ae00568eb6",
-      "lastmod": "2026-08-26"
+      "hash": "c359cd9b03df9cf30be4c31c5b65e826cab225b6afb4897fb3022935e9facafb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-large-deposit-explanation-no-fluff-faq-answer-page-for-careful-decision-makers.html": {
-      "hash": "56b0d914d1b1d24d96018a1d0396d160dbad1bd9a09d06c6f0bf0d35c92258da",
-      "lastmod": "2026-08-26"
+      "hash": "015ceae6989da296117a183cdaddddc3563dba823b35d6a5d15ae7f2e44fe5bf",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-name-mismatch-explanation-comparison-friendly-decision-guide-for-people-who-need-a-startin.html": {
-      "hash": "1dc17c879a2300c8e102160a7a8f5412e0df8b63da08499a7c72275e44c7120d",
-      "lastmod": "2026-08-26"
+      "hash": "c4ac571f3a08e9a54f27b1a5de25730fda35f02b4271a49645b62460cf222073",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html": {
       "hash": "bf2f716fe53362ed298c4c3cffdcf103c26e12982b130b8e117b22866eac7041",
@@ -1268,1000 +1269,1000 @@
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-business-funding-documents-checklist-driven-faq-answer-page-before-you-call.html": {
-      "hash": "b840098c713bd6dec93dcef727474927b2ec70541e2541b6230309c309e5809b",
-      "lastmod": "2026-08-26"
+      "hash": "2956f8231b08df891ee8e82a76e88f41d48604013b8443f1d425740c4d4ecf61",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html": {
-      "hash": "20d96fcf8991e941b60976aab700d2e60465c38c82a177e031abaf24d3b16785",
-      "lastmod": "2026-08-26"
+      "hash": "050285a6a2e6113f7c42862da291b4abd49c3340e094bc1c4fb5dd2c72cdd980",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-how-to-explain-a-late-payment-editorial-framework-before-you-call.html": {
-      "hash": "3fd8ea31fb566aced1b45bbc7125308a4a1bf50e1afadc8c2bb45e0906915065",
-      "lastmod": "2026-08-26"
+      "hash": "6004e9bc97a65c821117f5345e3696f2a4af7dee42810f634b4dc20d6d69151e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-life-admin-letters-editorial-budget-planning-note-when-you-need-to-ask-better-questions.html": {
-      "hash": "9a6aaedb812150cf82d218c87dc0db4d06b3bc9e2408f4bb6ef0147232ca638d",
-      "lastmod": "2026-08-26"
+      "hash": "a8db9049a5365b31cf8f9036860f73ca1827e509182c751ac83e99deca66e45a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-mortgage-explanation-comparison-friendly-decision-guide-for-careful-decision-makers.html": {
-      "hash": "8b060009fe8ed69ada88d3a806ed5e86098847e64da31837229c1b97f5f4f5f9",
-      "lastmod": "2026-08-26"
+      "hash": "11857d5f96e49f05a794c5c75d894471b9ae5b60f892396706aac794ceb4231b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-rental-history-explanation-comparison-friendly-faq-answer-page-before-you-pay.html": {
-      "hash": "621b98dabc96dd9b78c451e0e407e7cf2ff22b6522bb6fa049030a5aae762753",
-      "lastmod": "2026-08-26"
+      "hash": "80a843369718f890bba2866c28ca57806a207a9b6d87092a8df6a6f81f805f32",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-25-self-employed-income-explanation-beginner-safe-planning-checklist-for-busy-operators.html": {
-      "hash": "4349f602868527fcdbd948e22ef93c089874dd450e0e6d5f9067ef4506b3d3c5",
-      "lastmod": "2026-08-26"
+      "hash": "acf7d4184570d9410424c4cb8318d75bc5a0e7c6f68596e1cb5f0057987ef10e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-business-funding-documents-checklist-driven-question-checklist-before-you-call.html": {
-      "hash": "f42d51ca3fe0f63742f7b35eaa9c9f3fff39af3bdbaa385dbbafb2a963757e59",
-      "lastmod": "2026-08-26"
+      "hash": "02f033d275a87c2d666e060dc37efe7dd9eeb01328e7d5b0f8573d7cec8f517b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-credit-dispute-letters-geo-ready-timeline-guide-when-timing-matters.html": {
-      "hash": "df5f191d67fbaa27a088bf77f9c1d76ce0709aac28a69421b636680726c21ff5",
-      "lastmod": "2026-08-26"
+      "hash": "e7fcd0123517df02f12f8eab5f9aac6a502ae1e3c2cfb5c6a2e8cfc2693deb5e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-credit-report-issues-editorial-timeline-guide-before-you-call.html": {
-      "hash": "4254ae52e2b622556ff0e29ea8eb2a16882091b487dba1c816fbd6fbbdc86ad9",
+      "hash": "e39202b99803d81aa72b1bee3f8de10d594171a77ac986aee4b6956cef95ddb5",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-full-approval-prep-bundle-editorial-timeline-guide-before-you-call.html": {
-      "hash": "584929461fa385864c27074dc1f6e13303008ffbb807cb078a6186ff62a979a4",
-      "lastmod": "2026-08-26"
+      "hash": "bc6c8830f4f13910da17827cb62e976f1a95a4b5a437b8c4a700756d67786c49",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html": {
-      "hash": "fe562e981414840247ebd480b017b1179b68c53b5c7275a2f031f7a0a2a46195",
-      "lastmod": "2026-08-26"
+      "hash": "05200d0cf5e21b38260977661df7776d2bac5a59fb890b7c2ba85ed5b4441fad",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-identity-records-explanation-decision-focused-decision-guide-for-careful-decision-makers.html": {
-      "hash": "8baf75e5c1fed2453dc34576fc0533fdf2ac61307321dd2f05dd7d1fea57b988",
-      "lastmod": "2026-08-26"
+      "hash": "2d85dfa8a2656fd1c26de2288fcf53487990b086391ef53631bf46c4a4b44bb9",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-26-large-deposit-explanation-editorial-resource-roundup-when-timing-matters.html": {
-      "hash": "b09004d63cf2f8d7ee3aec9c7123e70aac827431f97a882b0c0e9cf84c3cb690",
-      "lastmod": "2026-08-26"
+      "hash": "6e488f2c92d1cffc06c029009c0b2b64b3336b4bc0b5a5cadbc85da728ddf3cd",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-address-issue-explanation-aeo-ready-local-resource-directory-when-you-need-to-ask-better-q.html": {
-      "hash": "ceca5c33f6938e030343221c2e2a3fd91a5fd0b6f8c1897ab6cbfb3af29bba56",
-      "lastmod": "2026-08-26"
+      "hash": "dfaaad9b33db1f927a1721e3a7486dc371dd78d06eb1a5b68f5c9a49ac3da3f7",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-credit-report-issues-2026-ready-budget-planning-note-when-timing-matters.html": {
-      "hash": "95e2bfb766c1874fecea9f0c11218841831b54e7035024055181adbddad0e055",
-      "lastmod": "2026-08-26"
+      "hash": "7f76dc6617f548ab3cd2ba01f48e8edd275151230982a09fdf00a242561728c3",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-hair-restoration-provider-research-resource-backed-operator-playbook-before-you-pay.html": {
-      "hash": "d2026ae5ebb066b22f486f3a5457c23dfc30c4cf2c27ef58bc29009ea874c6cc",
-      "lastmod": "2026-08-26"
+      "hash": "7785536cd212050cf4a4a4cc894bec50bf61a61618af8103cc6fce27a7291489",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-life-admin-letters-human-first-buyer-guide-when-you-are-comparing-options.html": {
-      "hash": "091d61144261884aa649f506da049e252fbeaf68c60ab30f5aec6547e7002675",
-      "lastmod": "2026-08-26"
+      "hash": "b302e3c1b3e7adebb9312e92f74f7a96a3730d621e12d0213f07146e488699e6",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-loan-application-packet-practical-comparison-guide-for-careful-decision-makers.html": {
-      "hash": "72bae2a02792751bc08c093fbd96f593b4e77e8d01ab731c888354f68ab06819",
-      "lastmod": "2026-08-26"
+      "hash": "f5b1a80b8ac8c4bbeacc1c2d53203856faa2a71606d835f67f7edae52f20eae5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-proof-of-income-for-renting-2026-ready-decision-guide-before-you-choose.html": {
-      "hash": "0cd261c4cdfd63d51492005a111b49e566ce070d392d919689672a2083c4757b",
-      "lastmod": "2026-08-26"
+      "hash": "70780d1a44c3b111cc6c7438c69f29e204624979739631a54fa5d1931c01cd42",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-27-rental-cover-letters-checklist-driven-budget-planning-note-for-people-who-need-a-starting.html": {
-      "hash": "1bb088ff7b85eb9ac8f6563dca16123ad7d3884ed2d0db6a103ccdf7e7920081",
-      "lastmod": "2026-08-26"
+      "hash": "6a36a6789bc3ad48a3971bf0ba7676f4baa27e292d7d0f05abde61a5ffc1f5fb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-apartment-denial-review-aeo-ready-decision-guide-before-you-book.html": {
-      "hash": "8980d81796c3001d1f3a061be4de9ceab7d9e5dde8d49d454657eb82e11833d8",
-      "lastmod": "2026-08-26"
+      "hash": "1da452f9838ead700f43612bf941f6d7b8484e90cb3bf6c14757e032bbd1bda7",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-application-document-checklists-2026-ready-timeline-guide-when-you-need-to-ask-better-ques.html": {
-      "hash": "cf12d56af3618d88e2fda89906fec632f5120358e8b6de52eb8b6e425699c42e",
-      "lastmod": "2026-08-26"
+      "hash": "bc953a4e17953297e0a726f9fcb77922fde9bbd44595bdacf25733a9edcc1396",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-bank-statement-explanation-operator-grade-decision-guide-before-you-pay.html": {
-      "hash": "e7bf11c526b87a154d9676cb927e6a0bc696c4b578ce87d165584164e1127c54",
-      "lastmod": "2026-08-26"
+      "hash": "edc50eee5e49afb6eb53dd3f5f9bc16d61dfd7f6b89600331e25f76ae1a8a961",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-business-funding-packet-checklist-driven-operator-playbook-when-timing-matters.html": {
-      "hash": "e7a67cbcf368670856272d3ab1bd00a81e5b22f8d2f8a91c01147253e8a55e03",
-      "lastmod": "2026-08-26"
+      "hash": "abc9cdb07451283746e8815435ecff83bf08897cd8bcd3bd5f62c5b893853596",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-business-ownership-documents-comparison-friendly-red-flag-checklist-when-you-need-to-ask-b.html": {
-      "hash": "5ff9a83d35e6e04b662fbd872f25bd5cbc4e8f29dde8416fcbb0610213736e94",
-      "lastmod": "2026-08-26"
+      "hash": "c78f2d97c3991268bb9761dda54361d232c4562b5d75afaeb72fad4a33004800",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-full-approval-prep-bundle-decision-focused-timeline-guide-before-you-pay.html": {
-      "hash": "58bb12467cbc28949085bf0d27fa479d258d8e2fb787f37d074f551b401735c5",
-      "lastmod": "2026-08-26"
+      "hash": "9c84e3fb749a58afe6c8098cd8b7efecfdeb062b885bbe98163dd26758dd7355",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-28-income-change-explanation-no-fluff-timeline-guide-for-busy-operators.html": {
-      "hash": "d1e4877c21915fa61df1615d6237b776d7a1f34e23815dbd09d927efffc5523b",
-      "lastmod": "2026-08-26"
+      "hash": "ad050f125bc14ac7c2d3b0ac697ddbc6b636e0bbb4126aacfdbad8df4bf3b109",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-application-issue-explanation-practical-faq-answer-page-before-you-pay.html": {
-      "hash": "b976284061ef17b8027bf2dbd7642f37c324a73a6e5ca49613554213e0fa0280",
-      "lastmod": "2026-08-26"
+      "hash": "38af3718d699f3f4d1d293d8971d28ccb544ee46db7e88857352e638cf73d81d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-full-approval-prep-bundle-beginner-safe-resource-roundup-before-you-pay.html": {
-      "hash": "304f668aad6d2621de3d9244295689a12074317cef2aa80c13e7d6627852c529",
-      "lastmod": "2026-08-26"
+      "hash": "abe6e7a1c9ccb96f92b1a7032255ec9fb678df49572d0f9b398b0c550bdc4f73",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-job-gap-explanation-2026-ready-buyer-guide-for-busy-operators.html": {
-      "hash": "ff226df5e60828f9a3dde72188b1d1a6aac5067a528267750c12e0638acf6142",
-      "lastmod": "2026-08-26"
+      "hash": "4049137f910517cd096e9f457829e933dbc447efabd4793a0dc22a8beb15b06f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-late-payment-explanation-no-fluff-mistakes-to-avoid-when-timing-matters.html": {
-      "hash": "fd281519dc3c45c620c2187139527094382fb4ffd2d712f67af18645d1cf47dc",
-      "lastmod": "2026-08-26"
+      "hash": "62e1b56385d374ad27cbcbaa0d70598a9cb67268f10728ed17031b7d36fad2de",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-loan-application-packet-operator-grade-red-flag-checklist-before-you-book.html": {
-      "hash": "6a923e56091e75945022573a18ab7834b2ed380b35f57a7464d3a354e25e2094",
-      "lastmod": "2026-08-26"
+      "hash": "c63731d6bcaa92a104c069e235f8c33c1d82c8a79a72b7f88add263a00cc06a0",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-personal-loan-documents-beginner-safe-faq-answer-page-before-you-choose.html": {
-      "hash": "3d0ec8557294ab36f1104f123f40017be4b3f01bc3aab30298e4181bbdf6c8bb",
-      "lastmod": "2026-08-26"
+      "hash": "9271c30ba7258b279bf7fe60cd4e1e8685139016014c9d8f52857f81039ca3ca",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-29-self-service-paperwork-preparation-checklist-driven-resource-roundup-when-you-need-to-ask.html": {
-      "hash": "b2fde332c5faf9cb87b9d8b37a734ac2001c82b4f039fbf0b49683a867bb5db3",
-      "lastmod": "2026-08-26"
+      "hash": "d8f9219b26fd639262c105d585289271d2e415acee5276aa1902a1e5e521d2d7",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-address-issue-explanation-editorial-red-flag-checklist-when-you-are-comparing-options.html": {
-      "hash": "a77f1dd1abf6618ae1c9b4968b7d4c8f10396ce8186390646005e876a09c55b5",
-      "lastmod": "2026-08-26"
+      "hash": "2ffee312f75493783a684eb40a5b8e9dce76816553ccb5e1cb6ee612b6f79c6e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa.html": {
-      "hash": "a5f4c1334a0d0b2762828e043a1696a3434cb74d8196e9e3907e3923f2c9bd71",
-      "lastmod": "2026-08-26"
+      "hash": "ef86208dac9e931bb55ef2bd9ed2d7c328a4527523972e253b3ef15d567aefd5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-identity-records-explanation-practical-budget-planning-note-for-careful-decision-makers.html": {
-      "hash": "997d1e870d1bbef88031ab0a5e38e5557f1cf44e4c9bdf0d173403997c6665b6",
-      "lastmod": "2026-08-26"
+      "hash": "1fbce97afaefd153178976ae61fbada38c2aca8fa8f506877d09ea830a17ab37",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-job-gap-explanation-geo-ready-comparison-guide-before-you-choose.html": {
-      "hash": "dc008e34f52387bf0b879e10cff9fa6f7a22f52dcc9ae7cee1133f9abf74b082",
-      "lastmod": "2026-08-26"
+      "hash": "e31059cf3f04d3167926d91c972d9df5411885818eb4843ec1c1ef5d206deb27",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-life-admin-documents-citation-friendly-budget-planning-note-before-you-choose.html": {
-      "hash": "9915e8d31f5263f3a283722ea60eb7826f8fac7e58990a09931ea9c5acdb8614",
-      "lastmod": "2026-08-26"
+      "hash": "2ca8fa2f30102d93edb15fe926bb8bd5e4a2bfc14c166c7875a8180c04c6743e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-recovery-housing-low-risk-planning-checklist-before-you-pay.html": {
-      "hash": "7b05fbe7d432edd1afdb7c44583c70ed84249b216f651e67931b62839672d81b",
-      "lastmod": "2026-08-26"
+      "hash": "e92b9bf0c22b08946c517ee2de4bd97f833340ec6176631a6b84fc8c00e98bb9",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-30-rental-application-packet-geo-ready-decision-guide-for-careful-decision-makers.html": {
-      "hash": "90327de3a845fe7a16caa7db30f597c31da388b86a9065f313ec115c4b668b5e",
-      "lastmod": "2026-08-26"
+      "hash": "3a719791948a9a9deee9217e69058af79d16df6f6c7df9da79760f67f98e8f37",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-credit-dispute-letters-decision-focused-planning-checklist-for-careful-decision-makers.html": {
-      "hash": "ccdc17e43c24313e089d38f34018e67d90c78e2e5e2920b3d1c00563abd99fbf",
-      "lastmod": "2026-08-26"
+      "hash": "512a8cc12ffa565f621fe2830c800a72199e4bccc4400dee8a7c2a5bd31fe36a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-debt-validation-letters-decision-focused-resource-roundup-for-people-who-need-a-starting-p.html": {
-      "hash": "1f28627cd28a2a1b938c33503dce49c00c356af2b888ec5f06374ae591bb2a98",
-      "lastmod": "2026-08-26"
+      "hash": "41168838c634fcb83fb9f515679ab1005dd2c7a655796cd1b56b6a63ec0afa10",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-income-change-explanation-beginner-safe-framework-when-timing-matters.html": {
-      "hash": "198a804a86534119e0c4ec85e4342fba30ed1a5b14a28da0893fb515b2477c37",
-      "lastmod": "2026-08-26"
+      "hash": "8ce465433ea8f9c2bcfee4e17a57a95edc593f46423dd40123d9e6749c8ab903",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-job-gap-explanation-comparison-friendly-planning-checklist-before-you-book.html": {
-      "hash": "c64f63390ea150b696f0d53142b6fdeb0f3b2bb8fe5e87f33d58c8fb0aec17d2",
-      "lastmod": "2026-08-26"
+      "hash": "da26b066314b33a967541e5d16e992b84738c10cce5d6749d9aad0f11d4335ae",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-lender-document-request-editorial-planning-checklist-before-you-sign.html": {
-      "hash": "041e9e062ed607ac8fabb983c5fb09d1dc15baf789b8b3ec987886a2536a5a50",
-      "lastmod": "2026-08-26"
+      "hash": "fc93d3b530ad74de0a4ad44ea6b351fb69e46014d3809c70304b6dea3136a061",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-loan-application-packet-low-risk-comparison-guide-before-you-sign.html": {
-      "hash": "dc34e746e8e4c9f345bc2133176e10f1b812ed88036494a05bb613e918ce3599",
-      "lastmod": "2026-08-26"
+      "hash": "fc4ea32dbeab3bf94b2761df2154791f1da1912ee35c9e9110d136fcf93b3515",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call.html": {
-      "hash": "d7a09708b63b87f9b4c4e92020106376c2080914c09e4aa359b24d3e587a95ec",
-      "lastmod": "2026-08-26"
+      "hash": "909df12d5b8c1d3ea68ea0bac1439baae97edacc4f91219ce3c75a0fccf8aa16",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-application-issue-explanation-comparison-friendly-budget-planning-note-before-you-choose.html": {
-      "hash": "bf59d5e5680751a91063dc7f0db82b0a6ad9e4b175c24301640c599bfb4bebe9",
-      "lastmod": "2026-08-26"
+      "hash": "95663655ebb22278d0a09a0bd9cd7325625b4f53d5da75ade57e7cbd98519a5c",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-boarding-agreement-questions-geo-ready-question-checklist-for-first-time-buyers.html": {
-      "hash": "621ac7cb5eca17c0e85db4dfafbebe9a381536c58b516e0b1900847928377393",
-      "lastmod": "2026-08-26"
+      "hash": "a628cc36d37e47216744ac0b87bbd4b52b4764306d355676f8e1c634f20d8564",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-business-funding-documents-editorial-prep-guide-when-timing-matters.html": {
-      "hash": "4e9b2b3dd5292d4e312f0e035c5d8016da71d58bd08d00d257fc1b2aa938df11",
-      "lastmod": "2026-08-26"
+      "hash": "6dc37e5c320bcf08dd2edaf283a4ff93c440c2a704f6481e8d013408533520cc",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-cash-flow-explanation-practical-decision-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "ad7dce964a716b032942df49a05adf61e567916497adba585d97d3762c268d6f",
-      "lastmod": "2026-08-26"
+      "hash": "e8df94179eba3659b50c1e7fe3f10d8a0683813f113c608ac2b4d9488baad5ed",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-credit-dispute-letters-no-fluff-faq-answer-page-for-people-who-need-a-starting-point.html": {
-      "hash": "6cd82f31eb50f1cdb4596df6ae5a349f93f39592a2efbf86fde04396d7b613a9",
-      "lastmod": "2026-08-26"
+      "hash": "832217c82ba4bcdb56eed40c9d2b51592a1e030da2832ea0db4acb1696874ad6",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-full-approval-prep-bundle-aeo-ready-question-checklist-when-you-are-comparing-options.html": {
-      "hash": "50c393d67d6b44792e440133e095fca5058ef66f818baad4fbe53c2c4bc31273",
-      "lastmod": "2026-08-26"
+      "hash": "2083d04d658d8d8a52955001012f6505c163ad4ac188e4fba123d0f598f34df6",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-01-multiple-application-issues-human-first-prep-guide-for-busy-operators.html": {
-      "hash": "d3d7be4d6057ebfa80cab39e467b11ec4960b7853315f02547b9340d029fcc24",
-      "lastmod": "2026-08-26"
+      "hash": "40f70e3330ab804c7a65d6a9c8105985cfa2ccd215cc8cf3312ae85ddb2485ef",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-address-issue-explanation-2026-ready-budget-planning-note-before-you-choose.html": {
-      "hash": "8061454240f8c5930d33f643c55cbef42db4ec8efc500ec2ac07b401cf18217d",
-      "lastmod": "2026-08-26"
+      "hash": "1045967ae6a83439cfe1f3fd7c48d6316ef44e5843c19a8c170f8318e1df9c81",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-address-issue-explanation-low-risk-planning-checklist-before-you-call.html": {
-      "hash": "1f7f3d3e16e664b5db96614e5b5a27b47fa261b5f241599ff25fc3b942b907d0",
-      "lastmod": "2026-08-26"
+      "hash": "5e9b6f827c3fab92eeb1eb4a682c4ed2ef457b65cbedfe442c63278eec6e67bc",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-apartment-denial-review-operator-grade-local-resource-directory-when-you-are-comparing-opt.html": {
-      "hash": "48b5192486d079ce62ed67604825ea61c1884e4da1eedd57c0ba3ebaa6800db6",
+      "hash": "75521d7ea6a7a3da99716c4f7767b42c1001547d4a6c70f8028e887a30512e86",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-life-admin-letters-plain-english-decision-guide-for-first-time-buyers.html": {
-      "hash": "8e6e6204f05b345de3e40c1742d808b8b43af5f5eed27daed2ec06262526b2e7",
-      "lastmod": "2026-08-26"
+      "hash": "ac1e95ba4badcaaa18abf972445972dbf8b6a87972ddf4758a4202639e03bf99",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-personal-loan-documents-checklist-driven-question-checklist-for-careful-decision-makers.html": {
-      "hash": "5fe2386469cceb05d56121073fc1cae00b73e8cdbbda38aa1de7cbbac4f75000",
-      "lastmod": "2026-08-26"
+      "hash": "c2a3e76cdbb87adbe93af041396c85a7848109772ce1fc1a20ab2688153f1bf0",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-proof-of-income-letters-human-first-question-checklist-before-you-call.html": {
-      "hash": "be51bc99830421d3d698daeef7a9d33bfc4c1369d6f8bc1b08b271f3f941058d",
-      "lastmod": "2026-08-26"
+      "hash": "a292734229044140212cfa0408314fbf7d0b01e5005c8897ed5487d3753cc2a2",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-02-recovery-referrals-editorial-decision-guide-before-you-choose.html": {
-      "hash": "a022b30eaa3adc451b2f2ec8d630e3e138cfb5e783f017b15b924b080c371387",
-      "lastmod": "2026-08-26"
+      "hash": "2e799f01dcdc040a8301b05c9327b6ef73e10aa9ed1b5cfc4a26ee0fcf69ea07",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-complete-document-library-citation-friendly-planning-checklist-before-you-call.html": {
-      "hash": "c742b7825caf0ac804d6800126fcc6d4133234434d7843c0bd1c8eef4b5d2a09",
-      "lastmod": "2026-08-26"
+      "hash": "6613293e4df07b39b8bd46f448d4d7d06c5f7bcc99b68d8946459237006d2794",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-credit-dispute-letters-citation-friendly-local-resource-directory-before-you-pay.html": {
-      "hash": "a33756f84b39683c1d5653dd421a073d63331aca357366ef9eab2048fb507a64",
-      "lastmod": "2026-08-26"
+      "hash": "ca029835471019d483b574947dcc76faaaf3f7d340b5489617afa9d2dc3c62fc",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-debt-validation-letters-geo-ready-comparison-guide-before-you-sign.html": {
-      "hash": "35f512661a4e18f749b00122d3636b28bd66a4ff466fa8d6da1f02560119df33",
-      "lastmod": "2026-08-26"
+      "hash": "c8b8a0421a9c472736dd85da4493521ca105c3cea2f2094984b90efa4bff3131",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-goodwill-letters-comparison-friendly-decision-guide-for-busy-operators.html": {
-      "hash": "f3cb06759b8444cf2ece068203eeda102629571b9186cd6fd07852e969f7aa65",
-      "lastmod": "2026-08-26"
+      "hash": "0c505e3080f71ca14db72f4eff8a3a8596df6577d24d92eeba1ea6aa82d78e32",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-goodwill-letters-editorial-comparison-guide-for-first-time-buyers.html": {
-      "hash": "76cc18e0d71fc661a6a6daceb8f608295074cb41c859f9c2f8c55e438990f78d",
+      "hash": "6ee0abb0021f6b847f9768cb245b9f9c8149e9ddcbc755caef1a2e1599f23b86",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu.html": {
-      "hash": "04d20842685cf3767d203a4cf7c44b78493bc92d4738f8c778d90254c895f092",
-      "lastmod": "2026-08-26"
+      "hash": "d902cbd312af188d206f478c638cbbee54a0c93da20ef046c99f714a9cce6155",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-03-rental-application-packet-human-first-buyer-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "e6e7667598f55ad04b779093d0eea6c8097800caf149856a5d08db504d73e1be",
-      "lastmod": "2026-08-26"
+      "hash": "19cc34f765b5c9754c60e55c994063f197395689a87e4be2f0e21d64853ec509",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-credit-explanation-letters-citation-friendly-framework-before-you-sign.html": {
-      "hash": "f02e1b6287c79d2357127b88b55361cc2bd912cf47d4ffe98f93f0b0f4b4d1aa",
-      "lastmod": "2026-08-26"
+      "hash": "2b70950e4fa7e2c53d8f2e81a0255d534e603ad77e3b0959e2271dbe6e19d31f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-goodwill-letters-practical-resource-roundup-before-you-sign.html": {
-      "hash": "111971a2a6d9a881dcfa6bbff8d403c01eae9252f0797c836f67739c6143b49f",
-      "lastmod": "2026-08-26"
+      "hash": "152425a30942c59bc94e38b2648336db7ed12d8e3fa3673630d33ddb9d80c71b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-mortgage-explanation-decision-focused-budget-planning-note-before-you-choose.html": {
-      "hash": "26bd7b8861d786835eb641fd00a2bd1117c98606c3d70a4d1de5fb7906812f4c",
-      "lastmod": "2026-08-26"
+      "hash": "88279d332c7b07d49660416eab54b6ba8c08e429f677c586ecb4016ef214bbcf",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-mortgage-explanation-operator-grade-resource-roundup-when-timing-matters.html": {
-      "hash": "3ec40e7f1b23e6756d50966a7be6eb52732a5817701b34ef11cfed5b4157a15b",
-      "lastmod": "2026-08-26"
+      "hash": "51faaf630737dbb3efb6a44393742488fb2bd7eda737e21fa92730dcc658f1bb",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-personal-loan-documents-2026-ready-framework-before-you-pay.html": {
-      "hash": "e6d4baa35256a3aed3a272bda6a40c94d1c6119bba5e21b5c6eb5c22233ae17e",
-      "lastmod": "2026-08-26"
+      "hash": "a6f014f20c6f328c96b33dcc9551894277698f2dd57b56f73c8e398d506c1603",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-proof-of-income-for-renting-citation-friendly-local-resource-directory-before-you-book.html": {
-      "hash": "db0b073587057dc54a8c67324d89ce2c04e368003f414f11344b65c991fd23d4",
-      "lastmod": "2026-08-26"
+      "hash": "9f8949d1d3614c295438eefe3dd729ea216d29d264a78256eff2e896df19d41b",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-04-trauma-informed-leadership-aeo-ready-planning-checklist-before-you-book.html": {
-      "hash": "3b40a87f4f16e048721864b35b1ecfaa8981bacf80ef5be18ac4b52e0b91838b",
-      "lastmod": "2026-08-26"
+      "hash": "5aab2ae2e4a5cffaf28a38f1a5771a24b644078ccdafa523e251d04079625d27",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-business-funding-packet-comparison-friendly-local-resource-directory-when-you-need-to-ask.html": {
-      "hash": "f7d310689e8d071fccfcecbd8f534bd3ba7c10c5116eb456e7f911a53a3b89de",
-      "lastmod": "2026-08-26"
+      "hash": "1330ec77aa380281565bbc67e77833eefa13cbedb353dae028cd58600945068e",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-business-ownership-documents-human-first-operator-playbook-when-you-are-comparing-options.html": {
-      "hash": "12152b3e41333fafe3e83d3d49f8466f716ec6c28a93f1a3a8381a776c8e9c63",
-      "lastmod": "2026-08-26"
+      "hash": "6e398dfab42f03c0eb61eac6d0b634b500c553a52c2205cae02cb4413a1d1a52",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-credit-rental-income-and-loan-letters-no-fluff-prep-guide-for-people-who-need-a-starting-p.html": {
-      "hash": "e8a18fe77677d685a425c40f913e9db16c4bfa5120e61b256ffb88c7804e3f95",
-      "lastmod": "2026-08-26"
+      "hash": "dc65d95558ea807ac3541f318d2d14843064048faf78400d79bc8402882b5d30",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-debt-validation-letters-checklist-driven-question-checklist-for-first-time-buyers.html": {
-      "hash": "35cdf498aec543b399c30077394e98eb77e115c19845df3383503d25f533a81f",
-      "lastmod": "2026-08-26"
+      "hash": "dda744ea16702bcc7c6fda93d8ae233f1648b99b78315b11fd2c385313039298",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html": {
-      "hash": "0583387b9c5e4e9cdd4f9b84e970f929c2289eca7c8c7d3d72244058a7637374",
-      "lastmod": "2026-08-26"
+      "hash": "fc8f7d2013be96721613a6b276111072734336c20db20d50e82a4853ae3ba06f",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-letters-of-explanation-2026-ready-resource-roundup-when-timing-matters.html": {
-      "hash": "3ed7ce90ef5a2a5e09d358b9655b12fa479c2a055cb4ffbd0f1fd51d1a4916e1",
-      "lastmod": "2026-08-26"
+      "hash": "640fd87d12aff7adda6a896048d3fa3703a8de079e101fb4ef04439c2ad9e9ac",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-05-truthful-document-preparation-geo-ready-operator-playbook-before-you-sign.html": {
-      "hash": "0f094af234c206ea8fd17495618b820fed91f92e1ee766f7b1547faa98595c8c",
-      "lastmod": "2026-08-26"
+      "hash": "8364b70db0ec680c4bb56614cf57b1c43faf32d9b9cd229c33d0e5ce601ae730",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-complete-document-library-editorial-question-checklist-for-careful-decision-makers.html": {
-      "hash": "bb63f78e07a712b35a024d549544ee822bbdc0d4590ed809ed522c32cfe4538f",
-      "lastmod": "2026-08-26"
+      "hash": "f61a7bcac1a4993fccb790053e27da8ca12108444ef5c97a00759a5cc496ee72",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-document-consistency-before-applying-plain-english-question-checklist-when-timing-matters.html": {
-      "hash": "7a521bc6973c91a2ea647b612df0912c0b68ba75896d2adc4aac70e0a60aa8a3",
-      "lastmod": "2026-08-26"
+      "hash": "68736fd00fb2e2463c4dbee4ae43f94ee91077072e5dfc4fae3009ca9a81454a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-job-gap-explanation-checklist-driven-planning-checklist-before-you-pay.html": {
-      "hash": "19d99ccf10f2e626afcd7602ec95a8a7627b8220222b0a06d8ffa82a50f0751c",
-      "lastmod": "2026-08-26"
+      "hash": "fff64fc4b905c5cc3f57ae6cdb07a941d4a4d6c065c1ebd7a15dc04d035b850d",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-letters-of-explanation-aeo-ready-mistakes-to-avoid-before-you-sign.html": {
-      "hash": "f3448241023ed533af11c42020647c6d26cc9698ee75ed612a25f0cfcea615d0",
-      "lastmod": "2026-08-26"
+      "hash": "e9dd66fdf6c1c26a4a969103aecb8f8a95e3bc320d8c05bc6eac050eaec23fea",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-loan-application-packet-practical-faq-answer-page-before-you-book.html": {
-      "hash": "3b790712c378f4879cb1c2c0efd79cd2bcd867644df094541d6c74487819269d",
-      "lastmod": "2026-08-26"
+      "hash": "6db9fdbad2cc31c5eabc20b79c7908a6c0449b33c11bad8fea44afd33ee0f565",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-self-service-document-creation-comparison-friendly-faq-answer-page-for-careful-decision-ma.html": {
-      "hash": "a504b20361f824f11783fbb2a7c733aa15caa3fbaec0c963fa36bdafedc9b10c",
-      "lastmod": "2026-08-26"
+      "hash": "53142d8da18dd5d4125e74e7635f84d9769f61d1947a4bb118e2a0a212b762ab",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call.html": {
-      "hash": "e8613f3cce65815f2b1c5faecbe058ca431368391d34fafb910e3edf9e58f32c",
-      "lastmod": "2026-08-26"
+      "hash": "2cb3fa04f833467c837a4291915855ab104f488d6f6f812fc90345e71bc9f7a5",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-business-explanation-letters-2026-ready-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "481ae78e5bba49cdc070fa170b587e42b0d7592e5f1a3b200a63d215fd22bd56",
-      "lastmod": "2026-08-26"
+      "hash": "5178b1a6ed6bb2e9b4cdf94b6163d8a910f0fa481dc24d0e4d8803945a060d93",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-business-funding-packet-checklist-driven-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "850df88673c588429f549704b74fd40ef57f87b8a47f2e67db99e744bb75c33a",
-      "lastmod": "2026-08-26"
+      "hash": "a388918ca2d8ff04b0c607ac1a867009dbdc459cd6f22cf7dc5350f785c65c1a",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-late-payment-explanation-resource-backed-mistakes-to-avoid-when-you-need-to-ask-better-que.html": {
-      "hash": "ca05f79e8c5c7b80bc9af34a2a5214aa08d56a7afed1c75da6060e1a751cacd7",
-      "lastmod": "2026-08-26"
+      "hash": "791935ce4ce2aaa86e501afabf0a377f4b6104d8d4fce70c742cde20dd28c0e3",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-life-admin-letters-plain-english-prep-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "64179d957d069467f60b618af31bea35021d920d92cf0e0ff223831b2e88f726",
-      "lastmod": "2026-08-26"
+      "hash": "4675e7c6b140f7fc48a7b6394b2b841339ee88622e8cdf7704ebfecfaabf20d2",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-personal-loan-documents-citation-friendly-prep-guide-for-careful-decision-makers.html": {
-      "hash": "4aa7446406894bf01ffca93d98af5a53a1ab2425d843527e0b8ad6d5e6f49fe3",
-      "lastmod": "2026-08-26"
+      "hash": "af8011757b8baad154d6aa44f9dd1e1821588f902d1551bae5ff95cb3a0d3383",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html": {
-      "hash": "d052d40d66adac1057324e6ed661aa879450b28c407f3badbca9d47d3e6fcac6",
-      "lastmod": "2026-08-26"
+      "hash": "f1b5f9dc3747669843433965af7401b70216ecb8a2041cb252c205901b2c248c",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-07-self-service-document-creation-2026-ready-planning-checklist-when-you-are-comparing-option.html": {
-      "hash": "6b2bd0125c35f312001274e9623060bba2f3244b1b357915b96dc7d4f622d8e7",
-      "lastmod": "2026-08-26"
+      "hash": "0199a00cf05b4acf49065bf6b7af32ff1bf535c2671297af705a14e96941d685",
+      "lastmod": "2026-08-08"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-business-explanation-letters-aeo-ready-mistakes-to-avoid-for-careful-decision-makers.html": {
-      "hash": "3833ec5f5775b4c919c0bf26dd4ac15fb33114df7fdea7d11fcb481626538849",
-      "lastmod": "2026-08-26"
+      "hash": "ec83efa6fc9c029d5dd0e5f21016a6b3d1a8954fd5bcb2945f70001d585f9476",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-business-funding-packet-citation-friendly-budget-planning-note-for-careful-decision-makers.html": {
-      "hash": "14dc88efc034f51a17c172345c178359efb414e99817b32f8c413202bd6c811a",
-      "lastmod": "2026-08-26"
+      "hash": "b6ceaf40995ac7a0b52f659d6e90d14890c4376571f7556e29e89679574c8a29",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-business-loan-explanation-citation-friendly-timeline-guide-when-timing-matters.html": {
-      "hash": "58c6e7ab82383846dd834563aaa194f8ab9930ff60a303f9b0090cbc8b86b70b",
-      "lastmod": "2026-08-26"
+      "hash": "217b3af252ca6930fd33853b148ea584f8d97e95bd9897c18b08a39ae6ce2d7e",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-complete-document-library-editorial-mistakes-to-avoid-when-timing-matters.html": {
-      "hash": "e2dfedb5d72033000fa962df8db93c3ba336daf9f67aaeb4838effc38393ad95",
-      "lastmod": "2026-08-26"
+      "hash": "e6fe65ca2bf166c72bf5a8d2fd3d2f05071d55053f07d4294e294abca3842360",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-credit-report-issues-resource-backed-planning-checklist-before-you-sign.html": {
-      "hash": "8a912f89e3580529f213dc2d162bb002b2870baeebbdd499ef07f236b544c3a4",
-      "lastmod": "2026-08-26"
+      "hash": "dfa6f288cb76f73193c57227c9d9fd86eee7712d41295af1234b41307eb37bc9",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html": {
-      "hash": "6d7aaef3d7d22d0b09aaea3053ed06370d289eedbef1ebeb8dd0a0e136e6027a",
-      "lastmod": "2026-08-26"
+      "hash": "ee4142b7fd8599bd6b0ab4ac8f364b5775f51f5fcd250c72888f2c388cd12a7c",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-09-job-gap-explanation-resource-backed-red-flag-checklist-for-careful-decision-makers.html": {
-      "hash": "a5882e6a839e695557ab8bb0c061404d68681d719db639ca345c65d5b3fab264",
-      "lastmod": "2026-08-26"
+      "hash": "145685267272e0667498a119e1be5d2485c48dffaa6ae76bebbccdc30e05ea4d",
+      "lastmod": "2026-08-09"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-bank-statement-explanation-human-first-timeline-guide-for-careful-decision-makers.html": {
-      "hash": "1d916162ce940ad378ee1dcd6c154b7a8e15f749adcc19c7575595363234dfc9",
-      "lastmod": "2026-08-26"
+      "hash": "79e0648d752a0681e3d7603c2e375891f9a62943285cfaac60dcf93230fd1ca5",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-credit-dispute-letters-human-first-faq-answer-page-for-careful-decision-makers.html": {
-      "hash": "c45f718eed246a8636debad185ec30958596f04c2551f7487223e61ac84e4758",
-      "lastmod": "2026-08-26"
+      "hash": "e53440312a5faeed148cc323acc6ea1b4739b7907e27ca5b18f08b2706f3243d",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book.html": {
-      "hash": "094325e6cbb478ca0146805c494c9c69dc6fc9b7f4e5198c8882cca2098ae2f4",
-      "lastmod": "2026-08-26"
+      "hash": "f878deac0c5191f9db63c17908f6cbebc7cd1f94d0716757c0f470110c7d6827",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-late-payment-explanation-low-risk-faq-answer-page-for-people-who-need-a-starting-point.html": {
-      "hash": "0684adb441139a4c14731795946a0788c71a91d59b25e4a7caf754b89ee43295",
-      "lastmod": "2026-08-26"
+      "hash": "a3a535bc6473f5eaebc5c02fdb4b1f05967f7b986fc8f45ec31fafa76d78a0dd",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-life-admin-documents-decision-focused-operator-playbook-when-timing-matters.html": {
-      "hash": "445a774d96f23c9d6897d6f06916a761e55e98178e44a18dcaaf96b2039cd953",
-      "lastmod": "2026-08-26"
+      "hash": "0c4246cacb1fe07180464200cd9e091274c87091ae223252d0e6a99e99c62289",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-neuropsych-evaluation-research-decision-focused-question-checklist-before-you-sign.html": {
-      "hash": "4fb4bf7432ca2f5beba030d08781804fa7dc479ae993ee3c119797daf6214669",
-      "lastmod": "2026-08-26"
+      "hash": "87a47a7447e8d86ea173e9fe148ee9e920d21d871149b6f24c5309a81cce7006",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-10-proof-of-income-for-renting-2026-ready-resource-roundup-for-people-who-need-a-starting-poi.html": {
-      "hash": "83ee99273e92e26224e642dc4ec357d8a24358539276dafb8fc1909972a1ea5c",
-      "lastmod": "2026-08-26"
+      "hash": "c732f049f20d7a69504d4d7838bcbead8ce4b3cb2b6cef2120f928fd346c3df3",
+      "lastmod": "2026-08-10"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-business-explanation-letters-no-fluff-resource-roundup-when-you-need-to-ask-better-questio.html": {
-      "hash": "3ca16c51695f00084dfa24353567446c3f57145ef8da5b85a4ae7ee124362366",
-      "lastmod": "2026-08-26"
+      "hash": "1feeba2b63f8f4965878a0372466bd5ec811b845eac74060da7f3dadea317240",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-credit-report-errors-human-first-decision-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "ca62cf8f2e8ac9b794c31179a240c5e8439a2c858843a435e01c9109bf05f114",
-      "lastmod": "2026-08-26"
+      "hash": "d1e06407ee4b55f11c1ab5b23bec20047eb73fe4f19f17caceb16aa079e7b404",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-employment-explanation-letters-no-fluff-operator-playbook-for-busy-operators.html": {
-      "hash": "cfc0f335d53baa248295fdcd75ea4bb606c8d88a41d05b2c10974469d570f933",
-      "lastmod": "2026-08-26"
+      "hash": "fa946163121a7e9726f188c70529ab025fea188787fc9099ad57cb7eda45e929",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html": {
-      "hash": "f16f2c7472ae90a5fc89dfcae44002c445b089dc1bcce3d17bcc9e5adf5f7fe5",
-      "lastmod": "2026-08-26"
+      "hash": "1fe84a14d9f44b818c9a4b71b08f495dba02a92700e2fa1bd6cad14461caeebb",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-large-deposit-explanation-human-first-question-checklist-for-busy-operators.html": {
-      "hash": "34108903c4109401df123acf3088ae7f302436b9e391b509034119211ae8127d",
-      "lastmod": "2026-08-26"
+      "hash": "a5226b2d339d9bf8fc835248d72d76cea5d750fb40abb76ee2d90521a86028e5",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-loan-explanation-letters-decision-focused-comparison-guide-before-you-pay.html": {
-      "hash": "7e5e4ee65e803c51199f7c17c2f3efea6cdf539d75a2a817d3ed8bdfcf8c08bc",
-      "lastmod": "2026-08-26"
+      "hash": "9f708bfc1ffd58ea2a4445822d8d0150006751efa2202efb42b5dc9bca6408c5",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-11-name-mismatch-explanation-2026-ready-framework-before-you-book.html": {
-      "hash": "37436b1c9f1f58fb7398745759211346cca0a87d535b03380917a3e29e42ca55",
-      "lastmod": "2026-08-26"
+      "hash": "76d093f07fcdce0533d9167b2e240aac8893cb7e337927ca0d3b49eaef77ef70",
+      "lastmod": "2026-08-11"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-business-loan-explanation-checklist-driven-red-flag-checklist-when-timing-matters.html": {
-      "hash": "8f0d1a2e764336c096c6d6055f4847c3775ec708dffafc2d4ea602a449660a36",
-      "lastmod": "2026-08-26"
+      "hash": "26944e1e9124f0410d7c1465d587611d3f9318e69fffd609bda09c53f96c4bee",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-business-loan-explanation-human-first-comparison-guide-when-timing-matters.html": {
-      "hash": "2d7fc24a69cd61e4810b04da10e6f73c1545b022f1399b57503a1af5559752b2",
-      "lastmod": "2026-08-26"
+      "hash": "b041dd89fe8808272e3679e2e9ab3ca41d0c13b529fe2604a145fcafd5a58eab",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-credit-dispute-letters-decision-focused-timeline-guide-before-you-choose.html": {
-      "hash": "4d440f58a76de5ff2257fb76de768b90c49916db6ed4c5e01239a6095972cadc",
-      "lastmod": "2026-08-26"
+      "hash": "b4ebb13ce235d413047606ee3eb8935cbbcdbaa4057393a2790ffe5bb9037fa0",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-credit-rental-income-and-loan-letters-practical-budget-planning-note-before-you-book.html": {
-      "hash": "0f1af611cdb08b64067ae9e2a4487252d6805a2aebd883a980edb135376359eb",
-      "lastmod": "2026-08-26"
+      "hash": "495eacc9434a341a6defd5d986afd41abce80ee1a0a9188a462f02de03be646a",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-credit-report-errors-plain-english-timeline-guide-for-busy-operators.html": {
-      "hash": "a0800b640193c679b26a300c3de24c7d6e4e2434ee51850c1c21afc10f92ae59",
-      "lastmod": "2026-08-26"
+      "hash": "9979d760ecce1c1da029ce898143fdd320413aeb349e2b29ea343bbea0d38578",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-family-recovery-support-geo-ready-local-resource-directory-when-timing-matters.html": {
-      "hash": "04e94581f65ac221d45c7ab390c95e56d038026e6d6886c26f0d452924e5c6c3",
-      "lastmod": "2026-08-26"
+      "hash": "7581c81ac1e6e2f08c37a479e02aa2299bc1020f46f305e868f11e969bee48a5",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-12-personal-loan-documents-comparison-friendly-operator-playbook-for-people-who-need-a-starti.html": {
-      "hash": "b910ee3f34cb35b1a5e6f1d651b6385db9b7066fc1d77573437d3a9d3f1ddd54",
-      "lastmod": "2026-08-26"
+      "hash": "13a800b0d37a0177fa8fec3ebbdac1bf5c1e0e424354d1cc3b7f9280632b32a3",
+      "lastmod": "2026-08-12"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-business-explanation-letters-editorial-red-flag-checklist-for-busy-operators.html": {
-      "hash": "5284d9d01255fe18d755115d29828c632d951c7ceabc3ec505875c104b723dc8",
-      "lastmod": "2026-08-26"
+      "hash": "000e198f7c751f8cdc0187a424281e894a606ed3c45b9c5b30daf09e70650cdb",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-compassion-fatigue-resources-decision-focused-buyer-guide-before-you-choose.html": {
-      "hash": "6f5fac4f9355312bd04cb834d6e599746da46abe427cf3c9544cfbfa7038f6bf",
-      "lastmod": "2026-08-26"
+      "hash": "1df70358449e2231a28a86fde3059eb7e18ab6f25ca1320dea7827de8e152edb",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-credit-dispute-letters-decision-focused-local-resource-directory-for-busy-operators.html": {
-      "hash": "e0f425e82b7da97d31fc17556274f606e3bbecf2877cb4320c0c6c63a43e259c",
-      "lastmod": "2026-08-26"
+      "hash": "3091e437fae70f3655c9b9f7a43d2ae98f8739d0d3af791c8ac05e7d72dcc402",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-income-change-explanation-human-first-faq-answer-page-for-careful-decision-makers.html": {
-      "hash": "6ffd640eadde2e452b188172cf1b69724b10a0da36174a37c0aacabb897e7150",
-      "lastmod": "2026-08-26"
+      "hash": "d4879110edc2b1dd620d7c52f363f7aed86cba9aa4b1c8e6511b65f5821d298c",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-letters-of-explanation-decision-focused-prep-guide-for-busy-operators.html": {
-      "hash": "e799cec000b5a69905093e473c58425a1a01e99997f96b8fccc526d41f36492e",
-      "lastmod": "2026-08-26"
+      "hash": "5387e1a3bb978ec3e849020388903e01c4a69d63718cc024557243f80470389c",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-loan-application-packet-practical-question-checklist-when-you-need-to-ask-better-questions.html": {
-      "hash": "7cf95cda5f65649a3766d246578c80ff0d44a2c36cf6d91cd17f88cd5e57c8e5",
-      "lastmod": "2026-08-26"
+      "hash": "386b3b67848376e613e00f5dfbaffd212a364a895b01c77e17899eab1d8503b0",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-13-personal-loan-documents-beginner-safe-buyer-guide-for-busy-operators.html": {
-      "hash": "90b4a4c24ac64bcbba294f5bbc2da1d05a7a6c9802634bb0915da30e8e7ec856",
-      "lastmod": "2026-08-26"
+      "hash": "104b7c8965738491d0eec088d9494202a55a779700e123778680dac448408589",
+      "lastmod": "2026-08-13"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-bank-statement-explanation-resource-backed-local-resource-directory-before-you-pay.html": {
-      "hash": "f9baeca4ebf9f74c7981d2227df9d11a2a08fa31a0d64afb75047eade55f069e",
-      "lastmod": "2026-08-26"
+      "hash": "828295bd0493a6eee201f4de1532747c61d005270690c8c59daa59ef0420f91e",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-credit-dispute-letters-geo-ready-resource-roundup-before-you-choose.html": {
-      "hash": "bece2be5df3190e546a7d5006c7d53ef540e0642b213df50a4f6967206458d5d",
-      "lastmod": "2026-08-26"
+      "hash": "0bdc1db2f28bd865d538ffe960793598c4155ac31e62e529a8b65dd8e36a849d",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-employment-explanation-letters-no-fluff-buyer-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "3733d6bdd68a7a02ec1446f4a98fb6165ecde64390f02f4e17d53c4053365058",
-      "lastmod": "2026-08-26"
+      "hash": "efeae687a2baab9bd12454b19721e3c39b90d2f7af620a0954aaa9524ce3266a",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-income-change-explanation-resource-backed-buyer-guide-before-you-choose.html": {
-      "hash": "fb8b94cce2d0a72a82839dbbbe04c544d1ad24800a434536d47039ec842cb7ae",
-      "lastmod": "2026-08-26"
+      "hash": "0bd5d100670501d5a0d77352768f13493bdb5784330a1a9bdac67e7fef89fb4e",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-large-deposit-explanation-resource-backed-buyer-guide-before-you-call.html": {
-      "hash": "e2692799856a14d22f04fbb7e6f3332dbe3acd7948f4c1c5ebfb40c3e1012929",
-      "lastmod": "2026-08-26"
+      "hash": "123f08618b003dc1dbc0fa963b1f1b04ed8b40efe03d1f9e9244e4749465edf8",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-recovery-housing-decision-focused-comparison-guide-before-you-choose.html": {
-      "hash": "345ad4e05b3823a8966160d08cbedabf18049f8acd45a405e0d4560245b489fa",
-      "lastmod": "2026-08-26"
+      "hash": "6d80e0031f908770f0801760819b19801962e7ef45a3b936f4561eaf78228bcc",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-14-rental-cover-letters-geo-ready-mistakes-to-avoid-for-people-who-need-a-starting-point.html": {
-      "hash": "7c414f34fe888e45bbb068d14d91b83dcf3c1602782d17ce5992fa33f7cc0106",
-      "lastmod": "2026-08-26"
+      "hash": "54b9575412dab17f1dd29bec06683f1897e2989c9bbf44836a7b84813f28cc10",
+      "lastmod": "2026-08-14"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-business-funding-documents-checklist-driven-decision-guide-when-timing-matters.html": {
-      "hash": "3518c13b74f41ac9edbaa7eb520493bcb1d09f18a2c40bfe800fb617f728a232",
-      "lastmod": "2026-08-26"
+      "hash": "b16140b3b82563538e169a6ea62f897eb427bc7b3232f1272265351c98d99647",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-business-funding-documents-editorial-operator-playbook-before-you-book.html": {
-      "hash": "79930c52cc2b399ecacd0cbe11ca03c7f66fdec3e6ed6aeb99679be3949a01fb",
-      "lastmod": "2026-08-26"
+      "hash": "5c0e14b2090fcc575b875ec976848830ff380953010e9ad33c1e6e3602fc0855",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-employment-explanation-letters-operator-grade-resource-roundup-when-you-are-comparing-opti.html": {
-      "hash": "09d8fb408efbae67bb4bc2168ff9fe6ad5002ddabcba054e7e3714359c6a2f50",
-      "lastmod": "2026-08-26"
+      "hash": "7bae8c7315bfac76c971932f5ede4f7cffa5d9f89729b0376d2fa98020005e5c",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-horse-contract-preparation-low-risk-budget-planning-note-for-busy-operators.html": {
-      "hash": "b08ba3e913cff8069cd101334a9420ac709ade81b0bdf234b37d3dbe2ca38112",
-      "lastmod": "2026-08-26"
+      "hash": "79429d68d2fbd76c3142218f4a0a18df0f3fb112d150985e3119f34a1c364f5f",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-loan-explanation-letters-practical-resource-roundup-when-you-are-comparing-options.html": {
-      "hash": "8a0ba748b8d11c4e574227081ec522e984fe95befb3b140a8f981816b7080f90",
-      "lastmod": "2026-08-26"
+      "hash": "8788a7fa0b8033e82a1d38acadb61a46e63b293d8807031533846db7c9036201",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-personal-loan-documents-citation-friendly-comparison-guide-for-careful-decision-makers.html": {
-      "hash": "3a411a7ab64ad7adb959534e14f57b57851b6d85b2d604f1bb66a24220134d43",
-      "lastmod": "2026-08-26"
+      "hash": "0b7a38433c594016ceaa87544e7185ff1a604159cb13e04dae02bf6e57f5a236",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-15-self-employed-income-explanation-editorial-framework-when-you-are-comparing-options.html": {
-      "hash": "fcbe4bd40d357f63b1cc88b9ae3a4a6ce70fa14f73f764a964e84ad1b7e194ed",
-      "lastmod": "2026-08-26"
+      "hash": "4ed1b1cef3c094950f81a5fc0ff8e5f922907f045fe379efd635e063dc0b86e9",
+      "lastmod": "2026-08-15"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-how-to-explain-a-late-payment-aeo-ready-resource-roundup-when-you-are-comparing-options.html": {
-      "hash": "9fa3f17e790f1aa29b7c97d360cfaed6ba4bb18e688cc0824912171d05db76ec",
-      "lastmod": "2026-08-26"
+      "hash": "e61dc10b9c6c1cde446cc4ca9d21545607d7b736dfd710c40de74e80e9c51b5d",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-lender-document-request-operator-grade-question-checklist-when-you-are-comparing-options.html": {
-      "hash": "bdd96f3306f06bd672f652c46a908b8b61d7a0e9fe7163632f0678f5bdaae8de",
-      "lastmod": "2026-08-26"
+      "hash": "9b1da733fae11b2ae7bb4ed09d95d88eb5e3e39b169c896ae8d56e11a4e40eab",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-letters-of-explanation-beginner-safe-timeline-guide-when-you-are-comparing-options.html": {
-      "hash": "2ab18c0b972beab64e6456de74d6730d5f24ec93adf449a74a46077a32bc59a9",
-      "lastmod": "2026-08-26"
+      "hash": "363e34cdd6ac7a629edc6ac2728e8a4a655a1882837c80a031ab73eb6c454577",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-loan-application-packet-beginner-safe-local-resource-directory-before-you-call.html": {
-      "hash": "092623fbc8c0dbd79f547f25761d6b45b66cbfafde1bbf7b42617026e65438a1",
-      "lastmod": "2026-08-26"
+      "hash": "1722cd171c580ebce1dd519fc62f0e443e8c5b9c74c6117292f35bccea1fbf84",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-loan-application-packet-low-risk-planning-checklist-for-busy-operators.html": {
-      "hash": "b2336d4ac1ba4df842340dc06cb98a408cbb7c8240ceea13c4407b173bbc04af",
-      "lastmod": "2026-08-26"
+      "hash": "2643bbc78d01e748ff1ba76c08e10052425baad12c4b36fffdb317e45759b92d",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-personal-loan-documents-checklist-driven-question-checklist-for-busy-operators.html": {
-      "hash": "b12449e0d6b08cd9a6bc2cf20e99106c229610131897e4d4895d155c5bc11d2a",
-      "lastmod": "2026-08-26"
+      "hash": "687bd200950f3dd9f4893e919dee3a2db8a1314fc87b22706ac2667814ef9301",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-16-rental-history-explanation-plain-english-faq-answer-page-before-you-choose.html": {
-      "hash": "feaa9f8a5e3498c1bfaf9bac164e961a78e39245cdb2d7c388b558353930a2e2",
-      "lastmod": "2026-08-26"
+      "hash": "eeec85e64310293a13f7e33cd846adf6abf5a04b56108709619fcd2e6284c7c3",
+      "lastmod": "2026-08-16"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-address-issue-explanation-checklist-driven-framework-when-you-are-comparing-options.html": {
-      "hash": "b8b27bd52f897706863a355368a30486f032c1bdf4773b12c7802525db86c0a0",
-      "lastmod": "2026-08-26"
+      "hash": "55103e79f639cb84fe6be8bf4383744f969f79198271e32266ccac90f7cd3649",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-apartment-application-paperwork-practical-faq-answer-page-for-careful-decision-makers.html": {
-      "hash": "29d7eb9097d2850a2fa852228b2a2a2020232a34224f4612a069d3c1f7e56524",
-      "lastmod": "2026-08-26"
+      "hash": "e82d451ced38d57dfcfe4aa7b87f084f8ccec3b2f4a9b85a67af3ea3f974ce7a",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-business-funding-packet-practical-resource-roundup-for-busy-operators.html": {
-      "hash": "197af237d00818b4ed8a49772455d3889434ba5beb26ae1bfd15c8ded49dfd5f",
-      "lastmod": "2026-08-26"
+      "hash": "9580ccd27150c54c60fdd9a125d0f8310185ebcdf9a4e9e0f935e5e1f7b836ec",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book.html": {
-      "hash": "08f832830c842e171ffa208f2b86c029a5f21c7217c4d0994ede9098ceafa699",
-      "lastmod": "2026-08-26"
+      "hash": "e6babeb7a79d279f7e5c3283a01a01d290b6fa0d714bdddf8bf5e7608223de35",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay.html": {
-      "hash": "dbd8c6f65465b76d7491987a40df86c2484a80bedeb1c4884849ec53ee48d8a6",
-      "lastmod": "2026-08-26"
+      "hash": "83382b62043bbf2dd75086567052ac5a0617a0fd02e9f5f56548e00c3c6b00dd",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call.html": {
-      "hash": "a207073bfdd52bb6df6ec21a818e6d5484e91d62c7e65b0b52369a41fe68d39f",
-      "lastmod": "2026-08-26"
+      "hash": "4ef05c1ebc22a4292bf86e0bacff0f5ffe52635070ce50f496fd097edcf642dd",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html": {
-      "hash": "b71a0127b5006797abdc7ef913b361b5e38a53d7d077b8117a0877e052743315",
-      "lastmod": "2026-08-26"
+      "hash": "bc88391268d8ea322be666306e0451dfddb23ae7c896b46c9e4f58d4f09809ce",
+      "lastmod": "2026-08-17"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators.html": {
-      "hash": "a5e76bf425a7765ba567740200b713e792c43a2e43940127f63eb56dfd50535c",
-      "lastmod": "2026-08-26"
+      "hash": "1fea84b7c563f40bf988be33c01fa5c775c5f962d2d9ac5ebc91601bd89d4404",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions.html": {
-      "hash": "8eb79de1f513def9df3407fea828a98da1aa31bcabbc9c18bdeedbd34ab47f91",
-      "lastmod": "2026-08-26"
+      "hash": "33cc863ac3a390d91711952abb0fa47bb42f70281469890bfa3afafdd67862e2",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html": {
-      "hash": "7bc7ef7d3056a01f1ccffb0ea1472d83c518928ea3b95cdc5d9e89daedf6011e",
-      "lastmod": "2026-08-26"
+      "hash": "683e840bebdaaeed2510fa2a210437c2d92b056a1f42b34f9ed28e35e4830015",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose.html": {
-      "hash": "2f3e1722fd55e17ea3da510fe57914028f6c8247fdeb4accdfe97cac99170901",
-      "lastmod": "2026-08-26"
+      "hash": "9f80a22c859bfb06d7c43ef9f2f2b24b8e2146b554367cfb35e013795348c9eb",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose.html": {
-      "hash": "5be5c22a86f41390473a23829bb203287be2b61a8a3f32bb8b20dc17fada7e2a",
-      "lastmod": "2026-08-26"
+      "hash": "4ad933a9e19c3e2b8aedf5db38aed2ec9867ed6dbdd9d8b4b4591ac9f17d813e",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters.html": {
-      "hash": "78309e919a15b09d0a904e316f7668a03ec909b24566dd0e7e78b2f4c496346b",
-      "lastmod": "2026-08-26"
+      "hash": "46981aadefb089fbe08b1a43c86dc9972464e9128e10affeadfe6b2262d7f602",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book.html": {
-      "hash": "2adb0d0d2003a75de47f5370481475c895e8ec765c9e5389d0c0c17f4fd10e3a",
-      "lastmod": "2026-08-26"
+      "hash": "609eedbdb1311222f8b31e5a501b9e0b7c3b3112e86811a7e27e54ce2d3244ab",
+      "lastmod": "2026-08-18"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters.html": {
-      "hash": "5ee088a51619ff0539f2345454483992ad67eec7777579e15e6c1a6f43693e61",
-      "lastmod": "2026-08-26"
+      "hash": "57263cfd50188296e4e12defd832411f898489228767d5e6d58732ac7efcc372",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point.html": {
-      "hash": "5150cf7d1441f50c436903b7f7ccfdd7f28e7f24bf748e12abcac61cbf26c717",
-      "lastmod": "2026-08-26"
+      "hash": "35a65444d9447fa29b5012272e05aa92d0dd39cb93a43bf9534fef275d279540",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options.html": {
-      "hash": "3721ce9a112d03c45bfb75b05ccd8c5cc7c6c0bd8cec3e8197c1e1f2df11d499",
-      "lastmod": "2026-08-26"
+      "hash": "e6b5e19791808033fc0059ec62a10aa289288e99f9098c2c7af68ebcf2c573dc",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options.html": {
-      "hash": "1ecfac2a76f107018e300193732300fd0c4ab8c1d4cba0ca91d4491c57252652",
-      "lastmod": "2026-08-26"
+      "hash": "60546394133a1eb2936b3e9aa0f51a6d48a7d0f11dcc2f89016d9b58172ef2b6",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html": {
-      "hash": "5c387e68251033376a57f5ee0fbff95f1a15137e0a410c3fef180b108fd75295",
-      "lastmod": "2026-08-26"
+      "hash": "bac45520c4a278500d04c2522305c422a71838edb2b41df86164a5d172fc61f2",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html": {
-      "hash": "5c41c09522b7a0d85533bffa13bbd551471f3f1ddd166f252441c8de7327191d",
-      "lastmod": "2026-08-26"
+      "hash": "4e239b9def35dcac866e75d28d5bae79252c540d0b6f3c7a18d9316192a41452",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker.html": {
-      "hash": "f48d69aa7863bbd5bcc6287e0deb4aa0f2c37a68a5f623a638b88c3e92004d8b",
-      "lastmod": "2026-08-26"
+      "hash": "2d06e3975480594a215cebbef1dd0f4d5dff133e8a0fe1c7a2639b14e3fb5277",
+      "lastmod": "2026-08-19"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call.html": {
-      "hash": "7922549ace3e8b2e9025260b7b0d3ae92effa9662706cc5cd4793e7878c68276",
-      "lastmod": "2026-08-26"
+      "hash": "c38535f0ba3a1889fd299e025775dbcc1bb42418eb015822858d25bfd97c4a72",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call.html": {
-      "hash": "03accae9ca09b46e864b241b94bf58ea73c342815a12eaa2f13915a9494c0c05",
-      "lastmod": "2026-08-26"
+      "hash": "fbe88cb67978117d6b57174c122441e16f0b3cf811fa6b7c92ef679924ca4a37",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "73805ce01762841d725fa827765c5243dd0977e398a558b350f7ab86409ce7c9",
-      "lastmod": "2026-08-26"
+      "hash": "a3b2e6e06733059120445065c01b8266769dd01e41cdcb80f086b6b80214492a",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers.html": {
-      "hash": "b90bb97d6f1e64e99d6358724ece0a975f49c77fa3dfb7c5803b2371620c1cbf",
-      "lastmod": "2026-08-26"
+      "hash": "1a6052edd7b86f5a363ddad98cda09044a6213e4adf4f2cb08f5256e455fc2d0",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers.html": {
-      "hash": "a8294fc13a3bb44396d2496fd02755bcaf92d1ae45e1bca3b3c2ede544f629c5",
-      "lastmod": "2026-08-26"
+      "hash": "be384fa546ebec5a43d235d91dfa39078910bf5c454829237c97e6d4cd963a72",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose.html": {
-      "hash": "041a64b1136c13746d785bfbe69d8806e542883572b1c1f7b03ef835d9974ad2",
-      "lastmod": "2026-08-26"
+      "hash": "5ed974669fb8e82cf7b9d88f9aba2bd7981916d221ef471cbe737a261c55c3fc",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay.html": {
-      "hash": "78fbefe6020b21ca7e6edee7c92048ecce3b25e289b802344ac08c0019fef8f2",
-      "lastmod": "2026-08-26"
+      "hash": "9a95200d956e0d783eede4c005a95cb9823d0f0709391b7d7bf9a9df363873d8",
+      "lastmod": "2026-08-20"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign.html": {
-      "hash": "75159521e75e81a46f36ba6fb5b82ec736f07bb34a0a883d4f0a501f54f1f328",
-      "lastmod": "2026-08-26"
+      "hash": "2b461e286f91b966a914382ad101c03ea9e05ae291b669402e93b42e4bf11a97",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers.html": {
-      "hash": "cc422a14bfc71d4eeabbf017ef3e928d727751bac537be07eb6bfc2a2f93676f",
-      "lastmod": "2026-08-26"
+      "hash": "a370a403f1e2416155dac33d9416100ad36d9457f331a279db8324b0a8d79c9a",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign.html": {
-      "hash": "4f9dd34115f8f3811cc943cdd2cff22de34ec2181ff17132208e38b1358a6626",
-      "lastmod": "2026-08-26"
+      "hash": "29ae3ae17b3d3a836ad9117831928fc445d8600c9c0a9d5e8818d27e8f7990e7",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book.html": {
-      "hash": "0ce57f62020100002747d6c6fdc30b612500b8d74a1edc1f7e2d940ecdb71053",
-      "lastmod": "2026-08-26"
+      "hash": "10b377b0b80030cfc4a11be7041c2d5c5b9eda861b42f4f6bf33569ec497fac6",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers.html": {
-      "hash": "38f6042f95abef229eeef83ac7e51389a4959e9767d874c1a85409dd7bb9657c",
+      "hash": "b870e5d738cdd4e6a055409abd8b0101b64b7e3d6d00153dcd840d4b133df945",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters.html": {
-      "hash": "a34fca2bd8a937f32448c97ab81d1cfc0040268b60558d8fa593dfac39322bf5",
-      "lastmod": "2026-08-26"
+      "hash": "99e3fd3ff3a8d74aefa93e0d778c8158e56dfae1949800996c8a1f92a2513139",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators.html": {
-      "hash": "7768cccc6b3ba2e6edef825e49e830dc5c13491bdaebf14d268837a557462f37",
-      "lastmod": "2026-08-26"
+      "hash": "ad82607e5c53d417ceb3fdfb7d96e904a9b76e4f82785400246e24875493ed7d",
+      "lastmod": "2026-08-21"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-application-issue-explanation-aeo-ready-prep-guide-for-first-time-buyers.html": {
-      "hash": "073ede9b0c1ebb07e72b2a4f876e7c751c27a29ce5bb974cddc07ce53f592c2b",
-      "lastmod": "2026-08-26"
+      "hash": "ede3d69520092ac2dc9521475efbbd3e40251fbedcc0966f3a4ace492b1ed8ed",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers.html": {
-      "hash": "a120f56820506ec425e623b32a70bf45830372041ea882909d534ada2da42d5c",
-      "lastmod": "2026-08-26"
+      "hash": "2454838d407e6954e59ca55a0109bd68c666f2e8cd21c9f9dde8b2db1f034ad9",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions.html": {
-      "hash": "a0cda248786431fddd41b5667fbc9172268a2033c1a0d227b01836f267d8a0ab",
-      "lastmod": "2026-08-26"
+      "hash": "e3bdd5a18db165a3e4fe983c8131dcafdb79f2ce94fbe71322d1910b2a192fb2",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay.html": {
-      "hash": "4c1433b02684307d3310d9ad2d484ce2f2d71a3bc10f81be510bf5339ce09e07",
+      "hash": "0f7127fd6693becb9f532970a98785f2f4d2e26214e8ccb2f173647157c65fdb",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions.html": {
-      "hash": "b5bcf08e5512d0ab072040b6c6035d75ae2088a01edd3178c00d863ab4ab8659",
-      "lastmod": "2026-08-26"
+      "hash": "5c7cfa13314306204137fefe309e3e333987618261f8baf634696664282f6fb7",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers.html": {
-      "hash": "fde5c03bf1ab8001ff0c54c9a7169ea9285d458307f6177a8755e34a9a218e3a",
-      "lastmod": "2026-08-26"
+      "hash": "05f5f1232a522e7bbd117c69ebc6122b2c42f65fd80879418a45920b87385816",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign.html": {
-      "hash": "cf8f6cdda405aca5cf25a46339a0113fbb9284e1d79775cc7beeb61ccb3bd48b",
-      "lastmod": "2026-08-26"
+      "hash": "d91daf7ea475f5378e850da1260bd5459b29e991974173d7e3a4861b74533e37",
+      "lastmod": "2026-08-22"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers.html": {
-      "hash": "42f48bde5a361177f8ee14a04a850e6634616bb88b864de5d7b0f3e1c9ea352b",
-      "lastmod": "2026-08-26"
+      "hash": "3dab6d55503a6a4fe1a7235d2af533c43c5b17f7e42926f8338d30c225a90570",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators.html": {
-      "hash": "5bcd6ea5beaac63d8d124fb92f4f07584780a271353e0c6925a14137b4a30d31",
-      "lastmod": "2026-08-26"
+      "hash": "ddf954c85df143a51e8649a5f9ac35f38dccfca7571a172552815495819eef91",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html": {
-      "hash": "70109903c5a4cb4abe1c5feae5e7774faa4fd503ef7535841eb9630683ebab7c",
-      "lastmod": "2026-08-26"
+      "hash": "ac0bc83bfcc807564a21ff78e829a9fca3d1d9c72e96278918dfc6c41f5a344b",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters.html": {
-      "hash": "2bd53c7802b4b815728f836dcc15888e49cf7cdb114d0c01a73c5725f1bfe3fc",
-      "lastmod": "2026-08-26"
+      "hash": "046e0406263fe05195fa0b65c81c4ad780d06c6ee142d33f2e3285845e362e18",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker.html": {
-      "hash": "684181c816bba29384f4d9aa5a44b515c6b26e8625bf3db20487ca4d34883b0d",
-      "lastmod": "2026-08-26"
+      "hash": "0e0e7942fe54770dad0e4f64d546c2ef20478b8ce8f5d5c1eee2cc3c652f67fc",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html": {
-      "hash": "9b461802f0b2ec039458f2b6a93d68c2d0e5defb73dd49ee0df087dcc0478f38",
-      "lastmod": "2026-08-26"
+      "hash": "4933b16d6be188d2b146ca0ba1c8fd64263ff66d4a1fe6a77d3001c56436283c",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign.html": {
-      "hash": "46d11d4b5e4f42da15eda80c6b9d07e693e0030995db3c1989490a3d122a978b",
-      "lastmod": "2026-08-26"
+      "hash": "4a7ea0344ca4fb2b6f3416386650a68305fe9ee958133b0786c2b69a64ec9740",
+      "lastmod": "2026-08-23"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "4f8a8304e21477663e49fe3783c5a033db0d4312d3b6c329bf1ff0723f469a3b",
-      "lastmod": "2026-08-26"
+      "hash": "7fd303d16454fe91b9860d0f657c913fffaadb7bc854c6ab5cd370a7d600db7a",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting.html": {
-      "hash": "a9a1e976d54c84fd517f2090beb030e5e2b879a29d43f4ed8dc8d9de29358ac2",
-      "lastmod": "2026-08-26"
+      "hash": "d89225d922803df1767daa21e2aa9c4d04e6a368274d3f9b512e45c71dbfdeb7",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p.html": {
-      "hash": "400179575bddfad893ee86eab33ca68e6b21181976d13ce04034b5c76447b5c1",
+      "hash": "e999178818f4db1a6b3879ddc98cab8d5ad28752084c8f6332575a9954b56a30",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters.html": {
-      "hash": "db029b596a7d71a302e429ad2fd85d4f5dfe202c3b031539c366cb4d2d986ceb",
-      "lastmod": "2026-08-26"
+      "hash": "a771752c45950811ff73c31b72bfd8e609c5e53df2de41d67d8ef609a16e217d",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters.html": {
-      "hash": "7c3241ed3cf1cc11b71cc83a9fb6617ee9db937cf6a26daec203cea407505f2f",
-      "lastmod": "2026-08-26"
+      "hash": "a7afcfc3bb3cd8d9de74be457007eba93bd7869756c374519ce3d5f53a0d0222",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators.html": {
-      "hash": "f76780aeedc4ce63d348929954f8fa58151bff5fde1090199373283fff3a3228",
-      "lastmod": "2026-08-26"
+      "hash": "5a7d71f88f51bf362fa13cd24b051fa778f2577f13939922ce3f6d2b2e0c51f1",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose.html": {
-      "hash": "4455e8e481c0ad9b912f75265465c4976390e66cbe7dfc9fd6423fee0577eee5",
-      "lastmod": "2026-08-26"
+      "hash": "5c55c88975aa1422fdfdd3f7bfc4f5c492183707da4f96ab00cf05db9125ab3f",
+      "lastmod": "2026-08-24"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-car-loan-explanation-plain-english-decision-guide-when-timing-matters.html": {
-      "hash": "1962e813523c6daae94c87c28deacad3f1bd74e5b5322b249d4d70d9609a41d6",
-      "lastmod": "2026-08-26"
+      "hash": "2b13c3f8b03f8e757a708597755900e8f9b268294eb4d73fbe6a07ef31b5e1be",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers.html": {
-      "hash": "8b1b7ac1f9c87f863a211651209df4c8493e30ebc316295619f25477125eb4bb",
-      "lastmod": "2026-08-26"
+      "hash": "d035537b474f1039c1035909fdf84671bf05e9741bfd23424c1ba443320e1be6",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting.html": {
-      "hash": "5f9369c72becba5a5b3e784cea68dfe04345cdc5c4a5f012b4efcf8ec8cec100",
-      "lastmod": "2026-08-26"
+      "hash": "4f1d958c75c7921b78115c32981b2479b242a26de1a460debdbf464469efeb1f",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose.html": {
-      "hash": "24e3e62c6102ea6eba24819d5fbaeaf82f962a6116ea5396d88b9ebd5a65c619",
-      "lastmod": "2026-08-26"
+      "hash": "161b13530bd4d9e465f3a4ad16226c6ada9fa59a95ba6ffd174abd6c3a123d0e",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose.html": {
-      "hash": "bdd92d0ed86350ad3d07d986d9801393b41abe71e4116899009a8cd5bfa67c3b",
-      "lastmod": "2026-08-26"
+      "hash": "e359d0ea8016e40a9fb8d07f2629bd350d62e5779c65aecf325f1c49e12e2aae",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers.html": {
-      "hash": "dbb7395f35382d6deec62b1798f6fe51559bf91f54e9e7e8f9ae7a32c624187c",
-      "lastmod": "2026-08-26"
+      "hash": "b2d1f4ecd1a255e0dade743fd026554ade0db3104f3c6c13b34e45c163574cd5",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi.html": {
-      "hash": "3c66fec653e0fff1d4d0ece598f5a8b92039fb93e35c8349e20d76b7e635b340",
-      "lastmod": "2026-08-26"
+      "hash": "98b0283cc5059c5b55d5878f254e5f8c214bebd5ed6d96639dab1560d82e08fc",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters.html": {
-      "hash": "7ce49180617199898b2cbf2528bac54817407ade1cabda59bea93f6ef05249e5",
-      "lastmod": "2026-08-26"
+      "hash": "54031534791bdb806b431f4787e07ae03eecc3184fa8075ab6200968daa266bb",
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign.html": {
-      "hash": "9aa3a077d12957932c1c4117cd5987d74227a8ffc53d479d80fdf7594c2a842a",
+      "hash": "cb1d09d1b2b2a6fff6aa2f4e336c61817db9fbafb34b1ba6622b364f9db494f1",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose.html": {
-      "hash": "f9691d46d4ab634f6312ab7393c7f6bf3da11bc7b4169a0b3e2335d9597796b1",
+      "hash": "678ca08f7290ff7661822e944ded2b99bf4f4e8dc5dee92e770ace1cdd21fabb",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point.html": {
-      "hash": "b436529621193d20002246656d83774bf1e304b27e56365949b91f3563236462",
+      "hash": "bfab5e0afadc503a0ccbe4227384f8285b9084e87551cb3f923b6b4cd5a86ce8",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose.html": {
-      "hash": "9f94a5ae69a92d17376ea947fbe1298caa4e0001b3f9292bbb72cea241c8f100",
+      "hash": "e5c1ccc4d5693eadd809057e18fd3e86398efa530a94003b394072a7c6eac5d6",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html": {
       "hash": "eb1f4fff3db12d3ec985686e7167e75f05514b2b994934cafba95cbe3b3b385e",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions.html": {
-      "hash": "f431f67ae6db4ca7e8d930a25cc8a60353119cc0d940d8ff5adb12d07136966a",
+      "hash": "f7275d98c9fb93530767748fd40e0a37422e46ccb66d5a2038f65f5ba384a4a3",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions.html": {
-      "hash": "690ab5a336efc93b44d9f53e4358ccfb860da8f7f4154c8d2cc26016ae459fb5",
+      "hash": "3a9a973e49a9e2fbedbe316306720a0cbfc23564d714870701b7b94852264176",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book.html": {
-      "hash": "4d6729959dffd173e9ef005f759c4a5d018832125d5268b1786a4b8c3ca8065e",
+      "hash": "a194bb9f5914a8421b67664dfd7455fa69d3080b020ded7c3b38aa521411c265",
       "lastmod": "2026-08-26"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney.html": {
       "hash": "eafa94ccd09d62e92b3ffd39397494e95b874cf8c7abe7e8c6edfd4bd2de521f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html": {
       "hash": "633c7e7b5dfc9fcf08b5483fa7d8499355fbf59805e97b531e81dc4a97ac9394",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html": {
       "hash": "b0089e68a5a235999f2c27461e5c88a4c37eceadd730fb0283856985c368215a",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation.html": {
       "hash": "fe9c691109992eff1fb6f68120d8496385b04948076e7f8e30e86e4f61d806ff",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-28-what-to-ask-about-house-rules-before-moving-into-recovery-housing.html": {
       "hash": "0f9f5178e989982d40da9e3fb0e17dddb9f5a64f21c9cde0c934ea35e8d13dda",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing.html": {
       "hash": "efdacc21249263f7331add90da48b94c54f87014312f2178cfd2493ae173b675",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html": {
       "hash": "78157d917c272b606aadc63af44f5ecc2e4cee703f312fbe50df982e51002b40",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html": {
       "hash": "35a3fab8c597c27fa1dc22b5808e26cca57ce4edabc8138a6b20edce844e730f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html": {
       "hash": "b8b06cd4d5e74ee0cdc032d64d54dda5640855564edf7dfb5a60c4c07ba79c05",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html": {
       "hash": "f25d0f9ea5c023d6acc840c2304c921f66db56a82d81a19c947f659016b0a8fa",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html": {
       "hash": "345571f0f2c5b67b38b14869516309f7569fe2d17e798401c79785c7f230f2bf",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem.html": {
       "hash": "db4b52c2ef81a72558b98a13851a88fc9d3ea74aed5aca876646b0c9a5cf3b1d",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision.html": {
       "hash": "398ccba5b69df2b060203fd30e9ef56981ce3843840d2a0a9ad6b83ccf2db90b",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html": {
       "hash": "4d907226f1d66c675cdc6b13af3c68b179c0cc6160074f893058cb8ef150a98e",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html": {
       "hash": "a9acf2405517f33c8eb49f63cd7309d51e2fdc51ea42ea7b041db2a247513a4f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-08-25"
     },
     "https://professionalresourcelibrary.com/dental-decision-resources.html": {
       "hash": "52732a1fff08c60dca8d1fb6035002360fb332283c77583e2a1fd0863d14290e",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/equine-legal-resource-library.html": {
       "hash": "d9ee11179d034667b1e397f084945f1918996079a8b9e2e3783dd9b37a70a484",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/hormone-wellness-clinic-research.html": {
       "hash": "d821726440adf13c7bda5c40c1a4ce72fb91be84bc1f20292fc56a3603feb556",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/neuro-evaluation-research.html": {
       "hash": "331eb7aac9e16e40981a1b0f835c49ec6e86d68cbf4678eeb1c0ed037361ff70",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/personal-injury-research-resources.html": {
       "hash": "0f66fb2d345da780106a6a5fc498fb0ae3da4fb320d0aa9c33f04086f328dbeb",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/regulated-service-provider-research.html": {
       "hash": "3769da744282e0262a8dbdafb9ae9575b5f53c61dd2d3361bc4ff70da93adf4f",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html": {
       "hash": "7d24e3763eed17da76dbb1bb1fa8683f4b667ec27ee5f23193589d121b6a98d0",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     },
     "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries.html": {
       "hash": "f24589dd73bc8c2a795f891e1147a51a7017f37443f1a6234be1ca41e786f3ae",
-      "lastmod": "2026-08-26"
+      "lastmod": "2026-07-11"
     }
   }
 }

@@ -20,11 +20,17 @@ content hash is unchanged keeps its recorded date; only a URL whose content
 actually changed - or a URL that has never been seen - advances to the build
 date.
 
-Seeding note: the ledger was seeded from the state of the tree on the day it was
-introduced, not from reconstructed history. There is no evidence in this repo of
-when each page last substantively changed (every page was regenerated in the
-same batch), so every seeded entry carries the seed date and the dates diverge
-from there. Nothing here invents a plausible-looking past.
+Seeding note: the ledger was first written with every entry stamped with the day
+it was created, on the stated grounds that no per-page history existed. That was
+not true - this repository has 143 commits going back to 2026-06-27 - and it left
+`cadence_gate.js` correctly reporting `uniform_lastmod: 565 of 565`. It is now
+reseeded by `scripts/reseed_lastmod_from_git.py`, which reads each page's real
+commit history and takes the date its visible text last changed in a commit that
+did not change more than a tenth of the published library at once. That
+qualifier matters: 566 of 569 files share a most-recent-commit date, because
+several commits edited the whole library in one pass, so the naive answer would
+have laundered the tip date into every URL. Nothing invents a date; a file with
+no history keeps the value it already had.
 
 Determinism: `resolve()` is a pure read. It never writes, so a validator that
 builds twice and compares hashes - which `deterministic_build.py` does - sees
@@ -46,8 +52,11 @@ SCHEMA = "lastmod-ledger-v1"
 _NOTE = (
     "Per-URL content hash and the date that content last changed. lastmod only "
     "advances for a URL whose hash changed; see scripts/lib/lastmod_ledger.py. "
-    "Seeded from the tree as it stood on seeded_on - no historical dates were "
-    "reconstructed, because none are recorded anywhere in this repository."
+    "Dates were reseeded from real git history by "
+    "scripts/reseed_lastmod_from_git.py: a page's lastmod is the date its visible "
+    "text last changed in a commit that did not change more than a tenth of the "
+    "published library at once, or the date the page was added where that never "
+    "happened. No date here was invented."
 )
 
 
@@ -103,6 +112,9 @@ def updated(hashes: dict[str, str], ledger: dict | None = None, today: str | Non
         "schema": SCHEMA,
         "note": _NOTE,
         "seeded_on": ledger.get("seeded_on") or today,
+        # Provenance survives a rebuild, or the next --write would quietly erase
+        # the record of where these dates came from.
+        "reseeded_from_git_on": ledger.get("reseeded_from_git_on"),
         "entries": {
             url: {"hash": hashes[url], "lastmod": resolved[url]}
             for url in sorted(hashes)
@@ -127,6 +139,7 @@ def merge(hashes: dict[str, str], ledger: dict | None = None, today: str | None 
         "schema": SCHEMA,
         "note": _NOTE,
         "seeded_on": ledger.get("seeded_on") or today,
+        "reseeded_from_git_on": ledger.get("reseeded_from_git_on"),
         "entries": {url: entries[url] for url in sorted(entries)},
     }
 
