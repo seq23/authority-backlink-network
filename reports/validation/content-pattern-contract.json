@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-26T00:40:18.033Z",
+  "generated_at": "2026-08-26T02:09:20.096Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 495,
+  "pages_checked": 507,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -46,14 +46,14 @@
     {
       "id": "comparison_table",
       "blocking": false,
-      "pages_missing": 495,
+      "pages_missing": 507,
       "coverage_pct": 0,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 494,
+      "pages_missing": 506,
       "coverage_pct": 0.2,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
@@ -67,7 +67,7 @@
     {
       "id": "faq",
       "blocking": false,
-      "pages_missing": 495,
+      "pages_missing": 507,
       "coverage_pct": 0,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
