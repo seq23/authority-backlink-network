@@ -1,6 +1,6 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-25",
+  "as_of": "2026-08-26",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
@@ -32,7 +32,7 @@
     {
       "campaign_id": "wpp-commercial",
       "brand_id": "west-peek-productions",
-      "rendered": 8,
+      "rendered": 9,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 1,
@@ -45,7 +45,7 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 51,
+      "rendered": 52,
       "live_verified": 49,
       "indexed": 0,
       "distinct_destinations": 6,
@@ -97,7 +97,7 @@
     {
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
-      "rendered": 7,
+      "rendered": 8,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -188,7 +188,7 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 276,
+      "rendered": 282,
       "live_verified": 270,
       "indexed": 0,
       "distinct_destinations": 12,

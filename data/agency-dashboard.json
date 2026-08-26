@@ -1,16 +1,16 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-25",
+  "as_of": "2026-08-26",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 32,
+    "runtime_operators": 34,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
     "serviced_target_urls": 64,
-    "backlink_rows": 557,
-    "unique_source_editorials": 534,
+    "backlink_rows": 566,
+    "unique_source_editorials": 543,
     "live_verified_rows": 476,
     "indexed_rows": 0
   },
@@ -217,6 +217,12 @@
       "category": "Support / diagnostics"
     },
     {
+      "operator": "cadence:gate",
+      "command": "npm run cadence:gate",
+      "implementation": "node scripts/cadence_gate.js",
+      "category": "Other"
+    },
+    {
       "operator": "cadence:headroom",
       "command": "npm run cadence:headroom",
       "implementation": "node scripts/cadence/publish_headroom.mjs",
@@ -244,6 +250,12 @@
       "operator": "validate:all",
       "command": "npm run validate:all",
       "implementation": "npm run validate:release",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:operator-doc-currency",
+      "command": "npm run validate:operator-doc-currency",
+      "implementation": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
       "category": "Validation / release"
     },
     {
@@ -1664,10 +1676,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 30,
+      "backlink_count": 31,
       "live_verified_count": 30,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose.html",
+          "source_title": "Credit Rental Income And Loan Letters: Beginner-Safe Comparison Guide Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "get the full document library",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
@@ -2284,10 +2316,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 31,
+      "backlink_count": 32,
       "live_verified_count": 31,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Credit Dispute Letters: Aeo-Ready Timeline Guide For People Who Need A Starting Point",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "create a credit dispute letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters.html",
@@ -3683,10 +3735,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 28,
+      "backlink_count": 29,
       "live_verified_count": 27,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign.html",
+          "source_title": "Application Issue Explanation: Geo-Ready Question Checklist Before You Sign",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "create a letter of explanation",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting.html",
@@ -4363,10 +4435,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 18,
+      "backlink_count": 19,
       "live_verified_count": 17,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions.html",
+          "source_title": "Life Admin Letters: Resource-Backed Buyer Guide When You Need To Ask Better Questions",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "draft your letter for free",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose.html",
@@ -5163,10 +5255,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 43,
+      "backlink_count": 44,
       "live_verified_count": 40,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose.html",
+          "source_title": "Car Loan Explanation: Citation-Friendly Decision Guide Before You Choose",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "create a loan explanation letter",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers.html",
@@ -6199,10 +6311,30 @@
       "campaign_ids": [
         "approval-prep-authority"
       ],
-      "backlink_count": 27,
+      "backlink_count": 28,
       "live_verified_count": 26,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book.html",
+          "source_title": "Rental Application Packet: Checklist-Driven Prep Guide Before You Book",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "build your rental application packet",
+          "campaign_id": "approval-prep-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi.html",
@@ -8288,10 +8420,30 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 8,
+      "backlink_count": 9,
       "live_verified_count": 8,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers.html",
+          "source_title": "Wedding Seating Chart: Human-First Budget/Planning Note For Careful Decision-Makers",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "Wedding Seating Chart Maker",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html",
@@ -11622,10 +11774,30 @@
       "campaign_ids": [
         "the-industry-guides-authority"
       ],
-      "backlink_count": 3,
+      "backlink_count": 4,
       "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions.html",
+          "source_title": "Proof Of Income Documents: Human-First Framework When You Need To Ask Better Questions",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "The Industry Guides",
+          "campaign_id": "the-industry-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html",
@@ -12763,7 +12935,7 @@
         "wpp-commercial",
         "wpp-community-authority"
       ],
-      "backlink_count": 20,
+      "backlink_count": 21,
       "live_verified_count": 14,
       "indexed_count": 0,
       "backlinks": [
@@ -12866,6 +13038,26 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 88
+        },
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book.html",
+          "source_title": "Executive Broadcast Planning: 2026-Ready Budget/Planning Note Before You Book",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-26",
+          "release_date": "2026-08-26",
+          "anchor": "West Peek Productions",
+          "campaign_id": "wpp-commercial",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
         },
         {
           "source_path": "sites/founder-operator/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html",
