@@ -1,14 +1,16 @@
 {
   "generated_at": "2026-08-26",
   "policy_source": "data/cadence/policy.json",
-  "urls": 565,
-  "dated": 565,
+  "urls": 593,
+  "dated": 593,
   "undated": 0,
   "stale_over_window": 0,
   "stale_pct": 0,
-  "fresh_within_30d": 488,
-  "lastmod_within_7d": 167,
+  "fresh_within_30d": 517,
+  "lastmod_within_7d": 196,
   "new_since_last_run": 0,
+  "new_editorial_urls": 0,
+  "new_navigation_urls": 0,
   "ledger_initialised": true,
   "maintainable_ceiling": 325,
   "policy": {
@@ -22,7 +24,7 @@
   },
   "blocking": [],
   "warnings": [
-    "library_over_ceiling: 565 pages against a ceiling of 325 (25 substantive refreshes per week held inside 91 days). 240 pages cannot be kept current at this capacity."
+    "library_over_ceiling: 593 pages against a ceiling of 325 (25 substantive refreshes per week held inside 91 days). 268 pages cannot be kept current at this capacity."
   ],
   "status": "CLEAR"
 }

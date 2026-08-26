@@ -103,6 +103,36 @@ if (ledgerExists) {
 }
 const newUrls = [...urls.keys()].filter((u) => !known.has(u));
 
+// Topic hubs are generated navigation over pages that already exist, not new
+// editorial surface. data/topic-taxonomy.json and data/publications.json give
+// their exact URLs - this is not a path heuristic - and they are held out of the
+// weekly publishing cap for one reason: the cap exists because publishing faster
+// than the library can be refreshed pushes the tail out of the citable window,
+// and a hub adds nothing to refresh. Its content is the membership of pages that
+// are already counted, and it is rewritten whenever that membership changes.
+// They are still counted in urls.size, so they still press on the ceiling
+// warning, and they are reported separately rather than disappearing.
+function navigationUrls() {
+  const out = new Set();
+  const read = (rel) => {
+    const f = path.join(ROOT, rel);
+    return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
+  };
+  const taxonomy = read('data/topic-taxonomy.json');
+  const publications = read('data/publications.json');
+  if (!taxonomy || !publications) return out;
+  const domainById = new Map(publications.map((p) => [p.id, p.working_domain]));
+  for (const [pubId, entry] of Object.entries(taxonomy.publications || {})) {
+    const domain = domainById.get(pubId);
+    if (!domain) continue;
+    for (const hub of entry.hubs || []) out.add(`https://${domain}/topics/${hub.slug}`);
+  }
+  return out;
+}
+const navigation = navigationUrls();
+const newNavigation = newUrls.filter((u) => navigation.has(u));
+const newEditorial = newUrls.filter((u) => !navigation.has(u));
+
 const dated = [...urls.entries()].filter(([, d]) => d);
 const undated = [...urls.entries()].filter(([, d]) => !d);
 const ages = dated.map(([, d]) => ageDays(d));
@@ -115,8 +145,8 @@ const ceiling = policy.refresh_capacity_per_week * Math.floor(policy.refresh_win
 const blocking = [];
 const warnings = [];
 
-if (ledgerExists && newUrls.length > policy.new_pages_per_week) {
-  blocking.push(`weekly_cap: ${newUrls.length} URLs are new since the last run, cap is ${policy.new_pages_per_week} per week`);
+if (ledgerExists && newEditorial.length > policy.new_pages_per_week) {
+  blocking.push(`weekly_cap: ${newEditorial.length} editorial URLs are new since the last run, cap is ${policy.new_pages_per_week} per week`);
 }
 if (stalePct > policy.stale_tolerance_pct) {
   blocking.push(`refresh_debt: ${stale} of ${dated.length} pages (${stalePct.toFixed(0)}%) are older than ${policy.refresh_window_days} days, tolerance is ${policy.stale_tolerance_pct}%`);
@@ -153,6 +183,8 @@ const report = {
   fresh_within_30d: fresh30,
   lastmod_within_7d: publishedThisWeek,
   new_since_last_run: ledgerExists ? newUrls.length : null,
+  new_editorial_urls: ledgerExists ? newEditorial.length : null,
+  new_navigation_urls: ledgerExists ? newNavigation.length : null,
   ledger_initialised: ledgerExists,
   maintainable_ceiling: ceiling,
   policy: { ...policy, _source: undefined },
@@ -173,6 +205,7 @@ fs.writeFileSync(path.join(ROOT, 'reports/cadence/cadence-gate.json'), JSON.stri
 if (JSON_ONLY) console.log(JSON.stringify(report, null, 2));
 else {
   console.log(`CADENCE GATE ${report.status}: ${urls.size} urls; ${stale} past ${policy.refresh_window_days}d (${report.stale_pct}%); ${fresh30} fresh within ${policy.high_value_window_days}d; ceiling ${ceiling}`);
+  if (ledgerExists) console.log(`  new since last run: ${newEditorial.length} editorial, ${newNavigation.length} navigation`);
   for (const b of blocking) console.log(`  BLOCK  ${b}`);
   for (const w of warnings) console.log(`  WARN   ${w}`);
 }
