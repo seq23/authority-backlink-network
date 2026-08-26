@@ -14,6 +14,7 @@
     "audit:links": "python3 scripts/link_audit.py",
     "social:drafts": "python3 scripts/generate_social_queue.py",
     "autopilot": "python3 scripts/authority_v4_autopilot.py",
+    "content:clusters": "python3 scripts/generate_cluster_articles.py",
     "social:dry-run": "SOCIAL_DRY_RUN=true python3 scripts/social_publisher.py",
     "trace:github-actions": "python3 scripts/trace_github_actions.py",
     "validate:cache:self-test": "python3 scripts/validate.py cache-self-test",

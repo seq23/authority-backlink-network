@@ -1,12 +1,12 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-24",
+  "as_of": "2026-08-25",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 22,
+      "rendered": 26,
       "live_verified": 22,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -19,7 +19,7 @@
     {
       "campaign_id": "wpp-community-authority",
       "brand_id": "west-peek-productions",
-      "rendered": 7,
+      "rendered": 11,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 1,
@@ -32,8 +32,8 @@
     {
       "campaign_id": "wpp-commercial",
       "brand_id": "west-peek-productions",
-      "rendered": 7,
-      "live_verified": 6,
+      "rendered": 8,
+      "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 1,
       "distinct_anchors": 2,
@@ -45,8 +45,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 49,
-      "live_verified": 48,
+      "rendered": 51,
+      "live_verified": 49,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -58,7 +58,7 @@
     {
       "campaign_id": "dianne-recovery-resources",
       "brand_id": "diannes-place",
-      "rendered": 13,
+      "rendered": 17,
       "live_verified": 13,
       "indexed": 0,
       "distinct_destinations": 4,
@@ -71,11 +71,11 @@
     {
       "campaign_id": "hicks-workplace-wellbeing",
       "brand_id": "hicks-consulting",
-      "rendered": 8,
+      "rendered": 14,
       "live_verified": 8,
       "indexed": 0,
-      "distinct_destinations": 5,
-      "distinct_anchors": 5,
+      "distinct_destinations": 6,
+      "distinct_anchors": 6,
       "rendered_floor": 4,
       "destination_floor": 4,
       "coverage_status": "HEALTHY_RENDERED",
@@ -84,8 +84,8 @@
     {
       "campaign_id": "horse-equine-legal",
       "brand_id": "horse-legal-guide",
-      "rendered": 9,
-      "live_verified": 8,
+      "rendered": 13,
+      "live_verified": 9,
       "indexed": 0,
       "distinct_destinations": 5,
       "distinct_anchors": 5,
@@ -110,7 +110,7 @@
     {
       "campaign_id": "accident-guides-authority",
       "brand_id": "accident-guides",
-      "rendered": 8,
+      "rendered": 9,
       "live_verified": 8,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -123,7 +123,7 @@
     {
       "campaign_id": "dentistry-guides-authority",
       "brand_id": "dentistry-guides",
-      "rendered": 7,
+      "rendered": 8,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -149,7 +149,7 @@
     {
       "campaign_id": "neuro-eval-guides-authority",
       "brand_id": "neuro-eval-guides",
-      "rendered": 7,
+      "rendered": 8,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -162,7 +162,7 @@
     {
       "campaign_id": "uscis-exam-guides-authority",
       "brand_id": "uscis-exam-guides",
-      "rendered": 7,
+      "rendered": 8,
       "live_verified": 7,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -175,7 +175,7 @@
     {
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
-      "rendered": 6,
+      "rendered": 10,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -188,8 +188,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 270,
-      "live_verified": 264,
+      "rendered": 276,
+      "live_verified": 270,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -201,11 +201,11 @@
     {
       "campaign_id": "porch-party-authority",
       "brand_id": "porch-party",
-      "rendered": 16,
+      "rendered": 30,
       "live_verified": 16,
       "indexed": 0,
-      "distinct_destinations": 2,
-      "distinct_anchors": 2,
+      "distinct_destinations": 6,
+      "distinct_anchors": 6,
       "rendered_floor": 2,
       "destination_floor": 2,
       "coverage_status": "HEALTHY_RENDERED",
