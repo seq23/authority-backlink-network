@@ -598,3 +598,265 @@ def compose_body(f: dict) -> tuple[str, list[dict]]:
         f.get("meta_line_html") or "",
     ]
     return "\n".join(p for p in parts if p), items
+
+
+# ---------------------------------------------------------------------------
+# Internal navigation
+# ---------------------------------------------------------------------------
+# 546 of 568 published pages had no inbound internal link from anywhere on their
+# own site. A sitemap entry is an invitation; an internal link is a path, and a
+# page with no path in is a page a crawler has no reason to fetch twice and no
+# signal to weigh. All three publications sat at zero indexed pages in Bing.
+#
+# Everything below composes that navigation. It lives here because this module is
+# the single body generator both the autopilot and the navigation build call, so
+# a newly generated page and a rebuilt existing one get the same markup.
+#
+# Two rules the markup has to obey:
+#
+#   1. Per-page navigation is wrapped in <nav>, which lastmod_ledger.content_hash()
+#      strips before hashing. Adding a breadcrumb to 565 pages must not read as
+#      565 content changes and collapse every lastmod onto one build day.
+#   2. Every link is absolute and extensionless, from lib.site_urls. A hub that
+#      names /foo while the sitemap names https://domain/foo is two URLs for one
+#      page. Internal navigation is never nofollowed - nofollowing our own paths
+#      would undo the entire repair.
+
+BREADCRUMB_RE = re.compile(r'<nav[^>]+data-nav="breadcrumb"[\s\S]*?</nav>\s*'
+                           r'(?:<script type="application/ld\+json" data-nav="breadcrumb">'
+                           r'[\s\S]*?</script>)?', re.I)
+RELATED_RE = re.compile(r'<nav[^>]+data-nav="related"[\s\S]*?</nav>', re.I)
+TOPIC_INDEX_RE = re.compile(r'<section[^>]+data-nav="topic-index"[\s\S]*?</section>', re.I)
+LEGACY_HOME_LINK_RE = re.compile(
+    r'<p><a href="\.\./index\.html">(?:&larr;|←)\s*Home</a></p>', re.I)
+
+
+def attr(text: str) -> str:
+    """Escape for an attribute value."""
+    return html.escape(str(text), quote=True)
+
+
+def breadcrumb_html(trail: list[tuple[str, str]]) -> str:
+    """The visible breadcrumb. Absolute hrefs; the last crumb is the page itself."""
+    parts = []
+    for index, (name, url) in enumerate(trail):
+        last = index == len(trail) - 1
+        if last:
+            parts.append(f'<span aria-current="page">{esc(name)}</span>')
+        else:
+            parts.append(f'<a href="{attr(url)}">{esc(name)}</a>')
+    return ('<nav class="breadcrumb" data-nav="breadcrumb" aria-label="Breadcrumb">'
+            + '<span class="breadcrumb__sep"> / </span>'.join(parts)
+            + '</nav>')
+
+
+def breadcrumb_schema(trail: list[tuple[str, str]]) -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": name, "item": url}
+            for i, (name, url) in enumerate(trail)
+        ],
+    }
+
+
+def related_html(heading: str, items: list[tuple[str, str]],
+                 hub_title: str, hub_url: str) -> str:
+    """Sibling links, plus the way back up to the hub.
+
+    The hub link is repeated here rather than left to the breadcrumb alone: it is
+    the one link on the page that leads to every other page on the same topic.
+    """
+    if not items:
+        return ""
+    body = "".join(f'<li><a href="{attr(url)}">{esc(name)}</a></li>' for name, url in items)
+    return ('<nav class="related" data-nav="related" aria-label="Related pages">'
+            f'<h2>{esc(sentence_case(heading))}</h2><ul>{body}</ul>'
+            f'<p><a href="{attr(hub_url)}">All {esc(hub_title.lower())}</a></p></nav>')
+
+
+def apply_page_navigation(text: str, breadcrumb: str, breadcrumb_schema: dict,
+                          related: str) -> str:
+    """Put the breadcrumb at the top of <main> and the related block at its end.
+
+    Idempotent: an existing block with the same data-nav marker is replaced, and
+    the legacy "<- Home" paragraph the three generators emitted is replaced by
+    the breadcrumb rather than left above it.
+    """
+    schema_tag = ('<script type="application/ld+json" data-nav="breadcrumb">'
+                  + json.dumps(breadcrumb_schema, ensure_ascii=False) + '</script>')
+    block = breadcrumb + schema_tag
+
+    if BREADCRUMB_RE.search(text):
+        text = BREADCRUMB_RE.sub(lambda _m: block, text, count=1)
+    elif LEGACY_HOME_LINK_RE.search(text):
+        text = LEGACY_HOME_LINK_RE.sub(lambda _m: block, text, count=1)
+    else:
+        text = re.sub(r"(<main[^>]*>)", lambda m: m.group(1) + block, text, count=1)
+
+    if RELATED_RE.search(text):
+        text = RELATED_RE.sub(lambda _m: related, text, count=1)
+    elif related:
+        text = re.sub(r"(</article>)", lambda m: m.group(1) + related, text, count=1)
+    return text
+
+
+def topic_index_html(pub_title: str, hubs: list[tuple[str, str, str, int]]) -> str:
+    """The publication index's list of topic hubs. Not inside <nav>: on the index
+    this list is the content, and it should move the index's lastmod when it
+    changes."""
+    rows = "".join(
+        f'<li><a href="{attr(url)}">{esc(title)}</a> — {esc(summary)} '
+        f'<span class="note">{count} page{"s" if count != 1 else ""}</span></li>'
+        for title, url, summary, count in hubs)
+    return ('<section data-nav="topic-index"><h2>Browse by topic</h2>'
+            f'<p>Everything {esc(pub_title)} publishes sits under one of these topics. '
+            'Each topic page lists its pages grouped by the question they answer.</p>'
+            f'<ul>{rows}</ul></section>')
+
+
+def apply_topic_index(text: str, block: str) -> str:
+    if TOPIC_INDEX_RE.search(text):
+        return TOPIC_INDEX_RE.sub(lambda _m: block, text, count=1)
+    return re.sub(r"(</main>)", lambda m: block + m.group(1), text, count=1)
+
+
+# --- the hub page itself ----------------------------------------------------
+HUB_CLARITY = None
+
+
+def clarity_projects() -> dict:
+    global HUB_CLARITY
+    if HUB_CLARITY is None:
+        HUB_CLARITY = _load("data/clarity_projects.json", {"projects": {}}).get("projects", {})
+    return HUB_CLARITY
+
+
+def clarity_tag(domain: str) -> str:
+    project = clarity_projects().get(domain)
+    if not project:
+        return ""
+    return ('<script data-clarity-loader>(function(w,d,m){var h=(w.location.hostname||"")'
+            '.toLowerCase().replace(/^www\\./,"");var id=m[h];if(!id)return;w.clarity=w.clarity||'
+            'function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};var s=d.createElement("script");'
+            's.async=1;s.src="https://www.clarity.ms/tag/"+id;var f=d.getElementsByTagName("script")[0];'
+            'f.parentNode.insertBefore(s,f)})(window,document,'
+            + json.dumps({domain: project}) + ')</script>')
+
+
+# hostile_review.py requires both of these strings on every publishable page, and
+# the second on any page whose text trips its sensitive-topic list. Several hub
+# titles do ("contract", "legal", "medical", "therapy", "burnout"), so both are
+# unconditional.
+HUB_BOUNDARY = ("This page is informational. It is not legal, medical, mental-health, "
+                "immigration, financial, or professional advice. Verify anything that "
+                "turns on your own circumstances with a qualified professional.")
+
+
+def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
+                     members: list[dict], siblings: list[tuple[str, str]]) -> str:
+    """A topic hub: the page that gives every member page a path in.
+
+    A hub is only ever written for a topic that has members. An empty one would
+    render no links at all, which fails the conversion_path check in
+    validate_content_pattern_contract.js and, more to the point, would be a page
+    that exists to be navigation and contains none.
+    """
+    if not members:
+        raise ValueError(f"refusing to compose an empty hub: {hub['slug']}")
+
+    title = hub["title"]
+    pub_title = pub["title"]
+    by_cluster: dict[str, list[dict]] = {}
+    for row in members:
+        by_cluster.setdefault(row["cluster"], []).append(row)
+
+    lead = (f"{pub_title} publishes {len(members)} pages on {title.lower()}, grouped below "
+            f"into the {len(by_cluster)} questions they answer. Each one states what it "
+            f"covers, who it is written for, and the single disclosed affiliated resource "
+            f"it cites. None of them ranks providers or quotes prices.")
+
+    sections = []
+    for cluster in sorted(by_cluster, key=str.lower):
+        rows = by_cluster[cluster]
+        items = "".join(
+            f'<li><a href="{attr(r["url"])}">{esc(r["title"])}</a></li>' for r in rows)
+        sections.append(f"<h3>{esc(sentence_case(cluster))}</h3><ul>{items}</ul>")
+
+    table_rows = "".join(
+        f"<tr><td>{esc(sentence_case(cluster))}</td>"
+        f"<td>{len(by_cluster[cluster])}</td></tr>"
+        for cluster in sorted(by_cluster, key=str.lower))
+
+    others = "".join(f'<li><a href="{attr(u)}">{esc(t)}</a></li>' for t, u in siblings)
+    other_block = (
+        '<nav class="related" data-nav="related" aria-label="Other topics">'
+        f'<h2>Other topics in {esc(pub_title)}</h2><ul>{others}</ul>'
+        f'<p><a href="{attr(home)}">{esc(pub_title)} home</a></p></nav>'
+    ) if others else ""
+
+    trail = [(pub_title, home), (title, url)]
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "CollectionPage", "name": title, "url": url, "@id": url,
+             "description": hub["summary"],
+             "isPartOf": {"@type": "WebSite", "name": pub_title, "url": home},
+             "mainEntity": {"@type": "ItemList", "numberOfItems": len(members),
+                            "itemListElement": [
+                                {"@type": "ListItem", "position": i + 1,
+                                 "url": r["url"], "name": r["title"]}
+                                for i, r in enumerate(members)]}},
+            breadcrumb_schema(trail),
+        ],
+    }
+    description = (f"{hub['summary']} {len(members)} pages from {pub_title}.")[:300]
+
+    return (
+        '<!doctype html>\n<html lang="en">\n<head>'
+        '<meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">'
+        f'<title>{esc(title)} | {esc(pub_title)}</title>'
+        f'<meta name="description" content="{attr(description)}">'
+        f'<link rel="canonical" href="{attr(url)}">'
+        '<link rel="stylesheet" href="/styles.css">'
+        '<script type="application/ld+json">'
+        + json.dumps(schema, ensure_ascii=False) + '</script>'
+        + clarity_tag(domain) +
+        '</head>\n<body>\n'
+        f'<header><strong>{esc(pub_title)}</strong></header>\n'
+        '<main class="page">'
+        + breadcrumb_html(trail) +
+        f'<article><h1>{esc(title)}</h1>'
+        f'<p class="dek">{esc(lead)}</p>'
+        f'<p><em>{esc(hub["summary"])}</em></p>'
+        '<h2>What is on this page</h2>'
+        '<table><thead><tr><th>Question</th><th>Pages</th></tr></thead>'
+        f'<tbody>{table_rows}</tbody></table>'
+        '<h2>How to use this topic</h2>'
+        f'<p>The pages below are grouped by the question they answer rather than by the '
+        f'date they were published, because a reader arriving on {esc(title.lower())} is '
+        f'looking for one of those questions and not for the newest page. Start with the '
+        f'group that matches the decision in front of you; the pages inside a group cover '
+        f'the same ground for different situations.</p>'
+        f'<p>Every page states its own scope before it states anything else: what it '
+        f'covers, who it is written for, the one affiliated resource it cites, and where '
+        f'it stops. Where a page cites an affiliated destination the link is disclosed and '
+        f'carries <code>rel="sponsored nofollow"</code>, so it passes no ranking signal. '
+        f'The links on this page are internal to {esc(pub_title)} and are ordinary '
+        f'followed links.</p>'
+        f'<h2>Pages in {esc(title.lower())}</h2>'
+        + "".join(sections) +
+        '<h2>Editorial and affiliation note</h2>'
+        f'<p>{esc(pub["disclosure"])} <strong>Affiliation disclosed:</strong> this '
+        f'publication cites affiliated projects where the citation is topically relevant, '
+        f'and labels them. It publishes no rankings, no awards, and no paid placement '
+        f'presented as editorial. {esc(HUB_BOUNDARY)}</p>'
+        '</article>'
+        + other_block +
+        '</main>\n'
+        f'<footer><p>&copy; 2026 {esc(pub_title)}. Affiliation disclosed. No fake '
+        'rankings. No paid placement unless clearly labeled.</p></footer>\n'
+        '</body>\n</html>\n'
+    )

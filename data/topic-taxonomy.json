@@ -1,0 +1,358 @@
+{
+  "schema": "authority-topic-taxonomy-v1",
+  "note": "Which topic hub each published page belongs to, keyed on the cluster the page already records for itself: the Topic row in its scope table (autopilot pages), the cluster field in content-bank/cluster-articles/*.json (hand-authored pages), or the Topic context line (backlink seed pages). Nothing here re-topics a page; it groups clusters that were already recorded. Every cluster present in the library appears exactly once, and scripts/build_site_navigation.py fails rather than publishing if a page's cluster is unmapped, if two hubs claim one cluster, or if a hub would ship with fewer than minimum_hub_members pages.",
+  "minimum_hub_members": 3,
+  "minimum_hub_members_note": "A hub with no members carries no outbound editorial link and fails the conversion_path check in validate_content_pattern_contract.js; a hub with one member is a redirect wearing a costume. The clusters below are merged until every hub is worth navigating - the smallest in this file holds 8 pages.",
+  "publications": {
+    "founder": {
+      "hubs": [
+        {
+          "slug": "virtual-event-production",
+          "title": "Virtual event production and executive broadcast",
+          "summary": "Planning, running and pricing virtual, hybrid and broadcast events, from run-of-show documents to what actually drives the cost.",
+          "clusters": [
+            "executive broadcast planning",
+            "virtual event production",
+            "virtual event production economics",
+            "virtual agency os authority"
+          ]
+        },
+        {
+          "slug": "community-operations",
+          "title": "Community programs and managed operations",
+          "summary": "Scoping, staffing and measuring a community program, and deciding between an in-house team and a managed operator.",
+          "clusters": [
+            "community as a service",
+            "community program operations",
+            "managed community operations",
+            "community retention",
+            "community platform selection",
+            "community moderation strategy"
+          ]
+        },
+        {
+          "slug": "ai-execution-and-delegation",
+          "title": "AI execution, delegation and operating cadence",
+          "summary": "Where AI belongs in a weekly operating review, what to delegate to it, and how to automate without losing the thread.",
+          "clusters": [
+            "automation without chaos",
+            "AI in the executive operating cadence",
+            "AI execution systems",
+            "AI coaching workflows",
+            "AI delegation",
+            "AI workforce design"
+          ]
+        },
+        {
+          "slug": "founder-operating-rhythms",
+          "title": "Founder operating rhythms",
+          "summary": "Review cadences, calendar protection, accountability and recovery after the week gets away from you.",
+          "clusters": [
+            "productivity recovery after missed days",
+            "review cadences",
+            "calendar protection",
+            "daily discipline frameworks",
+            "team accountability",
+            "personal board of directors",
+            "meeting operating rhythms",
+            "founder operating systems"
+          ]
+        },
+        {
+          "slug": "hiring-and-lean-team-stack",
+          "title": "Hiring standards and the lean-team stack",
+          "summary": "Role scorecards, work samples, onboarding plans and the tools a small team actually needs.",
+          "clusters": [
+            "tool stacks for lean teams",
+            "hiring standards for small teams",
+            "startup resource libraries",
+            "chief of staff systems"
+          ]
+        }
+      ]
+    },
+    "memphis": {
+      "hubs": [
+        {
+          "slug": "wedding-planning-tools",
+          "title": "Wedding planning tools and checklists",
+          "summary": "Date-based checklists, planning templates and the gaps that show up between booking and the week of the wedding.",
+          "clusters": [
+            "wedding planning tools",
+            "wedding checklist planning",
+            "wedding planning gaps",
+            "wedding planning deadlines"
+          ]
+        },
+        {
+          "slug": "wedding-day-timelines",
+          "title": "Wedding day timelines",
+          "summary": "Building a run-of-day timeline vendors can work from, and what changes when the schedule slips.",
+          "clusters": [
+            "wedding-day timeline"
+          ]
+        },
+        {
+          "slug": "wedding-and-event-budgets",
+          "title": "Wedding and event budgets",
+          "summary": "Budgets that track real payment timing rather than a single total, for weddings and for events generally.",
+          "clusters": [
+            "wedding budget planning",
+            "event budget planning"
+          ]
+        },
+        {
+          "slug": "wedding-seating-charts",
+          "title": "Wedding seating charts",
+          "summary": "A calm method for seating, and what to settle before the chart is worth starting.",
+          "clusters": [
+            "wedding seating chart"
+          ]
+        },
+        {
+          "slug": "grazing-tables-and-vendors",
+          "title": "Grazing tables and Memphis event vendors",
+          "summary": "Briefing a grazing table, comparing it against a buffet, and finding and questioning local vendors.",
+          "clusters": [
+            "grazing tables",
+            "Memphis event vendors",
+            "party decor vendors",
+            "neighborhood vendor guides",
+            "Memphis giftable experiences"
+          ]
+        },
+        {
+          "slug": "porch-and-seasonal-styling",
+          "title": "Porch and seasonal styling",
+          "summary": "Scoping a porch project, seasonal installs and takedowns, and how sun, wind and humidity change the material list.",
+          "clusters": [
+            "seasonal porch styling",
+            "porch decorating",
+            "Halloween porch styling",
+            "fall porch setups"
+          ]
+        },
+        {
+          "slug": "event-and-room-styling",
+          "title": "Corporate, milestone and room styling",
+          "summary": "Corporate and milestone event decor, hotel room setups, and comparing two quotes that look different on purpose.",
+          "clusters": [
+            "corporate and milestone event styling",
+            "corporate event styling",
+            "hotel room decor",
+            "hotel room decorations",
+            "birthday room setups"
+          ]
+        }
+      ]
+    },
+    "professional": {
+      "hubs": [
+        {
+          "slug": "credit-reports-and-disputes",
+          "title": "Credit reports, disputes and goodwill letters",
+          "summary": "Reading a credit report, disputing what is wrong on it, and writing the letters that accompany a dispute.",
+          "clusters": [
+            "credit dispute letters",
+            "credit report errors",
+            "credit report issues",
+            "goodwill letters",
+            "debt validation letters",
+            "late payment explanation",
+            "how to explain a late payment",
+            "credit explanation letters"
+          ]
+        },
+        {
+          "slug": "loan-application-packets",
+          "title": "Loan application packets and lender document requests",
+          "summary": "What a lender asks for, how to assemble it once, and how to answer a document request without restarting the file.",
+          "clusters": [
+            "personal loan documents",
+            "loan application packet",
+            "full approval prep bundle",
+            "lender document request",
+            "application document checklists"
+          ]
+        },
+        {
+          "slug": "loan-type-explanations",
+          "title": "Mortgage, business and car loan explanations",
+          "summary": "The explanation letters that attach to a specific kind of loan, and what each underwriter is actually asking.",
+          "clusters": [
+            "loan explanation letters",
+            "mortgage explanation",
+            "business loan explanation",
+            "car loan explanation"
+          ]
+        },
+        {
+          "slug": "application-problems",
+          "title": "When an application runs into trouble",
+          "summary": "Multiple applications in flight, a file that stalled, and how to explain a problem without creating a second one.",
+          "clusters": [
+            "multiple application issues",
+            "application issue explanation"
+          ]
+        },
+        {
+          "slug": "letters-of-explanation",
+          "title": "Letters of explanation",
+          "summary": "What a letter of explanation is for, what belongs in one, and where the line is between explaining and arguing.",
+          "clusters": [
+            "letters of explanation"
+          ]
+        },
+        {
+          "slug": "income-and-employment-letters",
+          "title": "Income, employment and self-employment letters",
+          "summary": "Explaining an income change, a job gap, self-employed earnings or an irregular cash flow to someone reading a file.",
+          "clusters": [
+            "income change explanation",
+            "employment explanation letters",
+            "job gap explanation",
+            "self-employed income explanation",
+            "business explanation letters",
+            "cash flow explanation"
+          ]
+        },
+        {
+          "slug": "bank-statement-and-deposit-letters",
+          "title": "Bank statements and large deposits",
+          "summary": "Sourcing a deposit, annotating a statement, and answering the questions a statement raises before they are asked.",
+          "clusters": [
+            "bank statement explanation",
+            "large deposit explanation"
+          ]
+        },
+        {
+          "slug": "identity-and-address-records",
+          "title": "Identity, name and address records",
+          "summary": "A name that does not match, an address history with holes in it, and the records that reconcile them.",
+          "clusters": [
+            "address issue explanation",
+            "name mismatch explanation",
+            "identity records explanation"
+          ]
+        },
+        {
+          "slug": "rental-applications",
+          "title": "Rental and apartment applications",
+          "summary": "Assembling a rental application, writing a cover letter for it, and reviewing a denial.",
+          "clusters": [
+            "apartment application paperwork",
+            "rental application packet",
+            "rental history explanation",
+            "apartment denial review",
+            "rental cover letters"
+          ]
+        },
+        {
+          "slug": "proof-of-income-and-residency",
+          "title": "Proof of income and proof of residency",
+          "summary": "What counts as proof, how to organise a packet of it, and which document answers which request.",
+          "clusters": [
+            "proof of income for renting",
+            "proof of income letters",
+            "credit rental income and loan letters",
+            "proof of residency letter",
+            "how to organize a proof-of-income packet",
+            "proof of income documents"
+          ]
+        },
+        {
+          "slug": "business-funding-documents",
+          "title": "Business funding and ownership documents",
+          "summary": "The packet a business funding application needs, and the ownership records that have to agree with it.",
+          "clusters": [
+            "business funding packet",
+            "business funding documents",
+            "business ownership documents"
+          ]
+        },
+        {
+          "slug": "document-preparation",
+          "title": "Document preparation and life admin",
+          "summary": "Building a document library once, keeping it truthful and consistent, and reusing it across applications.",
+          "clusters": [
+            "life admin letters",
+            "complete document library",
+            "self-service document creation",
+            "truthful document preparation",
+            "life admin documents",
+            "documentation checklists",
+            "self-service paperwork preparation",
+            "document consistency before applying"
+          ]
+        },
+        {
+          "slug": "workplace-mental-health",
+          "title": "Workplace burnout and mental-health support",
+          "summary": "Scoping workplace wellbeing work, telling training apart from therapy, and responding to burnout before it is a crisis.",
+          "clusters": [
+            "compassion fatigue resources",
+            "trauma-informed leadership",
+            "workplace wellbeing scoping",
+            "organizational mental health training",
+            "workplace burnout resources",
+            "high-achieving women and burnout",
+            "therapy consultation questions",
+            "therapy information",
+            "workplace mental health training"
+          ]
+        },
+        {
+          "slug": "recovery-housing",
+          "title": "Recovery housing and family support",
+          "summary": "Comparing recovery residences, understanding levels of support, and how families can help without taking over.",
+          "clusters": [
+            "family recovery support",
+            "recovery housing",
+            "recovery housing decisions",
+            "community reintegration",
+            "recovery referrals",
+            "recovery housing questions",
+            "recovery resources"
+          ]
+        },
+        {
+          "slug": "equine-contracts",
+          "title": "Equine contracts, boarding and liability",
+          "summary": "Boarding agreements, purchase and lease paperwork, and organising records before a dispute.",
+          "clusters": [
+            "equine contract preparation",
+            "boarding agreement questions",
+            "horse contract preparation",
+            "equine liability questions",
+            "horse purchase documents",
+            "horse dispute preparation",
+            "horse boarding agreements",
+            "boarding barn contract issues"
+          ]
+        },
+        {
+          "slug": "regulated-provider-research",
+          "title": "Regulated provider and clinic research",
+          "summary": "Preparing for a consult, organising records before an appointment, and the questions to ask a regulated provider first.",
+          "clusters": [
+            "preparing records before a specialist appointment",
+            "decision frameworks for sensitive services",
+            "neuropsych evaluation research",
+            "how to prepare for consults",
+            "IV therapy clinic research",
+            "dental decision resources",
+            "USCIS civil surgeon appointment prep",
+            "regulated provider research",
+            "red flags in regulated services",
+            "hair restoration provider research",
+            "the industry guides authority",
+            "uscis exam guides authority",
+            "accident guides authority",
+            "hormones iv hair authority",
+            "neuro eval guides authority"
+          ]
+        }
+      ]
+    }
+  }
+}
