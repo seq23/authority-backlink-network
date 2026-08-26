@@ -257,7 +257,32 @@ ANSWER_VARIANTS = [
     "{pub} maintains this {modifier} {fmt} on {cluster} for {aud}. It offers a frame rather than a "
     "verdict: the boundaries of the topic, one disclosed affiliated citation to {brand} "
     "({category}), and an explicit stopping point, because {risk}.",
+
+    # The registry's `category` values run to a dozen words ("virtual/hybrid event
+    # production, managed community operations, and audience growth services"),
+    # which pushes a variant that quotes one past sixty words on its own. These
+    # name the destination without restating its remit - it is a row in the scope
+    # table either way - so compose_answer() can fall back to them and stay inside
+    # the extractable-answer budget.
+    "{pub} publishes this {modifier} {fmt} on {cluster} for {aud}. It states its own scope and "
+    "cites one disclosed affiliated destination, {brand}. It ranks nothing and names no best "
+    "provider, and {risk}.",
+
+    "This {fmt} covers {cluster} for {aud}, published by {pub}. It frames the comparison instead "
+    "of settling it, and cites one affiliated destination, {brand}, with disclosure. No ranking, "
+    "no pricing, and {risk}.",
+
+    "{cluster_cap}, for {aud}, from {pub}. Scope only: what the page covers, the single disclosed "
+    "affiliated citation it carries to {brand}, and where it stops. Nothing here is a ranking, "
+    "and {risk}.",
+
+    "Read this as scope rather than a verdict. {pub} covers {cluster} for {aud} {tail}, citing one "
+    "disclosed affiliated destination, {brand}. It publishes no ranking and no prices, and {risk}.",
 ]
+
+# Target for the extractable answer. Below forty words it is not self-contained;
+# above sixty it stops being a span an answer engine will lift whole.
+ANSWER_WORDS = (40, 60)
 
 CITATION_VARIANTS = [
     "{link} is the one affiliated destination this page cites, covering {category}. The "
@@ -306,8 +331,30 @@ def risk_clause(f: dict) -> str:
 
 
 def compose_answer(f: dict) -> str:
+    """Render the first variant that lands inside ANSWER_WORDS.
+
+    The slots hold recorded values of wildly different lengths - a cluster is two
+    words, a registry category can be twelve - so a fixed set of templates cannot
+    hit a word budget on its own. Candidates are tried in an order rotated by the
+    page's own hash, so which one wins still varies across the library, and the
+    closest to the midpoint is used if none fits.
+    """
+    rendered = [_render_answer(f, v) for v in _rotated(ANSWER_VARIANTS, f["title"])]
+    low, high = ANSWER_WORDS
+    for text in rendered:
+        if low <= _words(text) <= high:
+            return text
+    midpoint = (low + high) / 2
+    return min(rendered, key=lambda t: abs(_words(t) - midpoint))
+
+
+def _rotated(options: list, salt: str) -> list:
+    start = int(hashlib.sha256(str(salt).encode("utf-8")).hexdigest()[:12], 16) % len(options)
+    return options[start:] + options[:start]
+
+
+def _render_answer(f: dict, variant: str) -> str:
     tail = INTENT_TAIL.get(f["intent"], f["intent"])
-    variant = pick(ANSWER_VARIANTS, f["title"], "answer")
     return variant.format(
         pub=esc(f["pub_title"]),
         modifier=esc(f["modifier"]),
