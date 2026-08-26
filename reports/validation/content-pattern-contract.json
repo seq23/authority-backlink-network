@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-26T20:01:08.204Z",
+  "generated_at": "2026-08-26T20:01:32.370Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 562,
@@ -67,8 +67,8 @@
     {
       "id": "faq",
       "blocking": false,
-      "pages_missing": 316,
-      "coverage_pct": 43.8,
+      "pages_missing": 216,
+      "coverage_pct": 61.6,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
