@@ -9,6 +9,10 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
+# rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
+# sites below used it without importing it, so every run of this script died
+# with NameError: name 'rel_attr' is not defined.
+from affiliation import rel_attr
 
 ROOT = Path(__file__).resolve().parents[1]
 PANTRY = json.loads((ROOT/'content-bank/yearly-pantry.json').read_text(encoding='utf-8'))

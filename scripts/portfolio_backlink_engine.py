@@ -10,6 +10,10 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
+# rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
+# sites below used it without importing it, so every run of this script died
+# with NameError: name 'rel_attr' is not defined.
+from affiliation import rel_attr
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1]

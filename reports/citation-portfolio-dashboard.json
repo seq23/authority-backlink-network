@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-08-24",
+  "as_of": "2026-08-25",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 476,
+    "authority_backlinks": 488,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 82,
-    "live_verified": 467,
-    "discoverable": 467,
+    "live_verified": 476,
+    "discoverable": 476,
     "indexed": 0,
     "ai_cited": 0
   },
@@ -103,7 +103,7 @@
       "brand_id": "bhpc",
       "brand_name": "Billionaire High Performance Coach",
       "growth_status": "standard",
-      "authority_backlinks": 8,
+      "authority_backlinks": 9,
       "owned_manifest_surfaces": 4,
       "monthly_authority_target": 10,
       "monthly_verified_backlink_target": 8,
@@ -113,7 +113,7 @@
       "brand_id": "aplayer-mode",
       "brand_name": "A Player Mode",
       "growth_status": "growth",
-      "authority_backlinks": 21,
+      "authority_backlinks": 22,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -153,7 +153,7 @@
       "brand_id": "hicks-consulting",
       "brand_name": "Hicks Consulting",
       "growth_status": "growth",
-      "authority_backlinks": 8,
+      "authority_backlinks": 10,
       "owned_manifest_surfaces": 7,
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 14,
@@ -173,7 +173,7 @@
       "brand_id": "approval-prep",
       "brand_name": "Approval Prep",
       "growth_status": "priority",
-      "authority_backlinks": 270,
+      "authority_backlinks": 276,
       "owned_manifest_surfaces": 18,
       "monthly_authority_target": 150,
       "monthly_verified_backlink_target": 120,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 49,
+      "authority_backlinks": 51,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -201,11 +201,11 @@
     }
   ],
   "by_domain": {
-    "aplayermode.com": 21,
+    "aplayermode.com": 22,
     "porchandparty901.com": 16,
     "dentistryguides.com": 7,
-    "hicksconsulting.org": 8,
-    "billionairehighperformancecoach.com": 8,
+    "hicksconsulting.org": 10,
+    "billionairehighperformancecoach.com": 9,
     "neuroevalguides.com": 7,
     "virtualagency-os.com": 23,
     "uscisexam.com": 7,
@@ -213,23 +213,23 @@
     "theindustryguides.com": 7,
     "horselegalguide.com": 9,
     "hormonesivhair.com": 9,
-    "approvalprep.com": 270,
+    "approvalprep.com": 276,
     "westpeekproductions.com": 14,
-    "weddingbudgetspreadsheet.com": 17,
-    "weddingtimelinetemplate.com": 17,
+    "weddingbudgetspreadsheet.com": 18,
+    "weddingtimelinetemplate.com": 18,
     "weddingseatingchartmaker.com": 8,
     "weddingchecklistpdf.com": 7,
     "diannesplacerecoveryservices.com": 13
   },
   "by_publication": {
     "unknown": 39,
-    "professional": 332,
-    "founder": 53,
-    "memphis": 52
+    "professional": 340,
+    "founder": 55,
+    "memphis": 54
   },
   "lifecycle": {
-    "live_verified": 467,
-    "published_in_repository": 9
+    "live_verified": 476,
+    "published_in_repository": 12
   },
   "campaign_health": [
     {
@@ -261,7 +261,7 @@
     {
       "campaign_id": "wpp-commercial",
       "brand_id": "west-peek-productions",
-      "rendered": 6,
+      "rendered": 7,
       "live_verified": 6,
       "indexed": 0,
       "distinct_destinations": 1,
@@ -274,8 +274,8 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 48,
-      "live_verified": 47,
+      "rendered": 49,
+      "live_verified": 48,
       "indexed": 0,
       "distinct_destinations": 6,
       "distinct_anchors": 6,
@@ -313,7 +313,7 @@
     {
       "campaign_id": "horse-equine-legal",
       "brand_id": "horse-legal-guide",
-      "rendered": 8,
+      "rendered": 9,
       "live_verified": 8,
       "indexed": 0,
       "distinct_destinations": 5,
@@ -366,7 +366,7 @@
       "campaign_id": "hormones-iv-hair-authority",
       "brand_id": "hormones-iv-hair",
       "rendered": 9,
-      "live_verified": 8,
+      "live_verified": 9,
       "indexed": 0,
       "distinct_destinations": 3,
       "distinct_anchors": 4,
@@ -417,8 +417,8 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 264,
-      "live_verified": 258,
+      "rendered": 270,
+      "live_verified": 264,
       "indexed": 0,
       "distinct_destinations": 12,
       "distinct_anchors": 12,
@@ -442,8 +442,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 467,
-    "live_verified_backlinks": 467,
+    "rendered_backlinks": 476,
+    "live_verified_backlinks": 476,
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   }
