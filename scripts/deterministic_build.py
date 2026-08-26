@@ -152,6 +152,7 @@ def main() -> None:
         if differences:
             print(json.dumps({"status": "FAIL", "differences": differences}, indent=2))
             raise SystemExit(1)
+        prior = lastmod_ledger.load().get("entries", {})
         ledger = lastmod_ledger.updated(url_hashes)
         if args.write:
             built = Path(a)
@@ -163,7 +164,11 @@ def main() -> None:
             # or "build twice and compare" would be comparing against a ledger
             # the first pass had already moved.
             lastmod_ledger.save(ledger)
-        advanced = sum(1 for v in ledger["entries"].values() if v["lastmod"] == lastmod_ledger.build_date())
+        # Count what actually moved, not what happens to carry today's date. On
+        # the day the ledger is seeded those are the same number, and reporting
+        # the second as the first would overstate how much changed on any build
+        # run on a date that already appears in the ledger.
+        advanced = sum(1 for u, h in url_hashes.items() if prior.get(u, {}).get("hash") != h)
         print(json.dumps({
             "status": "PASS",
             "build_date": BUILD_DATE,
