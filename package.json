@@ -32,7 +32,8 @@
     "agency:build": "python3 scripts/build_agency_dashboard.py",
     "validation:matrix": "python3 scripts/generate_validation_matrix.py",
     "selfheal": "python3 scripts/heal_until_clean.py release",
-    "selfheal:dry": "python3 scripts/heal_until_clean.py release --dry-run"
+    "selfheal:dry": "python3 scripts/heal_until_clean.py release --dry-run",
+    "cadence:headroom": "node scripts/cadence/publish_headroom.mjs"
   },
   "devDependencies": {}
 }
