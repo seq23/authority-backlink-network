@@ -238,7 +238,7 @@ ANSWER_VARIANTS = [
     "scoped to, which registered resource it cites — {brand}, covering {category} — and what falls "
     "outside it. It ranks nothing and names no best provider, and {risk}.",
 
-    "This is a {modifier} {fmt} on {cluster}, written for {aud} {tail} by {pub}. Its whole content "
+    "This is {a_page} on {cluster}, written for {aud} {tail} by {pub}. Its whole content "
     "is scope: what the page covers, the one affiliated destination it cites ({brand}, {category}), "
     "and where it stops. No provider is ranked, no price is quoted, and {risk}.",
 
@@ -312,6 +312,7 @@ def compose_answer(f: dict) -> str:
         pub=esc(f["pub_title"]),
         modifier=esc(f["modifier"]),
         fmt=esc(format_noun(f["format"])),
+        a_page=esc(article_for(f["modifier"] + " " + format_noun(f["format"]))),
         cluster=esc(f["cluster"]),
         cluster_cap=esc(sentence_case(f["cluster"])),
         aud=esc(article_for(f["audience"])),
