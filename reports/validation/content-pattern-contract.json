@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-26T20:15:42.570Z",
+  "generated_at": "2026-08-26T21:43:10.968Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 562,
+  "pages_checked": 590,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -47,14 +47,14 @@
       "id": "comparison_table",
       "blocking": false,
       "pages_missing": 51,
-      "coverage_pct": 90.9,
+      "coverage_pct": 91.4,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 515,
-      "coverage_pct": 8.4,
+      "pages_missing": 533,
+      "coverage_pct": 9.7,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
@@ -67,8 +67,8 @@
     {
       "id": "faq",
       "blocking": false,
-      "pages_missing": 19,
-      "coverage_pct": 96.6,
+      "pages_missing": 47,
+      "coverage_pct": 92,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -145,21 +145,27 @@
       "founder-operator/ai-marketing-operations-resources.html",
       "founder-operator/founder-execution-systems.html",
       "founder-operator/index.html",
+      "founder-operator/topics/ai-execution-and-delegation.html",
+      "founder-operator/topics/community-operations.html",
+      "founder-operator/topics/founder-operating-rhythms.html",
+      "founder-operator/topics/hiring-and-lean-team-stack.html",
+      "founder-operator/topics/virtual-event-production.html",
       "founder-operator/virtual-event-production-buyers-guide.html",
       "memphis-local/index.html",
       "memphis-local/memphis-grazing-table-resources.html",
       "memphis-local/memphis-party-decor-vendors.html",
       "memphis-local/memphis-porch-decorating-resources.html",
       "memphis-local/seasonal-home-styling-memphis.html",
+      "memphis-local/topics/event-and-room-styling.html",
+      "memphis-local/topics/grazing-tables-and-vendors.html",
+      "memphis-local/topics/porch-and-seasonal-styling.html",
+      "memphis-local/topics/wedding-and-event-budgets.html",
+      "memphis-local/topics/wedding-day-timelines.html",
+      "memphis-local/topics/wedding-planning-tools.html",
+      "memphis-local/topics/wedding-seating-charts.html",
       "professional-resources/dental-decision-resources.html",
       "professional-resources/equine-legal-resource-library.html",
-      "professional-resources/hormone-wellness-clinic-research.html",
-      "professional-resources/index.html",
-      "professional-resources/neuro-evaluation-research.html",
-      "professional-resources/personal-injury-research-resources.html",
-      "professional-resources/regulated-service-provider-research.html",
-      "professional-resources/uscis-medical-exam-resources.html",
-      "professional-resources/workplace-burnout-and-boundaries.html"
+      "professional-resources/hormone-wellness-clinic-research.html"
     ],
     "structured_data": []
   },

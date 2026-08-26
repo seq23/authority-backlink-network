@@ -57,6 +57,18 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+# IndexNow accepts 10,000 URLs per request, but it throttles a caller that posts
+# three full sitemaps in a row. Batches of 200 with a pause between them cleared
+# every publication where one request per publication did not.
+INDEXNOW_BATCH = 200
+INDEXNOW_MAX_URLS = 10000
+INDEXNOW_PACING_SECONDS = 2
+# 403 from IndexNow is documented as an invalid key, but it is also what the
+# endpoint returns when it is throttling. A key that is genuinely wrong fails
+# every attempt, so retrying costs nothing and tells the two apart.
+RETRYABLE_STATUSES = {403, 429}
+
+
 def request_json(url: str, method: str = "GET", headers: dict[str, str] | None = None,
                  payload: Any = None, timeout: int = 30, attempts: int = 3) -> dict[str, Any]:
     headers = {"User-Agent": USER_AGENT, **(headers or {})}
@@ -65,6 +77,7 @@ def request_json(url: str, method: str = "GET", headers: dict[str, str] | None =
         body = json.dumps(payload).encode("utf-8")
         headers.setdefault("Content-Type", "application/json")
     last_error = ""
+    last_status: int | None = None
     for attempt in range(attempts):
         try:
             req = urllib.request.Request(url, data=body, method=method, headers=headers)
@@ -78,14 +91,15 @@ def request_json(url: str, method: str = "GET", headers: dict[str, str] | None =
                 parsed = json.loads(raw) if raw.strip() else {}
             except json.JSONDecodeError:
                 parsed = {"raw": raw[:2000]}
-            if exc.code < 500 and exc.code != 429:
+            if exc.code < 500 and exc.code not in RETRYABLE_STATUSES:
                 return {"ok": False, "http_status": exc.code, "body": parsed}
+            last_status = exc.code
             last_error = f"HTTP {exc.code}: {raw[:500]}"
         except Exception as exc:  # noqa: BLE001 - receipt must retain provider error
             last_error = str(exc)
         if attempt + 1 < attempts:
             time.sleep(min(2 ** attempt, 4))
-    return {"ok": False, "http_status": None, "body": {}, "error": last_error}
+    return {"ok": False, "http_status": last_status, "body": {}, "error": last_error}
 
 
 def request_text(url: str, timeout: int = 30, attempts: int = 3) -> dict[str, Any]:
@@ -255,9 +269,23 @@ def main() -> None:
             if not public_key_file.exists() or public_key_file.read_text(encoding="utf-8").strip() != key:
                 indexnow = {"status": "FAILED", "attempted": False, "submitted_urls": 0, "key_location": key_location, "error": f"Missing or mismatched public key file: {public_key_file.relative_to(ROOT)}"}
             else:
-                result = request_json(indexnow_endpoint, method="POST", payload={"host": domain, "key": key, "keyLocation": key_location, "urlList": sitemap_urls[:10000]})
-                indexnow = {"status": "SUCCESS" if result.get("ok") else "FAILED", "attempted": True, "http_status": result.get("http_status"), "submitted_urls": len(sitemap_urls[:10000]), "key_source": key_source, "key_location": key_location, "key_file": str(public_key_file.relative_to(ROOT))}
-                if result.get("error"): indexnow["error"] = result["error"]
+                # Submitted in batches, paced. One 402-URL request for the third
+                # publication came back 403 while the same payload succeeded on
+                # its own moments later: the endpoint throttles a caller that
+                # posts three whole sitemaps back to back, and a throttle
+                # answered 403 is indistinguishable from a bad key unless the
+                # batches are recorded separately. Each batch carries its own
+                # HTTP status in the receipt, and a batch that fails is retried
+                # by request_json's 403/429/5xx backoff before it is believed.
+                batches = []
+                for start in range(0, len(sitemap_urls[:INDEXNOW_MAX_URLS]), INDEXNOW_BATCH):
+                    chunk = sitemap_urls[start:start + INDEXNOW_BATCH]
+                    if batches:
+                        time.sleep(INDEXNOW_PACING_SECONDS)
+                    result = request_json(indexnow_endpoint, method="POST", payload={"host": domain, "key": key, "keyLocation": key_location, "urlList": chunk})
+                    batches.append({"urls": len(chunk), "http_status": result.get("http_status"), "ok": bool(result.get("ok")), "error": result.get("error")})
+                submitted = sum(b["urls"] for b in batches if b["ok"])
+                indexnow = {"status": "SUCCESS" if all(b["ok"] for b in batches) else ("PARTIAL" if submitted else "FAILED"), "attempted": True, "submitted_urls": submitted, "offered_urls": len(sitemap_urls[:INDEXNOW_MAX_URLS]), "batches": batches, "key_source": key_source, "key_location": key_location, "key_file": str(public_key_file.relative_to(ROOT))}
         else:
             indexnow = {"status": "NOT_CONFIGURED", "attempted": False, "submitted_urls": 0, "reason": "no INDEXNOW_KEY in the environment and no data/indexnow_key.txt"}
 
@@ -321,6 +349,11 @@ def main() -> None:
                     row["lifecycle_stage"] = "source_discovered"
             row.setdefault("evidence", {})["ai_cited"] = bool(row.get("evidence", {}).get("ai_cited", False))
 
+        # Pace the next publication's submissions too, not just the batches
+        # within one: three sitemaps posted back to back is what drew the
+        # throttle in the first place.
+        if indexnow.get("attempted"):
+            time.sleep(INDEXNOW_PACING_SECONDS)
         statuses = [indexnow["status"], gsc_sitemap["status"], inspection_status]
         if "FAILED" in statuses:
             provider_failure = True

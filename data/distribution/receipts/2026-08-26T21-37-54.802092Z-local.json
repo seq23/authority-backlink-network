@@ -1,0 +1,160 @@
+{
+  "schema": "authority-network-post-publish-distribution-v1",
+  "receipt_id": "2026-08-26T21-37-54.802092Z-local",
+  "attempted_at": "2026-08-26T21:37:54.802092Z",
+  "chain": [
+    "successful_publish",
+    "sitemap_refresh",
+    "indexnow",
+    "gsc_sitemap_submission",
+    "priority_url_inspection_where_configured",
+    "durable_distribution_receipt",
+    "live_backlink_verification",
+    "observation_feedback"
+  ],
+  "trigger_contract": "AUTOMATIC_ONLY_AFTER_AUTHORITY_AUTOPILOT_WORKFLOW_SUCCESS; manual dispatch and scheduled retry are also allowed.",
+  "publications": [
+    {
+      "publication_id": "founder",
+      "domain": "founderoperatorlibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/founder-operator/sitemap.xml",
+        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
+        "sha256": "f69f08c52cec54c830fbfecdfe46456ece0b5f477093a29010779e6a7d22bf01",
+        "url_count": 96
+      },
+      "indexnow": {
+        "status": "SUCCESS",
+        "attempted": true,
+        "http_status": 202,
+        "submitted_urls": 96,
+        "key_source": "data/indexnow_key.txt",
+        "key_location": "https://founderoperatorlibrary.com/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt",
+        "key_file": "sites/founder-operator/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:founderoperatorlibrary.com",
+        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "LIVE_BACKLINK_VERIFY=false"
+          }
+        ]
+      }
+    },
+    {
+      "publication_id": "memphis",
+      "domain": "memphisvendorlibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/memphis-local/sitemap.xml",
+        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
+        "sha256": "4f1363a4798b02a8dfb38f99a824ad0d9f819e82b7d952c7e34dbec29e75e57f",
+        "url_count": 95
+      },
+      "indexnow": {
+        "status": "SUCCESS",
+        "attempted": true,
+        "http_status": 202,
+        "submitted_urls": 95,
+        "key_source": "data/indexnow_key.txt",
+        "key_location": "https://memphisvendorlibrary.com/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt",
+        "key_file": "sites/memphis-local/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:memphisvendorlibrary.com",
+        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "LIVE_BACKLINK_VERIFY=false"
+          }
+        ]
+      }
+    },
+    {
+      "publication_id": "professional",
+      "domain": "professionalresourcelibrary.com",
+      "successful_publish_gate": "workflow_run_success_or_manual_dispatch",
+      "sitemap_refresh": {
+        "status": "SUCCESS",
+        "path": "sites/professional-resources/sitemap.xml",
+        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
+        "sha256": "39209632a073c6f694599f8f31c24b3a1282e3800acd614823508110074550d2",
+        "url_count": 402
+      },
+      "indexnow": {
+        "status": "FAILED",
+        "attempted": true,
+        "http_status": 403,
+        "submitted_urls": 402,
+        "key_source": "data/indexnow_key.txt",
+        "key_location": "https://professionalresourcelibrary.com/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt",
+        "key_file": "sites/professional-resources/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
+      },
+      "gsc_sitemap_submission": {
+        "status": "NOT_CONFIGURED",
+        "attempted": false,
+        "site_url": "sc-domain:professionalresourcelibrary.com",
+        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
+        "token_state": "not_configured"
+      },
+      "priority_url_inspection": {
+        "status": "NOT_CONFIGURED",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
+      },
+      "live_backlink_verification": {
+        "status": "NOT_CONFIGURED",
+        "checked": 0,
+        "verified": 0,
+        "results": [
+          {
+            "status": "NOT_CONFIGURED",
+            "reason": "LIVE_BACKLINK_VERIFY=false"
+          }
+        ]
+      }
+    }
+  ],
+  "durable_receipt": {
+    "latest": "data/distribution/provider-receipt.json",
+    "history": "data/distribution/receipts/2026-08-26T21-37-54.802092Z-local.json"
+  },
+  "provider_success_claimed": true,
+  "verified_external_citations_delta": 0,
+  "truth_boundary": "Rendered, deployed, live-verified, discovered, indexed, independently referenced, LLM-surfaced, and cited are separate evidence states. Provider submission is not proof of indexing or citation."
+}

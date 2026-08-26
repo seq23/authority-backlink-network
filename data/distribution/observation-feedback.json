@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-observation-feedback-v1",
-  "observed_at": "2026-08-26T16:04:36.015899Z",
-  "source_receipt_id": "2026-08-26T16-04-36.015899Z-32986726751",
+  "observed_at": "2026-08-26T21:39:29.419188Z",
+  "source_receipt_id": "2026-08-26T21-39-29.419188Z-local",
   "publication_health": [
     {
       "publication_id": "founder",
@@ -9,7 +9,7 @@
       "rendered_backlinks": 85,
       "live_verified_backlinks": 85,
       "indexed_referring_pages": 0,
-      "indexnow_status": "NOT_CONFIGURED",
+      "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "NOT_CONFIGURED",
       "gsc_inspection_status": "NOT_CONFIGURED"
     },
@@ -19,7 +19,7 @@
       "rendered_backlinks": 82,
       "live_verified_backlinks": 82,
       "indexed_referring_pages": 0,
-      "indexnow_status": "NOT_CONFIGURED",
+      "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "NOT_CONFIGURED",
       "gsc_inspection_status": "NOT_CONFIGURED"
     },
@@ -29,7 +29,7 @@
       "rendered_backlinks": 376,
       "live_verified_backlinks": 376,
       "indexed_referring_pages": 0,
-      "indexnow_status": "NOT_CONFIGURED",
+      "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "NOT_CONFIGURED",
       "gsc_inspection_status": "NOT_CONFIGURED"
     }
@@ -186,6 +186,6 @@
     "indexed_referring_pages": 0,
     "verified_external_citations": 0
   },
-  "recommended_action": "CONFIGURE_PROVIDER_CREDENTIALS_AND_DEPLOY_PUBLICATION_PROPERTIES",
+  "recommended_action": "CONTINUE_YIELD_GOVERNOR",
   "truth_boundary": "Rendered, deployed, live-verified, discovered, indexed, independently referenced, LLM-surfaced, and cited are separate evidence states. Provider submission is not proof of indexing or citation."
 }

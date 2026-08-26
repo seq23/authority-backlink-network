@@ -42,6 +42,13 @@ jobs:
           MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
           PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
         run: python3 scripts/authority_v4_autopilot.py
+      - name: Give the new pages a path in and a canonical that serves 200
+        # Without this the three pages generated above are orphans the moment
+        # they are written, which is the state that put all three publications
+        # at zero indexed pages. It also fails loudly if the autopilot drew a
+        # cluster that data/topic-taxonomy.json does not place in a hub, rather
+        # than publishing a page nothing links to.
+        run: python3 scripts/build_site_navigation.py --write
       - name: Materialize public IndexNow key files when configured
         env:
           INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
