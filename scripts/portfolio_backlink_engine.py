@@ -72,11 +72,21 @@ def render(article,pub):
   'Choose the smallest responsible next action and a review date.',
   'Preserve the notes, documents, and assumptions used to make the decision.',
  ]))
- faqs=[]
- for i,q in enumerate(article['questions'][:4]):
-  faqs.append(f'<h3>{html.escape(q)}</h3><p>Use the question to request a specific, verifiable answer. Ask who owns the responsibility, what evidence supports the answer, what is excluded, and what changes if the situation becomes more complex. For regulated or sensitive matters, confirm the answer with the appropriate qualified professional.</p>')
+
  disclosure=pub['disclosure']+' '+article['disclaimer']+' This page is not legal, medical, mental-health, immigration, financial, or professional advice. <strong>Affiliation disclosed:</strong> this page is published by an affiliated authority network and includes one affiliated resource only where it directly supports the topic. It is not an independent award, ranking, review, or earned-media claim.'
- schema={'@context':'https://schema.org','@type':'Article','headline':title,'datePublished':today,'dateModified':today,'author':{'@type':'Organization','name':pub['title']},'publisher':{'@type':'Organization','name':pub['title']},'about':article['campaign_id'],'mainEntityOfPage':{'@type':'WebPage','@id':f"https://{pub['working_domain']}/daily/{today}-{article['slug']}.html"}}
+ page_url=f"https://{pub['working_domain']}/daily/{today}-{article['slug']}.html"
+ # The FAQ section used to be four of article['questions'] over one fixed answer
+ # paragraph - the same paragraph on all four, and the same on all 32 seed pages.
+ # Those entries are prompts to put to a provider, not questions this page
+ # answers, and marking them up would have published 128 Question nodes sharing
+ # one answer. The page does answer one question, in its own recorded
+ # direct_answer, and that is what the FAQPage node carries. Same shape as
+ # local-guides-citation-velocity/scripts/build_site.js, which falls back to a
+ # single Question named for the page when a section-level Q&A set is absent.
+ schema={'@context':'https://schema.org','@graph':[
+  {'@type':'Article','headline':title,'datePublished':today,'dateModified':today,'author':{'@type':'Organization','name':pub['title']},'publisher':{'@type':'Organization','name':pub['title']},'about':article['campaign_id'],'mainEntityOfPage':{'@type':'WebPage','@id':page_url}},
+  {'@type':'FAQPage','mainEntity':[{'@type':'Question','name':title,'acceptedAnswer':{'@type':'Answer','text':direct}}]},
+ ]}
  return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, answer-first guide to {html.escape(title.lower())}, with decision factors, questions, mistakes, and a transparent related resource."><link rel="canonical" href="https://{pub['working_domain']}/daily/{today}-{article['slug']}.html"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body data-backlink-seed-id="{html.escape(article['id'])}"><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(direct)}</p><p><em>Updated {today}. This article is designed to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
@@ -87,7 +97,6 @@ def render(article,pub):
 <h2>A simple five-step decision path</h2><ol>{steps}</ol><p>Do not skip the final documentation step. A decision becomes easier to maintain when the assumptions, exclusions, owner, and review date are visible. That record also makes it easier to repair the plan if circumstances change.</p>
 <h2>Common mistakes</h2><ul>{mistakes}</ul>
 <h2>How to use the related resource</h2><p>The following resource is included because it directly addresses this article’s decision area. Review its scope and boundaries before using it: <a href="{html.escape(target)}"{rel_attr(target)}>{html.escape(anchor)}</a>. The link is an affiliated editorial reference, not an independent endorsement, ranking, or guarantee.</p><p>A useful next step is to compare the resource against the questions above. Confirm that the destination is current, that its stated purpose matches your situation, and that any legal, medical, financial, contractual, or clinical question is handled by an appropriately qualified person.</p>
-<h2>Frequently asked questions</h2>{''.join(faqs)}
 <h2>Editorial and affiliation note</h2><p>{disclosure}</p><p class="meta">Authority Network campaign: {html.escape(article['campaign_id'])}. Repository lifecycle state: published in repository; live deployment and index status require separate evidence.</p></article></main></body></html>'''
 
 def refresh_assets():

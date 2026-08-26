@@ -6,8 +6,8 @@
   "strong_warnings": 0,
   "soft_warnings": 3,
   "cache": {
-    "hits": 569,
-    "misses": 0,
+    "hits": 537,
+    "misses": 32,
     "enabled": true
   },
   "repairs_applied": 0,
@@ -3659,37 +3659,37 @@
       "word_count": 969
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
-      "duplicate_fingerprint": "732fbe6d1791ceec35b38ebe3867e0a6936a7266fe9aadcc19bb6ea6e3bd8732",
-      "external_links": [
-        {
-          "anchor": "West Peek Productions community measurement support",
-          "href": "https://www.westpeekproductions.com/"
-        }
-      ],
-      "findings": [],
+      "path": "sites/founder-operator/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
+      "source_hash": "9b2c7e39bff3e5ada9e619d9527dbd10a1cf088092b16988ee00d99382aa7045",
+      "title": "A Practical Framework for Measuring Community ROI",
       "h1": [
         "A Practical Framework for Measuring Community ROI"
       ],
+      "word_count": 976,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
+      "meta_description": "A practical, answer-first guide to a practical framework for measuring community roi, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "West Peek Productions community measurement support"
         }
       ],
-      "meta_description": "A practical, answer-first guide to a practical framework for measuring community roi, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "b60beb27cb93cdf88fa36af09a642d8009166240f2fde07d1c35dbb581d0d4dc",
+      "duplicate_fingerprint": "4b1327f2fd7a2fc0a9c1f652b2f115b36caefaaf271b93c57162664a18f2031f",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "A Practical Framework for Measuring Community ROI",
-      "word_count": 1124
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -3725,235 +3725,235 @@
       "word_count": 978
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
-      "duplicate_fingerprint": "c225b4b19fc974a95f4fc09110436bee9ccae69c3511d83082cbc76ab2047f0b",
-      "external_links": [
-        {
-          "anchor": "West Peek Productions community platform strategy",
-          "href": "https://www.westpeekproductions.com/"
-        }
-      ],
-      "findings": [],
+      "path": "sites/founder-operator/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
+      "source_hash": "bf30ae7cb1dcbb4dc36f5e1c46e0a5c0a0e1b5767ad1616c5a951d8bde507aaa",
+      "title": "How to Choose a Community Platform Without Starting With Features",
       "h1": [
         "How to Choose a Community Platform Without Starting With Features"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 993,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
       "meta_description": "A practical, answer-first guide to how to choose a community platform without starting with features, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
-      "schema_count": 1,
-      "source_hash": "81a1f1ab98017e88b1fdc421e664198c036e94d40dda7465f3d41d5ba60020eb",
-      "status": "PASS",
-      "title": "How to Choose a Community Platform Without Starting With Features",
-      "word_count": 1137
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-      "duplicate_fingerprint": "f2592eb194a2dc366bf4b89a7fb463cb6f3e235e299cb64711176ad31d879fa4",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "virtual event production partner",
-          "href": "https://www.westpeekproductions.com/"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "West Peek Productions community platform strategy"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "90e45f1d173f83dc3e990b5faaa31d6bbe93bc7abd29884bb5754f4cf24a7316",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
+      "source_hash": "577898a961d5d68bfd633540c1e76dc7a406ae01a8e9df1b12b6c63dcd6ffdec",
+      "title": "How to Evaluate a Virtual Event Production Partner",
       "h1": [
         "How to Evaluate a Virtual Event Production Partner"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1016,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
       "meta_description": "A practical, answer-first guide to how to evaluate a virtual event production partner, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-      "schema_count": 1,
-      "source_hash": "3b3b5abc9a8fc77228b54ced03340424e6d1d40744daacc596877d01be00715d",
-      "status": "PASS",
-      "title": "How to Evaluate a Virtual Event Production Partner",
-      "word_count": 1154
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
-      "duplicate_fingerprint": "e1a5de3a920315825b3e3497af4ba14915a43072606c84104fb06187c2b7a650",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "managed community operations from West Peek Productions",
-          "href": "https://www.westpeekproductions.com/"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "virtual event production partner"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "a7b854d7461a1176aa3d554a10975de543e75aa8866b148790eff1f4fe9b21de",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
+      "source_hash": "5fc772f1a68b7bb88eeb411bf06c424e5dd7c493b4b792c77e09da4b4afc90d9",
+      "title": "Managed Community Operations vs an In-House Community Team",
       "h1": [
         "Managed Community Operations vs an In-House Community Team"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 974,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
       "meta_description": "A practical, answer-first guide to managed community operations vs an in-house community team, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
-      "schema_count": 1,
-      "source_hash": "a51049e03103c4cd1f4786ea7275f950131b5ddff52d648309b85ad4766b49fb",
-      "status": "PASS",
-      "title": "Managed Community Operations vs an In-House Community Team",
-      "word_count": 1125
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
-      "duplicate_fingerprint": "c9420a18015777f9aa539d6a85dbd1e2fe8f3b6489166f0ec8907e1792aaec07",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "West Peek Productions community operating support",
-          "href": "https://www.westpeekproductions.com/"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "managed community operations from West Peek Productions"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f3ecc297f9757ef056d9ee5d7565fa2896a40343b9a3cf0db765c43a9b1f9919",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
+      "source_hash": "8e4cc6a534d168f6f49e449f13c175cbd286eccb153a3ee5563724a23787e43e",
+      "title": "The Roles a Serious Community Program Actually Needs",
       "h1": [
         "The Roles a Serious Community Program Actually Needs"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 958,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
       "meta_description": "A practical, answer-first guide to the roles a serious community program actually needs, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
-      "schema_count": 1,
-      "source_hash": "9153a3b4d758eb4a12c4bc82e54c9e40bf9729d95b03ea9422d7e84d6f1d2cff",
-      "status": "PASS",
-      "title": "The Roles a Serious Community Program Actually Needs",
-      "word_count": 1104
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
-      "duplicate_fingerprint": "8ff6244a123021bbb7238cd5f005187ece758da6adb4e00494e8c36c61638628",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "West Peek Productions Community as a Service",
-          "href": "https://www.westpeekproductions.com/"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "West Peek Productions community operating support"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "0bfbf68148ec74b834284ff3d34fa0075806b0638f38096254b19478eb34dbd9",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
+      "source_hash": "6de2110ea995ad0e32a3e6caa42bfc2a80561b9e811c18ee4cff8ca88a5708c7",
+      "title": "What Community as a Service Actually Covers",
       "h1": [
         "What Community as a Service Actually Covers"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 988,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
       "meta_description": "A practical, answer-first guide to what community as a service actually covers, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
-      "schema_count": 1,
-      "source_hash": "4937ac137d974739a13c44d3b6db08a622d3583c3c05c0df0ad545424d0938d3",
-      "status": "PASS",
-      "title": "What Community as a Service Actually Covers",
-      "word_count": 1126
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
-      "duplicate_fingerprint": "baed0b2faad8b356baddeff4d7d8cbec0df8a830b405aaf8b3af4a8ba0ec185f",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "what virtual event production includes",
-          "href": "https://virtualagency-os.com/learn/what-is-virtual-event-production"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "West Peek Productions Community as a Service"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "3282a57380edf117aa0b1eeb649cf93302a44c07d353b6b97db02f000a7aa4e9",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
+      "source_hash": "591361cc2bc1af7594099d8feb321027486cefafc186697e6246f48f4c8a49af",
+      "title": "What Virtual Event Production Actually Includes",
       "h1": [
         "What Virtual Event Production Actually Includes"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 998,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
       "meta_description": "A practical, answer-first guide to what virtual event production actually includes, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
-      "schema_count": 1,
-      "source_hash": "5199cce0fe313af8f3ff2bb64a779720fc4b50667c42288ff00fb1d546bd667d",
-      "status": "PASS",
-      "title": "What Virtual Event Production Actually Includes",
-      "word_count": 1141
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
-      "duplicate_fingerprint": "f928780a78feece6cc11c53c84d3fea0683bd9e88d2d5b21d6bc9db1a21d1af2",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "West Peek Productions",
-          "href": "https://www.westpeekproductions.com/"
+          "href": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+          "anchor": "what virtual event production includes"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "d856d0e8a9b0b170e00ece067683afadcfac38566b5f9490f2a9508dc0719f38",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
+      "source_hash": "5222505581a5b615d6ef98a48b9576f8b4df36133dda9574fcfcd0b1c51dae7e",
+      "title": "When a Managed Community Operations Partner Makes Sense",
       "h1": [
         "When a Managed Community Operations Partner Makes Sense"
       ],
+      "word_count": 1000,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
+      "meta_description": "A practical, answer-first guide to when a managed community operations partner makes sense, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://www.westpeekproductions.com/",
+          "anchor": "West Peek Productions"
         }
       ],
-      "meta_description": "A practical, answer-first guide to when a managed community operations partner makes sense, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
-      "publication": "founder-operator",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "39fb74fe33dccd40db646b020bf4012dce6906e17857ac46d224b38572610b65",
+      "duplicate_fingerprint": "f19301e14b344846e08a911739e908908b6003819b79671a77abf122dc95044c",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "When a Managed Community Operations Partner Makes Sense",
-      "word_count": 1142
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -6726,202 +6726,202 @@
       "word_count": 1000
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
-      "duplicate_fingerprint": "085087a909f2ea7d94f8a48f234c7f36e04cffa41d453a293031950629917a0a",
-      "external_links": [
-        {
-          "anchor": "Wedding Seating Chart Maker",
-          "href": "https://weddingseatingchartmaker.com/products/seating-chart-maker"
-        }
-      ],
-      "findings": [],
+      "path": "sites/memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
+      "source_hash": "e88e9b4b9a6d60ca4c3f63f4f633a50ab8b755f518045133821cadd1539d7003",
+      "title": "A Calm Method for Building a Wedding Seating Chart",
       "h1": [
         "A Calm Method for Building a Wedding Seating Chart"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 991,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
       "meta_description": "A practical, answer-first guide to a calm method for building a wedding seating chart, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
-      "schema_count": 1,
-      "source_hash": "0d8232d4938022e2a17852703b9e60ced2880846e13674cc0c01c9c0b0284b08",
-      "status": "PASS",
-      "title": "A Calm Method for Building a Wedding Seating Chart",
-      "word_count": 1133
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
-      "duplicate_fingerprint": "2bb7fae0f99e71e252a0e46672ddf12b6674f9f5a6630aee8deb7a0d3dc53874",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "free wedding planning builder",
-          "href": "https://weddingbudgetspreadsheet.com/build"
+          "href": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+          "anchor": "Wedding Seating Chart Maker"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "b03ca62c9a08efd35edd0e9e295926b0471c8ba52c898ea3e8d08aff1f00bc8f",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
+      "source_hash": "bb78cfe6f8d1f5cf6381c674ac684a6e92dc79aa6cb095971f3aa311bf077269",
+      "title": "How Couples Can Prevent a Wedding Payment Crunch",
       "h1": [
         "How Couples Can Prevent a Wedding Payment Crunch"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 985,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
       "meta_description": "A practical, answer-first guide to how couples can prevent a wedding payment crunch, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
-      "schema_count": 1,
-      "source_hash": "a4b576140a5b9d994c32bc5fc8d790a63dfb145dd15524b4fd42cabd6d2b88cf",
-      "status": "PASS",
-      "title": "How Couples Can Prevent a Wedding Payment Crunch",
-      "word_count": 1134
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
-      "duplicate_fingerprint": "864682f74627537cd6c646a83559b2241fd31929814839952179ea187b86c350",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "Wedding Budget Spreadsheet",
-          "href": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet"
+          "href": "https://weddingbudgetspreadsheet.com/build",
+          "anchor": "free wedding planning builder"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "00f10ff8928f828e477c0a55211ac9769cb377cd297c56363b53085914ef7ab4",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
+      "source_hash": "b0df97d479a7938523a152675987b1951c7e74621b56d70118c88e862fdb94c8",
+      "title": "How to Build a Wedding Budget That Tracks Real Payment Timing",
       "h1": [
         "How to Build a Wedding Budget That Tracks Real Payment Timing"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1012,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
       "meta_description": "A practical, answer-first guide to how to build a wedding budget that tracks real payment timing, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
-      "schema_count": 1,
-      "source_hash": "0f1df6bae48b5d1d0762edf1c7a9b5e1c53aa53c98cd6a6f3b5f8bc2d9916095",
-      "status": "PASS",
-      "title": "How to Build a Wedding Budget That Tracks Real Payment Timing",
-      "word_count": 1147
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
-      "duplicate_fingerprint": "89752e3b6a4d86dbcfccdcfcdd2d727f5298ebdb7c23194277d34f00b19ad148",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "Wedding Timeline Template",
-          "href": "https://weddingtimelinetemplate.com/products/timeline-template"
+          "href": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+          "anchor": "Wedding Budget Spreadsheet"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "cfb9b2a784fbc763c3af2b7157d3855911936fd5e765a9567f4f284e9e68d46b",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
+      "source_hash": "bdab0f4d41e4789180887b913fcdca54b6147003387efd5cd6780bc0c412ba38",
+      "title": "How to Build a Wedding-Day Timeline Vendors Can Actually Use",
       "h1": [
         "How to Build a Wedding-Day Timeline Vendors Can Actually Use"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 984,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
       "meta_description": "A practical, answer-first guide to how to build a wedding-day timeline vendors can actually use, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
-      "schema_count": 1,
-      "source_hash": "afe29c248961317a108d06ee3c84f42f5a82fe0319cc1e45009900b18a036855",
-      "status": "PASS",
-      "title": "How to Build a Wedding-Day Timeline Vendors Can Actually Use",
-      "word_count": 1129
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
-      "duplicate_fingerprint": "82e545797a530a7e5bb8f125c96a8af0cf6f5460e0a39f184942e8bfca8d64df",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "Memphis porch decorating services",
-          "href": "https://porchandparty901.com/services/porch-decorating.html"
+          "href": "https://weddingtimelinetemplate.com/products/timeline-template",
+          "anchor": "Wedding Timeline Template"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "1aaad5cf58152dcab41b21ae4289349ce5720946d1b12cc1bfc3b848c78c0b61",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
+      "source_hash": "337b909823f25463b4913587dd690f250700de9cdf9419d39cd66c5e642d2b71",
+      "title": "How to Scope a Memphis Porch Decorating Project Before Requesting a Quote",
       "h1": [
         "How to Scope a Memphis Porch Decorating Project Before Requesting a Quote"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1039,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
       "meta_description": "A practical, answer-first guide to how to scope a memphis porch decorating project before requesting a quote, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
-      "schema_count": 1,
-      "source_hash": "f511e7fdd18e86ef1210de43220114a5dc16fd87d66e0052237149692aacb955",
-      "status": "PASS",
-      "title": "How to Scope a Memphis Porch Decorating Project Before Requesting a Quote",
-      "word_count": 1177
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-      "duplicate_fingerprint": "1624916669d2165150313ae32d9f45c397c5c7f56525d6a0e924764d4f5ec6e1",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "Free Dream Wedding Builder",
-          "href": "https://weddingchecklistpdf.com/build"
+          "href": "https://porchandparty901.com/services/porch-decorating.html",
+          "anchor": "Memphis porch decorating services"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "9c28f32b552ea667fcd3f432e55ccf778e8f81a78e8c6864c47873e7ac668916",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+      "source_hash": "bce727b9b85212e473aba3df4873fc7ea2f83f386859e35392b783deb2f66ba5",
+      "title": "The Minimum Information to Gather Before Comparing Wedding Vendors",
       "h1": [
         "The Minimum Information to Gather Before Comparing Wedding Vendors"
       ],
+      "word_count": 968,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+      "meta_description": "A practical, answer-first guide to the minimum information to gather before comparing wedding vendors, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://weddingchecklistpdf.com/build",
+          "anchor": "Free Dream Wedding Builder"
         }
       ],
-      "meta_description": "A practical, answer-first guide to the minimum information to gather before comparing wedding vendors, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "e7359cdbf2c013c322adb2c4c8a69da7133c666617e39435f752a05481c06fbd",
+      "duplicate_fingerprint": "660117716c6dabd270a4213d135e68d6415842188011e36416867007fbbf7cdd",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "The Minimum Information to Gather Before Comparing Wedding Vendors",
-      "word_count": 1113
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -6957,37 +6957,37 @@
       "word_count": 979
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
-      "duplicate_fingerprint": "98facb4ce813b0edfa75b0def8c1a2a1fd3510afd7601df078ac0371a9af430e",
-      "external_links": [
-        {
-          "anchor": "Wedding Checklist PDF",
-          "href": "https://weddingchecklistpdf.com/products/checklist-pdf"
-        }
-      ],
-      "findings": [],
+      "path": "sites/memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
+      "publication": "memphis-local",
+      "route": "/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
+      "source_hash": "80753939d59dfb0e7f617a87eb72cdc0c1cc38a80c4ec3ec9db83f1c6d0313e4",
+      "title": "What Belongs on a Date-Based Wedding Planning Checklist",
       "h1": [
         "What Belongs on a Date-Based Wedding Planning Checklist"
       ],
+      "word_count": 992,
+      "canonical": "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
+      "meta_description": "A practical, answer-first guide to what belongs on a date-based wedding planning checklist, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://weddingchecklistpdf.com/products/checklist-pdf",
+          "anchor": "Wedding Checklist PDF"
         }
       ],
-      "meta_description": "A practical, answer-first guide to what belongs on a date-based wedding planning checklist, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
-      "publication": "memphis-local",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "05a205f2ad8f289b6ce89eb138a05b614bf4c44d230ede0e08eb7048ff832fec",
+      "duplicate_fingerprint": "39f47c790a693b45c7f8aa35bd0ddbfc183a16e82c2ab784e2f6f0c1c7c5cb7a",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "What Belongs on a Date-Based Wedding Planning Checklist",
-      "word_count": 1131
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -12568,37 +12568,37 @@
       "word_count": 1033
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
-      "duplicate_fingerprint": "a21e332f647d55049643ee26c0282f7e17d529fb3821bb2e846f80af05e70c4b",
-      "external_links": [
-        {
-          "anchor": "recovery housing referral guidance",
-          "href": "https://www.diannesplacerecoveryservices.com/referrals/"
-        }
-      ],
-      "findings": [],
+      "path": "sites/professional-resources/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
+      "source_hash": "fa5d60b6a050fa48331b0e49aa8a35901efb68e22bee5a69c0872ac64385e7b4",
+      "title": "A Safer Referral Handoff From Treatment to Recovery Housing",
       "h1": [
         "A Safer Referral Handoff From Treatment to Recovery Housing"
       ],
+      "word_count": 978,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
+      "meta_description": "A practical, answer-first guide to a safer referral handoff from treatment to recovery housing, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://www.diannesplacerecoveryservices.com/referrals/",
+          "anchor": "recovery housing referral guidance"
         }
       ],
-      "meta_description": "A practical, answer-first guide to a safer referral handoff from treatment to recovery housing, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-a-safer-referral-handoff-from-treatment-to-recovery-housing.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "1cbb2bb92bd8ea18af47274ca18a80707de11adecc85636a61734e3678b976b7",
+      "duplicate_fingerprint": "0e2ce649f8fb3f2ae25f38be4afc112ce3b6202de55512109f7037d4434d2837",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "A Safer Referral Handoff From Treatment to Recovery Housing",
-      "word_count": 1126
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -12700,268 +12700,268 @@
       "word_count": 1050
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
-      "duplicate_fingerprint": "f6a8df186b6950ec561e4f267a87d92954c141a7561c7f6ca795a12c4a371295",
-      "external_links": [
-        {
-          "anchor": "horse purchase agreement versus bill of sale",
-          "href": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/"
-        }
-      ],
-      "findings": [],
+      "path": "sites/professional-resources/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
+      "source_hash": "08871cf8e94d43505e83b63c309ad6dc1aa7d2fa988e40bf696e0f3df9f9b582",
+      "title": "Horse Purchase Agreement vs Bill of Sale: Why the Difference Matters",
       "h1": [
         "Horse Purchase Agreement vs Bill of Sale: Why the Difference Matters"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 992,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
       "meta_description": "A practical, answer-first guide to horse purchase agreement vs bill of sale: why the difference matters, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
-      "schema_count": 1,
-      "source_hash": "8a889c87f8cbf4ebbc11f95f0cf31661682d5cb19b9aebb9697e840522b84845",
-      "status": "PASS",
-      "title": "Horse Purchase Agreement vs Bill of Sale: Why the Difference Matters",
-      "word_count": 1129
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
-      "duplicate_fingerprint": "d17894755f6ed88e5b0179b5f89516081990fd9f945a56aedee6e46831cf3e18",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "recovery support resources",
-          "href": "https://www.diannesplacerecoveryservices.com/resources/"
+          "href": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+          "anchor": "horse purchase agreement versus bill of sale"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "ba450254d2d29fec4f032511d81029b48a05aead530ad7e3915016ca8e701d10",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
+      "source_hash": "716a77b1d66e88c11d72c97f7aa36d06653a993299c64948c7c50b9f152f1a6c",
+      "title": "How Families Can Evaluate Recovery Housing Without Taking Over",
       "h1": [
         "How Families Can Evaluate Recovery Housing Without Taking Over"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 972,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
       "meta_description": "A practical, answer-first guide to how families can evaluate recovery housing without taking over, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
-      "schema_count": 1,
-      "source_hash": "e02e38a82986e72627e7b766337369b80525115d5d92602e562d2a532722fd57",
-      "status": "PASS",
-      "title": "How Families Can Evaluate Recovery Housing Without Taking Over",
-      "word_count": 1116
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
-      "duplicate_fingerprint": "761ce8864cf98e6ce60da6c6c787be5d9942ac3a523b462eb7b5b9c9033b5632",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "workplace wellbeing resource library",
-          "href": "https://www.hicksconsulting.org/resources/"
+          "href": "https://www.diannesplacerecoveryservices.com/resources/",
+          "anchor": "recovery support resources"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "b004ea6cb1a6b27fc115f219de74f4a31d3a78dc6da24bf1aef2a9ea5fddd2c7",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
+      "source_hash": "0e7eeadb0c20bd18cf7939927d36ca42bd5251101e040ade18a7242e28e3d757",
+      "title": "How Organizations Can Respond to Burnout Before It Becomes a Crisis",
       "h1": [
         "How Organizations Can Respond to Burnout Before It Becomes a Crisis"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 968,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
       "meta_description": "A practical, answer-first guide to how organizations can respond to burnout before it becomes a crisis, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
-      "schema_count": 1,
-      "source_hash": "98c58365d3f4bd73f8f23c071ccb0ef9e41f07e25f1e7e783a47528e3ad0e336",
-      "status": "PASS",
-      "title": "How Organizations Can Respond to Burnout Before It Becomes a Crisis",
-      "word_count": 1112
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
-      "duplicate_fingerprint": "52894d08fe10d8077cf1501e461ac456d5f6a07084401599ffb21ebd282770aa",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "decision-support publishing methodology",
-          "href": "https://theindustryguides.com/methodology.html"
+          "href": "https://www.hicksconsulting.org/resources/",
+          "anchor": "workplace wellbeing resource library"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "adbf082eed0a6749b6a5fb329b389ae43925bb0d853a1386ab95a33550ba5314",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
+      "source_hash": "73c26114aa6aa8bf0118bfd0b73c4b0afea4a2121d3a810e3440562c6a672407",
+      "title": "How to Evaluate a Decision-Support Guide Before You Rely on It",
       "h1": [
         "How to Evaluate a Decision-Support Guide Before You Rely on It"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1014,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
       "meta_description": "A practical, answer-first guide to how to evaluate a decision-support guide before you rely on it, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
-      "schema_count": 1,
-      "source_hash": "cc5e3d6af56bc33b5fef3cf569d20cca247327d0e2e57ea08708f9c1ea28e3ba",
-      "status": "PASS",
-      "title": "How to Evaluate a Decision-Support Guide Before You Rely on It",
-      "word_count": 1156
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
-      "duplicate_fingerprint": "16eb6d88af39d7b64f14001fad82a6deabec5d2092896ad3faf4b854b9501151",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "steps to prepare after receiving a demand letter",
-          "href": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/"
+          "href": "https://theindustryguides.com/methodology.html",
+          "anchor": "decision-support publishing methodology"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "467bce11ae18995a4539143c420dcf33906a3d790d77a14ab7a0a8462b0cefa2",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
+      "source_hash": "0d66f2da541cc9472e6e27e729403361f6717d4630ceb85ccf54001308377a86",
+      "title": "How to Organize Information After Receiving an Equine Demand Letter",
       "h1": [
         "How to Organize Information After Receiving an Equine Demand Letter"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1002,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
       "meta_description": "A practical, answer-first guide to how to organize information after receiving an equine demand letter, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-organize-information-after-receiving-an-equine-demand-letter.html",
-      "schema_count": 1,
-      "source_hash": "61bd8048628e9b39c63507e8a8de66b2dfcd6d41bc90ad8f883841acac0d0065",
-      "status": "PASS",
-      "title": "How to Organize Information After Receiving an Equine Demand Letter",
-      "word_count": 1143
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-      "duplicate_fingerprint": "8ba16b0440b06512f06ea185293bef539011882e62bdc473bf2ad0b543a30177",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "USCIS medical exam cost and timeframe guide",
-          "href": "https://uscisexam.com/guides/costs-and-timeframes/"
+          "href": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+          "anchor": "steps to prepare after receiving a demand letter"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "f3f6da050cf79230cfd4b6b22c64c904f8c38fd966a5a74df3dc970234749f58",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
+      "source_hash": "66efc9de63db8151d57c1d8e9fb595421da8355aab60f9ce55954be45c01b6c9",
+      "title": "How to Prepare for a USCIS Immigration Medical Exam",
       "h1": [
         "How to Prepare for a USCIS Immigration Medical Exam"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1013,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
       "meta_description": "A practical, answer-first guide to how to prepare for a uscis immigration medical exam, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-      "schema_count": 1,
-      "source_hash": "934d2b274a0acfca5d104757c26ccf7f928dea3de153bfd42de32ace56135c7c",
-      "status": "PASS",
-      "title": "How to Prepare for a USCIS Immigration Medical Exam",
-      "word_count": 1159
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
-      "duplicate_fingerprint": "2b78597c3fe8d61af30187d546e41e859d654413c93c0b6753f4ec1c3906e36a",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "personal injury educational guides",
-          "href": "https://theaccidentguides.com/guides/"
+          "href": "https://uscisexam.com/guides/costs-and-timeframes/",
+          "anchor": "USCIS medical exam cost and timeframe guide"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "638b003215a3f7be820f5910e0e3a40811636f21c5e6969e8746aa0a495b6882",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
+      "source_hash": "13ae95246e180b421af5ac4c56a9f564471295abe1c4d1298998a3f53d30e56b",
+      "title": "How to Prepare Questions Before Speaking With a Personal Injury Lawyer",
       "h1": [
         "How to Prepare Questions Before Speaking With a Personal Injury Lawyer"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1017,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
       "meta_description": "A practical, answer-first guide to how to prepare questions before speaking with a personal injury lawyer, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
-      "schema_count": 1,
-      "source_hash": "769c40cf147ebd39578af6c513585e288304f77385ecdefdd1ec2ccb95944085",
-      "status": "PASS",
-      "title": "How to Prepare Questions Before Speaking With a Personal Injury Lawyer",
-      "word_count": 1157
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
-      "duplicate_fingerprint": "5d6a2feba5232a6b7a343724ed9e358389cf89f8f889e24d8ac47c7ed87bbf42",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "organizational wellbeing training inquiry",
-          "href": "https://www.hicksconsulting.org/organizational-training-inquiry/"
+          "href": "https://theaccidentguides.com/guides/",
+          "anchor": "personal injury educational guides"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "8aa818cdc47c45bd9b110e5fbaa13d26e7fd3c98d1784fbac3f1b8b8d4660dbe",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+      "source_hash": "8871af859d37305ea85f9f9626fcbd4e6b4f4b1c77e78f33ba48253cb40854d6",
+      "title": "How to Scope Organizational Wellbeing Training",
       "h1": [
         "How to Scope Organizational Wellbeing Training"
       ],
+      "word_count": 952,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+      "meta_description": "A practical, answer-first guide to how to scope organizational wellbeing training, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+          "anchor": "organizational wellbeing training inquiry"
         }
       ],
-      "meta_description": "A practical, answer-first guide to how to scope organizational wellbeing training, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "8f5dce19a8a70fa1a1cf72d14d148d890092dfcce7ae8c2c0318946542b12083",
+      "duplicate_fingerprint": "be472c1609dfa0ee6f5b71dc42906903f11ebf0c92fc351f0a599a2d15cf4596",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "How to Scope Organizational Wellbeing Training",
-      "word_count": 1102
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
@@ -13096,268 +13096,268 @@
       "word_count": 1064
     },
     {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
-      "duplicate_fingerprint": "6f4e696a8ea847b16a22d4fa17d2d35215a21638bcbe3ad24afd9f1e2b4a8f26",
-      "external_links": [
-        {
-          "anchor": "horse boarding agreement checklist",
-          "href": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/"
-        }
-      ],
-      "findings": [],
+      "path": "sites/professional-resources/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
+      "source_hash": "4fac373ff42a3ddb5df1c3283d277c0afa96a041d38e4ef25d14e93551161f15",
+      "title": "Questions to Answer Before Signing a Horse Boarding Agreement",
       "h1": [
         "Questions to Answer Before Signing a Horse Boarding Agreement"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 994,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
       "meta_description": "A practical, answer-first guide to questions to answer before signing a horse boarding agreement, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
-      "schema_count": 1,
-      "source_hash": "bf2f716fe53362ed298c4c3cffdcf103c26e12982b130b8e117b22866eac7041",
-      "status": "PASS",
-      "title": "Questions to Answer Before Signing a Horse Boarding Agreement",
-      "word_count": 1136
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
-      "duplicate_fingerprint": "84a962dc7725dca43240fa5775ea2f27afdec062240ecbf8e0cf0d323b868c39",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "plain-language recovery housing answers",
-          "href": "https://www.diannesplacerecoveryservices.com/answers/"
+          "href": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+          "anchor": "horse boarding agreement checklist"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "d1be26d51ed207d64d7dabd88327695cebee73bbba009ca45498bf2299c550ac",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
+      "source_hash": "7396e90bc6c158caf034393373fbf4873309a0280de6875d58eafba40b1b2c8b",
+      "title": "Questions to Ask Before Choosing a Recovery Residence",
       "h1": [
         "Questions to Ask Before Choosing a Recovery Residence"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 963,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
       "meta_description": "A practical, answer-first guide to questions to ask before choosing a recovery residence, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
-      "schema_count": 1,
-      "source_hash": "e6c117c8826cca95abda1a6bba375e28f529d7457d692d9af6b2fbd4f792ccb3",
-      "status": "PASS",
-      "title": "Questions to Ask Before Choosing a Recovery Residence",
-      "word_count": 1112
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
-      "duplicate_fingerprint": "93e89d28b8366e3b80c4fb9ff1ba844a5393177e56df88601313824fc72e3f92",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "IV hydration clinic red-flag guide",
-          "href": "https://hormonesivhair.com/guides/iv-hydration-red-flags/"
+          "href": "https://www.diannesplacerecoveryservices.com/answers/",
+          "anchor": "plain-language recovery housing answers"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "65a15ca0e7ef48f169c6ee832eac8571cb1cb54df0a3e038dff63e960c04477d",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
+      "source_hash": "859eac9a38d499d049bca552a80c5253954398ae0e9923e8e8e9e4d739a81da7",
+      "title": "Questions to Ask Before Choosing an IV Hydration or Wellness Clinic",
       "h1": [
         "Questions to Ask Before Choosing an IV Hydration or Wellness Clinic"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1007,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
       "meta_description": "A practical, answer-first guide to questions to ask before choosing an iv hydration or wellness clinic, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
-      "schema_count": 1,
-      "source_hash": "2003e6db36bf821bb3e301e93f103e3de82e4c82c6dfdbad222f6e3608d097be",
-      "status": "PASS",
-      "title": "Questions to Ask Before Choosing an IV Hydration or Wellness Clinic",
-      "word_count": 1147
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-      "duplicate_fingerprint": "6f60bcec624eab7fcce1de6fe76a0b230a93c569501b94105114003e541df4ca",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "virtual therapy information in Tennessee",
-          "href": "https://www.hicksconsulting.org/therapy/"
+          "href": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+          "anchor": "IV hydration clinic red-flag guide"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "528f9d5e3dee6101df77f504f3afbecf34af9f3c9b1b8837a68045b8ce09ce89",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
+      "source_hash": "98a765a02bf86b5148e63b0d1d6b90c6d5562dabe43470f66d5669546e333e85",
+      "title": "Therapy, Coaching, and Workplace Education Are Different Services",
       "h1": [
         "Therapy, Coaching, and Workplace Education Are Different Services"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 979,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
       "meta_description": "A practical, answer-first guide to therapy, coaching, and workplace education are different services, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-      "schema_count": 1,
-      "source_hash": "9739805e5938fe1ddc61cd5c2e2a334028f7ac7ee9953545492b7672e48ab4bb",
-      "status": "PASS",
-      "title": "Therapy, Coaching, and Workplace Education Are Different Services",
-      "word_count": 1123
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
-      "duplicate_fingerprint": "007b0c529accfe5a57ed04a0b9f3fd9e20b2fec91f0492d684c46892f75d3d86",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "recovery housing information",
-          "href": "https://www.diannesplacerecoveryservices.com/recovery-housing/"
+          "href": "https://www.hicksconsulting.org/therapy/",
+          "anchor": "virtual therapy information in Tennessee"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "501a01377647f95c60bb2d105a1347e8ca2940e9380d13a01a2ed57380c88320",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
+      "source_hash": "408b4e28b8ca7b5b9a390d3162c0bd6549b326e181e7984a3ebfdd9949c8e352",
+      "title": "What Recovery Housing Is Designed to Provide",
       "h1": [
         "What Recovery Housing Is Designed to Provide"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 963,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
       "meta_description": "A practical, answer-first guide to what recovery housing is designed to provide, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-recovery-housing-is-designed-to-provide.html",
-      "schema_count": 1,
-      "source_hash": "ac2951c4dd81da8c7b87bf037b2c3f22cc6b91a753ad7d0e398c16f9bf7892f2",
-      "status": "PASS",
-      "title": "What Recovery Housing Is Designed to Provide",
-      "word_count": 1118
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-      "duplicate_fingerprint": "40a558ec82f2a7c2406843eb24adadb5d8531706022fe2a4ac60a7d368be6bb5",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "questions to ask before neuro testing",
-          "href": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/"
+          "href": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+          "anchor": "recovery housing information"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "c1ee5c6dfad23b04438f3320deb900fa1393f29729abbf451460a6916095334b",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
+      "source_hash": "79a045faa2365e318d488d7392e40e1b12666682a228c1176bb6881e7988b83e",
+      "title": "What to Ask Before Scheduling Neuropsychological or ADHD Testing",
       "h1": [
         "What to Ask Before Scheduling Neuropsychological or ADHD Testing"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 1018,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
       "meta_description": "A practical, answer-first guide to what to ask before scheduling neuropsychological or adhd testing, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-      "schema_count": 1,
-      "source_hash": "9d2d4d4fd4beedfd481378960727a015e1e37fb6b1279111be0d3d758ddd73bc",
-      "status": "PASS",
-      "title": "What to Ask Before Scheduling Neuropsychological or ADHD Testing",
-      "word_count": 1161
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-      "duplicate_fingerprint": "3fc66ae3bb10f4a506fa731a36dcf63460b0c66fe80ee8be812a58fdc13c8cec",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "workplace mental-health speaking programs",
-          "href": "https://www.hicksconsulting.org/corporate-speaking/"
+          "href": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+          "anchor": "questions to ask before neuro testing"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "807e293aac0c309951b9cc6c16cf0c3cf906be96cea3faec8cea16cb72ca6cb5",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
+      "source_hash": "cde2985cf7f56f5c1c1af2e7b15072f106357e79be2462272fc806e0039aab0f",
+      "title": "What to Look for in a Workplace Mental-Health Speaker",
       "h1": [
         "What to Look for in a Workplace Mental-Health Speaker"
       ],
-      "html_lang": "en",
-      "internal_links": [
-        {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
-        }
-      ],
+      "word_count": 973,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
       "meta_description": "A practical, answer-first guide to what to look for in a workplace mental-health speaker, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-      "schema_count": 1,
-      "source_hash": "ecb393680e60f4de586e8e1780dcbf4ade833b7136fda2eb27844ed28a45a1fa",
-      "status": "PASS",
-      "title": "What to Look for in a Workplace Mental-Health Speaker",
-      "word_count": 1121
-    },
-    {
-      "cache_status": "HIT",
-      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
-      "duplicate_fingerprint": "2d4c37e9c6007a688a83aed8840ffa4fdb8aa3d530daa136108e14b37a2bd3c0",
+      "html_lang": "en",
       "external_links": [
         {
-          "anchor": "contract review versus a DIY horse agreement",
-          "href": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/"
+          "href": "https://www.hicksconsulting.org/corporate-speaking/",
+          "anchor": "workplace mental-health speaking programs"
         }
       ],
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
+      "schema_count": 1,
+      "duplicate_fingerprint": "b0fc5500589b12532202a2cd768cdd7e336b6d85a00c351c5b4c6fb13c15c4b3",
       "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
+      "path": "sites/professional-resources/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
+      "publication": "professional-resources",
+      "route": "/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
+      "source_hash": "66c4e21f23a180982feb29d3c0cddfeb160bccae6951862654bd8c9420d75daf",
+      "title": "When a Horse Contract Needs More Than a Template",
       "h1": [
         "When a Horse Contract Needs More Than a Template"
       ],
+      "word_count": 968,
+      "canonical": "https://professionalresourcelibrary.com/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
+      "meta_description": "A practical, answer-first guide to when a horse contract needs more than a template, with decision factors, questions, mistakes, and a transparent related resource.",
       "html_lang": "en",
-      "internal_links": [
+      "external_links": [
         {
-          "anchor": "\u2190 Home",
-          "href": "../index.html"
+          "href": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+          "anchor": "contract review versus a DIY horse agreement"
         }
       ],
-      "meta_description": "A practical, answer-first guide to when a horse contract needs more than a template, with decision factors, questions, mistakes, and a transparent related resource.",
-      "path": "sites/professional-resources/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
-      "publication": "professional-resources",
-      "repair_count": 0,
-      "repairs": [],
-      "route": "/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
+      "internal_links": [
+        {
+          "href": "../index.html",
+          "anchor": "\u2190 Home"
+        }
+      ],
       "schema_count": 1,
-      "source_hash": "9acf3ac124ac133ff73d06a7db0a061680963ed31c487587b3e972e8d8daacae",
+      "duplicate_fingerprint": "a5cc2ce41541fa5884c737109bba426ed702270ab264cb52f0de71c865bec267",
+      "findings": [],
+      "repair_count": 0,
       "status": "PASS",
-      "title": "When a Horse Contract Needs More Than a Template",
-      "word_count": 1119
+      "repairs": [],
+      "cache_status": "MISS"
     },
     {
       "cache_status": "HIT",
