@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-26T00:39:00.692572+00:00",
+  "profile": "release",
+  "mode": "repair",
+  "max_attempts": 3,
+  "status": "CLEAN",
+  "unresolved": [],
+  "attempts": [
+    {
+      "attempt": 1,
+      "failed_before": [
+        "pages_release"
+      ],
+      "actions": [
+        {
+          "check": "pages_release",
+          "action": "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/deterministic_build.py --write",
+          "ran": true,
+          "repair_exit": 0,
+          "why": "Rewrites the wholly derived artifacts (sitemaps, llms.txt, 404s). Safe to run unconditionally: it regenerates from source and cannot destroy authored content."
+        },
+        {
+          "check": "pages_release",
+          "action": "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/page_validation.py release",
+          "ran": true,
+          "repair_exit": 0,
+          "why": "Same validator, repairing form."
+        }
+      ]
+    }
+  ]
+}

@@ -30,7 +30,9 @@
     "distribution:prepare-indexnow": "python3 scripts/prepare_indexnow_keys.py",
     "distribution:run": "python3 scripts/post_publish_distribution.py",
     "agency:build": "python3 scripts/build_agency_dashboard.py",
-    "validation:matrix": "python3 scripts/generate_validation_matrix.py"
+    "validation:matrix": "python3 scripts/generate_validation_matrix.py",
+    "selfheal": "python3 scripts/heal_until_clean.py release",
+    "selfheal:dry": "python3 scripts/heal_until_clean.py release --dry-run"
   },
   "devDependencies": {}
 }

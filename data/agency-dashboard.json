@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 28,
+    "runtime_operators": 30,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -215,6 +215,18 @@
       "command": "npm run trace:github-actions",
       "implementation": "python3 scripts/trace_github_actions.py",
       "category": "Support / diagnostics"
+    },
+    {
+      "operator": "selfheal",
+      "command": "npm run selfheal",
+      "implementation": "python3 scripts/heal_until_clean.py release",
+      "category": "Other"
+    },
+    {
+      "operator": "selfheal:dry",
+      "command": "npm run selfheal:dry",
+      "implementation": "python3 scripts/heal_until_clean.py release --dry-run",
+      "category": "Other"
     },
     {
       "operator": "validate:all",
