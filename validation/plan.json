@@ -20,7 +20,8 @@
       "distribution_chain",
       "links",
       "recovery_agency",
-      "social_contract"
+      "social_contract",
+      "content_pattern"
     ],
     "release": [
       "json",
@@ -36,7 +37,8 @@
       "distribution_chain",
       "links",
       "recovery_agency",
-      "social_contract"
+      "social_contract",
+      "content_pattern"
     ],
     "full": [
       "json",
@@ -53,7 +55,8 @@
       "distribution_chain",
       "recovery_agency",
       "social_contract",
-      "cache_self_test"
+      "cache_self_test",
+      "content_pattern"
     ],
     "cache-self-test": [
       "python",
@@ -132,6 +135,10 @@
     "social_contract": {
       "severity": "SOFT_WARNING",
       "rationale": "Declares missing_secrets_nonblocking_by_default and strict_social_failure_opt_in - non-blocking by its own contract."
+    },
+    "content_pattern": {
+      "severity": "HARD_FAIL",
+      "rationale": "A page that carries no direct answer, no query-bearing h1, an empty table cell, or no outbound editorial link cannot be quoted by an answer engine or returns nothing when it is. All four checks measure 100% across the 495 published pages, so blocking cannot regress a clean surface."
     }
   },
   "severity_matrix_policy": {

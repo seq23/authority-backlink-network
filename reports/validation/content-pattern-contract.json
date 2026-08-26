@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "validator": "content-pattern-contract",
+  "generated_at": "2026-08-26T00:26:25.006Z",
+  "enforcement": "block",
+  "scanned_root": "sites",
+  "pages_checked": 495,
+  "status": "PASS",
+  "blocking_failures": 0,
+  "summary": [
+    {
+      "id": "direct_answer",
+      "blocking": true,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "no direct-answer block - nothing here is quotable without surrounding context"
+    },
+    {
+      "id": "query_in_heading",
+      "blocking": true,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "h1 missing or too short to carry the searcher phrasing"
+    },
+    {
+      "id": "no_empty_table_cells",
+      "blocking": true,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "table ships empty cells - the agent calls these impossible to cite"
+    },
+    {
+      "id": "conversion_path",
+      "blocking": true,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "no outbound editorial link - the page is a dead end that returns nothing"
+    },
+    {
+      "id": "checklist",
+      "blocking": false,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "no checklist or numbered protocol (agent request #1, 730 occurrences)"
+    },
+    {
+      "id": "comparison_table",
+      "blocking": false,
+      "pages_missing": 495,
+      "coverage_pct": 0,
+      "why": "no comparison or cost table (agent request #2, 529 occurrences)"
+    },
+    {
+      "id": "concrete_numbers",
+      "blocking": false,
+      "pages_missing": 494,
+      "coverage_pct": 0.2,
+      "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
+    },
+    {
+      "id": "named_sources",
+      "blocking": false,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "no named primary source (agent request #6, 288 occurrences)"
+    },
+    {
+      "id": "faq",
+      "blocking": false,
+      "pages_missing": 495,
+      "coverage_pct": 0,
+      "why": "no FAQ block or FAQPage schema (agent request #9)"
+    },
+    {
+      "id": "structured_data",
+      "blocking": false,
+      "pages_missing": 0,
+      "coverage_pct": 100,
+      "why": "no JSON-LD structured data (agent request #10)"
+    }
+  ],
+  "worst_gaps": {
+    "direct_answer": [],
+    "query_in_heading": [],
+    "no_empty_table_cells": [],
+    "conversion_path": [],
+    "checklist": [],
+    "comparison_table": [
+      "founder-operator/ai-executive-coaching-resources.html",
+      "founder-operator/ai-marketing-operations-resources.html",
+      "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
+      "founder-operator/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
+      "founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
+      "founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
+      "founder-operator/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
+      "founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
+      "founder-operator/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html",
+      "founder-operator/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html",
+      "founder-operator/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html",
+      "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
+      "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
+      "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
+      "founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html"
+    ],
+    "concrete_numbers": [
+      "founder-operator/ai-executive-coaching-resources.html",
+      "founder-operator/ai-marketing-operations-resources.html",
+      "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
+      "founder-operator/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
+      "founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
+      "founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
+      "founder-operator/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
+      "founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
+      "founder-operator/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html",
+      "founder-operator/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html",
+      "founder-operator/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html",
+      "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
+      "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
+      "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
+      "founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html"
+    ],
+    "named_sources": [],
+    "faq": [
+      "founder-operator/ai-executive-coaching-resources.html",
+      "founder-operator/ai-marketing-operations-resources.html",
+      "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
+      "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
+      "founder-operator/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
+      "founder-operator/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
+      "founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
+      "founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
+      "founder-operator/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
+      "founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
+      "founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
+      "founder-operator/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html",
+      "founder-operator/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html",
+      "founder-operator/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html",
+      "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
+      "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
+      "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
+      "founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html"
+    ],
+    "structured_data": []
+  },
+  "blocking_backlog": []
+}

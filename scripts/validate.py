@@ -23,6 +23,7 @@ COMMANDS = {
     "pages_release": [sys.executable, "scripts/page_validation.py", "release"],
     "pages_full": [sys.executable, "scripts/page_validation.py", "full"],
     "deterministic_build": [sys.executable, "scripts/deterministic_build.py"],
+    "content_pattern": ["node", "scripts/validators/validate_content_pattern_contract.js"],
     "hostile": [sys.executable, "scripts/hostile_review.py"],
     "links": [sys.executable, "scripts/link_audit.py"],
     "social_contract": [sys.executable, "tests/test_social_contract.py"],
