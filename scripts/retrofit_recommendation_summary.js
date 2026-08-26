@@ -28,7 +28,10 @@ const rootIdx = argv.indexOf('--root');
 const ROOT = rootIdx >= 0 ? path.resolve(argv[rootIdx + 1]) : process.cwd();
 const dirs = argv.filter((a, i) => !a.startsWith('--') && (rootIdx < 0 || i !== rootIdx + 1));
 
-const SKIP_DIR = /(^|\/)(node_modules|\.git|dist|\.pages-output|artifacts|coverage|_site|build)(\/|$)/;
+// data/ holds inputs, not pages. In a sibling repo this script walked
+// data/report_fixes/agent_runs/ and injected a summary block into four raw agent
+// reports - rewriting the evidence the pipeline reads from. Never walk inputs.
+const SKIP_DIR = /(^|\/)(node_modules|\.git|dist|\.pages-output|artifacts|coverage|_site|build|data|reports|content)(\/|$)/;
 const MARK = 'data-content-block="recommendation_summary"';
 
 const strip = (h) => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ')
