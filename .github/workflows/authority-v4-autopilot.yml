@@ -74,6 +74,19 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: python3 scripts/social_publisher.py
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Observe whether answer engines cite us
+        # The probe shipped in seven repos and was invoked by none, so no
+        # citation observation was ever taken. Grounded mode reads the pages
+        # the answer was actually built from; knowledge mode would only show
+        # whether a model memorised the brand, which is not a citation.
+        continue-on-error: true
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CITATION_PROBE_MODE: grounded
+        run: node scripts/llm_citation_probe.mjs --limit 25
       - name: Commit generated content, reports, and social ledger
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

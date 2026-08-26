@@ -103,7 +103,13 @@ if (!queries.length) { console.error('citation probe: no queries found'); proces
 // live search, which is the stronger measurement when its quota allows.
 const orKey = process.env.OPENROUTER_API_KEY || '';
 const key = process.env.GEMINI_API_KEY || process.env.GOOGLE_GEMINI_API_KEY || '';
-const PROVIDER = arg('--provider', orKey && !GROUNDED ? 'openrouter' : 'gemini');
+// Pick the provider that can actually do the job asked for. Gemini grounds via
+// Google Search; OpenRouter grounds via the ":online" suffix, which returns the
+// pages the answer was built from as url_citation annotations. Preferring a
+// provider we have no key for is how grounded mode silently skipped every run.
+const PROVIDER = arg('--provider', GROUNDED
+  ? (key ? 'gemini' : (orKey ? 'openrouter' : 'gemini'))
+  : (orKey ? 'openrouter' : 'gemini'));
 // Three small models rather than one, because a single model's idiosyncrasies
 // are not a measurement.
 //
@@ -130,17 +136,37 @@ async function withTimeout(fn) {
   finally { clearTimeout(t); }
 }
 
-async function askOpenRouter(query, model) {
+// ":online" runs the model against live web results. The pages it actually used
+// come back as url_citation annotations, which is the retrieval observation the
+// knowledge-mode call cannot produce - that one only shows whether the model
+// memorised us during training, which is not a citation.
+const onlineModel = (model) => (model.endsWith(':online') ? model : `${model}:online`);
+
+function openRouterCitations(data) {
+  const message = data?.choices?.[0]?.message || {};
+  const urls = [];
+  for (const annotation of message.annotations || []) {
+    const url = annotation?.url_citation?.url;
+    if (url) urls.push(url);
+  }
+  return [...new Set(urls)];
+}
+
+async function askOpenRouter(query, model, grounded = false) {
+  const requestModel = grounded ? onlineModel(model) : model;
   const res = await withTimeout((signal) => fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     signal,
     headers: { 'content-type': 'application/json', authorization: `Bearer ${orKey}` },
-    body: JSON.stringify({ model, temperature: 0, max_tokens: 400, messages: [{ role: 'user', content: query }] }),
+    body: JSON.stringify({
+      model: requestModel, temperature: 0, max_tokens: 400,
+      messages: [{ role: 'user', content: query }],
+    }),
   }));
   const data = await res.json().catch(() => ({}));
   if (!res.ok) return { ok: false, error: data?.error?.message || `HTTP ${res.status}` };
   const answer = data?.choices?.[0]?.message?.content || '';
-  return { ok: true, answer, uris: [] };
+  return { ok: true, answer, uris: grounded ? openRouterCitations(data) : [] };
 }
 const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 const now = new Date().toISOString();
@@ -155,12 +181,19 @@ if (!haveKey || DRY) {
 const observations = [];
 // One model can be idiosyncratic. Asking several and reporting each separately
 // says more than averaging them into a single number would.
-const engines = PROVIDER === 'openrouter' ? OR_MODELS : [model];
+// Knowledge mode asks several cheap models because one model's idiosyncrasies
+// are not a measurement. Grounded mode bills per search - around $0.007 a query
+// - and the thing being measured is which pages the retrieval layer returns,
+// which does not vary much by model. One model keeps a portfolio-wide run in
+// cents. Override with OPENROUTER_GROUNDED_MODELS.
+const GROUNDED_MODELS = (process.env.OPENROUTER_GROUNDED_MODELS || OR_MODELS[0] || 'mistralai/mistral-nemo')
+  .split(',').map((m) => m.trim()).filter(Boolean);
+const engines = PROVIDER === 'openrouter' ? (GROUNDED ? GROUNDED_MODELS : OR_MODELS) : [model];
 for (const q of queries) {
  for (const engineModel of engines) {
   let r;
   try {
-    r = PROVIDER === 'openrouter' ? await askOpenRouter(q, engineModel) : await ask(q, key, engineModel, GROUNDED);
+    r = PROVIDER === 'openrouter' ? await askOpenRouter(q, engineModel, GROUNDED) : await ask(q, key, engineModel, GROUNDED);
   } catch (e) { r = { ok: false, error: String(e.message || e) }; }
   if (!r.ok) {
     observations.push({ query: q, engine: `${PROVIDER}:${engineModel}`, mode: MODE, observed_at: now, status: 'provider_error', error: r.error });
