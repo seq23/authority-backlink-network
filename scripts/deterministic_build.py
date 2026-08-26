@@ -11,6 +11,8 @@ import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from lib import lastmod_ledger
+
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
 BUILD_DATE = os.getenv("BUILD_DATE", "2026-01-01")
@@ -78,8 +80,18 @@ def render_404(source: Path, domain: str) -> str:
     )
 
 
-def build_into(out: Path) -> dict[str, str]:
+def build_into(out: Path) -> tuple[dict[str, str], dict[str, str]]:
+    """Write the derived artifacts under `out`.
+
+    Returns (artifact hashes, {url: content hash}). The second value is what the
+    lastmod ledger is rebuilt from; it is returned rather than persisted here so
+    that building twice and comparing - which main() does to prove determinism -
+    cannot be perturbed by a write this function made on the first pass.
+    """
     hashes: dict[str, str] = {}
+    url_hashes: dict[str, str] = {}
+    ledger = lastmod_ledger.load()
+    today = lastmod_ledger.build_date()
     for pub in sorted(PUBLICATIONS, key=lambda x: x["id"]):
         source = ROOT / pub["folder"]
         target = out / pub["folder"]
@@ -99,22 +111,34 @@ def build_into(out: Path) -> dict[str, str]:
                 f'publication {pub.get("id")!r} has no domain '
                 '(expected "working_domain" in data/publications.json)')
         html_files = sorted(source.rglob("*.html"), key=lambda p: p.relative_to(source).as_posix())
-        urls = []
+        # <lastmod> is a claim about when the page changed, so it is derived from
+        # the page's content hash, not from BUILD_DATE. Stamping the build date on
+        # every URL moved all 565 of them on every run, which told a crawler
+        # nothing about which page changed and was false for the ones that did
+        # not. Only a URL whose content hash differs from the ledger advances.
+        page_hashes: dict[str, str] = {}
         for page in html_files:
             rel = page.relative_to(source).as_posix()
             text = page.read_text(encoding="utf-8", errors="ignore")
             if rel.startswith("agency/") or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
                 continue
             loc = f"https://{domain}/" if rel == "index.html" else f"https://{domain}/{rel}"
-            urls.append(f"<url><loc>{escape(loc)}</loc><lastmod>{BUILD_DATE}</lastmod></url>")
+            page_hashes[loc] = lastmod_ledger.content_hash(text)
+        lastmods = lastmod_ledger.resolve(page_hashes, ledger, today)
+        url_hashes.update(page_hashes)
+        urls = [
+            f"<url><loc>{escape(loc)}</loc><lastmod>{lastmods[loc]}</lastmod></url>"
+            for loc in page_hashes
+        ]
+        newest = max(lastmods.values()) if lastmods else today
         sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"
-        llms = f"# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {BUILD_DATE}.\n\nSitemap: https://{domain}/sitemap.xml\n"
+        llms = f"# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n"
         not_found = render_404(source, domain)
         for name, value in (("sitemap.xml", sitemap), ("llms.txt", llms), ("404.html", not_found)):
             path = target / name
             atomic_text(path, value)
             hashes[f'{pub["folder"]}/{name}'] = hashlib.sha256(value.encode()).hexdigest()
-    return hashes
+    return hashes, url_hashes
 
 
 def main() -> None:
@@ -122,19 +146,32 @@ def main() -> None:
     ap.add_argument("--write", action="store_true", help="Write deterministic derived artifacts into the repository.")
     args = ap.parse_args()
     with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
-        first = build_into(Path(a))
-        second = build_into(Path(b))
+        first, url_hashes = build_into(Path(a))
+        second, _ = build_into(Path(b))
         differences = [k for k in sorted(set(first) | set(second)) if first.get(k) != second.get(k)]
         if differences:
             print(json.dumps({"status": "FAIL", "differences": differences}, indent=2))
             raise SystemExit(1)
+        ledger = lastmod_ledger.updated(url_hashes)
         if args.write:
             built = Path(a)
             for rel in first:
                 src = built / rel
                 dst = ROOT / rel
                 atomic_text(dst, src.read_text(encoding="utf-8"))
-        print(json.dumps({"status": "PASS", "build_date": BUILD_DATE, "artifacts": len(first), "differences": []}, indent=2))
+            # Persisted only on --write. A validation run must leave no trace,
+            # or "build twice and compare" would be comparing against a ledger
+            # the first pass had already moved.
+            lastmod_ledger.save(ledger)
+        advanced = sum(1 for v in ledger["entries"].values() if v["lastmod"] == lastmod_ledger.build_date())
+        print(json.dumps({
+            "status": "PASS",
+            "build_date": BUILD_DATE,
+            "artifacts": len(first),
+            "differences": [],
+            "sitemap_urls": len(url_hashes),
+            "lastmod_advanced_this_build": advanced,
+        }, indent=2))
 
 
 if __name__ == "__main__":

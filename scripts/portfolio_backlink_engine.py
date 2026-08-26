@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
 from affiliation import rel_attr
+from lib import lastmod_ledger
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -90,17 +91,26 @@ def render(article,pub):
 <h2>Editorial and affiliation note</h2><p>{disclosure}</p><p class="meta">Authority Network campaign: {html.escape(article['campaign_id'])}. Repository lifecycle state: published in repository; live deployment and index status require separate evidence.</p></article></main></body></html>'''
 
 def refresh_assets():
+ # <lastmod> used to be date.today() for every URL, so any run of this script
+ # moved the whole library's freshness date to the build day. That is a false
+ # claim to a crawler about every page that did not change, and it flattens the
+ # one signal that correlates with being cited. The date now comes from the
+ # content-hash ledger: unchanged content keeps the date it already had.
  pubs,_=publication_maps()
+ ledger=lastmod_ledger.load(); today=lastmod_ledger.build_date(); all_hashes={}
  for pub in pubs.values():
   folder=ROOT/pub['folder']; domain=pub['working_domain']; pages=sorted(folder.rglob('*.html'))
-  urls=[]; llms=[f"# {pub['title']}",pub['mission'],'',f"Sitemap: https://{domain}/sitemap.xml",'','## Pages']
+  hashes={}; llms=[f"# {pub['title']}",pub['mission'],'',f"Sitemap: https://{domain}/sitemap.xml",'','## Pages']
   for p in pages:
    rel=p.relative_to(folder).as_posix(); text=p.read_text(encoding='utf-8',errors='ignore')
    if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex',text,re.I): continue
    url=f'https://{domain}/' if rel=='index.html' else f'https://{domain}/{rel}'
-   urls.append(f'<url><loc>{escape(url)}</loc><lastmod>{date.today().isoformat()}</lastmod></url>'); llms.append(f'- {url}')
+   hashes[url]=lastmod_ledger.content_hash(text); llms.append(f'- {url}')
+  lastmods=lastmod_ledger.resolve(hashes,ledger,today); all_hashes.update(hashes)
+  urls=[f'<url><loc>{escape(url)}</loc><lastmod>{lastmods[url]}</lastmod></url>' for url in hashes]
   sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(urls)+'\n</urlset>\n'
   (folder/'sitemap.xml').write_text(sitemap,encoding='utf-8'); (folder/'llms.txt').write_text('\n'.join(llms)+'\n',encoding='utf-8')
+ lastmod_ledger.save(lastmod_ledger.updated(all_hashes,ledger,today))
 
 def seed():
  data=read('data/backlink-seed-articles.json',{'articles':[]}); links=read('data/link-registry.json',[]); pubs,_=publication_maps(); existing={x.get('seed_article_id') for x in links}; made=[]

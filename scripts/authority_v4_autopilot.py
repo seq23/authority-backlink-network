@@ -9,6 +9,7 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
+from lib import lastmod_ledger
 # rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
@@ -368,16 +369,26 @@ def update_sitemap(site_path, domain):
     if not domain:
         raise SystemExit(f'update_sitemap: no domain resolved for {site_path}')
     site = ROOT/site_path
-    urls = []
+    # RELEASE_DATE on every URL made the whole publication claim to have been
+    # refreshed on whatever day the autopilot last ran. Only the handful of pages
+    # the run actually wrote had changed; the rest were a date bump, which is
+    # both untrue and self-defeating - a freshness signal that fires for
+    # everything distinguishes nothing. The date now follows the content hash.
+    ledger = lastmod_ledger.load()
+    hashes = {}
     for f in sorted(site.rglob('*.html')):
         rel = f.relative_to(site).as_posix()
         text = f.read_text(encoding='utf-8', errors='ignore')
         if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
             continue
         loc = f'https://{domain}/' if rel == 'index.html' else f'https://{domain}/{rel}'
-        urls.append(f'<url><loc>{loc}</loc><lastmod>{RELEASE_DATE}</lastmod></url>')
+        hashes[loc] = lastmod_ledger.content_hash(text)
+    lastmods = lastmod_ledger.resolve(hashes, ledger, RELEASE_DATE)
+    lastmod_ledger.save(lastmod_ledger.merge(hashes, ledger, RELEASE_DATE))
+    urls = [f'<url><loc>{loc}</loc><lastmod>{lastmods[loc]}</lastmod></url>' for loc in hashes]
+    newest = max(lastmods.values()) if lastmods else RELEASE_DATE
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
-    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {RELEASE_DATE}.\n\nSitemap: https://{domain}/sitemap.xml\n'
+    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n'
     tmp = site/'sitemap.xml.tmp'
     with tmp.open('w', encoding='utf-8', newline='\n') as handle:
         handle.write(sitemap)
