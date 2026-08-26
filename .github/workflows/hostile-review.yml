@@ -25,3 +25,8 @@ jobs:
         with:
           name: authority-network-validation-receipts
           path: reports/
+      - name: Cadence gate
+        # Blocks publishing faster than the library can be kept inside the
+        # 91-day window where pages stay citable. Warnings are reported
+        # without failing the run.
+        run: npm run cadence:gate
