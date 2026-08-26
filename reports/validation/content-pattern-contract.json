@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-26T20:00:22.963Z",
+  "generated_at": "2026-08-26T20:01:08.204Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 562,
@@ -67,8 +67,8 @@
     {
       "id": "faq",
       "blocking": false,
-      "pages_missing": 416,
-      "coverage_pct": 26,
+      "pages_missing": 316,
+      "coverage_pct": 43.8,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -161,11 +161,11 @@
       "memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
       "memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
       "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
-      "memphis-local/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay.html",
-      "memphis-local/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers.html",
-      "memphis-local/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers.html",
-      "memphis-local/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html",
-      "memphis-local/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers.html"
+      "memphis-local/index.html",
+      "memphis-local/memphis-grazing-table-resources.html",
+      "memphis-local/memphis-party-decor-vendors.html",
+      "memphis-local/memphis-porch-decorating-resources.html",
+      "memphis-local/seasonal-home-styling-memphis.html"
     ],
     "structured_data": []
   },
