@@ -58,7 +58,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from lib import lastmod_ledger  # noqa: E402
+from lib import lastmod_ledger, site_urls  # noqa: E402
 
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
 BULK_SHARE = 0.10  # of currently published pages
@@ -81,21 +81,21 @@ def visible_text_hash(blob: bytes) -> str:
 
 
 def published_pages() -> dict[str, Path]:
-    """{url: file} for every page the sitemap emitters publish, by their own rules."""
+    """{url: file} for every page the sitemap emitters publish, by their own rules.
+
+    The rules - which files are excluded, and what URL form the rest are
+    addressed by - come from lib/site_urls, the same module the three sitemap
+    emitters use. A ledger keyed on a different URL form than the sitemap would
+    match nothing and reset every date to the build day.
+    """
     out: dict[str, Path] = {}
     for pub in PUBLICATIONS:
         source = ROOT / pub["folder"]
-        domain = pub.get("working_domain") or pub.get("domain") or pub.get("default_domain")
-        if not domain or not source.exists():
+        if not source.exists():
             continue
-        for page in sorted(source.rglob("*.html")):
-            rel = page.relative_to(source).as_posix()
-            text = page.read_text(encoding="utf-8", errors="ignore")
-            if rel.startswith("agency/") or re.search(
-                    r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
-                continue
-            loc = f"https://{domain}/" if rel == "index.html" else f"https://{domain}/{rel}"
-            out[loc] = page
+        domain = site_urls.domain_of(pub)
+        for rel, loc, _text in site_urls.published_pages(source, domain):
+            out[loc] = source / rel
     return out
 
 

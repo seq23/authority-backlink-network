@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
 from affiliation import rel_attr
-from lib import lastmod_ledger
+from lib import lastmod_ledger, site_urls
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -74,7 +74,9 @@ def render(article,pub):
  ]))
 
  disclosure=pub['disclosure']+' '+article['disclaimer']+' This page is not legal, medical, mental-health, immigration, financial, or professional advice. <strong>Affiliation disclosed:</strong> this page is published by an affiliated authority network and includes one affiliated resource only where it directly supports the topic. It is not an independent award, ranking, review, or earned-media claim.'
- page_url=f"https://{pub['working_domain']}/daily/{today}-{article['slug']}.html"
+ # The extensionless form, from the same helper the sitemap uses: the .html
+ # form is answered with a 308 by the origin.
+ page_url=site_urls.page_url(pub['working_domain'],f"daily/{today}-{article['slug']}.html")
  # The FAQ section used to be four of article['questions'] over one fixed answer
  # paragraph - the same paragraph on all four, and the same on all 32 seed pages.
  # Those entries are prompts to put to a provider, not questions this page
@@ -88,7 +90,7 @@ def render(article,pub):
   {'@type':'FAQPage','mainEntity':[{'@type':'Question','name':title,'acceptedAnswer':{'@type':'Answer','text':direct}}]},
  ]}
  return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, answer-first guide to {html.escape(title.lower())}, with decision factors, questions, mistakes, and a transparent related resource."><link rel="canonical" href="https://{pub['working_domain']}/daily/{today}-{article['slug']}.html"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, answer-first guide to {html.escape(title.lower())}, with decision factors, questions, mistakes, and a transparent related resource."><link rel="canonical" href="{html.escape(page_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body data-backlink-seed-id="{html.escape(article['id'])}"><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(direct)}</p><p><em>Updated {today}. This article is designed to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
 <p class="topic-context"><strong>Topic context:</strong> {html.escape(topic_context)}.</p>
 <h2>What this decision is really about</h2><p>{html.escape(direct)} The useful test is whether the plan still makes sense after responsibilities, exclusions, evidence, timing, and failure paths are visible. A polished promise is not enough; the operating details have to survive real-world use.</p><p>Start by writing the intended outcome in one sentence. Then identify the person who owns the decision, the people affected by it, the facts that are known, the facts still missing, and the point at which a qualified professional or provider must be consulted. This prevents a simple resource page from being mistaken for individualized advice.</p>
@@ -105,19 +107,19 @@ def refresh_assets():
  # claim to a crawler about every page that did not change, and it flattens the
  # one signal that correlates with being cited. The date now comes from the
  # content-hash ledger: unchanged content keeps the date it already had.
+ # <loc> comes from lib/site_urls.page_url(), shared with deterministic_build.py
+ # and authority_v4_autopilot.update_sitemap(). All three used to carry their own
+ # copy of the same f-string, and all three named the .html file that Cloudflare
+ # Pages answers 308 for rather than the extensionless path it serves 200 for.
  pubs,_=publication_maps()
  ledger=lastmod_ledger.load(); today=lastmod_ledger.build_date(); all_hashes={}
  for pub in pubs.values():
-  folder=ROOT/pub['folder']; domain=pub['working_domain']; pages=sorted(folder.rglob('*.html'))
+  folder=ROOT/pub['folder']; domain=site_urls.domain_of(pub)
   hashes={}; llms=[f"# {pub['title']}",pub['mission'],'',f"Sitemap: https://{domain}/sitemap.xml",'','## Pages']
-  for p in pages:
-   rel=p.relative_to(folder).as_posix(); text=p.read_text(encoding='utf-8',errors='ignore')
-   if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex',text,re.I): continue
-   url=f'https://{domain}/' if rel=='index.html' else f'https://{domain}/{rel}'
+  for _rel,url,text in site_urls.published_pages(folder,domain):
    hashes[url]=lastmod_ledger.content_hash(text); llms.append(f'- {url}')
   lastmods=lastmod_ledger.resolve(hashes,ledger,today); all_hashes.update(hashes)
-  urls=[f'<url><loc>{escape(url)}</loc><lastmod>{lastmods[url]}</lastmod></url>' for url in hashes]
-  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(urls)+'\n</urlset>\n'
+  sitemap=site_urls.render_sitemap({url:lastmods[url] for url in hashes})
   (folder/'sitemap.xml').write_text(sitemap,encoding='utf-8'); (folder/'llms.txt').write_text('\n'.join(llms)+'\n',encoding='utf-8')
  lastmod_ledger.save(lastmod_ledger.updated(all_hashes,ledger,today))
 

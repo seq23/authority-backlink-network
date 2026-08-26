@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from lib import lastmod_ledger
+from lib import lastmod_ledger, site_urls
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
@@ -96,42 +96,27 @@ def build_into(out: Path) -> tuple[dict[str, str], dict[str, str]]:
         source = ROOT / pub["folder"]
         target = out / pub["folder"]
         target.mkdir(parents=True, exist_ok=True)
-        # data/publications.json stores the host under "working_domain". Reading
-        # only "domain"/"default_domain" yielded None for every publication, and
-        # the f-strings below turned that into a literal "https://None/..." for
-        # every URL - so all three sitemaps and llms.txt files shipped pointing at
-        # an unresolvable host. Google reported 355 errors on
-        # professionalresourcelibrary.com; the other two had not been re-read yet.
-        domain = pub.get("working_domain") or pub.get("domain") or pub.get("default_domain")
-        if not domain:
-            # Never emit a sitemap addressed to a host we could not resolve. A
-            # loud build failure is recoverable; a silently broken sitemap is
-            # invisible until someone reads Search Console months later.
-            raise SystemExit(
-                f'publication {pub.get("id")!r} has no domain '
-                '(expected "working_domain" in data/publications.json)')
-        html_files = sorted(source.rglob("*.html"), key=lambda p: p.relative_to(source).as_posix())
+        # Never emit a sitemap addressed to a host we could not resolve. A loud
+        # build failure is recoverable; a silently broken sitemap is invisible
+        # until someone reads Search Console months later.
+        domain = site_urls.domain_of(pub)
         # <lastmod> is a claim about when the page changed, so it is derived from
         # the page's content hash, not from BUILD_DATE. Stamping the build date on
         # every URL moved all 565 of them on every run, which told a crawler
         # nothing about which page changed and was false for the ones that did
         # not. Only a URL whose content hash differs from the ledger advances.
-        page_hashes: dict[str, str] = {}
-        for page in html_files:
-            rel = page.relative_to(source).as_posix()
-            text = page.read_text(encoding="utf-8", errors="ignore")
-            if rel.startswith("agency/") or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
-                continue
-            loc = f"https://{domain}/" if rel == "index.html" else f"https://{domain}/{rel}"
-            page_hashes[loc] = lastmod_ledger.content_hash(text)
+        #
+        # The <loc> form comes from lib/site_urls.page_url(), shared with the two
+        # other sitemap emitters, so no copy of it can drift back to the .html
+        # form the origin answers 308 for.
+        page_hashes: dict[str, str] = {
+            loc: lastmod_ledger.content_hash(text)
+            for _, loc, text in site_urls.published_pages(source, domain)
+        }
         lastmods = lastmod_ledger.resolve(page_hashes, ledger, today)
         url_hashes.update(page_hashes)
-        urls = [
-            f"<url><loc>{escape(loc)}</loc><lastmod>{lastmods[loc]}</lastmod></url>"
-            for loc in page_hashes
-        ]
         newest = max(lastmods.values()) if lastmods else today
-        sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n"
+        sitemap = site_urls.render_sitemap({loc: lastmods[loc] for loc in page_hashes})
         llms = f"# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n"
         not_found = render_404(source, domain)
         for name, value in (("sitemap.xml", sitemap), ("llms.txt", llms), ("404.html", not_found)):

@@ -41,6 +41,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from affiliation import rel_attr  # noqa: E402
+from lib import site_urls  # noqa: E402
 
 CONTENT_DIR = ROOT / "content-bank/cluster-articles"
 LEDGER = ROOT / "data/link-registry.json"
@@ -180,7 +181,8 @@ def render(article: dict) -> str:
     pub = PUBLICATIONS[article["publication"]]
     domain = pub["working_domain"]
     filename = f"{article['date']}-{article['slug']}.html"
-    url = f"https://{domain}/daily/{filename}"
+    # Extensionless, from the shared helper: the .html form 308s to this one.
+    url = site_urls.page_url(domain, f"daily/{filename}")
     approved_link(article["target_brand_id"], article["target_url"])
 
     sections = article["sections"]

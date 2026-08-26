@@ -9,7 +9,7 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
-from lib import lastmod_ledger
+from lib import lastmod_ledger, site_urls
 # rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
@@ -277,7 +277,9 @@ def generate_page(brief):
         product_section = f'<h2>What you can create</h2><p><strong>{html.escape(product_name)}:</strong> {html.escape(product_message)}</p><p>You complete the document with your own truthful facts, review it, and send it yourself. Approval Prep does not make the approval decision.</p>'
     generated = (f'{RELEASE_DATE}T00:00:00Z' if os.getenv('PUBLIC_RELEASE_DATE') else datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'))
     slug = slugify(title)
-    canonical_url = f"https://{pub['default_domain']}/daily/{TODAY}-{slug}.html"
+    # The extensionless form, from the same helper the sitemap uses. A canonical
+    # that names the .html file points at a URL the origin answers 308 for.
+    canonical_url = site_urls.page_url(pub['default_domain'], f'daily/{TODAY}-{slug}.html')
 
     # The body used to be drawn from the pantry: ten paragraphs cut from two
     # sentence moulds, nine checklist items from a third, five FAQ entries whose
@@ -428,19 +430,15 @@ def update_sitemap(site_path, domain):
     # both untrue and self-defeating - a freshness signal that fires for
     # everything distinguishes nothing. The date now follows the content hash.
     ledger = lastmod_ledger.load()
-    hashes = {}
-    for f in sorted(site.rglob('*.html')):
-        rel = f.relative_to(site).as_posix()
-        text = f.read_text(encoding='utf-8', errors='ignore')
-        if rel.startswith('agency/') or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, re.I):
-            continue
-        loc = f'https://{domain}/' if rel == 'index.html' else f'https://{domain}/{rel}'
-        hashes[loc] = lastmod_ledger.content_hash(text)
+    # <loc> comes from lib/site_urls.page_url(), shared with the other two
+    # sitemap emitters. This function used to build it from its own copy of the
+    # same f-string, which named the .html file the origin answers 308 for.
+    hashes = {loc: lastmod_ledger.content_hash(text)
+              for _, loc, text in site_urls.published_pages(site, domain)}
     lastmods = lastmod_ledger.resolve(hashes, ledger, RELEASE_DATE)
     lastmod_ledger.save(lastmod_ledger.merge(hashes, ledger, RELEASE_DATE))
-    urls = [f'<url><loc>{loc}</loc><lastmod>{lastmods[loc]}</lastmod></url>' for loc in hashes]
     newest = max(lastmods.values()) if lastmods else RELEASE_DATE
-    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
+    sitemap = site_urls.render_sitemap({loc: lastmods[loc] for loc in hashes})
     llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n'
     tmp = site/'sitemap.xml.tmp'
     with tmp.open('w', encoding='utf-8', newline='\n') as handle:
