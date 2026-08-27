@@ -1,0 +1,300 @@
+{
+  "schema": "authority-crawler-access-v1",
+  "measured_at": "2026-08-27T23:37:42.317962+00:00",
+  "note": "Access is a precondition for citation, not evidence of it.",
+  "domains": [
+    {
+      "domain": "founderoperatorlibrary.com",
+      "sitemap_urls": 105,
+      "probe_article": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
+      "agents": {
+        "GPTBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "OAI-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ChatGPT-User": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ClaudeBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Claude-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "PerplexityBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Googlebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Bingbot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Applebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "baseline-browser": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        }
+      }
+    },
+    {
+      "domain": "memphisvendorlibrary.com",
+      "sitemap_urls": 104,
+      "probe_article": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers",
+      "agents": {
+        "GPTBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "OAI-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ChatGPT-User": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ClaudeBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Claude-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "PerplexityBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Googlebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Bingbot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Applebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "baseline-browser": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        }
+      }
+    },
+    {
+      "domain": "professionalresourcelibrary.com",
+      "sitemap_urls": 419,
+      "probe_article": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers",
+      "agents": {
+        "GPTBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "OAI-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ChatGPT-User": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "ClaudeBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Claude-SearchBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "PerplexityBot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Googlebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Bingbot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "Applebot": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        },
+        "baseline-browser": {
+          "root": 200,
+          "robots": 200,
+          "llms": 200,
+          "sitemap": 200,
+          "article": 200,
+          "answer_server_rendered": true,
+          "blocked": false
+        }
+      }
+    }
+  ],
+  "status": "PASS",
+  "blocked_agent_domain_pairs": 0
+}
