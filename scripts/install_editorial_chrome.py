@@ -63,10 +63,14 @@ SITES = ROOT / "sites"
 ADVICE_BOUNDARY = ("This page is informational. It is not legal, medical, "
                    "mental-health, immigration, financial, or professional advice.")
 
-FOOTER_RE = re.compile(r"<footer>.*?</footer>\s*", re.S | re.I)
+# No trailing \s* on either of these. Consuming the whitespace after the tag
+# and re-emitting a fixed newline rewrites the surrounding indentation, which
+# made this script and deterministic_build.py alternately reformat 404.html on
+# every build. Replace the element, leave the layout alone.
+FOOTER_RE = re.compile(r"<footer>.*?</footer>", re.S | re.I)
 BODY_END_RE = re.compile(r"</body>", re.I)
 MAIN_END_RE = re.compile(r"</main>", re.I)
-DISCLOSURE_RE = re.compile(r'<aside class="affiliate-disclosure".*?</aside>\s*', re.S | re.I)
+DISCLOSURE_RE = re.compile(r'<aside class="affiliate-disclosure".*?</aside>', re.S | re.I)
 ANCHOR_RE = re.compile(r'<a\s+[^>]*?href="([^"]+)"[^>]*>(.*?)</a>', re.I | re.S)
 
 # Preferred insertion point: immediately before the heading that introduces the
@@ -182,7 +186,7 @@ def install(text: str, pub_title: str, domain: str, editor_addr: str,
     # --- footer -----------------------------------------------------------
     footer = render_footer(pub_title, domain, editor_addr)
     if FOOTER_RE.search(text):
-        text = FOOTER_RE.sub(lambda _m: footer + "\n", text, count=1)
+        text = FOOTER_RE.sub(lambda _m: footer, text, count=1)
     elif BODY_END_RE.search(text):
         text = BODY_END_RE.sub(footer + "\n</body>", text, count=1)
     else:
