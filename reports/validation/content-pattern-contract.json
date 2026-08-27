@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T17:49:50.099Z",
+  "generated_at": "2026-08-27T18:58:20.463Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 616,
@@ -60,8 +60,8 @@
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 54,
-      "coverage_pct": 91.2,
+      "pages_missing": 43,
+      "coverage_pct": 93,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -164,7 +164,7 @@
       "memphis-local/topics/wedding-seating-charts.html",
       "professional-resources/contributors.html",
       "professional-resources/corrections.html",
-      "professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html"
+      "professional-resources/editorial-standards.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",
