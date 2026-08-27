@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T17:49:50.099Z",
+  "generated_at": "2026-08-27T18:31:35.361Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 616,
+  "pages_checked": 625,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -47,28 +47,28 @@
       "id": "comparison_table",
       "blocking": false,
       "pages_missing": 60,
-      "coverage_pct": 90.3,
+      "coverage_pct": 90.4,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 518,
-      "coverage_pct": 15.9,
+      "pages_missing": 527,
+      "coverage_pct": 15.7,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 54,
-      "coverage_pct": 91.2,
+      "pages_missing": 63,
+      "coverage_pct": 89.9,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
       "id": "faq",
       "blocking": false,
       "pages_missing": 59,
-      "coverage_pct": 90.4,
+      "coverage_pct": 90.6,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -142,6 +142,7 @@
     "named_sources": [
       "founder-operator/contributors.html",
       "founder-operator/corrections.html",
+      "founder-operator/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -152,6 +153,7 @@
       "founder-operator/topics/virtual-event-production.html",
       "memphis-local/contributors.html",
       "memphis-local/corrections.html",
+      "memphis-local/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options.html",
       "memphis-local/editorial-standards.html",
       "memphis-local/index.html",
       "memphis-local/masthead.html",
@@ -162,9 +164,7 @@
       "memphis-local/topics/wedding-day-timelines.html",
       "memphis-local/topics/wedding-planning-tools.html",
       "memphis-local/topics/wedding-seating-charts.html",
-      "professional-resources/contributors.html",
-      "professional-resources/corrections.html",
-      "professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html"
+      "professional-resources/contributors.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

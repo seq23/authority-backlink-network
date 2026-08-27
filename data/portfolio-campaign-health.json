@@ -1,12 +1,12 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-08-26",
+  "as_of": "2026-08-27",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 26,
+      "rendered": 27,
       "live_verified": 26,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -45,7 +45,7 @@
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 52,
+      "rendered": 53,
       "live_verified": 52,
       "indexed": 0,
       "distinct_destinations": 6,
@@ -110,7 +110,7 @@
     {
       "campaign_id": "accident-guides-authority",
       "brand_id": "accident-guides",
-      "rendered": 9,
+      "rendered": 10,
       "live_verified": 9,
       "indexed": 0,
       "distinct_destinations": 3,
@@ -188,7 +188,7 @@
     {
       "campaign_id": "approval-prep-authority",
       "brand_id": "approval-prep",
-      "rendered": 282,
+      "rendered": 288,
       "live_verified": 282,
       "indexed": 0,
       "distinct_destinations": 12,

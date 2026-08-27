@@ -465,7 +465,16 @@
     "b1eafe745293abe29b718d3175acb49ae603d94701bbe34757f4de055243cd0b",
     "a13566ae673a39ed24fedf7013a65aaa23abc0276aff927e64292d197daa2892",
     "021adb68d71176db67b97739ecd10fbdf7203afb1075771656538314d3b8ce06",
-    "284900b1d45547cce77f62af8058cb04fdb0ad6259004b0f6225d116d221dd90"
+    "284900b1d45547cce77f62af8058cb04fdb0ad6259004b0f6225d116d221dd90",
+    "d64c559eddef0446fc20685bab7f52e16aa4cba0fed204dfbbd7826dcab4c49b",
+    "12bae2182858db98f35cf0bfb00d0329e300a1a4cad4cd48e61e44c3c5150f7b",
+    "c7b71ea883ec054d9b2cb251b706d8c86e03d7b20bf08ff45fc5701aa31bf451",
+    "926f2168b22c4e43f4280bb82ab6c4dfaf363cf001c2770ff76dda5a5fa6e213",
+    "079cbbcd06def7faf15e6a6486edf8857b0b8490a6dcfdb19e154ed7ed20c3a5",
+    "b3a9d2d1e8f423747549b6793eca34dc6588fb2004993090c16011e7baf2e4ad",
+    "46ef4415279ef3ff6e765960aee7fd127957d24fb11fac9ab0480ae1820017d7",
+    "c463ba1992befcaa85b53f7c131e03c13dbeb0fefceb609c4d64960bd4c931b7",
+    "350821b3ff1af5464d3a52a647b36322fc4ab2a6d2bc4b5a6311f7f48320b702"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -932,7 +941,16 @@
     "079e37fe198e4b8af06ae50eb51c5a6096e35c8b9dd05bd06d4e6e8fa1c1a7ed",
     "2b57b716ce3480f8b3462c96aac40440b70f2ba81d289d5a6ebe3c9c96197ca4",
     "62a676b8e9f03549c7a7395b38444f1c679e150759214cb6e7211024348dc620",
-    "19e5695e7c3aeb52492d479d6282526a86943e83b2531798eb8968575c6d557c"
+    "19e5695e7c3aeb52492d479d6282526a86943e83b2531798eb8968575c6d557c",
+    "1e08bf39de4581c609febbdb2758660a2b0ef427b7d4111da65680c2a45471b4",
+    "a26fcaa3ab3b78b7f06b484f2bea4b8f299f0be97c60c2d452afc7114072d933",
+    "fb0d95bc7f103752aca79295d1d8938e938782a77b461c1031e26f7faaedbee7",
+    "f3e52f6765f1e0b0fb4382c99100bd439f9f6b84acb10719358305823a25e61b",
+    "bbc69989fa84636fdf85e125b848376ca49110cf6acb6aff84f3c4299b678fe3",
+    "af8299afce4d2940b803bddeda1eb45fa9ac158cc2388c17eadace2a6c230d3b",
+    "cc274b0036a73195e36483c2880647890f4aa136f383d2a008e8d4bf1dc19048",
+    "35e49ba74b59cc69c76add366906b4f2f6e38d8a15fd9bdcadf5fcea464b4abd",
+    "c121c93127aaf3289f971c5065017afeddbb427d6f4a6b9fef7f08df7548e314"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1399,7 +1417,16 @@
     "Rental Application Packet: Checklist-Driven Prep Guide Before You Book",
     "Executive Broadcast Planning: 2026-Ready Budget/Planning Note Before You Book",
     "Wedding Seating Chart: Human-First Budget/Planning Note For Careful Decision-Makers",
-    "Proof Of Income Documents: Human-First Framework When You Need To Ask Better Questions"
+    "Proof Of Income Documents: Human-First Framework When You Need To Ask Better Questions",
+    "Identity Records Explanation: No-Fluff Timeline Guide When You Need To Ask Better Questions",
+    "Income Change Explanation: Citation-Friendly Budget/Planning Note Before You Sign",
+    "Cash Flow Explanation: Resource-Backed Question Checklist Before You Book",
+    "Business Funding Packet: Aeo-Ready Faq Answer Page When You Are Comparing Options",
+    "Letters Of Explanation: Aeo-Ready Local/Resource Directory Before You Choose",
+    "Business Ownership Documents: Plain-English Mistakes To Avoid For People Who Need A Starting Point",
+    "Automation Without Chaos: Low-Risk Operator Playbook Before You Sign",
+    "Wedding Checklist Planning: Beginner-Safe Comparison Guide When You Are Comparing Options",
+    "Horse Contract Preparation: Geo-Ready Red-Flag Checklist For Busy Operators"
   ],
   "history": [
     {
@@ -3054,6 +3081,36 @@
         80,
         80,
         80
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "release_date": "2026-08-27",
+      "day_index": 62,
+      "target_volume": 9,
+      "generated": 9,
+      "published": 9,
+      "scores": [
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88,
+        88
       ],
       "duplicate_warnings": 0,
       "hard_fails": 0,
