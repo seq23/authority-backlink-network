@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "measurement": "internal-click-depth-from-homepage",
+  "max_depth_policy": null,
+  "publications": [
+    {
+      "publication": "founder",
+      "working_domain": "founderoperatorlibrary.com",
+      "pages": 96,
+      "reachable": 96,
+      "orphans": 0,
+      "orphan_pct": 0.0,
+      "max_depth": 2,
+      "depth_histogram": {
+        "0": 1,
+        "1": 22,
+        "2": 73
+      },
+      "beyond_depth_3": 0,
+      "beyond_depth_3_sample": [],
+      "orphan_sample": [],
+      "broken_internal_links": [],
+      "broken_internal_link_count": 0
+    },
+    {
+      "publication": "memphis",
+      "working_domain": "memphisvendorlibrary.com",
+      "pages": 95,
+      "reachable": 95,
+      "orphans": 0,
+      "orphan_pct": 0.0,
+      "max_depth": 2,
+      "depth_histogram": {
+        "0": 1,
+        "1": 24,
+        "2": 70
+      },
+      "beyond_depth_3": 0,
+      "beyond_depth_3_sample": [],
+      "orphan_sample": [],
+      "broken_internal_links": [],
+      "broken_internal_link_count": 0
+    },
+    {
+      "publication": "professional",
+      "working_domain": "professionalresourcelibrary.com",
+      "pages": 402,
+      "reachable": 402,
+      "orphans": 0,
+      "orphan_pct": 0.0,
+      "max_depth": 2,
+      "depth_histogram": {
+        "0": 1,
+        "1": 37,
+        "2": 364
+      },
+      "beyond_depth_3": 0,
+      "beyond_depth_3_sample": [],
+      "orphan_sample": [],
+      "broken_internal_links": [],
+      "broken_internal_link_count": 0
+    }
+  ],
+  "totals": {
+    "pages": 593,
+    "orphans": 0,
+    "beyond_depth_3": 0
+  }
+}

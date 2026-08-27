@@ -486,6 +486,29 @@ footer a { color: var(--accent); }
   padding: 2px 6px;
 }
 
+/* ------------------------------------------- external citations and sources */
+
+/* Added on main alongside the external-sourcing work. Expressed here in this
+ * publication's own tokens rather than the hardcoded palette main used, which
+ * was written when all three sites shared one stylesheet. */
+.table-scroll { overflow-x: auto; margin: 20px 0; }
+
+.faq-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  margin-top: 14px;
+}
+.faq-item h3 { margin: 0 0 6px; }
+
+[data-block="external-citations"] li,
+[data-block="external-sources"] li { line-height: 1.55; }
+
+[data-block="external-citations"],
+[data-block="external-sources"] {
+  border-left: 3px solid var(--rule-strong);
+  padding-left: 16px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

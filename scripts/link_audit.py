@@ -21,7 +21,17 @@ for b in brands:
         brand_by_domain[d]=b
 publication_domains={norm_domain(p['working_domain']) for p in publications}
 target_domains=set(brand_by_domain)
-allowed_external=publication_domains|target_domains|{'schema.org'}
+# Verified outside authorities (data/external-sources.json). These are editorial
+# citations, not affiliated placements: they are deliberately outside
+# `affiliated_all`, so the sponsored+nofollow requirement below does not and must
+# not apply to them. Each cited URL still has to be one the registry verified.
+external_sources=json.loads((ROOT/'data/external-sources.json').read_text())
+external_source_urls={s['url'].rstrip('/'):s for s in external_sources['sources']}
+external_source_domains={norm_domain(s['url']) for s in external_sources['sources']}
+external_source_lanes={}
+for _s in external_sources['sources']:
+    external_source_lanes.setdefault(norm_domain(_s['url']),set()).update(_s['lanes'])
+allowed_external=publication_domains|target_domains|external_source_domains|{'schema.org'}
 allowed_by_pub={}
 for b in brands:
     for pub in b.get('approved_publications',[]): allowed_by_pub.setdefault(pub,set()).update(brand_domains(b))
@@ -42,6 +52,11 @@ for path in sorted((ROOT/'sites').rglob('*.html')):
         row={'source':rel,'publication':pub,'href':href,'domain':domain,'anchor':anchor,'external':href.startswith('http'),'violation':''}
         if row['external']:
             if domain not in allowed_external: row['violation']='external_domain_not_in_registry'; errors.append(row)
+            elif domain in external_source_domains:
+                if href.rstrip('/') not in external_source_urls:
+                    row['violation']='external_source_url_not_verified'; errors.append(row)
+                elif pub not in external_source_lanes[domain]:
+                    row['violation']='external_source_wrong_publication_lane'; errors.append(row)
             elif domain in target_domains and domain not in allowed_by_pub.get(pub,set()): row['violation']='target_domain_wrong_publication_lane'; errors.append(row)
             elif domain in target_domains:
                 brand=brand_by_domain[domain]; meta=approved_links(brand).get(href.rstrip('/'))

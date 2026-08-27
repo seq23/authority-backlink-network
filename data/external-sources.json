@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Registry of non-affiliated authoritative sources these publications are permitted to cite.",
+  "why": "Before this registry every outbound link on all three publications pointed at a domain inside the network, and all 543 affiliated links carry rel=\"sponsored nofollow\" by design. A publication that cites only itself and passes no equity looks exactly like a link farm and gives an answer engine no reason to treat it as a source. These entries are the outside evidence the pages stand on.",
+  "rules": {
+    "verification": "Every entry was fetched over the network and returned HTTP 200. An entry may not be added from memory. If a URL cannot be verified it is not listed, and the page states what is unknown instead of citing it.",
+    "no_rel_sponsored": "These are editorial citations, not affiliated placements. They must NOT carry rel=\"sponsored\" - that would misdeclare an unpaid citation of a government agency as a paid placement. The sponsored+nofollow rule applies to affiliated network targets only.",
+    "lane_separation": "A source may only be cited by the publications listed in its `lanes`. The professional publication additionally separates its subject areas, so `topics` are used to keep equine, workplace mental-health, immigration, and regulated-clinic material from citing each other's sources.",
+    "stability": "Entries use the URL the server actually resolved to, so a citation does not open on a redirect."
+  },
+  "publisher_types": {
+    "us_federal_agency": "A United States federal government agency or its consumer-facing service.",
+    "us_state_agency": "A state government department.",
+    "us_local_government": "A city or county government or its health department.",
+    "federal_regulation": "The regulation text itself, published by the government.",
+    "professional_association": "A national membership or credentialing body for a licensed profession.",
+    "standards_body": "An accredited standards-developing organization.",
+    "government_sponsored_enterprise": "A federally chartered secondary-market enterprise whose published guide sets the documentation requirements lenders apply."
+  },
+  "sources": [
+    {
+      "id": "uscis-i-693",
+      "domain": "uscis.gov",
+      "url": "https://www.uscis.gov/i-693",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "publisher_type": "us_federal_agency",
+      "title": "Report of Immigration Medical Examination and Vaccination Record",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "medical exam"
+      ],
+      "supports": "The form itself, its edition date, and who is required to complete each part."
+    },
+    {
+      "id": "uscis-find-civil-surgeon",
+      "domain": "uscis.gov",
+      "url": "https://www.uscis.gov/tools/find-a-civil-surgeon",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "publisher_type": "us_federal_agency",
+      "title": "Find a Civil Surgeon",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "medical exam"
+      ],
+      "supports": "The only authoritative way to confirm a clinician is a designated civil surgeon."
+    },
+    {
+      "id": "ecfr-8-232-1",
+      "domain": "ecfr.gov",
+      "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-232/section-232.1",
+      "publisher": "Office of the Federal Register",
+      "publisher_type": "federal_regulation",
+      "title": "eCFR :: 8 CFR 232.1 -- General",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "medical exam"
+      ],
+      "supports": "The regulation that requires the examination, rather than a description of it."
+    },
+    {
+      "id": "cfpb-credit-reports-and-scores",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Credit reports and scores",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute"
+      ],
+      "supports": "What a credit report contains and who is allowed to see it."
+    },
+    {
+      "id": "cfpb-dispute-credit-report-error",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "How do I dispute an error on my credit report?",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "letter"
+      ],
+      "supports": "The dispute route and the statutory investigation window."
+    },
+    {
+      "id": "cfpb-debt-to-income-ratio",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-en-1791/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "What is a debt-to-income ratio?",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "income",
+        "underwriting"
+      ],
+      "supports": "How debt-to-income is calculated and why an underwriter asks for the documents behind it."
+    },
+    {
+      "id": "cfpb-loan-estimate",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Loan estimate explainer",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "cost",
+        "closing"
+      ],
+      "supports": "The standardised disclosure that makes two mortgage offers comparable line by line."
+    },
+    {
+      "id": "cfpb-loan-options",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/owning-a-home/explore/understand-the-different-kinds-of-loans-available/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Understand the different kinds of loans available",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "comparison"
+      ],
+      "supports": "How loan types differ in the documentation they require."
+    },
+    {
+      "id": "annualcreditreport-official",
+      "domain": "annualcreditreport.com",
+      "url": "https://www.annualcreditreport.com/index.action",
+      "publisher": "Central Source LLC, the site directed by federal law",
+      "publisher_type": "us_federal_agency",
+      "title": "Annual Credit Report",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report"
+      ],
+      "supports": "The single site federal law directs consumers to for free reports from the three nationwide bureaus."
+    },
+    {
+      "id": "ftc-disputing-credit-report-errors",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/disputing-errors-your-credit-reports",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Disputing Errors on Your Credit Reports",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "letter"
+      ],
+      "supports": "What a dispute letter should contain and what the bureau owes the consumer in return."
+    },
+    {
+      "id": "ftc-free-credit-reports",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/free-credit-reports",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Free Credit Reports",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "cost"
+      ],
+      "supports": "Which reports are free and which sites charge for them."
+    },
+    {
+      "id": "samhsa-national-helpline",
+      "domain": "samhsa.gov",
+      "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "publisher": "Substance Abuse and Mental Health Services Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "National Helpline",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "recovery",
+        "mental health",
+        "workplace"
+      ],
+      "supports": "A free, confidential, 24/7 federal referral line, named instead of implying this publication can refer anyone."
+    },
+    {
+      "id": "narr-standards",
+      "domain": "narronline.org",
+      "url": "https://narronline.org/standards/",
+      "publisher": "National Alliance for Recovery Residences",
+      "publisher_type": "professional_association",
+      "title": "Standards",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "recovery",
+        "recovery housing"
+      ],
+      "supports": "The published levels-of-support framework recovery residences are certified against."
+    },
+    {
+      "id": "ada-dental-insurance",
+      "domain": "ada.org",
+      "url": "https://www.ada.org/resources/practice/dental-insurance",
+      "publisher": "American Dental Association",
+      "publisher_type": "professional_association",
+      "title": "Dental Insurance",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "dental",
+        "dentist",
+        "cost",
+        "insurance"
+      ],
+      "supports": "How dental benefit plans are structured, which is what makes two treatment plan estimates differ."
+    },
+    {
+      "id": "ada-health-policy-institute",
+      "domain": "ada.org",
+      "url": "https://www.ada.org/resources/research/health-policy-institute",
+      "publisher": "American Dental Association",
+      "publisher_type": "professional_association",
+      "title": "Health Policy Institute",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "dental",
+        "dentist",
+        "cost",
+        "research"
+      ],
+      "supports": "The ADA's own research arm, for dental cost and utilisation data rather than a figure invented here."
+    },
+    {
+      "id": "aaoms",
+      "domain": "aaoms.org",
+      "url": "https://aaoms.org/",
+      "publisher": "American Association of Oral and Maxillofacial Surgeons",
+      "publisher_type": "professional_association",
+      "title": "AAOMS",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "dental",
+        "oral surgery",
+        "specialist"
+      ],
+      "supports": "The specialty body, for confirming what an oral and maxillofacial surgeon's scope actually is."
+    },
+    {
+      "id": "osha-workplace-stress",
+      "domain": "osha.gov",
+      "url": "https://www.osha.gov/workplace-stress",
+      "publisher": "Occupational Safety and Health Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Workplace Stress - Overview",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "workplace",
+        "burnout",
+        "mental health"
+      ],
+      "supports": "The federal workplace-safety framing of job stress, separate from clinical treatment."
+    },
+    {
+      "id": "eeoc-mental-health-rights",
+      "domain": "eeoc.gov",
+      "url": "https://www.eeoc.gov/laws/guidance/depression-ptsd-other-mental-health-conditions-workplace-your-legal-rights",
+      "publisher": "U.S. Equal Employment Opportunity Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Depression, PTSD, & Other Mental Health Conditions in the Workplace: Your Legal Rights",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "workplace",
+        "mental health",
+        "burnout",
+        "accommodation"
+      ],
+      "supports": "What an employee may be entitled to at work, which a wellbeing programme does not decide."
+    },
+    {
+      "id": "eeoc-disability-resources",
+      "domain": "eeoc.gov",
+      "url": "https://www.eeoc.gov/eeoc-disability-related-resources",
+      "publisher": "U.S. Equal Employment Opportunity Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "EEOC Disability-Related Resources",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "workplace",
+        "accommodation",
+        "neuro",
+        "evaluation"
+      ],
+      "supports": "The agency's own resource set on accommodation, for readers whose question is a rights question."
+    },
+    {
+      "id": "apa-testing-and-assessment",
+      "domain": "apa.org",
+      "url": "https://www.apa.org/topics/testing-assessment-measurement",
+      "publisher": "American Psychological Association",
+      "publisher_type": "professional_association",
+      "title": "Testing, Assessment, and Measurement",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "neuro",
+        "evaluation",
+        "psychological",
+        "assessment"
+      ],
+      "supports": "What standardised psychological assessment is and what it is not."
+    },
+    {
+      "id": "aacn-clinical-neuropsychology",
+      "domain": "theaacn.org",
+      "url": "https://theaacn.org/",
+      "publisher": "American Academy of Clinical Neuropsychology",
+      "publisher_type": "professional_association",
+      "title": "American Academy of Clinical Neuropsychology",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "neuro",
+        "evaluation",
+        "neuropsychological"
+      ],
+      "supports": "The board-certification body, for checking a neuropsychologist's credential rather than taking a claim on trust."
+    },
+    {
+      "id": "hud-rental-assistance",
+      "domain": "hud.gov",
+      "url": "https://www.hud.gov/topics/rental_assistance",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "publisher_type": "us_federal_agency",
+      "title": "Rental Assistance",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "rental",
+        "housing",
+        "application"
+      ],
+      "supports": "Federal rental assistance programmes, for readers whose real constraint is cost rather than paperwork."
+    },
+    {
+      "id": "hud-fair-housing",
+      "domain": "hud.gov",
+      "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "publisher_type": "us_federal_agency",
+      "title": "Fair Housing and Equal Opportunity",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "rental",
+        "housing",
+        "application",
+        "denial"
+      ],
+      "supports": "Where a rental denial that looks discriminatory is actually reported."
+    },
+    {
+      "id": "fannie-mae-selling-guide",
+      "domain": "selling-guide.fanniemae.com",
+      "url": "https://selling-guide.fanniemae.com/",
+      "publisher": "Fannie Mae",
+      "publisher_type": "government_sponsored_enterprise",
+      "title": "Selling Guide",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "underwriting",
+        "letter",
+        "income"
+      ],
+      "supports": "The published guide underwriters work from, which is why lenders ask for the documents they ask for."
+    },
+    {
+      "id": "american-horse-council",
+      "domain": "horsecouncil.org",
+      "url": "https://horsecouncil.org/",
+      "publisher": "American Horse Council",
+      "publisher_type": "professional_association",
+      "title": "The American Horse Council",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "equine",
+        "horse",
+        "boarding",
+        "liability"
+      ],
+      "supports": "The national industry body, for state equine-activity statutes that differ by state."
+    },
+    {
+      "id": "nist-ai-rmf",
+      "domain": "nist.gov",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "publisher": "National Institute of Standards and Technology",
+      "publisher_type": "us_federal_agency",
+      "title": "AI Risk Management Framework",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "ai",
+        "risk",
+        "governance",
+        "delegation"
+      ],
+      "supports": "A published, non-commercial framework for governing AI use, instead of a vendor's own maturity model."
+    },
+    {
+      "id": "nist-ai-rmf-development",
+      "domain": "nist.gov",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+      "publisher": "National Institute of Standards and Technology",
+      "publisher_type": "us_federal_agency",
+      "title": "AI RMF Development",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "ai",
+        "risk",
+        "governance"
+      ],
+      "supports": "How the framework was developed, for readers checking whether it is a real standard."
+    },
+    {
+      "id": "irs-contractor-or-employee",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Independent contractor (self-employed) or employee?",
+      "lanes": [
+        "founder",
+        "professional"
+      ],
+      "topics": [
+        "hiring",
+        "contractor",
+        "team",
+        "cost",
+        "self-employed",
+        "business ownership"
+      ],
+      "supports": "The classification test itself, which decides the real cost of a lean team."
+    },
+    {
+      "id": "ftc-endorsement-guides",
+      "domain": "ftc.gov",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "FTC's Endorsement Guides: What People Are Asking",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "marketing",
+        "disclosure",
+        "endorsement",
+        "ai"
+      ],
+      "supports": "The disclosure rules any operator running affiliate or endorsement marketing is bound by."
+    },
+    {
+      "id": "sba-launch-your-business",
+      "domain": "sba.gov",
+      "url": "https://www.sba.gov/counseling/launch-your-business/",
+      "publisher": "U.S. Small Business Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Launch your business",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "founder",
+        "business",
+        "structure",
+        "compliance"
+      ],
+      "supports": "The federal small-business guidance a founder can act on without buying anything."
+    },
+    {
+      "id": "sba-manage-your-business",
+      "domain": "sba.gov",
+      "url": "https://www.sba.gov/counseling/manage-your-business/",
+      "publisher": "U.S. Small Business Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Manage your business",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "founder",
+        "operator",
+        "compliance",
+        "business"
+      ],
+      "supports": "Ongoing compliance obligations, which is the part an operating rhythm has to absorb."
+    },
+    {
+      "id": "esta-tsp",
+      "domain": "tsp.esta.org",
+      "url": "https://tsp.esta.org/tsp/index.html",
+      "publisher": "Entertainment Services and Technology Association",
+      "publisher_type": "standards_body",
+      "title": "ESTA Technical Standards Program",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "event production",
+        "rigging",
+        "staging",
+        "standards",
+        "safety"
+      ],
+      "supports": "The ANSI-accredited standards programme for entertainment rigging, power and staging."
+    },
+    {
+      "id": "fda-food-code",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/food/retail-food-protection/fda-food-code",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "FDA Food Code",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "food",
+        "catering",
+        "grazing table",
+        "safety",
+        "temperature"
+      ],
+      "supports": "The model code state and county food rules are written from, including time and temperature control for safety."
+    },
+    {
+      "id": "fda-refrigerator-thermometers",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Refrigerator Thermometers - Cold Facts about Food Safety",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "food",
+        "grazing table",
+        "safety",
+        "temperature"
+      ],
+      "supports": "Holding temperatures for cold food, which is the whole risk in a served grazing table."
+    },
+    {
+      "id": "memphis-city-government",
+      "domain": "memphistn.gov",
+      "url": "https://memphistn.gov/",
+      "publisher": "City of Memphis",
+      "publisher_type": "us_local_government",
+      "title": "The City of Memphis",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "permit",
+        "event",
+        "local"
+      ],
+      "supports": "The city itself, for permits and requirements that only the city can confirm."
+    },
+    {
+      "id": "shelby-county-health",
+      "domain": "shelbytnhealth.com",
+      "url": "https://www.shelbytnhealth.com/",
+      "publisher": "Shelby County Health Department",
+      "publisher_type": "us_local_government",
+      "title": "Shelby County Health Dept., TN",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "food",
+        "catering",
+        "permit",
+        "safety"
+      ],
+      "supports": "The county authority that actually permits and inspects food service in Memphis.",
+      "note": "Homepage only. Numeric deep links on this host were observed redirecting to unrelated pages, so only the root is cited."
+    },
+    {
+      "id": "tn-sales-and-use-tax",
+      "domain": "tn.gov",
+      "url": "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
+      "publisher": "Tennessee Department of Revenue",
+      "publisher_type": "us_state_agency",
+      "title": "Sales and Use Tax",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "cost",
+        "budget",
+        "tax",
+        "vendor"
+      ],
+      "supports": "Why a vendor quote and a final invoice differ, and who owes the tax."
+    },
+    {
+      "id": "nws-memphis",
+      "domain": "weather.gov",
+      "url": "https://www.weather.gov/meg/",
+      "publisher": "National Weather Service, Memphis",
+      "publisher_type": "us_federal_agency",
+      "title": "Memphis, TN",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "weather",
+        "outdoor",
+        "event",
+        "porch"
+      ],
+      "supports": "The local forecast office, for an outdoor event's actual weather risk."
+    },
+    {
+      "id": "noaa-climate-normals",
+      "domain": "ncei.noaa.gov",
+      "url": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "publisher_type": "us_federal_agency",
+      "title": "U.S. Climate Normals Quick Access",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "weather",
+        "outdoor",
+        "event",
+        "season",
+        "planning"
+      ],
+      "supports": "30-year climate normals, so a seasonal claim about Memphis can be checked rather than asserted."
+    },
+    {
+      "id": "avixa-standards",
+      "domain": "avixa.org",
+      "url": "https://www.avixa.org/resources/standards",
+      "publisher": "AVIXA",
+      "publisher_type": "standards_body",
+      "title": "Standards - Overview",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "event production",
+        "av",
+        "standards",
+        "broadcast",
+        "staging"
+      ],
+      "supports": "Published audiovisual standards, for what a competent AV or event production vendor works to."
+    },
+    {
+      "id": "avixa",
+      "domain": "avixa.org",
+      "url": "https://www.avixa.org/",
+      "publisher": "AVIXA",
+      "publisher_type": "professional_association",
+      "title": "AVIXA",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "event production",
+        "av",
+        "training",
+        "certification"
+      ],
+      "supports": "The audiovisual industry trade association, for certification and training a vendor may hold."
+    },
+    {
+      "id": "copyright-office-ai",
+      "domain": "copyright.gov",
+      "url": "https://www.copyright.gov/ai/",
+      "publisher": "U.S. Copyright Office",
+      "publisher_type": "us_federal_agency",
+      "title": "Copyright and Artificial Intelligence",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "ai",
+        "copyright",
+        "content",
+        "delegation",
+        "marketing"
+      ],
+      "supports": "The Copyright Office's own material on AI, for questions about ownership of AI-assisted output."
+    },
+    {
+      "id": "nist-cybersecurity-framework",
+      "domain": "nist.gov",
+      "url": "https://www.nist.gov/cyberframework",
+      "publisher": "National Institute of Standards and Technology",
+      "publisher_type": "us_federal_agency",
+      "title": "Cybersecurity Framework",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "security",
+        "risk",
+        "governance",
+        "operations",
+        "systems"
+      ],
+      "supports": "A published framework for managing security risk, for operators handling client or customer data."
+    },
+    {
+      "id": "ftc-business-guidance",
+      "domain": "ftc.gov",
+      "url": "https://www.ftc.gov/business-guidance",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Business Guidance",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "marketing",
+        "advertising",
+        "disclosure",
+        "business",
+        "compliance"
+      ],
+      "supports": "Federal guidance on advertising and business practices that binds any operator marketing a service."
+    },
+    {
+      "id": "sba-loans",
+      "domain": "sba.gov",
+      "url": "https://www.sba.gov/loans/",
+      "publisher": "U.S. Small Business Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Loans",
+      "lanes": [
+        "founder",
+        "professional"
+      ],
+      "topics": [
+        "business",
+        "funding",
+        "loan",
+        "sba"
+      ],
+      "supports": "Federal small-business loan programmes and what each requires."
+    },
+    {
+      "id": "identitytheft-gov",
+      "domain": "identitytheft.gov",
+      "url": "https://www.identitytheft.gov/",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "IdentityTheft.gov",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "identity",
+        "credit",
+        "fraud",
+        "identity theft",
+        "records"
+      ],
+      "supports": "The federal one-stop resource the CFPB directs people to when a credit error results from identity theft."
+    },
+    {
+      "id": "cfpb-mortgages",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/consumer-tools/mortgages/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Mortgages",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "mortgage",
+        "loan",
+        "home",
+        "closing",
+        "application"
+      ],
+      "supports": "The agency's consumer mortgage resources, covering the process an application moves through."
+    },
+    {
+      "id": "fda-human-drug-compounding",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/drugs/guidance-compliance-regulatory-information/human-drug-compounding",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Human Drug Compounding",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "hormone",
+        "compounded",
+        "clinic",
+        "medication",
+        "wellness"
+      ],
+      "supports": "What compounded medications are and how they differ from FDA-approved drugs, for readers researching a wellness or hormone clinic."
+    },
+    {
+      "id": "uscourts",
+      "domain": "uscourts.gov",
+      "url": "https://www.uscourts.gov/",
+      "publisher": "Administrative Office of the U.S. Courts",
+      "publisher_type": "us_federal_agency",
+      "title": "United States Courts",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "court",
+        "legal",
+        "claim",
+        "dispute",
+        "records"
+      ],
+      "supports": "The federal judiciary's own site, for how court processes and records actually work."
+    },
+    {
+      "id": "tn-courts",
+      "domain": "tncourts.gov",
+      "url": "https://www.tncourts.gov/",
+      "publisher": "Tennessee Administrative Office of the Courts",
+      "publisher_type": "us_state_agency",
+      "title": "Tennessee State Courts",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "court",
+        "legal",
+        "tennessee",
+        "dispute",
+        "records"
+      ],
+      "supports": "The Tennessee state court system, for state-level procedure and self-help resources."
+    },
+    {
+      "id": "usps-mail-forwarding",
+      "domain": "usps.com",
+      "url": "https://www.usps.com/manage/forward.htm",
+      "publisher": "United States Postal Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Standard Forward Mail",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "address",
+        "residency",
+        "records",
+        "identity",
+        "moving"
+      ],
+      "supports": "The official change-of-address process, which is what an address-history gap usually needs to reconcile against."
+    },
+    {
+      "id": "tn-alcoholic-beverage-commission",
+      "domain": "tn.gov",
+      "url": "https://www.tn.gov/abc.html",
+      "publisher": "Tennessee Alcoholic Beverage Commission",
+      "publisher_type": "us_state_agency",
+      "title": "Alcoholic Beverage Commission",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "event",
+        "alcohol",
+        "permit",
+        "vendor",
+        "catering"
+      ],
+      "supports": "State licensing for serving alcohol at an event, which is a separate permission from a food permit."
+    },
+    {
+      "id": "tn-secretary-of-state-businesses",
+      "domain": "sos.tn.gov",
+      "url": "https://sos.tn.gov/businesses",
+      "publisher": "Tennessee Secretary of State",
+      "publisher_type": "us_state_agency",
+      "title": "Businesses",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "vendor",
+        "business",
+        "memphis",
+        "registration"
+      ],
+      "supports": "The state business register, for checking that a vendor is a registered entity."
+    },
+    {
+      "id": "tn-fire-prevention",
+      "domain": "tn.gov",
+      "url": "https://www.tn.gov/commerce/fire-prevention.html",
+      "publisher": "Tennessee State Fire Marshal's Office",
+      "publisher_type": "us_state_agency",
+      "title": "Tennessee Fire Prevention / State Fire Marshal's Office",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "event",
+        "venue",
+        "occupancy",
+        "safety",
+        "permit"
+      ],
+      "supports": "State fire prevention and codes, which govern occupancy limits and exits at an event venue."
+    },
+    {
+      "id": "memphis-public-libraries",
+      "domain": "memphislibrary.org",
+      "url": "https://www.memphislibrary.org/",
+      "publisher": "Memphis Public Libraries",
+      "publisher_type": "us_local_government",
+      "title": "Memphis Public Libraries",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "local",
+        "community",
+        "research"
+      ],
+      "supports": "A Memphis public institution, for local records and community resources."
+    },
+    {
+      "id": "fda-consumer-updates",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/consumers/consumer-updates",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Consumer Updates",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "clinic",
+        "wellness",
+        "treatment",
+        "medication",
+        "hormone"
+      ],
+      "supports": "The agency's consumer-facing updates, for claims made by wellness and treatment clinics."
+    }
+  ]
+}

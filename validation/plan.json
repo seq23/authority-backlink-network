@@ -23,6 +23,8 @@
       "social_contract",
       "content_pattern",
       "published_tree_purity",
+      "external_sources",
+      "click_depth",
       "analytics_separation"
     ],
     "release": [
@@ -42,6 +44,8 @@
       "social_contract",
       "content_pattern",
       "published_tree_purity",
+      "external_sources",
+      "click_depth",
       "analytics_separation"
     ],
     "full": [
@@ -62,6 +66,8 @@
       "cache_self_test",
       "content_pattern",
       "published_tree_purity",
+      "external_sources",
+      "click_depth",
       "analytics_separation"
     ],
     "cache-self-test": [
@@ -149,6 +155,14 @@
     "published_tree_purity": {
       "severity": "HARD_FAIL",
       "why": "sites/ is publicly fetchable and every AI crawler is allowed; an operator surface there discloses network operations regardless of its noindex meta."
+    },
+    "external_sources": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence. These publications now cite 34 outside domains, and the whole value of that is that the citations are real. This check fails if a registered source has no verification receipt, if its last fetch was not a 200, or if a citation's host disagrees with its registered domain. A fabricated government URL on a publication whose only asset is credibility is the worst failure available here, so it blocks. The network fetch is a separate opt-in flag; the blocking run is structural and offline."
+    },
+    "click_depth": {
+      "severity": "HARD_FAIL",
+      "rationale": "Broken required journeys. Orphan count correlates inversely with AI citations across the 9 measured properties: the most-cited property carries 3 orphans and every zero-citation property is heavily orphaned. All three publications currently measure 0 orphans at a maximum depth of 2, so blocking cannot regress a clean surface - it only stops the daily generator from silently reintroducing pages nothing links to."
     },
     "analytics_separation": {
       "severity": "HARD_FAIL",

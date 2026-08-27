@@ -53,7 +53,21 @@ ALL_PUBLICATION_DOMAINS = {d.replace('www.', '') for d in PUBLICATION_DOMAINS.va
 # Listed explicitly so the lock stays a real allowlist rather than being widened.
 INFRASTRUCTURE_DOMAINS = {'clarity.ms', 'www.clarity.ms'}
 
-ALLOWED_EXTERNAL_DOMAINS = ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS | INFRASTRUCTURE_DOMAINS
+# Verified non-affiliated authoritative sources, from data/external-sources.json.
+# Until these existed every outbound link on all three publications pointed at a
+# domain inside this network, which is what a link farm looks like from outside.
+# The lock is not widened to "any .gov": only registered URLs whose existence was
+# confirmed over the network by scripts/verify_external_sources.py may be cited,
+# and only from the publication lanes the registry names.
+external_sources = json.loads((ROOT / 'data/external-sources.json').read_text())
+EXTERNAL_SOURCE_BY_URL = {s['url'].rstrip('/'): s for s in external_sources['sources']}
+EXTERNAL_SOURCE_DOMAINS = {_early_norm_domain(s['url']) for s in external_sources['sources']}
+EXTERNAL_SOURCE_LANES = {}
+for _s in external_sources['sources']:
+    EXTERNAL_SOURCE_LANES.setdefault(_early_norm_domain(_s['url']), set()).update(_s['lanes'])
+
+ALLOWED_EXTERNAL_DOMAINS = (ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
+                            | INFRASTRUCTURE_DOMAINS | EXTERNAL_SOURCE_DOMAINS)
 
 ALLOWED_PUB_TARGETS = {}
 for b in brands:
@@ -79,6 +93,8 @@ REQUIRED_DISCLOSURE_SNIPPETS = [
 
 URL_RE = re.compile(r'https?://[^\s"\'<>]+')
 ANCHOR_RE = re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.I | re.S)
+# Same anchors, but keeping the whole opening tag so `rel` is inspectable.
+ANCHOR_TAG_RE = re.compile(r'<a\s+([^>]*?href="([^"]+)"[^>]*?)>(.*?)</a>', re.I | re.S)
 
 
 def norm_domain(url_or_domain: str) -> str:
@@ -180,6 +196,8 @@ for pub, folder in PUB_FOLDERS.items():
                 errors.append(f'{rel}: external domain not allowed by registry: {domain}')
             if domain in ALL_TARGET_DOMAINS and domain not in ALLOWED_PUB_TARGETS.get(pub, set()):
                 errors.append(f'{rel}: target domain {domain} is not allowed in {pub} publication')
+            if domain in EXTERNAL_SOURCE_DOMAINS and pub not in EXTERNAL_SOURCE_LANES[domain]:
+                errors.append(f'{rel}: external source domain {domain} is not registered for the {pub} lane')
 
         # Anchor checks only for outbound target links.
         outbound_targets = []
@@ -194,6 +212,27 @@ for pub, folder in PUB_FOLDERS.items():
 
         if len(outbound_targets) > 8:
             warnings.append(f'{rel}: high outbound-link count; review only if the page feels crowded')
+
+        # Citations of outside authorities. Two things have to hold or the
+        # citation is worse than none: the exact URL must be one that was
+        # actually fetched and verified, and it must not be declared sponsored.
+        # rel="sponsored" on a CFPB or USCIS page would tell a crawler this
+        # publication was paid to link to a federal agency, which is a false
+        # disclosure and undoes the reason for citing it.
+        for open_tag, href, anchor_html in ANCHOR_TAG_RE.findall(txt):
+            if not href.startswith('http'):
+                continue
+            if norm_domain(href) not in EXTERNAL_SOURCE_DOMAINS:
+                continue
+            if href.rstrip('/') not in EXTERNAL_SOURCE_BY_URL:
+                errors.append(f'{rel}: unverified external-source URL (not in data/external-sources.json): {href}')
+                continue
+            rel_match = re.search(r'rel="([^"]*)"', open_tag, re.I)
+            rel_tokens = {t.lower() for t in rel_match.group(1).split()} if rel_match else set()
+            if 'sponsored' in rel_tokens:
+                errors.append(f'{rel}: editorial citation must not be marked sponsored: {href}')
+            if not clean_anchor(anchor_html):
+                errors.append(f'{rel}: external-source citation has empty anchor text: {href}')
 
         # Generic product-aware routing. Metadata is structural; topic fit is warning-only.
         for domain, anchor, href in outbound_targets:
@@ -229,8 +268,12 @@ for pub, folder in PUB_FOLDERS.items():
                 warnings.append(f'{rel}: Approval Prep page should state the no-credit-repair boundary clearly')
 
         # YMYL/spam phrase check.
+        # Matched on word boundaries rather than as bare substrings: 'cure ' as a
+        # substring also fires on "obscure concern", "secure the venue" and
+        # "procure a permit", none of which is a health claim. The claim this
+        # rule exists to catch - "cure", "cures" - is still caught.
         for phrase in BANNED_PHRASES:
-            if phrase in lower:
+            if re.search(r'\b' + re.escape(phrase.strip()) + r'\b', lower):
                 # Footer says no fake rankings/reviews; that is allowed as a disclosure.
                 if phrase.startswith('fake') and 'no fake' in lower:
                     continue
