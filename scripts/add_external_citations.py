@@ -438,6 +438,137 @@ def index_hub_assignments() -> dict[str, int]:
     return counts
 
 
+# Where a subject is governed by one nameable instrument - a regulation, a
+# form, a handbook - the page says so in its own words rather than leaving the
+# reader to infer it from a list of links.
+#
+# The limit on this map is deliberate and it is a limit of evidence. Each note
+# states what a document *is*: its title, its publisher, and the subject it
+# governs. Every one of those titles was read off the document itself during
+# `verify_external_sources.py --network`, which stores the observed title in
+# the receipt. What a regulation *requires* is not asserted here, because the
+# fetch verified that the page exists and what it is called, not its contents.
+#
+# A subject whose sources are general agency landing pages gets no note. There
+# is nothing more to say about it than the citation list already says, and
+# saying it anyway would be padding.
+CLUSTER_INSTRUMENT: dict[str, str] = {
+    "debt validation letters":
+        "The instrument here is a regulation, not a template. 12 CFR 1006.34, "
+        "titled &ldquo;Notice for validation of debts&rdquo; and published by the "
+        "Office of the Federal Register, is the text that governs the validation "
+        "notice a collector owes you, so it is the thing to read before drafting "
+        "anything.",
+    "self-employed income explanation":
+        "Self-employment income reaches a lender as a tax form. The IRS publishes "
+        "Schedule C (Form 1040), &ldquo;Profit or Loss from Business (Sole "
+        "Proprietorship)&rdquo;, and an explanation letter is checked against the "
+        "figure that form already reports rather than replacing it.",
+    "cash flow explanation":
+        "Schedule C (Form 1040), the IRS form reporting profit or loss from a sole "
+        "proprietorship, is where a reviewer looks first. A narrative about cash "
+        "flow sits alongside that form; it does not stand in for it.",
+    "full approval prep bundle":
+        "FHA files are governed by a published handbook. HUD's Single Family "
+        "Housing Policy Handbook 4000.1 is the document that states what an FHA "
+        "file must contain, which is why two lenders can ask for the same paperwork.",
+    "application document checklists":
+        "A checklist assembled from experience and one assembled from HUD's Single "
+        "Family Housing Policy Handbook 4000.1 are different objects. The handbook "
+        "is published, so it can be checked.",
+    "mortgage explanation":
+        "Two published documents sit behind most mortgage paperwork: HUD's Single "
+        "Family Housing Policy Handbook 4000.1 for FHA files, and the CFPB's "
+        "closing disclosure explainer for the form that arrives before closing.",
+    "business ownership documents":
+        "Ownership paperwork now answers to a federal filing. FinCEN's Beneficial "
+        "Ownership Information Reporting programme is the requirement that "
+        "ownership records have to line up with, and FinCEN publishes it directly.",
+    "business funding documents":
+        "Beneficial Ownership Information Reporting, published by FinCEN, is the "
+        "federal filing a funding file is now expected to be consistent with.",
+    "business funding packet":
+        "A funding packet normally has to evidence an EIN. The IRS issues it and "
+        "publishes the official route to get one, which is the only place it comes "
+        "from.",
+    "proof of income letters":
+        "There is an official version of the income record. The IRS publishes tax "
+        "transcripts, and a transcript is a different object from a copy of a "
+        "return that an applicant assembles.",
+    "how to organize a proof-of-income packet":
+        "The IRS transcript service is the authoritative source for the tax records "
+        "a packet is built around, rather than a self-assembled copy.",
+    "income change explanation":
+        "A change in income is verified against records the IRS already holds. Its "
+        "transcript service is where the official version of those records comes "
+        "from.",
+    "job gap explanation":
+        "A gap is read against a documented earnings record. The IRS transcript "
+        "service publishes the official version of that record.",
+    "truthful document preparation":
+        "Truthfulness here has a reference point. The IRS transcript service holds "
+        "the official record a prepared document has to stay consistent with.",
+    "lender document request":
+        "A lender's request is rarely arbitrary. Fannie Mae's Selling Guide and the "
+        "IRS transcript service between them explain where most items on the list "
+        "come from.",
+    "large deposit explanation":
+        "A large deposit draws a question because of a reporting regime, not "
+        "suspicion of the individual. FinCEN, the Treasury bureau that administers "
+        "it, publishes that regime.",
+    "apartment application paperwork":
+        "A landlord does not see an application the way an applicant does. The "
+        "CFPB's page &ldquo;What is a tenant screening report?&rdquo; describes the "
+        "document that actually arrives on the other side.",
+    "rental history explanation":
+        "Rental history reaches a landlord through a tenant screening report. The "
+        "CFPB publishes what that report is and what an applicant may ask for.",
+    "apartment denial review":
+        "After a denial the relevant document is the tenant screening report. The "
+        "CFPB sets out what it contains and the applicant's right to see the one "
+        "used.",
+    "proof of income for renting":
+        "What a landlord receives is a tenant screening report, described by the "
+        "CFPB, rather than the packet an applicant hands over.",
+    "goodwill letters":
+        "Whether a mark is still worth writing about depends on time. The CFPB's "
+        "&ldquo;How long does information stay on my credit report?&rdquo; sets out "
+        "the reporting periods, and a goodwill letter cannot shorten them.",
+    "late payment explanation":
+        "The CFPB's &ldquo;How long does information stay on my credit report?&rdquo; "
+        "gives the reporting periods that decide whether a late payment is still on "
+        "the report at all.",
+    "how to explain a late payment":
+        "Before drafting, check whether the entry is still reportable. The CFPB "
+        "publishes how long information stays on a credit report.",
+    "credit report errors":
+        "An error and a stale-but-accurate entry are handled differently. The CFPB's "
+        "credit report answers and its page on how long information stays on a "
+        "report separate the two.",
+    "proof of residency letter":
+        "Address proof has a federal standard behind it. TSA publishes the REAL ID "
+        "requirements, which name the documents a compliant credential accepts.",
+    "address issue explanation":
+        "The REAL ID standard, published by TSA, is what decides which address "
+        "documents are accepted, so it is the reference an address explanation "
+        "works against.",
+    "name mismatch explanation":
+        "A name mismatch is resolved by replacing or correcting a vital record. "
+        "USAGov publishes the official replacement route for each one.",
+    "identity records explanation":
+        "USAGov publishes the official route for replacing lost or stolen ID "
+        "documents, which is where an identity record is corrected rather than "
+        "explained.",
+    "life admin letters":
+        "Most of these letters exist because a record needs replacing. USAGov "
+        "publishes the official replacement route for each vital document.",
+    "credit dispute letters":
+        "A dispute has a statutory route. The CFPB describes how to dispute an "
+        "error on a credit report, and the FTC publishes what a dispute letter "
+        "should contain.",
+}
+
+
 def choose_sources(rel_key: str, lane: str) -> tuple[list[dict], str]:
     """Sources for one page, from its recorded hub or its explicit entry."""
     cluster = _cluster_of_page.get(rel_key, "")
@@ -463,7 +594,8 @@ def choose_sources(rel_key: str, lane: str) -> tuple[list[dict], str]:
     return chosen, reason
 
 
-def render_block(sources: list[dict]) -> str:
+def render_block(sources: list[dict], instrument: str = "") -> str:
+    lead = f'<p class="instrument-note">{instrument}</p>' if instrument else ""
     items = "".join(
         f'<li><a href="{html.escape(s["url"], quote=True)}" '
         f'data-source="external-authority" rel="noopener">'
@@ -476,6 +608,7 @@ def render_block(sources: list[dict]) -> str:
         '<p>This page is general guidance. The authorities below publish the '
         'underlying requirements, and they are the place to confirm anything '
         'current before acting on it.</p>'
+        f'{lead}'
         f'<ul>{items}</ul>'
         '<p class="note">These sources are independent. They are not affiliated '
         'with this publication, nothing was paid for their inclusion, and their '
@@ -498,7 +631,8 @@ def process(path: Path, rel_key: str, lane: str, write: bool) -> tuple[str, list
             path.write_text(stripped, encoding="utf-8", newline="\n")
         return ("skipped", [])
 
-    block = render_block(sources)
+    block = render_block(sources, CLUSTER_INSTRUMENT.get(
+        _cluster_of_page.get(rel_key, ""), ""))
     boundary = BOUNDARY_RE.search(stripped)
     if boundary:
         updated = stripped[:boundary.start()] + block + "\n" + stripped[boundary.start():]
