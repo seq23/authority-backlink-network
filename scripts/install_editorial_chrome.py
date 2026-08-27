@@ -108,7 +108,7 @@ def render_footer(pub_title: str, domain: str, editor_addr: str) -> str:
     return (
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
-        f"<p>{esc(pub_title)} is published by Sequoia Taylor, who also owns several of "
+        f"<p>{esc(pub_title)} is published by S. L. Taylor, who also owns several of "
         f"the projects it cites. Those citations are labelled on the page and carry "
         f'<code>rel="sponsored nofollow"</code>, so they pass no ranking signal. '
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
