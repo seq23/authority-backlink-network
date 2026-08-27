@@ -41,6 +41,7 @@
     "validate:published-tree-purity": "python3 scripts/validators/validate_published_tree_purity.py",
     "measure:click-depth": "python3 scripts/measure_click_depth.py",
     "measure:duplication": "python3 scripts/measure_content_duplication.py",
+    "measure:affiliate-fit": "python3 scripts/measure_affiliate_topical_fit.py",
     "sources:verify": "python3 scripts/verify_external_sources.py",
     "sources:verify-network": "python3 scripts/verify_external_sources.py --network",
     "citations:apply": "python3 scripts/add_external_citations.py --write",
