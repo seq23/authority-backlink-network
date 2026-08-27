@@ -626,6 +626,9 @@ BREADCRUMB_RE = re.compile(r'<nav[^>]+data-nav="breadcrumb"[\s\S]*?</nav>\s*'
                            r'(?:<script type="application/ld\+json" data-nav="breadcrumb">'
                            r'[\s\S]*?</script>)?', re.I)
 RELATED_RE = re.compile(r'<nav[^>]+data-nav="related"[\s\S]*?</nav>', re.I)
+MORE_RE = re.compile(r'<nav[^>]+data-nav="more"[\s\S]*?</nav>', re.I)
+LIBRARY_RE = re.compile(r'<nav[^>]+data-nav="library"[\s\S]*?</nav>', re.I)
+LATEST_RE = re.compile(r'<nav[^>]+data-nav="latest"[\s\S]*?</nav>', re.I)
 TOPIC_INDEX_RE = re.compile(r'<section[^>]+data-nav="topic-index"[\s\S]*?</section>', re.I)
 LEGACY_HOME_LINK_RE = re.compile(
     r'<p><a href="\.\./index\.html">(?:&larr;|←)\s*Home</a></p>', re.I)
@@ -676,29 +679,135 @@ def related_html(heading: str, items: list[tuple[str, str]],
             f'<p><a href="{attr(hub_url)}">All {esc(hub_title.lower())}</a></p></nav>')
 
 
+def more_nav_html(pub_title: str, items: list[tuple[str, str, str]]) -> str:
+    """Pages from the publication's other hubs, named with the hub they sit in.
+
+    Only ever emitted for a page whose own hub is too small to offer a full set
+    of siblings - three of Memphis Vendor Library's seven hubs hold eight or nine
+    pages, so a reader there ran out of same-topic pages at seven and the page
+    landed under the density this repair exists to reach. Each entry says which
+    topic it comes from, so the block cannot be mistaken for more of the same
+    subject, and the pages are drawn in the publication's own running order from
+    the current page's position rather than sampled, so every page is reachable
+    from some other page and a rerun writes the same bytes.
+    """
+    if not items:
+        return ""
+    body = "".join(f'<li><a href="{attr(url)}">{esc(name)}</a>'
+                   f' <span class="note">{esc(hub)}</span></li>'
+                   for name, url, hub in items)
+    return ('<nav class="more" data-nav="more" aria-label="Elsewhere in this publication">'
+            f'<h2>Elsewhere in {esc(pub_title)}</h2><ul>{body}</ul></nav>')
+
+
+def library_nav_html(pub_title: str, home: str,
+                     hubs: list[tuple[str, str, int]],
+                     extras: list[tuple[str, str]],
+                     self_url: str = "", home_link: bool = True) -> str:
+    """The publication's own topic structure, as a nav on every page.
+
+    Why this exists
+    ---------------
+    Before it, a daily page carried six internal links: two crumbs and four
+    siblings. Median internal links out was 6 against the 17 the one property in
+    this estate that actually earns AI-assistant citations sustains. A page that
+    links only sideways inside its own hub gives a crawler - and a reader - no
+    route to the rest of the publication.
+
+    This is not an undifferentiated link dump. It is the same list the index
+    already publishes as "Browse by topic": one entry per hub in
+    `data/topic-taxonomy.json`, each carrying the number of pages behind it, plus
+    the publication's own standing overview pages. Every entry is a real section
+    of this publication, and the page the reader is on is never listed twice.
+
+    It lives inside <nav>, which `lastmod_ledger.content_hash()` and
+    `scripts/template_share.js` both strip - so adding it to 593 pages neither
+    collapses lastmod onto one build day nor inflates measured template share.
+    """
+    rows = []
+    for title, url, count in hubs:
+        if url == self_url:
+            continue
+        note = (f' <span class="note">{count} page{"s" if count != 1 else ""}</span>'
+                if count else "")
+        rows.append(f'<li><a href="{attr(url)}">{esc(title)}</a>{note}</li>')
+    for title, url in extras:
+        if url == self_url:
+            continue
+        rows.append(f'<li><a href="{attr(url)}">{esc(title)}</a></li>')
+    if not rows:
+        return ""
+    # `home_link=False` where the page already carries a home link in its
+    # breadcrumb or header nav. Repeating it renders the same URL twice on one
+    # page, which page_validation.py reports as DUPLICATE_EXTERNAL_LINK - these
+    # publications write internal links as absolute same-host URLs, so its
+    # outbound-link check sees them - and which buys no reachability either.
+    tail = (f'<p><a href="{attr(home)}">{esc(pub_title)} home</a></p>'
+            if home_link else "")
+    return ('<nav class="library" data-nav="library" aria-label="Browse this publication">'
+            f'<h2>Browse {esc(pub_title)}</h2><ul>{"".join(rows)}</ul>'
+            f'{tail}</nav>')
+
+
+def latest_nav_html(pub_title: str, items: list[tuple[str, str, str]],
+                    self_url: str = "") -> str:
+    """Most recently published pages, newest first, for publication-level pages.
+
+    Only ever used on the index, the about page and the standing overview pages -
+    the pages whose subject is the publication itself, where "what went up most
+    recently" is a genuine answer rather than filler. Daily pages get the related
+    nav instead, which is scoped to their own topic.
+
+    The date shown is the one already in the page's own URL slug. Nothing here is
+    computed, estimated or asserted beyond what the filename records.
+    """
+    rows = [f'<li><a href="{attr(url)}">{esc(title)}</a>'
+            f' <span class="note">{esc(date)}</span></li>'
+            for title, url, date in items if url != self_url]
+    if not rows:
+        return ""
+    return ('<nav class="latest" data-nav="latest" aria-label="Recently published">'
+            f'<h2>Recently published in {esc(pub_title)}</h2>'
+            f'<ul>{"".join(rows)}</ul></nav>')
+
+
 def apply_page_navigation(text: str, breadcrumb: str, breadcrumb_schema: dict,
-                          related: str) -> str:
-    """Put the breadcrumb at the top of <main> and the related block at its end.
+                          related: str, more: str = "", library: str = "",
+                          latest: str = "") -> str:
+    """Put the breadcrumb at the top of <main> and the nav blocks at its end.
 
     Idempotent: an existing block with the same data-nav marker is replaced, and
     the legacy "<- Home" paragraph the three generators emitted is replaced by
     the breadcrumb rather than left above it.
     """
-    schema_tag = ('<script type="application/ld+json" data-nav="breadcrumb">'
-                  + json.dumps(breadcrumb_schema, ensure_ascii=False) + '</script>')
-    block = breadcrumb + schema_tag
+    # An empty breadcrumb means "this page does not take one" - the publication
+    # index is its own root. Emitting the block anyway would write a
+    # BreadcrumbList of `{}`, which is a schema error dressed as coverage.
+    if breadcrumb:
+        schema_tag = ('<script type="application/ld+json" data-nav="breadcrumb">'
+                      + json.dumps(breadcrumb_schema, ensure_ascii=False) + '</script>')
+        block = breadcrumb + schema_tag
 
-    if BREADCRUMB_RE.search(text):
-        text = BREADCRUMB_RE.sub(lambda _m: block, text, count=1)
-    elif LEGACY_HOME_LINK_RE.search(text):
-        text = LEGACY_HOME_LINK_RE.sub(lambda _m: block, text, count=1)
-    else:
-        text = re.sub(r"(<main[^>]*>)", lambda m: m.group(1) + block, text, count=1)
+        if BREADCRUMB_RE.search(text):
+            text = BREADCRUMB_RE.sub(lambda _m: block, text, count=1)
+        elif LEGACY_HOME_LINK_RE.search(text):
+            text = LEGACY_HOME_LINK_RE.sub(lambda _m: block, text, count=1)
+        else:
+            text = re.sub(r"(<main[^>]*>)", lambda m: m.group(1) + block, text, count=1)
 
     if RELATED_RE.search(text):
         text = RELATED_RE.sub(lambda _m: related, text, count=1)
     elif related:
         text = re.sub(r"(</article>)", lambda m: m.group(1) + related, text, count=1)
+
+    # The two publication-level blocks go last, in a fixed order, so a rerun over
+    # an already-navigated page produces the same bytes.
+    for pattern, block in ((MORE_RE, more), (LIBRARY_RE, library),
+                           (LATEST_RE, latest)):
+        if pattern.search(text):
+            text = pattern.sub(lambda _m: block, text, count=1)
+        elif block:
+            text = re.sub(r"(</main>)", lambda m: block + m.group(1), text, count=1)
     return text
 
 
@@ -755,7 +864,8 @@ HUB_BOUNDARY = ("This page is informational. It is not legal, medical, mental-he
 
 
 def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
-                     members: list[dict], siblings: list[tuple[str, str]]) -> str:
+                     members: list[dict], siblings: list[tuple[str, str]],
+                     overviews: list[tuple[str, str]] | None = None) -> str:
     """A topic hub: the page that gives every member page a path in.
 
     A hub is only ever written for a topic that has members. An empty one would
@@ -796,12 +906,28 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
         f'<p><a href="{attr(home)}">{esc(pub_title)} home</a></p></nav>'
     ) if others else ""
 
+    # The publication's standing overview pages. A hub of eight members sat at 15
+    # internal links out - its members, its sibling hubs and home - which is
+    # under the density this repair targets, and the overview pages cover the
+    # same subjects the small hubs do. They are named here rather than padded
+    # into the member list, which stays exactly the hub's own pages.
+    overview_block = library_nav_html(pub_title, home, [], overviews or [],
+                                      self_url=url, home_link=False)
+
     trail = [(pub_title, home), (title, url)]
     schema = {
         "@context": "https://schema.org",
         "@graph": [
+            # The publisher node is not decoration. Organization schema was
+            # present on 95% of this publication's pages and absent from exactly
+            # the hubs, because a hub is composed here rather than by the daily
+            # generator that emits an Article with an Organization author. Named
+            # from data/publications.json; nothing is invented.
+            {"@type": "Organization", "name": pub_title, "url": home,
+             "@id": home + "#publisher", "description": pub.get("mission", "")},
             {"@type": "CollectionPage", "name": title, "url": url, "@id": url,
              "description": hub["summary"],
+             "publisher": {"@id": home + "#publisher"},
              "isPartOf": {"@type": "WebSite", "name": pub_title, "url": home},
              "mainEntity": {"@type": "ItemList", "numberOfItems": len(members),
                             "itemListElement": [
@@ -854,7 +980,7 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
         f'and labels them. It publishes no rankings, no awards, and no paid placement '
         f'presented as editorial. {esc(HUB_BOUNDARY)}</p>'
         '</article>'
-        + other_block +
+        + other_block + overview_block +
         '</main>\n'
         f'<footer><p>&copy; 2026 {esc(pub_title)}. Affiliation disclosed. No fake '
         'rankings. No paid placement unless clearly labeled.</p></footer>\n'

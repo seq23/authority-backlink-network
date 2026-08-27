@@ -234,6 +234,10 @@ def rebuild(write: bool) -> dict:
         known.add("index.html")
 
         # -- hub pages
+        hub_overviews = [(t, u) for t, u, _r in
+                         overview_pages(source, domain,
+                                        {row["rel"] for rs in members.values()
+                                         for row in rs}, hubs)]
         for hub in hubs:
             page = page_composer.compose_hub_page(
                 hub=hub,
@@ -244,8 +248,40 @@ def rebuild(write: bool) -> dict:
                 members=members[hub["slug"]],
                 siblings=[(h["title"], hub_urls[h["slug"]]) for h in hubs
                           if h["slug"] != hub["slug"]],
+                overviews=hub_overviews,
             )
             written += write_if_changed(source / "topics" / f'{hub["slug"]}.html', page, write)
+
+        # -- the publication-level furniture every page can carry
+        hub_rows = [(h["title"], hub_urls[h["slug"]], len(members[h["slug"]]))
+                    for h in hubs]
+        member_rels = {row["rel"] for rows in members.values() for row in rows}
+        overviews = overview_pages(source, domain, member_rels, hubs)
+        about = [(t, u) for t, u, r in overviews if r == "about.html"]
+        # On a daily page the library nav names the hubs and the about page: the
+        # publication's structure, not a copy of its whole page list. The standing
+        # overview pages are named on the publication-level pages, which is where
+        # a reader browsing the publication rather than a topic actually is.
+        # No home link in the block: every page that carries it already links
+        # home from its breadcrumb or its header nav. And one nav per hub, each
+        # omitting that hub: the page's breadcrumb already links its own hub with
+        # the same anchor text, and validation/repair.py answers an exact
+        # (href, anchor) repeat by deleting the second anchor outright - which
+        # silently un-linked 543 pages and put the rebuild and the repair pass
+        # into a loop, each undoing the other.
+        daily_library = {
+            hub["slug"]: page_composer.library_nav_html(
+                pub["title"], home, hub_rows, about, home_link=False,
+                self_url=hub_urls[hub["slug"]])
+            for hub in hubs}
+        latest_rows = recent_pages(members)
+
+        # The publication's whole running order, for topping up a hub too small
+        # to offer a full set of siblings.
+        library_order = [(h["slug"], h["title"], row)
+                         for h in hubs for row in members[h["slug"]]]
+        position = {(slug, r["rel"]): i
+                    for i, (slug, _t, r) in enumerate(library_order)}
 
         # -- breadcrumbs and sibling links on every member page
         for hub in hubs:
@@ -253,10 +289,14 @@ def rebuild(write: bool) -> dict:
             for index, row in enumerate(rows):
                 path = source / row["rel"]
                 text = path.read_text(encoding="utf-8", errors="ignore")
+                before = link_targets(text)
                 trail = [(pub["title"], home), (hub["title"], hub_urls[hub["slug"]]),
                          (row["title"] or hub["title"], row["url"])]
-                related = [(other["title"], other["url"])
-                           for other in neighbours(rows, index)]
+                siblings = neighbours(rows, index)
+                related = [(other["title"], other["url"]) for other in siblings]
+                topup = cross_hub_topup(
+                    library_order, position[(hub["slug"], row["rel"])],
+                    hub["slug"], SIBLING_SPAN - len(siblings))
                 text = page_composer.apply_page_navigation(
                     text,
                     breadcrumb=page_composer.breadcrumb_html(trail),
@@ -264,16 +304,20 @@ def rebuild(write: bool) -> dict:
                     related=page_composer.related_html(
                         f'More on {hub["title"].lower()}', related,
                         hub["title"], hub_urls[hub["slug"]]),
+                    more=page_composer.more_nav_html(pub["title"], topup),
+                    library=daily_library[hub["slug"]],
                 )
                 text = set_canonical(text, row["url"])
                 text = normalize_internal_links(text, row["rel"], domain, known)
+                assert_no_links_lost(row["rel"], before, text)
                 written += write_if_changed(path, text, write)
 
         # -- canonical on every other publishable page, and the index's hub list
-        member_rels = {row["rel"] for rows in members.values() for row in rows}
+        overview_rels = {r for _t, _u, r in overviews}
         for rel, url, text in site_urls.published_pages(source, domain):
             if rel in member_rels:
                 continue
+            before = link_targets(text)
             updated = normalize_internal_links(set_canonical(text, url), rel, domain, known)
             if rel == "index.html":
                 updated = page_composer.apply_topic_index(
@@ -282,6 +326,28 @@ def rebuild(write: bool) -> dict:
                         pub["title"],
                         [(h["title"], hub_urls[h["slug"]], h["summary"],
                           len(members[h["slug"]])) for h in hubs]))
+                updated = page_composer.apply_page_navigation(
+                    updated, breadcrumb="", breadcrumb_schema={}, related="",
+                    library="",
+                    latest=page_composer.latest_nav_html(pub["title"], latest_rows))
+            elif rel in overview_rels:
+                # about.html and the standing overview pages carried a breadcrumb
+                # on none of them and six internal links each. They are two clicks
+                # from every hub now, and they say so in schema.
+                title = page_title(text) or pub["title"]
+                trail = [(pub["title"], home), (title, url)]
+                updated = page_composer.apply_page_navigation(
+                    updated,
+                    breadcrumb=page_composer.breadcrumb_html(trail),
+                    breadcrumb_schema=page_composer.breadcrumb_schema(trail),
+                    related="",
+                    library=page_composer.library_nav_html(
+                        pub["title"], home, hub_rows,
+                        [(t, u) for t, u, _r in overviews], self_url=url,
+                        home_link=False),
+                    latest=page_composer.latest_nav_html(pub["title"], latest_rows,
+                                                         self_url=url))
+            assert_no_links_lost(rel, before, updated)
             written += write_if_changed(source / rel, updated, write)
 
         receipt_pubs.append({
@@ -294,7 +360,11 @@ def rebuild(write: bool) -> dict:
             "pages_in_a_hub": sum(len(v) for v in members.values()),
         })
 
+    duplicate_anchor_pages = duplicate_anchor_audit()
+
     problems = {}
+    if duplicate_anchor_pages:
+        problems["pages_with_a_repeated_absolute_anchor"] = duplicate_anchor_pages[:20]
     if empty_hubs:
         problems["empty_hubs"] = empty_hubs
     if thin_hubs:
@@ -311,12 +381,159 @@ def rebuild(write: bool) -> dict:
     }
 
 
-def neighbours(rows: list[dict], index: int, span: int = 4) -> list[dict]:
+def overview_pages(source: Path, domain: str, member_rels: set[str],
+                   hubs: list[dict]) -> list[tuple[str, str, str]]:
+    """The publication-level pages: about, plus the standing overview pages.
+
+    Everything publishable that is not a daily page, not a topic hub, and not the
+    index. These are the pages whose subject is the publication rather than one
+    topic, so they are the ones that carry the full library nav and the recently
+    published list.
+    """
+    hub_rels = {f'topics/{h["slug"]}.html' for h in hubs}
+    out = []
+    for rel, url, text in site_urls.published_pages(source, domain):
+        if rel in member_rels or rel in hub_rels or rel == "index.html":
+            continue
+        if rel.startswith(("daily/", "topics/")):
+            continue
+        out.append((page_title(text) or rel, url, rel))
+    out.sort(key=lambda row: row[0].lower())
+    return out
+
+
+def recent_pages(members: dict[str, list[dict]], limit: int = 12
+                 ) -> list[tuple[str, str, str]]:
+    """The `limit` most recently published daily pages, newest first.
+
+    The date is read from the page's own filename, which every daily generator
+    writes as a `YYYY-MM-DD-` prefix. Pages without that prefix are skipped
+    rather than given a guessed date.
+    """
+    rows = []
+    for pages in members.values():
+        for row in pages:
+            stem = Path(row["rel"]).stem
+            match = DATE_PREFIX_RE.match(stem)
+            if match:
+                rows.append((match.group(0).rstrip("-"), row["title"], row["url"]))
+    rows.sort(key=lambda r: (r[0], r[1]), reverse=True)
+    return [(title, url, date) for date, title, url in rows[:limit]]
+
+
+ANY_ANCHOR_RE = re.compile(r'<a\b[^>]*?\bhref="([^"]+)"', re.I)
+
+
+def link_targets(text: str) -> set[str]:
+    """Every distinct href on the page.
+
+    Destinations, not anchor tags. The publications write internal links as
+    absolute `https://<domain>/...` URLs, so a scheme test cannot separate
+    internal from external and there is no reason to try: the invariant this
+    supports is that a navigation rebuild never costs the page a destination,
+    and that holds for every href on it.
+
+    Counting tags instead of destinations was wrong in one direction that
+    matters. Dropping a second, identical link to the same URL - the home link
+    the library nav repeated after the breadcrumb already carried it - lowers the
+    tag count while removing nothing a reader or a crawler can reach, and
+    page_validation.py reports that repeat as DUPLICATE_EXTERNAL_LINK.
+    """
+    return set(ANY_ANCHOR_RE.findall(text))
+
+
+def assert_no_links_lost(rel: str, before: set[str], after_text: str) -> None:
+    """A navigation pass may only add destinations. Abort rather than write a loss."""
+    lost = before - link_targets(after_text)
+    if lost:
+        raise SystemExit(
+            f"refusing to write {rel}: {len(lost)} link target(s) would be lost, "
+            f"first {sorted(lost)[:3]}. A navigation rebuild adds links; it never "
+            "removes one.")
+
+
+ABSOLUTE_ANCHOR_RE = re.compile(
+    r'<a\s+[^>]*href="(https?://[^"]+)"[^>]*>(.*?)</a>', re.I | re.S)
+
+
+def repeated_absolute_anchors(text: str) -> list[tuple[str, str]]:
+    """(href, anchor) pairs this page carries more than once.
+
+    `validation/page_audit.py` calls an exact repeat DUPLICATE_EXTERNAL_LINK and
+    `validation/repair.py` fixes it by deleting the second anchor tag and leaving
+    its text as bare words. That is a page silently losing a link, and because
+    this script would put the link straight back on the next run, the two passes
+    undo each other forever. So the rebuild does not emit one: every block that
+    can name a URL another block already names with the same words leaves it out.
+
+    Matches the audit's own key: href with any trailing slash dropped, anchor
+    text stripped of tags, whitespace-trimmed and lowercased.
+    """
+    seen: set[tuple[str, str]] = set()
+    repeats = []
+    for href, inner in ABSOLUTE_ANCHOR_RE.findall(text):
+        key = (href.rstrip("/"), re.sub(r"<[^>]+>", "", inner).strip().lower())
+        if key in seen:
+            repeats.append(key)
+        seen.add(key)
+    return repeats
+
+
+SIBLING_SPAN = 12
+
+
+def cross_hub_topup(library_order: list[tuple[str, str, dict]], position: int,
+                    own_slug: str, wanted: int) -> list[tuple[str, str, str]]:
+    """`wanted` pages from hubs other than `own_slug`, from `position` onward.
+
+    Returns (title, url, hub title). Empty when the page's own hub already
+    supplied a full set of siblings, which is the common case: this only fires
+    for hubs holding fewer than SIBLING_SPAN + 1 pages.
+    """
+    if wanted <= 0:
+        return []
+    out = []
+    total = len(library_order)
+    for offset in range(1, total):
+        slug, hub_title, row = library_order[(position + offset) % total]
+        if slug == own_slug:
+            continue
+        out.append((row["title"], row["url"], hub_title))
+        if len(out) == wanted:
+            break
+    return out
+
+
+def duplicate_anchor_audit() -> list[str]:
+    """Every publishable page that carries the same (href, anchor) twice.
+
+    Reported as a blocking problem in the receipt rather than left to be found
+    when the repair pass quietly deletes the second copy.
+    """
+    out = []
+    for pub in sorted(PUBLICATIONS, key=lambda p: p["id"]):
+        source = ROOT / pub["folder"]
+        domain = site_urls.domain_of(pub)
+        for rel, _url, text in site_urls.published_pages(source, domain):
+            repeats = repeated_absolute_anchors(text)
+            if repeats:
+                out.append(f'{pub["id"]}/{rel} :: {repeats[0][1]!r}')
+    return sorted(out)
+
+
+def neighbours(rows: list[dict], index: int, span: int = SIBLING_SPAN) -> list[dict]:
     """Up to `span` siblings around `index`, wrapping, never the page itself.
 
     Sequential neighbours rather than a random sample: adjacent rows share a
     cluster, so the links a reader is offered are the closest pages to the one
     they are on, and every page in the hub is linked from some other page in it.
+
+    `span` was 4, which held the daily pages at six internal links out - two
+    crumbs and four siblings. The one property in this estate that measurably
+    earns AI-assistant citations sustains a median of 17 and is almost entirely
+    free of orphans; 12 siblings plus the hub, the crumbs and the library nav is
+    what clears that bar without the block ceasing to be topical. Rows are sorted
+    by cluster, so the first neighbours are still same-cluster pages.
     """
     if len(rows) <= 1:
         return []
