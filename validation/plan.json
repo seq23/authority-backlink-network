@@ -25,6 +25,7 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
+      "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity"
     ],
@@ -47,6 +48,7 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
+      "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity"
     ],
@@ -70,6 +72,7 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
+      "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity"
     ],
@@ -166,6 +169,10 @@
     "click_depth": {
       "severity": "HARD_FAIL",
       "rationale": "Broken required journeys. Orphan count correlates inversely with AI citations across the 9 measured properties: the most-cited property carries 3 orphans and every zero-citation property is heavily orphaned. All three publications currently measure 0 orphans at a maximum depth of 2, so blocking cannot regress a clean surface - it only stops the daily generator from silently reintroducing pages nothing links to."
+    },
+    "nav_rebuild_after_publish": {
+      "severity": "HARD_FAIL",
+      "rationale": "Broken required journeys, and the one shape of that this gate could not see. build_site_navigation.py renders bounded navigation blocks - twelve siblings, twelve recent pages - and 3ce3dbb gave it an assertion that refused to write any page that lost a link. A bounded window over a growing library has to evict, so from the day both landed, every autopilot run that actually published something aborted the rebuild and left the new pages orphaned; run 33101813017 on 2026-08-27 is the first. Neither script is wrong alone and both pass on the committed tree, which is exactly why nothing here caught it: no check ran the workflow's own order, publish then rebuild. This one does, against a temporary copy with a synthetic new daily page in it, and requires the rebuild to complete, no eviction to leave a page unreached, and click depth to still measure zero orphans. It also fails if the fixture stops evicting anything, because a guard that no longer exercises its case is not a guard."
     },
     "analytics_separation": {
       "severity": "HARD_FAIL",
