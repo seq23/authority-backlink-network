@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T00:37:17.332Z",
+  "generated_at": "2026-08-27T16:17:05.796Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 590,
+  "pages_checked": 602,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -46,15 +46,15 @@
     {
       "id": "comparison_table",
       "blocking": false,
-      "pages_missing": 51,
-      "coverage_pct": 91.4,
+      "pages_missing": 60,
+      "coverage_pct": 90,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 503,
-      "coverage_pct": 14.7,
+      "pages_missing": 515,
+      "coverage_pct": 14.5,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
@@ -67,8 +67,8 @@
     {
       "id": "faq",
       "blocking": false,
-      "pages_missing": 47,
-      "coverage_pct": 92,
+      "pages_missing": 59,
+      "coverage_pct": 90.2,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -88,6 +88,8 @@
     "comparison_table": [
       "founder-operator/ai-executive-coaching-resources.html",
       "founder-operator/ai-marketing-operations-resources.html",
+      "founder-operator/contributors.html",
+      "founder-operator/corrections.html",
       "founder-operator/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
       "founder-operator/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
       "founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
@@ -96,23 +98,23 @@
       "founder-operator/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
       "founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
       "founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
+      "founder-operator/editorial-standards.html",
       "founder-operator/founder-execution-systems.html",
       "founder-operator/index.html",
       "founder-operator/virtual-event-production-buyers-guide.html",
+      "memphis-local/contributors.html",
+      "memphis-local/corrections.html",
       "memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
       "memphis-local/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
       "memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
       "memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
       "memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
       "memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-      "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
-      "memphis-local/index.html",
-      "memphis-local/memphis-grazing-table-resources.html",
-      "memphis-local/memphis-party-decor-vendors.html",
-      "memphis-local/memphis-porch-decorating-resources.html",
-      "memphis-local/seasonal-home-styling-memphis.html"
+      "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html"
     ],
     "concrete_numbers": [
+      "founder-operator/contributors.html",
+      "founder-operator/corrections.html",
       "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
       "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
       "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
@@ -135,37 +137,35 @@
       "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
       "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
-      "founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
-      "founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html"
+      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html"
     ],
     "named_sources": [],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",
       "founder-operator/ai-marketing-operations-resources.html",
+      "founder-operator/contributors.html",
+      "founder-operator/corrections.html",
+      "founder-operator/editorial-standards.html",
       "founder-operator/founder-execution-systems.html",
       "founder-operator/index.html",
+      "founder-operator/masthead.html",
       "founder-operator/topics/ai-execution-and-delegation.html",
       "founder-operator/topics/community-operations.html",
       "founder-operator/topics/founder-operating-rhythms.html",
       "founder-operator/topics/hiring-and-lean-team-stack.html",
       "founder-operator/topics/virtual-event-production.html",
       "founder-operator/virtual-event-production-buyers-guide.html",
+      "memphis-local/contributors.html",
+      "memphis-local/corrections.html",
+      "memphis-local/editorial-standards.html",
       "memphis-local/index.html",
+      "memphis-local/masthead.html",
       "memphis-local/memphis-grazing-table-resources.html",
       "memphis-local/memphis-party-decor-vendors.html",
       "memphis-local/memphis-porch-decorating-resources.html",
       "memphis-local/seasonal-home-styling-memphis.html",
       "memphis-local/topics/event-and-room-styling.html",
-      "memphis-local/topics/grazing-tables-and-vendors.html",
-      "memphis-local/topics/porch-and-seasonal-styling.html",
-      "memphis-local/topics/wedding-and-event-budgets.html",
-      "memphis-local/topics/wedding-day-timelines.html",
-      "memphis-local/topics/wedding-planning-tools.html",
-      "memphis-local/topics/wedding-seating-charts.html",
-      "professional-resources/dental-decision-resources.html",
-      "professional-resources/equine-legal-resource-library.html",
-      "professional-resources/hormone-wellness-clinic-research.html"
+      "memphis-local/topics/grazing-tables-and-vendors.html"
     ],
     "structured_data": []
   },
