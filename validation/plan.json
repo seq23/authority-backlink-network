@@ -27,7 +27,8 @@
       "click_depth",
       "nav_rebuild_after_publish",
       "analytics_separation",
-      "cadence_gate_integrity"
+      "cadence_gate_integrity",
+      "autopilot_cadence_cap"
     ],
     "release": [
       "json",
@@ -50,7 +51,8 @@
       "click_depth",
       "nav_rebuild_after_publish",
       "analytics_separation",
-      "cadence_gate_integrity"
+      "cadence_gate_integrity",
+      "autopilot_cadence_cap"
     ],
     "full": [
       "json",
@@ -74,7 +76,8 @@
       "click_depth",
       "nav_rebuild_after_publish",
       "analytics_separation",
-      "cadence_gate_integrity"
+      "cadence_gate_integrity",
+      "autopilot_cadence_cap"
     ],
     "cache-self-test": [
       "python",
@@ -181,6 +184,10 @@
     "cadence_gate_integrity": {
       "severity": "HARD_FAIL",
       "rationale": "A gate that cannot hold a verdict is false evidence about whether publishing is governed at all. cadence_gate.js used to rewrite the ledger it reads, so a blocked run cleared itself on the next invocation - observed as BLOCKED then CLEAR with nothing changed between them. That made the weekly publishing cap unenforceable while still reporting a status, which is worse than having no cap, because the green run was taken as proof. This blocks on the gate mutating its ledger, on two identical runs disagreeing, on no workflow invoking the gate, and on CI being able to run the acceptance path."
+    },
+    "autopilot_cadence_cap": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence about whether publishing is governed. data/cadence/policy.json declared 3 new pages per week and scripts/cadence_gate.js enforced it, while the autopilot published 9 a day - 63 a week, 21x the cap - and never met the gate, because git-auto-commit-action pushes with GITHUB_TOKEN and GitHub does not trigger workflows on those pushes. The cap was written down, validated, and structurally unreachable by the only process that could break it. This blocks if the generator stops consulting the declared allowance, applies it after generating rather than before, lets it exceed the cap, or stops reporting a zero-page day as the ordinary success it is."
     }
   },
   "severity_matrix_policy": {

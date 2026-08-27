@@ -106,6 +106,24 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CITATION_PROBE_MODE: grounded
         run: node scripts/llm_citation_probe.mjs --limit 25
+      # The cap is applied inside the generator, before anything is written.
+      # This is the second, independent check that it held - and the point where
+      # a publish that did stay inside the cap is recorded, so the ledger the
+      # gate measures against moves with the library instead of freezing and
+      # turning the cap into a ratchet.
+      #
+      # Ordering matters and is enforced by
+      # scripts/validators/validate_cadence_gate_integrity.js: an over-cap run
+      # fails at the gate and never reaches the accept step, so this cannot
+      # launder a violation. On a day with nothing to publish the accept is a
+      # no-op and says so.
+      - name: Cadence gate
+        run: npm run cadence:gate
+
+      - name: Record a cleared publish in the cadence baseline
+        run: |
+          npm run cadence:accept -- --reason "Authority V4.2 autopilot run ${{ github.run_id }} on $(date -u +%F): the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate."
+
       - name: Commit generated content, reports, and social ledger
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
