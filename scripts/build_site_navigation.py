@@ -201,6 +201,7 @@ def rebuild(write: bool) -> dict:
     unmapped_all: list[str] = []
     empty_hubs: list[str] = []
     thin_hubs: list[str] = []
+    stranded_all: list[str] = []
     written = 0
 
     for pub in sorted(PUBLICATIONS, key=lambda p: p["id"]):
@@ -233,6 +234,13 @@ def rebuild(write: bool) -> dict:
         known |= {f'topics/{h["slug"]}.html' for h in hubs}
         known.add("index.html")
 
+        # The rebuilt text of every page of this publication, and the pages a
+        # rotating nav block stopped naming. Both are read once the publication
+        # is fully rebuilt, to answer the one question the per-page assertion
+        # cannot: is an evicted page still reached from the index?
+        rendered: dict[str, str] = {}
+        evicted: set[str] = set()
+
         # -- hub pages
         hub_overviews = [(t, u) for t, u, _r in
                          overview_pages(source, domain,
@@ -250,6 +258,7 @@ def rebuild(write: bool) -> dict:
                           if h["slug"] != hub["slug"]],
                 overviews=hub_overviews,
             )
+            rendered[f'topics/{hub["slug"]}.html'] = page
             written += write_if_changed(source / "topics" / f'{hub["slug"]}.html', page, write)
 
         # -- the publication-level furniture every page can carry
@@ -289,7 +298,7 @@ def rebuild(write: bool) -> dict:
             for index, row in enumerate(rows):
                 path = source / row["rel"]
                 text = path.read_text(encoding="utf-8", errors="ignore")
-                before = link_targets(text)
+                before_text = text
                 trail = [(pub["title"], home), (hub["title"], hub_urls[hub["slug"]]),
                          (row["title"] or hub["title"], row["url"])]
                 siblings = neighbours(rows, index)
@@ -309,7 +318,9 @@ def rebuild(write: bool) -> dict:
                 )
                 text = set_canonical(text, row["url"])
                 text = normalize_internal_links(text, row["rel"], domain, known)
-                assert_no_links_lost(row["rel"], before, text)
+                evicted |= assert_no_links_lost(
+                    row["rel"], before_text, text, known, domain)
+                rendered[row["rel"]] = text
                 written += write_if_changed(path, text, write)
 
         # -- canonical on every other publishable page, and the index's hub list
@@ -317,7 +328,6 @@ def rebuild(write: bool) -> dict:
         for rel, url, text in site_urls.published_pages(source, domain):
             if rel in member_rels:
                 continue
-            before = link_targets(text)
             updated = normalize_internal_links(set_canonical(text, url), rel, domain, known)
             if rel == "index.html":
                 updated = page_composer.apply_topic_index(
@@ -347,14 +357,28 @@ def rebuild(write: bool) -> dict:
                         home_link=False),
                     latest=page_composer.latest_nav_html(pub["title"], latest_rows,
                                                          self_url=url))
-            assert_no_links_lost(rel, before, updated)
+            evicted |= assert_no_links_lost(rel, text, updated, known, domain)
+            rendered[rel] = updated
             written += write_if_changed(source / rel, updated, write)
+
+        # The other half of the link-loss invariant, answerable only now that
+        # every page of this publication has been rebuilt: a page a rotating nav
+        # block stopped naming has to still be reached from the index.
+        stranded = unreachable_after_rebuild(rendered, domain, evicted)
+        stranded_all += [f'{pub["id"]}/{rel}' for rel in stranded]
 
         receipt_pubs.append({
             "publication": pub["id"],
             "domain": domain,
             "hubs": len(hubs),
             "hub_members": {h["slug"]: len(members[h["slug"]]) for h in hubs},
+            # Pages a bounded nav block stopped naming this run, and how many of
+            # them nothing else in the publication reaches. The second number is
+            # the one that matters, and it is expected to be zero: every daily
+            # page is listed on its hub whether or not a sibling block still
+            # names it.
+            "nav_block_evictions": len(evicted),
+            "nav_block_evictions_left_unreachable": len(stranded),
             "smallest_hub": min(len(members[h["slug"]]) for h in hubs),
             "largest_hub": max(len(members[h["slug"]]) for h in hubs),
             "pages_in_a_hub": sum(len(v) for v in members.values()),
@@ -371,6 +395,8 @@ def rebuild(write: bool) -> dict:
         problems["hubs_below_minimum_members"] = thin_hubs
     if unmapped_all:
         problems["pages_with_no_hub"] = unmapped_all[:50]
+    if stranded_all:
+        problems["pages_a_nav_block_evicted_and_nothing_else_reaches"] = stranded_all[:50]
     return {
         "status": "FAIL" if problems else "PASS",
         "written": write,
@@ -424,32 +450,152 @@ def recent_pages(members: dict[str, list[dict]], limit: int = 12
 ANY_ANCHOR_RE = re.compile(r'<a\b[^>]*?\bhref="([^"]+)"', re.I)
 
 
-def link_targets(text: str) -> set[str]:
-    """Every distinct href on the page.
+# Every block this script owns is delimited by a `data-nav` attribute, which is
+# what makes the injection idempotent - see the module docstring. That same
+# marker is what separates a generated block from the page's own body, and both
+# halves are needed below, for different reasons.
+GENERATED_BLOCK_RE = re.compile(
+    r'<(nav|section|script)\b[^>]*\sdata-nav="[^"]*"[^>]*>[\s\S]*?</\1>', re.I)
 
-    Destinations, not anchor tags. The publications write internal links as
-    absolute `https://<domain>/...` URLs, so a scheme test cannot separate
-    internal from external and there is no reason to try: the invariant this
-    supports is that a navigation rebuild never costs the page a destination,
-    and that holds for every href on it.
 
-    Counting tags instead of destinations was wrong in one direction that
-    matters. Dropping a second, identical link to the same URL - the home link
-    the library nav repeated after the breadcrumb already carried it - lowers the
-    tag count while removing nothing a reader or a crawler can reach, and
-    page_validation.py reports that repeat as DUPLICATE_EXTERNAL_LINK.
+def without_generated_blocks(text: str) -> str:
+    """The page with every generator-owned region removed.
+
+    Two regions, not one. The `data-nav` blocks are the obvious ones. The other
+    is `<p><a href="../index.html">&larr; Home</a></p>`, which every daily
+    generator emits and which `apply_page_navigation` consumes and replaces with
+    the breadcrumb - so it is page_composer's to rewrite, and its own pattern is
+    reused here rather than restated, because two spellings of one region is how
+    a rule and its exception drift apart.
+
+    What is left is the page's own material: the article body, its editorial and
+    source links, and whatever chrome another generator installed. None of it is
+    this script's to touch, so none of it may lose a destination.
     """
-    return set(ANY_ANCHOR_RE.findall(text))
+    return page_composer.LEGACY_HOME_LINK_RE.sub(
+        "", GENERATED_BLOCK_RE.sub("", text))
 
 
-def assert_no_links_lost(rel: str, before: set[str], after_text: str) -> None:
-    """A navigation pass may only add destinations. Abort rather than write a loss."""
-    lost = before - link_targets(after_text)
-    if lost:
+def link_destinations(text: str, rel: str, known: set[str],
+                      domain: str) -> set[str]:
+    """Every place the page can take a reader, keyed by destination.
+
+    Destinations, not spellings. Comparing raw href strings was wrong in two
+    directions that both matter here:
+
+    * `normalize_internal_links` rewrites `foo.html` to `https://<domain>/foo` on
+      purpose, because that is the form the origin serves 200 for. The reader
+      ends up on the same page; only the spelling changed.
+    * Every daily generator emits `<p><a href="../index.html">&larr; Home</a></p>`
+      and `page_composer.apply_page_navigation` replaces that paragraph with the
+      breadcrumb, whose first crumb links the same home page absolutely. The
+      string `../index.html` disappears; the destination does not.
+
+    An internal href resolves through the same `resolve_href` the reachability
+    pass uses, so the two agree on what a link reaches. Anything that does not
+    resolve to a page of this publication - an off-site citation, a mailto, a
+    link to another property in the registry - keeps its literal href, which is
+    the only identity it has here.
+    """
+    out = set()
+    for href in ANY_ANCHOR_RE.findall(text):
+        target = resolve_href(href, rel, known, domain)
+        out.add(f"page:{target}" if target else f"href:{href}")
+    return out
+
+
+def assert_no_links_lost(rel: str, before_text: str, after_text: str,
+                         known: set[str], domain: str) -> set[str]:
+    """Abort on a lost editorial destination; return what a nav block evicted.
+
+    The first form of this check refused to write a page that lost any href at
+    all. That is one invariant too many - it is two invariants wearing one coat:
+
+    1. A navigation rebuild must never cost the page a destination the page
+       itself carried. Nothing here may reach into the article body, the source
+       citations, or another generator's chrome and take a link away. That is
+       absolute, it is still enforced by aborting before the write, and it is
+       enforced harder than before: the region is now compared against itself,
+       so a body link deleted while a navigation block happens to name the same
+       page still fails. The old page-wide comparison could not see that.
+
+    2. A `data-nav` block must never cost the *publication* a destination. But
+       these blocks are bounded windows over a growing library - twelve siblings
+       from `neighbours()`, twelve recent pages from `recent_pages()` - and a
+       bounded window over a growing set has to evict. Publishing the thirteenth
+       page into a hub necessarily pushes one page out of some other page's
+       sibling list. Forbidding that outright forbade publishing at all: the
+       daily autopilot wrote its pages and this pass then refused to link them
+       in, which is how the workflow went red on 2026-08-25 and 2026-08-27.
+
+    So an eviction from a generated block is not refused here. It is returned,
+    and `rebuild()` proves afterwards that the evicted page is still reached
+    from the publication's index - which is the property the assertion was
+    defending in the first place. A page a rotating block stopped naming that
+    nothing else reaches still fails the run, as a problem in the receipt rather
+    than a mid-write abort, because that verdict cannot be reached until the
+    whole publication has been rebuilt.
+
+    Anything lost that is not an internal page - an off-site citation dropped
+    out of a nav block - is treated as case 1 and aborts. No generated block
+    emits an external link, so by design that cannot happen; if it ever does,
+    the safe reading is that something outside this script's contract moved.
+    """
+    editorial = link_destinations(
+        without_generated_blocks(before_text), rel, known, domain)
+    fatal = sorted(editorial - link_destinations(
+        without_generated_blocks(after_text), rel, known, domain))
+    if fatal:
         raise SystemExit(
-            f"refusing to write {rel}: {len(lost)} link target(s) would be lost, "
-            f"first {sorted(lost)[:3]}. A navigation rebuild adds links; it never "
-            "removes one.")
+            f"refusing to write {rel}: {len(fatal)} link target(s) outside the "
+            f"generated navigation would be lost, first {fatal[:3]}. A "
+            "navigation rebuild adds links; it never removes one the page "
+            "itself carried.")
+
+    lost = (link_destinations(before_text, rel, known, domain)
+            - link_destinations(after_text, rel, known, domain))
+    off_site = sorted(t for t in lost if not t.startswith("page:"))
+    if off_site:
+        raise SystemExit(
+            f"refusing to write {rel}: {len(off_site)} off-site destination(s) "
+            f"would be lost from a generated block, first {off_site[:3]}. No "
+            "generated block emits one, so this is not a rotation.")
+    return {t[len("page:"):] for t in lost}
+
+
+def unreachable_after_rebuild(rendered: dict[str, str], domain: str,
+                              evicted: set[str]) -> list[str]:
+    """Which evicted pages the rebuilt publication no longer reaches.
+
+    Built from the rebuilt text held in memory rather than from disk, so the
+    answer is the same whether or not `--write` was passed and a dry run reports
+    the verdict the write would have produced.
+
+    Reachability is not reimplemented anywhere new: this walks the same
+    `resolve_href` edges as `reachability()` below and as
+    `scripts/measure_click_depth.py`, which is registered in validation/plan.json
+    as `click_depth` at HARD_FAIL and is the standing enforcement of this
+    property across the whole estate.
+    """
+    if not evicted:
+        return []
+    rels = set(rendered) | {"index.html"}
+    edges: dict[str, set[str]] = {}
+    for rel, text in rendered.items():
+        out = set()
+        for href in ANY_ANCHOR_RE.findall(text):
+            target = resolve_href(href, rel, rels, domain)
+            if target and target != rel:
+                out.add(target)
+        edges[rel] = out
+    seen = {"index.html"}
+    queue = deque(["index.html"])
+    while queue:
+        for target in edges.get(queue.popleft(), ()):
+            if target not in seen:
+                seen.add(target)
+                queue.append(target)
+    return sorted(t for t in evicted if t not in seen)
 
 
 ABSOLUTE_ANCHOR_RE = re.compile(
