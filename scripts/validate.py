@@ -37,6 +37,7 @@ COMMANDS = {
     "published_tree_purity": [sys.executable, "scripts/validators/validate_published_tree_purity.py"],
     "external_sources": [sys.executable, "scripts/verify_external_sources.py"],
     "click_depth": [sys.executable, "scripts/measure_click_depth.py", "--max-depth", "3"],
+    "analytics_separation": [sys.executable, "scripts/validators/validate_analytics_separation.py"],
 }
 
 

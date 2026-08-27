@@ -24,7 +24,8 @@
       "content_pattern",
       "published_tree_purity",
       "external_sources",
-      "click_depth"
+      "click_depth",
+      "analytics_separation"
     ],
     "release": [
       "json",
@@ -44,7 +45,8 @@
       "content_pattern",
       "published_tree_purity",
       "external_sources",
-      "click_depth"
+      "click_depth",
+      "analytics_separation"
     ],
     "full": [
       "json",
@@ -65,7 +67,8 @@
       "content_pattern",
       "published_tree_purity",
       "external_sources",
-      "click_depth"
+      "click_depth",
+      "analytics_separation"
     ],
     "cache-self-test": [
       "python",
@@ -160,6 +163,10 @@
     "click_depth": {
       "severity": "HARD_FAIL",
       "rationale": "Broken required journeys. Orphan count correlates inversely with AI citations across the 9 measured properties: the most-cited property carries 3 orphans and every zero-citation property is heavily orphaned. All three publications currently measure 0 orphans at a maximum depth of 2, so blocking cannot regress a clean surface - it only stops the daily generator from silently reintroducing pages nothing links to."
+    },
+    "analytics_separation": {
+      "severity": "HARD_FAIL",
+      "rationale": "Wrong-domain routing: a placeholder, missing, shared or cross-publication analytics id sends one publication's reader data into another's project."
     }
   },
   "severity_matrix_policy": {

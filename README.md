@@ -4,6 +4,9 @@ Authority Network is a multi-publication content and backlink-governance system.
 
 ## Start here
 
+- Editorial independence, contact setup and the contributor system: [`docs/EDITORIAL-INDEPENDENCE.md`](docs/EDITORIAL-INDEPENDENCE.md)
+- Plan for earning citations from parties the owner does not control: [`docs/EXTERNAL-AUTHORITY-PLAN.md`](docs/EXTERNAL-AUTHORITY-PLAN.md)
+
 - Plain-English system guide: [`docs/WHAT-THIS-SYSTEM-IS.md`](docs/WHAT-THIS-SYSTEM-IS.md)
 - Day-0 VA/operator guide: [`docs/DAY-0-VA-OPERATOR-GUIDE.md`](docs/DAY-0-VA-OPERATOR-GUIDE.md)
 - Validation/cache explanation: [`docs/VALIDATION-CACHE-PLAIN-ENGLISH.md`](docs/VALIDATION-CACHE-PLAIN-ENGLISH.md)

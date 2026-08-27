@@ -1,9 +1,42 @@
-# Citation-first crawl policy.
-# Search engines and AI answer engines are explicitly welcome on this site.
+# Professional Resource Library -- crawl policy
+# professionalresourcelibrary.com
+#
+# A carefully separated professional resource publication for regulated-service research, equine legal education, and workplace mental-health resources.
+#
+# Search engines and AI answer engines are explicitly welcome here.
 # The per-agent Allow groups below are deliberate: they override any
 # prepended blanket Disallow (e.g. Cloudflare managed robots.txt) for the
 # same agent, because merged same-name groups resolve equal-length
 # Allow/Disallow conflicts in favour of Allow.
+#
+# What is on this site:
+#   /topics/              16 topic hubs, one per subject area
+#     /topics/application-problems
+#     /topics/bank-statement-and-deposit-letters
+#     /topics/business-funding-documents
+#     /topics/credit-reports-and-disputes
+#     /topics/document-preparation
+#     /topics/equine-contracts
+#     /topics/identity-and-address-records
+#     /topics/income-and-employment-letters
+#     /topics/letters-of-explanation
+#     /topics/loan-application-packets
+#     /topics/loan-type-explanations
+#     /topics/proof-of-income-and-residency
+#     /topics/recovery-housing
+#     /topics/regulated-provider-research
+#     /topics/rental-applications
+#     /topics/workplace-mental-health
+#   /daily/               376 dated articles
+#   /                     20 standing pages
+#
+# Editorial governance (who is responsible, how to report an error):
+#   /masthead             ownership and the responsible editor
+#   /editorial-standards  sourcing, AI-use disclosure, conflicts of interest
+#   /corrections          corrections policy and the correction log
+#   /contributors         byline policy
+#
+# Machine-readable summary of this publication: https://professionalresourcelibrary.com/llms.txt
 
 User-agent: Googlebot
 Allow: /

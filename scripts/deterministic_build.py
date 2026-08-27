@@ -37,9 +37,15 @@ def render_404(source: Path, domain: str) -> str:
     index.html keeps the page on-brand without restating design tokens here.
     """
     index = (source / "index.html").read_text(encoding="utf-8", errors="ignore")
+    # The favicon is lifted alongside the stylesheet for the same reason: each
+    # publication now ships its own /favicon.svg, and rebuilding the head
+    # without it would strip the icon that install_editorial_chrome.py puts on
+    # every other page -- leaving the two scripts to fight over 404.html on
+    # alternate builds.
     styles = "\n".join(
         re.findall(r"<style[\s\S]*?</style>", index, re.I)
         + re.findall(r'<link[^>]+rel=["\']stylesheet["\'][^>]*>', index, re.I)
+        + re.findall(r'<link[^>]+rel=["\']icon["\'][^>]*>', index, re.I)
     )
     title_match = re.search(r"<title>([^<]*)</title>", index, re.I)
     site_name = re.split(r"\s+[|\u2014-]\s+", title_match.group(1))[0].strip() if title_match else domain

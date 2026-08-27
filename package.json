@@ -47,7 +47,12 @@
     "pages:demand-shapes": "python3 scripts/build_demand_shape_pages.py --write",
     "validate:external-sources": "python3 scripts/verify_external_sources.py",
     "validate:click-depth": "python3 scripts/measure_click_depth.py --max-depth 3",
-    "validate:demand-backed-pages": "python3 scripts/validate_demand_backed_pages.py"
+    "validate:demand-backed-pages": "python3 scripts/validate_demand_backed_pages.py",
+    "editorial:pages": "python3 scripts/build_editorial_pages.py --write",
+    "editorial:chrome": "python3 scripts/install_editorial_chrome.py --write",
+    "editorial:robots": "python3 scripts/build_robots.py --write",
+    "editorial:build": "python3 scripts/build_editorial_pages.py --write && python3 scripts/build_robots.py --write && python3 scripts/install_editorial_chrome.py --write",
+    "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py"
   },
   "devDependencies": {}
 }

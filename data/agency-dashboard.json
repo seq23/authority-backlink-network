@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 45,
+    "runtime_operators": 50,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -247,6 +247,30 @@
       "category": "Other"
     },
     {
+      "operator": "editorial:build",
+      "command": "npm run editorial:build",
+      "implementation": "python3 scripts/build_editorial_pages.py --write && python3 scripts/build_robots.py --write && python3 scripts/install_editorial_chrome.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "editorial:chrome",
+      "command": "npm run editorial:chrome",
+      "implementation": "python3 scripts/install_editorial_chrome.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "editorial:pages",
+      "command": "npm run editorial:pages",
+      "implementation": "python3 scripts/build_editorial_pages.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "editorial:robots",
+      "command": "npm run editorial:robots",
+      "implementation": "python3 scripts/build_robots.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "measure:click-depth",
       "command": "npm run measure:click-depth",
       "implementation": "python3 scripts/measure_click_depth.py",
@@ -292,6 +316,12 @@
       "operator": "validate:all",
       "command": "npm run validate:all",
       "implementation": "npm run validate:release && npm run validate:demand-backed-pages",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:analytics-separation",
+      "command": "npm run validate:analytics-separation",
+      "implementation": "python3 scripts/validators/validate_analytics_separation.py",
       "category": "Validation / release"
     },
     {

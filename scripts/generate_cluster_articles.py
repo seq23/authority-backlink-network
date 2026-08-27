@@ -49,18 +49,17 @@ CLARITY = json.loads((ROOT / "data/clarity_projects.json").read_text(encoding="u
 PUBLICATIONS = {p["id"]: p for p in json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))}
 BRANDS = {b["id"]: b for b in json.loads((ROOT / "data/brands.json").read_text(encoding="utf-8"))}
 
-# Table styling lives on the page rather than in the shared stylesheet: styles.css
-# is a published asset for 514 existing pages and this batch should not change how
-# any of them render.
-TABLE_CSS = (
-    "<style>"
-    ".ct-wrap{overflow-x:auto;margin:22px 0}"
-    ".ct{border-collapse:collapse;width:100%;font-size:15px;background:#fff}"
-    ".ct caption{caption-side:top;text-align:left;font-weight:700;padding:0 0 8px;color:#445}"
-    ".ct th,.ct td{border:1px solid #e5dac8;padding:9px 11px;text-align:left;vertical-align:top}"
-    ".ct thead th{background:#f2ece1}"
-    "</style>"
-)
+# Table styling used to live on the page, in an inline <style> block with the
+# warm palette (#e5dac8, #f2ece1) hardcoded into it. That was correct when all
+# three publications shared one byte-identical stylesheet; it is wrong now that
+# they do not, because an inline block outranks the linked sheet and would drag
+# the founder publication's old colours onto the Memphis and Professional sites.
+#
+# .ct-wrap, .ct and .ct caption are now defined in each site's own styles.css in
+# terms of that site's design tokens, and .ct th/.ct td inherit the generic
+# th/td rules there. scripts/install_editorial_chrome.py strips any surviving
+# copy of the old inline block, so this staying empty is load-bearing.
+TABLE_CSS = ""
 
 
 def esc(value: str) -> str:

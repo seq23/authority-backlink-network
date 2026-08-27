@@ -1,2 +1,495 @@
-:root{font-family:Inter,Arial,sans-serif;color:#162033;background:#f7f4ee}body{margin:0}header{padding:24px 7vw;background:#162033;color:white}header strong{display:block;font-size:22px;margin-bottom:12px}nav{display:flex;flex-wrap:wrap;gap:10px}nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:6px 10px;border-radius:999px;font-size:13px}main{max-width:900px;margin:0 auto;padding:48px 24px}h1{font-size:44px;line-height:1.05;margin:0 0 12px}.dek{font-size:20px;color:#445;line-height:1.5}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#7a6132;font-weight:700}.card{background:white;border:1px solid #e5dac8;border-radius:18px;padding:22px;margin:28px 0;box-shadow:0 10px 30px rgba(20,20,20,.05)}section{margin:32px 0}li{margin:10px 0;line-height:1.55}a{color:#7a3f00}.note{color:#7b6b59;font-size:90%}footer{padding:28px 7vw;background:#e9dfd0;color:#564b3e}
-table{border-collapse:collapse;width:100%;font-size:15px;background:white;border:1px solid #e5dac8;border-radius:10px;overflow:hidden}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #ece2d2;vertical-align:top}th{background:#f2ece1;font-weight:700}tr:last-child td{border-bottom:0}.table-scroll{overflow-x:auto;margin:16px 0}.faq-item{border-top:1px solid #e5dac8;padding-top:14px;margin-top:14px}.faq-item h3{margin:0 0 6px;font-size:17px}[data-block="external-citations"] li,[data-block="external-sources"] li{line-height:1.5}
+/* Memphis Vendor Library — "the city magazine"
+ *
+ * This publication is read by people planning a wedding, a party or a porch in
+ * one specific city. The identity is warm and editorial: an old-style serif for
+ * headlines, generous leading, a clay-and-river palette taken from the place
+ * rather than from a template, and soft geometry. It should read like a city
+ * magazine's vendor section, not like documentation.
+ *
+ * Sibling stylesheets: sites/founder-operator/styles.css (technical, grotesque,
+ * near-square) and sites/professional-resources/styles.css (institutional,
+ * rectangular, restrained). All three define the same token names and the same
+ * component class names, and share no values. Before this change all three
+ * publications were served a byte-identical stylesheet.
+ *
+ * No webfont is loaded — see the note in the founder stylesheet. The serif here
+ * is a system old-style stack, which is genuinely a different voice from the
+ * grotesque next door without adding a third-party request.
+ */
+
+:root {
+  /* Surfaces */
+  --bg: #fdfaf4;
+  --surface: #ffffff;
+  --surface-2: #f4ece0;
+  --surface-inset: #f7efe3;
+
+  /* Ink */
+  --ink: #2b211b;
+  --ink-strong: #1a120d;
+  --ink-muted: #6d5c50;
+  --ink-on-dark: #fdfaf4;
+  --ink-on-dark-muted: #d8c7b6;
+
+  /* Signal — clay is the brand, river is the second voice */
+  --accent: #a33f24;
+  --accent-soft: #f6e4dc;
+  --accent-ink: #7d2d16;
+  --river: #2c6675;
+  --flag: #2c6675;          /* disclosure / affiliation marker */
+  --flag-soft: #e4eef1;
+
+  /* Structure */
+  --rule: #e6d8c6;
+  --rule-strong: #c3ad94;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 8px rgba(80, 55, 35, .06);
+  --shadow-lift: 0 12px 32px rgba(80, 55, 35, .10);
+
+  /* Type — old-style serif display, humanist sans for running text */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+                  "Times New Roman", serif;
+  --font-body: "Seravek", "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+               source-sans-pro, system-ui, -apple-system, sans-serif;
+  --font-meta: var(--font-display);
+
+  --measure: 66ch;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1512;
+    --surface: #221b16;
+    --surface-2: #2c231d;
+    --surface-inset: #241d17;
+    --ink: #efe4d8;
+    --ink-strong: #fbf4ea;
+    --ink-muted: #b3a094;
+    --ink-on-dark: #efe4d8;
+    --ink-on-dark-muted: #b3a094;
+    --accent: #e08a68;
+    --accent-soft: #3a231a;
+    --accent-ink: #f0a586;
+    --river: #7cb6c4;
+    --flag: #7cb6c4;
+    --flag-soft: #16282d;
+    --rule: #362b23;
+    --rule-strong: #574538;
+    --shadow: 0 2px 8px rgba(0, 0, 0, .4);
+    --shadow-lift: 0 12px 32px rgba(0, 0, 0, .55);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------------------------------------------------------------- masthead */
+
+/* A magazine masthead: the name set large in the display serif, centred over a
+ * double rule, with the section links beneath in small caps. */
+header {
+  background: var(--surface-inset);
+  color: var(--ink);
+  padding: 26px 7vw 0;
+  border-bottom: 4px double var(--rule-strong);
+  text-align: center;
+}
+
+header > strong,
+.wordmark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.4vw, 30px);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -.01em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 22px;
+  margin-top: 14px;
+  padding-bottom: 14px;
+}
+
+header nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+}
+
+header nav a:hover,
+header nav a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ------------------------------------------------------------------ layout */
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+section { margin: 38px 0; }
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  font-weight: 600;
+  color: var(--ink-strong);
+  margin: 0 0 16px;
+  max-width: 20ch;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 27px;
+  line-height: 1.22;
+  font-weight: 600;
+  margin: 40px 0 12px;
+  color: var(--ink-strong);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 26px 0 8px;
+}
+
+p { max-width: var(--measure); margin: 0 0 16px; }
+
+/* The kicker above the headline, set in river blue small caps against the clay
+ * of the masthead. */
+.eyebrow {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-weight: 700;
+  color: var(--river);
+  margin: 0 0 12px;
+}
+
+.dek {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 52ch;
+  margin-bottom: 30px;
+}
+
+.note, .meta { font-size: 13.5px; color: var(--ink-muted); font-style: italic; }
+
+ul, ol { padding-left: 1.2em; max-width: var(--measure); }
+li { margin: 10px 0; }
+
+a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+
+:focus-visible { outline: 2px solid var(--river); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+/* ------------------------------------------------------- panels and blocks */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin: 32px 0;
+  box-shadow: var(--shadow-lift);
+}
+
+.info-panel {
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.info-panel h2 {
+  font-family: var(--font-body);
+  margin: 0 0 8px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+.recommendation-summary__answer {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink-strong);
+  margin: 0;
+}
+
+.topic-context {
+  border-left: 3px solid var(--rule-strong);
+  padding-left: 18px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* -------------------------------------------------------------- navigation */
+
+.breadcrumb { font-size: 13px; color: var(--ink-muted); margin-bottom: 26px; }
+.breadcrumb a { color: var(--ink-muted); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb__sep { color: var(--rule-strong); }
+
+.related, .library, .latest, .more {
+  margin: 46px 0 0;
+  padding: 24px 0 0;
+  border-top: 4px double var(--rule-strong);
+}
+
+.related h2, .library h2, .latest h2, .more h2 {
+  margin-top: 0;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+.related ul, .library ul, .latest ul, .more ul { list-style: none; padding-left: 0; max-width: none; }
+.related li, .library li, .latest li, .more li {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.latest li { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* ------------------------------------------------------------------ tables */
+
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; margin: 24px 0; }
+th, td { border: 1px solid var(--rule); padding: 11px 13px; text-align: left; vertical-align: top; }
+thead th {
+  background: var(--surface-2);
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.ct-wrap { overflow-x: auto; margin: 24px 0; }
+.ct { background: var(--surface); }
+.ct caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 18px;
+  padding: 0 0 10px;
+  color: var(--ink-muted);
+}
+
+.faq h3 { margin-top: 24px; }
+
+/* --------------------------------------------------- affiliate  disclosure */
+
+/* Set in river blue rather than in a warning colour. A reader planning a
+ * wedding should read this as the publication being straight with them, which
+ * is what it is. */
+.affiliate-disclosure {
+  margin: 30px 0;
+  padding: 18px 22px;
+  background: var(--flag-soft);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--flag);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.affiliate-disclosure > h2,
+.affiliate-disclosure > p:first-child > strong:first-child {
+  display: block;
+  margin: 0 0 8px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: var(--flag);
+}
+
+.affiliate-disclosure p { max-width: none; margin: 0 0 8px; }
+.affiliate-disclosure p:last-child { margin-bottom: 0; }
+.affiliate-disclosure a { color: var(--flag); }
+
+.affiliated-mark {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--flag);
+  background: var(--flag-soft);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------- bylines and  authors */
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 0 0 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.byline a { color: var(--ink); }
+.byline__role { font-style: italic; }
+.byline__sep { color: var(--rule-strong); }
+
+.author-card {
+  display: grid;
+  gap: 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  margin: 28px 0;
+}
+.author-card h2, .author-card h3 { margin: 0; font-size: 20px; }
+.author-card p { margin: 0; }
+.author-card__links { font-size: 14px; }
+
+/* ------------------------------------------------------------ policy pages */
+
+.policy dl { margin: 20px 0; }
+.policy dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-top: 18px;
+}
+.policy dd { margin: 5px 0 0; padding: 0; max-width: var(--measure); }
+
+.contact-block {
+  font-size: 16px;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.corrections-log { list-style: none; padding-left: 0; }
+.corrections-log > li { padding: 16px 0; border-bottom: 1px solid var(--rule); margin: 0; }
+.corrections-log time { font-size: 13px; color: var(--ink-muted); display: block; font-style: italic; }
+
+.empty-state {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink-muted);
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+footer {
+  background: var(--surface-inset);
+  color: var(--ink-muted);
+  padding: 40px 7vw 48px;
+  font-size: 14.5px;
+  border-top: 4px double var(--rule-strong);
+  text-align: center;
+}
+footer p { max-width: var(--measure); margin: 0 auto 10px; }
+footer a { color: var(--accent-ink); }
+
+.editorial-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 22px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+}
+.editorial-nav li { margin: 0; }
+
+/* ------------------------------------------------------------- 404 helpers */
+
+.nf-wrap { margin: 26px 0; }
+.nf-code {
+  font-family: var(--font-display);
+  font-size: 14px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+}
+
+/* ------------------------------------------- external citations and sources */
+
+/* Added on main alongside the external-sourcing work. Expressed here in this
+ * publication's own tokens rather than the hardcoded palette main used, which
+ * was written when all three sites shared one stylesheet. */
+.table-scroll { overflow-x: auto; margin: 20px 0; }
+
+.faq-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  margin-top: 14px;
+}
+.faq-item h3 { margin: 0 0 6px; }
+
+[data-block="external-citations"] li,
+[data-block="external-sources"] li { line-height: 1.55; }
+
+[data-block="external-citations"],
+[data-block="external-sources"] {
+  border-left: 3px solid var(--rule-strong);
+  padding-left: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  header, footer, .related, .library, .latest, .more { display: none; }
+  body { font-size: 11pt; }
+  .affiliate-disclosure { border: 1px solid #000; }
+}
