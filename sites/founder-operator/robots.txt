@@ -1,3 +1,77 @@
+# Citation-first crawl policy.
+# Search engines and AI answer engines are explicitly welcome on this site.
+# The per-agent Allow groups below are deliberate: they override any
+# prepended blanket Disallow (e.g. Cloudflare managed robots.txt) for the
+# same agent, because merged same-name groups resolve equal-length
+# Allow/Disallow conflicts in favour of Allow.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CloudflareBrowserRenderingCrawler
+Allow: /
+
 User-agent: *
 Allow: /
+
 Sitemap: https://founderoperatorlibrary.com/sitemap.xml
