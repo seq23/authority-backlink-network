@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 
 .validation-cache/
+
+# Owner-facing agency dashboard: generated, never published, never committed.
+reports/agency/

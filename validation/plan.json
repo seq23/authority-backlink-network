@@ -21,7 +21,8 @@
       "links",
       "recovery_agency",
       "social_contract",
-      "content_pattern"
+      "content_pattern",
+      "published_tree_purity"
     ],
     "release": [
       "json",
@@ -38,7 +39,8 @@
       "links",
       "recovery_agency",
       "social_contract",
-      "content_pattern"
+      "content_pattern",
+      "published_tree_purity"
     ],
     "full": [
       "json",
@@ -56,7 +58,8 @@
       "recovery_agency",
       "social_contract",
       "cache_self_test",
-      "content_pattern"
+      "content_pattern",
+      "published_tree_purity"
     ],
     "cache-self-test": [
       "python",
@@ -139,6 +142,10 @@
     "content_pattern": {
       "severity": "HARD_FAIL",
       "rationale": "A page that carries no direct answer, no query-bearing h1, an empty table cell, or no outbound editorial link cannot be quoted by an answer engine or returns nothing when it is. All four checks measure 100% across the 495 published pages, so blocking cannot regress a clean surface."
+    },
+    "published_tree_purity": {
+      "severity": "HARD_FAIL",
+      "why": "sites/ is publicly fetchable and every AI crawler is allowed; an operator surface there discloses network operations regardless of its noindex meta."
     }
   },
   "severity_matrix_policy": {

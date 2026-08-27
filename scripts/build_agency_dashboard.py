@@ -19,7 +19,12 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_OUT = ROOT / "data" / "agency-dashboard.json"
-PAGE_OUT = ROOT / "sites" / "founder-operator" / "agency" / "index.html"
+# The dashboard is OWNER-FACING ONLY. It must never be written into sites/, which is
+# the published tree: founderoperatorlibrary.com allows every AI crawler and carries no
+# Disallow rules, so anything under sites/ is publicly fetchable regardless of the page's
+# noindex meta. noindex keeps a page out of a search index; it does not make it private.
+PAGE_OUT = ROOT / "reports" / "agency" / "index.html"
+PUBLISHED_TREE = ROOT / "sites"
 REPORT_OUT = ROOT / "reports" / "agency-dashboard-build.json"
 AS_OF = os.getenv("PUBLIC_RELEASE_DATE") or os.getenv("BUILD_DATE") or date.today().isoformat()
 
@@ -347,7 +352,7 @@ def render_html(model: dict) -> str:
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive"><title>Authority Network Agency | Backlink Operations</title>
 <meta name="description" content="Owner operational view of Authority Network target URLs, editorial backlinks, publication operators, and canonical commands.">
-<link rel="canonical" href="https://founderoperatorlibrary.com/agency/"><link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css">
 <style>
 body{{background:#f4f1ea}} main.agency{{max-width:1500px;padding-top:32px}} .top{{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}} .top h1{{font-size:38px}} .badge{{display:inline-block;background:#162033;color:#fff;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em}} .truth{{background:#fff7dc;border:1px solid #ead28e;border-radius:12px;padding:14px 16px;max-width:950px}}
 .stats{{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}} .stat{{background:#fff;border:1px solid #ddd3c3;border-radius:14px;padding:16px}} .stat strong{{display:block;font-size:28px}} .stat span{{font-size:13px;color:#665b4f}}
@@ -377,6 +382,11 @@ const input=document.getElementById('filter'); input.addEventListener('input',()
 def main() -> None:
     model = build_model()
     write_json(DATA_OUT, model)
+    if PUBLISHED_TREE in PAGE_OUT.parents:
+        raise SystemExit(
+            "refusing to build the agency dashboard into the published tree: "
+            f"{PAGE_OUT.relative_to(ROOT).as_posix()}"
+        )
     PAGE_OUT.parent.mkdir(parents=True, exist_ok=True)
     PAGE_OUT.write_text(render_html(model), encoding="utf-8")
     receipt = {
