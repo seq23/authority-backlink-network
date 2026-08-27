@@ -1,0 +1,15 @@
+# The operator dashboard was published here by mistake and is now built to
+# reports/ instead (commit 7e48923). The asset is gone from this tree and the
+# validate:published-tree-purity check HARD_FAILs if it ever comes back, but a
+# deleted asset only 404s -- it does not stop the route from being re-created.
+#
+# Cloudflare Pages evaluates _redirects before asset lookup: "Redirects are
+# always followed, regardless of whether or not an asset matches the incoming
+# request." So this line makes /agency permanently non-serving at the origin
+# even if a future build drops a file back at that path.
+#
+# Pages _redirects supports only 301/302/303/307/308 -- 404 and 410 are not
+# valid status codes in this file -- so this is a 301 to the site root rather
+# than the 410 the route deserves. A Pages Function would be required for 410.
+/agency/* / 301
+/agency / 301
