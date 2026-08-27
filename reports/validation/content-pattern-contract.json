@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-26T21:45:42.370Z",
+  "generated_at": "2026-08-27T00:37:17.332Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 590,
@@ -53,8 +53,8 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 533,
-      "coverage_pct": 9.7,
+      "pages_missing": 503,
+      "coverage_pct": 14.7,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
@@ -113,8 +113,6 @@
       "memphis-local/seasonal-home-styling-memphis.html"
     ],
     "concrete_numbers": [
-      "founder-operator/ai-executive-coaching-resources.html",
-      "founder-operator/ai-marketing-operations-resources.html",
       "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
       "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
       "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
@@ -137,7 +135,9 @@
       "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
       "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html"
+      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html"
     ],
     "named_sources": [],
     "faq": [
