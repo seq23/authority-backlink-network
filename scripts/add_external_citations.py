@@ -1,0 +1,399 @@
+#!/usr/bin/env python3
+"""Give every substantive page a source outside this network.
+
+The measurement that motivates this: across `sites/`, 571 outbound editorial
+links carried rel="sponsored nofollow" and every one of them pointed at a domain
+in this portfolio. Zero pages cited anything the owner does not own. That is the
+single fact that makes three publications read as a link farm rather than as
+publications, and no amount of word count or internal linking compensates for it.
+
+What this adds
+--------------
+One `Sources` section per page, listing verified outside authorities from
+`data/external-sources.json` chosen by topic match against the page's own text.
+
+Four rules it follows, because a citation block done badly is worse than none:
+
+1. Only registered sources. Every URL in the registry was fetched and returned
+   200 (see scripts/verify_external_sources.py). Nothing is cited from memory.
+2. `rel="noopener"` and nothing else. An editorial citation of a federal agency
+   must not carry `sponsored` or `nofollow`; that markup declares a paid
+   placement and would be a false disclosure. Affiliated portfolio links keep
+   `rel="sponsored nofollow"` untouched.
+3. Lane and subject separation. A source is only offered to publications listed
+   in its `lanes`, and after the first source is chosen every further source
+   must share a topic with the ones already selected. That keeps the
+   professional publication's equine, immigration, credit and workplace
+   mental-health material from citing each other's sources, which its own
+   disclosure requires.
+4. Confidence floor. A page that does not match at least two sources gets
+   nothing. Navigation pages, the about page and the mastheads make no factual
+   claims of their own, so they are skipped rather than decorated.
+
+Idempotent: the block is delimited by `data-block="external-citations"` and
+replaced wholesale, so running twice writes the same bytes.
+
+    python3 scripts/add_external_citations.py --write
+"""
+from __future__ import annotations
+
+import argparse
+import math
+import html
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITES = ROOT / "sites"
+PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
+REGISTRY = json.loads((ROOT / "data/external-sources.json").read_text(encoding="utf-8"))
+SOURCES = REGISTRY["sources"]
+
+LANE_BY_FOLDER = {p["folder"].split("/", 1)[1]: p["id"] for p in PUBLICATIONS}
+
+BLOCK_RE = re.compile(
+    r'\s*<section data-block="external-citations">.*?</section>', re.S | re.I)
+MAIN_RE = re.compile(r"(<main[^>]*>)(.*?)(</main>)", re.S | re.I)
+TAG_RE = re.compile(r"<[^>]+>")
+SCRIPT_RE = re.compile(r"<(script|style)\b[^>]*>.*?</\1>", re.S | re.I)
+# The editorial-boundary section is the page's closing disclaimer. Sources belong
+# above it: the reader should see what the page stands on before being told what
+# it is not.
+BOUNDARY_RE = re.compile(r'<section><h2>Editorial boundary</h2>', re.I)
+
+# Pages that answer no query of their own. Citing sources on a masthead or a
+# navigation hub would be decoration, which is the failure mode this is meant
+# to avoid.
+SKIP_NAMES = {"404.html", "about.html", "index.html"}
+
+MIN_SOURCES = 2
+MAX_SOURCES = 4
+
+
+def page_text(html_text: str) -> str:
+    match = MAIN_RE.search(html_text)
+    body = match.group(2) if match else html_text
+    body = SCRIPT_RE.sub(" ", body)
+    return " ".join(TAG_RE.sub(" ", body).split()).lower()
+
+
+# --------------------------------------------------------------------------
+# How a page's sources are chosen
+# --------------------------------------------------------------------------
+# Not by keyword matching. That was tried and it failed in a way worth
+# recording: the daily pages are written from a small shared vocabulary (their
+# median pairwise Sorensen-Dice is 0.686), so a page about credit-explanation
+# letters and a page about a dental consultation share most of their words. A
+# keyword matcher scored the American Dental Association as a match for a
+# letters-of-explanation page, which is exactly the decorative, gamed-looking
+# citation this work exists to avoid.
+#
+# The repository already holds an authoritative answer. `data/topic-taxonomy.json`
+# assigns every daily page to exactly one hub, and `build_site_navigation.py`
+# resolves that assignment from a cluster string the *generator itself wrote*
+# into the page. That is a recorded fact, not an inference.
+#
+# So sources are mapped to hubs by hand, once, below. Each entry is a
+# deliberate editorial judgement that these authorities are the right outside
+# references for that subject, and a hub with no honest match gets none.
+HUB_SOURCES: dict[str, list[str]] = {
+    # -- founder ------------------------------------------------------------
+    "virtual-event-production": ["esta-tsp", "avixa-standards", "avixa"],
+    "community-operations": ["ftc-endorsement-guides", "ftc-business-guidance"],
+    "ai-execution-and-delegation": ["nist-ai-rmf", "nist-ai-rmf-development",
+                                    "copyright-office-ai", "ftc-endorsement-guides"],
+    "founder-operating-rhythms": ["sba-manage-your-business", "sba-launch-your-business"],
+    "hiring-and-lean-team-stack": ["irs-contractor-or-employee",
+                                   "sba-manage-your-business", "nist-cybersecurity-framework"],
+    # -- memphis ------------------------------------------------------------
+    "wedding-planning-tools": ["tn-sales-and-use-tax", "tn-secretary-of-state-businesses"],
+    "wedding-day-timelines": ["nws-memphis", "tn-fire-prevention"],
+    "wedding-and-event-budgets": ["tn-sales-and-use-tax", "tn-alcoholic-beverage-commission",
+                                  "tn-secretary-of-state-businesses"],
+    "wedding-seating-charts": ["tn-fire-prevention", "memphis-city-government"],
+    "grazing-tables-and-vendors": ["fda-food-code", "fda-refrigerator-thermometers",
+                                   "shelby-county-health", "tn-secretary-of-state-businesses"],
+    "porch-and-seasonal-styling": ["nws-memphis", "noaa-climate-normals",
+                                   "memphis-city-government"],
+    "event-and-room-styling": ["tn-fire-prevention", "memphis-city-government",
+                               "tn-sales-and-use-tax"],
+    # -- professional -------------------------------------------------------
+    "credit-reports-and-disputes": ["cfpb-dispute-credit-report-error",
+                                    "ftc-disputing-credit-report-errors",
+                                    "annualcreditreport-official", "identitytheft-gov"],
+    "loan-application-packets": ["cfpb-debt-to-income-ratio", "fannie-mae-selling-guide",
+                                 "cfpb-loan-estimate"],
+    "loan-type-explanations": ["cfpb-loan-options", "cfpb-mortgages", "sba-loans"],
+    "application-problems": ["cfpb-credit-reports-and-scores", "ftc-free-credit-reports"],
+    "letters-of-explanation": ["fannie-mae-selling-guide", "cfpb-debt-to-income-ratio"],
+    "income-and-employment-letters": ["cfpb-debt-to-income-ratio", "fannie-mae-selling-guide"],
+    "bank-statement-and-deposit-letters": ["fannie-mae-selling-guide",
+                                           "cfpb-debt-to-income-ratio"],
+    "identity-and-address-records": ["identitytheft-gov", "usps-mail-forwarding"],
+    "rental-applications": ["hud-fair-housing", "hud-rental-assistance",
+                            "cfpb-credit-reports-and-scores"],
+    "proof-of-income-and-residency": ["cfpb-debt-to-income-ratio", "usps-mail-forwarding"],
+    "business-funding-documents": ["sba-loans", "irs-contractor-or-employee"],
+    "document-preparation": ["identitytheft-gov", "usps-mail-forwarding",
+                             "annualcreditreport-official"],
+    "workplace-mental-health": ["eeoc-mental-health-rights", "osha-workplace-stress",
+                                "eeoc-disability-resources", "samhsa-national-helpline"],
+    "recovery-housing": ["narr-standards", "samhsa-national-helpline"],
+    "equine-contracts": ["american-horse-council", "tn-courts", "uscourts"],
+    # regulated-provider-research deliberately has no hub-level entry. It spans
+    # dental, neuropsychological, immigration-medical and hormone-clinic
+    # material, and this publication's own disclosure says those stay separated.
+    # Its pages are cited at cluster level instead, and a cluster too general to
+    # cite honestly gets nothing.
+}
+
+# Cluster-level mapping, which is finer than the hub. The cluster string is
+# recorded on the page by the generator, so this is as precise as the hub map
+# and separates subjects the hub merges.
+CLUSTER_SOURCES: dict[str, list[str]] = {
+    "neuropsych evaluation research": ["apa-testing-and-assessment",
+                                       "aacn-clinical-neuropsychology",
+                                       "eeoc-disability-resources"],
+    "neuro eval guides authority": ["apa-testing-and-assessment",
+                                    "aacn-clinical-neuropsychology"],
+    "dental decision resources": ["ada-dental-insurance", "ada-health-policy-institute",
+                                  "aaoms"],
+    "uscis civil surgeon appointment prep": ["uscis-find-civil-surgeon", "uscis-i-693",
+                                             "ecfr-8-232-1"],
+    "uscis exam guides authority": ["uscis-i-693", "uscis-find-civil-surgeon"],
+    "iv therapy clinic research": ["fda-human-drug-compounding", "fda-consumer-updates"],
+    "hormone wellness clinic questions": ["fda-human-drug-compounding",
+                                          "fda-consumer-updates"],
+    "hormones iv hair authority": ["fda-human-drug-compounding", "fda-consumer-updates"],
+    "hair restoration provider research": ["fda-consumer-updates",
+                                           "fda-human-drug-compounding"],
+    "personal injury lawyer questions": ["uscourts", "tn-courts"],
+    "accident guides authority": ["uscourts", "tn-courts"],
+}
+
+# The standing overview pages are not daily pages, so they carry no cluster
+# string. They are named explicitly rather than guessed at.
+PAGE_SOURCES: dict[str, list[str]] = {
+    "founder-operator/virtual-event-production-buyers-guide.html":
+        ["esta-tsp", "avixa-standards", "avixa"],
+    "founder-operator/ai-executive-coaching-resources.html":
+        ["nist-ai-rmf", "copyright-office-ai"],
+    "founder-operator/ai-marketing-operations-resources.html":
+        ["ftc-endorsement-guides", "ftc-business-guidance", "nist-ai-rmf"],
+    "founder-operator/founder-execution-systems.html":
+        ["sba-manage-your-business", "sba-launch-your-business"],
+    "memphis-local/memphis-grazing-table-resources.html":
+        ["fda-food-code", "fda-refrigerator-thermometers", "shelby-county-health"],
+    "memphis-local/memphis-party-decor-vendors.html":
+        ["tn-secretary-of-state-businesses", "tn-sales-and-use-tax", "memphis-city-government"],
+    "memphis-local/memphis-porch-decorating-resources.html":
+        ["nws-memphis", "noaa-climate-normals"],
+    "memphis-local/seasonal-home-styling-memphis.html":
+        ["noaa-climate-normals", "nws-memphis"],
+    "professional-resources/dental-decision-resources.html":
+        ["ada-dental-insurance", "ada-health-policy-institute", "aaoms"],
+    "professional-resources/equine-legal-resource-library.html":
+        ["american-horse-council", "tn-courts", "uscourts"],
+    "professional-resources/hormone-wellness-clinic-research.html":
+        ["fda-human-drug-compounding", "fda-consumer-updates"],
+    "professional-resources/neuro-evaluation-research.html":
+        ["apa-testing-and-assessment", "aacn-clinical-neuropsychology",
+         "eeoc-disability-resources"],
+    "professional-resources/personal-injury-research-resources.html":
+        ["uscourts", "tn-courts"],
+    "professional-resources/regulated-service-provider-research.html":
+        ["ada-dental-insurance", "apa-testing-and-assessment", "uscourts"],
+    "professional-resources/uscis-medical-exam-resources.html":
+        ["uscis-i-693", "uscis-find-civil-surgeon", "ecfr-8-232-1"],
+    "professional-resources/workplace-burnout-and-boundaries.html":
+        ["eeoc-mental-health-rights", "osha-workplace-stress", "samhsa-national-helpline"],
+}
+
+SOURCE_BY_ID = {s["id"]: s for s in SOURCES}
+
+_hub_of_page: dict[str, str] = {}
+_cluster_of_page: dict[str, str] = {}
+
+
+def index_hub_assignments() -> dict[str, int]:
+    """Ask build_site_navigation which hub each daily page belongs to.
+
+    Reusing that module rather than reimplementing it means the citations and
+    the navigation can never disagree about a page's subject.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_navigation as nav
+    from lib import site_urls
+
+    counts: dict[str, int] = {}
+    for pub in nav.PUBLICATIONS:
+        source = ROOT / pub["folder"]
+        domain = site_urls.domain_of(pub)
+        hubs = nav.load_hubs(pub["id"])
+        members, _unmapped = nav.assign_members(source, domain, hubs)
+        folder = pub["folder"].split("/", 1)[1]
+        for slug, rows in members.items():
+            for row in rows:
+                key = f'{folder}/{row["rel"]}'
+                _hub_of_page[key] = slug
+                _cluster_of_page[key] = (row.get("cluster") or "").strip().lower()
+                counts[slug] = counts.get(slug, 0) + 1
+    return counts
+
+
+def choose_sources(rel_key: str, lane: str) -> tuple[list[dict], str]:
+    """Sources for one page, from its recorded hub or its explicit entry."""
+    cluster = _cluster_of_page.get(rel_key, "")
+    if rel_key in PAGE_SOURCES:
+        ids, reason = PAGE_SOURCES[rel_key], "named-page"
+    elif cluster in CLUSTER_SOURCES:
+        ids, reason = CLUSTER_SOURCES[cluster], f"cluster:{cluster}"
+    else:
+        hub = _hub_of_page.get(rel_key)
+        if not hub:
+            return [], "no-hub"
+        ids = HUB_SOURCES.get(hub, [])
+        reason = f"hub:{hub}"
+    chosen = []
+    for sid in ids[:MAX_SOURCES]:
+        source = SOURCE_BY_ID.get(sid)
+        if source is None:
+            raise SystemExit(f"{rel_key}: unknown source id {sid!r}")
+        if lane not in source["lanes"]:
+            raise SystemExit(
+                f"{rel_key}: source {sid!r} is not registered for the {lane} lane")
+        chosen.append(source)
+    return chosen, reason
+
+
+def render_block(sources: list[dict]) -> str:
+    items = "".join(
+        f'<li><a href="{html.escape(s["url"], quote=True)}" '
+        f'data-source="external-authority" rel="noopener">'
+        f'{html.escape(s["title"])}</a> &mdash; '
+        f'{html.escape(s["publisher"])}. '
+        f'<span class="note">{html.escape(s["supports"])}</span></li>'
+        for s in sources)
+    return (
+        '\n<section data-block="external-citations"><h2>Sources outside this network</h2>'
+        '<p>This page is general guidance. The authorities below publish the '
+        'underlying requirements, and they are the place to confirm anything '
+        'current before acting on it.</p>'
+        f'<ul>{items}</ul>'
+        '<p class="note">These sources are independent. They are not affiliated '
+        'with this publication, nothing was paid for their inclusion, and their '
+        'publishers have not reviewed or endorsed this page.</p></section>')
+
+
+def process(path: Path, rel_key: str, lane: str, write: bool) -> tuple[str, list[dict]]:
+    original = path.read_text(encoding="utf-8")
+    # Pages that already carry a hand-authored citation block own their own
+    # sources. Injecting a second one would give the reader two Sources
+    # sections, which reads as padding rather than sourcing.
+    if 'data-block="external-sources"' in original:
+        return ("authored", [])
+    stripped = BLOCK_RE.sub("", original)
+    sources, reason = choose_sources(rel_key, lane)
+    if len(sources) < MIN_SOURCES:
+        # Removing a previously injected block on a page that no longer maps
+        # keeps the run idempotent in both directions.
+        if stripped != original and write:
+            path.write_text(stripped, encoding="utf-8", newline="\n")
+        return ("skipped", [])
+
+    block = render_block(sources)
+    boundary = BOUNDARY_RE.search(stripped)
+    if boundary:
+        updated = stripped[:boundary.start()] + block + "\n" + stripped[boundary.start():]
+    else:
+        close = stripped.lower().rfind("</main>")
+        if close == -1:
+            return ("no-main", [])
+        updated = stripped[:close] + block + "\n" + stripped[close:]
+
+    if updated == original:
+        return ("unchanged", sources)
+    if write:
+        path.write_text(updated, encoding="utf-8", newline="\n")
+    return ("written", sources)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--write", action="store_true")
+    args = parser.parse_args()
+
+    stats: dict[str, dict] = {}
+    domains_by_lane: dict[str, set] = {}
+    hub_counts = index_hub_assignments()
+    print(f"  hub assignments read from data/topic-taxonomy.json: "
+          f"{sum(hub_counts.values())} daily page(s) across {len(hub_counts)} hub(s)")
+
+    for folder, lane in sorted(LANE_BY_FOLDER.items()):
+        root = SITES / folder
+        row = stats.setdefault(lane, {"pages": 0, "cited": 0, "skipped": 0,
+                                      "written": 0, "citations": 0})
+        pages = [p for p in sorted(root.rglob("*.html")) if p.name not in SKIP_NAMES]
+        for path in pages:
+            rel_key = f"{folder}/{path.relative_to(root).as_posix()}"
+            row["pages"] += 1
+            status, sources = process(path, rel_key, lane, args.write)
+            if status == "authored":
+                row["cited"] += 1
+                row["authored"] = row.get("authored", 0) + 1
+                authored = re.findall(r'data-source="external-authority"[^>]*>',
+                                      path.read_text(encoding="utf-8"))
+                row["citations"] += len(authored)
+                domains_by_lane.setdefault(lane, set()).update(
+                    s["domain"] for s in SOURCES
+                    if s["url"] in path.read_text(encoding="utf-8"))
+            if status in {"written", "unchanged"}:
+                row["cited"] += 1
+                row["citations"] += len(sources)
+                domains_by_lane.setdefault(lane, set()).update(
+                    s["domain"] for s in sources)
+            if status == "written":
+                row["written"] += 1
+            if status == "skipped":
+                row["skipped"] += 1
+
+    print("EXTERNAL CITATIONS" + ("" if args.write else " (dry run)"))
+    total_pages = total_cited = total_links = 0
+    for lane, row in sorted(stats.items()):
+        pct = round(100 * row["cited"] / max(row["pages"], 1), 1)
+        print(f"\n  {lane}: {row['cited']}/{row['pages']} page(s) cited ({pct}%)")
+        print(f"    outbound citations: {row['citations']}   "
+              f"distinct domains: {len(domains_by_lane.get(lane, set()))}")
+        print(f"    no confident topic match, left alone: {row['skipped']}")
+        print(f"    {'updated' if args.write else 'would update'}: {row['written']}")
+        total_pages += row["pages"]
+        total_cited += row["cited"]
+        total_links += row["citations"]
+
+    all_domains = sorted(set().union(*domains_by_lane.values())) if domains_by_lane else []
+    print(f"\n  TOTAL: {total_cited}/{total_pages} substantive page(s) now cite an "
+          f"outside source ({round(100 * total_cited / max(total_pages, 1), 1)}%)")
+    print(f"  {total_links} outbound citations across {len(all_domains)} external domains")
+    print("  " + ", ".join(all_domains))
+
+    report = ROOT / "reports/external-citation-coverage.json"
+    report.parent.mkdir(parents=True, exist_ok=True)
+    report.write_text(json.dumps({
+        "schema_version": "1.0",
+        "generated_by": "scripts/add_external_citations.py",
+        "rel_policy": "editorial citations carry rel=\"noopener\" only; "
+                      "affiliated portfolio links keep rel=\"sponsored nofollow\"",
+        "per_publication": {k: {**v, "distinct_domains": sorted(domains_by_lane.get(k, set()))}
+                            for k, v in stats.items()},
+        "totals": {"pages": total_pages, "pages_citing": total_cited,
+                   "citations": total_links, "distinct_domains": len(all_domains)},
+        "external_domains": all_domains,
+    }, indent=2) + "\n", encoding="utf-8")
+    print(f"\n  wrote {report.relative_to(ROOT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

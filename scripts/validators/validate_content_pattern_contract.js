@@ -69,8 +69,27 @@ const hasAnswer = (h) => /<h[23][^>]*>\s*(?:Quick|Direct|Short)\s+answer/i.test(
 // editorial dead end - it costs a page of crawl budget and returns nothing.
 const CONVERSION = /<a[^>]+href="https?:\/\//i;
 
-// Font hosts are assets, not cited sources.
-const EXTERNAL_SOURCE = /<a[^>]+href="https?:\/\/(?!fonts\.(?:googleapis|gstatic)\.com)/i;
+// A "named primary source" has to be a source. This check used to pass on any
+// outbound link at all, which meant all 590 pages scored 100% while every one of
+// them linked exclusively to domains inside this portfolio - the check reported
+// full coverage of a thing that did not exist anywhere on the three sites.
+//
+// It now counts only links to domains in data/external-sources.json, every one of
+// which was fetched and returned 200 before being registered. Affiliated
+// portfolio links, which carry rel="sponsored nofollow", no longer satisfy it.
+const REGISTERED_SOURCE_DOMAINS = new Set(
+  JSON.parse(fs.readFileSync(path.join(REPO, 'data/external-sources.json'), 'utf8'))
+    .sources.map((s) => s.domain.toLowerCase().replace(/^www\./, '')));
+const EXTERNAL_SOURCE = {
+  test: (html) => {
+    const hrefs = html.match(/<a[^>]+href="https?:\/\/[^"]+"/gi) || [];
+    return hrefs.some((tag) => {
+      const m = tag.match(/href="https?:\/\/([^/"]+)/i);
+      if (!m) return false;
+      return REGISTERED_SOURCE_DOMAINS.has(m[1].toLowerCase().replace(/^www\./, ''));
+    });
+  },
+};
 
 const CHECKS = [
   { id: 'direct_answer', blocking: true, test: hasAnswer,
@@ -96,8 +115,8 @@ const CHECKS = [
     test: (h) => /\$\s?\d|\d+\s?(?:days?|weeks?|months?|years?|hours?|minutes?)\b/i.test(text(h)),
     why: 'no concrete cost or timeline figures (agent request #5, 365 occurrences)' },
   { id: 'named_sources', blocking: false,
-    test: (h) => /data-source|Primary sources|Sources?:/i.test(h) || EXTERNAL_SOURCE.test(h),
-    why: 'no named primary source (agent request #6, 288 occurrences)' },
+    test: (h) => EXTERNAL_SOURCE.test(h),
+    why: 'no link to a verified outside source - the page cites only domains this network owns' },
   { id: 'faq', blocking: false, test: (h) => /FAQPage|data-faq|class="[^"]*faq/i.test(h),
     why: 'no FAQ block or FAQPage schema (agent request #9)' },
   { id: 'structured_data', blocking: false, test: (h) => /application\/ld\+json/i.test(h),

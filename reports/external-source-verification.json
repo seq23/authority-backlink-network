@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.0",
+  "validator": "external-source-verification",
+  "generated_at": "2026-08-27T16:00:39+00:00",
+  "sources_checked": 56,
+  "verified": 56,
+  "receipts": [
+    {
+      "id": "uscis-i-693",
+      "url": "https://www.uscis.gov/i-693",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "http_status": 200,
+      "resolved_url": "https://www.uscis.gov/i-693",
+      "observed_title": "Report of Immigration Medical Examination and Vaccination Record | USCIS",
+      "checked_at": "2026-08-27T16:00:21+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "uscis-find-civil-surgeon",
+      "url": "https://www.uscis.gov/tools/find-a-civil-surgeon",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "http_status": 200,
+      "resolved_url": "https://www.uscis.gov/tools/find-a-civil-surgeon",
+      "observed_title": "Find a Civil Surgeon | USCIS",
+      "checked_at": "2026-08-27T16:00:22+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ecfr-8-232-1",
+      "url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-232/section-232.1",
+      "publisher": "Office of the Federal Register",
+      "http_status": 200,
+      "resolved_url": "https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-232/section-232.1",
+      "observed_title": "eCFR :: 8 CFR 232.1 -- General.",
+      "checked_at": "2026-08-27T16:00:22+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-credit-reports-and-scores",
+      "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "observed_title": "Credit reports and scores | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:22+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-dispute-credit-report-error",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/",
+      "observed_title": "How do I dispute an error on my credit report? | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:22+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-debt-to-income-ratio",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-en-1791/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-en-1791/",
+      "observed_title": "What is a debt-to-income ratio? | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:22+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-loan-estimate",
+      "url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+      "observed_title": "Loan estimate explainer | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:23+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-loan-options",
+      "url": "https://www.consumerfinance.gov/owning-a-home/explore/understand-the-different-kinds-of-loans-available/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/owning-a-home/explore/understand-the-different-kinds-of-loans-available/",
+      "observed_title": "Understand the different kinds of loans available | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:23+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "annualcreditreport-official",
+      "url": "https://www.annualcreditreport.com/index.action",
+      "publisher": "Central Source LLC, the site directed by federal law",
+      "http_status": 200,
+      "resolved_url": "https://www.annualcreditreport.com/index.action",
+      "observed_title": "Annual Credit Report",
+      "checked_at": "2026-08-27T16:00:23+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ftc-disputing-credit-report-errors",
+      "url": "https://consumer.ftc.gov/articles/disputing-errors-your-credit-reports",
+      "publisher": "Federal Trade Commission",
+      "http_status": 200,
+      "resolved_url": "https://consumer.ftc.gov/articles/disputing-errors-your-credit-reports",
+      "observed_title": "Disputing Errors on Your Credit Reports | Consumer Advice",
+      "checked_at": "2026-08-27T16:00:23+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ftc-free-credit-reports",
+      "url": "https://consumer.ftc.gov/articles/free-credit-reports",
+      "publisher": "Federal Trade Commission",
+      "http_status": 200,
+      "resolved_url": "https://consumer.ftc.gov/articles/free-credit-reports",
+      "observed_title": "Free Credit Reports | Consumer Advice",
+      "checked_at": "2026-08-27T16:00:23+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "samhsa-national-helpline",
+      "url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "publisher": "Substance Abuse and Mental Health Services Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.samhsa.gov/find-help/helplines/national-helpline",
+      "observed_title": "National Helpline for Mental Health, Drug, Alcohol Issues | SAMHSA",
+      "checked_at": "2026-08-27T16:00:24+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "narr-standards",
+      "url": "https://narronline.org/standards/",
+      "publisher": "National Alliance for Recovery Residences",
+      "http_status": 200,
+      "resolved_url": "https://narronline.org/standards/",
+      "observed_title": "Standards | National Alliance for Recovery Residences",
+      "checked_at": "2026-08-27T16:00:24+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ada-dental-insurance",
+      "url": "https://www.ada.org/resources/practice/dental-insurance",
+      "publisher": "American Dental Association",
+      "http_status": 200,
+      "resolved_url": "https://www.ada.org/resources/practice/dental-insurance",
+      "observed_title": "Dental Insurance | American Dental Association",
+      "checked_at": "2026-08-27T16:00:25+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ada-health-policy-institute",
+      "url": "https://www.ada.org/resources/research/health-policy-institute",
+      "publisher": "American Dental Association",
+      "http_status": 200,
+      "resolved_url": "https://www.ada.org/resources/research/health-policy-institute",
+      "observed_title": "Health Policy Institute (HPI) | American Dental Association",
+      "checked_at": "2026-08-27T16:00:25+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "aaoms",
+      "url": "https://aaoms.org/",
+      "publisher": "American Association of Oral and Maxillofacial Surgeons",
+      "http_status": 200,
+      "resolved_url": "https://aaoms.org/",
+      "observed_title": "AAOMS",
+      "checked_at": "2026-08-27T16:00:25+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "osha-workplace-stress",
+      "url": "https://www.osha.gov/workplace-stress",
+      "publisher": "Occupational Safety and Health Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.osha.gov/workplace-stress",
+      "observed_title": "Workplace Stress - Overview | Occupational Safety and Health Administration",
+      "checked_at": "2026-08-27T16:00:25+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "eeoc-mental-health-rights",
+      "url": "https://www.eeoc.gov/laws/guidance/depression-ptsd-other-mental-health-conditions-workplace-your-legal-rights",
+      "publisher": "U.S. Equal Employment Opportunity Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.eeoc.gov/laws/guidance/depression-ptsd-other-mental-health-conditions-workplace-your-legal-rights",
+      "observed_title": "Depression, PTSD, &amp; Other Mental Health Conditions in the Workplace: Your Legal Rights | U.S. Equal Employment Opportunity Commission",
+      "checked_at": "2026-08-27T16:00:26+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "eeoc-disability-resources",
+      "url": "https://www.eeoc.gov/eeoc-disability-related-resources",
+      "publisher": "U.S. Equal Employment Opportunity Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.eeoc.gov/eeoc-disability-related-resources",
+      "observed_title": "EEOC Disability-Related Resources | U.S. Equal Employment Opportunity Commission",
+      "checked_at": "2026-08-27T16:00:26+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "apa-testing-and-assessment",
+      "url": "https://www.apa.org/topics/testing-assessment-measurement",
+      "publisher": "American Psychological Association",
+      "http_status": 200,
+      "resolved_url": "https://www.apa.org/topics/testing-assessment-measurement",
+      "observed_title": "",
+      "checked_at": "2026-08-27T16:00:26+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "aacn-clinical-neuropsychology",
+      "url": "https://theaacn.org/",
+      "publisher": "American Academy of Clinical Neuropsychology",
+      "http_status": 200,
+      "resolved_url": "https://theaacn.org/",
+      "observed_title": "American Academy of Clinical Neuropsychology",
+      "checked_at": "2026-08-27T16:00:26+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "hud-rental-assistance",
+      "url": "https://www.hud.gov/topics/rental_assistance",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "http_status": 200,
+      "resolved_url": "https://www.hud.gov/topics/rental_assistance",
+      "observed_title": "25red-Rental Assistance | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "checked_at": "2026-08-27T16:00:27+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "hud-fair-housing",
+      "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "http_status": 200,
+      "resolved_url": "https://www.hud.gov/program_offices/fair_housing_equal_opp",
+      "observed_title": "25red-FHEO | HUD.gov / U.S. Department of Housing and Urban Development (HUD)",
+      "checked_at": "2026-08-27T16:00:27+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fannie-mae-selling-guide",
+      "url": "https://selling-guide.fanniemae.com/",
+      "publisher": "Fannie Mae",
+      "http_status": 200,
+      "resolved_url": "https://selling-guide.fanniemae.com/",
+      "observed_title": "Selling Guide | Fannie Mae",
+      "checked_at": "2026-08-27T16:00:27+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "american-horse-council",
+      "url": "https://horsecouncil.org/",
+      "publisher": "American Horse Council",
+      "http_status": 200,
+      "resolved_url": "https://horsecouncil.org/",
+      "observed_title": "Home - The American Horse Council",
+      "checked_at": "2026-08-27T16:00:27+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "nist-ai-rmf",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "publisher": "National Institute of Standards and Technology",
+      "http_status": 200,
+      "resolved_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "observed_title": "AI Risk Management Framework | NIST",
+      "checked_at": "2026-08-27T16:00:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "nist-ai-rmf-development",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+      "publisher": "National Institute of Standards and Technology",
+      "http_status": 200,
+      "resolved_url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development",
+      "observed_title": "AI RMF Development | NIST",
+      "checked_at": "2026-08-27T16:00:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "irs-contractor-or-employee",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
+      "publisher": "Internal Revenue Service",
+      "http_status": 200,
+      "resolved_url": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
+      "observed_title": "Independent contractor (self-employed) or employee? | Internal Revenue Service",
+      "checked_at": "2026-08-27T16:00:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ftc-endorsement-guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "publisher": "Federal Trade Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observed_title": "FTC&#039;s Endorsement Guides: What People Are Asking | Federal Trade Commission",
+      "checked_at": "2026-08-27T16:00:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "sba-launch-your-business",
+      "url": "https://www.sba.gov/counseling/launch-your-business/",
+      "publisher": "U.S. Small Business Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.sba.gov/counseling/launch-your-business/",
+      "observed_title": "Launch your business - Small Business Administration",
+      "checked_at": "2026-08-27T16:00:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "sba-manage-your-business",
+      "url": "https://www.sba.gov/counseling/manage-your-business/",
+      "publisher": "U.S. Small Business Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.sba.gov/counseling/manage-your-business/",
+      "observed_title": "Manage your business - Small Business Administration",
+      "checked_at": "2026-08-27T16:00:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "esta-tsp",
+      "url": "https://tsp.esta.org/tsp/index.html",
+      "publisher": "Entertainment Services and Technology Association",
+      "http_status": 200,
+      "resolved_url": "https://tsp.esta.org/tsp/index.html",
+      "observed_title": "TSP",
+      "checked_at": "2026-08-27T16:00:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-food-code",
+      "url": "https://www.fda.gov/food/retail-food-protection/fda-food-code",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/food/retail-food-protection/fda-food-code",
+      "observed_title": "FDA Food Code | FDA",
+      "checked_at": "2026-08-27T16:00:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-refrigerator-thermometers",
+      "url": "https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety",
+      "observed_title": "Refrigerator Thermometers - Cold Facts about Food Safety | FDA",
+      "checked_at": "2026-08-27T16:00:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "memphis-city-government",
+      "url": "https://memphistn.gov/",
+      "publisher": "City of Memphis",
+      "http_status": 200,
+      "resolved_url": "https://memphistn.gov/",
+      "observed_title": "Home - The City of Memphis",
+      "checked_at": "2026-08-27T16:00:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "shelby-county-health",
+      "url": "https://www.shelbytnhealth.com/",
+      "publisher": "Shelby County Health Department",
+      "http_status": 200,
+      "resolved_url": "https://www.shelbytnhealth.com/",
+      "observed_title": "Shelby County Health Dept., TN | Official Website",
+      "checked_at": "2026-08-27T16:00:30+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "tn-sales-and-use-tax",
+      "url": "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
+      "publisher": "Tennessee Department of Revenue",
+      "http_status": 200,
+      "resolved_url": "https://www.tn.gov/revenue/taxes/sales-and-use-tax.html",
+      "observed_title": "Sales and Use Tax",
+      "checked_at": "2026-08-27T16:00:30+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "nws-memphis",
+      "url": "https://www.weather.gov/meg/",
+      "publisher": "National Weather Service, Memphis",
+      "http_status": 200,
+      "resolved_url": "https://www.weather.gov/meg/",
+      "observed_title": "Memphis, TN",
+      "checked_at": "2026-08-27T16:00:31+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "noaa-climate-normals",
+      "url": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "http_status": 200,
+      "resolved_url": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "observed_title": "NOAA NCEI U.S. Climate Normals Quick Access",
+      "checked_at": "2026-08-27T16:00:31+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "avixa-standards",
+      "url": "https://www.avixa.org/resources/standards",
+      "publisher": "AVIXA",
+      "http_status": 200,
+      "resolved_url": "https://www.avixa.org/resources/standards",
+      "observed_title": "Standards - Overview | AVIXA",
+      "checked_at": "2026-08-27T16:00:35+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "avixa",
+      "url": "https://www.avixa.org/",
+      "publisher": "AVIXA",
+      "http_status": 200,
+      "resolved_url": "https://www.avixa.org/",
+      "observed_title": "AVIXA - The #1 AV Association | Training &amp; Certification | AVIXA",
+      "checked_at": "2026-08-27T16:00:35+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "copyright-office-ai",
+      "url": "https://www.copyright.gov/ai/",
+      "publisher": "U.S. Copyright Office",
+      "http_status": 200,
+      "resolved_url": "https://www.copyright.gov/ai/",
+      "observed_title": "Copyright and Artificial Intelligence | U.S. Copyright Office",
+      "checked_at": "2026-08-27T16:00:35+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "nist-cybersecurity-framework",
+      "url": "https://www.nist.gov/cyberframework",
+      "publisher": "National Institute of Standards and Technology",
+      "http_status": 200,
+      "resolved_url": "https://www.nist.gov/cyberframework",
+      "observed_title": "Cybersecurity Framework | NIST",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ftc-business-guidance",
+      "url": "https://www.ftc.gov/business-guidance",
+      "publisher": "Federal Trade Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.ftc.gov/business-guidance",
+      "observed_title": "Business Guidance | Federal Trade Commission",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "sba-loans",
+      "url": "https://www.sba.gov/loans/",
+      "publisher": "U.S. Small Business Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.sba.gov/loans/",
+      "observed_title": "Loans - Small Business Administration",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "identitytheft-gov",
+      "url": "https://www.identitytheft.gov/",
+      "publisher": "Federal Trade Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.identitytheft.gov/",
+      "observed_title": "IdentityTheft.gov",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "cfpb-mortgages",
+      "url": "https://www.consumerfinance.gov/consumer-tools/mortgages/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "http_status": 200,
+      "resolved_url": "https://www.consumerfinance.gov/consumer-tools/mortgages/",
+      "observed_title": "Mortgages | Consumer Financial Protection Bureau",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-human-drug-compounding",
+      "url": "https://www.fda.gov/drugs/guidance-compliance-regulatory-information/human-drug-compounding",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/drugs/guidance-compliance-regulatory-information/human-drug-compounding",
+      "observed_title": "Human Drug Compounding | FDA",
+      "checked_at": "2026-08-27T16:00:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "uscourts",
+      "url": "https://www.uscourts.gov/",
+      "publisher": "Administrative Office of the U.S. Courts",
+      "http_status": 200,
+      "resolved_url": "https://www.uscourts.gov/",
+      "observed_title": "United States Courts",
+      "checked_at": "2026-08-27T16:00:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "tn-courts",
+      "url": "https://www.tncourts.gov/",
+      "publisher": "Tennessee Administrative Office of the Courts",
+      "http_status": 200,
+      "resolved_url": "https://www.tncourts.gov/",
+      "observed_title": "",
+      "checked_at": "2026-08-27T16:00:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "usps-mail-forwarding",
+      "url": "https://www.usps.com/manage/forward.htm",
+      "publisher": "United States Postal Service",
+      "http_status": 200,
+      "resolved_url": "https://www.usps.com/manage/forward.htm",
+      "observed_title": "Standard Forward Mail | USPS",
+      "checked_at": "2026-08-27T16:00:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "tn-alcoholic-beverage-commission",
+      "url": "https://www.tn.gov/abc.html",
+      "publisher": "Tennessee Alcoholic Beverage Commission",
+      "http_status": 200,
+      "resolved_url": "https://www.tn.gov/abc.html",
+      "observed_title": "Alcoholic Beverage Commission (ABC)",
+      "checked_at": "2026-08-27T16:00:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "tn-secretary-of-state-businesses",
+      "url": "https://sos.tn.gov/businesses",
+      "publisher": "Tennessee Secretary of State",
+      "http_status": 200,
+      "resolved_url": "https://sos.tn.gov/businesses",
+      "observed_title": "Businesses | Tennessee Secretary of State",
+      "checked_at": "2026-08-27T16:00:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "tn-fire-prevention",
+      "url": "https://www.tn.gov/commerce/fire-prevention.html",
+      "publisher": "Tennessee State Fire Marshal's Office",
+      "http_status": 200,
+      "resolved_url": "https://www.tn.gov/commerce/fire-prevention.html",
+      "observed_title": "Tennessee Fire Prevention / State Fire Marshal&#39;s Office",
+      "checked_at": "2026-08-27T16:00:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "memphis-public-libraries",
+      "url": "https://www.memphislibrary.org/",
+      "publisher": "Memphis Public Libraries",
+      "http_status": 200,
+      "resolved_url": "https://www.memphislibrary.org/",
+      "observed_title": "Memphis Public Libraries &#8211; Start Here",
+      "checked_at": "2026-08-27T16:00:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-consumer-updates",
+      "url": "https://www.fda.gov/consumers/consumer-updates",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/consumers/consumer-updates",
+      "observed_title": "Consumer Updates | FDA",
+      "checked_at": "2026-08-27T16:00:39+00:00",
+      "outcome": "verified"
+    }
+  ]
+}

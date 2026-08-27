@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-26",
+  "as_of": "2026-08-27",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 34,
+    "runtime_operators": 44,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -229,9 +229,39 @@
       "category": "Other"
     },
     {
+      "operator": "cadence:template-share",
+      "command": "npm run cadence:template-share",
+      "implementation": "node scripts/template_share.js",
+      "category": "Other"
+    },
+    {
+      "operator": "citations:apply",
+      "command": "npm run citations:apply",
+      "implementation": "python3 scripts/add_external_citations.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "content:clusters",
       "command": "npm run content:clusters",
       "implementation": "python3 scripts/generate_cluster_articles.py",
+      "category": "Other"
+    },
+    {
+      "operator": "measure:click-depth",
+      "command": "npm run measure:click-depth",
+      "implementation": "python3 scripts/measure_click_depth.py",
+      "category": "Other"
+    },
+    {
+      "operator": "measure:duplication",
+      "command": "npm run measure:duplication",
+      "implementation": "python3 scripts/measure_content_duplication.py",
+      "category": "Other"
+    },
+    {
+      "operator": "pages:demand-shapes",
+      "command": "npm run pages:demand-shapes",
+      "implementation": "python3 scripts/build_demand_shape_pages.py --write",
       "category": "Other"
     },
     {
@@ -247,15 +277,45 @@
       "category": "Other"
     },
     {
+      "operator": "sources:verify",
+      "command": "npm run sources:verify",
+      "implementation": "python3 scripts/verify_external_sources.py",
+      "category": "Other"
+    },
+    {
+      "operator": "sources:verify-network",
+      "command": "npm run sources:verify-network",
+      "implementation": "python3 scripts/verify_external_sources.py --network",
+      "category": "Other"
+    },
+    {
       "operator": "validate:all",
       "command": "npm run validate:all",
       "implementation": "npm run validate:release",
       "category": "Validation / release"
     },
     {
+      "operator": "validate:click-depth",
+      "command": "npm run validate:click-depth",
+      "implementation": "python3 scripts/measure_click_depth.py --max-depth 3",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:external-sources",
+      "command": "npm run validate:external-sources",
+      "implementation": "python3 scripts/verify_external_sources.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:operator-doc-currency",
       "command": "npm run validate:operator-doc-currency",
       "implementation": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:published-tree-purity",
+      "command": "npm run validate:published-tree-purity",
+      "implementation": "python3 scripts/validators/validate_published_tree_purity.py",
       "category": "Validation / release"
     },
     {
