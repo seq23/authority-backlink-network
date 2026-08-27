@@ -15,7 +15,9 @@
     "federal_regulation": "The regulation text itself, published by the government.",
     "professional_association": "A national membership or credentialing body for a licensed profession.",
     "standards_body": "An accredited standards-developing organization.",
-    "government_sponsored_enterprise": "A federally chartered secondary-market enterprise whose published guide sets the documentation requirements lenders apply."
+    "government_sponsored_enterprise": "A federally chartered secondary-market enterprise whose published guide sets the documentation requirements lenders apply.",
+    "national_crisis_line": "The national crisis and suicide-prevention line established under federal law and administered with SAMHSA funding.",
+    "university_extension_service": "A land-grant university's cooperative extension service, which publishes the applied agricultural guidance its state relies on."
   },
   "sources": [
     {
@@ -1035,6 +1037,533 @@
         "hormone"
       ],
       "supports": "The agency's consumer-facing updates, for claims made by wellness and treatment clinics."
+    },
+    {
+      "id": "ecfr-12-1006-34",
+      "domain": "ecfr.gov",
+      "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1006/subpart-B/section-1006.34",
+      "publisher": "Office of the Federal Register",
+      "publisher_type": "federal_regulation",
+      "title": "12 CFR 1006.34 - Notice for validation of debts",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "debt validation letters",
+        "debt collection",
+        "dispute"
+      ],
+      "supports": "The regulation text that sets what a debt validation notice must contain and when it must be sent."
+    },
+    {
+      "id": "cfpb-debt-collection",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/consumer-tools/debt-collection/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Debt collection",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "debt validation letters",
+        "debt collection"
+      ],
+      "supports": "What a collector may and may not do, and the consumer's right to demand verification of a debt."
+    },
+    {
+      "id": "ftc-debt-collection-faqs",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/debt-collection-faqs",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Debt Collection FAQs",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "debt validation letters",
+        "debt collection"
+      ],
+      "supports": "The FTC's plain-language answers on disputing a debt and stopping contact in writing."
+    },
+    {
+      "id": "cfpb-how-long-info-stays",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-long-does-information-stay-on-my-credit-report-en-323/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "How long does information stay on my credit report?",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "late payment explanation",
+        "goodwill letters"
+      ],
+      "supports": "The statutory reporting periods, which decide whether a late payment is still worth explaining at all."
+    },
+    {
+      "id": "cfpb-what-is-a-credit-score",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "What is a credit score?",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "late payment explanation"
+      ],
+      "supports": "What a score is built from, which is what a goodwill or explanation letter cannot change on its own."
+    },
+    {
+      "id": "cfpb-credit-report-answers",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/answers/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Credit report answers",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "application"
+      ],
+      "supports": "The bureau's indexed answers on reports, errors and the records a denied application turns on."
+    },
+    {
+      "id": "cfpb-closing-disclosure",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/owning-a-home/closing-disclosure/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "Closing disclosure explainer",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "closing",
+        "cost"
+      ],
+      "supports": "A line-by-line reading of the closing form, and the three-day rule that governs when it must arrive."
+    },
+    {
+      "id": "hud-sfh-handbook-4000-1",
+      "domain": "hud.gov",
+      "url": "https://www.hud.gov/program_offices/housing/sfh/handbook_4000-1",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "publisher_type": "us_federal_agency",
+      "title": "Single Family Housing Policy Handbook 4000.1",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "underwriting",
+        "closing"
+      ],
+      "supports": "The FHA underwriting handbook itself, which states the documentation an FHA file must contain."
+    },
+    {
+      "id": "va-home-loans",
+      "domain": "va.gov",
+      "url": "https://www.va.gov/housing-assistance/home-loans/",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "publisher_type": "us_federal_agency",
+      "title": "VA-Backed Veterans Home Loans",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "underwriting"
+      ],
+      "supports": "Eligibility and the certificate of eligibility, which is documentation no private lender can substitute."
+    },
+    {
+      "id": "fanniemae-originating-underwriting",
+      "domain": "singlefamily.fanniemae.com",
+      "url": "https://singlefamily.fanniemae.com/originating-underwriting",
+      "publisher": "Fannie Mae",
+      "publisher_type": "government_sponsored_enterprise",
+      "title": "Originating & Underwriting",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "underwriting",
+        "letter",
+        "income"
+      ],
+      "supports": "The originating and underwriting resources behind the documentation lenders actually request."
+    },
+    {
+      "id": "freddiemac-single-family",
+      "domain": "sf.freddiemac.com",
+      "url": "https://sf.freddiemac.com/",
+      "publisher": "Freddie Mac",
+      "publisher_type": "government_sponsored_enterprise",
+      "title": "Freddie Mac Single-Family",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "mortgage",
+        "underwriting"
+      ],
+      "supports": "The second secondary-market guide, which is why documentation rules differ between two lenders."
+    },
+    {
+      "id": "irs-small-business-self-employed",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Small Businesses and Self-Employed",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "income",
+        "self-employed",
+        "business",
+        "letter"
+      ],
+      "supports": "The filing and recordkeeping obligations a self-employment income letter has to stay consistent with."
+    },
+    {
+      "id": "irs-schedule-c",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/forms-pubs/about-schedule-c-form-1040",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "About Schedule C (Form 1040), Profit or Loss from Business",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "income",
+        "self-employed",
+        "business"
+      ],
+      "supports": "The form a lender reads for self-employed income, and the figure an explanation letter must match."
+    },
+    {
+      "id": "irs-get-transcript",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/individuals/get-transcript",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Get your tax records and transcripts",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "income",
+        "records",
+        "letter",
+        "application"
+      ],
+      "supports": "The official route to the transcript a lender requests, rather than a copy the applicant assembles."
+    },
+    {
+      "id": "irs-business-structures",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/business-structures",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Business structures",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "business",
+        "business ownership",
+        "funding"
+      ],
+      "supports": "How entity type decides which ownership documents exist in the first place."
+    },
+    {
+      "id": "irs-get-ein",
+      "domain": "irs.gov",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+      "publisher": "Internal Revenue Service",
+      "publisher_type": "us_federal_agency",
+      "title": "Get an employer identification number",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "business",
+        "business ownership",
+        "funding",
+        "sba"
+      ],
+      "supports": "The EIN itself, which a funding packet is normally required to evidence."
+    },
+    {
+      "id": "fdic-consumer-resource-center",
+      "domain": "fdic.gov",
+      "url": "https://www.fdic.gov/consumer-resource-center",
+      "publisher": "Federal Deposit Insurance Corporation",
+      "publisher_type": "us_federal_agency",
+      "title": "Consumer Resource Center",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "income",
+        "records",
+        "bank statement"
+      ],
+      "supports": "What a bank must disclose and retain, which is what a statement explanation is checked against."
+    },
+    {
+      "id": "fincen",
+      "domain": "fincen.gov",
+      "url": "https://www.fincen.gov/",
+      "publisher": "Financial Crimes Enforcement Network, U.S. Department of the Treasury",
+      "publisher_type": "us_federal_agency",
+      "title": "Financial Crimes Enforcement Network",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "records",
+        "bank statement",
+        "fraud"
+      ],
+      "supports": "The reporting regime that explains why a large deposit draws a documentation request at all."
+    },
+    {
+      "id": "fincen-boi",
+      "domain": "fincen.gov",
+      "url": "https://www.fincen.gov/boi",
+      "publisher": "Financial Crimes Enforcement Network, U.S. Department of the Treasury",
+      "publisher_type": "us_federal_agency",
+      "title": "Beneficial Ownership Information Reporting",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "business",
+        "business ownership",
+        "funding"
+      ],
+      "supports": "The beneficial-ownership reporting requirement that ownership paperwork now has to line up with."
+    },
+    {
+      "id": "tsa-real-id",
+      "domain": "tsa.gov",
+      "url": "https://www.tsa.gov/realid",
+      "publisher": "Transportation Security Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "REAL ID",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "identity",
+        "records",
+        "home"
+      ],
+      "supports": "The federal identity standard, and the proof-of-address documents a compliant credential requires."
+    },
+    {
+      "id": "usagov-replace-vital-documents",
+      "domain": "usa.gov",
+      "url": "https://www.usa.gov/replace-vital-documents",
+      "publisher": "USAGov, U.S. General Services Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "How to replace lost or stolen ID cards",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "identity",
+        "records",
+        "home"
+      ],
+      "supports": "The official replacement route for each vital record, which a name or identity letter depends on."
+    },
+    {
+      "id": "cfpb-tenant-screening-report",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-tenant-screening-report-en-2102/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "What is a tenant screening report?",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "rental",
+        "housing",
+        "credit report",
+        "records"
+      ],
+      "supports": "What a landlord actually receives, and the applicant's right to the report behind a denial."
+    },
+    {
+      "id": "ftc-rental-listing-scams",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/rental-listing-scams",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Rental Listing Scams",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "rental",
+        "housing",
+        "fraud"
+      ],
+      "supports": "The documented scam patterns that make an unverified rental request worth refusing."
+    },
+    {
+      "id": "ada-gov",
+      "domain": "ada.gov",
+      "url": "https://www.ada.gov/",
+      "publisher": "U.S. Department of Justice, Civil Rights Division",
+      "publisher_type": "us_federal_agency",
+      "title": "The Americans with Disabilities Act",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "workplace",
+        "accommodation",
+        "mental health"
+      ],
+      "supports": "The statute itself, which is the authority behind any workplace accommodation conversation."
+    },
+    {
+      "id": "lifeline-988",
+      "domain": "988lifeline.org",
+      "url": "https://988lifeline.org/",
+      "publisher": "988 Suicide & Crisis Lifeline",
+      "publisher_type": "national_crisis_line",
+      "title": "988 Suicide & Crisis Lifeline",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "mental health",
+        "burnout",
+        "recovery"
+      ],
+      "supports": "The national crisis line, which is the correct destination when a page's subject stops being informational."
+    },
+    {
+      "id": "samhsa-home",
+      "domain": "samhsa.gov",
+      "url": "https://www.samhsa.gov/",
+      "publisher": "Substance Abuse and Mental Health Services Administration",
+      "publisher_type": "us_federal_agency",
+      "title": "Substance Abuse and Mental Health Services Administration",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "mental health",
+        "recovery",
+        "recovery housing",
+        "burnout"
+      ],
+      "supports": "The federal agency's own programme and treatment-locator material."
+    },
+    {
+      "id": "ahrq-questions",
+      "domain": "ahrq.gov",
+      "url": "https://www.ahrq.gov/questions/index.html",
+      "publisher": "Agency for Healthcare Research and Quality",
+      "publisher_type": "us_federal_agency",
+      "title": "Questions Are the Answer",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "evaluation",
+        "clinic",
+        "records",
+        "comparison",
+        "research"
+      ],
+      "supports": "The federal question-list for a clinical appointment, which is a sourced alternative to an invented checklist."
+    },
+    {
+      "id": "medicare-gov",
+      "domain": "medicare.gov",
+      "url": "https://www.medicare.gov/",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "publisher_type": "us_federal_agency",
+      "title": "Medicare",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "clinic",
+        "cost",
+        "evaluation",
+        "research"
+      ],
+      "supports": "Coverage rules and the official provider-comparison tools, rather than a ranking."
+    },
+    {
+      "id": "nidcr",
+      "domain": "nidcr.nih.gov",
+      "url": "https://www.nidcr.nih.gov/",
+      "publisher": "National Institute of Dental and Craniofacial Research",
+      "publisher_type": "us_federal_agency",
+      "title": "National Institute of Dental and Craniofacial Research",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "dental",
+        "dentist",
+        "oral surgery",
+        "research"
+      ],
+      "supports": "The federal research institute for oral health, independent of any dental trade body."
+    },
+    {
+      "id": "psu-extension-equine",
+      "domain": "extension.psu.edu",
+      "url": "https://extension.psu.edu/animals-and-livestock/equine",
+      "publisher": "Penn State Extension",
+      "publisher_type": "university_extension_service",
+      "title": "Horse Farm and Equine Industry",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "equine",
+        "horse",
+        "boarding",
+        "liability"
+      ],
+      "supports": "Applied boarding, facility and liability guidance from a land-grant extension service."
     }
   ]
 }

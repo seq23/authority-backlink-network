@@ -158,8 +158,8 @@ CLUSTER_SOURCES: dict[str, list[str]] = {
                                        "eeoc-disability-resources"],
     "neuro eval guides authority": ["apa-testing-and-assessment",
                                     "aacn-clinical-neuropsychology"],
-    "dental decision resources": ["ada-dental-insurance", "ada-health-policy-institute",
-                                  "aaoms"],
+    "dental decision resources": ["nidcr", "ada-dental-insurance",
+                                  "ada-health-policy-institute", "aaoms"],
     "uscis civil surgeon appointment prep": ["uscis-find-civil-surgeon", "uscis-i-693",
                                              "ecfr-8-232-1"],
     "uscis exam guides authority": ["uscis-i-693", "uscis-find-civil-surgeon"],
@@ -171,6 +171,201 @@ CLUSTER_SOURCES: dict[str, list[str]] = {
                                            "fda-human-drug-compounding"],
     "personal injury lawyer questions": ["uscourts", "tn-courts"],
     "accident guides authority": ["uscourts", "tn-courts"],
+
+    # -- credit-reports-and-disputes ---------------------------------------
+    # The hub sent all 43 of these pages to the same four sources, which is why
+    # a debt-validation page and a goodwill-letter page read as the same page.
+    # They are not the same subject and they are not governed by the same text:
+    # a validation notice is set by 12 CFR 1006.34, and whether a late payment
+    # is worth explaining at all is decided by the FCRA reporting period.
+    "credit dispute letters": ["cfpb-dispute-credit-report-error",
+                               "ftc-disputing-credit-report-errors",
+                               "annualcreditreport-official", "identitytheft-gov"],
+    "credit report errors": ["cfpb-credit-report-answers",
+                             "ftc-disputing-credit-report-errors",
+                             "cfpb-how-long-info-stays", "annualcreditreport-official"],
+    "goodwill letters": ["cfpb-how-long-info-stays", "cfpb-what-is-a-credit-score",
+                         "cfpb-credit-reports-and-scores"],
+    "debt validation letters": ["ecfr-12-1006-34", "cfpb-debt-collection",
+                                "ftc-debt-collection-faqs"],
+    "credit report issues": ["cfpb-credit-reports-and-scores", "ftc-free-credit-reports",
+                             "cfpb-credit-report-answers"],
+    "late payment explanation": ["cfpb-how-long-info-stays", "cfpb-what-is-a-credit-score",
+                                 "ftc-disputing-credit-report-errors"],
+    "how to explain a late payment": ["cfpb-credit-report-answers",
+                                      "cfpb-how-long-info-stays", "ftc-free-credit-reports"],
+    "credit explanation letters": ["fannie-mae-selling-guide", "cfpb-debt-to-income-ratio",
+                                   "cfpb-what-is-a-credit-score"],
+
+    # -- loan-application-packets ------------------------------------------
+    "personal loan documents": ["cfpb-loan-options", "cfpb-debt-to-income-ratio",
+                                "cfpb-what-is-a-credit-score"],
+    "loan application packet": ["cfpb-loan-estimate", "fannie-mae-selling-guide",
+                                "cfpb-debt-to-income-ratio"],
+    "full approval prep bundle": ["fanniemae-originating-underwriting",
+                                  "hud-sfh-handbook-4000-1", "cfpb-closing-disclosure"],
+    "lender document request": ["fannie-mae-selling-guide", "irs-get-transcript",
+                                "cfpb-debt-to-income-ratio"],
+    "application document checklists": ["cfpb-loan-estimate", "cfpb-closing-disclosure",
+                                        "hud-sfh-handbook-4000-1"],
+
+    # -- loan-type-explanations --------------------------------------------
+    "loan explanation letters": ["cfpb-loan-options", "cfpb-mortgages",
+                                 "cfpb-debt-to-income-ratio"],
+    "mortgage explanation": ["cfpb-mortgages", "cfpb-closing-disclosure",
+                             "hud-sfh-handbook-4000-1"],
+    "business loan explanation": ["sba-loans", "irs-small-business-self-employed",
+                                  "irs-business-structures"],
+    "car loan explanation": ["cfpb-loan-options", "cfpb-what-is-a-credit-score",
+                             "cfpb-credit-reports-and-scores"],
+
+    # -- income-and-employment-letters -------------------------------------
+    "income change explanation": ["cfpb-debt-to-income-ratio", "irs-get-transcript",
+                                  "fannie-mae-selling-guide"],
+    "employment explanation letters": ["irs-contractor-or-employee",
+                                       "fannie-mae-selling-guide",
+                                       "cfpb-debt-to-income-ratio"],
+    "job gap explanation": ["fanniemae-originating-underwriting",
+                            "cfpb-debt-to-income-ratio", "irs-get-transcript"],
+    "business explanation letters": ["irs-small-business-self-employed",
+                                     "irs-business-structures", "sba-loans"],
+    "self-employed income explanation": ["irs-schedule-c",
+                                         "irs-small-business-self-employed",
+                                         "irs-get-transcript"],
+    "cash flow explanation": ["irs-schedule-c", "fdic-consumer-resource-center",
+                              "irs-small-business-self-employed"],
+
+    # -- bank-statement-and-deposit-letters --------------------------------
+    "bank statement explanation": ["fdic-consumer-resource-center",
+                                   "fannie-mae-selling-guide",
+                                   "cfpb-debt-to-income-ratio"],
+    "large deposit explanation": ["fincen", "fdic-consumer-resource-center",
+                                  "fanniemae-originating-underwriting"],
+
+    # -- letters-of-explanation --------------------------------------------
+    "letters of explanation": ["fannie-mae-selling-guide", "cfpb-debt-to-income-ratio",
+                               "fanniemae-originating-underwriting"],
+
+    # -- application-problems ----------------------------------------------
+    "multiple application issues": ["cfpb-credit-report-answers", "ftc-free-credit-reports",
+                                    "cfpb-credit-reports-and-scores"],
+    "application issue explanation": ["cfpb-credit-reports-and-scores",
+                                      "cfpb-debt-to-income-ratio", "ftc-free-credit-reports"],
+
+    # -- rental-applications -----------------------------------------------
+    "apartment application paperwork": ["cfpb-tenant-screening-report", "hud-fair-housing",
+                                        "cfpb-credit-reports-and-scores"],
+    "rental application packet": ["hud-fair-housing", "hud-rental-assistance",
+                                  "cfpb-tenant-screening-report"],
+    "rental history explanation": ["cfpb-tenant-screening-report",
+                                   "cfpb-credit-report-answers", "hud-fair-housing"],
+    "apartment denial review": ["cfpb-tenant-screening-report", "ftc-free-credit-reports",
+                                "hud-fair-housing"],
+    "rental cover letters": ["ftc-rental-listing-scams", "hud-fair-housing",
+                             "hud-rental-assistance"],
+
+    # -- proof-of-income-and-residency -------------------------------------
+    "proof of income for renting": ["cfpb-tenant-screening-report", "hud-rental-assistance",
+                                    "cfpb-debt-to-income-ratio"],
+    "proof of income letters": ["irs-get-transcript", "cfpb-debt-to-income-ratio",
+                                "irs-schedule-c"],
+    "credit rental income and loan letters": ["cfpb-credit-reports-and-scores",
+                                              "cfpb-debt-to-income-ratio", "hud-fair-housing"],
+    "proof of residency letter": ["usps-mail-forwarding", "tsa-real-id",
+                                  "usagov-replace-vital-documents"],
+    "how to organize a proof-of-income packet": ["irs-get-transcript", "irs-schedule-c",
+                                                 "cfpb-debt-to-income-ratio"],
+    "proof of income documents": ["irs-get-transcript", "cfpb-debt-to-income-ratio",
+                                  "usps-mail-forwarding"],
+
+    # -- identity-and-address-records --------------------------------------
+    "address issue explanation": ["usps-mail-forwarding", "tsa-real-id",
+                                  "usagov-replace-vital-documents"],
+    "name mismatch explanation": ["usagov-replace-vital-documents", "tsa-real-id",
+                                  "identitytheft-gov"],
+    "identity records explanation": ["identitytheft-gov", "usagov-replace-vital-documents",
+                                     "tsa-real-id"],
+
+    # -- business-funding-documents ----------------------------------------
+    "business funding packet": ["sba-loans", "irs-get-ein", "irs-business-structures"],
+    "business funding documents": ["sba-loans", "irs-small-business-self-employed",
+                                   "fincen-boi"],
+    "business ownership documents": ["fincen-boi", "irs-business-structures", "irs-get-ein"],
+
+    # -- document-preparation ----------------------------------------------
+    "complete document library": ["identitytheft-gov", "usps-mail-forwarding",
+                                  "annualcreditreport-official"],
+    "life admin letters": ["usagov-replace-vital-documents", "usps-mail-forwarding",
+                           "tsa-real-id"],
+    "self-service document creation": ["usagov-replace-vital-documents", "identitytheft-gov",
+                                       "irs-get-transcript"],
+    "truthful document preparation": ["irs-get-transcript", "fannie-mae-selling-guide",
+                                      "identitytheft-gov"],
+    "life admin documents": ["usagov-replace-vital-documents", "usps-mail-forwarding",
+                             "irs-get-transcript"],
+    "documentation checklists": ["cfpb-loan-estimate", "fannie-mae-selling-guide",
+                                 "irs-get-transcript"],
+    "document consistency before applying": ["fannie-mae-selling-guide", "irs-get-transcript",
+                                             "cfpb-debt-to-income-ratio"],
+    "self-service paperwork preparation": ["usagov-replace-vital-documents",
+                                           "identitytheft-gov", "usps-mail-forwarding"],
+
+    # -- workplace-mental-health -------------------------------------------
+    "compassion fatigue resources": ["osha-workplace-stress", "samhsa-national-helpline",
+                                     "lifeline-988"],
+    "trauma-informed leadership": ["samhsa-home", "osha-workplace-stress",
+                                   "eeoc-mental-health-rights"],
+    "workplace wellbeing scoping": ["osha-workplace-stress", "eeoc-disability-resources",
+                                    "ada-gov"],
+    "organizational mental health training": ["eeoc-mental-health-rights", "ada-gov",
+                                              "osha-workplace-stress"],
+    "workplace burnout resources": ["osha-workplace-stress", "samhsa-national-helpline",
+                                    "eeoc-mental-health-rights"],
+    "high-achieving women and burnout": ["osha-workplace-stress", "lifeline-988",
+                                         "samhsa-home"],
+    "therapy consultation questions": ["ahrq-questions", "samhsa-national-helpline",
+                                       "lifeline-988"],
+    "therapy information": ["samhsa-home", "lifeline-988", "ahrq-questions"],
+    "workplace mental health training": ["eeoc-mental-health-rights",
+                                         "eeoc-disability-resources", "ada-gov"],
+
+    # -- recovery-housing ---------------------------------------------------
+    "family recovery support": ["samhsa-national-helpline", "lifeline-988", "samhsa-home"],
+    "recovery housing": ["narr-standards", "samhsa-national-helpline"],
+    "recovery housing decisions": ["narr-standards", "samhsa-home", "hud-rental-assistance"],
+    "community reintegration": ["samhsa-home", "hud-rental-assistance", "lifeline-988"],
+    "recovery referrals": ["samhsa-national-helpline", "lifeline-988", "narr-standards"],
+    "recovery housing questions": ["narr-standards", "samhsa-national-helpline",
+                                   "hud-rental-assistance"],
+    "recovery resources": ["samhsa-home", "samhsa-national-helpline", "lifeline-988"],
+
+    # -- equine-contracts ---------------------------------------------------
+    "equine contract preparation": ["american-horse-council", "psu-extension-equine",
+                                    "uscourts"],
+    "boarding agreement questions": ["psu-extension-equine", "american-horse-council",
+                                     "tn-courts"],
+    "horse contract preparation": ["american-horse-council", "uscourts", "tn-courts"],
+    "boarding barn contract issues": ["psu-extension-equine", "tn-courts",
+                                      "american-horse-council"],
+    "equine liability questions": ["american-horse-council", "uscourts",
+                                   "psu-extension-equine"],
+    "horse boarding agreements": ["psu-extension-equine", "american-horse-council",
+                                  "uscourts"],
+    "horse dispute preparation": ["uscourts", "tn-courts", "american-horse-council"],
+    "horse purchase documents": ["american-horse-council", "psu-extension-equine",
+                                 "tn-courts"],
+
+    # -- regulated-provider-research ----------------------------------------
+    # This hub deliberately has no hub-level entry, so these clusters were
+    # getting nothing at all. AHRQ's question list and the CMS comparison tools
+    # are the federal, non-ranking references for "how do I choose a provider",
+    # which is exactly what these pages are about.
+    "preparing records before a specialist appointment": ["ahrq-questions", "medicare-gov"],
+    "decision frameworks for sensitive services": ["ahrq-questions", "medicare-gov"],
+    "how to prepare for consults": ["ahrq-questions", "medicare-gov"],
+    "red flags in regulated services": ["ahrq-questions", "fda-consumer-updates"],
+    "regulated provider research": ["medicare-gov", "ahrq-questions"],
+    "the industry guides authority": ["ahrq-questions", "medicare-gov"],
 }
 
 # The standing overview pages are not daily pages, so they carry no cluster
