@@ -1,0 +1,108 @@
+{
+  "_README": [
+    "Editorial governance facts for the three publications. Everything here is",
+    "published to readers, so every statement in this file must be true.",
+    "",
+    "Two things are deliberately NOT in this file:",
+    "  1. The conflict-of-interest list. It is derived at build time from",
+    "     data/brands.json (approved_publications) so it cannot drift away from",
+    "     the affiliations the link registry actually permits.",
+    "  2. Any invented person. contributors[] in data/contributors.json ships",
+    "     empty. The only person named anywhere is the real owner, below.",
+    "",
+    "scripts/build_editorial_pages.py turns this into the masthead, editorial",
+    "standards, corrections and contributors pages on each site."
+  ],
+
+  "responsible_person": {
+    "name": "Sequoia Taylor",
+    "role": "Publisher and responsible editor",
+    "applies_to": ["founder", "memphis", "professional"],
+    "note": "One person is accountable for all three publications. That is disclosed on every masthead rather than obscured behind a brand name."
+  },
+
+  "ai_use": {
+    "headline": "How these pages are produced",
+    "summary": "Most pages on this site are drafted by an automated system from a structured brief, then checked by an automated editorial review before they publish. A person sets the briefs and the standards; a person does not read every page before it goes live.",
+    "does": [
+      "An automated composer drafts each page from a brief that fixes the question, the audience, the scope and the single affiliated resource the page is allowed to cite.",
+      "Every page is checked before publication for the affiliation disclosure, the regulated-advice boundary, banned marketing claims, unregistered outbound destinations, and a valid page structure.",
+      "A person writes and reviews the briefs, the standards on this page, and any change to what the system is allowed to say."
+    ],
+    "does_not": [
+      "No quote on this site is attributed to a person who did not say it. Where a page has no quote, it carries none.",
+      "No statistic, price or measurement is generated. Where a page states a number it is sourced, and where no source exists the page says so instead of estimating.",
+      "No page presents automated output as a human's first-hand experience, test or site visit.",
+      "No review, rating, ranking or award is published on this site at all, so none can be fabricated."
+    ],
+    "commitment": "If that changes -- if pages begin to carry human bylines, first-hand testing or original research -- this page changes with it, and the byline says which is which."
+  },
+
+  "corrections_policy": {
+    "promise": "A factual error is corrected on the page itself, and the correction is logged here with the date and what changed. Corrections are not made silently.",
+    "response_target": "Corrections are acknowledged within five business days.",
+    "what_qualifies": [
+      "A factual error: a wrong name, date, figure, requirement or rule.",
+      "A broken or wrong destination on a cited resource.",
+      "An affiliation that is not disclosed where it should be.",
+      "A page that reads as advice in a regulated area where it must not."
+    ],
+    "what_does_not": [
+      "Disagreement with a judgement the page openly presents as a judgement.",
+      "A request to remove an accurate statement because it is unflattering.",
+      "A request to be added to, removed from, or ranked within a list. This publication does not rank."
+    ]
+  },
+
+  "contributor_policy": {
+    "status": "This publication has no external contributors today. Every page is produced by the publisher and the automated system described in the editorial standards.",
+    "credit": "A named contributor gets a byline on their own work, an author page, and a link to a profile they control. Bylines are never applied to pages the named person did not write.",
+    "requirements": [
+      "A real, verifiable identity and at least one external profile the contributor controls.",
+      "Named, on-the-record sourcing. Anonymous 'industry experts' are not published.",
+      "A written disclosure of any commercial interest in the subject, published on the page."
+    ]
+  },
+
+  "publications": {
+    "founder": {
+      "wordmark": "FOL",
+      "beat": "how small teams actually run: operating cadence, delegation, hiring, and the systems underneath",
+      "audience": "founders and operators of small companies, and the people who run their weeks for them",
+      "contact_prefixes": { "editor": "editor", "corrections": "corrections", "pitch": "pitch" },
+      "sourcing": [
+        "Vendor documentation and published pricing pages, cited and dated, rather than a sales conversation.",
+        "Practitioners quoted on the record, named, with the work they are describing identified.",
+        "The publication's own operating experience, labelled as such and never presented as a survey.",
+        "Where a page cannot establish a number -- a price, a benchmark, a conversion rate -- it says the number is not public rather than estimating one."
+      ],
+      "stance": "This publication does not rank tools and does not run a 'best of' list. Software categories churn faster than any list can stay honest, and a ranking is the easiest thing in this field to sell. Pages here describe the decision instead: what the job is, what changes the answer, and where a category stops being the right tool."
+    },
+    "memphis": {
+      "wordmark": "MVL",
+      "beat": "hosting, weddings, parties and vendor decisions in Memphis, and the planning questions that do not change with the city",
+      "audience": "people planning an event in the Memphis area, and the hosts and vendors who work with them",
+      "contact_prefixes": { "editor": "editor", "corrections": "corrections", "pitch": "pitch" },
+      "sourcing": [
+        "Written vendor pricing and contract terms the publication has actually seen, dated, rather than a figure repeated from another site.",
+        "City, county and venue rules taken from the body that issues them, not summarised from a competitor.",
+        "Vendors named and quoted on the record, with any commercial relationship stated on the page.",
+        "Where a local price range is not documented, the page says what drives the cost instead of inventing a range."
+      ],
+      "stance": "No vendor pays to appear here and no vendor can pay to be removed. This publication publishes no rankings, no 'top vendors' lists and no awards, because in a local vendor market those are the format most often sold. What it publishes instead is what a contract should contain, what changes a quote, and which questions to ask before signing."
+    },
+    "professional": {
+      "wordmark": "PRL",
+      "beat": "research support for regulated services: legal, medical, immigration, equine law and workplace mental health",
+      "audience": "people trying to understand a regulated process before they act, and to work out which professional they need",
+      "contact_prefixes": { "editor": "editor", "corrections": "corrections", "pitch": "pitch" },
+      "sourcing": [
+        "The agency, court, board or regulator that issues the rule, cited directly. A secondary summary is never the source for a requirement.",
+        "The date the rule was checked, because requirements in these areas change and a stale page is a harmful page.",
+        "Licensed professionals quoted on the record, with their jurisdiction and licence status stated.",
+        "Where a requirement varies by jurisdiction or by individual circumstance, the page says so and stops, rather than generalising."
+      ],
+      "stance": "This publication is educational and is not a professional adviser. Its job is to help a reader understand a process well enough to ask a licensed professional a better question, and to recognise when the answer depends on facts only that professional can assess. It publishes no rankings of lawyers, clinicians or firms, and it makes no claim about outcomes."
+    }
+  }
+}
