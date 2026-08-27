@@ -81,23 +81,35 @@ def page_subjects() -> dict[str, tuple[str, str]]:
 
 
 def declared_scope() -> dict[str, set[str]]:
-    """Clusters each target is allowed on, as the pantry itself declares them."""
+    """Clusters each target is allowed on, as the pantry itself declares them.
+
+    Keyed by every host the target can actually be reached at, not only its
+    `domain` field. dream-wedding-builder is one target whose `domain` is
+    weddingchecklistpdf.com but whose approved_links span four sibling domains
+    for the same product family. Keying on `domain` alone reported the other
+    three - 46 placements - as `target_not_in_pantry`, as though the network
+    were citing strangers. They are the same target, under the same declared
+    scope, reached through a mirror. This widens the key, not the scope.
+    """
     pantry = json.loads((ROOT / "content-bank/yearly-pantry.json").read_text(encoding="utf-8"))
     scope: dict[str, set[str]] = {}
     for pub in pantry["publications"].values():
         for target in pub.get("targets", []):
             if not isinstance(target, dict):
                 continue
-            domain = norm(str(target.get("domain", "")))
-            if not domain:
-                continue
+            hosts = {norm(str(target.get("domain", "")))}
+            for link in target.get("approved_links", []):
+                if isinstance(link, dict) and str(link.get("url", "")).startswith("http"):
+                    hosts.add(norm(urlparse(link["url"]).netloc))
             eligible = target.get("eligible_clusters")
-            # A target with no declared scope is recorded as unbounded rather
-            # than as "matches everything": that distinction is the finding.
-            if eligible:
-                scope.setdefault(domain, set()).update(c.strip().lower() for c in eligible)
-            else:
-                scope.setdefault(domain, set())
+            for host in hosts:
+                if not host:
+                    continue
+                # A target with no declared scope is recorded as unbounded rather
+                # than as "matches everything": that distinction is the finding.
+                scope.setdefault(host, set())
+                if eligible:
+                    scope[host].update(c.strip().lower() for c in eligible)
     return scope
 
 
@@ -130,6 +142,16 @@ def main() -> int:
                 verdict = "target_not_in_pantry"
             elif not declared:
                 verdict = "target_declares_no_scope"
+            elif not cluster:
+                # A page that records no cluster is a hand-authored standing
+                # page - a hub, an index, or an editorial pillar - not something
+                # build_brief routed. Its affiliated link was placed by a person
+                # choosing it, so "outside the target's declared clusters" is not
+                # a finding about it; there is no drawn cluster to be outside of.
+                # Counting these as out_of_scope, as this script used to, put 30
+                # correct editorial placements in with the routing defects and
+                # overstated the failure. Reported as their own population.
+                verdict = "standing_page_no_cluster"
             elif cluster in declared:
                 verdict = "in_scope"
             else:
@@ -149,7 +171,8 @@ def main() -> int:
     unbounded = sorted(d for d, s in scope.items() if not s)
     print("AFFILIATE TOPICAL FIT (does a paid placement sit on a page about its own subject?)")
     print(f"\n  affiliated placements examined: {total}")
-    for verdict in ("in_scope", "out_of_scope", "target_declares_no_scope", "target_not_in_pantry"):
+    for verdict in ("in_scope", "standing_page_no_cluster", "out_of_scope",
+                    "target_declares_no_scope", "target_not_in_pantry"):
         n = counts.get(verdict, 0)
         if n:
             print(f"    {verdict:26s} {n:5d}  ({n / total:5.1%})")

@@ -304,6 +304,61 @@ CITATION_VARIANTS = [
 ]
 
 
+# The same statements with the citation taken out.
+#
+# A page reaches these when `link_html` is empty, which is now a thing that
+# happens on purpose. build_brief() in scripts/authority_v4_autopilot.py used to
+# turn its own topical filter off when nothing matched and place a link anyway;
+# it now declines, and scripts/repair_offtopic_affiliate_links.py removed the 72
+# placements that were made that way before it did. A page with no affiliated
+# citation is not a damaged page with a hole in it - it states its scope, answers
+# its question and stops - so it gets its own sentences rather than the citation
+# sentences with the brand deleted out of the middle.
+ANSWER_VARIANTS_NO_CITATION = [
+    "{pub} publishes this {modifier} {fmt} on {cluster} for {aud}. It says what the topic is "
+    "scoped to and what falls outside it. This page cites no affiliated destination at all: it "
+    "ranks nothing, names no best provider, quotes no prices, and {risk}.",
+
+    "This is {a_page} on {cluster}, written for {aud} {tail} by {pub}. Its whole content is "
+    "scope: what the page covers and where it stops. No provider is ranked, no price is quoted, "
+    "no affiliated destination is cited here, and {risk}.",
+
+    "{cluster_cap}, for {aud}, from {pub}. This {fmt} exists to make the comparison legible "
+    "rather than to settle it: it names its own scope and stops there, carrying no affiliated "
+    "citation. Nothing here is a ranking or a recommendation, and {risk}.",
+
+    "Read this as scope, not as a verdict. {pub} covers {cluster} here for {aud} {tail}. The "
+    "page carries no affiliated citation, publishes no ranking and no pricing, and leaves the "
+    "choice where it belongs, because {risk}.",
+
+    "{pub} maintains this {modifier} {fmt} on {cluster} for {aud}. It offers a frame rather than "
+    "a verdict: the boundaries of the topic and an explicit stopping point. No affiliated "
+    "destination is cited on this page, and {risk}.",
+
+    "This {fmt} from {pub} addresses {cluster} for {aud}. What it can tell you is what the topic "
+    "is scoped to and where the page stops. What it will not do is rank providers, quote prices, "
+    "or point you at an affiliated destination, and {risk}.",
+]
+
+SUMMARY_VARIANTS_NO_CITATION = [
+    "This page covers {cluster} for {aud}, cites no affiliated destination, and ranks nothing.",
+    "Scope: {cluster} for {aud}, with no affiliated citation and no ranking attached.",
+    "This page frames {cluster} for {aud} and carries no affiliated citation.",
+    "{cluster_cap}, framed for {aud}, with no affiliated citation and no verdict.",
+]
+
+
+def has_citation(f: dict) -> bool:
+    """Whether this page carries an affiliated citation.
+
+    One notion, read in one place. A page has a citation when it has a link to
+    carry; everything downstream - the answer, the summary line, the scope
+    table, the four filters, the FAQ, the citation section itself - branches on
+    this and on nothing else.
+    """
+    return bool(str(f.get("link_html") or "").strip())
+
+
 def _words(text: str) -> int:
     return len(re.findall(r"[A-Za-z0-9'’-]+", re.sub(r"<[^>]+>", " ", text)))
 
@@ -339,7 +394,8 @@ def compose_answer(f: dict) -> str:
     page's own hash, so which one wins still varies across the library, and the
     closest to the midpoint is used if none fits.
     """
-    rendered = [_render_answer(f, v) for v in _rotated(ANSWER_VARIANTS, f["title"])]
+    variants = ANSWER_VARIANTS if has_citation(f) else ANSWER_VARIANTS_NO_CITATION
+    rendered = [_render_answer(f, v) for v in _rotated(variants, f["title"])]
     low, high = ANSWER_WORDS
     for text in rendered:
         if low <= _words(text) <= high:
@@ -364,8 +420,8 @@ def _render_answer(f: dict, variant: str) -> str:
         cluster_cap=esc(sentence_case(f["cluster"])),
         aud=esc(article_for(f["audience"])),
         tail=esc(tail),
-        anchor=esc(f["anchor_text"]),
-        brand=esc(f.get("brand_name") or f["anchor_text"]),
+        anchor=esc(f.get("anchor_text", "")),
+        brand=esc(f.get("brand_name") or f.get("anchor_text", "")),
         category=esc(f.get("brand_category") or "a related topic area"),
         boundary=esc(compliance_phrase(f.get("brand_compliance", ""))),
         risk=esc(risk_clause(f)),
@@ -451,24 +507,40 @@ def decision_frame(f: dict) -> str:
     scannable-protocol shape does not depend on whether a campaign happens to
     have keywords recorded.
     """
-    brand = f.get("brand_name") or f["anchor_text"]
+    brand = f.get("brand_name") or f.get("anchor_text", "")
     category = f.get("brand_category") or "a related topic area"
     terms = registered_terms(f)
     lane = f.get("brand_compliance") or "unclassified"
     question = question_for(f["format"], f["intent"], f["cluster"])
 
-    evidence = (f"the citation registry records this destination against {', '.join(terms)}"
-                if terms else
-                "no term set is recorded for this destination, so topic fit is a judgement call")
-    rows = [
-        ("Fit", f"does {brand} ({category}) actually cover {f['cluster']} for "
-                f"{article_for(f['audience'])}?"),
-        ("Evidence", f"{evidence}."),
-        ("Risk", f"the registry files this destination under {lane} compliance, and {risk_clause(f)}."),
+    if has_citation(f):
+        evidence = (f"the citation registry records this destination against {', '.join(terms)}"
+                    if terms else
+                    "no term set is recorded for this destination, so topic fit is a judgement call")
+        rows = [
+            ("Fit", f"does {brand} ({category}) actually cover {f['cluster']} for "
+                    f"{article_for(f['audience'])}?"),
+            ("Evidence", f"{evidence}."),
+            ("Risk", f"the registry files this destination under {lane} compliance, and {risk_clause(f)}."),
+        ]
+    else:
+        # The same four filters, answered from this page's own recorded values.
+        # With no destination there is no registry lane to cite and no term set
+        # to weigh, and saying so is the honest answer to "Evidence" rather than
+        # a gap in the frame.
+        rows = [
+            ("Fit", f"does {article_for(f['modifier'] + ' ' + format_noun(f['format']))} on "
+                    f"{f['cluster']} match what {article_for(f['audience'])} needs "
+                    f"{INTENT_TAIL.get(f['intent'], f['intent'])}?"),
+            ("Evidence", "this page cites no affiliated destination, so there is no registered "
+                         "term set to weigh here; the scope table above is the whole of what it "
+                         "claims."),
+            ("Risk", f"the page ranks nothing and quotes no prices, and {risk_clause(f)}."),
+        ]
+    rows.append(
         ("Next step", f"this page is written for readers "
-                       f"{INTENT_TAIL.get(f['intent'], f['intent'])}; the open question is still: "
-                       f"{question}"),
-    ]
+                      f"{INTENT_TAIL.get(f['intent'], f['intent'])}; the open question is still: "
+                      f"{question}"))
     heading = pick([
         "Fit, evidence, risk, next step",
         "Four filters, answered for this page",
@@ -499,12 +571,25 @@ def faq_items(f: dict) -> list[dict]:
                   f"passes no ranking signal."),
         })
     boundary = compliance_phrase(f.get("brand_compliance", ""))
+    if has_citation(f):
+        not_answered = (
+            f"It does not rank providers, publish prices, or tell {article_for(f['audience'])} which "
+            f"option to choose. The registry files this destination under "
+            f"{f.get('brand_compliance') or 'a sensitive'} compliance, so anything that turns on "
+            f"your own circumstances belongs with a qualified professional rather than with a "
+            f"resource page.")
+    else:
+        # No destination, so no registry lane to file it under. The boundary is
+        # still real and still stated; it just belongs to the subject rather
+        # than to something this page cites.
+        not_answered = (
+            f"It does not rank providers, publish prices, or tell {article_for(f['audience'])} which "
+            f"option to choose, and it cites no affiliated destination. Anything that turns on your "
+            f"own circumstances belongs with a qualified professional rather than with a resource "
+            f"page.")
     items.append({
         "q": f"What does this page not answer about {f['cluster']}?",
-        "a": (f"It does not rank providers, publish prices, or tell {article_for(f['audience'])} which "
-              f"option to choose. The registry files this destination under {f.get('brand_compliance') or 'a sensitive'} "
-              f"compliance, so anything that turns on your own circumstances belongs with a qualified "
-              f"professional rather than with a resource page."),
+        "a": not_answered,
     })
     items.append({
         "q": "How current is this page?",
@@ -553,8 +638,9 @@ def summary_line(f: dict) -> str:
     open on different clauses, and splitting one of them yielded "Four things, in
     order." as a page's summary.
     """
-    return pick(SUMMARY_VARIANTS, f["title"], "summary").format(
-        brand=esc(f.get("brand_name") or f["anchor_text"]),
+    variants = SUMMARY_VARIANTS if has_citation(f) else SUMMARY_VARIANTS_NO_CITATION
+    return pick(variants, f["title"], "summary").format(
+        brand=esc(f.get("brand_name") or f.get("anchor_text", "")),
         category=esc(f.get("brand_category") or "a related topic area"),
         cluster=esc(f["cluster"]),
         cluster_cap=esc(sentence_case(f["cluster"])),
@@ -592,7 +678,8 @@ def compose_body(f: dict) -> tuple[str, list[dict]]:
         scope_table(f),
         decision_frame(f),
         f.get("product_section_html") or "",
-        "<h2>Useful citation</h2><p>" + compose_citation(f) + "</p>",
+        ("<h2>Useful citation</h2><p>" + compose_citation(f) + "</p>"
+         if has_citation(f) else ""),
         faq_html(items),
         f.get("editorial_note_html") or "",
         f.get("meta_line_html") or "",

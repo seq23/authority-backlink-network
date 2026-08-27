@@ -40,6 +40,7 @@ COMMANDS = {
     "nav_rebuild_after_publish": [sys.executable, "scripts/validators/validate_nav_rebuild_after_publish.py"],
     "autopilot_cadence_cap": [sys.executable, "scripts/validators/validate_autopilot_respects_cadence_cap.py"],
     "analytics_separation": [sys.executable, "scripts/validators/validate_analytics_separation.py"],
+    "affiliate_topical_scope": [sys.executable, "scripts/validators/validate_affiliate_topical_scope.py"],
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
 }
 

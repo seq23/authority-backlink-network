@@ -28,7 +28,8 @@
       "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity",
-      "autopilot_cadence_cap"
+      "autopilot_cadence_cap",
+      "affiliate_topical_scope"
     ],
     "release": [
       "json",
@@ -52,7 +53,8 @@
       "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity",
-      "autopilot_cadence_cap"
+      "autopilot_cadence_cap",
+      "affiliate_topical_scope"
     ],
     "full": [
       "json",
@@ -77,7 +79,8 @@
       "nav_rebuild_after_publish",
       "analytics_separation",
       "cadence_gate_integrity",
-      "autopilot_cadence_cap"
+      "autopilot_cadence_cap",
+      "affiliate_topical_scope"
     ],
     "cache-self-test": [
       "python",
@@ -188,6 +191,10 @@
     "autopilot_cadence_cap": {
       "severity": "HARD_FAIL",
       "rationale": "False evidence about whether publishing is governed. data/cadence/policy.json declared 3 new pages per week and scripts/cadence_gate.js enforced it, while the autopilot published 9 a day - 63 a week, 21x the cap - and never met the gate, because git-auto-commit-action pushes with GITHUB_TOKEN and GitHub does not trigger workflows on those pushes. The cap was written down, validated, and structurally unreachable by the only process that could break it. This blocks if the generator stops consulting the declared allowance, applies it after generating rather than before, lets it exceed the cap, or stops reporting a zero-page day as the ordinary success it is."
+    },
+    "affiliate_topical_scope": {
+      "severity": "HARD_FAIL",
+      "rationale": "Wrong-domain routing and false evidence, both already named in severity_policy. Every daily page states that this publication cites affiliated projects 'where the citation is topically relevant'. Across 598 affiliated placements that was false for about 39%: 82 sat outside their target's declared clusters, 105 pointed at targets that declared no clusters at all, and 46 at hosts the pantry did not recognise. uscisexam.com, the one property in the portfolio earning AI citations, was cited from a page about trauma-informed leadership; dentistryguides.com from a page about credit-report errors. A disclosure that does not describe what the page does is worse than none, because it is read as proof. This blocks on an undeclared target, on a declaration written in clusters the publication does not use, on an affiliated placement outside its target's scope, and on build_brief() failing to decline - so a clean corpus cannot be produced by a generator whose two permissive fallbacks have been restored."
     }
   },
   "severity_matrix_policy": {
