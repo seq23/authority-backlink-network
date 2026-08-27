@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-08-26T21-39-29.419188Z-local",
-  "attempted_at": "2026-08-26T21:39:29.419188Z",
+  "receipt_id": "2026-08-27T19-43-58.085204Z-33109816387",
+  "attempted_at": "2026-08-27T19:43:58.085204Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "f69f08c52cec54c830fbfecdfe46456ece0b5f477093a29010779e6a7d22bf01",
-        "url_count": 96
+        "sha256": "064f9c44cb93868f0e12ef600a6244c533e4aeb33078fd1252c93727c89a1c64",
+        "url_count": 105
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 96,
-        "offered_urls": 96,
+        "submitted_urls": 105,
+        "offered_urls": 105,
         "batches": [
           {
-            "urls": 96,
+            "urls": 105,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 0,
+        "requested_urls": 1,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 85,
-        "verified": 85,
+        "checked": 86,
+        "verified": 86,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
@@ -1164,6 +1164,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
+            "target_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+            "anchor": "what virtual event production means",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -1176,17 +1189,17 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "4f1363a4798b02a8dfb38f99a824ad0d9f819e82b7d952c7e34dbec29e75e57f",
-        "url_count": 95
+        "sha256": "7a577b6db51199882c0665e57daca4c0a47bff3a02c95082e266d08f20f9d9fa",
+        "url_count": 104
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 95,
-        "offered_urls": 95,
+        "submitted_urls": 104,
+        "offered_urls": 104,
         "batches": [
           {
-            "urls": 95,
+            "urls": 104,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -1205,14 +1218,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 0,
+        "requested_urls": 1,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 82,
-        "verified": 82,
+        "checked": 83,
+        "verified": 83,
         "results": [
           {
             "source_url": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers",
@@ -2279,6 +2292,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
+            "target_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+            "anchor": "Wedding Seating Chart Maker",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -2291,14 +2317,14 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "39209632a073c6f694599f8f31c24b3a1282e3800acd614823508110074550d2",
-        "url_count": 402
+        "sha256": "fc01f5bea988a7a8b79ce1c2df5b9f83c0a45aba0c62815f22bb88c00d647cd5",
+        "url_count": 419
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 402,
-        "offered_urls": 402,
+        "submitted_urls": 419,
+        "offered_urls": 419,
         "batches": [
           {
             "urls": 200,
@@ -2313,7 +2339,7 @@
             "error": null
           },
           {
-            "urls": 2,
+            "urls": 19,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -2332,14 +2358,14 @@
       },
       "priority_url_inspection": {
         "status": "NOT_CONFIGURED",
-        "requested_urls": 0,
+        "requested_urls": 7,
         "inspected_urls": 0,
         "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 376,
-        "verified": 376,
+        "checked": 383,
+        "verified": 383,
         "results": [
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers",
@@ -7228,6 +7254,97 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+            "target_url": "https://approvalprep.com/life-admin-letter-kit",
+            "anchor": "create an address explanation letter",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+            "target_url": "https://approvalprep.com/letter-of-explanation",
+            "anchor": "create a letter of explanation",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+            "target_url": "https://approvalprep.com/business-funding-prep-kit",
+            "anchor": "build a business funding packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+            "target_url": "https://approvalprep.com/business-funding-prep-kit",
+            "anchor": "build a business funding packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose",
+            "target_url": "https://approvalprep.com/letter-of-explanation",
+            "anchor": "create a letter of explanation",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+            "target_url": "https://approvalprep.com/business-funding-prep-kit",
+            "anchor": "build a business funding packet",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+            "target_url": "https://theaccidentguides.com/guides/",
+            "anchor": "personal injury educational guides",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -7235,7 +7352,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-08-26T21-39-29.419188Z-local.json"
+    "history": "data/distribution/receipts/2026-08-27T19-43-58.085204Z-33109816387.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
