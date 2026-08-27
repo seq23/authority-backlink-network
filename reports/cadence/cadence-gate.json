@@ -20,7 +20,8 @@
     "new_pages_per_week": 3,
     "refresh_capacity_per_week": 25,
     "require_lastmod": true,
-    "_why": "13 weeks is the point where pages become markedly more likely to lose AI citations, and recency is the strongest single correlate of being cited. The ceiling is refresh capacity times that window: publish faster than the library can be maintained and the tail ages out of citability."
+    "_why": "13 weeks is the point where pages become markedly more likely to lose AI citations, and recency is the strongest single correlate of being cited. The ceiling is refresh capacity times that window: publish faster than the library can be maintained and the tail ages out of citability.",
+    "_provenance_refresh_capacity_per_week": "refresh_capacity_per_week is NOT a measurement. It traces to a single unsourced sentence, and no repository in this portfolio has been shown to sustain it; publication and refresh rates observed across the portfolio when this was reviewed on 2026-08-27 ranged roughly 0.4 to 3.2 per week, against the 25 asserted here. The number is left unchanged deliberately - correcting it is a capacity decision, not an editorial one - but every figure derived from it inherits the same standing. maintainable_ceiling is refresh_capacity_per_week * floor(refresh_window_days / 7), so 25 * 13 = 325, and the library_over_ceiling warning reports \"N pages cannot be kept current at this capacity\" using it. Those outputs look like measurements and are not: they are this figure restated. Read them as \"against a declared capacity of 25\", never as an observed limit. If the real sustainable rate is established, change it here and every derived ceiling corrects itself."
   },
   "blocking": [],
   "warnings": [
