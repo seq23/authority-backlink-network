@@ -38,6 +38,7 @@ COMMANDS = {
     "external_sources": [sys.executable, "scripts/verify_external_sources.py"],
     "click_depth": [sys.executable, "scripts/measure_click_depth.py", "--max-depth", "3"],
     "analytics_separation": [sys.executable, "scripts/validators/validate_analytics_separation.py"],
+    "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
 }
 
 

@@ -25,7 +25,8 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
-      "analytics_separation"
+      "analytics_separation",
+      "cadence_gate_integrity"
     ],
     "release": [
       "json",
@@ -46,7 +47,8 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
-      "analytics_separation"
+      "analytics_separation",
+      "cadence_gate_integrity"
     ],
     "full": [
       "json",
@@ -68,7 +70,8 @@
       "published_tree_purity",
       "external_sources",
       "click_depth",
-      "analytics_separation"
+      "analytics_separation",
+      "cadence_gate_integrity"
     ],
     "cache-self-test": [
       "python",
@@ -167,6 +170,10 @@
     "analytics_separation": {
       "severity": "HARD_FAIL",
       "rationale": "Wrong-domain routing: a placeholder, missing, shared or cross-publication analytics id sends one publication's reader data into another's project."
+    },
+    "cadence_gate_integrity": {
+      "severity": "HARD_FAIL",
+      "rationale": "A gate that cannot hold a verdict is false evidence about whether publishing is governed at all. cadence_gate.js used to rewrite the ledger it reads, so a blocked run cleared itself on the next invocation - observed as BLOCKED then CLEAR with nothing changed between them. That made the weekly publishing cap unenforceable while still reporting a status, which is worse than having no cap, because the green run was taken as proof. This blocks on the gate mutating its ledger, on two identical runs disagreeing, on no workflow invoking the gate, and on CI being able to run the acceptance path."
     }
   },
   "severity_matrix_policy": {
