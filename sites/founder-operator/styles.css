@@ -1,1 +1,517 @@
-:root{font-family:Inter,Arial,sans-serif;color:#162033;background:#f7f4ee}body{margin:0}header{padding:24px 7vw;background:#162033;color:white}header strong{display:block;font-size:22px;margin-bottom:12px}nav{display:flex;flex-wrap:wrap;gap:10px}nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:6px 10px;border-radius:999px;font-size:13px}main{max-width:900px;margin:0 auto;padding:48px 24px}h1{font-size:44px;line-height:1.05;margin:0 0 12px}.dek{font-size:20px;color:#445;line-height:1.5}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#7a6132;font-weight:700}.card{background:white;border:1px solid #e5dac8;border-radius:18px;padding:22px;margin:28px 0;box-shadow:0 10px 30px rgba(20,20,20,.05)}section{margin:32px 0}li{margin:10px 0;line-height:1.55}a{color:#7a3f00}.note{color:#7b6b59;font-size:90%}footer{padding:28px 7vw;background:#e9dfd0;color:#564b3e}
+/* Founder Operator Library — "the operator's manual"
+ *
+ * This publication is read by founders and operators who are mid-decision. The
+ * identity is deliberately technical: a grotesque type stack, monospaced
+ * metadata, near-square geometry, and a single blue signal colour used only for
+ * links and rules that mean something. It should read like good internal
+ * documentation, not like a magazine.
+ *
+ * This file is one of three sibling stylesheets that share component class
+ * names and token names but nothing else. Memphis Vendor Library and
+ * Professional Resource Library define the same tokens with different values,
+ * different type stacks and different geometry, so a page moved between the
+ * three would render as a different publication. That is the point: the three
+ * properties were previously served a byte-identical stylesheet.
+ *
+ * No webfont is loaded. The three identities are separated by system stacks,
+ * colour and geometry rather than by a Google Fonts request, because a third
+ * party font host is a real dependency and a real privacy disclosure on a
+ * publication that promises neither.
+ */
+
+:root {
+  /* Surfaces */
+  --bg: #ffffff;
+  --surface: #f4f6f9;
+  --surface-2: #eaeef3;
+  --surface-inset: #0f1720;
+
+  /* Ink */
+  --ink: #0f1720;
+  --ink-strong: #050a10;
+  --ink-muted: #55647a;
+  --ink-on-dark: #e8edf4;
+  --ink-on-dark-muted: #9aa9bd;
+
+  /* Signal */
+  --accent: #1d4ed8;
+  --accent-soft: #dbe6fb;
+  --accent-ink: #12358f;
+  --flag: #a1521a;          /* disclosure / affiliation marker */
+  --flag-soft: #fbeee2;
+
+  /* Structure */
+  --rule: #d3dbe5;
+  --rule-strong: #9dabbe;
+  --radius: 3px;
+  --radius-sm: 2px;
+  --shadow: 0 1px 2px rgba(15, 23, 32, .06);
+  --shadow-lift: 0 2px 10px rgba(15, 23, 32, .08);
+
+  /* Type */
+  --font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+                  "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-display);
+  --font-meta: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+               "Liberation Mono", monospace;
+
+  --measure: 68ch;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d141c;
+    --surface: #141d27;
+    --surface-2: #1c2733;
+    --surface-inset: #060b11;
+    --ink: #e4eaf2;
+    --ink-strong: #f6f9fc;
+    --ink-muted: #97a6b9;
+    --accent: #7ea6ff;
+    --accent-soft: #17263f;
+    --accent-ink: #a9c4ff;
+    --flag: #e2a878;
+    --flag-soft: #2a1f14;
+    --rule: #26323f;
+    --rule-strong: #435365;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-lift: 0 2px 10px rgba(0, 0, 0, .5);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------------------------------------------------------------- masthead */
+
+header {
+  background: var(--surface-inset);
+  color: var(--ink-on-dark);
+  padding: 20px 7vw 0;
+  border-bottom: 3px solid var(--accent);
+}
+
+header > strong,
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5ch;
+  font-family: var(--font-meta);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+}
+
+/* The bracket motif is the wordmark. It is drawn in CSS rather than shipped as
+ * an image so it needs no asset pipeline and scales with the type. */
+header > strong::before,
+.wordmark::before { content: "["; color: var(--accent); font-weight: 700; }
+header > strong::after,
+.wordmark::after  { content: "]"; color: var(--accent); font-weight: 700; }
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 16px;
+}
+
+header nav a {
+  color: var(--ink-on-dark-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: var(--font-meta);
+  padding: 8px 14px 10px;
+  border-bottom: 2px solid transparent;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--ink-on-dark);
+  border-bottom-color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ layout */
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 44px 24px 72px;
+}
+
+section { margin: 34px 0; }
+
+h1 {
+  font-size: clamp(30px, 4.6vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -.022em;
+  font-weight: 700;
+  color: var(--ink-strong);
+  margin: 0 0 14px;
+  max-width: 22ch;
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  font-weight: 650;
+  margin: 34px 0 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-strong);
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -.005em;
+  margin: 24px 0 8px;
+}
+
+p { max-width: var(--measure); margin: 0 0 15px; }
+
+.eyebrow {
+  font-family: var(--font-meta);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.dek {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  max-width: 56ch;
+  margin-bottom: 26px;
+}
+
+.note, .meta {
+  font-family: var(--font-meta);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+
+ul, ol { padding-left: 1.15em; max-width: var(--measure); }
+li { margin: 9px 0; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ------------------------------------------------------- panels and blocks */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 28px 0;
+}
+
+.card > h2:first-child,
+.card .info-panel + h2 { border-top: 0; padding-top: 0; margin-top: 18px; }
+
+.info-panel {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+}
+
+.info-panel h2 {
+  border-top: 0;
+  padding-top: 0;
+  margin: 0 0 8px;
+  font-family: var(--font-meta);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.recommendation-summary__answer {
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 550;
+  color: var(--ink-strong);
+  margin: 0;
+}
+
+.topic-context {
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 16px;
+  color: var(--ink-muted);
+}
+
+/* -------------------------------------------------------------- navigation */
+
+.breadcrumb {
+  font-family: var(--font-meta);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  margin-bottom: 22px;
+}
+.breadcrumb a { color: var(--ink-muted); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb__sep { color: var(--rule-strong); }
+
+.related, .library, .latest, .more {
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.related h2, .library h2, .latest h2, .more h2 {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+  font-family: var(--font-meta);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.related ul, .library ul, .latest ul, .more ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: none;
+}
+
+.related li, .library li, .latest li, .more li {
+  margin: 0;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.latest li { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* ------------------------------------------------------------------ tables */
+
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 20px 0; }
+th, td {
+  border: 1px solid var(--rule);
+  padding: 9px 11px;
+  text-align: left;
+  vertical-align: top;
+}
+thead th {
+  background: var(--surface-2);
+  font-family: var(--font-meta);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* Cluster-article tables. The generator emits its own <style> block for these;
+ * it now uses these same custom properties so a table inherits the identity of
+ * whichever publication it is served from. */
+.ct-wrap { overflow-x: auto; margin: 22px 0; }
+.ct { background: var(--bg); }
+.ct caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 650;
+  padding: 0 0 8px;
+  color: var(--ink-muted);
+}
+
+.faq h3 { margin-top: 20px; }
+
+/* -------------------------------------------------- affiliate  disclosure */
+
+/* Stated plainly and up front. An affiliation a reader can see is a reason to
+ * trust the page; an affiliation they discover later is not. */
+.affiliate-disclosure {
+  margin: 26px 0;
+  padding: 15px 18px;
+  background: var(--flag-soft);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--flag);
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.affiliate-disclosure > h2,
+.affiliate-disclosure > p:first-child > strong:first-child {
+  display: block;
+  border-top: 0;
+  padding-top: 0;
+  margin: 0 0 6px;
+  font-family: var(--font-meta);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 600;
+  color: var(--flag);
+}
+
+.affiliate-disclosure p { max-width: none; margin: 0 0 8px; }
+.affiliate-disclosure p:last-child { margin-bottom: 0; }
+.affiliate-disclosure a { color: var(--flag); }
+
+/* An inline marker on the individual affiliated link. */
+.affiliated-mark {
+  font-family: var(--font-meta);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--flag);
+  border: 1px solid var(--flag);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------- bylines and  authors */
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-meta);
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.byline a { color: var(--ink); }
+.byline__role { color: var(--ink-muted); }
+.byline__sep { color: var(--rule-strong); }
+
+.author-card {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin: 24px 0;
+}
+.author-card h2, .author-card h3 { border-top: 0; padding-top: 0; margin: 0; font-size: 17px; }
+.author-card p { margin: 0; }
+.author-card__links { font-family: var(--font-meta); font-size: 13px; }
+
+/* ------------------------------------------------------------ policy pages */
+
+/* Masthead, corrections, editorial standards. Long-form governance text reads
+ * better narrow and unadorned. */
+.policy dl { margin: 18px 0; }
+.policy dt {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-muted);
+  margin-top: 16px;
+}
+.policy dd { margin: 4px 0 0; padding: 0; max-width: var(--measure); }
+
+.contact-block {
+  font-family: var(--font-meta);
+  font-size: 15px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 18px 0;
+}
+
+.corrections-log { list-style: none; padding-left: 0; }
+.corrections-log > li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.corrections-log time {
+  font-family: var(--font-meta);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  display: block;
+}
+
+.empty-state {
+  font-family: var(--font-meta);
+  font-size: 14px;
+  color: var(--ink-muted);
+  background: var(--surface);
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+footer {
+  background: var(--surface-inset);
+  color: var(--ink-on-dark-muted);
+  padding: 34px 7vw 40px;
+  font-size: 14px;
+  border-top: 3px solid var(--accent);
+}
+footer p { max-width: var(--measure); margin: 0 0 10px; }
+footer a { color: var(--ink-on-dark); }
+
+.editorial-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-meta);
+  font-size: 13px;
+}
+.editorial-nav li { margin: 0; }
+
+/* ------------------------------------------------------------- 404 helpers */
+
+.nf-wrap { margin: 24px 0; }
+.nf-code {
+  font-family: var(--font-meta);
+  font-size: 13px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  header, footer, .related, .library, .latest, .more { display: none; }
+  body { font-size: 11pt; }
+  .affiliate-disclosure { border: 1px solid #000; }
+}
