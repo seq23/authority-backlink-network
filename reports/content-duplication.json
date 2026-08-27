@@ -6,45 +6,45 @@
   "summary": [
     {
       "publication": "founder-operator",
-      "pages_scored": 104,
-      "pairs_compared": 5356,
+      "pages_scored": 105,
+      "pairs_compared": 5460,
       "max_dice": 0.944,
-      "median_dice": 0.277,
-      "p95_dice": 0.813,
+      "median_dice": 0.28,
+      "p95_dice": 0.814,
       "worst_pair": [
         "sites/founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
         "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html"
       ],
-      "pairs_at_or_over_threshold": 338
+      "pairs_at_or_over_threshold": 348
     },
     {
       "publication": "memphis-local",
-      "pages_scored": 103,
-      "pairs_compared": 5253,
+      "pages_scored": 104,
+      "pairs_compared": 5356,
       "max_dice": 0.973,
-      "median_dice": 0.272,
+      "median_dice": 0.274,
       "p95_dice": 0.849,
       "worst_pair": [
         "sites/memphis-local/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
         "sites/memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html"
       ],
-      "pairs_at_or_over_threshold": 617
+      "pairs_at_or_over_threshold": 651
     },
     {
       "publication": "professional-resources",
-      "pages_scored": 412,
-      "pairs_compared": 84666,
+      "pages_scored": 419,
+      "pairs_compared": 87571,
       "max_dice": 0.947,
-      "median_dice": 0.661,
+      "median_dice": 0.664,
       "p95_dice": 0.78,
       "worst_pair": [
         "sites/professional-resources/daily/2026-08-06-loan-application-packet-practical-faq-answer-page-before-you-book.html",
         "sites/professional-resources/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose.html"
       ],
-      "pairs_at_or_over_threshold": 2659
+      "pairs_at_or_over_threshold": 2779
     }
   ],
-  "pairs_at_or_over_threshold": 3614,
+  "pairs_at_or_over_threshold": 3778,
   "worst_offenders": [
     {
       "publication": "memphis-local",

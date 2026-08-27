@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T19:04:35.665Z",
+  "generated_at": "2026-08-27T19:08:43.448Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 616,
+  "pages_checked": 625,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -47,28 +47,28 @@
       "id": "comparison_table",
       "blocking": false,
       "pages_missing": 60,
-      "coverage_pct": 90.3,
+      "coverage_pct": 90.4,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 518,
-      "coverage_pct": 15.9,
+      "pages_missing": 519,
+      "coverage_pct": 17,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
       "pages_missing": 43,
-      "coverage_pct": 93,
+      "coverage_pct": 93.1,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
       "id": "faq",
       "blocking": false,
       "pages_missing": 59,
-      "coverage_pct": 90.4,
+      "coverage_pct": 90.6,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -113,8 +113,6 @@
       "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html"
     ],
     "concrete_numbers": [
-      "founder-operator/contributors.html",
-      "founder-operator/corrections.html",
       "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
       "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
       "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
@@ -137,7 +135,9 @@
       "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
       "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html"
+      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html"
     ],
     "named_sources": [
       "founder-operator/contributors.html",

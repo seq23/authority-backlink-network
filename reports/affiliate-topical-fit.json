@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "measurement": "affiliate-topical-fit",
-  "placements_examined": 589,
+  "placements_examined": 598,
   "counts": {
-    "target_declares_no_scope": 104,
+    "target_declares_no_scope": 105,
     "out_of_scope": 82,
-    "in_scope": 358,
-    "target_not_in_pantry": 45
+    "in_scope": 365,
+    "target_not_in_pantry": 46
   },
   "targets_without_declared_scope": [
     "aplayermode.com",
@@ -24,7 +24,7 @@
     },
     "virtualagency-os.com": {
       "out_of_scope": 14,
-      "in_scope": 20
+      "in_scope": 21
     },
     "aplayermode.com": {
       "target_declares_no_scope": 30
@@ -44,7 +44,7 @@
       "target_not_in_pantry": 18
     },
     "weddingseatingchartmaker.com": {
-      "target_not_in_pantry": 9
+      "target_not_in_pantry": 10
     },
     "weddingchecklistpdf.com": {
       "out_of_scope": 2,
@@ -52,7 +52,7 @@
     },
     "approvalprep.com": {
       "out_of_scope": 2,
-      "in_scope": 282
+      "in_scope": 288
     },
     "dentistryguides.com": {
       "target_declares_no_scope": 9
@@ -68,7 +68,7 @@
       "target_declares_no_scope": 10
     },
     "theaccidentguides.com": {
-      "target_declares_no_scope": 10
+      "target_declares_no_scope": 11
     },
     "theindustryguides.com": {
       "target_declares_no_scope": 10
@@ -969,6 +969,13 @@
       "verdict": "out_of_scope"
     },
     {
+      "page": "memphis-local/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options.html",
+      "hub": "wedding-planning-tools",
+      "cluster": "wedding checklist planning",
+      "target": "weddingseatingchartmaker.com",
+      "verdict": "target_not_in_pantry"
+    },
+    {
       "page": "memphis-local/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html",
       "hub": "porch-and-seasonal-styling",
       "cluster": "seasonal porch styling",
@@ -1492,6 +1499,13 @@
       "cluster": "equine contract preparation",
       "target": "horselegalguide.com",
       "verdict": "out_of_scope"
+    },
+    {
+      "page": "professional-resources/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators.html",
+      "hub": "equine-contracts",
+      "cluster": "horse contract preparation",
+      "target": "theaccidentguides.com",
+      "verdict": "target_declares_no_scope"
     },
     {
       "page": "professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
