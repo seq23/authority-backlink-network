@@ -35,6 +35,7 @@ COMMANDS = {
     "distribution_chain": [sys.executable, "tests/test_distribution_chain.py"],
     "recovery_agency": [sys.executable, "tests/test_recovery_agency_contract.py"],
     "published_tree_purity": [sys.executable, "scripts/validators/validate_published_tree_purity.py"],
+    "analytics_separation": [sys.executable, "scripts/validators/validate_analytics_separation.py"],
 }
 
 

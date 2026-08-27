@@ -49,6 +49,18 @@ jobs:
         # cluster that data/topic-taxonomy.json does not place in a hub, rather
         # than publishing a page nothing links to.
         run: python3 scripts/build_site_navigation.py --write
+      - name: Refresh the editorial governance surface
+        # There is no shared page shell in this repo -- five generators each
+        # inline their own. These three scripts run last and are idempotent, so
+        # whatever any generator emitted gets the masthead/standards/corrections
+        # footer, the affiliate disclosure next to the affiliated citation, and
+        # this publication's own favicon. Order matters: the pages must exist
+        # before the chrome installer links them, and robots.txt reports page
+        # counts so it runs after the day's pages are written.
+        run: |
+          python3 scripts/build_editorial_pages.py --write
+          python3 scripts/build_robots.py --write
+          python3 scripts/install_editorial_chrome.py --write
       - name: Materialize public IndexNow key files when configured
         env:
           INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}

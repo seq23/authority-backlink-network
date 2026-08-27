@@ -38,7 +38,12 @@
     "validate:operator-doc-currency": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
     "cadence:gate": "node scripts/cadence_gate.js",
     "cadence:template-share": "node scripts/template_share.js",
-    "validate:published-tree-purity": "python3 scripts/validators/validate_published_tree_purity.py"
+    "validate:published-tree-purity": "python3 scripts/validators/validate_published_tree_purity.py",
+    "editorial:pages": "python3 scripts/build_editorial_pages.py --write",
+    "editorial:chrome": "python3 scripts/install_editorial_chrome.py --write",
+    "editorial:robots": "python3 scripts/build_robots.py --write",
+    "editorial:build": "python3 scripts/build_editorial_pages.py --write && python3 scripts/build_robots.py --write && python3 scripts/install_editorial_chrome.py --write",
+    "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py"
   },
   "devDependencies": {}
 }

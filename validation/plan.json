@@ -22,7 +22,8 @@
       "recovery_agency",
       "social_contract",
       "content_pattern",
-      "published_tree_purity"
+      "published_tree_purity",
+      "analytics_separation"
     ],
     "release": [
       "json",
@@ -40,7 +41,8 @@
       "recovery_agency",
       "social_contract",
       "content_pattern",
-      "published_tree_purity"
+      "published_tree_purity",
+      "analytics_separation"
     ],
     "full": [
       "json",
@@ -59,7 +61,8 @@
       "social_contract",
       "cache_self_test",
       "content_pattern",
-      "published_tree_purity"
+      "published_tree_purity",
+      "analytics_separation"
     ],
     "cache-self-test": [
       "python",
@@ -146,6 +149,10 @@
     "published_tree_purity": {
       "severity": "HARD_FAIL",
       "why": "sites/ is publicly fetchable and every AI crawler is allowed; an operator surface there discloses network operations regardless of its noindex meta."
+    },
+    "analytics_separation": {
+      "severity": "HARD_FAIL",
+      "rationale": "Wrong-domain routing: a placeholder, missing, shared or cross-publication analytics id sends one publication's reader data into another's project."
     }
   },
   "severity_matrix_policy": {
