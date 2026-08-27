@@ -34,6 +34,7 @@ COMMANDS = {
     "backlink_local": [sys.executable, "scripts/portfolio_backlink_engine.py", "verify-local"],
     "distribution_chain": [sys.executable, "tests/test_distribution_chain.py"],
     "recovery_agency": [sys.executable, "tests/test_recovery_agency_contract.py"],
+    "published_tree_purity": [sys.executable, "scripts/validators/validate_published_tree_purity.py"],
 }
 
 
