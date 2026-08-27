@@ -38,11 +38,33 @@ if isinstance(links, dict):
 catchup = [r for r in links if START <= r.get('scheduled_content_date', '') <= END]
 assert len(catchup) == EXPECTED_TOTAL, len(catchup)
 assert len({r.get('source_path') for r in catchup}) == EXPECTED_TOTAL
+# The 27-day catch-up is still 243 rows over 243 distinct pages: nothing was
+# retired, and the two assertions above still say so. What changed is that 24 of
+# those rows carried an affiliated citation sitting on a page about something
+# else - theaccidentguides.com on documentation checklists, hormonesivhair.com on
+# equine liability, dentistryguides.com on credit-report errors - and
+# scripts/repair_offtopic_affiliate_links.py removed those citations. The rows
+# are kept and marked `removed_off_topic` rather than deleted, because the
+# backfill really did publish them and erasing that would make this accounting
+# lie in the other direction.
+#
+# So the rendering assertion follows the registry's own status field, the way
+# portfolio_backlink_engine.verify_local() already does, and a removed row is
+# asserted to be genuinely gone from the page. That is a stronger claim than the
+# one it replaces, not a weaker one: before, this loop could only confirm a link
+# was present, and had no way to say a link that should not be there is absent.
+removed = [r for r in catchup if r.get('status') == 'removed_off_topic']
+assert all(r.get('lifecycle_stage') != 'published_in_repository' for r in removed), \
+    'a removed row still claims to be rendered in the repository'
 for row in catchup:
     path = ROOT / row['source_path']
     assert path.exists(), row['source_path']
     text = path.read_text(encoding='utf-8', errors='ignore')
-    assert row.get('target_url') in text, row['source_path']
+    if row.get('status') == 'removed_off_topic':
+        assert row['target_url'] not in text, \
+            f"{row['source_path']}: off-topic citation is still rendered"
+    else:
+        assert row.get('target_url') in text, row['source_path']
     assert '"datePublished": "2026-08-08"' in text, row['source_path']
     assert 'Last updated: 2026-08-08' in text, row['source_path']
 

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T19:38:57.010Z",
+  "generated_at": "2026-08-27T21:01:41.003Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 625,
@@ -53,15 +53,15 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 519,
-      "coverage_pct": 17,
+      "pages_missing": 527,
+      "coverage_pct": 15.7,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 43,
-      "coverage_pct": 93.1,
+      "pages_missing": 75,
+      "coverage_pct": 88,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -142,6 +142,14 @@
     "named_sources": [
       "founder-operator/contributors.html",
       "founder-operator/corrections.html",
+      "founder-operator/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
+      "founder-operator/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
+      "founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
+      "founder-operator/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
+      "founder-operator/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
+      "founder-operator/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
+      "founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
+      "founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -152,19 +160,11 @@
       "founder-operator/topics/virtual-event-production.html",
       "memphis-local/contributors.html",
       "memphis-local/corrections.html",
-      "memphis-local/editorial-standards.html",
-      "memphis-local/index.html",
-      "memphis-local/masthead.html",
-      "memphis-local/topics/event-and-room-styling.html",
-      "memphis-local/topics/grazing-tables-and-vendors.html",
-      "memphis-local/topics/porch-and-seasonal-styling.html",
-      "memphis-local/topics/wedding-and-event-budgets.html",
-      "memphis-local/topics/wedding-day-timelines.html",
-      "memphis-local/topics/wedding-planning-tools.html",
-      "memphis-local/topics/wedding-seating-charts.html",
-      "professional-resources/contributors.html",
-      "professional-resources/corrections.html",
-      "professional-resources/editorial-standards.html"
+      "memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
+      "memphis-local/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
+      "memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
+      "memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
+      "memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

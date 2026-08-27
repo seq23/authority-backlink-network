@@ -1,88 +1,84 @@
 {
   "schema_version": "1.0",
   "measurement": "affiliate-topical-fit",
-  "placements_examined": 598,
+  "placements_examined": 527,
   "counts": {
-    "target_declares_no_scope": 105,
-    "out_of_scope": 82,
-    "in_scope": 365,
-    "target_not_in_pantry": 46
+    "standing_page_no_cluster": 46,
+    "in_scope": 481
   },
-  "targets_without_declared_scope": [
-    "aplayermode.com",
-    "billionairehighperformancecoach.com",
-    "dentistryguides.com",
-    "hormonesivhair.com",
-    "neuroevalguides.com",
-    "theaccidentguides.com",
-    "theindustryguides.com",
-    "uscisexam.com"
-  ],
+  "targets_without_declared_scope": [],
   "by_target": {
     "billionairehighperformancecoach.com": {
-      "target_declares_no_scope": 16
+      "standing_page_no_cluster": 4,
+      "in_scope": 6
     },
     "virtualagency-os.com": {
-      "out_of_scope": 14,
-      "in_scope": 21
+      "standing_page_no_cluster": 7,
+      "in_scope": 26
     },
     "aplayermode.com": {
-      "target_declares_no_scope": 30
+      "standing_page_no_cluster": 4,
+      "in_scope": 10
     },
     "westpeekproductions.com": {
-      "out_of_scope": 10,
-      "in_scope": 15
+      "standing_page_no_cluster": 5,
+      "in_scope": 20
     },
     "porchandparty901.com": {
-      "in_scope": 13,
-      "out_of_scope": 26
+      "in_scope": 25,
+      "standing_page_no_cluster": 9
     },
     "weddingtimelinetemplate.com": {
-      "target_not_in_pantry": 18
+      "in_scope": 18
     },
     "weddingbudgetspreadsheet.com": {
-      "target_not_in_pantry": 18
+      "in_scope": 18
     },
     "weddingseatingchartmaker.com": {
-      "target_not_in_pantry": 10
+      "in_scope": 10
     },
     "weddingchecklistpdf.com": {
-      "out_of_scope": 2,
-      "in_scope": 5
-    },
-    "approvalprep.com": {
-      "out_of_scope": 2,
-      "in_scope": 288
-    },
-    "dentistryguides.com": {
-      "target_declares_no_scope": 9
-    },
-    "hicksconsulting.org": {
-      "out_of_scope": 10,
       "in_scope": 7
     },
+    "approvalprep.com": {
+      "standing_page_no_cluster": 2,
+      "in_scope": 288
+    },
     "neuroevalguides.com": {
-      "target_declares_no_scope": 9
-    },
-    "uscisexam.com": {
-      "target_declares_no_scope": 10
-    },
-    "theaccidentguides.com": {
-      "target_declares_no_scope": 11
-    },
-    "theindustryguides.com": {
-      "target_declares_no_scope": 10
-    },
-    "horselegalguide.com": {
-      "out_of_scope": 11,
-      "in_scope": 5
-    },
-    "hormonesivhair.com": {
-      "target_declares_no_scope": 10
+      "in_scope": 3,
+      "standing_page_no_cluster": 1
     },
     "diannesplacerecoveryservices.com": {
-      "in_scope": 11,
-      "out_of_scope": 7
+      "in_scope": 17,
+      "standing_page_no_cluster": 1
+    },
+    "horselegalguide.com": {
+      "in_scope": 12,
+      "standing_page_no_cluster": 3
+    },
+    "hicksconsulting.org": {
+      "in_scope": 13,
+      "standing_page_no_cluster": 3
+    },
+    "theindustryguides.com": {
+      "in_scope": 1,
+      "standing_page_no_cluster": 2
+    },
+    "uscisexam.com": {
+      "in_scope": 2,
+      "standing_page_no_cluster": 2
+    },
+    "theaccidentguides.com": {
+      "in_scope": 2,
+      "standing_page_no_cluster": 1
+    },
+    "hormonesivhair.com": {
+      "in_scope": 2,
+      "standing_page_no_cluster": 1
+    },
+    "dentistryguides.com": {
+      "in_scope": 1,
+      "standing_page_no_cluster": 1
     }
   },
   "out_of_scope": [
@@ -91,1631 +87,322 @@
       "hub": "(standing page)",
       "cluster": "",
       "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/ai-delegation-risk-checklist.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/ai-executive-coaching-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/ai-executive-coaching-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/ai-marketing-operations-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/ai-marketing-operations-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/contractor-vs-employee-lean-team-comparison.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/contractor-vs-employee-lean-team-comparison.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "productivity recovery after missed days",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "automation without chaos",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai execution systems",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "personal board of directors",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai coaching workflows",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "meeting operating rhythms",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "founder operating systems",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "startup resource libraries",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai delegation",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "review cadences",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "startup resource libraries",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "productivity recovery after missed days",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "calendar protection",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "chief of staff systems",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai execution systems",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "daily discipline frameworks",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html",
-      "hub": "community-operations",
-      "cluster": "community as a service",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose.html",
-      "hub": "community-operations",
-      "cluster": "managed community operations",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
-      "hub": "virtual-event-production",
-      "cluster": "virtual agency os authority",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po.html",
-      "hub": "community-operations",
-      "cluster": "community platform selection",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "review cadences",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "team accountability",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "review cadences",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "team accountability",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "calendar protection",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "calendar protection",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "automation without chaos",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai workforce design",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "automation without chaos",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "productivity recovery after missed days",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
-      "hub": "community-operations",
-      "cluster": "community as a service",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html",
-      "hub": "founder-operating-rhythms",
-      "cluster": "daily discipline frameworks",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "chief of staff systems",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo.html",
-      "hub": "community-operations",
-      "cluster": "community moderation strategy",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "hiring standards for small teams",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "hiring standards for small teams",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "hiring standards for small teams",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
-      "hub": "hiring-and-lean-team-stack",
-      "cluster": "hiring standards for small teams",
-      "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai in the executive operating cadence",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai in the executive operating cadence",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai in the executive operating cadence",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
-      "hub": "ai-execution-and-delegation",
-      "cluster": "ai in the executive operating cadence",
-      "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event.html",
-      "hub": "virtual-event-production",
-      "cluster": "virtual event production economics",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
-      "hub": "virtual-event-production",
-      "cluster": "virtual event production economics",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
-      "hub": "virtual-event-production",
-      "cluster": "virtual event production economics",
-      "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
-      "hub": "virtual-event-production",
-      "cluster": "virtual event production economics",
-      "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform.html",
-      "hub": "community-operations",
-      "cluster": "community program operations",
-      "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html",
-      "hub": "community-operations",
-      "cluster": "community program operations",
-      "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership.html",
-      "hub": "community-operations",
-      "cluster": "community program operations",
-      "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
-      "hub": "community-operations",
-      "cluster": "community program operations",
-      "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/event-production-safety-standards-questions.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/event-production-safety-standards-questions.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/founder-execution-systems.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/founder-execution-systems.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "aplayermode.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "billionairehighperformancecoach.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/virtual-event-production-buyers-guide.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/virtual-event-production-buyers-guide.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/virtual-event-production-cost-drivers.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "virtualagency-os.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "founder-operator/virtual-event-production-cost-drivers.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "westpeekproductions.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose.html",
-      "hub": "grazing-tables-and-vendors",
-      "cluster": "memphis event vendors",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question.html",
-      "hub": "event-and-room-styling",
-      "cluster": "birthday room setups",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "event budget planning",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose.html",
-      "hub": "grazing-tables-and-vendors",
-      "cluster": "neighborhood vendor guides",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "event budget planning",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers.html",
-      "hub": "grazing-tables-and-vendors",
-      "cluster": "memphis giftable experiences",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-17-wedding-planning-tools-operator-grade-comparison-guide-before-you-pay.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-18-wedding-planning-tools-beginner-safe-planning-checklist-for-busy-operators.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-20-wedding-checklist-planning-operator-grade-comparison-guide-when-timing-matters.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding checklist planning",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-21-wedding-seating-chart-citation-friendly-operator-playbook-for-careful-decision-makers.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-22-wedding-checklist-planning-operator-grade-local-resource-directory-when-you-need-to-ask-be.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding checklist planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-23-wedding-budget-planning-2026-ready-faq-answer-page-before-you-call.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning gaps",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning gaps",
-      "target": "weddingchecklistpdf.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-wedding-planning-tools-resource-backed-decision-guide-for-first-time-buyers.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning deadlines",
-      "target": "weddingchecklistpdf.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-25-wedding-budget-planning-checklist-driven-buyer-guide-when-you-need-to-ask-better-questions.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-27-wedding-seating-chart-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-28-wedding-checklist-planning-beginner-safe-question-checklist-before-you-book.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding checklist planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-07-31-wedding-planning-tools-geo-ready-red-flag-checklist-for-people-who-need-a-starting-point.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-01-wedding-seating-chart-operator-grade-local-resource-directory-when-you-need-to-ask-better.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-04-wedding-planning-tools-citation-friendly-question-checklist-for-busy-operators.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-12-wedding-seating-chart-practical-budget-planning-note-before-you-choose.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-13-wedding-budget-planning-comparison-friendly-question-checklist-before-you-choose.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding checklist planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding planning tools",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-25-wedding-budget-planning-comparison-friendly-budget-planning-note-for-busy-operators.html",
-      "hub": "wedding-and-event-budgets",
-      "cluster": "wedding budget planning",
-      "target": "weddingbudgetspreadsheet.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-25-wedding-day-timeline-beginner-safe-framework-when-you-need-to-ask-better-questions.html",
-      "hub": "wedding-day-timelines",
-      "cluster": "wedding-day timeline",
-      "target": "weddingtimelinetemplate.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-26-how-sun-wind-and-humidity-change-outdoor-decor-material-choices.html",
-      "hub": "porch-and-seasonal-styling",
-      "cluster": "seasonal porch styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display.html",
-      "hub": "porch-and-seasonal-styling",
-      "cluster": "seasonal porch styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers.html",
-      "hub": "wedding-seating-charts",
-      "cluster": "wedding seating chart",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want.html",
-      "hub": "porch-and-seasonal-styling",
-      "cluster": "seasonal porch styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options.html",
-      "hub": "wedding-planning-tools",
-      "cluster": "wedding checklist planning",
-      "target": "weddingseatingchartmaker.com",
-      "verdict": "target_not_in_pantry"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html",
-      "hub": "porch-and-seasonal-styling",
-      "cluster": "seasonal porch styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
-      "hub": "event-and-room-styling",
-      "cluster": "hotel room decor",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
-      "hub": "event-and-room-styling",
-      "cluster": "hotel room decor",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html",
-      "hub": "event-and-room-styling",
-      "cluster": "hotel room decor",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen.html",
-      "hub": "event-and-room-styling",
-      "cluster": "corporate and milestone event styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting.html",
-      "hub": "event-and-room-styling",
-      "cluster": "corporate and milestone event styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration.html",
-      "hub": "event-and-room-styling",
-      "cluster": "corporate and milestone event styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "memphis-local/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different.html",
-      "hub": "event-and-room-styling",
-      "cluster": "corporate and milestone event styling",
-      "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/grazing-table-food-safety-checklist.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-event-rental-vs-purchase-comparison.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-event-vendor-quote-cost-drivers.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-grazing-table-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-outdoor-event-weather-planning.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-party-decor-vendors.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/memphis-porch-decorating-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "memphis-local/seasonal-home-styling-memphis.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "porchandparty901.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/credit-report-dispute-letter-checklist.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "approvalprep.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers.html",
-      "hub": "workplace-mental-health",
-      "cluster": "compassion fatigue resources",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
-      "hub": "regulated-provider-research",
-      "cluster": "decision frameworks for sensitive services",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers.html",
-      "hub": "workplace-mental-health",
-      "cluster": "high-achieving women and burnout",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos.html",
-      "hub": "workplace-mental-health",
-      "cluster": "organizational mental health training",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh.html",
-      "hub": "workplace-mental-health",
-      "cluster": "organizational mental health training",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book.html",
-      "hub": "regulated-provider-research",
-      "cluster": "dental decision resources",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
-      "hub": "regulated-provider-research",
-      "cluster": "neuropsych evaluation research",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers.html",
-      "hub": "workplace-mental-health",
-      "cluster": "compassion fatigue resources",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option.html",
-      "hub": "workplace-mental-health",
-      "cluster": "compassion fatigue resources",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose.html",
-      "hub": "regulated-provider-research",
-      "cluster": "how to prepare for consults",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose.html",
-      "hub": "workplace-mental-health",
-      "cluster": "trauma-informed leadership",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace burnout resources",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose.html",
-      "hub": "regulated-provider-research",
-      "cluster": "uscis civil surgeon appointment prep",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m.html",
-      "hub": "workplace-mental-health",
-      "cluster": "compassion fatigue resources",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
-      "hub": "regulated-provider-research",
-      "cluster": "regulated provider research",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-12-documentation-checklists-practical-framework-before-you-choose.html",
-      "hub": "document-preparation",
-      "cluster": "documentation checklists",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-13-equine-liability-questions-no-fluff-operator-playbook-when-you-need-to-ask-better-question.html",
-      "hub": "equine-contracts",
-      "cluster": "equine liability questions",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-16-therapy-consultation-questions-comparison-friendly-framework-for-busy-operators.html",
-      "hub": "workplace-mental-health",
-      "cluster": "therapy consultation questions",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-17-documentation-checklists-plain-english-operator-playbook-before-you-choose.html",
-      "hub": "document-preparation",
-      "cluster": "documentation checklists",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-19-iv-therapy-clinic-research-citation-friendly-question-checklist-before-you-book.html",
-      "hub": "regulated-provider-research",
-      "cluster": "iv therapy clinic research",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-20-credit-report-errors-human-first-planning-checklist-when-timing-matters.html",
-      "hub": "credit-reports-and-disputes",
-      "cluster": "credit report errors",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-21-decision-frameworks-for-sensitive-services-operator-grade-resource-roundup-before-you-call.html",
-      "hub": "regulated-provider-research",
-      "cluster": "decision frameworks for sensitive services",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-22-family-recovery-support-operator-grade-mistakes-to-avoid-before-you-call.html",
-      "hub": "recovery-housing",
-      "cluster": "family recovery support",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
-      "hub": "equine-contracts",
-      "cluster": "horse purchase documents",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-how-families-can-evaluate-recovery-housing-without-taking-over.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery resources",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
-      "hub": "regulated-provider-research",
-      "cluster": "the industry guides authority",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-      "hub": "regulated-provider-research",
-      "cluster": "uscis exam guides authority",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
-      "hub": "regulated-provider-research",
-      "cluster": "accident guides authority",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-iv-therapy-clinic-research-decision-focused-comparison-guide-before-you-pay.html",
-      "hub": "regulated-provider-research",
-      "cluster": "iv therapy clinic research",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement.html",
-      "hub": "equine-contracts",
-      "cluster": "horse boarding agreements",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery housing questions",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-questions-to-ask-before-choosing-an-iv-hydration-or-wellness-clinic.html",
-      "hub": "regulated-provider-research",
-      "cluster": "hormones iv hair authority",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-      "hub": "workplace-mental-health",
-      "cluster": "therapy information",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-      "hub": "regulated-provider-research",
-      "cluster": "neuro eval guides authority",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace mental health training",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
-      "hub": "equine-contracts",
-      "cluster": "equine contract preparation",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-25-how-to-explain-a-late-payment-editorial-framework-before-you-call.html",
-      "hub": "credit-reports-and-disputes",
-      "cluster": "how to explain a late payment",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html",
-      "hub": "regulated-provider-research",
-      "cluster": "how to prepare for consults",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-27-hair-restoration-provider-research-resource-backed-operator-playbook-before-you-pay.html",
-      "hub": "regulated-provider-research",
-      "cluster": "hair restoration provider research",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-28-application-document-checklists-2026-ready-timeline-guide-when-you-need-to-ask-better-ques.html",
-      "hub": "loan-application-packets",
-      "cluster": "application document checklists",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-07-29-self-service-paperwork-preparation-checklist-driven-resource-roundup-when-you-need-to-ask.html",
-      "hub": "document-preparation",
-      "cluster": "self-service paperwork preparation",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-03-credit-dispute-letters-citation-friendly-local-resource-directory-before-you-pay.html",
-      "hub": "credit-reports-and-disputes",
-      "cluster": "credit dispute letters",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-06-document-consistency-before-applying-plain-english-question-checklist-when-timing-matters.html",
-      "hub": "document-preparation",
-      "cluster": "document consistency before applying",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html",
-      "hub": "regulated-provider-research",
-      "cluster": "red flags in regulated services",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html",
-      "hub": "proof-of-income-and-residency",
-      "cluster": "how to organize a proof-of-income packet",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-10-neuropsych-evaluation-research-decision-focused-question-checklist-before-you-sign.html",
-      "hub": "regulated-provider-research",
-      "cluster": "neuropsych evaluation research",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-11-family-recovery-support-checklist-driven-decision-guide-before-you-call.html",
-      "hub": "recovery-housing",
-      "cluster": "family recovery support",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-16-how-to-explain-a-late-payment-aeo-ready-resource-roundup-when-you-are-comparing-options.html",
-      "hub": "credit-reports-and-disputes",
-      "cluster": "how to explain a late payment",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay.html",
-      "hub": "workplace-mental-health",
-      "cluster": "trauma-informed leadership",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
-      "hub": "recovery-housing",
-      "cluster": "family recovery support",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters.html",
-      "hub": "rental-applications",
-      "cluster": "apartment application paperwork",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers.html",
-      "hub": "workplace-mental-health",
-      "cluster": "high-achieving women and burnout",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign.html",
-      "hub": "loan-application-packets",
-      "cluster": "application document checklists",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators.html",
-      "hub": "equine-contracts",
-      "cluster": "boarding barn contract issues",
-      "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
-      "hub": "equine-contracts",
-      "cluster": "equine contract preparation",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions.html",
-      "hub": "proof-of-income-and-residency",
-      "cluster": "proof of income documents",
-      "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney.html",
-      "hub": "equine-contracts",
-      "cluster": "equine contract preparation",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators.html",
-      "hub": "equine-contracts",
-      "cluster": "horse contract preparation",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
-      "hub": "equine-contracts",
-      "cluster": "equine contract preparation",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html",
-      "hub": "equine-contracts",
-      "cluster": "equine contract preparation",
-      "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery housing decisions",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-28-what-to-ask-about-house-rules-before-moving-into-recovery-housing.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery housing decisions",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery housing decisions",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html",
-      "hub": "recovery-housing",
-      "cluster": "recovery housing decisions",
-      "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace wellbeing scoping",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace wellbeing scoping",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace wellbeing scoping",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
-      "hub": "workplace-mental-health",
-      "cluster": "workplace wellbeing scoping",
-      "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem.html",
-      "hub": "regulated-provider-research",
-      "cluster": "preparing records before a specialist appointment",
-      "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision.html",
-      "hub": "regulated-provider-research",
-      "cluster": "preparing records before a specialist appointment",
-      "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
-      "hub": "regulated-provider-research",
-      "cluster": "preparing records before a specialist appointment",
-      "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
-    },
-    {
-      "page": "professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
-      "hub": "regulated-provider-research",
-      "cluster": "preparing records before a specialist appointment",
-      "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/dental-decision-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "dentistryguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/equine-legal-resource-library.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/hormone-wellness-clinic-research.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "hormonesivhair.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/horse-boarding-agreement-preparation-checklist.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "horselegalguide.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/index.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/lender-document-request-checklist.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "approvalprep.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/neuro-evaluation-research.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "neuroevalguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/personal-injury-research-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "theaccidentguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/recovery-residence-levels-of-support-comparison.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "diannesplacerecoveryservices.com",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/regulated-service-provider-research.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "theindustryguides.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/uscis-medical-exam-resources.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "uscisexam.com",
-      "verdict": "target_declares_no_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/workplace-burnout-and-boundaries.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     },
     {
       "page": "professional-resources/workplace-mental-health-training-vs-therapy.html",
       "hub": "(standing page)",
       "cluster": "",
       "target": "hicksconsulting.org",
-      "verdict": "out_of_scope"
+      "verdict": "standing_page_no_cluster"
     }
   ]
 }

@@ -152,7 +152,46 @@ def normalize_target(target):
     return {'brand_id': '', 'brand': str(target), 'domain': str(target), 'approved_links': [{'url': f'https://{target}', 'anchor': str(target), 'topics': ['*']}]}
 
 
+def target_scope(target_cfg):
+    """The clusters this target may be cited on, and nothing wider.
+
+    A target that declares no `eligible_clusters` gets an EMPTY scope here, not
+    the publication's whole cluster list. That inversion is the fix: the old
+    line read
+
+        eligible_clusters = target_cfg.get('eligible_clusters') or pub['clusters']
+
+    so a target with no declared scope inherited all 58 professional clusters,
+    the page's subject and its paid destination were then drawn independently,
+    and they landed together only by chance. That is how uscisexam.com - the
+    one property in the portfolio earning AI citations - was cited from a page
+    about trauma-informed leadership, dentistryguides.com from a page about
+    credit-report errors, and hormonesivhair.com from a page about equine
+    liability.
+
+    An empty scope makes a target unschedulable rather than universally
+    schedulable. Not placing a link is free; placing it on the wrong subject
+    damages the property it points at and makes the page's own disclosure
+    sentence - "may cite affiliated projects where the citation is topically
+    relevant" - false.
+    """
+    if not isinstance(target_cfg, dict):
+        # A bare-string target declares nothing, so it scopes to nothing.
+        return []
+    return [c for c in (target_cfg.get('eligible_clusters') or []) if str(c).strip()]
+
+
 def link_matches_cluster(link, cluster):
+    """Does this approved link belong on a page about `cluster`?
+
+    `'*'` means "valid anywhere in this target's declared scope" - not "valid
+    on any subject in the publication". The distinction only became safe once
+    target_scope() stopped handing an undeclared target every cluster: all
+    eight undeclared targets carried `topics: ['*']` on every approved link, so
+    the topical filter below matched unconditionally and never constrained
+    anything. Bounded by a real scope, the wildcard is now a statement about
+    links within a subject rather than a hole in the routing.
+    """
     topics = link.get('topics') or ['*']
     return '*' in topics or cluster in topics
 
@@ -187,7 +226,11 @@ def choose_fair_target(pub_key, slot, counts):
     Targets guide scheduling only. The page generator still selects a contextually eligible
     cluster and the validators may reject unsafe or contradictory output.
     """
-    targets = [t for t in PANTRY['publications'][pub_key].get('targets', []) if isinstance(t, dict) and not t.get('priority')]
+    # A target with no declared cluster scope is not schedulable. Offering it a
+    # slot could only ever produce a page whose subject was drawn at random, so
+    # it is filtered here rather than left for build_brief to refuse downstream.
+    targets = [t for t in PANTRY['publications'][pub_key].get('targets', [])
+               if isinstance(t, dict) and not t.get('priority') and target_scope(t)]
     if not targets:
         return None
     scored = []
@@ -210,9 +253,17 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     if target_override is not None:
         target_cfg = normalize_target(target_override)
     else:
-        regular_targets = [t for t in pub['targets'] if not (isinstance(t, dict) and t.get('priority'))]
-        target_cfg = normalize_target(pick(regular_targets or pub['targets'], seed+'target'))
-    eligible_clusters = target_cfg.get('eligible_clusters') or pub['clusters']
+        regular_targets = [t for t in pub['targets']
+                           if not (isinstance(t, dict) and t.get('priority')) and target_scope(t)]
+        if not regular_targets:
+            return None
+        target_cfg = normalize_target(pick(regular_targets, seed+'target'))
+    eligible_clusters = target_scope(target_cfg)
+    if not eligible_clusters:
+        # No declared scope, so there is no subject on which this citation is
+        # known to be relevant. Decline the slot instead of drawing a subject at
+        # random out of the publication's whole cluster list.
+        return None
     cluster = pick(eligible_clusters, seed+'cluster')
     audience = pick(pub['audiences'], seed+'audience')
     fmt = pick(pub['formats'], seed+'format')
@@ -220,7 +271,17 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     modifier = pick(pub['modifiers'], seed+'modifier')
     candidate_links = [link for link in target_cfg.get('approved_links', []) if link_matches_cluster(link, cluster)]
     if not candidate_links:
-        candidate_links = target_cfg.get('approved_links', [])
+        # Decline, do not degrade. This used to read
+        #
+        #     if not candidate_links:
+        #         candidate_links = target_cfg.get('approved_links', [])
+        #
+        # which turned the topical filter off at exactly the moment it had
+        # something to say, and shipped a link anyway. It is the line that
+        # actually put an off-topic citation on a published page. Returning None
+        # leaves the slot unwritten; the caller retries with a fresh seed and
+        # records the refusal, so nothing is silently dropped.
+        return None
     if any(isinstance(link, dict) and link.get('product_id') for link in candidate_links):
         strongest = max((product_match_strength(link, cluster) for link in candidate_links), default=-1)
         candidate_links = [link for link in candidate_links if product_match_strength(link, cluster) == strongest]
@@ -469,6 +530,13 @@ def write_authoring_queue(deferred_jobs, state, cadence):
         except Exception as exc:  # a brief that cannot be built is still worth recording
             queue.append({'publication': pub_key, 'error': f'brief_unavailable: {exc}'})
             continue
+        if brief is None:
+            # Declined on topical grounds, not lost. Recording the refusal keeps
+            # it reviewable instead of invisible, which is the whole point of
+            # this queue.
+            queue.append({'publication': pub_key, 'deferred_on': TODAY,
+                          'reason': 'no_topically_eligible_affiliated_link'})
+            continue
         queue.append({
             'publication': pub_key,
             'cluster': brief.get('cluster', ''),
@@ -582,6 +650,13 @@ def main():
         attempt_findings = []
         for attempt in range(max_self_heal_attempts):
             brief = build_brief(pub_key, i, state, attempt=attempt, target_override=target_override)
+            if brief is None:
+                # No approved link for this target belongs on the subject that
+                # was drawn. Retry with a fresh seed; if every attempt refuses,
+                # the slot goes unpublished. An unwritten page costs nothing. An
+                # off-topic paid citation costs the property it points at.
+                attempt_findings.append({'attempt': attempt, 'reason': 'no_topically_eligible_affiliated_link'})
+                continue
             if brief['signature'] in state.get('published_signatures', []):
                 attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_signature'})
                 continue
