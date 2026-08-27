@@ -8,8 +8,8 @@
   "stale_pct": 0,
   "fresh_within_30d": 626,
   "lastmod_within_7d": 626,
-  "new_since_last_run": 9,
-  "new_editorial_urls": 9,
+  "new_since_last_run": 0,
+  "new_editorial_urls": 0,
   "new_navigation_urls": 0,
   "ledger_initialised": true,
   "maintainable_ceiling": 325,
@@ -22,11 +22,9 @@
     "require_lastmod": true,
     "_why": "13 weeks is the point where pages become markedly more likely to lose AI citations, and recency is the strongest single correlate of being cited. The ceiling is refresh capacity times that window: publish faster than the library can be maintained and the tail ages out of citability."
   },
-  "blocking": [
-    "weekly_cap: 9 editorial URLs are new since the ledger was last accepted, cap is 3 per week"
-  ],
+  "blocking": [],
   "warnings": [
     "library_over_ceiling: 628 pages against a ceiling of 325 (25 substantive refreshes per week held inside 91 days). 303 pages cannot be kept current at this capacity."
   ],
-  "status": "BLOCKED"
+  "status": "CLEAR"
 }

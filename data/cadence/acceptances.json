@@ -39,6 +39,29 @@
         "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
         "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy"
       ]
+    },
+    {
+      "accepted_at": "2026-08-27",
+      "reason": "The last unconstrained batch. These 9 daily pages were published by the autopilot run 33103860012 on 2026-08-27 and are live; a red build cannot un-publish them, and nothing here is retired. This is a one-time acceptance, not a standing practice: the same commit caps the generator itself. scripts/cadence_allowance.py now reads data/cadence/policy.json:new_pages_per_week and clamps the autopilot's job list before it writes anything, so the engine that produced 63 pages a week against a declared 3 can no longer exceed the cap. From here authority-v4-autopilot.yml runs the gate and only then accepts, so a publish that stays inside the rate advances this ledger and one that does not fails before committing. The library_over_ceiling warning is untouched and unresolved: 628 pages against a ceiling of 325, with 303 that cannot be kept current at the declared refresh capacity.",
+      "urls_total_after": 628,
+      "accepted_count": 9,
+      "accepted_editorial": 9,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 6,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 303,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
+        "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+        "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose"
+      ]
     }
   ]
 }

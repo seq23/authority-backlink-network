@@ -6,6 +6,7 @@ Designed for three publication sites already deployed by Cloudflare Git integrat
 """
 import os, json, re, hashlib, random, html, urllib.request
 from pathlib import Path
+import cadence_allowance
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
@@ -450,6 +451,53 @@ def update_sitemap(site_path, domain):
     tmp.replace(site/'llms.txt')
 
 
+
+def write_authoring_queue(deferred_jobs, state, cadence):
+    """Record the slots the cap deferred, with the angle each was going to take.
+
+    A deferred slot is not a discarded one. Without this the cap would silently
+    shrink the day's output and the intent behind each unwritten page would be
+    gone, which is how a rate limit turns into quiet attrition. Each entry
+    carries enough to write the page later, or to decide it was not worth
+    writing - which is also a legitimate outcome, and one the queue makes
+    reviewable instead of invisible.
+    """
+    queue = []
+    for i, (pub_key, target_override) in enumerate(deferred_jobs):
+        try:
+            brief = build_brief(pub_key, i, state, attempt=0, target_override=target_override)
+        except Exception as exc:  # a brief that cannot be built is still worth recording
+            queue.append({'publication': pub_key, 'error': f'brief_unavailable: {exc}'})
+            continue
+        queue.append({
+            'publication': pub_key,
+            'cluster': brief.get('cluster', ''),
+            'audience': brief.get('audience', ''),
+            'format': brief.get('format', ''),
+            'intent': brief.get('intent', ''),
+            'modifier': brief.get('modifier', ''),
+            'intended_title': brief.get('title', ''),
+            'target_brand': brief.get('brand', ''),
+            'target_url': brief.get('target_url', ''),
+            'signature': brief.get('signature', ''),
+            'deferred_on': TODAY,
+            'reason': 'weekly_publication_cap',
+        })
+    write_json(REPORT_DIR/'authoring-queue.json', {
+        'schema_version': '1.0',
+        'run_at': TODAY,
+        'note': (
+            'Slots the weekly publication cap deferred. Not discarded: each carries the angle it '
+            'was going to take, so it can be written when there is room, or retired on purpose. '
+            'The cap is data/cadence/policy.json:new_pages_per_week and is enforced in '
+            'scripts/cadence_allowance.py before generation, not after.'
+        ),
+        'cadence': cadence,
+        'deferred': len(queue),
+        'queue': queue,
+    })
+
+
 def main():
     state = read_json(STATE_PATH, DEFAULT_STATE)
     for k, v in DEFAULT_STATE.items():
@@ -503,6 +551,32 @@ def main():
         base_jobs.append((pub_key, choose_fair_target(pub_key, i, portfolio_counts)))
     jobs = priority_jobs + base_jobs
     jobs = jobs[:volume]
+
+    # The publishing cap the repository already declares finally governs the
+    # generator that can violate it. Before this, volume came only from the
+    # scaling config and the gate in .github/workflows/hostile-review.yml never
+    # saw the result, because git-auto-commit-action pushes with GITHUB_TOKEN and
+    # GitHub does not trigger workflows on those pushes. So a declared 3 per week
+    # sat next to a measured 63 per week and nothing could reconcile them.
+    #
+    # Over the cap is not an error and does not fail the run. There is nothing
+    # broken about a day with no room left; the honest response is to publish
+    # nothing and say so. What would be dishonest is publishing anyway, or
+    # quietly discarding the material - so the slots that do not fit are written
+    # to the authoring queue with the angle each one was going to take, and the
+    # run exits 0.
+    site_paths = [cfg['site_path'] for cfg in PANTRY['publications'].values()]
+    cadence = cadence_allowance.allowance(ROOT, site_paths, date.fromisoformat(TODAY))
+    deferred_jobs = jobs[cadence['allowance']:]
+    jobs = jobs[:cadence['allowance']]
+    print(
+        f"CADENCE: {cadence['published_in_window']} page(s) published in the {cadence['window_days']} days "
+        f"to {cadence['window_end']}, cap is {cadence['weekly_cap']} per week -> room for {cadence['allowance']} today; "
+        f"{len(deferred_jobs)} slot(s) queued for later."
+    )
+    if not jobs:
+        print("CADENCE: nothing to publish today. This is success, not a failure - the library is at its declared rate.")
+    write_authoring_queue(deferred_jobs, state, cadence)
     for i, (pub_key, target_override) in enumerate(jobs):
         accepted = None
         attempt_findings = []
