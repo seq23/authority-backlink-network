@@ -6,7 +6,7 @@
     "validate:changed": "python3 scripts/validate.py changed",
     "validate:release": "python3 scripts/validate.py release",
     "validate:full": "python3 scripts/validate.py full",
-    "validate:all": "npm run validate:release",
+    "validate:all": "npm run validate:release && npm run validate:demand-backed-pages",
     "release:prepush": "npm run validate:release",
     "release:prepush:local": "npm run validate:release",
     "check": "npm run validate:changed",
@@ -46,7 +46,8 @@
     "citations:apply": "python3 scripts/add_external_citations.py --write",
     "pages:demand-shapes": "python3 scripts/build_demand_shape_pages.py --write",
     "validate:external-sources": "python3 scripts/verify_external_sources.py",
-    "validate:click-depth": "python3 scripts/measure_click_depth.py --max-depth 3"
+    "validate:click-depth": "python3 scripts/measure_click_depth.py --max-depth 3",
+    "validate:demand-backed-pages": "python3 scripts/validate_demand_backed_pages.py"
   },
   "devDependencies": {}
 }

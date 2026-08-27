@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 44,
+    "runtime_operators": 45,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -291,13 +291,19 @@
     {
       "operator": "validate:all",
       "command": "npm run validate:all",
-      "implementation": "npm run validate:release",
+      "implementation": "npm run validate:release && npm run validate:demand-backed-pages",
       "category": "Validation / release"
     },
     {
       "operator": "validate:click-depth",
       "command": "npm run validate:click-depth",
       "implementation": "python3 scripts/measure_click_depth.py --max-depth 3",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:demand-backed-pages",
+      "command": "npm run validate:demand-backed-pages",
+      "implementation": "python3 scripts/validate_demand_backed_pages.py",
       "category": "Validation / release"
     },
     {
