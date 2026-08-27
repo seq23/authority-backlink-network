@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0",
+  "measurement": "sorensen-dice-main-bigrams",
+  "threshold": 0.8,
+  "scope": "all",
+  "summary": [
+    {
+      "publication": "founder-operator",
+      "pages_scored": 105,
+      "pairs_compared": 5460,
+      "max_dice": 0.944,
+      "median_dice": 0.28,
+      "p95_dice": 0.814,
+      "worst_pair": [
+        "sites/founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
+        "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html"
+      ],
+      "pairs_at_or_over_threshold": 348
+    },
+    {
+      "publication": "memphis-local",
+      "pages_scored": 104,
+      "pairs_compared": 5356,
+      "max_dice": 0.973,
+      "median_dice": 0.274,
+      "p95_dice": 0.849,
+      "worst_pair": [
+        "sites/memphis-local/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
+        "sites/memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html"
+      ],
+      "pairs_at_or_over_threshold": 651
+    },
+    {
+      "publication": "professional-resources",
+      "pages_scored": 419,
+      "pairs_compared": 87571,
+      "max_dice": 0.947,
+      "median_dice": 0.664,
+      "p95_dice": 0.78,
+      "worst_pair": [
+        "sites/professional-resources/daily/2026-08-06-loan-application-packet-practical-faq-answer-page-before-you-book.html",
+        "sites/professional-resources/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose.html"
+      ],
+      "pairs_at_or_over_threshold": 2779
+    }
+  ],
+  "pairs_at_or_over_threshold": 3778,
+  "worst_offenders": [
+    {
+      "publication": "memphis-local",
+      "dice": 0.973,
+      "a": "sites/memphis-local/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
+      "b": "sites/memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.947,
+      "a": "sites/professional-resources/daily/2026-08-06-loan-application-packet-practical-faq-answer-page-before-you-book.html",
+      "b": "sites/professional-resources/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose.html"
+    },
+    {
+      "publication": "founder-operator",
+      "dice": 0.944,
+      "a": "sites/founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
+      "b": "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.944,
+      "a": "sites/memphis-local/daily/2026-07-29-wedding-checklist-planning-no-fluff-faq-answer-page-before-you-call.html",
+      "b": "sites/memphis-local/daily/2026-08-02-wedding-checklist-planning-human-first-resource-roundup-before-you-call.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.942,
+      "a": "sites/professional-resources/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-08-01-credit-dispute-letters-no-fluff-faq-answer-page-for-people-who-need-a-starting-point.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.941,
+      "a": "sites/professional-resources/daily/2026-07-17-large-deposit-explanation-low-risk-framework-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-07-26-large-deposit-explanation-editorial-resource-roundup-when-timing-matters.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.941,
+      "a": "sites/professional-resources/daily/2026-07-19-loan-application-packet-human-first-prep-guide-for-first-time-buyers.html",
+      "b": "sites/professional-resources/daily/2026-07-23-loan-application-packet-operator-grade-buyer-guide-for-first-time-buyers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.94,
+      "a": "sites/professional-resources/daily/2026-07-16-proof-of-income-letters-aeo-ready-question-checklist-before-you-call.html",
+      "b": "sites/professional-resources/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.939,
+      "a": "sites/memphis-local/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html",
+      "b": "sites/memphis-local/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.939,
+      "a": "sites/professional-resources/daily/2026-07-24-complete-document-library-citation-friendly-planning-checklist-when-timing-matters.html",
+      "b": "sites/professional-resources/daily/2026-08-06-complete-document-library-editorial-question-checklist-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.937,
+      "a": "sites/professional-resources/daily/2026-07-27-proof-of-income-for-renting-2026-ready-decision-guide-before-you-choose.html",
+      "b": "sites/professional-resources/daily/2026-08-04-proof-of-income-for-renting-citation-friendly-local-resource-directory-before-you-book.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.935,
+      "a": "sites/professional-resources/daily/2026-07-18-complete-document-library-citation-friendly-timeline-guide-for-first-time-buyers.html",
+      "b": "sites/professional-resources/daily/2026-07-24-complete-document-library-citation-friendly-planning-checklist-when-timing-matters.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.934,
+      "a": "sites/professional-resources/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point.html",
+      "b": "sites/professional-resources/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.932,
+      "a": "sites/professional-resources/daily/2026-07-13-employment-explanation-letters-operator-grade-red-flag-checklist-when-timing-matters.html",
+      "b": "sites/professional-resources/daily/2026-07-18-employment-explanation-letters-decision-focused-prep-guide-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.932,
+      "a": "sites/professional-resources/daily/2026-07-28-full-approval-prep-bundle-decision-focused-timeline-guide-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-08-01-full-approval-prep-bundle-aeo-ready-question-checklist-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.931,
+      "a": "sites/memphis-local/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign.html",
+      "b": "sites/memphis-local/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.931,
+      "a": "sites/professional-resources/daily/2026-07-18-complete-document-library-citation-friendly-timeline-guide-for-first-time-buyers.html",
+      "b": "sites/professional-resources/daily/2026-08-06-complete-document-library-editorial-question-checklist-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.93,
+      "a": "sites/professional-resources/daily/2026-07-13-business-ownership-documents-citation-friendly-resource-roundup-for-people-who-need-a-star.html",
+      "b": "sites/professional-resources/daily/2026-07-21-business-ownership-documents-2026-ready-local-resource-directory-for-people-who-need-a-sta.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.93,
+      "a": "sites/professional-resources/daily/2026-07-14-lender-document-request-aeo-ready-prep-guide-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-08-16-lender-document-request-operator-grade-question-checklist-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.93,
+      "a": "sites/professional-resources/daily/2026-07-15-proof-of-income-letters-human-first-framework-for-first-time-buyers.html",
+      "b": "sites/professional-resources/daily/2026-07-18-proof-of-income-letters-plain-english-buyer-guide-before-you-call.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.93,
+      "a": "sites/professional-resources/daily/2026-07-24-identity-records-explanation-no-fluff-local-resource-directory-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-07-30-identity-records-explanation-practical-budget-planning-note-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.929,
+      "a": "sites/professional-resources/daily/2026-07-14-personal-loan-documents-aeo-ready-buyer-guide-for-busy-operators.html",
+      "b": "sites/professional-resources/daily/2026-08-13-personal-loan-documents-beginner-safe-buyer-guide-for-busy-operators.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.928,
+      "a": "sites/memphis-local/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call.html",
+      "b": "sites/memphis-local/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.928,
+      "a": "sites/professional-resources/daily/2026-07-14-full-approval-prep-bundle-aeo-ready-framework-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-07-29-full-approval-prep-bundle-beginner-safe-resource-roundup-before-you-pay.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.928,
+      "a": "sites/professional-resources/daily/2026-07-25-rental-history-explanation-comparison-friendly-faq-answer-page-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.927,
+      "a": "sites/memphis-local/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call.html",
+      "b": "sites/memphis-local/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.927,
+      "a": "sites/professional-resources/daily/2026-07-13-bank-statement-explanation-human-first-comparison-guide-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-07-20-bank-statement-explanation-no-fluff-buyer-guide-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.927,
+      "a": "sites/professional-resources/daily/2026-07-14-full-approval-prep-bundle-aeo-ready-framework-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-07-23-full-approval-prep-bundle-aeo-ready-faq-answer-page-before-you-choose.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.927,
+      "a": "sites/professional-resources/daily/2026-07-14-lender-document-request-aeo-ready-prep-guide-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-07-22-lender-document-request-low-risk-decision-guide-for-people-who-need-a-starting-point.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.927,
+      "a": "sites/professional-resources/daily/2026-07-29-application-issue-explanation-practical-faq-answer-page-before-you-pay.html",
+      "b": "sites/professional-resources/daily/2026-08-01-application-issue-explanation-comparison-friendly-budget-planning-note-before-you-choose.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.926,
+      "a": "sites/memphis-local/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers.html",
+      "b": "sites/memphis-local/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.926,
+      "a": "sites/memphis-local/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign.html",
+      "b": "sites/memphis-local/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.926,
+      "a": "sites/professional-resources/daily/2026-07-15-full-approval-prep-bundle-low-risk-buyer-guide-when-you-need-to-ask-better-questions.html",
+      "b": "sites/professional-resources/daily/2026-07-28-full-approval-prep-bundle-decision-focused-timeline-guide-before-you-pay.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.925,
+      "a": "sites/memphis-local/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers.html",
+      "b": "sites/memphis-local/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.925,
+      "a": "sites/professional-resources/daily/2026-07-13-life-admin-letters-plain-english-prep-guide-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-07-27-life-admin-letters-human-first-buyer-guide-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "founder-operator",
+      "dice": 0.924,
+      "a": "sites/founder-operator/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio.html",
+      "b": "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.924,
+      "a": "sites/memphis-local/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators.html",
+      "b": "sites/memphis-local/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.924,
+      "a": "sites/professional-resources/daily/2026-07-12-rental-history-explanation-low-risk-mistakes-to-avoid-when-timing-matters.html",
+      "b": "sites/professional-resources/daily/2026-08-16-rental-history-explanation-plain-english-faq-answer-page-before-you-choose.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.924,
+      "a": "sites/professional-resources/daily/2026-07-15-personal-loan-documents-comparison-friendly-planning-checklist-when-you-are-comparing-opti.html",
+      "b": "sites/professional-resources/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.924,
+      "a": "sites/professional-resources/daily/2026-07-31-loan-application-packet-low-risk-comparison-guide-before-you-sign.html",
+      "b": "sites/professional-resources/daily/2026-08-06-loan-application-packet-practical-faq-answer-page-before-you-book.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.924,
+      "a": "sites/professional-resources/daily/2026-08-07-personal-loan-documents-citation-friendly-prep-guide-for-careful-decision-makers.html",
+      "b": "sites/professional-resources/daily/2026-08-15-personal-loan-documents-citation-friendly-comparison-guide-for-careful-decision-makers.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.923,
+      "a": "sites/professional-resources/daily/2026-07-22-lender-document-request-low-risk-decision-guide-for-people-who-need-a-starting-point.html",
+      "b": "sites/professional-resources/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.923,
+      "a": "sites/professional-resources/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-08-14-credit-dispute-letters-geo-ready-resource-roundup-before-you-choose.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.923,
+      "a": "sites/professional-resources/daily/2026-07-28-business-funding-packet-checklist-driven-operator-playbook-when-timing-matters.html",
+      "b": "sites/professional-resources/daily/2026-08-05-business-funding-packet-comparison-friendly-local-resource-directory-when-you-need-to-ask.html"
+    },
+    {
+      "publication": "memphis-local",
+      "dice": 0.922,
+      "a": "sites/memphis-local/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay.html",
+      "b": "sites/memphis-local/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.922,
+      "a": "sites/professional-resources/daily/2026-07-15-full-approval-prep-bundle-low-risk-buyer-guide-when-you-need-to-ask-better-questions.html",
+      "b": "sites/professional-resources/daily/2026-08-01-full-approval-prep-bundle-aeo-ready-question-checklist-when-you-are-comparing-options.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.921,
+      "a": "sites/professional-resources/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
+      "b": "sites/professional-resources/daily/2026-07-26-credit-dispute-letters-geo-ready-timeline-guide-when-timing-matters.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.92,
+      "a": "sites/professional-resources/daily/2026-07-13-personal-loan-documents-resource-backed-mistakes-to-avoid-before-you-choose.html",
+      "b": "sites/professional-resources/daily/2026-07-29-personal-loan-documents-beginner-safe-faq-answer-page-before-you-choose.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.92,
+      "a": "sites/professional-resources/daily/2026-07-19-income-change-explanation-operator-grade-operator-playbook-before-you-sign.html",
+      "b": "sites/professional-resources/daily/2026-08-14-income-change-explanation-resource-backed-buyer-guide-before-you-choose.html"
+    },
+    {
+      "publication": "professional-resources",
+      "dice": 0.92,
+      "a": "sites/professional-resources/daily/2026-07-31-loan-application-packet-low-risk-comparison-guide-before-you-sign.html",
+      "b": "sites/professional-resources/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose.html"
+    }
+  ]
+}

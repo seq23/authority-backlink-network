@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T19:15:17.448Z",
+  "generated_at": "2026-08-27T19:13:07.915Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 625,
@@ -53,15 +53,15 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 527,
-      "coverage_pct": 15.7,
+      "pages_missing": 519,
+      "coverage_pct": 17,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 63,
-      "coverage_pct": 89.9,
+      "pages_missing": 43,
+      "coverage_pct": 93.1,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -113,8 +113,6 @@
       "memphis-local/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist.html"
     ],
     "concrete_numbers": [
-      "founder-operator/contributors.html",
-      "founder-operator/corrections.html",
       "founder-operator/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers.html",
       "founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
       "founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
@@ -137,12 +135,13 @@
       "founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
       "founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html"
+      "founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
+      "founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
+      "founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html"
     ],
     "named_sources": [
       "founder-operator/contributors.html",
       "founder-operator/corrections.html",
-      "founder-operator/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -153,7 +152,6 @@
       "founder-operator/topics/virtual-event-production.html",
       "memphis-local/contributors.html",
       "memphis-local/corrections.html",
-      "memphis-local/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options.html",
       "memphis-local/editorial-standards.html",
       "memphis-local/index.html",
       "memphis-local/masthead.html",
@@ -164,7 +162,9 @@
       "memphis-local/topics/wedding-day-timelines.html",
       "memphis-local/topics/wedding-planning-tools.html",
       "memphis-local/topics/wedding-seating-charts.html",
-      "professional-resources/contributors.html"
+      "professional-resources/contributors.html",
+      "professional-resources/corrections.html",
+      "professional-resources/editorial-standards.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

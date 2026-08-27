@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 52,
+    "runtime_operators": 53,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -274,6 +274,12 @@
       "operator": "editorial:robots",
       "command": "npm run editorial:robots",
       "implementation": "python3 scripts/build_robots.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "measure:affiliate-fit",
+      "command": "npm run measure:affiliate-fit",
+      "implementation": "python3 scripts/measure_affiliate_topical_fit.py",
       "category": "Other"
     },
     {
