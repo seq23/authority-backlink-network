@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-27T00:37:17.332Z",
+  "generated_at": "2026-08-27T16:04:20.261Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 590,
+  "pages_checked": 604,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -47,28 +47,28 @@
       "id": "comparison_table",
       "blocking": false,
       "pages_missing": 51,
-      "coverage_pct": 91.4,
+      "coverage_pct": 91.6,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 503,
-      "coverage_pct": 14.7,
+      "pages_missing": 506,
+      "coverage_pct": 16.2,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 0,
-      "coverage_pct": 100,
-      "why": "no named primary source (agent request #6, 288 occurrences)"
+      "pages_missing": 42,
+      "coverage_pct": 93,
+      "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
       "id": "faq",
       "blocking": false,
       "pages_missing": 47,
-      "coverage_pct": 92,
+      "coverage_pct": 92.2,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -139,7 +139,33 @@
       "founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
       "founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html"
     ],
-    "named_sources": [],
+    "named_sources": [
+      "founder-operator/index.html",
+      "founder-operator/topics/ai-execution-and-delegation.html",
+      "founder-operator/topics/community-operations.html",
+      "founder-operator/topics/founder-operating-rhythms.html",
+      "founder-operator/topics/hiring-and-lean-team-stack.html",
+      "founder-operator/topics/virtual-event-production.html",
+      "memphis-local/index.html",
+      "memphis-local/topics/event-and-room-styling.html",
+      "memphis-local/topics/grazing-tables-and-vendors.html",
+      "memphis-local/topics/porch-and-seasonal-styling.html",
+      "memphis-local/topics/wedding-and-event-budgets.html",
+      "memphis-local/topics/wedding-day-timelines.html",
+      "memphis-local/topics/wedding-planning-tools.html",
+      "memphis-local/topics/wedding-seating-charts.html",
+      "professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
+      "professional-resources/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose.html",
+      "professional-resources/daily/2026-07-11-regulated-provider-research-citation-friendly-budget-planning-note-for-first-time-buyers.html",
+      "professional-resources/daily/2026-07-21-decision-frameworks-for-sensitive-services-operator-grade-resource-roundup-before-you-call.html",
+      "professional-resources/daily/2026-07-24-how-to-evaluate-a-decision-support-guide-before-you-rely-on-it.html",
+      "professional-resources/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html",
+      "professional-resources/daily/2026-08-07-red-flags-in-regulated-services-comparison-friendly-budget-planning-note-for-first-time-bu.html",
+      "professional-resources/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem.html",
+      "professional-resources/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision.html",
+      "professional-resources/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
+      "professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html"
+    ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",
       "founder-operator/ai-marketing-operations-resources.html",

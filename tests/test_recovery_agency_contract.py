@@ -71,16 +71,27 @@ assert _runtime_ops == _npm_scripts, (
     f"stale in dashboard: {sorted(_runtime_ops - _npm_scripts)}")
 assert {x['operator'] for x in agency['release_operators']} == set(update_contract.get('commands', {}))
 
-page = (ROOT / 'sites/founder-operator/agency/index.html').read_text(encoding='utf-8')
-assert re.search(r'<meta[^>]+name="robots"[^>]+noindex', page, re.I)
-assert 'Canonical publication operators' in page
-assert 'Canonical runtime operators' in page
-assert 'Canonical release operators' in page
-assert 'Canonical workflow operators' in page
+# The operator dashboard was deliberately removed from the published tree, and
+# `scripts/validators/validate_published_tree_purity.py` HARD_FAILs if anything
+# puts it back: sites/ is publicly fetchable and allows every AI crawler, so a
+# noindex meta tag does not keep an operator surface private.
+#
+# This block used to require that page to exist and to read its contents, which
+# made these two checks contradict each other - one demanded the file, the other
+# forbade it. The purity validator is the one carrying the security decision, so
+# the contract here is inverted: the dashboard must be absent from sites/, and
+# the operator model is asserted against the data file instead of scraped out of
+# rendered HTML.
+agency_page = ROOT / 'sites/founder-operator/agency/index.html'
+assert not agency_page.exists(), (
+    'operator dashboard is present under sites/; it is publicly fetchable there '
+    'and validate_published_tree_purity.py treats it as a HARD_FAIL')
+assert not (ROOT / 'sites/founder-operator/agency').exists()
+
 for op in package.get('scripts', {}):
-    assert f'npm run {op}' in page, op
+    assert op in _runtime_ops, op
 for url in approved_urls:
-    assert url in page, url
+    assert url in agency_approved, url
 
 # Operator page must not leak into public discovery surfaces.
 founder_sitemap = (ROOT / 'sites/founder-operator/sitemap.xml').read_text(encoding='utf-8')

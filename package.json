@@ -6,7 +6,7 @@
     "validate:changed": "python3 scripts/validate.py changed",
     "validate:release": "python3 scripts/validate.py release",
     "validate:full": "python3 scripts/validate.py full",
-    "validate:all": "npm run validate:release",
+    "validate:all": "npm run validate:release && npm run validate:demand-backed-pages",
     "release:prepush": "npm run validate:release",
     "release:prepush:local": "npm run validate:release",
     "check": "npm run validate:changed",
@@ -38,7 +38,16 @@
     "validate:operator-doc-currency": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
     "cadence:gate": "node scripts/cadence_gate.js",
     "cadence:template-share": "node scripts/template_share.js",
-    "validate:published-tree-purity": "python3 scripts/validators/validate_published_tree_purity.py"
+    "validate:published-tree-purity": "python3 scripts/validators/validate_published_tree_purity.py",
+    "measure:click-depth": "python3 scripts/measure_click_depth.py",
+    "measure:duplication": "python3 scripts/measure_content_duplication.py",
+    "sources:verify": "python3 scripts/verify_external_sources.py",
+    "sources:verify-network": "python3 scripts/verify_external_sources.py --network",
+    "citations:apply": "python3 scripts/add_external_citations.py --write",
+    "pages:demand-shapes": "python3 scripts/build_demand_shape_pages.py --write",
+    "validate:external-sources": "python3 scripts/verify_external_sources.py",
+    "validate:click-depth": "python3 scripts/measure_click_depth.py --max-depth 3",
+    "validate:demand-backed-pages": "python3 scripts/validate_demand_backed_pages.py"
   },
   "devDependencies": {}
 }
