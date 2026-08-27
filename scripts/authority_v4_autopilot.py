@@ -478,7 +478,20 @@ def main():
     duplicate_warnings = 0
     hard_fail_count = 0
     min_score = int(os.getenv('MIN_BASE_PUBLISH_SCORE', '60'))
-    max_self_heal_attempts = max(1, int(os.getenv('SELF_HEAL_MAX_ATTEMPTS', '96')))
+    # This was 96. Each attempt re-rolls the date-seeded PRNG over the yearly
+    # pantry - a cartesian product of clusters x formats x intents x modifiers
+    # advertising 898,560 to 1,123,200 combinations - and tries again until a
+    # permutation clears the score gate. With the daily count fixed as the input
+    # and the content as the search space, that is a publication quota in the
+    # strict sense, whatever `targets_are_quotas: false` says elsewhere in the
+    # config. A slot that needs 96 tries did not have a page worth writing in it.
+    #
+    # Eight attempts is enough to ride out an unlucky draw or a duplicate hash.
+    # Past that the honest output is a shortfall, which is now recorded rather
+    # than ground away, because a cadence that cannot be met from real material
+    # is information and hiding it is how 743 filler pages got published in a
+    # sibling repo to keep a 75-page daily number intact.
+    max_self_heal_attempts = max(1, int(os.getenv('SELF_HEAL_MAX_ATTEMPTS', '8')))
     self_heal_recoveries = 0
     self_heal_attempts = 0
     blocked_slots = []
