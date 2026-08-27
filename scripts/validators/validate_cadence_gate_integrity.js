@@ -24,8 +24,13 @@
  *   3. The gate is actually invoked by a workflow. A gate nothing calls is the
  *      documented prior state of this file across nine repositories, and it is
  *      indistinguishable from having no gate at all.
- *   4. Acceptance is a separate, reason-bearing command, and CI does not run it.
- *      If CI could accept, the block would clear itself again by another route.
+ *   4. Acceptance is a separate, reason-bearing command, and wherever a workflow
+ *      does advance the ledger, it does so strictly AFTER a passing gate in the
+ *      same file. A read-only gate with no advancer anywhere is a ratchet: a
+ *      library that publishes inside its cap still accumulates unaccepted URLs
+ *      until it crosses the cap and stays red forever, with no over-publishing
+ *      behind it. So CI accepting is allowed and sometimes required - but only
+ *      downstream of a gate that can still stop it, never unconditionally.
  *
  * It deliberately does not care whether the gate currently passes or blocks.
  * Freshness and volume are the gate's business; this is only about whether the
@@ -113,9 +118,22 @@ if (!fs.existsSync(path.join(ROOT, ACCEPT))) {
     }
   }
 }
-const ciAccepts = wfs.filter((f) => /cadence:accept/.test(fs.readFileSync(f, 'utf8')));
-if (ciAccepts.length) {
-  failures.push(`ci_can_accept: ${ciAccepts.map((f) => path.basename(f)).join(', ')} invokes cadence:accept. If CI can advance the ledger, the cap clears itself exactly as it did when the gate wrote the ledger.`);
+// A workflow may advance the ledger, but only behind a gate that can still stop
+// it. Comments are blanked first so that prose mentioning either command cannot
+// satisfy or trip the ordering check.
+for (const f of wfs) {
+  const raw = fs.readFileSync(f, 'utf8');
+  const code = raw.split('\n').map((l) => l.replace(/(^|\s)#.*$/, '$1')).join('\n');
+  const iAccept = code.indexOf('cadence:accept');
+  if (iAccept < 0) continue;
+  const iGate = code.indexOf('cadence:gate');
+  if (iGate < 0 || iGate > iAccept) {
+    failures.push(`accept_not_gated: ${path.basename(f)} runs cadence:accept without a cadence:gate before it. Advancing the baseline ahead of the check that reads it is the same defect as the gate writing its own ledger.`);
+  }
+  const gateStep = code.slice(0, iAccept);
+  if (/continue-on-error:\s*true/.test(gateStep.slice(gateStep.lastIndexOf('- name:')))) {
+    failures.push(`accept_not_gated: ${path.basename(f)} allows the cadence gate step to fail without stopping the job before cadence:accept runs.`);
+  }
 }
 
 const receipt = {
