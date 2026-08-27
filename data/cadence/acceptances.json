@@ -1,0 +1,44 @@
+{
+  "acceptances": [
+    {
+      "accepted_at": "2026-08-27",
+      "reason": "Merged 2026-08-27 and already live on all three publications: 12 editorial-governance pages (masthead, editorial standards, corrections route, contributors, one set per publication) from 83a4dc7, and 14 articles from ea80066. A red build cannot un-publish them, and the gate could not have stopped them - it rewrote its own ledger on every run, so the cap it was enforcing cleared itself on the next invocation. Accepted into the baseline once, with the gate now read-only, so the cap of 3 editorial pages per week applies for real from here. This accepts the count, not the judgement: 14 articles in one day against a capacity of 25 refreshes per week is what keeps this library above its maintainable ceiling, and the library_over_ceiling warning stands unresolved.",
+      "urls_total_after": 619,
+      "accepted_count": 26,
+      "accepted_editorial": 26,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 23,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 294,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
+        "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
+        "https://founderoperatorlibrary.com/contributors",
+        "https://founderoperatorlibrary.com/corrections",
+        "https://founderoperatorlibrary.com/editorial-standards",
+        "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
+        "https://founderoperatorlibrary.com/masthead",
+        "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
+        "https://memphisvendorlibrary.com/contributors",
+        "https://memphisvendorlibrary.com/corrections",
+        "https://memphisvendorlibrary.com/editorial-standards",
+        "https://memphisvendorlibrary.com/grazing-table-food-safety-checklist",
+        "https://memphisvendorlibrary.com/masthead",
+        "https://memphisvendorlibrary.com/memphis-event-rental-vs-purchase-comparison",
+        "https://memphisvendorlibrary.com/memphis-event-vendor-quote-cost-drivers",
+        "https://memphisvendorlibrary.com/memphis-outdoor-event-weather-planning",
+        "https://professionalresourcelibrary.com/contributors",
+        "https://professionalresourcelibrary.com/corrections",
+        "https://professionalresourcelibrary.com/credit-report-dispute-letter-checklist",
+        "https://professionalresourcelibrary.com/editorial-standards",
+        "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
+        "https://professionalresourcelibrary.com/lender-document-request-checklist",
+        "https://professionalresourcelibrary.com/masthead",
+        "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
+        "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
+        "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy"
+      ]
+    }
+  ]
+}

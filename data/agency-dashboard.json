@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 50,
+    "runtime_operators": 52,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -217,6 +217,12 @@
       "category": "Support / diagnostics"
     },
     {
+      "operator": "cadence:accept",
+      "command": "npm run cadence:accept",
+      "implementation": "node scripts/cadence_accept.js",
+      "category": "Other"
+    },
+    {
       "operator": "cadence:gate",
       "command": "npm run cadence:gate",
       "implementation": "node scripts/cadence_gate.js",
@@ -322,6 +328,12 @@
       "operator": "validate:analytics-separation",
       "command": "npm run validate:analytics-separation",
       "implementation": "python3 scripts/validators/validate_analytics_separation.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:cadence-integrity",
+      "command": "npm run validate:cadence-integrity",
+      "implementation": "node scripts/validators/validate_cadence_gate_integrity.js",
       "category": "Validation / release"
     },
     {

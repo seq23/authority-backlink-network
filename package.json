@@ -52,7 +52,9 @@
     "editorial:chrome": "python3 scripts/install_editorial_chrome.py --write",
     "editorial:robots": "python3 scripts/build_robots.py --write",
     "editorial:build": "python3 scripts/build_editorial_pages.py --write && python3 scripts/build_robots.py --write && python3 scripts/install_editorial_chrome.py --write",
-    "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py"
+    "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py",
+    "cadence:accept": "node scripts/cadence_accept.js",
+    "validate:cadence-integrity": "node scripts/validators/validate_cadence_gate_integrity.js"
   },
   "devDependencies": {}
 }
