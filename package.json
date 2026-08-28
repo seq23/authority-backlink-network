@@ -59,7 +59,9 @@
     "validate:cadence-integrity": "node scripts/validators/validate_cadence_gate_integrity.js",
     "compile:consumer-reporting": "python3 scripts/compile_consumer_reporting_companies.py",
     "compile:consumer-reporting:fetch": "python3 scripts/compile_consumer_reporting_companies.py --fetch",
-    "pages:consumer-reporting-directory": "python3 scripts/build_consumer_reporting_directory.py --write"
+    "pages:consumer-reporting-directory": "python3 scripts/build_consumer_reporting_directory.py --write",
+    "validate:brand-link-concentration": "python3 scripts/validators/validate_brand_link_concentration.py",
+    "links:reduce-concentration": "python3 scripts/reduce_commercial_link_concentration.py"
   },
   "devDependencies": {}
 }

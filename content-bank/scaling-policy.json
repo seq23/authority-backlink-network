@@ -34,8 +34,8 @@
     "max_duplicate_similarity": 0.15,
     "min_publish_score": 60,
     "auto_publish_score": 85,
-    "approval_prep_min_pages_per_day": 4,
-    "approval_prep_max_pages_per_day": 9
+    "max_brand_page_share_per_publication": 0.3333,
+    "_why_max_brand_page_share_per_publication": "No single affiliated brand may be cited from more than a third of any publication's pages. Measured 2026-08-28, the leading brand in the two publications with no concentration problem sits at 31.4% (virtual-agency-os of founder-operator's 105 pages) and 32.7% (porch-party of memphis-local's 104); professional-resources had approval-prep on 69.0% of 420. The cap is the third the two healthy publications bracket, so it is the network's own observed norm rather than a round number. Enforced before generation in scripts/authority_v4_autopilot.py and over published output by scripts/validators/validate_brand_link_concentration.py. Every one of these citations already carries rel=\"sponsored nofollow\" and passes no ranking signal, so nothing is lost to search by removing one; what the cap protects is the claim each page makes about being a resource library rather than a channel for one product."
   },
   "social_rules": {
     "linkedin_daily_limit": 1,
@@ -51,16 +51,6 @@
     ]
   },
   "priority_targets": [
-    {
-      "brand_id": "approval-prep",
-      "publication": "professional-resources",
-      "pages_per_day": 6,
-      "minimum": 4,
-      "maximum": 9,
-      "start_immediately": true,
-      "quality_policy": "Aim for 5-8 pages daily and preserve aggressive momentum. Daily variation, word counts, page counts, anchor length, and product mix are warning-only; only structural corruption, false evidence, wrong-domain routing, or clearly prohibited claims may block publication.",
-      "preferred_range": "5-8"
-    },
     {
       "brand_id": "west-peek-productions",
       "campaign_id": "wpp-community-authority",
@@ -149,5 +139,6 @@
     "priority_method": "campaign_deficit_then_contextual_fit_then_yield",
     "live_evidence_never_required_to_generate_but_required_to_claim_live": true,
     "owned_network_links_truth_label": "affiliated_editorial_backlink"
-  }
+  },
+  "_priority_targets_note": "approval-prep was removed from this list on 2026-08-28. It was the only entry with pages_per_day: 6 and no until_rendered_coverage, so unlike every other priority target it had no stop condition, and it took the front of the daily job list every day until it held 290 of professional-resources' 420 pages against a declared minimum_rendered_coverage of 2. It is not in deficit and does not need a priority lane; it competes through choose_fair_target() with every other target, which weights by deficit and will now rarely pick it. Its pages, campaign and destinations are unchanged."
 }

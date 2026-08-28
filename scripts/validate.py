@@ -41,6 +41,7 @@ COMMANDS = {
     "autopilot_cadence_cap": [sys.executable, "scripts/validators/validate_autopilot_respects_cadence_cap.py"],
     "analytics_separation": [sys.executable, "scripts/validators/validate_analytics_separation.py"],
     "affiliate_topical_scope": [sys.executable, "scripts/validators/validate_affiliate_topical_scope.py"],
+    "brand_link_concentration": [sys.executable, "scripts/validators/validate_brand_link_concentration.py"],
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
 }
 

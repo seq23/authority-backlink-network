@@ -53,16 +53,25 @@ assert len({r.get('source_path') for r in catchup}) == EXPECTED_TOTAL
 # asserted to be genuinely gone from the page. That is a stronger claim than the
 # one it replaces, not a weaker one: before, this loop could only confirm a link
 # was present, and had no way to say a link that should not be there is absent.
-removed = [r for r in catchup if r.get('status') == 'removed_off_topic']
+#
+# `withdrawn` joins `removed_off_topic` here for the same reason and under the
+# same rule. Those rows are the citations scripts/reduce_commercial_link_-
+# concentration.py removed to bring approval-prep from 69% of
+# professional-resources' pages back under the declared third: the placement was
+# on-topic, the page still exists and still argues what it argued, and only the
+# affiliated citation is gone. Both statuses are held to the stronger assertion -
+# the URL must be genuinely absent from the page - not excused from the weaker one.
+WITHDRAWN = {'removed_off_topic', 'withdrawn'}
+removed = [r for r in catchup if r.get('status') in WITHDRAWN]
 assert all(r.get('lifecycle_stage') != 'published_in_repository' for r in removed), \
     'a removed row still claims to be rendered in the repository'
 for row in catchup:
     path = ROOT / row['source_path']
     assert path.exists(), row['source_path']
     text = path.read_text(encoding='utf-8', errors='ignore')
-    if row.get('status') == 'removed_off_topic':
+    if row.get('status') in WITHDRAWN:
         assert row['target_url'] not in text, \
-            f"{row['source_path']}: off-topic citation is still rendered"
+            f"{row['source_path']}: withdrawn citation is still rendered"
     else:
         assert row.get('target_url') in text, row['source_path']
     assert '"datePublished": "2026-08-08"' in text, row['source_path']

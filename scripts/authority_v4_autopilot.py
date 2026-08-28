@@ -221,6 +221,88 @@ def published_counts_by_brand():
     return counts
 
 
+# The share of a publication's pages one brand may be cited from. Read from the
+# policy file, never defaulted: a missing cap is a policy question, not a value
+# for this module to invent.
+MAX_BRAND_PAGE_SHARE = float(SCALING.get('hard_limits', {})['max_brand_page_share_per_publication'])
+_SPONSORED_A = re.compile(r'<a\s+([^>]*)>', re.I)
+_HREF = re.compile(r'href="([^"]+)"')
+_REL = re.compile(r'rel="([^"]*)"')
+_SHARE_CACHE = {}
+
+
+def _host_to_brand():
+    """Every host an owned target is reachable at, mapped to its brand id.
+
+    Keyed off approved_links as well as `domain` because dream-wedding-builder
+    is one brand behind four sibling domains; counting them separately would
+    read a 51% share as four unremarkable ones.
+    """
+    out = {}
+    for pub in PANTRY['publications'].values():
+        for target in pub.get('targets', []):
+            if not isinstance(target, dict) or not target.get('brand_id'):
+                continue
+            hosts = [str(target.get('domain', ''))]
+            hosts += [str(l.get('url', '')) for l in target.get('approved_links', [])
+                      if isinstance(l, dict)]
+            for value in hosts:
+                host = urlparse(value if '//' in value else '//' + value).netloc.lower()
+                host = host.removeprefix('www.')
+                if host:
+                    out[host] = target['brand_id']
+    return out
+
+
+def brands_at_share_cap(pub_key):
+    """Brand ids already cited from at least their share of this publication's pages.
+
+    Counted from the rendered pages rather than from data/link-registry.json,
+    because the ledger is a record of intent and the pages are the footprint.
+
+    This is the guard that was missing. approval-prep reached 290 of
+    professional-resources' 420 pages - 69%, against 31.4% and 32.7% for the
+    leading brand in the other two publications - because nothing in the
+    scheduler could see a share, only a per-campaign deficit that a priority
+    target with no `until_rendered_coverage` never stopped filling.
+    """
+    if pub_key in _SHARE_CACHE:
+        return _SHARE_CACHE[pub_key]
+    site_path = ROOT / PANTRY['publications'][pub_key]['site_path']
+    brands = _host_to_brand()
+    total, carrying = 0, {}
+    for path in sorted(site_path.rglob('*.html')):
+        if path.name == '404.html':
+            continue
+        total += 1
+        seen = set()
+        for attrs in _SPONSORED_A.findall(path.read_text(encoding='utf-8', errors='ignore')):
+            href = _HREF.search(attrs)
+            rel = _REL.search(attrs)
+            if not href or not rel or 'sponsored' not in rel.group(1):
+                continue
+            host = urlparse(href.group(1)).netloc.lower().removeprefix('www.')
+            if host in brands:
+                seen.add(brands[host])
+        for bid in seen:
+            carrying[bid] = carrying.get(bid, 0) + 1
+    allowed = int(total * MAX_BRAND_PAGE_SHARE)
+    result = {bid for bid, n in carrying.items() if n >= allowed}
+    _SHARE_CACHE[pub_key] = result
+    return result
+
+
+def schedulable_targets(pub_key, targets):
+    """`targets` minus the ones already at their share of this publication.
+
+    A brand at the cap is not offered another slot. It is not an error and does
+    not degrade to "place it anyway": if every target in a publication is at its
+    cap the day produces nothing there, which the run already reports honestly.
+    """
+    capped = brands_at_share_cap(pub_key)
+    return [t for t in targets if t.get('brand_id') not in capped]
+
+
 def choose_fair_target(pub_key, slot, counts):
     """Choose the largest weighted portfolio deficit without forcing a link outside topic fit.
 
@@ -232,6 +314,7 @@ def choose_fair_target(pub_key, slot, counts):
     # it is filtered here rather than left for build_brief to refuse downstream.
     targets = [t for t in PANTRY['publications'][pub_key].get('targets', [])
                if isinstance(t, dict) and not t.get('priority') and target_scope(t)]
+    targets = schedulable_targets(pub_key, targets)
     if not targets:
         return None
     scored = []
@@ -256,6 +339,7 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     else:
         regular_targets = [t for t in pub['targets']
                            if not (isinstance(t, dict) and t.get('priority')) and target_scope(t)]
+        regular_targets = schedulable_targets(pub_key, regular_targets)
         if not regular_targets:
             return None
         target_cfg = normalize_target(pick(regular_targets, seed+'target'))
@@ -591,7 +675,19 @@ def main():
         current_campaign = published_counts_by_brand().get('campaign:'+campaign_id, 0) if campaign_id else published_counts_by_brand().get(rule.get('brand_id',''), 0)
         if rule.get('until_rendered_coverage') is not None and current_campaign >= int(rule.get('until_rendered_coverage')):
             continue
-        requested = int(os.getenv('APPROVAL_PREP_PAGES_PER_DAY', str(rule.get('pages_per_day', 6)))) if rule.get('brand_id') == 'approval-prep' else int(rule.get('pages_per_day', 1))
+        # A priority lane is for a campaign in deficit, not a standing exemption
+        # from the share cap. This check is why one brand can no longer take the
+        # front of the job list every day until it holds two thirds of a
+        # publication: the cap is checked before the slot is created, not after.
+        if not schedulable_targets(pub_key, [target]):
+            print(f"SHARE CAP: {rule.get('brand_id')} is at "
+                  f"{MAX_BRAND_PAGE_SHARE:.1%} of {pub_key}; no priority slots today.")
+            continue
+        # APPROVAL_PREP_PAGES_PER_DAY used to override this line for one brand
+        # only. A per-brand environment variable that outranks the shared
+        # schedule is how the concentration was produced; the rule file is the
+        # only input now.
+        requested = int(rule.get('pages_per_day', 1))
         # The configured range is a planning target, not a validator. Allow normal daily variation
         # while preserving the repository-wide absolute safety ceiling.
         requested = max(1, min(requested, int(SCALING.get('hard_limits', {}).get('absolute_max_pages_per_day', 12))))

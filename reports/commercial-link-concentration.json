@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "measurement": "commercial-link-concentration",
+  "measured_on": "2026-08-28",
+  "cap": {
+    "max_brand_page_share_per_publication": 0.3333,
+    "evidence": "The leading brand in the two publications with no concentration complaint measures 31.4% (virtual-agency-os, founder-operator) and 32.7% (porch-party, memphis-local) of their pages. The cap is the third they bracket."
+  },
+  "applied": true,
+  "pages_stripped": 170,
+  "links_removed": 170,
+  "registry_rows_withdrawn": 170,
+  "links_retargeted": 0,
+  "retargeting_note": "Zero, and not for want of trying: approval-prep's 46 declared clusters share no member with any other professional target's declared scope, so there is no page among these on which another brand is in scope. Placing one anyway would trade a concentration footprint for an off-topic one.",
+  "brands": [
+    {
+      "publication": "memphis-local",
+      "brand": "dream-wedding-builder",
+      "publication_pages": 104,
+      "pages_before": 53,
+      "pages_after": 34,
+      "share_before": 0.5096,
+      "share_after": 0.3269,
+      "cap_pages": 34,
+      "protected_from_stripping": 2,
+      "shortfall": 0
+    },
+    {
+      "publication": "professional-resources",
+      "brand": "approval-prep",
+      "publication_pages": 420,
+      "pages_before": 290,
+      "pages_after": 139,
+      "share_before": 0.6905,
+      "share_after": 0.331,
+      "cap_pages": 139,
+      "protected_from_stripping": 14,
+      "shortfall": 0
+    }
+  ],
+  "failures": [
+    "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html: 'Topic'",
+    "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html: 'Topic'",
+    "sites/memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html: 'Topic'"
+  ]
+}
