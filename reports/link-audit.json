@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "total_links": 24471,
+  "total_links": 24474,
   "violations": [],
   "target_domains": [
     "aplayermode.com",
@@ -26184,6 +26184,15 @@
       "href": "https://founderoperatorlibrary.com/editorial-standards",
       "domain": "founderoperatorlibrary.com",
       "anchor": "sourcing\nand AI-use standards",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/founder-operator/masthead.html",
+      "publication": "founder",
+      "href": "https://founderoperatorlibrary.com/contributors",
+      "domain": "founderoperatorlibrary.com",
+      "anchor": "contributors page",
       "external": true,
       "violation": ""
     },
@@ -54453,6 +54462,15 @@
       "href": "https://memphisvendorlibrary.com/editorial-standards",
       "domain": "memphisvendorlibrary.com",
       "anchor": "sourcing\nand AI-use standards",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/masthead.html",
+      "publication": "memphis",
+      "href": "https://memphisvendorlibrary.com/contributors",
+      "domain": "memphisvendorlibrary.com",
+      "anchor": "contributors page",
       "external": true,
       "violation": ""
     },
@@ -205500,6 +205518,15 @@
       "href": "https://professionalresourcelibrary.com/editorial-standards",
       "domain": "professionalresourcelibrary.com",
       "anchor": "sourcing\nand AI-use standards",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/professional-resources/masthead.html",
+      "publication": "professional",
+      "href": "https://professionalresourcelibrary.com/contributors",
+      "domain": "professionalresourcelibrary.com",
+      "anchor": "contributors page",
       "external": true,
       "violation": ""
     },

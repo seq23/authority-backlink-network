@@ -11,7 +11,11 @@
       "virtual-agency-os",
       "west-peek-productions"
     ],
-    "disclosure": "Published by S. L. Taylor's affiliated authority network. Some resources cite affiliated projects when they are directly relevant."
+    "disclosure": "Published by Founder Operator Library Editorial Desk, the editorial company for this publication and a subsidiary of Spry Labs. Some resources cite projects under common ownership when they are directly relevant.",
+    "_retired_disclosures_note": "Disclosure sentences this publication has PUBLISHED and has now withdrawn. scripts/install_editorial_chrome.py rewrites any of these to the current disclosure above wherever it still appears in an already-published page, so a retired ownership claim cannot survive in the back catalogue. This is ownership chrome only -- nothing else in the article body is touched. Add a string here when the disclosure changes; never delete one, or the pages still carrying it stop being repaired.",
+    "retired_disclosures": [
+      "Published by S. L. Taylor's affiliated authority network. Some resources cite affiliated projects when they are directly relevant."
+    ]
   },
   {
     "id": "memphis",

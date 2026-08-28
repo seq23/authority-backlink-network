@@ -32,6 +32,19 @@ What it installs
    .affiliate-disclosure block placed next to the citation -- not in the small
    print. It names the affiliated projects on that specific page.
 
+3. A repair for a WITHDRAWN ownership sentence already baked into a published
+   page body. The generators inline data/publications.json's `disclosure` at
+   publication time, so editing that field alone fixes new pages and leaves the
+   back catalogue asserting the old claim. Any string listed in that
+   publication's `retired_disclosures` is rewritten to the current one. Literal
+   sentence substitution, ownership chrome only -- see
+   refresh_disclosure_sentence().
+
+4. The JSON-LD byline, forced to the same editorial company the visible footer
+   byline names. Both come from one call to byline.entity_for() in this pass,
+   which is the point: they used to disagree on 552 pages. See
+   normalise_jsonld_author().
+
 Two hard constraints on the markup
 ----------------------------------
 * The <footer> and <header> tags must stay BARE, with no attributes.
@@ -56,6 +69,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from affiliation import affiliated_domains, host_of, is_affiliated  # noqa: E402
+from byline import entity_for, subsidiary_clause  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SITES = ROOT / "sites"
@@ -105,11 +119,16 @@ def render_footer(pub_title: str, domain: str, editor_addr: str) -> str:
     ]
     items = "".join(f'<li><a href="{esc(u)}">{esc(t)}</a></li>' for t, u in links)
     items += f'<li><a href="mailto:{esc(editor_addr)}">{esc(editor_addr)}</a></li>'
+    entity = entity_for(pub_title)
     return (
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
-        f"<p>{esc(pub_title)} is published by S. L. Taylor, who also owns several of "
-        f"the projects it cites. Those citations are labelled on the page and carry "
+        f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
+        f"edited by <strong>{esc(entity)}</strong>{esc(subsidiary_clause())}. Pages here "
+        f"carry that byline and no other: this publication names no individual author, "
+        f"and never attributes a page to someone who did not write it.</p>"
+        f"<p>{esc(entity)} is under common ownership with several of the projects this "
+        f"publication cites. Those citations are labelled on the page and carry "
         f'<code>rel="sponsored nofollow"</code>, so they pass no ranking signal. '
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
         f"and no listing that can be bought.</p>"
@@ -133,7 +152,8 @@ def render_disclosure(pub_title: str, domain: str, names: list) -> str:
     return (
         '<aside class="affiliate-disclosure" data-disclosure="affiliate">'
         "<h2>Why this page links where it does</h2>"
-        f"<p>This page cites {subject} owned by the same person who publishes "
+        f"<p>This page cites {subject} under common ownership with "
+        f"<strong>{esc(entity_for(pub_title))}</strong>, the editorial company that publishes "
         f"{esc(pub_title)}. That is a genuine conflict of interest, and it is why you are "
         f"reading it here rather than discovering it somewhere else.</p>"
         f'<p>The citation carries <code>rel="sponsored nofollow"</code>, so it sends no '
@@ -172,10 +192,146 @@ HEAD_END_RE = re.compile(r"</head>", re.I)
 LEGACY_TABLE_CSS_RE = re.compile(r"<style>\s*\.ct-wrap\{[^<]*?</style>", re.I | re.S)
 
 
+def refresh_disclosure_sentence(text: str, current: str, retired: list) -> str:
+    """Rewrite a withdrawn ownership sentence in an already-published page.
+
+    The footer is replaced wholesale on every run, so it can never carry a stale
+    ownership claim. The disclosure sentence from data/publications.json is
+    different: the generators bake it into the page body at publication time, so
+    changing the data file fixes new pages and leaves the back catalogue still
+    asserting the retired claim. 36 published pages named a person as the
+    publisher for exactly that reason.
+
+    This closes that hole without reshaping anything. It is a literal
+    substitution of one declared sentence for another -- ownership chrome only,
+    no heading, structure, argument or editorial prose is touched, which keeps it
+    inside data/back_catalogue_decision.json's DO_NOT_RESHAPE standing decision.
+    Both the raw and the HTML-escaped spelling are handled because the generators
+    disagree about whether they escape the apostrophe.
+
+    Idempotent: once a page carries the current sentence there is nothing left to
+    match.
+    """
+    for old in retired:
+        if not old or old == current:
+            continue
+        text = text.replace(old, current)
+        text = text.replace(esc(old), esc(current))
+    return text
+
+
+LDJSON_RE = re.compile(
+    r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S | re.I)
+
+# The schema.org types that carry a byline. A WebPage, AboutPage, FAQPage,
+# Organization or BreadcrumbList does not, and forcing an author onto one would
+# be inventing an authorship claim rather than correcting one.
+BYLINED_TYPES = frozenset({
+    "Article", "BlogPosting", "NewsArticle", "TechArticle",
+    "ScholarlyArticle", "Report", "AdvertiserContentArticle",
+})
+
+
+def _canonical_author(entity: str) -> dict:
+    return {"@type": "Organization", "name": entity}
+
+
+def _normalise_author_nodes(node, entity: str) -> bool:
+    """Set every byline on `node` to `entity`. Returns True if anything moved.
+
+    Two separate defects are repaired here:
+
+      * An author node that names something other than the editorial company.
+        552 pages carried `"author": {"@type": "Organization"}` whose name was a
+        bare domain string or the publication's own title, while the visible
+        attribution named a person. Machine-readable and human-readable
+        authorship disagreed on every one of them.
+
+      * An Article with no author node at all. 36 pages had a visible byline in
+        the footer and nothing in the graph, which is the same disagreement with
+        one side missing.
+
+    A Person node is never written. The author is an organisation because the
+    pages are not written by a person, and turning the byline into a name would
+    be the fabrication this whole change exists to remove.
+    """
+    changed = False
+    if isinstance(node, list):
+        for item in node:
+            changed |= _normalise_author_nodes(item, entity)
+        return changed
+    if not isinstance(node, dict):
+        return False
+
+    for value in node.values():
+        if isinstance(value, (dict, list)):
+            changed |= _normalise_author_nodes(value, entity)
+
+    want = _canonical_author(entity)
+    types = node.get("@type")
+    types = types if isinstance(types, list) else [types]
+    is_bylined = any(t in BYLINED_TYPES for t in types if isinstance(t, str))
+
+    if "author" in node:
+        if node["author"] != want:
+            node["author"] = want
+            changed = True
+    elif is_bylined:
+        # Insert next to the headline rather than appending, so the graph reads
+        # the way a generator would have written it.
+        rebuilt, placed = {}, False
+        for key, value in node.items():
+            rebuilt[key] = value
+            if not placed and key in ("headline", "name"):
+                rebuilt["author"] = want
+                placed = True
+        if not placed:
+            rebuilt["author"] = want
+        node.clear()
+        node.update(rebuilt)
+        changed = True
+    return changed
+
+
+def normalise_jsonld_author(text: str, pub_title: str) -> str:
+    """Rewrite the JSON-LD byline to match the visible one.
+
+    Only a block that actually needs a change is re-serialised, so a page whose
+    graph is already correct keeps its exact bytes. That matters: the three
+    404.html files carry pretty-printed JSON-LD written by
+    scripts/deterministic_build.py, and compacting them here would leave the two
+    scripts reformatting the same file on alternate builds -- the failure mode
+    already documented above for the footer whitespace.
+    """
+    entity = entity_for(pub_title)
+
+    def repl(match: re.Match) -> str:
+        open_tag, payload, close_tag = match.groups()
+        try:
+            graph = json.loads(payload)
+        except (ValueError, TypeError):
+            return match.group(0)  # not ours to fix; page_audit reports it
+        if not _normalise_author_nodes(graph, entity):
+            return match.group(0)
+        return open_tag + json.dumps(graph, ensure_ascii=False) + close_tag
+
+    return LDJSON_RE.sub(repl, text)
+
+
 def install(text: str, pub_title: str, domain: str, editor_addr: str,
-            names_by_domain: dict) -> str:
+            names_by_domain: dict, disclosure: str = "",
+            retired_disclosures: tuple = ()) -> str:
     # --- legacy inline table CSS -----------------------------------------
     text = LEGACY_TABLE_CSS_RE.sub("", text)
+
+    # --- withdrawn ownership sentence in the page body --------------------
+    if disclosure:
+        text = refresh_disclosure_sentence(text, disclosure, list(retired_disclosures))
+
+    # --- JSON-LD byline ---------------------------------------------------
+    # Runs here, in the same pass that writes the visible footer byline, so the
+    # two are produced from one call to byline.entity_for() and cannot drift.
+    text = normalise_jsonld_author(text, pub_title)
 
     # --- favicon ----------------------------------------------------------
     # Each publication ships its own /favicon.svg. It is the identity marker a
@@ -233,7 +389,11 @@ def main() -> int:
                 skipped.append(rel)
                 continue
             original = path.read_text(encoding="utf-8")
-            updated = install(original, pub["title"], domain, editor_addr, names_by_domain)
+            updated = install(
+                original, pub["title"], domain, editor_addr, names_by_domain,
+                disclosure=pub.get("disclosure", ""),
+                retired_disclosures=tuple(pub.get("retired_disclosures") or ()),
+            )
 
             # Nothing installed may point off-domain. Check only what we added.
             for found in re.findall(r'https?://[^\s"\'<>)]+', footer_and_disclosure(updated)):

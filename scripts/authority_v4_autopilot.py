@@ -15,6 +15,7 @@ from lib import lastmod_ledger, site_urls
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
 from affiliation import rel_attr
+from byline import entity_for
 from lib import page_composer
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -395,7 +396,13 @@ def generate_page(brief):
         'headline': title,
         'datePublished': RELEASE_DATE,
         'dateModified': RELEASE_DATE,
-        'author': {'@type': 'Organization', 'name': f"{pub['default_domain']} editorial desk"},
+        # The byline. Derived from scripts/byline.py, which is the same
+        # expression install_editorial_chrome.py renders into the VISIBLE
+        # footer byline -- so the machine-readable author and the one a
+        # reader sees cannot disagree. It used to be a domain string here
+        # while the footer named a person, which is exactly the drift this
+        # closes.
+        'author': {'@type': 'Organization', 'name': entity_for(facts['pub_title'])},
         'about': cluster,
         'audience': {'@type': 'Audience', 'audienceType': audience},
         'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical_url}

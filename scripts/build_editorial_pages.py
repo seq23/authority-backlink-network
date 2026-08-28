@@ -49,6 +49,8 @@ import sys
 from urllib.parse import urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from byline import entity_for, parent_company, subsidiary_clause  # noqa: E402
 
 # The exact sentence hostile_review.py requires on any page mentioning a
 # regulated subject. These pages all mention "legal" and "contract", so it is
@@ -136,8 +138,12 @@ def editorial_footer(pub_title: str, domain: str, editor_addr: str) -> str:
     return (
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
-        f"<p>{esc(pub_title)} is published by S. L. Taylor, who also owns several of "
-        f"the projects it cites. Those citations are labelled on the page and carry "
+        f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
+        f"edited by <strong>{esc(entity_for(pub_title))}</strong>{esc(subsidiary_clause())}. Pages here "
+        f"carry that byline and no other: this publication names no individual author, "
+        f"and never attributes a page to someone who did not write it.</p>"
+        f"<p>{esc(entity_for(pub_title))} is under common ownership with several of the projects this "
+        f"publication cites. Those citations are labelled on the page and carry "
         f"<code>rel=\"sponsored nofollow\"</code>, so they pass no ranking signal. "
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
         f"and no listing that can be bought.</p>"
@@ -201,7 +207,8 @@ def masthead_page(pub, ed, pubed, brands, editor_addr, corrections_addr) -> tupl
     home = f"https://{domain}"
     url = f"{home}/masthead"
     title = "Masthead and ownership"
-    person = ed["responsible_person"]
+    entity = ed["publisher_entity"]
+    byline = entity_for(pub["title"])
 
     # Derived, not hand-written: the brands this publication's link registry
     # actually permits it to cite.
@@ -215,20 +222,31 @@ def masthead_page(pub, ed, pubed, brands, editor_addr, corrections_addr) -> tupl
          "<td>Not applicable</td></tr>"
 
     body = f"""<h1>Who is responsible for {esc(pub['title'])}</h1>
-<p class="dek">Ownership, accountability and how to reach a person about anything on this site.</p>
+<p class="dek">Ownership, accountability and how to reach the desk about anything on this site.</p>
 <h2>Short answer</h2>
-<p>{esc(pub['title'])} is owned and published by {esc(person['name'])}, who also owns several
-of the projects this publication cites. That is disclosed here, on every page footer, and next
-to every affiliated link, because a reader who finds out later has been misled, and a reader who
-is told up front can weigh it.</p>
+<p>{esc(pub['title'])} is written, edited and published by <strong>{esc(byline)}</strong>, the
+editorial company for this publication{esc(subsidiary_clause())}. That company is the byline on
+every page here. It is under common ownership with several of the projects this publication
+cites, which is disclosed here, in every page footer, and next to every affiliated link, because
+a reader who finds out later has been misled, and a reader who is told up front can weigh it.</p>
 
-<h2>Responsible person</h2>
+<h2>Responsible publisher</h2>
 <div class="policy">
 <dl>
-<dt>Publisher and responsible editor</dt>
-<dd>{esc(person['name'])}. Accountable for what this publication says, for correcting it when it
+<dt>{esc(entity['role'])}</dt>
+<dd>{esc(byline)}. Accountable for what this publication says, for correcting it when it
 is wrong, and for the standards on the <a href="{esc(home)}/editorial-standards">sourcing
 and AI-use standards</a> page.</dd>
+<dt>Corporate relationship</dt>
+<dd>{esc(byline)} is the editorial company for {esc(pub['title'])} and nothing else. Every
+publication in this group has an editorial company of its own{esc(subsidiary_clause())}. No other
+corporate detail is published here: this page states the relationship and stops, rather than
+dressing it up with particulars that nobody has established.</dd>
+<dt>Named staff</dt>
+<dd>None. This publication does not name individual editors or writers, does not publish staff
+biographies or credentials, and does not put a personal byline on a page. Where that changes, a
+named contributor will appear on the <a href="{esc(home)}/contributors">contributors page</a>
+with a profile they control, and only on the pages they actually wrote.</dd>
 <dt>What this publication covers</dt>
 <dd>{esc(ed['publications'][pub['id']]['beat'])}.</dd>
 <dt>Who it is written for</dt>
@@ -242,10 +260,12 @@ and AI-use standards</a> page.</dd>
 </div>
 
 <h2>Ownership and commercial relationships</h2>
-<p>{esc(person['note'])} The three publications are {esc(person['name'])}'s and are operated as
-one editorial group. They are not independent of each other and do not claim to be. What they
-are independent of is any payment for coverage: nothing on this site can be bought, and no
-listing, mention or placement is for sale at any price.</p>
+<p>{esc(entity['note'])}</p>
+<p>{esc(entity['accountability'])}</p>
+<p>The three publications in this group each have their own editorial company, and those
+companies are commonly owned. They are therefore not independent of each other and do not claim
+to be. What they are independent of is any payment for coverage: nothing on this site can be
+bought, and no listing, mention or placement is for sale at any price.</p>
 <p>The projects below are commonly owned with this publication. Where a page cites one, the
 citation is labelled on the page and carries <code>rel="sponsored nofollow"</code> so it passes
 no ranking signal to the destination. This publication publishes no rankings, no awards and no
@@ -264,9 +284,9 @@ scored comparisons, so an affiliated project cannot be ranked above anything.</p
 <li>It will not exchange links with another site for the purpose of ranking.</li>
 </ul>
 
-<h2>How to reach a person</h2>
-<p>Editorial questions, corrections, pitches and complaints all reach a person at the addresses
-above. {esc(ed['corrections_policy']['response_target'])} If you believe a page here is wrong,
+<h2>How to reach the desk</h2>
+<p>Editorial questions, corrections, pitches and complaints all reach {esc(byline)} at the
+addresses above. {esc(ed['corrections_policy']['response_target'])} If you believe a page here is wrong,
 the <a href="{esc(home)}/corrections">corrections page</a> is the fastest route and the one that
 produces a public record.</p>
 <p>{esc(ADVICE_BOUNDARY)}</p>"""
@@ -274,13 +294,22 @@ produces a public record.</p>
     schema = web_page_schema("AboutPage", title, url,
                              "Ownership, accountability and editorial contact.",
                              pub["title"], home, pub.get("mission", ""))
-    # The responsible person is a real, named human. This is the one Person node
-    # in the entire build and it names the actual owner.
-    schema["@graph"].append({
-        "@type": "Person", "name": person["name"], "jobTitle": person["role"],
-        "@id": home + "/masthead#responsible-person",
-    })
-    schema["@graph"][0]["founder"] = {"@id": home + "/masthead#responsible-person"}
+    # The responsible party is the editorial company, not a person. There is no
+    # Person node anywhere in this build: naming one would mean naming somebody,
+    # and nobody has agreed to be named. `name` here is byte-identical to the
+    # visible footer byline and to the JSON-LD author on every article, because
+    # all three call byline.entity_for() -- the disagreement this replaces had
+    # 552 pages claiming an Organization author under a person's visible byline.
+    publisher_node = {
+        "@type": "Organization", "name": byline,
+        "@id": home + "/masthead#publisher-entity",
+        "description": f"The editorial company that writes, edits and publishes {pub['title']}.",
+    }
+    parent = parent_company()
+    if parent:
+        publisher_node["parentOrganization"] = {"@type": "Organization", "name": parent}
+    schema["@graph"].append(publisher_node)
+    schema["@graph"][0]["publishingPrinciples"] = home + "/editorial-standards"
     return "masthead.html", url, title, \
         "Ownership, accountability and editorial contact for " + pub["title"] + ".", schema, body
 
@@ -466,8 +495,10 @@ def contributors_page(pub, ed, contributors, pitch_addr) -> tuple:
     body = f"""<h1>Contributors and byline policy</h1>
 <p class="dek">Who writes for {esc(pub['title'])}, how bylines are used, and how to write for it.</p>
 <h2>Short answer</h2>
-<p>{esc(cpol['status'])} When a named person writes for this publication they get a byline on
-their own work and an author page, and nothing else carries their name.</p>
+<p>Every page here is bylined <strong>{esc(entity_for(pub['title']))}</strong>, the editorial
+company for this publication. {esc(cpol['status'])} When a named person writes for this
+publication they get a byline on their own work and an author page, and nothing else carries
+their name.</p>
 
 <h2>Current contributors</h2>
 {listing}
@@ -476,9 +507,12 @@ their own work and an author page, and nothing else carries their name.</p>
 <p>{esc(cpol['credit'])}</p>
 <p>Pages produced by the automated system described in the
 <a href="{esc(home)}/editorial-standards">statement of editorial standards</a> do not carry a
-personal byline, because no person wrote them. They are attributed to the publication. That distinction
-is the whole point of having a byline system at all: a name on a page has to mean a person is
-answerable for it, or it means nothing.</p>
+personal byline, because no person wrote them. They are attributed to
+{esc(entity_for(pub['title']))}, which is answerable for them as an organisation. That
+distinction is the whole point of having a byline system at all: a person's name on a page has
+to mean that person is answerable for it, or it means nothing. The same name appears in this
+page's machine-readable metadata as the author, so an automated reader and a human reader are
+told the same thing.</p>
 
 <h2>What a contributor needs</h2>
 <ul>{reqs}</ul>

@@ -41,6 +41,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from affiliation import rel_attr  # noqa: E402
+from byline import entity_for  # noqa: E402
 from lib import site_urls  # noqa: E402
 
 CONTENT_DIR = ROOT / "content-bank/cluster-articles"
@@ -125,7 +126,11 @@ def schema_graph(article: dict, pub: dict, url: str) -> str:
             "description": article["meta_description"],
             "datePublished": article["date"],
             "dateModified": article["date"],
-            "author": {"@type": "Organization", "name": pub["title"]},
+            # author is the editorial company that writes the publication;
+            # publisher is the publication itself. Both organisations, and the
+            # author string is the same expression the visible footer byline
+            # uses -- see scripts/byline.py.
+            "author": {"@type": "Organization", "name": entity_for(pub["title"])},
             "publisher": {"@type": "Organization", "name": pub["title"]},
             "about": article["cluster"],
             "isAccessibleForFree": True,

@@ -29,7 +29,7 @@ Only real integrity, safety, routing, secret, deterministic-build, or required-j
 
 # Real Authority Network — BACKLINKS - Targeted SEO/AEO/GEO Engine
 
-This repo is built only for the domains S. L. Taylor listed. It is not a generic backlink scaffold.
+This repo is built only for the domains the owner listed. It is not a generic backlink scaffold.
 
 ## New authority publication domains assumed
 
