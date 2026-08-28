@@ -1,0 +1,25 @@
+{
+  "_what": "Hostnames whose referrals mean an AI answer engine sent a person here. Matched on the referrer HOSTNAME only -- never the full URL, which on some engines carries the user's question text.",
+  "_why": "The portfolio can measure whether a page is cited (Bing Webmaster AI Performance) but not whether a citation was ever clicked. Clarity is installed on all three publications and supports custom tags, so classifying the referrer at page load turns arrivals into a filterable dimension with no new infrastructure and no new account.",
+  "_privacy": "Hostname only. No query strings, no paths from the referring engine, no user identifiers. The landing path on our own site is recorded because it is our own URL.",
+  "engines": {
+    "chatgpt.com": "chatgpt",
+    "chat.openai.com": "chatgpt",
+    "openai.com": "chatgpt",
+    "perplexity.ai": "perplexity",
+    "www.perplexity.ai": "perplexity",
+    "copilot.microsoft.com": "copilot",
+    "www.bing.com": "bing-or-copilot",
+    "bing.com": "bing-or-copilot",
+    "gemini.google.com": "gemini",
+    "bard.google.com": "gemini",
+    "claude.ai": "claude",
+    "you.com": "you",
+    "www.you.com": "you",
+    "search.brave.com": "brave-ai",
+    "duckduckgo.com": "duckduckgo",
+    "phind.com": "phind",
+    "poe.com": "poe"
+  },
+  "_note_on_bing": "www.bing.com is ambiguous -- a Copilot answer and an ordinary Bing result can both refer from it. It is tagged bing-or-copilot rather than being counted as an AI arrival, so it never inflates the AI number."
+}
