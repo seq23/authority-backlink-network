@@ -29,7 +29,8 @@
       "analytics_separation",
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
-      "affiliate_topical_scope"
+      "affiliate_topical_scope",
+      "brand_link_concentration"
     ],
     "release": [
       "json",
@@ -54,7 +55,8 @@
       "analytics_separation",
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
-      "affiliate_topical_scope"
+      "affiliate_topical_scope",
+      "brand_link_concentration"
     ],
     "full": [
       "json",
@@ -80,7 +82,8 @@
       "analytics_separation",
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
-      "affiliate_topical_scope"
+      "affiliate_topical_scope",
+      "brand_link_concentration"
     ],
     "cache-self-test": [
       "python",
@@ -195,6 +198,10 @@
     "affiliate_topical_scope": {
       "severity": "HARD_FAIL",
       "rationale": "Wrong-domain routing and false evidence, both already named in severity_policy. Every daily page states that this publication cites affiliated projects 'where the citation is topically relevant'. Across 598 affiliated placements that was false for about 39%: 82 sat outside their target's declared clusters, 105 pointed at targets that declared no clusters at all, and 46 at hosts the pantry did not recognise. uscisexam.com, the one property in the portfolio earning AI citations, was cited from a page about trauma-informed leadership; dentistryguides.com from a page about credit-report errors. A disclosure that does not describe what the page does is worse than none, because it is read as proof. This blocks on an undeclared target, on a declaration written in clusters the publication does not use, on an affiliated placement outside its target's scope, and on build_brief() failing to decline - so a clean corpus cannot be produced by a generator whose two permissive fallbacks have been restored."
+    },
+    "brand_link_concentration": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence, already named in severity_policy. Every page states that this publication cites affiliated projects where the citation is topically relevant, which reads as an occasional editorial choice. On 2026-08-28 approval-prep was cited from 290 of professional-resources' 420 pages - 69%, and 292 of the network's 490 commercial links - while the leading brand in the other two publications sat at 31.4% and 32.7%. Every one of those links carried rel=\"sponsored nofollow\" and was inside its declared topical scope, so no existing validator could see it: each placement was individually correct and the aggregate was the defect. The disclosure being accurate made it worse, not better. This blocks on a brand over the declared third of any publication, on the cap being removed or raised in content-bank/scaling-policy.json, on the scheduler no longer withholding slots from a brand at its cap, on the per-brand APPROVAL_PREP_PAGES_PER_DAY bypass returning, and on any priority lane regaining a daily quota with no until_rendered_coverage to stop at."
     }
   },
   "severity_matrix_policy": {

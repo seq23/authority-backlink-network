@@ -227,6 +227,36 @@ def replace_faq_node(text: str, items: list[dict]) -> str:
     return LD_RE.sub(sub, text, count=0)
 
 
+def recompose_without_citation(path: Path) -> str:
+    """The page as it reads with its affiliated citation removed.
+
+    Extracted from `main()` so a second caller can reuse it without copying the
+    part that matters: before composing anything new, the page is recomposed
+    *with* its existing citation and the result required to reproduce what is on
+    disk. A page this module cannot first rebuild byte-for-byte is one it does
+    not understand, and it refuses to replace it rather than guessing.
+
+    Raises ValueError when the page cannot be read back or cannot be reproduced.
+    """
+    folder = path.relative_to(ROOT / "sites").parts[0]
+    text = path.read_text(encoding="utf-8")
+    match = ARTICLE_RE.search(text)
+    if not match:
+        raise ValueError("no <article> with an <h1>")
+    head, body, tail = match.groups()
+    pure = DISCLOSURE_RE.sub("\n", body)
+
+    base = facts_from_page(path, folder)
+    with_citation = citation_facts(base, pure)
+    rebuilt, _ = page_composer.compose_body(with_citation)
+    if pure.strip() != rebuilt.strip():
+        raise ValueError("reconstruction did not reproduce the page")
+
+    new_body, items = page_composer.compose_body(citation_free(base))
+    updated = text[: match.start()] + head + "\n" + new_body + tail + text[match.end():]
+    return replace_faq_node(updated, items)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true", help="apply the repair")
@@ -261,28 +291,11 @@ def main() -> int:
 
     changed, removed, per_target, failures = 0, 0, {}, []
     for path, hosts in sorted(targeted.items()):
-        folder = path.relative_to(ROOT / "sites").parts[0]
-        text = path.read_text(encoding="utf-8")
-        match = ARTICLE_RE.search(text)
-        head, body, tail = match.groups()
-        pure = DISCLOSURE_RE.sub("\n", body)
-
         try:
-            base = facts_from_page(path, folder)
-            with_citation = citation_facts(base, pure)
-            rebuilt, _ = page_composer.compose_body(with_citation)
+            updated = recompose_without_citation(path)
         except (ValueError, KeyError) as exc:
             failures.append(f"{path.relative_to(ROOT)}: {exc}")
             continue
-
-        # Refuse to rewrite a page this script cannot first reproduce.
-        if pure.strip() != rebuilt.strip():
-            failures.append(f"{path.relative_to(ROOT)}: reconstruction did not reproduce the page")
-            continue
-
-        new_body, items = page_composer.compose_body(citation_free(base))
-        updated = text[:match.start()] + head + "\n" + new_body + tail + text[match.end():]
-        updated = replace_faq_node(updated, items)
 
         if args.write:
             path.write_text(updated, encoding="utf-8")
