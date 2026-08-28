@@ -1,0 +1,27 @@
+{
+  "_what": "Standing decision on the 585 pre-2026-08-26 pages, recorded next to the measurement rather than left in a chat log.",
+  "decided_at": "2026-08-27",
+  "decision": "DO_NOT_RESHAPE. Leave the 585 in place, do not retire them, and do not invest editorial effort in them. Do not expand this network into vertical query pages either.",
+  "evidence": {
+    "conforming_pages": "46 of 631 carry the full citation shape, all dated 2026-08-26 or later, when the template changed",
+    "taxonomy_titles": "76% of pages carry taxonomy-slot titles assembled from 163 modifier x stage combinations; only 13% are query-shaped",
+    "open_ground_coverage": "196 open-ground queries: 7 strong match, 46 partial, 143 with no page at all (72.96%)",
+    "held_ground_coverage": "89 held-ground queries: 2 strong, 18 partial, 69 no page (77.53%)",
+    "citations": "professionalresourcelibrary.com: 0 over three months, Bing Webmaster AI Performance",
+    "reachability_is_not_the_constraint": "0 orphans, 419/419 reachable, max depth 2, median 13 inbound links -- and still 0 citations. The 377-orphan figure that suggested otherwise was a depth-2 bucket read out of the wrong column.",
+    "access_is_not_the_constraint": "30 of 30 agent x domain crawler probes return 200 with a server-rendered answer block"
+  },
+  "reasoning": [
+    "Reshaping the 585 would produce better-shaped pages for queries nobody searches. The titles are assembled from an internal taxonomy -- 'Citation-Friendly Budget/Planning Note For Careful Decision-Makers' is not a retrieval surface. Shape is necessary and not sufficient; it wins a slot that is already open, and these pages do not sit on open slots.",
+    "The measured gap is COVERAGE, not shape. 143 open-ground queries have no page anywhere in the network. That is an argument for writing against demand, not for rewriting the back catalogue.",
+    "But those 143 queries are vertical questions -- 'TRT injections vs gel', 'all-on-4 dental implants price 2026', 'can a dental abscess wait until Monday'. Building them HERE would make this network look like more of the same portfolio, which directly undermines the reason it exists. The byline is deliberately S. L. Taylor to establish perceived external ownership; filling it with the portfolio's own vertical query pages would spend that posture to chase coverage.",
+    "The owner has already designated where new query pages go: the velocity site owns citations and leads so the canonical sites stay clean. The 143 open-ground queries are a velocity-site opportunity that this measurement surfaced. They are not an authority-network task.",
+    "So the correct action here is to stop, not to build. The network is measured, access-clean and topically scoped. The new template is one week old with 46 pages in it. Let it accumulate and re-measure rather than spending editorial effort on either end of the back catalogue."
+  ],
+  "what_this_is_not": "This is not retirement. Nothing is deleted, unpublished or noindexed. The 585 stay exactly as they are; they simply stop receiving investment.",
+  "revisit_when": [
+    "The 46 conforming pages have had 60+ days to be crawled and re-measured against Bing AI Performance. If shape alone moves citations on open ground, that changes the ranking of these options.",
+    "Clarity referrer data shows any ai_referral arrivals at all -- that would be the first evidence a citation was ever clicked, and would justify more investment here.",
+    "Anyone proposes reshaping the back catalogue again: read this file first, then re-derive the 143/196 coverage figure before spending."
+  ]
+}
