@@ -1564,6 +1564,80 @@
         "liability"
       ],
       "supports": "Applied boarding, facility and liability guidance from a land-grant extension service."
+    },
+    {
+      "id": "cfpb-consumer-reporting-companies-list",
+      "domain": "consumerfinance.gov",
+      "url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/consumer-reporting-companies/companies-list/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "List of Consumer Reporting Companies",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "records",
+        "rental",
+        "tenant screening"
+      ],
+      "supports": "The Bureau's own enumerated list of consumer reporting companies, and the caveats it attaches to it."
+    },
+    {
+      "id": "cfpb-consumer-reporting-companies-list-pdf-2025",
+      "domain": "files.consumerfinance.gov",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb_consumer-reporting-companies_list_2025.pdf",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "List of Consumer Reporting Companies (2025 PDF)",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "records"
+      ],
+      "supports": "The full 2025 edition, including the nationwide section and the per-company qualifying text that the CSV export reduces to Yes/No."
+    },
+    {
+      "id": "cfpb-consumer-reporting-companies-list-csv-2025",
+      "domain": "files.consumerfinance.gov",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb-consumer-reporting-companies_list_2025.csv",
+      "publisher": "Consumer Financial Protection Bureau",
+      "publisher_type": "us_federal_agency",
+      "title": "List of Consumer Reporting Companies (2025 CSV export)",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "dispute",
+        "records"
+      ],
+      "supports": "The machine-readable export every row of the compiled directory is carried through from."
+    },
+    {
+      "id": "ftc-credit-freezes-and-fraud-alerts",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/credit-freezes-and-fraud-alerts",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "Credit Freezes and Fraud Alerts",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "credit",
+        "credit report",
+        "identity theft",
+        "fraud"
+      ],
+      "supports": "What a security freeze does and does not do, which is what the freeze column on the compiled directory is answering."
     }
   ]
 }
