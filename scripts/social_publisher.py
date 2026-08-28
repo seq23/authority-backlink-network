@@ -74,7 +74,14 @@ def validate_required_secrets(platform):
     if platform == 'linkedin':
         missing = [k for k in ['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_AUTHOR_URN'] if not os.getenv(k)]
     elif platform == 'x':
-        missing = [k for k in ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET'] if not os.getenv(k)]
+        # Two auth paths. OAuth 2.0 user-context is preferred when a bearer token is
+        # present: it is what the X developer console now hands out, and it is a
+        # single token rather than a signed pair. OAuth 1.0a stays supported so an
+        # existing 1.0a setup keeps working unchanged.
+        if os.getenv('X_OAUTH2_ACCESS_TOKEN'):
+            missing = []
+        else:
+            missing = [k for k in ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET'] if not os.getenv(k)]
     else:
         missing = []
     return missing
@@ -140,23 +147,70 @@ def x_oauth_header(method, url, body_params=None):
     return 'OAuth ' + ', '.join(f'{oauth_percent(k)}="{oauth_percent(v)}"' for k, v in oauth.items())
 
 
-def x_post(text):
+def x_refresh_access_token():
+    """Exchange the refresh token for a new access token.
+
+    X's OAuth 2.0 access tokens are short-lived (about two hours), so a scheduled
+    lane that only ever reads the stored token works once and then 401s forever.
+    Refresh needs the OAuth 2.0 CLIENT ID - a different value from the OAuth 1.0a
+    consumer key - so when it is absent this returns None and the caller falls
+    back to the stored token rather than pretending to have refreshed.
+    """
+    refresh = os.getenv('X_OAUTH2_REFRESH_TOKEN')
+    client_id = os.getenv('X_OAUTH2_CLIENT_ID')
+    if not refresh or not client_id:
+        return None
+    body = urllib.parse.urlencode({
+        'grant_type': 'refresh_token',
+        'refresh_token': refresh,
+        'client_id': client_id,
+    }).encode('utf-8')
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    secret = os.getenv('X_OAUTH2_CLIENT_SECRET')
+    if secret:
+        basic = base64.b64encode(f'{client_id}:{secret}'.encode()).decode()
+        headers['Authorization'] = f'Basic {basic}'
+    req = urllib.request.Request('https://api.x.com/2/oauth2/token', data=body, method='POST', headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            out = json.loads(resp.read().decode('utf-8', errors='replace'))
+        return out.get('access_token') or None
+    except Exception:
+        # A failed refresh is not fatal here: the stored token may still be valid.
+        return None
+
+
+def x_send(text, bearer=None):
     url = 'https://api.x.com/2/tweets'
-    payload = {'text': text}
-    data = json.dumps(payload).encode('utf-8')
+    data = json.dumps({'text': text}).encode('utf-8')
+    auth = f'Bearer {bearer}' if bearer else x_oauth_header('POST', url)
     req = urllib.request.Request(
         url,
         data=data,
         method='POST',
-        headers={
-            'Authorization': x_oauth_header('POST', url),
-            'Content-Type': 'application/json'
-        }
+        headers={'Authorization': auth, 'Content-Type': 'application/json'}
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         body = resp.read().decode('utf-8', errors='replace')
         out = json.loads(body) if body.strip().startswith('{') else {'raw': body}
         return {'ok': True, 'status': resp.status, 'id': out.get('data', {}).get('id', ''), 'body': out}
+
+
+def x_post(text):
+    bearer = os.getenv('X_OAUTH2_ACCESS_TOKEN')
+    if not bearer:
+        return x_send(text)
+    try:
+        return x_send(text, bearer)
+    except urllib.error.HTTPError as err:
+        # 401 is the expected shape of an expired bearer. Refresh once, then retry;
+        # anything else, or a refresh that cannot run, propagates unchanged.
+        if err.code != 401:
+            raise
+        refreshed = x_refresh_access_token()
+        if not refreshed:
+            raise
+        return x_send(text, refreshed)
 
 
 def post_item(item, dry_run=False):
