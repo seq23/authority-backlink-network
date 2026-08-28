@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 54,
+    "runtime_operators": 57,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -247,6 +247,18 @@
       "category": "Other"
     },
     {
+      "operator": "compile:consumer-reporting",
+      "command": "npm run compile:consumer-reporting",
+      "implementation": "python3 scripts/compile_consumer_reporting_companies.py",
+      "category": "Other"
+    },
+    {
+      "operator": "compile:consumer-reporting:fetch",
+      "command": "npm run compile:consumer-reporting:fetch",
+      "implementation": "python3 scripts/compile_consumer_reporting_companies.py --fetch",
+      "category": "Other"
+    },
+    {
       "operator": "content:clusters",
       "command": "npm run content:clusters",
       "implementation": "python3 scripts/generate_cluster_articles.py",
@@ -292,6 +304,12 @@
       "operator": "measure:duplication",
       "command": "npm run measure:duplication",
       "implementation": "python3 scripts/measure_content_duplication.py",
+      "category": "Other"
+    },
+    {
+      "operator": "pages:consumer-reporting-directory",
+      "command": "npm run pages:consumer-reporting-directory",
+      "implementation": "python3 scripts/build_consumer_reporting_directory.py --write",
       "category": "Other"
     },
     {

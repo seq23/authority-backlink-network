@@ -56,7 +56,10 @@
     "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py",
     "validate:affiliate-topical-scope": "python3 scripts/validators/validate_affiliate_topical_scope.py",
     "cadence:accept": "node scripts/cadence_accept.js",
-    "validate:cadence-integrity": "node scripts/validators/validate_cadence_gate_integrity.js"
+    "validate:cadence-integrity": "node scripts/validators/validate_cadence_gate_integrity.js",
+    "compile:consumer-reporting": "python3 scripts/compile_consumer_reporting_companies.py",
+    "compile:consumer-reporting:fetch": "python3 scripts/compile_consumer_reporting_companies.py --fetch",
+    "pages:consumer-reporting-directory": "python3 scripts/build_consumer_reporting_directory.py --write"
   },
   "devDependencies": {}
 }
