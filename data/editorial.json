@@ -3,22 +3,34 @@
     "Editorial governance facts for the three publications. Everything here is",
     "published to readers, so every statement in this file must be true.",
     "",
-    "Two things are deliberately NOT in this file:",
+    "Each publication is published by its OWN editorial company, named after the",
+    "publication. The byline is that company, not a person. The entity name is",
+    "derived at build time as '<publication title> <entity_suffix>' so the byline",
+    "on a page, the JSON-LD author and the masthead cannot drift apart.",
+    "",
+    "Three things are deliberately NOT in this file:",
     "  1. The conflict-of-interest list. It is derived at build time from",
     "     data/brands.json (approved_publications) so it cannot drift away from",
     "     the affiliations the link registry actually permits.",
     "  2. Any invented person. contributors[] in data/contributors.json ships",
-    "     empty. The only person named anywhere is the real owner, below.",
+    "     empty, and no page names a member of staff.",
+    "  3. Any invented corporate detail. No registration number, incorporation",
+    "     date, address, phone number, credential or award is recorded here or",
+    "     published anywhere, because none has been supplied. The only corporate",
+    "     facts asserted are the two below: each publication has its own",
+    "     editorial company, and that company is a subsidiary of Spry Labs.",
     "",
     "scripts/build_editorial_pages.py turns this into the masthead, editorial",
     "standards, corrections and contributors pages on each site."
   ],
 
-  "responsible_person": {
-    "name": "S. L. Taylor",
-    "role": "Publisher and responsible editor",
+  "publisher_entity": {
+    "entity_suffix": "Editorial Desk",
+    "role": "Publisher and responsible editorial company",
+    "parent_company": "Spry Labs",
     "applies_to": ["founder", "memphis", "professional"],
-    "note": "One person is accountable for all three publications. That is disclosed on every masthead rather than obscured behind a brand name."
+    "note": "Each of these publications is published by its own editorial company, named after the publication and operating as a subsidiary of Spry Labs. The editorial companies are under common ownership with each other and with several of the projects these publications cite. That common ownership is disclosed on every masthead, in every page footer and next to every affiliated link rather than obscured.",
+    "accountability": "Accountability sits with the editorial company, which is reachable at the editorial and corrections addresses on every page. No individual member of staff is named on this site, and no page claims a named author who did not write it."
   },
 
   "ai_use": {
