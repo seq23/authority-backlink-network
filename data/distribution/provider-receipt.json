@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-08-28T00-36-10.655690Z-33130207128",
-  "attempted_at": "2026-08-28T00:36:10.655690Z",
+  "receipt_id": "2026-08-28T01-15-22.537934Z-33132268039",
+  "attempted_at": "2026-08-28T01:15:22.537934Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -43,107 +43,17 @@
         "key_file": "sites/founder-operator/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
       },
       "gsc_sitemap_submission": {
-        "status": "FAILED",
+        "status": "SUCCESS",
         "attempted": true,
-        "http_status": 403,
+        "http_status": 204,
         "site_url": "sc-domain:founderoperatorlibrary.com",
-        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "error": "HTTP 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"User does not have sufficient permission for site 'sc-domain:founderoperatorlibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n    \"errors\": [\n      {\n        \"message\": \"User does not have sufficient permission for site 'sc-domain:founderoperatorlibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n        \"domain\": \"global\",\n        \"reason\": \"forbidden\"\n      }\n    ]\n  }\n}\n"
+        "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml"
       },
       "priority_url_inspection": {
-        "status": "FAILED",
-        "requested_urls": 8,
-        "inspected_urls": 8,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/founder-execution-systems",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "status": "SUCCESS",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -1196,107 +1106,17 @@
         "key_file": "sites/memphis-local/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
       },
       "gsc_sitemap_submission": {
-        "status": "FAILED",
+        "status": "SUCCESS",
         "attempted": true,
-        "http_status": 403,
+        "http_status": 204,
         "site_url": "sc-domain:memphisvendorlibrary.com",
-        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "error": "HTTP 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"User does not have sufficient permission for site 'sc-domain:memphisvendorlibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n    \"errors\": [\n      {\n        \"message\": \"User does not have sufficient permission for site 'sc-domain:memphisvendorlibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n        \"domain\": \"global\",\n        \"reason\": \"forbidden\"\n      }\n    ]\n  }\n}\n"
+        "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml"
       },
       "priority_url_inspection": {
-        "status": "FAILED",
-        "requested_urls": 8,
-        "inspected_urls": 8,
-        "results": [
-          {
-            "url": "https://memphisvendorlibrary.com/grazing-table-food-safety-checklist",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-event-rental-vs-purchase-comparison",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-event-vendor-quote-cost-drivers",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-grazing-table-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-outdoor-event-weather-planning",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-party-decor-vendors",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/seasonal-home-styling-memphis",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "status": "SUCCESS",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -2465,173 +2285,17 @@
         "key_file": "sites/professional-resources/e502938ea2ecc29dcfdd1d437c363d83d173f9ebaaac822d9be3a5cc32496af5.txt"
       },
       "gsc_sitemap_submission": {
-        "status": "FAILED",
+        "status": "SUCCESS",
         "attempted": true,
-        "http_status": 403,
+        "http_status": 204,
         "site_url": "sc-domain:professionalresourcelibrary.com",
-        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "error": "HTTP 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"User does not have sufficient permission for site 'sc-domain:professionalresourcelibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n    \"errors\": [\n      {\n        \"message\": \"User does not have sufficient permission for site 'sc-domain:professionalresourcelibrary.com'. See also: https://support.google.com/webmasters/answer/2451999.\",\n        \"domain\": \"global\",\n        \"reason\": \"forbidden\"\n      }\n    ]\n  }\n}\n"
+        "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml"
       },
       "priority_url_inspection": {
-        "status": "FAILED",
-        "requested_urls": 14,
-        "inspected_urls": 14,
-        "results": [
-          {
-            "url": "https://professionalresourcelibrary.com/credit-report-dispute-letter-checklist",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/dental-decision-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/equine-legal-resource-library",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/hormone-wellness-clinic-research",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/lender-document-request-checklist",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/neuro-evaluation-research",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/personal-injury-research-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/regulated-service-provider-research",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy",
-            "status": "FAILED",
-            "http_status": 403,
-            "verdict": "UNKNOWN",
-            "coverage_state": "UNKNOWN",
-            "indexing_state": "UNKNOWN",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "status": "SUCCESS",
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -7259,7 +6923,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-08-28T00-36-10.655690Z-33130207128.json"
+    "history": "data/distribution/receipts/2026-08-28T01-15-22.537934Z-33132268039.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
