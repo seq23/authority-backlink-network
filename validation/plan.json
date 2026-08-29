@@ -31,7 +31,8 @@
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
       "brand_link_concentration",
-      "selfheal_wiring"
+      "selfheal_wiring",
+      "social_enqueue_completeness"
     ],
     "release": [
       "json",
@@ -58,7 +59,8 @@
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
       "brand_link_concentration",
-      "selfheal_wiring"
+      "selfheal_wiring",
+      "social_enqueue_completeness"
     ],
     "full": [
       "json",
@@ -86,7 +88,8 @@
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
       "brand_link_concentration",
-      "selfheal_wiring"
+      "selfheal_wiring",
+      "social_enqueue_completeness"
     ],
     "cache-self-test": [
       "python",
@@ -209,6 +212,10 @@
     "selfheal_wiring": {
       "severity": "HARD_FAIL",
       "rationale": "A repair loop that runs green and repairs nothing is worse than no loop, because the green run is taken as proof the tree is healthy. Four such defects were reproduced on 2026-08-29: portfolio_backlink_engine.repair() gated on two lifecycle stages the 613-row registry has never held, so it matched 0 rows and printed PASS; the same function recorded findings it has no handler for as repaired; cache.fingerprint() omitted allow_repair, so a --no-repair result satisfied a repairing run and suppressed the repair; and heal_until_clean.py declared `page_validation.py changed` as a repair when that invocation cannot mutate the tree at all. This blocks on the repair gate matching zero rows, on the gate reaching withdrawn or off-topic-removed rows a prior remediation cleaned, on a claimed finding having no handler, on allow_repair leaving the cache key, on a declared repair being inert, and on no workflow invoking the loop."
+    },
+    "social_enqueue_completeness": {
+      "severity": "HARD_FAIL",
+      "rationale": "Measured opportunity that produces nothing, silently. The autopilot published up to 12 pages a day and then enqueued social distribution with published[:LINKEDIN_DAILY_LIMIT] and x_pool[:X_DAILY_LIMIT]; because x_pool was built item-outer/template-inner, all 5 X slots went to published[0]. Exactly one page a day reached the queue on either platform and 428 of 474 published pages were never queued at all - not deferred, not logged, not visible in any report. Daily platform rate limits remain enforced in scripts/social_publisher.py, which leaves unposted items queued_for_auto_post so they roll to the next run: a cap that defers is fine, a cap that drops is not. This blocks if an enqueue-time slice is reintroduced, or if any governed run publishes pages that never enter the queue."
     }
   },
   "severity_matrix_policy": {

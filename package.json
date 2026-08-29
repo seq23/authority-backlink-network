@@ -62,7 +62,8 @@
     "pages:consumer-reporting-directory": "python3 scripts/build_consumer_reporting_directory.py --write",
     "validate:brand-link-concentration": "python3 scripts/validators/validate_brand_link_concentration.py",
     "links:reduce-concentration": "python3 scripts/reduce_commercial_link_concentration.py",
-    "validate:selfheal-wiring": "python3 scripts/validators/validate_selfheal_wiring.py"
+    "validate:selfheal-wiring": "python3 scripts/validators/validate_selfheal_wiring.py",
+    "validate:social-enqueue-completeness": "python3 scripts/validators/validate_social_enqueue_completeness.py"
   },
   "devDependencies": {}
 }

@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 60,
+    "runtime_operators": 61,
     "release_operators": 10,
     "workflow_operators": 5,
     "approved_target_urls": 86,
@@ -412,6 +412,12 @@
       "operator": "validate:selfheal-wiring",
       "command": "npm run validate:selfheal-wiring",
       "implementation": "python3 scripts/validators/validate_selfheal_wiring.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:social-enqueue-completeness",
+      "command": "npm run validate:social-enqueue-completeness",
+      "implementation": "python3 scripts/validators/validate_social_enqueue_completeness.py",
       "category": "Validation / release"
     },
     {

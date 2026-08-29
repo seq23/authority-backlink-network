@@ -833,9 +833,15 @@ def main():
 
     social = read_json(ROOT/'data/social-queue.json', [])
     if isinstance(social, dict): social = social.get('items', [])
-    li_limit = int(os.getenv('LINKEDIN_DAILY_LIMIT', '1'))
-    x_limit = int(os.getenv('X_DAILY_LIMIT', '5'))
-    for item in published[:li_limit]:
+    # Enqueue every published page. Daily platform rate limits are enforced at
+    # POST time by scripts/social_publisher.py, which leaves unposted items as
+    # queued_for_auto_post so they roll to the next run. Slicing here instead
+    # dropped the remainder permanently and silently: 427 of 474 pages (90%)
+    # published before this fix never entered the queue on any platform, because
+    # LINKEDIN_DAILY_LIMIT=1 and the x_pool ordering below spent all 5 X slots on
+    # published[0]. A rate limit belongs where the rate is consumed, not where
+    # the candidate is recorded.
+    for item in published:
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
@@ -855,7 +861,7 @@ def main():
     for idx, item in enumerate(published):
         for t_idx, tmpl in enumerate(x_templates):
             x_pool.append((item, tmpl, idx, t_idx))
-    for item, tmpl, idx, t_idx in x_pool[:x_limit]:
+    for item, tmpl, idx, t_idx in x_pool:
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
@@ -865,6 +871,14 @@ def main():
             body = f"{hooks[t_idx % len(hooks)]} {item['title']} [{t_idx + 1}]"
         social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
     write_json(ROOT/'data/social-queue.json', social)
+    # Rule 0 visibility: a run that publishes pages but enqueues no distribution
+    # for them is a silent drop, so the counts are recorded in the run receipt.
+    social_enqueued_paths = {s.get('source_path') for s in social if s.get('scheduled_content_date') == TODAY}
+    social_enqueued = {
+        'published_pages': len(published),
+        'pages_enqueued_for_social': len([p for p in {i['path'] for i in published} if p in social_enqueued_paths]),
+        'pages_missing_social': sorted(p for p in {i['path'] for i in published} if p not in social_enqueued_paths),
+    }
 
     # Refresh the portfolio dashboard after canonical state is written.
     try:
@@ -873,7 +887,7 @@ def main():
     except Exception:
         pass
 
-    run = {'date': TODAY, 'release_date': RELEASE_DATE, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'self_heal_recoveries': self_heal_recoveries, 'self_heal_attempts': self_heal_attempts, 'blocked_slots': blocked_slots, 'stats_before': stats}
+    run = {'date': TODAY, 'release_date': RELEASE_DATE, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'self_heal_recoveries': self_heal_recoveries, 'self_heal_attempts': self_heal_attempts, 'blocked_slots': blocked_slots, 'social_enqueued': social_enqueued, 'stats_before': stats}
     state.setdefault('history', []).append(run)
     write_json(STATE_PATH, state)
     write_json(REPORT_DIR/'v4-autopilot-report.json', {'status': 'ok', 'run': run, 'generated': generated, 'published': published, 'scaling_policy': SCALING})
