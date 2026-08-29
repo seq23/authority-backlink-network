@@ -44,6 +44,7 @@ COMMANDS = {
     "brand_link_concentration": [sys.executable, "scripts/validators/validate_brand_link_concentration.py"],
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
     "selfheal_wiring": [sys.executable, "scripts/validators/validate_selfheal_wiring.py"],
+    "social_enqueue_completeness": [sys.executable, "scripts/validators/validate_social_enqueue_completeness.py"],
 }
 
 

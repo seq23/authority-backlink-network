@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "920cb2ec7c4b6e123a38e735c3feda3123f9f97f9d48fabbb7bed87dd69dddd8",
+  "plan_sha256": "bad098effb3a09a1d38f8aa0d4e7af3262bf8f8109d32041fe2bbebf4e7d2449",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 28,
+  "count": 29,
   "counts_by_severity": {
-    "HARD_FAIL": 25,
+    "HARD_FAIL": 26,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
@@ -307,6 +307,17 @@
       "severity": "SOFT_WARNING",
       "classified": true,
       "rationale": "Declares missing_secrets_nonblocking_by_default and strict_social_failure_opt_in - non-blocking by its own contract.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_enqueue_completeness",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Measured opportunity that produces nothing, silently. The autopilot published up to 12 pages a day and then enqueued social distribution with published[:LINKEDIN_DAILY_LIMIT] and x_pool[:X_DAILY_LIMIT]; because x_pool was built item-outer/template-inner, all 5 X slots went to published[0]. Exactly one page a day reached the queue on either platform and 428 of 474 published pages were never queued at all - not deferred, not logged, not visible in any report. Daily platform rate limits remain enforced in scripts/social_publisher.py, which leaves unposted items queued_for_auto_post so they roll to the next run: a cap that defers is fine, a cap that drops is not. This blocks if an enqueue-time slice is reintroduced, or if any governed run publishes pages that never enter the queue.",
       "profiles": [
         "changed",
         "full",

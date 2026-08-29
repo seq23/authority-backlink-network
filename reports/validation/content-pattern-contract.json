@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-08-29T14:26:56.485Z",
+  "generated_at": "2026-08-29T16:13:43.015Z",
   "enforcement": "block",
   "scanned_root": "sites",
   "pages_checked": 626,
@@ -53,8 +53,8 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 527,
-      "coverage_pct": 15.8,
+      "pages_missing": 535,
+      "coverage_pct": 14.5,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
