@@ -49,6 +49,18 @@ def main() -> int:
         return 1
 
     total = sum(1 for _ in SITES.rglob("*.html"))
+    # Rule 0: finding no operator surfaces among no pages is not a clean tree.
+    # Proved by deleting every file under sites/: this printed
+    # "PASS (0 published page(s) checked, 0 operator surfaces)" and exited 0.
+    # sites/ is tracked in git, so an empty scan means the tree moved or the
+    # glob broke, never that the published surface is legitimately empty.
+    if total == 0:
+        print("PUBLISHED TREE PURITY: FAIL (scanned 0 published pages)")
+        print(f"  {SITES.relative_to(ROOT)} contains no .html files. This check looks for "
+              f"operator surfaces among published pages; with no pages to search it finds "
+              f"none and would report a clean tree. sites/ is committed and never empty, so "
+              f"this is a broken scan root, not a clean result.")
+        return 1
     print(f"PUBLISHED TREE PURITY: PASS ({total} published page(s) checked, 0 operator surfaces)")
     return 0
 

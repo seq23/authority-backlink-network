@@ -172,12 +172,14 @@ for pantry_pub, config in pantry.get('publications', {}).items():
                 errors.append(f'{pantry_pub}: {brand_id} approved link uses wrong domain: {link.get("url")}')
 
 # Validate HTML pages.
+pages_examined = 0
 for pub, folder in PUB_FOLDERS.items():
     base = ROOT / folder
     if not base.exists():
         errors.append(f'Missing publication folder: {folder}')
         continue
     for path in sorted(base.rglob('*.html')):
+        pages_examined += 1
         rel = str(path.relative_to(ROOT))
         txt = path.read_text(errors='ignore')
         lower = txt.lower()
@@ -339,8 +341,20 @@ if social_path.exists():
             if phrase in body_key:
                 errors.append(f'data/social-queue.json item {i}: banned phrase in social body: {phrase}')
 
+# Rule 0: a hostile review that read no pages found no problems for the same
+# reason a closed book contains no typos. Proved by deleting every file under
+# sites/: this reported PASS. The publication folders are committed, so an empty
+# sweep is a moved tree or a broken PUB_FOLDERS mapping, not a clean library.
+if not pages_examined:
+    errors.append(
+        'hostile review examined 0 published pages. The publication folders named in '
+        'PUB_FOLDERS are tracked in git and always contain pages, so finding none means '
+        'the tree moved or the mapping broke. Reporting PASS here would vouch for nothing.'
+    )
+
 report = {
     'status': 'PASS' if not errors else 'FAIL',
+    'pages_examined': pages_examined,
     'target_domains_locked': sorted(ALL_TARGET_DOMAINS),
     'publication_domains_assumed': sorted(ALL_PUBLICATION_DOMAINS),
     'errors': errors,
