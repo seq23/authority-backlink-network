@@ -1,0 +1,45 @@
+name: Buffer Route Probe
+
+# Read-only by default: asks Buffer what this token can do and prints the
+# answer with the token redacted. The single write is opt-in, behind an input
+# that must be typed, so no scheduled or automatic run can post.
+on:
+  workflow_dispatch:
+    inputs:
+      channels_input:
+        description: 'JSON for channels(input:) -- e.g. {"organizationId":"..."}'
+        required: false
+        default: ''
+      schedule_test_text:
+        description: 'THE one write. Leave blank for a read-only probe.'
+        required: false
+        default: ''
+      channel_id:
+        description: 'Buffer channel id for the write'
+        required: false
+        default: ''
+  push:
+    branches: [buffer-x-route]
+    paths:
+      - 'scripts/lib/buffer_route.py'
+      - 'scripts/buffer_route_probe.py'
+      - '.github/workflows/buffer-route-probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe Buffer
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        run: |
+          python3 scripts/buffer_route_probe.py \
+            ${{ github.event.inputs.channels_input && format('--channels-input ''{0}''', github.event.inputs.channels_input) || '' }} \
+            ${{ github.event.inputs.schedule_test_text && format('--schedule-test ''{0}'' --channel-id ''{1}''', github.event.inputs.schedule_test_text, github.event.inputs.channel_id) || '' }}
