@@ -55,13 +55,25 @@ def save_index(index: dict) -> None:
     atomic_write(INDEX, json.dumps(index, indent=2, sort_keys=True).encode() + b"\n")
 
 
-def fingerprint(page_hash: str, dependencies: dict, profile: str) -> str:
+def fingerprint(page_hash: str, dependencies: dict, profile: str, allow_repair: bool) -> str:
+    """Key a cached page result.
+
+    `allow_repair` is part of the key because a result produced WITHOUT repair is
+    not interchangeable with one produced with it. Omitting it was a real defect:
+    `page_validation.py release --no-repair` cached an un-repaired page as
+    non-FAIL, and the next genuine `page_validation.py release` got a cache HIT,
+    applied 0 repairs, and left the defect in the tree. Proved 2026-08-29 on a
+    daily page with its meta description stripped - repairs_applied went 1 (cold
+    cache) -> 0 (after a --no-repair pass). Required positional, not defaulted,
+    so a new call site cannot reintroduce the collision by omission.
+    """
     return digest({
         "schema": CACHE_SCHEMA,
         "epoch": VALIDATION_EPOCH,
         "page_hash": page_hash,
         "dependencies": dependencies,
         "profile": profile,
+        "allow_repair": bool(allow_repair),
     })
 
 

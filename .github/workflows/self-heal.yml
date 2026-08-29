@@ -1,0 +1,66 @@
+name: Bounded Self-Healing
+
+# scripts/heal_until_clean.py existed with `selfheal` and `selfheal:dry` in
+# package.json and no workflow, no aggregate script and no hook ran either, so
+# the loop healed nothing in CI for its entire life. p-n-p, dream-wedding-builder
+# and WPP-llm all closed this same gap; this repo was left out.
+#
+# Weekly and bounded: it validates the release profile, runs the repair each
+# failing check declares, re-validates, and commits only if the tree is clean
+# afterwards. validate_selfheal_wiring.py keeps this file reachable - deleting
+# it turns that validator red rather than silently re-orphaning the loop.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '34 16 * * 3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: authority-backlink-network-self-heal
+  cancel-in-progress: false
+
+jobs:
+  self_heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      # Deliberately NOT restoring .validation-cache. The loop's whole job is to
+      # repair, and a warm cache carried in from another run is the one input
+      # that can make a repairing pass skip the page it was meant to fix.
+      - name: Sync latest main before writing repairs
+        run: git pull --rebase --autostash origin main
+      - name: Repair until clean
+        run: python3 scripts/heal_until_clean.py release
+      - name: Revalidate after repair
+        # Nothing is committed unless the repo validates after the repair, so a
+        # bad repair cannot be pushed.
+        run: python3 scripts/validate.py release
+      - name: Commit only validated repair output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No safe repairs were needed - every repairable check was already green."
+          else
+            git commit -m "Self-heal: apply bounded validated repairs"
+            git push origin main
+          fi
+      - name: Publish the loop report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: self-heal-loop
+          path: |
+            reports/self-heal-loop.json
+            reports/validation-release.json
+          if-no-files-found: error

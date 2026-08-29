@@ -5,7 +5,7 @@ Creates useful, disclosure-backed Authority Network pages and records truthful l
 It never marks a page deployed, indexed, cited, or independently earned without observation evidence.
 """
 from __future__ import annotations
-import argparse, hashlib, html, json, re
+import argparse, hashlib, html, json, re, sys
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
@@ -150,24 +150,74 @@ def local_findings(row):
   if '<meta name="description"' not in t: findings.append('meta_description_missing')
  return findings
 
+# The stages this repair may touch, and why the other two are excluded.
+#
+# The gate used to read {published_in_repository, rendered_in_repository}. The
+# registry has never held either value: all 613 rows are live_verified (349) or
+# approved_destination (264), so the loop matched 0 rows on every run and still
+# printed status PASS. Confirmed 2026-08-29 by counting the registry.
+#
+# Widening it to "whatever the registry actually contains" would be worse than
+# the bug. The 264 approved_destination rows are status removed_off_topic (71),
+# withdrawn (170) and approved_target_not_auto_published (23) - links that
+# repair_offtopic_affiliate_links.py deliberately DELETED as off-topic, or that
+# were never published. Re-inserting them is exactly the harm that script exists
+# to undo. So the gate is the rows that are genuinely rendered and current.
+REPAIRABLE_STAGES = {'live_verified'}
+REPAIRABLE_STATUSES = {'published'}
+
+# What repair() can actually rewrite. local_findings() also emits anchor_missing,
+# canonical_missing, meta_description_missing and source_missing, and there is no
+# handler for any of them - they need an author or a generator, not a rerun.
+# Listing them here keeps the omission auditable and stops the function recording
+# a repair it did not perform.
+HANDLED_FINDINGS = {'target_link_missing', 'affiliation_disclosure_missing'}
+
+
 def repair():
- links=read('data/link-registry.json',[]); repaired=[]; blocked=[]
+ links=read('data/link-registry.json',[]); repaired=[]; blocked=[]; unhandled=[]; considered=0
  for row in links:
-  if row.get('lifecycle_stage') not in {'published_in_repository','rendered_in_repository'}: continue
+  if row.get('lifecycle_stage') not in REPAIRABLE_STAGES or row.get('status') not in REPAIRABLE_STATUSES: continue
+  considered+=1
   f=local_findings(row)
   if not f: continue
   p=ROOT/row.get('source_path','')
   if not p.exists(): blocked.append({'source':row.get('source_path'),'reason':'source_missing'}); continue
+  handled=sorted(set(f)&HANDLED_FINDINGS); missing=sorted(set(f)-HANDLED_FINDINGS)
+  if missing:
+   # Named, not silently folded into `repaired`. These survive the run.
+   unhandled.append({'source':row.get('source_path'),'findings':missing,'reason':'no repair handler for this defect class'})
+  if not handled: continue
   t=p.read_text(encoding='utf-8')
+  before=t
   if 'target_link_missing' in f:
    marker='<h2>Editorial note</h2>'
    insertion=f'<h2>Related resource</h2><p><a href="{html.escape(row["target_url"])}"{rel_attr(row["target_url"])}>{html.escape(row.get("anchor") or row["target_url"])}</a> is included as an affiliated editorial reference when it directly supports the topic.</p>'
    t=t.replace(marker,insertion+marker) if marker in t else t.replace('</article>',insertion+'</article>')
   if 'affiliation_disclosure_missing' in f:
    t=t.replace('</article>','<h2>Affiliation note</h2><p><strong>Affiliation disclosed:</strong> this page may reference an affiliated project when directly relevant. The link is not an independent ranking, award, or guarantee.</p></article>')
-  p.write_text(t,encoding='utf-8'); repaired.append({'source':str(p.relative_to(ROOT)),'repairs':f})
- write('data/backlink-self-heal-latest.json',{'schema':'authority-backlink-self-heal-v1','status':'PASS' if not blocked else 'PASS_WITH_SOFT_WARNING','repaired':repaired,'blocked':blocked})
- print(json.dumps({'status':'PASS' if not blocked else 'PASS_WITH_SOFT_WARNING','repaired':len(repaired),'blocked':blocked},indent=2))
+  if t==before:
+   # The handler matched but rewrote nothing. Recording this as a repair is how
+   # a no-op reports success; it is a blocked row instead.
+   blocked.append({'source':str(p.relative_to(ROOT)),'reason':'handler_made_no_change','findings':handled}); continue
+  p.write_text(t,encoding='utf-8'); repaired.append({'source':str(p.relative_to(ROOT)),'repairs':handled})
+ # A run that considered zero rows is a broken gate, not a clean tree - that is
+ # precisely the failure this function shipped with. It is never PASS.
+ if not considered:
+  status='FAIL'
+ elif blocked or unhandled:
+  status='PASS_WITH_SOFT_WARNING'
+ else:
+  status='PASS'
+ out={'schema':'authority-backlink-self-heal-v1','status':status,'rows_considered':considered,
+      'gate':{'lifecycle_stage':sorted(REPAIRABLE_STAGES),'status':sorted(REPAIRABLE_STATUSES)},
+      'handled_findings':sorted(HANDLED_FINDINGS),'repaired':repaired,'blocked':blocked,'unhandled':unhandled}
+ write('data/backlink-self-heal-latest.json',out)
+ print(json.dumps({'status':status,'rows_considered':considered,'repaired':len(repaired),
+                   'blocked':blocked,'unhandled':unhandled},indent=2))
+ if not considered:
+  print('repair: gate matched 0 of %d registry rows - refusing to report PASS' % len(links),file=sys.stderr)
+  raise SystemExit(1)
 
 def verify_local():
  links=read('data/link-registry.json',[]); failures=[]; checked=0

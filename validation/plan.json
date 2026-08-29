@@ -30,7 +30,8 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "selfheal_wiring"
     ],
     "release": [
       "json",
@@ -56,7 +57,8 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "selfheal_wiring"
     ],
     "full": [
       "json",
@@ -83,7 +85,8 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "selfheal_wiring"
     ],
     "cache-self-test": [
       "python",
@@ -202,6 +205,10 @@
     "brand_link_concentration": {
       "severity": "HARD_FAIL",
       "rationale": "False evidence, already named in severity_policy. Every page states that this publication cites affiliated projects where the citation is topically relevant, which reads as an occasional editorial choice. On 2026-08-28 approval-prep was cited from 290 of professional-resources' 420 pages - 69%, and 292 of the network's 490 commercial links - while the leading brand in the other two publications sat at 31.4% and 32.7%. Every one of those links carried rel=\"sponsored nofollow\" and was inside its declared topical scope, so no existing validator could see it: each placement was individually correct and the aggregate was the defect. The disclosure being accurate made it worse, not better. This blocks on a brand over the declared third of any publication, on the cap being removed or raised in content-bank/scaling-policy.json, on the scheduler no longer withholding slots from a brand at its cap, on the per-brand APPROVAL_PREP_PAGES_PER_DAY bypass returning, and on any priority lane regaining a daily quota with no until_rendered_coverage to stop at."
+    },
+    "selfheal_wiring": {
+      "severity": "HARD_FAIL",
+      "rationale": "A repair loop that runs green and repairs nothing is worse than no loop, because the green run is taken as proof the tree is healthy. Four such defects were reproduced on 2026-08-29: portfolio_backlink_engine.repair() gated on two lifecycle stages the 613-row registry has never held, so it matched 0 rows and printed PASS; the same function recorded findings it has no handler for as repaired; cache.fingerprint() omitted allow_repair, so a --no-repair result satisfied a repairing run and suppressed the repair; and heal_until_clean.py declared `page_validation.py changed` as a repair when that invocation cannot mutate the tree at all. This blocks on the repair gate matching zero rows, on the gate reaching withdrawn or off-topic-removed rows a prior remediation cleaned, on a claimed finding having no handler, on allow_repair leaving the cache key, on a declared repair being inert, and on no workflow invoking the loop."
     }
   },
   "severity_matrix_policy": {

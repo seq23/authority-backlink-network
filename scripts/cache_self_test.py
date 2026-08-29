@@ -22,12 +22,17 @@ with tempfile.TemporaryDirectory() as td:
     cache.OBJECTS = base / "objects"
     cache.INDEX = base / "page-index.json"
     cache.VERSION_FILE = base / "version"
-    fp = cache.fingerprint("page", {"dep": "1"}, "release")
+    fp = cache.fingerprint("page", {"dep": "1"}, "release", True)
     result = {"status": "PASS", "path": "sites/test.html", "proof": "ok"}
     cache.put("sites/test.html", fp, result)
     assert cache.get("sites/test.html", fp) is not None, "expected cache hit"
-    assert cache.get("sites/test.html", cache.fingerprint("changed", {"dep": "1"}, "release")) is None, "changed page must miss"
-    assert cache.get("sites/test.html", cache.fingerprint("page", {"dep": "2"}, "release")) is None, "dependency change must miss"
+    assert cache.get("sites/test.html", cache.fingerprint("changed", {"dep": "1"}, "release", True)) is None, "changed page must miss"
+    assert cache.get("sites/test.html", cache.fingerprint("page", {"dep": "2"}, "release", True)) is None, "dependency change must miss"
+    # A result produced without repair must never satisfy a repairing run. Before
+    # allow_repair joined the key, `release --no-repair` cached an un-repaired
+    # page and the next repairing `release` hit that entry and repaired nothing.
+    assert cache.get("sites/test.html", cache.fingerprint("page", {"dep": "1"}, "release", False)) is None, \
+        "a no-repair result must not satisfy a repairing run"
     try:
         cache.put("bad", fp, {"status": "FAIL"})
         raise AssertionError("FAIL result was cached")
