@@ -16,8 +16,8 @@ Set these under:
 - `MAX_DUPLICATE_SIMILARITY` = `0.15`
 - `ENABLE_GEMINI_REWRITE` = `false`
 - `GEMINI_MODEL` = `gemini-2.5-flash-lite`
-- `LINKEDIN_DAILY_LIMIT` = `1`
-- `X_DAILY_LIMIT` = `5`
+- `LINKEDIN_DAILY_LIMIT` = `3`
+- `X_DAILY_LIMIT` = `8`
 - `FOUNDER_PUBLICATION_DOMAIN` = your actual founder/operator publication domain
 - `MEMPHIS_PUBLICATION_DOMAIN` = your actual Memphis publication domain
 - `PROFESSIONAL_PUBLICATION_DOMAIN` = your actual professional resource publication domain

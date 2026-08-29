@@ -34,6 +34,8 @@
       "selfheal_wiring",
       "social_enqueue_completeness",
       "script_callers",
+      "social_rate_limits",
+      "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
     "release": [
@@ -64,6 +66,8 @@
       "selfheal_wiring",
       "social_enqueue_completeness",
       "script_callers",
+      "social_rate_limits",
+      "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
     "full": [
@@ -95,6 +99,8 @@
       "selfheal_wiring",
       "social_enqueue_completeness",
       "script_callers",
+      "social_rate_limits",
+      "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
     "cache-self-test": [
@@ -230,6 +236,14 @@
     "affiliate_rel_disclosure": {
       "severity": "HARD_FAIL",
       "rationale": "False evidence, already named in severity_policy. Every published page states that affiliated citations carry rel=\"sponsored nofollow\". Nothing verified it: validate_brand_link_concentration.py uses the sponsored token to select commercial links, so a link that lost its rel drops out of the concentration count instead of being reported, and the aggregate looks better for the defect. The only tool that could see it, backfill_rel_attributes.py, had no caller. This is that same scan run as a check: it fails if any absolute link to a domain in data/brands.json is missing either token. It measures 0 missing across 632 pages today, so blocking cannot regress a clean surface."
+    },
+    "social_rate_limits": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication to live accounts: a daily limit outside the safe band either risks irreversible suspension of the X/LinkedIn accounts the authority network depends on, or restores a cap so low the queue never drains, which is a silent decision not to distribute."
+    },
+    "social_queue_priority": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication to live accounts: multiple postable entries for one page and platform is duplicate posting, the exact pattern platform spam scoring targets, and it spends the daily budget on repetition instead of reach."
     }
   },
   "severity_matrix_policy": {

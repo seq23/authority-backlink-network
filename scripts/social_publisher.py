@@ -10,7 +10,7 @@ Safety model:
 - Uses official APIs only.
 - Supports SOCIAL_DRY_RUN=true for validation without network calls.
 """
-import base64, copy, hashlib, hmac, json, os, re, time, urllib.parse, urllib.request, urllib.error
+import base64, copy, hashlib, hmac, json, os, random, re, time, urllib.parse, urllib.request, urllib.error
 from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
@@ -23,6 +23,9 @@ TODAY = date.today().isoformat()
 TODAY_ORDINAL = date.today().toordinal()
 
 POSTED_STATUSES = {'posted', 'skipped_duplicate', 'failed_permanent'}
+# Anything outside POSTABLE_STATUSES is never posted. That deliberately includes
+# 'not_for_posting', which scripts/prioritize_social_queue.py writes onto entries
+# retired as duplicates, together with the reason it retired them.
 POSTABLE_STATUSES = {'queued_for_auto_post', 'approved_for_auto_post'}
 
 
@@ -259,9 +262,18 @@ def main():
     enable_x = truthy('ENABLE_X_POSTING', 'true')
     dry_run = truthy('SOCIAL_DRY_RUN', 'false') or truthy('MOCK_SOCIAL_POSTING', 'false')
     require_secrets = truthy('REQUIRE_SOCIAL_SECRETS', 'true')
-    li_limit = int(os.getenv('LINKEDIN_DAILY_LIMIT', '1'))
-    x_limit = int(os.getenv('X_DAILY_LIMIT', '5'))
+    li_limit = int(os.getenv('LINKEDIN_DAILY_LIMIT', '3'))
+    x_limit = int(os.getenv('X_DAILY_LIMIT', '8'))
     max_sim = float(os.getenv('MAX_SOCIAL_SIMILARITY', '0.86'))
+    # Per-run cap and in-run spacing exist for one reason: a daily cap alone is
+    # not account-safe. Eight posts emitted inside one loop land within seconds
+    # of each other on the same timestamp, which reads as a bot to X's spam
+    # heuristics no matter how modest the daily total is. The workflow runs on
+    # several irregular crons; each run takes a small slice and paces the posts
+    # inside it, so the same daily volume arrives as scattered activity.
+    run_limit = int(os.getenv('SOCIAL_RUN_LIMIT', '3'))
+    min_interval = int(os.getenv('SOCIAL_POST_MIN_INTERVAL_SECONDS', '90'))
+    posted_this_run = {'linkedin': 0, 'x': 0}
     # Count already-posted items for TODAY so multiple workflows cannot exceed
     # the daily cap when both autopilot and social-only schedules run.
     posted_today = {'linkedin': 0, 'x': 0}
@@ -279,7 +291,15 @@ def main():
             platform_secret_skips['x'] = missing
             enable_x = False
 
-    if platform_secret_skips and require_secrets and not dry_run:
+    # A missing credential set retires ONE platform, not the run. This used to
+    # read `if platform_secret_skips and ...`, so the absent LinkedIn token
+    # returned before a single X post was attempted: the queue's real drain rate
+    # was 0/day on both platforms, not 5/day on X, and every scheduled run
+    # exited green with `status: ok_with_secret_warning` saying so in a field
+    # nobody reads. Raising X_DAILY_LIMIT would have changed nothing. Bail only
+    # when no platform is left to post to -- that is the genuinely empty run.
+    no_platform_left = not enable_li and not enable_x
+    if platform_secret_skips and no_platform_left and require_secrets and not dry_run:
         strict_failure = truthy('FAIL_ON_SOCIAL_POST_FAILURE', 'false')
         report = {
             'date': TODAY, 'dry_run': False,
@@ -380,12 +400,19 @@ def main():
             continue
         if platform == 'x' and (not enable_x or posted_today['x'] >= x_limit):
             continue
+        if posted_this_run.get(platform, 0) >= run_limit:
+            continue
         body = append_url(item.get('body',''), item)
         if any(jaccard_text(body, old) > max_sim for old in bodies_today_by_platform[platform]):
             item['status'] = 'skipped_duplicate'
             item['skipped_at'] = datetime.now(timezone.utc).isoformat()
             skipped.append({'index': idx, 'platform': platform, 'reason': 'same_day_similarity'})
             continue
+        # Space live posts apart, with jitter, so a run does not emit a clump on
+        # one timestamp. Placed after the similarity guard so a skipped item does
+        # not burn a delay, and skipped for dry runs and the run's first post.
+        if not dry_run and (posted_this_run['linkedin'] + posted_this_run['x']) > 0 and min_interval > 0:
+            time.sleep(min_interval * random.uniform(0.7, 1.6))
         item['last_attempt_at'] = datetime.now(timezone.utc).isoformat()
         attempts.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'preview': body[:120]})
         try:
@@ -396,6 +423,7 @@ def main():
                 item['post_id'] = result.get('id', '')
                 item['post_result'] = {'dry_run': result.get('dry_run', False), 'status': result.get('status')}
                 posted_today[platform] += 1
+                posted_this_run[platform] = posted_this_run.get(platform, 0) + 1
                 bodies_today_by_platform[platform].append(body)
                 successes.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
             else:
@@ -420,13 +448,19 @@ def main():
         'enabled': {'linkedin': enable_li, 'x': enable_x},
         'secret_skips': platform_secret_skips,
         'limits': {'linkedin': li_limit, 'x': x_limit},
+        'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
+        'posted_this_run': posted_this_run,
         'attempts': attempts,
         'successes': successes,
         'failures': failures,
         'skipped': skipped,
         'posted_today': posted_today,
         'brand_rotation_policy': {'quota_count': len(brand_quotas), 'daily_rotation_offset': TODAY_ORDINAL},
-        'status': ('blocked_missing_secrets' if platform_secret_skips and require_secrets and not dry_run else ('ok_with_secret_warning' if platform_secret_skips else ('ok' if not failures else 'partial_failure')))
+        # A partial credential set is a warning, not a block: X posted, LinkedIn
+        # did not. Only a run with no usable platform at all is blocked.
+        'status': ('blocked_missing_secrets' if platform_secret_skips and no_platform_left and require_secrets and not dry_run
+                   else ('ok_with_secret_warning' if platform_secret_skips
+                         else ('ok' if not failures else 'partial_failure')))
     }
     write_json(REPORT_PATH, report)
     print(json.dumps(report, indent=2))

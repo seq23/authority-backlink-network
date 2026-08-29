@@ -320,10 +320,17 @@ if social_path.exists():
         body_key = re.sub(r'\s+', ' ', item.get('body','').strip().lower())
         platform = item.get('platform')
         key = (platform, body_key)
-        if key in seen:
-            errors.append(f'data/social-queue.json item {i}: duplicate {platform} body')
-        seen.add(key)
-        if item.get('status') not in {'draft_requires_human_approval','queued_for_auto_post','approved_for_auto_post','posted','post_failed','skipped_duplicate','failed_permanent'}:
+        # The duplicate check exists to stop duplicate POSTING, so it only
+        # applies to entries that can still be posted. An entry retired as
+        # not_for_posting is kept in the file on purpose -- with its reason --
+        # as an audit trail of a decision, and counting it here would make that
+        # record itself the failure.
+        retired = item.get('status') == 'not_for_posting'
+        if not retired:
+            if key in seen:
+                errors.append(f'data/social-queue.json item {i}: duplicate {platform} body')
+            seen.add(key)
+        if item.get('status') not in {'draft_requires_human_approval','queued_for_auto_post','approved_for_auto_post','posted','post_failed','skipped_duplicate','failed_permanent','not_for_posting'}:
             errors.append(f'data/social-queue.json item {i}: unsupported social status: {item.get("status")}')
         target_url = item.get('target_url') or item.get('source_url') or ''
         if target_url.startswith('http') and norm_domain(target_url) not in (ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS):

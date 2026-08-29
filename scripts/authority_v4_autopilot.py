@@ -857,19 +857,26 @@ def main():
         "Decision aid added: {title}. The point is clarity, not keyword confetti.",
         "Added a practical resource: {title}. Built for people first, search second."
     ]
-    x_pool = []
+    # One X post per page, not five. The five templates stay, but they are a
+    # rotation ACROSS pages rather than five posts about the same page: the
+    # earlier fan-out queued five near-identical tweets carrying the identical
+    # URL and headline, distinguishable only by a canned lead-in and a trailing
+    # "[1]".."[5]" whose sole function was to get past X's duplicate-content
+    # rejection. That is the shape platform spam heuristics are built to catch,
+    # and it is duplication rather than reach: five posts to one URL do not make
+    # the page more reachable, they make the account look automated. Every
+    # published page still enters the queue exactly once per platform, so the
+    # enqueue-completeness contract is unaffected -- no slicing here.
     for idx, item in enumerate(published):
-        for t_idx, tmpl in enumerate(x_templates):
-            x_pool.append((item, tmpl, idx, t_idx))
-    for item, tmpl, idx, t_idx in x_pool:
+        tmpl = x_templates[idx % len(x_templates)]
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
         source_url = 'https://' + domain + '/' + rel_path
         body = tmpl.format(title=item['title'])
         if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
             hooks = item['social_hooks']
-            body = f"{hooks[t_idx % len(hooks)]} {item['title']} [{t_idx + 1}]"
-        social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': f'x_resource_note_{t_idx+1}'})
+            body = f"{hooks[idx % len(hooks)]} {item['title']}"
+        social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'x', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'x_resource_note'})
     write_json(ROOT/'data/social-queue.json', social)
     # Rule 0 visibility: a run that publishes pages but enqueues no distribution
     # for them is a silent drop, so the counts are recorded in the run receipt.
