@@ -130,6 +130,7 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
         return 1
 
     live, types = {}, {}
+    posts_return_type = None
     report["live"], report["types"] = live, types
 
     # ---- schema shape, and the named types this route actually depends on
@@ -142,6 +143,11 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
             if f["name"] in ("channels", "dailyPostingLimits", "createPost", "posts"):
                 wanted.add(base_name(f["type"]))
                 wanted.update(base_name(a["type"]) for a in f.get("args") or [])
+            if f["name"] == "posts":
+                # Named explicitly: the standing queue-depth count is read
+                # through this field, and a probe that cannot name its return
+                # type cannot write a selection set for it.
+                posts_return_type = base_name(f["type"])
     except buffer_route.BufferError as err:
         report["schema_error"] = str(err)
 
@@ -210,18 +216,32 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
     # and this one does not. Counting what is already queued is the only way to
     # respect it, so the shape of the `posts` query has to be known exactly.
     if args.queue_depth:
+        report["posts_return_type"] = posts_return_type
+        for name in ("PostsFilter", posts_return_type, "PostsConnection",
+                     "PostConnection", "PostEdge", "DateTimeComparator",
+                     "DateTimePresence"):
+            described = describe_type(name, types)
+            for member in (described or {}).get("possibleTypes") or []:
+                describe_type(member, types)
+        selections = {
+            "connection": "totalCount edges { node { id status channelId dueAt } }",
+            "list": "id status channelId dueAt",
+            "count_only": "totalCount",
+        }
         for org in org_ids:
             for status in ("scheduled", "draft", "needs_approval", "sending", "sent"):
-                try_query(f"posts[{status}]", """
-                    query P($input: PostsInput!, $first: Int) {
-                      posts(input: $input, first: $first) {
-                        edges { node { id status channelId dueAt createdAt } }
-                        pageInfo { hasNextPage endCursor }
-                        totalCount
-                      }
-                    }""",
-                    {"input": {"organizationId": org, "status": [status]}, "first": 50},
-                    live)
+                for shape, selection in selections.items():
+                    res = try_query(f"posts[{status}][{shape}]", """
+                        query P($input: PostsInput!, $first: Int) {
+                          posts(input: $input, first: $first) { %s }
+                        }""" % selection,
+                        {"input": {"organizationId": org,
+                                   "filter": {"status": [status]}}, "first": 100},
+                        live)
+                    if res.get("ok"):
+                        # One working shape is the answer; asking again in the
+                        # other two shapes is two more requests for nothing.
+                        break
             break
 
     if args.auth_check:
