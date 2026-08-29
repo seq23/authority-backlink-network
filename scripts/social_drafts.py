@@ -18,11 +18,26 @@ Meanwhile 581 published pages sit in data/social-queue.json with nothing
 carrying them anywhere. A lane that answers "the API refused, so I deferred
 everything" is a lane that exits 0 having done nothing, every run, forever.
 
-So when a platform is switched ON and still cannot post, this writes the day's
+So when a platform cannot get a post out through its API, this writes the day's
 highest-value posts out as a copy-paste sheet: the exact text the API would
 have sent, the URL, and nothing to assemble. Distribution still happens; it
-happens by hand for as long as the API is dead, and it goes back to automatic
-by itself the moment a post succeeds.
+happens by hand, and it goes back to automatic the moment the API can post.
+
+Two ways a platform lands here
+------------------------------
+An OUTAGE - the platform is switched on and refuses, or has no credentials, or
+spent its whole daily budget on failed attempts. Drafting stops by itself the
+moment a post succeeds.
+
+A PAUSE FOR POSTING - the platform is switched off on purpose, with
+`pause_mode: "draft_by_hand"` in data/social-brand-policy.json, precisely
+because its API cannot be used. X is here as of 2026-08-29: the owner decided
+not to fund X's pay-per-use API, so the publisher makes ZERO requests to it, and
+this sheet is the whole distribution route until she funds it.
+
+What must never land here is a platform paused DORMANT - `pause_mode:
+"dormant"`, which is LinkedIn. That switch says nothing is wanted from the
+platform at all, and drafting it would quietly reverse it.
 
 What it must never do
 ---------------------
@@ -277,7 +292,7 @@ def render_markdown(ledger, unavailable, now, today, errors=None):
         "",
     ]
     if unavailable:
-        lines.append("Automatic posting is not working right now:")
+        lines.append("Automatic posting is not carrying these right now:")
         lines.append("")
         for platform, reason in sorted(unavailable.items()):
             lines.append(f"- **{platform}** — {reason}")
@@ -287,9 +302,11 @@ def render_markdown(ledger, unavailable, now, today, errors=None):
                     f"`{recorded['error'][:220]}`")
         lines.append("")
         lines.append(
-            "See `docs/SOCIAL-AUTOPOST-SECRETS.md` for what that response means and what "
-            "fixes it. Nothing below is lost either way: the posting queue is untouched, "
-            "and automatic posting resumes on its own the moment a post succeeds."
+            "See `docs/SOCIAL-AUTOPOST-SECRETS.md` for what that means and what changes "
+            "it. Nothing below is lost either way: the posting queue is untouched, and "
+            "automatic posting resumes the moment the API can post again -- on its own "
+            "after an outage, or by setting the platform's `enabled` back to true in "
+            "`data/social-brand-policy.json` if it was paused for posting."
         )
         lines.append("")
     if not batches:
@@ -418,7 +435,14 @@ def run(queue, eligible_indices, unavailable, policy=None, ledger_path=None,
 
 def unavailable_platforms(platform_states, halted_platforms, attempted, posted_run,
                           spent_today, posted_today):
-    """Which switched-ON platforms could not get a post out, and why.
+    """Which platforms could not get a post out through the API, and why.
+
+    Two families land here. A switched-ON platform whose API refused, or has no
+    credentials, or burned its whole budget on failures -- an outage. And a
+    platform paused specifically FOR POSTING, whose API is off on purpose while
+    its distribution continues by hand. Both need the sheet; neither posts.
+
+    A platform paused DORMANT is in neither family and is never drafted.
 
     Deliberately NOT "the daily budget is used up". A healthy day that has
     already posted its eight is not an outage and must not produce drafts; a day
@@ -427,7 +451,20 @@ def unavailable_platforms(platform_states, halted_platforms, attempted, posted_r
     out = {}
     for platform, state in (platform_states or {}).items():
         if state == social_platforms.STATE_PAUSED:
-            continue  # A recorded decision, not an outage. LinkedIn is here.
+            # Paused DORMANT: a recorded decision that nothing is wanted from
+            # this platform at all. LinkedIn is here. Drafting it would reverse
+            # the owner's switch without anyone deciding to.
+            continue
+        if state == social_platforms.STATE_PAUSED_FOR_POSTING:
+            # Paused FOR POSTING: the API lane is off but distribution
+            # continues by hand. X is here. This is the whole reason the two
+            # pause modes are distinguished -- see scripts/lib/social_platforms.py.
+            out[platform] = (
+                f"the {platform} API lane is switched off by a recorded decision "
+                f"(pause_mode \"{social_platforms.PAUSE_DRAFT_BY_HAND}\"), so nothing is "
+                f"sent to it and these are posted by hand instead"
+            )
+            continue
         if state == social_platforms.STATE_UNDOCUMENTED_OFF:
             continue  # Already a build failure elsewhere; not this lane's job.
         if state == social_platforms.STATE_UNCREDENTIALLED:
@@ -475,8 +512,14 @@ def main(argv=None):
     eligible = social_selection.eligible_in_priority_order(
         queue, policy, today.isoformat(), today.toordinal())
 
-    platforms = args.platform or [p for p in social_platforms.PLATFORMS
-                                  if social_platforms.is_enabled(p, policy)]
+    # Switched-on platforms, plus every platform paused for POSTING -- those are
+    # off precisely because their content has to go out by hand, so excluding
+    # them here would make the manual lane the one thing that cannot draft X.
+    platforms = args.platform or [
+        p for p in social_platforms.PLATFORMS
+        if social_platforms.is_enabled(p, policy)
+        or social_platforms.drafts_by_hand(p, policy)
+    ]
     unavailable = {p: args.reason for p in platforms}
     receipt = run(queue, eligible, unavailable, policy=policy,
                   ledger_path=ledger_path, drafts_path=drafts_path)

@@ -19,19 +19,49 @@ So enablement is DECLARED, in data/social-brand-policy.json, and that
 declaration is the only switch:
 
     "platforms": {
-      "x":        {"enabled": true,  "daily_limit": 8},
+      "x":        {"enabled": false, "daily_limit": 8,
+                   "pause_mode": "draft_by_hand",
+                   "paused_on": ..., "paused_by": ..., "paused_reason": ...},
       "linkedin": {"enabled": false, "daily_limit": 3,
+                   "pause_mode": "dormant",
                    "paused_on": ..., "paused_by": ..., "paused_reason": ...}
     }
 
-Three states, deliberately distinguishable (see `platform_state`):
+`pause_mode` is optional and defaults to "dormant" -- the conservative reading,
+because producing drafts nobody asked for is the change that needs to be
+declared, not the absence of them.
 
-    paused_by_switch          enabled:false, with the paused_* record saying who
-                              decided and why. Nothing is attempted; the run
-                              says so by name.
+Four states, deliberately distinguishable (see `platform_state`):
+
+    paused_dormant            enabled:false, pause_mode "dormant". Switched off
+                              because nothing is wanted from it at all. Nothing
+                              is attempted and NO drafts are produced. LinkedIn.
+    paused_for_posting        enabled:false, pause_mode "draft_by_hand". The API
+                              lane is off, but distribution continues: the day's
+                              posts are written to reports/social-drafts.md and
+                              posted by hand. Zero API requests are made. X.
     on_but_uncredentialled    enabled:true, credentials absent. A named stop,
                               not a failure and not a silent success.
     on_and_posting            enabled:true, credentials present.
+
+Why two kinds of pause
+----------------------
+"Off" answers one question ("does this platform post?") but hides a second one
+that matters just as much: does the content still need to get out? LinkedIn is
+off because the owner wants nothing from it for now -- drafting it would quietly
+reverse her switch. X is off because its API is pay-per-use, has never once
+accepted a post (HTTP 402 credits-depleted on the very first request this
+repository ever made), and she has decided not to fund it. The content still
+has to reach X; it reaches it through her hands instead of through the API.
+
+Collapsing those two into one `enabled: false` forces a choice between drafting
+LinkedIn against her decision and silently dropping X distribution altogether.
+So the pause carries its mode, and the drafting fallback is keyed on
+`paused_for_posting` rather than on "switched off".
+
+Both remain ONE boolean to reverse: set `enabled` back to true and the platform
+posts again, whichever mode it was paused in. `pause_mode` is inert while
+enabled is true.
 
 And a fourth that is always a build failure: enabled:false with no paused_*
 record. That is an undocumented switch-off -- indistinguishable, from the
@@ -77,6 +107,19 @@ PLATFORMS = ("linkedin", "x")
 ENV_OVERRIDE = {"linkedin": "ENABLE_LINKEDIN_POSTING", "x": "ENABLE_X_POSTING"}
 PAUSE_FIELDS = ("paused_on", "paused_by", "paused_reason")
 
+# How a paused platform behaves. Declared alongside the pause record, in
+# data/social-brand-policy.json, on the same platform entry as `enabled`.
+PAUSE_MODE_FIELD = "pause_mode"
+# Switched off and wanted silent. No posts, no drafts, nothing produced.
+PAUSE_DORMANT = "dormant"
+# Switched off for the API only. Distribution continues by hand: the day's
+# posts are written to reports/social-drafts.md and the owner posts them.
+PAUSE_DRAFT_BY_HAND = "draft_by_hand"
+PAUSE_MODES = (PAUSE_DORMANT, PAUSE_DRAFT_BY_HAND)
+# Absent means dormant. Producing drafts is the behaviour that has to be asked
+# for explicitly; not producing them is never a surprise.
+DEFAULT_PAUSE_MODE = PAUSE_DORMANT
+
 # Statuses an entry must hold to be a candidate for posting at all. Kept in step
 # with POSTABLE_STATUSES in scripts/social_publisher.py.
 POSTABLE_STATUSES = {"queued_for_auto_post", "approved_for_auto_post"}
@@ -85,7 +128,12 @@ TRUTHY = {"1", "true", "yes", "y", "on"}
 FALSEY = {"0", "false", "no", "n", "off"}
 
 STATE_PAUSED = "paused_by_switch"
+# Paused for the API lane only; the drafting fallback is keyed on exactly this.
+STATE_PAUSED_FOR_POSTING = "paused_for_posting_drafts_by_hand"
 STATE_UNDOCUMENTED_OFF = "off_without_a_recorded_decision"
+# Every state in which the platform sends nothing to its API. Used by callers
+# that need "will this platform be contacted?" rather than "is it on?".
+NON_POSTING_STATES = (STATE_PAUSED, STATE_PAUSED_FOR_POSTING, STATE_UNDOCUMENTED_OFF)
 STATE_UNCREDENTIALLED = "on_but_uncredentialled"
 STATE_ON = "on_and_posting"
 
@@ -133,6 +181,43 @@ def pause_record(platform: str, policy=None):
     return {f: entry.get(f) for f in PAUSE_FIELDS}
 
 
+def pause_mode(platform: str, policy=None) -> str:
+    """How this platform is paused. Meaningful only while it is paused.
+
+    An unrecognised value reads as dormant rather than raising: a typo must
+    make the system quieter, never louder. validate_social_pause_modes.py
+    fails the build on exactly that typo, so it cannot survive a run.
+    """
+    value = declaration(platform, policy).get(PAUSE_MODE_FIELD)
+    if isinstance(value, str) and value.strip().lower() in PAUSE_MODES:
+        return value.strip().lower()
+    return DEFAULT_PAUSE_MODE
+
+
+def declared_pause_mode(platform: str, policy=None):
+    """The raw declared value, or None. For validators that must see a typo."""
+    value = declaration(platform, policy).get(PAUSE_MODE_FIELD)
+    return value if isinstance(value, str) else None
+
+
+def drafts_by_hand(platform: str, policy=None) -> bool:
+    """True when this platform is paused for POSTING and still wants drafts.
+
+    This is the single question the drafting fallback asks. It is deliberately
+    not "is the platform off": LinkedIn is off and must produce nothing.
+    """
+    if is_enabled(platform, policy):
+        return False
+    if pause_record(platform, policy) is None:
+        return False
+    return pause_mode(platform, policy) == PAUSE_DRAFT_BY_HAND
+
+
+def drafting_platforms(policy=None) -> list:
+    """Platforms whose distribution continues by hand while their API is off."""
+    return [p for p in PLATFORMS if drafts_by_hand(p, policy)]
+
+
 def missing_pause_fields(platform: str, policy=None) -> list:
     entry = declaration(platform, policy)
     if entry.get("enabled", True):
@@ -178,7 +263,11 @@ def platform_state(platform: str, missing_secrets=None, policy=None) -> str:
     caller has not checked -- the credential states are then not reported.
     """
     if not is_enabled(platform, policy):
-        return STATE_PAUSED if pause_record(platform, policy) else STATE_UNDOCUMENTED_OFF
+        if pause_record(platform, policy) is None:
+            return STATE_UNDOCUMENTED_OFF
+        if pause_mode(platform, policy) == PAUSE_DRAFT_BY_HAND:
+            return STATE_PAUSED_FOR_POSTING
+        return STATE_PAUSED
     if missing_secrets:
         return STATE_UNCREDENTIALLED
     return STATE_ON

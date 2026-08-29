@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "bad098effb3a09a1d38f8aa0d4e7af3262bf8f8109d32041fe2bbebf4e7d2449",
+  "plan_sha256": "c84fb8b8bece5d7883bb6e57b8a4329d6cb2a95bceffbbbe621dce89676907c6",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,14 +13,25 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 29,
+  "count": 37,
   "counts_by_severity": {
-    "HARD_FAIL": 26,
+    "HARD_FAIL": 34,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
   "unclassified": [],
   "validators": [
+    {
+      "id": "affiliate_rel_disclosure",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence, already named in severity_policy. Every published page states that affiliated citations carry rel=\"sponsored nofollow\". Nothing verified it: validate_brand_link_concentration.py uses the sponsored token to select commercial links, so a link that lost its rel drops out of the concentration count instead of being reported, and the aggregate looks better for the defect. The only tool that could see it, backfill_rel_attributes.py, had no caller. This is that same scan run as a check: it fails if any absolute link to a domain in data/brands.json is missing either token. It measures 0 missing across 632 pages today, so blocking cannot regress a clean surface.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
     {
       "id": "affiliate_topical_scope",
       "severity": "HARD_FAIL",
@@ -113,6 +124,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "False evidence. Self-reports hard/strong/soft counts.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "citation_probe_wiring",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence, in the same shape as selfheal_wiring: a stage that is invoked, reports nothing, and is read as having measured something. scripts/llm_citation_probe.mjs is the only thing here that observes whether answer engines cite these publications, and it was wired into the autopilot explicitly because it had shipped in seven repositories with no caller. It was then invoked and still took no observation: loadQueries() falls back to data/seo/priority_queries.json when the config names no file, that path has never existed in this repository, an empty list exits 1 with 'no queries found', and the step is continue-on-error - so every scheduled run ended with the probe dead and the workflow green, while the step's own comment stated that observation was now being taken. The 37 queries it needed were in data/queries/evidence/evidence_queries.json, generated from the topic map for exactly this measurement, with nothing joining the two. This drives the real probe in dry-run - no key, no network, no spend - and blocks if the configured queries file is missing or empty, if the probe exits non-zero, or if it reports zero queries ready. It measures 25 ready today, so blocking cannot regress a clean surface.",
       "profiles": [
         "changed",
         "full",
@@ -292,10 +314,32 @@
       ]
     },
     {
+      "id": "script_callers",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Executable failure, one step earlier. Seven scripts under scripts/ had no caller at all and nothing said so: three citation measurement tools and four one-shot backfills. A filename grep found the docstring that named the script and the README paragraph that described it, so each read as wired, and 'is this still reachable' had to be re-answered by hand every time. Two had rotted unnoticed while unreachable - measure_internal_reachability.py read sites/ from an absolute path outside this checkout, so a run from a worktree measured a different tree, then crashed writing its result into a scratch directory belonging to a session that no longer existed. An unreachable script is untested by everything, including this validation, while still looking live. This blocks on any tracked script under scripts/ that no runner invokes and no source imports, counts only invocations and real imports rather than prose mentions, excludes itself from its own reference corpus, and fails if it ever examines zero scripts.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "selfheal_wiring",
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "A repair loop that runs green and repairs nothing is worse than no loop, because the green run is taken as proof the tree is healthy. Four such defects were reproduced on 2026-08-29: portfolio_backlink_engine.repair() gated on two lifecycle stages the 613-row registry has never held, so it matched 0 rows and printed PASS; the same function recorded findings it has no handler for as repaired; cache.fingerprint() omitted allow_repair, so a --no-repair result satisfied a repairing run and suppressed the repair; and heal_until_clean.py declared `page_validation.py changed` as a repair when that invocation cannot mutate the tree at all. This blocks on the repair gate matching zero rows, on the gate reaching withdrawn or off-topic-removed rows a prior remediation cleaned, on a claimed finding having no handler, on allow_repair leaving the cache key, on a declared repair being inert, and on no workflow invoking the loop.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_attempt_budget",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Unsafe publication to live accounts, and the shape of it no configuration check can see. On 2026-08-29 the publisher made 581 requests to X in 76 seconds against X_DAILY_LIMIT=8, SOCIAL_RUN_LIMIT=3 and a jittered 90-second interval. Every one of those numbers was declared, in band, and validated by validate_social_rate_limits.py, which passed throughout - all three were counted against SUCCESSES, and X answered 402 then 429, so no counter ever moved and the loop walked the whole queue at full speed, continuing for 481 attempts after the platform had said stop. Then, because a failed attempt was stamped post_failed and no postable set contains that status, all 581 entries left the queue permanently: the X backlog went 581 to zero in one run, with the workflow green and the report calling it 'partial_failure'. A cap that only holds when nothing is going wrong is not a cap, and a guard that reads the number instead of exercising it cannot tell the difference. This drives the real publisher against a synthetic queue with the platform stubbed and blocks if a per-run slice bounds successes rather than requests, if a platform-level refusal does not stop the run, if spacing is keyed on successes, if a failing run retires the entries it could not post, if a day's scheduled runs can exceed the daily cap, if a run with zero successes reports itself as partial, or if the committed queue still carries the status the defect stamped. It fails if it exercises zero scenarios.",
       "profiles": [
         "changed",
         "full",
@@ -314,10 +358,54 @@
       ]
     },
     {
+      "id": "social_drafts_fallback",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Distribution silently stopping, which no configuration check can see. The X account answers every write with HTTP 402 credits-depleted - X's pay-per-use billing saying the enrolled account has no credits, got on the FIRST request of the FIRST run with no successful post anywhere in this repository's history. It is not a period cap that resets and no lower posting rate gets under it, so a lane that only defers and retries exits 0 having done nothing, every run, forever, while 581 published pages go undistributed. scripts/social_drafts.py writes the day's highest-value posts to reports/social-drafts.md as copy-paste text instead. This drives the real publisher against synthetic queues with the platform stubbed and blocks if a refusal produces no drafts, if the sheet does not carry the exact characters the API would have sent, if an unposted batch is piled on top of rather than reissued, if a batch marked posted through the single marked_posted_through declaration is offered again or stays on the sheet, if done-ness is stamped per row rather than derived, if drafting mutates data/social-queue.json by a single byte, if a batch exceeds the daily limit, if a 402 costs more than one request now that this path exists, or if a platform paused by decision (LinkedIn) is drafted as though it were an outage. It fails if it exercises zero properties.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "social_enqueue_completeness",
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Measured opportunity that produces nothing, silently. The autopilot published up to 12 pages a day and then enqueued social distribution with published[:LINKEDIN_DAILY_LIMIT] and x_pool[:X_DAILY_LIMIT]; because x_pool was built item-outer/template-inner, all 5 X slots went to published[0]. Exactly one page a day reached the queue on either platform and 428 of 474 published pages were never queued at all - not deferred, not logged, not visible in any report. Daily platform rate limits remain enforced in scripts/social_publisher.py, which leaves unposted items queued_for_auto_post so they roll to the next run: a cap that defers is fine, a cap that drops is not. This blocks if an enqueue-time slice is reintroduced, or if any governed run publishes pages that never enter the queue.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_pause_modes",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Distribution ending as a side effect of a billing decision, which no configuration check can see. X's API is pay-per-use with no free tier: every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and at about $0.20 per link post eight a day is roughly $48/month. On 2026-08-29 the owner declined to fund it -- \"im not funding X so find a $0 workaround or kill it\" -- so X is switched off. But X is off for a different reason than LinkedIn, which is off because nothing is wanted from it, and one `enabled: false` cannot hold both meanings. Draft every paused platform and LinkedIn starts producing work the owner said she did not want; draft none of them and X -- the only platform with any distribution left -- silently stops distributing while the run still exits 0 and the report still says \"paused\". So the pause declares its mode in data/social-brand-policy.json: \"dormant\" produces nothing at all, \"draft_by_hand\" keeps the API off while the day's posts go out by hand from reports/social-drafts.md. This drives the real publisher with post_item, both platform senders and urlopen all stubbed and counted, and blocks if a platform paused for posting produces no drafts, if it makes a single API request (no probe, no one attempt to see whether credits came back -- every one is billable), if a dormant pause produces drafts or requests, if flipping pause_mode to dormant does not stop the drafts (which would prove the mode decorative), if setting only `enabled` back to true fails to restore posting on either platform in either mode, if a paused platform is declared without a recognised pause_mode, if pausing consumes or per-row-stamps data/social-queue.json, or if the two pauses read identically in the report. It fails if it exercises zero properties.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_queue_priority",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Unsafe publication to live accounts: multiple postable entries for one page and platform is duplicate posting, the exact pattern platform spam scoring targets, and it spends the daily budget on repetition instead of reach.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_rate_limits",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Unsafe publication to live accounts: a daily limit outside the safe band either risks irreversible suspension of the X/LinkedIn accounts the authority network depends on, or restores a cap so low the queue never drains, which is a silent decision not to distribute.",
       "profiles": [
         "changed",
         "full",

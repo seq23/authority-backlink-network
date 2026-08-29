@@ -1,16 +1,22 @@
 {
-  "version": "4.3.5",
-  "purpose": "Declare which social platforms this network posts to (see platforms, which is the switch), and prevent long-term starvation of smaller brands on the enabled ones while preserving daily caps.",
+  "version": "4.3.6",
+  "purpose": "Declare which social platforms this network posts to (see platforms, which is the switch), how a paused platform behaves (see pause_mode), and prevent long-term starvation of smaller brands on the enabled ones while preserving daily caps.",
   "platforms": {
-    "_read_me_first": "This block is the on/off switch for each social platform. Nothing else in the repository decides whether a platform posts. To turn one on or off, change its \"enabled\" value here and commit. That is the entire change.",
+    "_read_me_first": "This block is the on/off switch for each social platform. Nothing else in the repository decides whether a platform posts. To turn one on or off, change its \"enabled\" value here and commit. That is the entire change. A platform switched OFF must also record who paused it, when and why, plus a \"pause_mode\" saying what happens to its content meanwhile: \"dormant\" means nothing is produced at all (LinkedIn), and \"draft_by_hand\" means the API lane is off but the day's posts are still written to reports/social-drafts.md to be posted by hand (X). pause_mode is ignored while enabled is true, so re-enabling a platform stays a one-boolean change either way.",
     "x": {
-      "enabled": true,
-      "daily_limit": 8
+      "HOW_TO_TURN_X_BACK_ON": "Change \"enabled\" on the next line from false to true, and commit. That is the whole switch, exactly as it is for LinkedIn. The X entries already sitting in data/social-queue.json start going out again on their own -- they were never deleted, never re-labelled and carry no per-row pause mark, so nothing has to be rebuilt or un-marked. \"pause_mode\" below is inert the moment enabled is true; leave it as it is. X's API is pay-per-use and a post carrying a URL costs about $0.20, so turning this on means funding the developer account first -- until then every write answers HTTP 402 credits-depleted. While it is off, distribution does NOT stop: see pause_mode.",
+      "enabled": false,
+      "daily_limit": 8,
+      "pause_mode": "draft_by_hand",
+      "paused_on": "2026-08-29",
+      "paused_by": "owner",
+      "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn."
     },
     "linkedin": {
-      "HOW_TO_TURN_LINKEDIN_BACK_ON": "Change \"enabled\" on the next line from false to true, and commit. That is the whole switch. The 581 LinkedIn posts already sitting in data/social-queue.json start going out again on their own -- they were never deleted, never re-labelled, and nothing has to be rebuilt or un-marked. Two repository secrets also have to exist for a post to actually send: LINKEDIN_ACCESS_TOKEN and LINKEDIN_AUTHOR_URN. If you flip this on before adding them, nothing breaks: each run says \"linkedin_on_but_uncredentialled\" in reports/social-publisher-report.json and X keeps posting normally.",
+      "HOW_TO_TURN_LINKEDIN_BACK_ON": "Change \"enabled\" on the next line from false to true, and commit. That is the whole switch. The 581 LinkedIn posts already sitting in data/social-queue.json start going out again on their own -- they were never deleted, never re-labelled, and nothing has to be rebuilt or un-marked. Two repository secrets also have to exist for a post to actually send: LINKEDIN_ACCESS_TOKEN and LINKEDIN_AUTHOR_URN. If you flip this on before adding them, nothing breaks: each run says \"linkedin_on_but_uncredentialled\" in reports/social-publisher-report.json and nothing else changes. (X is no longer posting either -- it is paused for posting with pause_mode \"draft_by_hand\", so its content goes out by hand from reports/social-drafts.md.)",
       "enabled": false,
       "daily_limit": 3,
+      "pause_mode": "dormant",
       "paused_on": "2026-08-29",
       "paused_by": "owner",
       "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."

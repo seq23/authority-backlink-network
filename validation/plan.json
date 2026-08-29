@@ -37,6 +37,7 @@
       "social_rate_limits",
       "social_attempt_budget",
       "social_drafts_fallback",
+      "social_pause_modes",
       "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
@@ -72,6 +73,7 @@
       "social_rate_limits",
       "social_attempt_budget",
       "social_drafts_fallback",
+      "social_pause_modes",
       "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
@@ -108,6 +110,7 @@
       "social_rate_limits",
       "social_attempt_budget",
       "social_drafts_fallback",
+      "social_pause_modes",
       "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
@@ -265,6 +268,10 @@
     "social_drafts_fallback": {
       "severity": "HARD_FAIL",
       "rationale": "Distribution silently stopping, which no configuration check can see. The X account answers every write with HTTP 402 credits-depleted - X's pay-per-use billing saying the enrolled account has no credits, got on the FIRST request of the FIRST run with no successful post anywhere in this repository's history. It is not a period cap that resets and no lower posting rate gets under it, so a lane that only defers and retries exits 0 having done nothing, every run, forever, while 581 published pages go undistributed. scripts/social_drafts.py writes the day's highest-value posts to reports/social-drafts.md as copy-paste text instead. This drives the real publisher against synthetic queues with the platform stubbed and blocks if a refusal produces no drafts, if the sheet does not carry the exact characters the API would have sent, if an unposted batch is piled on top of rather than reissued, if a batch marked posted through the single marked_posted_through declaration is offered again or stays on the sheet, if done-ness is stamped per row rather than derived, if drafting mutates data/social-queue.json by a single byte, if a batch exceeds the daily limit, if a 402 costs more than one request now that this path exists, or if a platform paused by decision (LinkedIn) is drafted as though it were an outage. It fails if it exercises zero properties."
+    },
+    "social_pause_modes": {
+      "severity": "HARD_FAIL",
+      "rationale": "Distribution ending as a side effect of a billing decision, which no configuration check can see. X's API is pay-per-use with no free tier: every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and at about $0.20 per link post eight a day is roughly $48/month. On 2026-08-29 the owner declined to fund it -- \"im not funding X so find a $0 workaround or kill it\" -- so X is switched off. But X is off for a different reason than LinkedIn, which is off because nothing is wanted from it, and one `enabled: false` cannot hold both meanings. Draft every paused platform and LinkedIn starts producing work the owner said she did not want; draft none of them and X -- the only platform with any distribution left -- silently stops distributing while the run still exits 0 and the report still says \"paused\". So the pause declares its mode in data/social-brand-policy.json: \"dormant\" produces nothing at all, \"draft_by_hand\" keeps the API off while the day's posts go out by hand from reports/social-drafts.md. This drives the real publisher with post_item, both platform senders and urlopen all stubbed and counted, and blocks if a platform paused for posting produces no drafts, if it makes a single API request (no probe, no one attempt to see whether credits came back -- every one is billable), if a dormant pause produces drafts or requests, if flipping pause_mode to dormant does not stop the drafts (which would prove the mode decorative), if setting only `enabled` back to true fails to restore posting on either platform in either mode, if a paused platform is declared without a recognised pause_mode, if pausing consumes or per-row-stamps data/social-queue.json, or if the two pauses read identically in the report. It fails if it exercises zero properties."
     }
   },
   "severity_matrix_policy": {

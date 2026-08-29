@@ -3,47 +3,57 @@
   "dry_run": false,
   "enabled": {
     "linkedin": false,
-    "x": true
+    "x": false
   },
   "platform_states": {
     "linkedin": "paused_by_switch",
-    "x": "on_and_posting"
+    "x": "paused_for_posting_drafts_by_hand"
+  },
+  "named_stops": {
+    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
+    "x": "x_paused_for_posting: owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn. ZERO requests were made to the x API this run. Distribution did not stop: the day's posts are on reports/social-drafts.md to be posted by hand, and marked done in data/social-draft-ledger.json. Turn automatic posting back on by setting platforms.x.enabled to true in data/social-brand-policy.json."
   },
   "paused_platforms": {
     "linkedin": {
       "paused_on": "2026-08-29",
       "paused_by": "owner",
       "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+    },
+    "x": {
+      "paused_on": "2026-08-29",
+      "paused_by": "owner",
+      "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn."
     }
-  },
-  "parked_by_platform_switch": {
-    "linkedin": 581
   },
   "secret_skips": {},
   "limits": {
     "linkedin": 3,
     "x": 8
   },
+  "attempts": [],
+  "successes": [],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 0,
+    "x": 0
+  },
   "pacing": {
     "run_limit": 3,
     "min_interval_seconds": 90
   },
-  "posted_this_run": {
-    "linkedin": 0,
-    "x": 0
-  },
-  "attempted_this_run": {
-    "linkedin": 0,
-    "x": 0
-  },
-  "spent_today": {
-    "linkedin": 0,
+  "parked_by_platform_switch": {
+    "linkedin": 581,
     "x": 581
   },
-  "halted_platforms": {},
+  "api_requests_made": 0,
+  "drafting_platforms": [
+    "x"
+  ],
+  "still_postable_after_run": 1162,
   "manual_drafts": {
     "platforms_unavailable": {
-      "x": "the whole x budget for today was spent on attempts that all failed, so this run had nothing left to try"
+      "x": "the x API lane is switched off by a recorded decision (pause_mode \"draft_by_hand\"), so nothing is sent to it and these are posted by hand instead"
     },
     "actions": {
       "x": {
@@ -63,27 +73,11 @@
     ],
     "marked_posted_through": null,
     "marker_is_stale": false,
-    "ledger_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/data/social-draft-ledger.json",
-    "drafts_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/reports/social-drafts.md",
+    "ledger_path": "/private/tmp/claude-501/-Users-sequoiataylor/f1c501ee-7200-4290-b347-d7bfe69dc709/scratchpad/wt/data/social-draft-ledger.json",
+    "drafts_path": "/private/tmp/claude-501/-Users-sequoiataylor/f1c501ee-7200-4290-b347-d7bfe69dc709/scratchpad/wt/reports/social-drafts.md",
     "queue_entries_read": 1468
   },
-  "deferred_for_retry": 0,
-  "restored_legacy_failures": 0,
-  "still_postable_after_run": 1162,
-  "attempts": [],
-  "successes": [],
-  "failures": [],
-  "skipped": [],
-  "posted_today": {
-    "linkedin": 0,
-    "x": 0
-  },
-  "brand_rotation_policy": {
-    "quota_count": 15,
-    "daily_rotation_offset": 739857
-  },
-  "status": "ok",
-  "named_stops": {
-    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json."
-  }
+  "status": "posted_nothing_drafted_by_hand",
+  "production_blocked": false,
+  "stop_reason": "No platform posts through its API right now, and none was contacted: zero requests were made. Distribution still ran -- 8 post(s) are waiting on reports/social-drafts.md for x, to be posted by hand and then marked done in data/social-draft-ledger.json. The posting queue is untouched and every entry keeps its status."
 }
