@@ -1,6 +1,6 @@
 # Post these by hand
 
-_Generated 2026-08-29T22:28:51.543624+00:00. Regenerated on every scheduled run; nothing here is lost._
+_Generated 2026-08-29T23:22:06.547783+00:00. Regenerated on every scheduled run; nothing here is lost._
 
 Automatic posting is not carrying these right now:
 

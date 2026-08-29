@@ -43,10 +43,48 @@
     "min_interval_seconds": 90
   },
   "parked_by_platform_switch": {
-    "linkedin": 581,
-    "x": 581
+    "linkedin": 581
   },
   "api_requests_made": 0,
+  "delivery_routes": {
+    "x": {
+      "route": "buffer",
+      "declared_enabled": true,
+      "used_this_run": false,
+      "receipt": {
+        "available": false,
+        "reason": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['tiktok']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+        "halted": null,
+        "organization_id": "6a1331f15351f4a7ea38e3d5",
+        "channel_id": null,
+        "channel_name": null,
+        "channel_service": null,
+        "buffer_daily_limit_discovered": null,
+        "buffer_used_today": null,
+        "policy_daily_limit": 8,
+        "headroom_at_open": 0,
+        "attempts": 0,
+        "accepted": 0,
+        "remaining": 0,
+        "plan_limits": {
+          "channels": 3,
+          "scheduledPosts": 10
+        },
+        "channels_connected": [
+          {
+            "id": "6a1337eec687a22dd420b43f",
+            "name": "iamcindymercer",
+            "service": "tiktok",
+            "isLocked": false,
+            "isDisconnected": false,
+            "isQueuePaused": false
+          }
+        ]
+      },
+      "why_not_used": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['tiktok']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+      "x_api_requests_made": 0
+    }
+  },
   "drafting_platforms": [
     "x"
   ],
@@ -73,8 +111,8 @@
     ],
     "marked_posted_through": null,
     "marker_is_stale": false,
-    "ledger_path": "/private/tmp/claude-501/-Users-sequoiataylor/f1c501ee-7200-4290-b347-d7bfe69dc709/scratchpad/wt/data/social-draft-ledger.json",
-    "drafts_path": "/private/tmp/claude-501/-Users-sequoiataylor/f1c501ee-7200-4290-b347-d7bfe69dc709/scratchpad/wt/reports/social-drafts.md",
+    "ledger_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/data/social-draft-ledger.json",
+    "drafts_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/reports/social-drafts.md",
     "queue_entries_read": 1468
   },
   "status": "posted_nothing_drafted_by_hand",
