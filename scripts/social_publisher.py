@@ -15,12 +15,20 @@ from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
 
-from lib import social_platforms
+from lib import social_platforms, social_selection
+import social_drafts
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = Path(os.getenv('SOCIAL_QUEUE_PATH', str(ROOT / 'data/social-queue.json')))
 REPORT_PATH = Path(os.getenv('SOCIAL_REPORT_PATH', str(ROOT / 'reports/social-publisher-report.json')))
 REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+# Where the manual-posting fallback keeps its state and writes its sheet. Both
+# default beside the queue and the report they belong to, so a fixture run
+# pointed at a temporary queue cannot write over the committed ones.
+DRAFT_LEDGER_PATH = Path(os.getenv('SOCIAL_DRAFT_LEDGER_PATH',
+                                   str(social_drafts.ledger_path_default(QUEUE_PATH))))
+DRAFTS_PATH = Path(os.getenv('SOCIAL_DRAFTS_PATH',
+                             str(social_drafts.drafts_path_default(REPORT_PATH))))
 TODAY = date.today().isoformat()
 TODAY_ORDINAL = date.today().toordinal()
 
@@ -125,32 +133,13 @@ def truthy(name, default='false'):
     return str(os.getenv(name, default)).strip().lower() in {'1','true','yes','y','on'}
 
 
-def normalize(text):
-    text = re.sub(r'https?://\S+', '', text or '')
-    text = re.sub(r'[^a-z0-9 ]+', ' ', text.lower())
-    return re.sub(r'\s+', ' ', text).strip()
-
-
-def jaccard_text(a, b):
-    wa = set(re.findall(r'[a-z]{4,}', normalize(a)))
-    wb = set(re.findall(r'[a-z]{4,}', normalize(b)))
-    if not wa or not wb:
-        return 0.0
-    return len(wa & wb) / len(wa | wb)
-
-
-def append_url(body, item):
-    url = item.get('source_url') or item.get('target_url') or ''
-    if url and url not in body:
-        return (body.rstrip() + '\n\n' + url).strip()
-    return body.strip()
-
-
-def trim_x(text):
-    # conservative trim for plain text posts. URL length is platform-normalized, but keep simple.
-    if len(text) <= 275:
-        return text
-    return text[:272].rstrip() + '…'
+# Text rendering and selection live in scripts/lib/social_selection.py, so the
+# manual-drafts sheet in scripts/social_drafts.py offers the SAME posts, in the
+# same order, with the same characters that this module would have sent.
+normalize = social_selection.normalize
+jaccard_text = social_selection.jaccard_text
+append_url = social_selection.append_url
+trim_x = social_selection.trim_x
 
 
 def validate_required_secrets(platform):
@@ -314,9 +303,9 @@ def x_post(text):
 
 def post_item(item, dry_run=False):
     platform = item.get('platform')
-    text = append_url(item.get('body', ''), item)
-    if platform == 'x':
-        text = trim_x(text)
+    # One renderer, shared with the manual-drafts sheet, so what the API is sent
+    # and what she is asked to paste cannot diverge.
+    text = social_selection.post_text(item)
     if not text:
         return {'ok': False, 'error': 'empty_body'}
     if dry_run:
@@ -421,6 +410,27 @@ def main():
     # inside it, so the same daily volume arrives as scattered activity.
     run_limit = int(os.getenv('SOCIAL_RUN_LIMIT', '3'))
     min_interval = int(os.getenv('SOCIAL_POST_MIN_INTERVAL_SECONDS', '90'))
+    # The manual-posting fallback. A platform that is switched ON and still
+    # cannot get a post out does not get to leave the run empty-handed: the
+    # day's highest-value posts are written to a copy-paste sheet instead, so
+    # distribution keeps happening while the API is dead. It reads the queue and
+    # writes nothing to it, so restoring the API restores automatic posting with
+    # no un-drafting pass. See scripts/social_drafts.py.
+    def emit_drafts(states, halted=None, attempted=None, posted_run=None,
+                    spent=None, posted=None):
+        unavailable = social_drafts.unavailable_platforms(
+            states, halted or {}, attempted or {}, posted_run or {},
+            spent or {}, posted or {})
+        eligible = social_selection.eligible_in_priority_order(
+            queue, platform_policy, TODAY, TODAY_ORDINAL)
+        return social_drafts.run(
+            queue, eligible, unavailable, policy=platform_policy,
+            ledger_path=DRAFT_LEDGER_PATH, drafts_path=DRAFTS_PATH,
+            today=TODAY, batch_sizes={'linkedin': li_limit, 'x': x_limit},
+            # A dry run reports what it WOULD draft and persists nothing, for the
+            # same reason it does not write the queue.
+            write=not dry_run)
+
     posted_this_run = {'linkedin': 0, 'x': 0}
     # Count already-posted items for TODAY so multiple workflows cannot exceed
     # the daily cap when both autopilot and social-only schedules run.
@@ -443,6 +453,7 @@ def main():
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
             'posted_today': {'linkedin': 0, 'x': 0},
             'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
+            'manual_drafts': emit_drafts(off_states),
             'status': 'stopped_no_enabled_platform',
             'production_blocked': False,
             'stop_reason': (
@@ -507,6 +518,7 @@ def main():
             'limits': {'linkedin': li_limit, 'x': x_limit},
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
             'posted_today': {'linkedin': 0, 'x': 0},
+            'manual_drafts': emit_drafts(platform_states),
             'status': 'blocked_missing_secrets' if strict_failure else 'ok_with_secret_warning',
             'production_blocked': bool(strict_failure),
             'message': 'Social credentials are unavailable. Social posting was skipped; content publication remains allowed.'
@@ -518,14 +530,8 @@ def main():
         return
 
     bodies_today_by_platform = defaultdict(list)
-    posted_by_brand_platform = defaultdict(int)
-    seen_order = {}
-    for i, existing in enumerate(queue):
-        brand = existing.get('brand') or existing.get('domain') or 'unknown'
-        seen_order.setdefault(brand, len(seen_order))
+    for existing in queue:
         platform = existing.get('platform')
-        if existing.get('status') == 'posted':
-            posted_by_brand_platform[(platform, brand)] += 1
         if existing.get('posted_at','').startswith(TODAY):
             if platform in posted_today:
                 posted_today[platform] += 1
@@ -576,66 +582,15 @@ def main():
         if halt and platform not in halted_platforms:
             halted_platforms[platform] = halt
 
-    raw_eligible = [i for i, item in enumerate(queue) if item.get('status') in POSTABLE_STATUSES]
+    brand_quotas = platform_policy.get('brand_quotas', {}) if isinstance(platform_policy, dict) else {}
 
-    def load_brand_policy():
-        policy_path = ROOT / 'data/social-brand-policy.json'
-        policy = read_json(policy_path, {})
-        quotas = policy.get('brand_quotas', {}) if isinstance(policy, dict) else {}
-        rotation = policy.get('rotation', {}) if isinstance(policy, dict) else {}
-        return quotas, rotation
-
-    brand_quotas, rotation_policy = load_brand_policy()
-
-    def brand_weight(brand):
-        try:
-            return float(brand_quotas.get(brand, 1.0))
-        except Exception:
-            return 1.0
-
-    def weighted_posted_score(platform, brand):
-        # Lower score gets priority. This makes brands with fewer prior posts relative
-        # to their configured quota surface earlier, preventing portfolio starvation.
-        return posted_by_brand_platform[(platform, brand)] / max(brand_weight(brand), 0.01)
-
-    def item_priority(i):
-        item = queue[i]
-        return (
-            item.get('last_attempt_at', ''),
-            0 if item.get('date') == TODAY else 1,
-            0 if item.get('source_url') else 1,
-            i
-        )
-
-    # Round-robin by platform and brand. This prevents X from burning several daily
-    # slots on the same brand just because that brand appears first in social-queue.json.
-    platform_brand_groups = defaultdict(list)
-    for i in raw_eligible:
-        item = queue[i]
-        platform = item.get('platform')
-        brand = item.get('brand') or item.get('domain') or 'unknown'
-        platform_brand_groups[(platform, brand)].append(i)
-    for key in platform_brand_groups:
-        platform_brand_groups[key].sort(key=item_priority)
-
-    eligible_indices = []
-    for platform in ('linkedin', 'x'):
-        brand_keys = [key for key in platform_brand_groups if key[0] == platform]
-        
-        rotation_offset = TODAY_ORDINAL % max(len(brand_keys), 1)
-        brand_keys.sort(key=lambda key: (
-            weighted_posted_score(key[0], key[1]),
-            (seen_order.get(key[1], 9999) - rotation_offset) % max(len(brand_keys), 1),
-            key[1]
-        ))
-        more = True
-        while more:
-            more = False
-            for key in brand_keys:
-                group = platform_brand_groups[key]
-                if group:
-                    eligible_indices.append(group.pop(0))
-                    more = True
+    # Selection moved to scripts/lib/social_selection.py unchanged: brand
+    # round-robin, quota-weighted starvation guard, date-ordinal rotation, and
+    # never-attempted-first within a brand. It is shared with the manual-drafts
+    # lane so a sheet written by hand cannot offer a different post, or a
+    # different order, from the one the API would have received.
+    eligible_indices = social_selection.eligible_in_priority_order(
+        queue, platform_policy, TODAY, TODAY_ORDINAL)
 
     for idx in eligible_indices:
         item = queue[idx]
@@ -695,6 +650,8 @@ def main():
         except Exception as e:
             record_failure(item, idx, platform, str(e)[:500])
 
+    manual_drafts = emit_drafts(platform_states, halted_platforms, attempted_this_run,
+                                posted_this_run, spent_today, posted_today)
     if not dry_run:
         write_json(QUEUE_PATH, queue)
     report = {
@@ -711,6 +668,7 @@ def main():
         'attempted_this_run': attempted_this_run,
         'spent_today': spent_today,
         'halted_platforms': halted_platforms,
+        'manual_drafts': manual_drafts,
         'deferred_for_retry': sum(1 for f in failures if f.get('disposition') == 'deferred_for_retry'),
         'restored_legacy_failures': restored_legacy_failures,
         'still_postable_after_run': sum(1 for i in queue if i.get('status') in POSTABLE_STATUSES),
