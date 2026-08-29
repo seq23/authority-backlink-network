@@ -7,11 +7,7 @@
   },
   "platform_states": {
     "linkedin": "paused_by_switch",
-    "x": "paused_for_posting_drafts_by_hand"
-  },
-  "named_stops": {
-    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
-    "x": "x_paused_for_posting: owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn. ZERO requests were made to the x API this run. Distribution did not stop: the day's posts are on reports/social-drafts.md to be posted by hand, and marked done in data/social-draft-ledger.json. Turn automatic posting back on by setting platforms.x.enabled to true in data/social-brand-policy.json."
+    "x": "paused_for_posting_delivered_via_route"
   },
   "paused_platforms": {
     "linkedin": {
@@ -25,52 +21,56 @@
       "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn."
     }
   },
+  "parked_by_platform_switch": {
+    "linkedin": 581
+  },
   "secret_skips": {},
   "limits": {
     "linkedin": 3,
     "x": 8
   },
-  "attempts": [],
-  "successes": [],
-  "failures": [],
-  "skipped": [],
-  "posted_today": {
-    "linkedin": 0,
-    "x": 0
-  },
   "pacing": {
     "run_limit": 3,
     "min_interval_seconds": 90
   },
-  "parked_by_platform_switch": {
-    "linkedin": 581
+  "posted_this_run": {
+    "linkedin": 0,
+    "x": 0
   },
-  "api_requests_made": 0,
+  "buffer_queued_this_run": 0,
   "delivery_routes": {
     "x": {
       "route": "buffer",
       "declared_enabled": true,
-      "used_this_run": false,
+      "used_this_run": true,
       "receipt": {
-        "available": false,
-        "reason": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['tiktok']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+        "available": true,
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 8 post(s) of headroom",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
-        "channel_id": null,
-        "channel_name": null,
-        "channel_service": null,
-        "buffer_daily_limit_discovered": null,
-        "buffer_used_today": null,
+        "channel_id": "6a936b7accaf649a674276b2",
+        "channel_name": "sequoia_ta12767",
+        "channel_service": "twitter",
+        "buffer_daily_limit_discovered": 50,
+        "buffer_used_today": 0,
         "policy_daily_limit": 8,
-        "headroom_at_open": 0,
+        "headroom_at_open": 8,
         "attempts": 0,
         "accepted": 0,
-        "remaining": 0,
+        "remaining": 8,
         "plan_limits": {
           "channels": 3,
           "scheduledPosts": 10
         },
         "channels_connected": [
+          {
+            "id": "6a936b7accaf649a674276b2",
+            "name": "sequoia_ta12767",
+            "service": "twitter",
+            "isLocked": false,
+            "isDisconnected": false,
+            "isQueuePaused": false
+          },
           {
             "id": "6a1337eec687a22dd420b43f",
             "name": "iamcindymercer",
@@ -81,30 +81,24 @@
           }
         ]
       },
-      "why_not_used": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['tiktok']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+      "meaning_of_buffer_queued": "Buffer accepted the post and holds it in the X channel's queue. It is NOT published yet: Buffer sends it at the channel's next posting slot. The entry keeps status 'buffer_queued' with the Buffer post id, is never re-sent, and is never offered on the hand-post sheet.",
       "x_api_requests_made": 0
     }
   },
-  "drafting_platforms": [
-    "x"
-  ],
-  "still_postable_after_run": 1162,
+  "attempted_this_run": {
+    "linkedin": 0,
+    "x": 0
+  },
+  "spent_today": {
+    "linkedin": 0,
+    "x": 581
+  },
+  "halted_platforms": {},
   "manual_drafts": {
-    "platforms_unavailable": {
-      "x": "the x API lane is switched off by a recorded decision (pause_mode \"draft_by_hand\"), so nothing is sent to it and these are posted by hand instead"
-    },
-    "actions": {
-      "x": {
-        "action": "reissued_open_batch",
-        "batch_ids": [
-          "x-2026-08-29-1"
-        ],
-        "drafts": 8,
-        "detail": "A batch is already waiting to be posted. Re-rendered unchanged rather than adding a second one -- a wall of drafts is as useless as an empty queue. Mark it posted in data/social-draft-ledger.json to release the next batch."
-      }
-    },
+    "platforms_unavailable": {},
+    "actions": {},
     "drafts_written": 0,
-    "drafts_reissued": 8,
+    "drafts_reissued": 0,
     "open_drafts": 8,
     "open_batches": [
       "x-2026-08-29-1"
@@ -115,7 +109,24 @@
     "drafts_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/reports/social-drafts.md",
     "queue_entries_read": 1468
   },
-  "status": "posted_nothing_drafted_by_hand",
-  "production_blocked": false,
-  "stop_reason": "No platform posts through its API right now, and none was contacted: zero requests were made. Distribution still ran -- 8 post(s) are waiting on reports/social-drafts.md for x, to be posted by hand and then marked done in data/social-draft-ledger.json. The posting queue is untouched and every entry keeps its status."
+  "deferred_for_retry": 0,
+  "restored_legacy_failures": 0,
+  "still_postable_after_run": 1162,
+  "attempts": [],
+  "successes": [],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 0,
+    "x": 0
+  },
+  "brand_rotation_policy": {
+    "quota_count": 15,
+    "daily_rotation_offset": 739857
+  },
+  "status": "ok",
+  "named_stops": {
+    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
+    "x": "x_delivered_via_buffer: x's own API stayed off and was contacted ZERO times -- it is pay-per-use and unfunded. The day's posts were handed to Buffer's free queue instead, and Buffer publishes them at the channel's next posting slot. Entries carry status 'buffer_queued' with the Buffer post id, and are NOT offered on reports/social-drafts.md, because a post Buffer accepted must not also be posted by hand."
+  }
 }
