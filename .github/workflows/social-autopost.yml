@@ -3,7 +3,17 @@ name: Social Auto-Post Only
 on:
   workflow_dispatch:
   schedule:
+    # Four irregular windows a day, not one. The daily cap is what protects the
+    # account's volume; spreading the runs is what protects its SHAPE. A single
+    # run emitting the whole day's allowance produces a clump of posts seconds
+    # apart, which is a louder automation signal than the count. Combined with
+    # SOCIAL_RUN_LIMIT (a slice per run) and SOCIAL_POST_MIN_INTERVAL_SECONDS
+    # (jittered spacing inside a run), the same daily volume lands as scattered
+    # activity. Minutes are deliberately not round.
+    - cron: '23 13 * * *'
     - cron: '17 16 * * *'
+    - cron: '41 19 * * *'
+    - cron: '9 22 * * *'
 
 permissions:
   contents: write
@@ -29,8 +39,10 @@ jobs:
           REQUIRE_SOCIAL_SECRETS: ${{ vars.REQUIRE_SOCIAL_SECRETS || 'true' }}
           FAIL_ON_SOCIAL_POST_FAILURE: ${{ vars.FAIL_ON_SOCIAL_POST_FAILURE || 'false' }}
           SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN || 'false' }}
-          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
-          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '3' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '8' }}
+          SOCIAL_RUN_LIMIT: ${{ vars.SOCIAL_RUN_LIMIT || '3' }}
+          SOCIAL_POST_MIN_INTERVAL_SECONDS: ${{ vars.SOCIAL_POST_MIN_INTERVAL_SECONDS || '90' }}
           MAX_SOCIAL_SIMILARITY: ${{ vars.MAX_SOCIAL_SIMILARITY || '0.86' }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}

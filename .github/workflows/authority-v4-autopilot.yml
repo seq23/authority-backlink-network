@@ -36,8 +36,10 @@ jobs:
           ENABLE_GEMINI_REWRITE: ${{ vars.ENABLE_GEMINI_REWRITE || 'false' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
-          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
-          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '3' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '8' }}
+          SOCIAL_RUN_LIMIT: ${{ vars.SOCIAL_RUN_LIMIT || '3' }}
+          SOCIAL_POST_MIN_INTERVAL_SECONDS: ${{ vars.SOCIAL_POST_MIN_INTERVAL_SECONDS || '90' }}
           FOUNDER_PUBLICATION_DOMAIN: ${{ vars.FOUNDER_PUBLICATION_DOMAIN }}
           MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
           PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
@@ -82,8 +84,10 @@ jobs:
           REQUIRE_SOCIAL_SECRETS: ${{ vars.REQUIRE_SOCIAL_SECRETS || 'true' }}
           FAIL_ON_SOCIAL_POST_FAILURE: ${{ vars.FAIL_ON_SOCIAL_POST_FAILURE || 'false' }}
           SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN || 'false' }}
-          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '1' }}
-          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '5' }}
+          LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '3' }}
+          X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '8' }}
+          SOCIAL_RUN_LIMIT: ${{ vars.SOCIAL_RUN_LIMIT || '3' }}
+          SOCIAL_POST_MIN_INTERVAL_SECONDS: ${{ vars.SOCIAL_POST_MIN_INTERVAL_SECONDS || '90' }}
           MAX_SOCIAL_SIMILARITY: ${{ vars.MAX_SOCIAL_SIMILARITY || '0.86' }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
