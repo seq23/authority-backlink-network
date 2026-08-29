@@ -1,20 +1,14 @@
 {
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
-    "x": false
+    "x": true
   },
   "secret_skips": {
     "linkedin": [
       "LINKEDIN_ACCESS_TOKEN",
       "LINKEDIN_AUTHOR_URN"
-    ],
-    "x": [
-      "X_API_KEY",
-      "X_API_SECRET",
-      "X_ACCESS_TOKEN",
-      "X_ACCESS_TOKEN_SECRET"
     ]
   },
   "limits": {

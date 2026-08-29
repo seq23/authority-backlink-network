@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-08-28",
+  "run_at": "2026-08-29",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 103,
+    "published_in_window": 94,
     "allowance": 0,
-    "window_start": "2026-08-22",
-    "window_end": "2026-08-28"
+    "window_start": "2026-08-23",
+    "window_end": "2026-08-29"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "operator playbooks",
-      "audience": "chief of staff",
-      "format": "timeline guide",
-      "intent": "for first-time buyers",
+      "cluster": "team accountability",
+      "audience": "marketing lead",
+      "format": "comparison guide",
+      "intent": "before you call",
       "modifier": "2026-ready",
-      "intended_title": "Operator Playbooks: 2026-Ready Timeline Guide For First-Time Buyers",
+      "intended_title": "Team Accountability: 2026-Ready Comparison Guide Before You Call",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "ec0dd2c0b322bcb0621fff28641ee1ad8705628c133f0feee6c395b7beea3d8a",
-      "deferred_on": "2026-08-28",
+      "signature": "791073e5d35cca31d5cd07270533c90e84c9493bb51968887605db53774236a3",
+      "deferred_on": "2026-08-29",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-08-28",
+      "deferred_on": "2026-08-29",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "preparing records before a specialist appointment",
+      "cluster": "questions before signing agreements",
       "audience": "high-achieving woman",
-      "format": "framework",
-      "intent": "when you are comparing options",
-      "modifier": "low-risk",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Framework When You Are Comparing Options",
-      "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/",
-      "signature": "aa35914ab73de20a6cdb955f06ee2482b8ab5809b12ae264bf2d399bd1717bef",
-      "deferred_on": "2026-08-28",
+      "format": "question checklist",
+      "intent": "for careful decision-makers",
+      "modifier": "checklist-driven",
+      "intended_title": "Questions Before Signing Agreements: Checklist-Driven Question Checklist For Careful Decision-Makers",
+      "target_brand": "The Industry Guides",
+      "target_url": "https://theindustryguides.com/methodology.html",
+      "signature": "a8a66836b85eea5a31261c9fe638a8a43e46b3b43e04ee8963477e702de4bccf",
+      "deferred_on": "2026-08-29",
       "reason": "weekly_publication_cap"
     }
   ]
