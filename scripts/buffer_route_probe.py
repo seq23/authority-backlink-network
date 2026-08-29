@@ -118,6 +118,9 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
                          "Creates nothing; separates 'the token may not post' from "
                          "'there is no channel to post to'.")
     ap.add_argument("--share-mode", default="addToQueue")
+    ap.add_argument("--queue-depth", action="store_true",
+                    help="Count the posts already occupying a scheduled slot. The free "
+                         "plan caps that standing depth, not just a daily rate.")
     args = ap.parse_args(argv)
 
     report = {"endpoint": buffer_route.ENDPOINT, "token_present": buffer_route.has_token()}
@@ -142,7 +145,8 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
     except buffer_route.BufferError as err:
         report["schema_error"] = str(err)
 
-    for name in ["ChannelsInput", "ChannelsFiltersInput", "DailyPostingLimitsInput",
+    for name in ["PostsInput", "PostsFilter", "PostsFiltersInput", "PostConnection",
+                 "PostEdge", "ChannelsInput", "ChannelsFiltersInput", "DailyPostingLimitsInput",
                  "CreatePostInput", "ShareMode", "SchedulingType", "Service",
                  "ChannelType", "PostActionPayload", "DailyPostingLimitStatus",
                  "OrganizationLimits", "Post", "PostStatus",
@@ -198,6 +202,27 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
               dailyPostingLimits(input: $input) { %s }
             }""" % (limit_fields or "__typename"),
             {"input": {"channelIds": [c["id"] for c in channels]}}, live)
+
+    # ---- the STANDING queue depth: how many posts already occupy a slot.
+    # The free plan's OrganizationLimits.scheduledPosts is not a daily rate, it
+    # is a cap on how many posts may sit queued AT ONCE -- note the siblings
+    # scheduledStoriesPerChannel and scheduledThreadsPerChannel name their scope
+    # and this one does not. Counting what is already queued is the only way to
+    # respect it, so the shape of the `posts` query has to be known exactly.
+    if args.queue_depth:
+        for org in org_ids:
+            for status in ("scheduled", "draft", "needs_approval", "sending", "sent"):
+                try_query(f"posts[{status}]", """
+                    query P($input: PostsInput!, $first: Int) {
+                      posts(input: $input, first: $first) {
+                        edges { node { id status channelId dueAt createdAt } }
+                        pageInfo { hasNextPage endCursor }
+                        totalCount
+                      }
+                    }""",
+                    {"input": {"organizationId": org, "status": [status]}, "first": 50},
+                    live)
+            break
 
     if args.auth_check:
         # A channel id that cannot exist. If the token were unable to post at
