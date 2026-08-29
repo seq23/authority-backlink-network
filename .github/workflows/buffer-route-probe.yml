@@ -1,0 +1,49 @@
+name: Buffer Route Probe
+
+# Diagnostics for the Buffer delivery route that carries X's posts. Read-only
+# by default: it asks Buffer what this token can do -- which channels are
+# connected, what the plan allows, what daily limit Buffer reports for the
+# channel -- and prints the answer with the token redacted.
+#
+# The single write is opt-in and has to be typed. There is no schedule and no
+# push trigger, so nothing here can post on its own.
+on:
+  workflow_dispatch:
+    inputs:
+      schedule_test_text:
+        description: 'THE one write: put this text in the X channel queue. Blank = read-only.'
+        required: false
+        default: ''
+      channel_id:
+        description: 'Buffer channel id for the write. Blank = the connected X channel.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe Buffer
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          # Through the environment, never interpolated into the command line:
+          # what someone types in the dispatch form must not become shell.
+          SCHEDULE_TEST_TEXT: ${{ github.event.inputs.schedule_test_text }}
+          CHANNEL_ID: ${{ github.event.inputs.channel_id }}
+        run: |
+          set -euo pipefail
+          args=(--auth-check)
+          if [ -n "${SCHEDULE_TEST_TEXT:-}" ]; then
+            args+=(--schedule-test "${SCHEDULE_TEST_TEXT}")
+            if [ -n "${CHANNEL_ID:-}" ]; then
+              args+=(--channel-id "${CHANNEL_ID}")
+            fi
+          fi
+          python3 scripts/buffer_route_probe.py "${args[@]}"

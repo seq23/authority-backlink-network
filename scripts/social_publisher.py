@@ -15,7 +15,7 @@ from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
 
-from lib import social_platforms, social_selection
+from lib import buffer_route, social_platforms, social_selection
 import social_drafts
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -301,7 +301,13 @@ def x_post(text):
         return x_send(text, refreshed)
 
 
-def post_item(item, dry_run=False):
+def post_item(item, dry_run=False, route=None):
+    """Send one item, through its platform's API or through a delivery route.
+
+    `route` is a live scripts/lib/buffer_route.Route. When one is passed for an
+    item, it is the ONLY thing contacted: X's own API is not called, not even
+    to check. That is what keeps "zero requests to X" true while X posts.
+    """
     platform = item.get('platform')
     # One renderer, shared with the manual-drafts sheet, so what the API is sent
     # and what she is asked to paste cannot diverge.
@@ -312,6 +318,14 @@ def post_item(item, dry_run=False):
         
         dry_key = f"{platform}|{item.get('brand','')}|{item.get('post_type','')}|{item.get('source_path','')}|{text}"
         return {'ok': True, 'dry_run': True, 'id': f"dry-{hashlib.sha1(dry_key.encode()).hexdigest()[:12]}", 'text': text}
+    if route is not None:
+        result = route.create_post(text)
+        # Accepted by Buffer is QUEUED, not published: Buffer sends it at the
+        # channel's next posting slot. The caller records the difference.
+        return {'ok': True, 'via': 'buffer', 'id': result['id'],
+                'buffer_status': result.get('buffer_status'),
+                'due_at': result.get('due_at'),
+                'channel_id': result.get('channel_id'), 'status': 200}
     if platform == 'linkedin':
         return linkedin_post(text)
     if platform == 'x':
@@ -332,6 +346,20 @@ def named_stops_for(platform_states, paused, secret_skips):
     stops = {}
     for platform, state in platform_states.items():
         if state == social_platforms.STATE_ON:
+            continue
+        if state == social_platforms.STATE_ROUTED:
+            # Not a stop at all: posts left. Named anyway, because "X posted
+            # today and X's API was never called" is the one sentence a reader
+            # of this report most needs and would otherwise have to infer.
+            stops[platform] = (
+                f"{platform}_delivered_via_buffer: {platform}'s own API stayed off and "
+                f"was contacted ZERO times -- it is pay-per-use and unfunded. The day's "
+                f"posts were handed to Buffer's free queue instead, and Buffer publishes "
+                f"them at the channel's next posting slot. Entries carry status "
+                f"'buffer_queued' with the Buffer post id, and are NOT offered on "
+                f"reports/social-drafts.md, because a post Buffer accepted must not also "
+                f"be posted by hand."
+            )
             continue
         if state == social_platforms.STATE_PAUSED:
             stops[platform] = (
@@ -425,6 +453,28 @@ def main():
     # inside it, so the same daily volume arrives as scattered activity.
     run_limit = int(os.getenv('SOCIAL_RUN_LIMIT', '3'))
     min_interval = int(os.getenv('SOCIAL_POST_MIN_INTERVAL_SECONDS', '90'))
+
+    # ------------------------------------------------------------------ route
+    # X's own API is pay-per-use and unfunded, so it stays off. Buffer is a
+    # DELIVERY ROUTE for the same X profile at no per-post cost: declared on
+    # platforms.x.delivery_route in data/social-brand-policy.json, opened here,
+    # and used INSTEAD of X's API -- never alongside it. The queue, the
+    # selection order and the drafting fallback are untouched.
+    #
+    # Everything about the ceiling is discovered from Buffer at runtime
+    # (dailyPostingLimits), then capped again by this network's own
+    # X_DAILY_LIMIT. A number hardcoded here would be a guess that survives
+    # Buffer changing it.
+    x_route = None
+    x_route_declared = social_platforms.route_enabled(
+        'x', social_platforms.ROUTE_BUFFER, platform_policy)
+    if x_route_declared and not dry_run and not enable_x:
+        x_route = buffer_route.Route('x', policy_daily_limit=x_limit).open()
+    x_via_route = bool(x_route and x_route.available)
+    # Drafts already offered to her by hand and not yet marked posted. The route
+    # must not take one: she would post it, and Buffer would post it again.
+    open_draft_fingerprints = social_drafts.open_fingerprints(
+        social_drafts.read_ledger(DRAFT_LEDGER_PATH)) if x_via_route else set()
     # The manual-posting fallback. A platform that is switched ON and still
     # cannot get a post out does not get to leave the run empty-handed: the
     # day's highest-value posts are written to a copy-paste sheet instead, so
@@ -461,7 +511,7 @@ def main():
     # made -- which is exactly how "zero API requests while paused" is achieved
     # rather than asserted. So the drafts are cut first and the run is named by
     # what it actually produced.
-    if not enable_li and not enable_x:
+    if not enable_li and not enable_x and not x_via_route:
         off_states = {p: social_platforms.platform_state(p, None, platform_policy)
                       for p in social_platforms.PLATFORMS}
         drafts = emit_drafts(off_states)
@@ -481,6 +531,23 @@ def main():
             'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
             'parked_by_platform_switch': {k: len(v) for k, v in parked_off.items()},
             'api_requests_made': 0,
+            # The route was declared and could not carry anything. Say why, in
+            # the report she reads, rather than leaving "X went out by hand
+            # again" to be explained by someone reading the code.
+            'delivery_routes': {
+                'x': {
+                    'route': social_platforms.ROUTE_BUFFER,
+                    'declared_enabled': x_route_declared,
+                    'used_this_run': False,
+                    'receipt': x_route.receipt() if x_route is not None else None,
+                    'why_not_used': (
+                        (x_route.reason if x_route is not None else
+                         'the Buffer route is not switched on for x in '
+                         'data/social-brand-policy.json')
+                        if not x_via_route else None),
+                    'x_api_requests_made': 0,
+                }
+            },
             'drafting_platforms': drafting,
             'still_postable_after_run': sum(1 for i in queue
                                             if i.get('status') in POSTABLE_STATUSES),
@@ -536,6 +603,12 @@ def main():
         p: social_platforms.platform_state(p, platform_secret_skips.get(p), platform_policy)
         for p in social_platforms.PLATFORMS
     }
+    if x_via_route:
+        # The route is open, so X's posts leave through it and must NOT also be
+        # drafted by hand. If the route were unavailable or had refused, this
+        # line does not run and X reports paused_for_posting exactly as before,
+        # with the sheet cut as before -- the fallback is unchanged, not removed.
+        platform_states['x'] = social_platforms.STATE_ROUTED
     # Entries that cannot post right now ONLY because their platform's switch is
     # off. Derived, never stamped onto the rows: flipping the switch back on
     # restores every one of them with no queue edit. See scripts/lib/social_platforms.py.
@@ -577,7 +650,11 @@ def main():
     bodies_today_by_platform = defaultdict(list)
     for existing in queue:
         platform = existing.get('platform')
-        if existing.get('posted_at','').startswith(TODAY):
+        # A post Buffer accepted today is not published yet, but it IS out of
+        # this network's hands and must count against the same-day duplicate
+        # guard. Otherwise a near-identical post is queued behind it.
+        if (existing.get('posted_at', '') or existing.get('buffer_queued_at', '')
+                ).startswith(TODAY):
             if platform in posted_today:
                 posted_today[platform] += 1
             bodies_today_by_platform[platform].append(existing.get('body',''))
@@ -598,6 +675,10 @@ def main():
         # than the number of posts already known to have gone out.
         spent_today[plat] = max(spent_today[plat], posted_today[plat])
     attempted_this_run = {'linkedin': 0, 'x': 0}
+    # Counted apart from posted_this_run on purpose: these are in Buffer's
+    # queue, not on X. Merging them would report posts as published that Buffer
+    # has not sent yet.
+    buffer_queued_this_run = 0
     halted_platforms = {}
 
     def record_failure(item, idx, platform, error):
@@ -648,8 +729,20 @@ def main():
             continue
         if platform == 'linkedin' and (not enable_li or spent_today['linkedin'] >= li_limit):
             continue
-        if platform == 'x' and (not enable_x or spent_today['x'] >= x_limit):
-            continue
+        if platform == 'x':
+            if not enable_x and not x_via_route:
+                continue
+            if spent_today['x'] >= x_limit:
+                continue
+            if x_via_route:
+                # The route's own discovered ceiling, spent in ATTEMPTS, and a
+                # hard stop the moment it has refused once. Both are enforced
+                # inside scripts/lib/buffer_route.py as well; this is the same
+                # rule read before a request is built rather than after.
+                if x_route.halted or x_route.remaining() <= 0:
+                    continue
+                if social_drafts.fingerprint(item) in open_draft_fingerprints:
+                    continue
         if attempted_this_run.get(platform, 0) >= run_limit:
             continue
         body = append_url(item.get('body',''), item)
@@ -677,8 +770,31 @@ def main():
         attempts.append({'index': idx, 'platform': platform, 'brand': item.get('brand'),
                          'attempt_count': item['attempt_count'], 'preview': body[:120]})
         try:
-            result = post_item(item, dry_run=dry_run)
-            if result.get('ok'):
+            item_route = x_route if (platform == 'x' and x_via_route) else None
+            result = post_item(item, dry_run=dry_run, route=item_route)
+            if result.get('ok') and result.get('via') == 'buffer':
+                # ACCEPTED, NOT PUBLISHED. Buffer holds the post in the
+                # channel's queue and sends it at the next posting slot, so
+                # calling this 'posted' would claim something that has not
+                # happened yet. 'buffer_queued' is in no postable set, so the
+                # entry is never re-sent, and it is not in POSTABLE_STATUSES,
+                # so the hand-post sheet can never offer it either.
+                item['status'] = 'buffer_queued'
+                item['delivered_via'] = 'buffer'
+                item['buffer_queued_at'] = datetime.now(timezone.utc).isoformat()
+                item['buffer_post_id'] = result.get('id', '')
+                item['buffer_channel_id'] = result.get('channel_id', '')
+                item['buffer_post_status'] = result.get('buffer_status')
+                item['buffer_due_at'] = result.get('due_at')
+                item['post_id'] = result.get('id', '')
+                buffer_queued_this_run += 1
+                bodies_today_by_platform[platform].append(body)
+                successes.append({'index': idx, 'platform': platform,
+                                  'brand': item.get('brand'), 'id': item['buffer_post_id'],
+                                  'via': 'buffer', 'published': False,
+                                  'buffer_status': result.get('buffer_status'),
+                                  'due_at': result.get('due_at')})
+            elif result.get('ok'):
                 item['status'] = 'posted'
                 item['posted_at'] = datetime.now(timezone.utc).isoformat()
                 item['post_id'] = result.get('id', '')
@@ -689,13 +805,29 @@ def main():
                 successes.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
             else:
                 record_failure(item, idx, platform, result.get('error', 'unknown_error'))
+        except buffer_route.BufferError as e:
+            # Buffer said no. The route has already halted itself; mirror that
+            # here so the loop cannot ask a second time, and never treat it as
+            # the entry's fault -- the entry is deferred, not retired.
+            record_failure(item, idx, platform, f'buffer_route: {str(e)[:400]}')
         except urllib.error.HTTPError as e:
             detail = e.read().decode('utf-8', errors='replace')[:500]
             record_failure(item, idx, platform, f'HTTP {e.code}: {detail}')
         except Exception as e:
             record_failure(item, idx, platform, str(e)[:500])
+        if x_route is not None and x_route.halted and 'x' not in halted_platforms:
+            halted_platforms['x'] = f'buffer_route_halted: {x_route.halted}'
 
-    manual_drafts = emit_drafts(platform_states, halted_platforms, attempted_this_run,
+    # If the route refused part-way, the posts it did not carry still have to
+    # reach X somehow. Reporting X as routed would silently drop them, so the
+    # platform goes back to paused_for_posting and the sheet is cut exactly as
+    # it was before Buffer existed. Entries Buffer already accepted carry
+    # status 'buffer_queued' and are in no postable set, so they cannot be
+    # drafted -- no post is offered twice.
+    draft_states = dict(platform_states)
+    if x_route is not None and x_route.halted:
+        draft_states['x'] = social_platforms.platform_state('x', None, platform_policy)
+    manual_drafts = emit_drafts(draft_states, halted_platforms, attempted_this_run,
                                 posted_this_run, spent_today, posted_today)
     if not dry_run:
         write_json(QUEUE_PATH, queue)
@@ -710,6 +842,25 @@ def main():
         'limits': {'linkedin': li_limit, 'x': x_limit},
         'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
         'posted_this_run': posted_this_run,
+        'buffer_queued_this_run': buffer_queued_this_run,
+        # What Buffer holds is NOT what X has published. Anything reading this
+        # report has to be able to tell the two apart without knowing how the
+        # route works.
+        'delivery_routes': {
+            'x': {
+                'route': social_platforms.ROUTE_BUFFER,
+                'declared_enabled': x_route_declared,
+                'used_this_run': bool(x_route is not None),
+                'receipt': x_route.receipt() if x_route is not None else None,
+                'meaning_of_buffer_queued': (
+                    "Buffer accepted the post and holds it in the X channel's queue. It "
+                    "is NOT published yet: Buffer sends it at the channel's next posting "
+                    "slot. The entry keeps status 'buffer_queued' with the Buffer post "
+                    "id, is never re-sent, and is never offered on the hand-post sheet."
+                ),
+                'x_api_requests_made': 0,
+            }
+        },
         'attempted_this_run': attempted_this_run,
         'spent_today': spent_today,
         'halted_platforms': halted_platforms,

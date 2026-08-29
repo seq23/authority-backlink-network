@@ -15,6 +15,14 @@ Therefore the Authority Network cannot safely extract LinkedIn or X credentials 
 5. Add a token-health preflight and expiry/rotation alerts.
 6. Never write raw credentials to repo files, reports, ChatGPT messages, or generated artifacts.
 
+## Where credentials live ("the vault")
+
+There is no separate vault repository or directory in this portfolio, and inventing one would
+add a second place for a credential to rot. The vault for this repository is **GitHub Actions
+repository secrets** — `Settings → Secrets and variables → Actions → Secrets` — which is
+option 3 above and the only store any workflow here reads from. This section is the registry:
+a secret that is not named below is not wired to anything.
+
 ## Current required secret names
 
 - `LINKEDIN_ACCESS_TOKEN`
@@ -23,6 +31,14 @@ Therefore the Authority Network cannot safely extract LinkedIn or X credentials 
 - `X_API_SECRET`
 - `X_ACCESS_TOKEN`
 - `X_ACCESS_TOKEN_SECRET`
+- `BUFFER_ACCESS_TOKEN` — **the one that is actually in use for X.** X's own API is
+  pay-per-use and unfunded, so the six names above post nothing today; this token delivers
+  the same X posts through Buffer's free queue instead. Read only at workflow runtime by
+  `scripts/lib/buffer_route.py`, sent as `Authorization: Bearer` to
+  `https://api.buffer.com/graphql`, and passed through a redactor before any response can
+  reach a log or a report. Registered here on 2026-08-29; the value has never been written
+  to a repository file. `scripts/validators/validate_buffer_route.py` blocks the release if
+  it ever appears in a log, a report, the drafts sheet or a commit.
 
 ## Automation options
 

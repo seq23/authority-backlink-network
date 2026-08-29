@@ -143,6 +143,11 @@ def drive(tmp, name, policy, queue=None):
 
     for var in ("ENABLE_X_POSTING", "ENABLE_LINKEDIN_POSTING"):
         os.environ.pop(var, None)  # The declaration must govern, not an override.
+    # The pause contract is about the platform's OWN API. A Buffer token left in
+    # the environment would open the delivery route mid-scenario and change what
+    # every property below is measuring, so this file always runs without one.
+    # The route has its own guard: scripts/validators/validate_buffer_route.py.
+    os.environ.pop("BUFFER_ACCESS_TOKEN", None)
     os.environ.update({
         "SOCIAL_PLATFORM_POLICY_PATH": str(pp),
         "SOCIAL_QUEUE_PATH": str(qp), "SOCIAL_REPORT_PATH": str(rp),
@@ -157,7 +162,12 @@ def drive(tmp, name, policy, queue=None):
     mod = load_publisher()
     calls = {"post_item": [], "x_post": [], "linkedin_post": [], "urlopen": []}
 
-    def stub_post_item(item, dry_run=False):
+    def stub_post_item(item, dry_run=False, route=None):
+        # `route` is the delivery-route argument the publisher now passes (see
+        # scripts/lib/buffer_route.py). This harness always runs without a
+        # Buffer token, so it is always None here; accepting it keeps the stub
+        # honest about the real signature instead of turning every call into a
+        # TypeError that reads as "the platform refused".
         calls["post_item"].append(item.get("platform"))
         return {"ok": True, "id": f"stub-{len(calls['post_item'])}", "status": 201}
 

@@ -2,11 +2,69 @@
 
 This repo now supports 100% hands-off page publishing and social auto-posting for one LinkedIn account and one X account.
 
-## X is paused for posting — you post it by hand (2026-08-29)
+## X posts through Buffer now, at $0 — one thing left for you to do (2026-08-29)
 
-**What happens every day:** nothing is sent to X and no request is made to it; `scripts/social_drafts.py` writes the day's eight highest-value X posts to `reports/social-drafts.md` instead.
+**The short version.** X's own API stays off and is contacted zero times — it is pay-per-use
+and you decided not to fund it. Buffer publishes to the same X profile from its free plan at
+no per-post cost, so the day's X posts are handed to Buffer's queue instead of to you. The
+route is wired, the token is in repository secrets, and the code is guarded.
 
-**What you do:** open `reports/social-drafts.md`, post the eight posts on it by hand, then set `"marked_posted_through"` in `data/social-draft-ledger.json` to the batch id printed at the top of that sheet and commit. That is the whole loop.
+**What you have to do, once, in Buffer — and it takes about two minutes.** Your Buffer
+account (`seq.taylor@gmail.com`, organization "My Organization") has exactly **one channel
+connected, and it is TikTok**. There is no X channel, so there is currently nothing for the
+route to post to. Go to **buffer.com → Channels → New Channel → X**, connect the profile, and
+that is the whole job: the next scheduled run finds the channel by itself and starts posting.
+No commit, no secret, no code change. Your plan allows 3 channels and 1 is in use.
+
+**Until you do that, nothing is lost.** Every run says exactly why in
+`reports/social-publisher-report.json` under `delivery_routes.x.why_not_used`, and the day's
+eight posts keep going to `reports/social-drafts.md` to be posted by hand, exactly as they do
+today. The route replaces that step; it does not remove it.
+
+### What happens each day once the channel is connected
+
+The scheduled run picks the day's highest-value X posts in the usual priority order and hands
+them to Buffer. Buffer publishes each at the channel's next posting slot. **Your only
+remaining job is nothing at all** — no sheet to open, no batch to mark — unless Buffer is
+unavailable, in which case the hand-post sheet comes back on its own for that run.
+
+### Numbers that matter
+
+- **Buffer's own daily limit is discovered at runtime**, not hardcoded: the route reads
+  `dailyPostingLimits` for the channel before it sends anything. On this account it currently
+  reports **25 posts per channel per day**. This network's own `X_DAILY_LIMIT` of **8** is
+  lower, so 8 is what actually goes out. The lower of the two always governs.
+- The free plan also allows **10 scheduled posts at a time** across the organization, so
+  Buffer may refuse once the queue is deep. A refusal **stops the route for that run** — it
+  is never retried — and the remaining posts fall back to the hand-post sheet.
+- Buffer accepting a post is **not X publishing it**. Accepted entries carry status
+  `buffer_queued` with the Buffer post id; Buffer sends them at the channel's next slot.
+  Nothing here ever calls a queued post "posted".
+
+### The two things that cannot happen
+
+- **No post goes out twice.** A post Buffer accepted is never written onto the hand-post
+  sheet, and a post already sitting unposted on an open batch of that sheet is never taken by
+  Buffer.
+- **No request ever reaches X's own API.** Not a probe, not one attempt to see whether
+  credits appeared. Every one would be billable.
+
+`scripts/validators/validate_buffer_route.py` blocks the release if any of that stops being
+true, including if `BUFFER_ACCESS_TOKEN` ever reaches a log, a report or a commit.
+
+### Turning the route off
+
+`data/social-brand-policy.json` → `platforms.x.delivery_route.enabled` → `false`, and commit.
+The hand-post sheet comes back on the next run, unchanged, with nothing to un-mark. Turning
+X's own paid API back on is still the separate single boolean below.
+
+## If you ever fund X's own API instead (2026-08-29)
+
+### Why the API is off
+
+**What happens every day:** nothing is sent to X and no request is made to it. Where the day's posts go depends on the Buffer route above — into Buffer's queue when the X channel is connected, and onto `reports/social-drafts.md` when it is not, or when Buffer is unavailable or has refused.
+
+**The hand-post loop, when it is the one running:** open `reports/social-drafts.md`, post what is on it by hand, then set `"marked_posted_through"` in `data/social-draft-ledger.json` to the batch id printed at the top of that sheet and commit. That is the whole loop. A post Buffer has already accepted never appears there, so there is nothing to reconcile between the two.
 
 **What is actually wrong.** Every write to X returns:
 

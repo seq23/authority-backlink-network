@@ -136,6 +136,20 @@ STATE_UNDOCUMENTED_OFF = "off_without_a_recorded_decision"
 NON_POSTING_STATES = (STATE_PAUSED, STATE_PAUSED_FOR_POSTING, STATE_UNDOCUMENTED_OFF)
 STATE_UNCREDENTIALLED = "on_but_uncredentialled"
 STATE_ON = "on_and_posting"
+# The API lane is off AND a delivery route is carrying the platform's posts
+# anyway. X is here whenever Buffer is connected: X's own API is not called at
+# all (it is pay-per-use and unfunded), and the posts leave through Buffer's
+# free queue instead of through the owner's hands. Distinct from
+# STATE_PAUSED_FOR_POSTING because the drafting fallback must NOT also offer a
+# post that a route has already accepted -- that is a double post.
+STATE_ROUTED = "paused_for_posting_delivered_via_route"
+
+# A DELIVERY ROUTE is another way for a post to leave, declared on the platform
+# it delivers for. It is not a platform: the queue, the priority order and the
+# brand rotation are unchanged, and turning the platform's own API back on is
+# still the same single boolean.
+DELIVERY_ROUTE_FIELD = "delivery_route"
+ROUTE_BUFFER = "buffer"
 
 
 def load_policy(path=None) -> dict:
@@ -273,6 +287,43 @@ def platform_state(platform: str, missing_secrets=None, policy=None) -> str:
     return STATE_ON
 
 
+def delivery_route(platform: str, policy=None) -> dict:
+    """The declared delivery route for one platform, or {}.
+
+    Shape, on the platform's own entry in data/social-brand-policy.json:
+
+        "delivery_route": {"route": "buffer", "enabled": true}
+
+    Absent means no route: the platform posts through its own API when enabled,
+    and through the owner's hands when it is paused for posting. Adding a route
+    never changes either of those; it only adds a way out that is tried first.
+    """
+    entry = declaration(platform, policy).get(DELIVERY_ROUTE_FIELD)
+    return entry if isinstance(entry, dict) else {}
+
+
+def route_enabled(platform: str, route: str, policy=None) -> bool:
+    """True when THIS route is declared and switched on for this platform.
+
+    Overridable per run by ENABLE_<PLATFORM>_<ROUTE>_ROUTE, on the same
+    unset-or-blank-means-no-opinion rule as the platform switch itself, so a
+    workflow input that does not exist cannot silently switch a route off.
+    """
+    raw = (os.getenv(f"ENABLE_{platform.upper()}_{route.upper()}_ROUTE") or "").strip().lower()
+    if raw in TRUTHY:
+        return True
+    if raw in FALSEY:
+        return False
+    declared = delivery_route(platform, policy)
+    return bool(declared.get("enabled")) and str(declared.get("route", "")).lower() == route
+
+
+def routed_platforms(policy=None) -> list:
+    """Platforms carrying a switched-on delivery route."""
+    return [p for p in PLATFORMS
+            if any(route_enabled(p, r, policy) for r in (ROUTE_BUFFER,))]
+
+
 def partition_queue(queue, policy=None):
     """Split queue entries into what can post now and what is parked by a switch.
 
@@ -281,7 +332,11 @@ def partition_queue(queue, policy=None):
     platform's `enabled` flips back to true -- no queue rewrite, no per-row
     un-marking, no re-backfill.
     """
-    enabled = set(enabled_platforms(policy))
+    # A platform with a switched-on delivery route is NOT parked: its posts
+    # still leave, through the route rather than through its own API. Counting
+    # them as parked would report 826 X entries as going nowhere on a day the
+    # route carried them.
+    enabled = set(enabled_platforms(policy)) | set(routed_platforms(policy))
     postable, parked = [], {}
     for i, item in enumerate(queue):
         if item.get("status") not in POSTABLE_STATUSES:

@@ -105,6 +105,12 @@ jobs:
           X_OAUTH2_REFRESH_TOKEN: ${{ secrets.X_OAUTH2_REFRESH_TOKEN }}
           X_OAUTH2_CLIENT_ID: ${{ secrets.X_OAUTH2_CLIENT_ID }}
           X_OAUTH2_CLIENT_SECRET: ${{ secrets.X_OAUTH2_CLIENT_SECRET }}
+          # The credential that actually carries X. X's own API above is
+          # pay-per-use and unfunded, so it is switched off and contacted zero
+          # times; this token hands the day's X posts to Buffer's free queue
+          # instead. Read only here, at runtime, and never written to a file.
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          ENABLE_X_BUFFER_ROUTE: ${{ vars.ENABLE_X_BUFFER_ROUTE }}
         run: python3 scripts/social_publisher.py
       - uses: actions/setup-node@v7
         with:
