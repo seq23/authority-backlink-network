@@ -24,14 +24,45 @@ them: the legacy REST API (`api.bufferapp.com/1/*`) answers 401 "Public API
 tokens are not accepted for REST API access" and Buffer retires it on
 2027-02-01; `graph.buffer.com` answers 401 "Please use api.buffer.com".
 
-Limits are DISCOVERED, never hardcoded
---------------------------------------
-Buffer's own per-channel daily posting limit is read at runtime from the
-`dailyPostingLimits` query and used as a hard ceiling. A number typed into this
-file would be a guess that stays wrong after Buffer changes it, and the cost of
-being wrong here is the failure this repository already had once: on 2026-08-29
-a run made 581 requests in 76 seconds because its caps counted successes rather
-than attempts, so a refusal cost one request per queue entry.
+Limits are DISCOVERED, never hardcoded, and the STRICTEST one binds
+-------------------------------------------------------------------
+The owner pays Buffer nothing either -- that is the entire point of being here
+rather than on X's paid API -- so the free plan's allowance is a hard ceiling,
+not guidance. Three different ceilings apply at once and they are different
+KINDS of limit, discovered from the API on every run:
+
+  daily rate, per channel   `dailyPostingLimits` -> `limit`, with `scheduled`
+                            and `sent` already counted against it. Buffer
+                            reported 50 for the X channel and 25 for the TikTok
+                            one, so it is per channel and it is per day.
+  standing queue depth      `account.organizations.limits.scheduledPosts`,
+                            which on this free plan is 10. It is NOT a rate: it
+                            caps how many posts may sit waiting to go out AT
+                            ONCE. Its siblings in the same type name their scope
+                            -- `scheduledStoriesPerChannel`,
+                            `scheduledThreadsPerChannel` -- and this one does
+                            not, so it is read as the whole organization's,
+                            which is the stricter of the two readings and
+                            therefore the safe one.
+  this network's own cap    X_DAILY_LIMIT, minus what this repository already
+                            handed Buffer today.
+
+The queue-depth cap is the one that actually governs, and it changes the shape
+of the lane. "Eight a day" into a queue ten deep fills up on day two and stays
+full. So the route does not push a daily quota: it TOPS THE QUEUE UP to just
+under the discovered depth cap and adds more only as Buffer drains it. On a day
+Buffer has published nothing, that means very few posts leave, and that is the
+correct answer rather than a fault.
+
+A number typed into this file would be a guess that stays wrong after Buffer
+changes it or the owner changes plan, and the cost of being wrong here is the
+failure this repository already had once: on 2026-08-29 a run made 581 requests
+in 76 seconds because its caps counted successes rather than attempts, so a
+refusal cost one request per queue entry.
+
+Nothing here spends money or asks to. There is no upgrade call, no trial, and
+no attempt to post past a refusal to see what happens: a limit refusal halts
+the route for the run and is reported by name.
 
 Two rules follow, and both are enforced by the caller
 (scripts/social_publisher.py) and guarded by
@@ -47,6 +78,15 @@ Queued is not published
 it at the channel's next posting time. So an accepted post is `buffer_queued`,
 not `posted`, and the two are recorded differently on the queue entry. Nothing
 here claims a post is live on X.
+
+What happens to a post the route cannot take
+--------------------------------------------
+Nothing. It stays `queued_for_auto_post` in data/social-queue.json and goes out
+on a later run as Buffer's queue drains. There is no second holding place and
+no sheet for a human: the owner said she would never hand-post, so a lane that
+asked her to would be a lane nothing downstream consumes. "Deferred because
+Buffer's queue is full" is a named, counted state in the run report, not a task
+assigned to anybody.
 """
 from __future__ import annotations
 
@@ -133,7 +173,33 @@ def graphql(query, variables=None, timeout=TIMEOUT, opener=None):
 # Buffer's name for X. The Service enum on this schema still says "twitter";
 # there is no "x" member, so matching on "x" finds nothing and the route would
 # report "no channel connected" forever with an X channel sitting right there.
+#
+# This mapping is the ONLY way a channel is ever chosen. There is deliberately
+# no "use the first channel" path: this Buffer account also carries
+# `iamcindymercer`, a TikTok channel that belongs to a different project of the
+# owner's, and a first-channel fallback would post this network's citations to
+# it. `open()` re-checks the selected channel's service against this mapping
+# before the route is marked available, so a selection bug cannot survive even
+# if the matching loop above it is changed.
 SERVICE_FOR_PLATFORM = {"x": ("twitter",)}
+
+# Statuses in which a Buffer post occupies one of the free plan's scheduled
+# slots. `sent` does not -- it has left. `error` does not -- Buffer gave up on
+# it. Read from the PostStatus enum on the live schema: draft, error,
+# needs_approval, scheduled, sending, sent.
+OCCUPYING_STATUSES = ("scheduled", "draft", "needs_approval", "sending")
+
+# Where the free plan declares how many posts may sit queued at once.
+QUEUE_DEPTH_LIMIT_FIELD = "scheduledPosts"
+
+POSTS_QUERY = """
+query Q($input: PostsInput!, $first: Int) {
+  posts(input: $input, first: $first) {
+    totalCount
+    edges { node { id status channelId dueAt } }
+  }
+}
+"""
 
 CHANNELS_QUERY = """
 query C($input: ChannelsInput!) {

@@ -217,12 +217,26 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
     # respect it, so the shape of the `posts` query has to be known exactly.
     if args.queue_depth:
         report["posts_return_type"] = posts_return_type
-        for name in ("PostsFilter", posts_return_type, "PostsConnection",
+        for name in ("PostsResults", "PostsFilter", posts_return_type, "PostsConnection",
                      "PostConnection", "PostEdge", "DateTimeComparator",
                      "DateTimePresence"):
             described = describe_type(name, types)
             for member in (described or {}).get("possibleTypes") or []:
                 describe_type(member, types)
+        # Standing depth without the `posts` query: dailyPostingLimits takes a
+        # date, and `scheduled` is how many posts are queued FOR that date. The
+        # addToQueue slots land on the next free posting times, so summing the
+        # next fortnight is the whole standing queue.
+        from datetime import date as _date, timedelta as _td
+        for offset in range(0, 15):
+            day = (_date.today() + _td(days=offset)).isoformat()
+            try_query(f"dailyPostingLimits[{day}]", """
+                query L($input: DailyPostingLimitsInput!) {
+                  dailyPostingLimits(input: $input) {
+                    channelId isAtLimit limit scheduled sent }
+                }""",
+                {"input": {"channelIds": [c["id"] for c in channels],
+                           "date": day + "T12:00:00.000Z"}}, live)
         selections = {
             "connection": "totalCount edges { node { id status channelId dueAt } }",
             "list": "id status channelId dueAt",
@@ -243,6 +257,15 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
                         # other two shapes is two more requests for nothing.
                         break
             break
+        if x_channels:
+            try_query("posts[channel-scoped]", """
+                query P($input: PostsInput!, $first: Int) {
+                  posts(input: $input, first: $first) { totalCount }
+                }""",
+                {"input": {"organizationId": org_ids[0],
+                           "filter": {"channelIds": [x_channels[0]["id"]],
+                                      "status": ["scheduled"]}}, "first": 100},
+                live)
 
     if args.auth_check:
         # A channel id that cannot exist. If the token were unable to post at
