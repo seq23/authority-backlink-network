@@ -32,7 +32,9 @@
       "affiliate_topical_scope",
       "brand_link_concentration",
       "selfheal_wiring",
-      "social_enqueue_completeness"
+      "social_enqueue_completeness",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "release": [
       "json",
@@ -60,7 +62,9 @@
       "affiliate_topical_scope",
       "brand_link_concentration",
       "selfheal_wiring",
-      "social_enqueue_completeness"
+      "social_enqueue_completeness",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "full": [
       "json",
@@ -89,7 +93,9 @@
       "affiliate_topical_scope",
       "brand_link_concentration",
       "selfheal_wiring",
-      "social_enqueue_completeness"
+      "social_enqueue_completeness",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "cache-self-test": [
       "python",
@@ -216,6 +222,14 @@
     "social_enqueue_completeness": {
       "severity": "HARD_FAIL",
       "rationale": "Measured opportunity that produces nothing, silently. The autopilot published up to 12 pages a day and then enqueued social distribution with published[:LINKEDIN_DAILY_LIMIT] and x_pool[:X_DAILY_LIMIT]; because x_pool was built item-outer/template-inner, all 5 X slots went to published[0]. Exactly one page a day reached the queue on either platform and 428 of 474 published pages were never queued at all - not deferred, not logged, not visible in any report. Daily platform rate limits remain enforced in scripts/social_publisher.py, which leaves unposted items queued_for_auto_post so they roll to the next run: a cap that defers is fine, a cap that drops is not. This blocks if an enqueue-time slice is reintroduced, or if any governed run publishes pages that never enter the queue."
+    },
+    "script_callers": {
+      "severity": "HARD_FAIL",
+      "rationale": "Executable failure, one step earlier. Seven scripts under scripts/ had no caller at all and nothing said so: three citation measurement tools and four one-shot backfills. A filename grep found the docstring that named the script and the README paragraph that described it, so each read as wired, and 'is this still reachable' had to be re-answered by hand every time. Two had rotted unnoticed while unreachable - measure_internal_reachability.py read sites/ from an absolute path outside this checkout, so a run from a worktree measured a different tree, then crashed writing its result into a scratch directory belonging to a session that no longer existed. An unreachable script is untested by everything, including this validation, while still looking live. This blocks on any tracked script under scripts/ that no runner invokes and no source imports, counts only invocations and real imports rather than prose mentions, excludes itself from its own reference corpus, and fails if it ever examines zero scripts."
+    },
+    "affiliate_rel_disclosure": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence, already named in severity_policy. Every published page states that affiliated citations carry rel=\"sponsored nofollow\". Nothing verified it: validate_brand_link_concentration.py uses the sponsored token to select commercial links, so a link that lost its rel drops out of the concentration count instead of being reported, and the aggregate looks better for the defect. The only tool that could see it, backfill_rel_attributes.py, had no caller. This is that same scan run as a check: it fails if any absolute link to a domain in data/brands.json is missing either token. It measures 0 missing across 632 pages today, so blocking cannot regress a clean surface."
     }
   },
   "severity_matrix_policy": {

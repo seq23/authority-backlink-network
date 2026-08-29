@@ -63,7 +63,20 @@
     "validate:brand-link-concentration": "python3 scripts/validators/validate_brand_link_concentration.py",
     "links:reduce-concentration": "python3 scripts/reduce_commercial_link_concentration.py",
     "validate:selfheal-wiring": "python3 scripts/validators/validate_selfheal_wiring.py",
-    "validate:social-enqueue-completeness": "python3 scripts/validators/validate_social_enqueue_completeness.py"
+    "validate:social-enqueue-completeness": "python3 scripts/validators/validate_social_enqueue_completeness.py",
+    "links:backfill-rel": "python3 scripts/backfill_rel_attributes.py",
+    "validate:affiliate-rel-disclosure": "python3 scripts/backfill_rel_attributes.py --check",
+    "validate:script-callers": "python3 scripts/validators/validate_script_callers.py",
+    "measure:citation-shape": "python3 scripts/measurement/measure_citation_shape.py",
+    "measure:crawler-access": "python3 scripts/measurement/measure_crawler_access.py",
+    "measure:internal-reachability": "python3 scripts/measurement/measure_internal_reachability.py",
+    "measure:citation-all": "npm run measure:internal-reachability && npm run measure:crawler-access && npm run measure:citation-shape",
+    "pages:debloat": "python3 scripts/debloat_daily_pages.py",
+    "pages:debloat:write": "python3 scripts/debloat_daily_pages.py --write",
+    "pages:retrofit-recommendation-summary": "node scripts/retrofit_recommendation_summary.js sites",
+    "pages:backfill-missed-days": "python3 scripts/backfill_authority_v4.py",
+    "analytics:install-clarity": "node scripts/install_clarity.js",
+    "cadence:reseed-lastmod": "python3 scripts/reseed_lastmod_from_git.py"
   },
   "devDependencies": {}
 }
