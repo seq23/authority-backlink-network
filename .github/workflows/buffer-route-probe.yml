@@ -40,6 +40,6 @@ jobs:
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: |
-          python3 scripts/buffer_route_probe.py \
+          python3 scripts/buffer_route_probe.py --auth-check \
             ${{ github.event.inputs.channels_input && format('--channels-input ''{0}''', github.event.inputs.channels_input) || '' }} \
             ${{ github.event.inputs.schedule_test_text && format('--schedule-test ''{0}'' --channel-id ''{1}''', github.event.inputs.schedule_test_text, github.event.inputs.channel_id) || '' }}

@@ -112,7 +112,11 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
     ap.add_argument("--schedule-test", metavar="TEXT", default=None,
                     help="THE one write: schedule this text into the channel's queue.")
     ap.add_argument("--channel-id", default=None)
-    ap.add_argument("--scheduling-type", default="scheduled")
+    ap.add_argument("--scheduling-type", default="automatic")
+    ap.add_argument("--auth-check", action="store_true",
+                    help="Call createPost against a channel id that does not exist. "
+                         "Creates nothing; separates 'the token may not post' from "
+                         "'there is no channel to post to'.")
     ap.add_argument("--share-mode", default="addToQueue")
     args = ap.parse_args(argv)
 
@@ -140,7 +144,9 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
 
     for name in ["ChannelsInput", "ChannelsFiltersInput", "DailyPostingLimitsInput",
                  "CreatePostInput", "ShareMode", "SchedulingType", "Service",
-                 "ChannelType", "PostActionPayload", *sorted(n for n in wanted if n)]:
+                 "ChannelType", "PostActionPayload", "DailyPostingLimitStatus",
+                 "OrganizationLimits", "Post", "PostStatus",
+                 *sorted(n for n in wanted if n)]:
         described = describe_type(name, types)
         # Union payloads hide the real shapes behind possibleTypes; a route that
         # cannot read the error branch cannot tell a refusal from a success.
@@ -173,12 +179,48 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
                   if str(c.get("service", "")).lower() in ("twitter", "x")]
     report["x_channel_ids"] = [c["id"] for c in x_channels]
 
+    # ---- what the plan itself allows
+    for org in org_ids:
+        try_query(f"organization_limits[{org}]", """
+            query O { account { organizations { id name channelCount
+              limits { %s } } } }""" % " ".join(
+                  f.split(":")[0] for f in
+                  (types.get("OrganizationLimits") or {}).get("fields") or []) or "__typename",
+            None, live)
+        break
+
     # ---- the real ceiling, read from Buffer rather than guessed
     if channels:
+        limit_fields = " ".join(f.split(":")[0] for f in
+                                (types.get("DailyPostingLimitStatus") or {}).get("fields") or [])
         try_query("dailyPostingLimits", """
             query L($input: DailyPostingLimitsInput!) {
-              dailyPostingLimits(input: $input) { __typename }
-            }""", {"input": {"channelIds": [c["id"] for c in channels]}}, live)
+              dailyPostingLimits(input: $input) { %s }
+            }""" % (limit_fields or "__typename"),
+            {"input": {"channelIds": [c["id"] for c in channels]}}, live)
+
+    if args.auth_check:
+        # A channel id that cannot exist. If the token were unable to post at
+        # all this answers UnauthorizedError; if it may post it answers
+        # NotFoundError. Either way nothing is created.
+        try_query("mutation_authorization", """
+            mutation A($input: CreatePostInput!) {
+              createPost(input: $input) {
+                __typename
+                ... on PostActionSuccess { post { id } }
+                ... on NotFoundError { message }
+                ... on UnauthorizedError { message }
+                ... on InvalidInputError { message }
+                ... on LimitReachedError { message }
+                ... on RestProxyError { code message }
+                ... on UnexpectedError { message }
+              }
+            }""",
+            {"input": {"channelId": "000000000000000000000000",
+                       "text": "authorization probe, never created",
+                       "assets": [], "needsApproval": False,
+                       "mode": "addToQueue", "schedulingType": "automatic"}},
+            live)
 
     if args.schedule_test:
         channel_id = args.channel_id or (x_channels[0]["id"] if x_channels else None)
@@ -188,7 +230,16 @@ def main(argv=None):  # noqa: C901 - a probe is a list of questions
             report["schedule_test_channel"] = channel_id
             try_query("schedule_test", """
                 mutation S($input: CreatePostInput!) {
-                  createPost(input: $input) { __typename }
+                  createPost(input: $input) {
+                    __typename
+                    ... on PostActionSuccess { post { id status dueAt channelId text } }
+                    ... on NotFoundError { message }
+                    ... on UnauthorizedError { message }
+                    ... on InvalidInputError { message }
+                    ... on LimitReachedError { message }
+                    ... on RestProxyError { code message }
+                    ... on UnexpectedError { message }
+                  }
                 }""",
                 {"input": {"channelId": channel_id, "text": args.schedule_test,
                            "assets": [], "needsApproval": False,
