@@ -78,7 +78,7 @@ def validate_required_secrets(platform):
         # present: it is what the X developer console now hands out, and it is a
         # single token rather than a signed pair. OAuth 1.0a stays supported so an
         # existing 1.0a setup keeps working unchanged.
-        if os.getenv('X_OAUTH2_ACCESS_TOKEN'):
+        if x_oauth1a_complete() or os.getenv('X_OAUTH2_ACCESS_TOKEN'):
             missing = []
         else:
             missing = [k for k in ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET'] if not os.getenv(k)]
@@ -196,7 +196,23 @@ def x_send(text, bearer=None):
         return {'ok': True, 'status': resp.status, 'id': out.get('data', {}).get('id', ''), 'body': out}
 
 
+def x_oauth1a_complete():
+    return all(os.getenv(k) for k in ('X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET'))
+
+
 def x_post(text):
+    # OAuth 1.0a wins when a complete set is present, even though OAuth 2.0 is the
+    # newer path. Measured on this account: refreshing an OAuth 2.0 token returns a
+    # NEW refresh token and invalidates the one that was sent. A scheduled lane
+    # cannot write that rotated value back - GITHUB_TOKEN cannot update repository
+    # secrets - so the OAuth 2.0 path survives exactly one refresh and then 401s
+    # forever, with no signal until it does.
+    #
+    # OAuth 1.0a access tokens do not expire and need no refresh, which is what a
+    # cron-driven publisher actually wants. OAuth 2.0 stays supported for a setup
+    # that only has bearer credentials.
+    if x_oauth1a_complete():
+        return x_send(text)
     bearer = os.getenv('X_OAUTH2_ACCESS_TOKEN')
     if not bearer:
         return x_send(text)
