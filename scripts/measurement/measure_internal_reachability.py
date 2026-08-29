@@ -14,14 +14,37 @@ An orphan here means: no other page in the publication links to it. That is the
 definition that matters for crawl discovery, and it is stricter than "not
 reachable from the homepage in N hops".
 """
-import os, re, html, json, collections
+import argparse, os, re, html, json, collections
 
-ROOT = '/Users/sequoiataylor/GitHub/authority-backlink-network/sites'
-PUBS = {
-    'founder-operator': 'founderoperatorlibrary.com',
-    'memphis-local': 'memphisvendorlibrary.com',
-    'professional-resources': 'professionalresourcelibrary.com',
-}
+# Resolved from this file, never from an absolute path. The earlier hard-coded
+# /Users/.../GitHub/authority-backlink-network/sites meant a run from a worktree
+# silently measured the canonical checkout instead of the tree in hand, and the
+# result was written into a scratch directory belonging to a session that no
+# longer exists, so the script crashed after printing the numbers.
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DEFAULT_SITES = os.path.join(REPO, 'sites')
+DEFAULT_OUT = os.path.join(REPO, 'reports/citation-measurement/internal-reachability.json')
+
+# Publication folder -> the host it is served on. Read from data/publications.json
+# so a fourth publication does not have to be remembered here.
+def publications(repo):
+    path = os.path.join(repo, 'data/publications.json')
+    pubs = {}
+    for entry in json.load(open(path, encoding='utf-8')):
+        folder = entry['folder'].rstrip('/').split('/')[-1]
+        raw = entry.get('working_domain') or entry.get('domain') or entry.get('base_url') or ''
+        host = re.sub(r'^https?://(?:www\.)?', '', raw).strip('/')
+        if host:
+            pubs[folder] = host.lower()
+    return pubs
+
+
+ap = argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--sites', default=DEFAULT_SITES)
+ap.add_argument('--out', default=DEFAULT_OUT)
+args = ap.parse_args()
+ROOT = args.sites
+PUBS = publications(REPO)
 HREF = re.compile(r'<a\b[^>]*href=["\']([^"\']+)["\']', re.I)
 
 
@@ -97,4 +120,8 @@ for pub_dir, host in PUBS.items():
     print('   depth histogram            %s' % dict(sorted(hist.items())))
     print('   median inbound links/page  %d' % out[host]['median_inbound_links'])
 
-json.dump(out, open('/private/tmp/claude-501/-Users-sequoiataylor/f3ec99dc-fe58-442f-9c3f-73876fa39d72/scratchpad/linkgraph.json', 'w'), indent=2)
+os.makedirs(os.path.dirname(args.out), exist_ok=True)
+with open(args.out, 'w', encoding='utf-8') as fh:
+    json.dump(out, fh, indent=2)
+    fh.write('\n')
+print('wrote %s' % os.path.relpath(args.out, REPO))
