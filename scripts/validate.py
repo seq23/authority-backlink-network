@@ -49,6 +49,7 @@ COMMANDS = {
     "social_rate_limits": [sys.executable, "scripts/validators/validate_social_rate_limits.py"],
     "social_attempt_budget": [sys.executable, "scripts/validators/validate_social_attempt_budget.py"],
     "social_drafts_fallback": [sys.executable, "scripts/validators/validate_social_drafts_fallback.py"],
+    "social_pause_modes": [sys.executable, "scripts/validators/validate_social_pause_modes.py"],
     "citation_probe_wiring": [sys.executable, "scripts/validators/validate_citation_probe_wiring.py"],
     "social_queue_priority": [sys.executable, "scripts/prioritize_social_queue.py", "--check"],
     "affiliate_rel_disclosure": [sys.executable, "scripts/backfill_rel_attributes.py", "--check"],

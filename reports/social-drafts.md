@@ -1,14 +1,14 @@
 # Post these by hand
 
-_Generated 2026-08-29T22:19:06.227536+00:00. Regenerated on every scheduled run; nothing here is lost._
+_Generated 2026-08-29T22:23:03.149909+00:00. Regenerated on every scheduled run; nothing here is lost._
 
-Automatic posting is not working right now:
+Automatic posting is not carrying these right now:
 
-- **x** — the whole x budget for today was spent on attempts that all failed, so this run had nothing left to try
+- **x** — the x API lane is switched off by a recorded decision (pause_mode "draft_by_hand"), so nothing is sent to it and these are posted by hand instead
   - x answered this to 481 posts: `HTTP 429: {"detail":"Too Many Requests","status":429,"title":"Too Many Requests","type":"about:blank"}`
   - x answered this to 100 posts: `HTTP 402: {"detail":"credits depleted","status":402,"title":"Payment Required","type":"https://api.x.com/2/problems/credits-depleted"}`
 
-See `docs/SOCIAL-AUTOPOST-SECRETS.md` for what that response means and what fixes it. Nothing below is lost either way: the posting queue is untouched, and automatic posting resumes on its own the moment a post succeeds.
+See `docs/SOCIAL-AUTOPOST-SECRETS.md` for what that means and what changes it. Nothing below is lost either way: the posting queue is untouched, and automatic posting resumes the moment the API can post again -- on its own after an outage, or by setting the platform's `enabled` back to true in `data/social-brand-policy.json` if it was paused for posting.
 
 ## When you have posted these
 

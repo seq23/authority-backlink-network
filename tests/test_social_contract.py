@@ -58,6 +58,10 @@ with tempfile.TemporaryDirectory() as td:
         policy = td/f'policy-{switch}.json'
         doc = json.loads(policy_src.read_text())
         doc['platforms']['linkedin']['enabled'] = switch
+        # X is paused for posting in the committed declaration. This fixture is
+        # about the LinkedIn switch in isolation, so X is switched ON here on
+        # purpose -- otherwise "X was unaffected" would be vacuously true.
+        doc['platforms']['x']['enabled'] = True
         doc['platforms']['linkedin'].setdefault('paused_on', '2026-08-29')
         doc['platforms']['linkedin'].setdefault('paused_by', 'owner')
         doc['platforms']['linkedin'].setdefault('paused_reason', 'fixture')
@@ -85,11 +89,14 @@ with tempfile.TemporaryDirectory() as td:
         else:
             assert not r.get('parked_by_platform_switch'), 'switch on must park nothing'
 
-    # A run with every switch off must stop by NAME, not exit 0 having done nothing.
+    # A run with every switch off DORMANT must stop by NAME, not exit 0 having
+    # done nothing. Dormant is the case that produces nothing at all; the
+    # paused-for-posting case below must NOT report itself as a stop.
     policy_off = td/'policy-all-off.json'
     doc = json.loads(policy_src.read_text())
     for plat in ('linkedin','x'):
-        doc['platforms'][plat].update({'enabled': False, 'paused_on':'2026-08-29',
+        doc['platforms'][plat].update({'enabled': False, 'pause_mode':'dormant',
+                                       'paused_on':'2026-08-29',
                                        'paused_by':'owner','paused_reason':'fixture'})
     policy_off.write_text(json.dumps(doc, indent=2), encoding='utf-8')
     q4=td/'queue4.json'; r4=td/'report4.json'
@@ -103,6 +110,54 @@ with tempfile.TemporaryDirectory() as td:
     assert r['status']=='stopped_no_enabled_platform','a run with nowhere to post must stop by name'
     assert r['stop_reason'],'the stop must carry a reason'
 
+    assert r['platform_states']['x']=='paused_by_switch','a dormant pause must read as one'
+    assert r['manual_drafts']['drafts_written']==0,'a dormant pause must produce no drafts'
+
     # Pacing knobs must be reported, so a run that silently lost its spacing is visible.
     assert r['pacing']['run_limit']>=1 and 'min_interval_seconds' in r['pacing'],'pacing not reported'
-print(json.dumps({'status':'PASS','fixtures':['platform_switch_round_trip','all_switches_off_named_stop','dry_run_nonmutation','both_platforms_exercised','missing_secrets_nonblocking_by_default','strict_social_failure_opt_in','one_platform_missing_does_not_abort_the_other','pacing_reported']}))
+
+    # The other pause: X switched off FOR POSTING. Nothing may be sent to the
+    # API, and the run must NOT report itself as a stop -- it still hands the
+    # day's posts over to be published by hand. "Posted nothing, drafted 8" is
+    # work; only "nothing produced by any route" is a stop.
+    policy_draft = td/'policy-draft-by-hand.json'
+    doc = json.loads(policy_src.read_text())
+    doc['platforms']['linkedin'].update({'enabled': False, 'pause_mode':'dormant',
+                                         'paused_on':'2026-08-29','paused_by':'owner',
+                                         'paused_reason':'fixture'})
+    doc['platforms']['x'].update({'enabled': False, 'pause_mode':'draft_by_hand',
+                                  'paused_on':'2026-08-29','paused_by':'owner',
+                                  'paused_reason':'fixture'})
+    policy_draft.write_text(json.dumps(doc, indent=2), encoding='utf-8')
+    q5=td/'queue5.json'; r5=td/'report5.json'
+    rows5=[{'platform':'x','brand':'Fixture','post_type':'resource',
+            'body':f'X fixture {i}','source_url':f'https://example.com/{i}',
+            'status':'queued_for_auto_post'} for i in range(10)]
+    q5.write_text(json.dumps(rows5,indent=2),encoding='utf-8')
+    before5=q5.read_bytes()
+    env5={**os.environ,'SOCIAL_QUEUE_PATH':str(q5),'SOCIAL_REPORT_PATH':str(r5),
+          'SOCIAL_PLATFORM_POLICY_PATH':str(policy_draft),'SOCIAL_DRY_RUN':'true',
+          'SOCIAL_DRAFT_LEDGER_PATH':str(td/'ledger5.json'),
+          'SOCIAL_DRAFTS_PATH':str(td/'drafts5.md')}
+    for key in ['ENABLE_LINKEDIN_POSTING','ENABLE_X_POSTING']: env5.pop(key,None)
+    p5=subprocess.run([sys.executable,'scripts/social_publisher.py'],cwd=ROOT,env=env5,text=True,capture_output=True)
+    assert p5.returncode==0,(p5.stdout,p5.stderr)
+    r=json.loads(r5.read_text())
+    assert r['platform_states']['x']=='paused_for_posting_drafts_by_hand',\
+        'a pause_mode of draft_by_hand must resolve to its own state'
+    assert r['attempts']==[] and r['api_requests_made']==0,\
+        'a platform paused for posting must be contacted zero times'
+    assert r['manual_drafts']['drafts_written']>0,\
+        'a platform paused for posting must still hand its posts over to be posted by hand'
+    assert r['manual_drafts']['drafts_written']<=doc['platforms']['x']['daily_limit'],\
+        'a hand-posting batch must never exceed a day of work'
+    assert r['status']!='stopped_no_enabled_platform',\
+        'a run that produced a day of drafts is not a stop'
+    assert 'x' in r['named_stops'] and 'draft' in r['named_stops']['x'].lower(),\
+        'the stop must say the posts still went out, and where to find them'
+    assert q5.read_bytes()==before5,'pausing for posting rewrote the queue'
+    assert 'linkedin' not in r['manual_drafts']['actions'],\
+        'a dormant LinkedIn must not be drafted, even while X is drafting beside it'
+    assert not (td/'ledger5.json').exists() and not (td/'drafts5.md').exists(),\
+        'a dry run must report what it would draft and persist nothing'
+print(json.dumps({'status':'PASS','fixtures':['platform_switch_round_trip','all_switches_off_named_stop','paused_for_posting_still_drafts_and_makes_no_requests','dry_run_nonmutation','both_platforms_exercised','missing_secrets_nonblocking_by_default','strict_social_failure_opt_in','one_platform_missing_does_not_abort_the_other','pacing_reported']}))

@@ -322,10 +322,12 @@ def post_item(item, dry_run=False):
 def named_stops_for(platform_states, paused, secret_skips):
     """A named reason for every platform that did nothing this run.
 
-    "Did nothing" must never be left to be inferred. The three cases read
-    differently on purpose: a paused switch is a decision, an uncredentialled
-    switch is a to-do, and an undocumented switch-off is a bug that
-    scripts/validators/validate_social_rate_limits.py also fails the build on.
+    "Did nothing" must never be left to be inferred. The cases read differently
+    on purpose: a dormant pause is a decision to produce nothing, a pause FOR
+    POSTING is a decision to stop the API while distribution continues by hand,
+    an uncredentialled switch is a to-do, and an undocumented switch-off is a
+    bug that scripts/validators/validate_social_rate_limits.py also fails the
+    build on.
     """
     stops = {}
     for platform, state in platform_states.items():
@@ -334,7 +336,20 @@ def named_stops_for(platform_states, paused, secret_skips):
         if state == social_platforms.STATE_PAUSED:
             stops[platform] = (
                 f"{platform}_paused_by_switch: {(paused.get(platform) or {}).get('paused_reason')} "
-                f"Turn it back on by setting platforms.{platform}.enabled to true in "
+                f"Nothing is posted and nothing is drafted -- this pause is dormant on "
+                f"purpose. Turn it back on by setting platforms.{platform}.enabled to true "
+                f"in data/social-brand-policy.json."
+            )
+        elif state == social_platforms.STATE_PAUSED_FOR_POSTING:
+            # Not the same stop as a dormant pause, and it must not read like
+            # one: nothing was POSTED, but the day's distribution still went
+            # out. A report saying only "paused" would describe a stopped lane.
+            stops[platform] = (
+                f"{platform}_paused_for_posting: {(paused.get(platform) or {}).get('paused_reason')} "
+                f"ZERO requests were made to the {platform} API this run. Distribution did "
+                f"not stop: the day's posts are on reports/social-drafts.md to be posted by "
+                f"hand, and marked done in data/social-draft-ledger.json. Turn automatic "
+                f"posting back on by setting platforms.{platform}.enabled to true in "
                 f"data/social-brand-policy.json."
             )
         elif state == social_platforms.STATE_UNCREDENTIALLED:
@@ -439,9 +454,20 @@ def main():
 
     # Rule 0: a run with nothing switched on must stop with a NAMED reason, not
     # fall through the loop and exit 0 having done nothing.
+    #
+    # "Nothing switched on" is no longer the same as "nothing to do". A platform
+    # paused FOR POSTING is off here and still owes the day its drafts, and this
+    # branch returns before a single credential is read or a single request is
+    # made -- which is exactly how "zero API requests while paused" is achieved
+    # rather than asserted. So the drafts are cut first and the run is named by
+    # what it actually produced.
     if not enable_li and not enable_x:
         off_states = {p: social_platforms.platform_state(p, None, platform_policy)
                       for p in social_platforms.PLATFORMS}
+        drafts = emit_drafts(off_states)
+        produced = drafts.get('drafts_written', 0) + drafts.get('drafts_reissued', 0)
+        drafting = sorted(social_platforms.drafting_platforms(platform_policy))
+        _, parked_off = social_platforms.partition_queue(queue, platform_policy)
         report = {
             'date': TODAY, 'dry_run': dry_run,
             'enabled': {'linkedin': enable_li, 'x': enable_x},
@@ -453,17 +479,36 @@ def main():
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
             'posted_today': {'linkedin': 0, 'x': 0},
             'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
-            'manual_drafts': emit_drafts(off_states),
-            'status': 'stopped_no_enabled_platform',
+            'parked_by_platform_switch': {k: len(v) for k, v in parked_off.items()},
+            'api_requests_made': 0,
+            'drafting_platforms': drafting,
+            'still_postable_after_run': sum(1 for i in queue
+                                            if i.get('status') in POSTABLE_STATUSES),
+            'manual_drafts': drafts,
+            'status': ('posted_nothing_drafted_by_hand' if produced
+                       else 'stopped_no_enabled_platform'),
             'production_blocked': False,
             'stop_reason': (
-                'Every social platform switch is off in data/social-brand-policy.json, '
-                'so there is nowhere to post. '
-                + ('Recorded decisions: '
-                   + '; '.join(f"{k}: {v.get('paused_reason')}" for k, v in paused.items())
-                   if paused else
-                   'No platform carries a paused_on/paused_by/paused_reason record, so this '
-                   'is an undocumented switch-off rather than a decision.')
+                # Two genuinely different outcomes, named differently. "Posted
+                # nothing, drafted 8" is a run that did its work through the
+                # other route; "everything dormant, nothing produced" is a run
+                # that did none, and only the second is a stop.
+                (f"No platform posts through its API right now, and none was contacted: "
+                 f"zero requests were made. Distribution still ran -- {produced} post(s) "
+                 f"are waiting on reports/social-drafts.md for "
+                 f"{', '.join(drafting) or 'the drafting platforms'}, to be posted by hand "
+                 f"and then marked done in data/social-draft-ledger.json. The posting queue "
+                 f"is untouched and every entry keeps its status."
+                 ) if produced else
+                ('Every social platform switch is off in data/social-brand-policy.json, '
+                 'none is paused for posting with drafts due, and there is no queued '
+                 'content left to hand over, so this run had nothing to produce by any '
+                 'route. '
+                 + ('Recorded decisions: '
+                    + '; '.join(f"{k}: {v.get('paused_reason')}" for k, v in paused.items())
+                    if paused else
+                    'No platform carries a paused_on/paused_by/paused_reason record, so this '
+                    'is an undocumented switch-off rather than a decision.'))
             ),
         }
         write_json(REPORT_PATH, report)

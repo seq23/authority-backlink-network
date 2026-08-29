@@ -2,7 +2,9 @@
 
 This repo now supports 100% hands-off page publishing and social auto-posting for one LinkedIn account and one X account.
 
-## X cannot post: the account has no API credits (2026-08-29)
+## X is paused for posting — you post it by hand (2026-08-29)
+
+**What happens every day:** nothing is sent to X and no request is made to it; `scripts/social_drafts.py` writes the day's eight highest-value X posts to `reports/social-drafts.md` instead.
 
 **What you do:** open `reports/social-drafts.md`, post the eight posts on it by hand, then set `"marked_posted_through"` in `data/social-draft-ledger.json` to the batch id printed at the top of that sheet and commit. That is the whole loop.
 
@@ -20,24 +22,25 @@ That is X's pay-per-use billing, not a rate limit and not a bug here. X made pay
 
 **So no posting rate gets under it.** Not eight a day, not one a month. Nothing resets on a period boundary. The only fix is to add a credit balance in the X developer console. Note before doing so: on pay-per-use a post **containing a URL costs $0.20**, against $0.015 for one without, and every post this network sends carries a URL — eight a day is roughly **$48/month**.
 
-**Until then, distribution still happens.** On every run where X is switched on and still cannot get a post out, `scripts/social_drafts.py` writes the day's eight highest-value posts to `reports/social-drafts.md` — the exact text the API would have sent, the link, nothing to assemble — and also prints them into the workflow run summary. The selection is the same one the publisher uses (`scripts/lib/social_selection.py`), so the sheet is the posts the API would have sent, in the order it would have sent them.
+**So the switch is off, and it is off in a way that keeps the content moving.** `platforms.x.enabled` is `false` — the publisher makes **zero** requests to X, so nothing is billable and nothing is probing a dead endpoint — but `platforms.x.pause_mode` is `"draft_by_hand"`, which is not the same pause as LinkedIn's. On every run `scripts/social_drafts.py` writes the day's eight highest-value posts to `reports/social-drafts.md` — the exact text the API would have sent, the link, nothing to assemble — and also prints them into the workflow run summary. The selection is the same one the publisher uses (`scripts/lib/social_selection.py`), so the sheet is the posts the API would have sent, in the order it would have sent them.
 
 - **A batch stays put until you mark it done.** Runs re-render the same sheet rather than piling a second batch on top, so you never face a wall of 581 drafts.
 - **Marking done is one edit,** exactly like the LinkedIn switch: set `marked_posted_through` to the batch id. Every draft in that batch and every earlier one is retired, and the next run cuts a fresh batch. Nothing is ever stamped row by row, so there is nothing to un-mark.
 - **The posting queue is untouched.** Drafting reads `data/social-queue.json` and writes nothing to it. Fund the X account and automatic posting resumes on the next run with no undo pass — the drafts sheet simply stops being written.
-- **LinkedIn is not drafted.** It is paused by decision (below), and a pause is a choice rather than an outage.
+- **LinkedIn is not drafted.** It is paused `"dormant"` (below): that switch says nothing is wanted from the platform at all, so drafting it would reverse a decision nobody made.
+- **Turning X back on is one boolean.** `data/social-brand-policy.json` · **line 8** · change `"enabled": false` to `"enabled": true` under `platforms.x`, and commit. Nothing else — leave `pause_mode` alone, it is inert while the platform is enabled. Fund the developer account first, or every post answers 402 again.
 
-`scripts/validators/validate_social_drafts_fallback.py` blocks the release if any of that stops being true.
+`scripts/validators/validate_social_drafts_fallback.py` and `scripts/validators/validate_social_pause_modes.py` block the release if any of that stops being true — including if X ever makes a single API request while paused.
 
 ## LinkedIn is paused (2026-08-29) — one line turns it back on
 
-**File:** `data/social-brand-policy.json` · **Line 12** · change `"enabled": false` to `"enabled": true` under `platforms.linkedin`, and commit. That is the whole switch.
+**File:** `data/social-brand-policy.json` · **line 17** · change `"enabled": false` to `"enabled": true` under `platforms.linkedin`, and commit. That is the whole switch.
 
 - The 581 LinkedIn posts already in `data/social-queue.json` start going out again on their own. They were never deleted or re-labelled; being parked is derived from the switch, not stamped on the rows, so nothing has to be un-marked or re-created.
-- Two repository secrets also have to exist before a post can actually send: `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_AUTHOR_URN`. Flipping the switch on before adding them breaks nothing — each run records `linkedin_on_but_uncredentialled` in `reports/social-publisher-report.json` and X keeps posting as normal.
+- Two repository secrets also have to exist before a post can actually send: `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_AUTHOR_URN`. Flipping the switch on before adding them breaks nothing — each run records `linkedin_on_but_uncredentialled` in `reports/social-publisher-report.json` and nothing else changes. (X is not posting either — it is paused for posting, above.)
 - `ENABLE_LINKEDIN_POSTING` / `ENABLE_X_POSTING` are now per-run overrides only. Leave them unset and the file above is the answer. They are listed below for completeness, not as something to set.
 
-Three states are deliberately distinguishable in every run report, under `platform_states`: `paused_by_switch` (a decision), `on_but_uncredentialled` (a to-do), `on_and_posting` (working). A platform switched off without a `paused_on` / `paused_by` / `paused_reason` record fails the build — see `scripts/validators/validate_social_rate_limits.py`.
+Four states are deliberately distinguishable in every run report, under `platform_states`: `paused_by_switch` (a decision that nothing is wanted — LinkedIn, `pause_mode: "dormant"`), `paused_for_posting_drafts_by_hand` (the API is off but distribution continues by hand — X, `pause_mode: "draft_by_hand"`), `on_but_uncredentialled` (a to-do), and `on_and_posting` (working). A platform switched off without a `paused_on` / `paused_by` / `paused_reason` record fails the build (`scripts/validators/validate_social_rate_limits.py`), and one switched off without a recognised `pause_mode` fails it too (`scripts/validators/validate_social_pause_modes.py`) — an unrecognised mode reads as dormant at runtime, so a typo would silently end that platform's distribution while the run stayed green.
 
 ## How it works
 

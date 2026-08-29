@@ -110,6 +110,16 @@ jobs:
               if open_drafts and sheet.exists():
                   fh.write(sheet.read_text())
 
+          # Every platform dormant, nothing drafted, and content still waiting is
+          # the one shape Rule 0 forbids: a run that produced nothing by any
+          # route. A platform paused FOR POSTING does not land here -- it has
+          # drafts -- and a genuinely empty queue does not either.
+          if (r.get('status') == 'stopped_no_enabled_platform' and not open_drafts
+                  and (postable or 0) > 0):
+              print(f'::error::Every social platform is switched off, no drafts were '
+                    f'produced, and {postable} queued posts are waiting. Nothing was '
+                    f'distributed by any route. Named stop: {r.get("stop_reason")}')
+              sys.exit(1)
           if attempts and not successes and not open_drafts:
               print(f'::error::All {attempts} posting attempts failed, nothing was '
                     f'published, and no drafts were produced either. Queue entries were '
@@ -118,9 +128,11 @@ jobs:
                     f'write credits, and reports/social-drafts.md.')
               sys.exit(1)
           if open_drafts:
-              print(f'::warning::Posting is not working, so {open_drafts} posts are '
-                    f'waiting in reports/social-drafts.md to be posted by hand. Mark '
-                    f'them done with one edit in data/social-draft-ledger.json.')
+              print(f'::warning::{open_drafts} posts are waiting in '
+                    f'reports/social-drafts.md to be posted by hand -- either because a '
+                    f'platform is paused for posting on purpose, or because its API '
+                    f'could not take them. Mark them done with one edit in '
+                    f'data/social-draft-ledger.json.')
           PY
 
       - name: Create failure issue

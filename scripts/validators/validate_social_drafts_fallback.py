@@ -29,9 +29,17 @@ synthetic queues with the platform API stubbed and asserts them:
                            walk the whole queue: a 402 still costs exactly ONE
                            request, and a batch never exceeds the daily limit
 
-And one thing that must NOT happen: a platform paused by decision - LinkedIn is,
-as of 2026-08-29 - produces no drafts. A pause is a choice, not an outage, and
-drafting it would quietly reverse the switch.
+And one thing that must NOT happen: a platform paused DORMANT - LinkedIn is, as
+of 2026-08-29 - produces no drafts. That switch says nothing is wanted from the
+platform at all, and drafting it would quietly reverse it.
+
+The mirror of that is now equally load-bearing. A platform paused FOR POSTING -
+`pause_mode: "draft_by_hand"`, which X is as of 2026-08-29, because the owner
+decided not to fund X's pay-per-use API - MUST still produce its drafts. It is
+switched off precisely because the API cannot carry the content, so treating it
+like a dormant pause would silently end distribution on the only platform that
+still has any. "A pause is a choice" is true of both; what differs is what the
+choice was, and that is what pause_mode records.
 
 Fails hard if it exercises zero scenarios.
 """
@@ -341,20 +349,31 @@ def main() -> int:  # noqa: C901 - one assertion per property, kept flat on purp
         failures.append("Drafting produced nothing from a queue of postable entries.")
 
     # ---------------------------------------------------------------- property 6
-    # A platform paused by decision produces no drafts. LinkedIn is paused; a
-    # fallback that drafted it would quietly reverse the owner's switch.
+    # The two pauses must behave differently. A DORMANT pause produces no
+    # drafts; drafting it would quietly reverse the owner's switch. A pause FOR
+    # POSTING must still produce them; not drafting it would silently end the
+    # only distribution that platform has left.
     from lib import social_platforms  # noqa: E402
     paused_states = {"linkedin": social_platforms.STATE_PAUSED,
-                     "x": social_platforms.STATE_ON}
+                     "x": social_platforms.STATE_PAUSED_FOR_POSTING}
     paused_unavailable = social_drafts.unavailable_platforms(
         paused_states, {}, {"x": 0}, {"x": 0}, {"x": 0}, {"x": 0})
-    checks.append({"property": "a_paused_platform_is_never_drafted",
+    checks.append({"property": "dormant_pause_is_never_drafted_"
+                               "paused_for_posting_always_is",
                    "states": paused_states, "unavailable": paused_unavailable})
     if "linkedin" in paused_unavailable:
         failures.append(
-            "LinkedIn is paused by a recorded decision and was still treated as an "
-            "outage to draft around. A pause is a choice; drafting it reverses the "
-            "switch without anyone deciding to."
+            "LinkedIn is paused DORMANT and was still treated as something to draft "
+            "around. That pause says nothing is wanted from the platform at all; "
+            "drafting it reverses the switch without anyone deciding to."
+        )
+    if "x" not in paused_unavailable:
+        failures.append(
+            "X is paused FOR POSTING -- switched off precisely because its pay-per-use "
+            "API is not funded -- and produced no drafts. A pause_mode of "
+            "\"draft_by_hand\" exists so that turning the API lane off does not also "
+            "turn distribution off; collapsing it back into a dormant pause ends "
+            "distribution entirely with nothing reporting the loss."
         )
     # A healthy platform that has merely finished its day is not an outage either.
     healthy = social_drafts.unavailable_platforms(
