@@ -2,6 +2,33 @@
 
 This repo now supports 100% hands-off page publishing and social auto-posting for one LinkedIn account and one X account.
 
+## X cannot post: the account has no API credits (2026-08-29)
+
+**What you do:** open `reports/social-drafts.md`, post the eight posts on it by hand, then set `"marked_posted_through"` in `data/social-draft-ledger.json` to the batch id printed at the top of that sheet and commit. That is the whole loop.
+
+**What is actually wrong.** Every write to X returns:
+
+```txt
+HTTP 402 {"detail":"credits depleted","status":402,"title":"Payment Required",
+          "type":"https://api.x.com/2/problems/credits-depleted"}
+```
+
+That is X's pay-per-use billing, not a rate limit and not a bug here. X made pay-per-use the default on 2026-02-06 and retired the free tier for new developer signups; `credits-depleted` means the enrolled developer account has no credit balance to charge the request against. Two things establish that this is billing rather than a quota this account spent:
+
+- the **first request of the first run** in this repository's history returned 402, and `posted_at` appears in no revision of `data/social-queue.json` — no post has ever succeeded, so there was never an allowance to use up;
+- the problem type is `credits-depleted`. A credential that was wrong, expired or wrongly scoped returns 401 or 403 with a different problem type, so this is not a misconfigured secret being reported as 402.
+
+**So no posting rate gets under it.** Not eight a day, not one a month. Nothing resets on a period boundary. The only fix is to add a credit balance in the X developer console. Note before doing so: on pay-per-use a post **containing a URL costs $0.20**, against $0.015 for one without, and every post this network sends carries a URL — eight a day is roughly **$48/month**.
+
+**Until then, distribution still happens.** On every run where X is switched on and still cannot get a post out, `scripts/social_drafts.py` writes the day's eight highest-value posts to `reports/social-drafts.md` — the exact text the API would have sent, the link, nothing to assemble — and also prints them into the workflow run summary. The selection is the same one the publisher uses (`scripts/lib/social_selection.py`), so the sheet is the posts the API would have sent, in the order it would have sent them.
+
+- **A batch stays put until you mark it done.** Runs re-render the same sheet rather than piling a second batch on top, so you never face a wall of 581 drafts.
+- **Marking done is one edit,** exactly like the LinkedIn switch: set `marked_posted_through` to the batch id. Every draft in that batch and every earlier one is retired, and the next run cuts a fresh batch. Nothing is ever stamped row by row, so there is nothing to un-mark.
+- **The posting queue is untouched.** Drafting reads `data/social-queue.json` and writes nothing to it. Fund the X account and automatic posting resumes on the next run with no undo pass — the drafts sheet simply stops being written.
+- **LinkedIn is not drafted.** It is paused by decision (below), and a pause is a choice rather than an outage.
+
+`scripts/validators/validate_social_drafts_fallback.py` blocks the release if any of that stops being true.
+
 ## LinkedIn is paused (2026-08-29) — one line turns it back on
 
 **File:** `data/social-brand-policy.json` · **Line 12** · change `"enabled": false` to `"enabled": true` under `platforms.linkedin`, and commit. That is the whole switch.

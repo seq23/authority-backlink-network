@@ -65,23 +65,25 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Authority V4.2 social auto-post ledger"
-          file_pattern: "data/social-queue.json reports/social-publisher-report.json"
-      - name: Surface a run that posted nothing at all
+          file_pattern: "data/social-queue.json data/social-draft-ledger.json reports/social-publisher-report.json reports/social-drafts.md"
+      - name: Surface what this run actually did
         # The posting step above is deliberately continue-on-error: a platform
         # refusing a post must never block content publication. But that also
         # meant NOTHING could turn this workflow red, so the failure-issue step
         # below was unreachable and the run on 2026-08-29 that failed 581 of 581
         # posts - the whole X queue - reported success with a green tick.
         #
-        # An ordinary partial failure stays quiet. A run that attempted posts
-        # and got none out is a broken account, credential or credit state, not
-        # a bad afternoon, and it is the one case a human has to see. Reads the
-        # receipt rather than the exit code, so the non-blocking property of the
-        # step above is preserved.
+        # Rule 0 applies to the run as a whole, not to the API alone. "Posted
+        # nothing, drafted 8 for hand-posting" is work done, and it is reported
+        # as such, loudly, with the drafts printed into the run summary. What is
+        # NOT allowed is a run that posted nothing, drafted nothing, and still
+        # had queued content waiting - that is the silent-defer shape, and it
+        # fails. Reads the receipt rather than the exit code, so the
+        # non-blocking property of the posting step is preserved.
         if: always()
         run: |
           python3 - <<'PY'
-          import json, pathlib, sys
+          import json, os, pathlib, sys
           p = pathlib.Path('reports/social-publisher-report.json')
           if not p.exists():
               print('No social publisher receipt was written; nothing to assess.')
@@ -89,18 +91,38 @@ jobs:
           r = json.loads(p.read_text())
           attempts, successes = len(r.get('attempts', [])), len(r.get('successes', []))
           halted = r.get('halted_platforms') or {}
+          drafts = r.get('manual_drafts') or {}
+          open_drafts = int(drafts.get('open_drafts') or 0)
+          postable = r.get('still_postable_after_run')
           print(json.dumps({'status': r.get('status'), 'attempts': attempts,
                             'successes': successes, 'halted_platforms': halted,
-                            'still_postable_after_run': r.get('still_postable_after_run')}, indent=2))
+                            'manual_drafts': drafts,
+                            'still_postable_after_run': postable}, indent=2))
           for platform, reason in halted.items():
               print(f'::warning::{platform} stopped this run early: {reason}')
-          if attempts and not successes:
-              print(f'::error::All {attempts} posting attempts failed and nothing was '
-                    f'published. Queue entries were deferred rather than dropped, so no '
-                    f'distribution was lost, but posting is not working: check platform '
-                    f'credentials, API write credits, and rate-limit state.')
+
+          summary = pathlib.Path(os.environ.get('GITHUB_STEP_SUMMARY', '/dev/null'))
+          sheet = pathlib.Path('reports/social-drafts.md')
+          with summary.open('a') as fh:
+              fh.write(f'## Social auto-post\n\nPosted **{successes}**, attempted '
+                       f'**{attempts}**, drafts waiting to be posted by hand '
+                       f'**{open_drafts}**.\n\n')
+              if open_drafts and sheet.exists():
+                  fh.write(sheet.read_text())
+
+          if attempts and not successes and not open_drafts:
+              print(f'::error::All {attempts} posting attempts failed, nothing was '
+                    f'published, and no drafts were produced either. Queue entries were '
+                    f'deferred rather than dropped, so no distribution was lost, but this '
+                    f'run got nothing out by any route: check platform credentials, API '
+                    f'write credits, and reports/social-drafts.md.')
               sys.exit(1)
+          if open_drafts:
+              print(f'::warning::Posting is not working, so {open_drafts} posts are '
+                    f'waiting in reports/social-drafts.md to be posted by hand. Mark '
+                    f'them done with one edit in data/social-draft-ledger.json.')
           PY
+
       - name: Create failure issue
         if: failure()
         uses: dacbd/create-issue-action@v2

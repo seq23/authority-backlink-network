@@ -1,0 +1,80 @@
+{
+  "schema": "authority-social-draft-ledger-v1",
+  "purpose": "Drafts handed to a human because the platform API would not accept a post. Separate from data/social-queue.json on purpose: drafting never consumes, retires or reorders a queue entry, so restoring API access restores automatic posting with no un-drafting pass.",
+  "HOW_TO_MARK_DRAFTS_AS_POSTED": "Set \"marked_posted_through\" below to the batch id printed at the top of reports/social-drafts.md, and commit. That is the whole change. Every draft in that batch and in every batch before it is then done: it is never offered again, and the next scheduled run writes a fresh batch of the next highest-value posts. Done-ness is derived from this one field -- no draft is ever stamped row by row, so there is nothing to un-mark if you change your mind. Leaving it alone is also safe: an unposted batch is re-rendered unchanged rather than piled on top of.",
+  "marked_posted_through": null,
+  "batches": [
+    {
+      "batch_id": "x-2026-08-29-1",
+      "platform": "x",
+      "generated_at": "2026-08-29T21:41:10.116958+00:00",
+      "reason": "the whole x budget for today was spent on attempts that all failed, so this run had nothing left to try",
+      "items": [
+        {
+          "fingerprint": "8476567833976673",
+          "queue_index_at_draft_time": 1297,
+          "platform": "x",
+          "brand": "founderoperatorlibrary.com",
+          "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
+          "text": "Useful citation, not fake ranking: How to Write a Delegation Brief a Person or a Tool Can Both Execute.\n\nhttps://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html"
+        },
+        {
+          "fingerprint": "138247accde8f9fd",
+          "queue_index_at_draft_time": 1299,
+          "platform": "x",
+          "brand": "founderoperatorlibrary.com",
+          "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html",
+          "text": "Useful citation, not fake ranking: How to Decide Which Recurring Tasks to Automate First.\n\nhttps://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html"
+        },
+        {
+          "fingerprint": "d396916536f9c1b8",
+          "queue_index_at_draft_time": 1329,
+          "platform": "x",
+          "brand": "memphisvendorlibrary.com",
+          "url": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html",
+          "text": "Useful citation, not fake ranking: How the Brief Changes for a Proposal, Anniversary, or Birthday Room.\n\nhttps://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html"
+        },
+        {
+          "fingerprint": "c4a12090ae07736a",
+          "queue_index_at_draft_time": 1331,
+          "platform": "x",
+          "brand": "memphisvendorlibrary.com",
+          "url": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify.html",
+          "text": "Useful citation, not fake ranking: What a Grazing Table Brief Should Specify.\n\nhttps://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify.html"
+        },
+        {
+          "fingerprint": "2a5185ea9a9a4ade",
+          "queue_index_at_draft_time": 1357,
+          "platform": "x",
+          "brand": "professionalresourcelibrary.com",
+          "url": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html",
+          "text": "Useful citation, not fake ranking: What Levels of Support Mean When Comparing Recovery Residences.\n\nhttps://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html"
+        },
+        {
+          "fingerprint": "111480e126206960",
+          "queue_index_at_draft_time": 1359,
+          "platform": "x",
+          "brand": "professionalresourcelibrary.com",
+          "url": "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing.html",
+          "text": "Useful citation, not fake ranking: How to Plan the First 30 Days After Moving Into Recovery Housing.\n\nhttps://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing.html"
+        },
+        {
+          "fingerprint": "67f094addca9fd8c",
+          "queue_index_at_draft_time": 121,
+          "platform": "x",
+          "brand": "professionalresourcelibrary.com",
+          "url": "https://professionalresourcelibrary.com/daily/2026-07-12-rental-history-explanation-low-risk-mistakes-to-avoid-when-timing-matters.html",
+          "text": "Need to explain what happened? Create the letter they asked for. Rental History Explanation: Low-Risk Mistakes To Avoid When Timing Matte\u2026\n\nhttps://professionalresourcelibrary.com/daily/2026-07-12-rental-history-explanation-low-risk-mistakes-to-avoid-when-timing-matters.html"
+        },
+        {
+          "fingerprint": "272bb4bb53cde652",
+          "queue_index_at_draft_time": 127,
+          "platform": "x",
+          "brand": "professionalresourcelibrary.com",
+          "url": "https://professionalresourcelibrary.com/daily/2026-07-13-personal-loan-documents-resource-backed-mistakes-to-avoid-before-you-choose.html",
+          "text": "Need to explain what happened? Create the letter they asked for. Personal Loan Documents: Resource-Backed Mistakes To Avoid Before You\u2026\n\nhttps://professionalresourcelibrary.com/daily/2026-07-13-personal-loan-documents-resource-backed-mistakes-to-avoid-before-you-choose.html"
+        }
+      ]
+    }
+  ]
+}

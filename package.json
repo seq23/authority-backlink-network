@@ -78,7 +78,9 @@
     "analytics:install-clarity": "node scripts/install_clarity.js",
     "cadence:reseed-lastmod": "python3 scripts/reseed_lastmod_from_git.py",
     "social:backfill-queue": "python3 scripts/backfill_social_queue.py",
-    "social:backfill-queue:write": "python3 scripts/backfill_social_queue.py --write"
+    "social:backfill-queue:write": "python3 scripts/backfill_social_queue.py --write",
+    "social:manual-sheet": "python3 scripts/social_drafts.py",
+    "validate:social-drafts-fallback": "python3 scripts/validators/validate_social_drafts_fallback.py"
   },
   "devDependencies": {}
 }
