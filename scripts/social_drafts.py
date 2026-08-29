@@ -189,6 +189,22 @@ def open_batches(ledger, platform=None):
     return out
 
 
+def open_fingerprints(ledger):
+    """Fingerprints on a batch she has NOT yet marked posted.
+
+    A delivery route must never take one of these. The sheet has already
+    offered them to her by hand; a route accepting the same entry afterwards is
+    a double post on the same profile, which is the one failure mode a second
+    delivery lane introduces that neither lane had alone.
+    """
+    seen = set()
+    for batch in open_batches(ledger):
+        for entry in batch.get("items", []):
+            if entry.get("fingerprint"):
+                seen.add(entry["fingerprint"])
+    return seen
+
+
 def emitted_fingerprints(ledger):
     """Every fingerprint ever offered, posted or not. Nothing is offered twice."""
     seen = set()
@@ -454,6 +470,14 @@ def unavailable_platforms(platform_states, halted_platforms, attempted, posted_r
             # Paused DORMANT: a recorded decision that nothing is wanted from
             # this platform at all. LinkedIn is here. Drafting it would reverse
             # the owner's switch without anyone deciding to.
+            continue
+        if state == social_platforms.STATE_ROUTED:
+            # Paused for posting, and a delivery route carried the posts anyway
+            # -- Buffer, for X. Nothing is drafted: an entry the route accepted
+            # must not also be offered by hand, or it goes out twice. If the
+            # route is unavailable or refuses, the publisher reports the
+            # platform as STATE_PAUSED_FOR_POSTING instead and the sheet is
+            # cut exactly as before. Batches already open stay on the sheet.
             continue
         if state == social_platforms.STATE_PAUSED_FOR_POSTING:
             # Paused FOR POSTING: the API lane is off but distribution

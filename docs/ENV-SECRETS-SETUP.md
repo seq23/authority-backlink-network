@@ -36,6 +36,25 @@ Then set variable:
 
 If Gemini fails, is missing, or rate-limits, the base deterministic page is still published if it passes review.
 
+## Buffer secret — how X actually posts
+
+Set under:
+
+`GitHub repo → Settings → Secrets and variables → Actions → Secrets`
+
+- `BUFFER_ACCESS_TOKEN`
+
+This is the credential that carries X. X's own API is pay-per-use (about $0.20 for a post
+carrying a URL, and every post here carries one), so it is switched off and contacted zero
+times; Buffer publishes to the same X profile from its free plan at no per-post cost. The
+token is read only at workflow runtime, is never written to any file in this repository, and
+every Buffer response passes through a redactor before it can reach a log or a report.
+
+Nothing else has to be set: the Buffer channel and the daily posting limit are both
+discovered at runtime. The route is switched on at `platforms.x.delivery_route.enabled` in
+`data/social-brand-policy.json`, and setting it to `false` returns X to going out by hand
+with nothing to undo.
+
 ## LinkedIn Secrets for one account
 
 Only needed when LinkedIn auto-posting should actually send posts. Content generation and backlink publication never depend on these credentials.

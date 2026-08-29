@@ -143,6 +143,11 @@ def drive(tmp, name, policy, queue=None):
 
     for var in ("ENABLE_X_POSTING", "ENABLE_LINKEDIN_POSTING"):
         os.environ.pop(var, None)  # The declaration must govern, not an override.
+    # The pause contract is about the platform's OWN API. A Buffer token left in
+    # the environment would open the delivery route mid-scenario and change what
+    # every property below is measuring, so this file always runs without one.
+    # The route has its own guard: scripts/validators/validate_buffer_route.py.
+    os.environ.pop("BUFFER_ACCESS_TOKEN", None)
     os.environ.update({
         "SOCIAL_PLATFORM_POLICY_PATH": str(pp),
         "SOCIAL_QUEUE_PATH": str(qp), "SOCIAL_REPORT_PATH": str(rp),

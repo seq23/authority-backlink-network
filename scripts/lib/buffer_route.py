@@ -128,3 +128,271 @@ def graphql(query, variables=None, timeout=TIMEOUT, opener=None):
         raise BufferError("GraphQL response carried no data", status=status,
                           kind="bad_response")
     return data
+
+
+# Buffer's name for X. The Service enum on this schema still says "twitter";
+# there is no "x" member, so matching on "x" finds nothing and the route would
+# report "no channel connected" forever with an X channel sitting right there.
+SERVICE_FOR_PLATFORM = {"x": ("twitter",)}
+
+CHANNELS_QUERY = """
+query C($input: ChannelsInput!) {
+  channels(input: $input) {
+    id name service serviceId type isDisconnected isLocked isQueuePaused timezone
+  }
+}
+"""
+
+ACCOUNT_QUERY = """
+query A {
+  account {
+    id
+    organizations {
+      id name channelCount
+      limits { channels scheduledPosts }
+    }
+  }
+}
+"""
+
+LIMITS_QUERY = """
+query L($input: DailyPostingLimitsInput!) {
+  dailyPostingLimits(input: $input) { channelId isAtLimit limit scheduled sent }
+}
+"""
+
+CREATE_POST = """
+mutation P($input: CreatePostInput!) {
+  createPost(input: $input) {
+    __typename
+    ... on PostActionSuccess { post { id status dueAt channelId } }
+    ... on NotFoundError { message }
+    ... on UnauthorizedError { message }
+    ... on InvalidInputError { message }
+    ... on LimitReachedError { message }
+    ... on RestProxyError { code message }
+    ... on UnexpectedError { message }
+  }
+}
+"""
+
+# Buffer answers createPost with a union. Exactly one member is a success; every
+# other member is a refusal, and a refusal ends the route for the run. Listing
+# them by name rather than testing for the success case means a member Buffer
+# adds later is treated as a refusal, which is the safe direction.
+SUCCESS_TYPE = "PostActionSuccess"
+
+# Buffer's queue, not an immediate publish. `addToQueue` puts the post in the
+# channel's queue at its next free posting slot, and `automatic` means Buffer
+# sends it itself rather than pinging a phone to post by hand. The alternatives
+# are recorded because picking the wrong one silently changes what "posted"
+# means: `shareNow` publishes on the spot, and `notification` publishes nothing
+# at all -- it asks the owner to. Neither is what a scheduled lane wants.
+DEFAULT_MODE = "addToQueue"
+DEFAULT_SCHEDULING_TYPE = "automatic"
+
+
+class Route:
+    """One run's worth of Buffer delivery for one platform.
+
+    Holds the two rules that matter and cannot be bypassed by a caller:
+
+      count attempts   `remaining()` falls on every attempt, before the request
+                       is made, never on success. A run whose calls all fail
+                       spends its budget exactly as fast as one that works.
+      halt on refusal  the first refusal sets `halted` and every later call
+                       raises without touching the network. There is no retry
+                       path in this class at all.
+
+    The 2026-08-29 failure this prevents: 581 requests in 76 seconds against an
+    API that had already refused, because the caps counted successes.
+    """
+
+    def __init__(self, platform="x", opener=None, policy_daily_limit=None):
+        self.platform = platform
+        self.opener = opener
+        self.policy_daily_limit = policy_daily_limit
+        self.available = False
+        self.reason = f"{TOKEN_ENV} has not been read yet"
+        self.organization_id = None
+        self.channel = None
+        self.channel_id = None
+        self.buffer_daily_limit = None
+        self.buffer_used_today = None
+        self.headroom = 0
+        self.attempts = 0
+        self.accepted = 0
+        self.halted = None
+        self.plan_limits = {}
+        self.channels_seen = []
+
+    # -- discovery ---------------------------------------------------------
+    def open(self):
+        """Find the channel and read the real ceiling. Never guesses a number."""
+        if not has_token():
+            self.reason = (f"{TOKEN_ENV} is absent from this environment, so Buffer "
+                           f"cannot be asked to carry anything")
+            return self
+        try:
+            account = graphql(ACCOUNT_QUERY, opener=self.opener)["account"]
+        except BufferError as err:
+            self.reason = f"Buffer refused the account lookup: {err}"
+            self.halted = self.reason
+            return self
+        orgs = account.get("organizations") or []
+        if not orgs:
+            self.reason = "the Buffer account carries no organization to post from"
+            return self
+        wanted = SERVICE_FOR_PLATFORM.get(self.platform, ())
+        for org in orgs:
+            self.organization_id = org["id"]
+            self.plan_limits = org.get("limits") or {}
+            try:
+                channels = graphql(CHANNELS_QUERY,
+                                   {"input": {"organizationId": org["id"]}},
+                                   opener=self.opener)["channels"]
+            except BufferError as err:
+                self.reason = f"Buffer refused the channel list: {err}"
+                self.halted = self.reason
+                return self
+            self.channels_seen.extend(
+                {k: c.get(k) for k in ("id", "name", "service", "isLocked",
+                                       "isDisconnected", "isQueuePaused")}
+                for c in channels)
+            for channel in channels:
+                if str(channel.get("service", "")).lower() in wanted:
+                    self.channel = channel
+                    self.channel_id = channel["id"]
+                    break
+            if self.channel:
+                break
+        if not self.channel:
+            services = sorted({str(c.get("service")) for c in self.channels_seen})
+            self.reason = (
+                f"no {self.platform} channel is connected to this Buffer account. "
+                f"Buffer calls it {'/'.join(wanted)}; the channels connected are "
+                f"{services or ['none']}. Connect the X profile at "
+                f"buffer.com -> Channels -> New Channel and this route starts "
+                f"carrying posts on the next run with no code change."
+            )
+            return self
+        if self.channel.get("isDisconnected"):
+            self.reason = (f"the Buffer {self.platform} channel "
+                           f"{self.channel.get('name')!r} is disconnected; "
+                           f"reconnect it in Buffer")
+            return self
+        if self.channel.get("isLocked"):
+            self.reason = (f"the Buffer {self.platform} channel "
+                           f"{self.channel.get('name')!r} is locked by the plan's "
+                           f"channel allowance, so Buffer will not accept posts for it")
+            return self
+        try:
+            limits = graphql(LIMITS_QUERY,
+                             {"input": {"channelIds": [self.channel_id]}},
+                             opener=self.opener)["dailyPostingLimits"]
+        except BufferError as err:
+            # No discovered ceiling means no ceiling this module is willing to
+            # act on. It refuses to post rather than fall back to a guess.
+            self.reason = f"Buffer would not report its daily posting limit: {err}"
+            self.halted = self.reason
+            return self
+        status = next((s for s in limits if s.get("channelId") == self.channel_id),
+                      limits[0] if limits else {})
+        self.buffer_daily_limit = status.get("limit")
+        self.buffer_used_today = int(status.get("scheduled") or 0) + int(status.get("sent") or 0)
+        if status.get("isAtLimit"):
+            self.reason = (f"Buffer reports the channel is already at its daily limit "
+                           f"({self.buffer_used_today}/{self.buffer_daily_limit})")
+            return self
+        if self.buffer_daily_limit is None:
+            self.reason = ("Buffer reported no daily limit number for this channel, so "
+                           "there is no discovered ceiling to respect and nothing is sent")
+            return self
+        self.headroom = max(0, int(self.buffer_daily_limit) - self.buffer_used_today)
+        if self.policy_daily_limit is not None:
+            # Two ceilings, and the lower one governs. Buffer's is the account's
+            # hard cap; the policy's is what this network has decided to send.
+            self.headroom = min(self.headroom, int(self.policy_daily_limit))
+        if self.headroom <= 0:
+            self.reason = (f"no headroom left today: Buffer allows "
+                           f"{self.buffer_daily_limit} and "
+                           f"{self.buffer_used_today} are already used")
+            return self
+        self.available = True
+        self.reason = (f"ready: Buffer channel {self.channel.get('name')!r} "
+                       f"({self.channel_id}), {self.headroom} post(s) of headroom")
+        return self
+
+    # -- the two rules -----------------------------------------------------
+    def remaining(self):
+        """Headroom minus ATTEMPTS. Never minus successes."""
+        if self.halted or not self.available:
+            return 0
+        return max(0, self.headroom - self.attempts)
+
+    def create_post(self, text, due_at=None, mode=DEFAULT_MODE,
+                    scheduling_type=DEFAULT_SCHEDULING_TYPE):
+        """Put one post in the Buffer queue. Raises BufferError on any refusal.
+
+        Queued, not published: Buffer sends it at the channel's next posting
+        slot. The caller records that distinction rather than calling it posted.
+        """
+        if self.halted:
+            raise BufferError(f"route already halted this run: {self.halted}",
+                              kind="halted")
+        if not self.available:
+            raise BufferError(f"route not available: {self.reason}",
+                              kind="unavailable")
+        if self.remaining() <= 0:
+            raise BufferError(
+                f"the discovered Buffer allowance for today is spent "
+                f"({self.attempts} attempt(s) against {self.headroom})",
+                kind="limit_spent")
+        payload = {"channelId": self.channel_id, "text": text, "assets": [],
+                   "needsApproval": False, "mode": mode,
+                   "schedulingType": scheduling_type,
+                   "source": "authority-backlink-network"}
+        if due_at:
+            payload["dueAt"] = due_at
+        # Spent BEFORE the call. This is the whole fix for the 581-request run.
+        self.attempts += 1
+        try:
+            payload_out = graphql(CREATE_POST, {"input": payload}, opener=self.opener)
+        except BufferError as err:
+            self.halted = f"buffer_transport_refusal: {err}"
+            raise
+        result = payload_out.get("createPost") or {}
+        kind = result.get("__typename")
+        if kind != SUCCESS_TYPE:
+            message = _redact(result.get("message") or kind or "unknown refusal")
+            self.halted = f"buffer_refused ({kind}): {message}"
+            raise BufferError(self.halted, kind=str(kind))
+        post = result.get("post") or {}
+        self.accepted += 1
+        return {
+            "ok": True,
+            "id": post.get("id", ""),
+            "buffer_status": post.get("status"),
+            "due_at": post.get("dueAt"),
+            "channel_id": post.get("channelId") or self.channel_id,
+        }
+
+    def receipt(self):
+        return {
+            "available": self.available,
+            "reason": self.reason,
+            "halted": self.halted,
+            "organization_id": self.organization_id,
+            "channel_id": self.channel_id,
+            "channel_name": (self.channel or {}).get("name"),
+            "channel_service": (self.channel or {}).get("service"),
+            "buffer_daily_limit_discovered": self.buffer_daily_limit,
+            "buffer_used_today": self.buffer_used_today,
+            "policy_daily_limit": self.policy_daily_limit,
+            "headroom_at_open": self.headroom,
+            "attempts": self.attempts,
+            "accepted": self.accepted,
+            "remaining": self.remaining(),
+            "plan_limits": self.plan_limits,
+            "channels_connected": self.channels_seen,
+        }
