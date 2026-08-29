@@ -18,12 +18,6 @@ on:
         description: 'Buffer channel id for the write'
         required: false
         default: ''
-  push:
-    branches: [buffer-x-route]
-    paths:
-      - 'scripts/lib/buffer_route.py'
-      - 'scripts/buffer_route_probe.py'
-      - '.github/workflows/buffer-route-probe.yml'
 
 permissions:
   contents: read

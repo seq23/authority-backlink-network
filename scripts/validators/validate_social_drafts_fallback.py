@@ -112,6 +112,11 @@ def drive(tmp, name, response, runs=1, env_extra=None, queue=None):
     qp, rp = tmp / f"{name}-queue.json", tmp / f"{name}-report.json"
     lp, dp = tmp / f"{name}-ledger.json", tmp / f"{name}-drafts.md"
     qp.write_text(json.dumps(queue if queue is not None else synthetic_queue()))
+    # No Buffer token, ever: this file is about the platform's own API, and an
+    # ambient token would open the delivery route mid-scenario and change what
+    # every property here measures. The route has its own guard,
+    # scripts/validators/validate_buffer_route.py.
+    os.environ.pop("BUFFER_ACCESS_TOKEN", None)
     os.environ.update({
         "SOCIAL_QUEUE_PATH": str(qp), "SOCIAL_REPORT_PATH": str(rp),
         "SOCIAL_DRAFT_LEDGER_PATH": str(lp), "SOCIAL_DRAFTS_PATH": str(dp),
@@ -128,7 +133,12 @@ def drive(tmp, name, response, runs=1, env_extra=None, queue=None):
         mod = load_publisher()
         calls = [0]
 
-        def stub_post(item, dry_run=False, _c=calls):
+        def stub_post(item, dry_run=False, route=None, _c=calls):
+        # `route` is the delivery-route argument the publisher now passes
+        # (scripts/lib/buffer_route.py). None here: these harnesses run without
+        # a Buffer token. Accepting it keeps the stub matching the real
+        # signature, instead of every call raising TypeError and being recorded
+        # as a platform refusal.
             _c[0] += 1
             if response.get("ok"):
                 return {"ok": True, "id": f"stub-{_c[0]}", "status": 201}

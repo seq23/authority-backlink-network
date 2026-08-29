@@ -162,7 +162,12 @@ def drive(tmp, name, policy, queue=None):
     mod = load_publisher()
     calls = {"post_item": [], "x_post": [], "linkedin_post": [], "urlopen": []}
 
-    def stub_post_item(item, dry_run=False):
+    def stub_post_item(item, dry_run=False, route=None):
+        # `route` is the delivery-route argument the publisher now passes (see
+        # scripts/lib/buffer_route.py). This harness always runs without a
+        # Buffer token, so it is always None here; accepting it keeps the stub
+        # honest about the real signature instead of turning every call into a
+        # TypeError that reads as "the platform refused".
         calls["post_item"].append(item.get("platform"))
         return {"ok": True, "id": f"stub-{len(calls['post_item'])}", "status": 201}
 

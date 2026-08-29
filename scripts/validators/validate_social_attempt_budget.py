@@ -134,6 +134,11 @@ def load_publisher():
 
 def drive(queue_path, report_path, response, runs=1):
     """Run the publisher `runs` times against one queue file. Returns call counts."""
+    # No Buffer token, ever: this file is about the platform's own API, and an
+    # ambient token would open the delivery route mid-scenario and change what
+    # every property here measures. The route has its own guard,
+    # scripts/validators/validate_buffer_route.py.
+    os.environ.pop("BUFFER_ACCESS_TOKEN", None)
     os.environ.update({
         "SOCIAL_QUEUE_PATH": str(queue_path),
         "SOCIAL_REPORT_PATH": str(report_path),
@@ -156,7 +161,12 @@ def drive(queue_path, report_path, response, runs=1):
         calls = [0]
         sleeps = [0]
 
-        def stub_post(item, dry_run=False, _c=calls):
+        def stub_post(item, dry_run=False, route=None, _c=calls):
+        # `route` is the delivery-route argument the publisher now passes
+        # (scripts/lib/buffer_route.py). None here: these harnesses run without
+        # a Buffer token. Accepting it keeps the stub matching the real
+        # signature, instead of every call raising TypeError and being recorded
+        # as a platform refusal.
             _c[0] += 1
             if response.get("ok"):
                 return {"ok": True, "id": f"stub-{_c[0]}", "status": 201}
