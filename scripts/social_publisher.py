@@ -15,6 +15,8 @@ from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
 
+from lib import social_platforms
+
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = Path(os.getenv('SOCIAL_QUEUE_PATH', str(ROOT / 'data/social-queue.json')))
 REPORT_PATH = Path(os.getenv('SOCIAL_REPORT_PATH', str(ROOT / 'reports/social-publisher-report.json')))
@@ -250,6 +252,42 @@ def post_item(item, dry_run=False):
     return {'ok': False, 'error': f'unsupported_platform:{platform}'}
 
 
+def named_stops_for(platform_states, paused, secret_skips):
+    """A named reason for every platform that did nothing this run.
+
+    "Did nothing" must never be left to be inferred. The three cases read
+    differently on purpose: a paused switch is a decision, an uncredentialled
+    switch is a to-do, and an undocumented switch-off is a bug that
+    scripts/validators/validate_social_rate_limits.py also fails the build on.
+    """
+    stops = {}
+    for platform, state in platform_states.items():
+        if state == social_platforms.STATE_ON:
+            continue
+        if state == social_platforms.STATE_PAUSED:
+            stops[platform] = (
+                f"{platform}_paused_by_switch: {(paused.get(platform) or {}).get('paused_reason')} "
+                f"Turn it back on by setting platforms.{platform}.enabled to true in "
+                f"data/social-brand-policy.json."
+            )
+        elif state == social_platforms.STATE_UNCREDENTIALLED:
+            missing = secret_skips.get(platform) or []
+            stops[platform] = (
+                f"{platform}_on_but_uncredentialled: the switch for {platform} is ON in "
+                f"data/social-brand-policy.json, but {', '.join(missing) or 'its credentials'} "
+                f"{'is' if len(missing) == 1 else 'are'} absent from repository secrets, so "
+                f"nothing was posted to {platform}. This is a to-do, not a failure; any other "
+                f"enabled platform posted normally."
+            )
+        else:
+            stops[platform] = (
+                f"{platform}_off_without_a_recorded_decision: the switch for {platform} is off "
+                f"but carries no paused_on/paused_by/paused_reason record, so nothing here can "
+                f"tell a decision from a breakage."
+            )
+    return stops
+
+
 def main():
     original_queue = read_json(QUEUE_PATH, [])
     queue = original_queue
@@ -258,8 +296,14 @@ def main():
     # Dry-run validation must never mutate the publish queue. Live mode mutates statuses after real API attempts.
     if truthy('SOCIAL_DRY_RUN', 'false') or truthy('MOCK_SOCIAL_POSTING', 'false'):
         queue = copy.deepcopy(queue)
-    enable_li = truthy('ENABLE_LINKEDIN_POSTING', 'true')
-    enable_x = truthy('ENABLE_X_POSTING', 'true')
+    # Enablement is declared in data/social-brand-policy.json and overridden per
+    # run by ENABLE_<PLATFORM>_POSTING. The literal 'true' defaults that used to
+    # live here (and in both workflows) were a third opinion about a question the
+    # declaration now answers once. See scripts/lib/social_platforms.py.
+    platform_policy = social_platforms.load_policy()
+    enable_li = social_platforms.is_enabled('linkedin', platform_policy)
+    enable_x = social_platforms.is_enabled('x', platform_policy)
+    paused = social_platforms.paused_platforms(platform_policy)
     dry_run = truthy('SOCIAL_DRY_RUN', 'false') or truthy('MOCK_SOCIAL_POSTING', 'false')
     require_secrets = truthy('REQUIRE_SOCIAL_SECRETS', 'true')
     li_limit = int(os.getenv('LINKEDIN_DAILY_LIMIT', '3'))
@@ -279,6 +323,38 @@ def main():
     posted_today = {'linkedin': 0, 'x': 0}
     attempts, successes, failures, skipped = [], [], [], []
 
+    # Rule 0: a run with nothing switched on must stop with a NAMED reason, not
+    # fall through the loop and exit 0 having done nothing.
+    if not enable_li and not enable_x:
+        off_states = {p: social_platforms.platform_state(p, None, platform_policy)
+                      for p in social_platforms.PLATFORMS}
+        report = {
+            'date': TODAY, 'dry_run': dry_run,
+            'enabled': {'linkedin': enable_li, 'x': enable_x},
+            'platform_states': off_states,
+            'named_stops': named_stops_for(off_states, paused, {}),
+            'paused_platforms': paused,
+            'secret_skips': {},
+            'limits': {'linkedin': li_limit, 'x': x_limit},
+            'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
+            'posted_today': {'linkedin': 0, 'x': 0},
+            'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
+            'status': 'stopped_no_enabled_platform',
+            'production_blocked': False,
+            'stop_reason': (
+                'Every social platform switch is off in data/social-brand-policy.json, '
+                'so there is nowhere to post. '
+                + ('Recorded decisions: '
+                   + '; '.join(f"{k}: {v.get('paused_reason')}" for k, v in paused.items())
+                   if paused else
+                   'No platform carries a paused_on/paused_by/paused_reason record, so this '
+                   'is an undocumented switch-off rather than a decision.')
+            ),
+        }
+        write_json(REPORT_PATH, report)
+        print(json.dumps(report, indent=2))
+        return
+
     platform_secret_skips = {}
     if enable_li and not dry_run:
         missing = validate_required_secrets('linkedin')
@@ -290,6 +366,21 @@ def main():
         if missing:
             platform_secret_skips['x'] = missing
             enable_x = False
+
+    # The three distinguishable states, computed from the switch and the
+    # credential check together. "Paused by choice", "switched on but with no
+    # credentials", and "switched on and posting" are different situations with
+    # different remedies, and a reader of the ledger must be able to tell which
+    # one they are looking at without going to look at the secrets.
+    platform_states = {
+        p: social_platforms.platform_state(p, platform_secret_skips.get(p), platform_policy)
+        for p in social_platforms.PLATFORMS
+    }
+    # Entries that cannot post right now ONLY because their platform's switch is
+    # off. Derived, never stamped onto the rows: flipping the switch back on
+    # restores every one of them with no queue edit. See scripts/lib/social_platforms.py.
+    _, parked_by_switch = social_platforms.partition_queue(queue, platform_policy)
+    parked_by_platform_switch = {k: len(v) for k, v in parked_by_switch.items()}
 
     # A missing credential set retires ONE platform, not the run. This used to
     # read `if platform_secret_skips and ...`, so the absent LinkedIn token
@@ -304,6 +395,10 @@ def main():
         report = {
             'date': TODAY, 'dry_run': False,
             'enabled': {'linkedin': enable_li, 'x': enable_x},
+            'platform_states': platform_states,
+            'named_stops': named_stops_for(platform_states, paused, platform_secret_skips),
+            'paused_platforms': paused,
+            'parked_by_platform_switch': parked_by_platform_switch,
             'secret_skips': platform_secret_skips,
             'limits': {'linkedin': li_limit, 'x': x_limit},
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
@@ -446,6 +541,9 @@ def main():
         'date': TODAY,
         'dry_run': dry_run,
         'enabled': {'linkedin': enable_li, 'x': enable_x},
+        'platform_states': platform_states,
+        'paused_platforms': paused,
+        'parked_by_platform_switch': parked_by_platform_switch,
         'secret_skips': platform_secret_skips,
         'limits': {'linkedin': li_limit, 'x': x_limit},
         'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
@@ -460,7 +558,8 @@ def main():
         # did not. Only a run with no usable platform at all is blocked.
         'status': ('blocked_missing_secrets' if platform_secret_skips and no_platform_left and require_secrets and not dry_run
                    else ('ok_with_secret_warning' if platform_secret_skips
-                         else ('ok' if not failures else 'partial_failure')))
+                         else ('ok' if not failures else 'partial_failure'))),
+        'named_stops': named_stops_for(platform_states, paused, platform_secret_skips),
     }
     write_json(REPORT_PATH, report)
     print(json.dumps(report, indent=2))

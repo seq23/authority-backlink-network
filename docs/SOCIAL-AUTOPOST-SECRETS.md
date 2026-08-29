@@ -2,6 +2,16 @@
 
 This repo now supports 100% hands-off page publishing and social auto-posting for one LinkedIn account and one X account.
 
+## LinkedIn is paused (2026-08-29) — one line turns it back on
+
+**File:** `data/social-brand-policy.json` · **Line 12** · change `"enabled": false` to `"enabled": true` under `platforms.linkedin`, and commit. That is the whole switch.
+
+- The 581 LinkedIn posts already in `data/social-queue.json` start going out again on their own. They were never deleted or re-labelled; being parked is derived from the switch, not stamped on the rows, so nothing has to be un-marked or re-created.
+- Two repository secrets also have to exist before a post can actually send: `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_AUTHOR_URN`. Flipping the switch on before adding them breaks nothing — each run records `linkedin_on_but_uncredentialled` in `reports/social-publisher-report.json` and X keeps posting as normal.
+- `ENABLE_LINKEDIN_POSTING` / `ENABLE_X_POSTING` are now per-run overrides only. Leave them unset and the file above is the answer. They are listed below for completeness, not as something to set.
+
+Three states are deliberately distinguishable in every run report, under `platform_states`: `paused_by_switch` (a decision), `on_but_uncredentialled` (a to-do), `on_and_posting` (working). A platform switched off without a `paused_on` / `paused_by` / `paused_reason` record fails the build — see `scripts/validators/validate_social_rate_limits.py`.
+
 ## How it works
 
 1. `authority-v4-autopilot.yml` generates pages, validates them, queues social posts, posts the social queue, commits ledgers/reports, and lets Cloudflare Git integration deploy the pages.

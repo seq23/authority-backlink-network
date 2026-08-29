@@ -1,9 +1,20 @@
 {
-  "version": "4.3.3",
-  "purpose": "Prevent long-term starvation of smaller brands across one LinkedIn account and one X account while preserving daily platform caps.",
-  "daily_limits": {
-    "linkedin": 1,
-    "x": 5
+  "version": "4.3.5",
+  "purpose": "Declare which social platforms this network posts to (see platforms, which is the switch), and prevent long-term starvation of smaller brands on the enabled ones while preserving daily caps.",
+  "platforms": {
+    "_read_me_first": "This block is the on/off switch for each social platform. Nothing else in the repository decides whether a platform posts. To turn one on or off, change its \"enabled\" value here and commit. That is the entire change.",
+    "x": {
+      "enabled": true,
+      "daily_limit": 8
+    },
+    "linkedin": {
+      "HOW_TO_TURN_LINKEDIN_BACK_ON": "Change \"enabled\" on the next line from false to true, and commit. That is the whole switch. The 581 LinkedIn posts already sitting in data/social-queue.json start going out again on their own -- they were never deleted, never re-labelled, and nothing has to be rebuilt or un-marked. Two repository secrets also have to exist for a post to actually send: LINKEDIN_ACCESS_TOKEN and LINKEDIN_AUTHOR_URN. If you flip this on before adding them, nothing breaks: each run says \"linkedin_on_but_uncredentialled\" in reports/social-publisher-report.json and X keeps posting normally.",
+      "enabled": false,
+      "daily_limit": 3,
+      "paused_on": "2026-08-29",
+      "paused_by": "owner",
+      "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+    }
   },
   "rotation": {
     "method": "weighted_round_robin_with_daily_offset",

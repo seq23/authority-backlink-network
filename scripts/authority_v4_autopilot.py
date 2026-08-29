@@ -6,6 +6,7 @@ Designed for three publication sites already deployed by Cloudflare Git integrat
 """
 import os, json, re, hashlib, random, html, urllib.request
 from pathlib import Path
+from collections import defaultdict
 import cadence_allowance
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
@@ -17,6 +18,7 @@ from lib import lastmod_ledger, site_urls
 from affiliation import rel_attr
 from byline import entity_for
 from lib import page_composer
+from lib import social_platforms
 
 ROOT = Path(__file__).resolve().parents[1]
 PANTRY = json.loads((ROOT/'content-bank/yearly-pantry.json').read_text(encoding='utf-8'))
@@ -841,14 +843,30 @@ def main():
     # LINKEDIN_DAILY_LIMIT=1 and the x_pool ordering below spent all 5 X slots on
     # published[0]. A rate limit belongs where the rate is consumed, not where
     # the candidate is recorded.
-    for item in published:
-        domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
-        rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
-        source_url = 'https://' + domain + '/' + rel_path
-        body = f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking."
-        if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
-            body = f"{pick(item['social_hooks'], item['title']+'linkedin')} {item['title']}"
-        social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
+    # Enqueue only for platforms whose switch is on. A paused platform that keeps
+    # being enqueued rebuilds its own parked backlog one run at a time -- the 581
+    # LinkedIn entries accumulated exactly that way, sitting at
+    # queued_for_auto_post and reading as imminent work while nothing could post
+    # them. The switch lives in data/social-brand-policy.json.
+    #
+    # This is NOT the enqueue-time rate limit that PR #73 removed, and it must not
+    # be mistaken for it. A rate limit defers an item that WILL post later, so
+    # slicing there drops distribution silently. This declines to create an item
+    # for a platform that is switched off on purpose, and the run receipt below
+    # records which platforms were enabled, so the completeness contract is
+    # evaluated against the platforms that were actually in play.
+    social_platform_policy = social_platforms.load_policy()
+    enabled_social_platforms = social_platforms.enabled_platforms(social_platform_policy)
+    paused_social_platforms = social_platforms.paused_platforms(social_platform_policy)
+    if 'linkedin' in enabled_social_platforms:
+        for item in published:
+            domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
+            rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
+            source_url = 'https://' + domain + '/' + rel_path
+            body = f"A useful resource does not need to pretend every answer is universal. New note: {item['title']} — built as a decision aid, not a fake ranking."
+            if item.get('target_brand_id') == 'approval-prep' and item.get('social_hooks'):
+                body = f"{pick(item['social_hooks'], item['title']+'linkedin')} {item['title']}"
+            social.append({'date': RELEASE_DATE, 'scheduled_content_date': TODAY, 'platform': 'linkedin', 'status': 'queued_for_auto_post', 'body': body, 'source_path': item['path'], 'source_url': source_url, 'post_type': 'authority_resource_note'})
     
     x_templates = [
         "New resource: {title}. Better questions, fewer loud claims.",
@@ -867,7 +885,7 @@ def main():
     # the page more reachable, they make the account look automated. Every
     # published page still enters the queue exactly once per platform, so the
     # enqueue-completeness contract is unaffected -- no slicing here.
-    for idx, item in enumerate(published):
+    for idx, item in enumerate(published if 'x' in enabled_social_platforms else []):
         tmpl = x_templates[idx % len(x_templates)]
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
@@ -881,10 +899,29 @@ def main():
     # Rule 0 visibility: a run that publishes pages but enqueues no distribution
     # for them is a silent drop, so the counts are recorded in the run receipt.
     social_enqueued_paths = {s.get('source_path') for s in social if s.get('scheduled_content_date') == TODAY}
+    # The contract is per ENABLED platform: every published page must reach the
+    # queue for each platform that was switched on for this run. Naming the
+    # platforms in the receipt is what keeps that honest -- with LinkedIn paused
+    # the contract expects X only, and it says so rather than being satisfied by
+    # a union that would also be satisfied if X had silently dropped out.
+    published_paths = {i['path'] for i in published}
+    enqueued_by_platform = defaultdict(set)
+    for s in social:
+        if s.get('scheduled_content_date') == TODAY:
+            enqueued_by_platform[s.get('platform')].add(s.get('source_path'))
+    missing_by_platform = {
+        plat: sorted(published_paths - enqueued_by_platform.get(plat, set()))
+        for plat in enabled_social_platforms
+    }
     social_enqueued = {
         'published_pages': len(published),
-        'pages_enqueued_for_social': len([p for p in {i['path'] for i in published} if p in social_enqueued_paths]),
-        'pages_missing_social': sorted(p for p in {i['path'] for i in published} if p not in social_enqueued_paths),
+        'platforms_enabled': enabled_social_platforms,
+        'platforms_paused': paused_social_platforms,
+        'pages_enqueued_by_platform': {p: len(enqueued_by_platform.get(p, set()) & published_paths)
+                                       for p in enabled_social_platforms},
+        'pages_missing_by_platform': missing_by_platform,
+        'pages_enqueued_for_social': len([p for p in published_paths if p in social_enqueued_paths]),
+        'pages_missing_social': sorted({p for miss in missing_by_platform.values() for p in miss}),
     }
 
     # Refresh the portfolio dashboard after canonical state is written.

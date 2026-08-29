@@ -79,8 +79,13 @@ jobs:
       - name: Auto-post social queue (non-blocking)
         continue-on-error: true
         env:
-          ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING || 'true' }}
-          ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING || 'true' }}
+          # Enablement is DECLARED in data/social-brand-policy.json (platforms.*.enabled).
+          # These pass the repository variable through as an override only: unset expands
+          # to an empty string, which scripts/lib/social_platforms.py reads as "no opinion"
+          # and defers to the declaration. A literal '|| true' here would be a second,
+          # silent answer to a question the declaration already answers.
+          ENABLE_LINKEDIN_POSTING: ${{ vars.ENABLE_LINKEDIN_POSTING }}
+          ENABLE_X_POSTING: ${{ vars.ENABLE_X_POSTING }}
           REQUIRE_SOCIAL_SECRETS: ${{ vars.REQUIRE_SOCIAL_SECRETS || 'true' }}
           FAIL_ON_SOCIAL_POST_FAILURE: ${{ vars.FAIL_ON_SOCIAL_POST_FAILURE || 'false' }}
           SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN || 'false' }}
