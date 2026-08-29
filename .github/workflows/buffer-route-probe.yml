@@ -1,21 +1,21 @@
 name: Buffer Route Probe
 
-# Read-only by default: asks Buffer what this token can do and prints the
-# answer with the token redacted. The single write is opt-in, behind an input
-# that must be typed, so no scheduled or automatic run can post.
+# Diagnostics for the Buffer delivery route that carries X's posts. Read-only
+# by default: it asks Buffer what this token can do -- which channels are
+# connected, what the plan allows, what daily limit Buffer reports for the
+# channel -- and prints the answer with the token redacted.
+#
+# The single write is opt-in and has to be typed. There is no schedule and no
+# push trigger, so nothing here can post on its own.
 on:
   workflow_dispatch:
     inputs:
-      channels_input:
-        description: 'JSON for channels(input:) -- e.g. {"organizationId":"..."}'
-        required: false
-        default: ''
       schedule_test_text:
-        description: 'THE one write. Leave blank for a read-only probe.'
+        description: 'THE one write: put this text in the X channel queue. Blank = read-only.'
         required: false
         default: ''
       channel_id:
-        description: 'Buffer channel id for the write'
+        description: 'Buffer channel id for the write. Blank = the connected X channel.'
         required: false
         default: ''
 
@@ -33,7 +33,17 @@ jobs:
       - name: Probe Buffer
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          # Through the environment, never interpolated into the command line:
+          # what someone types in the dispatch form must not become shell.
+          SCHEDULE_TEST_TEXT: ${{ github.event.inputs.schedule_test_text }}
+          CHANNEL_ID: ${{ github.event.inputs.channel_id }}
         run: |
-          python3 scripts/buffer_route_probe.py --auth-check \
-            ${{ github.event.inputs.channels_input && format('--channels-input ''{0}''', github.event.inputs.channels_input) || '' }} \
-            ${{ github.event.inputs.schedule_test_text && format('--schedule-test ''{0}'' --channel-id ''{1}''', github.event.inputs.schedule_test_text, github.event.inputs.channel_id) || '' }}
+          set -euo pipefail
+          args=(--auth-check)
+          if [ -n "${SCHEDULE_TEST_TEXT:-}" ]; then
+            args+=(--schedule-test "${SCHEDULE_TEST_TEXT}")
+            if [ -n "${CHANNEL_ID:-}" ]; then
+              args+=(--channel-id "${CHANNEL_ID}")
+            fi
+          fi
+          python3 scripts/buffer_route_probe.py "${args[@]}"
