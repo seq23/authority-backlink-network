@@ -176,3 +176,43 @@ npm run validate:release
 ```
 
 Cloudflare deployment remains handled by Cloudflare Git integration. The post-publish distribution workflow runs only after successful Authority Network publication, plus manual and scheduled retry paths.
+
+## Measurement tools, and why they are not validators
+
+Three tools measure whether these publications can earn citations, and none of
+them blocks anything:
+
+```bash
+npm run measure:internal-reachability   # rebuild the link graph from rendered HTML
+npm run measure:crawler-access          # live probe: can GPTBot et al. fetch these pages
+npm run measure:citation-shape          # shape gap against 46 external agent runs
+npm run measure:citation-all            # all three, in that order
+```
+
+They produce numbers a person reads, in `reports/citation-measurement/`. That is
+the whole job. This repository has a standing rule that a measurement is not a
+mandate: `scripts/measure_content_duplication.py` was added with the note "this
+commit measures it rather than fixing it", because the remedy there is editorial
+and "rewriting the prose of thousands of live pages automatically would risk
+manufacturing substance that is not there". The same reasoning holds for these
+three, and 00a657e kept them on exactly that ground after they refuted the
+"377 orphans" claim the portfolio was reasoning from.
+
+Not blocking is not the same as not reachable. Each one now has a named entry
+point, and `scripts/validators/validate_script_callers.py` fails the release if
+any tracked script under `scripts/` loses its last caller — so a measurement
+tool cannot quietly become an orphan again, and cannot rot unnoticed while it
+sits there. `measure_internal_reachability.py` had already done both: it read
+`sites/` from an absolute path outside the checkout and wrote its result into a
+scratch directory belonging to a session that no longer existed.
+
+Repair tools, likewise reachable and likewise manual:
+
+```bash
+npm run links:backfill-rel                       # add a missing rel="sponsored nofollow"
+npm run pages:debloat                            # dry run; :write to apply
+npm run pages:retrofit-recommendation-summary -- --apply
+npm run pages:backfill-missed-days               # operator recovery for skipped publish days
+npm run analytics:install-clarity
+npm run cadence:reseed-lastmod
+```

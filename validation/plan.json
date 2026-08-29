@@ -30,7 +30,9 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "release": [
       "json",
@@ -56,7 +58,9 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "full": [
       "json",
@@ -83,7 +87,9 @@
       "cadence_gate_integrity",
       "autopilot_cadence_cap",
       "affiliate_topical_scope",
-      "brand_link_concentration"
+      "brand_link_concentration",
+      "script_callers",
+      "affiliate_rel_disclosure"
     ],
     "cache-self-test": [
       "python",
@@ -202,6 +208,14 @@
     "brand_link_concentration": {
       "severity": "HARD_FAIL",
       "rationale": "False evidence, already named in severity_policy. Every page states that this publication cites affiliated projects where the citation is topically relevant, which reads as an occasional editorial choice. On 2026-08-28 approval-prep was cited from 290 of professional-resources' 420 pages - 69%, and 292 of the network's 490 commercial links - while the leading brand in the other two publications sat at 31.4% and 32.7%. Every one of those links carried rel=\"sponsored nofollow\" and was inside its declared topical scope, so no existing validator could see it: each placement was individually correct and the aggregate was the defect. The disclosure being accurate made it worse, not better. This blocks on a brand over the declared third of any publication, on the cap being removed or raised in content-bank/scaling-policy.json, on the scheduler no longer withholding slots from a brand at its cap, on the per-brand APPROVAL_PREP_PAGES_PER_DAY bypass returning, and on any priority lane regaining a daily quota with no until_rendered_coverage to stop at."
+    },
+    "script_callers": {
+      "severity": "HARD_FAIL",
+      "rationale": "Executable failure, one step earlier. Seven scripts under scripts/ had no caller at all and nothing said so: three citation measurement tools and four one-shot backfills. A filename grep found the docstring that named the script and the README paragraph that described it, so each read as wired, and 'is this still reachable' had to be re-answered by hand every time. Two had rotted unnoticed while unreachable - measure_internal_reachability.py read sites/ from an absolute path outside this checkout, so a run from a worktree measured a different tree, then crashed writing its result into a scratch directory belonging to a session that no longer existed. An unreachable script is untested by everything, including this validation, while still looking live. This blocks on any tracked script under scripts/ that no runner invokes and no source imports, counts only invocations and real imports rather than prose mentions, excludes itself from its own reference corpus, and fails if it ever examines zero scripts."
+    },
+    "affiliate_rel_disclosure": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence, already named in severity_policy. Every published page states that affiliated citations carry rel=\"sponsored nofollow\". Nothing verified it: validate_brand_link_concentration.py uses the sponsored token to select commercial links, so a link that lost its rel drops out of the concentration count instead of being reported, and the aggregate looks better for the defect. The only tool that could see it, backfill_rel_attributes.py, had no caller. This is that same scan run as a check: it fails if any absolute link to a domain in data/brands.json is missing either token. It measures 0 missing across 632 pages today, so blocking cannot regress a clean surface."
     }
   },
   "severity_matrix_policy": {

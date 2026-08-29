@@ -43,6 +43,8 @@ COMMANDS = {
     "affiliate_topical_scope": [sys.executable, "scripts/validators/validate_affiliate_topical_scope.py"],
     "brand_link_concentration": [sys.executable, "scripts/validators/validate_brand_link_concentration.py"],
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
+    "script_callers": [sys.executable, "scripts/validators/validate_script_callers.py"],
+    "affiliate_rel_disclosure": [sys.executable, "scripts/backfill_rel_attributes.py", "--check"],
 }
 
 

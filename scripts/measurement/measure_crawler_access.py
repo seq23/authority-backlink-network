@@ -20,14 +20,15 @@ Three things are checked per (domain, agent):
 Network access required. Exits non-zero if any agent is blocked.
 
 Usage:
-  python3 measure_crawler_access.py --out reports/crawler-access.json \\
-      founderoperatorlibrary.com memphisvendorlibrary.com professionalresourcelibrary.com
+  npm run measure:crawler-access
+  python3 scripts/measurement/measure_crawler_access.py founderoperatorlibrary.com
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import urllib.error
 import urllib.request
@@ -79,11 +80,29 @@ def first_article_url(domain):
     return article or (locs[0] if locs else None), len(locs)
 
 
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DEFAULT_OUT = os.path.join(REPO, "reports/citation-measurement/crawler-access.json")
+
+
+def declared_domains() -> list[str]:
+    """The publications this repository actually serves.
+
+    Typing the three hostnames on the command line every time is how a probe
+    ends up measuring two of them, or a domain that was renamed six weeks ago.
+    """
+    with open(os.path.join(REPO, "data/publications.json"), encoding="utf-8") as fh:
+        return [p["working_domain"] for p in json.load(fh) if p.get("working_domain")]
+
+
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("domains", nargs="+")
-    ap.add_argument("--out")
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("domains", nargs="*", default=[],
+                    help="default: every working_domain in data/publications.json")
+    ap.add_argument("--out", default=DEFAULT_OUT)
     args = ap.parse_args()
+    if not args.domains:
+        args.domains = declared_domains()
+    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
 
     result = {
         "schema": "authority-crawler-access-v1",

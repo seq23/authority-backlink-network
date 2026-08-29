@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 59,
+    "runtime_operators": 72,
     "release_operators": 10,
     "workflow_operators": 4,
     "approved_target_urls": 86,
@@ -217,6 +217,12 @@
       "category": "Support / diagnostics"
     },
     {
+      "operator": "analytics:install-clarity",
+      "command": "npm run analytics:install-clarity",
+      "implementation": "node scripts/install_clarity.js",
+      "category": "Other"
+    },
+    {
       "operator": "cadence:accept",
       "command": "npm run cadence:accept",
       "implementation": "node scripts/cadence_accept.js",
@@ -232,6 +238,12 @@
       "operator": "cadence:headroom",
       "command": "npm run cadence:headroom",
       "implementation": "node scripts/cadence/publish_headroom.mjs",
+      "category": "Other"
+    },
+    {
+      "operator": "cadence:reseed-lastmod",
+      "command": "npm run cadence:reseed-lastmod",
+      "implementation": "python3 scripts/reseed_lastmod_from_git.py",
       "category": "Other"
     },
     {
@@ -289,6 +301,12 @@
       "category": "Other"
     },
     {
+      "operator": "links:backfill-rel",
+      "command": "npm run links:backfill-rel",
+      "implementation": "python3 scripts/backfill_rel_attributes.py",
+      "category": "Other"
+    },
+    {
       "operator": "links:reduce-concentration",
       "command": "npm run links:reduce-concentration",
       "implementation": "python3 scripts/reduce_commercial_link_concentration.py",
@@ -301,9 +319,27 @@
       "category": "Other"
     },
     {
+      "operator": "measure:citation-all",
+      "command": "npm run measure:citation-all",
+      "implementation": "npm run measure:internal-reachability && npm run measure:crawler-access && npm run measure:citation-shape",
+      "category": "Other"
+    },
+    {
+      "operator": "measure:citation-shape",
+      "command": "npm run measure:citation-shape",
+      "implementation": "python3 scripts/measurement/measure_citation_shape.py",
+      "category": "Other"
+    },
+    {
       "operator": "measure:click-depth",
       "command": "npm run measure:click-depth",
       "implementation": "python3 scripts/measure_click_depth.py",
+      "category": "Other"
+    },
+    {
+      "operator": "measure:crawler-access",
+      "command": "npm run measure:crawler-access",
+      "implementation": "python3 scripts/measurement/measure_crawler_access.py",
       "category": "Other"
     },
     {
@@ -313,15 +349,45 @@
       "category": "Other"
     },
     {
+      "operator": "measure:internal-reachability",
+      "command": "npm run measure:internal-reachability",
+      "implementation": "python3 scripts/measurement/measure_internal_reachability.py",
+      "category": "Other"
+    },
+    {
+      "operator": "pages:backfill-missed-days",
+      "command": "npm run pages:backfill-missed-days",
+      "implementation": "python3 scripts/backfill_authority_v4.py",
+      "category": "Other"
+    },
+    {
       "operator": "pages:consumer-reporting-directory",
       "command": "npm run pages:consumer-reporting-directory",
       "implementation": "python3 scripts/build_consumer_reporting_directory.py --write",
       "category": "Other"
     },
     {
+      "operator": "pages:debloat",
+      "command": "npm run pages:debloat",
+      "implementation": "python3 scripts/debloat_daily_pages.py",
+      "category": "Other"
+    },
+    {
+      "operator": "pages:debloat:write",
+      "command": "npm run pages:debloat:write",
+      "implementation": "python3 scripts/debloat_daily_pages.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "pages:demand-shapes",
       "command": "npm run pages:demand-shapes",
       "implementation": "python3 scripts/build_demand_shape_pages.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "pages:retrofit-recommendation-summary",
+      "command": "npm run pages:retrofit-recommendation-summary",
+      "implementation": "node scripts/retrofit_recommendation_summary.js sites",
       "category": "Other"
     },
     {
@@ -347,6 +413,12 @@
       "command": "npm run sources:verify-network",
       "implementation": "python3 scripts/verify_external_sources.py --network",
       "category": "Other"
+    },
+    {
+      "operator": "validate:affiliate-rel-disclosure",
+      "command": "npm run validate:affiliate-rel-disclosure",
+      "implementation": "python3 scripts/backfill_rel_attributes.py --check",
+      "category": "Validation / release"
     },
     {
       "operator": "validate:affiliate-topical-scope",
@@ -406,6 +478,12 @@
       "operator": "validate:published-tree-purity",
       "command": "npm run validate:published-tree-purity",
       "implementation": "python3 scripts/validators/validate_published_tree_purity.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:script-callers",
+      "command": "npm run validate:script-callers",
+      "implementation": "python3 scripts/validators/validate_script_callers.py",
       "category": "Validation / release"
     },
     {

@@ -18,10 +18,10 @@ The point is the delta. Run it again after any content change to see whether
 the gap moved. Deterministic, no network, no paid tools.
 
 Usage:
-  python3 measure_citation_shape.py \
-      --sites  /path/to/authority-backlink-network/sites \
-      --evidence /path/to/html_report_contract.generated.json \
-      --out    /path/to/report.json
+  npm run measure:citation-shape
+  python3 scripts/measurement/measure_citation_shape.py \
+      --sites  sites --evidence /path/to/html_report_contract.generated.json \
+      --out    reports/citation-measurement/citation_shape_report.json
 """
 
 from __future__ import annotations
@@ -491,14 +491,40 @@ def summarise(pages, label):
     }
 
 
+# Repo-relative defaults, so `npm run measure:citation-shape` works from a
+# clean checkout with no arguments. Every one of these was a required flag,
+# which is why the script only ever ran by hand with three absolute paths
+# pasted in, and why nothing scheduled it.
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DEFAULT_SITES = os.path.join(REPO, "sites")
+DEFAULT_OUT = os.path.join(REPO, "reports/citation-measurement/citation_shape_report.json")
+# The evidence side is 46 external agent runs recorded in a sibling repository.
+# It is not vendored here: it is another property's data and it moves on its own.
+DEFAULT_EVIDENCE = os.path.join(
+    os.path.dirname(REPO),
+    "local-guides-citation-velocity/data/report_fixes/html_report_contract.generated.json")
+
+
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--sites", required=True)
-    ap.add_argument("--evidence", required=True)
-    ap.add_argument("--out", required=True)
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--sites", default=DEFAULT_SITES)
+    ap.add_argument("--evidence", default=DEFAULT_EVIDENCE)
+    ap.add_argument("--out", default=DEFAULT_OUT)
     ap.add_argument("--boilerplate-threshold", type=float, default=0.20)
     args = ap.parse_args()
 
+    if not os.path.exists(args.evidence):
+        # Say which half is missing rather than dying on a traceback. The
+        # subject side is local; the evidence side is not.
+        print(
+            f"evidence corpus not found: {args.evidence}\n"
+            "This measurement compares this network against 46 external agent runs held in\n"
+            "local-guides-citation-velocity. Check that repository out beside this one, or\n"
+            "pass --evidence with its html_report_contract.generated.json.",
+            file=sys.stderr)
+        return 2
+
+    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     doc, texts, incumbent = load_evidence_corpus(args.evidence)
     evidence = {
         "source": os.path.basename(args.evidence),
