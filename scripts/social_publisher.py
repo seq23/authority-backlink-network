@@ -10,7 +10,7 @@ Safety model:
 - Uses official APIs only.
 - Supports SOCIAL_DRY_RUN=true for validation without network calls.
 """
-import base64, copy, hashlib, hmac, json, os, random, re, time, urllib.parse, urllib.request, urllib.error
+import base64, copy, hashlib, hmac, json, os, random, re, sys, time, urllib.parse, urllib.request, urllib.error
 from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
@@ -29,6 +29,84 @@ POSTED_STATUSES = {'posted', 'skipped_duplicate', 'failed_permanent'}
 # 'not_for_posting', which scripts/prioritize_social_queue.py writes onto entries
 # retired as duplicates, together with the reason it retired them.
 POSTABLE_STATUSES = {'queued_for_auto_post', 'approved_for_auto_post'}
+
+# How many times one entry may be attempted before it is retired for good. Stops
+# a genuinely unpostable item cycling forever, while letting an outage pass.
+MAX_POST_ATTEMPTS = int(os.getenv('MAX_POST_ATTEMPTS', '5'))
+
+# Errors a retry cannot change, because the item itself is the problem. Anything
+# not on this list is treated as transient and the entry is deferred, because
+# the expensive mistake here is dropping a page from distribution for good on
+# the strength of one bad afternoon at the API.
+PERMANENT_ERROR_MARKERS = ('empty_body', 'unsupported_platform')
+
+# Responses that mean "stop talking to this platform", not "try the next item".
+# 429 is the platform saying it has had enough; 402 is the account having no
+# write credits left; 401/403 mean the credentials will not work for any item.
+# In every case the next request cannot succeed and can only make things worse.
+HALT_STATUS_REASONS = {
+    '429': 'rate_limited_by_platform',
+    '402': 'payment_required_credits_depleted',
+    '401': 'credentials_rejected',
+    '403': 'credentials_forbidden',
+}
+
+
+def recoverable_legacy_failure(item):
+    """True for an entry retired by the attempt-budget defect of 2026-08-29.
+
+    `post_failed` is a status this module no longer writes: an attempt that
+    fails now either defers the entry or, if the entry itself is unpostable,
+    retires it as `failed_permanent`. So a row still carrying `post_failed`
+    came from the run that stamped 581 of them in one pass, after X answered
+    402 then 429 to a loop that made one request per queue entry because its
+    caps counted successes instead of attempts.
+
+    Those entries were never faulty - the platform refused the account, not the
+    post - and `post_failed` is in no postable set, so leaving them stamped
+    means 581 published pages are silently never distributed. They are restored
+    on sight. Only infrastructure refusals qualify; a content-level failure is
+    left alone, because a retry cannot change it.
+    """
+    if item.get('status') != 'post_failed':
+        return False
+    return halt_reason(item.get('last_error')) is not None
+
+
+def normalize_legacy_failures(queue):
+    """Return entries stamped by that defect to the postable pool."""
+    restored = 0
+    for item in queue:
+        if not recoverable_legacy_failure(item):
+            continue
+        item['status'] = 'queued_for_auto_post'
+        item['attempt_count'] = int(item.get('attempt_count') or 0) or 1
+        item['requeued_reason'] = (
+            'restored_after_attempt_budget_defect: retired by a run whose per-run and '
+            'daily caps counted successes rather than attempts, so a platform-level '
+            'refusal was recorded against every entry instead of stopping the run. '
+            'The entry itself was never at fault.'
+        )
+        restored += 1
+    return restored
+
+
+def is_permanent_error(error):
+    text = str(error or '')
+    return any(marker in text for marker in PERMANENT_ERROR_MARKERS)
+
+
+def halt_reason(error):
+    """Return a halt reason if this error means the whole platform should stop."""
+    m = re.match(r'\s*HTTP (\d{3})', str(error or ''))
+    if not m:
+        return None
+    code = m.group(1)
+    if code in HALT_STATUS_REASONS:
+        return f'{HALT_STATUS_REASONS[code]} (HTTP {code})'
+    if code.startswith('5'):
+        return f'platform_server_error (HTTP {code})'
+    return None
 
 
 def read_json(path, default):
@@ -288,7 +366,33 @@ def named_stops_for(platform_states, paused, secret_skips):
     return stops
 
 
+def restore_deferred_mode():
+    """Apply the legacy-failure normalization to the queue and exit. Posts nothing.
+
+    The publisher does this at the start of any ordinary run too, so this mode
+    exists only to bring the committed queue back in one step rather than
+    waiting for the next scheduled lane. It opens no network connection.
+    """
+    queue = read_json(QUEUE_PATH, [])
+    if isinstance(queue, dict):
+        queue = queue.get('items', [])
+    restored = normalize_legacy_failures(queue)
+    if restored:
+        write_json(QUEUE_PATH, queue)
+    postable = sum(1 for i in queue if i.get('status') in POSTABLE_STATUSES)
+    print(json.dumps({
+        'mode': 'restore-deferred',
+        'posted': 0,
+        'entries': len(queue),
+        'restored': restored,
+        'postable_after': postable,
+    }, indent=2))
+
+
 def main():
+    if '--restore-deferred' in sys.argv:
+        restore_deferred_mode()
+        return
     original_queue = read_json(QUEUE_PATH, [])
     queue = original_queue
     if isinstance(queue, dict):
@@ -427,6 +531,51 @@ def main():
                 posted_today[platform] += 1
             bodies_today_by_platform[platform].append(existing.get('body',''))
 
+    restored_legacy_failures = normalize_legacy_failures(queue)
+
+    # Budget spent TODAY is measured in attempts, not posts. posted_today above
+    # counts what landed; this counts what was sent. They differ exactly when
+    # things are going wrong, which is when the cap has to hold.
+    spent_today = {'linkedin': 0, 'x': 0}
+    for existing in queue:
+        plat = existing.get('platform')
+        if plat in spent_today and str(existing.get('last_attempt_at', '')).startswith(TODAY):
+            spent_today[plat] += 1
+    for plat in spent_today:
+        # A row posted today always carries last_attempt_at too, but a queue
+        # written by an older revision may not. Never let the budget read lower
+        # than the number of posts already known to have gone out.
+        spent_today[plat] = max(spent_today[plat], posted_today[plat])
+    attempted_this_run = {'linkedin': 0, 'x': 0}
+    halted_platforms = {}
+
+    def record_failure(item, idx, platform, error):
+        """A failed attempt defers the item; it does not retire it.
+
+        Marking a transient failure terminal is how 581 queued X entries became
+        581 dead ones in a single run on 2026-08-29: X answered 402 then 429,
+        every entry was stamped post_failed, and post_failed is in no postable
+        set, so the queue went to zero eligible items with nothing reporting a
+        loss. A cap that defers is fine; a failure that drops is not.
+        """
+        item['last_error'] = error
+        attempts_used = int(item.get('attempt_count') or 0)
+        if is_permanent_error(error):
+            item['status'] = 'failed_permanent'
+            disposition = 'failed_permanent'
+        elif attempts_used >= MAX_POST_ATTEMPTS:
+            item['status'] = 'failed_permanent'
+            disposition = 'failed_permanent_attempts_exhausted'
+        else:
+            # Back to the postable pool for a later run.
+            item['status'] = 'queued_for_auto_post'
+            disposition = 'deferred_for_retry'
+        failures.append({'index': idx, 'platform': platform, 'error': error,
+                         'attempt_count': attempts_used, 'disposition': disposition})
+        halt = halt_reason(error)
+        if halt and platform not in halted_platforms:
+            halted_platforms[platform] = halt
+
     raw_eligible = [i for i, item in enumerate(queue) if item.get('status') in POSTABLE_STATUSES]
 
     def load_brand_policy():
@@ -491,11 +640,17 @@ def main():
     for idx in eligible_indices:
         item = queue[idx]
         platform = item.get('platform')
-        if platform == 'linkedin' and (not enable_li or posted_today['linkedin'] >= li_limit):
+        # A platform that has refused the account stops for the rest of the run.
+        # Continuing past a 429 is the single most account-damaging thing this
+        # script can do: it converts one rate-limit response into hundreds of
+        # further requests against an endpoint that has just said stop.
+        if platform in halted_platforms:
             continue
-        if platform == 'x' and (not enable_x or posted_today['x'] >= x_limit):
+        if platform == 'linkedin' and (not enable_li or spent_today['linkedin'] >= li_limit):
             continue
-        if posted_this_run.get(platform, 0) >= run_limit:
+        if platform == 'x' and (not enable_x or spent_today['x'] >= x_limit):
+            continue
+        if attempted_this_run.get(platform, 0) >= run_limit:
             continue
         body = append_url(item.get('body',''), item)
         if any(jaccard_text(body, old) > max_sim for old in bodies_today_by_platform[platform]):
@@ -505,11 +660,22 @@ def main():
             continue
         # Space live posts apart, with jitter, so a run does not emit a clump on
         # one timestamp. Placed after the similarity guard so a skipped item does
-        # not burn a delay, and skipped for dry runs and the run's first post.
-        if not dry_run and (posted_this_run['linkedin'] + posted_this_run['x']) > 0 and min_interval > 0:
+        # not burn a delay, and skipped for dry runs and the run's first attempt.
+        # Keyed on ATTEMPTS, not successes: a run whose posts are all failing is
+        # exactly when spacing matters most, and keying it on successes meant a
+        # fully-failing run paced nothing at all.
+        if not dry_run and sum(attempted_this_run.values()) > 0 and min_interval > 0:
             time.sleep(min_interval * random.uniform(0.7, 1.6))
+        # Budget is consumed HERE, before the call, because what the platform
+        # rate-limits and what the free-tier allowance counts is the request,
+        # not the outcome. Charging only for successes is what let a run whose
+        # every call failed make one request per queue entry.
         item['last_attempt_at'] = datetime.now(timezone.utc).isoformat()
-        attempts.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'preview': body[:120]})
+        item['attempt_count'] = int(item.get('attempt_count') or 0) + 1
+        attempted_this_run[platform] = attempted_this_run.get(platform, 0) + 1
+        spent_today[platform] = spent_today.get(platform, 0) + 1
+        attempts.append({'index': idx, 'platform': platform, 'brand': item.get('brand'),
+                         'attempt_count': item['attempt_count'], 'preview': body[:120]})
         try:
             result = post_item(item, dry_run=dry_run)
             if result.get('ok'):
@@ -522,18 +688,12 @@ def main():
                 bodies_today_by_platform[platform].append(body)
                 successes.append({'index': idx, 'platform': platform, 'brand': item.get('brand'), 'id': item['post_id'], 'dry_run': result.get('dry_run', False)})
             else:
-                item['status'] = 'post_failed'
-                item['last_error'] = result.get('error', 'unknown_error')
-                failures.append({'index': idx, 'platform': platform, 'error': item['last_error']})
+                record_failure(item, idx, platform, result.get('error', 'unknown_error'))
         except urllib.error.HTTPError as e:
             detail = e.read().decode('utf-8', errors='replace')[:500]
-            item['status'] = 'post_failed'
-            item['last_error'] = f'HTTP {e.code}: {detail}'
-            failures.append({'index': idx, 'platform': platform, 'error': item['last_error']})
+            record_failure(item, idx, platform, f'HTTP {e.code}: {detail}')
         except Exception as e:
-            item['status'] = 'post_failed'
-            item['last_error'] = str(e)[:500]
-            failures.append({'index': idx, 'platform': platform, 'error': item['last_error']})
+            record_failure(item, idx, platform, str(e)[:500])
 
     if not dry_run:
         write_json(QUEUE_PATH, queue)
@@ -548,6 +708,12 @@ def main():
         'limits': {'linkedin': li_limit, 'x': x_limit},
         'pacing': {'run_limit': run_limit, 'min_interval_seconds': min_interval},
         'posted_this_run': posted_this_run,
+        'attempted_this_run': attempted_this_run,
+        'spent_today': spent_today,
+        'halted_platforms': halted_platforms,
+        'deferred_for_retry': sum(1 for f in failures if f.get('disposition') == 'deferred_for_retry'),
+        'restored_legacy_failures': restored_legacy_failures,
+        'still_postable_after_run': sum(1 for i in queue if i.get('status') in POSTABLE_STATUSES),
         'attempts': attempts,
         'successes': successes,
         'failures': failures,
@@ -556,9 +722,13 @@ def main():
         'brand_rotation_policy': {'quota_count': len(brand_quotas), 'daily_rotation_offset': TODAY_ORDINAL},
         # A partial credential set is a warning, not a block: X posted, LinkedIn
         # did not. Only a run with no usable platform at all is blocked.
+        # "partial_failure" for a run where every single attempt failed is a
+        # false description, and it is the one the 2026-08-29 run reported while
+        # 581 of 581 posts failed. A run that got nothing out is named as such.
         'status': ('blocked_missing_secrets' if platform_secret_skips and no_platform_left and require_secrets and not dry_run
                    else ('ok_with_secret_warning' if platform_secret_skips
-                         else ('ok' if not failures else 'partial_failure'))),
+                         else ('ok' if not failures
+                               else ('all_attempts_failed' if not successes else 'partial_failure')))),
         'named_stops': named_stops_for(platform_states, paused, platform_secret_skips),
     }
     write_json(REPORT_PATH, report)

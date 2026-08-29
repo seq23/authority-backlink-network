@@ -1,5 +1,7 @@
 {
   "_why": "The probe has to know which domains are ours, otherwise it cannot tell a citation of ours from anyone else's. Listed explicitly rather than inferred, so a new domain is a deliberate addition.",
+  "_queries_why": "Without this key the probe fell back to its built-in default of data/seo/priority_queries.json, a path that has never existed in this repository. loadQueries() returns [] for a missing file and the probe then exits 1 with 'citation probe: no queries found' - which is exactly what it did on every scheduled autopilot run, invisibly, because the step is continue-on-error. The queries it needs were sitting in data/queries/evidence/evidence_queries.json the whole time, generated from data/citation-topic-map.json for precisely this measurement. Two components each keeping their own list, with nothing joining them.",
+  "queries_file": "data/queries/evidence/evidence_queries.json",
   "owned_domains": [
     "founderoperatorlibrary.com",
     "memphisvendorlibrary.com",

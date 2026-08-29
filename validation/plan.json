@@ -35,6 +35,8 @@
       "social_enqueue_completeness",
       "script_callers",
       "social_rate_limits",
+      "social_attempt_budget",
+      "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
@@ -67,6 +69,8 @@
       "social_enqueue_completeness",
       "script_callers",
       "social_rate_limits",
+      "social_attempt_budget",
+      "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
@@ -100,6 +104,8 @@
       "social_enqueue_completeness",
       "script_callers",
       "social_rate_limits",
+      "social_attempt_budget",
+      "citation_probe_wiring",
       "social_queue_priority",
       "affiliate_rel_disclosure"
     ],
@@ -240,6 +246,14 @@
     "social_rate_limits": {
       "severity": "HARD_FAIL",
       "rationale": "Unsafe publication to live accounts: a daily limit outside the safe band either risks irreversible suspension of the X/LinkedIn accounts the authority network depends on, or restores a cap so low the queue never drains, which is a silent decision not to distribute."
+    },
+    "citation_probe_wiring": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence, in the same shape as selfheal_wiring: a stage that is invoked, reports nothing, and is read as having measured something. scripts/llm_citation_probe.mjs is the only thing here that observes whether answer engines cite these publications, and it was wired into the autopilot explicitly because it had shipped in seven repositories with no caller. It was then invoked and still took no observation: loadQueries() falls back to data/seo/priority_queries.json when the config names no file, that path has never existed in this repository, an empty list exits 1 with 'no queries found', and the step is continue-on-error - so every scheduled run ended with the probe dead and the workflow green, while the step's own comment stated that observation was now being taken. The 37 queries it needed were in data/queries/evidence/evidence_queries.json, generated from the topic map for exactly this measurement, with nothing joining the two. This drives the real probe in dry-run - no key, no network, no spend - and blocks if the configured queries file is missing or empty, if the probe exits non-zero, or if it reports zero queries ready. It measures 25 ready today, so blocking cannot regress a clean surface."
+    },
+    "social_attempt_budget": {
+      "severity": "HARD_FAIL",
+      "rationale": "Unsafe publication to live accounts, and the shape of it no configuration check can see. On 2026-08-29 the publisher made 581 requests to X in 76 seconds against X_DAILY_LIMIT=8, SOCIAL_RUN_LIMIT=3 and a jittered 90-second interval. Every one of those numbers was declared, in band, and validated by validate_social_rate_limits.py, which passed throughout - all three were counted against SUCCESSES, and X answered 402 then 429, so no counter ever moved and the loop walked the whole queue at full speed, continuing for 481 attempts after the platform had said stop. Then, because a failed attempt was stamped post_failed and no postable set contains that status, all 581 entries left the queue permanently: the X backlog went 581 to zero in one run, with the workflow green and the report calling it 'partial_failure'. A cap that only holds when nothing is going wrong is not a cap, and a guard that reads the number instead of exercising it cannot tell the difference. This drives the real publisher against a synthetic queue with the platform stubbed and blocks if a per-run slice bounds successes rather than requests, if a platform-level refusal does not stop the run, if spacing is keyed on successes, if a failing run retires the entries it could not post, if a day's scheduled runs can exceed the daily cap, if a run with zero successes reports itself as partial, or if the committed queue still carries the status the defect stamped. It fails if it exercises zero scenarios."
     },
     "social_queue_priority": {
       "severity": "HARD_FAIL",
