@@ -33,6 +33,21 @@ same title generate word-for-word identical bodies. Different URLs, same text.
 The account still emits two identical notes, so the later page's entry is
 retired for the same reason the fan-out is.
 
+What a paused PLATFORM does NOT do
+----------------------------------
+Nothing here. A platform being switched off in data/social-brand-policy.json --
+LinkedIn is, as of 2026-08-29 -- parks its entries by DERIVATION, not by
+rewriting them. Their status stays `queued_for_auto_post`; the publisher simply
+does not select them while the switch is off, and `--check` reports the count.
+Flipping the switch back to true restores all of them at once, with no queue
+edit and no un-marking pass.
+
+So `not_for_posting` in this queue means exactly one thing: retired on its own
+merits as a duplicate, permanently, regardless of any switch. `--check` fails if
+a row is stamped with a platform-pause marker instead, because a stamp is
+something a future re-enable would have to hunt down and reverse row by row --
+which is the manual step the switch exists to avoid.
+
 --check is the registered validator mode: it fails if any page has more than
 one postable entry on a platform, or if two postable entries share a body, so
 neither shape can creep back in. It fails hard if it examines zero queue
@@ -48,7 +63,14 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from lib import social_platforms  # noqa: E402
+
 QUEUE = ROOT / "data/social-queue.json"
+# Markers that would mean a platform pause had been stamped onto rows. Any of
+# these breaks the one-flip round trip and is a hard failure.
+PAUSE_STAMP_KEYS = ("paused_platform", "platform_paused", "parked_reason", "parked_by_switch")
+PAUSE_STAMP_SUBSTRINGS = ("platform_paused", "platform_retired", "linkedin_paused")
 
 POSTABLE = {"queued_for_auto_post", "approved_for_auto_post"}
 RETIRED = "not_for_posting"
@@ -130,6 +152,18 @@ def main() -> int:
     dupes, first_seen = duplicates(queue)
 
     if check:
+        # Derived, per-switch parking. Nothing is written; this is what the queue
+        # means today given data/social-brand-policy.json.
+        policy = social_platforms.load_policy()
+        postable_now, parked = social_platforms.partition_queue(queue, policy)
+        parked_counts = {k: len(v) for k, v in parked.items()}
+
+        stamped = [
+            i for i, item in enumerate(queue)
+            if any(k in item for k in PAUSE_STAMP_KEYS)
+            or any(s in str(item.get("retired_reason", "")).lower() for s in PAUSE_STAMP_SUBSTRINGS)
+        ]
+
         by_page = defaultdict(int)
         for i in dupes:
             by_page[group_key(queue[i])] += 1
@@ -137,11 +171,30 @@ def main() -> int:
         for reason in dupes.values():
             by_reason[reason.split(":")[0]] += 1
         worst = sorted(by_page.items(), key=lambda kv: -kv[1])[:5]
+        failures = []
+        if dupes:
+            failures.append(
+                f"{len(dupes)} postable entries repeat an earlier one, by page or by body."
+            )
+        if stamped:
+            failures.append(
+                f"{len(stamped)} queue entries carry a platform-pause marker stamped onto "
+                f"the row (indices {stamped[:5]}). A paused platform must park its entries "
+                f"by derivation from the switch in data/social-brand-policy.json, never by "
+                f"rewriting rows: a stamp turns re-enabling from one edit into a row-by-row "
+                f"un-marking pass, which is exactly what the switch exists to avoid. "
+                f"'not_for_posting' in this queue means retired as a duplicate, nothing else."
+            )
         result = {
             "validator": "social_queue_priority",
-            "status": "FAIL" if dupes else "PASS",
-            "hard_failures": 1 if dupes else 0,
+            "status": "FAIL" if failures else "PASS",
+            "hard_failures": len(failures),
             "entries_examined": len(queue),
+            "postable_now": len(postable_now),
+            "parked_by_platform_switch": parked_counts,
+            "platforms_enabled": social_platforms.enabled_platforms(policy),
+            "row_level_pause_stamps": len(stamped),
+            "failures": failures,
             "postable_pages": len(first_seen),
             "duplicate_postable_entries": len(dupes),
             "by_reason": dict(by_reason),
@@ -152,7 +205,7 @@ def main() -> int:
             "remedy": "python3 scripts/prioritize_social_queue.py --write",
         }
         print(json.dumps(result, indent=2))
-        return 1 if dupes else 0
+        return 1 if failures else 0
 
     retired = []
     for i, reason in dupes.items():
