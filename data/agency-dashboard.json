@@ -599,7 +599,10 @@
       "path": ".github/workflows/social-autopost.yml",
       "scheduled": true,
       "cron": [
-        "17 16 * * *"
+        "23 13 * * *",
+        "17 16 * * *",
+        "41 19 * * *",
+        "9 22 * * *"
       ],
       "manual_dispatch": true
     }
