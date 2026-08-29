@@ -1,6 +1,20 @@
 {
   "schema": "authority-backlink-self-heal-v1",
   "status": "PASS",
+  "rows_considered": 349,
+  "gate": {
+    "lifecycle_stage": [
+      "live_verified"
+    ],
+    "status": [
+      "published"
+    ]
+  },
+  "handled_findings": [
+    "affiliation_disclosure_missing",
+    "target_link_missing"
+  ],
   "repaired": [],
-  "blocked": []
+  "blocked": [],
+  "unhandled": []
 }

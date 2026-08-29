@@ -35,17 +35,30 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("mode", choices=["changed", "release", "full"])
     parser.add_argument("--no-repair", action="store_true")
+    # `changed` stays non-mutating by default so ordinary development validates
+    # without rewriting the tree. --repair is the explicit opt-in, and exists so
+    # heal_until_clean.py can declare a repair for pages_changed that is actually
+    # the repairing form of the identical contract. Before it existed the loop
+    # ran `page_validation.py changed`, which cannot repair in any circumstance
+    # (allow_repair excluded the mode), reported ran/exit 0, and left the defect
+    # in place - proved 2026-08-29: repairs_applied 0 under `changed` vs 1 under
+    # `release` for the same stripped meta description.
+    parser.add_argument("--repair", action="store_true",
+                        help="Permit repair in a mode that does not repair by default.")
     args = parser.parse_args()
 
+    if args.repair and args.no_repair:
+        parser.error("--repair and --no-repair are contradictory")
+
     use_cache = args.mode != "full"
-    allow_repair = args.mode in {"release", "full"} and not args.no_repair
+    allow_repair = (args.mode in {"release", "full"} or args.repair) and not args.no_repair
     deps = dependency_state()
     results: list[dict] = []
     hits = misses = repairs = 0
 
     for page in iter_pages():
         initial = audit_page(page)
-        fp = cache.fingerprint(initial.source_hash, deps, args.mode)
+        fp = cache.fingerprint(initial.source_hash, deps, args.mode, allow_repair)
         cached = cache.get(initial.path, fp) if use_cache else None
         if cached:
             result = cached["result"]
@@ -64,7 +77,7 @@ def main() -> None:
         result = final.to_dict()
         result["repairs"] = repaired
         result["cache_status"] = "MISS"
-        final_fp = cache.fingerprint(final.source_hash, deps, args.mode)
+        final_fp = cache.fingerprint(final.source_hash, deps, args.mode, allow_repair)
         if result["status"] != "FAIL":
             cache.put(final.path, final_fp, result)
         results.append(result)

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "f3054541a1bb548ed332671daed9d769c9f0c7649531a82415ef7f00dac087d3",
+  "plan_sha256": "920cb2ec7c4b6e123a38e735c3feda3123f9f97f9d48fabbb7bed87dd69dddd8",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,19 +13,63 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 17,
+  "count": 28,
   "counts_by_severity": {
-    "HARD_FAIL": 14,
+    "HARD_FAIL": 25,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
   "unclassified": [],
   "validators": [
     {
+      "id": "affiliate_topical_scope",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Wrong-domain routing and false evidence, both already named in severity_policy. Every daily page states that this publication cites affiliated projects 'where the citation is topically relevant'. Across 598 affiliated placements that was false for about 39%: 82 sat outside their target's declared clusters, 105 pointed at targets that declared no clusters at all, and 46 at hosts the pantry did not recognise. uscisexam.com, the one property in the portfolio earning AI citations, was cited from a page about trauma-informed leadership; dentistryguides.com from a page about credit-report errors. A disclosure that does not describe what the page does is worse than none, because it is read as proof. This blocks on an undeclared target, on a declaration written in clusters the publication does not use, on an affiliated placement outside its target's scope, and on build_brief() failing to decline - so a clean corpus cannot be produced by a generator whose two permissive fallbacks have been restored.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "analytics_separation",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Wrong-domain routing: a placeholder, missing, shared or cross-publication analytics id sends one publication's reader data into another's project.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "autopilot_cadence_cap",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence about whether publishing is governed. data/cadence/policy.json declared 3 new pages per week and scripts/cadence_gate.js enforced it, while the autopilot published 9 a day - 63 a week, 21x the cap - and never met the gate, because git-auto-commit-action pushes with GITHUB_TOKEN and GitHub does not trigger workflows on those pushes. The cap was written down, validated, and structurally unreachable by the only process that could break it. This blocks if the generator stops consulting the declared allowance, applies it after generating rather than before, lets it exceed the cap, or stops reporting a zero-page day as the ordinary success it is.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "backlink_local",
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "False evidence: verifies each published backlink actually resolves.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "brand_link_concentration",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence, already named in severity_policy. Every page states that this publication cites affiliated projects where the citation is topically relevant, which reads as an occasional editorial choice. On 2026-08-28 approval-prep was cited from 290 of professional-resources' 420 pages - 69%, and 292 of the network's 490 commercial links - while the leading brand in the other two publications sat at 31.4% and 32.7%. Every one of those links carried rel=\"sponsored nofollow\" and was inside its declared topical scope, so no existing validator could see it: each placement was individually correct and the aggregate was the defect. The disclosure being accurate made it worse, not better. This blocks on a brand over the declared third of any publication, on the cap being removed or raised in content-bank/scaling-policy.json, on the scheduler no longer withholding slots from a brand at its cap, on the per-brand APPROVAL_PREP_PAGES_PER_DAY bypass returning, and on any priority lane regaining a daily quota with no until_rendered_coverage to stop at.",
       "profiles": [
         "changed",
         "full",
@@ -40,6 +84,17 @@
       "profiles": [
         "cache-self-test",
         "full"
+      ]
+    },
+    {
+      "id": "cadence_gate_integrity",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A gate that cannot hold a verdict is false evidence about whether publishing is governed at all. cadence_gate.js used to rewrite the ledger it reads, so a blocked run cleared itself on the next invocation - observed as BLOCKED then CLEAR with nothing changed between them. That made the weekly publishing cap unenforceable while still reporting a status, which is worse than having no cap, because the green run was taken as proof. This blocks on the gate mutating its ledger, on two identical runs disagreeing, on no workflow invoking the gate, and on CI being able to run the acceptance path.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
       ]
     },
     {
@@ -65,6 +120,28 @@
       ]
     },
     {
+      "id": "click_depth",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Broken required journeys. Orphan count correlates inversely with AI citations across the 9 measured properties: the most-cited property carries 3 orphans and every zero-citation property is heavily orphaned. All three publications currently measure 0 orphans at a maximum depth of 2, so blocking cannot regress a clean surface - it only stops the daily generator from silently reintroducing pages nothing links to.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "content_pattern",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A page that carries no direct answer, no query-bearing h1, an empty table cell, or no outbound editorial link cannot be quoted by an answer engine or returns nothing when it is. All four checks measure 100% across the 495 published pages, so blocking cannot regress a clean surface.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "deterministic_build",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -80,6 +157,17 @@
       "severity": "STRONG_WARNING",
       "classified": true,
       "rationale": "Post-publish observation. Passes today with 0 verified citations, so it measures reach rather than correctness, and depends on secrets that are absent in local runs.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "external_sources",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence. These publications now cite 34 outside domains, and the whole value of that is that the citations are real. This check fails if a registered source has no verification receipt, if its last fetch was not a 200, or if a citation's host disagrees with its registered domain. A fabricated government URL on a publication whose only asset is credibility is the worst failure available here, so it blocks. The network fetch is a separate opt-in flag; the blocking run is structural and offline.",
       "profiles": [
         "changed",
         "full",
@@ -113,6 +201,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Broken required journeys and wrong-domain routing.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "nav_rebuild_after_publish",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Broken required journeys, and the one shape of that this gate could not see. build_site_navigation.py renders bounded navigation blocks - twelve siblings, twelve recent pages - and 3ce3dbb gave it an assertion that refused to write any page that lost a link. A bounded window over a growing library has to evict, so from the day both landed, every autopilot run that actually published something aborted the rebuild and left the new pages orphaned; run 33101813017 on 2026-08-27 is the first. Neither script is wrong alone and both pass on the committed tree, which is exactly why nothing here caught it: no check ran the workflow's own order, publish then rebuild. This one does, against a temporary copy with a synthetic new daily page in it, and requires the rebuild to complete, no eviction to leave a page unreached, and click depth to still measure zero orphans. It also fails if the fixture stops evicting anything, because a guard that no longer exercises its case is not a guard.",
       "profiles": [
         "changed",
         "full",
@@ -158,6 +257,17 @@
       ]
     },
     {
+      "id": "published_tree_purity",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Unclassified; treated as the fail-safe default.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "python",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -175,6 +285,17 @@
       "severity": "STRONG_WARNING",
       "classified": true,
       "rationale": "Backfill and self-heal accounting is administrative drift; a gap is repairable and does not make published output wrong.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "selfheal_wiring",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A repair loop that runs green and repairs nothing is worse than no loop, because the green run is taken as proof the tree is healthy. Four such defects were reproduced on 2026-08-29: portfolio_backlink_engine.repair() gated on two lifecycle stages the 613-row registry has never held, so it matched 0 rows and printed PASS; the same function recorded findings it has no handler for as repaired; cache.fingerprint() omitted allow_repair, so a --no-repair result satisfied a repairing run and suppressed the repair; and heal_until_clean.py declared `page_validation.py changed` as a repair when that invocation cannot mutate the tree at all. This blocks on the repair gate matching zero rows, on the gate reaching withdrawn or off-topic-removed rows a prior remediation cleaned, on a claimed finding having no handler, on allow_repair leaving the cache key, on a declared repair being inert, and on no workflow invoking the loop.",
       "profiles": [
         "changed",
         "full",

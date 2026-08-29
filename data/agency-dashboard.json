@@ -4,9 +4,9 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 59,
+    "runtime_operators": 60,
     "release_operators": 10,
-    "workflow_operators": 4,
+    "workflow_operators": 5,
     "approved_target_urls": 86,
     "serviced_target_urls": 65,
     "backlink_rows": 613,
@@ -409,6 +409,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:selfheal-wiring",
+      "command": "npm run validate:selfheal-wiring",
+      "implementation": "python3 scripts/validators/validate_selfheal_wiring.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validation:matrix",
       "command": "npm run validation:matrix",
       "implementation": "python3 scripts/generate_validation_matrix.py",
@@ -482,6 +488,15 @@
       "scheduled": false,
       "cron": [],
       "manual_dispatch": false
+    },
+    {
+      "name": "Bounded Self-Healing",
+      "path": ".github/workflows/self-heal.yml",
+      "scheduled": true,
+      "cron": [
+        "34 16 * * 3"
+      ],
+      "manual_dispatch": true
     },
     {
       "name": "Social Auto-Post Only",

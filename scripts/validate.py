@@ -43,6 +43,7 @@ COMMANDS = {
     "affiliate_topical_scope": [sys.executable, "scripts/validators/validate_affiliate_topical_scope.py"],
     "brand_link_concentration": [sys.executable, "scripts/validators/validate_brand_link_concentration.py"],
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
+    "selfheal_wiring": [sys.executable, "scripts/validators/validate_selfheal_wiring.py"],
 }
 
 

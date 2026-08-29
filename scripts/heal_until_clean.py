@@ -37,8 +37,8 @@ BUILD_DERIVED = ([sys.executable, "scripts/deterministic_build.py", "--write"],
                  "Rewrites the wholly derived artifacts (sitemaps, llms.txt, 404s). Safe to run unconditionally: it regenerates from source and cannot destroy authored content.")
 REPAIRS = {
     "pages_changed": [BUILD_DERIVED,
-                      ([sys.executable, "scripts/page_validation.py", "changed"],
-                       "page_validation.py repairs by default; the check runs the same code with --no-repair, so this is the repairing form of the identical contract.")],
+                      ([sys.executable, "scripts/page_validation.py", "changed", "--repair"],
+                       "The repairing form of the identical contract. --repair is required: `changed` does not repair by default, so the previous pairing (plain `page_validation.py changed`) could not repair under any circumstance and reported success anyway.")],
     "pages_release": [BUILD_DERIVED,
                       ([sys.executable, "scripts/page_validation.py", "release"],
                        "Same validator, repairing form.")],
