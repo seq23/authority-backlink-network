@@ -90,10 +90,35 @@ def main() -> None:
     hard_failures = sum(r["status"] == "FAIL" for r in results)
     strong_warnings = sum(r["status"] == "PASS_WITH_STRONG_WARNING" for r in results)
     soft_warnings = sum(r["status"] == "PASS_WITH_SOFT_WARNING" for r in results)
+    # Rule 0: an audit that examined no pages has not audited anything, and its
+    # PASS is indistinguishable from a clean library. Proved by deleting every
+    # file under sites/: this reported PASS, 0 hard failures, in the `full`
+    # profile that exists to audit the whole library. sites/ is committed, so a
+    # fresh checkout always has pages - which is exactly why an empty result
+    # means a broken glob, a moved tree, or a generator that wrote nothing,
+    # never a legitimately empty corpus.
+    # `changed` is exempt: a branch that touched no page legitimately has an
+    # empty set, and that is the ordinary case rather than a broken one. The
+    # whole-library modes have no such excuse.
+    if not results and args.mode in {"release", "full"}:
+        print(json.dumps({
+            "schema": "authority-page-validation-v1",
+            "mode": args.mode,
+            "status": "FAIL",
+            "hard_failures": 1,
+            "pages_examined": 0,
+            "detail": "Audited zero pages in a whole-library mode. sites/ is tracked in git "
+                      "and always contains published pages, so an empty audit set is a "
+                      "broken selector or a missing tree, not a clean library. Passing here "
+                      "would vouch for nothing while reporting full coverage.",
+        }, indent=2))
+        raise SystemExit(1)
+
     receipt = {
         "schema": "authority-page-validation-v1",
         "mode": args.mode,
         "status": "FAIL" if hard_failures else ("PASS_WITH_STRONG_WARNING" if strong_warnings else ("PASS_WITH_SOFT_WARNING" if soft_warnings else "PASS")),
+        "pages_examined": len(results),
         "hard_failures": hard_failures,
         "strong_warnings": strong_warnings,
         "soft_warnings": soft_warnings,

@@ -85,6 +85,25 @@ def main() -> int:
                 if not DRY:
                     open(path, "w", encoding="utf-8").write(out)
     if CHECK:
+        # Rule 0: "0 links missing rel" across 0 pages is the same green as
+        # across 632. Proved by deleting every file under sites/: this reported
+        # PASS with pages_scanned 0. Every published page claims that affiliated
+        # citations carry rel="sponsored nofollow"; this is the only thing that
+        # verifies the claim, so a vacuous pass re-opens exactly the gap it was
+        # written to close. sites/ is committed and never legitimately empty.
+        if not scanned:
+            print(json.dumps({
+                "validator": "affiliate_rel_disclosure",
+                "status": "FAIL",
+                "hard_failures": 1,
+                "pages_scanned": 0,
+                "detail": "Scanned zero pages. This check verifies the rel=\"sponsored "
+                          "nofollow\" claim every published page makes about its affiliated "
+                          "citations; with no pages scanned it finds nothing missing and "
+                          "reports PASS, which vouches for nothing. sites/ is tracked in "
+                          "git, so an empty scan is a broken selector, not a clean corpus.",
+            }, indent=2))
+            return 1
         print(json.dumps({
             "validator": "affiliate_rel_disclosure",
             "status": "FAIL" if changed_links else "PASS",

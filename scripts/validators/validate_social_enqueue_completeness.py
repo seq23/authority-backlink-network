@@ -146,7 +146,12 @@ def main() -> int:
 
     legacy_published = sum(r.get("published", 0) for r in legacy)
     legacy_queued = len({p for r in legacy for p in queued_by_date.get(r.get("date"), set())})
-    legacy_deficit = legacy_published - legacy_queued
+    # Clamped at zero. The backfill enqueued pages beyond those the run receipts
+    # counted, so this subtraction went negative and the receipt reported
+    # "legacy_pages_never_queued: -74" - a count of a thing that cannot be
+    # negative, published as evidence. A surplus means the backlog is covered,
+    # not that minus-74 pages are missing.
+    legacy_deficit = max(0, legacy_published - legacy_queued)
 
     for run in governed:
         receipt = run.get("social_enqueued")
@@ -191,8 +196,23 @@ def main() -> int:
         "platforms_enabled": declared_enabled,
         "platforms_paused": social_platforms.paused_platforms(policy),
         "runs_examined": len(governed),
+        # The per-run half of this validator iterates `governed`. The existing
+        # Rule 0 guard above checks `history`, which is 61 legacy runs and
+        # therefore never empty - so it cannot see that the loop below ran zero
+        # times. Today it does: the cadence cap holds the autopilot at 0 pages a
+        # day, so no run since the contract has published anything. That is a
+        # legitimate state, not a failure, but a green receipt must say which
+        # half of the check actually ran rather than leaving it to be inferred
+        # from a count nobody reads.
+        "dynamic_coverage": (
+            "per_run_receipts_verified" if governed else
+            "VACUOUS: no run since %s has published a page, so the per-run enqueue "
+            "check examined nothing. Only the %d static contract checks against "
+            "scripts/authority_v4_autopilot.py carry this PASS." % (CONTRACT_SINCE, checks_performed)
+        ),
         "legacy_runs_reported_only": len(legacy),
         "legacy_pages_published": legacy_published,
+        "legacy_pages_queued": legacy_queued,
         "legacy_pages_never_queued": legacy_deficit,
         "failures": hard_failures,
     }

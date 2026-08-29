@@ -137,6 +137,29 @@ const pages = [];
 })(ROOT);
 pages.sort();
 
+// Rule 0: zero pages is not full compliance.
+//
+// coverage_pct is computed as 100 * (1 - missing / max(pages.length, 1)), so an
+// empty scan yields 100% on every check and zero blocking failures. Proved by
+// deleting every file under sites/: this printed "0 pages checked" alongside
+// "BLOCKING direct_answer coverage 100%" on all four blocking checks, and
+// exited 0. The severity rationale for this gate reads "all four checks measure
+// 100% across the 495 published pages, so blocking cannot regress a clean
+// surface" - and a 100% derived from nothing is indistinguishable from that.
+//
+// sites/ is tracked in git, so a fresh checkout always has pages. An empty scan
+// means the walk root moved, the skip rules widened, or the tree is absent.
+if (pages.length === 0) {
+  console.error(
+    'CONTENT PATTERN CONTRACT: FAIL - scanned 0 pages under ' +
+    (path.relative(REPO, ROOT) || '.') + '.\n' +
+    '  Coverage is a ratio over the pages scanned, so an empty scan reports 100% on\n' +
+    '  every check and blocks nothing. sites/ is committed and always contains pages,\n' +
+    '  so finding none means a broken scan root or skip rule, not a compliant library.'
+  );
+  process.exit(1);
+}
+
 const blockingFailures = [];
 const gaps = {};
 for (const check of CHECKS) gaps[check.id] = [];
