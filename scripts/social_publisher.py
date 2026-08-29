@@ -15,20 +15,20 @@ from collections import defaultdict
 from pathlib import Path
 from datetime import date, datetime, timezone
 
-from lib import buffer_route, social_platforms, social_selection
-import social_drafts
+from lib import (buffer_route, hand_post_history, social_platforms,
+                 social_selection)
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = Path(os.getenv('SOCIAL_QUEUE_PATH', str(ROOT / 'data/social-queue.json')))
 REPORT_PATH = Path(os.getenv('SOCIAL_REPORT_PATH', str(ROOT / 'reports/social-publisher-report.json')))
 REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-# Where the manual-posting fallback keeps its state and writes its sheet. Both
-# default beside the queue and the report they belong to, so a fixture run
-# pointed at a temporary queue cannot write over the committed ones.
+# The historical record of what the owner posted to X BY HAND, back when the
+# fallback was a copy-paste sheet. Read-only, and read on every run for one
+# reason: those posts are live on the profile and must never be sent again.
+# Nothing writes it and no surface asks her to update it -- the sheet itself is
+# retired. See scripts/lib/hand_post_history.py.
 DRAFT_LEDGER_PATH = Path(os.getenv('SOCIAL_DRAFT_LEDGER_PATH',
-                                   str(social_drafts.ledger_path_default(QUEUE_PATH))))
-DRAFTS_PATH = Path(os.getenv('SOCIAL_DRAFTS_PATH',
-                             str(social_drafts.drafts_path_default(REPORT_PATH))))
+                                   str(hand_post_history.ledger_path_default(QUEUE_PATH))))
 TODAY = date.today().isoformat()
 TODAY_ORDINAL = date.today().toordinal()
 
@@ -134,8 +134,8 @@ def truthy(name, default='false'):
 
 
 # Text rendering and selection live in scripts/lib/social_selection.py, so the
-# manual-drafts sheet in scripts/social_drafts.py offers the SAME posts, in the
-# same order, with the same characters that this module would have sent.
+# delivery route sends the SAME text this module would have sent, rendered once
+# so the two can never diverge.
 normalize = social_selection.normalize
 jaccard_text = social_selection.jaccard_text
 append_url = social_selection.append_url
@@ -309,8 +309,8 @@ def post_item(item, dry_run=False, route=None):
     to check. That is what keeps "zero requests to X" true while X posts.
     """
     platform = item.get('platform')
-    # One renderer, shared with the manual-drafts sheet, so what the API is sent
-    # and what she is asked to paste cannot diverge.
+    # One renderer for every lane, so what an API is sent and what a delivery
+    # route is handed cannot diverge.
     text = social_selection.post_text(item)
     if not text:
         return {'ok': False, 'error': 'empty_body'}
@@ -356,9 +356,9 @@ def named_stops_for(platform_states, paused, secret_skips):
                 f"was contacted ZERO times -- it is pay-per-use and unfunded. The day's "
                 f"posts were handed to Buffer's free queue instead, and Buffer publishes "
                 f"them at the channel's next posting slot. Entries carry status "
-                f"'buffer_queued' with the Buffer post id, and are NOT offered on "
-                f"reports/social-drafts.md, because a post Buffer accepted must not also "
-                f"be posted by hand."
+                f"'buffer_queued' with the Buffer post id. Posts Buffer's free plan had "
+                f"no room for stay 'queued_for_auto_post' and go out on a later run as "
+                f"the Buffer queue drains -- nothing is asked of anybody."
             )
             continue
         if state == social_platforms.STATE_PAUSED:
@@ -368,17 +368,21 @@ def named_stops_for(platform_states, paused, secret_skips):
                 f"purpose. Turn it back on by setting platforms.{platform}.enabled to true "
                 f"in data/social-brand-policy.json."
             )
-        elif state == social_platforms.STATE_PAUSED_FOR_POSTING:
+        elif state == social_platforms.STATE_PAUSED_ROUTE_ONLY:
             # Not the same stop as a dormant pause, and it must not read like
-            # one: nothing was POSTED, but the day's distribution still went
-            # out. A report saying only "paused" would describe a stopped lane.
+            # one: this platform's API is off on purpose and a delivery route
+            # carries it, but the route could not carry anything THIS run.
+            # Nothing is lost and nothing is asked of anyone -- the entries are
+            # still queued and the next run tries again.
             stops[platform] = (
-                f"{platform}_paused_for_posting: {(paused.get(platform) or {}).get('paused_reason')} "
-                f"ZERO requests were made to the {platform} API this run. Distribution did "
-                f"not stop: the day's posts are on reports/social-drafts.md to be posted by "
-                f"hand, and marked done in data/social-draft-ledger.json. Turn automatic "
-                f"posting back on by setting platforms.{platform}.enabled to true in "
-                f"data/social-brand-policy.json."
+                f"{platform}_awaiting_delivery_route: "
+                f"{(paused.get(platform) or {}).get('paused_reason')} "
+                f"ZERO requests were made to the {platform} API this run -- it is "
+                f"pay-per-use and unfunded. Its delivery route could not carry anything "
+                f"this run, so the day's posts simply stayed 'queued_for_auto_post' and "
+                f"go out on a later run. Nothing is stranded and nothing is asked of "
+                f"anybody. Turn the platform's own API back on by setting "
+                f"platforms.{platform}.enabled to true in data/social-brand-policy.json."
             )
         elif state == social_platforms.STATE_UNCREDENTIALLED:
             missing = secret_skips.get(platform) or []
@@ -465,37 +469,41 @@ def main():
     # (dailyPostingLimits), then capped again by this network's own
     # X_DAILY_LIMIT. A number hardcoded here would be a guess that survives
     # Buffer changing it.
+    #
+    # The per-day slice of this network's own limit that is still unspent:
+    # X_DAILY_LIMIT minus what THIS repository already handed Buffer today.
+    # Deliberately not `spent_today['x']`, which counts attempts against X's own
+    # API -- 581 of those failed on 2026-08-29 and none of them consumed a
+    # single Buffer slot. Charging Buffer for X's dead API is how a working
+    # route sat at attempts: 0 with eight posts of headroom.
+    buffer_sent_today = sum(1 for i in queue
+                            if str(i.get('buffer_queued_at', '')).startswith(TODAY))
     x_route = None
     x_route_declared = social_platforms.route_enabled(
         'x', social_platforms.ROUTE_BUFFER, platform_policy)
     if x_route_declared and not dry_run and not enable_x:
-        x_route = buffer_route.Route('x', policy_daily_limit=x_limit).open()
+        x_route = buffer_route.Route(
+            'x', policy_daily_limit=max(0, x_limit - buffer_sent_today)).open()
     x_via_route = bool(x_route and x_route.available)
-    # Drafts already offered to her by hand and not yet marked posted. The route
-    # must not take one: she would post it, and Buffer would post it again.
-    open_draft_fingerprints = social_drafts.open_fingerprints(
-        social_drafts.read_ledger(DRAFT_LEDGER_PATH)) if x_via_route else set()
-    # The manual-posting fallback. A platform that is switched ON and still
-    # cannot get a post out does not get to leave the run empty-handed: the
-    # day's highest-value posts are written to a copy-paste sheet instead, so
-    # distribution keeps happening while the API is dead. It reads the queue and
-    # writes nothing to it, so restoring the API restores automatic posting with
-    # no un-drafting pass. See scripts/social_drafts.py.
-    def emit_drafts(states, halted=None, attempted=None, posted_run=None,
-                    spent=None, posted=None):
-        unavailable = social_drafts.unavailable_platforms(
-            states, halted or {}, attempted or {}, posted_run or {},
-            spent or {}, posted or {})
-        eligible = social_selection.eligible_in_priority_order(
-            queue, platform_policy, TODAY, TODAY_ORDINAL)
-        return social_drafts.run(
-            queue, eligible, unavailable, policy=platform_policy,
-            ledger_path=DRAFT_LEDGER_PATH, drafts_path=DRAFTS_PATH,
-            today=TODAY, batch_sizes={'linkedin': li_limit, 'x': x_limit},
-            # A dry run reports what it WOULD draft and persists nothing, for the
-            # same reason it does not write the queue.
-            write=not dry_run)
-
+    # The one set of posts no route may ever take: the ones the owner put on X
+    # with her own hands, back when the fallback was a copy-paste sheet. They
+    # are live on the profile and were never consumed from the queue, so
+    # without this they would go out a second time. Everything else in that
+    # ledger is a draft she never posted -- free to leave through Buffer, which
+    # is the whole point of retiring the sheet. See scripts/lib/hand_post_history.py.
+    hand_ledger = hand_post_history.read_ledger(DRAFT_LEDGER_PATH)
+    posted_by_hand = hand_post_history.posted_by_hand_fingerprints(hand_ledger)
+    hand_post_record = hand_post_history.summary(hand_ledger)
+    released_from_old_drafts = []
+    # Drafted onto the retired sheet and never posted from it. Free to go out
+    # through Buffer -- that is the whole point of retiring the sheet -- and
+    # tracked only so the report can say so.
+    drafted_never_posted = set()
+    for _batch in hand_ledger.get('batches', [])[
+            hand_post_history.marked_index(hand_ledger) + 1:]:
+        for _entry in _batch.get('items', []):
+            if _entry.get('fingerprint'):
+                drafted_never_posted.add(_entry['fingerprint'])
     posted_this_run = {'linkedin': 0, 'x': 0}
     # Count already-posted items for TODAY so multiple workflows cannot exceed
     # the daily cap when both autopilot and social-only schedules run.
@@ -505,18 +513,17 @@ def main():
     # Rule 0: a run with nothing switched on must stop with a NAMED reason, not
     # fall through the loop and exit 0 having done nothing.
     #
-    # "Nothing switched on" is no longer the same as "nothing to do". A platform
-    # paused FOR POSTING is off here and still owes the day its drafts, and this
-    # branch returns before a single credential is read or a single request is
-    # made -- which is exactly how "zero API requests while paused" is achieved
-    # rather than asserted. So the drafts are cut first and the run is named by
-    # what it actually produced.
+    # This branch returns before a single credential is read or a single request
+    # is made to a platform API -- which is how "zero API requests while paused"
+    # is achieved rather than asserted. Nothing is produced for a human here and
+    # nothing is stranded: every entry keeps `queued_for_auto_post` and the next
+    # run tries the route again.
     if not enable_li and not enable_x and not x_via_route:
         off_states = {p: social_platforms.platform_state(p, None, platform_policy)
                       for p in social_platforms.PLATFORMS}
-        drafts = emit_drafts(off_states)
-        produced = drafts.get('drafts_written', 0) + drafts.get('drafts_reissued', 0)
-        drafting = sorted(social_platforms.drafting_platforms(platform_policy))
+        route_only = sorted(social_platforms.route_only_platforms(platform_policy))
+        deferred = sum(1 for i in queue if i.get('platform') in route_only
+                       and i.get('status') in POSTABLE_STATUSES)
         _, parked_off = social_platforms.partition_queue(queue, platform_policy)
         report = {
             'date': TODAY, 'dry_run': dry_run,
@@ -548,29 +555,32 @@ def main():
                     'x_api_requests_made': 0,
                 }
             },
-            'drafting_platforms': drafting,
+            'route_only_platforms': route_only,
             'still_postable_after_run': sum(1 for i in queue
                                             if i.get('status') in POSTABLE_STATUSES),
-            'manual_drafts': drafts,
-            'status': ('posted_nothing_drafted_by_hand' if produced
+            # A named, counted state -- not a task for anybody. These entries
+            # are queued, they stay queued, and they go out on a later run.
+            'deferred_waiting_for_delivery_route': deferred,
+            'hand_post_history': hand_post_record,
+            'status': ('deferred_waiting_for_delivery_route' if deferred
                        else 'stopped_no_enabled_platform'),
             'production_blocked': False,
             'stop_reason': (
-                # Two genuinely different outcomes, named differently. "Posted
-                # nothing, drafted 8" is a run that did its work through the
-                # other route; "everything dormant, nothing produced" is a run
-                # that did none, and only the second is a stop.
+                # Two genuinely different outcomes, named differently. "The
+                # route could not take anything today, 826 entries still
+                # queued" is a lane waiting; "everything dormant, nothing
+                # queued" is a lane that has nothing to do at all.
                 (f"No platform posts through its API right now, and none was contacted: "
-                 f"zero requests were made. Distribution still ran -- {produced} post(s) "
-                 f"are waiting on reports/social-drafts.md for "
-                 f"{', '.join(drafting) or 'the drafting platforms'}, to be posted by hand "
-                 f"and then marked done in data/social-draft-ledger.json. The posting queue "
-                 f"is untouched and every entry keeps its status."
-                 ) if produced else
-                ('Every social platform switch is off in data/social-brand-policy.json, '
-                 'none is paused for posting with drafts due, and there is no queued '
-                 'content left to hand over, so this run had nothing to produce by any '
-                 'route. '
+                 f"zero requests were made. The delivery route for "
+                 f"{', '.join(route_only) or 'the routed platforms'} could not carry "
+                 f"anything this run, so {deferred} entr{'y' if deferred == 1 else 'ies'} "
+                 f"stayed 'queued_for_auto_post' and go out on a later run as the route "
+                 f"frees up. Nothing is stranded, nothing is lost, and nothing is asked "
+                 f"of anybody."
+                 ) if deferred else
+                ('Every social platform switch is off in data/social-brand-policy.json '
+                 'and there is no queued content left for any delivery route, so this '
+                 'run had nothing to produce by any lane. '
                  + ('Recorded decisions: '
                     + '; '.join(f"{k}: {v.get('paused_reason')}" for k, v in paused.items())
                     if paused else
@@ -636,7 +646,7 @@ def main():
             'limits': {'linkedin': li_limit, 'x': x_limit},
             'attempts': [], 'successes': [], 'failures': [], 'skipped': [],
             'posted_today': {'linkedin': 0, 'x': 0},
-            'manual_drafts': emit_drafts(platform_states),
+            'hand_post_history': hand_post_record,
             'status': 'blocked_missing_secrets' if strict_failure else 'ok_with_secret_warning',
             'production_blocked': bool(strict_failure),
             'message': 'Social credentials are unavailable. Social posting was skipped; content publication remains allowed.'
@@ -732,17 +742,34 @@ def main():
         if platform == 'x':
             if not enable_x and not x_via_route:
                 continue
-            if spent_today['x'] >= x_limit:
+            # The one thing that must hold on EVERY path out to X, not just the
+            # routed one: a post the owner already put on the profile with her
+            # own hands is never sent again. Drafting never consumed the queue,
+            # so those entries still read `queued_for_auto_post` and this check
+            # is the only thing between them and a second identical post. It
+            # sits ABOVE the route branch deliberately -- it used to sit inside
+            # it, which meant the day X's own API is funded and the one boolean
+            # flips, everything at or before `marked_posted_through` would go
+            # out again through the API instead.
+            if hand_post_history.fingerprint(item) in posted_by_hand:
                 continue
             if x_via_route:
                 # The route's own discovered ceiling, spent in ATTEMPTS, and a
                 # hard stop the moment it has refused once. Both are enforced
                 # inside scripts/lib/buffer_route.py as well; this is the same
                 # rule read before a request is built rather than after.
+                #
+                # `spent_today['x']` is deliberately NOT consulted here. It
+                # counts attempts against X's OWN API, and on 2026-08-29 there
+                # were 581 of them, all failed, none of which occupied a Buffer
+                # slot. Gating the route on that number is what left a ready
+                # route with eight posts of headroom at attempts: 0. The route's
+                # share of X_DAILY_LIMIT is applied where it belongs: as a
+                # ceiling at open(), net of what Buffer was already sent today.
                 if x_route.halted or x_route.remaining() <= 0:
                     continue
-                if social_drafts.fingerprint(item) in open_draft_fingerprints:
-                    continue
+            elif spent_today['x'] >= x_limit:
+                continue
         if attempted_this_run.get(platform, 0) >= run_limit:
             continue
         body = append_url(item.get('body',''), item)
@@ -788,6 +815,15 @@ def main():
                 item['buffer_due_at'] = result.get('due_at')
                 item['post_id'] = result.get('id', '')
                 buffer_queued_this_run += 1
+                if hand_post_history.fingerprint(item) in drafted_never_posted:
+                    # This post was once written onto the retired hand-post
+                    # sheet and never posted from it. Buffer has it now. Named
+                    # in the report so "the eight that were stuck" can be seen
+                    # to have moved rather than having to be inferred.
+                    released_from_old_drafts.append(
+                        {'buffer_post_id': item['buffer_post_id'],
+                         'brand': item.get('brand'),
+                         'url': item.get('source_url') or item.get('target_url') or ''})
                 bodies_today_by_platform[platform].append(body)
                 successes.append({'index': idx, 'platform': platform,
                                   'brand': item.get('brand'), 'id': item['buffer_post_id'],
@@ -818,17 +854,17 @@ def main():
         if x_route is not None and x_route.halted and 'x' not in halted_platforms:
             halted_platforms['x'] = f'buffer_route_halted: {x_route.halted}'
 
-    # If the route refused part-way, the posts it did not carry still have to
-    # reach X somehow. Reporting X as routed would silently drop them, so the
-    # platform goes back to paused_for_posting and the sheet is cut exactly as
-    # it was before Buffer existed. Entries Buffer already accepted carry
-    # status 'buffer_queued' and are in no postable set, so they cannot be
-    # drafted -- no post is offered twice.
-    draft_states = dict(platform_states)
+    # If the route refused part-way, the posts it did not carry are not lost and
+    # are not handed to anybody: they still hold `queued_for_auto_post` and go
+    # out on a later run as the route frees up. Reporting X as routed when the
+    # route halted would make that invisible, so the platform reads as
+    # "awaiting its delivery route" instead -- a named, counted state.
     if x_route is not None and x_route.halted:
-        draft_states['x'] = social_platforms.platform_state('x', None, platform_policy)
-    manual_drafts = emit_drafts(draft_states, halted_platforms, attempted_this_run,
-                                posted_this_run, spent_today, posted_today)
+        platform_states['x'] = social_platforms.platform_state('x', None, platform_policy)
+    route_only_platforms = sorted(social_platforms.route_only_platforms(platform_policy))
+    deferred_waiting_for_route = sum(
+        1 for i in queue if i.get('platform') in route_only_platforms
+        and i.get('status') in POSTABLE_STATUSES)
     if not dry_run:
         write_json(QUEUE_PATH, queue)
     report = {
@@ -856,15 +892,29 @@ def main():
                     "Buffer accepted the post and holds it in the X channel's queue. It "
                     "is NOT published yet: Buffer sends it at the channel's next posting "
                     "slot. The entry keeps status 'buffer_queued' with the Buffer post "
-                    "id, is never re-sent, and is never offered on the hand-post sheet."
+                    "id and is never re-sent."
                 ),
+                'meaning_of_deferred': (
+                    "Buffer's free plan caps how many posts may sit queued at once. When "
+                    "that cap is reached the remaining entries are simply left alone: "
+                    "they keep 'queued_for_auto_post' and the next run offers them again "
+                    "as Buffer drains its queue. Nothing is dropped, nothing is parked in "
+                    "another file, and nothing is asked of anybody."
+                ),
+                'released_from_retired_hand_drafts': released_from_old_drafts,
                 'x_api_requests_made': 0,
             }
         },
         'attempted_this_run': attempted_this_run,
         'spent_today': spent_today,
         'halted_platforms': halted_platforms,
-        'manual_drafts': manual_drafts,
+        # A named, counted, visible state -- never a task for a human. The
+        # hand-post sheet these entries used to land on is retired: the owner
+        # said she would never post from it, so it produced work nothing
+        # downstream consumed. See scripts/lib/hand_post_history.py.
+        'deferred_waiting_for_delivery_route': deferred_waiting_for_route,
+        'route_only_platforms': route_only_platforms,
+        'hand_post_history': hand_post_record,
         'deferred_for_retry': sum(1 for f in failures if f.get('disposition') == 'deferred_for_retry'),
         'restored_legacy_failures': restored_legacy_failures,
         'still_postable_after_run': sum(1 for i in queue if i.get('status') in POSTABLE_STATUSES),

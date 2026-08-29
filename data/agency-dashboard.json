@@ -4,9 +4,9 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 78,
+    "runtime_operators": 77,
     "release_operators": 10,
-    "workflow_operators": 5,
+    "workflow_operators": 6,
     "approved_target_urls": 86,
     "serviced_target_urls": 65,
     "backlink_rows": 613,
@@ -415,12 +415,6 @@
       "category": "Distribution / social"
     },
     {
-      "operator": "social:manual-sheet",
-      "command": "npm run social:manual-sheet",
-      "implementation": "python3 scripts/social_drafts.py",
-      "category": "Distribution / social"
-    },
-    {
       "operator": "sources:verify",
       "command": "npm run sources:verify",
       "implementation": "python3 scripts/verify_external_sources.py",
@@ -487,6 +481,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:no-manual-lane",
+      "command": "npm run validate:no-manual-lane",
+      "implementation": "python3 scripts/validators/validate_no_manual_lane.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:operator-doc-currency",
       "command": "npm run validate:operator-doc-currency",
       "implementation": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
@@ -508,12 +508,6 @@
       "operator": "validate:selfheal-wiring",
       "command": "npm run validate:selfheal-wiring",
       "implementation": "python3 scripts/validators/validate_selfheal_wiring.py",
-      "category": "Validation / release"
-    },
-    {
-      "operator": "validate:social-drafts-fallback",
-      "command": "npm run validate:social-drafts-fallback",
-      "implementation": "python3 scripts/validators/validate_social_drafts_fallback.py",
       "category": "Validation / release"
     },
     {
@@ -588,6 +582,13 @@
       "cron": [
         "22 14 * * *"
       ],
+      "manual_dispatch": true
+    },
+    {
+      "name": "Buffer Route Probe",
+      "path": ".github/workflows/buffer-route-probe.yml",
+      "scheduled": false,
+      "cron": [],
       "manual_dispatch": true
     },
     {

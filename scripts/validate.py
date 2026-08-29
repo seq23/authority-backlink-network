@@ -48,7 +48,7 @@ COMMANDS = {
     "script_callers": [sys.executable, "scripts/validators/validate_script_callers.py"],
     "social_rate_limits": [sys.executable, "scripts/validators/validate_social_rate_limits.py"],
     "social_attempt_budget": [sys.executable, "scripts/validators/validate_social_attempt_budget.py"],
-    "social_drafts_fallback": [sys.executable, "scripts/validators/validate_social_drafts_fallback.py"],
+    "no_manual_lane": [sys.executable, "scripts/validators/validate_no_manual_lane.py"],
     "social_pause_modes": [sys.executable, "scripts/validators/validate_social_pause_modes.py"],
     "buffer_route": [sys.executable, "scripts/validators/validate_buffer_route.py"],
     "citation_probe_wiring": [sys.executable, "scripts/validators/validate_citation_probe_wiring.py"],

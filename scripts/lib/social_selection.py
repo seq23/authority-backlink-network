@@ -3,16 +3,21 @@
 
 Why this module exists
 ----------------------
-Two things now consume the social queue: scripts/social_publisher.py, which
-posts, and scripts/social_drafts.py, which writes a copy-paste sheet when the
-platform will not accept a post at all. If each kept its own idea of ordering
-and its own idea of how a body becomes post text, the sheet would hand the
-owner different posts, in a different order, from the ones the API would send -
-two components each keeping their own list, with no link between them.
+One thing consumes the social queue: scripts/social_publisher.py. It can send a
+post through a platform's own API or hand it to a declared delivery route --
+Buffer, for X -- and those two lanes must select the same post, in the same
+order, with the same characters. If each kept its own idea of ordering and its
+own idea of how a body becomes post text, the route would carry different posts
+from the ones the API would have sent: two components each keeping their own
+list, with no link between them.
 
-So the ordering and the text rendering live here once, and both callers use
-them. The drafts sheet is, by construction, the same posts in the same order
-that the publisher would have sent.
+So the ordering and the text rendering live here once, and every lane uses
+them. A post handed to Buffer is, by construction, the same post in the same
+order that the API would have sent.
+
+There used to be a third consumer, a copy-paste sheet the owner posted from by
+hand. It was retired on 2026-08-29 -- she said she would never post from it --
+so Buffer is now the whole of X's distribution.
 
 Nothing in here opens a network connection or mutates the queue.
 """
