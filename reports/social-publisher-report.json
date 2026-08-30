@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 8 post(s) of headroom, bound by network_policy_daily (ceilings: {'buffer_daily_rate': 50, 'free_plan_queue_depth': 9, 'network_policy_daily': 8})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 6 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 50, 'free_plan_queue_depth': 6, 'network_policy_daily': 6})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -53,23 +53,22 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 0,
-        "policy_daily_limit": 8,
+        "policy_daily_limit": 6,
         "free_plan_queue_depth_limit": 10,
-        "queued_in_buffer_now": 0,
+        "queued_in_buffer_now": 3,
         "ceilings_discovered": {
           "buffer_daily_rate": 50,
-          "free_plan_queue_depth": 9,
-          "network_policy_daily": 8
+          "free_plan_queue_depth": 6,
+          "network_policy_daily": 6
         },
-        "binding_ceiling": "network_policy_daily",
+        "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
           "limit": 10,
-          "used": 0,
+          "used": 3,
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-08-29": 0,
-            "2026-08-30": 0,
+            "2026-08-30": 3,
             "2026-08-31": 0,
             "2026-09-01": 0,
             "2026-09-02": 0,
@@ -81,15 +80,16 @@
             "2026-09-08": 0,
             "2026-09-09": 0,
             "2026-09-10": 0,
-            "2026-09-11": 0
+            "2026-09-11": 0,
+            "2026-09-12": 0
           },
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
         },
-        "headroom_at_open": 8,
+        "headroom_at_open": 6,
         "attempts": 3,
         "accepted": 3,
-        "remaining": 5,
+        "remaining": 3,
         "plan_limits": {
           "channels": 3,
           "scheduledPosts": 10
@@ -117,19 +117,19 @@
       "meaning_of_deferred": "Buffer's free plan caps how many posts may sit queued at once. When that cap is reached the remaining entries are simply left alone: they keep 'queued_for_auto_post' and the next run offers them again as Buffer drains its queue. Nothing is dropped, nothing is parked in another file, and nothing is asked of anybody.",
       "released_from_retired_hand_drafts": [
         {
-          "buffer_post_id": "6a93725961f7ab587cd1853b",
+          "buffer_post_id": "6a93738c73b542df4de56949",
           "brand": null,
-          "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html"
+          "url": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify.html"
         },
         {
-          "buffer_post_id": "6a9372ea73b542df4de55dcc",
+          "buffer_post_id": "6a9373d119e5b3c30eaeda32",
           "brand": null,
-          "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html"
+          "url": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html"
         },
         {
-          "buffer_post_id": "6a937344ba5ed85198091e6f",
+          "buffer_post_id": "6a937452ba5ed85198092bef",
           "brand": null,
-          "url": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html"
+          "url": "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing.html"
         }
       ],
       "x_api_requests_made": 0
@@ -141,10 +141,10 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 584
+    "x": 5
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 578,
+  "deferred_waiting_for_delivery_route": 575,
   "route_only_platforms": [
     "x"
   ],
@@ -158,71 +158,71 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1159,
+  "still_postable_after_run": 1156,
   "attempts": [
     {
-      "index": 1297,
+      "index": 1331,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: How to Write a Delegation Brief a Person or a Tool Can Both Execute.\n\nhttps://founder"
+      "preview": "Useful citation, not fake ranking: What a Grazing Table Brief Should Specify.\n\nhttps://memphisvendorlibrary.com/daily/20"
     },
     {
-      "index": 1299,
+      "index": 1357,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: How to Decide Which Recurring Tasks to Automate First.\n\nhttps://founderoperatorlibrar"
+      "preview": "Useful citation, not fake ranking: What Levels of Support Mean When Comparing Recovery Residences.\n\nhttps://professional"
     },
     {
-      "index": 1329,
+      "index": 1359,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: How the Brief Changes for a Proposal, Anniversary, or Birthday Room.\n\nhttps://memphis"
+      "preview": "Useful citation, not fake ranking: How to Plan the First 30 Days After Moving Into Recovery Housing.\n\nhttps://profession"
     }
   ],
   "successes": [
     {
-      "index": 1297,
+      "index": 1331,
       "platform": "x",
       "brand": null,
-      "id": "6a93725961f7ab587cd1853b",
+      "id": "6a93738c73b542df4de56949",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-08-30T12:50:00.000Z"
+      "due_at": "2026-08-30T15:27:00.000Z"
     },
     {
-      "index": 1299,
+      "index": 1357,
       "platform": "x",
       "brand": null,
-      "id": "6a9372ea73b542df4de55dcc",
+      "id": "6a9373d119e5b3c30eaeda32",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-08-30T13:34:00.000Z"
+      "due_at": "2026-08-31T13:40:00.000Z"
     },
     {
-      "index": 1329,
+      "index": 1359,
       "platform": "x",
       "brand": null,
-      "id": "6a937344ba5ed85198091e6f",
+      "id": "6a937452ba5ed85198092bef",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-08-30T14:18:00.000Z"
+      "due_at": "2026-08-31T14:55:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 2
   },
   "brand_rotation_policy": {
     "quota_count": 15,
-    "daily_rotation_offset": 739857
+    "daily_rotation_offset": 739858
   },
   "status": "ok",
   "named_stops": {
