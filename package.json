@@ -79,8 +79,7 @@
     "cadence:reseed-lastmod": "python3 scripts/reseed_lastmod_from_git.py",
     "social:backfill-queue": "python3 scripts/backfill_social_queue.py",
     "social:backfill-queue:write": "python3 scripts/backfill_social_queue.py --write",
-    "social:manual-sheet": "python3 scripts/social_drafts.py",
-    "validate:social-drafts-fallback": "python3 scripts/validators/validate_social_drafts_fallback.py"
+    "validate:no-manual-lane": "python3 scripts/validators/validate_no_manual_lane.py"
   },
   "devDependencies": {}
 }

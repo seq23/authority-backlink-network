@@ -10,17 +10,34 @@ data/social-brand-policy.json. Adding a second way for a post to leave adds
 exactly four ways to do damage, and each one has already happened somewhere in
 this repository's short history:
 
-  post twice          the hand-post sheet offers eight posts and the route
-                      takes the same eight. She posts them; Buffer posts them
-                      again. Two identical posts on one profile, from a system
-                      whose whole purpose is to look like a person.
+  post twice          the owner put eight posts on X with her own hands, back
+                      when the fallback was a copy-paste sheet, and those
+                      entries were never consumed from the queue. A route that
+                      hands them to Buffer posts them a second time on the same
+                      profile, from a system whose whole purpose is to look
+                      like a person. What she DRAFTED and never posted is the
+                      opposite case and must be released -- the sheet is
+                      retired and nothing will ever release it by hand.
   run past a refusal  on 2026-08-29 this repository made 581 requests in 76
                       seconds because its caps counted successes rather than
                       attempts, so one refusal cost one request per queue
                       entry. A route that retries is that failure again.
-  exceed the ceiling  Buffer publishes the limit it will accept
-                      (dailyPostingLimits). Guessing it, or counting only what
-                      succeeded, is how an account gets locked.
+  exceed the ceiling  Buffer publishes the limits it will accept, and they are
+                      different KINDS of limit: a per-channel daily RATE from
+                      dailyPostingLimits, and the free plan's standing QUEUE
+                      DEPTH from OrganizationLimits.scheduledPosts, which on
+                      this account is 10 against a rate of 50 and is therefore
+                      the one that governs. The owner pays Buffer nothing --
+                      that is the whole reason this route exists instead of X's
+                      paid API -- so exceeding a free allowance is not a
+                      throughput question, it is an upgrade prompt. Guessing
+                      either number, reading only one of them, or counting only
+                      what succeeded is how that happens.
+  post to the wrong    this Buffer account also carries `iamcindymercer`, a
+  channel              TikTok channel belonging to a different project of the
+                      owner's. A route that took "the first channel" would put
+                      this network's citations on it. The X channel is selected
+                      by service and re-checked before every post.
   eat the queue       1,162 entries are waiting. A delivery lane that consumes
                       or retires them takes the network's distribution with it.
 
@@ -87,8 +104,9 @@ def synthetic_queue(n=30):
 
 
 def load_publisher():
-    for name in ("social_drafts", "lib", "lib.social_platforms", "lib.buffer_route",
-                 "lib.social_selection", "social_publisher_buffer_probe"):
+    for name in ("lib", "lib.social_platforms", "lib.buffer_route",
+                 "lib.hand_post_history", "lib.social_selection",
+                 "social_publisher_buffer_probe"):
         sys.modules.pop(name, None)
     spec = importlib.util.spec_from_file_location("social_publisher_buffer_probe", PUBLISHER)
     mod = importlib.util.module_from_spec(spec)
@@ -98,26 +116,45 @@ def load_publisher():
 
 
 def buffer_stub(calls, limit=25, used=0, channel_service="twitter",
-                refuse_after=None, refusal="LimitReachedError"):
+                refuse_after=None, refusal="LimitReachedError",
+                plan_depth=100, already_queued=0, channels=None):
     """Stand in for Buffer's GraphQL endpoint, recording every request.
 
     `refuse_after` makes createPost refuse from the Nth call onward, which is
     how "halts on the first refusal" is measured: the stub would happily answer
     a thousand more.
+
+    `plan_depth` and `already_queued` are the free plan's standing queue-depth
+    allowance and how much of it is already spent. They default to a depth so
+    generous it cannot bind, so the properties about the DAILY rate measure the
+    daily rate; the depth is exercised on its own further down.
     """
+    state = {"queued": already_queued}
+
     def graphql(query, variables=None, timeout=30, opener=None):
         calls["all"].append(query.strip().split("\n")[1].strip() if "\n" in query else query)
         if "organizations" in query:
             return {"account": {"id": "acc", "organizations": [
                 {"id": "org", "name": "My Organization",
-                 "limits": {"channels": 3, "scheduledPosts": 10}}]}}
+                 "limits": {"channels": 3, "scheduledPosts": plan_depth}}]}}
         if "channels(input" in query:
+            if channels is not None:
+                return {"channels": channels}
             if channel_service is None:
                 return {"channels": []}
             return {"channels": [{"id": "ch-x", "name": "westpeek",
                                   "service": channel_service, "isDisconnected": False,
                                   "isLocked": False, "isQueuePaused": False}]}
         if "dailyPostingLimits" in query:
+            # A dated request is the depth sweep; an undated one is today's
+            # rate. Everything already waiting is reported on the first dated
+            # day asked about, so the sweep sees the whole standing queue.
+            if (variables or {}).get("input", {}).get("date"):
+                first = not calls.get("depth_days")
+                calls.setdefault("depth_days", []).append(variables["input"]["date"])
+                return {"dailyPostingLimits": [
+                    {"channelId": "ch-x", "isAtLimit": False, "limit": limit,
+                     "scheduled": state["queued"] if first else 0, "sent": 0}]}
             return {"dailyPostingLimits": [{"channelId": "ch-x", "isAtLimit": False,
                                             "limit": limit, "scheduled": used, "sent": 0}]}
         if "createPost" in query:
@@ -126,6 +163,7 @@ def buffer_stub(calls, limit=25, used=0, channel_service="twitter",
             if refuse_after is not None and n >= refuse_after:
                 return {"createPost": {"__typename": refusal,
                                        "message": "Buffer says no"}}
+            state["queued"] += 1
             return {"createPost": {"__typename": "PostActionSuccess",
                                    "post": {"id": f"buf-{n}", "status": "scheduled",
                                             "dueAt": "2026-08-30T14:00:00Z",
@@ -143,7 +181,7 @@ def drive(tmp, name, policy, queue=None, token=CANARY_TOKEN, ledger=None,
     third even if it bypassed the first two.
     """
     qp, rp = tmp / f"{name}-queue.json", tmp / f"{name}-report.json"
-    lp, dp = tmp / f"{name}-ledger.json", tmp / f"{name}-drafts.md"
+    lp = tmp / f"{name}-ledger.json"
     pp = tmp / f"{name}-policy.json"
     pp.write_text(json.dumps(policy, indent=2))
     qp.write_text(json.dumps(queue if queue is not None else synthetic_queue(), indent=2))
@@ -157,7 +195,7 @@ def drive(tmp, name, policy, queue=None, token=CANARY_TOKEN, ledger=None,
     os.environ.update({
         "SOCIAL_PLATFORM_POLICY_PATH": str(pp), "SOCIAL_QUEUE_PATH": str(qp),
         "SOCIAL_REPORT_PATH": str(rp), "SOCIAL_DRAFT_LEDGER_PATH": str(lp),
-        "SOCIAL_DRAFTS_PATH": str(dp), "SOCIAL_DRY_RUN": "false",
+        "SOCIAL_DRY_RUN": "false",
         "REQUIRE_SOCIAL_SECRETS": "false", "X_DAILY_LIMIT": "8",
         "LINKEDIN_DAILY_LIMIT": "3", "SOCIAL_RUN_LIMIT": str(run_limit),
         "SOCIAL_POST_MIN_INTERVAL_SECONDS": "0",
@@ -186,13 +224,14 @@ def drive(tmp, name, policy, queue=None, token=CANARY_TOKEN, ledger=None,
         "report": json.loads(rp.read_text()),
         "queue_before": queue_before, "queue_after": queue_after,
         "ledger": json.loads(lp.read_text()) if lp.exists() else {},
-        "sheet": dp.read_text() if dp.exists() else "",
         "stdout": stdout.getvalue(),
         "create_calls": len(calls["createPost"]),
         "sent_texts": [c.get("text") for c in calls["createPost"]],
         "x_api_calls": len(calls["x_api"]), "urlopen_calls": len(calls["urlopen"]),
         "queued": [i for i in queue_after if i.get("status") == "buffer_queued"],
-        "paths": {"report": rp, "ledger": lp, "sheet": dp, "queue": qp},
+        "still_postable": [i for i in queue_after
+                           if i.get("status") == "queued_for_auto_post"],
+        "paths": {"report": rp, "ledger": lp, "queue": qp},
     }
 
 
@@ -309,82 +348,245 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
             "refused, so the halt above proves nothing.")
 
     # ------------------------------------------------------------- property 4
-    # A post Buffer accepted is never offered on the hand-post sheet, and a
-    # post already on an open sheet is never taken by the route.
+    # The one post the route must NEVER take, and the one it MUST.
+    #
+    # `marked_posted_through` in data/social-draft-ledger.json names the last
+    # batch the owner posted to X with her own hands, back when the fallback was
+    # a sheet she worked through. Drafting never consumed the queue, so those
+    # entries are still `queued_for_auto_post` and the ledger is the ONLY thing
+    # standing between them and a second identical post on the same profile.
+    #
+    # Everything AFTER that marker is the opposite case: drafted, never posted.
+    # The sheet is retired -- she said "i will never do it honestly" -- so
+    # nothing will ever release those by hand. Holding them back would freeze
+    # the day's distribution on a step that will not happen, which is exactly
+    # the state this repository was in: a ready route, eight posts of headroom,
+    # and attempts: 0.
+    from lib import hand_post_history  # noqa: E402
     from lib import social_selection  # noqa: E402
-    import social_drafts  # noqa: E402
 
-    fixture = synthetic_queue()
-    # Put the first three entries on an open, unmarked batch: she has been asked
-    # to post these by hand and has not yet said she did.
-    open_items = [social_drafts.draft_entry(item, i) for i, item in enumerate(fixture[:3])]
-    ledger = social_drafts.empty_ledger()
-    ledger["batches"].append({"batch_id": "x-2026-08-29-1", "platform": "x",
-                              "generated_at": "2026-08-29T00:00:00Z",
-                              "reason": "fixture", "items": open_items})
+    fixture = synthetic_queue(12)
+    hand_posted = [{"fingerprint": hand_post_history.fingerprint(i), "platform": "x",
+                    "brand": i["brand"], "url": i["source_url"], "text": i["body"]}
+                   for i in fixture[:4]]
+    never_posted = [{"fingerprint": hand_post_history.fingerprint(i), "platform": "x",
+                     "brand": i["brand"], "url": i["source_url"], "text": i["body"]}
+                    for i in fixture[4:8]]
+    ledger = {"schema": "authority-social-draft-ledger-v1",
+              "marked_posted_through": "x-2026-08-28-1",
+              "batches": [
+                  {"batch_id": "x-2026-08-28-1", "platform": "x",
+                   "generated_at": "2026-08-28T00:00:00Z", "reason": "fixture",
+                   "items": hand_posted},
+                  {"batch_id": "x-2026-08-29-1", "platform": "x",
+                   "generated_at": "2026-08-29T00:00:00Z", "reason": "fixture",
+                   "items": never_posted}]}
+    ledger_before = json.dumps(ledger, sort_keys=True)
     double = drive(tmp, "double", committed, queue=fixture, ledger=ledger, limit=25)
-    open_texts = {e["text"] for e in open_items}
-    collisions = sorted(open_texts.intersection(double["sent_texts"]))
-    drafted_after = {e["text"] for b in double["ledger"].get("batches", [])
-                     for e in b.get("items", [])}
-    queued_texts = {social_selection.post_text(i) for i in double["queued"]}
-    both = sorted(queued_texts.intersection(drafted_after))
-    checks.append({"property": "no_post_goes_out_by_both_routes",
-                   "posts_open_on_the_sheet": len(open_items),
-                   "of_those_taken_by_buffer": len(collisions),
+    # Matched on the URL rather than the body: X's 280-character trim can cut a
+    # body short, and a body-substring test would then report "not sent" for a
+    # post that went out -- passing for the wrong reason in the one direction
+    # that matters.
+    sent = [t or "" for t in double["sent_texts"]]
+    resent = sorted(e["url"] for e in hand_posted if any(e["url"] in t for t in sent))
+    released = sorted(e["url"] for e in never_posted if any(e["url"] in t for t in sent))
+    ledger_after = json.dumps(json.loads(
+        double["paths"]["ledger"].read_text()), sort_keys=True)
+    checks.append({"property": "hand_posted_is_never_re_sent_drafted_but_unposted_is_released",
+                   "posts_she_posted_by_hand": len(hand_posted),
+                   "of_those_handed_to_buffer_again": len(resent),
+                   "posts_drafted_but_never_posted": len(never_posted),
+                   "of_those_released_to_buffer": len(released),
                    "buffer_accepted": len(double["queued"]),
-                   "of_those_also_drafted": len(both),
-                   "statuses_after": sorted({i.get("status") for i in double["queue_after"]})})
-    if collisions:
+                   "ledger_unchanged_by_the_run": ledger_after == ledger_before,
+                   "statuses_after": sorted({i.get("status")
+                                             for i in double["queue_after"]})})
+    if resent:
         failures.append(
-            f"{len(collisions)} post(s) sitting unposted on reports/social-drafts.md were "
-            f"ALSO handed to Buffer. She posts them by hand, Buffer posts them again: two "
-            f"identical posts on one profile.")
-    if both:
+            f"{len(resent)} post(s) at or before marked_posted_through were handed to "
+            f"Buffer. She already put those on X herself: they are live on the profile, "
+            f"and Buffer publishing them again is two identical posts from an account "
+            f"whose whole purpose is to look like a person.")
+    if len(released) != len(never_posted):
         failures.append(
-            f"{len(both)} post(s) Buffer accepted were also written onto the hand-post "
-            f"sheet. Accepted by Buffer means it is going out; offering it again is a "
-            f"double post.")
+            f"Only {len(released)} of {len(never_posted)} post(s) that were drafted and "
+            f"NEVER posted reached Buffer. The sheet they were drafted onto is retired "
+            f"and nothing will ever release them by hand, so holding them back freezes "
+            f"the day's distribution on a step that will not happen -- which is the "
+            f"exact state this route was found in: ready, eight posts of headroom, and "
+            f"attempts: 0.")
+    if ledger_after != ledger_before:
+        failures.append(
+            "A run rewrote data/social-draft-ledger.json. marked_posted_through is a "
+            "historical record of what the owner posted by hand; nothing updates it, "
+            "and moving it is how a post she already made gets sent a second time.")
     if not double["queued"]:
         failures.append(
-            "Buffer accepted nothing in the double-post fixture, so nothing above was "
-            "actually tested.")
+            "Buffer accepted nothing in this fixture, so nothing above was tested.")
     if "buffer_queued" in social_platforms.POSTABLE_STATUSES:
         failures.append(
             "'buffer_queued' is a postable status, so an entry Buffer already holds "
             "would be sent again on the next run.")
 
-    # Proved negatively: switch the route off and the SAME entries are drafted
-    # by hand again. If they were drafted either way, the route is not the
-    # reason the sheet is empty.
+    # Proved negatively: switch the route off and NOTHING is handed to Buffer,
+    # and the same entries stay queued rather than going anywhere else. If they
+    # left by some other lane, the route is not what carries them.
     route_off = drive(tmp, "route-off", off, queue=fixture, limit=25)
-    checks.append({"property": "with_the_route_off_the_hand_sheet_comes_back",
+    checks.append({"property": "with_the_route_off_nothing_leaves_and_nothing_is_stranded",
                    "x_state_route_on": double["report"]["platform_states"]["x"],
                    "x_state_route_off": route_off["report"]["platform_states"]["x"],
-                   "drafts_route_on": double["report"]["manual_drafts"]["drafts_written"],
-                   "drafts_route_off": route_off["report"]["manual_drafts"]["drafts_written"],
-                   "buffer_calls_route_off": route_off["create_calls"]})
+                   "buffer_calls_route_off": route_off["create_calls"],
+                   "still_queued_route_off": len(route_off["still_postable"]),
+                   "deferred_named": route_off["report"].get(
+                       "deferred_waiting_for_delivery_route")})
     if route_off["create_calls"]:
         failures.append(
             f"The route is switched off in the declaration and still made "
             f"{route_off['create_calls']} Buffer call(s).")
-    if route_off["report"]["manual_drafts"]["drafts_written"] == 0:
+    if len(route_off["still_postable"]) < len(fixture) - 4:
         failures.append(
-            "With the Buffer route off, X produced no drafts. The hand-post fallback is "
-            "the thing Buffer replaces; if it does not come back when the route is off, "
-            "switching the route off ends X's distribution altogether.")
+            f"With the route off, only {len(route_off['still_postable'])} of "
+            f"{len(fixture)} entries stayed queued. A post nothing can carry today "
+            f"must simply wait -- waiting costs nothing and loses nothing, and there "
+            f"is no second holding place for it to go to.")
+    if route_off["report"].get("deferred_waiting_for_delivery_route") in (None, 0):
+        failures.append(
+            "With the route off, the run does not count what is waiting for it. "
+            "'X distributed nothing today' then has no number attached to it.")
+
+    # ------------------------------------------------------------ property 4b
+    # The FREE PLAN's standing queue depth is a hard ceiling, discovered at
+    # runtime, and it is the one that governs. Buffer's daily rate here is 50
+    # and the plan allows 10 queued at once; nine are already waiting, so at
+    # most the one remaining slot may be filled -- and the last slot is left
+    # free deliberately, because Buffer's count and this one are read moments
+    # apart and filling the final slot turns a race into an upgrade prompt.
+    depth_capped = drive(tmp, "depth", committed, limit=50,
+                         plan_depth=10, already_queued=9)
+    depth_receipt = depth_capped["report"]["delivery_routes"]["x"]["receipt"]
+    checks.append({"property": "the_free_plans_standing_queue_depth_is_a_hard_ceiling",
+                   "buffer_daily_rate_reported": 50,
+                   "plan_scheduled_posts_allowance": 10,
+                   "already_queued_in_buffer": 9,
+                   "eligible_entries": 30,
+                   "create_calls": depth_capped["create_calls"],
+                   "binding_ceiling": depth_receipt.get("binding_ceiling"),
+                   "ceilings": depth_receipt.get("ceilings_discovered"),
+                   "halted": depth_receipt.get("halted")})
+    if depth_capped["create_calls"] > 1:
+        failures.append(
+            f"Buffer's free plan allows 10 posts queued at once, 9 were already "
+            f"waiting, and the route made {depth_capped['create_calls']} createPost "
+            f"calls. The owner pays Buffer nothing -- that is the entire reason this "
+            f"route exists rather than X's paid API -- so exceeding a free allowance "
+            f"is not a throughput question, it is an upgrade prompt.")
+    if depth_receipt.get("binding_ceiling") != "free_plan_queue_depth":
+        failures.append(
+            f"With 9 of 10 queue slots taken and a daily rate of 50, the binding "
+            f"ceiling was reported as {depth_receipt.get('binding_ceiling')!r}. The "
+            f"strictest limit has to be the one that governs, and it has to say so: a "
+            f"run that sends one post reads as a fault unless the reason is attached.")
+    if depth_receipt.get("halted"):
+        failures.append(
+            f"The route halted ({depth_receipt['halted']}) on a plan that was merely "
+            f"nearly full. Finding a free plan's ceiling by being refused at it is "
+            f"exactly what must not happen.")
+
+    # Proved negatively: empty that same queue and the SAME fixture, the SAME
+    # daily rate and the SAME policy send more. If the count did not move, the
+    # depth cap held for some other reason and proves nothing.
+    depth_free = drive(tmp, "depth-free", committed, limit=50,
+                       plan_depth=10, already_queued=0)
+    checks.append({"property": "the_queue_depth_is_read_at_runtime_not_hardcoded",
+                   "with_9_of_10_taken": depth_capped["create_calls"],
+                   "with_0_of_10_taken": depth_free["create_calls"],
+                   "ceilings_when_empty": depth_free["report"]["delivery_routes"]["x"][
+                       "receipt"].get("ceilings_discovered")})
+    if depth_free["create_calls"] <= depth_capped["create_calls"]:
+        failures.append(
+            f"An empty Buffer queue sent no more than a nearly full one "
+            f"({depth_free['create_calls']} vs {depth_capped['create_calls']}), so the "
+            f"standing depth is not being read from Buffer at all and the ceiling above "
+            f"held by accident.")
+    depth_literals = subprocess.run(
+        ["git", "grep", "-nIE", r"scheduledPosts\s*[:=]\s*[0-9]+", "--",
+         "scripts"], cwd=ROOT, text=True, capture_output=True).stdout.strip()
+    checks.append({"property": "no_plan_allowance_number_is_written_into_the_code",
+                   "literal_assignments_in_scripts": depth_literals.splitlines()})
+    if any("validators/" not in ln for ln in depth_literals.splitlines()):
+        failures.append(
+            f"A plan allowance is hardcoded outside the validators:\n{depth_literals[:300]}. "
+            f"A number typed into the code stays wrong the moment Buffer changes it or "
+            f"the owner changes plan, and being wrong about a ceiling on a free account "
+            f"means an upgrade prompt.")
+
+    # ------------------------------------------------------------ property 4c
+    # The route posts to the X channel and to NOTHING else. This is not
+    # hypothetical: the same Buffer account carries `iamcindymercer`, a TikTok
+    # channel belonging to a different project of the owner's, and it is listed
+    # FIRST here so a "use the first channel" implementation would pick it.
+    two_channels = [
+        {"id": "ch-tiktok", "name": "iamcindymercer", "service": "tiktok",
+         "isDisconnected": False, "isLocked": False, "isQueuePaused": False},
+        {"id": "ch-x", "name": "sequoia_ta12767", "service": "twitter",
+         "isDisconnected": False, "isLocked": False, "isQueuePaused": False},
+    ]
+    picked = drive(tmp, "two-channels", committed, limit=25, channels=two_channels)
+    picked_receipt = picked["report"]["delivery_routes"]["x"]["receipt"]
+    wrong_channel_posts = [c for c in picked["sent_texts"] if False]  # texts carry no id
+    channel_ids_posted = {c for c in [picked_receipt.get("channel_id")] if c}
+    checks.append({"property": "the_route_selects_the_x_channel_explicitly_never_the_first_one",
+                   "channels_offered": [(c["name"], c["service"]) for c in two_channels],
+                   "channel_selected": picked_receipt.get("channel_name"),
+                   "service_selected": picked_receipt.get("channel_service"),
+                   "channel_ids_posted_to": sorted(channel_ids_posted),
+                   "buffer_calls": picked["create_calls"]})
+    if picked_receipt.get("channel_service") != "twitter":
+        failures.append(
+            f"With a TikTok channel listed first, the route selected a "
+            f"{picked_receipt.get('channel_service')!r} channel "
+            f"({picked_receipt.get('channel_name')!r}). `iamcindymercer` is a separate "
+            f"project of the owner's; this lane is X-only, and posting this network's "
+            f"citations there is not undoable.")
+    if "ch-tiktok" in channel_ids_posted:
+        failures.append("The route posted to the TikTok channel.")
+
+    # Proved negatively: offer ONLY the TikTok channel and the route must refuse
+    # outright rather than fall back to it. A check that only ever sees a
+    # correct list cannot tell selection from luck.
+    only_tiktok = drive(tmp, "only-tiktok", committed, limit=25,
+                        channels=[two_channels[0]])
+    tiktok_receipt = only_tiktok["report"]["delivery_routes"]["x"]["receipt"]
+    checks.append({"property": "with_only_a_tiktok_channel_the_route_refuses_rather_than_falls_back",
+                   "buffer_calls": only_tiktok["create_calls"],
+                   "channel_selected": tiktok_receipt.get("channel_name"),
+                   "available": tiktok_receipt.get("available"),
+                   "reason": (tiktok_receipt.get("reason") or "")[:200]})
+    if only_tiktok["create_calls"]:
+        failures.append(
+            f"With no X channel connected and a TikTok channel present, the route made "
+            f"{only_tiktok['create_calls']} createPost call(s). That is this network's "
+            f"content on a channel that is not this network's.")
+    if tiktok_receipt.get("available"):
+        failures.append(
+            "The route reported itself available with no X channel connected.")
 
     # ------------------------------------------------------------- property 5
     # X's own API is contacted ZERO times. That is the whole reason this route
     # exists: every request to X is billable and she has declined to fund it.
     checks.append({"property": "x_api_is_never_contacted_by_the_route",
                    "x_api_calls": sum(r["x_api_calls"] for r in
-                                      (capped, roomy, generous, refused, double)),
+                                      (capped, roomy, generous, refused, double,
+                                       depth_capped, depth_free, picked, only_tiktok)),
                    "raw_network_calls": sum(r["urlopen_calls"] for r in
-                                            (capped, roomy, generous, refused, double)),
+                                            (capped, roomy, generous, refused, double,
+                                             depth_capped, depth_free, picked,
+                                             only_tiktok)),
                    "reported": double["report"]["delivery_routes"]["x"]["x_api_requests_made"]})
     for label, run in (("capped", capped), ("roomy", roomy), ("generous", generous),
-                       ("refused", refused), ("double", double), ("off", route_off)):
+                       ("refused", refused), ("double", double), ("off", route_off),
+                       ("depth-capped", depth_capped), ("depth-free", depth_free),
+                       ("two-channels", picked), ("only-tiktok", only_tiktok)):
         if run["x_api_calls"] or run["urlopen_calls"]:
             failures.append(
                 f"The {label} run made {run['x_api_calls']} call(s) to X's own API and "
@@ -450,7 +652,7 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
     # The token never reaches a log, a report, a sheet, a ledger or a commit.
     leaks = []
     for label, run in (("double", double), ("refused", refused)):
-        for where in ("stdout", "sheet"):
+        for where in ("stdout",):
             if CANARY_TOKEN in run[where]:
                 leaks.append(f"{label}:{where}")
         for where in ("report", "ledger"):
@@ -479,25 +681,29 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
 
     # ------------------------------------------------------------- property 9
     # No X channel in Buffer is a NAMED stop with the fix in it, not a silent
-    # nothing -- and the hand-post sheet still carries the day.
+    # nothing -- and the entries it could not carry simply wait, in the queue,
+    # where waiting costs nothing.
     nochannel = drive(tmp, "no-x-channel", committed, channel_service="tiktok")
     why = (nochannel["report"].get("delivery_routes", {}).get("x", {}) or {}).get("why_not_used")
-    checks.append({"property": "a_missing_channel_is_named_and_falls_back",
+    deferred = nochannel["report"].get("deferred_waiting_for_delivery_route")
+    checks.append({"property": "a_missing_channel_is_named_and_nothing_is_stranded",
                    "x_state": nochannel["report"]["platform_states"]["x"],
-                   "why_not_used": (why or "")[:160],
-                   "drafts_written": nochannel["report"]["manual_drafts"]["drafts_written"],
+                   "why_not_used": (why or "")[:200],
+                   "deferred_waiting_for_delivery_route": deferred,
+                   "still_queued": len(nochannel["still_postable"]),
                    "buffer_create_calls": nochannel["create_calls"]})
     if nochannel["create_calls"]:
         failures.append("The route posted with no X channel connected.")
     if not why:
         failures.append(
-            "Buffer could not carry X and the report gives no reason, so 'it went out by "
-            "hand again' has no explanation anywhere she looks.")
-    if nochannel["report"]["manual_drafts"]["drafts_written"] == 0:
+            "Buffer could not carry X and the report gives no reason, so 'X distributed "
+            "nothing today' has no explanation anywhere she looks.")
+    if not deferred or len(nochannel["still_postable"]) == 0:
         failures.append(
-            "With no X channel in Buffer, nothing was drafted by hand either. That is the "
-            "day's distribution lost in silence -- the fallback must survive the route "
-            "being unusable.")
+            f"With no X channel in Buffer, {deferred} entries were reported as waiting "
+            f"and {len(nochannel['still_postable'])} are still queued. A post the route "
+            f"cannot carry must stay queued_for_auto_post and be counted, so a run that "
+            f"distributes nothing is visible as a named state rather than as silence.")
 
     # ------------------------------------------------------------ property 10
     # The budget is spent BEFORE the request, not after the outcome. Measured
@@ -558,6 +764,117 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
             f"{failed_call['remaining_during_call']} of {failed_call['headroom']} left, so "
             f"the budget is charged on the OUTCOME rather than on the attempt. Remove the "
             f"halt-on-refusal rule above and that alone reproduces the 2026-08-29 run.")
+
+    # ------------------------------------------------------------ property 11
+    # A ceiling that cannot be MEASURED is not a ceiling of infinity. If Buffer
+    # will not say how deep its queue already is, or the plan publishes no
+    # allowance at all, the route must refuse to post rather than assume room.
+    # On an account that pays nothing, assuming room is how a free plan meets an
+    # upgrade prompt, and it is the one failure that cannot be undone by a
+    # later run.
+    from lib import buffer_route as br2  # noqa: E402
+
+    def depth_probe(plan_depth, break_sweep):
+        route = br2.Route("x", policy_daily_limit=8)
+        calls = {"createPost": [], "all": []}
+        base = buffer_stub(calls, limit=50, plan_depth=plan_depth)
+
+        def graphql(query, variables=None, timeout=30, opener=None):
+            if break_sweep and (variables or {}).get("input", {}).get("date"):
+                raise br2.BufferError("HTTP 500: buffer is down", kind="http_error")
+            return base(query, variables, timeout, opener)
+
+        real, tok = br2.graphql, os.environ.get("BUFFER_ACCESS_TOKEN")
+        br2.graphql = graphql
+        os.environ["BUFFER_ACCESS_TOKEN"] = CANARY_TOKEN
+        try:
+            route.open()
+            return {"available": route.available, "reason": route.reason[:180],
+                    "depth_days_swept": len(calls.get("depth_days") or []),
+                    "createPost_calls": len(calls["createPost"])}
+        finally:
+            br2.graphql = real
+            if tok is not None:
+                os.environ["BUFFER_ACCESS_TOKEN"] = tok
+
+    no_allowance = depth_probe(plan_depth=None, break_sweep=False)
+    unmeasurable = depth_probe(plan_depth=10, break_sweep=True)
+    measurable = depth_probe(plan_depth=10, break_sweep=False)
+    checks.append({"property": "an_unmeasurable_ceiling_stops_the_route_it_never_assumes_room",
+                   "plan_publishes_no_allowance": no_allowance,
+                   "buffer_refuses_the_depth_sweep": unmeasurable,
+                   "both_answerable": measurable})
+    if no_allowance["available"]:
+        failures.append(
+            "The plan published no scheduledPosts allowance and the route made itself "
+            "available anyway. With no discovered ceiling there is nothing to respect, "
+            "and guessing one on an account that pays Buffer nothing is how a free plan "
+            "gets pushed into an upgrade prompt.")
+    if unmeasurable["available"]:
+        failures.append(
+            "Buffer refused to say how many posts are already queued and the route "
+            "posted regardless. An unanswerable question is not an answer of zero.")
+    if not measurable["available"]:
+        failures.append(
+            f"With both numbers answerable the route still refused to post "
+            f"({measurable['reason']}), so the two refusals above prove nothing.")
+
+    # ------------------------------------------------------------ property 12
+    # Measuring the depth must itself be BOUNDED. The sweep asks Buffer one
+    # question per day of horizon, and an unbounded or per-entry sweep would be
+    # the 2026-08-29 shape again with a different verb: hundreds of requests
+    # against an API nobody asked hundreds of questions.
+    checks.append({"property": "measuring_the_depth_costs_a_bounded_number_of_requests",
+                   "days_swept": measurable["depth_days_swept"],
+                   "horizon_declared": br2.QUEUE_DEPTH_HORIZON_DAYS,
+                   "eligible_entries_in_the_fixture": 30})
+    if measurable["depth_days_swept"] != br2.QUEUE_DEPTH_HORIZON_DAYS:
+        failures.append(
+            f"The depth sweep made {measurable['depth_days_swept']} requests against a "
+            f"declared horizon of {br2.QUEUE_DEPTH_HORIZON_DAYS} days. A sweep whose "
+            f"size is not the horizon is a sweep whose size is something else -- the "
+            f"queue, most likely, which is 581 entries.")
+
+    # ------------------------------------------------------------ property 13
+    # The network's own daily share is counted over a ROLLING 24 HOURS, not by
+    # matching today's date on a timestamp. This happened for real on
+    # 2026-08-30: a scheduled run straddled UTC midnight and stamped part of
+    # its own work with the next day, so the following run counted five of six
+    # posts already sent and allowed one over the policy. The queue below is
+    # stamped exactly that way -- some of the day's posts dated "tomorrow" --
+    # and the route must still count all of them.
+    from datetime import datetime, timedelta, timezone  # noqa: E402
+
+    now = datetime.now(timezone.utc)
+    straddled = synthetic_queue(30)
+    for n, entry in enumerate(straddled[:6]):
+        entry["status"] = "buffer_queued"
+        entry["delivered_via"] = "buffer"
+        # Three stamped minutes ago, three stamped minutes ago but on the other
+        # side of a date boundary -- which is what a run at 23:59 produces.
+        entry["buffer_queued_at"] = (
+            (now - timedelta(minutes=5)) if n < 3 else (now + timedelta(minutes=5))
+        ).isoformat()
+    rollover = drive(tmp, "rollover", committed, queue=straddled, limit=50)
+    rollover_receipt = rollover["report"]["delivery_routes"]["x"]["receipt"]
+    checks.append({"property": "the_networks_daily_share_survives_a_utc_midnight_rollover",
+                   "already_handed_to_buffer_in_the_last_24h": 6,
+                   "x_daily_limit": 8,
+                   "policy_ceiling_computed": rollover_receipt.get(
+                       "policy_daily_limit"),
+                   "create_calls": rollover["create_calls"]})
+    if rollover_receipt.get("policy_daily_limit") != 2:
+        failures.append(
+            f"Six posts were handed to Buffer inside the last 24 hours, three of them "
+            f"stamped on the far side of a date boundary, and the route computed a "
+            f"remaining policy allowance of "
+            f"{rollover_receipt.get('policy_daily_limit')} against X_DAILY_LIMIT of 8. "
+            f"Counting by date string rather than by a rolling window is what let a run "
+            f"straddling UTC midnight go one over the policy on 2026-08-30.")
+    if rollover["create_calls"] > 2:
+        failures.append(
+            f"The route sent {rollover['create_calls']} posts with only 2 of the day's "
+            f"8 left.")
 
     exercised = len(checks)
     status = "FAIL" if failures else "PASS"

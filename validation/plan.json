@@ -36,7 +36,7 @@
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
-      "social_drafts_fallback",
+      "no_manual_lane",
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
@@ -73,7 +73,7 @@
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
-      "social_drafts_fallback",
+      "no_manual_lane",
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
@@ -111,7 +111,7 @@
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
-      "social_drafts_fallback",
+      "no_manual_lane",
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
@@ -268,9 +268,9 @@
       "severity": "HARD_FAIL",
       "rationale": "Unsafe publication to live accounts: multiple postable entries for one page and platform is duplicate posting, the exact pattern platform spam scoring targets, and it spends the daily budget on repetition instead of reach."
     },
-    "social_drafts_fallback": {
+    "no_manual_lane": {
       "severity": "HARD_FAIL",
-      "rationale": "Distribution silently stopping, which no configuration check can see. The X account answers every write with HTTP 402 credits-depleted - X's pay-per-use billing saying the enrolled account has no credits, got on the FIRST request of the FIRST run with no successful post anywhere in this repository's history. It is not a period cap that resets and no lower posting rate gets under it, so a lane that only defers and retries exits 0 having done nothing, every run, forever, while 581 published pages go undistributed. scripts/social_drafts.py writes the day's highest-value posts to reports/social-drafts.md as copy-paste text instead. This drives the real publisher against synthetic queues with the platform stubbed and blocks if a refusal produces no drafts, if the sheet does not carry the exact characters the API would have sent, if an unposted batch is piled on top of rather than reissued, if a batch marked posted through the single marked_posted_through declaration is offered again or stays on the sheet, if done-ness is stamped per row rather than derived, if drafting mutates data/social-queue.json by a single byte, if a batch exceeds the daily limit, if a 402 costs more than one request now that this path exists, or if a platform paused by decision (LinkedIn) is drafted as though it were an outage. It fails if it exercises zero properties."
+      "rationale": "A lane whose only consumer will never consume it. Until 2026-08-29 a run that could not post to X wrote the day's highest-value posts to reports/social-drafts.md for the owner to paste in herself and mark done with one field in data/social-draft-ledger.json. Shown what that asked of her she said \"this means i manually have to do it? i will never do it honestly\", so every run was producing a standing instruction that would never be followed -- worse than none, because the report kept presenting a growing pile of posts as pending work. Buffer carries the same posts to the same X profile from a free plan for nothing, so the manual lane was DELETED rather than left dormant, and this validator keeps it deleted. It drives the real publisher with Buffer's transport stubbed and every network path counted, and blocks if the retired files are back in the tree or still imported, if any run writes a sheet for a person to act on (watched at the directory level, not by trusting a path constant), if any surface instructs the owner to post or to mark anything, if the report stops counting what the route could not carry, if the free plan's standing queue-depth allowance is exceeded or is found by being refused at it rather than discovered before the request, if that depth is not read from Buffer at runtime, if a post the route could not take is dropped, retired or parked anywhere instead of staying queued_for_auto_post and going out on the NEXT run (proved across two consecutive runs against the same queue), if a post at or before marked_posted_through is sent again or that record is rewritten, if a post drafted and never posted is held back from Buffer, if X's own pay-per-use API is contacted even once, or if switching the route off resurrects a manual lane rather than leaving the entries to wait. It fails if it exercises zero properties."
     },
     "social_pause_modes": {
       "severity": "HARD_FAIL",

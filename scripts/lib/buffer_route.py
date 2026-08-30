@@ -24,14 +24,45 @@ them: the legacy REST API (`api.bufferapp.com/1/*`) answers 401 "Public API
 tokens are not accepted for REST API access" and Buffer retires it on
 2027-02-01; `graph.buffer.com` answers 401 "Please use api.buffer.com".
 
-Limits are DISCOVERED, never hardcoded
---------------------------------------
-Buffer's own per-channel daily posting limit is read at runtime from the
-`dailyPostingLimits` query and used as a hard ceiling. A number typed into this
-file would be a guess that stays wrong after Buffer changes it, and the cost of
-being wrong here is the failure this repository already had once: on 2026-08-29
-a run made 581 requests in 76 seconds because its caps counted successes rather
-than attempts, so a refusal cost one request per queue entry.
+Limits are DISCOVERED, never hardcoded, and the STRICTEST one binds
+-------------------------------------------------------------------
+The owner pays Buffer nothing either -- that is the entire point of being here
+rather than on X's paid API -- so the free plan's allowance is a hard ceiling,
+not guidance. Three different ceilings apply at once and they are different
+KINDS of limit, discovered from the API on every run:
+
+  daily rate, per channel   `dailyPostingLimits` -> `limit`, with `scheduled`
+                            and `sent` already counted against it. Buffer
+                            reported 50 for the X channel and 25 for the TikTok
+                            one, so it is per channel and it is per day.
+  standing queue depth      `account.organizations.limits.scheduledPosts`,
+                            which on this free plan is 10. It is NOT a rate: it
+                            caps how many posts may sit waiting to go out AT
+                            ONCE. Its siblings in the same type name their scope
+                            -- `scheduledStoriesPerChannel`,
+                            `scheduledThreadsPerChannel` -- and this one does
+                            not, so it is read as the whole organization's,
+                            which is the stricter of the two readings and
+                            therefore the safe one.
+  this network's own cap    X_DAILY_LIMIT, minus what this repository already
+                            handed Buffer today.
+
+The queue-depth cap is the one that actually governs, and it changes the shape
+of the lane. "Eight a day" into a queue ten deep fills up on day two and stays
+full. So the route does not push a daily quota: it TOPS THE QUEUE UP to just
+under the discovered depth cap and adds more only as Buffer drains it. On a day
+Buffer has published nothing, that means very few posts leave, and that is the
+correct answer rather than a fault.
+
+A number typed into this file would be a guess that stays wrong after Buffer
+changes it or the owner changes plan, and the cost of being wrong here is the
+failure this repository already had once: on 2026-08-29 a run made 581 requests
+in 76 seconds because its caps counted successes rather than attempts, so a
+refusal cost one request per queue entry.
+
+Nothing here spends money or asks to. There is no upgrade call, no trial, and
+no attempt to post past a refusal to see what happens: a limit refusal halts
+the route for the run and is reported by name.
 
 Two rules follow, and both are enforced by the caller
 (scripts/social_publisher.py) and guarded by
@@ -47,6 +78,15 @@ Queued is not published
 it at the channel's next posting time. So an accepted post is `buffer_queued`,
 not `posted`, and the two are recorded differently on the queue entry. Nothing
 here claims a post is live on X.
+
+What happens to a post the route cannot take
+--------------------------------------------
+Nothing. It stays `queued_for_auto_post` in data/social-queue.json and goes out
+on a later run as Buffer's queue drains. There is no second holding place and
+no sheet for a human: the owner said she would never hand-post, so a lane that
+asked her to would be a lane nothing downstream consumes. "Deferred because
+Buffer's queue is full" is a named, counted state in the run report, not a task
+assigned to anybody.
 """
 from __future__ import annotations
 
@@ -54,6 +94,7 @@ import json
 import os
 import urllib.error
 import urllib.request
+from datetime import datetime, timedelta, timezone
 
 ENDPOINT = os.getenv("BUFFER_GRAPHQL_ENDPOINT", "https://api.buffer.com/graphql")
 TOKEN_ENV = "BUFFER_ACCESS_TOKEN"
@@ -133,7 +174,39 @@ def graphql(query, variables=None, timeout=TIMEOUT, opener=None):
 # Buffer's name for X. The Service enum on this schema still says "twitter";
 # there is no "x" member, so matching on "x" finds nothing and the route would
 # report "no channel connected" forever with an X channel sitting right there.
+#
+# This mapping is the ONLY way a channel is ever chosen. There is deliberately
+# no "use the first channel" path: this Buffer account also carries
+# `iamcindymercer`, a TikTok channel that belongs to a different project of the
+# owner's, and a first-channel fallback would post this network's citations to
+# it. `open()` re-checks the selected channel's service against this mapping
+# before the route is marked available, so a selection bug cannot survive even
+# if the matching loop above it is changed.
 SERVICE_FOR_PLATFORM = {"x": ("twitter",)}
+
+# Statuses in which a Buffer post occupies one of the free plan's scheduled
+# slots. `sent` does not -- it has left. `error` does not -- Buffer gave up on
+# it. Read from the PostStatus enum on the live schema: draft, error,
+# needs_approval, scheduled, sending, sent.
+OCCUPYING_STATUSES = ("scheduled", "draft", "needs_approval", "sending")
+
+# Where the free plan declares how many posts may sit queued at once.
+QUEUE_DEPTH_LIMIT_FIELD = "scheduledPosts"
+
+# How far ahead to look when summing the standing queue. Buffer's addToQueue
+# drops a post on the channel's next free posting slot, so a queue at the free
+# plan's depth of 10 spans days, not weeks. Long enough to see all of it, short
+# enough that measuring it costs a bounded, small number of requests.
+QUEUE_DEPTH_HORIZON_DAYS = 14
+
+POSTS_QUERY = """
+query Q($input: PostsInput!, $first: Int) {
+  posts(input: $input, first: $first) {
+    totalCount
+    edges { node { id status channelId dueAt } }
+  }
+}
+"""
 
 CHANNELS_QUERY = """
 query C($input: ChannelsInput!) {
@@ -225,6 +298,14 @@ class Route:
         self.halted = None
         self.plan_limits = {}
         self.channels_seen = []
+        # The three discovered ceilings and which one actually bound. Reported
+        # so a run that sends two posts can be read as "the free plan's queue
+        # is nearly full" rather than as a fault.
+        self.queue_depth_limit = None
+        self.queue_depth_used = None
+        self.ceilings = {}
+        self.binding_ceiling = None
+        self.depth_probe = {}
 
     # -- discovery ---------------------------------------------------------
     def open(self):
@@ -266,6 +347,24 @@ class Route:
                     break
             if self.channel:
                 break
+        if self.channel is not None and str(
+                self.channel.get("service", "")).lower() not in wanted:
+            # Unreachable through the loop above, and asserted anyway. The one
+            # channel this must never pick is real and connected: the TikTok
+            # account `iamcindymercer` belongs to a different project of the
+            # owner's. A future edit that turns the match into "the first
+            # channel" would post this network's citations there, and would be
+            # caught here rather than on TikTok.
+            self.reason = (
+                f"refusing to post: the selected Buffer channel "
+                f"{self.channel.get('name')!r} is a "
+                f"{self.channel.get('service')!r} channel, not "
+                f"{'/'.join(wanted)}. This route posts to the {self.platform} channel "
+                f"and to nothing else.")
+            self.halted = self.reason
+            self.channel = None
+            self.channel_id = None
+            return self
         if not self.channel:
             services = sorted({str(c.get("service")) for c in self.channels_seen})
             self.reason = (
@@ -308,20 +407,118 @@ class Route:
             self.reason = ("Buffer reported no daily limit number for this channel, so "
                            "there is no discovered ceiling to respect and nothing is sent")
             return self
-        self.headroom = max(0, int(self.buffer_daily_limit) - self.buffer_used_today)
+
+        # ---- ceiling 1: the channel's daily RATE, discovered from Buffer.
+        self.ceilings["buffer_daily_rate"] = max(
+            0, int(self.buffer_daily_limit) - self.buffer_used_today)
+
+        # ---- ceiling 2: the free plan's standing QUEUE DEPTH. Not a rate: it
+        # caps how many posts may sit waiting at once, and on this free plan it
+        # is 10 against a daily rate of 50, so it is the one that governs.
+        # Refusing to post when it cannot be measured is the safe direction --
+        # the alternative is guessing a number on an account that pays nothing.
+        depth = self.discover_queue_depth()
+        if depth.get("limit") is None:
+            self.reason = (
+                f"the plan does not publish a {QUEUE_DEPTH_LIMIT_FIELD} allowance, so "
+                f"there is no discovered queue-depth ceiling to respect and nothing is "
+                f"sent. This account pays Buffer nothing; a guessed ceiling is how a "
+                f"free plan gets pushed into an upgrade prompt.")
+            return self
+        if depth.get("used") is None:
+            self.reason = (
+                f"Buffer would not say how many posts are already queued "
+                f"({depth.get('error')}), so the {QUEUE_DEPTH_LIMIT_FIELD} allowance of "
+                f"{depth['limit']} cannot be respected and nothing is sent.")
+            return self
+        self.queue_depth_limit = int(depth["limit"])
+        self.queue_depth_used = int(depth["used"])
+        # Topped up to just UNDER the cap, never to it. The last slot is left
+        # free deliberately: Buffer's own count and this one are read moments
+        # apart, and filling the final slot is what turns a race into a
+        # LimitReachedError and an upgrade prompt.
+        self.ceilings["free_plan_queue_depth"] = max(
+            0, self.queue_depth_limit - 1 - self.queue_depth_used)
+
+        # ---- ceiling 3: what this network has decided to send, today.
         if self.policy_daily_limit is not None:
-            # Two ceilings, and the lower one governs. Buffer's is the account's
-            # hard cap; the policy's is what this network has decided to send.
-            self.headroom = min(self.headroom, int(self.policy_daily_limit))
+            self.ceilings["network_policy_daily"] = max(0, int(self.policy_daily_limit))
+
+        # The strictest binds, and which one it was is reported rather than
+        # inferred: "two posts left" reads as a fault unless the reason is there.
+        self.binding_ceiling = min(self.ceilings, key=lambda k: self.ceilings[k])
+        self.headroom = self.ceilings[self.binding_ceiling]
         if self.headroom <= 0:
-            self.reason = (f"no headroom left today: Buffer allows "
-                           f"{self.buffer_daily_limit} and "
-                           f"{self.buffer_used_today} are already used")
+            self.reason = (
+                f"no headroom: the strictest discovered ceiling is "
+                f"{self.binding_ceiling} at {self.ceilings[self.binding_ceiling]} "
+                f"(all of them: {self.ceilings}). Nothing is sent, nothing is lost -- "
+                f"the entries stay queued and go out as Buffer drains.")
             return self
         self.available = True
         self.reason = (f"ready: Buffer channel {self.channel.get('name')!r} "
-                       f"({self.channel_id}), {self.headroom} post(s) of headroom")
+                       f"({self.channel_id}), {self.headroom} post(s) of headroom, "
+                       f"bound by {self.binding_ceiling} (ceilings: {self.ceilings})")
         return self
+
+    # -- the standing queue depth -----------------------------------------
+    def discover_queue_depth(self):
+        """How many posts already occupy one of the free plan's scheduled slots.
+
+        The obvious source, the `posts` query, answers "Not authorized to access
+        this resource" for a public API token -- verified against the live
+        endpoint on 2026-08-29, both as a count and as a page of edges. So the
+        depth is summed from `dailyPostingLimits`, which the same token CAN
+        read: it takes a date, and `scheduled` is how many posts are queued for
+        that date on that channel. `addToQueue` places a post at the next free
+        posting slot, so summing the horizon below is the standing queue.
+
+        Deliberately per-ORGANIZATION, across every connected channel, not just
+        X's. `scheduledPosts` sits beside `scheduledStoriesPerChannel` and
+        `scheduledThreadsPerChannel` in the same type; those two name their
+        scope and it does not, so the whole-organization reading is the one this
+        route acts on. It is the stricter of the two possible readings, and on
+        a free plan the stricter reading is the one that does not end in an
+        upgrade prompt.
+        """
+        limit = (self.plan_limits or {}).get(QUEUE_DEPTH_LIMIT_FIELD)
+        out = {"limit": limit, "used": None, "error": None,
+               "horizon_days": QUEUE_DEPTH_HORIZON_DAYS, "by_day": {},
+               "source": "dailyPostingLimits summed by date",
+               "scope": "organization (every connected channel)"}
+        self.depth_probe = out
+        if limit is None:
+            return out
+        channel_ids = [c.get("id") for c in self.channels_seen if c.get("id")]
+        if self.channel_id and self.channel_id not in channel_ids:
+            channel_ids.append(self.channel_id)
+        if not channel_ids:
+            out["error"] = "no channels to count"
+            return out
+        total = 0
+        # UTC, matching the dates Buffer is asked about and the timestamps this
+        # repository writes. A local date would start the sweep a day early or
+        # a day late for most of the world, and the day it skipped is the one
+        # holding posts this route would then not see.
+        today = datetime.now(timezone.utc).date()
+        for offset in range(QUEUE_DEPTH_HORIZON_DAYS):
+            day = today + timedelta(days=offset)
+            try:
+                rows = graphql(LIMITS_QUERY,
+                               {"input": {"channelIds": channel_ids,
+                                          "date": day.isoformat() + "T12:00:00.000Z"}},
+                               opener=self.opener)["dailyPostingLimits"]
+            except BufferError as err:
+                # A depth that cannot be measured is not a depth of zero. The
+                # caller refuses to post rather than assume room.
+                out["error"] = str(err)[:300]
+                out["used"] = None
+                return out
+            day_total = sum(int(r.get("scheduled") or 0) for r in rows)
+            out["by_day"][day.isoformat()] = day_total
+            total += day_total
+        out["used"] = total
+        return out
 
     # -- the two rules -----------------------------------------------------
     def remaining(self):
@@ -343,6 +540,13 @@ class Route:
         if not self.available:
             raise BufferError(f"route not available: {self.reason}",
                               kind="unavailable")
+        wanted = SERVICE_FOR_PLATFORM.get(self.platform, ())
+        if str((self.channel or {}).get("service", "")).lower() not in wanted:
+            # Checked again per post, not only at open(): the channel is the one
+            # field whose being wrong is silent and irreversible.
+            raise BufferError(
+                f"refusing to post to a {(self.channel or {}).get('service')!r} channel; "
+                f"this route posts only to {'/'.join(wanted)}", kind="wrong_channel")
         if self.remaining() <= 0:
             raise BufferError(
                 f"the discovered Buffer allowance for today is spent "
@@ -389,6 +593,11 @@ class Route:
             "buffer_daily_limit_discovered": self.buffer_daily_limit,
             "buffer_used_today": self.buffer_used_today,
             "policy_daily_limit": self.policy_daily_limit,
+            "free_plan_queue_depth_limit": self.queue_depth_limit,
+            "queued_in_buffer_now": self.queue_depth_used,
+            "ceilings_discovered": self.ceilings,
+            "binding_ceiling": self.binding_ceiling,
+            "queue_depth_probe": self.depth_probe,
             "headroom_at_open": self.headroom,
             "attempts": self.attempts,
             "accepted": self.accepted,

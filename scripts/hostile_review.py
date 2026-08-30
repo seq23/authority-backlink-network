@@ -332,7 +332,14 @@ if social_path.exists():
             if key in seen:
                 errors.append(f'data/social-queue.json item {i}: duplicate {platform} body')
             seen.add(key)
-        if item.get('status') not in {'draft_requires_human_approval','queued_for_auto_post','approved_for_auto_post','posted','post_failed','skipped_duplicate','failed_permanent','not_for_posting'}:
+        # 'buffer_queued' is a real terminal status, not a typo: Buffer has
+        # accepted the post and holds it in the X channel's queue until the
+        # channel's next posting slot. It is deliberately NOT 'posted' -- queued
+        # in Buffer is not published on X -- and it is in no postable set, so the
+        # entry is never sent again. Missing from this list, it turned the first
+        # run that actually delivered anything through the route into a hard
+        # failure, on the day the route started working.
+        if item.get('status') not in {'draft_requires_human_approval','queued_for_auto_post','approved_for_auto_post','posted','buffer_queued','post_failed','skipped_duplicate','failed_permanent','not_for_posting'}:
             errors.append(f'data/social-queue.json item {i}: unsupported social status: {item.get("status")}')
         target_url = item.get('target_url') or item.get('source_url') or ''
         if target_url.startswith('http') and norm_domain(target_url) not in (ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS):

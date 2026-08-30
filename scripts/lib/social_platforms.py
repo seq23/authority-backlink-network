@@ -20,7 +20,7 @@ declaration is the only switch:
 
     "platforms": {
       "x":        {"enabled": false, "daily_limit": 8,
-                   "pause_mode": "draft_by_hand",
+                   "pause_mode": "delivery_route",
                    "paused_on": ..., "paused_by": ..., "paused_reason": ...},
       "linkedin": {"enabled": false, "daily_limit": 3,
                    "pause_mode": "dormant",
@@ -36,10 +36,13 @@ Four states, deliberately distinguishable (see `platform_state`):
     paused_dormant            enabled:false, pause_mode "dormant". Switched off
                               because nothing is wanted from it at all. Nothing
                               is attempted and NO drafts are produced. LinkedIn.
-    paused_for_posting        enabled:false, pause_mode "draft_by_hand". The API
-                              lane is off, but distribution continues: the day's
-                              posts are written to reports/social-drafts.md and
-                              posted by hand. Zero API requests are made. X.
+    paused_api_route_only     enabled:false, pause_mode "delivery_route". The
+                              platform's own API lane is off, and distribution
+                              continues through a declared DELIVERY ROUTE --
+                              Buffer, for X. Zero API requests are made to the
+                              platform itself. Nothing is ever asked of a human:
+                              a post the route cannot carry stays
+                              `queued_for_auto_post` and goes out on a later run.
     on_but_uncredentialled    enabled:true, credentials absent. A named stop,
                               not a failure and not a silent success.
     on_and_posting            enabled:true, credentials present.
@@ -48,16 +51,25 @@ Why two kinds of pause
 ----------------------
 "Off" answers one question ("does this platform post?") but hides a second one
 that matters just as much: does the content still need to get out? LinkedIn is
-off because the owner wants nothing from it for now -- drafting it would quietly
-reverse her switch. X is off because its API is pay-per-use, has never once
-accepted a post (HTTP 402 credits-depleted on the very first request this
-repository ever made), and she has decided not to fund it. The content still
-has to reach X; it reaches it through her hands instead of through the API.
+off because the owner wants nothing from it for now. X is off because its API
+is pay-per-use, has never once accepted a post (HTTP 402 credits-depleted on
+the very first request this repository ever made), and she has decided not to
+fund it. The content still has to reach X; it reaches it through Buffer.
 
-Collapsing those two into one `enabled: false` forces a choice between drafting
-LinkedIn against her decision and silently dropping X distribution altogether.
-So the pause carries its mode, and the drafting fallback is keyed on
-`paused_for_posting` rather than on "switched off".
+Collapsing those two into one `enabled: false` forces a choice between treating
+LinkedIn as live against her decision and silently dropping X distribution
+altogether. So the pause carries its mode.
+
+There used to be a third arrangement here: `draft_by_hand`, which wrote the
+day's posts to reports/social-drafts.md for the owner to paste into X herself.
+It is GONE, on 2026-08-29, because she said plainly that she would never do it
+-- "this means i manually have to do it? i will never do it honestly" -- and a
+lane whose only consumer will never consume it produces work that nothing
+downstream acts on. Buffer is connected and carries the same posts for nothing,
+so the route is the whole distribution lane and no surface asks her to post
+anything. The value "draft_by_hand" is still ACCEPTED on read, as a synonym for
+"delivery_route", so an older declaration on disk does not silently become an
+undocumented switch-off; it never means a human is asked to do anything.
 
 Both remain ONE boolean to reverse: set `enabled` back to true and the platform
 posts again, whichever mode it was paused in. `pause_mode` is inert while
@@ -112,12 +124,19 @@ PAUSE_FIELDS = ("paused_on", "paused_by", "paused_reason")
 PAUSE_MODE_FIELD = "pause_mode"
 # Switched off and wanted silent. No posts, no drafts, nothing produced.
 PAUSE_DORMANT = "dormant"
-# Switched off for the API only. Distribution continues by hand: the day's
-# posts are written to reports/social-drafts.md and the owner posts them.
-PAUSE_DRAFT_BY_HAND = "draft_by_hand"
-PAUSE_MODES = (PAUSE_DORMANT, PAUSE_DRAFT_BY_HAND)
-# Absent means dormant. Producing drafts is the behaviour that has to be asked
-# for explicitly; not producing them is never a surprise.
+# Switched off for the platform's OWN API only. Distribution continues through
+# the declared delivery route -- Buffer, for X. Nothing is ever asked of a
+# human: a post the route cannot carry stays queued and goes out later.
+PAUSE_ROUTE_ONLY = "delivery_route"
+# The retired name for the same pause, from when the fallback was a copy-paste
+# sheet. Read as a synonym so an older data/social-brand-policy.json does not
+# read as an undocumented switch-off; it can never revive a manual lane, because
+# there is no manual lane left in this repository to revive.
+PAUSE_LEGACY_DRAFT_BY_HAND = "draft_by_hand"
+PAUSE_MODE_SYNONYMS = {PAUSE_LEGACY_DRAFT_BY_HAND: PAUSE_ROUTE_ONLY}
+PAUSE_MODES = (PAUSE_DORMANT, PAUSE_ROUTE_ONLY, PAUSE_LEGACY_DRAFT_BY_HAND)
+# Absent means dormant. Continuing to distribute while paused is the behaviour
+# that has to be asked for explicitly; stopping is never a surprise.
 DEFAULT_PAUSE_MODE = PAUSE_DORMANT
 
 # Statuses an entry must hold to be a candidate for posting at all. Kept in step
@@ -128,20 +147,24 @@ TRUTHY = {"1", "true", "yes", "y", "on"}
 FALSEY = {"0", "false", "no", "n", "off"}
 
 STATE_PAUSED = "paused_by_switch"
-# Paused for the API lane only; the drafting fallback is keyed on exactly this.
-STATE_PAUSED_FOR_POSTING = "paused_for_posting_drafts_by_hand"
+# Paused for the platform's own API only, with a delivery route declared, and
+# the route could NOT carry posts this run. Nothing is asked of anyone: the
+# entries keep `queued_for_auto_post` and the next run tries again.
+STATE_PAUSED_ROUTE_ONLY = "paused_api_awaiting_delivery_route"
+# Retired alias. Kept bound so an old pickle, report or comparison reading the
+# former name does not silently get a different platform state.
+STATE_PAUSED_FOR_POSTING = STATE_PAUSED_ROUTE_ONLY
 STATE_UNDOCUMENTED_OFF = "off_without_a_recorded_decision"
 # Every state in which the platform sends nothing to its API. Used by callers
 # that need "will this platform be contacted?" rather than "is it on?".
-NON_POSTING_STATES = (STATE_PAUSED, STATE_PAUSED_FOR_POSTING, STATE_UNDOCUMENTED_OFF)
+NON_POSTING_STATES = (STATE_PAUSED, STATE_PAUSED_ROUTE_ONLY, STATE_UNDOCUMENTED_OFF)
 STATE_UNCREDENTIALLED = "on_but_uncredentialled"
 STATE_ON = "on_and_posting"
 # The API lane is off AND a delivery route is carrying the platform's posts
 # anyway. X is here whenever Buffer is connected: X's own API is not called at
 # all (it is pay-per-use and unfunded), and the posts leave through Buffer's
 # free queue instead of through the owner's hands. Distinct from
-# STATE_PAUSED_FOR_POSTING because the drafting fallback must NOT also offer a
-# post that a route has already accepted -- that is a double post.
+# STATE_PAUSED_ROUTE_ONLY, which is the same pause with the route unavailable.
 STATE_ROUTED = "paused_for_posting_delivered_via_route"
 
 # A DELIVERY ROUTE is another way for a post to leave, declared on the platform
@@ -204,7 +227,8 @@ def pause_mode(platform: str, policy=None) -> str:
     """
     value = declaration(platform, policy).get(PAUSE_MODE_FIELD)
     if isinstance(value, str) and value.strip().lower() in PAUSE_MODES:
-        return value.strip().lower()
+        canonical = value.strip().lower()
+        return PAUSE_MODE_SYNONYMS.get(canonical, canonical)
     return DEFAULT_PAUSE_MODE
 
 
@@ -214,22 +238,23 @@ def declared_pause_mode(platform: str, policy=None):
     return value if isinstance(value, str) else None
 
 
-def drafts_by_hand(platform: str, policy=None) -> bool:
-    """True when this platform is paused for POSTING and still wants drafts.
+def route_only(platform: str, policy=None) -> bool:
+    """True when this platform's own API is paused and a route carries it.
 
-    This is the single question the drafting fallback asks. It is deliberately
-    not "is the platform off": LinkedIn is off and must produce nothing.
+    Deliberately not "is the platform off": LinkedIn is off dormant and must
+    produce nothing at all. X is off route-only and keeps distributing through
+    Buffer. Neither asks a human to do anything.
     """
     if is_enabled(platform, policy):
         return False
     if pause_record(platform, policy) is None:
         return False
-    return pause_mode(platform, policy) == PAUSE_DRAFT_BY_HAND
+    return pause_mode(platform, policy) == PAUSE_ROUTE_ONLY
 
 
-def drafting_platforms(policy=None) -> list:
-    """Platforms whose distribution continues by hand while their API is off."""
-    return [p for p in PLATFORMS if drafts_by_hand(p, policy)]
+def route_only_platforms(policy=None) -> list:
+    """Platforms whose distribution continues via a route while their API is off."""
+    return [p for p in PLATFORMS if route_only(p, policy)]
 
 
 def missing_pause_fields(platform: str, policy=None) -> list:
@@ -279,8 +304,8 @@ def platform_state(platform: str, missing_secrets=None, policy=None) -> str:
     if not is_enabled(platform, policy):
         if pause_record(platform, policy) is None:
             return STATE_UNDOCUMENTED_OFF
-        if pause_mode(platform, policy) == PAUSE_DRAFT_BY_HAND:
-            return STATE_PAUSED_FOR_POSTING
+        if pause_mode(platform, policy) == PAUSE_ROUTE_ONLY:
+            return STATE_PAUSED_ROUTE_ONLY
         return STATE_PAUSED
     if missing_secrets:
         return STATE_UNCREDENTIALLED
@@ -295,8 +320,8 @@ def delivery_route(platform: str, policy=None) -> dict:
         "delivery_route": {"route": "buffer", "enabled": true}
 
     Absent means no route: the platform posts through its own API when enabled,
-    and through the owner's hands when it is paused for posting. Adding a route
-    never changes either of those; it only adds a way out that is tried first.
+    and does not distribute at all while it is paused. Adding a route never
+    changes the first of those; it only adds a way out that is tried first.
     """
     entry = declaration(platform, policy).get(DELIVERY_ROUTE_FIELD)
     return entry if isinstance(entry, dict) else {}

@@ -39,7 +39,7 @@ jobs:
           CHANNEL_ID: ${{ github.event.inputs.channel_id }}
         run: |
           set -euo pipefail
-          args=(--auth-check)
+          args=(--auth-check --queue-depth)
           if [ -n "${SCHEDULE_TEST_TEXT:-}" ]; then
             args+=(--schedule-test "${SCHEDULE_TEST_TEXT}")
             if [ -n "${CHANNEL_ID:-}" ]; then

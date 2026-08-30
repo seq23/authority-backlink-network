@@ -71,7 +71,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Authority V4.2 social auto-post ledger"
-          file_pattern: "data/social-queue.json data/social-draft-ledger.json reports/social-publisher-report.json reports/social-drafts.md"
+          file_pattern: "data/social-queue.json reports/social-publisher-report.json"
       - name: Surface what this run actually did
         # The posting step above is deliberately continue-on-error: a platform
         # refusing a post must never block content publication. But that also
@@ -79,13 +79,19 @@ jobs:
         # below was unreachable and the run on 2026-08-29 that failed 581 of 581
         # posts - the whole X queue - reported success with a green tick.
         #
-        # Rule 0 applies to the run as a whole, not to the API alone. "Posted
-        # nothing, drafted 8 for hand-posting" is work done, and it is reported
-        # as such, loudly, with the drafts printed into the run summary. What is
-        # NOT allowed is a run that posted nothing, drafted nothing, and still
-        # had queued content waiting - that is the silent-defer shape, and it
-        # fails. Reads the receipt rather than the exit code, so the
+        # Rule 0 applies to the run as a whole, not to the API alone. A run
+        # that handed Buffer everything its free plan had room for is work
+        # done, and it is reported as such. What is NOT allowed is a run that
+        # posted nothing, routed nothing, and still had queued content waiting
+        # with a route that was available - that is the silent-defer shape, and
+        # it fails. Reads the receipt rather than the exit code, so the
         # non-blocking property of the posting step is preserved.
+        #
+        # "Deferred" is NOT that shape. Buffer's free plan caps how many posts
+        # may sit queued at once, so a run that adds two and defers the rest is
+        # the lane working correctly. Deferred entries keep
+        # queued_for_auto_post and go out on a later run; nothing is asked of
+        # anybody, and there is no sheet to check.
         if: always()
         run: |
           python3 - <<'PY'
@@ -97,48 +103,59 @@ jobs:
           r = json.loads(p.read_text())
           attempts, successes = len(r.get('attempts', [])), len(r.get('successes', []))
           halted = r.get('halted_platforms') or {}
-          drafts = r.get('manual_drafts') or {}
-          open_drafts = int(drafts.get('open_drafts') or 0)
+          queued = int(r.get('buffer_queued_this_run') or 0)
+          deferred = int(r.get('deferred_waiting_for_delivery_route') or 0)
+          route = ((r.get('delivery_routes') or {}).get('x') or {})
+          receipt = route.get('receipt') or {}
           postable = r.get('still_postable_after_run')
           print(json.dumps({'status': r.get('status'), 'attempts': attempts,
                             'successes': successes, 'halted_platforms': halted,
-                            'manual_drafts': drafts,
+                            'buffer_queued_this_run': queued,
+                            'deferred_waiting_for_delivery_route': deferred,
+                            'route_receipt': receipt,
                             'still_postable_after_run': postable}, indent=2))
           for platform, reason in halted.items():
               print(f'::warning::{platform} stopped this run early: {reason}')
 
           summary = pathlib.Path(os.environ.get('GITHUB_STEP_SUMMARY', '/dev/null'))
-          sheet = pathlib.Path('reports/social-drafts.md')
           with summary.open('a') as fh:
-              fh.write(f'## Social auto-post\n\nPosted **{successes}**, attempted '
-                       f'**{attempts}**, drafts waiting to be posted by hand '
-                       f'**{open_drafts}**.\n\n')
-              if open_drafts and sheet.exists():
-                  fh.write(sheet.read_text())
+              fh.write(f'## Social auto-post\n\nHanded to Buffer this run: **{queued}**. '
+                       f'Posted directly: **{successes - queued}**. Attempted '
+                       f'**{attempts}**.\n\n')
+              fh.write(f'Waiting for room in Buffer: **{deferred}** '
+                       f'(they stay queued and go out as Buffer drains -- '
+                       f'nothing to do).\n\n')
+              if receipt:
+                  fh.write(f"Buffer ceilings discovered this run: "
+                           f"`{receipt.get('ceilings_discovered')}`, bound by "
+                           f"`{receipt.get('binding_ceiling')}`. Channel: "
+                           f"`{receipt.get('channel_name')}` "
+                           f"(`{receipt.get('channel_service')}`).\n\n")
+              for s in r.get('successes', []):
+                  if s.get('via') == 'buffer':
+                      fh.write(f"- Buffer post `{s.get('id')}` - {s.get('brand')} "
+                               f"(due {s.get('due_at')})\n")
 
-          # Every platform dormant, nothing drafted, and content still waiting is
-          # the one shape Rule 0 forbids: a run that produced nothing by any
-          # route. A platform paused FOR POSTING does not land here -- it has
-          # drafts -- and a genuinely empty queue does not either.
-          if (r.get('status') == 'stopped_no_enabled_platform' and not open_drafts
+          # The one shape Rule 0 forbids: nothing went out by ANY route while a
+          # route was available and content was waiting. A route that reports
+          # itself unavailable or full is a named state, not this.
+          route_was_open = bool(receipt.get('available'))
+          if route_was_open and attempts and not successes:
+              print(f'::error::The Buffer route was available and all {attempts} '
+                    f'attempts failed, so nothing was distributed by any route. '
+                    f'Entries were deferred rather than dropped, so no distribution '
+                    f'was lost. Named stop: {r.get("stop_reason") or halted}')
+              sys.exit(1)
+          if (r.get('status') == 'stopped_no_enabled_platform'
                   and (postable or 0) > 0):
-              print(f'::error::Every social platform is switched off, no drafts were '
-                    f'produced, and {postable} queued posts are waiting. Nothing was '
-                    f'distributed by any route. Named stop: {r.get("stop_reason")}')
+              print(f'::error::Every social platform is switched off, no delivery '
+                    f'route carried anything, and {postable} queued posts are '
+                    f'waiting. Named stop: {r.get("stop_reason")}')
               sys.exit(1)
-          if attempts and not successes and not open_drafts:
-              print(f'::error::All {attempts} posting attempts failed, nothing was '
-                    f'published, and no drafts were produced either. Queue entries were '
-                    f'deferred rather than dropped, so no distribution was lost, but this '
-                    f'run got nothing out by any route: check platform credentials, API '
-                    f'write credits, and reports/social-drafts.md.')
-              sys.exit(1)
-          if open_drafts:
-              print(f'::warning::{open_drafts} posts are waiting in '
-                    f'reports/social-drafts.md to be posted by hand -- either because a '
-                    f'platform is paused for posting on purpose, or because its API '
-                    f'could not take them. Mark them done with one edit in '
-                    f'data/social-draft-ledger.json.')
+          if deferred and not queued and route_was_open:
+              print(f'::warning::The Buffer route was open and took nothing while '
+                    f'{deferred} entries waited. Ceilings: '
+                    f'{receipt.get("ceilings_discovered")}.')
           PY
 
       - name: Create failure issue

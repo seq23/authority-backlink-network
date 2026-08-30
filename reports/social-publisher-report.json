@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -18,7 +18,7 @@
     "x": {
       "paused_on": "2026-08-29",
       "paused_by": "owner",
-      "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues by hand -- every scheduled run still writes the day's eight highest-value posts to reports/social-drafts.md, and she copies them out and marks the batch done in data/social-draft-ledger.json. That is what pause_mode \"draft_by_hand\" means and why it is not \"dormant\" like LinkedIn."
+      "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
     }
   },
   "parked_by_platform_switch": {
@@ -37,7 +37,7 @@
     "linkedin": 0,
     "x": 0
   },
-  "buffer_queued_this_run": 0,
+  "buffer_queued_this_run": 3,
   "delivery_routes": {
     "x": {
       "route": "buffer",
@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 8 post(s) of headroom",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 3 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 50, 'free_plan_queue_depth': 3, 'network_policy_daily': 3})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -53,11 +53,43 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 0,
-        "policy_daily_limit": 8,
-        "headroom_at_open": 8,
-        "attempts": 0,
-        "accepted": 0,
-        "remaining": 8,
+        "policy_daily_limit": 3,
+        "free_plan_queue_depth_limit": 10,
+        "queued_in_buffer_now": 6,
+        "ceilings_discovered": {
+          "buffer_daily_rate": 50,
+          "free_plan_queue_depth": 3,
+          "network_policy_daily": 3
+        },
+        "binding_ceiling": "free_plan_queue_depth",
+        "queue_depth_probe": {
+          "limit": 10,
+          "used": 6,
+          "error": null,
+          "horizon_days": 14,
+          "by_day": {
+            "2026-08-30": 4,
+            "2026-08-31": 2,
+            "2026-09-01": 0,
+            "2026-09-02": 0,
+            "2026-09-03": 0,
+            "2026-09-04": 0,
+            "2026-09-05": 0,
+            "2026-09-06": 0,
+            "2026-09-07": 0,
+            "2026-09-08": 0,
+            "2026-09-09": 0,
+            "2026-09-10": 0,
+            "2026-09-11": 0,
+            "2026-09-12": 0
+          },
+          "source": "dailyPostingLimits summed by date",
+          "scope": "organization (every connected channel)"
+        },
+        "headroom_at_open": 3,
+        "attempts": 3,
+        "accepted": 3,
+        "remaining": 0,
         "plan_limits": {
           "channels": 3,
           "scheduledPosts": 10
@@ -81,52 +113,115 @@
           }
         ]
       },
-      "meaning_of_buffer_queued": "Buffer accepted the post and holds it in the X channel's queue. It is NOT published yet: Buffer sends it at the channel's next posting slot. The entry keeps status 'buffer_queued' with the Buffer post id, is never re-sent, and is never offered on the hand-post sheet.",
+      "meaning_of_buffer_queued": "Buffer accepted the post and holds it in the X channel's queue. It is NOT published yet: Buffer sends it at the channel's next posting slot. The entry keeps status 'buffer_queued' with the Buffer post id and is never re-sent.",
+      "meaning_of_deferred": "Buffer's free plan caps how many posts may sit queued at once. When that cap is reached the remaining entries are simply left alone: they keep 'queued_for_auto_post' and the next run offers them again as Buffer drains its queue. Nothing is dropped, nothing is parked in another file, and nothing is asked of anybody.",
+      "released_from_retired_hand_drafts": [
+        {
+          "buffer_post_id": "6a93747619e5b3c30eaee1e5",
+          "brand": null,
+          "url": "https://professionalresourcelibrary.com/daily/2026-07-12-rental-history-explanation-low-risk-mistakes-to-avoid-when-timing-matters.html"
+        },
+        {
+          "buffer_post_id": "6a9374d073b542df4de57905",
+          "brand": null,
+          "url": "https://professionalresourcelibrary.com/daily/2026-07-13-personal-loan-documents-resource-backed-mistakes-to-avoid-before-you-choose.html"
+        }
+      ],
       "x_api_requests_made": 0
     }
   },
   "attempted_this_run": {
     "linkedin": 0,
-    "x": 0
+    "x": 3
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 581
+    "x": 8
   },
   "halted_platforms": {},
-  "manual_drafts": {
-    "platforms_unavailable": {},
-    "actions": {},
-    "drafts_written": 0,
-    "drafts_reissued": 0,
-    "open_drafts": 8,
-    "open_batches": [
-      "x-2026-08-29-1"
-    ],
+  "deferred_waiting_for_delivery_route": 572,
+  "route_only_platforms": [
+    "x"
+  ],
+  "hand_post_history": {
+    "note": "Historical only: what the owner posted to X by hand before Buffer carried it. Read on every run so those posts are never sent again. Nothing updates it and nothing asks her to.",
     "marked_posted_through": null,
-    "marker_is_stale": false,
-    "ledger_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/data/social-draft-ledger.json",
-    "drafts_path": "/home/runner/work/authority-backlink-network/authority-backlink-network/reports/social-drafts.md",
-    "queue_entries_read": 1468
+    "batches_recorded": 1,
+    "batches_she_posted_by_hand": 0,
+    "posts_she_posted_by_hand": 0,
+    "posts_drafted_but_never_posted": 8
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1162,
-  "attempts": [],
-  "successes": [],
+  "still_postable_after_run": 1153,
+  "attempts": [
+    {
+      "index": 121,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Need to explain what happened? Create the letter they asked for. Rental History Explanation: Low-Risk Mistakes To Avoid "
+    },
+    {
+      "index": 127,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Need to explain what happened? Create the letter they asked for. Personal Loan Documents: Resource-Backed Mistakes To Av"
+    },
+    {
+      "index": 133,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Need to explain what happened? Create the letter they asked for. Lender Document Request: Aeo-Ready Prep Guide When You "
+    }
+  ],
+  "successes": [
+    {
+      "index": 121,
+      "platform": "x",
+      "brand": null,
+      "id": "6a93747619e5b3c30eaee1e5",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-08-31T15:47:00.000Z"
+    },
+    {
+      "index": 127,
+      "platform": "x",
+      "brand": null,
+      "id": "6a9374d073b542df4de57905",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-08-31T16:32:00.000Z"
+    },
+    {
+      "index": 133,
+      "platform": "x",
+      "brand": null,
+      "id": "6a93752ed6c6c023c656c2ab",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-09-01T13:19:00.000Z"
+    }
+  ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 5
   },
   "brand_rotation_policy": {
     "quota_count": 15,
-    "daily_rotation_offset": 739857
+    "daily_rotation_offset": 739858
   },
   "status": "ok",
   "named_stops": {
     "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
-    "x": "x_delivered_via_buffer: x's own API stayed off and was contacted ZERO times -- it is pay-per-use and unfunded. The day's posts were handed to Buffer's free queue instead, and Buffer publishes them at the channel's next posting slot. Entries carry status 'buffer_queued' with the Buffer post id, and are NOT offered on reports/social-drafts.md, because a post Buffer accepted must not also be posted by hand."
+    "x": "x_delivered_via_buffer: x's own API stayed off and was contacted ZERO times -- it is pay-per-use and unfunded. The day's posts were handed to Buffer's free queue instead, and Buffer publishes them at the channel's next posting slot. Entries carry status 'buffer_queued' with the Buffer post id. Posts Buffer's free plan had no room for stay 'queued_for_auto_post' and go out on a later run as the Buffer queue drains -- nothing is asked of anybody."
   }
 }

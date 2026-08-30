@@ -111,24 +111,25 @@ with tempfile.TemporaryDirectory() as td:
     assert r['stop_reason'],'the stop must carry a reason'
 
     assert r['platform_states']['x']=='paused_by_switch','a dormant pause must read as one'
-    assert r['manual_drafts']['drafts_written']==0,'a dormant pause must produce no drafts'
+    assert 'manual_drafts' not in r,'the hand-post lane is retired; nothing may report it'
 
     # Pacing knobs must be reported, so a run that silently lost its spacing is visible.
     assert r['pacing']['run_limit']>=1 and 'min_interval_seconds' in r['pacing'],'pacing not reported'
 
-    # The other pause: X switched off FOR POSTING. Nothing may be sent to the
-    # API, and the run must NOT report itself as a stop -- it still hands the
-    # day's posts over to be published by hand. "Posted nothing, drafted 8" is
-    # work; only "nothing produced by any route" is a stop.
-    policy_draft = td/'policy-draft-by-hand.json'
+    # The other pause: X's own API switched off with a DELIVERY ROUTE declared.
+    # Nothing may be sent to the API, nothing may be asked of a human, and the
+    # entries the route could not carry must simply stay queued and be counted.
+    # "Deferred, 10 waiting" is a named state; only "nothing produced and
+    # nothing waiting" is a stop.
+    policy_route = td/'policy-delivery-route.json'
     doc = json.loads(policy_src.read_text())
     doc['platforms']['linkedin'].update({'enabled': False, 'pause_mode':'dormant',
                                          'paused_on':'2026-08-29','paused_by':'owner',
                                          'paused_reason':'fixture'})
-    doc['platforms']['x'].update({'enabled': False, 'pause_mode':'draft_by_hand',
+    doc['platforms']['x'].update({'enabled': False, 'pause_mode':'delivery_route',
                                   'paused_on':'2026-08-29','paused_by':'owner',
                                   'paused_reason':'fixture'})
-    policy_draft.write_text(json.dumps(doc, indent=2), encoding='utf-8')
+    policy_route.write_text(json.dumps(doc, indent=2), encoding='utf-8')
     q5=td/'queue5.json'; r5=td/'report5.json'
     rows5=[{'platform':'x','brand':'Fixture','post_type':'resource',
             'body':f'X fixture {i}','source_url':f'https://example.com/{i}',
@@ -136,28 +137,35 @@ with tempfile.TemporaryDirectory() as td:
     q5.write_text(json.dumps(rows5,indent=2),encoding='utf-8')
     before5=q5.read_bytes()
     env5={**os.environ,'SOCIAL_QUEUE_PATH':str(q5),'SOCIAL_REPORT_PATH':str(r5),
-          'SOCIAL_PLATFORM_POLICY_PATH':str(policy_draft),'SOCIAL_DRY_RUN':'true',
-          'SOCIAL_DRAFT_LEDGER_PATH':str(td/'ledger5.json'),
-          'SOCIAL_DRAFTS_PATH':str(td/'drafts5.md')}
-    for key in ['ENABLE_LINKEDIN_POSTING','ENABLE_X_POSTING']: env5.pop(key,None)
+          'SOCIAL_PLATFORM_POLICY_PATH':str(policy_route),'SOCIAL_DRY_RUN':'true',
+          'SOCIAL_DRAFT_LEDGER_PATH':str(td/'ledger5.json')}
+    for key in ['ENABLE_LINKEDIN_POSTING','ENABLE_X_POSTING','BUFFER_ACCESS_TOKEN']:
+        env5.pop(key,None)
     p5=subprocess.run([sys.executable,'scripts/social_publisher.py'],cwd=ROOT,env=env5,text=True,capture_output=True)
     assert p5.returncode==0,(p5.stdout,p5.stderr)
     r=json.loads(r5.read_text())
-    assert r['platform_states']['x']=='paused_for_posting_drafts_by_hand',\
-        'a pause_mode of draft_by_hand must resolve to its own state'
+    assert r['platform_states']['x']=='paused_api_awaiting_delivery_route',\
+        'a pause_mode of delivery_route must resolve to its own state'
     assert r['attempts']==[] and r['api_requests_made']==0,\
-        'a platform paused for posting must be contacted zero times'
-    assert r['manual_drafts']['drafts_written']>0,\
-        'a platform paused for posting must still hand its posts over to be posted by hand'
-    assert r['manual_drafts']['drafts_written']<=doc['platforms']['x']['daily_limit'],\
-        'a hand-posting batch must never exceed a day of work'
+        'a platform paused for its own API must be contacted zero times'
+    assert r['deferred_waiting_for_delivery_route']==len(rows5),\
+        'every entry the route could not carry must stay queued and be counted'
+    assert r['route_only_platforms']==['x'],\
+        'the platform whose distribution runs through a route must be named'
+    assert 'manual_drafts' not in json.dumps(r),\
+        'no run may report a hand-post lane: it is deleted, not switched off'
+    assert not (ROOT/'reports'/'social-drafts.md').exists(),\
+        'the copy-paste sheet is retired and must never be written again'
     assert r['status']!='stopped_no_enabled_platform',\
-        'a run that produced a day of drafts is not a stop'
-    assert 'x' in r['named_stops'] and 'draft' in r['named_stops']['x'].lower(),\
-        'the stop must say the posts still went out, and where to find them'
-    assert q5.read_bytes()==before5,'pausing for posting rewrote the queue'
-    assert 'linkedin' not in r['manual_drafts']['actions'],\
-        'a dormant LinkedIn must not be drafted, even while X is drafting beside it'
-    assert not (td/'ledger5.json').exists() and not (td/'drafts5.md').exists(),\
-        'a dry run must report what it would draft and persist nothing'
-print(json.dumps({'status':'PASS','fixtures':['platform_switch_round_trip','all_switches_off_named_stop','paused_for_posting_still_drafts_and_makes_no_requests','dry_run_nonmutation','both_platforms_exercised','missing_secrets_nonblocking_by_default','strict_social_failure_opt_in','one_platform_missing_does_not_abort_the_other','pacing_reported']}))
+        'a run whose entries are waiting on a route is not a stop with nothing waiting'
+    assert 'x' in r['named_stops'] and 'route' in r['named_stops']['x'].lower(),\
+        'the stop must say the posts are waiting for the route, and that nothing is asked'
+    assert 'by hand' not in r['named_stops']['x'].lower(),\
+        'nothing may tell the owner to post by hand; she has said she never will'
+    assert q5.read_bytes()==before5,'pausing rewrote the queue'
+    assert r['hand_post_history']['marked_posted_through'] is None or \
+        isinstance(r['hand_post_history']['marked_posted_through'],str),\
+        'the historical hand-post record must be reported, read-only'
+    assert not (td/'ledger5.json').exists(),\
+        'nothing may write the hand-post ledger; it is a historical record'
+print(json.dumps({'status':'PASS','fixtures':['platform_switch_round_trip','all_switches_off_named_stop','route_only_pause_defers_by_name_and_makes_no_requests','dry_run_nonmutation','both_platforms_exercised','missing_secrets_nonblocking_by_default','strict_social_failure_opt_in','one_platform_missing_does_not_abort_the_other','pacing_reported']}))

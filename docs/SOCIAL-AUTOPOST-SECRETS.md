@@ -2,69 +2,90 @@
 
 This repo now supports 100% hands-off page publishing and social auto-posting for one LinkedIn account and one X account.
 
-## X posts through Buffer now, at $0 — one thing left for you to do (2026-08-29)
+## X posts through Buffer now, and there is nothing left for you to do (2026-08-29)
 
 **The short version.** X's own API stays off and is contacted zero times — it is pay-per-use
 and you decided not to fund it. Buffer publishes to the same X profile from its free plan at
-no per-post cost, so the day's X posts are handed to Buffer's queue instead of to you. The
-route is wired, the token is in repository secrets, and the code is guarded.
+no per-post cost, and your X channel `sequoia_ta12767` is connected. **The scheduled runs hand
+the day's posts to Buffer by themselves. Nothing is asked of you.**
 
-**What you have to do, once, in Buffer — and it takes about two minutes.** Your Buffer
-account (`seq.taylor@gmail.com`, organization "My Organization") has exactly **one channel
-connected, and it is TikTok**. There is no X channel, so there is currently nothing for the
-route to post to. Go to **buffer.com → Channels → New Channel → X**, connect the profile, and
-that is the whole job: the next scheduled run finds the channel by itself and starts posting.
-No commit, no secret, no code change. Your plan allows 3 channels and 1 is in use.
+### The copy-paste sheet is gone
 
-**Until you do that, nothing is lost.** Every run says exactly why in
-`reports/social-publisher-report.json` under `delivery_routes.x.why_not_used`, and the day's
-eight posts keep going to `reports/social-drafts.md` to be posted by hand, exactly as they do
-today. The route replaces that step; it does not remove it.
+There used to be a `reports/social-drafts.md` — the day's posts written out for you to paste
+into X, and a field to set when you had. You said: *"this means i manually have to do it? i
+will never do it honestly."* That is the right answer, and it means the sheet was producing
+work nobody would ever do while every run reported a growing pile of posts as if it were
+pending. So the sheet, the module that wrote it and the validator that guarded it were
+**deleted**, not switched off.
 
-### What happens each day once the channel is connected
+One thing survives, read-only: `data/social-draft-ledger.json` still records what you posted
+to X **by hand** before this change, under `marked_posted_through`. Those posts are live on
+your profile and must never go out again, so every run reads that field. **Nothing updates it
+and nothing will ever ask you to.** Everything after that marker was drafted and never posted,
+and Buffer has since carried it.
 
-The scheduled run picks the day's highest-value X posts in the usual priority order and hands
-them to Buffer. Buffer publishes each at the channel's next posting slot. **Your only
-remaining job is nothing at all** — no sheet to open, no batch to mark — unless Buffer is
-unavailable, in which case the hand-post sheet comes back on its own for that run.
+### What happens each day
 
-### Numbers that matter
+The scheduled run picks the day's highest-value X posts in the usual priority order, tops up
+Buffer's queue to just under what the free plan allows, and stops. Buffer publishes each post
+at the channel's next posting slot. Anything there was no room for stays `queued_for_auto_post`
+and goes out on a later run as Buffer drains — nothing is dropped and nothing is held anywhere
+else.
 
-- **Buffer's own daily limit is discovered at runtime**, not hardcoded: the route reads
-  `dailyPostingLimits` for the channel before it sends anything. On this account it currently
-  reports **25 posts per channel per day**. This network's own `X_DAILY_LIMIT` of **8** is
-  lower, so 8 is what actually goes out. The lower of the two always governs.
-- The free plan also allows **10 scheduled posts at a time** across the organization, so
-  Buffer may refuse once the queue is deep. A refusal **stops the route for that run** — it
-  is never retried — and the remaining posts fall back to the hand-post sheet.
-- Buffer accepting a post is **not X publishing it**. Accepted entries carry status
-  `buffer_queued` with the Buffer post id; Buffer sends them at the channel's next slot.
-  Nothing here ever calls a queued post "posted".
+### The free plan is the ceiling, and it is read fresh every run
 
-### The two things that cannot happen
+You pay Buffer nothing, which is the whole reason this route exists instead of X's paid API.
+So the plan's allowances are treated as hard limits, discovered from Buffer's own API on every
+single run — never typed into the code, where a number would stay wrong the moment Buffer or
+your plan changed. Three different limits apply at once and **the strictest one binds**:
 
-- **No post goes out twice.** A post Buffer accepted is never written onto the hand-post
-  sheet, and a post already sitting unposted on an open batch of that sheet is never taken by
-  Buffer.
-- **No request ever reaches X's own API.** Not a probe, not one attempt to see whether
-  credits appeared. Every one would be billable.
+| Limit | What it is | Value on your account |
+| --- | --- | --- |
+| `dailyPostingLimits.limit` | posts per channel per **day** | 50 for the X channel |
+| `limits.scheduledPosts` | posts allowed **queued at once** | **10** |
+| `X_DAILY_LIMIT` | this network's own daily decision | 8 |
 
-`scripts/validators/validate_buffer_route.py` blocks the release if any of that stops being
-true, including if `BUFFER_ACCESS_TOKEN` ever reaches a log, a report or a commit.
+The middle one is the real constraint and it is not a rate — it is a **depth**. Ten posts may
+sit waiting at any moment, so pushing eight a day into it would fill it on day two and stay
+full. The route therefore tops the queue up to **one below** the cap and adds more only as
+Buffer sends what is already there. The last slot is left free on purpose: Buffer's count and
+ours are read moments apart, and filling the final slot is what turns a race into a
+`LimitReachedError`. On a day Buffer has published little, few posts leave. That is correct,
+not a fault, and the run says which ceiling bound it.
+
+**Nothing here spends money or asks to.** No upgrade, no trial, and no posting past a refusal
+to see what happens: a limit or plan refusal **halts the route for that run**, is recorded by
+name, and is never retried. The budget is charged on **attempts**, before the request — the
+2026-08-29 run that made 581 requests in 76 seconds did so because its caps counted successes.
+
+### The three things that cannot happen
+
+- **No post goes out twice.** Anything at or before `marked_posted_through` — what you posted
+  by hand — is refused on **every** path out, Buffer's and X's own API alike.
+- **No post reaches the wrong channel.** Your Buffer account also carries `iamcindymercer`, a
+  TikTok channel for a different project. The route selects a channel by service (`twitter`)
+  and re-checks it before every single post. It will refuse to run rather than fall back to
+  "the first channel".
+- **No request ever reaches X's own API.** Not a probe, not one attempt to see whether credits
+  appeared. Every one would be billable.
+
+`scripts/validators/validate_buffer_route.py` (19 properties) and
+`scripts/validators/validate_no_manual_lane.py` (11) block the release if any of that stops
+being true, including if `BUFFER_ACCESS_TOKEN` ever reaches a log, a report or a commit.
 
 ### Turning the route off
 
 `data/social-brand-policy.json` → `platforms.x.delivery_route.enabled` → `false`, and commit.
-The hand-post sheet comes back on the next run, unchanged, with nothing to un-mark. Turning
-X's own paid API back on is still the separate single boolean below.
+X then distributes nothing and its entries simply wait in the queue, counted in the run report
+under `deferred_waiting_for_delivery_route`. There is no fallback lane to come back and
+nothing will ask you to post anything. Turning X's own paid API back on is still the separate
+single boolean below.
 
 ## If you ever fund X's own API instead (2026-08-29)
 
 ### Why the API is off
 
-**What happens every day:** nothing is sent to X and no request is made to it. Where the day's posts go depends on the Buffer route above — into Buffer's queue when the X channel is connected, and onto `reports/social-drafts.md` when it is not, or when Buffer is unavailable or has refused.
-
-**The hand-post loop, when it is the one running:** open `reports/social-drafts.md`, post what is on it by hand, then set `"marked_posted_through"` in `data/social-draft-ledger.json` to the batch id printed at the top of that sheet and commit. That is the whole loop. A post Buffer has already accepted never appears there, so there is nothing to reconcile between the two.
+**What happens every day:** nothing is sent to X and no request is made to it. The day's posts go into Buffer's free queue instead, as described above.
 
 **What is actually wrong.** Every write to X returns:
 
@@ -80,25 +101,24 @@ That is X's pay-per-use billing, not a rate limit and not a bug here. X made pay
 
 **So no posting rate gets under it.** Not eight a day, not one a month. Nothing resets on a period boundary. The only fix is to add a credit balance in the X developer console. Note before doing so: on pay-per-use a post **containing a URL costs $0.20**, against $0.015 for one without, and every post this network sends carries a URL — eight a day is roughly **$48/month**.
 
-**So the switch is off, and it is off in a way that keeps the content moving.** `platforms.x.enabled` is `false` — the publisher makes **zero** requests to X, so nothing is billable and nothing is probing a dead endpoint — but `platforms.x.pause_mode` is `"draft_by_hand"`, which is not the same pause as LinkedIn's. On every run `scripts/social_drafts.py` writes the day's eight highest-value posts to `reports/social-drafts.md` — the exact text the API would have sent, the link, nothing to assemble — and also prints them into the workflow run summary. The selection is the same one the publisher uses (`scripts/lib/social_selection.py`), so the sheet is the posts the API would have sent, in the order it would have sent them.
+**So the switch is off, and it is off in a way that keeps the content moving.** `platforms.x.enabled` is `false` — the publisher makes **zero** requests to X, so nothing is billable and nothing is probing a dead endpoint — but `platforms.x.pause_mode` is `"delivery_route"`, which is not the same pause as LinkedIn's. It says the platform's own API lane is off while a declared route carries the same posts. Buffer is that route.
 
-- **A batch stays put until you mark it done.** Runs re-render the same sheet rather than piling a second batch on top, so you never face a wall of 581 drafts.
-- **Marking done is one edit,** exactly like the LinkedIn switch: set `marked_posted_through` to the batch id. Every draft in that batch and every earlier one is retired, and the next run cuts a fresh batch. Nothing is ever stamped row by row, so there is nothing to un-mark.
-- **The posting queue is untouched.** Drafting reads `data/social-queue.json` and writes nothing to it. Fund the X account and automatic posting resumes on the next run with no undo pass — the drafts sheet simply stops being written.
-- **LinkedIn is not drafted.** It is paused `"dormant"` (below): that switch says nothing is wanted from the platform at all, so drafting it would reverse a decision nobody made.
-- **Turning X back on is one boolean.** `data/social-brand-policy.json` · **line 8** · change `"enabled": false` to `"enabled": true` under `platforms.x`, and commit. Nothing else — leave `pause_mode` alone, it is inert while the platform is enabled. Fund the developer account first, or every post answers 402 again.
+- **The posting queue is untouched.** The route reads `data/social-queue.json` and stamps only what Buffer actually accepted. Fund the X account and automatic posting resumes on the next run with no undo pass.
+- **Nothing is ever asked of a person.** A post the route had no room for keeps `queued_for_auto_post` and is counted in the run report under `deferred_waiting_for_delivery_route`. That is a named state, not a task.
+- **LinkedIn is not affected.** It is paused `"dormant"` (below): that switch says nothing is wanted from the platform at all.
+- **Turning X back on is one boolean.** `data/social-brand-policy.json` → `"enabled": true` under `platforms.x`, and commit. Nothing else — leave `pause_mode` alone, it is inert while the platform is enabled. Fund the developer account first, or every post answers 402 again. Posts you already made by hand stay refused on that path too.
 
-`scripts/validators/validate_social_drafts_fallback.py` and `scripts/validators/validate_social_pause_modes.py` block the release if any of that stops being true — including if X ever makes a single API request while paused.
+`scripts/validators/validate_no_manual_lane.py` and `scripts/validators/validate_social_pause_modes.py` block the release if any of that stops being true — including if X ever makes a single API request while paused.
 
 ## LinkedIn is paused (2026-08-29) — one line turns it back on
 
 **File:** `data/social-brand-policy.json` · **line 17** · change `"enabled": false` to `"enabled": true` under `platforms.linkedin`, and commit. That is the whole switch.
 
 - The 581 LinkedIn posts already in `data/social-queue.json` start going out again on their own. They were never deleted or re-labelled; being parked is derived from the switch, not stamped on the rows, so nothing has to be un-marked or re-created.
-- Two repository secrets also have to exist before a post can actually send: `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_AUTHOR_URN`. Flipping the switch on before adding them breaks nothing — each run records `linkedin_on_but_uncredentialled` in `reports/social-publisher-report.json` and nothing else changes. (X is not posting either — it is paused for posting, above.)
+- Two repository secrets also have to exist before a post can actually send: `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_AUTHOR_URN`. Flipping the switch on before adding them breaks nothing — each run records `linkedin_on_but_uncredentialled` in `reports/social-publisher-report.json` and nothing else changes. (X's own API is not posting either — it is paused with a delivery route, above, and Buffer carries its posts.)
 - `ENABLE_LINKEDIN_POSTING` / `ENABLE_X_POSTING` are now per-run overrides only. Leave them unset and the file above is the answer. They are listed below for completeness, not as something to set.
 
-Four states are deliberately distinguishable in every run report, under `platform_states`: `paused_by_switch` (a decision that nothing is wanted — LinkedIn, `pause_mode: "dormant"`), `paused_for_posting_drafts_by_hand` (the API is off but distribution continues by hand — X, `pause_mode: "draft_by_hand"`), `on_but_uncredentialled` (a to-do), and `on_and_posting` (working). A platform switched off without a `paused_on` / `paused_by` / `paused_reason` record fails the build (`scripts/validators/validate_social_rate_limits.py`), and one switched off without a recognised `pause_mode` fails it too (`scripts/validators/validate_social_pause_modes.py`) — an unrecognised mode reads as dormant at runtime, so a typo would silently end that platform's distribution while the run stayed green.
+Four states are deliberately distinguishable in every run report, under `platform_states`: `paused_by_switch` (a decision that nothing is wanted — LinkedIn, `pause_mode: "dormant"`), `paused_api_awaiting_delivery_route` (the platform's own API is off and a declared route carries its posts — X, `pause_mode: "delivery_route"` — reported only when the route could not carry anything that run, in which case the entries simply wait), `on_but_uncredentialled` (a to-do), and `on_and_posting` (working). A platform switched off without a `paused_on` / `paused_by` / `paused_reason` record fails the build (`scripts/validators/validate_social_rate_limits.py`), and one switched off without a recognised `pause_mode` fails it too (`scripts/validators/validate_social_pause_modes.py`) — an unrecognised mode reads as dormant at runtime, so a typo would silently end that platform's distribution while the run stayed green.
 
 ## How it works
 
