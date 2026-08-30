@@ -6,15 +6,16 @@ Why this exists
 X's own API is pay-per-use: about $0.20 for a post carrying a URL, and every
 post this network sends carries one. The owner has declined to fund it, so
 `platforms.x.enabled` is false in data/social-brand-policy.json and the
-publisher makes ZERO requests to X. Distribution continued by hand from
-reports/social-drafts.md.
+publisher makes ZERO requests to X.
 
-She already pays nothing for a Buffer account, and Buffer can put a post on the
-same X profile at no per-post cost. So Buffer is wired in as another way for an
-X post to LEAVE, alongside "she pastes it by hand". The queue, the priority
-order, the brand rotation and the drafting fallback are all unchanged: this
-module only answers "can this X post go out through Buffer instead of her
-hands, and did Buffer take it".
+She pays nothing for her Buffer account either, and Buffer can put a post on the
+same X profile at no per-post cost. So Buffer is how an X post LEAVES -- the
+only way, since 2026-08-29. There was briefly a second one, a sheet of the day's
+posts for her to paste in by hand, and it was retired the moment she read what
+it asked of her: "this means i manually have to do it? i will never do it
+honestly." The queue, the priority order and the brand rotation are unchanged;
+this module only answers "can this X post go out through Buffer, and did Buffer
+take it".
 
 The endpoint
 ------------
