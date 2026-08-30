@@ -274,9 +274,12 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
     present = [f for f in RETIRED_FILES if (ROOT / f).exists()]
     tracked = subprocess.run(["git", "ls-files", "--", *RETIRED_FILES],
                              cwd=ROOT, text=True, capture_output=True).stdout.split()
+    # Anchored to the start of a line so this file's own prose about the
+    # retired module does not match itself -- a guard that fails on its own
+    # explanation is a guard nobody can keep.
     importers = subprocess.run(
-        ["git", "grep", "-lI", "-e", "import social_drafts",
-         "-e", "from social_drafts", "--", "scripts", "tests"],
+        ["git", "grep", "-lIE", r"^\s*(import social_drafts|from social_drafts)",
+         "--", "scripts", "tests"],
         cwd=ROOT, text=True, capture_output=True).stdout.split()
     checks.append({"property": "the_retired_manual_lane_is_deleted_not_dormant",
                    "files_still_present": present,

@@ -94,7 +94,7 @@ import json
 import os
 import urllib.error
 import urllib.request
-from datetime import date, timedelta
+from datetime import datetime, timedelta, timezone
 
 ENDPOINT = os.getenv("BUFFER_GRAPHQL_ENDPOINT", "https://api.buffer.com/graphql")
 TOKEN_ENV = "BUFFER_ACCESS_TOKEN"
@@ -496,7 +496,11 @@ class Route:
             out["error"] = "no channels to count"
             return out
         total = 0
-        today = date.today()
+        # UTC, matching the dates Buffer is asked about and the timestamps this
+        # repository writes. A local date would start the sweep a day early or
+        # a day late for most of the world, and the day it skipped is the one
+        # holding posts this route would then not see.
+        today = datetime.now(timezone.utc).date()
         for offset in range(QUEUE_DEPTH_HORIZON_DAYS):
             day = today + timedelta(days=offset)
             try:

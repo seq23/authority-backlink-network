@@ -835,6 +835,47 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
             f"size is not the horizon is a sweep whose size is something else -- the "
             f"queue, most likely, which is 581 entries.")
 
+    # ------------------------------------------------------------ property 13
+    # The network's own daily share is counted over a ROLLING 24 HOURS, not by
+    # matching today's date on a timestamp. This happened for real on
+    # 2026-08-30: a scheduled run straddled UTC midnight and stamped part of
+    # its own work with the next day, so the following run counted five of six
+    # posts already sent and allowed one over the policy. The queue below is
+    # stamped exactly that way -- some of the day's posts dated "tomorrow" --
+    # and the route must still count all of them.
+    from datetime import datetime, timedelta, timezone  # noqa: E402
+
+    now = datetime.now(timezone.utc)
+    straddled = synthetic_queue(30)
+    for n, entry in enumerate(straddled[:6]):
+        entry["status"] = "buffer_queued"
+        entry["delivered_via"] = "buffer"
+        # Three stamped minutes ago, three stamped minutes ago but on the other
+        # side of a date boundary -- which is what a run at 23:59 produces.
+        entry["buffer_queued_at"] = (
+            (now - timedelta(minutes=5)) if n < 3 else (now + timedelta(minutes=5))
+        ).isoformat()
+    rollover = drive(tmp, "rollover", committed, queue=straddled, limit=50)
+    rollover_receipt = rollover["report"]["delivery_routes"]["x"]["receipt"]
+    checks.append({"property": "the_networks_daily_share_survives_a_utc_midnight_rollover",
+                   "already_handed_to_buffer_in_the_last_24h": 6,
+                   "x_daily_limit": 8,
+                   "policy_ceiling_computed": rollover_receipt.get(
+                       "policy_daily_limit"),
+                   "create_calls": rollover["create_calls"]})
+    if rollover_receipt.get("policy_daily_limit") != 2:
+        failures.append(
+            f"Six posts were handed to Buffer inside the last 24 hours, three of them "
+            f"stamped on the far side of a date boundary, and the route computed a "
+            f"remaining policy allowance of "
+            f"{rollover_receipt.get('policy_daily_limit')} against X_DAILY_LIMIT of 8. "
+            f"Counting by date string rather than by a rolling window is what let a run "
+            f"straddling UTC midnight go one over the policy on 2026-08-30.")
+    if rollover["create_calls"] > 2:
+        failures.append(
+            f"The route sent {rollover['create_calls']} posts with only 2 of the day's "
+            f"8 left.")
+
     exercised = len(checks)
     status = "FAIL" if failures else "PASS"
     receipt = {

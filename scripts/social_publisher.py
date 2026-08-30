@@ -13,7 +13,7 @@ Safety model:
 import base64, copy, hashlib, hmac, json, os, random, re, sys, time, urllib.parse, urllib.request, urllib.error
 from collections import defaultdict
 from pathlib import Path
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 from lib import (buffer_route, hand_post_history, social_platforms,
                  social_selection)
@@ -29,8 +29,15 @@ REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
 # retired. See scripts/lib/hand_post_history.py.
 DRAFT_LEDGER_PATH = Path(os.getenv('SOCIAL_DRAFT_LEDGER_PATH',
                                    str(hand_post_history.ledger_path_default(QUEUE_PATH))))
-TODAY = date.today().isoformat()
-TODAY_ORDINAL = date.today().toordinal()
+# UTC, deliberately, because every timestamp this module writes is UTC.
+# `date.today()` is the machine's LOCAL date, and the two disagree for part of
+# every day: run on a US clock at 19:00, "today" was the 29th while
+# `last_attempt_at` was already stamped the 30th, so `spent_today` counted zero
+# posts however many had been made and the daily cap stopped existing. It
+# passed in CI only because GitHub's runners are on UTC -- a cap that holds
+# only in one timezone is a cap that has never been tested.
+TODAY = datetime.now(timezone.utc).date().isoformat()
+TODAY_ORDINAL = datetime.now(timezone.utc).date().toordinal()
 
 POSTED_STATUSES = {'posted', 'skipped_duplicate', 'failed_permanent'}
 # Anything outside POSTABLE_STATUSES is never posted. That deliberately includes
@@ -476,8 +483,27 @@ def main():
     # API -- 581 of those failed on 2026-08-29 and none of them consumed a
     # single Buffer slot. Charging Buffer for X's dead API is how a working
     # route sat at attempts: 0 with eight posts of headroom.
-    buffer_sent_today = sum(1 for i in queue
-                            if str(i.get('buffer_queued_at', '')).startswith(TODAY))
+    #
+    # A ROLLING 24 HOURS, not "timestamps starting with today's date". The
+    # scheduled runs straddle UTC midnight, and on 2026-08-30 one did: a run
+    # that began on the 29th stamped part of its work with the 30th, so the
+    # next run counted five of the six posts already sent and allowed one more
+    # than the policy. A rolling window cannot be split by a date boundary.
+    _window_start = datetime.now(timezone.utc) - timedelta(hours=24)
+    def _sent_within_window(entry):
+        stamp = str(entry.get('buffer_queued_at') or '')
+        if not stamp:
+            return False
+        try:
+            when = datetime.fromisoformat(stamp.replace('Z', '+00:00'))
+        except ValueError:
+            # An unparseable stamp is counted, not ignored: the safe direction
+            # for a ceiling is to assume the slot was used.
+            return True
+        if when.tzinfo is None:
+            when = when.replace(tzinfo=timezone.utc)
+        return when >= _window_start
+    buffer_sent_today = sum(1 for i in queue if _sent_within_window(i))
     x_route = None
     x_route_declared = social_platforms.route_enabled(
         'x', social_platforms.ROUTE_BUFFER, platform_policy)
