@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-08-30",
+  "run_at": "2026-08-31",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 85,
+    "published_in_window": 76,
     "allowance": 0,
-    "window_start": "2026-08-24",
-    "window_end": "2026-08-30"
+    "window_start": "2026-08-25",
+    "window_end": "2026-08-31"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "AI workforce design",
-      "audience": "creator-founder",
-      "format": "local/resource directory",
-      "intent": "before you book",
-      "modifier": "checklist-driven",
-      "intended_title": "Ai Workforce Design: Checklist-Driven Local/Resource Directory Before You Book",
+      "cluster": "operator playbooks",
+      "audience": "chief of staff",
+      "format": "planning checklist",
+      "intent": "before you sign",
+      "modifier": "no-fluff",
+      "intended_title": "Operator Playbooks: No-Fluff Planning Checklist Before You Sign",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "9732c4504e63b3aeffcc0ae3960a7197573e7fa05f3120d4966823be144f9f75",
-      "deferred_on": "2026-08-30",
+      "signature": "879788b77bf060f4ee4594a1d1c6c8e5920636f8bf45d2ed9274d948fc688b22",
+      "deferred_on": "2026-08-31",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-08-30",
+      "deferred_on": "2026-08-31",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "resource directories for careful buyers",
-      "audience": "equine professional",
-      "format": "mistakes to avoid",
-      "intent": "before you call",
-      "modifier": "human-first",
-      "intended_title": "Resource Directories For Careful Buyers: Human-First Mistakes To Avoid Before You Call",
+      "audience": "adult seeking neuropsych evaluation",
+      "format": "comparison guide",
+      "intent": "for careful decision-makers",
+      "modifier": "decision-focused",
+      "intended_title": "Resource Directories For Careful Buyers: Decision-Focused Comparison Guide For Careful Decision-Makers",
       "target_brand": "The Industry Guides",
-      "target_url": "https://theindustryguides.com/tools/",
-      "signature": "f075ece6bed4b358ce8212e42efcc73866cb40b2d388ccda79b25a40495e4554",
-      "deferred_on": "2026-08-30",
+      "target_url": "https://theindustryguides.com/",
+      "signature": "b2db6003cc910d35832bf1c1b5b5882e08caa739e4c41e866bca9969ce13b84c",
+      "deferred_on": "2026-08-31",
       "reason": "weekly_publication_cap"
     }
   ]
