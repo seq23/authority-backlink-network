@@ -1,0 +1,31 @@
+{
+  "_README": [
+    "The floor each publication must keep clearing for outbound citation of sources",
+    "the owner does not control. scripts/validators/validate_external_citation_coverage.py",
+    "fails if any number here regresses.",
+    "",
+    "It is a ratchet, not a target. Raise a number when coverage genuinely improves.",
+    "Lowering one is a deliberate, reviewable act: it means the network is going back",
+    "towards the state measured on 2026-08-27, when all three publications together",
+    "cited zero domains outside the portfolio across 608 pages.",
+    "",
+    "Recorded 2026-09-01, after the Memphis wedding cost dataset added 21 verified",
+    "vendor sources to the memphis lane and five federal and standards-body sources",
+    "were added across the founder, memphis and professional lanes."
+  ],
+  "recorded": "2026-09-01",
+  "floors": {
+    "founder": {
+      "pages_citing_outside": 94,
+      "distinct_external_domains": 9
+    },
+    "memphis": {
+      "pages_citing_outside": 92,
+      "distinct_external_domains": 30
+    },
+    "professional": {
+      "pages_citing_outside": 398,
+      "distinct_external_domains": 35
+    }
+  }
+}

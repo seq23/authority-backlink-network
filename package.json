@@ -79,7 +79,10 @@
     "cadence:reseed-lastmod": "python3 scripts/reseed_lastmod_from_git.py",
     "social:backfill-queue": "python3 scripts/backfill_social_queue.py",
     "social:backfill-queue:write": "python3 scripts/backfill_social_queue.py --write",
-    "validate:no-manual-lane": "python3 scripts/validators/validate_no_manual_lane.py"
+    "validate:no-manual-lane": "python3 scripts/validators/validate_no_manual_lane.py",
+    "pages:wedding-cost-dataset": "python3 scripts/build_wedding_cost_dataset_page.py --write",
+    "validate:wedding-cost-dataset": "python3 scripts/validators/validate_wedding_cost_dataset.py",
+    "validate:external-citation-coverage": "python3 scripts/validators/validate_external_citation_coverage.py"
   },
   "devDependencies": {}
 }

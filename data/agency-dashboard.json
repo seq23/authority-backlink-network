@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-08-29",
+  "as_of": "2026-09-01",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 77,
+    "runtime_operators": 80,
     "release_operators": 10,
     "workflow_operators": 6,
     "approved_target_urls": 86,
@@ -391,6 +391,12 @@
       "category": "Other"
     },
     {
+      "operator": "pages:wedding-cost-dataset",
+      "command": "npm run pages:wedding-cost-dataset",
+      "implementation": "python3 scripts/build_wedding_cost_dataset_page.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "selfheal",
       "command": "npm run selfheal",
       "implementation": "python3 scripts/heal_until_clean.py release",
@@ -475,6 +481,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:external-citation-coverage",
+      "command": "npm run validate:external-citation-coverage",
+      "implementation": "python3 scripts/validators/validate_external_citation_coverage.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:external-sources",
       "command": "npm run validate:external-sources",
       "implementation": "python3 scripts/verify_external_sources.py",
@@ -514,6 +526,12 @@
       "operator": "validate:social-enqueue-completeness",
       "command": "npm run validate:social-enqueue-completeness",
       "implementation": "python3 scripts/validators/validate_social_enqueue_completeness.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:wedding-cost-dataset",
+      "command": "npm run validate:wedding-cost-dataset",
+      "implementation": "python3 scripts/validators/validate_wedding_cost_dataset.py",
       "category": "Validation / release"
     },
     {
