@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-08-31",
+  "run_at": "2026-09-01",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 76,
+    "published_in_window": 64,
     "allowance": 0,
-    "window_start": "2026-08-25",
-    "window_end": "2026-08-31"
+    "window_start": "2026-08-26",
+    "window_end": "2026-09-01"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
       "cluster": "operator playbooks",
-      "audience": "chief of staff",
+      "audience": "solo founder",
       "format": "planning checklist",
-      "intent": "before you sign",
-      "modifier": "no-fluff",
-      "intended_title": "Operator Playbooks: No-Fluff Planning Checklist Before You Sign",
+      "intent": "for first-time buyers",
+      "modifier": "practical",
+      "intended_title": "Operator Playbooks: Practical Planning Checklist For First-Time Buyers",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "879788b77bf060f4ee4594a1d1c6c8e5920636f8bf45d2ed9274d948fc688b22",
-      "deferred_on": "2026-08-31",
+      "signature": "c29ea105d42333b42b8ba29a0d83f2c933daaab6b86809455ae3ff378ce9760e",
+      "deferred_on": "2026-09-01",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-08-31",
+      "deferred_on": "2026-09-01",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "resource directories for careful buyers",
-      "audience": "adult seeking neuropsych evaluation",
-      "format": "comparison guide",
-      "intent": "for careful decision-makers",
-      "modifier": "decision-focused",
-      "intended_title": "Resource Directories For Careful Buyers: Decision-Focused Comparison Guide For Careful Decision-Makers",
+      "cluster": "decision frameworks for sensitive services",
+      "audience": "HR leader",
+      "format": "operator playbook",
+      "intent": "for first-time buyers",
+      "modifier": "beginner-safe",
+      "intended_title": "Decision Frameworks For Sensitive Services: Beginner-Safe Operator Playbook For First-Time Buyers",
       "target_brand": "The Industry Guides",
-      "target_url": "https://theindustryguides.com/",
-      "signature": "b2db6003cc910d35832bf1c1b5b5882e08caa739e4c41e866bca9969ce13b84c",
-      "deferred_on": "2026-08-31",
+      "target_url": "https://theindustryguides.com/tools/",
+      "signature": "6fd124596c8b0eb0c5626c00d63cf888753610131cc6a608c5367c4a8d906c22",
+      "deferred_on": "2026-09-01",
       "reason": "weekly_publication_cap"
     }
   ]
