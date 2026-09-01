@@ -25,21 +25,23 @@
     {
       "publication": "memphis",
       "working_domain": "memphisvendorlibrary.com",
-      "pages": 104,
-      "reachable": 104,
+      "pages": 105,
+      "reachable": 105,
       "orphans": 0,
       "orphan_pct": 0.0,
       "max_depth": 2,
       "depth_histogram": {
         "0": 1,
         "1": 28,
-        "2": 75
+        "2": 76
       },
       "beyond_depth_3": 0,
       "beyond_depth_3_sample": [],
       "orphan_sample": [],
-      "broken_internal_links": [],
-      "broken_internal_link_count": 0
+      "broken_internal_links": [
+        "/memphis-wedding-cost-by-guest-count-2026 -> /data/memphis-wedding-cost-by-guest-count-2026.csv"
+      ],
+      "broken_internal_link_count": 1
     },
     {
       "publication": "professional",
@@ -62,7 +64,7 @@
     }
   ],
   "totals": {
-    "pages": 629,
+    "pages": 630,
     "orphans": 0,
     "beyond_depth_3": 0
   }

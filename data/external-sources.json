@@ -17,7 +17,8 @@
     "standards_body": "An accredited standards-developing organization.",
     "government_sponsored_enterprise": "A federally chartered secondary-market enterprise whose published guide sets the documentation requirements lenders apply.",
     "national_crisis_line": "The national crisis and suicide-prevention line established under federal law and administered with SAMHSA funding.",
-    "university_extension_service": "A land-grant university's cooperative extension service, which publishes the applied agricultural guidance its state relies on."
+    "university_extension_service": "A land-grant university's cooperative extension service, which publishes the applied agricultural guidance its state relies on.",
+    "local_vendor_published_pricing": "A Memphis-area wedding or event vendor's own website, cited as the primary source for a price that vendor publishes. It is authoritative for exactly one thing -- what this vendor says it charges -- and for nothing else. These entries exist so the price data in data/memphis-wedding-cost-2026.json can be checked at its source; they are not recommendations, they are not ranked, and nothing was paid for their inclusion."
   },
   "sources": [
     {
@@ -1638,6 +1639,502 @@
         "fraud"
       ],
       "supports": "What a security freeze does and does not do, which is what the freeze column on the compiled directory is answering."
+    },
+    {
+      "id": "bella-luca-pricing",
+      "domain": "bellalucaphotography.com",
+      "url": "https://bellalucaphotography.com/pricemain",
+      "publisher": "Bella Luca Photography",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Pricing Options",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published wedding photography package prices."
+    },
+    {
+      "id": "shelby-renee-pricing",
+      "domain": "shelbyreneephoto.com",
+      "url": "https://www.shelbyreneephoto.com/2025wed",
+      "publisher": "Shelby Renee Photo",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Pricing",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published wedding photography package prices and add-on rates."
+    },
+    {
+      "id": "tracye-pulliam-pricing",
+      "domain": "tracyep.com",
+      "url": "https://tracyep.com/wedding-pricing/",
+      "publisher": "Tracye Pulliam Photography & Weddings",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Pricing",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published starting price for wedding collections."
+    },
+    {
+      "id": "for-the-love-birds-pricing",
+      "domain": "forthelovebirds.com",
+      "url": "https://forthelovebirds.com/pricing",
+      "publisher": "For the Love Birds Photography",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Pricing",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published starting prices for weddings and elopements."
+    },
+    {
+      "id": "sonum-may-pricing",
+      "domain": "pricing.sonummayphotography.com",
+      "url": "https://pricing.sonummayphotography.com/",
+      "publisher": "Sonum May Photography",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Collections",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published wedding photography collection prices and add-ons."
+    },
+    {
+      "id": "elizabeth-hoard-pricing",
+      "domain": "elizabethhoardphotography.com",
+      "url": "https://www.elizabethhoardphotography.com/pricing",
+      "publisher": "Elizabeth Hoard Photography",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Pricing and Packages",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "The photographer's published average investment range."
+    },
+    {
+      "id": "emily-holmes-pricing",
+      "domain": "emilyholmesweddings.com",
+      "url": "https://www.emilyholmesweddings.com/wedding-experience",
+      "publisher": "Emily Holmes Weddings",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Experience",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published average investment figures for traditional and intimate wedding days."
+    },
+    {
+      "id": "dj-mark-anderson-pricing",
+      "domain": "memphisweddingdjma.com",
+      "url": "https://www.memphisweddingdjma.com/about.html",
+      "publisher": "DJ Mark Anderson",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding DJs Memphis TN",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published price range for reception DJ services."
+    },
+    {
+      "id": "woodruff-fontaine-rental",
+      "domain": "woodruff-fontaine.org",
+      "url": "https://www.woodruff-fontaine.org/weddings-venue-rental",
+      "publisher": "Woodruff-Fontaine House Museum",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Weddings & Event Rental",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published venue rental prices, what the fee includes, and the maximum capacity."
+    },
+    {
+      "id": "the-kent-pricing",
+      "domain": "thekentmemphis.com",
+      "url": "https://thekentmemphis.com/pricing/",
+      "publisher": "The Kent",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Pricing",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published venue rental fees by day of week and package prices."
+    },
+    {
+      "id": "memphis-botanic-garden-rentals",
+      "domain": "membg.org",
+      "url": "https://membg.org/rentals/",
+      "publisher": "Memphis Botanic Garden",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Weddings & Private Events",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published venue capacities, what a rental includes, and the additional-hour rate."
+    },
+    {
+      "id": "commissary-full-service-catering",
+      "domain": "commissarybbq.com",
+      "url": "https://www.commissarybbq.com/full-service-catering",
+      "publisher": "The Commissary",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Full-Service BBQ Catering",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published per-person catering prices banded by guest count."
+    },
+    {
+      "id": "corkys-catering-rooms",
+      "domain": "corkysbbq.com",
+      "url": "https://www.corkysbbq.com/catering-private-party-rooms/",
+      "publisher": "Corky's BBQ",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Catering & Private Party Rooms",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published average per-person cost for a private party room."
+    },
+    {
+      "id": "bain-barbecue-catering",
+      "domain": "bainbarbecue.com",
+      "url": "https://www.bainbarbecue.com/catering",
+      "publisher": "Bain Barbecue & Bakery",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Catering",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published catering minimums and package prices."
+    },
+    {
+      "id": "off-the-square-catering",
+      "domain": "offthesquarecatering.com",
+      "url": "https://www.offthesquarecatering.com/",
+      "publisher": "Off The Square Catering",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Off The Square Catering",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published hourly rates for servers and bartenders and the drop-off fee."
+    },
+    {
+      "id": "sweet-lalas-wedding-cakes",
+      "domain": "sweetlalas.com",
+      "url": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "publisher": "Sweet LaLa's Bakery",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Cakes",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published per-serving wedding cake price, filling surcharge and delivery rate."
+    },
+    {
+      "id": "crave-sweet-shop-quote",
+      "domain": "cravesweetshop.com",
+      "url": "https://www.cravesweetshop.com/copy-of-get-a-quote",
+      "publisher": "Crave Sweet Shop",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Get a Quote",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published per-serving starting price for cake and cupcakes."
+    },
+    {
+      "id": "js-cakes-faq",
+      "domain": "jcakesyum.com",
+      "url": "https://www.jcakesyum.com/cake-f-a-q-s",
+      "publisher": "J's Cakes",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Cake FAQs",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published average minimum spend and delivery rates."
+    },
+    {
+      "id": "tcb-and-co-weddings",
+      "domain": "tcbnco.com",
+      "url": "https://www.tcbnco.com/pages/wedding",
+      "publisher": "TCB & Co",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Wedding Florist Memphis",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published minimum for full-service wedding florals."
+    },
+    {
+      "id": "hardin-house-services",
+      "domain": "thehardinhouse.com",
+      "url": "https://www.thehardinhouse.com/info",
+      "publisher": "The Hardin House",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Services",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published wedding planning and day-of coordination package prices."
+    },
+    {
+      "id": "affordable-party-rentals-pricing",
+      "domain": "affordablepartyrentals.com",
+      "url": "https://www.affordablepartyrentals.com/pricing.html",
+      "publisher": "Affordable Party Rentals",
+      "publisher_type": "local_vendor_published_pricing",
+      "title": "Pricing",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "memphis",
+        "wedding",
+        "cost",
+        "vendor",
+        "published pricing"
+      ],
+      "supports": "Published per-item rental prices for chairs, tables, linens and equipment."
+    },
+    {
+      "id": "section508-accessible-meetings",
+      "domain": "section508.gov",
+      "url": "https://www.section508.gov/create/accessible-meetings/",
+      "publisher": "U.S. General Services Administration, Section508.gov",
+      "publisher_type": "us_federal_agency",
+      "title": "Create Accessible Meetings",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "event production",
+        "virtual",
+        "accessibility",
+        "standards",
+        "operations"
+      ],
+      "supports": "The federal guidance on running a meeting or virtual event people with disabilities can actually attend, including captioning and platform choice."
+    },
+    {
+      "id": "ada-effective-communication",
+      "domain": "ada.gov",
+      "url": "https://www.ada.gov/resources/effective-communication/",
+      "publisher": "U.S. Department of Justice, Civil Rights Division",
+      "publisher_type": "us_federal_agency",
+      "title": "Effective Communication",
+      "lanes": [
+        "founder"
+      ],
+      "topics": [
+        "event production",
+        "accessibility",
+        "standards",
+        "compliance",
+        "operations"
+      ],
+      "supports": "What the ADA requires of a public event when a guest needs an interpreter, captioning or another auxiliary aid."
+    },
+    {
+      "id": "us-access-board-ada-standards",
+      "domain": "access-board.gov",
+      "url": "https://www.access-board.gov/ada/",
+      "publisher": "U.S. Access Board",
+      "publisher_type": "standards_body",
+      "title": "ADA Accessibility Standards",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "event",
+        "venue",
+        "accessibility",
+        "seating",
+        "staging",
+        "local"
+      ],
+      "supports": "The dimensional standards behind an accessible route, a wheelchair space and clear floor area, which is what a floor plan or seating chart has to leave room for."
+    },
+    {
+      "id": "noaa-storm-prediction-center",
+      "domain": "spc.noaa.gov",
+      "url": "https://www.spc.noaa.gov/",
+      "publisher": "NOAA Storm Prediction Center",
+      "publisher_type": "us_federal_agency",
+      "title": "NOAA Storm Prediction Center",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "weather",
+        "outdoor",
+        "event",
+        "planning",
+        "season",
+        "local"
+      ],
+      "supports": "The federal severe-weather outlook, which is the forecast an outdoor date is actually exposed to rather than the daily forecast."
+    },
+    {
+      "id": "ftc-advance-fee-loans",
+      "domain": "consumer.ftc.gov",
+      "url": "https://consumer.ftc.gov/articles/what-know-about-advance-fee-loans",
+      "publisher": "Federal Trade Commission",
+      "publisher_type": "us_federal_agency",
+      "title": "What To Know About Advance-Fee Loans",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "loan",
+        "funding",
+        "fraud",
+        "application",
+        "business"
+      ],
+      "supports": "The federal warning about lenders who ask for money before approving a loan, which is the scam pattern a borrower assembling documents is most exposed to."
     }
   ]
 }

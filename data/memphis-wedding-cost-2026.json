@@ -1,0 +1,1083 @@
+{
+  "_README": [
+    "Published Memphis-area wedding and event vendor pricing, collected by desk research.",
+    "",
+    "THE ONE RULE: every row is a price the vendor publishes on its own public website.",
+    "Nothing here is estimated, inferred, averaged from a third-party marketplace, or",
+    "remembered. If a vendor does not publish a number, that vendor is not in this file.",
+    "A single invented figure would make every other row worthless, because a reader",
+    "cannot tell which one was invented.",
+    "",
+    "Each row carries `source_url` (the exact page the price is printed on), `observed`",
+    "(the ISO date the page was fetched and read), and `quote` (the vendor's own words,",
+    "verbatim, so the figure can be checked against the page without re-deriving it).",
+    "",
+    "scripts/build_wedding_cost_dataset_page.py renders the publication page and the CSV",
+    "from this file. scripts/validators/validate_wedding_cost_dataset.py refuses to pass",
+    "if any dollar figure on that page does not resolve to a row here or to a derivation",
+    "this file defines. That is what stops someone editing a nicer number into the HTML.",
+    "",
+    "Every source_url must also be registered in data/external-sources.json, or",
+    "scripts/hostile_review.py will reject the page: this network may only link to URLs",
+    "that were actually fetched and returned 200."
+  ],
+  "schema_version": "1.0",
+  "edition": "2026",
+  "title": "Memphis Wedding Cost by Guest Count, 2026 Edition",
+  "slug": "memphis-wedding-cost-by-guest-count-2026.html",
+  "canonical_path": "/memphis-wedding-cost-by-guest-count-2026",
+  "lane": "memphis",
+  "published": "2026-09-01",
+  "collection_window": {
+    "start": "2026-09-01",
+    "end": "2026-09-01",
+    "method": "Every candidate vendor's own website was fetched over HTTP and read as text. A vendor entered the dataset only if a numeric price appeared on a page the vendor controls. Marketplace listings (The Knot, WeddingWire, Zola, Thumbtack, Peerspace, Wedding Spot, Eventective) were used to find candidates and were never used as a price source, because the price shown there is a range the platform assembles rather than the vendor's published rate."
+  },
+  "geography": "Memphis, Tennessee metropolitan area, including Germantown and Bartlett, TN and the north Mississippi tri-state area vendors serve from Memphis.",
+  "not_covered": [
+    "Alcohol and bar packages. No vendor in this sample publishes a per-person bar price, so the guest-count model below contains no alcohol line at all. This is the single largest gap.",
+    "Videography, attire, rings, stationery, hair and makeup, transport, hotel blocks and honeymoon. None were collected.",
+    "Actual contracted prices. Everything here is a published list or starting price. What couples pay after customisation, negotiation, peak-date premiums and overtime is not observable from a website and is not claimed.",
+    "Tennessee state and local sales tax, service charges and gratuity, except where a vendor publishes them as a line item.",
+    "Any claim of a market average. Several categories have one publishing vendor. A category's sample size is printed next to it, and a sample of one is labelled as a sample of one rather than as an average.",
+    "Vendors who do not publish prices, which is most of them. That is a selection bias in a knowable direction: vendors who post a starting price are more likely to be competing on transparency or on price, so this sample probably sits below the market it is drawn from."
+  ],
+  "vendors": [
+    {
+      "id": "bella-luca",
+      "name": "Bella Luca Photography",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "shelby-renee",
+      "name": "Shelby Renee Photo",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "tracye-pulliam",
+      "name": "Tracye Pulliam Photography & Weddings",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "for-the-love-birds",
+      "name": "For the Love Birds Photography",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "sonum-may",
+      "name": "Sonum May Photography",
+      "category": "photography",
+      "area": "Serves Memphis, TN and Oxford, MS with travel included"
+    },
+    {
+      "id": "elizabeth-hoard",
+      "name": "Elizabeth Hoard Photography",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "emily-holmes",
+      "name": "Emily Holmes Weddings",
+      "category": "photography",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "dj-mark-anderson",
+      "name": "DJ Mark Anderson",
+      "category": "dj",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "woodruff-fontaine",
+      "name": "Woodruff-Fontaine House Museum",
+      "category": "venue",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "the-kent",
+      "name": "The Kent",
+      "category": "venue",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "memphis-botanic-garden",
+      "name": "Memphis Botanic Garden",
+      "category": "venue",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "germantown-commissary",
+      "name": "The Commissary (Germantown Commissary)",
+      "category": "catering",
+      "area": "Germantown, TN"
+    },
+    {
+      "id": "corkys",
+      "name": "Corky's BBQ",
+      "category": "catering",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "bain-barbecue",
+      "name": "Bain Barbecue & Bakery",
+      "category": "catering",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "off-the-square",
+      "name": "Off The Square Catering",
+      "category": "catering",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "sweet-lalas",
+      "name": "Sweet LaLa's Bakery",
+      "category": "cake",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "crave-sweet-shop",
+      "name": "Crave Sweet Shop",
+      "category": "cake",
+      "area": "Germantown, TN"
+    },
+    {
+      "id": "js-cakes",
+      "name": "J's Cakes",
+      "category": "cake",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "tcb-and-co",
+      "name": "TCB & Co",
+      "category": "florals",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "the-hardin-house",
+      "name": "The Hardin House",
+      "category": "planning",
+      "area": "Memphis, TN"
+    },
+    {
+      "id": "affordable-party-rentals",
+      "name": "Affordable Party Rentals",
+      "category": "rentals",
+      "area": "Memphis, TN tri-state area"
+    }
+  ],
+  "categories": {
+    "photography": "Wedding photography coverage packages.",
+    "dj": "Reception and ceremony disc jockey services.",
+    "venue": "Ceremony and reception space rental.",
+    "catering": "Food service, per person or per order.",
+    "cake": "Wedding cake, priced per serving.",
+    "florals": "Wedding florals and installations.",
+    "planning": "Wedding planning and day-of coordination.",
+    "rentals": "Tables, chairs, linens and event equipment."
+  },
+  "rows": [
+    {
+      "vendor": "bella-luca",
+      "category": "photography",
+      "item": "Photo Luca 2",
+      "price": 3500,
+      "unit": "package",
+      "includes": "All day wedding coverage, engagement session, online galleries, fine art wedding album, 16x24 session prints, image discs with print licence, 21-day delivery",
+      "source_url": "https://bellalucaphotography.com/pricemain",
+      "observed": "2026-09-01",
+      "quote": "Photo Luca 2 ... $3500"
+    },
+    {
+      "vendor": "bella-luca",
+      "category": "photography",
+      "item": "Photo Bella",
+      "price": 3800,
+      "unit": "package",
+      "includes": "As Photo Luca 2 plus fine art parent albums",
+      "source_url": "https://bellalucaphotography.com/pricemain",
+      "observed": "2026-09-01",
+      "quote": "$3800"
+    },
+    {
+      "vendor": "bella-luca",
+      "category": "photography",
+      "item": "Photo Bella 2",
+      "price": 4550,
+      "unit": "package",
+      "includes": "Adds bridal session with book, art box album, 20x30 prints, 14-day delivery",
+      "source_url": "https://bellalucaphotography.com/pricemain",
+      "observed": "2026-09-01",
+      "quote": "$4550"
+    },
+    {
+      "vendor": "bella-luca",
+      "category": "photography",
+      "item": "Photo Bella 3",
+      "price": 5650,
+      "unit": "package",
+      "includes": "Adds engagement guest book, 7-day delivery",
+      "source_url": "https://bellalucaphotography.com/pricemain",
+      "observed": "2026-09-01",
+      "quote": "$5650"
+    },
+    {
+      "vendor": "shelby-renee",
+      "category": "photography",
+      "item": "The Glass Slipper",
+      "price": 2700,
+      "unit": "package",
+      "includes": "6 hours on wedding day, 500+ edited images, online gallery, one photographer",
+      "source_url": "https://www.shelbyreneephoto.com/2025wed",
+      "observed": "2026-09-01",
+      "quote": "The Glass Slipper $2700"
+    },
+    {
+      "vendor": "shelby-renee",
+      "category": "photography",
+      "item": "The Wish Upon A Star",
+      "price": 3450,
+      "unit": "package",
+      "includes": "8 hours, complimentary engagement session, 750+ edited images, $50 print credit",
+      "source_url": "https://www.shelbyreneephoto.com/2025wed",
+      "observed": "2026-09-01",
+      "quote": "The Wish Upon A Star $3450"
+    },
+    {
+      "vendor": "shelby-renee",
+      "category": "photography",
+      "item": "The Happily Ever After",
+      "price": 3975,
+      "unit": "package",
+      "includes": "10 hours, engagement and bridal sessions, 900+ edited images, 24x30 canvas, two photographers, $100 print credit",
+      "source_url": "https://www.shelbyreneephoto.com/2025wed",
+      "observed": "2026-09-01",
+      "quote": "The Happily Ever After $3975"
+    },
+    {
+      "vendor": "tracye-pulliam",
+      "category": "photography",
+      "item": "Wedding collections, starting price",
+      "price": 3300,
+      "unit": "starting_price",
+      "includes": "Not itemised on the page",
+      "source_url": "https://tracyep.com/wedding-pricing/",
+      "observed": "2026-09-01",
+      "quote": "Wedding collections start at $3,300"
+    },
+    {
+      "vendor": "for-the-love-birds",
+      "category": "photography",
+      "item": "Weddings, starting price",
+      "price": 4000,
+      "unit": "starting_price",
+      "includes": "Hourly coverage, second photographer and engagement session in standard packages, high-resolution print release",
+      "source_url": "https://forthelovebirds.com/pricing",
+      "observed": "2026-09-01",
+      "quote": "WEDDINGS START AT $4000"
+    },
+    {
+      "vendor": "for-the-love-birds",
+      "category": "photography",
+      "item": "Elopements, starting price",
+      "price": 1600,
+      "unit": "starting_price",
+      "includes": "Not itemised on the page",
+      "source_url": "https://forthelovebirds.com/pricing",
+      "observed": "2026-09-01",
+      "quote": "ELOPEMENTS START AT $1600"
+    },
+    {
+      "vendor": "sonum-may",
+      "category": "photography",
+      "item": "Elopement Coverage",
+      "price": 2000,
+      "unit": "package",
+      "includes": "2 hours coverage, fewer than 20 guests, online gallery, print release",
+      "source_url": "https://pricing.sonummayphotography.com/",
+      "observed": "2026-09-01",
+      "quote": "Elopement Coverage ... $2,000"
+    },
+    {
+      "vendor": "sonum-may",
+      "category": "photography",
+      "item": "Half Day Coverage",
+      "price": 5000,
+      "unit": "package",
+      "includes": "Up to 5 hours, one venue, typically fewer than 50 guests",
+      "source_url": "https://pricing.sonummayphotography.com/",
+      "observed": "2026-09-01",
+      "quote": "Half Day Coverage $5,000"
+    },
+    {
+      "vendor": "sonum-may",
+      "category": "photography",
+      "item": "Full Day Coverage",
+      "price": 8000,
+      "unit": "package",
+      "includes": "Up to 10 hours, second photographer, online gallery, print release",
+      "source_url": "https://pricing.sonummayphotography.com/",
+      "observed": "2026-09-01",
+      "quote": "$8,000"
+    },
+    {
+      "vendor": "sonum-may",
+      "category": "photography",
+      "item": "Weekend Coverage",
+      "price": 10000,
+      "unit": "package",
+      "includes": "Day-before and full-day coverage, second photographer",
+      "source_url": "https://pricing.sonummayphotography.com/",
+      "observed": "2026-09-01",
+      "quote": "$10,000"
+    },
+    {
+      "vendor": "sonum-may",
+      "category": "photography",
+      "item": "All-In Collection",
+      "price": 12000,
+      "unit": "package",
+      "includes": "Day-before plus full day, second photographer, 35mm film stills and Super 8 highlights",
+      "source_url": "https://pricing.sonummayphotography.com/",
+      "observed": "2026-09-01",
+      "quote": "All-In Collection ... $12,000"
+    },
+    {
+      "vendor": "elizabeth-hoard",
+      "category": "photography",
+      "item": "Stated average investment range",
+      "price_low": 8000,
+      "price_high": 15000,
+      "unit": "range",
+      "includes": "The photographer's stated typical range across a wedding weekend; not a package price",
+      "source_url": "https://www.elizabethhoardphotography.com/pricing",
+      "observed": "2026-09-01",
+      "quote": "An average investment for my couples' wedding weekend typically falls between $8,000-$15,000"
+    },
+    {
+      "vendor": "emily-holmes",
+      "category": "photography",
+      "item": "Traditional wedding day, stated average",
+      "price": 4700,
+      "unit": "stated_average",
+      "includes": "Full-day coverage through the exit",
+      "source_url": "https://www.emilyholmesweddings.com/wedding-experience",
+      "observed": "2026-09-01",
+      "quote": "couples planning traditional wedding days invest, on average, $4700"
+    },
+    {
+      "vendor": "emily-holmes",
+      "category": "photography",
+      "item": "Intimate celebration, stated average",
+      "price": 3900,
+      "unit": "stated_average",
+      "includes": "Smaller, slower-paced wedding day",
+      "source_url": "https://www.emilyholmesweddings.com/wedding-experience",
+      "observed": "2026-09-01",
+      "quote": "couples planning intimate celebrations invest, on average,$3900"
+    },
+    {
+      "vendor": "dj-mark-anderson",
+      "category": "dj",
+      "item": "Reception DJ service",
+      "price_low": 750,
+      "price_high": 1150,
+      "unit": "range",
+      "includes": "Equipment delivery, load in and set up, reception performance, take down and load out",
+      "source_url": "https://www.memphisweddingdjma.com/about.html",
+      "observed": "2026-09-01",
+      "quote": "PRICE RANGE $750 to $1,150 in most cases."
+    },
+    {
+      "vendor": "woodruff-fontaine",
+      "category": "venue",
+      "item": "Carriage House + Front Lawn + Garden",
+      "price": 5000,
+      "unit": "rental",
+      "capacity": 150,
+      "includes": "12-hour event rental, scheduled rehearsal, indoor and outdoor ceremony and reception space, onsite tables and chairs, restrooms and kitchen, event clean-up, 6 hours event security, mansion photography session, wedding party suite",
+      "source_url": "https://www.woodruff-fontaine.org/weddings-venue-rental",
+      "observed": "2026-09-01",
+      "quote": "$5,000 - Carriage House + Front Lawn + Garden"
+    },
+    {
+      "vendor": "woodruff-fontaine",
+      "category": "venue",
+      "item": "Carriage House + Garden",
+      "price": 4700,
+      "unit": "rental",
+      "capacity": 150,
+      "includes": "As above, without the front lawn",
+      "source_url": "https://www.woodruff-fontaine.org/weddings-venue-rental",
+      "observed": "2026-09-01",
+      "quote": "$4,700 - Carriage House + Garden"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Keel Avenue rental fee, Monday to Thursday",
+      "price": 7000,
+      "unit": "rental",
+      "includes": "Venue rental only; caterer must be chosen from the approved vendor list; all vendors must carry $1M liability insurance",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Keel Avenue Package Pricing Monday - Thursday $7,000*"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Keel Avenue rental fee, Sunday",
+      "price": 8500,
+      "unit": "rental",
+      "includes": "Venue rental only",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Sunday $8,500*"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Keel Avenue rental fee, Friday to Saturday",
+      "price": 9500,
+      "unit": "rental",
+      "includes": "Venue rental only",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Friday - Saturday $9,500*"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Front Street rental fee, Friday to Saturday",
+      "price": 14500,
+      "unit": "rental",
+      "includes": "Venue rental only, premier space",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Front Street Package Pricing Monday - Thursday $9,500* Friday - Saturday $14,500*"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Additional rental hour",
+      "price": 350,
+      "unit": "per_hour",
+      "includes": "One extra hour beyond the package",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Additional rental hours – $350.00 per extra hour"
+    },
+    {
+      "vendor": "the-kent",
+      "category": "venue",
+      "item": "Getting-ready suite beverages and light lunch",
+      "price": 25,
+      "unit": "per_person",
+      "includes": "Beverages and light lunch in the getting ready suites",
+      "source_url": "https://thekentmemphis.com/pricing/",
+      "observed": "2026-09-01",
+      "quote": "Beverages and light lunch in getting ready suites – $25.00 + per"
+    },
+    {
+      "vendor": "memphis-botanic-garden",
+      "category": "venue",
+      "item": "Additional venue hour beyond the included two",
+      "price": 150,
+      "unit": "per_hour",
+      "includes": "One extra hour of venue or space rental",
+      "source_url": "https://membg.org/rentals/",
+      "observed": "2026-09-01",
+      "quote": "Up to 2 Hours of Venue/Space Rental (Add $150 per additional hour)"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ Shoulder Plate, 50 to 99 guests",
+      "price": 13.25,
+      "unit": "per_person",
+      "guest_band": "50-99",
+      "includes": "Chopped BBQ, beans, slaw, potato salad or spaghetti, deviled egg, bread, plates and utensils",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ Shoulder Plate 150+ $11.50 100-149 $11.95 50-99 $13.25"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ Shoulder Plate, 100 to 149 guests",
+      "price": 11.95,
+      "unit": "per_person",
+      "guest_band": "100-149",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ Shoulder Plate 150+ $11.50 100-149 $11.95 50-99 $13.25"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ Shoulder Plate, 150 or more guests",
+      "price": 11.5,
+      "unit": "per_person",
+      "guest_band": "150+",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ Shoulder Plate 150+ $11.50 100-149 $11.95 50-99 $13.25"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ or Fried Chicken Plate, 50 to 99 guests",
+      "price": 13.5,
+      "unit": "per_person",
+      "guest_band": "50-99",
+      "includes": "Chicken, beans, slaw, potato salad or spaghetti, deviled egg, bread, plates and utensils",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ or Fried Chicken Plate 150+ $12.25 100-149 $12.50 50-99 $13.50"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ or Fried Chicken Plate, 100 to 149 guests",
+      "price": 12.5,
+      "unit": "per_person",
+      "guest_band": "100-149",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ or Fried Chicken Plate 150+ $12.25 100-149 $12.50 50-99 $13.50"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "BBQ or Fried Chicken Plate, 150 or more guests",
+      "price": 12.25,
+      "unit": "per_person",
+      "guest_band": "150+",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "BBQ or Fried Chicken Plate 150+ $12.25 100-149 $12.50 50-99 $13.50"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Rib Plate (6-8 bones), 50 to 99 guests",
+      "price": 22.0,
+      "unit": "per_person",
+      "guest_band": "50-99",
+      "includes": "Full order of ribs, beans, slaw, potato salad or spaghetti, deviled egg, bread, plates and utensils",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Rib Plate (6-8 Bones) 150+ $20.95 100-149 $21.25 50-99 $22.00"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Rib Plate (6-8 bones), 100 to 149 guests",
+      "price": 21.25,
+      "unit": "per_person",
+      "guest_band": "100-149",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Rib Plate (6-8 Bones) 150+ $20.95 100-149 $21.25 50-99 $22.00"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Rib Plate (6-8 bones), 150 or more guests",
+      "price": 20.95,
+      "unit": "per_person",
+      "guest_band": "150+",
+      "includes": "As above",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Rib Plate (6-8 Bones) 150+ $20.95 100-149 $21.25 50-99 $22.00"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Iced tea or lemonade",
+      "price": 1.25,
+      "unit": "per_person",
+      "includes": "Fresh brewed, sugar, sweetener, real lemon",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Iced Tea or Lemonade Add per person $1.25"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Soft drinks",
+      "price": 1.5,
+      "unit": "per_person",
+      "includes": "Soft drinks added to the plate price",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Soft Drinks Add per person $1.50"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Cakes and pies",
+      "price": 3.75,
+      "unit": "per_person",
+      "includes": "Dessert added to the plate price",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Cakes and Pies Add per person $3.75"
+    },
+    {
+      "vendor": "germantown-commissary",
+      "category": "catering",
+      "item": "Homemade banana pudding or brownie",
+      "price": 1.75,
+      "unit": "per_person",
+      "includes": "Dessert added to the plate price",
+      "source_url": "https://www.commissarybbq.com/full-service-catering",
+      "observed": "2026-09-01",
+      "quote": "Homemade Banana Pudding or Brownie Add. per person $1.75"
+    },
+    {
+      "vendor": "corkys",
+      "category": "catering",
+      "item": "Private party room, stated average per person",
+      "price": 15.99,
+      "unit": "per_person",
+      "includes": "Group reservation in a private party room for up to 40 people; 48 hours notice required",
+      "source_url": "https://www.corkysbbq.com/catering-private-party-rooms/",
+      "observed": "2026-09-01",
+      "quote": "The average cost per person is $15.99"
+    },
+    {
+      "vendor": "bain-barbecue",
+      "category": "catering",
+      "item": "Minimum catering order",
+      "price": 150,
+      "unit": "order_minimum",
+      "includes": "10-person minimum, $150 total order minimum",
+      "source_url": "https://www.bainbarbecue.com/catering",
+      "observed": "2026-09-01",
+      "quote": "10-person minimum, $150 order minimum"
+    },
+    {
+      "vendor": "bain-barbecue",
+      "category": "catering",
+      "item": "BBQ package with sides, bread and sauces",
+      "price": 240,
+      "unit": "package",
+      "includes": "Comes with Sweet BBQ Baked Beans, Jalapeno Lime Slaw, Martin's Potato Bread, and sauces",
+      "source_url": "https://www.bainbarbecue.com/catering",
+      "observed": "2026-09-01",
+      "quote": "$240 per package"
+    },
+    {
+      "vendor": "off-the-square",
+      "category": "catering",
+      "item": "Server",
+      "price": 15.0,
+      "unit": "per_hour",
+      "includes": "One server, per hour; an 18% gratuity is added",
+      "source_url": "https://www.offthesquarecatering.com/",
+      "observed": "2026-09-01",
+      "quote": "Servers are $15.00 per hr. per server"
+    },
+    {
+      "vendor": "off-the-square",
+      "category": "catering",
+      "item": "Bartender (ABC certified)",
+      "price": 18.0,
+      "unit": "per_hour",
+      "includes": "One bartender, per hour; an 18% gratuity is added",
+      "source_url": "https://www.offthesquarecatering.com/",
+      "observed": "2026-09-01",
+      "quote": "Bartenders (all are ABC certified) are $18.00 per hr per bartender"
+    },
+    {
+      "vendor": "off-the-square",
+      "category": "catering",
+      "item": "Drop-off delivery and pick up",
+      "price": 25.0,
+      "unit": "flat_fee",
+      "includes": "Set up of the food and a return trip to clean up",
+      "source_url": "https://www.offthesquarecatering.com/",
+      "observed": "2026-09-01",
+      "quote": "There is a $25.00 delivery and pick up fee."
+    },
+    {
+      "vendor": "sweet-lalas",
+      "category": "cake",
+      "item": "Wedding cake, starting price per serving",
+      "price": 5.0,
+      "unit": "per_serving",
+      "includes": "Base cake; 50% non-refundable deposit at booking; 4-6 week lead time",
+      "source_url": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "observed": "2026-09-01",
+      "quote": "Wedding cakes start at $5/serving"
+    },
+    {
+      "vendor": "sweet-lalas",
+      "category": "cake",
+      "item": "Filling",
+      "price": 0.5,
+      "unit": "per_serving",
+      "includes": "Strawberry, raspberry or lemon curd",
+      "source_url": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "observed": "2026-09-01",
+      "quote": "Fillings are an additional $0.50/serving"
+    },
+    {
+      "vendor": "sweet-lalas",
+      "category": "cake",
+      "item": "Cake tasting",
+      "price": 25.0,
+      "unit": "flat_fee",
+      "includes": "30-minute consult, credited back if you book",
+      "source_url": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "observed": "2026-09-01",
+      "quote": "Tastings are $25 for a 30 minute consult."
+    },
+    {
+      "vendor": "sweet-lalas",
+      "category": "cake",
+      "item": "Delivery, starting price",
+      "price": 150.0,
+      "unit": "flat_fee",
+      "includes": "Delivery and setup; $1.75 per mile beyond a 20 mile radius",
+      "source_url": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "observed": "2026-09-01",
+      "quote": "Our delivery starts at $150. We will charge $1.75 per mile after a 20 mile radius."
+    },
+    {
+      "vendor": "crave-sweet-shop",
+      "category": "cake",
+      "item": "Wedding cake, starting price per serving",
+      "price": 2.75,
+      "unit": "per_serving",
+      "includes": "Base cake; price increases with design complexity",
+      "source_url": "https://www.cravesweetshop.com/copy-of-get-a-quote",
+      "observed": "2026-09-01",
+      "quote": "Prices start at $2.75 per serving and increase based on design."
+    },
+    {
+      "vendor": "crave-sweet-shop",
+      "category": "cake",
+      "item": "Standard cupcake",
+      "price": 2.25,
+      "unit": "per_serving",
+      "includes": "One standard cupcake",
+      "source_url": "https://www.cravesweetshop.com/copy-of-get-a-quote",
+      "observed": "2026-09-01",
+      "quote": "Standard Cupcakes are $2.25 each"
+    },
+    {
+      "vendor": "js-cakes",
+      "category": "cake",
+      "item": "Custom cake, stated average minimum spend",
+      "price": 140.0,
+      "unit": "stated_average",
+      "includes": "Whole custom cake, not per serving",
+      "source_url": "https://www.jcakesyum.com/cake-f-a-q-s",
+      "observed": "2026-09-01",
+      "quote": "On average our customers spend a minimum of $140."
+    },
+    {
+      "vendor": "tcb-and-co",
+      "category": "florals",
+      "item": "Full-service wedding florals, minimum",
+      "price": 8500,
+      "unit": "minimum",
+      "includes": "Full-service florals including arches and large-scale installations; an a la carte collection is offered below the minimum",
+      "source_url": "https://www.tcbnco.com/pages/wedding",
+      "observed": "2026-09-01",
+      "quote": "Our full-service wedding florals including arches, large-scale installations, etc minimum starts at $8,500."
+    },
+    {
+      "vendor": "the-hardin-house",
+      "category": "planning",
+      "item": "Full service planning, starting price",
+      "price": 7500,
+      "unit": "starting_price",
+      "includes": "Customisable full-service planning",
+      "source_url": "https://www.thehardinhouse.com/info",
+      "observed": "2026-09-01",
+      "quote": "customizable starting at $7,500"
+    },
+    {
+      "vendor": "the-hardin-house",
+      "category": "planning",
+      "item": "Two Month Planning Package",
+      "price": 3250,
+      "unit": "package",
+      "includes": "Two planning meetings, details and task lists",
+      "source_url": "https://www.thehardinhouse.com/info",
+      "observed": "2026-09-01",
+      "quote": "$3,250"
+    },
+    {
+      "vendor": "the-hardin-house",
+      "category": "planning",
+      "item": "Wedding Weekend Planning (day-of coordination)",
+      "price": 1400,
+      "unit": "package",
+      "includes": "Timeline creation and distribution to vendors, coordination of event rentals, delivery and pick up",
+      "source_url": "https://www.thehardinhouse.com/info",
+      "observed": "2026-09-01",
+      "quote": "$1,400"
+    },
+    {
+      "vendor": "the-hardin-house",
+      "category": "planning",
+      "item": "Consultation",
+      "price": 100,
+      "unit": "per_hour",
+      "includes": "Hourly consulting rate",
+      "source_url": "https://www.thehardinhouse.com/info",
+      "observed": "2026-09-01",
+      "quote": "$100 per hour"
+    },
+    {
+      "vendor": "the-hardin-house",
+      "category": "planning",
+      "item": "Bridal assistant",
+      "price": 350,
+      "unit": "flat_fee",
+      "includes": "Assistant with the bridal party from the morning of the wedding, in contact with the lead coordinator",
+      "source_url": "https://www.thehardinhouse.com/info",
+      "observed": "2026-09-01",
+      "quote": "$350"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "White folding chair with metal leg",
+      "price": 1.75,
+      "unit": "per_item",
+      "includes": "One chair; page states prices subject to change, last updated 06/24/24",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "White w/ metal leg $1.75"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "White wood folding chair",
+      "price": 3.35,
+      "unit": "per_item",
+      "includes": "One chair",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "White wood $3.35"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Padded black banquet chair",
+      "price": 3.85,
+      "unit": "per_item",
+      "includes": "One chair",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "Padded black banquet $3.85"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "60 inch round table",
+      "price": 9.75,
+      "unit": "per_item",
+      "includes": "One table, seats eight",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "60\" round $9.75"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "72 inch round table",
+      "price": 14.0,
+      "unit": "per_item",
+      "includes": "One table, seats ten",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "72\" round $14.00"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Poly linen, 120 inch round",
+      "price": 11.5,
+      "unit": "per_item",
+      "includes": "One linen, fits a 60 inch round to the floor",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "120\" rd $11.50"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Poly linen, 132 inch round",
+      "price": 15.5,
+      "unit": "per_item",
+      "includes": "One linen, fits a 72 inch round to the floor",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "132\" rd $15.50"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Dance floor section, 3ft by 4ft",
+      "price": 20.0,
+      "unit": "per_item",
+      "includes": "One wood-grain section, indoor or under a commercial tent",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "3' x 4' sections wood grain $20/piece"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Portable bar",
+      "price": 75.0,
+      "unit": "per_item",
+      "includes": "One portable bar",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "Portable Bar $75.00"
+    },
+    {
+      "vendor": "affordable-party-rentals",
+      "category": "rentals",
+      "item": "Staging section, 4ft by 4ft",
+      "price": 37.0,
+      "unit": "per_item",
+      "includes": "One stage section",
+      "source_url": "https://www.affordablepartyrentals.com/pricing.html",
+      "observed": "2026-09-01",
+      "quote": "4' x 4' sections $ 37.00 / piece"
+    }
+  ],
+  "derivation": {
+    "_why": [
+      "Guest count is the biggest single cost driver in this category, and it is the one",
+      "national wedding sites answer worst: they publish a national average and apply a",
+      "city multiplier, which is not a measurement of Memphis.",
+      "",
+      "This derivation uses only per-person and per-item prices from the rows above. It",
+      "is arithmetic on published Memphis figures, not a model fitted to anything. Every",
+      "input names the row it comes from, so a reader can disagree with an assumption",
+      "without having to trust the total."
+    ],
+    "guest_counts": [
+      50,
+      75,
+      100,
+      125,
+      150,
+      200
+    ],
+    "per_guest_components": [
+      {
+        "id": "catering_entree",
+        "label": "Catering, one plate",
+        "banded": true,
+        "bands": {
+          "50-99": {
+            "low": 13.25,
+            "high": 22.0
+          },
+          "100-149": {
+            "low": 11.95,
+            "high": 21.25
+          },
+          "150+": {
+            "low": 11.5,
+            "high": 20.95
+          }
+        },
+        "basis": "The Commissary full-service catering, BBQ Shoulder Plate (low) to Rib Plate (high), at the guest-count band the vendor itself publishes.",
+        "sample_size": 1
+      },
+      {
+        "id": "catering_beverage",
+        "label": "Non-alcoholic beverage",
+        "low": 1.25,
+        "high": 1.5,
+        "basis": "The Commissary, iced tea or lemonade (low) to soft drinks (high).",
+        "sample_size": 1
+      },
+      {
+        "id": "cake",
+        "label": "Cake, one serving",
+        "low": 2.75,
+        "high": 5.0,
+        "basis": "Crave Sweet Shop starting price per serving (low) to Sweet LaLa's starting price per serving (high).",
+        "sample_size": 2
+      },
+      {
+        "id": "seating",
+        "label": "Chair, share of table, and linen",
+        "low": 4.41,
+        "high": 6.8,
+        "basis": "Affordable Party Rentals. Low: white metal-leg chair $1.75 + 60in round table $9.75 divided by 8 seats + 120in linen $11.50 divided by 8 seats. High: padded banquet chair $3.85 + 72in round table $14.00 divided by 10 seats + 132in linen $15.50 divided by 10 seats.",
+        "sample_size": 1
+      },
+      {
+        "id": "service_staff",
+        "label": "Service staff",
+        "low": 3.6,
+        "high": 6.8,
+        "basis": "Off The Square Catering. Low: one server at $15.00 per hour, one server per 25 guests, over a 6-hour reception, gratuity excluded, which is $3.60 per guest. High: the same server line plus one bartender at $18.00 per hour per 50 guests over 6 hours ($2.16 per guest), with the 18% gratuity the vendor publishes applied to both, which is $6.80 per guest. The staffing ratios are this publication's assumption and are stated so a reader can change them; the hourly rates and the gratuity are the vendor's published figures.",
+        "sample_size": 1
+      }
+    ],
+    "fixed_components": [
+      {
+        "id": "photography",
+        "label": "Photography",
+        "low": 2700,
+        "high": 8000,
+        "basis": "Lowest published full-wedding package across the seven photographers in the sample (Shelby Renee Photo, The Glass Slipper) to the highest entry-level figure among them (Elizabeth Hoard Photography's stated range floor).",
+        "sample_size": 7
+      },
+      {
+        "id": "dj",
+        "label": "Reception DJ",
+        "low": 750,
+        "high": 1150,
+        "basis": "DJ Mark Anderson's published reception range. SAMPLE OF ONE: this is one Memphis DJ's published range, not a market estimate.",
+        "sample_size": 1
+      },
+      {
+        "id": "coordination",
+        "label": "Day-of coordination",
+        "low": 1400,
+        "high": 3250,
+        "basis": "The Hardin House, Wedding Weekend (day-of) package to the Two Month Planning package. SAMPLE OF ONE.",
+        "sample_size": 1
+      },
+      {
+        "id": "venue",
+        "label": "Venue rental",
+        "low": 4700,
+        "high": 14500,
+        "basis": "Woodruff-Fontaine House Museum, Carriage House + Garden, to The Kent, Front Street Friday-Saturday. SAMPLE OF TWO venues that publish a rental fee.",
+        "sample_size": 2,
+        "capacity_note": "The low figure is a venue whose published maximum capacity is 150. At 200 guests it is not an available option, so the low end of the 200-guest total is not achievable at that venue and the venue line would have to be replaced."
+      }
+    ]
+  },
+  "national_context": {
+    "per_guest_low": 235,
+    "per_guest_high": 400,
+    "note": "The commonly quoted national per-guest range for weddings. It is stated on this page only as a contrast, to make clear that the figures here are a narrower measurement rather than a cheaper city. It is not a Memphis figure and is not part of the dataset."
+  }
+}

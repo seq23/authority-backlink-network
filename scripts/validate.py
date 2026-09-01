@@ -54,6 +54,8 @@ COMMANDS = {
     "citation_probe_wiring": [sys.executable, "scripts/validators/validate_citation_probe_wiring.py"],
     "social_queue_priority": [sys.executable, "scripts/prioritize_social_queue.py", "--check"],
     "affiliate_rel_disclosure": [sys.executable, "scripts/backfill_rel_attributes.py", "--check"],
+    "wedding_cost_dataset": [sys.executable, "scripts/validators/validate_wedding_cost_dataset.py"],
+    "external_citation_coverage": [sys.executable, "scripts/validators/validate_external_citation_coverage.py"],
 }
 
 

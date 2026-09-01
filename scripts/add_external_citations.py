@@ -100,7 +100,12 @@ def page_text(html_text: str) -> str:
 # references for that subject, and a hub with no honest match gets none.
 HUB_SOURCES: dict[str, list[str]] = {
     # -- founder ------------------------------------------------------------
-    "virtual-event-production": ["esta-tsp", "avixa-standards", "avixa"],
+    # The generic AVIXA landing page was dropped in favour of two federal
+    # sources, because "can a guest who needs captions actually attend this
+    # event" is a question these pages raise and had nothing to point at.
+    "virtual-event-production": ["esta-tsp", "avixa-standards",
+                                 "section508-accessible-meetings",
+                                 "ada-effective-communication"],
     "community-operations": ["ftc-endorsement-guides", "ftc-business-guidance"],
     "ai-execution-and-delegation": ["nist-ai-rmf", "nist-ai-rmf-development",
                                     "copyright-office-ai", "ftc-endorsement-guides"],
@@ -112,12 +117,18 @@ HUB_SOURCES: dict[str, list[str]] = {
     "wedding-day-timelines": ["nws-memphis", "tn-fire-prevention"],
     "wedding-and-event-budgets": ["tn-sales-and-use-tax", "tn-alcoholic-beverage-commission",
                                   "tn-secretary-of-state-businesses"],
-    "wedding-seating-charts": ["tn-fire-prevention", "memphis-city-government"],
+    # A seating chart decides where the accessible route and the clear floor
+    # space go. These pages cited the fire code and the city and had nothing on
+    # the dimensions that decision is actually measured against.
+    "wedding-seating-charts": ["tn-fire-prevention", "memphis-city-government",
+                               "us-access-board-ada-standards"],
     "grazing-tables-and-vendors": ["fda-food-code", "fda-refrigerator-thermometers",
                                    "shelby-county-health", "tn-secretary-of-state-businesses"],
     "porch-and-seasonal-styling": ["nws-memphis", "noaa-climate-normals",
+                                   "noaa-storm-prediction-center",
                                    "memphis-city-government"],
     "event-and-room-styling": ["tn-fire-prevention", "memphis-city-government",
+                               "us-access-board-ada-standards",
                                "tn-sales-and-use-tax"],
     # -- professional -------------------------------------------------------
     "credit-reports-and-disputes": ["cfpb-dispute-credit-report-error",
@@ -125,7 +136,8 @@ HUB_SOURCES: dict[str, list[str]] = {
                                     "annualcreditreport-official", "identitytheft-gov"],
     "loan-application-packets": ["cfpb-debt-to-income-ratio", "fannie-mae-selling-guide",
                                  "cfpb-loan-estimate"],
-    "loan-type-explanations": ["cfpb-loan-options", "cfpb-mortgages", "sba-loans"],
+    "loan-type-explanations": ["cfpb-loan-options", "cfpb-mortgages", "sba-loans",
+                               "ftc-advance-fee-loans"],
     "application-problems": ["cfpb-credit-reports-and-scores", "ftc-free-credit-reports"],
     "letters-of-explanation": ["fannie-mae-selling-guide", "cfpb-debt-to-income-ratio"],
     "income-and-employment-letters": ["cfpb-debt-to-income-ratio", "fannie-mae-selling-guide"],
@@ -135,7 +147,8 @@ HUB_SOURCES: dict[str, list[str]] = {
     "rental-applications": ["hud-fair-housing", "hud-rental-assistance",
                             "cfpb-credit-reports-and-scores"],
     "proof-of-income-and-residency": ["cfpb-debt-to-income-ratio", "usps-mail-forwarding"],
-    "business-funding-documents": ["sba-loans", "irs-contractor-or-employee"],
+    "business-funding-documents": ["sba-loans", "irs-contractor-or-employee",
+                                   "ftc-advance-fee-loans"],
     "document-preparation": ["identitytheft-gov", "usps-mail-forwarding",
                              "annualcreditreport-official"],
     "workplace-mental-health": ["eeoc-mental-health-rights", "osha-workplace-stress",
@@ -287,7 +300,8 @@ CLUSTER_SOURCES: dict[str, list[str]] = {
                                      "tsa-real-id"],
 
     # -- business-funding-documents ----------------------------------------
-    "business funding packet": ["sba-loans", "irs-get-ein", "irs-business-structures"],
+    "business funding packet": ["sba-loans", "ftc-advance-fee-loans", "irs-get-ein",
+                                "irs-business-structures"],
     "business funding documents": ["sba-loans", "irs-small-business-self-employed",
                                    "fincen-boi"],
     "business ownership documents": ["fincen-boi", "irs-business-structures", "irs-get-ein"],
@@ -372,7 +386,8 @@ CLUSTER_SOURCES: dict[str, list[str]] = {
 # string. They are named explicitly rather than guessed at.
 PAGE_SOURCES: dict[str, list[str]] = {
     "founder-operator/virtual-event-production-buyers-guide.html":
-        ["esta-tsp", "avixa-standards", "avixa"],
+        ["esta-tsp", "avixa-standards", "section508-accessible-meetings",
+         "ada-effective-communication"],
     "founder-operator/ai-executive-coaching-resources.html":
         ["nist-ai-rmf", "copyright-office-ai"],
     "founder-operator/ai-marketing-operations-resources.html":
@@ -384,7 +399,7 @@ PAGE_SOURCES: dict[str, list[str]] = {
     "memphis-local/memphis-party-decor-vendors.html":
         ["tn-secretary-of-state-businesses", "tn-sales-and-use-tax", "memphis-city-government"],
     "memphis-local/memphis-porch-decorating-resources.html":
-        ["nws-memphis", "noaa-climate-normals"],
+        ["nws-memphis", "noaa-climate-normals", "noaa-storm-prediction-center"],
     "memphis-local/seasonal-home-styling-memphis.html":
         ["noaa-climate-normals", "nws-memphis"],
     "professional-resources/dental-decision-resources.html":
