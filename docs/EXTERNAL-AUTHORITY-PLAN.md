@@ -1,6 +1,7 @@
 # Earning citations from people Sequoia does not own
 
-**Status:** plan, not yet executed. Nothing in here has been done.
+**Status:** partly executed. **Rank 2, Phase 1 is done and published** (2026-09-01);
+everything else in here is still a plan. See "What has actually been done" below.
 **Budget assumed:** $0 for tooling. Owner time is the scarce resource.
 **Measured:** 2026-08-27, on `work/editorial-independence` at `main`.
 
@@ -49,6 +50,43 @@ Realistic outcome of executing this plan well for twelve months is roughly
 is selling something. Ten citations from real publications are worth more than a
 thousand from anywhere they can be bought, and — unlike the purchasable kind —
 they do not become a liability later.
+
+---
+
+## 1a. What has actually been done
+
+Kept here rather than in a separate receipt, so the status line above can never
+drift away from the evidence.
+
+**Rank 2, Phase 1 — published 2026-09-01.**
+[Memphis Wedding Cost by Guest Count, 2026 Edition](https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026).
+21 Memphis-area vendors, 70 published prices, all read from the vendors' own
+sites and recorded in `data/memphis-wedding-cost-2026.json` with the source URL,
+the observation date and the vendor's verbatim words. Method, sample size and
+exclusions are stated above the numbers; the underlying table and a CSV are on
+the page; `Dataset` JSON-LD is emitted; the URL carries the year so the next
+edition is a new artifact.
+
+Two things it does **not** do, deliberately:
+
+- **No individual byline.** `data/contributors.json` is still empty and this
+  publication's footer says it never attributes a page to someone who did not
+  write it. The dataset carries the editorial-desk byline. Rank 3 remains the
+  route to a named human byline, and it requires a real person to agree first.
+- **No alcohol line.** No vendor in the sample publishes a per-person bar price,
+  so the guest-count model has none. It is the largest stated gap.
+
+**The outbound-citation number has moved.** The count in section 1 was 0 external
+domains across 608 pages. It is now 70 domains: the 21 vendor price sheets, plus
+five verified federal and standards-body sources added across the three lanes,
+on top of the concurrent workstream's registry. This still earns nothing
+inbound — section 1's note about that stands — but a page that cites nobody does
+not read as reference material, and that is now fixed.
+
+`scripts/validators/validate_external_citation_coverage.py` ratchets it: the
+count cannot fall back towards zero without a validator failing.
+
+**Not started:** Ranks 1, 3, 4, 5 and 6, and Phase 2 of Rank 2.
 
 ---
 
