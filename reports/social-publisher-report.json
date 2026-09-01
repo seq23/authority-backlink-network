@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 3})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 5})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -53,13 +53,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 3,
+        "policy_daily_limit": 5,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 7,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 2,
-          "network_policy_daily": 3
+          "network_policy_daily": 5
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -68,9 +68,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-01": 2,
+            "2026-09-01": 0,
             "2026-09-02": 4,
-            "2026-09-03": 1,
+            "2026-09-03": 3,
             "2026-09-04": 0,
             "2026-09-05": 0,
             "2026-09-06": 0,
@@ -96,17 +96,17 @@
         },
         "channels_connected": [
           {
-            "id": "6a1337eec687a22dd420b43f",
-            "name": "iamcindymercer",
-            "service": "tiktok",
+            "id": "6a936b7accaf649a674276b2",
+            "name": "sequoia_ta12767",
+            "service": "twitter",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
           },
           {
-            "id": "6a936b7accaf649a674276b2",
-            "name": "sequoia_ta12767",
-            "service": "twitter",
+            "id": "6a1337eec687a22dd420b43f",
+            "name": "iamcindymercer",
+            "service": "tiktok",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
@@ -125,10 +125,10 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 4
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 562,
+  "deferred_waiting_for_delivery_route": 560,
   "route_only_platforms": [
     "x"
   ],
@@ -142,50 +142,50 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1143,
+  "still_postable_after_run": 1141,
   "attempts": [
     {
-      "index": 187,
+      "index": 199,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Cash Flow Explanation: Practical Planning Checklist Bef"
+      "preview": "Need to explain what happened? Create the letter they asked for. Business Funding Documents: Checklist-Driven Faq Answer"
     },
     {
-      "index": 193,
+      "index": 205,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Identity Records Explanation: No-Fluff Local/Resource D"
+      "preview": "Need to explain what happened? Create the letter they asked for. Full Approval Prep Bundle: Editorial Timeline Guide Bef"
     }
   ],
   "successes": [
     {
-      "index": 187,
+      "index": 199,
       "platform": "x",
       "brand": null,
-      "id": "6a96e1c5b4426bdd0294fd3b",
+      "id": "6a9700bd7cb92983eede1743",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-03T14:53:00.000Z"
+      "due_at": "2026-09-03T16:55:00.000Z"
     },
     {
-      "index": 193,
+      "index": 205,
       "platform": "x",
       "brand": null,
-      "id": "6a96e24c5aa80671baf16485",
+      "id": "6a97010af5d24ca66e63a21f",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-03T15:39:00.000Z"
+      "due_at": "2026-09-04T13:12:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 2
   },
   "brand_rotation_policy": {
     "quota_count": 15,
