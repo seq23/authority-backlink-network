@@ -3163,6 +3163,126 @@
         "duplicate_warnings": 0,
         "hard_fails": 0
       }
+    },
+    {
+      "date": "2026-08-30",
+      "release_date": "2026-08-30",
+      "day_index": 65,
+      "target_volume": 3,
+      "generated": 0,
+      "published": 0,
+      "scores": [],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "social_enqueued": {
+        "published_pages": 0,
+        "platforms_enabled": [],
+        "platforms_paused": {
+          "linkedin": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+          },
+          "x": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
+          }
+        },
+        "pages_enqueued_by_platform": {},
+        "pages_missing_by_platform": {},
+        "pages_enqueued_for_social": 0,
+        "pages_missing_social": []
+      },
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.64864864864865,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "release_date": "2026-08-31",
+      "day_index": 66,
+      "target_volume": 3,
+      "generated": 0,
+      "published": 0,
+      "scores": [],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "social_enqueued": {
+        "published_pages": 0,
+        "platforms_enabled": [],
+        "platforms_paused": {
+          "linkedin": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+          },
+          "x": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
+          }
+        },
+        "pages_enqueued_by_platform": {},
+        "pages_missing_by_platform": {},
+        "pages_enqueued_for_social": 0,
+        "pages_missing_social": []
+      },
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.70588235294117,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "release_date": "2026-09-01",
+      "day_index": 67,
+      "target_volume": 3,
+      "generated": 0,
+      "published": 0,
+      "scores": [],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "social_enqueued": {
+        "published_pages": 0,
+        "platforms_enabled": [],
+        "platforms_paused": {
+          "linkedin": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+          },
+          "x": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
+          }
+        },
+        "pages_enqueued_by_platform": {},
+        "pages_missing_by_platform": {},
+        "pages_enqueued_for_social": 0,
+        "pages_missing_social": []
+      },
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 80.7741935483871,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
+      }
     }
   ]
 }
