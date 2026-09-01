@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-31",
+  "date": "2026-09-01",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -53,7 +53,7 @@
       "used_this_run": false,
       "receipt": {
         "available": false,
-        "reason": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 0}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+        "reason": "no headroom: the strictest discovered ceiling is network_policy_daily at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 0}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -63,21 +63,20 @@
         "buffer_used_today": 4,
         "policy_daily_limit": 0,
         "free_plan_queue_depth_limit": 10,
-        "queued_in_buffer_now": 9,
+        "queued_in_buffer_now": 8,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
-          "free_plan_queue_depth": 0,
+          "free_plan_queue_depth": 1,
           "network_policy_daily": 0
         },
-        "binding_ceiling": "free_plan_queue_depth",
+        "binding_ceiling": "network_policy_daily",
         "queue_depth_probe": {
           "limit": 10,
-          "used": 9,
+          "used": 8,
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-08-31": 0,
-            "2026-09-01": 4,
+            "2026-09-01": 3,
             "2026-09-02": 4,
             "2026-09-03": 1,
             "2026-09-04": 0,
@@ -89,7 +88,8 @@
             "2026-09-10": 0,
             "2026-09-11": 0,
             "2026-09-12": 0,
-            "2026-09-13": 0
+            "2026-09-13": 0,
+            "2026-09-14": 0
           },
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
@@ -104,24 +104,24 @@
         },
         "channels_connected": [
           {
-            "id": "6a1337eec687a22dd420b43f",
-            "name": "iamcindymercer",
-            "service": "tiktok",
-            "isLocked": false,
-            "isDisconnected": false,
-            "isQueuePaused": false
-          },
-          {
             "id": "6a936b7accaf649a674276b2",
             "name": "sequoia_ta12767",
             "service": "twitter",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
+          },
+          {
+            "id": "6a1337eec687a22dd420b43f",
+            "name": "iamcindymercer",
+            "service": "tiktok",
+            "isLocked": false,
+            "isDisconnected": false,
+            "isQueuePaused": false
           }
         ]
       },
-      "why_not_used": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 0}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+      "why_not_used": "no headroom: the strictest discovered ceiling is network_policy_daily at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 0}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
       "x_api_requests_made": 0
     }
   },
