@@ -1,43 +1,47 @@
 {
   "schema": "uscis-changelog-run-v1",
-  "checked_at": "2026-09-02T00:27:25+00:00",
+  "checked_at": "2026-09-02T00:33:05+00:00",
   "offline": false,
   "sources_declared": 4,
-  "sources_checked": 4,
+  "sources_checked": 1,
   "entries_written": 0,
   "outcomes": [
     {
       "source": "uscis-federal-register",
       "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
-      "status": "BASELINE_CAPTURED",
-      "lines": 120,
-      "detail": "first observation of this page; there is no previous version to diff against, so no entry was written."
+      "status": "NO_CHANGE",
+      "added_lines": 0,
+      "removed_lines": 0,
+      "detail": "the page was fetched and compared; the difference is below the materiality floor."
     },
     {
       "source": "uscis-filing-fees",
       "url": "https://www.uscis.gov/forms/filing-fees",
-      "status": "NO_CHANGE",
-      "added_lines": 0,
-      "removed_lines": 0,
-      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+      "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
+      "best_effort": true,
+      "consecutive_failures": 2,
+      "last_success": "2026-09-02T00:27:25+00:00",
+      "detail": "https://www.uscis.gov/forms/filing-fees: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     },
     {
       "source": "uscis-forms-updates",
       "url": "https://www.uscis.gov/forms/forms-updates",
-      "status": "NO_CHANGE",
-      "added_lines": 0,
-      "removed_lines": 0,
-      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+      "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
+      "best_effort": true,
+      "consecutive_failures": 2,
+      "last_success": "2026-09-02T00:27:25+00:00",
+      "detail": "https://www.uscis.gov/forms/forms-updates: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     },
     {
       "source": "uscis-all-forms",
       "url": "https://www.uscis.gov/forms/all-forms",
-      "status": "NO_CHANGE",
-      "added_lines": 0,
-      "removed_lines": 0,
-      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+      "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
+      "best_effort": true,
+      "consecutive_failures": 2,
+      "last_success": "2026-09-02T00:27:25+00:00",
+      "detail": "https://www.uscis.gov/forms/all-forms: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     }
   ],
   "blind_sources": [],
-  "named_outcome": "BASELINE_CAPTURED: a first snapshot was taken of 1 page(s). There was no previous version to compare against, so the absence of an entry is not a statement that nothing changed."
+  "named_outcome": "NO CHANGE: 1 of 4 tracked source(s) were fetched and compared, and none changed materially this week. 3 best-effort source(s) were unreachable and are disclosed as such on the page; none of them is being reported as unchanged."
 }
