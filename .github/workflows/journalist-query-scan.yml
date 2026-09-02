@@ -71,7 +71,22 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Journalist query scan: drafts for review (nothing sent)"
-          file_pattern: "data/journalist-queries/digests/** data/journalist-queries/state.json reports/journalist-query-scan-latest.json"
+          # The pattern names PATHS THAT ALWAYS EXIST after the scan step, not
+          # the files a productive day happens to produce.
+          #
+          # It used to name `data/journalist-queries/digests/**`, and the first
+          # real run failed: git-auto-commit-action exits 128 on a pathspec that
+          # matches nothing, and on a quiet day that directory is empty because
+          # git does not track empty directories. So every quiet day -- the
+          # designed, correct, most common outcome of this lane -- would have
+          # turned the workflow red, which is precisely the "a quiet day and a
+          # broken lane look the same" failure the rest of this lane is built to
+          # prevent, reintroduced in the plumbing.
+          #
+          # The directory is tracked (it holds the ledger, the beats and the
+          # format grammar) and the report is rewritten by every run, so both
+          # always match.
+          file_pattern: "data/journalist-queries reports/journalist-query-scan-latest.json"
 
       - name: Say what the run did, including when it did nothing
         # Rule 0. "No relevant queries today" is a legitimate named outcome and
