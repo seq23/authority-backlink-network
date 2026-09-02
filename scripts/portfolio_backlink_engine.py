@@ -115,24 +115,119 @@ def refresh_assets():
  ledger=lastmod_ledger.load(); today=lastmod_ledger.build_date(); all_hashes={}
  for pub in pubs.values():
   folder=ROOT/pub['folder']; domain=site_urls.domain_of(pub)
-  hashes={}; llms=[f"# {pub['title']}",pub['mission'],'',f"Sitemap: https://{domain}/sitemap.xml",'','## Pages']
+  hashes={}
   for _rel,url,text in site_urls.published_pages(folder,domain):
-   hashes[url]=lastmod_ledger.content_hash(text); llms.append(f'- {url}')
+   hashes[url]=lastmod_ledger.content_hash(text)
   lastmods=lastmod_ledger.resolve(hashes,ledger,today); all_hashes.update(hashes)
   sitemap=site_urls.render_sitemap({url:lastmods[url] for url in hashes})
-  (folder/'sitemap.xml').write_text(sitemap,encoding='utf-8'); (folder/'llms.txt').write_text('\n'.join(llms)+'\n',encoding='utf-8')
+  # llms.txt is NOT written here. Three emitters wrote this file; the autopilot
+  # and deterministic_build.py emit byte-identical text, and this one emitted a
+  # different long form listing every URL. The two lanes therefore overwrote
+  # each other every day, so the committed file alternated shape with whichever
+  # workflow ran last. One writer, and it is not this one; the sitemap below
+  # comes from the shared helper and already matches the other two.
+  (folder/'sitemap.xml').write_text(sitemap,encoding='utf-8')
  lastmod_ledger.save(lastmod_ledger.updated(all_hashes,ledger,today))
+
+# What a later lane has added to a seed page, and what the seed template does
+# not contain. `seed` used to rewrite every seed page from `render()` on every
+# run, and `render()` emits the bare article: no breadcrumb, no related or
+# library navigation, no editorial footer, no affiliate-disclosure aside and --
+# the reason this became a hard failure -- no `Sources outside this network`
+# block. So each nightly distribution run silently deleted the outbound
+# citations from all 32 seed pages, and the next autopilot run put the
+# navigation and the footer back but NOT the citations, because nothing in the
+# autopilot lane calls add_external_citations.py. Confirmed 2026-09-02 by
+# running `seed` on a clean checkout of main: 32 pages rewritten, 31 of them
+# dropped below the recorded external-citation floor.
+#
+# A page carrying any of these has been enriched downstream and is no longer the
+# template's to overwrite. Seeding creates pages; it does not own them for life.
+ENRICHMENT_MARKERS = (
+ 'data-block="external-citations"',
+ 'data-nav="',
+ 'data-disclosure="',
+ '<footer',
+)
+
+
+def outside_citations(text: str) -> set[str]:
+ """Absolute hrefs on a page that point outside the portfolio.
+
+ The same definition validate_external_citation_coverage.py counts: anything
+ that is not one of the publications' own domains and not an affiliated brand.
+ """
+ pubs,_=publication_maps()
+ own={norm_domain(p['working_domain']) if p['working_domain'].startswith('http') else p['working_domain'].lower().replace('www.','') for p in pubs.values()}
+ brand_domains=set()
+ for brand in read('data/brands.json',[]):
+  for value in [brand.get('url','')]+list(brand.get('domains',[]))+[l.get('url','') for l in brand.get('approved_links',[])]:
+   if value: brand_domains.add(norm_domain(value) if value.startswith('http') else value.lower().replace('www.',''))
+ out=set()
+ for href in re.findall(r'href="(https?://[^"]+)"',text,re.I):
+  if norm_domain(href) in own or norm_domain(href) in brand_domains: continue
+  out.add(href)
+ return out
+
+
+def plan_seed_writes()->list[dict]:
+ """What `seed` would do to each seed page, decided without touching the disk.
+
+ Shared with scripts/validators/validate_backlink_seed_preserves_citations.py so
+ the guard reasons about the same decision the generator makes, rather than its
+ own re-implementation of it.
+
+   create    the page does not exist yet; the template is the whole page
+   refresh   the page exists and carries no downstream enrichment, so a template
+             improvement can safely propagate to it
+   preserve  the page has been enriched by a later lane; leave it alone
+   blocked   rewriting it would delete outbound citations. Never written, and
+             `seed` exits non-zero on it.
+ """
+ data=read('data/backlink-seed-articles.json',{'articles':[]}); pubs,_=publication_maps(); plans=[]
+ for a in data['articles']:
+  pub=pubs[a['publication']]; rel=f"{pub['folder']}/daily/{a['date']}-{a['slug']}.html"; path=ROOT/rel
+  page=render(a,pub)
+  if not path.exists():
+   plans.append({'article_id':a['id'],'rel':rel,'action':'create','page':page,'lost_citations':[]}); continue
+  current=path.read_text(encoding='utf-8')
+  if any(marker in current for marker in ENRICHMENT_MARKERS):
+   plans.append({'article_id':a['id'],'rel':rel,'action':'preserve','page':page,'lost_citations':[]}); continue
+  lost=sorted(outside_citations(current)-outside_citations(page))
+  if lost:
+   # An unenriched page that still cites outside authorities. Refreshing it from
+   # the template would delete those citations, so it is refused rather than
+   # written -- the backstop for the case the marker list does not recognise.
+   plans.append({'article_id':a['id'],'rel':rel,'action':'blocked','page':page,'lost_citations':lost}); continue
+  plans.append({'article_id':a['id'],'rel':rel,'action':'refresh' if current!=page else 'preserve','page':page,'lost_citations':[]})
+ return plans
+
 
 def seed():
  data=read('data/backlink-seed-articles.json',{'articles':[]}); links=read('data/link-registry.json',[]); pubs,_=publication_maps(); existing={x.get('seed_article_id') for x in links}; made=[]
+ plans=plan_seed_writes(); by_id={p['article_id']:p for p in plans}
+ counts=Counter(p['action'] for p in plans)
+ blocked=[{'source':p['rel'],'would_delete':p['lost_citations']} for p in plans if p['action']=='blocked']
+ if blocked:
+  # Loud, at generation time. The alternative is what happened on 2026-09-02:
+  # the pages get written, the run continues, and the deletion surfaces a lane
+  # later as a citation-floor regression with no indication of what removed it.
+  print(json.dumps({'status':'FAIL','reason':'seed template would delete outbound citations from pages that already carry them','blocked':blocked},indent=2))
+  print('seed: refusing to rewrite %d enriched page(s) from the bare template' % len(blocked),file=sys.stderr)
+  raise SystemExit(1)
+ if not plans:
+  # Rule 0: no stage exits 0 having done nothing.
+  print(json.dumps({'status':'FAIL','reason':'no seed articles in data/backlink-seed-articles.json; a seed run that plans zero pages is a broken input, not a clean tree'},indent=2))
+  raise SystemExit(1)
  for a in data['articles']:
-  pub=pubs[a['publication']]; rel=f"{pub['folder']}/daily/{a['date']}-{a['slug']}.html"; path=ROOT/rel; page=render(a,pub)
+  pub=pubs[a['publication']]; rel=f"{pub['folder']}/daily/{a['date']}-{a['slug']}.html"; path=ROOT/rel; plan=by_id[a['id']]
   path.parent.mkdir(parents=True,exist_ok=True)
-  if not path.exists() or path.read_text(encoding='utf-8')!=page: path.write_text(page,encoding='utf-8')
+  if plan['action'] in ('create','refresh'): path.write_text(plan['page'],encoding='utf-8')
   if a['id'] not in existing:
    links.append({'id':'bl-'+stable_id(a['id'],a['target_url']),'date':a['date'],'seed_article_id':a['id'],'source_path':rel,'source_publication':a['publication'],'target_brand_id':a['target_brand_id'],'campaign_id':a['campaign_id'],'target_domain':norm_domain(a['target_url']),'target_url':a['target_url'],'anchor':a['anchor'],'brand':next((b['name'] for b in read('data/brands.json',[]) if b['id']==a['target_brand_id']),a['target_brand_id']),'link_type':'affiliated-editorial-backlink','status':'published','lifecycle_stage':'published_in_repository','score':92,'evidence':{'repository_rendered':True,'deployed':False,'live_verified':False,'discoverable':False,'indexed':False,'search_visibility_observed':False,'ai_cited':False},'truth_boundary':'Owned-network rendered backlink; not independent, live, indexed, or cited without evidence.'}); made.append(rel)
  write('data/link-registry.json',links); refresh_assets(); health()
- print(json.dumps({'status':'PASS','created_or_refreshed':len(data['articles']),'new_ledger_records':len(made),'pages':made},indent=2))
+ print(json.dumps({'status':'PASS','seed_articles':len(plans),'created':counts['create'],'refreshed':counts['refresh'],
+                   'preserved_enriched':counts['preserve'],'new_ledger_records':len(made),'pages':made},indent=2))
 
 def local_findings(row):
  p=ROOT/row.get('source_path',''); findings=[]
