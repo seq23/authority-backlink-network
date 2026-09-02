@@ -29,7 +29,7 @@ Parallel bake-off:
 - Never substitute another repo or write to another canonical repo.
 - Use a full-baseline ZIP as the governed handoff artifact when required.
 - Local updater validation and exact-SHA GitHub checks must pass before merge eligibility.
-- RED or UNPROVEN remains merge-blocked; merge to main/default is human-authorized only.
+- RED or UNPROVEN remains merge-blocked; merge to main/default is permitted ONLY when every required check is green: never with `--admin`, never force-pushed. A blocker that cannot go green on its own is reported as a NAMED STOP, never merged around.
 - Provider quota/rate-limit is BLOCKED/UNSCORED, not a model-quality failure.
 - For material UI/UX/design-system work, use the Claude Design routing layer when it materially improves the result; not for backend-only work.
 - Use existing tools and repo authority rather than inventing duplicate systems.
