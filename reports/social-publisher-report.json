@@ -68,9 +68,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-02": 2,
+            "2026-09-02": 0,
             "2026-09-03": 4,
-            "2026-09-04": 1,
+            "2026-09-04": 3,
             "2026-09-05": 0,
             "2026-09-06": 0,
             "2026-09-07": 0,
@@ -125,10 +125,10 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 4
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 558,
+  "deferred_waiting_for_delivery_route": 556,
   "route_only_platforms": [
     "x"
   ],
@@ -142,50 +142,50 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1139,
+  "still_postable_after_run": 1137,
   "attempts": [
     {
-      "index": 211,
+      "index": 223,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Address Issue Explanation: Aeo-Ready Local/Resource Dir"
+      "preview": "Need to explain what happened? Create the letter they asked for. Job Gap Explanation: 2026-Ready Buyer Guide For Busy Op"
     },
     {
-      "index": 217,
+      "index": 229,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Full Approval Prep Bundle: Decision-Focused Timeline Gu"
+      "preview": "Need to explain what happened? Create the letter they asked for. Job Gap Explanation: Geo-Ready Comparison Guide Before "
     }
   ],
   "successes": [
     {
-      "index": 211,
+      "index": 223,
       "platform": "x",
       "brand": null,
-      "id": "6a983338a00c49cc666f3f6a",
+      "id": "6a984ea8d09ad77fd827e7aa",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-04T14:28:00.000Z"
+      "due_at": "2026-09-04T16:30:00.000Z"
     },
     {
-      "index": 217,
+      "index": 229,
       "platform": "x",
       "brand": null,
-      "id": "6a9833942ccce291db73d2e6",
+      "id": "6a984efae4cb3676b93d7ee4",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-04T15:14:00.000Z"
+      "due_at": "2026-09-05T13:23:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 2
   },
   "brand_rotation_policy": {
     "quota_count": 15,
