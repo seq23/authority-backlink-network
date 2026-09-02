@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-01",
+  "date": "2026-09-02",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -76,7 +76,6 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-01": 0,
             "2026-09-02": 4,
             "2026-09-03": 4,
             "2026-09-04": 1,
@@ -89,7 +88,8 @@
             "2026-09-11": 0,
             "2026-09-12": 0,
             "2026-09-13": 0,
-            "2026-09-14": 0
+            "2026-09-14": 0,
+            "2026-09-15": 0
           },
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
@@ -104,17 +104,17 @@
         },
         "channels_connected": [
           {
-            "id": "6a1337eec687a22dd420b43f",
-            "name": "iamcindymercer",
-            "service": "tiktok",
+            "id": "6a936b7accaf649a674276b2",
+            "name": "sequoia_ta12767",
+            "service": "twitter",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
           },
           {
-            "id": "6a936b7accaf649a674276b2",
-            "name": "sequoia_ta12767",
-            "service": "twitter",
+            "id": "6a1337eec687a22dd420b43f",
+            "name": "iamcindymercer",
+            "service": "tiktok",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
