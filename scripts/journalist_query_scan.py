@@ -178,15 +178,31 @@ def dir_messages(inbox: Path) -> list[tuple[str, str]]:
 
 # ------------------------------------------------------------------- parse
 
+def label_pattern(names: list[str]) -> re.Pattern:
+    alternation = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
+    return re.compile(rf"^\s*(?:{alternation})\s*[:\-]\s*(.*)$", re.I)
+
+
 def compile_formats(formats: dict) -> dict:
-    labels = {}
-    for field, names in formats["field_labels"].items():
-        alternation = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
-        labels[field] = re.compile(rf"^\s*(?:{alternation})\s*[:\-]\s*(.*)$", re.I)
+    labels = {field: label_pattern(names)
+              for field, names in formats["field_labels"].items()}
+    ignored = formats.get("ignored_labels") or []
+    start = formats.get("query_start")
     return {
         "delimiters": [re.compile(p, re.M) for p in formats["block_delimiters"]],
         "labels": labels,
+        # Labels that exist in the provider's layout and carry nothing this lane
+        # uses. They are recognised so that they TERMINATE the previous field's
+        # continuation. Before they were declared, "MEDIA WEBSITE: https://..."
+        # was appended to the outlet name as if the reporter had typed it there.
+        "ignored": label_pattern(ignored) if ignored else None,
         "numbered": re.compile(formats["numbered_summary"], re.I),
+        # A digest that numbers its queries is split on the query heading itself,
+        # never on decoration. See the _README in query-formats.json: the first
+        # real SOS digest separated queries with five underscores (the delimiter
+        # wanted six) and carried a row of dashes INSIDE one reporter's question,
+        # so decoration is both an unreliable separator and a false one.
+        "query_start": re.compile(start, re.M) if start else None,
         "strip": [re.compile(p, re.I) for p in formats["strip_trailing_from_body"]],
         "required": formats["minimum_fields_for_a_query"],
         "one_of": formats["must_also_have_one_of"],
@@ -194,6 +210,18 @@ def compile_formats(formats: dict) -> dict:
 
 
 def split_blocks(body: str, compiled: dict) -> list[str]:
+    start = compiled.get("query_start")
+    if start:
+        starts = [m.start() for m in start.finditer(body)]
+        if starts:
+            # Everything before the first query heading is the newsletter's
+            # preamble and index. It is dropped rather than parsed: the index
+            # repeats every summary, and parsing it would double every query.
+            bounds = starts + [len(body)]
+            blocks = [body[bounds[i]:bounds[i + 1]].strip()
+                      for i in range(len(starts))]
+            return [b for b in blocks if b]
+
     text = body
     for pattern in compiled["delimiters"]:
         text = pattern.sub("\n@@BLOCK@@\n", text)
@@ -206,6 +234,9 @@ def parse_block(block: str, compiled: dict) -> dict | None:
     current: str | None = None
     for line in block.splitlines():
         if any(p.search(line) for p in compiled["strip"]):
+            current = None
+            continue
+        if compiled["ignored"] is not None and compiled["ignored"].match(line):
             current = None
             continue
         matched = False
@@ -226,6 +257,12 @@ def parse_block(block: str, compiled: dict) -> dict | None:
                 continue
         if current and line.strip():
             fields[current] = (fields[current] + " " + line.strip()).strip()
+
+    # SOS renders an address as "name@outlet.com (mailto:name@outlet.com)". The
+    # owner copies this field into a To: line, so the duplicate is stripped here
+    # rather than left for her to notice.
+    if fields.get("email"):
+        fields["email"] = re.sub(r"\s*\(mailto:[^)]*\)", "", fields["email"]).strip()
 
     if not all(fields.get(f) for f in compiled["required"]):
         return None
@@ -578,6 +615,7 @@ def run(args) -> dict:
     receipt = {
         "schema": "journalist-query-scan-v1",
         "run_at": now,
+        "messages_read": 0,
         "digests_read": 0,
         "queries_ingested": 0,
         "non_digest_messages": [],
@@ -613,7 +651,11 @@ def run(args) -> dict:
         write_json(RECEIPT, receipt)
         return receipt
 
-    receipt["digests_read"] = len(messages)
+    # A digest is a message that was actually read AS a digest. Counting the
+    # welcome email as one made the log read "digests read: 2" on a morning when
+    # exactly one digest existed, which is the small dishonesty that makes the
+    # big one ("nothing relevant today") believable.
+    receipt["messages_read"] = len(messages)
 
     formats = load(FORMATS)
     floor = partial_parse_floor(formats)
@@ -662,6 +704,8 @@ def run(args) -> dict:
                 "parsed": len(parsed)})
         queries.extend(parsed)
 
+    receipt["digests_read"] = (receipt["messages_read"]
+                               - len(receipt["non_digest_messages"]))
     receipt["queries_ingested"] = len(queries)
 
     # Never surface the same query twice. The mailbox is read with a lookback
@@ -810,7 +854,8 @@ def main() -> int:
     receipt = run(args)
     print("JOURNALIST QUERY SCAN")
     print(f"  named outcome: {receipt['named_outcome']}")
-    print(f"  messages read: {receipt['digests_read']}; "
+    print(f"  messages read: {receipt['messages_read']}; "
+          f"digests: {receipt['digests_read']}; "
           f"non-digest: {len(receipt['non_digest_messages'])}; "
           f"queries ingested: {receipt['queries_ingested']}; "
           f"already surfaced: {receipt['already_surfaced']}; "

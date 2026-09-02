@@ -33,6 +33,9 @@ What it checks
                       still says what it did.
   a broken parser is  a digest the parser cannot read is reported as
   not a quiet day     UNPARSEABLE_DIGEST, never as "no relevant queries".
+  the real digest     the actual 2026-09-02 SOS digest parses to every query its
+  parses whole        own index declares, with each summary still bound to the
+                      address it arrived with and no footer inside a question.
   exclusions bite     a query matching a hard exclusion never reaches a model.
 
 Hard-fails if it exercises zero properties.
@@ -358,6 +361,13 @@ def check_outcomes(report: Report, tmp: Path) -> None:
         if [m["signature"] for m in got["non_digest_messages"]] != ["sos-welcome"]:
             report.fail("the real SOS welcome email is not recognised as a non-digest; "
                         "it would raise a false UNPARSEABLE_DIGEST on every run")
+        if got["digests_read"] != 0:
+            report.fail(
+                f"a run that read only the welcome email reported "
+                f"{got['digests_read']} digest(s). A message positively recognised as "
+                f"NOT a digest may not be counted as one: 'digests read: 2' on a "
+                f"morning with one digest is the small dishonesty that makes the big "
+                f"one -- 'nothing relevant today' -- believable.")
         if got["stops"]:
             report.fail(f"the real welcome email produced stop(s) "
                         f"{[x['code'] for x in got['stops']]}; a welcome email is not a "
@@ -435,6 +445,135 @@ def check_outcomes(report: Report, tmp: Path) -> None:
                         f"than the memphis-events beat")
 
 
+# ---------------------------------------------------------------------------
+# Property -- the grammar must parse the REAL digest, whole and unmixed.
+# ---------------------------------------------------------------------------
+
+REAL_DIGEST = ROOT / "tests/fixtures/journalist-queries/sos-digest-2026-09-02.eml"
+
+# Labels the provider uses. Any of these appearing INSIDE a parsed value means
+# the block boundaries are wrong and one query's text has run into the next.
+PROVIDER_LABELS = ("SUMMARY:", "CATEGORY:", "NAME:", "EMAIL:", "MUCK RACK URL:",
+                   "MEDIA OUTLET:", "MEDIA WEBSITE:", "DEADLINE DATE:",
+                   "DEADLINE TIME:", "TIME ZONE:", "QUERY:")
+
+
+def check_real_digest(report: Report, tmp: Path) -> None:
+    """Drive the REAL 2026-09-02 SOS digest through the real scanner.
+
+    Why this exists. Every parser property above was proved against
+    FIXTURE_DIGEST, which this repository wrote. The grammar had therefore never
+    met its actual input, and when the first real digest arrived on 2026-09-02 it
+    parsed 2 of its 10 queries -- and paired query 1's summary with query 6's
+    email address, which would have handed the owner a draft answering one
+    reporter, addressed to another. PARTIAL_DIGEST_PARSE caught the shortfall and
+    the run stayed green; nothing was sent, because this lane has no send path.
+
+    A synthetic fixture cannot catch that class, because whoever writes the
+    fixture writes it in the layout the grammar already expects. So the real
+    message is kept, and the expected result is derived from the message ITSELF
+    rather than from the grammar: the index markers the newsletter prints, and
+    the summary/email pairs read straight out of the raw text.
+    """
+    report.exercised()
+    if not REAL_DIGEST.exists():
+        report.fail(
+            f"the real-digest fixture is missing ({REAL_DIGEST.name}). Without it "
+            f"the grammar is proved only against input this repository wrote, "
+            f"which is exactly the state in which it shipped unable to read 8 of "
+            f"10 real queries.")
+        return
+
+    raw = REAL_DIGEST.read_text(encoding="utf-8")
+    body = raw.split("\n\n", 1)[1]
+
+    # --- the oracle, read out of the message and not out of the grammar ----
+    expected_count = len(re.findall(r"\(#item\d+\)", body))
+    if expected_count < 5:
+        report.fail(f"the real-digest fixture declares only {expected_count} index "
+                    f"entries; it is no longer a representative digest and this "
+                    f"property is not proving anything")
+        return
+    expected_pairs = set(re.findall(
+        r"^\s*\d+\)\s*SUMMARY:\s*(.+?)\s*$.*?^\s*EMAIL:\s*(\S+)",
+        body, re.M | re.S))
+    expected_pairs = {(s, e.split("(")[0].strip()) for s, e in expected_pairs}
+
+    # This property is about the PARSER, so no model is called: the drafting key
+    # is withheld for the duration. That keeps the check deterministic, free, and
+    # runnable with no network, which is what lets it sit in the release profile.
+    saved_key = J.api_key
+    J.api_key = lambda: None
+    try:
+        got = drive(report, tmp, "realdigest", {REAL_DIGEST.name: raw})
+    finally:
+        J.api_key = saved_key
+
+    codes = {s["code"] for s in got["stops"]}
+    if "UNPARSEABLE_DIGEST" in codes:
+        report.fail("the real SOS digest is reported as unreadable")
+    if "PARTIAL_DIGEST_PARSE" in codes:
+        report.fail(
+            f"the real SOS digest still parses short: {[s for s in got['stops'] if s['code'] == 'PARTIAL_DIGEST_PARSE']}. "
+            f"The stop is doing its job; the grammar is not.")
+    if got["non_digest_messages"]:
+        report.fail("the real SOS digest was dismissed as a non-digest message")
+
+    report.exercised()
+    if got["queries_ingested"] != expected_count:
+        report.fail(
+            f"the real digest indexes {expected_count} queries and the parser "
+            f"ingested {got['queries_ingested']}. Every missing one is a query the "
+            f"owner never sees and nobody knows was there.")
+
+    # --- and the fields must belong to the query they were read from -------
+    report.exercised()
+    compiled = J.compile_formats(J.load(J.FORMATS))
+    parsed = J.parse_digest("sos", body, compiled)
+    got_pairs = {(q.get("summary", ""), q.get("email", "")) for q in parsed}
+    missing = expected_pairs - got_pairs
+    if missing:
+        report.fail(
+            f"{len(missing)} of {len(expected_pairs)} summary/address pairs did not "
+            f"survive parsing intact, e.g. {sorted(missing)[:2]}. A summary bound to "
+            f"the wrong address is a draft answering one reporter and addressed to "
+            f"another, which is worse than dropping the query.")
+
+    report.exercised()
+    for query in parsed:
+        for field, value in query.items():
+            if field == "provider":
+                continue
+            for label in PROVIDER_LABELS:
+                if label in str(value).upper():
+                    report.fail(
+                        f"the parsed {field!r} of {query.get('summary', '')[:40]!r} "
+                        f"contains the provider label {label!r}, so a block boundary "
+                        f"is wrong and one field has swallowed the next")
+                    break
+
+    report.exercised()
+    for query in parsed:
+        for required in ("summary", "outlet", "deadline", "email", "query"):
+            if not query.get(required):
+                report.fail(
+                    f"the real digest yielded a query with no {required!r} "
+                    f"({query.get('summary', '(no summary)')[:60]!r}). The owner acts "
+                    f"on these fields: a missing deadline or address makes a draft "
+                    f"unusable without her going back to the mailbox herself.")
+
+    # --- the footer must not be inside a reporter's question ---------------
+    report.exercised()
+    for query in parsed:
+        text = str(query.get("query", ""))
+        for junk in ("This email was sent to", "unsubscribe from this list",
+                     "Back to top", "Terms of Service"):
+            if junk in text:
+                report.fail(f"mailing-list boilerplate ({junk!r}) was parsed as part "
+                            f"of a reporter's question; it would be fed to the model "
+                            f"and could end up quoted back at the reporter")
+
+
 def main() -> int:
     report = Report()
     ledger = J.load(LANE / "expertise-ledger.json")
@@ -446,6 +585,7 @@ def main() -> int:
     drafts = check_recorded_digests(report, ledger, beats)
     with tempfile.TemporaryDirectory() as td:
         check_outcomes(report, Path(td))
+        check_real_digest(report, Path(td))
 
     if report.properties == 0:
         report.fail("exercised zero properties; a guard that iterates an empty list "
@@ -455,7 +595,7 @@ def main() -> int:
     print(f"JOURNALIST QUERY LANE: {status}")
     print(f"  properties exercised: {report.properties} "
           f"({len(ledger['facts'])} ledger fact(s), {drafts} recorded draft(s), "
-          f"7 guard proofs, 4 outcome proofs)")
+          f"7 guard proofs, 4 outcome proofs, 6 real-digest proofs)")
     if drafts == 0:
         print("  NAMED ZERO: no digest has been recorded yet, because ingestion is "
               "waiting on a mailbox credential. The guard was still driven through "

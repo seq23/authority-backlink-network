@@ -105,7 +105,7 @@ jobs:
         # it is printed. Silence in the log is not.
         if: always()
         run: |
-          python3 -c "import json; r=json.load(open('reports/journalist-query-scan-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('digests read:', r['digests_read'], '| ingested:', r['queries_ingested'], '| surfaced:', r['surfaced']); [print('STOP', s['code'] + ':', s['message']) for s in r['stops']]; print('nothing was sent to any journalist; this lane has no send path')"
+          python3 -c "import json; r=json.load(open('reports/journalist-query-scan-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('messages read:', r['messages_read'], '| digests:', r['digests_read'], '| ingested:', r['queries_ingested'], '| surfaced:', r['surfaced']); [print('STOP', s['code'] + ':', s['message']) for s in r['stops']]; print('nothing was sent to any journalist; this lane has no send path')"
 
       - name: Open an issue if the scan itself broke
         if: failure()
