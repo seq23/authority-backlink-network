@@ -1,7 +1,7 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T00:36:52+00:00",
-  "digests_read": 0,
+  "run_at": "2026-09-02T00:53:35+00:00",
+  "digests_read": 1,
   "queries_ingested": 0,
   "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
@@ -10,11 +10,12 @@
   "notified": false,
   "stops": [
     {
-      "code": "NO_MAILBOX_CREDENTIAL",
-      "message": "no journalist-query mailbox is configured, so no queries were ingested and none could have been missed.",
-      "unblock": "Subscribe to Source of Sources at sourceofsources.com (free, name and email only), then set the repository secrets SOS_IMAP_HOST, SOS_IMAP_USER and SOS_IMAP_PASSWORD to a mailbox that receives it."
+      "code": "UNPARSEABLE_DIGEST",
+      "message": "a 3914-character digest from Peter Shankman <peter@sourceofsources.com> produced zero parseable queries. It is being reported as unread, NOT as 'nothing relevant'.",
+      "unblock": "Correct the field labels in data/journalist-queries/query-formats.json to match the provider's current layout.",
+      "first_lines": "Add peter@sourceofsources.com to your contacts. Your first media queries arrive within 24 hours. /  /  / ** ✓ You’re In."
     }
   ],
   "drops": [],
-  "named_outcome": "NAMED STOP NO_MAILBOX_CREDENTIAL: no journalist-query mailbox is configured, so no queries were ingested and none could have been missed. This is not 'no relevant queries'; it is 'no queries were looked at'."
+  "named_outcome": "NAMED STOP: UNPARSEABLE_DIGEST"
 }
