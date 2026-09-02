@@ -7,20 +7,42 @@
     "",
     "WHAT IS AND IS NOT PROVEN, as of 2026-09-02.",
     "",
-    "The owner subscribed and the lane connected, authenticated, and read real",
-    "mail. What it read was the WELCOME email, not a query digest: 3,914",
-    "characters, subject 'Welcome to SOS!', matching to the byte what the run",
-    "reported it could not parse. No query digest has arrived yet -- Shankman's",
-    "own words are 'Your first media query will arrive within 24 hours,",
-    "Monday-Friday'.",
+    "This grammar HAS NOW MET A REAL DIGEST, and the first one it met defeated it.",
     "",
-    "So the field grammar below is STILL WRITTEN TO THE LABELLED-FIELD LAYOUT SOS",
-    "AND HARO DIGESTS USE, and is still unproven against a real digest. That is",
-    "stated here rather than quietly improved, because a grammar that has never",
-    "met its input is exactly the thing someone will later assume was verified.",
+    "On 2026-09-02 at 10:33 UTC the first real SOS digest arrived: 17,291",
+    "characters, subject '[SOS] Wednesday Morning Media Queries', carrying TEN",
+    "queries. The lane parsed TWO of them, raised PARTIAL_DIGEST_PARSE, and went",
+    "green -- the stop worked exactly as designed and is the only reason this was",
+    "not a silent loss of eight queries.",
     "",
-    "WHAT IS NOW KNOWN, stated by the publisher in that welcome email and quoted",
-    "in expected_queries_per_digest below:",
+    "Three separate defects, all reproduced against the real message, now kept",
+    "verbatim-but-redacted at tests/fixtures/journalist-queries/",
+    "sos-digest-2026-09-02.eml:",
+    "",
+    "  1. SOS separates queries with FIVE underscores. block_delimiters demanded",
+    "     six or more repeated characters, so the digest never split and the whole",
+    "     body collapsed into four blocks. parse_block returns at most one query",
+    "     per block, hence two.",
+    "",
+    "  2. Because the blocks did not split, fields CROSSED BETWEEN QUERIES:",
+    "     query 1's summary was paired with query 6's email address. That is worse",
+    "     than dropping a query -- it is a draft answering one reporter's question",
+    "     addressed to a different reporter. Nothing was sent, because this lane",
+    "     has no send path, but the owner would have been handed it to send.",
+    "",
+    "  3. SOS labels the date 'DEADLINE DATE', not 'Deadline', so no deadline was",
+    "     ever captured, and the unrecognised labels (NAME, MEDIA WEBSITE,",
+    "     MUCK RACK URL, DEADLINE TIME, TIME ZONE) were appended as continuation",
+    "     text onto whatever field preceded them.",
+    "",
+    "The fix is `query_start` below: a digest whose queries are introduced by a",
+    "numbered SUMMARY line is split on THAT, not on decorative rules, so an",
+    "ornamental row of dashes inside one reporter's question can no longer cut a",
+    "query in half and a five-underscore separator no longer has to be guessed at.",
+    "block_delimiters remains as the fallback for a provider that does not number.",
+    "",
+    "WHAT IS KNOWN ABOUT VOLUME, stated by the publisher in the welcome email and",
+    "quoted in expected_queries_per_digest below:",
     "  - two digests per day, around 6:30am and 1:30pm, occasionally a third;",
     "  - typically 10-15 queries per digest, sometimes more;",
     "  - Monday to Friday;",
@@ -29,17 +51,18 @@
     "The 10-15 figure is load-bearing: it is what makes a PARTIAL parse",
     "detectable. A digest that yields two queries when the publisher says it",
     "contains ten or more has dropped eight that nobody knows were there, and",
-    "that is worse than refusing outright.",
+    "that is worse than refusing outright. It is what caught this.",
     "",
     "The dangerous failure is not a parser that breaks; it is a parser that",
     "returns zero, or a handful, from a digest full of queries and gets reported",
     "as 'nothing relevant today'. So an unrecognised message body is a NAMED STOP",
     "called UNPARSEABLE_DIGEST, and a short read is a NAMED STOP called",
     "PARTIAL_DIGEST_PARSE. A quiet day and a broken parser must never look the",
-    "same."
+    "same. Neither stop may be removed or loosened to make a run green."
   ],
+  "query_start": "^[ \\t]*(?:\\d{1,3}\\)|\\[\\d{1,3}\\])[ \\t]*(?:Summary|SUMMARY)[ \\t]*[:\\-]",
   "block_delimiters": [
-    "^\\s*[-_=*~]{6,}\\s*$",
+    "^\\s*[-_=*~]{4,}\\s*$",
     "^\\s*\\*{3,}\\s*$"
   ],
   "field_labels": {
@@ -55,10 +78,11 @@
       "Media"
     ],
     "deadline": [
+      "Deadline Date",
+      "Deadline (ET)",
       "Deadline",
-      "Due",
       "Respond By",
-      "Deadline (ET)"
+      "Due"
     ],
     "email": [
       "Email",
@@ -80,8 +104,27 @@
       "Question",
       "Request",
       "Details"
+    ],
+    "reporter": [
+      "Name",
+      "Reporter",
+      "Journalist"
+    ],
+    "deadline_time": [
+      "Deadline Time"
+    ],
+    "timezone": [
+      "Time Zone",
+      "Timezone"
     ]
   },
+  "ignored_labels": [
+    "Muck Rack URL",
+    "Muckrack URL",
+    "Media Website",
+    "Website",
+    "Media Website URL"
+  ],
   "numbered_summary": "^\\s*(?:\\d+\\)|\\[\\d+\\])\\s*(?:Summary\\s*:)?\\s*(.+)$",
   "minimum_fields_for_a_query": [
     "summary"
@@ -96,7 +139,14 @@
     "^\\s*To unsubscribe",
     "^\\s*Unsubscribe",
     "^\\s*Copyright \\d{4}",
-    "^\\s*This list doesn't cost a dime"
+    "^\\s*This list doesn't cost a dime",
+    "^\\s*Back to top",
+    "^\\s*This email was sent to",
+    "^\\s*why did I get this",
+    "^\\s*Source of Sources Terms of Service",
+    "^\\s*Source of Sources \\(SOS\\)",
+    "^\\s*update subscription preferences",
+    "^\\s*Forwarded this email\\?"
   ],
   "expected_queries_per_digest": {
     "_source": "peter@sourceofsources.com, welcome email, 2026-09-02, verbatim: \"They'll contain queries from journalists - typically 10-15 per email, sometimes more if there's a rush.\"",

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "c84fb8b8bece5d7883bb6e57b8a4329d6cb2a95bceffbbbe621dce89676907c6",
+  "plan_sha256": "d86e785b6faa4e048d49596b30804f55508fa425520f353c7c279f6a8669910d",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,13 +13,16 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 37,
+  "count": 42,
   "counts_by_severity": {
-    "HARD_FAIL": 34,
+    "HARD_FAIL": 39,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
-  "unclassified": [],
+  "unclassified": [
+    "external_citation_coverage",
+    "wedding_cost_dataset"
+  ],
   "validators": [
     {
       "id": "affiliate_rel_disclosure",
@@ -81,6 +84,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "False evidence, already named in severity_policy. Every page states that this publication cites affiliated projects where the citation is topically relevant, which reads as an occasional editorial choice. On 2026-08-28 approval-prep was cited from 290 of professional-resources' 420 pages - 69%, and 292 of the network's 490 commercial links - while the leading brand in the other two publications sat at 31.4% and 32.7%. Every one of those links carried rel=\"sponsored nofollow\" and was inside its declared topical scope, so no existing validator could see it: each placement was individually correct and the aggregate was the defect. The disclosure being accurate made it worse, not better. This blocks on a brand over the declared third of any publication, on the cap being removed or raised in content-bank/scaling-policy.json, on the scheduler no longer withholding slots from a brand at its cap, on the per-brand APPROVAL_PREP_PAGES_PER_DAY bypass returning, and on any priority lane regaining a daily quota with no until_rendered_coverage to stop at.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "buffer_route",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A second way for a post to leave is a second way to burn the account, and this one cannot be seen from a configuration file. X's own API is pay-per-use and unfunded, so it is off and contacted zero times; Buffer carries the same posts to the same X profile for nothing, declared as platforms.x.delivery_route in data/social-brand-policy.json. Four things must hold and none of them is visible in a diff. The route must never exceed the ceiling BUFFER ITSELF reports at runtime from dailyPostingLimits -- a hardcoded number stays wrong after Buffer changes it -- and this repository's own X_DAILY_LIMIT must still cap a generous Buffer. It must spend that budget on ATTEMPTS, charged before the request is made and measured from inside the call, because caps that counted successes are exactly why 581 requests left this repository in 76 seconds on 2026-08-29. It must halt on the FIRST refusal and have no path back into the loop, while deferring the entries it did not carry rather than retiring them. And a post Buffer accepted must never also appear on reports/social-drafts.md, nor may the route take a post already sitting unposted on an open batch there -- either way she posts it by hand and Buffer posts it again, two identical posts on one profile. Alongside those: the queue is never consumed, queued-in-Buffer is recorded as 'buffer_queued' with its Buffer post id rather than as published, an unusable route falls back to the hand-post sheet with a named reason instead of silently ending X's distribution, X's own API is contacted zero times through every path, and BUFFER_ACCESS_TOKEN never reaches a log, a report, a sheet or a commit -- the publisher prints its report into the workflow log and commits it. Every property is driven through the real publisher with only Buffer's transport stubbed, and every one is proved negatively by running the opposite configuration. It fails if it exercises zero properties.",
       "profiles": [
         "changed",
         "full",
@@ -186,6 +200,17 @@
       ]
     },
     {
+      "id": "external_citation_coverage",
+      "severity": "HARD_FAIL",
+      "classified": false,
+      "rationale": "Unclassified; treated as the fail-safe default.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "external_sources",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -201,6 +226,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Unsafe publication; already separates advisory fit notes from failures.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "journalist_query_lane",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Two failures, either of which is unrecoverable and both of which are invisible in a diff. First, SENDING: pitches go out in the owner's name as a genuine expert, so an auto-sent pitch carrying one wrong fact gets printed under her name -- a correction in a real publication and a source relationship burned permanently and silently -- against an upside of about thirty seconds. There is therefore no send path, and this validator blocks the day one appears, including the day someone adds it for a good reason, because a good reason is exactly how it would arrive. It also requires the mailbox read to stay read-only. Second, INVENTING: a model handed a reporter's question and asked to write as an expert produces a confident answer whether or not the person has any first-hand knowledge, and the reporter cannot tell. So a draft may only use facts from data/journalist-queries/expertise-ledger.json, every fact must point at evidence that exists in this repository, and every number in a draft must appear in a fact the draft cited. The real verify_draft() is driven through a clean draft and six broken ones on every run. Beyond those it blocks if a recorded digest is marked as sent, if a recorded draft stops verifying against the ledger, if a query matching a hard exclusion reaches a model, or -- the quiet killer -- if a digest the parser cannot read is reported as 'no relevant queries' rather than as UNPARSEABLE_DIGEST, which is how a lane like this goes dead while still reporting green every morning. It fails if it exercises zero properties. It now also drives the REAL 2026-09-02 SOS digest, kept verbatim-but-redacted as a fixture. That property exists because every parser check before it used a fixture this repository wrote, so the grammar had never met its actual input -- and the first real digest parsed 2 of its 10 queries and paired query 1's summary with query 6's email address, which would have handed the owner a draft answering one reporter and addressed to another. PARTIAL_DIGEST_PARSE caught it and the run stayed green, which is the only reason eight queries were not lost silently. The expected result is derived from the message itself -- the index markers the newsletter prints and the summary/address pairs read out of the raw text -- and not from the grammar, so the grammar cannot mark its own homework.",
       "profiles": [
         "changed",
         "full",
@@ -234,6 +270,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Broken required journeys, and the one shape of that this gate could not see. build_site_navigation.py renders bounded navigation blocks - twelve siblings, twelve recent pages - and 3ce3dbb gave it an assertion that refused to write any page that lost a link. A bounded window over a growing library has to evict, so from the day both landed, every autopilot run that actually published something aborted the rebuild and left the new pages orphaned; run 33101813017 on 2026-08-27 is the first. Neither script is wrong alone and both pass on the committed tree, which is exactly why nothing here caught it: no check ran the workflow's own order, publish then rebuild. This one does, against a temporary copy with a synthetic new daily page in it, and requires the rebuild to complete, no eviction to leave a page unreached, and click depth to still measure zero orphans. It also fails if the fixture stops evicting anything, because a guard that no longer exercises its case is not a guard.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "no_manual_lane",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A lane whose only consumer will never consume it. Until 2026-08-29 a run that could not post to X wrote the day's highest-value posts to reports/social-drafts.md for the owner to paste in herself and mark done with one field in data/social-draft-ledger.json. Shown what that asked of her she said \"this means i manually have to do it? i will never do it honestly\", so every run was producing a standing instruction that would never be followed -- worse than none, because the report kept presenting a growing pile of posts as pending work. Buffer carries the same posts to the same X profile from a free plan for nothing, so the manual lane was DELETED rather than left dormant, and this validator keeps it deleted. It drives the real publisher with Buffer's transport stubbed and every network path counted, and blocks if the retired files are back in the tree or still imported, if any run writes a sheet for a person to act on (watched at the directory level, not by trusting a path constant), if any surface instructs the owner to post or to mark anything, if the report stops counting what the route could not carry, if the free plan's standing queue-depth allowance is exceeded or is found by being refused at it rather than discovered before the request, if that depth is not read from Buffer at runtime, if a post the route could not take is dropped, retired or parked anywhere instead of staying queued_for_auto_post and going out on the NEXT run (proved across two consecutive runs against the same queue), if a post at or before marked_posted_through is sent again or that record is rewritten, if a post drafted and never posted is held back from Buffer, if X's own pay-per-use API is contacted even once, or if switching the route off resurrects a manual lane rather than leaving the entries to wait. It fails if it exercises zero properties.",
       "profiles": [
         "changed",
         "full",
@@ -358,17 +405,6 @@
       ]
     },
     {
-      "id": "no_manual_lane",
-      "severity": "HARD_FAIL",
-      "classified": true,
-      "rationale": "A lane whose only consumer will never consume it. Until 2026-08-29 a run that could not post to X wrote the day's highest-value posts to reports/social-drafts.md for the owner to paste in herself and mark done with one field in data/social-draft-ledger.json. Shown what that asked of her she said \"this means i manually have to do it? i will never do it honestly\", so every run was producing a standing instruction that would never be followed -- worse than none, because the report kept presenting a growing pile of posts as pending work. Buffer carries the same posts to the same X profile from a free plan for nothing, so the manual lane was DELETED rather than left dormant, and this validator keeps it deleted. It drives the real publisher with Buffer's transport stubbed and every network path counted, and blocks if the retired files are back in the tree or still imported, if any run writes a sheet for a person to act on (watched at the directory level, not by trusting a path constant), if any surface instructs the owner to post or to mark anything, if the report stops counting what the route could not carry, if the free plan's standing queue-depth allowance is exceeded or is found by being refused at it rather than discovered before the request, if that depth is not read from Buffer at runtime, if a post the route could not take is dropped, retired or parked anywhere instead of staying queued_for_auto_post and going out on the NEXT run (proved across two consecutive runs against the same queue), if a post at or before marked_posted_through is sent again or that record is rewritten, if a post drafted and never posted is held back from Buffer, if X's own pay-per-use API is contacted even once, or if switching the route off resurrects a manual lane rather than leaving the entries to wait. It fails if it exercises zero properties.",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
       "id": "social_enqueue_completeness",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -413,10 +449,32 @@
       ]
     },
     {
+      "id": "uscis_changelog",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "A YMYL page whose entries a language model writes. The lane publishes a dated record of what changed on the USCIS filing-fee and form-edition pages, and the plan it comes from warns twice that a stale or wrong entry here is a harmful one. Two different things can put an unsupported sentence on that page: the model, which produces a fluent claim about a fee or an edition date that was never in the diff, and a person, who opens data/uscis-changelog/entries.json or the HTML and improves a headline or tidies a quote. scripts/uscis_changelog.py catches the first at write time; nothing catches the second, because no run happened. So this validator re-derives the check offline against the evidence stored with each entry -- every quoted line must appear verbatim in that entry's own stored added or removed lines -- and a hand edit fails exactly the way a hallucination does. It also blocks if an entry exists in the data file but not on the published page, if a published entry omits the agency URL or the date it was checked, if any entry's prose crosses the publication's advice boundary, if a tracked source is not registered and HTTP-200 verified in data/external-sources.json, if a snapshot's stored sha256 does not match its stored lines, or if a source that has never been successfully reached is not shown as such on the page -- that last one being how a changelog goes silently stale while its own green receipt says it is healthy. The real verify() is driven through a clean synthetic entry and five broken ones on EVERY run, including weeks with no entries, so a green receipt is never an empty loop. It fails if it examines zero items.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "wedding_cost_dataset",
+      "severity": "HARD_FAIL",
+      "classified": false,
+      "rationale": "Unclassified; treated as the fail-safe default.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "workflow_trace",
       "severity": "HARD_FAIL",
       "classified": true,
-      "rationale": "Workflow safety: a broken trace means release automation cannot be reasoned about.",
+      "rationale": "Workflow safety: a broken trace means release automation cannot be reasoned about. It also carries the plumbing contract for the two citation lanes (journalist query scan, USCIS changelog), which is what turned them red on 2026-09-02 while both lanes themselves worked. Two distinct defects, both guarded here. First, a COMMIT PATHSPEC THAT CAN MATCH NOTHING: git-auto-commit-action exits 128 on it, and the journalist lane's pattern named an empty digests directory, so the designed, correct, most common outcome of that lane -- a day with nothing worth surfacing -- turned the workflow red. Every pathspec on both lanes is now checked against git ls-files. Second, TWO LANES PUSHING TO MAIN WITHOUT A SHARED CONCURRENCY GROUP: git-auto-commit-action does not rebase, so dispatching both at once produced a non-fast-forward push and a red run on a lane that had done its work perfectly. Both must declare the same group with cancel-in-progress false. It also blocks continue-on-error and '|| true' on those lanes, because a legitimate named stop must be green on purpose and never green by suppression. It fails if it examined zero commit pathspecs.",
       "profiles": [
         "full",
         "release"
