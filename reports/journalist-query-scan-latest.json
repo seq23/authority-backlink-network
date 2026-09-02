@@ -1,6 +1,6 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T00:32:09+00:00",
+  "run_at": "2026-09-02T00:34:04+00:00",
   "digests_read": 0,
   "queries_ingested": 0,
   "dropped_by_beat_filter": 0,
@@ -8,7 +8,13 @@
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
-  "stops": [],
+  "stops": [
+    {
+      "code": "NO_MAILBOX_CREDENTIAL",
+      "message": "no journalist-query mailbox is configured, so no queries were ingested and none could have been missed.",
+      "unblock": "Subscribe to Source of Sources at sourceofsources.com (free, name and email only), then set the repository secrets SOS_IMAP_HOST, SOS_IMAP_USER and SOS_IMAP_PASSWORD to a mailbox that receives it."
+    }
+  ],
   "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NAMED STOP NO_MAILBOX_CREDENTIAL: no journalist-query mailbox is configured, so no queries were ingested and none could have been missed. This is not 'no relevant queries'; it is 'no queries were looked at'."
 }
