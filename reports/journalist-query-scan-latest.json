@@ -1,9 +1,15 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T01:09:20+00:00",
-  "digests_read": 0,
+  "run_at": "2026-09-02T01:10:44+00:00",
+  "digests_read": 1,
   "queries_ingested": 0,
-  "non_digest_messages": [],
+  "non_digest_messages": [
+    {
+      "from": "Peter Shankman <peter@sourceofsources.com>",
+      "subject": "Welcome to SOS!",
+      "signature": "sos-welcome"
+    }
+  ],
   "already_surfaced": 0,
   "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
@@ -12,5 +18,5 @@
   "notified": false,
   "stops": [],
   "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO QUERY DIGEST YET: 1 message(s) were read and every one is a recognised non-digest (sos-welcome). No digest has arrived, so no query was looked at. This is NOT 'no relevant queries'."
 }
