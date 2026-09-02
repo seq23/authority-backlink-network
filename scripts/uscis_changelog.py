@@ -571,7 +571,18 @@ def run(offline: bool, model: str) -> dict:
         # "no change this week" is a legitimate, named outcome. Silence is not.
         "named_outcome": (
             "BLIND" if blind else
-            "SOURCES_UNREACHABLE" if any(o["status"].startswith("NAMED_STOP") for o in outcomes) else
+            # Matched on the FETCH failures specifically. Matching every
+            # NAMED_STOP_* status made a run that fetched all three pages fine
+            # and merely lacked an API key report itself as
+            # SOURCES_UNREACHABLE -- a named outcome that named the wrong thing,
+            # which on a Rule 0 receipt is the whole of the value lost.
+            "SOURCES_UNREACHABLE" if any(
+                o["status"] in ("NAMED_STOP_UNREACHABLE", "NAMED_STOP_UNREADABLE")
+                for o in outcomes) else
+            "HELD: a change was detected and could not be described this run "
+            "(no API key); the snapshot was not advanced, so it is retried next "
+            "run rather than lost."
+            if any(o["status"] == "NAMED_STOP_NO_API_KEY" for o in outcomes) else
             "OFFLINE_NO_OBSERVATION" if offline else
             f"{len(new_entries)} entr{'y' if len(new_entries) == 1 else 'ies'} published"
             if new_entries else
