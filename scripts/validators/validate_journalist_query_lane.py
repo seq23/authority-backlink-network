@@ -340,6 +340,79 @@ def check_outcomes(report: Report, tmp: Path) -> None:
     if "NO RELEVANT QUERIES" in broken["named_outcome"]:
         report.fail("an unreadable digest was reported as 'no relevant queries'")
 
+    # --- the REAL welcome email must not read as a broken parser -----------
+    # tests/fixtures/journalist-queries/sos-welcome-2026-09-02.eml is the actual
+    # message the owner received, kept verbatim but for her name and the
+    # unsubscribe token. Before it was recognised, the lane read it as a digest,
+    # parsed it to zero queries, and raised UNPARSEABLE_DIGEST -- a false stop
+    # that would have fired every run for two days and taught its reader to
+    # ignore the real one.
+    report.exercised()
+    welcome = (ROOT / "tests/fixtures/journalist-queries/"
+                      "sos-welcome-2026-09-02.eml")
+    if not welcome.exists():
+        report.fail(f"the real welcome-email fixture is missing ({welcome.name}); the "
+                    f"non-digest path would be proved only against invented input")
+    else:
+        got = drive(report, tmp, "welcome", {welcome.name: welcome.read_text(encoding="utf-8")})
+        if [m["signature"] for m in got["non_digest_messages"]] != ["sos-welcome"]:
+            report.fail("the real SOS welcome email is not recognised as a non-digest; "
+                        "it would raise a false UNPARSEABLE_DIGEST on every run")
+        if got["stops"]:
+            report.fail(f"the real welcome email produced stop(s) "
+                        f"{[x['code'] for x in got['stops']]}; a welcome email is not a "
+                        f"broken parser")
+        if "NO RELEVANT QUERIES" in got["named_outcome"]:
+            report.fail("a run that read only a welcome email reported 'no relevant "
+                        "queries'; no query was looked at")
+
+        # And the excuse must be narrow. A REAL digest that happens to carry
+        # welcome-ish wording must still be parsed, never dismissed.
+        report.exercised()
+        # The subject deliberately MATCHES the welcome signature. Only the body
+        # markers distinguish this real digest from the real welcome email, so
+        # this is what proves recognition needs both.
+        disguised = ("From: Peter Shankman <peter@sourceofsources.com>\n"
+                     "Subject: Welcome to SOS! Here are today's queries\n\n"
+                     + FIXTURE_DIGEST)
+        got2 = drive(report, tmp, "disguised", {"d.eml": disguised})
+        if got2["non_digest_messages"]:
+            report.fail("a digest carrying a stray welcome phrase was dismissed as a "
+                        "non-digest. Recognition must require the subject AND the body "
+                        "markers, or a changed format gets excused as a welcome email.")
+        if got2["queries_ingested"] < 2:
+            report.fail(f"the disguised digest yielded {got2['queries_ingested']} "
+                        f"queries; its blocks must still be parsed")
+
+    # --- a short read must be named, not silently accepted -----------------
+    # The publisher states 10-15 queries per digest. A digest parsing to two has
+    # dropped eight nobody knows were there, which is the quiet version of the
+    # failure above.
+    report.exercised()
+    short = drive(report, tmp, "short", {"d.eml":
+        "From: Peter Shankman <peter@sourceofsources.com>\n"
+        "Subject: SOS Queries\n\n" + FIXTURE_DIGEST})
+    codes = {x["code"] for x in short["stops"]}
+    if "PARTIAL_DIGEST_PARSE" not in codes:
+        report.fail("a digest parsing to fewer queries than the declared floor did not "
+                    "raise PARTIAL_DIGEST_PARSE. A partial parse drops queries silently, "
+                    "which is the failure mode this repository keeps finding.")
+    if short["queries_ingested"] < 2:
+        report.fail("a partially parsed digest must still process the queries it DID "
+                    "read; naming the gap is not a reason to discard the rest")
+
+    # --- the same query is never surfaced twice ----------------------------
+    # The mailbox is read with a lookback window, so consecutive runs see the
+    # same digest.
+    report.exercised()
+    ids = [J.query_identity(q) for q in
+           J.parse_digest("sos", FIXTURE_DIGEST, J.compile_formats(J.load(J.FORMATS)))]
+    if len(ids) != len(set(ids)):
+        report.fail("two different queries in one digest share an identity; one would "
+                    "silently suppress the other")
+    if any(not i for i in ids):
+        report.fail("a query produced an empty identity, so dedupe would not hold")
+
     # --- the parser and the exclusions, on a real-shaped digest ------------
     report.exercised()
     compiled = J.compile_formats(J.load(J.FORMATS))

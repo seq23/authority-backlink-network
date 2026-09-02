@@ -46,6 +46,7 @@ from __future__ import annotations
 
 import argparse
 import email
+import hashlib
 import imaplib
 import json
 import os
@@ -133,7 +134,8 @@ def imap_messages(cfg: dict) -> list[tuple[str, str]]:
                 if typ != "OK" or not raw or not raw[0]:
                     continue
                 msg = email.message_from_bytes(raw[0][1], policy=policy.default)
-                out.append((str(msg.get("From", sender)), message_text(msg)))
+                out.append((str(msg.get("From", sender)),
+                            str(msg.get("Subject", "")), message_text(msg)))
     finally:
         try:
             conn.logout()
@@ -165,9 +167,12 @@ def dir_messages(inbox: Path) -> list[tuple[str, str]]:
         raw = path.read_text(encoding="utf-8", errors="replace")
         if path.suffix.lower() == ".eml":
             msg = email.message_from_string(raw, policy=policy.default)
-            out.append((str(msg.get("From", path.name)), message_text(msg)))
+            out.append((str(msg.get("From", path.name)),
+                        str(msg.get("Subject", "")), message_text(msg)))
         else:
-            out.append((path.name, raw))
+            first = raw.lstrip().splitlines()[0] if raw.strip() else ""
+            subject = first[8:].strip() if first.lower().startswith("subject:") else ""
+            out.append((path.name, subject, raw))
     return out
 
 
@@ -237,6 +242,42 @@ def parse_digest(sender: str, body: str, compiled: dict) -> list[dict]:
             parsed["provider"] = sender
             queries.append(parsed)
     return queries
+
+
+
+def non_digest_signature(subject: str, body: str, formats: dict) -> str | None:
+    """Positively identify a message that is not a query digest at all.
+
+    Recognition is by DECLARED signature only. "It had no query markers" is not
+    grounds for excusing a message, because that is also exactly what a changed
+    format looks like, and excusing it is how this lane would go silently dead.
+    A signature needs its subject pattern AND every one of its body markers, so
+    a real digest carrying a stray phrase is never dismissed.
+    """
+    for sig in formats.get("non_digest_messages", {}).get("signatures", []):
+        if not re.search(sig["subject"], subject or "", re.I):
+            continue
+        if all(re.search(re.escape(m), body, re.I) for m in sig["body_requires_all"]):
+            return sig["id"]
+    return None
+
+
+def partial_parse_floor(formats: dict) -> int:
+    return int(formats.get("expected_queries_per_digest", {})
+               .get("partial_parse_floor", 0) or 0)
+
+
+def query_identity(query: dict) -> str:
+    """Stable id for one query, so the same one is never surfaced twice.
+
+    The mailbox is read with a lookback window, so consecutive runs see the same
+    digest. Without this the same query would be drafted and surfaced every
+    morning until it aged out -- the lane would look busy while repeating itself,
+    and she would learn to skim it.
+    """
+    basis = "|".join(str(query.get(f, "")).strip().lower()
+                     for f in ("summary", "email", "deadline", "outlet"))
+    return hashlib.sha256(basis.encode("utf-8")).hexdigest()[:16]
 
 
 # ---------------------------------------------------------------- prefilter
@@ -539,6 +580,8 @@ def run(args) -> dict:
         "run_at": now,
         "digests_read": 0,
         "queries_ingested": 0,
+        "non_digest_messages": [],
+        "already_surfaced": 0,
         "dropped_by_beat_filter": 0,
         "dropped_as_ungroundable": 0,
         "dropped_by_grounding_guard": 0,
@@ -572,25 +615,67 @@ def run(args) -> dict:
 
     receipt["digests_read"] = len(messages)
 
+    formats = load(FORMATS)
+    floor = partial_parse_floor(formats)
     queries: list[dict] = []
-    for sender, body in messages:
+    for sender, subject, body in messages:
+        signature = non_digest_signature(subject, body, formats)
+        if signature:
+            # Positively recognised as not a digest. Counted and named, never a
+            # stop: the welcome email is not a broken parser.
+            receipt["non_digest_messages"].append(
+                {"from": sender, "subject": subject[:120], "signature": signature})
+            continue
+
         parsed = parse_digest(sender, body, compiled)
         if not parsed and len(body.strip()) > 200:
             # The failure that must never look like a quiet day.
             head = " / ".join(body.strip().splitlines()[:4])[:300]
             receipt["stops"].append({
                 "code": "UNPARSEABLE_DIGEST",
-                "message": f"a {len(body)}-character digest from {sender} produced zero "
-                           f"parseable queries. It is being reported as unread, NOT as "
-                           f"'nothing relevant'.",
-                "unblock": "Correct the field labels in "
-                           "data/journalist-queries/query-formats.json to match the "
-                           "provider's current layout.",
+                "message": f"a {len(body)}-character message from {sender} "
+                           f"(subject {subject[:80]!r}) produced zero parseable "
+                           f"queries and matches no declared non-digest signature. "
+                           f"It is being reported as UNREAD, NOT as 'nothing "
+                           f"relevant'.",
+                "unblock": "If it is a digest, correct the field labels in "
+                           "data/journalist-queries/query-formats.json. If it is not "
+                           "a digest, declare its signature in the same file under "
+                           "non_digest_messages.",
                 "first_lines": head})
             continue
+
+        if parsed and floor and len(parsed) < floor:
+            # A short read is the quiet version of the same failure. The
+            # publisher states 10-15 queries per digest, so a digest yielding two
+            # has dropped eight that nobody knows were there.
+            receipt["stops"].append({
+                "code": "PARTIAL_DIGEST_PARSE",
+                "message": f"a {len(body)}-character digest from {sender} parsed to "
+                           f"only {len(parsed)} quer"
+                           f"{'y' if len(parsed) == 1 else 'ies'}, below the floor of "
+                           f"{floor}. The publisher states these carry 10-15. The "
+                           f"{len(parsed)} that parsed ARE being processed below; this "
+                           f"stop exists because the ones that did not are invisible.",
+                "unblock": "Compare the digest against the field labels in "
+                           "data/journalist-queries/query-formats.json.",
+                "parsed": len(parsed)})
         queries.extend(parsed)
 
     receipt["queries_ingested"] = len(queries)
+
+    # Never surface the same query twice. The mailbox is read with a lookback
+    # window, so consecutive runs see the same digest.
+    already = set(state.get("surfaced_ids", []))
+    fresh_queries = []
+    for query in queries:
+        qid = query_identity(query)
+        if qid in already:
+            receipt["already_surfaced"] += 1
+            continue
+        query["_id"] = qid
+        fresh_queries.append(query)
+    queries = fresh_queries
 
     # ---------------------------------------------------------- prefilter
     candidates: list[tuple[dict, str]] = []
@@ -638,7 +723,7 @@ def run(args) -> dict:
                         "why": "; ".join(problems)[:300]})
                     continue
                 surfaced.append({
-                    "query": query, "beat": beat,
+                    "id": query.get("_id"), "query": query, "beat": beat,
                     "draft": drafted["draft"].strip(),
                     "facts_used": drafted["facts_used"],
                     "why": drafted.get("why", "")})
@@ -647,6 +732,9 @@ def run(args) -> dict:
 
     # ------------------------------------------------------------ surface
     if surfaced:
+        state["surfaced_ids"] = sorted(
+            set(state.get("surfaced_ids", [])) | {r["id"] for r in surfaced if r.get("id")}
+        )[-500:]
         write_json(DIGESTS / f"{today}.json",
                    {"date": today, "generated_at": now, "sent": False,
                     "note": "Nothing here was sent to anyone. Drafts are for the owner "
@@ -674,6 +762,23 @@ def run(args) -> dict:
     elif receipt["stops"]:
         receipt["named_outcome"] = (
             "NAMED STOP: " + "; ".join(s["code"] for s in receipt["stops"]))
+    elif receipt["already_surfaced"] and not receipt["surfaced"] and not receipt["stops"]:
+        receipt["named_outcome"] = (
+            f"ALREADY HANDLED: {receipt['queries_ingested']} quer"
+            f"{'y' if receipt['queries_ingested'] == 1 else 'ies'} were read and nothing "
+            f"new was surfaced -- {receipt['already_surfaced']} had already been "
+            f"surfaced on an earlier run and "
+            f"{receipt['dropped_by_beat_filter']} matched no beat. The mailbox is read "
+            f"with a lookback window on purpose, so a missed run never loses a digest; "
+            f"nothing is ever surfaced twice.")
+    elif (receipt["non_digest_messages"] and not receipt["queries_ingested"]
+          and not receipt["stops"]):
+        receipt["named_outcome"] = (
+            f"NO QUERY DIGEST YET: {len(receipt['non_digest_messages'])} message(s) "
+            f"were read and every one is a recognised non-digest "
+            f"({', '.join(m['signature'] for m in receipt['non_digest_messages'])}). "
+            f"No digest has arrived, so no query was looked at. This is NOT "
+            f"'no relevant queries'.")
     else:
         receipt["named_outcome"] = (
             f"NO RELEVANT QUERIES: {receipt['queries_ingested']} quer"
@@ -681,8 +786,10 @@ def run(args) -> dict:
             f"{receipt['digests_read']} digest(s) and every one was dropped "
             f"({receipt['dropped_by_beat_filter']} off-beat, "
             f"{receipt['dropped_as_ungroundable']} not answerable from first-hand work, "
-            f"{receipt['dropped_by_grounding_guard']} drafted but ungrounded). "
-            f"Nothing was sent, and nothing should have been.")
+            f"{receipt['dropped_by_grounding_guard']} drafted but ungrounded"
+            + (f", {receipt['already_surfaced']} already surfaced on an earlier run"
+               if receipt["already_surfaced"] else "")
+            + "). Nothing was sent, and nothing should have been.")
 
     announce_stops(receipt, state, args)
     state["last_run"] = now
@@ -703,8 +810,11 @@ def main() -> int:
     receipt = run(args)
     print("JOURNALIST QUERY SCAN")
     print(f"  named outcome: {receipt['named_outcome']}")
-    print(f"  digests read: {receipt['digests_read']}; queries ingested: "
-          f"{receipt['queries_ingested']}; surfaced: {receipt['surfaced']}")
+    print(f"  messages read: {receipt['digests_read']}; "
+          f"non-digest: {len(receipt['non_digest_messages'])}; "
+          f"queries ingested: {receipt['queries_ingested']}; "
+          f"already surfaced: {receipt['already_surfaced']}; "
+          f"surfaced: {receipt['surfaced']}")
     for drop in receipt["drops"][:10]:
         print(f"  [dropped] {drop['summary']!r}: {drop['why']}")
     for stop in receipt["stops"]:

@@ -5,39 +5,139 @@
     "code so it can be corrected the day a provider changes its layout without",
     "touching the filtering or drafting logic.",
     "",
-    "This grammar was NOT built from a captured sample. Nobody in this account is",
-    "subscribed yet (see data/journalist-queries/beats.json, ingestion._verified),",
-    "so it is written to the labelled-field layout SOS and HARO digests use, and",
-    "it is written to FAIL LOUDLY rather than to guess.",
+    "WHAT IS AND IS NOT PROVEN, as of 2026-09-02.",
     "",
-    "That last part is the whole design. The dangerous failure here is not a",
-    "parser that breaks; it is a parser that returns zero queries from a digest",
-    "full of them and gets reported as 'nothing relevant today'. So a message body",
-    "that yields no parseable block is a NAMED STOP called UNPARSEABLE_DIGEST that",
-    "names the provider and quotes the first lines it could not read. A quiet day",
-    "and a broken parser must never look the same."
+    "The owner subscribed and the lane connected, authenticated, and read real",
+    "mail. What it read was the WELCOME email, not a query digest: 3,914",
+    "characters, subject 'Welcome to SOS!', matching to the byte what the run",
+    "reported it could not parse. No query digest has arrived yet -- Shankman's",
+    "own words are 'Your first media query will arrive within 24 hours,",
+    "Monday-Friday'.",
+    "",
+    "So the field grammar below is STILL WRITTEN TO THE LABELLED-FIELD LAYOUT SOS",
+    "AND HARO DIGESTS USE, and is still unproven against a real digest. That is",
+    "stated here rather than quietly improved, because a grammar that has never",
+    "met its input is exactly the thing someone will later assume was verified.",
+    "",
+    "WHAT IS NOW KNOWN, stated by the publisher in that welcome email and quoted",
+    "in expected_queries_per_digest below:",
+    "  - two digests per day, around 6:30am and 1:30pm, occasionally a third;",
+    "  - typically 10-15 queries per digest, sometimes more;",
+    "  - Monday to Friday;",
+    "  - a source replies directly to the reporter.",
+    "",
+    "The 10-15 figure is load-bearing: it is what makes a PARTIAL parse",
+    "detectable. A digest that yields two queries when the publisher says it",
+    "contains ten or more has dropped eight that nobody knows were there, and",
+    "that is worse than refusing outright.",
+    "",
+    "The dangerous failure is not a parser that breaks; it is a parser that",
+    "returns zero, or a handful, from a digest full of queries and gets reported",
+    "as 'nothing relevant today'. So an unrecognised message body is a NAMED STOP",
+    "called UNPARSEABLE_DIGEST, and a short read is a NAMED STOP called",
+    "PARTIAL_DIGEST_PARSE. A quiet day and a broken parser must never look the",
+    "same."
   ],
   "block_delimiters": [
     "^\\s*[-_=*~]{6,}\\s*$",
     "^\\s*\\*{3,}\\s*$"
   ],
   "field_labels": {
-    "summary": ["Summary", "Subject", "Title"],
-    "outlet": ["Media Outlet", "Outlet", "Publication", "Media"],
-    "deadline": ["Deadline", "Due", "Respond By", "Deadline (ET)"],
-    "email": ["Email", "Reply To", "Contact", "Pitch To"],
-    "category": ["Category", "Categories", "Beat"],
-    "requirements": ["Requirements", "Requirement"],
-    "query": ["Query", "Question", "Request", "Details"]
+    "summary": [
+      "Summary",
+      "Subject",
+      "Title"
+    ],
+    "outlet": [
+      "Media Outlet",
+      "Outlet",
+      "Publication",
+      "Media"
+    ],
+    "deadline": [
+      "Deadline",
+      "Due",
+      "Respond By",
+      "Deadline (ET)"
+    ],
+    "email": [
+      "Email",
+      "Reply To",
+      "Contact",
+      "Pitch To"
+    ],
+    "category": [
+      "Category",
+      "Categories",
+      "Beat"
+    ],
+    "requirements": [
+      "Requirements",
+      "Requirement"
+    ],
+    "query": [
+      "Query",
+      "Question",
+      "Request",
+      "Details"
+    ]
   },
   "numbered_summary": "^\\s*(?:\\d+\\)|\\[\\d+\\])\\s*(?:Summary\\s*:)?\\s*(.+)$",
-  "minimum_fields_for_a_query": ["summary"],
-  "must_also_have_one_of": ["query", "email", "deadline"],
+  "minimum_fields_for_a_query": [
+    "summary"
+  ],
+  "must_also_have_one_of": [
+    "query",
+    "email",
+    "deadline"
+  ],
   "strip_trailing_from_body": [
     "^\\s*You are receiving this email because",
     "^\\s*To unsubscribe",
     "^\\s*Unsubscribe",
     "^\\s*Copyright \\d{4}",
     "^\\s*This list doesn't cost a dime"
-  ]
+  ],
+  "expected_queries_per_digest": {
+    "_source": "peter@sourceofsources.com, welcome email, 2026-09-02, verbatim: \"They'll contain queries from journalists - typically 10-15 per email, sometimes more if there's a rush.\"",
+    "typical_low": 10,
+    "typical_high": 15,
+    "_partial_parse_floor_note": "A digest that parses to fewer than `partial_parse_floor` queries is reported as PARTIAL_DIGEST_PARSE. Set below the stated low rather than at it: a genuinely light day is possible and should not be a stop, but a digest yielding a couple of queries when ten-plus were sent is a silent drop and must be named.",
+    "partial_parse_floor": 5
+  },
+  "non_digest_messages": {
+    "_why": [
+      "Not every message from the provider is a query digest. The welcome email is",
+      "not, and neither is an unsubscribe confirmation or an account notice. Before",
+      "this existed, the welcome email was read as a digest, parsed to zero queries,",
+      "and produced UNPARSEABLE_DIGEST -- a false stop that would have fired on",
+      "every run for two days and taught its reader to ignore the real one.",
+      "",
+      "Recognition is POSITIVE and declared. A message is only excused from the",
+      "digest guard if it MATCHES something here. 'It had no query markers' is not",
+      "grounds for excusing it, because that is also exactly what a changed format",
+      "looks like -- and excusing that is how the lane would go silently dead.",
+      "",
+      "Each entry needs a subject pattern AND a body marker, so a real digest that",
+      "happens to carry a stray phrase is never dismissed."
+    ],
+    "signatures": [
+      {
+        "id": "sos-welcome",
+        "note": "Observed in the owner's mailbox 2026-09-02, message 1a05f93be032e631.",
+        "subject": "^\\s*Welcome to SOS",
+        "body_requires_all": [
+          "Welcome to the Source of Sources community"
+        ]
+      },
+      {
+        "id": "sos-unsubscribe-confirmation",
+        "note": "Not yet observed; declared because an unsubscribe confirmation is the other message a list sends that is not a digest.",
+        "subject": "unsubscrib",
+        "body_requires_all": [
+          "unsubscrib"
+        ]
+      }
+    ]
+  }
 }

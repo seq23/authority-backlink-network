@@ -1,21 +1,16 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T00:53:35+00:00",
-  "digests_read": 1,
+  "run_at": "2026-09-02T01:09:20+00:00",
+  "digests_read": 0,
   "queries_ingested": 0,
+  "non_digest_messages": [],
+  "already_surfaced": 0,
   "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
-  "stops": [
-    {
-      "code": "UNPARSEABLE_DIGEST",
-      "message": "a 3914-character digest from Peter Shankman <peter@sourceofsources.com> produced zero parseable queries. It is being reported as unread, NOT as 'nothing relevant'.",
-      "unblock": "Correct the field labels in data/journalist-queries/query-formats.json to match the provider's current layout.",
-      "first_lines": "Add peter@sourceofsources.com to your contacts. Your first media queries arrive within 24 hours. /  /  / ** ✓ You’re In."
-    }
-  ],
+  "stops": [],
   "drops": [],
-  "named_outcome": "NAMED STOP: UNPARSEABLE_DIGEST"
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }

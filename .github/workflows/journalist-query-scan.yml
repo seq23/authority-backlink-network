@@ -22,9 +22,17 @@ name: Journalist Query Scan
 on:
   workflow_dispatch:
   schedule:
-    # 12:30 UTC, before the US working day, so a same-day deadline is still
-    # answerable when she reads it.
-    - cron: '30 12 * * 1-5'
+    # SOS sends TWICE a day. Peter Shankman's own welcome email: "You'll receive
+    # two emails from me per day, usually around 6:30am and another around
+    # 1:30pm" -- Eastern, weekdays. A single morning run would have read the
+    # 6:30am digest and never seen the 1:30pm one until the next day, by which
+    # point half of its deadlines are gone.
+    #
+    # 12:00 UTC is 8:00am ET; 18:15 UTC is 2:15pm ET. Both sit shortly after a
+    # send. Re-reading a digest is safe: queries are deduplicated by identity
+    # across runs, so the same one is never surfaced twice.
+    - cron: '0 12 * * 1-5'
+    - cron: '15 18 * * 1-5'
 
 permissions:
   contents: write

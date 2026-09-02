@@ -22,41 +22,97 @@
     {
       "id": "memphis-events",
       "label": "Memphis events, venues, vendors and wedding cost",
-      "keywords": ["memphis", "tennessee wedding", "wedding cost", "wedding budget",
-                   "wedding vendor", "venue cost", "catering cost", "event budget",
-                   "cost per guest", "guest count", "wedding photographer cost",
-                   "florist cost", "reception cost", "wedding pricing"]
+      "keywords": [
+        "memphis",
+        "tennessee wedding",
+        "wedding cost",
+        "wedding budget",
+        "wedding vendor",
+        "venue cost",
+        "catering cost",
+        "event budget",
+        "cost per guest",
+        "guest count",
+        "wedding photographer cost",
+        "florist cost",
+        "reception cost",
+        "wedding pricing"
+      ]
     },
     {
       "id": "event-production",
       "label": "Virtual and hybrid event production",
-      "keywords": ["virtual event", "hybrid event", "event production", "livestream",
-                   "webinar", "conference production", "run of show", "av production",
-                   "event tech", "attendee engagement", "event logistics",
-                   "accessible event", "event accessibility", "captioning"]
+      "keywords": [
+        "virtual event",
+        "hybrid event",
+        "event production",
+        "livestream",
+        "webinar",
+        "conference production",
+        "run of show",
+        "av production",
+        "event tech",
+        "attendee engagement",
+        "event logistics",
+        "accessible event",
+        "event accessibility",
+        "captioning"
+      ]
     },
     {
       "id": "small-team-operations",
       "label": "Operations for small teams",
-      "keywords": ["small team", "solo founder", "operations", "standard operating",
-                   "sop", "process documentation", "automation", "lean team",
-                   "operating cadence", "workflow", "founder", "bootstrapped",
-                   "small business owner", "outsourcing", "delegation"]
+      "keywords": [
+        "small team",
+        "solo founder",
+        "operations",
+        "standard operating",
+        "sop",
+        "process documentation",
+        "automation",
+        "lean team",
+        "operating cadence",
+        "workflow",
+        "founder",
+        "bootstrapped",
+        "small business owner",
+        "outsourcing",
+        "delegation"
+      ]
     },
     {
       "id": "immigration-documentation",
       "label": "Immigration documentation and form or fee changes",
-      "keywords": ["uscis", "immigration form", "immigration fee", "filing fee",
-                   "green card", "naturalization", "form i-", "form n-",
-                   "immigration paperwork", "immigration document", "civil surgeon",
-                   "immigration medical"]
+      "keywords": [
+        "uscis",
+        "immigration form",
+        "immigration fee",
+        "filing fee",
+        "green card",
+        "naturalization",
+        "form i-",
+        "form n-",
+        "immigration paperwork",
+        "immigration document",
+        "civil surgeon",
+        "immigration medical"
+      ]
     },
     {
       "id": "self-service-document-prep",
       "label": "Self-service document preparation",
-      "keywords": ["document preparation", "self-service legal", "diy paperwork",
-                   "form filling", "paperwork help", "checklist", "document checklist",
-                   "prepare documents", "notary", "pro se"]
+      "keywords": [
+        "document preparation",
+        "self-service legal",
+        "diy paperwork",
+        "form filling",
+        "paperwork help",
+        "checklist",
+        "document checklist",
+        "prepare documents",
+        "notary",
+        "pro se"
+      ]
     }
   ],
   "hard_exclusions": {
@@ -66,10 +122,24 @@
       "way to never send a wrong answer is to never draft one."
     ],
     "phrases": [
-      "legal advice", "attorney", "lawyer", "immigration attorney", "law firm",
-      "medical advice", "physician", "diagnosis", "therapist", "mental health advice",
-      "financial advice", "investment", "tax advice", "cpa",
-      "visa denial", "deportation", "removal proceedings", "asylum"
+      "legal advice",
+      "attorney",
+      "lawyer",
+      "immigration attorney",
+      "law firm",
+      "medical advice",
+      "physician",
+      "diagnosis",
+      "therapist",
+      "mental health advice",
+      "financial advice",
+      "investment",
+      "tax advice",
+      "cpa",
+      "visa denial",
+      "deportation",
+      "removal proceedings",
+      "asylum"
     ]
   },
   "ingestion": {
@@ -96,7 +166,30 @@
       "sourceofsources.com, featured.com, helpareporter.com, qwoted.com and",
       "sourcebottle.com in the previous 60 days. Zero messages. She is not",
       "subscribed to any of them yet, so there is currently nothing to ingest and",
-      "the lane's honest state is a named stop, not an empty result."
+      "the lane's honest state is a named stop, not an empty result.",
+      "",
+      "UPDATE 2026-09-02 -- SUBSCRIBED, CONNECTED, AND READING REAL MAIL.",
+      "The owner subscribed and set the three IMAP secrets. The lane authenticated",
+      "and read a real message on its first run. What it read was the WELCOME email,",
+      "not a query digest: 3,914 characters, subject 'Welcome to SOS!'. It refused to",
+      "call that a quiet day, which was correct, but it named it UNPARSEABLE_DIGEST,",
+      "which was wrong -- a welcome email is not a broken parser. Non-digest messages",
+      "are now positively recognised by declared signature.",
+      "",
+      "NO QUERY DIGEST HAS ARRIVED YET. Shankman: 'Your first media query will",
+      "arrive within 24 hours, Monday-Friday.' So the field grammar in",
+      "query-formats.json remains unproven against a real digest, and says so.",
+      "",
+      "What the publisher states about the format, and what each fact changed here:",
+      "  'two emails from me per day, usually around 6:30am and another around",
+      "   1:30pm'  -> the workflow now runs twice a day rather than once.",
+      "  'typically 10-15 per email, sometimes more'",
+      "            -> a partial parse is now DETECTABLE and named. A digest that",
+      "               yields two queries when ten were sent has dropped eight that",
+      "               nobody knows were there.",
+      "  'reply directly to the reporter in the email'",
+      "            -> confirms the reply address is per-query, which the grammar",
+      "               already treats as a field."
     ],
     "adapter": "imap",
     "adapters": {
@@ -110,8 +203,13 @@
           "folder": "SOS_IMAP_FOLDER"
         },
         "default_folder": "INBOX",
-        "senders": ["sourceofsources.com", "helpareporter.com", "featured.com"],
-        "lookback_days": 2
+        "senders": [
+          "sourceofsources.com",
+          "helpareporter.com",
+          "featured.com"
+        ],
+        "lookback_days": 2,
+        "_lookback_note": "Two days, deliberately more than one run's worth: a missed run must not lose a digest. Safe because queries are deduplicated by identity across runs, so re-reading a digest never re-surfaces a query."
       },
       "dir": {
         "note": "A directory of .eml or .txt files. Used by the validator's fixtures, and as an escape hatch if mail is exported rather than read over IMAP.",
