@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-01T15-54-37.032562Z-33528581140",
-  "attempted_at": "2026-09-01T15:54:37.032562Z",
+  "receipt_id": "2026-09-02T17-06-55.768925Z-33659017350",
+  "attempted_at": "2026-09-02T17:06:55.768925Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "94baa50a94bcf8b3fa4dbb3aca35ad09c21d2a83606719414ea98b86e3709877",
+        "sha256": "29e914e830c1b495be1b069eea5789cb6217727d4a28c2ceac4e83981a77a2a1",
         "url_count": 105
       },
       "indexnow": {
@@ -1085,17 +1085,17 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "42ced6d084af3f0c60c4f48b76e8f5b1518a040f1bdf045eda806d089945bc68",
-        "url_count": 104
+        "sha256": "6d91088f4370cb4db5cfdeebfd5023329312e945cc5776ad07708edfa8514885",
+        "url_count": 105
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 104,
-        "offered_urls": 104,
+        "submitted_urls": 105,
+        "offered_urls": 105,
         "batches": [
           {
-            "urls": 104,
+            "urls": 105,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -2005,14 +2005,14 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "c9af8beb6fa1b1e103fb6a2d1b3565bd7b29d457fe536870c46c2dd1b4812f27",
-        "url_count": 420
+        "sha256": "5d840acdb72b365ca9d99457e2934fcec99dc50ed4ce736df84b8dea414ea4fe",
+        "url_count": 421
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 420,
-        "offered_urls": 420,
+        "submitted_urls": 421,
+        "offered_urls": 421,
         "batches": [
           {
             "urls": 200,
@@ -2027,7 +2027,7 @@
             "error": null
           },
           {
-            "urls": 20,
+            "urls": 21,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -4713,7 +4713,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-01T15-54-37.032562Z-33528581140.json"
+    "history": "data/distribution/receipts/2026-09-02T17-06-55.768925Z-33659017350.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
