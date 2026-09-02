@@ -68,12 +68,29 @@ served as the changelog page on Professional Resource Library.
 
 ### What it watches, and why only that
 
-Three USCIS pages, declared in `data/uscis-changelog/tracked-sources.json`:
-filing fees, forms updates, and the all-forms list. Nothing else, and the file
-argues at length for why widening it would make the asset worse. The short
-version: what a journalist cites is an *unbroken* record, and every extra agency
-adds another URL that can move and another week where the log is partially blind
-while still publishing.
+**The spine is the Federal Register API**, filtered to documents published by
+USCIS. Every rule and notice USCIS issues about a form or a fee lands there with
+a publication date and an official document number, so each one *is* a dated
+change record rather than a webpage state that has to be diffed to find out when
+it moved.
+
+**The three uscis.gov pages are still declared and still attempted, marked
+`best_effort`.** They are unreachable from CI, and that is a finding rather than
+a bug: on 2026-09-02 `www.uscis.gov` returned **HTTP 403 Forbidden** to a GitHub
+Actions runner for all three pages, with three different user agents, while the
+identical request returned 200 from a laptop. It is an edge rule about the
+caller. Their stop never turns the workflow red, and it is disclosed on the
+published page so a reader can see what is and is not being observed. They start
+working again on their own if the block lifts.
+
+At least one non-`best_effort` source must exist and must have been reached, or
+the validator fails — otherwise a lane could be allowed to observe nothing
+forever while reporting green every week.
+
+Nothing else is watched, and `data/uscis-changelog/tracked-sources.json` argues
+at length for why widening it would make the asset worse. The short version:
+what a journalist cites is an *unbroken* record, and every extra source adds
+another week where the log is partially blind while still publishing.
 
 ### The chain
 

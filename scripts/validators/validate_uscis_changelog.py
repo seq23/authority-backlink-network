@@ -255,9 +255,29 @@ def check_sources(report: Report, tracked: dict, state: dict, page: str) -> None
                         f"baseline")
 
         # Staleness must be honest on the page, not only in a CI receipt.
-        if not st.get("last_success") and "not yet checked" not in page:
-            report.fail(f"tracked source {source['id']}: has never been successfully "
-                        f"reached, but the published page does not say so anywhere")
+        if not st.get("last_success"):
+            marker = ("cannot currently be read automatically"
+                      if source.get("best_effort") else "not yet checked")
+            if marker not in page:
+                report.fail(
+                    f"tracked source {source['id']}: has never been successfully "
+                    f"reached, but the published page does not disclose it. A reader "
+                    f"who cannot see which sources are actually being observed will "
+                    f"read an empty log as 'nothing changed'.")
+
+    # At least one source the lane DEPENDS on must be reachable. A changelog whose
+    # every source is best_effort is a changelog that is allowed to observe
+    # nothing forever while every run still reports green.
+    report.examined()
+    depended = [s for s in tracked["sources"] if not s.get("best_effort")]
+    if not depended:
+        report.fail("every tracked source is declared best_effort, so no failure to "
+                    "observe anything could ever turn this lane red")
+    reachable = [s for s in depended
+                 if state.get("sources", {}).get(s["id"], {}).get("last_success")]
+    if depended and not reachable:
+        report.fail("no source this lane depends on has ever been successfully "
+                    "reached; the lane has never observed anything")
 
 
 def main() -> int:

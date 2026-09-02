@@ -51,6 +51,16 @@
   },
   "sources": [
     {
+      "id": "uscis-federal-register",
+      "kind": "federal_register",
+      "best_effort": false,
+      "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "api_url": "https://www.federalregister.gov/api/v1/documents.json?per_page=40&order=newest&conditions%5Bagencies%5D%5B%5D=u-s-citizenship-and-immigration-services&fields%5B%5D=document_number&fields%5B%5D=title&fields%5B%5D=abstract&fields%5B%5D=publication_date&fields%5B%5D=type&fields%5B%5D=action",
+      "publisher": "Office of the Federal Register",
+      "title": "USCIS documents in the Federal Register",
+      "watching": "Every rule and notice USCIS publishes, which is where a form revision or a fee change is officially recorded, with its publication date and its Federal Register document number."
+    },
+    {
       "id": "uscis-filing-fees",
       "url": "https://www.uscis.gov/forms/filing-fees",
       "publisher": "U.S. Citizenship and Immigration Services",
@@ -59,7 +69,10 @@
       "extract": {
         "strategy": "main_or_body",
         "drop_selectors_note": "Navigation, script, style and the alert banner are removed by the normalizer; see scripts/uscis_changelog.py:visible_text()."
-      }
+      },
+      "kind": "html",
+      "best_effort": true,
+      "best_effort_reason": "www.uscis.gov answers HTTP 403 to a GitHub Actions runner; see _reachability_finding_2026_09_02."
     },
     {
       "id": "uscis-forms-updates",
@@ -70,7 +83,10 @@
       "extract": {
         "strategy": "main_or_body",
         "drop_selectors_note": "Same normalizer."
-      }
+      },
+      "kind": "html",
+      "best_effort": true,
+      "best_effort_reason": "www.uscis.gov answers HTTP 403 to a GitHub Actions runner; see _reachability_finding_2026_09_02."
     },
     {
       "id": "uscis-all-forms",
@@ -81,7 +97,36 @@
       "extract": {
         "strategy": "main_or_body",
         "drop_selectors_note": "Same normalizer."
-      }
+      },
+      "kind": "html",
+      "best_effort": true,
+      "best_effort_reason": "www.uscis.gov answers HTTP 403 to a GitHub Actions runner; see _reachability_finding_2026_09_02."
     }
+  ],
+  "_reachability_finding_2026_09_02": [
+    "www.uscis.gov returns HTTP 403 Forbidden to a GitHub Actions runner, for all",
+    "three tracked pages, with every one of three declared user agents. The",
+    "identical request returns 200 from a laptop. Confirmed twice, on runs",
+    "33575030786 and 33575235414. It is an edge bot rule keyed on the caller, not",
+    "a missing page and not an outage.",
+    "",
+    "The guard behaved correctly throughout -- nothing was published as 'no",
+    "change', no snapshot advanced, and every source named its stop. But a lane",
+    "that names a stop every week forever is still a lane that observes nothing,",
+    "which is the other half of Rule 0.",
+    "",
+    "So the SPINE of this changelog is now the Federal Register API, which is:",
+    "  - a United States government primary source (Office of the Federal",
+    "    Register / GPO), not an intermediary or a scraper proxy;",
+    "  - built for programmatic access, with no bot rule -- verified 200 from CI;",
+    "  - a BETTER change record for this subject, because a Federal Register",
+    "    document IS a dated change with an official citation number, rather than",
+    "    a webpage state that has to be diffed to find out when it moved.",
+    "",
+    "The three uscis.gov pages stay declared and are still attempted, marked",
+    "best_effort. Their 403 is a NAMED, DISCLOSED stop that never turns the",
+    "workflow red and is printed on the published page, because a reader must be",
+    "able to see which sources are actually being observed. They resolve on their",
+    "own the day the block lifts or the lane runs from anywhere else."
   ]
 }

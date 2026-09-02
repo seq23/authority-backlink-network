@@ -227,6 +227,50 @@ def fetch(url: str, cfg: dict) -> tuple[str, str]:
                     f"{url}: {last} (tried {len(user_agents(cfg))} user agent(s))")
 
 
+
+# --------------------------------------------------- the Federal Register
+
+def federal_register_lines(payload: dict) -> list[str]:
+    """One quotable line per published document, plus its abstract.
+
+    A Federal Register document is already what this lane is trying to build: a
+    dated, numbered, official record of a change. So the "snapshot" is the set
+    of documents, and a "diff" is the documents that appeared since last week.
+    No interpretation happens here -- the line is assembled from the agency's
+    own fields and is quoted back verbatim.
+    """
+    lines: list[str] = []
+    for doc in payload.get("results", []):
+        number = str(doc.get("document_number", "")).strip()
+        title = re.sub(r"\s+", " ", str(doc.get("title", ""))).strip()
+        published = str(doc.get("publication_date", "")).strip()
+        kind = str(doc.get("type", "")).strip()
+        action = re.sub(r"\s+", " ", str(doc.get("action") or "")).strip()
+        if not (number and title and published):
+            continue
+        lines.append(f"{published} | {kind} | FR Doc. {number} | {title}")
+        if action:
+            lines.append(f"FR Doc. {number} action: {action}")
+        abstract = re.sub(r"\s+", " ", str(doc.get("abstract") or "")).strip()
+        if abstract:
+            lines.append(f"FR Doc. {number} abstract: {abstract}")
+    return lines
+
+
+def read_source(source: dict, cfg: dict) -> tuple[list[str], str]:
+    """Fetch one tracked source and reduce it to comparable lines."""
+    if source.get("kind") == "federal_register":
+        raw, agent = fetch(source["api_url"], cfg)
+        try:
+            payload = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise NamedStop("SOURCE_UNREADABLE",
+                            f"{source['api_url']}: response was not JSON ({exc})")
+        return federal_register_lines(payload), agent
+    raw, agent = fetch(source["url"], cfg)
+    return visible_text(raw), agent
+
+
 # --------------------------------------------------------------------- diff
 
 def diff_lines(before: list[str], after: list[str]) -> dict:
@@ -458,18 +502,23 @@ def run(offline: bool, model: str) -> dict:
             continue
 
         try:
-            raw, agent = fetch(source["url"], cfg)
+            after, agent = read_source(source, cfg)
         except NamedStop as stop:
             st["consecutive_failures"] += 1
             outcomes.append({
-                "source": sid, "url": source["url"], "status": "NAMED_STOP_UNREACHABLE",
+                "source": sid, "url": source["url"],
+                "status": ("NAMED_STOP_BEST_EFFORT_UNREACHABLE" if source.get("best_effort")
+                           else "NAMED_STOP_UNREACHABLE"),
+                "best_effort": bool(source.get("best_effort")),
                 "consecutive_failures": st["consecutive_failures"],
                 "last_success": st["last_success"],
                 "detail": f"{stop.message} -- the snapshot was NOT advanced and this "
-                          f"source is NOT being reported as unchanged."})
+                          f"source is NOT being reported as unchanged."
+                          + (" This source is declared best_effort, so it does not turn "
+                             "the run red; it is disclosed on the published page instead."
+                             if source.get("best_effort") else "")})
             continue
 
-        after = visible_text(raw)
         if len(after) < 20:
             st["consecutive_failures"] += 1
             outcomes.append({
@@ -587,7 +636,12 @@ def run(offline: bool, model: str) -> dict:
     state["last_run"] = checked_at
     write_json(STATE, state)
 
-    blind = [o for o in outcomes if o["status"].startswith("NAMED_STOP")
+    # A best_effort source going quiet is a DISCLOSED condition, not a failure:
+    # it is declared in tracked-sources.json with its reason and it is printed on
+    # the published page. Only a source the lane actually depends on can blind it.
+    blind = [o for o in outcomes
+             if o["status"] == "NAMED_STOP_UNREACHABLE"
+             and not o.get("best_effort")
              and o.get("consecutive_failures", 0) >= MAX_CONSECUTIVE_FAILURES]
     checked = [o for o in outcomes if o["status"] in
                ("NO_CHANGE", "NO_MATERIAL_CHANGE", "ENTRY_PUBLISHED", "BASELINE_CAPTURED")]
@@ -612,7 +666,7 @@ def run(offline: bool, model: str) -> dict:
             # which on a Rule 0 receipt is the whole of the value lost.
             "SOURCES_UNREACHABLE" if any(
                 o["status"] in ("NAMED_STOP_UNREACHABLE", "NAMED_STOP_UNREADABLE")
-                for o in outcomes) else
+                and not o.get("best_effort") for o in outcomes) else
             "HELD: a change was detected and could not be described this run "
             "(no API key); the snapshot was not advanced, so it is retried next "
             "run rather than lost."
@@ -628,8 +682,13 @@ def run(offline: bool, model: str) -> dict:
             "HELD: a change was detected but could not be described this run; the "
             "snapshot was not advanced, so it is retried rather than lost."
             if any(o["status"].startswith(("HELD_", "REJECTED_")) for o in outcomes) else
-            "NO CHANGE: every tracked USCIS page was fetched and compared, and none "
-            "changed materially this week."),
+            (f"NO CHANGE: {len(checked)} of {len(tracked['sources'])} tracked source(s) "
+             f"were fetched and compared, and none changed materially this week."
+             + (f" {sum(1 for o in outcomes if o.get('best_effort') and o['status'].startswith('NAMED_STOP'))}"
+                f" best-effort source(s) were unreachable and are disclosed as such on "
+                f"the page; none of them is being reported as unchanged."
+                if any(o.get("best_effort") and o["status"].startswith("NAMED_STOP")
+                       for o in outcomes) else ""))),
     }
     write_json(RECEIPT, receipt)
     return receipt

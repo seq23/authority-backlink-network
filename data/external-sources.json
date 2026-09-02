@@ -2186,6 +2186,24 @@
         "form editions"
       ],
       "supports": "The set of forms USCIS lists, so a form appearing or being withdrawn is observable."
+    },
+    {
+      "id": "federal-register-uscis",
+      "domain": "federalregister.gov",
+      "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "publisher": "Office of the Federal Register",
+      "publisher_type": "us_federal_agency",
+      "title": "U.S. Citizenship and Immigration Services documents in the Federal Register",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "form editions",
+        "filing fees"
+      ],
+      "supports": "Every rule and notice USCIS publishes, each with its publication date and Federal Register document number. The primary source the form and fee changelog watches."
     }
   ]
 }

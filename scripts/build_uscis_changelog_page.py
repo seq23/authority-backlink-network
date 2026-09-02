@@ -102,15 +102,22 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
     # ---------------------------------------------------------------- sources
     source_rows = []
     stale_ids = []
+    best_effort_down = []
     for source in tracked["sources"]:
         st = state.get("sources", {}).get(source["id"], {})
         age = days_since(st.get("last_success"))
         if age is None:
-            status, note = "not yet checked", "This source has no successful check on record."
+            status = "NOT REACHABLE" if source.get("best_effort") else "not yet checked"
+            note = (source.get("best_effort_reason")
+                    or "This source has no successful check on record.")
+            if source.get("best_effort"):
+                best_effort_down.append(source["id"])
         elif age > STALE_AFTER_DAYS:
             status, note = "STALE", (f"Last reached {age} days ago. Nothing below should be "
                                      f"read as evidence that this page has not changed since.")
             stale_ids.append(source["id"])
+            if source.get("best_effort"):
+                best_effort_down.append(source["id"])
         else:
             status, note = "current", ""
         source_rows.append(
@@ -262,6 +269,14 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
         '<div class="table-scroll"><table><thead><tr>'
         '<th>USCIS page</th><th>Watched for</th><th>Last reached</th><th>Status</th>'
         '</tr></thead><tbody>' + "".join(source_rows) + '</tbody></table></div>'
+        + ('<p class="note"><strong>One of these sources cannot currently be read '
+           'automatically.</strong> The pages on the agency\'s own website refuse '
+           'automated requests from the machine that runs this check, which is a rule '
+           'about the caller rather than anything about the page: the same pages open '
+           'normally in a browser. They are listed here, and attempted every week, so '
+           'that what is and is not being observed stays visible. The Federal Register '
+           'record above them is unaffected and is the source the entries below are '
+           'built from.</p>' if best_effort_down else '')
         + ('<p class="note"><strong>One or more sources are stale.</strong> Entries '
            'below remain accurate as records of what was observed on their stated '
            'dates, but the absence of a recent entry for a stale source is not '
