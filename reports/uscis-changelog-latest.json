@@ -1,0 +1,36 @@
+{
+  "schema": "uscis-changelog-run-v1",
+  "checked_at": "2026-09-01T23:59:24+00:00",
+  "offline": false,
+  "sources_declared": 3,
+  "sources_checked": 3,
+  "entries_written": 0,
+  "outcomes": [
+    {
+      "source": "uscis-filing-fees",
+      "url": "https://www.uscis.gov/forms/filing-fees",
+      "status": "NO_CHANGE",
+      "added_lines": 0,
+      "removed_lines": 0,
+      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+    },
+    {
+      "source": "uscis-forms-updates",
+      "url": "https://www.uscis.gov/forms/forms-updates",
+      "status": "NO_CHANGE",
+      "added_lines": 0,
+      "removed_lines": 0,
+      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+    },
+    {
+      "source": "uscis-all-forms",
+      "url": "https://www.uscis.gov/forms/all-forms",
+      "status": "NO_CHANGE",
+      "added_lines": 0,
+      "removed_lines": 0,
+      "detail": "the page was fetched and compared; the difference is below the materiality floor."
+    }
+  ],
+  "blind_sources": [],
+  "named_outcome": "NO CHANGE: every tracked USCIS page was fetched and compared, and none changed materially this week."
+}

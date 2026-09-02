@@ -4,9 +4,9 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 80,
+    "runtime_operators": 85,
     "release_operators": 10,
-    "workflow_operators": 6,
+    "workflow_operators": 8,
     "approved_target_urls": 86,
     "serviced_target_urls": 65,
     "backlink_rows": 613,
@@ -253,6 +253,12 @@
       "category": "Other"
     },
     {
+      "operator": "changelog:uscis",
+      "command": "npm run changelog:uscis",
+      "implementation": "python3 scripts/uscis_changelog.py",
+      "category": "Other"
+    },
+    {
       "operator": "citations:apply",
       "command": "npm run citations:apply",
       "implementation": "python3 scripts/add_external_citations.py --write",
@@ -391,9 +397,21 @@
       "category": "Other"
     },
     {
+      "operator": "pages:uscis-changelog",
+      "command": "npm run pages:uscis-changelog",
+      "implementation": "python3 scripts/build_uscis_changelog_page.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "pages:wedding-cost-dataset",
       "command": "npm run pages:wedding-cost-dataset",
       "implementation": "python3 scripts/build_wedding_cost_dataset_page.py --write",
+      "category": "Other"
+    },
+    {
+      "operator": "queries:scan",
+      "command": "npm run queries:scan",
+      "implementation": "python3 scripts/journalist_query_scan.py",
       "category": "Other"
     },
     {
@@ -493,6 +511,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:journalist-query-lane",
+      "command": "npm run validate:journalist-query-lane",
+      "implementation": "python3 scripts/validators/validate_journalist_query_lane.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:no-manual-lane",
       "command": "npm run validate:no-manual-lane",
       "implementation": "python3 scripts/validators/validate_no_manual_lane.py",
@@ -526,6 +550,12 @@
       "operator": "validate:social-enqueue-completeness",
       "command": "npm run validate:social-enqueue-completeness",
       "implementation": "python3 scripts/validators/validate_social_enqueue_completeness.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:uscis-changelog",
+      "command": "npm run validate:uscis-changelog",
+      "implementation": "python3 scripts/validators/validate_uscis_changelog.py",
       "category": "Validation / release"
     },
     {
@@ -617,6 +647,15 @@
       "manual_dispatch": false
     },
     {
+      "name": "Journalist Query Scan",
+      "path": ".github/workflows/journalist-query-scan.yml",
+      "scheduled": true,
+      "cron": [
+        "30 12 * * 1-5"
+      ],
+      "manual_dispatch": true
+    },
+    {
       "name": "Bounded Self-Healing",
       "path": ".github/workflows/self-heal.yml",
       "scheduled": true,
@@ -634,6 +673,15 @@
         "17 16 * * *",
         "41 19 * * *",
         "9 22 * * *"
+      ],
+      "manual_dispatch": true
+    },
+    {
+      "name": "USCIS Form and Fee Changelog",
+      "path": ".github/workflows/uscis-changelog.yml",
+      "scheduled": true,
+      "cron": [
+        "11 13 * * 2"
       ],
       "manual_dispatch": true
     }

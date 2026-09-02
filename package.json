@@ -82,7 +82,12 @@
     "validate:no-manual-lane": "python3 scripts/validators/validate_no_manual_lane.py",
     "pages:wedding-cost-dataset": "python3 scripts/build_wedding_cost_dataset_page.py --write",
     "validate:wedding-cost-dataset": "python3 scripts/validators/validate_wedding_cost_dataset.py",
-    "validate:external-citation-coverage": "python3 scripts/validators/validate_external_citation_coverage.py"
+    "validate:external-citation-coverage": "python3 scripts/validators/validate_external_citation_coverage.py",
+    "changelog:uscis": "python3 scripts/uscis_changelog.py",
+    "pages:uscis-changelog": "python3 scripts/build_uscis_changelog_page.py --write",
+    "validate:uscis-changelog": "python3 scripts/validators/validate_uscis_changelog.py",
+    "queries:scan": "python3 scripts/journalist_query_scan.py",
+    "validate:journalist-query-lane": "python3 scripts/validators/validate_journalist_query_lane.py"
   },
   "devDependencies": {}
 }

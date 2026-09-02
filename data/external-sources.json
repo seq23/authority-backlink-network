@@ -2135,6 +2135,57 @@
         "business"
       ],
       "supports": "The federal warning about lenders who ask for money before approving a loan, which is the scam pattern a borrower assembling documents is most exposed to."
+    },
+    {
+      "id": "uscis-filing-fees",
+      "domain": "uscis.gov",
+      "url": "https://www.uscis.gov/forms/filing-fees",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "publisher_type": "us_federal_agency",
+      "title": "USCIS Filing Fees",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "filing fees"
+      ],
+      "supports": "The fee schedule USCIS publishes, and the primary source the form and fee changelog watches for fee changes."
+    },
+    {
+      "id": "uscis-forms-updates",
+      "domain": "uscis.gov",
+      "url": "https://www.uscis.gov/forms/forms-updates",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "publisher_type": "us_federal_agency",
+      "title": "USCIS Forms Updates",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "form editions"
+      ],
+      "supports": "Form edition dates and the dates prior editions stop being accepted; the primary source the changelog watches for edition changes."
+    },
+    {
+      "id": "uscis-all-forms",
+      "domain": "uscis.gov",
+      "url": "https://www.uscis.gov/forms/all-forms",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "publisher_type": "us_federal_agency",
+      "title": "USCIS All Forms",
+      "lanes": [
+        "professional"
+      ],
+      "topics": [
+        "immigration",
+        "uscis",
+        "form editions"
+      ],
+      "supports": "The set of forms USCIS lists, so a form appearing or being withdrawn is observable."
     }
   ]
 }

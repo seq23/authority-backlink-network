@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "_README": [
+    "The grammar of a journalist-query digest email, kept in data rather than in",
+    "code so it can be corrected the day a provider changes its layout without",
+    "touching the filtering or drafting logic.",
+    "",
+    "This grammar was NOT built from a captured sample. Nobody in this account is",
+    "subscribed yet (see data/journalist-queries/beats.json, ingestion._verified),",
+    "so it is written to the labelled-field layout SOS and HARO digests use, and",
+    "it is written to FAIL LOUDLY rather than to guess.",
+    "",
+    "That last part is the whole design. The dangerous failure here is not a",
+    "parser that breaks; it is a parser that returns zero queries from a digest",
+    "full of them and gets reported as 'nothing relevant today'. So a message body",
+    "that yields no parseable block is a NAMED STOP called UNPARSEABLE_DIGEST that",
+    "names the provider and quotes the first lines it could not read. A quiet day",
+    "and a broken parser must never look the same."
+  ],
+  "block_delimiters": [
+    "^\\s*[-_=*~]{6,}\\s*$",
+    "^\\s*\\*{3,}\\s*$"
+  ],
+  "field_labels": {
+    "summary": ["Summary", "Subject", "Title"],
+    "outlet": ["Media Outlet", "Outlet", "Publication", "Media"],
+    "deadline": ["Deadline", "Due", "Respond By", "Deadline (ET)"],
+    "email": ["Email", "Reply To", "Contact", "Pitch To"],
+    "category": ["Category", "Categories", "Beat"],
+    "requirements": ["Requirements", "Requirement"],
+    "query": ["Query", "Question", "Request", "Details"]
+  },
+  "numbered_summary": "^\\s*(?:\\d+\\)|\\[\\d+\\])\\s*(?:Summary\\s*:)?\\s*(.+)$",
+  "minimum_fields_for_a_query": ["summary"],
+  "must_also_have_one_of": ["query", "email", "deadline"],
+  "strip_trailing_from_body": [
+    "^\\s*You are receiving this email because",
+    "^\\s*To unsubscribe",
+    "^\\s*Unsubscribe",
+    "^\\s*Copyright \\d{4}",
+    "^\\s*This list doesn't cost a dime"
+  ]
+}

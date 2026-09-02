@@ -1,0 +1,96 @@
+name: Journalist Query Scan
+
+# Rank 1 of docs/EXTERNAL-AUTHORITY-PLAN.md -- the best ratio in the plan, whose
+# entire cost is "20 minutes each morning to scan". That is a daily habit with no
+# forcing function, and a daily habit with no forcing function dies in week
+# three, taking the best play in the plan with it. So the scan and the draft run
+# here instead.
+#
+# THE SEND STAYS HUMAN. This workflow surfaces drafts to the owner and nothing
+# else. Pitches go out in her name as a genuine expert; an auto-sent pitch with
+# one wrong fact gets printed under her name, which is a correction in a real
+# publication and a source relationship burned permanently and silently. The
+# upside of auto-sending is about thirty seconds. There is no send path in
+# scripts/journalist_query_scan.py and
+# scripts/validators/validate_journalist_query_lane.py fails the build if one
+# appears.
+#
+# On a day with nothing relevant, this sends NOTHING. Silence on a quiet day is a
+# designed outcome, not a failure -- and the run still records what it read and
+# why it dropped it, so a quiet day and a broken lane never look the same.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 12:30 UTC, before the US working day, so a same-day deadline is still
+    # answerable when she reads it.
+    - cron: '30 12 * * 1-5'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: journalist-query-scan-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Scan the day's queries and draft the ones she can actually answer
+        env:
+          # Ingestion. Source of Sources delivers by email and has no API --
+          # verified 2026-09-01, see data/journalist-queries/beats.json. These
+          # are the owner's to set; until they exist the run reaches a named
+          # stop, says so once, and stays quiet.
+          SOS_IMAP_HOST: ${{ secrets.SOS_IMAP_HOST }}
+          SOS_IMAP_PORT: ${{ vars.SOS_IMAP_PORT || '993' }}
+          SOS_IMAP_USER: ${{ secrets.SOS_IMAP_USER }}
+          SOS_IMAP_PASSWORD: ${{ secrets.SOS_IMAP_PASSWORD }}
+          SOS_IMAP_FOLDER: ${{ vars.SOS_IMAP_FOLDER || 'INBOX' }}
+          # Drafting. Already set on this repository.
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          JOURNALIST_QUERY_MODEL: ${{ vars.JOURNALIST_QUERY_MODEL || 'anthropic/claude-sonnet-4.5' }}
+          # Used by `gh issue create` to hand the digest to the owner. GitHub
+          # mails her; this reaches her, never a journalist.
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/journalist_query_scan.py
+
+      - name: Re-check every drafted pitch against the expertise ledger
+        run: python3 scripts/validators/validate_journalist_query_lane.py
+
+      - name: Commit the day's digest, if there was one
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Journalist query scan: drafts for review (nothing sent)"
+          file_pattern: "data/journalist-queries/digests/** data/journalist-queries/state.json reports/journalist-query-scan-latest.json"
+
+      - name: Say what the run did, including when it did nothing
+        # Rule 0. "No relevant queries today" is a legitimate named outcome and
+        # it is printed. Silence in the log is not.
+        if: always()
+        run: |
+          python3 -c "import json; r=json.load(open('reports/journalist-query-scan-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('digests read:', r['digests_read'], '| ingested:', r['queries_ingested'], '| surfaced:', r['surfaced']); [print('STOP', s['code'] + ':', s['message']) for s in r['stops']]; print('nothing was sent to any journalist; this lane has no send path')"
+
+      - name: Open an issue if the scan itself broke
+        if: failure()
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ github.token }}
+          title: "Journalist query scan failed"
+          body: |
+            The daily journalist-query scan failed. Check
+            `reports/journalist-query-scan-latest.json`.
+
+            Note the distinction that matters here: a day with no relevant
+            queries is a PASS and sends nothing. A failure means the lane could
+            not look, or looked and could not read what it found — which is the
+            state where a silent lane looks identical to a quiet day.

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "_README": [
+    "Entries are written ONLY by scripts/uscis_changelog.py, from a diff between two fetched copies of a USCIS page.",
+    "",
+    "Do not add or edit an entry by hand. scripts/validators/validate_uscis_changelog.py re-checks every quote here against the diff stored in the same entry, offline, so a hand edit fails exactly the way a fabricated entry does.",
+    "",
+    "An entry is never rewritten after publication. A later change to the same page becomes its own dated entry."
+  ],
+  "entries": []
+}

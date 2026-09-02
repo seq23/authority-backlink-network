@@ -136,9 +136,26 @@ try:
             "is back to weighting by per-campaign deficit alone, which cannot see a share."
         )
     else:
-        pub_key = "professional-resources"
-        capped = autopilot.brands_at_share_cap(pub_key)
-        fixture = [{"brand_id": next(iter(capped)) if capped else "guard-fixture-brand"},
+        # The capped brand is SEEDED rather than borrowed from the live corpus.
+        #
+        # This used to read `next(iter(capped))` from the real publication and
+        # fall back to a brand id that is capped nowhere when nothing happened to
+        # be at its cap. That made the proof depend on the corpus: on 2026-09-01
+        # publishing one page to professional-resources took its page count from
+        # 421 to 422, `int(total * share)` allowed one more page, approval-prep
+        # at 139 pages stopped being at the cap, and this guard reported ITSELF
+        # inert -- a hard failure caused by publishing a page, with nothing wrong
+        # with the scheduler at all.
+        #
+        # Seeding the cache exercises the same real functions
+        # (schedulable_targets -> brands_at_share_cap) against a capped brand
+        # that is capped by construction, so the refusal is proved every run
+        # rather than only on the days the corpus supplies a subject. The live
+        # measurement is unaffected: over_share_cap above is still computed from
+        # the rendered pages.
+        pub_key = "guard-fixture-publication"
+        autopilot._SHARE_CACHE[pub_key] = {"guard-fixture-capped-brand"}
+        fixture = [{"brand_id": "guard-fixture-capped-brand"},
                    {"brand_id": "guard-fixture-unknown-brand"}]
         kept = autopilot.schedulable_targets(pub_key, fixture)
         if len(kept) != 1 or kept[0]["brand_id"] != "guard-fixture-unknown-brand":

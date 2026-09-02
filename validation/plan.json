@@ -43,7 +43,9 @@
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
-      "external_citation_coverage"
+      "external_citation_coverage",
+      "uscis_changelog",
+      "journalist_query_lane"
     ],
     "release": [
       "json",
@@ -82,7 +84,9 @@
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
-      "external_citation_coverage"
+      "external_citation_coverage",
+      "uscis_changelog",
+      "journalist_query_lane"
     ],
     "full": [
       "json",
@@ -122,7 +126,9 @@
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
-      "external_citation_coverage"
+      "external_citation_coverage",
+      "uscis_changelog",
+      "journalist_query_lane"
     ],
     "cache-self-test": [
       "python",
@@ -285,6 +291,14 @@
     "buffer_route": {
       "severity": "HARD_FAIL",
       "rationale": "A second way for a post to leave is a second way to burn the account, and this one cannot be seen from a configuration file. X's own API is pay-per-use and unfunded, so it is off and contacted zero times; Buffer carries the same posts to the same X profile for nothing, declared as platforms.x.delivery_route in data/social-brand-policy.json. Four things must hold and none of them is visible in a diff. The route must never exceed the ceiling BUFFER ITSELF reports at runtime from dailyPostingLimits -- a hardcoded number stays wrong after Buffer changes it -- and this repository's own X_DAILY_LIMIT must still cap a generous Buffer. It must spend that budget on ATTEMPTS, charged before the request is made and measured from inside the call, because caps that counted successes are exactly why 581 requests left this repository in 76 seconds on 2026-08-29. It must halt on the FIRST refusal and have no path back into the loop, while deferring the entries it did not carry rather than retiring them. And a post Buffer accepted must never also appear on reports/social-drafts.md, nor may the route take a post already sitting unposted on an open batch there -- either way she posts it by hand and Buffer posts it again, two identical posts on one profile. Alongside those: the queue is never consumed, queued-in-Buffer is recorded as 'buffer_queued' with its Buffer post id rather than as published, an unusable route falls back to the hand-post sheet with a named reason instead of silently ending X's distribution, X's own API is contacted zero times through every path, and BUFFER_ACCESS_TOKEN never reaches a log, a report, a sheet or a commit -- the publisher prints its report into the workflow log and commits it. Every property is driven through the real publisher with only Buffer's transport stubbed, and every one is proved negatively by running the opposite configuration. It fails if it exercises zero properties."
+    },
+    "uscis_changelog": {
+      "severity": "HARD_FAIL",
+      "rationale": "A YMYL page whose entries a language model writes. The lane publishes a dated record of what changed on the USCIS filing-fee and form-edition pages, and the plan it comes from warns twice that a stale or wrong entry here is a harmful one. Two different things can put an unsupported sentence on that page: the model, which produces a fluent claim about a fee or an edition date that was never in the diff, and a person, who opens data/uscis-changelog/entries.json or the HTML and improves a headline or tidies a quote. scripts/uscis_changelog.py catches the first at write time; nothing catches the second, because no run happened. So this validator re-derives the check offline against the evidence stored with each entry -- every quoted line must appear verbatim in that entry's own stored added or removed lines -- and a hand edit fails exactly the way a hallucination does. It also blocks if an entry exists in the data file but not on the published page, if a published entry omits the agency URL or the date it was checked, if any entry's prose crosses the publication's advice boundary, if a tracked source is not registered and HTTP-200 verified in data/external-sources.json, if a snapshot's stored sha256 does not match its stored lines, or if a source that has never been successfully reached is not shown as such on the page -- that last one being how a changelog goes silently stale while its own green receipt says it is healthy. The real verify() is driven through a clean synthetic entry and five broken ones on EVERY run, including weeks with no entries, so a green receipt is never an empty loop. It fails if it examines zero items."
+    },
+    "journalist_query_lane": {
+      "severity": "HARD_FAIL",
+      "rationale": "Two failures, either of which is unrecoverable and both of which are invisible in a diff. First, SENDING: pitches go out in the owner's name as a genuine expert, so an auto-sent pitch carrying one wrong fact gets printed under her name -- a correction in a real publication and a source relationship burned permanently and silently -- against an upside of about thirty seconds. There is therefore no send path, and this validator blocks the day one appears, including the day someone adds it for a good reason, because a good reason is exactly how it would arrive. It also requires the mailbox read to stay read-only. Second, INVENTING: a model handed a reporter's question and asked to write as an expert produces a confident answer whether or not the person has any first-hand knowledge, and the reporter cannot tell. So a draft may only use facts from data/journalist-queries/expertise-ledger.json, every fact must point at evidence that exists in this repository, and every number in a draft must appear in a fact the draft cited. The real verify_draft() is driven through a clean draft and six broken ones on every run. Beyond those it blocks if a recorded digest is marked as sent, if a recorded draft stops verifying against the ledger, if a query matching a hard exclusion reaches a model, or -- the quiet killer -- if a digest the parser cannot read is reported as 'no relevant queries' rather than as UNPARSEABLE_DIGEST, which is how a lane like this goes dead while still reporting green every morning. It fails if it exercises zero properties."
     }
   },
   "severity_matrix_policy": {

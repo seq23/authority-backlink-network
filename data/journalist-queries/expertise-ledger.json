@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "_README": [
+    "The only material a pitch draft is allowed to be built from.",
+    "",
+    "docs/EXTERNAL-AUTHORITY-PLAN.md, Rank 1: 'This only works because Sequoia is",
+    "genuinely an expert... a fabricated expert is the one thing that turns this",
+    "from an asset into a catastrophe.'",
+    "",
+    "So the drafter is not asked what it knows about her. It is handed this file",
+    "and told it may use nothing else. Every fact here carries `evidence`: a path",
+    "in this repository or a published URL that a journalist could open. If a",
+    "query cannot be answered from these facts, the query is DROPPED. Dropping is",
+    "the normal outcome and it is the point -- the plan's own arithmetic is that a",
+    "2-in-10 rate on five real answers beats 0-in-50 on generic ones.",
+    "",
+    "scripts/validators/validate_journalist_query_lane.py hard-fails if any fact's",
+    "evidence path does not exist, and hard-fails if any drafted pitch contains a",
+    "number that is not present in the facts it cited.",
+    "",
+    "ADDING A FACT: it must be checkable by a stranger. 'She has run events for a",
+    "decade' is not a fact for this file; it has no evidence anyone can open.",
+    "'Memphis Vendor Library collected 70 published prices from 21 vendors on",
+    "2026-09-01' is, because the dataset and its method are published.",
+    "",
+    "REMOVING A FACT: remove it here and it stops being usable in drafts the same",
+    "day. Nothing caches it."
+  ],
+  "attribution": {
+    "pitches_go_out_as": "Sequoia Taylor, in her own name, never as a publication persona.",
+    "required_disclosure": "Every draft must state plainly who she is and what she owns. The plan is explicit that disclosure is an advantage here: reporters are wary of undisclosed commercial sources.",
+    "disclosure_sentence": "I own Memphis Vendor Library, Founder Operator Library and Professional Resource Library, which are affiliated publications, and I run event production and operations businesses in the same space — so treat me as an interested party who publishes their method."
+  },
+  "facts": [
+    {
+      "id": "memphis-wedding-cost-dataset",
+      "beat": "memphis-events",
+      "claim": "Memphis Vendor Library published an original dataset of 70 prices that 21 Memphis-area wedding and event vendors print on their own websites, all read on 2026-09-01, with the method, the sample size and the exclusions stated above the numbers and the full table plus a CSV on the page.",
+      "numbers": [
+        "70",
+        "21",
+        "2026-09-01"
+      ],
+      "evidence": "data/memphis-wedding-cost-2026.json",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "It is a measurement this publication took and published. A reporter can open the page, the table and the CSV and check every figure against the vendor page it came from."
+    },
+    {
+      "id": "memphis-cost-shape",
+      "beat": "memphis-events",
+      "claim": "In that dataset most of what Memphis vendors publish is a fixed cost rather than a per-guest cost, so cost per guest falls sharply as the guest list grows and trimming the guest list saves far less than couples expect.",
+      "numbers": [],
+      "evidence": "data/memphis-wedding-cost-2026.json",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "It is the arithmetic of the published table, which is on the page and reproducible from the CSV."
+    },
+    {
+      "id": "memphis-price-transparency-gap",
+      "beat": "memphis-events",
+      "claim": "Most Memphis-area vendors approached for that dataset publish no price at all, which is why the sample is 21 vendors rather than the whole market; vendors that do publish a starting price are more likely to be competing on transparency, so the published sample probably sits below the market it is drawn from.",
+      "numbers": [
+        "21"
+      ],
+      "evidence": "data/memphis-wedding-cost-2026.json",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "The selection rule and its known direction of bias are stated on the published page."
+    },
+    {
+      "id": "national-averages-are-not-city-prices",
+      "beat": "memphis-events",
+      "claim": "National wedding sites answer city cost questions by taking a national average and applying a city multiplier, which is not a measurement of that city; the Memphis dataset exists because nobody was measuring Memphis directly.",
+      "numbers": [],
+      "evidence": "data/memphis-wedding-cost-2026.json",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "It is the stated reason the dataset was collected, and the method section on the page says what was and was not used as a price source."
+    },
+    {
+      "id": "uscis-change-record",
+      "beat": "immigration-documentation",
+      "claim": "Professional Resource Library publishes a weekly primary-source record of what changed on the USCIS filing-fee and form-edition pages and when, built by fetching those pages, comparing each copy against the previous one, and quoting the agency's own words verbatim with the date the page was read.",
+      "numbers": [],
+      "evidence": "data/uscis-changelog/tracked-sources.json",
+      "public_url": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
+      "why_it_is_answerable": "The method, the pages watched, and the date each was last reached are published on the page, and every entry quotes the agency page it came from."
+    },
+    {
+      "id": "uscis-change-record-boundary",
+      "beat": "immigration-documentation",
+      "claim": "That record reports what a government page said and when it changed; it does not interpret immigration law, does not say which edition anyone should file, and is not legal advice.",
+      "numbers": [],
+      "evidence": "data/publications.json",
+      "public_url": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
+      "why_it_is_answerable": "It is the publication's declared editorial boundary and it is printed on the page."
+    },
+    {
+      "id": "desk-research-method",
+      "beat": "small-team-operations",
+      "claim": "The method behind both of those is the same and it is the transferable part: fetch the primary source, store the copy, record the date you read it, and publish the difference rather than the conclusion. It needs nobody to answer an email, which is why a small team can actually sustain it.",
+      "numbers": [],
+      "evidence": "docs/EXTERNAL-AUTHORITY-PLAN.md",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "Both published artifacts state their method in full, and the desk-research constraint is the stated reason each was buildable."
+    },
+    {
+      "id": "affiliation-disclosure-practice",
+      "beat": "small-team-operations",
+      "claim": "Across those publications every link to an affiliated property is disclosed and carries rel=\"sponsored nofollow\", and the affiliation is stated on the page rather than in a footer nobody reads.",
+      "numbers": [],
+      "evidence": "data/publications.json",
+      "public_url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+      "why_it_is_answerable": "It is verifiable by viewing source on any page of any of the three publications."
+    }
+  ]
+}
