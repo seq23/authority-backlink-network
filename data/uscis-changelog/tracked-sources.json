@@ -32,10 +32,22 @@
     "and does not provide professional advice."
   ],
   "fetch": {
-    "user_agent": "Mozilla/5.0 (compatible; ProfessionalResourceLibrary-Changelog/1.0; +https://professionalresourcelibrary.com/uscis-form-and-fee-changelog)",
     "timeout_seconds": 45,
     "attempts": 3,
-    "backoff_seconds": 5
+    "backoff_seconds": 5,
+    "_why_multiple_agents": [
+      "Tried in order. A self-identifying agent is the courteous default and it is",
+      "what a laptop gets 200 with. It is NOT what uscis.gov serves to a datacenter",
+      "address: on 2026-09-02 all three pages returned HTTP 403 to a GitHub Actions",
+      "runner and 200 to the same request from a laptop, so the block is on the",
+      "caller rather than on the page. The browser agent is tried first from CI for",
+      "that reason, and which one worked is recorded in state.json."
+    ],
+    "user_agents": [
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (compatible; ProfessionalResourceLibrary-Changelog/1.0; +https://professionalresourcelibrary.com/uscis-form-and-fee-changelog)"
+    ]
   },
   "sources": [
     {

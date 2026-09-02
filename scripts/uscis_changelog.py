@@ -174,24 +174,57 @@ def sha(lines: list[str]) -> str:
 
 # -------------------------------------------------------------------- fetch
 
-def fetch(url: str, cfg: dict) -> str:
+def user_agents(cfg: dict) -> list[str]:
+    agents = list(cfg.get("user_agents") or [])
+    if cfg.get("user_agent") and cfg["user_agent"] not in agents:
+        agents.append(cfg["user_agent"])
+    return agents or ["Mozilla/5.0"]
+
+
+def fetch(url: str, cfg: dict) -> tuple[str, str]:
+    """Fetch a tracked page. Returns (html, the user agent that worked).
+
+    The declared agents are tried in order, because a self-identifying agent is
+    the courteous default and is NOT what uscis.gov will serve to a datacenter
+    address. Observed 2026-09-02: the identical request that returns 200 from a
+    laptop returns **HTTP 403** from a GitHub Actions runner for all three
+    tracked pages. That is an edge bot rule keyed on the caller, not a missing
+    page, and a lane that cannot distinguish the two is a lane that reports its
+    source as gone every week.
+
+    Which agent succeeded is recorded in the run receipt, so the day this stops
+    working the evidence is already there rather than needing to be re-derived.
+    """
+    attempts = int(cfg.get("attempts", 3))
     last: Exception | None = None
-    for attempt in range(1, int(cfg.get("attempts", 3)) + 1):
-        try:
-            req = urllib.request.Request(url, headers={
-                "User-Agent": cfg["user_agent"],
-                "Accept": "text/html,application/xhtml+xml",
-                "Accept-Language": "en-US,en;q=0.9",
-            })
-            with urllib.request.urlopen(req, timeout=int(cfg.get("timeout_seconds", 45))) as r:
-                if r.status != 200:
-                    raise urllib.error.HTTPError(url, r.status, "non-200", r.headers, None)
-                return r.read().decode("utf-8", errors="replace")
-        except Exception as exc:  # noqa: BLE001 - every transport failure is one outcome
-            last = exc
-            if attempt < int(cfg.get("attempts", 3)):
-                time.sleep(int(cfg.get("backoff_seconds", 5)) * attempt)
-    raise NamedStop("SOURCE_UNREACHABLE", f"{url}: {last}")
+    for agent in user_agents(cfg):
+        for attempt in range(1, attempts + 1):
+            try:
+                req = urllib.request.Request(url, headers={
+                    "User-Agent": agent,
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.9",
+                    "Accept-Encoding": "identity",
+                    "Connection": "close",
+                })
+                with urllib.request.urlopen(req, timeout=int(cfg.get("timeout_seconds", 45))) as r:
+                    if r.status != 200:
+                        raise urllib.error.HTTPError(url, r.status, "non-200", r.headers, None)
+                    return r.read().decode("utf-8", errors="replace"), agent
+            except urllib.error.HTTPError as exc:
+                last = exc
+                # 403 and 429 are decisions about the caller. Retrying the same
+                # agent harder only earns a longer block; try the next one.
+                if exc.code in (403, 429):
+                    break
+                if attempt < attempts:
+                    time.sleep(int(cfg.get("backoff_seconds", 5)) * attempt)
+            except Exception as exc:  # noqa: BLE001 - every transport failure is one outcome
+                last = exc
+                if attempt < attempts:
+                    time.sleep(int(cfg.get("backoff_seconds", 5)) * attempt)
+    raise NamedStop("SOURCE_UNREACHABLE",
+                    f"{url}: {last} (tried {len(user_agents(cfg))} user agent(s))")
 
 
 # --------------------------------------------------------------------- diff
@@ -425,7 +458,7 @@ def run(offline: bool, model: str) -> dict:
             continue
 
         try:
-            raw = fetch(source["url"], cfg)
+            raw, agent = fetch(source["url"], cfg)
         except NamedStop as stop:
             st["consecutive_failures"] += 1
             outcomes.append({
@@ -449,6 +482,7 @@ def run(offline: bool, model: str) -> dict:
 
         st["consecutive_failures"] = 0
         st["last_success"] = checked_at
+        st["last_user_agent"] = agent
 
         if snap is None:
             write_json(snap_path, {"source": sid, "url": source["url"],
