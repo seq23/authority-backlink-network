@@ -106,7 +106,19 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
     for source in tracked["sources"]:
         st = state.get("sources", {}).get(source["id"], {})
         age = days_since(st.get("last_success"))
-        if age is None:
+        failing = int(st.get("consecutive_failures", 0) or 0)
+        if failing and st.get("last_success"):
+            # The most recent ATTEMPT failed, whatever the last success says.
+            # Without this a source last reached yesterday from one machine and
+            # refused ever since from the machine that actually runs the check
+            # reads as "current" until the staleness window expires -- two weeks
+            # of a page claiming to watch something it is not watching.
+            status = "NOT REACHED ON THE LAST ATTEMPT"
+            note = (f"Last reached {esc(st['last_success'][:10])}; the "
+                    f"{failing} most recent attempt(s) failed. "
+                    + (source.get("best_effort_reason") or ""))
+            (best_effort_down if source.get("best_effort") else stale_ids).append(source["id"])
+        elif age is None:
             status = "NOT REACHABLE" if source.get("best_effort") else "not yet checked"
             note = (source.get("best_effort_reason")
                     or "This source has no successful check on record.")

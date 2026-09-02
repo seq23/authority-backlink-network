@@ -23,7 +23,11 @@ permissions:
   issues: write
 
 concurrency:
-  group: uscis-changelog-${{ github.ref }}
+  # Shared with the other citation lane on purpose. Both commit to main, and
+  # git-auto-commit-action does not rebase: dispatching both at once produced a
+  # non-fast-forward push and a red run whose lane had worked perfectly. One
+  # group means they queue instead of colliding.
+  group: authority-network-citation-lanes-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:

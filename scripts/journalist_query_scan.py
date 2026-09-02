@@ -643,13 +643,29 @@ def run(args) -> dict:
             body = "\n\n".join(
                 f"**{s['code']}**\n\n{s['message']}\n\n**To unblock:** {s.get('unblock', '')}"
                 for s in fresh)
-            ok, _ = open_issue(
+            ok, detail = open_issue(
                 "Journalist-query lane is built and waiting on one credential",
                 body + "\n\nThis is said once. The daily scan will keep running and will "
                        "stay silent until it is unblocked, rather than opening this "
                        "issue again every morning.")
+            # Whether the owner was actually told is itself a fact the receipt has
+            # to carry. The first CI run printed a perfect named stop into a log
+            # nobody reads and opened no issue, and nothing anywhere said so --
+            # a notification lane that fails silently is indistinguishable from
+            # one that had nothing to say, which is the exact defect this lane is
+            # built to avoid, one level up.
+            receipt["announced"] = {"ok": ok, "codes": [s["code"] for s in fresh],
+                                    "detail": "" if ok else str(detail)[:300]}
             if ok:
                 state["stops_announced"] = sorted(announced | {s["code"] for s in fresh})
+            else:
+                receipt["stops"].append({
+                    "code": "ANNOUNCE_FAILED",
+                    "message": f"could not open the issue that tells the owner what to "
+                               f"set: {detail}. The stop was NOT marked announced, so "
+                               f"the next run tries again.",
+                    "unblock": "Read the named stop in this run's log; it says exactly "
+                               "what to set."})
         for code in list(state.get("stops_announced", [])):
             if code not in {s["code"] for s in unresolved}:
                 state["stops_announced"].remove(code)
