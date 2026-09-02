@@ -7,8 +7,8 @@
   "strong_warnings": 0,
   "soft_warnings": 3,
   "cache": {
-    "hits": 633,
-    "misses": 1,
+    "hits": 634,
+    "misses": 0,
     "enabled": true
   },
   "repairs_applied": 0,
@@ -111845,101 +111845,101 @@
       "word_count": 1582
     },
     {
-      "path": "sites/professional-resources/uscis-form-and-fee-changelog.html",
-      "publication": "professional-resources",
-      "route": "/uscis-form-and-fee-changelog.html",
-      "source_hash": "1d51373f7ee2a071b63b7f5d2aa2caacb60060c149219187e452ba56c45c9e16",
-      "title": "USCIS Form and Fee Changelog | Professional Resource Library",
+      "cache_status": "HIT",
+      "canonical": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
+      "duplicate_fingerprint": "8ab909ce6c6725ad5e10d32040447119b332f971bff5ac8e1196f139369c2f04",
+      "external_links": [
+        {
+          "anchor": "USCIS documents in the Federal Register",
+          "href": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services"
+        },
+        {
+          "anchor": "USCIS Filing Fees",
+          "href": "https://www.uscis.gov/forms/filing-fees"
+        },
+        {
+          "anchor": "USCIS Forms Updates",
+          "href": "https://www.uscis.gov/forms/forms-updates"
+        },
+        {
+          "anchor": "USCIS All Forms",
+          "href": "https://www.uscis.gov/forms/all-forms"
+        },
+        {
+          "anchor": "Masthead",
+          "href": "https://professionalresourcelibrary.com/masthead"
+        },
+        {
+          "anchor": "Editorial standards",
+          "href": "https://professionalresourcelibrary.com/editorial-standards"
+        },
+        {
+          "anchor": "Corrections",
+          "href": "https://professionalresourcelibrary.com/corrections"
+        },
+        {
+          "anchor": "Contributors",
+          "href": "https://professionalresourcelibrary.com/contributors"
+        }
+      ],
+      "findings": [],
       "h1": [
         "USCIS Form and Fee Changelog"
       ],
-      "word_count": 2119,
-      "canonical": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
-      "meta_description": "A dated record of what changed on the USCIS filing-fee and form-edition pages, and when. Every entry quotes the agency's own text, links the page it was read from, and carries the date it was checked.",
       "html_lang": "en",
-      "external_links": [
-        {
-          "href": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
-          "anchor": "USCIS documents in the Federal Register"
-        },
-        {
-          "href": "https://www.uscis.gov/forms/filing-fees",
-          "anchor": "USCIS Filing Fees"
-        },
-        {
-          "href": "https://www.uscis.gov/forms/forms-updates",
-          "anchor": "USCIS Forms Updates"
-        },
-        {
-          "href": "https://www.uscis.gov/forms/all-forms",
-          "anchor": "USCIS All Forms"
-        },
-        {
-          "href": "https://professionalresourcelibrary.com/masthead",
-          "anchor": "Masthead"
-        },
-        {
-          "href": "https://professionalresourcelibrary.com/editorial-standards",
-          "anchor": "Editorial standards"
-        },
-        {
-          "href": "https://professionalresourcelibrary.com/corrections",
-          "anchor": "Corrections"
-        },
-        {
-          "href": "https://professionalresourcelibrary.com/contributors",
-          "anchor": "Contributors"
-        }
-      ],
       "internal_links": [
         {
-          "href": "/",
-          "anchor": "Professional Resource Library"
+          "anchor": "Professional Resource Library",
+          "href": "/"
         },
         {
-          "href": "/regulated-service-provider-research",
-          "anchor": "Regulated Service Provider Research"
+          "anchor": "Regulated Service Provider Research",
+          "href": "/regulated-service-provider-research"
         },
         {
-          "href": "/personal-injury-research-resources",
-          "anchor": "Personal Injury Research Resources"
+          "anchor": "Personal Injury Research Resources",
+          "href": "/personal-injury-research-resources"
         },
         {
-          "href": "/dental-decision-resources",
-          "anchor": "Dental Decision Resources"
+          "anchor": "Dental Decision Resources",
+          "href": "/dental-decision-resources"
         },
         {
-          "href": "/hormone-wellness-clinic-research",
-          "anchor": "Hormone and Wellness Clinic Research"
+          "anchor": "Hormone and Wellness Clinic Research",
+          "href": "/hormone-wellness-clinic-research"
         },
         {
-          "href": "/neuro-evaluation-research",
-          "anchor": "Neuro Evaluation Research"
+          "anchor": "Neuro Evaluation Research",
+          "href": "/neuro-evaluation-research"
         },
         {
-          "href": "/uscis-medical-exam-resources",
-          "anchor": "USCIS Medical Exam Resources"
+          "anchor": "USCIS Medical Exam Resources",
+          "href": "/uscis-medical-exam-resources"
         },
         {
-          "href": "/equine-legal-resource-library",
-          "anchor": "Equine Legal Resource Library"
+          "anchor": "Equine Legal Resource Library",
+          "href": "/equine-legal-resource-library"
         },
         {
-          "href": "/workplace-burnout-and-boundaries",
-          "anchor": "Workplace Burnout and Boundaries Resources"
+          "anchor": "Workplace Burnout and Boundaries Resources",
+          "href": "/workplace-burnout-and-boundaries"
         },
         {
-          "href": "/about",
-          "anchor": "About Professional Resource Library"
+          "anchor": "About Professional Resource Library",
+          "href": "/about"
         }
       ],
-      "schema_count": 2,
-      "duplicate_fingerprint": "8ab909ce6c6725ad5e10d32040447119b332f971bff5ac8e1196f139369c2f04",
-      "findings": [],
+      "meta_description": "A dated record of what changed on the USCIS filing-fee and form-edition pages, and when. Every entry quotes the agency's own text, links the page it was read from, and carries the date it was checked.",
+      "path": "sites/professional-resources/uscis-form-and-fee-changelog.html",
+      "publication": "professional-resources",
       "repair_count": 0,
-      "status": "PASS",
       "repairs": [],
-      "cache_status": "MISS"
+      "route": "/uscis-form-and-fee-changelog.html",
+      "schema_count": 2,
+      "source_hash": "1d51373f7ee2a071b63b7f5d2aa2caacb60060c149219187e452ba56c45c9e16",
+      "status": "PASS",
+      "title": "USCIS Form and Fee Changelog | Professional Resource Library",
+      "word_count": 2119
     },
     {
       "cache_status": "HIT",

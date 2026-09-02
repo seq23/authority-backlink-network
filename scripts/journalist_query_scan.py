@@ -476,6 +476,56 @@ def render_digest(rows: list[dict], ledger: dict) -> str:
 
 # --------------------------------------------------------------------- run
 
+
+def announce_stops(receipt: dict, state: dict, args) -> None:
+    """Tell the owner, once, about a stop only she can clear.
+
+    Said ONCE. A daily issue reading "still not subscribed" is a standing
+    instruction nobody follows, which this repository has already paid for
+    (scripts/validators/validate_no_manual_lane.py records what that cost).
+
+    This lives in its own function because it did not used to. It sat at the
+    tail of run(), and the NO_MAILBOX_CREDENTIAL path returns from the middle of
+    run() -- so the code that announces the credential stop was unreachable from
+    the credential stop. Two CI runs printed a perfect named stop into a log
+    nobody reads and opened nothing. A guard that cannot reach what it governs
+    is the defect class this repository names explicitly, and this was one.
+    """
+    if args.no_issue:
+        return
+    unresolved = [s for s in receipt["stops"]
+                  if s["code"] in ("NO_MAILBOX_CREDENTIAL", "NO_API_KEY")]
+    announced = set(state.get("stops_announced", []))
+    fresh = [s for s in unresolved if s["code"] not in announced]
+    if fresh:
+        body = "\n\n".join(
+            f"**{s['code']}**\n\n{s['message']}\n\n**To unblock:** {s.get('unblock', '')}"
+            for s in fresh)
+        ok, detail = open_issue(
+            "Journalist-query lane is built and waiting on one credential",
+            body + "\n\nThis is said once. The daily scan will keep running and will "
+                   "stay silent until it is unblocked, rather than opening this issue "
+                   "again every morning.")
+        # Whether the owner was actually told is itself a fact the receipt carries.
+        # A notification lane that fails silently is indistinguishable from one
+        # that had nothing to say.
+        receipt["announced"] = {"ok": ok, "codes": [s["code"] for s in fresh],
+                                "detail": "" if ok else str(detail)[:300]}
+        if ok:
+            state["stops_announced"] = sorted(announced | {s["code"] for s in fresh})
+        else:
+            receipt["stops"].append({
+                "code": "ANNOUNCE_FAILED",
+                "message": f"could not open the issue that tells the owner what to set: "
+                           f"{detail}. The stop was NOT marked announced, so the next "
+                           f"run tries again.",
+                "unblock": "Read the named stop in this run's log; it says exactly what "
+                           "to set."})
+    for code in list(state.get("stops_announced", [])):
+        if code not in {s["code"] for s in unresolved}:
+            state["stops_announced"].remove(code)
+
+
 def run(args) -> dict:
     beats = load(BEATS)
     ledger = load(LEDGER)
@@ -514,6 +564,9 @@ def run(args) -> dict:
         receipt["named_outcome"] = (
             f"NAMED STOP {stop.code}: {stop.message} This is not 'no relevant queries'; "
             f"it is 'no queries were looked at'.")
+        announce_stops(receipt, state, args)
+        state["last_run"] = now
+        write_json(STATE, state)
         write_json(RECEIPT, receipt)
         return receipt
 
@@ -631,44 +684,7 @@ def run(args) -> dict:
             f"{receipt['dropped_by_grounding_guard']} drafted but ungrounded). "
             f"Nothing was sent, and nothing should have been.")
 
-    # A named stop is said ONCE. A daily issue saying "still not subscribed" is a
-    # standing instruction nobody follows, which this repository already learned
-    # costs more than it delivers (scripts/validators/validate_no_manual_lane.py).
-    unresolved = [s for s in receipt["stops"] if s["code"] in
-                  ("NO_MAILBOX_CREDENTIAL", "NO_API_KEY")]
-    if unresolved and not args.no_issue:
-        announced = set(state.get("stops_announced", []))
-        fresh = [s for s in unresolved if s["code"] not in announced]
-        if fresh:
-            body = "\n\n".join(
-                f"**{s['code']}**\n\n{s['message']}\n\n**To unblock:** {s.get('unblock', '')}"
-                for s in fresh)
-            ok, detail = open_issue(
-                "Journalist-query lane is built and waiting on one credential",
-                body + "\n\nThis is said once. The daily scan will keep running and will "
-                       "stay silent until it is unblocked, rather than opening this "
-                       "issue again every morning.")
-            # Whether the owner was actually told is itself a fact the receipt has
-            # to carry. The first CI run printed a perfect named stop into a log
-            # nobody reads and opened no issue, and nothing anywhere said so --
-            # a notification lane that fails silently is indistinguishable from
-            # one that had nothing to say, which is the exact defect this lane is
-            # built to avoid, one level up.
-            receipt["announced"] = {"ok": ok, "codes": [s["code"] for s in fresh],
-                                    "detail": "" if ok else str(detail)[:300]}
-            if ok:
-                state["stops_announced"] = sorted(announced | {s["code"] for s in fresh})
-            else:
-                receipt["stops"].append({
-                    "code": "ANNOUNCE_FAILED",
-                    "message": f"could not open the issue that tells the owner what to "
-                               f"set: {detail}. The stop was NOT marked announced, so "
-                               f"the next run tries again.",
-                    "unblock": "Read the named stop in this run's log; it says exactly "
-                               "what to set."})
-        for code in list(state.get("stops_announced", [])):
-            if code not in {s["code"] for s in unresolved}:
-                state["stops_announced"].remove(code)
+    announce_stops(receipt, state, args)
     state["last_run"] = now
     write_json(STATE, state)
     write_json(RECEIPT, receipt)

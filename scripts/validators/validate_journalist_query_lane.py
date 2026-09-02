@@ -44,6 +44,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
 import re
 import sys
 import tempfile
@@ -270,6 +271,62 @@ def check_outcomes(report: Report, tmp: Path) -> None:
     if not quiet["named_outcome"]:
         report.fail("a quiet day produced no named outcome. Rule 0: no run may exit 0 "
                     "having done nothing without saying so.")
+
+    # --- the credential stop must actually reach the owner ------------------
+    # This is the one that shipped broken. announce_stops() sat at the tail of
+    # run(), and the NO_MAILBOX_CREDENTIAL path returns from the MIDDLE of
+    # run() -- so the code that announces the credential stop was unreachable
+    # from the credential stop, and two CI runs printed a perfect named stop
+    # into a log nobody reads and opened nothing. Driven here rather than
+    # inspected, with the issue call stubbed and counted.
+    report.exercised()
+    calls: list[tuple[str, str]] = []
+    saved_open = J.open_issue
+    J.open_issue = lambda title, body: (calls.append((title, body)) or (True, "stubbed"))
+    # The REAL imap_messages is used, with its credentials removed from the
+    # environment. A stub would have proved only that the harness raises what
+    # the harness raises; this proves the message the owner actually receives
+    # names the stop and the secrets she has to set.
+    saved_env = {k: os.environ.pop(k, None) for k in
+                 ("SOS_IMAP_HOST", "SOS_IMAP_USER", "SOS_IMAP_PASSWORD")}
+    try:
+        inbox = tmp / "cred"
+        inbox.mkdir(parents=True, exist_ok=True)
+        saved = (J.RECEIPT, J.STATE, J.DIGESTS)
+        J.RECEIPT, J.STATE, J.DIGESTS = (tmp / "cred-r.json", tmp / "cred-s.json",
+                                         tmp / "cred-d")
+        try:
+            first = J.run(argparse.Namespace(inbox_dir=None, no_issue=False,
+                                             model=J.DEFAULT_MODEL))
+            second = J.run(argparse.Namespace(inbox_dir=None, no_issue=False,
+                                              model=J.DEFAULT_MODEL))
+        finally:
+            J.RECEIPT, J.STATE, J.DIGESTS = saved
+    finally:
+        J.open_issue = saved_open
+        for key, value in saved_env.items():
+            if value is not None:
+                os.environ[key] = value
+
+    if len(calls) != 1:
+        report.fail(
+            f"a run that could not read the mailbox opened {len(calls)} issue(s); it "
+            f"must open exactly one across two runs. Zero means the owner is never "
+            f"told what to set and the lane waits forever on a log line. More than "
+            f"one means a standing daily instruction, which this repository has "
+            f"already established nobody follows.")
+    elif "NO_MAILBOX_CREDENTIAL" not in calls[0][1] or "SOS_IMAP" not in calls[0][1]:
+        report.fail("the issue that tells the owner what to set does not name the "
+                    "stop and the secrets; a notification that does not say what to "
+                    "do is not a notification")
+    report.exercised()
+    if first.get("announced", {}).get("ok") is not True:
+        report.fail("the run receipt does not record that the owner was told. A "
+                    "notification lane that fails silently is indistinguishable from "
+                    "one that had nothing to say.")
+    if "NO RELEVANT" in second["named_outcome"]:
+        report.fail("a run that could not read the mailbox reported 'no relevant "
+                    "queries'; nothing was looked at")
 
     # --- a digest the parser cannot read -----------------------------------
     report.exercised()
