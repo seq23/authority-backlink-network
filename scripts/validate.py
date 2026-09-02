@@ -56,6 +56,8 @@ COMMANDS = {
     "affiliate_rel_disclosure": [sys.executable, "scripts/backfill_rel_attributes.py", "--check"],
     "wedding_cost_dataset": [sys.executable, "scripts/validators/validate_wedding_cost_dataset.py"],
     "external_citation_coverage": [sys.executable, "scripts/validators/validate_external_citation_coverage.py"],
+    "uscis_changelog": [sys.executable, "scripts/validators/validate_uscis_changelog.py"],
+    "journalist_query_lane": [sys.executable, "scripts/validators/validate_journalist_query_lane.py"],
 }
 
 

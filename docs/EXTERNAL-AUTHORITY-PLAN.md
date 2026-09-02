@@ -86,7 +86,50 @@ not read as reference material, and that is now fixed.
 `scripts/validators/validate_external_citation_coverage.py` ratchets it: the
 count cannot fall back towards zero without a validator failing.
 
-**Not started:** Ranks 1, 3, 4, 5 and 6, and Phase 2 of Rank 2.
+**Rank 4 — built and running, 2026-09-01.**
+[USCIS Form and Fee Changelog](https://professionalresourcelibrary.com/uscis-form-and-fee-changelog),
+published from `data/uscis-changelog/`. Three USCIS pages are fetched weekly by
+`.github/workflows/uscis-changelog.yml`, compared line by line against the stored
+copy, and a material difference becomes a dated entry whose every quoted line is
+verified present in the fetched page. **The weekly hour this play was costed at
+does not exist**; the plan's condition — "if that hour will not happen reliably,
+do not start this play" — was answered by removing the hour rather than promising
+it.
+
+Three things it does deliberately:
+
+- **An unreachable page is never recorded as "no change."** One miss is a named
+  stop and the source is shown as stale on the page itself, above the entries;
+  two consecutive misses turn the workflow red. That is the failure this lane
+  would otherwise have: a log that looks healthy because it stopped looking.
+- **The snapshot advances only after an entry exists.** An OpenRouter outage
+  costs a week of latency, never a lost change.
+- **The editorial-desk byline.** `data/contributors.json` is still empty.
+
+**Rank 1 — built and running, 2026-09-01, waiting on one free subscription.**
+`.github/workflows/journalist-query-scan.yml` runs each weekday: it ingests the
+day's queries, filters to the beats she can genuinely answer, and drafts a reply
+grounded only in `data/journalist-queries/expertise-ledger.json`. Nothing
+relevant means nothing is sent. One to three relevant means one GitHub issue with
+the query, the deadline and a draft.
+
+**The send stays human and there is no path that does not.** No mail transport is
+imported and a validator fails the build the day one appears. This is the plan's
+own line: an auto-sent pitch with one wrong fact is printed under her name, which
+is a correction in a real publication and a source relationship burned
+permanently, against an upside of thirty seconds.
+
+Ingestion was verified before it was built, and one thing in section 3 below is
+wrong: **`featured.com/api-integration/sign-up` returns HTTP 404**, `featured.com/api`
+returns 404, `robots.txt` disallows `/api/`, and `featured.com/questions` answers
+429 to automated requests. There is no public Featured API and nothing is built
+against one. Source of Sources is email, confirmed live; its `/feed` is the
+WordPress blog, not the queries. The lane therefore reads a mailbox over IMAP,
+read-only, and needs `SOS_IMAP_HOST`, `SOS_IMAP_USER` and `SOS_IMAP_PASSWORD` —
+the only credentials in either lane the owner must set herself. Steps are in
+[`runbooks/HANDS_OFF_CITATION_LANES.md`](runbooks/HANDS_OFF_CITATION_LANES.md).
+
+**Not started:** Ranks 3, 5 and 6, and Phase 2 of Rank 2.
 
 ---
 
@@ -124,7 +167,7 @@ Verified free-to-source platforms (checked 2026-08-27; status quoted, not assume
 |---|---|---|---|
 | **Source of Sources (SOS)** | sourceofsources.com | Yes — *"This list doesn't cost a dime."* | Peter Shankman's post-HARO project. Up to 3 query emails/day. Asks for charity donations, not fees. **Start here.** |
 | **HARO** (now run by Featured) | helpareporter.com | Believed yes — could not verify | See the correction below. Featured's own tiers are Free $0 / Lite $29 / Pro $79. Confirm in a browser before relying on it. |
-| **Featured.com** | featured.com | Yes — *"$0 Free forever"* | Now owns and operates HARO. |
+| **Featured.com** | featured.com | Yes — *"$0 Free forever"* | Now owns and operates HARO. **No public API** — `featured.com/api-integration/sign-up` and `/api` both return 404 and `robots.txt` disallows `/api/` (rechecked 2026-09-01). Source-side access is the website and email only. |
 | **SourceBottle** | sourcebottle.com | Yes — *"Put your wallets away! You can now create your Expert Profile for free!"* | Optional paid pitch upsell. |
 | **Qwoted** | qwoted.com | Yes — Basic, free | 2 pitches/month, and responses are held on a **2-hour delay** vs. paid. The delay is the real cost. |
 | **#JournoRequest** | Bluesky | Free | Verified active with posts dated 2026-08-27. **Skews heavily UK** — weak for a Memphis vendor beat, useful for the operations beat. |

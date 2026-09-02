@@ -1,0 +1,107 @@
+name: USCIS Form and Fee Changelog
+
+# Rank 4 of docs/EXTERNAL-AUTHORITY-PLAN.md, automated so it does not depend on
+# a weekly habit. The plan's own condition on this play was "if that hour will
+# not happen reliably, do not start this play" -- so the hour was removed rather
+# than promised.
+#
+# A run that finds nothing SAYS SO. "No USCIS change this week" is a named,
+# legitimate outcome; a silent exit is not. A source that could not be fetched is
+# never recorded as unchanged: one miss is a named stop, two consecutive misses
+# exit non-zero and open an issue, because a changelog that has stopped looking
+# while still publishing is the harmful state this lane exists to avoid.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Tuesday morning UTC. USCIS posts form and fee updates on weekdays, so a
+    # Monday run would carry a weekend's worth of nothing.
+    - cron: '11 13 * * 2'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: uscis-changelog-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch the tracked USCIS pages, diff them, and write any entry
+        # The only step that touches the network or the model. It advances a
+        # snapshot ONLY once an entry exists for the change, so an OpenRouter
+        # outage costs a week of latency and never a lost change.
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          USCIS_CHANGELOG_MODEL: ${{ vars.USCIS_CHANGELOG_MODEL || 'anthropic/claude-sonnet-4.5' }}
+        run: python3 scripts/uscis_changelog.py
+
+      - name: Render the published changelog
+        run: python3 scripts/build_uscis_changelog_page.py --write
+
+      - name: Give the page the publication's chrome, then a path in
+        # Without this the changelog is an orphan the moment it is written, which
+        # is the state that put all three publications at zero indexed pages.
+        #
+        # ORDER MATTERS, and it is the reverse of what reads naturally.
+        # build_editorial_pages.py regenerates masthead/standards/corrections
+        # wholesale, which DISCARDS the library nav build_site_navigation.py
+        # installs. Running navigation last is the order that converges: proved
+        # here by running the whole sequence three times and getting an identical
+        # tree from the second run onwards.
+        run: |
+          python3 scripts/build_editorial_pages.py --write
+          python3 scripts/build_robots.py --write
+          python3 scripts/install_editorial_chrome.py --write
+          python3 scripts/build_site_navigation.py --write
+
+      - name: Validate the entries against their stored evidence
+        # Runs after the page is rendered, so it checks what was actually
+        # published rather than what was intended.
+        run: python3 scripts/validators/validate_uscis_changelog.py
+
+      - name: Validate the release
+        run: python3 scripts/validate.py release
+
+      - name: Commit the week's snapshots, entries and page
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "USCIS form and fee changelog: weekly check"
+          file_pattern: "data/uscis-changelog/** sites/professional-resources/** reports/uscis-changelog-latest.json"
+
+      - name: Say what the run did, including when it did nothing
+        # Rule 0. A week with no change is a real outcome and it is printed into
+        # the log so a green run is never mistaken for a run that did not happen.
+        if: always()
+        run: |
+          python3 -c "import json,sys; r=json.load(open('reports/uscis-changelog-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('sources checked:', r['sources_checked'], 'of', r['sources_declared']); print('entries written:', r['entries_written'])"
+
+      - name: Open an issue if a tracked source has gone blind
+        # Only when a source has been unreachable for two consecutive checks. A
+        # single bad afternoon at an agency is not worth an issue; a fortnight of
+        # not looking is, because that is the point at which the page starts
+        # lying by omission.
+        if: failure()
+        uses: dacbd/create-issue-action@v2
+        with:
+          token: ${{ github.token }}
+          title: "USCIS changelog: a tracked source has gone unreachable"
+          body: |
+            The weekly USCIS changelog run failed. The usual cause is a tracked
+            page that has been unreachable for two consecutive checks, which
+            means the changelog has stopped observing it.
+
+            Nothing was published as "unchanged" for that source. Check
+            `reports/uscis-changelog-latest.json` for which source and why, and
+            update the URL in `data/uscis-changelog/tracked-sources.json` if the
+            agency has moved the page.

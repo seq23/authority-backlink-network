@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "lane": "professional",
+  "subject": "USCIS form editions and filing fees",
+  "why_this_lane_and_not_a_wider_one": [
+    "docs/EXTERNAL-AUTHORITY-PLAN.md, Rank 4: 'Pick one narrow lane and hold it --",
+    "immigration form and fee changes is the strongest candidate.'",
+    "",
+    "A changelog across five agencies is a worse asset than a changelog across one,",
+    "for a reason that is structural rather than editorial. The thing a journalist",
+    "cites is 'the record that has watched this page every week since 2026'. That",
+    "record is only worth citing if it is unbroken. Every additional agency adds",
+    "another page that can move its URL, another fetch that can fail, and another",
+    "week where the changelog is partially blind while still publishing. Depth is",
+    "the product; breadth is the thing that destroys it.",
+    "",
+    "USCIS form and fee changes were chosen over the alternatives because:",
+    "  - they change on a real cadence (edition dates, fee rules) rather than never;",
+    "  - the primary source is a stable federal URL, not a state board PDF that",
+    "    moves every session;",
+    "  - Professional Resource Library already carries the immigration surface",
+    "    (uscis-medical-exam-resources.html and its cost page), so the changelog",
+    "    lands next to material it actually relates to;",
+    "  - the affected reader is specific and currently unserved: someone mid-filing",
+    "    who needs to know whether the edition they downloaded is still accepted."
+  ],
+  "boundary": [
+    "This lane reports WHAT CHANGED on a government page and WHEN it was observed.",
+    "It does not tell anyone what to do about it, which edition to file, or whether",
+    "they qualify for anything. That boundary is the publication's, not this file's:",
+    "data/publications.json 'professional' says the publication is educational only",
+    "and does not provide professional advice."
+  ],
+  "fetch": {
+    "user_agent": "Mozilla/5.0 (compatible; ProfessionalResourceLibrary-Changelog/1.0; +https://professionalresourcelibrary.com/uscis-form-and-fee-changelog)",
+    "timeout_seconds": 45,
+    "attempts": 3,
+    "backoff_seconds": 5
+  },
+  "sources": [
+    {
+      "id": "uscis-filing-fees",
+      "url": "https://www.uscis.gov/forms/filing-fees",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "title": "USCIS Filing Fees",
+      "watching": "The filing fee schedule and the fee-related notices USCIS prints on it.",
+      "extract": {
+        "strategy": "main_or_body",
+        "drop_selectors_note": "Navigation, script, style and the alert banner are removed by the normalizer; see scripts/uscis_changelog.py:visible_text()."
+      }
+    },
+    {
+      "id": "uscis-forms-updates",
+      "url": "https://www.uscis.gov/forms/forms-updates",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "title": "USCIS Forms Updates",
+      "watching": "Form edition dates and the dates on which a prior edition stops being accepted.",
+      "extract": {
+        "strategy": "main_or_body",
+        "drop_selectors_note": "Same normalizer."
+      }
+    },
+    {
+      "id": "uscis-all-forms",
+      "url": "https://www.uscis.gov/forms/all-forms",
+      "publisher": "U.S. Citizenship and Immigration Services",
+      "title": "USCIS All Forms",
+      "watching": "The set of forms USCIS lists, so a form appearing or disappearing is observable.",
+      "extract": {
+        "strategy": "main_or_body",
+        "drop_selectors_note": "Same normalizer."
+      }
+    }
+  ]
+}

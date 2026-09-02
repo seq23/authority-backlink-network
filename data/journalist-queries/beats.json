@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "_README": [
+    "The beat filter, and the ingestion contract, for the journalist-query lane.",
+    "",
+    "The filter is deliberately strict and rejects freely. docs/EXTERNAL-AUTHORITY-PLAN.md",
+    "Rank 1: 'Answer only queries where you have first-hand knowledge -- a 2-in-10",
+    "hit rate on 5 good answers beats a 0-in-50 rate on generic ones.' A lane that",
+    "surfaces eight plausible queries a day is the same lane that dies in week",
+    "three, because it becomes a chore instead of an opportunity.",
+    "",
+    "`keywords` is a cheap prefilter, not the decision. A query that passes it goes",
+    "to a second, strict judgement against data/journalist-queries/expertise-ledger.json:",
+    "if a grounded answer cannot be built from the ledger, the query is dropped.",
+    "",
+    "`max_per_digest` is a hard cap, not a target. On a day with nothing relevant,",
+    "NOTHING IS SENT. Silence on a quiet day is a designed outcome."
+  ],
+  "max_per_digest": 3,
+  "max_draft_words": 200,
+  "beats": [
+    {
+      "id": "memphis-events",
+      "label": "Memphis events, venues, vendors and wedding cost",
+      "keywords": ["memphis", "tennessee wedding", "wedding cost", "wedding budget",
+                   "wedding vendor", "venue cost", "catering cost", "event budget",
+                   "cost per guest", "guest count", "wedding photographer cost",
+                   "florist cost", "reception cost", "wedding pricing"]
+    },
+    {
+      "id": "event-production",
+      "label": "Virtual and hybrid event production",
+      "keywords": ["virtual event", "hybrid event", "event production", "livestream",
+                   "webinar", "conference production", "run of show", "av production",
+                   "event tech", "attendee engagement", "event logistics",
+                   "accessible event", "event accessibility", "captioning"]
+    },
+    {
+      "id": "small-team-operations",
+      "label": "Operations for small teams",
+      "keywords": ["small team", "solo founder", "operations", "standard operating",
+                   "sop", "process documentation", "automation", "lean team",
+                   "operating cadence", "workflow", "founder", "bootstrapped",
+                   "small business owner", "outsourcing", "delegation"]
+    },
+    {
+      "id": "immigration-documentation",
+      "label": "Immigration documentation and form or fee changes",
+      "keywords": ["uscis", "immigration form", "immigration fee", "filing fee",
+                   "green card", "naturalization", "form i-", "form n-",
+                   "immigration paperwork", "immigration document", "civil surgeon",
+                   "immigration medical"]
+    },
+    {
+      "id": "self-service-document-prep",
+      "label": "Self-service document preparation",
+      "keywords": ["document preparation", "self-service legal", "diy paperwork",
+                   "form filling", "paperwork help", "checklist", "document checklist",
+                   "prepare documents", "notary", "pro se"]
+    }
+  ],
+  "hard_exclusions": {
+    "_why": [
+      "A query can match a beat keyword and still be one she must not answer.",
+      "These are dropped before the model is asked anything, because the cheapest",
+      "way to never send a wrong answer is to never draft one."
+    ],
+    "phrases": [
+      "legal advice", "attorney", "lawyer", "immigration attorney", "law firm",
+      "medical advice", "physician", "diagnosis", "therapist", "mental health advice",
+      "financial advice", "investment", "tax advice", "cpa",
+      "visa denial", "deportation", "removal proceedings", "asylum"
+    ]
+  },
+  "ingestion": {
+    "_verified": [
+      "Checked live on 2026-09-01, before any of this was built.",
+      "",
+      "SOURCE OF SOURCES -- email only. sourceofsources.com states: 'Up to three",
+      "times a day, you'll get an email filled with queries from journalists across",
+      "top media outlets.' The signup form asks for a name and an email address and",
+      "nothing else, and the site states 'This list doesn't cost a dime.' There is",
+      "no query API. https://sourceofsources.com/feed EXISTS and returns HTTP 200,",
+      "but it is the WordPress blog feed (channel title 'Source of Sources',",
+      "lastBuildDate Jan 2026, articles like 'How to Create an Online Press Kit').",
+      "It is not the queries and must not be used as if it were.",
+      "",
+      "FEATURED.COM -- no public API. https://featured.com/api-integration/sign-up,",
+      "named in the plan, returns HTTP 404. https://featured.com/api returns 404.",
+      "featured.com/robots.txt disallows /api/. featured.com/questions returns HTTP",
+      "429 to automated requests. There is no documented developer surface, so",
+      "nothing here is built against Featured; adding it later means adding a new",
+      "adapter, not changing this lane's shape.",
+      "",
+      "MAILBOX -- searched the owner's Gmail on 2026-09-01 for mail from",
+      "sourceofsources.com, featured.com, helpareporter.com, qwoted.com and",
+      "sourcebottle.com in the previous 60 days. Zero messages. She is not",
+      "subscribed to any of them yet, so there is currently nothing to ingest and",
+      "the lane's honest state is a named stop, not an empty result."
+    ],
+    "adapter": "imap",
+    "adapters": {
+      "imap": {
+        "note": "The only verified delivery channel is email, so this is the only real adapter. It reads, never sends, and never deletes.",
+        "env": {
+          "host": "SOS_IMAP_HOST",
+          "port": "SOS_IMAP_PORT",
+          "user": "SOS_IMAP_USER",
+          "password": "SOS_IMAP_PASSWORD",
+          "folder": "SOS_IMAP_FOLDER"
+        },
+        "default_folder": "INBOX",
+        "senders": ["sourceofsources.com", "helpareporter.com", "featured.com"],
+        "lookback_days": 2
+      },
+      "dir": {
+        "note": "A directory of .eml or .txt files. Used by the validator's fixtures, and as an escape hatch if mail is exported rather than read over IMAP.",
+        "flag": "--inbox-dir"
+      }
+    }
+  }
+}

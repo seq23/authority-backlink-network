@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-09-01T23:47:56.145Z",
+  "generated_at": "2026-09-02T00:20:16.730Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 627,
+  "pages_checked": 628,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -54,14 +54,14 @@
       "id": "concrete_numbers",
       "blocking": false,
       "pages_missing": 519,
-      "coverage_pct": 17.2,
+      "coverage_pct": 17.4,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
       "pages_missing": 43,
-      "coverage_pct": 93.1,
+      "coverage_pct": 93.2,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
