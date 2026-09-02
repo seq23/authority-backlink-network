@@ -77,6 +77,22 @@
       "accepted_urls": [
         "https://professionalresourcelibrary.com/consumer-reporting-companies-directory"
       ]
+    },
+    {
+      "accepted_at": "2026-09-02",
+      "reason": "Authority V4.2 autopilot run 33642537156 on 2026-09-02: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 631,
+      "accepted_count": 2,
+      "accepted_editorial": 2,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 306,
+      "accepted_urls": [
+        "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
+        "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog"
+      ]
     }
   ]
 }

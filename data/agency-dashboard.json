@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-01",
+  "as_of": "2026-09-02",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -651,7 +651,8 @@
       "path": ".github/workflows/journalist-query-scan.yml",
       "scheduled": true,
       "cron": [
-        "30 12 * * 1-5"
+        "0 12 * * 1-5",
+        "15 18 * * 1-5"
       ],
       "manual_dispatch": true
     },
