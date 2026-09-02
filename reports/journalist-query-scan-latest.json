@@ -1,8 +1,8 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T01:10:44+00:00",
-  "digests_read": 1,
-  "queries_ingested": 0,
+  "run_at": "2026-09-02T12:26:35+00:00",
+  "digests_read": 2,
+  "queries_ingested": 2,
   "non_digest_messages": [
     {
       "from": "Peter Shankman <peter@sourceofsources.com>",
@@ -11,12 +11,28 @@
     }
   ],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 1,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
-  "stops": [],
-  "drops": [],
-  "named_outcome": "NO QUERY DIGEST YET: 1 message(s) were read and every one is a recognised non-digest (sos-welcome). No digest has arrived, so no query was looked at. This is NOT 'no relevant queries'."
+  "stops": [
+    {
+      "code": "PARTIAL_DIGEST_PARSE",
+      "message": "a 17291-character digest from Peter Shankman <peter@sourceofsources.com> parsed to only 2 queries, below the floor of 5. The publisher states these carry 10-15. The 2 that parsed ARE being processed below; this stop exists because the ones that did not are invisible.",
+      "unblock": "Compare the digest against the field labels in data/journalist-queries/query-formats.json.",
+      "parsed": 2
+    }
+  ],
+  "drops": [
+    {
+      "summary": "Sleep medicine doctor needed",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Performance Management best practices for HR pros and employees",
+      "why": "The query asks about cybersecurity leadership and client protection strategies; Sequoia's facts cover wedding cost datasets, USCIS filing changes, and desk research methodology—none of which relate to"
+    }
+  ],
+  "named_outcome": "NAMED STOP: PARTIAL_DIGEST_PARSE"
 }
