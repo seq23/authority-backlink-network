@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-03",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -32,7 +32,7 @@
     "authority_publications": 3,
     "authority_backlinks": 349,
     "approved_destinations_waiting_for_context": 23,
-    "owned_manifest_surfaces": 82,
+    "owned_manifest_surfaces": 81,
     "live_verified": 349,
     "discoverable": 349,
     "indexed": 0,
@@ -194,7 +194,7 @@
       "brand_name": "Dianne's Place Recovery Services",
       "growth_status": "launch",
       "authority_backlinks": 18,
-      "owned_manifest_surfaces": 5,
+      "owned_manifest_surfaces": 4,
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 12,
       "target_variance_blocks_release": false
@@ -290,10 +290,10 @@
       "rendered": 18,
       "live_verified": 18,
       "indexed": 0,
-      "distinct_destinations": 4,
-      "distinct_anchors": 4,
+      "distinct_destinations": 3,
+      "distinct_anchors": 3,
       "rendered_floor": 4,
-      "destination_floor": 4,
+      "destination_floor": 3,
       "coverage_status": "HEALTHY_RENDERED",
       "external_outcome_proven": true
     },

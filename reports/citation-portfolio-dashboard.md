@@ -1,11 +1,11 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-09-02
+As of: 2026-09-03
 
 - Registered brands: 16
 - Authority publications: 3
 - Repository-rendered authority backlinks: 349
-- Owned product-repo surfaces imported: 82
+- Owned product-repo surfaces imported: 81
 - Live verified backlinks: 349
 - Indexed referring pages with evidence: 0
 
@@ -28,4 +28,4 @@ As of: 2026-09-02
 | Porch & Party | standard | 33 | 6 | 10 |
 | Approval Prep | priority | 139 | 18 | 150 |
 | Dream Wedding Builder | launch | 34 | 8 | 60 |
-| Dianne's Place Recovery Services | launch | 18 | 5 | 18 |
+| Dianne's Place Recovery Services | launch | 18 | 4 | 18 |

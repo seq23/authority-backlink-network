@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-02",
+  "run_at": "2026-09-03",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 49,
+    "published_in_window": 34,
     "allowance": 0,
-    "window_start": "2026-08-27",
-    "window_end": "2026-09-02"
+    "window_start": "2026-08-28",
+    "window_end": "2026-09-03"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "daily discipline frameworks",
-      "audience": "marketing lead",
-      "format": "question checklist",
-      "intent": "before you pay",
-      "modifier": "resource-backed",
-      "intended_title": "Daily Discipline Frameworks: Resource-Backed Question Checklist Before You Pay",
+      "cluster": "team accountability",
+      "audience": "executive assistant",
+      "format": "prep guide",
+      "intent": "for careful decision-makers",
+      "modifier": "AEO-ready",
+      "intended_title": "Team Accountability: Aeo-Ready Prep Guide For Careful Decision-Makers",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "988b7eb468b94c4e454a8a72be8b167c7d074f1965392ca9c24c9c837cb40d19",
-      "deferred_on": "2026-09-02",
+      "signature": "03d05a4af6fb825b9ed77abfd6e5e12cab1c7b703237601e1cec544f4039617e",
+      "deferred_on": "2026-09-03",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-02",
+      "deferred_on": "2026-09-03",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "questions before signing agreements",
-      "audience": "professional services buyer",
-      "format": "resource roundup",
-      "intent": "when timing matters",
-      "modifier": "GEO-ready",
-      "intended_title": "Questions Before Signing Agreements: Geo-Ready Resource Roundup When Timing Matters",
+      "cluster": "professional service provider comparison",
+      "audience": "HR leader",
+      "format": "decision guide",
+      "intent": "when you need to ask better questions",
+      "modifier": "comparison-friendly",
+      "intended_title": "Professional Service Provider Comparison: Comparison-Friendly Decision Guide When You Need To Ask Better Questions",
       "target_brand": "The Industry Guides",
       "target_url": "https://theindustryguides.com/methodology.html",
-      "signature": "86c11eefb84ba42b33e804fc511d7c3cd01d5db565e2ed6fa31eaeea9d204371",
-      "deferred_on": "2026-09-02",
+      "signature": "3d06b8e868f38c756a92b3f16d1b35897e69d3d1de48a98034c68b0da25ce1ed",
+      "deferred_on": "2026-09-03",
       "reason": "weekly_publication_cap"
     }
   ]
