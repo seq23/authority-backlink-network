@@ -70,6 +70,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from affiliation import affiliated_domains, host_of, is_affiliated  # noqa: E402
 from byline import entity_for, subsidiary_clause  # noqa: E402
+from lib.contact_link import mailto_link  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SITES = ROOT / "sites"
@@ -118,7 +119,11 @@ def render_footer(pub_title: str, domain: str, editor_addr: str) -> str:
         ("Contributors", f"{home}/contributors"),
     ]
     items = "".join(f'<li><a href="{esc(u)}">{esc(t)}</a></li>' for t, u in links)
-    items += f'<li><a href="mailto:{esc(editor_addr)}">{esc(editor_addr)}</a></li>'
+    # Wrapped by lib.contact_link so Cloudflare's Email Address Obfuscation
+    # leaves it alone. An unwrapped mailto: is rewritten at the edge into
+    # /cdn-cgi/l/email-protection, which the origin 404s -- one broken internal
+    # link on every published page. See scripts/lib/contact_link.py.
+    items += f'<li>{mailto_link(editor_addr)}</li>'
     entity = entity_for(pub_title)
     return (
         "<footer>"

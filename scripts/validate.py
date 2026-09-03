@@ -57,6 +57,7 @@ COMMANDS = {
     "wedding_cost_dataset": [sys.executable, "scripts/validators/validate_wedding_cost_dataset.py"],
     "external_citation_coverage": [sys.executable, "scripts/validators/validate_external_citation_coverage.py"],
     "backlink_seed_preserves_citations": [sys.executable, "scripts/validators/validate_backlink_seed_preserves_citations.py"],
+    "internal_links_resolve": [sys.executable, "scripts/validators/validate_internal_links_resolve.py"],
     "uscis_changelog": [sys.executable, "scripts/validators/validate_uscis_changelog.py"],
     "journalist_query_lane": [sys.executable, "scripts/validators/validate_journalist_query_lane.py"],
 }

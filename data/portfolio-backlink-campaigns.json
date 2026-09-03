@@ -173,7 +173,7 @@
       "name": "Dianne's Place Recovery Housing Resources",
       "status": "temporary_priority",
       "minimum_rendered_coverage": 4,
-      "minimum_distinct_destinations": 4,
+      "minimum_distinct_destinations": 3,
       "topic_keywords": [
         "recovery housing",
         "referral guidance",
@@ -192,10 +192,10 @@
       "destination_urls": [
         "https://www.diannesplacerecoveryservices.com/recovery-housing/",
         "https://www.diannesplacerecoveryservices.com/referrals/",
-        "https://www.diannesplacerecoveryservices.com/resources/",
-        "https://www.diannesplacerecoveryservices.com/answers/"
+        "https://www.diannesplacerecoveryservices.com/resources/"
       ],
-      "truth_label": "affiliated_editorial_backlink"
+      "truth_label": "affiliated_editorial_backlink",
+      "destination_floor_note": "Lowered from 4 to 3 on 2026-09-03. Not a relaxed standard: Dianne's Place removed /answers/ and /medical-disclaimer/ from its own site, and its sitemap now publishes three destinations this lane may cite educationally (/recovery-housing/, /referrals/, /resources/). /about and /contact-us are the only other live pages and neither is an educational or referral-context target, which this brand's link_policy requires. A floor of 4 against three existing pages is unsatisfiable and would have to be met by inventing a destination. Raise it again when the brand publishes a fourth citable page. The five published anchors that pointed at /answers/ were repointed to /resources/; verify_external_sources.py now fetches every approved brand destination, so a dead one fails the release rather than sitting in the registry."
     },
     {
       "id": "hicks-workplace-wellbeing",

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "729868c5b0c7cb5c8470415b89a3d541e9675a1f6fa570410f94051f7ec03ad2",
+  "plan_sha256": "76dae144c9249ef8b47a9717cdf9357cf6a8ab5b67657c0be5ab6a4e823977b8",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 43,
+  "count": 44,
   "counts_by_severity": {
-    "HARD_FAIL": 40,
+    "HARD_FAIL": 41,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
@@ -238,6 +238,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Unsafe publication; already separates advisory fit notes from failures.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "internal_links_resolve",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Broken required journeys. Every internal link in the markup the reader actually receives must resolve to a URL this build publishes. It reads the received markup rather than the tree, because the defect that took the whole network down on 2026-09-03 was injected after the origin: Cloudflare Email Address Obfuscation rewrote the governance footer's mailto: anchor into /cdn-cgi/l/email-protection, which the origin 404s, putting one broken link on every one of the 631 published pages and dropping Ahrefs site health to 4, 13 and 12 with 423, 107 and 107 errors. Nothing in sites/ was wrong, so a static link check found nothing and would have reported PASS throughout the outage. It fails if it examined zero pages, zero internal links or zero email anchors.",
       "profiles": [
         "changed",
         "full",
