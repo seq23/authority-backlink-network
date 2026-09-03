@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-02T17-06-55.768925Z-33659017350",
-  "attempted_at": "2026-09-02T17:06:55.768925Z",
+  "receipt_id": "2026-09-03T15-41-34.166314Z-33774064915",
+  "attempted_at": "2026-09-03T15:41:34.166314Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -2005,7 +2005,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "5d840acdb72b365ca9d99457e2934fcec99dc50ed4ce736df84b8dea414ea4fe",
+        "sha256": "8050d5628f9ba342df84f43111a88c545cfc180023720dfcb082df8b71677762",
         "url_count": 421
       },
       "indexnow": {
@@ -2122,8 +2122,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence",
-            "target_url": "https://www.diannesplacerecoveryservices.com/answers/",
-            "anchor": "plain-language recovery housing answers",
+            "target_url": "https://www.diannesplacerecoveryservices.com/resources/",
+            "anchor": "recovery support resources",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence",
             "source_live": true,
@@ -2421,8 +2421,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-07-23-community-reintegration-human-first-resource-roundup-before-you-pay",
-            "target_url": "https://www.diannesplacerecoveryservices.com/answers/",
-            "anchor": "plain-language recovery housing answers",
+            "target_url": "https://www.diannesplacerecoveryservices.com/resources/",
+            "anchor": "recovery support resources",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-07-23-community-reintegration-human-first-resource-roundup-before-you-pay",
             "source_live": true,
@@ -3877,8 +3877,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions",
-            "target_url": "https://www.diannesplacerecoveryservices.com/answers/",
-            "anchor": "plain-language recovery housing answers",
+            "target_url": "https://www.diannesplacerecoveryservices.com/resources/",
+            "anchor": "recovery support resources",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions",
             "source_live": true,
@@ -4228,8 +4228,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
-            "target_url": "https://www.diannesplacerecoveryservices.com/answers/",
-            "anchor": "plain-language recovery housing answers",
+            "target_url": "https://www.diannesplacerecoveryservices.com/resources/",
+            "anchor": "recovery support resources",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
             "source_live": true,
@@ -4713,7 +4713,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-02T17-06-55.768925Z-33659017350.json"
+    "history": "data/distribution/receipts/2026-09-03T15-41-34.166314Z-33774064915.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
