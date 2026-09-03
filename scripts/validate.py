@@ -60,6 +60,7 @@ COMMANDS = {
     "internal_links_resolve": [sys.executable, "scripts/validators/validate_internal_links_resolve.py"],
     "uscis_changelog": [sys.executable, "scripts/validators/validate_uscis_changelog.py"],
     "journalist_query_lane": [sys.executable, "scripts/validators/validate_journalist_query_lane.py"],
+    "validation_receipt_severity_truth": [sys.executable, "scripts/validators/validate_validation_receipt_severity_truth.py"],
 }
 
 
@@ -109,6 +110,40 @@ def severity_for(check: str) -> str:
     return SEVERITY_MATRIX.get(check, {}).get("severity", SEVERITY_DEFAULT)
 
 
+# The receipt used to carry one field named `severity` on every result, set from
+# the matrix regardless of whether the check passed. It was a policy class -- how
+# bad this check would be IF it failed -- but the word reads as an outcome, so 37
+# of 41 PASSing checks in a green release receipt were stamped
+# `"severity": "HARD_FAIL"`. A reader grepping a failed receipt for HARD_FAIL got
+# every check in the profile and no way to tell which one actually broke. That
+# already cost one misdiagnosis of run 33650439764, where the single real failure
+# was external_citation_coverage.
+#
+# So the two facts are now named separately and neither is inferable from the
+# other's name:
+#   severity_class     static policy from validation/plan.json; what it would
+#                      cost if this check failed. Present on passes and fails.
+#   observed_severity  what this run actually observed. "NONE" on a pass. Only a
+#                      check that genuinely failed can read HARD_FAIL here.
+# `blocking_if_failed` replaces `blocking` for the same reason.
+PASSED = "NONE"
+
+
+def classify(check: str, exit_code: int, strict: bool) -> dict:
+    """The single place outcome and policy are turned into receipt fields.
+
+    Kept pure and separate from run_check() so the guard that protects this
+    property can read the emitter's own logic instead of a second copy of it.
+    """
+    severity_class = severity_for(check)
+    blocking_if_failed = strict or severity_class == "HARD_FAIL"
+    return {
+        "severity_class": severity_class,
+        "observed_severity": PASSED if exit_code == 0 else severity_class,
+        "blocking_if_failed": blocking_if_failed,
+    }
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("profile", choices=PLAN["profiles"])
@@ -119,25 +154,24 @@ def main() -> None:
 
     for check in PLAN["profiles"][args.profile]:
         result = run_check(check)
-        result["severity"] = severity_for(check)
-        result["blocking"] = args.strict or result["severity"] == "HARD_FAIL"
+        result.update(classify(check, result["exit_code"], args.strict))
         results.append(result)
         # Stop at the first genuinely blocking failure. A non-blocking one keeps
         # the run going: reporting only the first defect and hiding the rest is
         # how a repo gets fixed one round-trip at a time.
-        if result["exit_code"] != 0 and result["blocking"]:
+        if result["exit_code"] != 0 and result["blocking_if_failed"]:
             break
 
-    blocking_failures = sum(1 for r in results if r["exit_code"] != 0 and r["blocking"])
-    nonblocking_failures = sum(1 for r in results if r["exit_code"] != 0 and not r["blocking"])
+    blocking_failures = sum(1 for r in results if r["exit_code"] != 0 and r["blocking_if_failed"])
+    nonblocking_failures = sum(1 for r in results if r["exit_code"] != 0 and not r["blocking_if_failed"])
     hard_failures = blocking_failures + sum(r["hard_failures"] for r in results)
     # Child receipts already provide warning counts. Do not count the aggregate status a second time.
     strong_warnings = sum(r["strong_warnings"] for r in results) + sum(
-        1 for r in results if r["exit_code"] != 0 and not r["blocking"])
+        1 for r in results if r["exit_code"] != 0 and not r["blocking_if_failed"])
     soft_warnings = sum(r["soft_warnings"] for r in results)
     status = "FAIL" if hard_failures else ("PASS_WITH_STRONG_WARNING" if strong_warnings else ("PASS_WITH_SOFT_WARNING" if soft_warnings else "PASS"))
     receipt = {
-        "schema": "authority-validation-receipt-v2",
+        "schema": "authority-validation-receipt-v3",
         "profile": args.profile,
         "status": status,
         "release_blocked": hard_failures > 0,
