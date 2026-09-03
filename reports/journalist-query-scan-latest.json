@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-02T18:30:58+00:00",
+  "run_at": "2026-09-03T12:26:52+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 9,
+  "queries_ingested": 7,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 9,
+  "dropped_by_beat_filter": 7,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,41 +14,33 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Seeking Fashion Week events for RTM Nexus coverage",
+      "summary": "Summary: Seeking Billion-Dollar Commercial Real Estate Owners for “Office Titans”",
+      "why": "excluded: 'investment'"
+    },
+    {
+      "summary": "Current College and University Leaders",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking 50–100 samples for upcoming themed boxes",
+      "summary": "Independent Pharmacies: How do you cater to customers",
+      "why": "excluded: 'physician'"
+    },
+    {
+      "summary": "Need Butchers for Eat This,Not That! Headlines",
       "why": "matches no declared beat"
     },
     {
-      "summary": "looking for occupational therapists or other aging in place specialists",
-      "why": "excluded: 'therapist'"
+      "summary": "Home/Kitchen/Travel/Entertaining Gifts",
+      "why": "matches no declared beat"
     },
     {
-      "summary": "Best Gifts for Travelers for 2026 (luggage, backpacks/duffels, clothing, shoes, travel tech, photo/video gear, etc)",
+      "summary": "Holiday Gift Guide for Moms & Women — Seeking Products for Review",
       "why": "matches no declared beat"
     },
     {
       "summary": "I'm looking for caregiver apps that help people stay organized when caregiving (not requesting help from a community)",
       "why": "matches no declared beat"
-    },
-    {
-      "summary": "Travel Advisors Reveal North America’s Most Scenic Train Rides for Fall",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Road Tripping Nebraska’s Fossil Country Where Mammoths and Rhinos Once Roamed",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Thanksgiving in New York City",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Insights on Planning Citywide Association Meetings and Conferences",
-      "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
