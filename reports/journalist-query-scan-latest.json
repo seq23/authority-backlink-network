@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-03T12:26:52+00:00",
+  "run_at": "2026-09-03T18:30:51+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 7,
+  "queries_ingested": 9,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 7,
+  "dropped_by_beat_filter": 9,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,33 +14,41 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Summary: Seeking Billion-Dollar Commercial Real Estate Owners for “Office Titans”",
+      "summary": "Feedback: Does tracking food intake help with weight loss?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking financial experts for insights on the upper-middle class",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Marketing Example: Getting both humans and AI to understand and trust",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Technology CEOs on how AI is changing their market this quarter",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "How Authors Can Land Podcast Interviews",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Looking to hear from an asphalt driveway contractor",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking New Yorkers who moved to NYC from another state or country in the last year",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "15 Kitchen appliances you MUST own this fall",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Someone in Anchorage, AK, to Discuss Developments and Scenic Drives",
       "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Current College and University Leaders",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Independent Pharmacies: How do you cater to customers",
-      "why": "excluded: 'physician'"
-    },
-    {
-      "summary": "Need Butchers for Eat This,Not That! Headlines",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Home/Kitchen/Travel/Entertaining Gifts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Holiday Gift Guide for Moms & Women — Seeking Products for Review",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "I'm looking for caregiver apps that help people stay organized when caregiving (not requesting help from a community)",
-      "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
