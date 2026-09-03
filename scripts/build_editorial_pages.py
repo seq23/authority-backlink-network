@@ -51,6 +51,7 @@ from urllib.parse import urlparse
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from byline import entity_for, parent_company, subsidiary_clause  # noqa: E402
+from lib.contact_link import mailto_link  # noqa: E402
 
 # The exact sentence hostile_review.py requires on any page mentioning a
 # regulated subject. These pages all mention "legal" and "contract", so it is
@@ -134,7 +135,11 @@ def editorial_footer(pub_title: str, domain: str, editor_addr: str) -> str:
         ("Contributors", f"{home}/contributors"),
     ]
     items = "".join(f'<li><a href="{esc(u)}">{esc(t)}</a></li>' for t, u in links)
-    items += f'<li><a href="mailto:{esc(editor_addr)}">{esc(editor_addr)}</a></li>'
+    # Wrapped by lib.contact_link so Cloudflare's Email Address Obfuscation
+    # leaves it alone. An unwrapped mailto: is rewritten at the edge into
+    # /cdn-cgi/l/email-protection, which the origin 404s -- one broken internal
+    # link on every published page. See scripts/lib/contact_link.py.
+    items += f'<li>{mailto_link(editor_addr)}</li>'
     return (
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
@@ -252,9 +257,9 @@ with a profile they control, and only on the pages they actually wrote.</dd>
 <dt>Who it is written for</dt>
 <dd>{esc(ed['publications'][pub['id']]['audience'])}.</dd>
 <dt>Editorial contact</dt>
-<dd><a href="mailto:{esc(editor_addr)}">{esc(editor_addr)}</a></dd>
+<dd>{mailto_link(editor_addr)}</dd>
 <dt>Corrections</dt>
-<dd><a href="mailto:{esc(corrections_addr)}">{esc(corrections_addr)}</a> &mdash; see the
+<dd>{mailto_link(corrections_addr)} &mdash; see the
 <a href="{esc(home)}/corrections">corrections policy and log</a>.</dd>
 </dl>
 </div>
@@ -375,9 +380,9 @@ it publishes.</p>
 
 <h2>Corrections</h2>
 <p>{esc(ed['corrections_policy']['promise'])} Write to
-<a href="mailto:{esc(corrections_addr)}">{esc(corrections_addr)}</a>, or read the full
+{mailto_link(corrections_addr)}, or read the full
 <a href="{esc(home)}/corrections">corrections policy</a>. General editorial contact is
-<a href="mailto:{esc(editor_addr)}">{esc(editor_addr)}</a>.</p>"""
+{mailto_link(editor_addr)}.</p>"""
 
     schema = web_page_schema("WebPage", title, url,
                              "Sourcing, production, AI use, affiliation and corrections policy.",
@@ -414,12 +419,12 @@ def corrections_page(pub, ed, corrections_addr) -> tuple:
 <p class="dek">How to report an error, what happens next, and every correction this publication
 has issued.</p>
 <h2>Short answer</h2>
-<p>Write to <a href="mailto:{esc(corrections_addr)}">{esc(corrections_addr)}</a> with the page
+<p>Write to {mailto_link(corrections_addr)} with the page
 address and what is wrong. {esc(cp['response_target'])} {esc(cp['promise'])}</p>
 
 <div class="contact-block">
 <p><strong>Corrections address:</strong>
-<a href="mailto:{esc(corrections_addr)}">{esc(corrections_addr)}</a></p>
+{mailto_link(corrections_addr)}</p>
 <p>Include the page address, the statement you believe is wrong, and -- if you have one -- the
 source that shows what is correct. You do not need to be the subject of the page to report an
 error on it.</p>
@@ -530,7 +535,7 @@ nothing to do with the affiliated projects can write a page that cites none of t
 </ul>
 
 <h2>How to write for this publication</h2>
-<p>Write to <a href="mailto:{esc(pitch_addr)}">{esc(pitch_addr)}</a> with the question you want
+<p>Write to {mailto_link(pitch_addr)} with the question you want
 to answer, why you are the person to answer it, and where your work can be read. Pitches that
 are really link requests are declined, and a pitch that offers a payment in either direction is
 declined automatically.</p>

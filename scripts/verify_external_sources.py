@@ -38,6 +38,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "data/external-sources.json"
+BRANDS = ROOT / "data/brands.json"
 RECEIPTS = ROOT / "reports/external-source-verification.json"
 PUBLICATION_IDS = {p["id"] for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -93,6 +94,38 @@ def fetch(url: str, timeout: int = 25) -> dict:
         }
 
 
+def brand_link_targets() -> list[dict]:
+    """Every affiliated destination the network is allowed to link to.
+
+    `data/external-sources.json` covers the EDITORIAL citations, and they were
+    fetched and receipted from the first day. The commercial destinations in
+    `data/brands.json` were not covered by anything: link_audit.py checks that a
+    published link is IN the approved set, and nothing ever checked that the
+    approved set still resolves. So when Dianne's Place removed /answers/ and
+    /medical-disclaimer/ from its site, five published professional-resources
+    pages went on linking to a 404 and every check in this repository passed.
+    Confirmed 2026-09-03: 2 of 86 approved brand links were dead.
+
+    A guard that cannot reach what it governs is not a guard. These are now
+    fetched and receipted on the same terms as the editorial sources.
+    """
+    out = []
+    for brand in json.loads(BRANDS.read_text(encoding="utf-8")):
+        for link in brand.get("approved_links", []):
+            url = link.get("url", "")
+            if not url:
+                continue
+            out.append({
+                # The host belongs in the id: dream-wedding-builder serves the
+                # same product path from four different domains, and an id that
+                # dropped the host would collapse them into one receipt.
+                "id": f"brand:{brand['id']}:{norm_domain(url)}{urlparse(url).path or '/'}",
+                "url": url,
+                "publisher": brand.get("name", brand["id"]),
+            })
+    return out
+
+
 def structural_failures(registry: dict, receipts: dict) -> list[str]:
     failures: list[str] = []
     sources = registry.get("sources", [])
@@ -139,6 +172,26 @@ def structural_failures(registry: dict, receipts: dict) -> list[str]:
             failures.append(
                 f"HARD_FAIL {sid}: last check was {receipt.get('outcome')} "
                 f"(HTTP {receipt.get('http_status')}); an unverified source may not stay registered")
+
+    brand_links = brand_link_targets()
+    if not brand_links:
+        failures.append(
+            "HARD_FAIL data/brands.json declares no approved_links; this check examined "
+            "nothing and must not report PASS on an empty set")
+    brand_receipts = {r["id"]: r for r in receipts.get("brand_link_receipts", [])}
+    for target in brand_links:
+        receipt = brand_receipts.get(target["id"])
+        if receipt is None:
+            failures.append(
+                f"HARD_FAIL {target['id']}: approved brand destination has no verification "
+                f"receipt ({target['url']}). Run `python3 scripts/verify_external_sources.py "
+                f"--network` before the network may link to it.")
+        elif receipt.get("outcome") != "verified":
+            failures.append(
+                f"HARD_FAIL {target['id']}: last check was {receipt.get('outcome')} "
+                f"(HTTP {receipt.get('http_status')}) for {target['url']}; the network may "
+                f"not keep linking to a destination that does not resolve. Repoint the "
+                f"published anchors, then remove it from data/brands.json.")
     return failures
 
 
@@ -168,6 +221,18 @@ def main() -> int:
             "verified": sum(1 for r in results if r["outcome"] == "verified"),
             "receipts": results,
         }
+        targets = brand_link_targets()
+        print(f"EXTERNAL SOURCE VERIFICATION: fetching {len(targets)} affiliated destination(s)")
+        brand_results = []
+        for target in targets:
+            observed = fetch(target["url"])
+            brand_results.append({**target, **observed})
+            print(f"  {observed['outcome']:<16} {observed['http_status']:<4} "
+                  f"{target['id']:<52} {observed['observed_title'][:40]}")
+        receipts["brand_links_checked"] = len(brand_results)
+        receipts["brand_links_verified"] = sum(
+            1 for r in brand_results if r["outcome"] == "verified")
+        receipts["brand_link_receipts"] = brand_results
         RECEIPTS.parent.mkdir(parents=True, exist_ok=True)
         RECEIPTS.write_text(json.dumps(receipts, indent=2) + "\n", encoding="utf-8")
         print(f"  wrote {RECEIPTS.relative_to(ROOT)}")

@@ -45,6 +45,7 @@
       "wedding_cost_dataset",
       "external_citation_coverage",
       "backlink_seed_preserves_citations",
+      "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane"
     ],
@@ -87,6 +88,7 @@
       "wedding_cost_dataset",
       "external_citation_coverage",
       "backlink_seed_preserves_citations",
+      "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane"
     ],
@@ -130,6 +132,7 @@
       "wedding_cost_dataset",
       "external_citation_coverage",
       "backlink_seed_preserves_citations",
+      "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane"
     ],
@@ -178,6 +181,10 @@
     "links": {
       "severity": "HARD_FAIL",
       "rationale": "Broken required journeys and wrong-domain routing."
+    },
+    "internal_links_resolve": {
+      "severity": "HARD_FAIL",
+      "rationale": "Broken required journeys. Every internal link in the markup the reader actually receives must resolve to a URL this build publishes. It reads the received markup rather than the tree, because the defect that took the whole network down on 2026-09-03 was injected after the origin: Cloudflare Email Address Obfuscation rewrote the governance footer's mailto: anchor into /cdn-cgi/l/email-protection, which the origin 404s, putting one broken link on every one of the 631 published pages and dropping Ahrefs site health to 4, 13 and 12 with 423, 107 and 107 errors. Nothing in sites/ was wrong, so a static link check found nothing and would have reported PASS throughout the outage. It fails if it examined zero pages, zero internal links or zero email anchors."
     },
     "citation_control": {
       "severity": "HARD_FAIL",
