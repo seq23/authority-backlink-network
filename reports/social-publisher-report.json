@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 3})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 4})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -53,13 +53,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 3,
+        "policy_daily_limit": 4,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 8,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 1,
-          "network_policy_daily": 3
+          "network_policy_daily": 4
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -68,9 +68,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-04": 1,
+            "2026-09-04": 0,
             "2026-09-05": 4,
-            "2026-09-06": 3,
+            "2026-09-06": 4,
             "2026-09-07": 0,
             "2026-09-08": 0,
             "2026-09-09": 0,
@@ -125,10 +125,10 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 3
+    "x": 4
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 549,
+  "deferred_waiting_for_delivery_route": 548,
   "route_only_platforms": [
     "x"
   ],
@@ -142,33 +142,33 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1130,
+  "still_postable_after_run": 1129,
   "attempts": [
     {
-      "index": 271,
+      "index": 277,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Letters Of Explanation: Aeo-Ready Mistakes To Avoid Bef"
+      "preview": "Need to explain what happened? Create the letter they asked for. Self-Service Document Creation: 2026-Ready Planning Che"
     }
   ],
   "successes": [
     {
-      "index": 271,
+      "index": 277,
       "platform": "x",
       "brand": null,
-      "id": "6a9af1405dff2d1220716480",
+      "id": "6a9b1fb9baae531ed5e6c086",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-06T15:27:00.000Z"
+      "due_at": "2026-09-07T13:40:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 3
   },
   "brand_rotation_policy": {
     "quota_count": 15,
