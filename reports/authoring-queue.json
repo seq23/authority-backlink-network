@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-03",
+  "run_at": "2026-09-04",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 34,
+    "published_in_window": 28,
     "allowance": 0,
-    "window_start": "2026-08-28",
-    "window_end": "2026-09-03"
+    "window_start": "2026-08-29",
+    "window_end": "2026-09-04"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "team accountability",
-      "audience": "executive assistant",
-      "format": "prep guide",
-      "intent": "for careful decision-makers",
-      "modifier": "AEO-ready",
-      "intended_title": "Team Accountability: Aeo-Ready Prep Guide For Careful Decision-Makers",
+      "cluster": "AI execution systems",
+      "audience": "venture-backed founder",
+      "format": "decision guide",
+      "intent": "for people who need a starting point",
+      "modifier": "comparison-friendly",
+      "intended_title": "Ai Execution Systems: Comparison-Friendly Decision Guide For People Who Need A Starting Point",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "03d05a4af6fb825b9ed77abfd6e5e12cab1c7b703237601e1cec544f4039617e",
-      "deferred_on": "2026-09-03",
+      "signature": "49ba043bda5b86bae329c43481253fec7da06ee21b66c537ae4e453f65ab6c9f",
+      "deferred_on": "2026-09-04",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-03",
+      "deferred_on": "2026-09-04",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "professional service provider comparison",
-      "audience": "HR leader",
-      "format": "decision guide",
-      "intent": "when you need to ask better questions",
-      "modifier": "comparison-friendly",
-      "intended_title": "Professional Service Provider Comparison: Comparison-Friendly Decision Guide When You Need To Ask Better Questions",
-      "target_brand": "The Industry Guides",
-      "target_url": "https://theindustryguides.com/methodology.html",
-      "signature": "3d06b8e868f38c756a92b3f16d1b35897e69d3d1de48a98034c68b0da25ce1ed",
-      "deferred_on": "2026-09-03",
+      "cluster": "dental decision resources",
+      "audience": "adult seeking neuropsych evaluation",
+      "format": "budget/planning note",
+      "intent": "before you sign",
+      "modifier": "human-first",
+      "intended_title": "Dental Decision Resources: Human-First Budget/Planning Note Before You Sign",
+      "target_brand": "The Dentistry Guides",
+      "target_url": "https://dentistryguides.com/",
+      "signature": "21d0aeebbee2c3b4e490fb88e388f693530ef258f2cf2b10667a1b8f6598f6b8",
+      "deferred_on": "2026-09-04",
       "reason": "weekly_publication_cap"
     }
   ]
