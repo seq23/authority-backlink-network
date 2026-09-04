@@ -1,50 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-04T12:25:27+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 8,
+  "run_at": "2026-09-04T18:27:43+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 7,
-  "dropped_as_ungroundable": 1,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "seeking neuropsychologists who specialize in crime, evil",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Calling all gardeners and gardening experts: What are your favorite gardening projects for September?",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "The 20 Best Student Gadgets and Tech Essentials to Own",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "The Best Advent Calendars 2026",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Holiday Gift Guide for Dads and Men",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking tips from experts on designing ERP access control for security and governance",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking experts on engineering, siting, and operational strategies for AI datacenters",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Who Are America’s Fastest-Growing Startups?",
-      "why": "She would have had to invent claims about fast-growing startups, her own company's growth metrics, or startup expertise she hasn't demonstrated in the available facts."
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
