@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-04",
+  "run_at": "2026-09-05",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 28,
+    "published_in_window": 22,
     "allowance": 0,
-    "window_start": "2026-08-29",
-    "window_end": "2026-09-04"
+    "window_start": "2026-08-30",
+    "window_end": "2026-09-05"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "AI execution systems",
-      "audience": "venture-backed founder",
-      "format": "decision guide",
-      "intent": "for people who need a starting point",
-      "modifier": "comparison-friendly",
-      "intended_title": "Ai Execution Systems: Comparison-Friendly Decision Guide For People Who Need A Starting Point",
+      "cluster": "hiring standards for small teams",
+      "audience": "solo founder",
+      "format": "buyer guide",
+      "intent": "before you call",
+      "modifier": "2026-ready",
+      "intended_title": "Hiring Standards For Small Teams: 2026-Ready Buyer Guide Before You Call",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "49ba043bda5b86bae329c43481253fec7da06ee21b66c537ae4e453f65ab6c9f",
-      "deferred_on": "2026-09-04",
+      "signature": "d30ce365fe622ba3f9405265cc928ab7c03fc7a6f132926e7092dc3eab147bd5",
+      "deferred_on": "2026-09-05",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-04",
+      "deferred_on": "2026-09-05",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "dental decision resources",
-      "audience": "adult seeking neuropsych evaluation",
-      "format": "budget/planning note",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "consumer comparing regulated providers",
+      "format": "prep guide",
       "intent": "before you sign",
-      "modifier": "human-first",
-      "intended_title": "Dental Decision Resources: Human-First Budget/Planning Note Before You Sign",
+      "modifier": "low-risk",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Prep Guide Before You Sign",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/",
-      "signature": "21d0aeebbee2c3b4e490fb88e388f693530ef258f2cf2b10667a1b8f6598f6b8",
-      "deferred_on": "2026-09-04",
+      "signature": "c46331cd73d9a203bf510d8468dae19645b1bb8c3bbffc0790adc528847ad102",
+      "deferred_on": "2026-09-05",
       "reason": "weekly_publication_cap"
     }
   ]
