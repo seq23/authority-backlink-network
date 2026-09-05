@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -7,11 +7,7 @@
   },
   "platform_states": {
     "linkedin": "paused_by_switch",
-    "x": "paused_api_awaiting_delivery_route"
-  },
-  "named_stops": {
-    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
-    "x": "x_awaiting_delivery_route: owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now. ZERO requests were made to the x API this run -- it is pay-per-use and unfunded. Its delivery route could not carry anything this run, so the day's posts simply stayed 'queued_for_auto_post' and go out on a later run. Nothing is stranded and nothing is asked of anybody. Turn the platform's own API back on by setting platforms.x.enabled to true in data/social-brand-policy.json."
+    "x": "paused_for_posting_delivered_via_route"
   },
   "paused_platforms": {
     "linkedin": {
@@ -25,35 +21,31 @@
       "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
     }
   },
+  "parked_by_platform_switch": {
+    "linkedin": 581
+  },
   "secret_skips": {},
   "limits": {
     "linkedin": 3,
     "x": 8
   },
-  "attempts": [],
-  "successes": [],
-  "failures": [],
-  "skipped": [],
-  "posted_today": {
-    "linkedin": 0,
-    "x": 0
-  },
   "pacing": {
     "run_limit": 3,
     "min_interval_seconds": 90
   },
-  "parked_by_platform_switch": {
-    "linkedin": 581
+  "posted_this_run": {
+    "linkedin": 0,
+    "x": 0
   },
-  "api_requests_made": 0,
+  "buffer_queued_this_run": 1,
   "delivery_routes": {
     "x": {
       "route": "buffer",
       "declared_enabled": true,
-      "used_this_run": false,
+      "used_this_run": true,
       "receipt": {
-        "available": false,
-        "reason": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 4}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+        "available": true,
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 4})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -63,21 +55,20 @@
         "buffer_used_today": 4,
         "policy_daily_limit": 4,
         "free_plan_queue_depth_limit": 10,
-        "queued_in_buffer_now": 9,
+        "queued_in_buffer_now": 8,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
-          "free_plan_queue_depth": 0,
+          "free_plan_queue_depth": 1,
           "network_policy_daily": 4
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
           "limit": 10,
-          "used": 9,
+          "used": 8,
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-04": 0,
-            "2026-09-05": 4,
+            "2026-09-05": 3,
             "2026-09-06": 4,
             "2026-09-07": 1,
             "2026-09-08": 0,
@@ -89,14 +80,15 @@
             "2026-09-14": 0,
             "2026-09-15": 0,
             "2026-09-16": 0,
-            "2026-09-17": 0
+            "2026-09-17": 0,
+            "2026-09-18": 0
           },
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
         },
-        "headroom_at_open": 0,
-        "attempts": 0,
-        "accepted": 0,
+        "headroom_at_open": 1,
+        "attempts": 1,
+        "accepted": 1,
         "remaining": 0,
         "plan_limits": {
           "channels": 3,
@@ -121,15 +113,25 @@
           }
         ]
       },
-      "why_not_used": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 4}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+      "meaning_of_buffer_queued": "Buffer accepted the post and holds it in the X channel's queue. It is NOT published yet: Buffer sends it at the channel's next posting slot. The entry keeps status 'buffer_queued' with the Buffer post id and is never re-sent.",
+      "meaning_of_deferred": "Buffer's free plan caps how many posts may sit queued at once. When that cap is reached the remaining entries are simply left alone: they keep 'queued_for_auto_post' and the next run offers them again as Buffer drains its queue. Nothing is dropped, nothing is parked in another file, and nothing is asked of anybody.",
+      "released_from_retired_hand_drafts": [],
       "x_api_requests_made": 0
     }
   },
+  "attempted_this_run": {
+    "linkedin": 0,
+    "x": 1
+  },
+  "spent_today": {
+    "linkedin": 0,
+    "x": 1
+  },
+  "halted_platforms": {},
+  "deferred_waiting_for_delivery_route": 547,
   "route_only_platforms": [
     "x"
   ],
-  "still_postable_after_run": 1129,
-  "deferred_waiting_for_delivery_route": 548,
   "hand_post_history": {
     "note": "Historical only: what the owner posted to X by hand before Buffer carried it. Read on every run so those posts are never sent again. Nothing updates it and nothing asks her to.",
     "marked_posted_through": null,
@@ -138,7 +140,43 @@
     "posts_she_posted_by_hand": 0,
     "posts_drafted_but_never_posted": 8
   },
-  "status": "deferred_waiting_for_delivery_route",
-  "production_blocked": false,
-  "stop_reason": "No platform posts through its API right now, and none was contacted: zero requests were made. The delivery route for x could not carry anything this run, so 548 entries stayed 'queued_for_auto_post' and go out on a later run as the route frees up. Nothing is stranded, nothing is lost, and nothing is asked of anybody."
+  "deferred_for_retry": 0,
+  "restored_legacy_failures": 0,
+  "still_postable_after_run": 1128,
+  "attempts": [
+    {
+      "index": 283,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Need to explain what happened? Create the letter they asked for. Business Loan Explanation: Citation-Friendly Timeline G"
+    }
+  ],
+  "successes": [
+    {
+      "index": 283,
+      "platform": "x",
+      "brand": null,
+      "id": "6a9c18b7e6524401a6548c45",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-09-07T14:55:00.000Z"
+    }
+  ],
+  "failures": [],
+  "skipped": [],
+  "posted_today": {
+    "linkedin": 0,
+    "x": 0
+  },
+  "brand_rotation_policy": {
+    "quota_count": 15,
+    "daily_rotation_offset": 739864
+  },
+  "status": "ok",
+  "named_stops": {
+    "linkedin": "linkedin_paused_by_switch: owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret. Nothing is posted and nothing is drafted -- this pause is dormant on purpose. Turn it back on by setting platforms.linkedin.enabled to true in data/social-brand-policy.json.",
+    "x": "x_delivered_via_buffer: x's own API stayed off and was contacted ZERO times -- it is pay-per-use and unfunded. The day's posts were handed to Buffer's free queue instead, and Buffer publishes them at the channel's next posting slot. Entries carry status 'buffer_queued' with the Buffer post id. Posts Buffer's free plan had no room for stay 'queued_for_auto_post' and go out on a later run as the Buffer queue drains -- nothing is asked of anybody."
+  }
 }
