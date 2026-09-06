@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "76dae144c9249ef8b47a9717cdf9357cf6a8ab5b67657c0be5ab6a4e823977b8",
+  "plan_sha256": "5d29e61df655d2c00ae213f2b593063a4fc5ee6c0130a7b2ba458a6bd0eec776",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,17 +13,13 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 44,
+  "count": 45,
   "counts_by_severity": {
-    "HARD_FAIL": 41,
+    "HARD_FAIL": 42,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
-  "unclassified": [
-    "backlink_seed_preserves_citations",
-    "external_citation_coverage",
-    "wedding_cost_dataset"
-  ],
+  "unclassified": [],
   "validators": [
     {
       "id": "affiliate_rel_disclosure",
@@ -83,8 +79,8 @@
     {
       "id": "backlink_seed_preserves_citations",
       "severity": "HARD_FAIL",
-      "classified": false,
-      "rationale": "Unclassified; treated as the fail-safe default.",
+      "classified": true,
+      "rationale": "False evidence at generation time. portfolio_backlink_engine.py seed rewrote all 32 seed pages from the bare render() template on every run, deleting the outbound citations that later lanes had added, and reported \"pages\": [] while doing it. That is what regressed the citation floor to founder 86 / memphis 85 / professional 382 in run 33650439764. This reads the generator's own plan_seed_writes() rather than a second copy of the rule and fails if any planned write would drop a citation, hard-failing when the planner returns nothing or when none of the planned pages is on disk. Catching this one lane later, at external_citation_coverage, is catching it after the auto-commit step could have published the loss.",
       "profiles": [
         "changed",
         "full",
@@ -214,8 +210,8 @@
     {
       "id": "external_citation_coverage",
       "severity": "HARD_FAIL",
-      "classified": false,
-      "rationale": "Unclassified; treated as the fail-safe default.",
+      "classified": true,
+      "rationale": "Corruption of published assets, and the check that caught run 33650439764. Measured 2026-08-27, all three publications together cited zero domains outside the portfolio across 608 pages: a publication that cites nobody reads as a link surface, not as reference material. Outbound citations are silent to lose -- a rebuild that drops the citation block, a source leaving the registry, a generator that stops calling add_external_citations.py -- and no other check sees any of them. data/external-citation-floor.json ratchets what each publication currently achieves and this fails if any lane falls below it, cites an unregistered domain, or marks an editorial citation rel=\"sponsored nofollow\", which is a false paid-placement disclosure. It refuses to report PASS on an empty page loop. It measures founder 94/94, memphis 92/92, professional 399/399 today, so blocking cannot regress a clean surface.",
       "profiles": [
         "changed",
         "full",
@@ -483,10 +479,21 @@
       ]
     },
     {
+      "id": "validation_receipt_severity_truth",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "False evidence about the evidence itself. Every result in the receipt carried one field named `severity`, set from this matrix regardless of outcome, so 37 of 41 PASSing checks in a green release receipt read \"severity\": \"HARD_FAIL\" next to \"status\": \"PASS\", \"hard_failures\": 0. Run 33650439764 had exactly one real failure, external_citation_coverage; triaging that receipt for HARD_FAIL returned the whole profile and three passing validators were reported as failing. A failure marker that matches every check identifies none of them, and this is the receipt every future failure in this lane is diagnosed from. The guard reads scripts/validate.py's own classify() rather than a second copy of the rule, rejects the ambiguous key names coming back, requires every check in every profile to be classified deliberately, and re-runs generate_validation_matrix.py in a sandbox to prove the published portfolio matrix is not a stale snapshot -- that generator has never had a caller in any profile. It hard-fails when it examines zero checks.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "wedding_cost_dataset",
       "severity": "HARD_FAIL",
-      "classified": false,
-      "rationale": "Unclassified; treated as the fail-safe default.",
+      "classified": true,
+      "rationale": "False evidence in owner-facing published numbers. The Memphis wedding cost dataset is quoted as fact on live pages and carries the 21 verified vendor sources that most of the memphis lane's outbound citation coverage rests on; an unverified or drifted figure is a claim the publication cannot support and takes the citation floor with it.",
       "profiles": [
         "changed",
         "full",

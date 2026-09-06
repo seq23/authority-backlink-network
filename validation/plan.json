@@ -47,7 +47,8 @@
       "backlink_seed_preserves_citations",
       "internal_links_resolve",
       "uscis_changelog",
-      "journalist_query_lane"
+      "journalist_query_lane",
+      "validation_receipt_severity_truth"
     ],
     "release": [
       "json",
@@ -90,7 +91,8 @@
       "backlink_seed_preserves_citations",
       "internal_links_resolve",
       "uscis_changelog",
-      "journalist_query_lane"
+      "journalist_query_lane",
+      "validation_receipt_severity_truth"
     ],
     "full": [
       "json",
@@ -134,7 +136,8 @@
       "backlink_seed_preserves_citations",
       "internal_links_resolve",
       "uscis_changelog",
-      "journalist_query_lane"
+      "journalist_query_lane",
+      "validation_receipt_severity_truth"
     ],
     "cache-self-test": [
       "python",
@@ -309,6 +312,22 @@
     "journalist_query_lane": {
       "severity": "HARD_FAIL",
       "rationale": "Two failures, either of which is unrecoverable and both of which are invisible in a diff. First, SENDING: pitches go out in the owner's name as a genuine expert, so an auto-sent pitch carrying one wrong fact gets printed under her name -- a correction in a real publication and a source relationship burned permanently and silently -- against an upside of about thirty seconds. There is therefore no send path, and this validator blocks the day one appears, including the day someone adds it for a good reason, because a good reason is exactly how it would arrive. It also requires the mailbox read to stay read-only. Second, INVENTING: a model handed a reporter's question and asked to write as an expert produces a confident answer whether or not the person has any first-hand knowledge, and the reporter cannot tell. So a draft may only use facts from data/journalist-queries/expertise-ledger.json, every fact must point at evidence that exists in this repository, and every number in a draft must appear in a fact the draft cited. The real verify_draft() is driven through a clean draft and six broken ones on every run. Beyond those it blocks if a recorded digest is marked as sent, if a recorded draft stops verifying against the ledger, if a query matching a hard exclusion reaches a model, or -- the quiet killer -- if a digest the parser cannot read is reported as 'no relevant queries' rather than as UNPARSEABLE_DIGEST, which is how a lane like this goes dead while still reporting green every morning. It fails if it exercises zero properties. It now also drives the REAL 2026-09-02 SOS digest, kept verbatim-but-redacted as a fixture. That property exists because every parser check before it used a fixture this repository wrote, so the grammar had never met its actual input -- and the first real digest parsed 2 of its 10 queries and paired query 1's summary with query 6's email address, which would have handed the owner a draft answering one reporter and addressed to another. PARTIAL_DIGEST_PARSE caught it and the run stayed green, which is the only reason eight queries were not lost silently. The expected result is derived from the message itself -- the index markers the newsletter prints and the summary/address pairs read out of the raw text -- and not from the grammar, so the grammar cannot mark its own homework."
+    },
+    "external_citation_coverage": {
+      "severity": "HARD_FAIL",
+      "rationale": "Corruption of published assets, and the check that caught run 33650439764. Measured 2026-08-27, all three publications together cited zero domains outside the portfolio across 608 pages: a publication that cites nobody reads as a link surface, not as reference material. Outbound citations are silent to lose -- a rebuild that drops the citation block, a source leaving the registry, a generator that stops calling add_external_citations.py -- and no other check sees any of them. data/external-citation-floor.json ratchets what each publication currently achieves and this fails if any lane falls below it, cites an unregistered domain, or marks an editorial citation rel=\"sponsored nofollow\", which is a false paid-placement disclosure. It refuses to report PASS on an empty page loop. It measures founder 94/94, memphis 92/92, professional 399/399 today, so blocking cannot regress a clean surface."
+    },
+    "backlink_seed_preserves_citations": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence at generation time. portfolio_backlink_engine.py seed rewrote all 32 seed pages from the bare render() template on every run, deleting the outbound citations that later lanes had added, and reported \"pages\": [] while doing it. That is what regressed the citation floor to founder 86 / memphis 85 / professional 382 in run 33650439764. This reads the generator's own plan_seed_writes() rather than a second copy of the rule and fails if any planned write would drop a citation, hard-failing when the planner returns nothing or when none of the planned pages is on disk. Catching this one lane later, at external_citation_coverage, is catching it after the auto-commit step could have published the loss."
+    },
+    "wedding_cost_dataset": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence in owner-facing published numbers. The Memphis wedding cost dataset is quoted as fact on live pages and carries the 21 verified vendor sources that most of the memphis lane's outbound citation coverage rests on; an unverified or drifted figure is a claim the publication cannot support and takes the citation floor with it."
+    },
+    "validation_receipt_severity_truth": {
+      "severity": "HARD_FAIL",
+      "rationale": "False evidence about the evidence itself. Every result in the receipt carried one field named `severity`, set from this matrix regardless of outcome, so 37 of 41 PASSing checks in a green release receipt read \"severity\": \"HARD_FAIL\" next to \"status\": \"PASS\", \"hard_failures\": 0. Run 33650439764 had exactly one real failure, external_citation_coverage; triaging that receipt for HARD_FAIL returned the whole profile and three passing validators were reported as failing. A failure marker that matches every check identifies none of them, and this is the receipt every future failure in this lane is diagnosed from. The guard reads scripts/validate.py's own classify() rather than a second copy of the rule, rejects the ambiguous key names coming back, requires every check in every profile to be classified deliberately, and re-runs generate_validation_matrix.py in a sandbox to prove the published portfolio matrix is not a stale snapshot -- that generator has never had a caller in any profile. It hard-fails when it examines zero checks."
     }
   },
   "severity_matrix_policy": {
