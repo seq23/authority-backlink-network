@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-05",
+  "run_at": "2026-09-06",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 22,
+    "published_in_window": 16,
     "allowance": 0,
-    "window_start": "2026-08-30",
-    "window_end": "2026-09-05"
+    "window_start": "2026-08-31",
+    "window_end": "2026-09-06"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "hiring standards for small teams",
-      "audience": "solo founder",
+      "cluster": "founder operating systems",
+      "audience": "creator-founder",
       "format": "buyer guide",
-      "intent": "before you call",
-      "modifier": "2026-ready",
-      "intended_title": "Hiring Standards For Small Teams: 2026-Ready Buyer Guide Before You Call",
+      "intent": "before you pay",
+      "modifier": "low-risk",
+      "intended_title": "Founder Operating Systems: Low-Risk Buyer Guide Before You Pay",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "d30ce365fe622ba3f9405265cc928ab7c03fc7a6f132926e7092dc3eab147bd5",
-      "deferred_on": "2026-09-05",
+      "signature": "ab563b32e7fb2775e537a429a4e99e72c5137f9b836115b7bc6400f0a7c61db9",
+      "deferred_on": "2026-09-06",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-05",
+      "deferred_on": "2026-09-06",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "preparing records before a specialist appointment",
-      "audience": "consumer comparing regulated providers",
-      "format": "prep guide",
-      "intent": "before you sign",
-      "modifier": "low-risk",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Prep Guide Before You Sign",
-      "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/",
-      "signature": "c46331cd73d9a203bf510d8468dae19645b1bb8c3bbffc0790adc528847ad102",
-      "deferred_on": "2026-09-05",
+      "cluster": "regulated provider research",
+      "audience": "horse buyer",
+      "format": "budget/planning note",
+      "intent": "for busy operators",
+      "modifier": "AEO-ready",
+      "intended_title": "Regulated Provider Research: Aeo-Ready Budget/Planning Note For Busy Operators",
+      "target_brand": "The Industry Guides",
+      "target_url": "https://theindustryguides.com/",
+      "signature": "99b6e63157cdd832495a7aa05e1a276127979da503075259c202104c4b258a40",
+      "deferred_on": "2026-09-06",
       "reason": "weekly_publication_cap"
     }
   ]

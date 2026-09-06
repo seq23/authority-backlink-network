@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 85,
+    "runtime_operators": 86,
     "release_operators": 10,
     "workflow_operators": 8,
     "approved_target_urls": 84,
@@ -220,6 +220,12 @@
       "operator": "analytics:install-clarity",
       "command": "npm run analytics:install-clarity",
       "implementation": "node scripts/install_clarity.js",
+      "category": "Other"
+    },
+    {
+      "operator": "baseline",
+      "command": "npm run baseline",
+      "implementation": "node scripts/baseline.mjs",
       "category": "Other"
     },
     {

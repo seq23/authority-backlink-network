@@ -37,7 +37,7 @@
     "linkedin": 0,
     "x": 0
   },
-  "buffer_queued_this_run": 1,
+  "buffer_queued_this_run": 2,
   "delivery_routes": {
     "x": {
       "route": "buffer",
@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 4})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 5})",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -53,24 +53,24 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 4,
+        "policy_daily_limit": 5,
         "free_plan_queue_depth_limit": 10,
-        "queued_in_buffer_now": 8,
+        "queued_in_buffer_now": 7,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
-          "free_plan_queue_depth": 1,
-          "network_policy_daily": 4
+          "free_plan_queue_depth": 2,
+          "network_policy_daily": 5
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
           "limit": 10,
-          "used": 8,
+          "used": 7,
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-06": 3,
+            "2026-09-06": 1,
             "2026-09-07": 4,
-            "2026-09-08": 1,
+            "2026-09-08": 2,
             "2026-09-09": 0,
             "2026-09-10": 0,
             "2026-09-11": 0,
@@ -86,9 +86,9 @@
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
         },
-        "headroom_at_open": 1,
-        "attempts": 1,
-        "accepted": 1,
+        "headroom_at_open": 2,
+        "attempts": 2,
+        "accepted": 2,
         "remaining": 0,
         "plan_limits": {
           "channels": 3,
@@ -121,14 +121,14 @@
   },
   "attempted_this_run": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 3
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 543,
+  "deferred_waiting_for_delivery_route": 541,
   "route_only_platforms": [
     "x"
   ],
@@ -142,33 +142,50 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1124,
+  "still_postable_after_run": 1122,
   "attempts": [
     {
-      "index": 307,
+      "index": 313,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Personal Loan Documents: Beginner-Safe Buyer Guide For "
+      "preview": "Need to explain what happened? Create the letter they asked for. Rental Cover Letters: Geo-Ready Mistakes To Avoid For P"
+    },
+    {
+      "index": 319,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Need to explain what happened? Create the letter they asked for. Business Funding Documents: Editorial Operator Playbook"
     }
   ],
   "successes": [
     {
-      "index": 307,
+      "index": 313,
       "platform": "x",
       "brand": null,
-      "id": "6a9d6a3605c83fb1f6204b4e",
+      "id": "6a9d786c6acbdfc9eda06a33",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-08T14:03:00.000Z"
+      "due_at": "2026-09-08T15:16:00.000Z"
+    },
+    {
+      "index": 319,
+      "platform": "x",
+      "brand": null,
+      "id": "6a9d78c06acbdfc9eda072b1",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-09-08T16:01:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 1
   },
   "brand_rotation_policy": {
     "quota_count": 15,
