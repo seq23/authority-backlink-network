@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-06",
+  "run_at": "2026-09-07",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 16,
+    "published_in_window": 10,
     "allowance": 0,
-    "window_start": "2026-08-31",
-    "window_end": "2026-09-06"
+    "window_start": "2026-09-01",
+    "window_end": "2026-09-07"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "founder operating systems",
+      "cluster": "team accountability",
       "audience": "creator-founder",
-      "format": "buyer guide",
-      "intent": "before you pay",
-      "modifier": "low-risk",
-      "intended_title": "Founder Operating Systems: Low-Risk Buyer Guide Before You Pay",
+      "format": "framework",
+      "intent": "for first-time buyers",
+      "modifier": "editorial",
+      "intended_title": "Team Accountability: Editorial Framework For First-Time Buyers",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "ab563b32e7fb2775e537a429a4e99e72c5137f9b836115b7bc6400f0a7c61db9",
-      "deferred_on": "2026-09-06",
+      "signature": "8d0fa41b3ee8e8b326a76409a16fcd16f00566e925dc251574fc6ec2639b4736",
+      "deferred_on": "2026-09-07",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-06",
+      "deferred_on": "2026-09-07",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "regulated provider research",
-      "audience": "horse buyer",
-      "format": "budget/planning note",
-      "intent": "for busy operators",
-      "modifier": "AEO-ready",
-      "intended_title": "Regulated Provider Research: Aeo-Ready Budget/Planning Note For Busy Operators",
-      "target_brand": "The Industry Guides",
-      "target_url": "https://theindustryguides.com/",
-      "signature": "99b6e63157cdd832495a7aa05e1a276127979da503075259c202104c4b258a40",
-      "deferred_on": "2026-09-06",
+      "cluster": "dental decision resources",
+      "audience": "consumer comparing regulated providers",
+      "format": "buyer guide",
+      "intent": "before you call",
+      "modifier": "citation-friendly",
+      "intended_title": "Dental Decision Resources: Citation-Friendly Buyer Guide Before You Call",
+      "target_brand": "The Dentistry Guides",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "5c17b04baff3e4a8dd9fc9234b3159cb95ac50e38a2a9d4f57357c7e15084637",
+      "deferred_on": "2026-09-07",
       "reason": "weekly_publication_cap"
     }
   ]
