@@ -61,6 +61,7 @@ COMMANDS = {
     "uscis_changelog": [sys.executable, "scripts/validators/validate_uscis_changelog.py"],
     "journalist_query_lane": [sys.executable, "scripts/validators/validate_journalist_query_lane.py"],
     "validation_receipt_severity_truth": [sys.executable, "scripts/validators/validate_validation_receipt_severity_truth.py"],
+    "page_chrome_page_footer": [sys.executable, "scripts/validators/validate_page_chrome_targets_page_footer.py"],
 }
 
 

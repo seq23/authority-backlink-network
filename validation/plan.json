@@ -48,7 +48,8 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth"
+      "validation_receipt_severity_truth",
+      "page_chrome_page_footer"
     ],
     "release": [
       "json",
@@ -92,7 +93,8 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth"
+      "validation_receipt_severity_truth",
+      "page_chrome_page_footer"
     ],
     "full": [
       "json",
@@ -137,7 +139,8 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth"
+      "validation_receipt_severity_truth",
+      "page_chrome_page_footer"
     ],
     "cache-self-test": [
       "python",
@@ -328,6 +331,10 @@
     "validation_receipt_severity_truth": {
       "severity": "HARD_FAIL",
       "rationale": "False evidence about the evidence itself. Every result in the receipt carried one field named `severity`, set from this matrix regardless of outcome, so 37 of 41 PASSing checks in a green release receipt read \"severity\": \"HARD_FAIL\" next to \"status\": \"PASS\", \"hard_failures\": 0. Run 33650439764 had exactly one real failure, external_citation_coverage; triaging that receipt for HARD_FAIL returned the whole profile and three passing validators were reported as failing. A failure marker that matches every check identifies none of them, and this is the receipt every future failure in this lane is diagnosed from. The guard reads scripts/validate.py's own classify() rather than a second copy of the rule, rejects the ambiguous key names coming back, requires every check in every profile to be classified deliberately, and re-runs generate_validation_matrix.py in a sandbox to prove the published portfolio matrix is not a stale snapshot -- that generator has never had a caller in any profile. It hard-fails when it examines zero checks."
+    },
+    "page_chrome_page_footer": {
+      "severity": "HARD_FAIL",
+      "rationale": "A page that ships two governance footers ships two identical /masthead anchors, which build_site_navigation.py's duplicate-anchor audit blocks the release on and which validation/repair.py would otherwise 'fix' by deleting an anchor and leaving its text as bare words. Run 34231670721 went red exactly here: the USCIS changelog published its first entry, that entry's <blockquote><footer> citation attribution became the first <footer> in the document, and install_editorial_chrome.py -- which searched for a bare <footer> and took the first hit -- installed the governance footer inside the blockquote while leaving the real page footer alone. The shape was unreachable while the changelog had zero entries, so a scan of sites/ reported PASS every day until the day it published. This guard is therefore behavioural: it feeds install() the shapes that trigger the defect and reads the output, as well as scanning the tree. It fails if it examined zero fixtures or zero pages."
     }
   },
   "severity_matrix_policy": {

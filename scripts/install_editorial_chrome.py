@@ -49,7 +49,8 @@ Two hard constraints on the markup
 ----------------------------------
 * The <footer> and <header> tags must stay BARE, with no attributes.
   scripts/build_demand_shape_pages.py lifts both with
-  re.compile(r"<footer>.*?</footer>") and exits if it cannot match. Idempotency
+  lib.page_chrome.page_footer_match() -- a <footer> outside <main> -- and
+  falls back to inserting one before </body>. Idempotency
   is therefore detected by comparing rendered content, not by a marker attribute.
 
 * Nothing here may emit an absolute URL outside the publication's own domain.
@@ -71,6 +72,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from affiliation import affiliated_domains, host_of, is_affiliated  # noqa: E402
 from byline import entity_for, subsidiary_clause  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
+from lib.page_chrome import page_footer_html, replace_page_footer  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SITES = ROOT / "sites"
@@ -82,7 +84,14 @@ ADVICE_BOUNDARY = ("This page is informational. It is not legal, medical, "
 # and re-emitting a fixed newline rewrites the surrounding indentation, which
 # made this script and deterministic_build.py alternately reformat 404.html on
 # every build. Replace the element, leave the layout alone.
-FOOTER_RE = re.compile(r"<footer>.*?</footer>", re.S | re.I)
+# The page footer is located by scripts/lib/page_chrome.py, NOT by a bare
+# `<footer>.*?</footer>` search. `<footer>` is also the HTML element for a
+# citation attribution inside <blockquote>, and on 2026-09-08 the first
+# entry published to the USCIS changelog put one of those ahead of the real
+# footer -- so this script installed the governance footer INSIDE a
+# blockquote and left the page footer alone. The page shipped two Masthead
+# anchors and the duplicate-anchor audit stopped the release. Scope, not
+# regex precision, was the defect.
 BODY_END_RE = re.compile(r"</body>", re.I)
 MAIN_END_RE = re.compile(r"</main>", re.I)
 DISCLOSURE_RE = re.compile(r'<aside class="affiliate-disclosure".*?</aside>', re.S | re.I)
@@ -346,12 +355,14 @@ def install(text: str, pub_title: str, domain: str, editor_addr: str,
 
     # --- footer -----------------------------------------------------------
     footer = render_footer(pub_title, domain, editor_addr)
-    if FOOTER_RE.search(text):
-        text = FOOTER_RE.sub(lambda _m: footer, text, count=1)
-    elif BODY_END_RE.search(text):
-        text = BODY_END_RE.sub(footer + "\n</body>", text, count=1)
-    else:
-        text = text + footer
+    text, replaced = replace_page_footer(text, footer)
+    if not replaced:
+        # No page-level footer yet. A <footer> inside <main> is a content
+        # footer and is never the thing to replace, so it does not count here.
+        if BODY_END_RE.search(text):
+            text = BODY_END_RE.sub(footer + "\n</body>", text, count=1)
+        else:
+            text = text + footer
 
     # --- affiliate disclosure --------------------------------------------
     text = DISCLOSURE_RE.sub("", text)          # drop any previous copy first
@@ -424,7 +435,7 @@ def main() -> int:
 
 def footer_and_disclosure(text: str) -> str:
     """Just the markup this script owns, for the off-domain check."""
-    parts = FOOTER_RE.findall(text) + DISCLOSURE_RE.findall(text)
+    parts = [page_footer_html(text)] + DISCLOSURE_RE.findall(text)
     return "".join(parts)
 
 
