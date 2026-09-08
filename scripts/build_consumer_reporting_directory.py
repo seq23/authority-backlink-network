@@ -42,6 +42,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
+from lib.text_io import write_lf  # noqa: E402
 DATA = ROOT / "data/compiled/cfpb-consumer-reporting-companies-2025.json"
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -447,7 +448,7 @@ def main() -> int:
     words = len(re.findall(r"\b[\w'-]+\b", re.sub(r"<[^>]+>", " ", rendered)))
     changed = current != rendered
     if changed and args.write:
-        target.write_text(rendered, encoding="utf-8", newline="\n")
+        write_lf(target, rendered)
 
     print(json.dumps({
         "status": "PASS",

@@ -59,6 +59,9 @@ from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from lib.text_io import write_lf  # noqa: E402
 
 # Everything the two generators read. `reports/` is created empty in the copy
 # because measure_click_depth.py writes its measurement there.
@@ -121,11 +124,9 @@ def build_fixture_tree(tmp: Path) -> list[tuple[str, str, str]]:
 
         hub = taxonomy["publications"][pub["id"]]["hubs"][0]
         rel = f"daily/{stamp}-{FIXTURE_SLUG}.html"
-        (source / rel).write_text(
-            FIXTURE_PAGE.format(
-                title="Navigation Rebuild Guard Fixture",
-                pub=pub["title"], cluster=hub["clusters"][0]),
-            encoding="utf-8", newline="\n")
+        write_lf(source / rel, FIXTURE_PAGE.format(
+            title="Navigation Rebuild Guard Fixture",
+            pub=pub["title"], cluster=hub["clusters"][0]))
         planted.append((pub["id"], pub.get("working_domain") or pub.get("domain"), rel))
     return planted
 

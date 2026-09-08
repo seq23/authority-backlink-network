@@ -46,6 +46,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from lib.text_io import write_lf  # noqa: E402
 SITES = ROOT / "sites"
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
 REGISTRY = json.loads((ROOT / "data/external-sources.json").read_text(encoding="utf-8"))
@@ -643,7 +646,7 @@ def process(path: Path, rel_key: str, lane: str, write: bool) -> tuple[str, list
         # Removing a previously injected block on a page that no longer maps
         # keeps the run idempotent in both directions.
         if stripped != original and write:
-            path.write_text(stripped, encoding="utf-8", newline="\n")
+            write_lf(path, stripped)
         return ("skipped", [])
 
     block = render_block(sources, CLUSTER_INSTRUMENT.get(
@@ -660,7 +663,7 @@ def process(path: Path, rel_key: str, lane: str, write: bool) -> tuple[str, list
     if updated == original:
         return ("unchanged", sources)
     if write:
-        path.write_text(updated, encoding="utf-8", newline="\n")
+        write_lf(path, updated)
     return ("written", sources)
 
 
