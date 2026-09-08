@@ -1,17 +1,70 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-07T18:28:46+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-08T12:25:34+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 13,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 10,
+  "dropped_as_ungroundable": 3,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Registered dietitians needed for information on fiber",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Expert in narrative art and/or curating experiential museum collections",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Data Centres in West Texas - especially Pecos",
+      "why": "excluded: 'investment'"
+    },
+    {
+      "summary": "Boo Basket Essentials and Fa-BOO-Lous Finds",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "The Best Health Gadgets on the market right now",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "The Best Running Gadgets and Accessories for Fall",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Fall Reading List",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Wanted: Most Haunted Campgrounds in America: 13 Spooky Sites.",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "How to avoid the airport repacking ritual",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "Mexico City hoteliers, chefs, and tour experts sought for Go World Travel feature",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "FinTech Leaders: How are you making money matters easier for consumers?",
+      "why": "She would have to claim she leads a FinTech company, which is not supported by any fact; her businesses are wedding/event vendor libraries and operations, not FinTech."
+    },
+    {
+      "summary": "Business Leaders: How is AI helping your company accomplish more with less?",
+      "why": "She would have to invent claims about using AI to increase team capacity, accomplish more without adding resources, or how AI changed her approach to hiring and scaling."
+    },
+    {
+      "summary": "Seeking experts to comment on how to define and govern AI decision authority",
+      "why": "She would have to invent expertise in AI governance, decision authority frameworks, and enterprise workflow management that isn't supported by any listed fact."
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 13 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 3 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
