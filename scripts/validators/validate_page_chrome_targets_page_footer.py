@@ -38,10 +38,17 @@ Two independent things fail hard
             content <footer> inside <main> must yield exactly ONE governance
             footer, outside <main>, with no repeated absolute anchor, and must
             be idempotent under a second application.
+  derived   deterministic_build.render_404() lifts the footer out of a
+            publication's index.html into 404.html. It carried its own
+            first-<footer> selector, so the same content <footer> that broke
+            run 34231670721 would have been lifted into the error page --
+            governance navigation dropped, a citation attribution in its place.
+            A behavioural fixture feeds it that index and reads the 404 back.
   tree      every published page must carry exactly one governance footer and it
-            must be outside <main>.
-  zero      a run that examined no fixtures or no pages FAILS. A guard that
-            iterates an empty list reports PASS forever.
+            must be outside <main>, and every publication's 404.html must carry
+            the governance footer rather than some content footer.
+  zero      a run that examined no fixtures, no derived 404 shell or no pages
+            FAILS. A guard that iterates an empty list reports PASS forever.
 
 The fixtures call the real install() and the real duplicate-anchor rule
 (build_site_navigation.repeated_absolute_anchors) rather than restating either,
@@ -56,12 +63,14 @@ import argparse
 import json
 import re
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site_navigation as nav  # noqa: E402
+import deterministic_build as derived  # noqa: E402
 import install_editorial_chrome as chrome  # noqa: E402
 from lib.page_chrome import MAIN_RE, page_footer_match  # noqa: E402
 
@@ -119,6 +128,54 @@ def governance_footers_outside_main(text: str) -> tuple[int, int]:
     return total, inside
 
 
+# An index.html in the shape that broke run 34231670721: a citation attribution
+# <footer> inside <main>, ahead of the real page footer. render_404() lifts a
+# footer out of this file, so it must lift the governance one.
+INDEX_WITH_CONTENT_FOOTER = (
+    "<!doctype html><html lang=\"en\"><head><title>%(t)s | Home</title>"
+    "<style>body{}</style></head><body>\n"
+    "<main>\n"
+    "<blockquote class=\"note\"><p>Filing fee changed.</p>"
+    "<footer>Added to Federal Register, observed 2026-09-08</footer></blockquote>\n"
+    "</main>\n"
+    "<footer %(mark)s><ul><li><a href=\"https://%(d)s/masthead\">Masthead</a></li>"
+    "</ul></footer>\n"
+    "</body></html>\n")
+
+CONTENT_FOOTER_TEXT = "observed 2026-09-08"
+
+
+def check_derived_404() -> tuple[int, list[str]]:
+    """render_404() must inherit the PAGE footer, never a content attribution."""
+    failures: list[str] = []
+    checked = 0
+    with tempfile.TemporaryDirectory() as tmp:
+        source = Path(tmp)
+        (source / "index.html").write_text(
+            INDEX_WITH_CONTENT_FOOTER % {
+                "t": PUB_TITLE, "d": DOMAIN, "mark": GOVERNANCE_MARK},
+            encoding="utf-8")
+        out = derived.render_404(source, DOMAIN)
+        checked += 1
+
+        total, inside = governance_footers_outside_main(out)
+        if total != 1:
+            failures.append(
+                f"HARD_FAIL derived 404: {total} governance footers, expected 1. "
+                f"render_404() lifted something other than the page footer out of "
+                f"index.html, which is the run 34231670721 selector defect in the "
+                f"derived build.")
+        if inside:
+            failures.append(
+                f"HARD_FAIL derived 404: governance footer landed inside <main>")
+        if CONTENT_FOOTER_TEXT in out:
+            failures.append(
+                f"HARD_FAIL derived 404: the citation attribution "
+                f"{CONTENT_FOOTER_TEXT!r} was lifted into the error page; a "
+                f"<footer> inside <main> is content and is never page chrome.")
+    return checked, failures
+
+
 def check_fixtures() -> tuple[int, list[str]]:
     failures: list[str] = []
     checked = 0
@@ -155,6 +212,14 @@ def check_fixtures() -> tuple[int, list[str]]:
 def check_tree(sites_root: Path) -> tuple[int, list[str]]:
     failures: list[str] = []
     checked = 0
+    for path in sorted(sites_root.glob("*/404.html")):
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if GOVERNANCE_MARK not in text:
+            failures.append(
+                f"HARD_FAIL {path.relative_to(sites_root).as_posix()}: carries no "
+                f"governance footer. 404.html inherits its footer from the "
+                f"publication's index.html; a missing one means a content <footer> "
+                f"was lifted instead of the page footer.")
     for path in sorted(sites_root.rglob("*.html")):
         text = path.read_text(encoding="utf-8", errors="ignore")
         if GOVERNANCE_MARK not in text:
@@ -182,22 +247,24 @@ def main() -> int:
 
     sites_root = Path(args.sites_root)
     fixtures_checked, fixture_failures = check_fixtures()
+    derived_checked, derived_failures = check_derived_404()
     pages_checked, tree_failures = (
         check_tree(sites_root) if sites_root.is_dir() else (0, []))
 
     print("PAGE CHROME TARGETS THE PAGE FOOTER")
     print(f"  fixtures exercised: {fixtures_checked}")
+    print(f"  derived 404 shells exercised: {derived_checked}")
     print(f"  published pages carrying a governance footer: {pages_checked}")
 
-    if fixtures_checked == 0 or pages_checked == 0:
+    if fixtures_checked == 0 or derived_checked == 0 or pages_checked == 0:
         print("PAGE CHROME TARGETS THE PAGE FOOTER: FAIL")
-        print(f"  HARD_FAIL examined {fixtures_checked} fixtures and {pages_checked} "
-              f"pages under {sites_root}; this guard must not report PASS on an empty "
-              f"walk")
+        print(f"  HARD_FAIL examined {fixtures_checked} fixtures, {derived_checked} "
+              f"derived 404 shells and {pages_checked} pages under {sites_root}; this "
+              f"guard must not report PASS on an empty walk")
         print(json.dumps({"status": "FAIL", "hard_failures": 1}))
         return 1
 
-    failures = fixture_failures + tree_failures
+    failures = fixture_failures + derived_failures + tree_failures
     if failures:
         print("PAGE CHROME TARGETS THE PAGE FOOTER: FAIL")
         for line in failures:
@@ -205,8 +272,9 @@ def main() -> int:
         print(json.dumps({"status": "FAIL", "hard_failures": len(failures)}))
         return 1
 
-    print(f"  {fixtures_checked} installer fixtures and {pages_checked} published pages "
-          f"each carry exactly one governance footer, outside <main>")
+    print(f"  {fixtures_checked} installer fixtures, {derived_checked} derived 404 "
+          f"shell(s) and {pages_checked} published pages each carry exactly one "
+          f"governance footer, outside <main>")
     print("PAGE CHROME TARGETS THE PAGE FOOTER: PASS")
     return 0
 

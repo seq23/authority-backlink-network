@@ -12,6 +12,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from lib import lastmod_ledger, site_urls
+from lib.page_chrome import page_footer_html
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
@@ -49,8 +50,14 @@ def render_404(source: Path, domain: str) -> str:
     )
     title_match = re.search(r"<title>([^<]*)</title>", index, re.I)
     site_name = re.split(r"\s+[|\u2014-]\s+", title_match.group(1))[0].strip() if title_match else domain
-    footer_match = re.search(r"<footer[\s\S]*?</footer>", index, re.I)
-    footer = footer_match.group(0) if footer_match else ""
+    # The PAGE footer, not the first <footer> in the document. `<footer>` is
+    # also the element a citation attribution uses inside <blockquote>, so the
+    # first match on a page that publishes quotes -- the USCIS changelog, and
+    # any index that ever carries one -- is content, not chrome. Lifting that
+    # into 404.html would put an entry's attribution at the bottom of the error
+    # page and drop the governance navigation entirely. Same defect class as
+    # run 34231670721; the selector is shared now so there is one rule.
+    footer = page_footer_html(index)
     ld = json.dumps({
         "@context": "https://schema.org",
         "@type": "WebPage",
