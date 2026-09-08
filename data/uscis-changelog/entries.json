@@ -7,5 +7,51 @@
     "",
     "An entry is never rewritten after publication. A later change to the same page becomes its own dated entry."
   ],
-  "entries": []
+  "entries": [
+    {
+      "id": "2026-09-08-uscis-federal-register",
+      "date_observed": "2026-09-08",
+      "checked_at": "2026-09-08T23:13:36+00:00",
+      "source_id": "uscis-federal-register",
+      "source_url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "source_title": "USCIS documents in the Federal Register",
+      "publisher": "Office of the Federal Register",
+      "headline": "Haiti TPS termination notice removed; e-Request Tool collection notice added",
+      "summary": "The page previously displayed a November 28, 2025 notice (FR Doc. 2025-21379) announcing termination of Haiti's Temporary Protected Status designation, effective February 3, 2026. The page now displays a September 4, 2026 notice (FR Doc. 2026-18099) regarding a 30-day public comment period for an information collection request related to the e-Request Tool.",
+      "quotes": [
+        {
+          "side": "removed",
+          "text": "2025-11-28 | Notice | FR Doc. 2025-21379 | Termination of the Designation of Haiti for Temporary Protected Status"
+        },
+        {
+          "side": "removed",
+          "text": "FR Doc. 2025-21379 abstract: Through this notice, the Department of Homeland Security (DHS) newly announces that the Secretary of Homeland Security (Secretary) is terminating the designation of Haiti for Temporary Protected Status. Because of interference by a federal district court judge, the designation of Haiti is set to expire on February 3, 2026. After reviewing country conditions and consulting with appropriate U.S. Government agencies, the Secretary determined that Haiti no longer meets the conditions for the designation for Temporary Protected Status. The Secretary, therefore, is newly terminating the Temporary Protected Status designation of Haiti as required by statute. This termination is effective February 3, 2026. After February 3, 2026, nationals of Haiti (and aliens having no nationality who last habitually resided in Haiti) who have been granted Temporary Protected Status under Haiti's designation will no longer have Temporary Protected Status. This determination to terminate the TPS designation for Haiti supersedes the determination announced in the July 1, 2025 notice, \"Termination of the Designation of Haiti for Temporary Protected Status.\""
+        },
+        {
+          "side": "added",
+          "text": "2026-09-04 | Notice | FR Doc. 2026-18099 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: e-Request Tool"
+        },
+        {
+          "side": "added",
+          "text": "FR Doc. 2026-18099 action: 30-Day notice."
+        }
+      ],
+      "evidence": {
+        "previous_snapshot_sha256": "5e33339fa018bfcf5d3667c1adc9c902cdff906436971db07cbc221768495fe4",
+        "current_snapshot_sha256": "573ee0dc0bc2cc5f44c127c9e5f1a26ab888000a9a8307ee252a35c39193adf1",
+        "previous_captured": "2026-09-02T00:33:05+00:00",
+        "added": [
+          "2026-09-04 | Notice | FR Doc. 2026-18099 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: e-Request Tool",
+          "FR Doc. 2026-18099 action: 30-Day notice.",
+          "FR Doc. 2026-18099 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and clearance in accordance with the Paperwork Reduction Act of 1995. The purpose of this notice is to allow an additional 30 days for public comments."
+        ],
+        "removed": [
+          "2025-11-28 | Notice | FR Doc. 2025-21379 | Termination of the Designation of Haiti for Temporary Protected Status",
+          "FR Doc. 2025-21379 action: Notice.",
+          "FR Doc. 2025-21379 abstract: Through this notice, the Department of Homeland Security (DHS) newly announces that the Secretary of Homeland Security (Secretary) is terminating the designation of Haiti for Temporary Protected Status. Because of interference by a federal district court judge, the designation of Haiti is set to expire on February 3, 2026. After reviewing country conditions and consulting with appropriate U.S. Government agencies, the Secretary determined that Haiti no longer meets the conditions for the designation for Temporary Protected Status. The Secretary, therefore, is newly terminating the Temporary Protected Status designation of Haiti as required by statute. This termination is effective February 3, 2026. After February 3, 2026, nationals of Haiti (and aliens having no nationality who last habitually resided in Haiti) who have been granted Temporary Protected Status under Haiti's designation will no longer have Temporary Protected Status. This determination to terminate the TPS designation for Haiti supersedes the determination announced in the July 1, 2025 notice, \"Termination of the Designation of Haiti for Temporary Protected Status.\""
+        ]
+      },
+      "model": "anthropic/claude-sonnet-4.5"
+    }
+  ]
 }
