@@ -44,6 +44,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
+from lib.text_io import write_lf  # noqa: E402
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
 SOURCES = {s["id"]: s for s in json.loads(
@@ -264,7 +265,7 @@ def main() -> int:
             continue
         if args.write:
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text(rendered, encoding="utf-8", newline="\n")
+            write_lf(target, rendered)
         written.append(f'{page["lane"]}/{page["slug"]}')
 
     words = {}

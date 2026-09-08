@@ -59,6 +59,9 @@ from email import policy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from lib.text_io import write_lf  # noqa: E402
 LANE = ROOT / "data/journalist-queries"
 BEATS = LANE / "beats.json"
 LEDGER = LANE / "expertise-ledger.json"
@@ -91,8 +94,7 @@ def load(path: Path):
 
 def write_json(path: Path, obj) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n",
-                    encoding="utf-8", newline="\n")
+    write_lf(path, json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
 
 
 # ------------------------------------------------------------------ ingest

@@ -59,6 +59,7 @@ STALE_AFTER_DAYS = 14
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
+from lib.text_io import write_lf  # noqa: E402
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
 CLARITY_RE = re.compile(r"<script data-clarity-loader>.*?</script>", re.S | re.I)
@@ -389,7 +390,7 @@ def main() -> int:
     changed = (not target.exists()) or target.read_text(encoding="utf-8") != page
     if args.write and changed:
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(page, encoding="utf-8", newline="\n")
+        write_lf(target, page)
 
     print("USCIS CHANGELOG PAGE")
     print(f"  sources watched: {len(tracked['sources'])}")

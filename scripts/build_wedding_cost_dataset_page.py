@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
+from lib.text_io import write_lf  # noqa: E402
 DATASET_PATH = ROOT / "data/memphis-wedding-cost-2026.json"
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -516,11 +517,11 @@ def main() -> int:
             changes.append(target)
             if args.write:
                 target.parent.mkdir(parents=True, exist_ok=True)
-                target.write_text(content, encoding="utf-8", newline="\n")
+                write_lf(target, content)
         elif target is csv_target and current != content:
             changes.append(target)
             if args.write:
-                target.write_text(content, encoding="utf-8", newline="\n")
+                write_lf(target, content)
 
     vendor_count = len(dataset["vendors"])
     print("WEDDING COST DATASET PAGE")

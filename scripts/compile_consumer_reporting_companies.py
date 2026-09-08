@@ -55,6 +55,9 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from lib.text_io import write_lf  # noqa: E402
 OUT = ROOT / "data/compiled/cfpb-consumer-reporting-companies-2025.json"
 
 LANDING = ("https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/"
@@ -326,8 +329,7 @@ def main() -> int:
 
     data = build(csv_bytes)
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n",
-                   encoding="utf-8", newline="\n")
+    write_lf(OUT, json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({"status": "PASS", "mode": "fetch", "written": str(OUT.relative_to(ROOT)),
                       **data["counts"]}, indent=2))
     return 0

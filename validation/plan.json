@@ -49,7 +49,8 @@
       "uscis_changelog",
       "journalist_query_lane",
       "validation_receipt_severity_truth",
-      "page_chrome_page_footer"
+      "page_chrome_page_footer",
+      "generated_text_writes_portable"
     ],
     "release": [
       "json",
@@ -94,7 +95,8 @@
       "uscis_changelog",
       "journalist_query_lane",
       "validation_receipt_severity_truth",
-      "page_chrome_page_footer"
+      "page_chrome_page_footer",
+      "generated_text_writes_portable"
     ],
     "full": [
       "json",
@@ -140,7 +142,8 @@
       "uscis_changelog",
       "journalist_query_lane",
       "validation_receipt_severity_truth",
-      "page_chrome_page_footer"
+      "page_chrome_page_footer",
+      "generated_text_writes_portable"
     ],
     "cache-self-test": [
       "python",
@@ -335,6 +338,10 @@
     "page_chrome_page_footer": {
       "severity": "HARD_FAIL",
       "rationale": "A page that ships two governance footers ships two identical /masthead anchors, which build_site_navigation.py's duplicate-anchor audit blocks the release on and which validation/repair.py would otherwise 'fix' by deleting an anchor and leaving its text as bare words. Run 34231670721 went red exactly here: the USCIS changelog published its first entry, that entry's <blockquote><footer> citation attribution became the first <footer> in the document, and install_editorial_chrome.py -- which searched for a bare <footer> and took the first hit -- installed the governance footer inside the blockquote while leaving the real page footer alone. The shape was unreachable while the changelog had zero entries, so a scan of sites/ reported PASS every day until the day it published. This guard is therefore behavioural: it feeds install() the shapes that trigger the defect and reads the output, as well as scanning the tree. It fails if it examined zero fixtures or zero pages."
+    },
+    "generated_text_writes_portable": {
+      "severity": "HARD_FAIL",
+      "rationale": "Path.write_text(..., newline=...) is Python 3.10+. The workflows pin 3.11, so the call succeeds in CI and raises TypeError only on the runtime the updater and the local validation profile use -- nothing that gates a merge can see it. docs/V4-6-1-PYTHON-PORTABILITY-FIX.md records the same failure being hand-fixed in two scripts; by 2026-09-08 the keyword had returned in nine call sites, one of them inside validate_nav_rebuild_after_publish.py, where it crashed a HARD_FAIL check before it could examine anything. scripts/lib/text_io.write_lf() now owns the rule and this guard is the thing that keeps it owned: it parses every file under scripts/, validation/ and tests/ (parses rather than greps, so the modules that name the banned call in their own docstrings do not fail on their explanation) and fails if it scanned zero files."
     }
   },
   "severity_matrix_policy": {
