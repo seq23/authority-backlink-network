@@ -1,70 +1,58 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-08T12:25:34+00:00",
+  "run_at": "2026-09-08T18:30:42+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 13,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 10,
-  "dropped_as_ungroundable": 3,
+  "dropped_by_beat_filter": 8,
+  "dropped_as_ungroundable": 2,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
   "drops": [
     {
-      "summary": "Registered dietitians needed for information on fiber",
+      "summary": "Registered dietitians needed for information on fast-food breakfast orders",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Expert in narrative art and/or curating experiential museum collections",
+      "summary": "When Does an Unsecured Debt Consolidation Loan Actually Save Money?",
+      "why": "excluded: 'cpa'"
+    },
+    {
+      "summary": "Home Holiday Gifts for Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Data Centres in West Texas - especially Pecos",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Boo Basket Essentials and Fa-BOO-Lous Finds",
+      "summary": "FALL + HOLIDAY GIFT GUIDE SUBMISSIONS ARE OPEN!",
       "why": "matches no declared beat"
     },
     {
-      "summary": "The Best Health Gadgets on the market right now",
+      "summary": "Shop Pink Products for Breast Cancer Support",
       "why": "matches no declared beat"
     },
     {
-      "summary": "The Best Running Gadgets and Accessories for Fall",
+      "summary": "Thoughtful Hostess Gifts",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Fall Reading List",
+      "summary": "Seeking Best Camping & Hiking Gifts for 2026-2027",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Wanted: Most Haunted Campgrounds in America: 13 Spooky Sites.",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "How to avoid the airport repacking ritual",
+      "summary": "Travel insurance and winter storm coverage",
       "why": "excluded: 'attorney'"
     },
     {
-      "summary": "Mexico City hoteliers, chefs, and tour experts sought for Go World Travel feature",
-      "why": "matches no declared beat"
+      "summary": "Education Leaders: How are you making learning work for more students?",
+      "why": "She would have to invent claims about education products, learner needs, accessibility solutions, or educational outcomes that don't exist in the available facts."
     },
     {
-      "summary": "FinTech Leaders: How are you making money matters easier for consumers?",
-      "why": "She would have to claim she leads a FinTech company, which is not supported by any fact; her businesses are wedding/event vendor libraries and operations, not FinTech."
-    },
-    {
-      "summary": "Business Leaders: How is AI helping your company accomplish more with less?",
-      "why": "She would have to invent claims about using AI to increase team capacity, accomplish more without adding resources, or how AI changed her approach to hiring and scaling."
-    },
-    {
-      "summary": "Seeking experts to comment on how to define and govern AI decision authority",
-      "why": "She would have to invent expertise in AI governance, decision authority frameworks, and enterprise workflow management that isn't supported by any listed fact."
+      "summary": "Cybersecurity Leaders: How are you staying one step ahead of the bad guys?",
+      "why": "She would have had to invent cybersecurity expertise, threat analysis, client defense strategies, and leadership of a cybersecurity company."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 13 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 3 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 2 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
