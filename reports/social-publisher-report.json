@@ -68,9 +68,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-08": 3,
+            "2026-09-08": 2,
             "2026-09-09": 4,
-            "2026-09-10": 1,
+            "2026-09-10": 2,
             "2026-09-11": 0,
             "2026-09-12": 0,
             "2026-09-13": 0,
@@ -125,10 +125,10 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "halted_platforms": {},
-  "deferred_waiting_for_delivery_route": 535,
+  "deferred_waiting_for_delivery_route": 534,
   "route_only_platforms": [
     "x"
   ],
@@ -142,33 +142,33 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1116,
+  "still_postable_after_run": 1115,
   "attempts": [
     {
-      "index": 355,
+      "index": 361,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Need to explain what happened? Create the letter they asked for. Loan Explanation Letters: Aeo-Ready Faq Answer Page Bef"
+      "preview": "Need to explain what happened? Create the letter they asked for. Business Funding Packet: Comparison-Friendly Red-Flag C"
     }
   ],
   "successes": [
     {
-      "index": 355,
+      "index": 361,
       "platform": "x",
       "brand": null,
-      "id": "6aa00e0e0a2312cc9839639b",
+      "id": "6aa01c6bd1fb03277f6e2218",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-10T14:53:00.000Z"
+      "due_at": "2026-09-10T15:39:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 1
   },
   "brand_rotation_policy": {
     "quota_count": 15,
