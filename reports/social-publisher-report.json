@@ -53,7 +53,7 @@
       "used_this_run": false,
       "receipt": {
         "available": false,
-        "reason": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 3}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+        "reason": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 4}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
         "halted": null,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
         "channel_id": "6a936b7accaf649a674276b2",
@@ -61,13 +61,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 3,
+        "policy_daily_limit": 4,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 9,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 0,
-          "network_policy_daily": 3
+          "network_policy_daily": 4
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -121,7 +121,7 @@
           }
         ]
       },
-      "why_not_used": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 3}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
+      "why_not_used": "no headroom: the strictest discovered ceiling is free_plan_queue_depth at 0 (all of them: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 0, 'network_policy_daily': 4}). Nothing is sent, nothing is lost -- the entries stay queued and go out as Buffer drains.",
       "x_api_requests_made": 0
     }
   },
