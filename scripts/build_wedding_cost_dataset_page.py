@@ -33,6 +33,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib.page_chrome import page_footer_match  # noqa: E402
 DATASET_PATH = ROOT / "data/memphis-wedding-cost-2026.json"
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -43,7 +46,10 @@ DISCLAIMER = ("This page is informational. It is not legal, medical, mental-heal
               "immigration, financial, or professional advice.")
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
-FOOTER_RE = re.compile(r"<footer>.*?</footer>", re.S | re.I)
+# The page-level footer only. `<footer>` is also the HTML element for a
+# citation attribution inside <blockquote>, so "the first <footer> in the
+# document" is not the same thing as "the page footer" -- see
+# scripts/lib/page_chrome.py for the run this distinction cost.
 CLARITY_RE = re.compile(r"<script data-clarity-loader>.*?</script>", re.S | re.I)
 
 
@@ -160,7 +166,7 @@ def build_csv(dataset: dict) -> str:
 def chrome(lane: str) -> tuple[str, str, str]:
     index = (ROOT / PUBLICATIONS[lane]["folder"] / "index.html").read_text(encoding="utf-8")
     header = HEADER_RE.search(index)
-    footer = FOOTER_RE.search(index)
+    footer = page_footer_match(index)
     clarity = CLARITY_RE.search(index)
     if not header or not footer:
         raise SystemExit(f"cannot read chrome from {lane} index.html")

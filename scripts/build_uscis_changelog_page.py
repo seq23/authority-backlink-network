@@ -33,6 +33,7 @@ import argparse
 import html
 import json
 import re
+import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -56,8 +57,10 @@ DISCLAIMER = ("This page is informational. It is not legal, medical, mental-heal
 # A source not reached in this many days is shown to the reader as stale.
 STALE_AFTER_DAYS = 14
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib.page_chrome import page_footer_match  # noqa: E402
+
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
-FOOTER_RE = re.compile(r"<footer>.*?</footer>", re.S | re.I)
 CLARITY_RE = re.compile(r"<script data-clarity-loader>.*?</script>", re.S | re.I)
 
 
@@ -67,7 +70,10 @@ def esc(text: str) -> str:
 
 def chrome(lane: str) -> tuple[str, str, str]:
     index = (ROOT / PUBLICATIONS[lane]["folder"] / "index.html").read_text(encoding="utf-8")
-    header, footer = HEADER_RE.search(index), FOOTER_RE.search(index)
+    # page_footer_match, not "the first <footer>": this very page emits a
+    # <blockquote><footer> attribution under every published entry, and the
+    # loose selector is what let the governance footer be installed inside one.
+    header, footer = HEADER_RE.search(index), page_footer_match(index)
     clarity = CLARITY_RE.search(index)
     if not header or not footer:
         raise SystemExit(f"cannot read chrome from {lane} index.html")
