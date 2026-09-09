@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "5f6981c47121177bcf4fc49faeab174ae600adc302dd5165fcb2127865d555d0",
+  "plan_sha256": "7c875bab0e5ac4eec7bfc75211199225b30f11278de3d99131a92520d0b5110a",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 47,
+  "count": 48,
   "counts_by_severity": {
-    "HARD_FAIL": 44,
+    "HARD_FAIL": 45,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
@@ -201,6 +201,17 @@
       "severity": "STRONG_WARNING",
       "classified": true,
       "rationale": "Post-publish observation. Passes today with 0 verified citations, so it measures reach rather than correctness, and depends on secrets that are absent in local runs.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "distribution_switch_single_source",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Measured distribution that reaches nothing, silently, because two components each kept their own answer to 'which platforms must a published page reach?' and agreed with each other. X was paused route-only on 2026-08-29 -- own paid API off, posts leaving through a switched-on Buffer route that had accepted 49 of them -- and scripts/authority_v4_autopilot.py gated its X enqueue loop on enabled_platforms(), which cannot see a route. From that day every page it published was enqueued for nothing while the route sat connected and idle. validate_social_enqueue_completeness.py had the identical blind spot, so it blamed a policy gap that did not exist ('it must be a recorded decision in data/social-brand-policy.json') rather than the drop in front of it. This blocks if any distribution decision site stops asking the shared helper, if a new enqueue site appears undeclared, or if the helper stops distinguishing a dormant pause from a route-only one -- a dormant platform with a stale enabled delivery_route block must distribute nothing, because dormant is what the owner picks when she wants silence.",
       "profiles": [
         "changed",
         "full",

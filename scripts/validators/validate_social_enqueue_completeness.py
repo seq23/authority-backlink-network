@@ -19,20 +19,33 @@ the next run. A cap that defers is fine. A cap that drops is not.
 This validator fails if a run publishes pages that never reach the queue, so the
 enqueue step can never silently regress to slicing again.
 
-Enabled platforms, not all platforms
-------------------------------------
-The contract is "every published page, for every platform that was switched ON",
-and it is evaluated per platform rather than as a union. LinkedIn was paused on
-2026-08-29 by an owner decision recorded in data/social-brand-policy.json, so the
-contract now expects X only -- honestly, by naming the platforms in the run
-receipt, not by weakening the assertion. A union check would also have been
-satisfied if X had silently dropped out while LinkedIn kept enqueueing, which is
-the failure mode this exists to catch.
+Distributing platforms, not merely enabled ones
+-----------------------------------------------
+The contract is "every published page, for every platform that a published page
+still has to REACH", and it is evaluated per platform rather than as a union. A
+union check would also have been satisfied if X had silently dropped out while
+LinkedIn kept enqueueing, which is the failure mode this exists to catch.
 
-A paused platform must ALSO not keep enqueueing. An entry created for a platform
-that cannot post is a parked row that reads as imminent work; 581 of them
-accumulated that way. So the static contract below additionally requires the
-enqueue site to gate on the switch.
+"Has to reach" is not the same question as "is switched on", and this validator
+used to ask the wrong one. It asked `declared_enabled()`. Both platforms are
+declared `enabled: false`, so it computed an empty set and failed the 2026-09-09
+release with "no platform switched on ... if that is intended it must be a
+recorded decision in data/social-brand-policy.json". The decision was recorded
+there, in full, and had been since 2026-08-29: X is paused for its own paid API
+ONLY, `pause_mode: "delivery_route"`, with a switched-on Buffer route that has
+accepted 49 posts. The validator could not see the `delivery_route` half of the
+declaration, so it named a real distribution drop after a policy gap that did
+not exist -- and scripts/authority_v4_autopilot.py had the identical blind spot,
+gating its X enqueue loop on `enabled_platforms()`, which is what caused the
+drop it was reporting.
+
+Both now ask social_platforms.distributing_platforms(): enabled platforms plus
+route-only platforms whose route is switched on. A DORMANT platform is still
+excluded -- LinkedIn must not keep enqueueing, because an entry created for a
+platform with no way out is a parked row that reads as imminent work and 581 of
+them accumulated exactly that way. So the static contract below still requires
+the enqueue site to gate every platform, only now on the shared question rather
+than on a locally re-derived list.
 """
 from __future__ import annotations
 import json
@@ -85,36 +98,62 @@ def main() -> int:
     policy = social_platforms.load_policy()
     declared_enabled = [p for p in social_platforms.PLATFORMS
                         if social_platforms.declared_enabled(p, policy)]
-    declared_paused = [p for p in social_platforms.PLATFORMS if p not in declared_enabled]
+    # The set the contract is evaluated against. Not `declared_enabled`: a
+    # platform paused route-only still distributes, through its route, and its
+    # published pages must still be enqueued or the route has nothing to carry.
+    # Asking the wrong question here is what made this validator report a real
+    # distribution drop under a false name -- "no platform switched on ... it
+    # must be a recorded decision in data/social-brand-policy.json" -- when the
+    # decision was recorded there in full and it was the reader that could not
+    # see the `delivery_route` half of it.
+    distributing = social_platforms.distributing_platforms(policy)
+    routed = social_platforms.routed_platforms(policy)
+    dormant = [p for p in social_platforms.PLATFORMS if p not in distributing]
 
-    # The enqueue site must consult the switch, or a paused platform silently
+    # The enqueue site must consult the switch, or a dormant platform silently
     # rebuilds its parked backlog one run at a time.
     checks_performed += 1
-    if "enabled_social_platforms" not in src:
+    if "distributing_social_platforms" not in src:
         hard_failures.append(
-            "scripts/authority_v4_autopilot.py no longer gates enqueue on the platform "
-            "switch in data/social-brand-policy.json. Without that gate a paused "
-            "platform keeps accumulating queue entries that can never post, which is "
-            "how 581 parked LinkedIn rows appeared."
+            "scripts/authority_v4_autopilot.py no longer gates enqueue on "
+            "social_platforms.distributing_platforms(). Gating on enabled_platforms() "
+            "alone drops every route-only platform: X's posts leave through Buffer, "
+            "and a row that is never created is a post the route can never carry. "
+            "Gating on nothing at all rebuilds the 581 parked LinkedIn rows instead."
         )
-    for plat in declared_paused:
+    for plat in social_platforms.PLATFORMS:
         checks_performed += 1
-        if f"'{plat}' in enabled_social_platforms" not in src:
+        if f"'{plat}' in distributing_social_platforms" not in src:
             hard_failures.append(
-                f"{plat} is switched off in data/social-brand-policy.json, but "
-                f"scripts/authority_v4_autopilot.py does not guard its enqueue loop with "
-                f"\"'{plat}' in enabled_social_platforms\". A paused platform must stop "
-                f"creating rows, not keep creating rows nothing can post."
+                f"scripts/authority_v4_autopilot.py does not guard the {plat} enqueue "
+                f"loop with \"'{plat}' in distributing_social_platforms\". Every "
+                f"platform's enqueue loop must ask the one shared question, so that "
+                f"flipping a switch or a delivery route in "
+                f"data/social-brand-policy.json is the whole change."
             )
-    for plat in declared_enabled:
+    for plat in distributing:
         checks_performed += 1
         if f"'platform': '{plat}'" not in src:
             hard_failures.append(
-                f"{plat} is switched ON in data/social-brand-policy.json, but "
+                f"{plat} distributes (enabled, or paused route-only with its route "
+                f"switched on) per data/social-brand-policy.json, but "
                 f"scripts/authority_v4_autopilot.py has no enqueue site that emits "
-                f"platform '{plat}'. An enabled platform with no enqueue site publishes "
-                f"pages that reach nobody."
+                f"platform '{plat}'. A distributing platform with no enqueue site "
+                f"publishes pages that reach nobody."
             )
+    # Rule 0 for the static half: a policy in which nothing distributes at all
+    # would make every loop above vacuous, and this validator would pass by
+    # checking that no page needs to go anywhere. That is a real silent stop and
+    # it fails here, whatever the per-run receipts say.
+    checks_performed += 1
+    if not distributing:
+        hard_failures.append(
+            "no platform in data/social-brand-policy.json distributes: every platform is "
+            "either switched off dormant or has no switched-on delivery route. Publishing "
+            "into a network where nothing distributes is a silent stop. To intend it, "
+            "declare it -- a platform paused dormant is a decision; all of them at once, "
+            "while pages keep publishing, is an outage."
+        )
     for banned, why in (
         ("for item in published[:", "LinkedIn enqueue slices the published list"),
         ("in x_pool[:", "X enqueue slices the candidate pool"),
@@ -165,13 +204,20 @@ def main() -> int:
         # (receipts written before this contract carry only the union field).
         by_platform = receipt.get("pages_missing_by_platform")
         if isinstance(by_platform, dict):
-            platforms_in_play = receipt.get("platforms_enabled") or []
+            # `platforms_distributing` is the field written since the route-only
+            # gate landed. Receipts from before it carry only `platforms_enabled`,
+            # which on those runs meant the same thing, so it is the fallback --
+            # not a synonym, a predecessor.
+            platforms_in_play = (receipt.get("platforms_distributing")
+                                 or receipt.get("platforms_enabled") or [])
             if not platforms_in_play:
                 hard_failures.append(
                     f"run {run.get('date')} published {receipt.get('published_pages')} pages "
-                    f"with no platform switched on. Publishing into a network where nothing "
-                    f"distributes is a silent stop; if that is intended it must be a recorded "
-                    f"decision in data/social-brand-policy.json, not an empty list here."
+                    f"and enqueued them for nothing: no platform was switched on and no "
+                    f"delivery route was carrying one either. Publishing into a network "
+                    f"where nothing distributes is a silent stop, and it is the state this "
+                    f"repository was in from the day X was paused route-only while the "
+                    f"enqueue gate still asked only which platforms were ENABLED."
                 )
             for plat in platforms_in_play:
                 missing = by_platform.get(plat) or []
@@ -194,6 +240,9 @@ def main() -> int:
         "checks_performed": checks_performed + len(governed),
         "static_enqueue_contract": "enforced",
         "platforms_enabled": declared_enabled,
+        "platforms_distributing": distributing,
+        "platforms_routed": routed,
+        "platforms_dormant": dormant,
         "platforms_paused": social_platforms.paused_platforms(policy),
         "runs_examined": len(governed),
         # The per-run half of this validator iterates `governed`. The existing

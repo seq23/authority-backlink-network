@@ -855,10 +855,21 @@ def main():
     # for a platform that is switched off on purpose, and the run receipt below
     # records which platforms were enabled, so the completeness contract is
     # evaluated against the platforms that were actually in play.
+    #
+    # The gate is DISTRIBUTING platforms, not merely enabled ones. A platform
+    # paused route-only -- X, whose own API is unfunded and whose posts leave
+    # through Buffer instead -- still has to be enqueued, because the route can
+    # only carry rows that exist. Gating this on enabled_platforms() is what
+    # stopped X distribution dead: from the day X was paused route-only, every
+    # page published here was enqueued for nothing while the Buffer route sat
+    # connected and idle. A dormant platform (LinkedIn) is still not enqueued,
+    # which is the parked-backlog protection above and is unchanged.
     social_platform_policy = social_platforms.load_policy()
     enabled_social_platforms = social_platforms.enabled_platforms(social_platform_policy)
+    distributing_social_platforms = social_platforms.distributing_platforms(social_platform_policy)
+    routed_social_platforms = social_platforms.routed_platforms(social_platform_policy)
     paused_social_platforms = social_platforms.paused_platforms(social_platform_policy)
-    if 'linkedin' in enabled_social_platforms:
+    if 'linkedin' in distributing_social_platforms:
         for item in published:
             domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
             rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
@@ -885,7 +896,7 @@ def main():
     # the page more reachable, they make the account look automated. Every
     # published page still enters the queue exactly once per platform, so the
     # enqueue-completeness contract is unaffected -- no slicing here.
-    for idx, item in enumerate(published if 'x' in enabled_social_platforms else []):
+    for idx, item in enumerate(published if 'x' in distributing_social_platforms else []):
         tmpl = x_templates[idx % len(x_templates)]
         domain = os.getenv(PANTRY['publications'][item['publication']]['domain_env']) or PANTRY['publications'][item['publication']]['default_domain']
         rel_path = str(Path(item['path']).relative_to(PANTRY['publications'][item['publication']]['site_path'])).replace('index.html','')
@@ -911,14 +922,21 @@ def main():
             enqueued_by_platform[s.get('platform')].add(s.get('source_path'))
     missing_by_platform = {
         plat: sorted(published_paths - enqueued_by_platform.get(plat, set()))
-        for plat in enabled_social_platforms
+        for plat in distributing_social_platforms
     }
     social_enqueued = {
         'published_pages': len(published),
         'platforms_enabled': enabled_social_platforms,
+        # The set the completeness contract is actually evaluated against:
+        # enabled platforms plus route-only platforms whose delivery route is
+        # switched on. Reported separately from `platforms_enabled` so "X posts
+        # through its own API" and "X posts through Buffer" stay two visibly
+        # different facts rather than one merged list.
+        'platforms_distributing': distributing_social_platforms,
+        'platforms_routed': routed_social_platforms,
         'platforms_paused': paused_social_platforms,
         'pages_enqueued_by_platform': {p: len(enqueued_by_platform.get(p, set()) & published_paths)
-                                       for p in enabled_social_platforms},
+                                       for p in distributing_social_platforms},
         'pages_missing_by_platform': missing_by_platform,
         'pages_enqueued_for_social': len([p for p in published_paths if p in social_enqueued_paths]),
         'pages_missing_social': sorted({p for miss in missing_by_platform.values() for p in miss}),
