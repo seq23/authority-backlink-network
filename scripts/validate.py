@@ -75,6 +75,31 @@ def python_compile_command() -> list[str]:
     return [sys.executable, "-m", "py_compile", *[str(p.relative_to(ROOT)) for p in files]]
 
 
+def aggregate_hard_failures(results: list[dict]) -> int:
+    """How many hard failures this run actually found. Counted ONCE each.
+
+    This used to be `blocking_failures + sum(child hard_failures)`, which counts
+    a blocking check that reported its own failures twice. On 2026-09-09 exactly
+    one validator failed -- social_enqueue_completeness, with one hard failure --
+    and the release receipt published `"hard_failures": 2, "blocking_failures":
+    1`, sending a reader looking for a second defect that did not exist.
+
+    The line immediately below already refuses to make that mistake for warnings
+    ("Child receipts already provide warning counts. Do not count the aggregate
+    status a second time."), so the arithmetic here was an oversight rather than
+    a policy.
+
+    A blocking check contributes at least one, because a check that crashes
+    before it can write a receipt still failed and its unparseable stdout parses
+    to zero. Where the child DID report a count, that count is the answer.
+    """
+    total = 0
+    for r in results:
+        blocking_failure = r["exit_code"] != 0 and r["blocking_if_failed"]
+        total += max(int(r.get("hard_failures", 0)), 1 if blocking_failure else 0)
+    return total
+
+
 def parse_child_receipt(stdout: str) -> dict:
     try:
         value = json.loads(stdout)
@@ -167,7 +192,7 @@ def main() -> None:
 
     blocking_failures = sum(1 for r in results if r["exit_code"] != 0 and r["blocking_if_failed"])
     nonblocking_failures = sum(1 for r in results if r["exit_code"] != 0 and not r["blocking_if_failed"])
-    hard_failures = blocking_failures + sum(r["hard_failures"] for r in results)
+    hard_failures = aggregate_hard_failures(results)
     # Child receipts already provide warning counts. Do not count the aggregate status a second time.
     strong_warnings = sum(r["strong_warnings"] for r in results) + sum(
         1 for r in results if r["exit_code"] != 0 and not r["blocking_if_failed"])

@@ -154,8 +154,45 @@ def main() -> int:
                     f"HARD_FAIL {MATRIX_PATH.name} is not what its generator produces "
                     "from the current plan; run `npm run validation:matrix` and commit it")
 
+    # 4. The failure COUNT is a count, not a sum of overlapping things.
+    #
+    # The 2026-09-09 release receipt read "hard_failures": 2, "blocking_failures":
+    # 1 with exactly one validator failing and exactly one hard failure inside it.
+    # The aggregate added the blocking count to the child counts, so a blocking
+    # check that reported its own failures was counted twice, and the receipt
+    # sent a reader hunting a second defect that did not exist. A receipt whose
+    # numbers cannot be trusted is the same class of problem as one whose failure
+    # marker cannot be: it is read as evidence.
+    cases = (
+        ("one blocking check reporting one hard failure",
+         [{"exit_code": 1, "blocking_if_failed": True, "hard_failures": 1}], 1),
+        ("one blocking check reporting three",
+         [{"exit_code": 1, "blocking_if_failed": True, "hard_failures": 3}], 3),
+        ("a blocking check that crashed before writing a receipt",
+         [{"exit_code": 2, "blocking_if_failed": True, "hard_failures": 0}], 1),
+        ("two blocking checks, one hard failure each",
+         [{"exit_code": 1, "blocking_if_failed": True, "hard_failures": 1},
+          {"exit_code": 1, "blocking_if_failed": True, "hard_failures": 1}], 2),
+        ("a clean run",
+         [{"exit_code": 0, "blocking_if_failed": True, "hard_failures": 0}], 0),
+        ("a non-blocking failure is not a hard failure",
+         [{"exit_code": 1, "blocking_if_failed": False, "hard_failures": 0}], 0),
+    )
+    arithmetic_examined = 0
+    for name, results, expected in cases:
+        arithmetic_examined += 1
+        got = emitter.aggregate_hard_failures(results)
+        if got != expected:
+            failures.append(
+                f"HARD_FAIL the receipt's hard_failures count is wrong for {name}: "
+                f"expected {expected}, got {got}. A failure counted twice is a defect "
+                f"the reader goes looking for and cannot find.")
+    if not arithmetic_examined:
+        failures.append("HARD_FAIL exercised zero receipt-arithmetic cases")
+
     print("VALIDATION RECEIPT SEVERITY TRUTH")
     print(f"  checks examined: {examined}")
+    print(f"  receipt arithmetic cases: {arithmetic_examined}")
     print(f"  classified in severity_matrix: {len(checks) - len(unclassified)}/{len(checks)}")
     print(f"  published matrix: {'in sync with plan' if not failures else 'see failures'}")
 
