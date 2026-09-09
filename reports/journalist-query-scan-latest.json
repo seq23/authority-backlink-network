@@ -1,31 +1,50 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-09T15:39:15+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-09T16:15:34+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 8,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 7,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
-  "stops": [
+  "stops": [],
+  "drops": [
     {
-      "code": "MAILBOX_CREDENTIAL_REJECTED",
-      "message": "the journalist-query mailbox at imap.gmail.com refused the credential in SOS_IMAP_USER/SOS_IMAP_PASSWORD ([AUTHENTICATIONFAILED] Invalid credentials (Failure)). The secrets are SET -- this is not 'not configured yet', it is a working mailbox connection that has stopped working. No digests were read, so no queries could be surfaced and none can be said to have been missed or not missed.",
-      "unblock": "Rotate SOS_IMAP_PASSWORD (repository secret) for mailbox s*********@gmail.com and re-run. A Google app password is revoked whenever the account password changes, which is the most likely cause; only the account owner can mint a new one. Nothing in this repository can restore authentication, and nothing here will pretend the lane is reading mail while it is not."
+      "summary": "Leadership skills in hospitality: Your favorite advice and lessons learned the hard way",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Publishing Scams: Have You Been Targeted or Impersonated?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Animal shelters/rehoming charities needed to comment on whether black dogs are adopted more slowly than other dogs",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "How Leadership & Culture Influence Business Outcomes (Hospitality Industry)",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking New Yorkers who moved from one NYC neighborhood to the other in the last year.",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking coffee products, experts, equipment and compelling stories",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking experts to comment on how to govern AI actions after deployment",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking established business owners for a podcast strategy session",
+      "why": "She would have to invent business revenue figures, employee count, operational structure details, and a specific strategic problem she's currently facing."
     }
   ],
-  "drops": [],
-  "named_outcome": "NAMED STOP (OUTAGE) MAILBOX_CREDENTIAL_REJECTED: the journalist-query mailbox at imap.gmail.com refused the credential in SOS_IMAP_USER/SOS_IMAP_PASSWORD ([AUTHENTICATIONFAILED] Invalid credentials (Failure)). The secrets are SET -- this is not 'not configured yet', it is a working mailbox connection that has stopped working. No digests were read, so no queries could be surfaced and none can be said to have been missed or not missed. This is not 'no relevant queries'; it is 'no queries were looked at'.",
-  "announced": {
-    "ok": true,
-    "codes": [
-      "MAILBOX_CREDENTIAL_REJECTED"
-    ],
-    "reminders": [],
-    "detail": ""
-  }
+  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
