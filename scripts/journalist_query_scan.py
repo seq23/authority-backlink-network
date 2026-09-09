@@ -162,71 +162,114 @@ def imap_messages(cfg: dict) -> list[tuple[str, str]]:
     folder = os.environ.get(env["folder"], "") or cfg.get("default_folder", "INBOX")
     since = (date.today() - timedelta(days=int(cfg.get("lookback_days", 2)))).strftime("%d-%b-%Y")
 
-    out: list[tuple[str, str]] = []
-    # Reaching the mailbox has three outcomes, and until 2026-09-09 only one of
-    # them had a name. "No credential set" was a named stop; "credential set and
-    # refused" was an unhandled imaplib traceback that killed the process before
-    # the receipt was written, so the workflow's reporting step read YESTERDAY's
-    # receipt and announced "NO RELEVANT QUERIES: 10 queries were read from 1
-    # digest(s)" on a morning this lane had read nothing. A quiet day and a
-    # broken lane looked identical, which is the one thing this lane exists to
-    # prevent. Both failure modes are named stops now, and both are OUTAGES:
-    # they fail the run, every run, until they are fixed. See
-    # data/journalist-queries/stop_policy.json.
-    try:
-        conn = imaplib.IMAP4_SSL(host, port)
-    except (OSError, imaplib.IMAP4.error) as exc:
+    # MORE THAN ONE MAILBOX, BECAUSE A SUBSCRIPTION MOVES AND A LANE SHOULD NOT BREAK WHILE IT DOES.
+    #
+    # Source of Sources delivers to whichever address is on the subscription, and changing that is an
+    # account action on their site that nobody here can perform or observe. Reading exactly one
+    # mailbox means there is a window -- between repointing this lane and the subscription actually
+    # moving -- where the lane authenticates perfectly, reads an empty inbox, and reports a quiet day.
+    # That is the precise failure this lane exists to prevent, and it would be self-inflicted.
+    #
+    # So USER and PASSWORD accept comma-separated lists and every mailbox is read. The old and the new
+    # address can both be listed across the move, in either order, and the digests are found wherever
+    # they actually arrive. De-duplication is by (subject, body) below, so a message visible in two
+    # mailboxes is ingested once.
+    users = [u.strip() for u in user.split(",") if u.strip()]
+    passwords = [p.strip() for p in password.split(",") if p.strip()]
+    if len(users) != len(passwords):
         raise NamedStop(
-            "MAILBOX_UNREACHABLE",
-            f"the journalist-query mailbox at {host}:{port} could not be reached "
-            f"({type(exc).__name__}: {exc}). No queries were read, so this is not "
-            f"'nothing relevant today' -- nothing was looked at.",
-            f"If {host} is correct and reachable, this is usually transient and the "
-            f"next scheduled run clears it. It stays red until a run actually reads "
-            f"the mailbox.") from exc
-    try:
+            "MAILBOX_CREDENTIAL_MISMATCH",
+            f"{env['user']} lists {len(users)} mailbox(es) but {env['password']} lists "
+            f"{len(passwords)} password(s). No mailbox was read.",
+            f"The two secrets are positional: the Nth password belongs to the Nth user. "
+            f"Set them to lists of the same length, comma-separated, and re-run.")
+
+    out: list[tuple[str, str, str]] = []
+    refused: list[str] = []
+    read_from: list[str] = []
+
+    # Reaching a mailbox has three outcomes, and until 2026-09-09 only one of them had a name. "No
+    # credential set" was a named stop; "credential set and refused" was an unhandled imaplib
+    # traceback that killed the process before the receipt was written, so the workflow's reporting
+    # step read YESTERDAY's receipt and announced "NO RELEVANT QUERIES: 10 queries were read from 1
+    # digest(s)" on a morning this lane had read nothing. A quiet day and a broken lane looked
+    # identical. Both failure modes are named stops now, and both are OUTAGES: they fail the run,
+    # every run, until they are fixed. See data/journalist-queries/stop_policy.json.
+    for one_user, one_password in zip(users, passwords):
         try:
-            conn.login(user, password)
-        except imaplib.IMAP4.error as exc:
-            # Set, and refused. Categorically different from NO_MAILBOX_CREDENTIAL:
-            # something that WAS reading her mail has stopped, and every SOS digest
-            # arriving meanwhile is a citation opportunity expiring unread.
+            conn = imaplib.IMAP4_SSL(host, port)
+        except (OSError, imaplib.IMAP4.error) as exc:
             raise NamedStop(
-                "MAILBOX_CREDENTIAL_REJECTED",
-                f"the journalist-query mailbox at {host} refused the credential in "
-                f"{env['user']}/{env['password']} ({_imap_detail(exc)}). The secrets are "
-                f"SET -- this is not 'not configured yet', it is a working mailbox "
-                f"connection that has stopped working. No digests were read, so no "
-                f"queries could be surfaced and none can be said to have been missed "
-                f"or not missed.",
-                f"Rotate {env['password']} (repository secret) for mailbox "
-                f"{_mask(user)} and re-run. A Google app password is revoked whenever "
-                f"the account password changes, which is the most likely cause; only "
-                f"the account owner can mint a new one. Nothing in this repository can "
-                f"restore authentication, and nothing here will pretend the lane is "
-                f"reading mail while it is not.") from exc
-        conn.select(f'"{folder}"', readonly=True)
-        seen: set[bytes] = set()
-        for sender in cfg["senders"]:
-            typ, data = conn.search(None, "SINCE", since, "FROM", f'"{sender}"')
-            if typ != "OK":
-                continue
-            for uid in data[0].split():
-                if uid in seen:
-                    continue
-                seen.add(uid)
-                typ, raw = conn.fetch(uid, "(RFC822)")
-                if typ != "OK" or not raw or not raw[0]:
-                    continue
-                msg = email.message_from_bytes(raw[0][1], policy=policy.default)
-                out.append((str(msg.get("From", sender)),
-                            str(msg.get("Subject", "")), message_text(msg)))
-    finally:
+                "MAILBOX_UNREACHABLE",
+                f"the journalist-query mailbox at {host}:{port} could not be reached "
+                f"({type(exc).__name__}: {exc}). No queries were read, so this is not "
+                f"'nothing relevant today' -- nothing was looked at.",
+                f"If {host} is correct and reachable, this is usually transient and the "
+                f"next scheduled run clears it. It stays red until a run actually reads "
+                f"the mailbox.") from exc
         try:
-            conn.logout()
-        except Exception:  # noqa: BLE001 - a failed logout is not a run failure
-            pass
-    return out
+            try:
+                conn.login(one_user, one_password)
+            except imaplib.IMAP4.error as exc:
+                # ONE REFUSED MAILBOX STILL FAILS THE RUN, even if another one worked.
+                #
+                # Collected rather than raised immediately so every mailbox is attempted and the
+                # report names all the broken ones at once. But it is NOT downgraded to a warning:
+                # a lane that reads one of two mailboxes and calls itself healthy is a lane quietly
+                # missing half its input, which is indistinguishable from a quiet day.
+                refused.append(f"{_mask(one_user)} ({_imap_detail(exc)})")
+                continue
+            conn.select(f'"{folder}"', readonly=True)
+            read_from.append(_mask(one_user))
+            seen: set[bytes] = set()
+            for sender in cfg["senders"]:
+                typ, data = conn.search(None, "SINCE", since, "FROM", f'"{sender}"')
+                if typ != "OK":
+                    continue
+                for uid in data[0].split():
+                    if uid in seen:
+                        continue
+                    seen.add(uid)
+                    typ, raw = conn.fetch(uid, "(RFC822)")
+                    if typ != "OK" or not raw or not raw[0]:
+                        continue
+                    msg = email.message_from_bytes(raw[0][1], policy=policy.default)
+                    out.append((str(msg.get("From", sender)),
+                                str(msg.get("Subject", "")), message_text(msg)))
+        finally:
+            try:
+                conn.logout()
+            except Exception:  # noqa: BLE001 - a failed logout is not a run failure
+                pass
+
+    if refused:
+        raise NamedStop(
+            "MAILBOX_CREDENTIAL_REJECTED",
+            f"{host} refused the credential for {', '.join(refused)}. The secrets are SET -- "
+            f"this is not 'not configured yet', it is a working mailbox connection that has "
+            f"stopped working. "
+            + (f"{len(read_from)} other mailbox(es) were read, but a lane reading only some of "
+               f"its inputs cannot say whether anything was missed."
+               if read_from else
+               "No digests were read, so no queries could be surfaced and none can be said to "
+               "have been missed or not missed."),
+            f"Rotate the matching entry in {env['password']} (repository secret) and re-run. A "
+            f"Google app password is revoked whenever the account password changes, which is the "
+            f"most likely cause; only the account owner can mint a new one. Nothing in this "
+            f"repository can restore authentication, and nothing here will pretend the lane is "
+            f"reading mail while it is not.")
+
+    # Same digest in two mailboxes is one digest. Keyed on subject and body rather than UID, because
+    # UIDs are per-mailbox and would defeat the de-duplication exactly when it is needed.
+    deduped: list[tuple[str, str, str]] = []
+    fingerprints: set[tuple[str, str]] = set()
+    for frm, subject, text in out:
+        key = (subject.strip(), text.strip())
+        if key in fingerprints:
+            continue
+        fingerprints.add(key)
+        deduped.append((frm, subject, text))
+    return deduped
 
 
 def message_text(msg) -> str:
