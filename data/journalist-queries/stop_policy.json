@@ -66,6 +66,26 @@
         "shape of notification that gets muted, and a muted outage is a silent one."
       ]
     },
+    "MAILBOX_CREDENTIAL_MISMATCH": {
+      "class": "outage",
+      "reminder_days": 0,
+      "why": [
+        "SOS_IMAP_USER and SOS_IMAP_PASSWORD are positional lists and they are",
+        "different lengths, so nothing can be read: the Nth password belongs to",
+        "the Nth user and a shorter list has no safe interpretation.",
+        "",
+        "An OUTAGE rather than a legitimate stop, and the distinction is the whole",
+        "point. The obvious implementation is zip(), which stops at the shorter",
+        "list and reads SOME mailboxes perfectly while silently ignoring the",
+        "rest -- a green run over a lane missing half its mail, which is exactly",
+        "the quiet-day-versus-broken-lane confusion this file exists to prevent.",
+        "So the mismatch fails the run rather than being repaired by truncation.",
+        "",
+        "Not announced: it can only be produced by editing the two secrets to",
+        "disagree, so whoever caused it is already looking at the run, and the",
+        "next correct edit clears it."
+      ]
+    },
     "MAILBOX_UNREACHABLE": {
       "class": "outage",
       "reminder_days": 7,
