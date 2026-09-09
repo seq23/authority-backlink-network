@@ -140,12 +140,29 @@ jobs:
           # route was available and content was waiting. A route that reports
           # itself unavailable or full is a named state, not this.
           route_was_open = bool(receipt.get('available'))
-          if route_was_open and attempts and not successes:
-              print(f'::error::The Buffer route was available and all {attempts} '
+          # An entry Buffer refused because IT ALREADY HOLDS IT is not a failed
+          # attempt. Buffer is the authority on its own queue, and it is saying
+          # the distribution already happened -- so those attempts are netted out
+          # before asking whether nothing went out. This is not a loosening of
+          # the gate: an attempt that ends "you already have this scheduled" DID
+          # reach distribution, on an earlier run.
+          already = int(r.get('already_scheduled_in_buffer') or 0)
+          effective_attempts = attempts - already
+          if route_was_open and effective_attempts > 0 and not successes:
+              print(f'::error::The Buffer route was available and all {effective_attempts} '
                     f'attempts failed, so nothing was distributed by any route. '
                     f'Entries were deferred rather than dropped, so no distribution '
                     f'was lost. Named stop: {r.get("stop_reason") or halted}')
               sys.exit(1)
+          if already:
+              # NAMED STOP, AND IT IS GREEN. Correct behaviour reported out loud:
+              # nothing new went out because Buffer already had it.
+              print(f'::notice::{already} entry(ies) were already scheduled in Buffer '
+                    f'and have been retired as skipped_duplicate rather than retried '
+                    f'forever. Buffer holds them; the distribution is not lost.')
+              with summary.open('a') as fh:
+                  fh.write(f'Already scheduled in Buffer (retired, not retried): '
+                           f'**{already}**.\n\n')
           if (r.get('status') == 'stopped_no_enabled_platform'
                   and (postable or 0) > 0):
               print(f'::error::Every social platform is switched off, no delivery '

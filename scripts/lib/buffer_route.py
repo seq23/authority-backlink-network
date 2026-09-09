@@ -73,6 +73,13 @@ scripts/validators/validate_buffer_route.py:
   halt on the first refusal       a route that has said no is not asked again
                                   in the same run, ever
 
+The one refusal that is NOT a route refusal is Buffer answering that it already
+holds the post ("you've already got this one scheduled"). That is Buffer
+confirming the distribution happened, not reporting an outage, so it retires the
+entry and the route stays open -- see DUPLICATE_KIND below. The attempt is still
+counted, so a queue of nothing but duplicates spends the allowance and stops at
+exactly the same point a queue of failures would.
+
 Queued is not published
 -----------------------
 `createPost` puts a post in the Buffer queue for the channel; Buffer publishes
@@ -256,6 +263,44 @@ mutation P($input: CreatePostInput!) {
 # adds later is treated as a refusal, which is the safe direction.
 SUCCESS_TYPE = "PostActionSuccess"
 
+# ...WITH ONE EXCEPTION, AND IT IS NOT A LOOSENING OF THAT RULE.
+#
+# Buffer refuses a post it already holds:
+#
+#   InvalidInputError: Invalid post: Whoops, it looks like you've already got
+#   this one scheduled or posted around the same time. We're not able to post
+#   the same thing twice so close together.
+#
+# That is not an outage and it is not a refusal of the ROUTE. It is Buffer
+# answering, authoritatively, that THIS ENTRY IS ALREADY SCHEDULED — the
+# distribution the caller wanted has already happened. Treating it as a route
+# halt is what broke run 34376835751 on 2026-09-09: the first entry was already
+# in Buffer's queue, the route halted on it, every other entry was deferred
+# untouched, and the workflow failed having distributed nothing.
+#
+# It would also have stayed broken. The duplicate does not leave Buffer's queue
+# because the run failed, so the next run picks the same entry, gets the same
+# refusal, and halts again — red forever, with no work anyone could do to clear
+# it. The same unclearable shape as the false SILENT in ci-sweep-probe.sh, and
+# the reason this is fixed at the classification rather than at the gate.
+#
+# The runaway this class exists to prevent (581 requests in 76 seconds on
+# 2026-08-29) is still prevented: `remaining()` falls on EVERY attempt including
+# these, so a queue of nothing but duplicates spends the day's allowance and
+# stops exactly as fast as a queue of failures.
+DUPLICATE_KIND = "duplicate"
+_DUPLICATE_MARKERS = (
+    "already got this one scheduled",
+    "post the same thing twice",
+    "already scheduled or posted around the same time",
+)
+
+
+def is_duplicate_refusal(message):
+    """True when Buffer's refusal means 'you already have this one queued'."""
+    text = str(message or "").lower()
+    return any(marker in text for marker in _DUPLICATE_MARKERS)
+
 # Buffer's queue, not an immediate publish. `addToQueue` puts the post in the
 # channel's queue at its next free posting slot, and `automatic` means Buffer
 # sends it itself rather than pinging a phone to post by hand. The alternatives
@@ -296,6 +341,9 @@ class Route:
         self.headroom = 0
         self.attempts = 0
         self.accepted = 0
+        # Entries Buffer refused because it already holds them. Not failures and
+        # not successes: the distribution already happened on an earlier run.
+        self.duplicates = 0
         self.halted = None
         self.plan_limits = {}
         self.channels_seen = []
@@ -570,6 +618,14 @@ class Route:
         kind = result.get("__typename")
         if kind != SUCCESS_TYPE:
             message = _redact(result.get("message") or kind or "unknown refusal")
+            if is_duplicate_refusal(message):
+                # ALREADY IN BUFFER'S QUEUE. The route is healthy and stays open;
+                # this one entry is done. Counted so a run made entirely of
+                # duplicates is still visible as such rather than reading as a
+                # run that quietly did nothing.
+                self.duplicates += 1
+                raise BufferError(f"buffer_duplicate: {message}",
+                                  kind=DUPLICATE_KIND)
             self.halted = f"buffer_refused ({kind}): {message}"
             raise BufferError(self.halted, kind=str(kind))
         post = result.get("post") or {}
@@ -587,6 +643,7 @@ class Route:
             "available": self.available,
             "reason": self.reason,
             "halted": self.halted,
+            "already_scheduled_in_buffer": self.duplicates,
             "organization_id": self.organization_id,
             "channel_id": self.channel_id,
             "channel_name": (self.channel or {}).get("name"),
