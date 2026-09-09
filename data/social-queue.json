@@ -17531,5 +17531,28 @@
     "last_error": "HTTP 429: {\"detail\":\"Too Many Requests\",\"status\":429,\"title\":\"Too Many Requests\",\"type\":\"about:blank\"}",
     "attempt_count": 1,
     "requeued_reason": "restored_after_attempt_budget_defect: retired by a run whose per-run and daily caps counted successes rather than attempts, so a platform-level refusal was recorded against every entry instead of stopping the run. The entry itself was never at fault."
+  },
+  {
+    "date": "2026-09-09",
+    "scheduled_content_date": "2026-09-09",
+    "platform": "x",
+    "status": "queued_for_auto_post",
+    "body": "New resource: Team Accountability: Checklist-Driven Comparison Guide Before You Sign. Better questions, fewer loud claims.",
+    "source_path": "sites/founder-operator/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign.html",
+    "source_url": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign.html",
+    "post_type": "x_resource_note",
+    "last_attempt_at": "2026-09-09T15:48:50.997986+00:00",
+    "attempt_count": 1,
+    "last_error": "buffer_route: buffer_refused (InvalidInputError): Invalid post: Whoops, it looks like you've already got this one scheduled or posted around the same time. We're not able to post the same thing twice so close together."
+  },
+  {
+    "date": "2026-09-09",
+    "scheduled_content_date": "2026-09-09",
+    "platform": "x",
+    "status": "queued_for_auto_post",
+    "body": "Not every resource page needs a hot take. This one is built to help compare the decision: Decision Frameworks For Sensitive Services: Comparison-Friendly Red-Flag Checklist For First-Time Buyers.",
+    "source_path": "sites/professional-resources/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs.html",
+    "source_url": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs.html",
+    "post_type": "x_resource_note"
   }
 ]

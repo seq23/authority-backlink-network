@@ -4965,10 +4965,457 @@
           "answer_mentions_brand": false
         }
       ]
+    },
+    {
+      "run_at": "2026-09-09T15:48:54.639Z",
+      "provider": "openrouter",
+      "engines": [
+        "ibm-granite/granite-4.0-h-micro"
+      ],
+      "mode": "grounded",
+      "queries": 25,
+      "observations": [
+        {
+          "query": "community as a service",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "tractionfive.com",
+            "verint.com",
+            "techround.co.uk",
+            "hardnumbers.co.uk",
+            "futureplanet.love"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community operations",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "communitystrategyacademy.com",
+            "australiancommunitymanagers.com.au",
+            "ziprecruiter.com",
+            "github.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community platform",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "discourse.org",
+            "mateflow.com",
+            "invisioncommunity.com",
+            "opensourcecommunity.io",
+            "circle.so"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community ROI",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "blog.hubspot.com",
+            "higherlogic.com",
+            "communityroundtable.com",
+            "thecr.s3.us-east-1.amazonaws.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community staffing",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "communitystaffing.ca",
+            "communitystaffing.com.au",
+            "communitystaffing.org",
+            "communitystaffingagency.com",
+            "linkedin.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community retention",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "networkli.co",
+            "timewell.jp",
+            "heartbeat.chat",
+            "getcombase.com",
+            "laurazug.substack.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "community moderation",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "hivebrite.io",
+            "rfc-editor.org",
+            "coursera.org",
+            "onlinelibrary.wiley.com",
+            "watchers.io"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "brand community",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "en.wikipedia.org",
+            "themarketingjuice.com",
+            "mdpi.com",
+            "doi.org",
+            "ebsco.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "managed community partner",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "cmpmidsouth.com",
+            "managewithbeacon.com",
+            "partnerscm.com",
+            "social-communities.com",
+            "communityconnectpartners.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "virtual event production partner",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "virtualvelocity.com",
+            "kinura.com",
+            "revolutioneventproduction.com",
+            "virtualpro.com",
+            "avpro360.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "executive broadcast production",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "linkedin.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "wedding budget",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "theknot.com",
+            "thepennyhoarder.com",
+            "weddingcostplanner.com",
+            "weddingprosrated.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "wedding timeline",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "theknot.com",
+            "101planners.com",
+            "brides.com",
+            "weddingnotepad.com",
+            "snaptoolsuite.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "wedding checklist",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "theknot.com",
+            "pix.wedding",
+            "aisle.wedding",
+            "zola.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "wedding seating chart",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "weddingwire.com",
+            "seatplan.io",
+            "wedding.studio",
+            "myseatplan.com",
+            "seatcanvas.app"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "wedding planning builder",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "wedbuild.com",
+            "everly.so",
+            "plannerd.com",
+            "itsayes.io"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "recovery housing",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "govinfo.gov",
+            "narronline.org",
+            "recoveryishappening.org",
+            "casewv.org",
+            "nextrecovery.life"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "referral guidance",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "digital.nhs.uk",
+            "racgp.org.au",
+            "acponline.org",
+            "code-medical-ethics.ama-assn.org"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "family recovery support",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "tfrfoundation.org",
+            "smartrecovery.org",
+            "familyrecoverycollective.com",
+            "samhsa.gov",
+            "thenationalcouncil.org"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "treatment-to-housing transition",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "hhrctraining.org",
+            "chcs.org",
+            "behavioralhealthnews.org",
+            "pmc.ncbi.nlm.nih.gov"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "workplace burnout",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "mayoclinic.org",
+            "pmc.ncbi.nlm.nih.gov",
+            "link.springer.com",
+            "annualreviews.org"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "organizational wellbeing",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "us2.sagepub.com",
+            "healthyworkplaces.berkeley.edu",
+            "ajg.com",
+            "action.deloitte.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "mental health training",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "mentalhealthfirstaid.org",
+            "mentalhealthcommission.ca",
+            "paho.org",
+            "thenationalcouncil.org"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "leadership wellbeing",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "link.springer.com",
+            "psychologytoday.com",
+            "ccl.org",
+            "pmc.ncbi.nlm.nih.gov",
+            "simplypsychology.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        },
+        {
+          "query": "horse boarding agreement",
+          "engine": "openrouter:ibm-granite/granite-4.0-h-micro",
+          "mode": "grounded",
+          "observed_at": "2026-09-09T15:48:54.639Z",
+          "status": "observed",
+          "cited_domains": [
+            "stablewise.com",
+            "butterscotch.io",
+            "campus.equestrian.ca",
+            "utecreekequine.com",
+            "amuletteequestriancenter.com"
+          ],
+          "cited_ours": [],
+          "self_cited": false,
+          "named_in_answer": [],
+          "answer_mentions_brand": false
+        }
+      ]
     }
   ],
   "latest_summary": {
-    "run_at": "2026-09-08T14:32:13.236Z",
+    "run_at": "2026-09-09T15:48:54.639Z",
     "provider": "openrouter",
     "engines": [
       "ibm-granite/granite-4.0-h-micro"

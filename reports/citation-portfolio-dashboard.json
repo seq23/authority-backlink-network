@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,7 +30,7 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 349,
+    "authority_backlinks": 351,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 81,
     "live_verified": 349,
@@ -43,7 +43,7 @@
       "brand_id": "the-industry-guides",
       "brand_name": "The Industry Guides",
       "growth_status": "growth",
-      "authority_backlinks": 2,
+      "authority_backlinks": 3,
       "owned_manifest_surfaces": 3,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -113,7 +113,7 @@
       "brand_id": "aplayer-mode",
       "brand_name": "A Player Mode",
       "growth_status": "growth",
-      "authority_backlinks": 13,
+      "authority_backlinks": 14,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -214,22 +214,23 @@
     "diannesplacerecoveryservices.com": 18,
     "hicksconsulting.org": 15,
     "horselegalguide.com": 14,
-    "theindustryguides.com": 2,
+    "theindustryguides.com": 3,
     "theaccidentguides.com": 3,
     "hormonesivhair.com": 3,
     "uscisexam.com": 4,
-    "aplayermode.com": 13,
+    "aplayermode.com": 14,
     "dentistryguides.com": 2
   },
   "by_publication": {
     "unknown": 15,
-    "founder": 74,
-    "professional": 203,
+    "founder": 75,
+    "professional": 204,
     "memphis": 57
   },
   "lifecycle": {
     "approved_destination": 241,
-    "live_verified": 349
+    "live_verified": 349,
+    "published_in_repository": 2
   },
   "campaign_health": [
     {

@@ -93,6 +93,22 @@
         "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
         "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog"
       ]
+    },
+    {
+      "accepted_at": "2026-09-09",
+      "reason": "Authority V4.2 autopilot run 34372596982 on 2026-09-09: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 633,
+      "accepted_count": 2,
+      "accepted_editorial": 2,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 308,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
+        "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs"
+      ]
     }
   ]
 }
