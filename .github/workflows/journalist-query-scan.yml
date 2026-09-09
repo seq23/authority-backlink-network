@@ -80,6 +80,25 @@ jobs:
         run: python3 scripts/validators/validate_journalist_query_lane.py
 
       - name: Commit the day's digest, if there was one
+        # always(), because the evidence of a BAD run is worth at least as much
+        # as the evidence of a good one, and two things here only work if it is
+        # written down:
+        #
+        #   * the receipt. A run that failed must leave a receipt saying so. If
+        #     the failing run commits nothing, the file in the repository still
+        #     describes the last day that worked, which is the stale-receipt
+        #     trap of 2026-09-09 preserved in git instead of on a runner.
+        #   * data/journalist-queries/state.json, which holds WHICH stops the
+        #     owner has already been told about and when. A credential outage
+        #     fails the run by design, so if state only persisted on success the
+        #     announcement log could never survive one -- and the "said once,
+        #     then reminded weekly" behaviour would degrade into a fresh issue
+        #     twice a weekday, forever.
+        #
+        # This does not make a failing run pass. The scan step has already
+        # failed by the time this runs, the job is red, and the step below
+        # decides who gets told.
+        if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Journalist query scan: drafts for review (nothing sent)"
@@ -103,12 +122,44 @@ jobs:
       - name: Say what the run did, including when it did nothing
         # Rule 0. "No relevant queries today" is a legitimate named outcome and
         # it is printed. Silence in the log is not.
+        #
+        # This step also decides whether the failure below needs an issue. It
+        # reads the receipt the scan just wrote -- and the scan now ALWAYS
+        # writes one, including from its error paths, because on 2026-09-09 an
+        # unhandled imaplib traceback skipped the write and this step read the
+        # PREVIOUS run's file, reporting "NO RELEVANT QUERIES: 10 queries were
+        # read from 1 digest(s)" on a morning the lane had read nothing.
+        id: say
         if: always()
         run: |
-          python3 -c "import json; r=json.load(open('reports/journalist-query-scan-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('messages read:', r.get('messages_read', '?'), '| digests:', r['digests_read'], '| ingested:', r['queries_ingested'], '| surfaced:', r['surfaced']); [print('STOP', s['code'] + ':', s['message']) for s in r['stops']]; print('nothing was sent to any journalist; this lane has no send path')"
+          python3 -c "
+          import json, os
+          r = json.load(open('reports/journalist-query-scan-latest.json'))
+          print('NAMED OUTCOME:', r['named_outcome'])
+          print('messages read:', r.get('messages_read', '?'), '| digests:', r['digests_read'],
+                '| ingested:', r['queries_ingested'], '| surfaced:', r['surfaced'])
+          for s in r['stops']:
+              print('STOP', s['code'] + ':', s['message'])
+          announced = (r.get('announced') or {}).get('ok') is True
+          named = bool(r['stops'])
+          # An outage the scan has already named AND announced does not need a
+          # second issue: the scan's own announcer is deduplicated and reminds on
+          # a cadence, while this action opens a brand-new issue every run. Two
+          # scheduled runs a weekday is ten issues a week for one dead password,
+          # and a notification at that volume is one that gets muted.
+          print('unexplained =', not (named and announced))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+              fh.write('unexplained=' + str(not (named and announced)).lower() + '\n')
+          print('nothing was sent to any journalist; this lane has no send path')
+          "
 
       - name: Open an issue if the scan itself broke
-        if: failure()
+        # Named-and-announced outages are reported by the scan's own announcer,
+        # once and then on a reminder cadence. This covers the rest: a crash, or
+        # a stop whose announcement could not be delivered. The run is RED
+        # either way -- what is deduplicated here is the issue, never the
+        # failure.
+        if: failure() && steps.say.outputs.unexplained != 'false'
         uses: dacbd/create-issue-action@v2
         with:
           token: ${{ github.token }}
@@ -121,3 +172,10 @@ jobs:
             queries is a PASS and sends nothing. A failure means the lane could
             not look, or looked and could not read what it found — which is the
             state where a silent lane looks identical to a quiet day.
+
+            This issue is the UNEXPLAINED case: the run failed without a named
+            stop, or with one the scan could not announce. Named outages
+            (`MAILBOX_CREDENTIAL_REJECTED`, `MAILBOX_UNREACHABLE`) report
+            themselves once and then on the reminder cadence declared in
+            `data/journalist-queries/stop_policy.json`, so they do not arrive
+            here twice a weekday.

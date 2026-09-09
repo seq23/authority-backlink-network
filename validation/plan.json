@@ -33,6 +33,7 @@
       "brand_link_concentration",
       "selfheal_wiring",
       "social_enqueue_completeness",
+      "distribution_switch_single_source",
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
@@ -79,6 +80,7 @@
       "brand_link_concentration",
       "selfheal_wiring",
       "social_enqueue_completeness",
+      "distribution_switch_single_source",
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
@@ -126,6 +128,7 @@
       "brand_link_concentration",
       "selfheal_wiring",
       "social_enqueue_completeness",
+      "distribution_switch_single_source",
       "script_callers",
       "social_rate_limits",
       "social_attempt_budget",
@@ -342,6 +345,10 @@
     "generated_text_writes_portable": {
       "severity": "HARD_FAIL",
       "rationale": "Path.write_text(..., newline=...) is Python 3.10+. The workflows pin 3.11, so the call succeeds in CI and raises TypeError only on the runtime the updater and the local validation profile use -- nothing that gates a merge can see it. docs/V4-6-1-PYTHON-PORTABILITY-FIX.md records the same failure being hand-fixed in two scripts; by 2026-09-08 the keyword had returned in nine call sites, one of them inside validate_nav_rebuild_after_publish.py, where it crashed a HARD_FAIL check before it could examine anything. scripts/lib/text_io.write_lf() now owns the rule and this guard is the thing that keeps it owned: it parses every file under scripts/, validation/ and tests/ (parses rather than greps, so the modules that name the banned call in their own docstrings do not fail on their explanation) and fails if it scanned zero files."
+    },
+    "distribution_switch_single_source": {
+      "severity": "HARD_FAIL",
+      "rationale": "Measured distribution that reaches nothing, silently, because two components each kept their own answer to 'which platforms must a published page reach?' and agreed with each other. X was paused route-only on 2026-08-29 -- own paid API off, posts leaving through a switched-on Buffer route that had accepted 49 of them -- and scripts/authority_v4_autopilot.py gated its X enqueue loop on enabled_platforms(), which cannot see a route. From that day every page it published was enqueued for nothing while the route sat connected and idle. validate_social_enqueue_completeness.py had the identical blind spot, so it blamed a policy gap that did not exist ('it must be a recorded decision in data/social-brand-policy.json') rather than the drop in front of it. This blocks if any distribution decision site stops asking the shared helper, if a new enqueue site appears undeclared, or if the helper stops distinguishing a dormant pause from a route-only one -- a dormant platform with a stale enabled delivery_route block must distribute nothing, because dormant is what the owner picks when she wants silence."
     }
   },
   "severity_matrix_policy": {

@@ -45,6 +45,7 @@ COMMANDS = {
     "cadence_gate_integrity": ["node", "scripts/validators/validate_cadence_gate_integrity.js"],
     "selfheal_wiring": [sys.executable, "scripts/validators/validate_selfheal_wiring.py"],
     "social_enqueue_completeness": [sys.executable, "scripts/validators/validate_social_enqueue_completeness.py"],
+    "distribution_switch_single_source": [sys.executable, "scripts/validators/validate_distribution_switch_single_source.py"],
     "script_callers": [sys.executable, "scripts/validators/validate_script_callers.py"],
     "social_rate_limits": [sys.executable, "scripts/validators/validate_social_rate_limits.py"],
     "social_attempt_budget": [sys.executable, "scripts/validators/validate_social_attempt_budget.py"],

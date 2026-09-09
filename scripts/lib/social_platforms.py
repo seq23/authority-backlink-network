@@ -349,6 +349,69 @@ def routed_platforms(policy=None) -> list:
             if any(route_enabled(p, r, policy) for r in (ROUTE_BUFFER,))]
 
 
+def distributing_platforms(policy=None) -> list:
+    """Every platform a published page must still be enqueued for. ONE answer.
+
+    "Is this platform on?" and "does a page published today still have to reach
+    this platform?" are different questions, and this repository learned the
+    difference the expensive way. `enabled_platforms()` answers the first.
+    This answers the second, and it is the only correct input to an ENQUEUE
+    decision:
+
+        enabled           the platform's own API posts. Enqueue.
+        route-only        the API is paused and a switched-on DELIVERY ROUTE
+                          carries the posts instead (X via Buffer). Still
+                          enqueue -- the post still leaves, just not through
+                          the platform's API.
+        dormant           paused with nothing carrying it (LinkedIn). Do NOT
+                          enqueue; rows created here can never leave and
+                          rebuild the parked backlog one run at a time.
+
+    Why this function exists
+    ------------------------
+    `partition_queue` below already knew this ("A platform with a switched-on
+    delivery route is NOT parked"). Two other callers did not, and each kept
+    its own list:
+
+      * scripts/authority_v4_autopilot.py gated its X enqueue loop on
+        `enabled_platforms()`, so from the day X was paused route-only, every
+        page it published was enqueued for NOTHING -- while Buffer, the route
+        that exists precisely to carry those posts, sat connected and idle
+        with 49 accepted posts behind it and no new work arriving.
+      * scripts/validators/validate_social_enqueue_completeness.py asked
+        `declared_enabled()` and therefore reported the true drop under a false
+        name: "no platform switched on ... if that is intended it must be a
+        recorded decision in data/social-brand-policy.json". The decision WAS
+        recorded there. What was missing was that neither caller read the
+        `delivery_route` half of it.
+
+    That is the "two components each keeping their own list with no link"
+    defect class. The link is this function: enqueue-side callers ask it and
+    nothing re-derives the set locally.
+    scripts/validators/validate_distribution_switch_single_source.py fails the
+    build if a new caller starts keeping its own list again.
+
+    A route only carries a platform that is paused ROUTE-ONLY
+    ---------------------------------------------------------
+    `routed_platforms()` answers a narrower question -- "is a route declared and
+    switched on for this platform?" -- and deliberately does not look at the
+    pause mode. That is the wrong input on its own: a platform switched to
+    `pause_mode: "dormant"` while a stale `delivery_route: {"enabled": true}`
+    block is left behind would keep distributing through the route, which is the
+    exact opposite of what dormant means ("nothing is attempted and NO drafts
+    are produced"). Dormant is the state the owner picks when she wants silence,
+    and a leftover object in the file must not be able to override her.
+
+    So a paused platform distributes only when `route_only()` agrees -- pause
+    mode route-only, with the pause paperwork present -- AND a route is on. An
+    undocumented switch-off distributes nothing either way, because
+    `route_only()` refuses to read a bare `enabled: false` as any kind of pause.
+    """
+    enabled = set(enabled_platforms(policy))
+    carried = {p for p in routed_platforms(policy) if route_only(p, policy)}
+    return [p for p in PLATFORMS if p in enabled or p in carried]
+
+
 def partition_queue(queue, policy=None):
     """Split queue entries into what can post now and what is parked by a switch.
 
@@ -361,7 +424,7 @@ def partition_queue(queue, policy=None):
     # still leave, through the route rather than through its own API. Counting
     # them as parked would report 826 X entries as going nowhere on a day the
     # route carried them.
-    enabled = set(enabled_platforms(policy)) | set(routed_platforms(policy))
+    enabled = set(distributing_platforms(policy))
     postable, parked = [], {}
     for i, item in enumerate(queue):
         if item.get("status") not in POSTABLE_STATUSES:

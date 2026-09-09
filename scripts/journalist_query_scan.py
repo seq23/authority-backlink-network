@@ -53,6 +53,7 @@ import os
 import re
 import subprocess
 import sys
+import traceback
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from email import policy
@@ -68,7 +69,20 @@ LEDGER = LANE / "expertise-ledger.json"
 FORMATS = LANE / "query-formats.json"
 DIGESTS = LANE / "digests"
 STATE = LANE / "state.json"
+STOP_POLICY = LANE / "stop_policy.json"
 RECEIPT = ROOT / "reports/journalist-query-scan-latest.json"
+
+# Which named stops are legitimate (green, said once) and which are outages
+# (red every run, paged once and then reminded). Declared in stop_policy.json so
+# the taxonomy is readable without reading this file, and asserted by
+# scripts/validators/validate_journalist_query_lane.py.
+CLASS_LEGITIMATE = "legitimate_stop"
+CLASS_OUTAGE = "outage"
+# An unclassified stop reads as an OUTAGE. A new stop code that nobody
+# remembered to classify is far more likely to be a break than a designed quiet
+# day, and the failure this whole lane guards against is the one where a broken
+# lane reads as a quiet one. Silence is what must be asked for explicitly.
+DEFAULT_STOP_CLASS = CLASS_OUTAGE
 KEY_FILE = Path.home() / "GitHub/how-we-know/.secrets/openrouter_key.txt"
 
 API = "https://openrouter.ai/api/v1/chat/completions"
@@ -86,6 +100,36 @@ class NamedStop(Exception):
     def __init__(self, code: str, message: str, unblock: str = ""):
         super().__init__(f"{code}: {message}")
         self.code, self.message, self.unblock = code, message, unblock
+
+
+def _mask(address: str) -> str:
+    """Enough of the mailbox to identify it, not enough to publish it.
+
+    The receipt and the announcement issue are both committed to a public
+    repository, and "which mailbox" is the one fact the owner needs to act. So
+    the first character and the domain, never the whole local part.
+    """
+    address = (address or "").strip()
+    if "@" not in address:
+        return "the configured mailbox"
+    local, _, domain = address.partition("@")
+    return f"{local[:1]}{'*' * max(len(local) - 1, 1)}@{domain}"
+
+
+def _imap_detail(exc: Exception) -> str:
+    """The server's own words, decoded and bounded.
+
+    imaplib raises with the raw bytes payload, so an unhandled one printed
+    b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)' into a traceback.
+    That string is genuinely useful -- it is how the server distinguishes a bad
+    password from a locked account -- so it is carried into the named stop
+    rather than discarded with the traceback.
+    """
+    args = getattr(exc, "args", None) or (exc,)
+    raw = args[0]
+    if isinstance(raw, (bytes, bytearray)):
+        raw = raw.decode("utf-8", "replace")
+    return str(raw)[:200]
 
 
 def load(path: Path):
@@ -119,9 +163,48 @@ def imap_messages(cfg: dict) -> list[tuple[str, str]]:
     since = (date.today() - timedelta(days=int(cfg.get("lookback_days", 2)))).strftime("%d-%b-%Y")
 
     out: list[tuple[str, str]] = []
-    conn = imaplib.IMAP4_SSL(host, port)
+    # Reaching the mailbox has three outcomes, and until 2026-09-09 only one of
+    # them had a name. "No credential set" was a named stop; "credential set and
+    # refused" was an unhandled imaplib traceback that killed the process before
+    # the receipt was written, so the workflow's reporting step read YESTERDAY's
+    # receipt and announced "NO RELEVANT QUERIES: 10 queries were read from 1
+    # digest(s)" on a morning this lane had read nothing. A quiet day and a
+    # broken lane looked identical, which is the one thing this lane exists to
+    # prevent. Both failure modes are named stops now, and both are OUTAGES:
+    # they fail the run, every run, until they are fixed. See
+    # data/journalist-queries/stop_policy.json.
     try:
-        conn.login(user, password)
+        conn = imaplib.IMAP4_SSL(host, port)
+    except (OSError, imaplib.IMAP4.error) as exc:
+        raise NamedStop(
+            "MAILBOX_UNREACHABLE",
+            f"the journalist-query mailbox at {host}:{port} could not be reached "
+            f"({type(exc).__name__}: {exc}). No queries were read, so this is not "
+            f"'nothing relevant today' -- nothing was looked at.",
+            f"If {host} is correct and reachable, this is usually transient and the "
+            f"next scheduled run clears it. It stays red until a run actually reads "
+            f"the mailbox.") from exc
+    try:
+        try:
+            conn.login(user, password)
+        except imaplib.IMAP4.error as exc:
+            # Set, and refused. Categorically different from NO_MAILBOX_CREDENTIAL:
+            # something that WAS reading her mail has stopped, and every SOS digest
+            # arriving meanwhile is a citation opportunity expiring unread.
+            raise NamedStop(
+                "MAILBOX_CREDENTIAL_REJECTED",
+                f"the journalist-query mailbox at {host} refused the credential in "
+                f"{env['user']}/{env['password']} ({_imap_detail(exc)}). The secrets are "
+                f"SET -- this is not 'not configured yet', it is a working mailbox "
+                f"connection that has stopped working. No digests were read, so no "
+                f"queries could be surfaced and none can be said to have been missed "
+                f"or not missed.",
+                f"Rotate {env['password']} (repository secret) for mailbox "
+                f"{_mask(user)} and re-run. A Google app password is revoked whenever "
+                f"the account password changes, which is the most likely cause; only "
+                f"the account owner can mint a new one. Nothing in this repository can "
+                f"restore authentication, and nothing here will pretend the lane is "
+                f"reading mail while it is not.") from exc
         conn.select(f'"{folder}"', readonly=True)
         seen: set[bytes] = set()
         for sender in cfg["senders"]:
@@ -554,6 +637,81 @@ def render_digest(rows: list[dict], ledger: dict) -> str:
     return "\n".join(parts)
 
 
+# ------------------------------------------------------------ stop taxonomy
+
+
+def stop_policy() -> dict:
+    """The declared stop taxonomy. Missing file is not a silent free pass.
+
+    An unreadable policy leaves every code unclassified, and an unclassified
+    code is an OUTAGE by DEFAULT_STOP_CLASS -- so losing this file makes the
+    lane louder, never quieter.
+    """
+    try:
+        data = json.loads(STOP_POLICY.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    stops = data.get("stops")
+    return stops if isinstance(stops, dict) else {}
+
+
+def stop_class(code: str, policy=None) -> str:
+    policy = stop_policy() if policy is None else policy
+    entry = policy.get(code)
+    declared = entry.get("class") if isinstance(entry, dict) else None
+    return declared if declared in (CLASS_LEGITIMATE, CLASS_OUTAGE) else DEFAULT_STOP_CLASS
+
+
+def reminder_days(code: str, policy=None) -> int:
+    policy = stop_policy() if policy is None else policy
+    entry = policy.get(code)
+    value = entry.get("reminder_days") if isinstance(entry, dict) else None
+    return value if isinstance(value, int) and value > 0 else 0
+
+
+def announceable(code: str, policy=None) -> bool:
+    """Stops the owner can act on, and only those.
+
+    A stop she cannot clear (a digest that did not parse, a draft the model
+    declined) belongs in the receipt and the log, not in her inbox. NOTIFY_FAILED
+    and ANNOUNCE_FAILED are excluded for a different reason: the thing that would
+    carry the announcement is the thing that just failed, so they fail the run
+    loudly instead of trying to page through a broken pager.
+    """
+    policy = stop_policy() if policy is None else policy
+    if code in ("NOTIFY_FAILED", "ANNOUNCE_FAILED", "UNEXPECTED_ERROR", "NO_INBOX_DIR"):
+        return False
+    return code in policy
+
+
+def announcement_log(state: dict) -> dict:
+    """{code: ISO date last announced}, migrating the old list-of-codes shape."""
+    raw = state.get("stops_announced")
+    if isinstance(raw, dict):
+        return dict(raw)
+    if isinstance(raw, list):
+        return {code: "" for code in raw}
+    return {}
+
+
+def outage_stops(receipt: dict, policy=None) -> list:
+    """Codes in this receipt that mean the lane could not do its job.
+
+    This is what decides the exit code, and it is the whole distinction the
+    workflow already states in prose: "a day with no relevant queries is a PASS
+    and sends nothing. A failure means the lane could not look, or looked and
+    could not read what it found."
+    """
+    policy = stop_policy() if policy is None else policy
+    seen, out = set(), []
+    for stop in receipt.get("stops", []):
+        code = stop.get("code")
+        if code and code not in seen and stop_class(code, policy) == CLASS_OUTAGE:
+            seen.add(code)
+            out.append(code)
+    return out
+
+
 # --------------------------------------------------------------------- run
 
 
@@ -573,26 +731,66 @@ def announce_stops(receipt: dict, state: dict, args) -> None:
     """
     if args.no_issue:
         return
-    unresolved = [s for s in receipt["stops"]
-                  if s["code"] in ("NO_MAILBOX_CREDENTIAL", "NO_API_KEY")]
-    announced = set(state.get("stops_announced", []))
-    fresh = [s for s in unresolved if s["code"] not in announced]
+    policy = stop_policy()
+    today = date.today()
+    unresolved = [s for s in receipt["stops"] if announceable(s["code"], policy)]
+    # Migrated in place from the old list-of-codes shape. A code in the old list
+    # is read as "announced, date unknown", which makes its first reminder due
+    # immediately -- correct, because an outage that has been running long
+    # enough to predate this file is exactly one worth mentioning again.
+    announced = announcement_log(state)
+    fresh = []
+    for stop in unresolved:
+        last = announced.get(stop["code"])
+        if last is None:
+            fresh.append(stop)
+            continue
+        every = reminder_days(stop["code"], policy)
+        if not every:
+            continue
+        try:
+            due = (today - date.fromisoformat(last)).days >= every
+        except ValueError:
+            due = True
+        if due:
+            stop = {**stop, "_reminder": True}
+            fresh.append(stop)
     if fresh:
+        outage = [s for s in fresh if stop_class(s["code"], policy) == CLASS_OUTAGE]
+        reminders = [s for s in fresh if s.get("_reminder")]
         body = "\n\n".join(
             f"**{s['code']}**\n\n{s['message']}\n\n**To unblock:** {s.get('unblock', '')}"
             for s in fresh)
-        ok, detail = open_issue(
-            "Journalist-query lane is built and waiting on one credential",
-            body + "\n\nThis is said once. The daily scan will keep running and will "
-                   "stay silent until it is unblocked, rather than opening this issue "
-                   "again every morning.")
+        if outage:
+            title = "Journalist-query lane cannot read the mailbox"
+            cadence = sorted({reminder_days(s["code"], policy) for s in outage} - {0})
+            footer = (
+                "\n\nThe scan will keep FAILING every run until this is cleared. That is "
+                "deliberate: the lane is not reading her mail, and a lane that went green "
+                "on a credential outage would be indistinguishable from a quiet day, which "
+                "is the one failure this lane exists to prevent. What is deduplicated here "
+                "is the ISSUE, not the failure"
+                + (f" -- you will be reminded every {cadence[0]} days while it is "
+                   f"unresolved, not twice a weekday." if cadence else "."))
+        else:
+            title = "Journalist-query lane is built and waiting on one credential"
+            footer = ("\n\nThis is said once. The daily scan will keep running and will "
+                      "stay silent until it is unblocked, rather than opening this issue "
+                      "again every morning.")
+        if reminders:
+            footer += ("\n\nThis is a REMINDER; it was first reported on "
+                       + ", ".join(f"{s['code']} {announced.get(s['code'], 'an earlier run')}"
+                                   for s in reminders) + ".")
+        ok, detail = open_issue(title, body + footer)
         # Whether the owner was actually told is itself a fact the receipt carries.
         # A notification lane that fails silently is indistinguishable from one
         # that had nothing to say.
         receipt["announced"] = {"ok": ok, "codes": [s["code"] for s in fresh],
+                                "reminders": [s["code"] for s in reminders],
                                 "detail": "" if ok else str(detail)[:300]}
         if ok:
-            state["stops_announced"] = sorted(announced | {s["code"] for s in fresh})
+            for s in fresh:
+                announced[s["code"]] = today.isoformat()
         else:
             receipt["stops"].append({
                 "code": "ANNOUNCE_FAILED",
@@ -601,9 +799,15 @@ def announce_stops(receipt: dict, state: dict, args) -> None:
                            f"run tries again.",
                 "unblock": "Read the named stop in this run's log; it says exactly what "
                            "to set."})
-    for code in list(state.get("stops_announced", [])):
-        if code not in {s["code"] for s in unresolved}:
-            state["stops_announced"].remove(code)
+    live = {s["code"] for s in unresolved}
+    for code in list(announced):
+        if code not in live:
+            del announced[code]
+    # One shape on disk from here: {code: last announced date}. The old
+    # `stops_announced` list is dropped once migrated, so nothing reads two
+    # answers to "has she been told?".
+    state["stops_announced"] = announced
+
 
 
 def run(args) -> dict:
@@ -644,9 +848,11 @@ def run(args) -> dict:
     except NamedStop as stop:
         receipt["stops"].append({"code": stop.code, "message": stop.message,
                                  "unblock": stop.unblock})
+        kind = ("OUTAGE" if stop_class(stop.code) == CLASS_OUTAGE
+                else "LEGITIMATE STOP")
         receipt["named_outcome"] = (
-            f"NAMED STOP {stop.code}: {stop.message} This is not 'no relevant queries'; "
-            f"it is 'no queries were looked at'.")
+            f"NAMED STOP ({kind}) {stop.code}: {stop.message} This is not 'no relevant "
+            f"queries'; it is 'no queries were looked at'.")
         announce_stops(receipt, state, args)
         state["last_run"] = now
         write_json(STATE, state)
@@ -853,7 +1059,39 @@ def main() -> int:
     ap.add_argument("--model", default=os.environ.get("JOURNALIST_QUERY_MODEL", DEFAULT_MODEL))
     args = ap.parse_args()
 
-    receipt = run(args)
+    try:
+        receipt = run(args)
+    except Exception as exc:  # noqa: BLE001 - see below; this must not re-raise
+        # A crash must never leave the PREVIOUS run's receipt in place. On
+        # 2026-09-09 an unhandled imaplib traceback did exactly that, and the
+        # workflow's reporting step -- which runs `if: always()` and reads this
+        # file -- announced "NO RELEVANT QUERIES: 10 queries were read from 1
+        # digest(s)" on a morning the lane had read nothing at all. The step was
+        # honest; the file it read was a day old. So the receipt is rewritten
+        # here, for every escape route out of run(), before anything exits.
+        #
+        # The traceback is still printed: this is not a swallow, it is a rewrite
+        # of the record plus a non-zero exit.
+        traceback.print_exc()
+        write_json(RECEIPT, {
+            "schema": "journalist-query-scan-v1",
+            "run_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+            "messages_read": 0, "digests_read": 0, "queries_ingested": 0,
+            "non_digest_messages": [], "already_surfaced": 0,
+            "dropped_by_beat_filter": 0, "dropped_as_ungroundable": 0,
+            "dropped_by_grounding_guard": 0, "surfaced": 0, "notified": False,
+            "drops": [],
+            "stops": [{
+                "code": "UNEXPECTED_ERROR",
+                "message": f"the scan raised {type(exc).__name__}: {str(exc)[:300]}. No "
+                           f"named stop covers this, so nothing can be said about what "
+                           f"was or was not in the mailbox.",
+                "unblock": "Read the traceback in this run's log."}],
+            "named_outcome": (
+                f"NAMED STOP (OUTAGE) UNEXPECTED_ERROR: {type(exc).__name__}. This run "
+                f"read nothing; it is not a quiet day."),
+        })
+        return 1
     print("JOURNALIST QUERY SCAN")
     print(f"  named outcome: {receipt['named_outcome']}")
     print(f"  messages read: {receipt['messages_read']}; "
@@ -870,6 +1108,18 @@ def main() -> int:
             print(f"      unblock: {stop['unblock']}")
     print(f"  receipt: {RECEIPT.relative_to(ROOT)}")
     print("  nothing was sent to any journalist; this lane has no send path.")
+
+    # The exit code carries the same distinction the receipt does, and the same
+    # one this lane's workflow states in prose: no relevant queries is a PASS
+    # and sends nothing; a lane that could not look, or looked and could not
+    # read, is a FAILURE. An outage stays red every run until it is fixed --
+    # deduplicating the ISSUE is right, deduplicating the FAILURE would be a
+    # false green over a lane that is not reading her mail.
+    outages = outage_stops(receipt)
+    if outages:
+        print(f"  OUTAGE: {', '.join(outages)} -- this run failed. It is not a quiet "
+              f"day and must not be read as one.")
+        return 1
     return 0
 
 

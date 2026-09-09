@@ -1,0 +1,159 @@
+{
+  "purpose": [
+    "Which named stops of this lane are LEGITIMATE STOPS and which are OUTAGES, and",
+    "how often each is allowed to page the owner. This file is the taxonomy; the",
+    "behaviour is in scripts/journalist_query_scan.py and is asserted by",
+    "scripts/validators/validate_journalist_query_lane.py.",
+    "",
+    "The distinction this lane is built on is stated in its own workflow: 'a day",
+    "with no relevant queries is a PASS and sends nothing. A failure means the lane",
+    "could not look, or looked and could not read what it found.' Those are the two",
+    "classes below. Everything the lane can stop for is one or the other, and the",
+    "class decides both the exit code and the noise."
+  ],
+  "classes": {
+    "legitimate_stop": [
+      "The lane worked and there was nothing to do, or it is waiting on something",
+      "that has never been set up. GREEN. Announced once so the owner knows it is",
+      "waiting, then silent -- a daily issue reading 'still not subscribed' is a",
+      "standing instruction nobody follows, and this repository has already paid",
+      "for that lesson once (see scripts/validators/validate_no_manual_lane.py)."
+    ],
+    "outage": [
+      "Something that WAS working has stopped, and the lane is no longer reading",
+      "her mail. RED, and it stays red every run until it is fixed: an outage that",
+      "goes green on its own is a false green over a lane that is not doing its",
+      "job. What is deduplicated is the ISSUE, not the failure. The run is red",
+      "every time; the owner is paged once and then reminded on the cadence below,",
+      "instead of receiving a fresh issue twice a weekday forever."
+    ]
+  },
+  "reminder_days_meaning": [
+    "Days between repeat announcements while the stop is unresolved. The stop is",
+    "announced immediately the first time. 0 means announce once and never again.",
+    "An outage is reminded because it is fixable and someone must act; a",
+    "legitimate stop is not, because nothing is wrong."
+  ],
+  "stops": {
+    "NO_MAILBOX_CREDENTIAL": {
+      "class": "legitimate_stop",
+      "reminder_days": 0,
+      "why": [
+        "The three IMAP secrets are not set at all. The lane was built before the",
+        "owner subscribed to Source of Sources, so 'not configured yet' is a",
+        "designed state and not a break. It is announced once and then waits."
+      ]
+    },
+    "MAILBOX_CREDENTIAL_REJECTED": {
+      "class": "outage",
+      "reminder_days": 7,
+      "why": [
+        "The secrets ARE set and the mailbox refused them. This is categorically",
+        "different from NO_MAILBOX_CREDENTIAL: something that was reading her mail",
+        "has stopped, and every SOS digest that arrives while it is broken is a",
+        "citation opportunity that expires unread. Deadlines in these digests are",
+        "measured in hours.",
+        "",
+        "First seen 2026-09-09 12:25 UTC. The lane had been green on every run",
+        "through 2026-09-08 18:30 UTC. The credential is a Google app password and",
+        "the owner changed her Google account password that morning, which revokes",
+        "app passwords and Gmail-scoped OAuth refresh tokens alike. That is a",
+        "rotation only she can perform; there is no code change here that restores",
+        "authentication, and anything that made this look green would be a false",
+        "green over a lane that is genuinely not reading her mail.",
+        "",
+        "Reminded weekly rather than twice a weekday: 10 issues a week is the",
+        "shape of notification that gets muted, and a muted outage is a silent one."
+      ]
+    },
+    "MAILBOX_UNREACHABLE": {
+      "class": "outage",
+      "reminder_days": 7,
+      "why": [
+        "The IMAP host could not be reached or the TLS session failed. Usually",
+        "transient, but indistinguishable from a permanent break without acting on",
+        "it, and a lane that cannot look is red for the same reason as one that",
+        "cannot read."
+      ]
+    },
+    "NO_INBOX_DIR": {
+      "class": "outage",
+      "reminder_days": 0,
+      "why": [
+        "--inbox-dir was pointed at something that is not a directory. Local",
+        "operator error; it never occurs on the scheduled run, so it is never",
+        "announced, but it must not be mistaken for a quiet day."
+      ]
+    },
+    "NO_API_KEY": {
+      "class": "legitimate_stop",
+      "reminder_days": 0,
+      "why": [
+        "No drafting model key. Queries are still read, surfaced and recorded --",
+        "the digest just arrives without drafts. Degraded, not blind."
+      ]
+    },
+    "UNPARSEABLE_DIGEST": {
+      "class": "legitimate_stop",
+      "reminder_days": 0,
+      "why": [
+        "A message arrived that is not a query digest, most often the SOS welcome",
+        "email. Recorded so it is never counted as a digest, which is the small",
+        "dishonesty that would make 'nothing relevant today' believable when it",
+        "was not true."
+      ]
+    },
+    "PARTIAL_DIGEST_PARSE": {
+      "class": "legitimate_stop",
+      "reminder_days": 0,
+      "why": [
+        "Some queries in a digest did not match the format grammar. The rest were",
+        "read. Reported rather than hidden, because a grammar that silently drops",
+        "half a digest looks exactly like a thin news day."
+      ]
+    },
+    "DRAFT_UNAVAILABLE": {
+      "class": "legitimate_stop",
+      "reminder_days": 0,
+      "why": [
+        "The model declined or failed for one query. The query is still surfaced;",
+        "she can answer it without a draft."
+      ]
+    },
+    "NOTIFY_FAILED": {
+      "class": "outage",
+      "reminder_days": 0,
+      "why": [
+        "Real queries were found and the issue that hands them to her could not be",
+        "opened. The whole lane exists to deliver that one notification, so",
+        "failing to deliver it is a failure of the lane. Not announced, because",
+        "the announcement path is the thing that just failed -- it fails the run",
+        "loudly instead."
+      ]
+    },
+    "ANNOUNCE_FAILED": {
+      "class": "outage",
+      "reminder_days": 0,
+      "why": [
+        "The issue explaining another stop could not be opened, so the stop was",
+        "NOT marked announced and the next run tries again. Red, because a",
+        "notification lane that fails silently is indistinguishable from one that",
+        "had nothing to say."
+      ]
+    },
+    "UNEXPECTED_ERROR": {
+      "class": "outage",
+      "reminder_days": 0,
+      "why": [
+        "The scan raised something no named stop covers. It exists so that a crash",
+        "can never again leave yesterday's receipt in place: on 2026-09-09 an",
+        "unhandled imaplib traceback skipped the receipt write, and the workflow's",
+        "own reporting step then read the PREVIOUS run's file and announced 'NO",
+        "RELEVANT QUERIES: 10 queries were read from 1 digest(s)' on a morning the",
+        "lane had read nothing at all. A stale receipt is the precise failure this",
+        "lane was built to prevent -- a quiet day and a broken lane looking the",
+        "same -- reintroduced in the error path."
+      ]
+    }
+  }
+}

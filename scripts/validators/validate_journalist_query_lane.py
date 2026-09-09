@@ -51,6 +51,7 @@ import os
 import re
 import sys
 import tempfile
+from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -574,6 +575,209 @@ def check_real_digest(report: Report, tmp: Path) -> None:
                             f"and could end up quoted back at the reporter")
 
 
+# ---------------------------------------------------------------------------
+# Property -- a stop the lane cannot clear itself is NAMED, CLASSIFIED, and
+# carries the right colour.
+# ---------------------------------------------------------------------------
+
+STOP_CODE_RE = re.compile(r'NamedStop\(\s*\n?\s*"([A-Z_]+)"|"code":\s*"([A-Z_]+)"')
+
+
+def check_stop_taxonomy(report: Report, tmp: Path) -> int:
+    """Drive the credential-rejected path and assert the whole vocabulary.
+
+    Why this exists
+    ---------------
+    On 2026-09-09 the mailbox credential was rejected -- the owner had changed
+    the Google account password that morning, which revokes app passwords -- and
+    the lane died on an unhandled `imaplib.IMAP4.error`. Three separate things
+    were wrong with that, and only the first is obvious:
+
+      1. The lane HAD a named-stop vocabulary and did not use it. "No credential
+         set" was a named stop; "credential set and refused" was a traceback.
+      2. The crash killed the process before the receipt was written, so the
+         workflow's reporting step read the PREVIOUS run's receipt and printed
+         "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s)" on a
+         morning the lane had read nothing. A quiet day and a broken lane looked
+         identical, which is the single failure this lane exists to prevent.
+      3. The lane's existing credential check asks whether the secret is SET. A
+         check on configuration cannot see a credential that is set and dead, so
+         the only thing that ever exercises the credential is the run itself --
+         which means the run has to report the answer honestly or nothing does.
+
+    So this drives the real scanner against a mailbox that refuses the login and
+    asserts the outcome, rather than asserting prose about it.
+    """
+    codes = {a or b for a, b in STOP_CODE_RE.findall(SCANNER.read_text(encoding="utf-8"))}
+    codes.discard("")
+    policy = J.stop_policy()
+
+    report.exercised()
+    if not codes:
+        report.fail("found zero named stop codes in the scanner; this check examined "
+                    "nothing and cannot vouch for the taxonomy")
+    if not policy:
+        report.fail("data/journalist-queries/stop_policy.json declares no stops. The "
+                    "taxonomy that decides which failures are green is missing.")
+    for code in sorted(codes):
+        report.exercised()
+        if code not in policy:
+            report.fail(
+                f"the scanner can raise {code} and stop_policy.json does not classify "
+                f"it. An unclassified stop defaults to OUTAGE, which is the safe "
+                f"reading, but nobody has said whether it is a break or a quiet day.")
+        elif J.stop_class(code, policy) not in (J.CLASS_LEGITIMATE, J.CLASS_OUTAGE):
+            report.fail(f"{code} has no valid class in stop_policy.json")
+
+    # --- a rejected credential is a NAMED STOP, and it is RED ---------------
+    report.exercised()
+    calls: list[tuple[str, str]] = []
+    saved_open, saved_imap = J.open_issue, J.imaplib
+    saved = (J.RECEIPT, J.STATE, J.DIGESTS)
+
+    class _RefusingIMAP:
+        """A mailbox that answers the login exactly as Gmail did on 2026-09-09."""
+        error = saved_imap.IMAP4.error
+
+        def __init__(self, host, port):
+            pass
+
+        def login(self, user, password):
+            raise saved_imap.IMAP4.error(b"[AUTHENTICATIONFAILED] Invalid credentials (Failure)")
+
+        def logout(self):
+            pass
+
+    class _FakeImaplib:
+        IMAP4 = saved_imap.IMAP4
+        IMAP4_SSL = _RefusingIMAP
+
+    secret = "s3cr3t-app-password-value"
+    saved_env = {k: os.environ.get(k) for k in
+                 ("SOS_IMAP_HOST", "SOS_IMAP_USER", "SOS_IMAP_PASSWORD")}
+    try:
+        J.open_issue = lambda title, body: (calls.append((title, body)) or (True, "stubbed"))
+        J.imaplib = _FakeImaplib
+        os.environ["SOS_IMAP_HOST"] = "imap.example.com"
+        os.environ["SOS_IMAP_USER"] = "owner@example.com"
+        os.environ["SOS_IMAP_PASSWORD"] = secret
+        J.RECEIPT, J.STATE, J.DIGESTS = (tmp / "rej-r.json", tmp / "rej-s.json",
+                                         tmp / "rej-d")
+        # A STALE receipt is planted first. If the scanner fails to rewrite it,
+        # this fixture reproduces the 2026-09-09 report exactly, and the
+        # assertions below catch it.
+        J.write_json(J.RECEIPT, {"schema": "journalist-query-scan-v1", "stops": [],
+                                 "named_outcome": "NO RELEVANT QUERIES: yesterday",
+                                 "messages_read": 1, "digests_read": 1,
+                                 "queries_ingested": 10, "surfaced": 0})
+        args = argparse.Namespace(inbox_dir=None, no_issue=False, model=J.DEFAULT_MODEL)
+        try:
+            receipt = J.run(args)
+        except Exception as exc:  # noqa: BLE001 - the defect under test IS a crash
+            # This is the 2026-09-09 shape restored. Reported as a named failure
+            # rather than allowed to abort this validator, so the receipt says
+            # WHY instead of the reader having to read a traceback about a
+            # traceback.
+            report.fail(
+                f"a mailbox that refuses the login crashed the scan with "
+                f"{type(exc).__name__}: {str(exc)[:120]}. An auth failure must be a "
+                f"NAMED STOP, not an unhandled traceback: the crash kills the process "
+                f"before the receipt is written, and the workflow's reporting step then "
+                f"reads the PREVIOUS run's receipt and calls a blind morning a quiet day.")
+            return len(codes)
+        codes_seen = [s["code"] for s in receipt["stops"]]
+
+        if "MAILBOX_CREDENTIAL_REJECTED" not in codes_seen:
+            report.fail(
+                f"a mailbox that refuses the login produced {codes_seen or 'no stop'} "
+                f"instead of MAILBOX_CREDENTIAL_REJECTED. A credential that is set and "
+                f"dead must not be reported as one that was never set, and must not be "
+                f"an unhandled traceback.")
+        if "NO_MAILBOX_CREDENTIAL" in codes_seen:
+            report.fail("a REJECTED credential was reported as a MISSING one. Those are "
+                        "different states: one is a lane waiting to be set up, the "
+                        "other is a lane that has stopped working.")
+
+        report.exercised()
+        if J.stop_class("MAILBOX_CREDENTIAL_REJECTED", policy) != J.CLASS_OUTAGE:
+            report.fail("MAILBOX_CREDENTIAL_REJECTED is not classed as an outage. A "
+                        "credential outage that reports green is a false green over a "
+                        "lane that is genuinely not reading her mail.")
+        if not J.outage_stops(receipt):
+            report.fail("a rejected credential produced no outage stop, so the run "
+                        "would exit 0. The lane read nothing; it must stay red.")
+
+        # --- the receipt must be TODAY's, never yesterday's -----------------
+        report.exercised()
+        on_disk = json.loads(J.RECEIPT.read_text(encoding="utf-8"))
+        if "yesterday" in on_disk.get("named_outcome", ""):
+            report.fail(
+                "the stale receipt survived the failure. This is the 2026-09-09 defect "
+                "exactly: the workflow's reporting step reads this file and would "
+                "announce a quiet day on a morning the lane read nothing.")
+        if on_disk.get("queries_ingested") or on_disk.get("digests_read"):
+            report.fail(f"the receipt of a run that read nothing claims "
+                        f"{on_disk.get('digests_read')} digest(s) and "
+                        f"{on_disk.get('queries_ingested')} quer(ies)")
+
+        # --- the secret is never printed ------------------------------------
+        report.exercised()
+        blob = json.dumps(on_disk) + json.dumps(calls)
+        if secret in blob:
+            report.fail("the mailbox password appears in the receipt or the issue body")
+        if "owner@example.com" in blob:
+            report.fail("the full mailbox address appears in the receipt or the issue "
+                        "body; it is masked so the owner can identify it without the "
+                        "repository publishing it")
+
+        # --- announced ONCE, then reminded, never every run -----------------
+        report.exercised()
+        first = len(calls)
+        if first != 1:
+            report.fail(f"a fresh outage opened {first} issues; it must open exactly one")
+        J.run(args)
+        if len(calls) != first:
+            report.fail(
+                f"the same unresolved outage opened another issue on the very next run "
+                f"({len(calls)} total). Two scheduled runs a weekday is ten issues a "
+                f"week for one dead password, and a notification at that volume is one "
+                f"that gets muted.")
+
+        report.exercised()
+        every = J.reminder_days("MAILBOX_CREDENTIAL_REJECTED", policy)
+        if every <= 0:
+            report.fail("MAILBOX_CREDENTIAL_REJECTED has no reminder cadence. Said once "
+                        "and then never again is how an outage becomes permanent.")
+        else:
+            state = json.loads(J.STATE.read_text(encoding="utf-8"))
+            stale = (date.today() - timedelta(days=every + 1)).isoformat()
+            state["stops_announced"] = {"MAILBOX_CREDENTIAL_REJECTED": stale}
+            J.write_json(J.STATE, state)
+            J.run(args)
+            if len(calls) != first + 1:
+                report.fail(f"an outage unresolved for more than {every} days did not "
+                            f"produce a reminder; it went silent instead.")
+    finally:
+        J.open_issue, J.imaplib = saved_open, saved_imap
+        J.RECEIPT, J.STATE, J.DIGESTS = saved
+        for k, v in saved_env.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
+
+    # --- a LEGITIMATE stop is green ----------------------------------------
+    report.exercised()
+    if J.stop_class("NO_MAILBOX_CREDENTIAL", policy) != J.CLASS_LEGITIMATE:
+        report.fail("NO_MAILBOX_CREDENTIAL is not a legitimate stop. A lane waiting to "
+                    "be set up is a named stop and must be GREEN, or the red means "
+                    "nothing when something actually breaks.")
+    if J.outage_stops({"stops": [{"code": "NO_MAILBOX_CREDENTIAL"}]}):
+        report.fail("a legitimate stop was classed as an outage and would fail the run")
+
+    return len(codes)
+
+
 def main() -> int:
     report = Report()
     ledger = J.load(LANE / "expertise-ledger.json")
@@ -583,9 +787,11 @@ def main() -> int:
     check_guard_alive(report, ledger, beats)
     check_ledger(report, ledger)
     drafts = check_recorded_digests(report, ledger, beats)
+    stop_codes = 0
     with tempfile.TemporaryDirectory() as td:
         check_outcomes(report, Path(td))
         check_real_digest(report, Path(td))
+        stop_codes = check_stop_taxonomy(report, Path(td))
 
     if report.properties == 0:
         report.fail("exercised zero properties; a guard that iterates an empty list "
@@ -595,7 +801,8 @@ def main() -> int:
     print(f"JOURNALIST QUERY LANE: {status}")
     print(f"  properties exercised: {report.properties} "
           f"({len(ledger['facts'])} ledger fact(s), {drafts} recorded draft(s), "
-          f"7 guard proofs, 4 outcome proofs, 6 real-digest proofs)")
+          f"7 guard proofs, 4 outcome proofs, 6 real-digest proofs, "
+          f"{stop_codes} stop code(s) classified)")
     if drafts == 0:
         print("  NAMED ZERO: no digest has been recorded yet, because ingestion is "
               "waiting on a mailbox credential. The guard was still driven through "
