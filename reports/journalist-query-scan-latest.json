@@ -1,58 +1,31 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-08T18:30:42+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 10,
+  "run_at": "2026-09-09T15:39:15+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
-  "dropped_as_ungroundable": 2,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
-  "stops": [],
-  "drops": [
+  "stops": [
     {
-      "summary": "Registered dietitians needed for information on fast-food breakfast orders",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "When Does an Unsecured Debt Consolidation Loan Actually Save Money?",
-      "why": "excluded: 'cpa'"
-    },
-    {
-      "summary": "Home Holiday Gifts for Gift Guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "FALL + HOLIDAY GIFT GUIDE SUBMISSIONS ARE OPEN!",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Shop Pink Products for Breast Cancer Support",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Thoughtful Hostess Gifts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Best Camping & Hiking Gifts for 2026-2027",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Travel insurance and winter storm coverage",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "Education Leaders: How are you making learning work for more students?",
-      "why": "She would have to invent claims about education products, learner needs, accessibility solutions, or educational outcomes that don't exist in the available facts."
-    },
-    {
-      "summary": "Cybersecurity Leaders: How are you staying one step ahead of the bad guys?",
-      "why": "She would have had to invent cybersecurity expertise, threat analysis, client defense strategies, and leadership of a cybersecurity company."
+      "code": "MAILBOX_CREDENTIAL_REJECTED",
+      "message": "the journalist-query mailbox at imap.gmail.com refused the credential in SOS_IMAP_USER/SOS_IMAP_PASSWORD ([AUTHENTICATIONFAILED] Invalid credentials (Failure)). The secrets are SET -- this is not 'not configured yet', it is a working mailbox connection that has stopped working. No digests were read, so no queries could be surfaced and none can be said to have been missed or not missed.",
+      "unblock": "Rotate SOS_IMAP_PASSWORD (repository secret) for mailbox s*********@gmail.com and re-run. A Google app password is revoked whenever the account password changes, which is the most likely cause; only the account owner can mint a new one. Nothing in this repository can restore authentication, and nothing here will pretend the lane is reading mail while it is not."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 2 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NAMED STOP (OUTAGE) MAILBOX_CREDENTIAL_REJECTED: the journalist-query mailbox at imap.gmail.com refused the credential in SOS_IMAP_USER/SOS_IMAP_PASSWORD ([AUTHENTICATIONFAILED] Invalid credentials (Failure)). The secrets are SET -- this is not 'not configured yet', it is a working mailbox connection that has stopped working. No digests were read, so no queries could be surfaced and none can be said to have been missed or not missed. This is not 'no relevant queries'; it is 'no queries were looked at'.",
+  "announced": {
+    "ok": true,
+    "codes": [
+      "MAILBOX_CREDENTIAL_REJECTED"
+    ],
+    "reminders": [],
+    "detail": ""
+  }
 }
