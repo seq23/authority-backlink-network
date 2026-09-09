@@ -117,6 +117,7 @@ def load_publisher():
 
 def buffer_stub(calls, limit=25, used=0, channel_service="twitter",
                 refuse_after=None, refusal="LimitReachedError",
+                refusal_message="Buffer says no",
                 plan_depth=100, already_queued=0, channels=None):
     """Stand in for Buffer's GraphQL endpoint, recording every request.
 
@@ -162,7 +163,7 @@ def buffer_stub(calls, limit=25, used=0, channel_service="twitter",
             n = len(calls["createPost"])
             if refuse_after is not None and n >= refuse_after:
                 return {"createPost": {"__typename": refusal,
-                                       "message": "Buffer says no"}}
+                                       "message": refusal_message}}
             state["queued"] += 1
             return {"createPost": {"__typename": "PostActionSuccess",
                                    "post": {"id": f"buf-{n}", "status": "scheduled",
@@ -346,6 +347,88 @@ def main() -> int:  # noqa: C901 - one property per block, deliberately flat
         failures.append(
             "The same fixture made no more calls when Buffer accepted than when it "
             "refused, so the halt above proves nothing.")
+
+    # ---------------------------------------------------- property 3b
+    # A DUPLICATE REFUSAL IS NOT AN OUTAGE, and must not halt the route.
+    #
+    # Buffer answers a post it already holds with:
+    #   InvalidInputError: Invalid post: Whoops, it looks like you've already
+    #   got this one scheduled or posted around the same time...
+    #
+    # That is Buffer saying the distribution ALREADY HAPPENED. Run 34376835751
+    # on 2026-09-09 treated it as a route halt: the first entry was already in
+    # the queue, the route stopped, every other entry was deferred untouched and
+    # the lane failed having distributed nothing. It could not clear itself
+    # either -- the failed run left the entry postable, so the next run picked
+    # the same one and halted again, red forever.
+    #
+    # Three things are asserted, and all three are the fix:
+    #   the route keeps going       more than one createPost call is made
+    #   x is not halted             nothing downstream reports an outage
+    #   the entry is RETIRED        skipped_duplicate, so it is never re-sent
+    DUP_MESSAGE = ("Invalid post: Whoops, it looks like you've already got this "
+                   "one scheduled or posted around the same time. We're not able "
+                   "to post the same thing twice so close together.")
+    dup = drive(tmp, "duplicate", committed, limit=25, refuse_after=1,
+                refusal="InvalidInputError", refusal_message=DUP_MESSAGE)
+    dup_report = dup["report"]
+    dup_halted = dup_report.get("halted_platforms", {})
+    dup_counted = int(dup_report.get("already_scheduled_in_buffer") or 0)
+    dup_skips = [s_.get("reason") for s_ in dup_report.get("skipped", [])]
+    dup_statuses = [i.get("status") for i in dup["queue_after"]
+                    if i.get("skip_reason") == "already_scheduled_in_buffer"]
+    checks.append({"property": "a_duplicate_refusal_does_not_halt_the_route",
+                   "createPost_calls": dup["create_calls"],
+                   "halted_platforms": list(dup_halted),
+                   "already_scheduled_in_buffer": dup_counted,
+                   "skip_reasons": sorted(set(r for r in dup_skips if r)),
+                   "statuses_of_duplicate_entries": sorted(set(dup_statuses))})
+    if dup["create_calls"] <= 1:
+        failures.append(
+            f"Buffer refused the 1st call as a DUPLICATE and the route made "
+            f"{dup['create_calls']} createPost call(s). A duplicate means the post is "
+            f"already scheduled, not that the route is down; halting on it defers every "
+            f"other entry and fails the lane having distributed nothing, which is run "
+            f"34376835751 exactly.")
+    if "x" in dup_halted:
+        failures.append(
+            f"A duplicate refusal recorded a halt for x ({dup_halted.get('x')}). Buffer "
+            f"holding the post already is not an outage, and reporting it as one makes "
+            f"the lane red for a route that is working.")
+    if dup_counted < 1:
+        failures.append(
+            "A duplicate refusal was not counted in already_scheduled_in_buffer, so a run "
+            "whose entries were all already scheduled would read as a run that did nothing.")
+    if "already_scheduled_in_buffer" not in dup_skips:
+        failures.append(
+            f"A duplicate refusal was not recorded as a named skip (saw {dup_skips}).")
+    if dup_statuses and set(dup_statuses) != {"skipped_duplicate"}:
+        failures.append(
+            f"A duplicate entry was left in status {sorted(set(dup_statuses))} rather than "
+            f"skipped_duplicate. Anything still postable is picked again on the next run, "
+            f"refused again, and the lane never clears itself.")
+    if not dup_statuses:
+        failures.append(
+            "No queue entry was retired as already-scheduled, so the duplicate path did "
+            "not run at all and this property is evidence of nothing.")
+
+    # Proved negatively: the SAME refusal shape with a non-duplicate message
+    # must still halt, so the property above is about the message and not about
+    # InvalidInputError having quietly become harmless.
+    notdup = drive(tmp, "invalid-not-dup", committed, limit=25, refuse_after=1,
+                   refusal="InvalidInputError",
+                   refusal_message="Invalid post: the text is empty")
+    checks.append({"property": "a_non_duplicate_InvalidInputError_still_halts",
+                   "createPost_calls": notdup["create_calls"],
+                   "halted_platforms": list(notdup["report"].get("halted_platforms", {}))})
+    if "x" not in notdup["report"].get("halted_platforms", {}):
+        failures.append(
+            "An InvalidInputError that is NOT a duplicate did not halt the route, so the "
+            "duplicate exemption has been widened into a blanket excuse for refusals.")
+    if notdup["create_calls"] >= dup["create_calls"]:
+        failures.append(
+            f"The non-duplicate refusal made as many calls ({notdup['create_calls']}) as the "
+            f"duplicate one ({dup['create_calls']}), so the duplicate path proves nothing.")
 
     # ------------------------------------------------------------- property 4
     # The one post the route must NEVER take, and the one it MUST.

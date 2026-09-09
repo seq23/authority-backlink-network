@@ -715,6 +715,11 @@ def main():
     # queue, not on X. Merging them would report posts as published that Buffer
     # has not sent yet.
     buffer_queued_this_run = 0
+    # Entries Buffer refused because it already holds them. Neither successes
+    # nor failures: counted separately so a run that distributed nothing NEW
+    # because everything was already scheduled reads as exactly that, rather
+    # than as a run in which the route failed.
+    already_scheduled_in_buffer = 0
     halted_platforms = {}
 
     def record_failure(item, idx, platform, error):
@@ -868,9 +873,30 @@ def main():
             else:
                 record_failure(item, idx, platform, result.get('error', 'unknown_error'))
         except buffer_route.BufferError as e:
-            # Buffer said no. The route has already halted itself; mirror that
-            # here so the loop cannot ask a second time, and never treat it as
-            # the entry's fault -- the entry is deferred, not retired.
+            if getattr(e, 'kind', '') == buffer_route.DUPLICATE_KIND:
+                # ALREADY IN BUFFER'S QUEUE. Buffer is the authority on what it
+                # holds, and it says this entry is scheduled — the distribution
+                # this run wanted has already happened. So the entry is RETIRED,
+                # not deferred: `skipped_duplicate` is in POSTED_STATUSES, so it
+                # leaves the postable set and is never offered again.
+                #
+                # Retiring it is the half that matters. On 2026-09-09 run
+                # 34376835751 halted the whole route on this refusal and failed
+                # the lane; because the run failed, the entry stayed postable,
+                # so the next run would pick the same one and halt again. Red
+                # forever, with no work anyone could do to clear it.
+                item['status'] = 'skipped_duplicate'
+                item['skipped_at'] = datetime.now(timezone.utc).isoformat()
+                item['skip_reason'] = 'already_scheduled_in_buffer'
+                skipped.append({'index': idx, 'platform': platform,
+                                'brand': item.get('brand'),
+                                'reason': 'already_scheduled_in_buffer'})
+                already_scheduled_in_buffer += 1
+                continue
+            # Any other refusal: Buffer said no and the route has already halted
+            # itself; mirror that here so the loop cannot ask a second time, and
+            # never treat it as the entry's fault -- the entry is deferred, not
+            # retired.
             record_failure(item, idx, platform, f'buffer_route: {str(e)[:400]}')
         except urllib.error.HTTPError as e:
             detail = e.read().decode('utf-8', errors='replace')[:500]
@@ -934,6 +960,7 @@ def main():
         'attempted_this_run': attempted_this_run,
         'spent_today': spent_today,
         'halted_platforms': halted_platforms,
+        'already_scheduled_in_buffer': already_scheduled_in_buffer,
         # A named, counted, visible state -- never a task for a human. The
         # hand-post sheet these entries used to land on is retired: the owner
         # said she would never post from it, so it produced work nothing
