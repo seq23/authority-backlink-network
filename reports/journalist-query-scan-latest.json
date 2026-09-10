@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-10T12:25:11+00:00",
+  "run_at": "2026-09-10T18:28:00+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 11,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 11,
+  "dropped_by_beat_filter": 10,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,49 +14,45 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Looking for financial counselors for story on setting a realistic monthly grocery budget",
+      "summary": "Looking for consumer bankruptcy attorneys for story on difference between dismissed vs. discharged bankruptcy",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "Seeking Expert Thoughts on Health & Wellness Trends with Association Meetings and Events",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Looking for CFPs for story on when and how to rebalance an investment portfolio",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Seeking: exercise science graduates, professionals, or professors in this field",
+      "summary": "Fall Foods & Drinks — Seeking Products for Review",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Hematologist to address study story on chronic lymphocytic leukemia",
+      "summary": "Seeking: mechanical engineering bachelor's graduates, mechanical engineers",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Doctors Juggling Invisible Work",
-      "why": "excluded: 'physician'"
-    },
-    {
-      "summary": "Long Island seniors who are \"super savers\"",
+      "summary": "Home Services for Holiday Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking: vet tech graduates",
+      "summary": "Splurge Worthy Food Gifts - No Commentary Needed",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Transportive Holiday Gifts For the Escapist",
+      "summary": "Christmas 2026: the Best Gift Boxes & Gift Sets",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Can a relationship survive without sex?",
-      "why": "excluded: 'therapist'"
-    },
-    {
-      "summary": "Seeking expert comments on whether Confidential Computing solves AI’s data-in-use problem",
+      "summary": "Seeking experts to comment on what tech can control as well as identify AI Agents",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Why Gen Z isn't going to Burning Man",
+      "summary": "Seeking Salem history experts for a commissioned destination guide",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Forbes: Seeking Expert Input on the Rise of Luxury Car Access and Road Trips",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 11 queries were read from 1 digest(s) and every one was dropped (11 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
