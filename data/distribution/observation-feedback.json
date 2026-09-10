@@ -1,13 +1,13 @@
 {
   "schema": "authority-network-observation-feedback-v1",
-  "observed_at": "2026-09-09T15:42:32.547239Z",
-  "source_receipt_id": "2026-09-09T15-42-32.547239Z-34371955018",
+  "observed_at": "2026-09-10T15:41:24.404294Z",
+  "source_receipt_id": "2026-09-10T15-41-24.404294Z-34497224643",
   "publication_health": [
     {
       "publication_id": "founder",
       "domain": "founderoperatorlibrary.com",
-      "rendered_backlinks": 78,
-      "live_verified_backlinks": 78,
+      "rendered_backlinks": 80,
+      "live_verified_backlinks": 80,
       "indexed_referring_pages": 0,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
@@ -26,9 +26,9 @@
     {
       "publication_id": "professional",
       "domain": "professionalresourcelibrary.com",
-      "rendered_backlinks": 204,
-      "live_verified_backlinks": 204,
-      "indexed_referring_pages": 0,
+      "rendered_backlinks": 205,
+      "live_verified_backlinks": 205,
+      "indexed_referring_pages": 1,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
       "gsc_inspection_status": "SUCCESS"
@@ -101,10 +101,10 @@
     {
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
-      "rendered": 2,
-      "deployed": 2,
-      "live_verified": 2,
-      "indexed": 0,
+      "rendered": 3,
+      "deployed": 3,
+      "live_verified": 3,
+      "indexed": 1,
       "verified_external_citations": 0
     },
     {
@@ -181,9 +181,9 @@
     }
   ],
   "portfolio_totals": {
-    "rendered_backlinks": 349,
-    "live_verified_backlinks": 349,
-    "indexed_referring_pages": 0,
+    "rendered_backlinks": 352,
+    "live_verified_backlinks": 352,
+    "indexed_referring_pages": 1,
     "verified_external_citations": 0
   },
   "recommended_action": "CONTINUE_YIELD_GOVERNOR",

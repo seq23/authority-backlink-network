@@ -11,8 +11,8 @@
     "serviced_target_urls": 64,
     "backlink_rows": 616,
     "unique_source_editorials": 585,
-    "live_verified_rows": 349,
-    "indexed_rows": 0
+    "live_verified_rows": 352,
+    "indexed_rows": 1
   },
   "publication_operators": [
     {
@@ -707,7 +707,7 @@
       "product_name": "",
       "campaign_ids": [],
       "backlink_count": 32,
-      "live_verified_count": 13,
+      "live_verified_count": 15,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -721,10 +721,10 @@
           "anchor": "A Player Mode",
           "campaign_id": "",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -741,10 +741,10 @@
           "anchor": "A Player Mode",
           "campaign_id": "",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -12787,8 +12787,8 @@
         "the-industry-guides-authority"
       ],
       "backlink_count": 6,
-      "live_verified_count": 1,
-      "indexed_count": 0,
+      "live_verified_count": 2,
+      "indexed_count": 1,
       "backlinks": [
         {
           "source_path": "sites/professional-resources/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs.html",
@@ -12801,11 +12801,11 @@
           "anchor": "The Industry Guides",
           "campaign_id": "the-industry-guides-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_indexed",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
-          "indexed": false,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": true,
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 88

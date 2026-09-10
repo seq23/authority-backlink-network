@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-09T15-42-32.547239Z-34371955018",
-  "attempted_at": "2026-09-09T15:42:32.547239Z",
+  "receipt_id": "2026-09-10T15-41-24.404294Z-34497224643",
+  "attempted_at": "2026-09-10T15:41:24.404294Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "29e914e830c1b495be1b069eea5789cb6217727d4a28c2ceac4e83981a77a2a1",
-        "url_count": 105
+        "sha256": "aa243cb607fabc1667dd7c0ff747e88c6932ccb496accabfca3d67a41abcf6d1",
+        "url_count": 107
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 105,
-        "offered_urls": 105,
+        "submitted_urls": 107,
+        "offered_urls": 107,
         "batches": [
           {
-            "urls": 105,
+            "urls": 107,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,37 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 2,
+        "inspected_urls": 2,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 78,
-        "verified": 78,
+        "checked": 80,
+        "verified": 80,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1073,6 +1096,32 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -2005,14 +2054,14 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "f7040abbae590cbd671ed5b0840b201e616f8190f9ec47cfe6b0a0f6f4d4a4bc",
-        "url_count": 421
+        "sha256": "3c12b091cc0da7f099694f30f94d13d27a65957191b489b5ac8da35c86da53ce",
+        "url_count": 422
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 421,
-        "offered_urls": 421,
+        "submitted_urls": 422,
+        "offered_urls": 422,
         "batches": [
           {
             "urls": 200,
@@ -2027,7 +2076,7 @@
             "error": null
           },
           {
-            "urls": 21,
+            "urls": 22,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -2046,14 +2095,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "PASS",
+            "coverage_state": "Submitted and indexed",
+            "indexing_state": "INDEXING_ALLOWED",
+            "last_crawl_time": "2026-09-10T04:34:56Z",
+            "google_canonical": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+            "user_canonical": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs"
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 204,
-        "verified": 204,
+        "checked": 205,
+        "verified": 205,
         "results": [
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
@@ -4706,6 +4767,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+            "target_url": "https://theindustryguides.com/",
+            "anchor": "The Industry Guides",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -4713,7 +4787,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-09T15-42-32.547239Z-34371955018.json"
+    "history": "data/distribution/receipts/2026-09-10T15-41-24.404294Z-34497224643.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,

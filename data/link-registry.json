@@ -20353,15 +20353,16 @@
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
     "status": "published",
-    "lifecycle_stage": "published_in_repository",
+    "lifecycle_stage": "source_discovered",
     "evidence": {
       "repository_rendered": true,
-      "deployed": false,
-      "live_verified": false,
-      "discoverable": false,
+      "deployed": true,
+      "live_verified": true,
+      "discoverable": true,
       "indexed": false,
       "search_visibility_observed": false,
-      "ai_cited": false
+      "ai_cited": false,
+      "gsc_inspected": true
     },
     "score": 88
   },
@@ -20388,15 +20389,16 @@
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
     "status": "published",
-    "lifecycle_stage": "published_in_repository",
+    "lifecycle_stage": "source_indexed",
     "evidence": {
       "repository_rendered": true,
-      "deployed": false,
-      "live_verified": false,
-      "discoverable": false,
-      "indexed": false,
+      "deployed": true,
+      "live_verified": true,
+      "discoverable": true,
+      "indexed": true,
       "search_visibility_observed": false,
-      "ai_cited": false
+      "ai_cited": false,
+      "gsc_inspected": true
     },
     "score": 88
   },
@@ -20423,15 +20425,16 @@
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
     "status": "published",
-    "lifecycle_stage": "published_in_repository",
+    "lifecycle_stage": "source_discovered",
     "evidence": {
       "repository_rendered": true,
-      "deployed": false,
-      "live_verified": false,
-      "discoverable": false,
+      "deployed": true,
+      "live_verified": true,
+      "discoverable": true,
       "indexed": false,
       "search_visibility_observed": false,
-      "ai_cited": false
+      "ai_cited": false,
+      "gsc_inspected": true
     },
     "score": 88
   }
