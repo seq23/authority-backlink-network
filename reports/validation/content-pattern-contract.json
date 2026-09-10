@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-09-09T16:42:42.540Z",
+  "generated_at": "2026-09-10T14:30:40.214Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 630,
+  "pages_checked": 631,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -53,15 +53,15 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 529,
+      "pages_missing": 530,
       "coverage_pct": 16,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 45,
-      "coverage_pct": 92.9,
+      "pages_missing": 46,
+      "coverage_pct": 92.7,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -143,6 +143,7 @@
       "founder-operator/contributors.html",
       "founder-operator/corrections.html",
       "founder-operator/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign.html",
+      "founder-operator/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -163,8 +164,7 @@
       "memphis-local/topics/wedding-day-timelines.html",
       "memphis-local/topics/wedding-planning-tools.html",
       "memphis-local/topics/wedding-seating-charts.html",
-      "professional-resources/contributors.html",
-      "professional-resources/corrections.html"
+      "professional-resources/contributors.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

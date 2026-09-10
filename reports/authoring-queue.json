@@ -1,15 +1,35 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-09",
+  "run_at": "2026-09-10",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 0,
-    "allowance": 3,
-    "window_start": "2026-09-03",
-    "window_end": "2026-09-09"
+    "published_in_window": 2,
+    "allowance": 1,
+    "window_start": "2026-09-04",
+    "window_end": "2026-09-10"
   },
-  "deferred": 0,
-  "queue": []
+  "deferred": 2,
+  "queue": [
+    {
+      "publication": "memphis-local",
+      "deferred_on": "2026-09-10",
+      "reason": "no_topically_eligible_affiliated_link"
+    },
+    {
+      "publication": "professional-resources",
+      "cluster": "dental decision resources",
+      "audience": "horse buyer",
+      "format": "local/resource directory",
+      "intent": "for people who need a starting point",
+      "modifier": "editorial",
+      "intended_title": "Dental Decision Resources: Editorial Local/Resource Directory For People Who Need A Starting Point",
+      "target_brand": "The Dentistry Guides",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "fd25d98a5dc8a4738d8c4e40916b7abef4552a8a922335ce53b2a578f6ed132a",
+      "deferred_on": "2026-09-10",
+      "reason": "weekly_publication_cap"
+    }
+  ]
 }

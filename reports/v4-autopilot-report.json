@@ -1,63 +1,22 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-09-09",
-    "release_date": "2026-09-09",
-    "day_index": 75,
+    "date": "2026-09-10",
+    "release_date": "2026-09-10",
+    "day_index": 76,
     "target_volume": 3,
-    "generated": 3,
-    "published": 2,
+    "generated": 1,
+    "published": 1,
     "scores": [
-      88,
       88
     ],
     "duplicate_warnings": 0,
-    "hard_fails": 1,
+    "hard_fails": 0,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 8,
-    "blocked_slots": [
-      {
-        "slot": 1,
-        "publication": "memphis-local",
-        "attempts": 8,
-        "findings": [
-          {
-            "attempt": 0,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 1,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 2,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 3,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 4,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 5,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 6,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 7,
-            "reason": "no_topically_eligible_affiliated_link"
-          }
-        ]
-      }
-    ],
+    "self_heal_attempts": 0,
+    "blocked_slots": [],
     "social_enqueued": {
-      "published_pages": 2,
+      "published_pages": 1,
       "platforms_enabled": [],
       "platforms_distributing": [
         "x"
@@ -78,55 +37,27 @@
         }
       },
       "pages_enqueued_by_platform": {
-        "x": 2
+        "x": 1
       },
       "pages_missing_by_platform": {
         "x": []
       },
-      "pages_enqueued_for_social": 2,
+      "pages_enqueued_for_social": 1,
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 1.0,
-      "avg_quality": 84.0,
+      "pass_rate": 0.9166666666666666,
+      "avg_quality": 88.0,
       "duplicate_warnings": 0,
-      "hard_fails": 0
+      "hard_fails": 1
     }
   },
   "generated": [
     {
-      "title": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign",
+      "title": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters",
       "publication": "founder-operator",
       "score": 88,
-      "words": 572,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    },
-    {
-      "publication": "memphis-local",
-      "slot": 1,
-      "status": "blocked_after_self_heal",
-      "repair_attempts": 8,
-      "hard_fails": [
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link"
-      ]
-    },
-    {
-      "title": "Decision Frameworks For Sensitive Services: Comparison-Friendly Red-Flag Checklist For First-Time Buyers",
-      "publication": "professional-resources",
-      "score": 88,
-      "words": 642,
+      "words": 597,
       "rewrite_status": "not_needed",
       "warnings": [],
       "hard_fails": [],
@@ -137,17 +68,17 @@
   ],
   "published": [
     {
-      "title": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign",
+      "title": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters",
       "publication": "founder-operator",
       "score": 88,
-      "words": 572,
+      "words": 597,
       "rewrite_status": "not_needed",
       "warnings": [],
       "hard_fails": [],
       "self_healed": false,
       "repair_attempts": 0,
       "repair_history": [],
-      "path": "sites/founder-operator/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign.html",
+      "path": "sites/founder-operator/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters.html",
       "target_brand_id": "aplayer-mode",
       "target_domain": "aplayermode.com",
       "target_url": "https://www.aplayermode.com/",
@@ -159,32 +90,6 @@
       "product_name": "",
       "target_route": "",
       "campaign_id": "",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    },
-    {
-      "title": "Decision Frameworks For Sensitive Services: Comparison-Friendly Red-Flag Checklist For First-Time Buyers",
-      "publication": "professional-resources",
-      "score": 88,
-      "words": 642,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/professional-resources/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs.html",
-      "target_brand_id": "the-industry-guides",
-      "target_domain": "theindustryguides.com",
-      "target_url": "https://theindustryguides.com/",
-      "anchor": "The Industry Guides",
-      "brand": "The Industry Guides",
-      "social_hooks": [],
-      "destination_type": "",
-      "product_id": "",
-      "product_name": "",
-      "target_route": "",
-      "campaign_id": "the-industry-guides-authority",
       "preferred_domain": "",
       "used_preferred_domain": false
     }

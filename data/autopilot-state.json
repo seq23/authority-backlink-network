@@ -476,7 +476,8 @@
     "c463ba1992befcaa85b53f7c131e03c13dbeb0fefceb609c4d64960bd4c931b7",
     "350821b3ff1af5464d3a52a647b36322fc4ab2a6d2bc4b5a6311f7f48320b702",
     "7386700297424c64aeba65a83969abd8cf4a6a7ac80d443adb837923ada8c39e",
-    "f5acdcf1777d73c5e87898c27dc6ac178a0715181c8c7d71ed6b80790684dfe9"
+    "f5acdcf1777d73c5e87898c27dc6ac178a0715181c8c7d71ed6b80790684dfe9",
+    "a9247dc8bfe97454333db532bd0e1870b14944471ee3d2cc446183ac257a517b"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -954,7 +955,8 @@
     "35e49ba74b59cc69c76add366906b4f2f6e38d8a15fd9bdcadf5fcea464b4abd",
     "c121c93127aaf3289f971c5065017afeddbb427d6f4a6b9fef7f08df7548e314",
     "fde29181b78ee053ce8c850dcb5f4f5a8a3793f37f9578f263fb34e379558dfa",
-    "51b91dd9eb22c30ea222afd91fa0009fb322aa61faf68a825827ef7b30054a1c"
+    "51b91dd9eb22c30ea222afd91fa0009fb322aa61faf68a825827ef7b30054a1c",
+    "6b7bce702855da8871655844022d79f98b441fe0aae80fbcbb502b0ddde55ae3"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1432,7 +1434,8 @@
     "Wedding Checklist Planning: Beginner-Safe Comparison Guide When You Are Comparing Options",
     "Horse Contract Preparation: Geo-Ready Red-Flag Checklist For Busy Operators",
     "Team Accountability: Checklist-Driven Comparison Guide Before You Sign",
-    "Decision Frameworks For Sensitive Services: Comparison-Friendly Red-Flag Checklist For First-Time Buyers"
+    "Decision Frameworks For Sensitive Services: Comparison-Friendly Red-Flag Checklist For First-Time Buyers",
+    "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
   ],
   "history": [
     {
@@ -3661,6 +3664,58 @@
         "avg_quality": 84.0,
         "duplicate_warnings": 0,
         "hard_fails": 0
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "release_date": "2026-09-10",
+      "day_index": 76,
+      "target_volume": 3,
+      "generated": 1,
+      "published": 1,
+      "scores": [
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "social_enqueued": {
+        "published_pages": 1,
+        "platforms_enabled": [],
+        "platforms_distributing": [
+          "x"
+        ],
+        "platforms_routed": [
+          "x"
+        ],
+        "platforms_paused": {
+          "linkedin": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+          },
+          "x": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
+          }
+        },
+        "pages_enqueued_by_platform": {
+          "x": 1
+        },
+        "pages_missing_by_platform": {
+          "x": []
+        },
+        "pages_enqueued_for_social": 1,
+        "pages_missing_social": []
+      },
+      "stats_before": {
+        "pass_rate": 0.9166666666666666,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 1
       }
     }
   ]

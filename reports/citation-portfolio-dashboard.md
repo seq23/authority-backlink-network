@@ -1,10 +1,10 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-09-09
+As of: 2026-09-10
 
 - Registered brands: 16
 - Authority publications: 3
-- Repository-rendered authority backlinks: 351
+- Repository-rendered authority backlinks: 352
 - Owned product-repo surfaces imported: 81
 - Live verified backlinks: 349
 - Indexed referring pages with evidence: 0
@@ -20,7 +20,7 @@ As of: 2026-09-09
 | Neuro Evaluation Guides | growth | 4 | 3 | 15 |
 | USCIS Exam Guides | growth | 4 | 3 | 15 |
 | Billionaire High Performance Coach | standard | 9 | 4 | 10 |
-| A Player Mode | growth | 14 | 1 | 15 |
+| A Player Mode | growth | 15 | 1 | 15 |
 | Virtual Agency OS | growth | 32 | 9 | 15 |
 | West Peek Productions | standard | 24 | 1 | 10 |
 | Horse Legal Guide | growth | 14 | 5 | 18 |
