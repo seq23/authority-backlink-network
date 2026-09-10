@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "dry_run": false,
   "enabled": {
     "linkedin": false,
@@ -77,7 +77,6 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-09": 0,
             "2026-09-10": 4,
             "2026-09-11": 4,
             "2026-09-12": 1,
@@ -90,7 +89,8 @@
             "2026-09-19": 0,
             "2026-09-20": 0,
             "2026-09-21": 0,
-            "2026-09-22": 0
+            "2026-09-22": 0,
+            "2026-09-23": 0
           },
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
