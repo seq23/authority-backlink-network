@@ -1,17 +1,62 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-09T18:30:01+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-10T12:25:11+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 11,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
+  "dropped_by_beat_filter": 11,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Looking for financial counselors for story on setting a realistic monthly grocery budget",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Looking for CFPs for story on when and how to rebalance an investment portfolio",
+      "why": "excluded: 'investment'"
+    },
+    {
+      "summary": "Seeking: exercise science graduates, professionals, or professors in this field",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Hematologist to address study story on chronic lymphocytic leukemia",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Doctors Juggling Invisible Work",
+      "why": "excluded: 'physician'"
+    },
+    {
+      "summary": "Long Island seniors who are \"super savers\"",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking: vet tech graduates",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Transportive Holiday Gifts For the Escapist",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Can a relationship survive without sex?",
+      "why": "excluded: 'therapist'"
+    },
+    {
+      "summary": "Seeking expert comments on whether Confidential Computing solves AI’s data-in-use problem",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Why Gen Z isn't going to Burning Man",
+      "why": "matches no declared beat"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 11 queries were read from 1 digest(s) and every one was dropped (11 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
