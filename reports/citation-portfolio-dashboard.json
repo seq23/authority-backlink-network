@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -33,9 +33,9 @@
     "authority_backlinks": 352,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 81,
-    "live_verified": 349,
-    "discoverable": 349,
-    "indexed": 0,
+    "live_verified": 352,
+    "discoverable": 352,
+    "indexed": 1,
     "ai_cited": 0
   },
   "by_brand": [
@@ -230,7 +230,8 @@
   "lifecycle": {
     "approved_destination": 241,
     "live_verified": 349,
-    "published_in_repository": 3
+    "source_discovered": 2,
+    "source_indexed": 1
   },
   "campaign_health": [
     {
@@ -443,9 +444,9 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 349,
-    "live_verified_backlinks": 349,
-    "indexed_referring_pages": 0,
+    "rendered_backlinks": 352,
+    "live_verified_backlinks": 352,
+    "indexed_referring_pages": 1,
     "verified_external_citations": 0
   }
 }

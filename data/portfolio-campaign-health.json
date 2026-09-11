@@ -1,6 +1,6 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-09-10",
+  "as_of": "2026-09-11",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
@@ -98,8 +98,8 @@
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
       "rendered": 3,
-      "live_verified": 2,
-      "indexed": 0,
+      "live_verified": 3,
+      "indexed": 1,
       "distinct_destinations": 2,
       "distinct_anchors": 2,
       "rendered_floor": 2,

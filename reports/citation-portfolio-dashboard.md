@@ -1,13 +1,13 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-09-10
+As of: 2026-09-11
 
 - Registered brands: 16
 - Authority publications: 3
 - Repository-rendered authority backlinks: 352
 - Owned product-repo surfaces imported: 81
-- Live verified backlinks: 349
-- Indexed referring pages with evidence: 0
+- Live verified backlinks: 352
+- Indexed referring pages with evidence: 1
 
 ## By brand
 

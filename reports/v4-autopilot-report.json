@@ -1,22 +1,20 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-09-10",
-    "release_date": "2026-09-10",
-    "day_index": 76,
+    "date": "2026-09-11",
+    "release_date": "2026-09-11",
+    "day_index": 77,
     "target_volume": 3,
-    "generated": 1,
-    "published": 1,
-    "scores": [
-      88
-    ],
+    "generated": 0,
+    "published": 0,
+    "scores": [],
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 0,
     "self_heal_attempts": 0,
     "blocked_slots": [],
     "social_enqueued": {
-      "published_pages": 1,
+      "published_pages": 0,
       "platforms_enabled": [],
       "platforms_distributing": [
         "x"
@@ -37,63 +35,23 @@
         }
       },
       "pages_enqueued_by_platform": {
-        "x": 1
+        "x": 0
       },
       "pages_missing_by_platform": {
         "x": []
       },
-      "pages_enqueued_for_social": 1,
+      "pages_enqueued_for_social": 0,
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 0.9166666666666666,
+      "pass_rate": 0.75,
       "avg_quality": 88.0,
       "duplicate_warnings": 0,
       "hard_fails": 1
     }
   },
-  "generated": [
-    {
-      "title": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters",
-      "publication": "founder-operator",
-      "score": 88,
-      "words": 597,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": []
-    }
-  ],
-  "published": [
-    {
-      "title": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters",
-      "publication": "founder-operator",
-      "score": 88,
-      "words": 597,
-      "rewrite_status": "not_needed",
-      "warnings": [],
-      "hard_fails": [],
-      "self_healed": false,
-      "repair_attempts": 0,
-      "repair_history": [],
-      "path": "sites/founder-operator/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters.html",
-      "target_brand_id": "aplayer-mode",
-      "target_domain": "aplayermode.com",
-      "target_url": "https://www.aplayermode.com/",
-      "anchor": "A Player Mode",
-      "brand": "A Player Mode",
-      "social_hooks": [],
-      "destination_type": "",
-      "product_id": "",
-      "product_name": "",
-      "target_route": "",
-      "campaign_id": "",
-      "preferred_domain": "",
-      "used_preferred_domain": false
-    }
-  ],
+  "generated": [],
+  "published": [],
   "scaling_policy": {
     "version": "v4.6-portfolio-citation-control",
     "goal": "Pursue 100,000 portfolio citation/impression opportunities in six months while preserving truthful evidence, contextual usefulness, and measured backlink quality.",
