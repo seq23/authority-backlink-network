@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-10T18:28:00+00:00",
+  "run_at": "2026-09-11T12:25:32+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 10,
+  "queries_ingested": 8,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 10,
+  "dropped_by_beat_filter": 8,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,45 +14,37 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Looking for consumer bankruptcy attorneys for story on difference between dismissed vs. discharged bankruptcy",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "Seeking Expert Thoughts on Health & Wellness Trends with Association Meetings and Events",
+      "summary": "Senior care community reps to discuss best practices in designing intergenerational cooking classes",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Fall Foods & Drinks — Seeking Products for Review",
+      "summary": "Senior care community reps to discuss how to combat resident dehydration in winter",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking: mechanical engineering bachelor's graduates, mechanical engineers",
+      "summary": "Gift Guide Request/Organic Spa",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Home Services for Holiday Gift Guide",
+      "summary": "I am looking for architects that have designed and built their own house.",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Splurge Worthy Food Gifts - No Commentary Needed",
+      "summary": "Seeking: mechanical engineering master's graduates, mechanical engineers",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Christmas 2026: the Best Gift Boxes & Gift Sets",
+      "summary": "Seeking: library science graduates and professionals in the field",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking experts to comment on what tech can control as well as identify AI Agents",
+      "summary": "Baby Must Haves",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking Salem history experts for a commissioned destination guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Forbes: Seeking Expert Input on the Rise of Luxury Car Access and Road Trips",
+      "summary": "Seeking food safety experts to discuss the butter compartment in refrigerators",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
