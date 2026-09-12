@@ -69,9 +69,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-12": 1,
+            "2026-09-12": 0,
             "2026-09-13": 4,
-            "2026-09-14": 3,
+            "2026-09-14": 4,
             "2026-09-15": 0,
             "2026-09-16": 0,
             "2026-09-17": 0,
@@ -126,11 +126,11 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 3
+    "x": 4
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
-  "deferred_waiting_for_delivery_route": 522,
+  "deferred_waiting_for_delivery_route": 521,
   "route_only_platforms": [
     "x"
   ],
@@ -144,33 +144,33 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1103,
+  "still_postable_after_run": 1102,
   "attempts": [
     {
-      "index": 413,
+      "index": 415,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: High-Achieving Women And Burnout: Practical Faq Answer Page For First-Time Buyers.\n\nh"
+      "preview": "Useful citation, not fake ranking: Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You "
     }
   ],
   "successes": [
     {
-      "index": 413,
+      "index": 415,
       "platform": "x",
       "brand": null,
-      "id": "6aa57ca166679b076f125fae",
+      "id": "6aa5aba966679b076f166d20",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-14T16:32:00.000Z"
+      "due_at": "2026-09-15T13:19:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 3
   },
   "brand_rotation_policy": {
     "quota_count": 15,
