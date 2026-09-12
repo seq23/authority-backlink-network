@@ -69,9 +69,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-12": 3,
+            "2026-09-12": 2,
             "2026-09-13": 4,
-            "2026-09-14": 1,
+            "2026-09-14": 2,
             "2026-09-15": 0,
             "2026-09-16": 0,
             "2026-09-17": 0,
@@ -126,11 +126,11 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
-  "deferred_waiting_for_delivery_route": 524,
+  "deferred_waiting_for_delivery_route": 523,
   "route_only_platforms": [
     "x"
   ],
@@ -144,33 +144,33 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1105,
+  "still_postable_after_run": 1104,
   "attempts": [
     {
-      "index": 409,
+      "index": 411,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: Ai Execution Systems: Decision-Focused Local/Resource Directory For First-Time Buyers"
+      "preview": "Useful citation, not fake ranking: Party Decor Vendors: Operator-Grade Operator Playbook For People Who Need A Starting "
     }
   ],
   "successes": [
     {
-      "index": 409,
+      "index": 411,
       "platform": "x",
       "brand": null,
-      "id": "6aa5535ac689c0dff0c2bd49",
+      "id": "6aa561d19a7f0553d16af530",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-14T14:55:00.000Z"
+      "due_at": "2026-09-14T15:47:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 1
   },
   "brand_rotation_policy": {
     "quota_count": 15,

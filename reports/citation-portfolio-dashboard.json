@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-12",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -229,9 +229,7 @@
   },
   "lifecycle": {
     "approved_destination": 241,
-    "live_verified": 349,
-    "source_discovered": 2,
-    "source_indexed": 1
+    "live_verified": 352
   },
   "campaign_health": [
     {
@@ -329,8 +327,8 @@
       "campaign_id": "the-industry-guides-authority",
       "brand_id": "the-industry-guides",
       "rendered": 3,
-      "live_verified": 2,
-      "indexed": 0,
+      "live_verified": 3,
+      "indexed": 1,
       "distinct_destinations": 2,
       "distinct_anchors": 2,
       "rendered_floor": 2,

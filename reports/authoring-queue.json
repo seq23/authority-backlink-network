@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-11",
+  "run_at": "2026-09-12",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-05",
-    "window_end": "2026-09-11"
+    "window_start": "2026-09-06",
+    "window_end": "2026-09-12"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "daily discipline frameworks",
-      "audience": "venture-backed founder",
-      "format": "decision guide",
-      "intent": "before you book",
+      "cluster": "hiring standards for small teams",
+      "audience": "VC platform lead",
+      "format": "comparison guide",
+      "intent": "before you call",
       "modifier": "citation-friendly",
-      "intended_title": "Daily Discipline Frameworks: Citation-Friendly Decision Guide Before You Book",
+      "intended_title": "Hiring Standards For Small Teams: Citation-Friendly Comparison Guide Before You Call",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "1466ef44b99d7cb59db50734146bd193e0033afb7be6633aca9286421d49ca8a",
-      "deferred_on": "2026-09-11",
+      "signature": "3bc50d701b7a7159ae81386329dc0c017a0243e4646075e4a8d07b98a733d2e9",
+      "deferred_on": "2026-09-12",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-11",
+      "deferred_on": "2026-09-12",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "horse buyer",
-      "format": "prep guide",
-      "intent": "before you choose",
-      "modifier": "operator-grade",
-      "intended_title": "Dental Decision Resources: Operator-Grade Prep Guide Before You Choose",
+      "audience": "adult seeking neuropsych evaluation",
+      "format": "mistakes to avoid",
+      "intent": "when timing matters",
+      "modifier": "2026-ready",
+      "intended_title": "Dental Decision Resources: 2026-Ready Mistakes To Avoid When Timing Matters",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/",
-      "signature": "6e72d8ff5b5eee0b776220e8bc382afcfc37d1bc1c9c805bb24bfdd9210007c5",
-      "deferred_on": "2026-09-11",
+      "signature": "96995e2171774040af72b6756d0b11807294016fe8b3372b8ad7541764fcd8ed",
+      "deferred_on": "2026-09-12",
       "reason": "weekly_publication_cap"
     }
   ]
