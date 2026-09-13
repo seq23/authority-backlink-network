@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-12",
+  "run_at": "2026-09-13",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-06",
-    "window_end": "2026-09-12"
+    "window_start": "2026-09-07",
+    "window_end": "2026-09-13"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "hiring standards for small teams",
-      "audience": "VC platform lead",
-      "format": "comparison guide",
-      "intent": "before you call",
-      "modifier": "citation-friendly",
-      "intended_title": "Hiring Standards For Small Teams: Citation-Friendly Comparison Guide Before You Call",
+      "cluster": "team accountability",
+      "audience": "event producer",
+      "format": "planning checklist",
+      "intent": "for people who need a starting point",
+      "modifier": "human-first",
+      "intended_title": "Team Accountability: Human-First Planning Checklist For People Who Need A Starting Point",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "3bc50d701b7a7159ae81386329dc0c017a0243e4646075e4a8d07b98a733d2e9",
-      "deferred_on": "2026-09-12",
+      "signature": "65e8d754c718c7c2ef9b4196a7b9bc058b532ce3548919ab9a720ab598543237",
+      "deferred_on": "2026-09-13",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-12",
+      "deferred_on": "2026-09-13",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "adult seeking neuropsych evaluation",
-      "format": "mistakes to avoid",
-      "intent": "when timing matters",
-      "modifier": "2026-ready",
-      "intended_title": "Dental Decision Resources: 2026-Ready Mistakes To Avoid When Timing Matters",
+      "audience": "nonprofit executive",
+      "format": "FAQ answer page",
+      "intent": "before you sign",
+      "modifier": "checklist-driven",
+      "intended_title": "Dental Decision Resources: Checklist-Driven Faq Answer Page Before You Sign",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/",
-      "signature": "96995e2171774040af72b6756d0b11807294016fe8b3372b8ad7541764fcd8ed",
-      "deferred_on": "2026-09-12",
+      "signature": "02c8dcc2bb23ca0fd6888df392f078d9ce6874ca48614d9ee6d7db482a8d5bc9",
+      "deferred_on": "2026-09-13",
       "reason": "weekly_publication_cap"
     }
   ]
