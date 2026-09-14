@@ -1,17 +1,62 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-11T18:29:07+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-14T12:26:32+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 11,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 10,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Wanted: a law firm that effectively communicates with clients",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "People who participated in the 80s trend",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Cognitive Psychologists / Sociology Researchers to comment on the 80s trend",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "I want to hear from psychologists, life coaches, counselors",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "U.S.-based vet needed re: why dogs snore + treatment",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Automakers and Automotive PR Contacts for Hands-On Vehicle Reviews",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Holiday Gift Guide",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Writing about the three-step pest check for bringing plants inside after the summer",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Writing about how to audit plant care as the seasons change (light changes; Best windows; When to move)",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "What are Americans doing wrong when they travel abroad?",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "Looking for Brands That Fit the Lives of Black Millennial Newlyweds",
+      "why": "She would have to invent claims about brands, products, services, or experiences for Black millennial newlyweds, which are not in her fact set."
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 11 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
