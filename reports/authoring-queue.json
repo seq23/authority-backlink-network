@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-13",
+  "run_at": "2026-09-14",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-07",
-    "window_end": "2026-09-13"
+    "window_start": "2026-09-08",
+    "window_end": "2026-09-14"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
       "cluster": "team accountability",
-      "audience": "event producer",
-      "format": "planning checklist",
-      "intent": "for people who need a starting point",
-      "modifier": "human-first",
-      "intended_title": "Team Accountability: Human-First Planning Checklist For People Who Need A Starting Point",
+      "audience": "creator-founder",
+      "format": "FAQ answer page",
+      "intent": "before you book",
+      "modifier": "practical",
+      "intended_title": "Team Accountability: Practical Faq Answer Page Before You Book",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "65e8d754c718c7c2ef9b4196a7b9bc058b532ce3548919ab9a720ab598543237",
-      "deferred_on": "2026-09-13",
+      "signature": "38330f9b4b467738f99861135f12a263094bb2b042dc754eb637eaa424e0d9f4",
+      "deferred_on": "2026-09-14",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-13",
+      "deferred_on": "2026-09-14",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "nonprofit executive",
-      "format": "FAQ answer page",
-      "intent": "before you sign",
-      "modifier": "checklist-driven",
-      "intended_title": "Dental Decision Resources: Checklist-Driven Faq Answer Page Before You Sign",
+      "audience": "equine professional",
+      "format": "prep guide",
+      "intent": "before you pay",
+      "modifier": "AEO-ready",
+      "intended_title": "Dental Decision Resources: Aeo-Ready Prep Guide Before You Pay",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/",
-      "signature": "02c8dcc2bb23ca0fd6888df392f078d9ce6874ca48614d9ee6d7db482a8d5bc9",
-      "deferred_on": "2026-09-13",
+      "target_url": "https://dentistryguides.com/guides/",
+      "signature": "deaa70f605859b6121078fb0a6e9f616d32f2485cc22ebfc9b7370ce50238011",
+      "deferred_on": "2026-09-14",
       "reason": "weekly_publication_cap"
     }
   ]
