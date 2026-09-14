@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-14T12:26:32+00:00",
+  "run_at": "2026-09-14T18:29:03+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 11,
+  "queries_ingested": 9,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 10,
+  "dropped_by_beat_filter": 8,
   "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,49 +14,41 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Wanted: a law firm that effectively communicates with clients",
+      "summary": "When Should Someone Stop Using the Debt Snowball or Avalanche?",
+      "why": "excluded: 'cpa'"
+    },
+    {
+      "summary": "U.S.-based veterinarian needed re: why dogs snore + if you should wake them up",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Retired or Current Fortune 500 CEOs: Empowering Your Assistant on a Higher Level",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Anti-Aging Products",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Autumn Reading List",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "expert in AI and healthcare for caregiving",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Top Standout CIO Skills",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Every travel insurance policy comes with a money-back guarantee. Here's what you need to know about it.",
       "why": "excluded: 'attorney'"
     },
     {
-      "summary": "People who participated in the 80s trend",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Cognitive Psychologists / Sociology Researchers to comment on the 80s trend",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "I want to hear from psychologists, life coaches, counselors",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "U.S.-based vet needed re: why dogs snore + treatment",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Automakers and Automotive PR Contacts for Hands-On Vehicle Reviews",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Holiday Gift Guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Writing about the three-step pest check for bringing plants inside after the summer",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Writing about how to audit plant care as the seasons change (light changes; Best windows; When to move)",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "What are Americans doing wrong when they travel abroad?",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "Looking for Brands That Fit the Lives of Black Millennial Newlyweds",
-      "why": "She would have to invent claims about brands, products, services, or experiences for Black millennial newlyweds, which are not in her fact set."
+      "summary": "Seeking retail and ecommerce leaders for Shoptalk video interviews",
+      "why": "She would have to invent retail/ecommerce expertise, claim senior executive status in that industry, or fabricate relevant experience in retail strategy, AI adoption, or commerce trends."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 11 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
