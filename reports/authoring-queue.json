@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-14",
+  "run_at": "2026-09-15",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-08",
-    "window_end": "2026-09-14"
+    "window_start": "2026-09-09",
+    "window_end": "2026-09-15"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "team accountability",
-      "audience": "creator-founder",
-      "format": "FAQ answer page",
-      "intent": "before you book",
-      "modifier": "practical",
-      "intended_title": "Team Accountability: Practical Faq Answer Page Before You Book",
+      "cluster": "AI delegation",
+      "audience": "solo founder",
+      "format": "comparison guide",
+      "intent": "for careful decision-makers",
+      "modifier": "editorial",
+      "intended_title": "Ai Delegation: Editorial Comparison Guide For Careful Decision-Makers",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "38330f9b4b467738f99861135f12a263094bb2b042dc754eb637eaa424e0d9f4",
-      "deferred_on": "2026-09-14",
+      "signature": "7bc0757d1aa49ca323c7f61190cda9c74f457ba8e074d1472319f8f095b35c6b",
+      "deferred_on": "2026-09-15",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-14",
+      "deferred_on": "2026-09-15",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "dental decision resources",
-      "audience": "equine professional",
-      "format": "prep guide",
-      "intent": "before you pay",
-      "modifier": "AEO-ready",
-      "intended_title": "Dental Decision Resources: Aeo-Ready Prep Guide Before You Pay",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "immigration medical exam applicant",
+      "format": "question checklist",
+      "intent": "before you call",
+      "modifier": "plain-English",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Plain-English Question Checklist Before You Call",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "deaa70f605859b6121078fb0a6e9f616d32f2485cc22ebfc9b7370ce50238011",
-      "deferred_on": "2026-09-14",
+      "signature": "6a9b68e2f3fa159f3a695704d6424e619666bea7cc68ab68ee1c61bf807a5e1c",
+      "deferred_on": "2026-09-15",
       "reason": "weekly_publication_cap"
     }
   ]
