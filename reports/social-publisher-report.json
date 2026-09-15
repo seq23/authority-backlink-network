@@ -37,7 +37,7 @@
     "linkedin": 0,
     "x": 0
   },
-  "buffer_queued_this_run": 1,
+  "buffer_queued_this_run": 2,
   "delivery_routes": {
     "x": {
       "route": "buffer",
@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 3})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 4})",
         "halted": null,
         "already_scheduled_in_buffer": 0,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
@@ -54,24 +54,24 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 3,
+        "policy_daily_limit": 4,
         "free_plan_queue_depth_limit": 10,
-        "queued_in_buffer_now": 8,
+        "queued_in_buffer_now": 7,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
-          "free_plan_queue_depth": 1,
-          "network_policy_daily": 3
+          "free_plan_queue_depth": 2,
+          "network_policy_daily": 4
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
           "limit": 10,
-          "used": 8,
+          "used": 7,
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-15": 2,
+            "2026-09-15": 0,
             "2026-09-16": 4,
-            "2026-09-17": 2,
+            "2026-09-17": 3,
             "2026-09-18": 0,
             "2026-09-19": 0,
             "2026-09-20": 0,
@@ -87,9 +87,9 @@
           "source": "dailyPostingLimits summed by date",
           "scope": "organization (every connected channel)"
         },
-        "headroom_at_open": 1,
-        "attempts": 1,
-        "accepted": 1,
+        "headroom_at_open": 2,
+        "attempts": 2,
+        "accepted": 2,
         "remaining": 0,
         "plan_limits": {
           "channels": 3,
@@ -122,15 +122,15 @@
   },
   "attempted_this_run": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 4
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
-  "deferred_waiting_for_delivery_route": 511,
+  "deferred_waiting_for_delivery_route": 509,
   "route_only_platforms": [
     "x"
   ],
@@ -144,33 +144,50 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1092,
+  "still_postable_after_run": 1090,
   "attempts": [
     {
-      "index": 435,
+      "index": 437,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: Memphis Event Vendors: Citation-Friendly Timeline Guide Before You Choose.\n\nhttps://m"
+      "preview": "Useful citation, not fake ranking: Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers.\n\nht"
+    },
+    {
+      "index": 439,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Useful citation, not fake ranking: Founder Operating Systems: Beginner-Safe Operator Playbook For Careful Decision-Maker"
     }
   ],
   "successes": [
     {
-      "index": 435,
+      "index": 437,
       "platform": "x",
       "brand": null,
-      "id": "6aa95705a917ac169ee550d3",
+      "id": "6aa971d7f09837c8f6528efe",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-17T15:39:00.000Z"
+      "due_at": "2026-09-17T16:55:00.000Z"
+    },
+    {
+      "index": 439,
+      "platform": "x",
+      "brand": null,
+      "id": "6aa97232374039999f77c0ab",
+      "via": "buffer",
+      "published": false,
+      "buffer_status": "scheduled",
+      "due_at": "2026-09-18T13:12:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "brand_rotation_policy": {
     "quota_count": 15,
