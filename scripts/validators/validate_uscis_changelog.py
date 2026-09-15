@@ -40,6 +40,16 @@ What it checks
   staleness is honest  a source with no successful check may not be presented on
                        the page as current, and the page must name every tracked
                        source.
+  citations stay       the published page may not carry the same absolute
+  distinct             (href, anchor text) pair twice, and the renderer is driven
+                       through two entries from the same source to prove it never
+                       will. Four sources checked weekly means every source will
+                       have two entries; when that first happened (2026-09-15) the
+                       identical "Primary source" anchor on both entries failed
+                       build_site_navigation.py's repeated-anchor audit two steps
+                       after this page was rendered, under the navigation step's
+                       name, and validation/repair.py would otherwise have deleted
+                       the second citation from a YMYL page.
 
 Hard-fails if it examines zero items. A guard that iterates an empty list reports
 PASS forever, and the green receipt is then taken as proof of the thing it never
@@ -59,6 +69,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import uscis_changelog as U  # noqa: E402
+import build_uscis_changelog_page as PAGE_BUILDER  # noqa: E402
+import build_site_navigation as NAV  # noqa: E402
 
 LANE = ROOT / "data/uscis-changelog"
 TRACKED = LANE / "tracked-sources.json"
@@ -205,6 +217,66 @@ def check_entries(report: Report, entries: list[dict], page: str) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Property 4 -- every citation on the page is distinct, proved on a synthetic
+# page with two entries from one source, which is the case that broke.
+# ---------------------------------------------------------------------------
+
+def synthetic_entry(source: dict, day: str) -> dict:
+    return {
+        "id": f"{day}-{source['id']}",
+        "date_observed": day,
+        "checked_at": f"{day}T13:00:00+00:00",
+        "source_id": source["id"],
+        "source_url": source["url"],
+        "source_title": source["title"],
+        "publisher": source["publisher"],
+        "headline": CLEAN_ENTRY["headline"],
+        "summary": CLEAN_ENTRY["summary"],
+        "quotes": CLEAN_ENTRY["quotes"],
+        "evidence": {"previous_captured": f"{day}T12:00:00+00:00",
+                     "added": FIXTURE_AFTER, "removed": FIXTURE_BEFORE},
+        "model": "fixture",
+    }
+
+
+def check_citations_distinct(report: Report, tracked: dict, state: dict, page: str) -> None:
+    # The detector itself must be alive: a page with the same absolute anchor
+    # twice has to be caught, or the PASS below means nothing.
+    report.examined()
+    twice = ('<a href="https://example.gov/x">Words</a> and again '
+             '<a href="https://example.gov/x/">words</a>')
+    if not NAV.repeated_absolute_anchors(twice):
+        report.fail("repeated_absolute_anchors() did not catch a page carrying the same "
+                    "absolute anchor twice; the distinct-citation check is inert")
+        return
+
+    # The renderer, driven through two entries from EVERY tracked source at
+    # once. This is the shape the real page takes by the second week a source
+    # changes, and it is the shape that failed on 2026-09-15.
+    for source in tracked["sources"]:
+        report.examined()
+        entries = [synthetic_entry(source, "2026-01-13"), synthetic_entry(source, "2026-01-06")]
+        rendered = PAGE_BUILDER.build_page(tracked, entries, state)
+        repeats = NAV.repeated_absolute_anchors(rendered)
+        if repeats:
+            report.fail(f"two entries from {source['id']} render the same absolute "
+                        f"anchor twice ({repeats[0][1]!r}); the second citation would "
+                        f"be deleted by validation/repair.py and the nav rebuild "
+                        f"would go red")
+
+    if not tracked["sources"]:
+        report.fail("zero tracked sources, so the two-entries-per-source render "
+                    "proved nothing; this check may not pass on an empty loop")
+
+    # And the page actually published, as it stands.
+    report.examined()
+    repeats = NAV.repeated_absolute_anchors(page)
+    if repeats:
+        report.fail(f"the published page carries the same absolute anchor twice: "
+                    f"{repeats[0][0]} :: {repeats[0][1]!r}")
+
+
+# ---------------------------------------------------------------------------
 # Property 3 -- sources, snapshots and staleness.
 # ---------------------------------------------------------------------------
 
@@ -297,6 +369,7 @@ def main() -> int:
     prove_guard(report)
     check_entries(report, entries, page)
     check_sources(report, tracked, state, page)
+    check_citations_distinct(report, tracked, state, page)
 
     # Rule 0. Zero items examined is a failure, not a pass.
     if report.items == 0:
@@ -307,7 +380,8 @@ def main() -> int:
     print(f"USCIS CHANGELOG: {status}")
     print(f"  items examined: {report.items} "
           f"({len(entries)} published entr{'y' if len(entries) == 1 else 'ies'}, "
-          f"{len(tracked['sources'])} tracked source(s), 6 guard proofs)")
+          f"{len(tracked['sources'])} tracked source(s), 6 guard proofs, "
+          f"{len(tracked['sources'])} distinct-citation renders)")
     if not entries:
         print("  NAMED ZERO: no change has been recorded yet. The guard was still "
               "driven through its fixtures above, so this PASS is not an empty loop.")

@@ -42,6 +42,7 @@ jobs:
           python-version: '3.11'
 
       - name: Fetch the tracked USCIS pages, diff them, and write any entry
+        id: fetch
         # The only step that touches the network or the model. It advances a
         # snapshot ONLY once an entry exists for the change, so an OpenRouter
         # outage costs a week of latency and never a lost change.
@@ -51,9 +52,11 @@ jobs:
         run: python3 scripts/uscis_changelog.py
 
       - name: Render the published changelog
+        id: render
         run: python3 scripts/build_uscis_changelog_page.py --write
 
       - name: Give the page the publication's chrome, then a path in
+        id: chrome
         # Without this the changelog is an orphan the moment it is written, which
         # is the state that put all three publications at zero indexed pages.
         #
@@ -70,14 +73,17 @@ jobs:
           python3 scripts/build_site_navigation.py --write
 
       - name: Validate the entries against their stored evidence
+        id: validate_entries
         # Runs after the page is rendered, so it checks what was actually
         # published rather than what was intended.
         run: python3 scripts/validators/validate_uscis_changelog.py
 
       - name: Validate the release
+        id: validate_release
         run: python3 scripts/validate.py release
 
       - name: Commit the week's snapshots, entries and page
+        id: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "USCIS form and fee changelog: weekly check"
@@ -90,22 +96,56 @@ jobs:
         run: |
           python3 -c "import json,sys; r=json.load(open('reports/uscis-changelog-latest.json')); print('NAMED OUTCOME:', r['named_outcome']); print('sources checked:', r['sources_checked'], 'of', r['sources_declared']); print('entries written:', r['entries_written'])"
 
-      - name: Open an issue if a tracked source has gone blind
-        # Only when a source has been unreachable for two consecutive checks. A
-        # single bad afternoon at an agency is not worth an issue; a fortnight of
-        # not looking is, because that is the point at which the page starts
-        # lying by omission.
+      - name: Name the stage that failed
+        # The issue below used to assert "a tracked source has gone unreachable"
+        # for ANY red run. On 2026-09-15 the fetch stage was green (three 403s,
+        # all disclosed as named best-effort stops) and the red step was the
+        # navigation rebuild, so issue #105 sent its reader to the wrong file.
+        # The stage is read from the step outcomes, not guessed.
+        if: failure()
+        id: diagnosis
+        run: |
+          stage="unknown"
+          for pair in "fetch:${{ steps.fetch.outcome }}" \
+                      "render:${{ steps.render.outcome }}" \
+                      "chrome:${{ steps.chrome.outcome }}" \
+                      "validate_entries:${{ steps.validate_entries.outcome }}" \
+                      "validate_release:${{ steps.validate_release.outcome }}" \
+                      "commit:${{ steps.commit.outcome }}"; do
+            if [ "${pair#*:}" = "failure" ]; then stage="${pair%%:*}"; break; fi
+          done
+          case "$stage" in
+            fetch) hint="A tracked source has been unreachable for two consecutive checks, or the model/verifier rejected every draft. Read reports/uscis-changelog-latest.json for the source and reason; update data/uscis-changelog/tracked-sources.json if the agency moved the page." ;;
+            render) hint="scripts/build_uscis_changelog_page.py refused to write the page; its HARD_FAIL lines in the log name why (unregistered source, zero sources, or a repeated citation anchor)." ;;
+            chrome) hint="One of build_editorial_pages / build_robots / install_editorial_chrome / build_site_navigation failed. The last JSON receipt in that step's log has the failing key (hubs, orphans, repeated absolute anchors)." ;;
+            validate_entries) hint="scripts/validators/validate_uscis_changelog.py found an entry the stored evidence does not support, a stale source presented as current, or a repeated citation. Its HARD_FAIL lines name the entry." ;;
+            validate_release) hint="scripts/validate.py release blocked. Read the release receipt for the blocking validator." ;;
+            commit) hint="The auto-commit could not push (usually a non-fast-forward from a concurrent lane). Nothing is lost; the next run redoes the week." ;;
+            *) hint="No named step reported failure; read the run log." ;;
+          esac
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+          echo "hint=$hint" >> "$GITHUB_OUTPUT"
+          echo "FAILED STAGE: $stage"
+          echo "$hint"
+
+      - name: Open an issue naming the stage that failed
         if: failure()
         uses: dacbd/create-issue-action@v2
         with:
           token: ${{ github.token }}
-          title: "USCIS changelog: a tracked source has gone unreachable"
+          title: "USCIS changelog: weekly run failed at stage `${{ steps.diagnosis.outputs.stage }}`"
           body: |
-            The weekly USCIS changelog run failed. The usual cause is a tracked
-            page that has been unreachable for two consecutive checks, which
-            means the changelog has stopped observing it.
+            The weekly USCIS changelog run failed. The step that went red was
+            **${{ steps.diagnosis.outputs.stage }}**.
 
-            Nothing was published as "unchanged" for that source. Check
-            `reports/uscis-changelog-latest.json` for which source and why, and
-            update the URL in `data/uscis-changelog/tracked-sources.json` if the
-            agency has moved the page.
+            ${{ steps.diagnosis.outputs.hint }}
+
+            Step outcomes: fetch=${{ steps.fetch.outcome }},
+            render=${{ steps.render.outcome }}, chrome=${{ steps.chrome.outcome }},
+            validate_entries=${{ steps.validate_entries.outcome }},
+            validate_release=${{ steps.validate_release.outcome }},
+            commit=${{ steps.commit.outcome }}.
+
+            Nothing was published as "unchanged" for any source that was not
+            reached; unreachable sources are disclosed on the page, not hidden.
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
