@@ -60,6 +60,7 @@ STALE_AFTER_DAYS = 14
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from build_site_navigation import repeated_absolute_anchors  # noqa: E402
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
 CLARITY_RE = re.compile(r"<script data-clarity-loader>.*?</script>", re.S | re.I)
@@ -160,9 +161,20 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
                 f'<h3>{esc(e["date_observed"])} &mdash; {esc(e["headline"])}</h3>'
                 f'<p>{esc(e["summary"])}</p>'
                 f'<p><strong>What the agency page says, verbatim:</strong></p>{quotes}'
+                # The anchor text carries the entry's own observed date. Every
+                # entry links the page it diffed, and a source that changes twice
+                # (the ordinary case: four sources, checked weekly, forever) puts
+                # the same URL on this page twice. Two anchors with the same href
+                # AND the same words are what `build_site_navigation.py` reports
+                # as a repeated absolute anchor and what validation/repair.py
+                # would otherwise silently strip; the same words on the same URL
+                # is the exact key, so "as observed <date>" keeps each entry's
+                # citation distinct. Entry ids are unique per (date, source), so
+                # this text is too.
                 f'<p class="note"><strong>Primary source:</strong> '
                 f'<a href="{esc(e["source_url"])}" data-source="external-authority" '
-                f'rel="noopener">{esc(e["publisher"])}: {esc(e["source_title"])}</a><br>'
+                f'rel="noopener">{esc(e["publisher"])}: {esc(e["source_title"])}, '
+                f'as observed {esc(e["date_observed"])}</a><br>'
                 f'<strong>Date checked:</strong> {esc(e["checked_at"][:10])}<br>'
                 f'<strong>Compared against the copy captured:</strong> '
                 f'{esc(e["evidence"]["previous_captured"][:10])}</p>'
@@ -386,6 +398,16 @@ def main() -> int:
         return 1
 
     page = build_page(tracked, entries, state)
+    repeats = repeated_absolute_anchors(page)
+    if repeats:
+        # Refuse here, under this stage's own name, rather than let the nav
+        # rebuild two steps later report it as a navigation problem.
+        print("USCIS CHANGELOG PAGE: FAIL")
+        for href, words in sorted(set(repeats)):
+            print(f"  HARD_FAIL the rendered page would carry the same absolute anchor "
+                  f"twice ({href} :: {words!r}); validation/repair.py deletes the "
+                  f"second copy, so the page was NOT written")
+        return 1
     target = ROOT / PUBLICATIONS[tracked["lane"]]["folder"] / SLUG
     changed = (not target.exists()) or target.read_text(encoding="utf-8") != page
     if args.write and changed:
