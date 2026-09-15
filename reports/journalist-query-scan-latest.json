@@ -1,54 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-15T12:24:50+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 9,
+  "run_at": "2026-09-15T18:28:02+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
-  "dropped_as_ungroundable": 1,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "Looking for mortgage experts to weigh in on HELOCs",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Looking for mortgage experts to weigh in on home equity loans",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Stories: How Relationships Change How We See Ourselves",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "What the Holidays Are Really Like in Retail (and the Pet Industry)",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Christmas Gift Guides 2026",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking SEO/GEO experts for an article on web optimization in the AI era",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Raleigh, NC Hotel to Host Famadillo Travel Writer",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Winter sports destinations",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Toronto interviews: Retail and tech leaders for the RTMNexus podcast",
-      "why": "She would have had to invent retail/tech executive credentials, Toronto availability, and relevant expertise in the requested topics (retail transformation, commerce, AI, customer experience)."
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
