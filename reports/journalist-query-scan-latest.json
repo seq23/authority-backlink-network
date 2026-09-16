@@ -1,46 +1,54 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-16T12:26:06+00:00",
+  "run_at": "2026-09-16T18:29:21+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 7,
+  "queries_ingested": 9,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 7,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 8,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
   "drops": [
     {
-      "summary": "Senior care community representatives on navigating heightened emotions during sales calls",
+      "summary": "Senior care community representatives on generating resident participation in chair yoga.",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Senior care community representatives on reducing bathing stress for residents",
+      "summary": "Obesity Medicine Specialist Needed for Opinions on Endocrine Society New Scientific Statement",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking Sustainable Fashion Experts (and products)",
+      "summary": "U.S. CPA or economist needed to compare the impact of tariff-related costs to tax savings for U.S. homeowners in 2026",
+      "why": "excluded: 'cpa'"
+    },
+    {
+      "summary": "I’m working on a feature story about veterans building new purpose and opportunity through farming, agriculture, and ent",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking Brands for Holiday Gift Guide Roundup",
+      "summary": "Solid-state battery/EV battery experts: Toyota’s 620-mile range/10-minute charging claims",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking people who do internal innovation to author a prompt card in our conversation card deck.",
+      "summary": "Seeking Retirees: What Subscriptions Have You Cancelled and Not Missed?",
       "why": "matches no declared beat"
     },
     {
-      "summary": "At Home Fitness",
+      "summary": "Who Should Be on a CIO’s IT Risk Management Team?",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Cancer Bites Holiday Gift Guide and National Gift Bag Initiative",
+      "summary": "People Who Rent Their RV for Money: What Are Some Things That Can Eat Into Your Profits?",
       "why": "matches no declared beat"
+    },
+    {
+      "summary": "Business Leaders: How is AI helping your company accomplish more with less?",
+      "why": "She would have to invent claims about using AI to increase team capacity, accomplish more without adding resources, or how AI changed her approach to hiring and scaling."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
