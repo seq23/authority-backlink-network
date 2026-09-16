@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 5})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 2 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 2, 'network_policy_daily': 4})",
         "halted": null,
         "already_scheduled_in_buffer": 0,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
@@ -54,13 +54,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 5,
+        "policy_daily_limit": 4,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 7,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 2,
-          "network_policy_daily": 5
+          "network_policy_daily": 4
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -69,9 +69,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-16": 2,
+            "2026-09-16": 0,
             "2026-09-17": 4,
-            "2026-09-18": 1,
+            "2026-09-18": 3,
             "2026-09-19": 0,
             "2026-09-20": 0,
             "2026-09-21": 0,
@@ -126,11 +126,11 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 2
+    "x": 4
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
-  "deferred_waiting_for_delivery_route": 508,
+  "deferred_waiting_for_delivery_route": 506,
   "route_only_platforms": [
     "x"
   ],
@@ -144,50 +144,50 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1089,
+  "still_postable_after_run": 1087,
   "attempts": [
     {
-      "index": 1471,
-      "platform": "x",
-      "brand": null,
-      "attempt_count": 1,
-      "preview": "New resource: Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters. Better questions, fewer loud claims.\n\nhttps:/"
-    },
-    {
-      "index": 441,
+      "index": 443,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: Birthday Room Setups: Resource-Backed Comparison Guide When You Need To Ask Better Qu"
+      "preview": "Useful citation, not fake ranking: Compassion Fatigue Resources: Aeo-Ready Decision Guide For First-Time Buyers.\n\nhttps:"
+    },
+    {
+      "index": 445,
+      "platform": "x",
+      "brand": null,
+      "attempt_count": 2,
+      "preview": "Useful citation, not fake ranking: Startup Resource Libraries: Decision-Focused Prep Guide Before You Sign.\n\nhttps://fou"
     }
   ],
   "successes": [
     {
-      "index": 1471,
+      "index": 443,
       "platform": "x",
       "brand": null,
-      "id": "6aaaa85fcc0de450ad763f47",
+      "id": "6aaac34585eb6b8fcc2b6a97",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-18T14:28:00.000Z"
+      "due_at": "2026-09-18T16:30:00.000Z"
     },
     {
-      "index": 441,
+      "index": 445,
       "platform": "x",
       "brand": null,
-      "id": "6aaaa8b846828b0472735fc7",
+      "id": "6aaac3b8c28aac9023d7b2a9",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-18T15:14:00.000Z"
+      "due_at": "2026-09-19T13:23:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 2
   },
   "brand_rotation_policy": {
     "quota_count": 15,
