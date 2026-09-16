@@ -1,17 +1,46 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-15T18:28:02+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-16T12:26:06+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 7,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
+  "dropped_by_beat_filter": 7,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Senior care community representatives on navigating heightened emotions during sales calls",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Senior care community representatives on reducing bathing stress for residents",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Sustainable Fashion Experts (and products)",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Brands for Holiday Gift Guide Roundup",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking people who do internal innovation to author a prompt card in our conversation card deck.",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "At Home Fitness",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Cancer Bites Holiday Gift Guide and National Gift Bag Initiative",
+      "why": "matches no declared beat"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
