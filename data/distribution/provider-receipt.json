@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-15T15-42-08.939884Z-34990137130",
-  "attempted_at": "2026-09-15T15:42:08.939884Z",
+  "receipt_id": "2026-09-16T15-42-15.752259Z-35116997678",
+  "attempted_at": "2026-09-16T15:42:15.752259Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "c0879df25c2e3a323ffcb3bd87b2a92917fa40e567a048a5f33c6ad5ceaa0283",
-        "url_count": 107
+        "sha256": "783aa65b0dfa5606043f3a6f20ea3467236e59c8381c7de55c16b7da55210a55",
+        "url_count": 108
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 107,
-        "offered_urls": 107,
+        "submitted_urls": 108,
+        "offered_urls": 108,
         "batches": [
           {
-            "urls": 107,
+            "urls": 108,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 80,
-        "verified": 80,
+        "checked": 81,
+        "verified": 81,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1099,6 +1111,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -2031,7 +2056,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "384db64b5c01b0596af300d4b151c438316dac127b3ebea6a89c1dff83541d18",
+        "sha256": "6b55d9cecfd868c82431ee6928ef085c6fe1252cf995e80fc3f6fc7c79ffa203",
         "url_count": 422
       },
       "indexnow": {
@@ -4752,7 +4777,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-15T15-42-08.939884Z-34990137130.json"
+    "history": "data/distribution/receipts/2026-09-16T15-42-15.752259Z-35116997678.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
