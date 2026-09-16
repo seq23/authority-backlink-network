@@ -1,48 +1,29 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-15",
+  "run_at": "2026-09-16",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 3,
-    "allowance": 0,
-    "window_start": "2026-09-09",
-    "window_end": "2026-09-15"
+    "published_in_window": 1,
+    "allowance": 2,
+    "window_start": "2026-09-10",
+    "window_end": "2026-09-16"
   },
-  "deferred": 3,
+  "deferred": 1,
   "queue": [
-    {
-      "publication": "founder-operator",
-      "cluster": "AI delegation",
-      "audience": "solo founder",
-      "format": "comparison guide",
-      "intent": "for careful decision-makers",
-      "modifier": "editorial",
-      "intended_title": "Ai Delegation: Editorial Comparison Guide For Careful Decision-Makers",
-      "target_brand": "A Player Mode",
-      "target_url": "https://www.aplayermode.com/",
-      "signature": "7bc0757d1aa49ca323c7f61190cda9c74f457ba8e074d1472319f8f095b35c6b",
-      "deferred_on": "2026-09-15",
-      "reason": "weekly_publication_cap"
-    },
-    {
-      "publication": "memphis-local",
-      "deferred_on": "2026-09-15",
-      "reason": "no_topically_eligible_affiliated_link"
-    },
     {
       "publication": "professional-resources",
       "cluster": "preparing records before a specialist appointment",
-      "audience": "immigration medical exam applicant",
-      "format": "question checklist",
-      "intent": "before you call",
-      "modifier": "plain-English",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Plain-English Question Checklist Before You Call",
+      "audience": "horse buyer",
+      "format": "decision guide",
+      "intent": "before you choose",
+      "modifier": "low-risk",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Decision Guide Before You Choose",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "6a9b68e2f3fa159f3a695704d6424e619666bea7cc68ab68ee1c61bf807a5e1c",
-      "deferred_on": "2026-09-15",
+      "signature": "a7f40960ab06ad2a011ea7f72aaf579eb10e9e3a013f853f75bdca86cb8c07bc",
+      "deferred_on": "2026-09-16",
       "reason": "weekly_publication_cap"
     }
   ]
