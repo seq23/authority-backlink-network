@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-16T15-42-15.752259Z-35116997678",
-  "attempted_at": "2026-09-16T15:42:15.752259Z",
+  "receipt_id": "2026-09-17T15-41-59.825560Z-35241877573",
+  "attempted_at": "2026-09-17T15:41:59.825560Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "783aa65b0dfa5606043f3a6f20ea3467236e59c8381c7de55c16b7da55210a55",
-        "url_count": 108
+        "sha256": "9ccbd6d495df0fd8f6c3088ba0d3f2ffc527aa99b192c298ea7965c80cd99b55",
+        "url_count": 109
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 108,
-        "offered_urls": 108,
+        "submitted_urls": 109,
+        "offered_urls": 109,
         "batches": [
           {
-            "urls": 108,
+            "urls": 109,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 81,
-        "verified": 81,
+        "checked": 82,
+        "verified": 82,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1118,6 +1118,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4777,7 +4790,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-16T15-42-15.752259Z-35116997678.json"
+    "history": "data/distribution/receipts/2026-09-17T15-41-59.825560Z-35241877573.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
