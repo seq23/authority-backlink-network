@@ -1,29 +1,29 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-16",
+  "run_at": "2026-09-17",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 1,
     "allowance": 2,
-    "window_start": "2026-09-10",
-    "window_end": "2026-09-16"
+    "window_start": "2026-09-11",
+    "window_end": "2026-09-17"
   },
   "deferred": 1,
   "queue": [
     {
       "publication": "professional-resources",
-      "cluster": "preparing records before a specialist appointment",
-      "audience": "horse buyer",
-      "format": "decision guide",
-      "intent": "before you choose",
-      "modifier": "low-risk",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Decision Guide Before You Choose",
+      "cluster": "dental decision resources",
+      "audience": "high-achieving woman",
+      "format": "resource roundup",
+      "intent": "when you need to ask better questions",
+      "modifier": "2026-ready",
+      "intended_title": "Dental Decision Resources: 2026-Ready Resource Roundup When You Need To Ask Better Questions",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/guides/",
-      "signature": "a7f40960ab06ad2a011ea7f72aaf579eb10e9e3a013f853f75bdca86cb8c07bc",
-      "deferred_on": "2026-09-16",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "fbed1784c8966a620b2b5c39d432ff4b881293640798aa7bef4eafb33d144ebe",
+      "deferred_on": "2026-09-17",
       "reason": "weekly_publication_cap"
     }
   ]

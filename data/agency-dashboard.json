@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-16",
+  "as_of": "2026-09-17",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 8,
     "approved_target_urls": 84,
     "serviced_target_urls": 64,
-    "backlink_rows": 617,
-    "unique_source_editorials": 586,
+    "backlink_rows": 618,
+    "unique_source_editorials": 587,
     "live_verified_rows": 353,
     "indexed_rows": 1
   },
@@ -706,10 +706,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 33,
+      "backlink_count": 34,
       "live_verified_count": 16,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose.html",
+          "source_title": "Ai Workforce Design: Low-Risk Prep Guide Before You Choose",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-09-17",
+          "release_date": "2026-09-17",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters.html",
