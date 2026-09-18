@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-17T18:30:51+00:00",
+  "run_at": "2026-09-18T12:24:31+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 9,
+  "queries_ingested": 8,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 9,
+  "dropped_by_beat_filter": 8,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,41 +14,37 @@
   "stops": [],
   "drops": [
     {
-      "summary": "How transparency impacts AI recommendations (AEO) and conversion",
+      "summary": "Doctors Needed to Talk Work/Life Balance",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Senior HR Leaders Wanted for Candid Podcast Conversations",
+      "summary": "Expert Insights on Using AI for Coupons, Comparison Shopping, and Deal Finding",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking Authors,Writers for Upcoming Interviews on The Book Stage Radio",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Seeking opera singers who take GLP-1 meds",
+      "summary": "I’m working on a feature story about veterans building new purpose and opportunity through farming, agriculture, and ent",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Halloween Entertaining and All Things Halloween",
+      "summary": "Female caregiver willing to share her story",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Looking for input from cleaning experts about most annoying things to clean",
+      "summary": "Looking for current or former professional athletes to be guests on an ESPN LA-affiliated radio show",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Landscapers or gardening/landscaping tool experts to discuss leaf blowers and leaf vacuums",
+      "summary": "Seeking cleaning expert to explain cleaning mistakes that can ruin a stainless steel sink",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Essentials for an Organized Home and Kitchen, Ready for the Holidays",
+      "summary": "Bougie Gifts for Women",
       "why": "matches no declared beat"
     },
     {
-      "summary": "ISO NYC-based Mom/Dad or Childcare Provider for Video Podcast",
+      "summary": "Who Should Be on a CIO’s IT Risk Management Team?",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
