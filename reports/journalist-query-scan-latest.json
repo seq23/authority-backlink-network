@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-18T12:24:31+00:00",
+  "run_at": "2026-09-18T18:28:50+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 8,
+  "queries_ingested": 6,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
+  "dropped_by_beat_filter": 6,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,37 +14,29 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Doctors Needed to Talk Work/Life Balance",
+      "summary": "Seeking experts to talk about \"dopamine sites\" that simulate shopping experiences",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Expert Insights on Using AI for Coupons, Comparison Shopping, and Deal Finding",
+      "summary": "Looking for Home Decor Experts/DIY Bloggers/Authors of Decor Books to Comment on How to Turn Nooks in Your Home Into Rea",
       "why": "matches no declared beat"
     },
     {
-      "summary": "I’m working on a feature story about veterans building new purpose and opportunity through farming, agriculture, and ent",
+      "summary": "Best Home Maintenance/Improvement Services",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Female caregiver willing to share her story",
+      "summary": "Best Home and Backyard Furniture for Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Looking for current or former professional athletes to be guests on an ESPN LA-affiliated radio show",
+      "summary": "Products Needed: 15th Annual Breast Cancer Awareness Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking cleaning expert to explain cleaning mistakes that can ruin a stainless steel sink",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Bougie Gifts for Women",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Who Should Be on a CIO’s IT Risk Management Team?",
+      "summary": "Essentials for an Organized Home and Kitchen, Ready for the Holidays",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 6 queries were read from 1 digest(s) and every one was dropped (6 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
