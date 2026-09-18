@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-17T15-41-59.825560Z-35241877573",
-  "attempted_at": "2026-09-17T15:41:59.825560Z",
+  "receipt_id": "2026-09-18T15-41-41.712865Z-35363922304",
+  "attempted_at": "2026-09-18T15:41:41.712865Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "9ccbd6d495df0fd8f6c3088ba0d3f2ffc527aa99b192c298ea7965c80cd99b55",
-        "url_count": 109
+        "sha256": "92e0dacf3581670de3c41adb770cbeb9ebbd402759cfabbe759833ad8ed08f39",
+        "url_count": 110
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 109,
-        "offered_urls": 109,
+        "submitted_urls": 110,
+        "offered_urls": 110,
         "batches": [
           {
-            "urls": 109,
+            "urls": 110,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 82,
-        "verified": 82,
+        "checked": 83,
+        "verified": 83,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1131,6 +1131,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4790,7 +4803,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-17T15-41-59.825560Z-35241877573.json"
+    "history": "data/distribution/receipts/2026-09-18T15-41-41.712865Z-35363922304.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
