@@ -1,34 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-18",
+  "run_at": "2026-09-19",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 2,
-    "allowance": 1,
-    "window_start": "2026-09-12",
-    "window_end": "2026-09-18"
+    "published_in_window": 3,
+    "allowance": 0,
+    "window_start": "2026-09-13",
+    "window_end": "2026-09-19"
   },
-  "deferred": 2,
+  "deferred": 3,
   "queue": [
     {
+      "publication": "founder-operator",
+      "cluster": "team accountability",
+      "audience": "venture-backed founder",
+      "format": "FAQ answer page",
+      "intent": "for careful decision-makers",
+      "modifier": "checklist-driven",
+      "intended_title": "Team Accountability: Checklist-Driven Faq Answer Page For Careful Decision-Makers",
+      "target_brand": "A Player Mode",
+      "target_url": "https://www.aplayermode.com/",
+      "signature": "82c544720bb0fb9ab99f1f2c27b47f7d353d21c3b5c5e40811eb7cce7a25f981",
+      "deferred_on": "2026-09-19",
+      "reason": "weekly_publication_cap"
+    },
+    {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-18",
+      "deferred_on": "2026-09-19",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "injured person researching next steps",
-      "format": "timeline guide",
-      "intent": "before you choose",
-      "modifier": "plain-English",
-      "intended_title": "Dental Decision Resources: Plain-English Timeline Guide Before You Choose",
+      "audience": "barn owner",
+      "format": "resource roundup",
+      "intent": "when timing matters",
+      "modifier": "no-fluff",
+      "intended_title": "Dental Decision Resources: No-Fluff Resource Roundup When Timing Matters",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "39589ffc241109b2afa559b1ef9be679168fb9e86a968c54b6acf7c0d1538ab5",
-      "deferred_on": "2026-09-18",
+      "signature": "4fac7f3c6665ce9a3e4a12a11e2a2e2ad3a62441c5331b1b97258a815382dd37",
+      "deferred_on": "2026-09-19",
       "reason": "weekly_publication_cap"
     }
   ]
