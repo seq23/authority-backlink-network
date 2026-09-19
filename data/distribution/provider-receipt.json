@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-18T15-41-41.712865Z-35363922304",
-  "attempted_at": "2026-09-18T15:41:41.712865Z",
+  "receipt_id": "2026-09-19T15-40-11.525831Z-35452497154",
+  "attempted_at": "2026-09-19T15:40:11.525831Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "92e0dacf3581670de3c41adb770cbeb9ebbd402759cfabbe759833ad8ed08f39",
+        "sha256": "57343ca4537bfbf42c3bc9afaa2fa68ac8cc38bcbec180e19b11ff5f8687cd90",
         "url_count": 110
       },
       "indexnow": {
@@ -51,21 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 1,
-        "inspected_urls": 1,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -4803,7 +4791,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-18T15-41-41.712865Z-35363922304.json"
+    "history": "data/distribution/receipts/2026-09-19T15-40-11.525831Z-35452497154.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
