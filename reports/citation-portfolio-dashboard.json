@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-09-19",
+  "as_of": "2026-09-20",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -229,8 +229,7 @@
   },
   "lifecycle": {
     "approved_destination": 241,
-    "live_verified": 354,
-    "source_discovered": 1
+    "live_verified": 355
   },
   "campaign_health": [
     {
