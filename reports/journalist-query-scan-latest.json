@@ -1,42 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-18T18:28:50+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 6,
+  "run_at": "2026-09-21T12:24:43+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 6,
+  "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "Seeking experts to talk about \"dopamine sites\" that simulate shopping experiences",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Looking for Home Decor Experts/DIY Bloggers/Authors of Decor Books to Comment on How to Turn Nooks in Your Home Into Rea",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Best Home Maintenance/Improvement Services",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Best Home and Backyard Furniture for Gift Guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Products Needed: 15th Annual Breast Cancer Awareness Guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Essentials for an Organized Home and Kitchen, Ready for the Holidays",
-      "why": "matches no declared beat"
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 6 queries were read from 1 digest(s) and every one was dropped (6 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
