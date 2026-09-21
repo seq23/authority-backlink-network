@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-20",
+  "run_at": "2026-09-21",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-14",
-    "window_end": "2026-09-20"
+    "window_start": "2026-09-15",
+    "window_end": "2026-09-21"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "team accountability",
+      "cluster": "hiring standards for small teams",
       "audience": "marketing lead",
-      "format": "prep guide",
-      "intent": "for first-time buyers",
-      "modifier": "plain-English",
-      "intended_title": "Team Accountability: Plain-English Prep Guide For First-Time Buyers",
+      "format": "comparison guide",
+      "intent": "when timing matters",
+      "modifier": "resource-backed",
+      "intended_title": "Hiring Standards For Small Teams: Resource-Backed Comparison Guide When Timing Matters",
       "target_brand": "A Player Mode",
       "target_url": "https://www.aplayermode.com/",
-      "signature": "d6703cac5ef2b57005e839ca7768099a1d888e4e34a9ff8343368cfb17bf8d7e",
-      "deferred_on": "2026-09-20",
+      "signature": "485cb1752b4c4a3793368347aa90208def00d3dfa14c616a2586672ed39a09a8",
+      "deferred_on": "2026-09-21",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-20",
+      "deferred_on": "2026-09-21",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "dental decision resources",
-      "audience": "barn owner",
-      "format": "budget/planning note",
-      "intent": "for busy operators",
-      "modifier": "resource-backed",
-      "intended_title": "Dental Decision Resources: Resource-Backed Budget/Planning Note For Busy Operators",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "dental patient",
+      "format": "resource roundup",
+      "intent": "before you call",
+      "modifier": "low-risk",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Resource Roundup Before You Call",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/guides/",
-      "signature": "0e13a916b764e474e0cb0a973cc594ef6fe0ed5bdfaba3878e528f1b2c6b1b0c",
-      "deferred_on": "2026-09-20",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "f51331d3cf3497ba9d815f7afefb7d72c1205b8fa64cfcd719e8d035203c1260",
+      "deferred_on": "2026-09-21",
       "reason": "weekly_publication_cap"
     }
   ]
