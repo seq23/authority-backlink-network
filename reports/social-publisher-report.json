@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 4})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 3})",
         "halted": null,
         "already_scheduled_in_buffer": 0,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
@@ -54,13 +54,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 4,
+        "policy_daily_limit": 3,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 8,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 1,
-          "network_policy_daily": 4
+          "network_policy_daily": 3
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -69,9 +69,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-22": 3,
+            "2026-09-22": 2,
             "2026-09-23": 4,
-            "2026-09-24": 1,
+            "2026-09-24": 2,
             "2026-09-25": 0,
             "2026-09-26": 0,
             "2026-09-27": 0,
@@ -126,11 +126,11 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
-  "deferred_waiting_for_delivery_route": 487,
+  "deferred_waiting_for_delivery_route": 486,
   "route_only_platforms": [
     "x"
   ],
@@ -144,33 +144,33 @@
   },
   "deferred_for_retry": 0,
   "restored_legacy_failures": 0,
-  "still_postable_after_run": 1068,
+  "still_postable_after_run": 1067,
   "attempts": [
     {
-      "index": 483,
+      "index": 485,
       "platform": "x",
       "brand": null,
       "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: Multiple Application Issues: Comparison-Friendly Budget/Planning Note For People Who "
+      "preview": "Useful citation, not fake ranking: Rental Application Packet: Beginner-Safe Red-Flag Checklist When Timing Matters.\n\nhtt"
     }
   ],
   "successes": [
     {
-      "index": 483,
+      "index": 485,
       "platform": "x",
       "brand": null,
-      "id": "6ab2833a499df9913440f676",
+      "id": "6ab291afeb284b640b6e157d",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-24T14:53:00.000Z"
+      "due_at": "2026-09-24T15:39:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 1
   },
   "brand_rotation_policy": {
     "quota_count": 15,
