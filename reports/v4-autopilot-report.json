@@ -1,20 +1,22 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-09-22",
-    "release_date": "2026-09-22",
-    "day_index": 88,
+    "date": "2026-09-23",
+    "release_date": "2026-09-23",
+    "day_index": 89,
     "target_volume": 3,
-    "generated": 0,
-    "published": 0,
-    "scores": [],
+    "generated": 1,
+    "published": 1,
+    "scores": [
+      88
+    ],
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 0,
     "self_heal_attempts": 0,
     "blocked_slots": [],
     "social_enqueued": {
-      "published_pages": 0,
+      "published_pages": 1,
       "platforms_enabled": [],
       "platforms_distributing": [
         "x"
@@ -35,12 +37,12 @@
         }
       },
       "pages_enqueued_by_platform": {
-        "x": 0
+        "x": 1
       },
       "pages_missing_by_platform": {
         "x": []
       },
-      "pages_enqueued_for_social": 0,
+      "pages_enqueued_for_social": 1,
       "pages_missing_social": []
     },
     "stats_before": {
@@ -50,8 +52,48 @@
       "hard_fails": 3
     }
   },
-  "generated": [],
-  "published": [],
+  "generated": [
+    {
+      "title": "Ai Delegation: Geo-Ready Faq Answer Page For People Who Need A Starting Point",
+      "publication": "founder-operator",
+      "score": 88,
+      "words": 595,
+      "rewrite_status": "not_needed",
+      "warnings": [],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": []
+    }
+  ],
+  "published": [
+    {
+      "title": "Ai Delegation: Geo-Ready Faq Answer Page For People Who Need A Starting Point",
+      "publication": "founder-operator",
+      "score": 88,
+      "words": 595,
+      "rewrite_status": "not_needed",
+      "warnings": [],
+      "hard_fails": [],
+      "self_healed": false,
+      "repair_attempts": 0,
+      "repair_history": [],
+      "path": "sites/founder-operator/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
+      "target_brand_id": "aplayer-mode",
+      "target_domain": "aplayermode.com",
+      "target_url": "https://www.aplayermode.com/",
+      "anchor": "A Player Mode",
+      "brand": "A Player Mode",
+      "social_hooks": [],
+      "destination_type": "",
+      "product_id": "",
+      "product_name": "",
+      "target_route": "",
+      "campaign_id": "",
+      "preferred_domain": "",
+      "used_preferred_domain": false
+    }
+  ],
   "scaling_policy": {
     "version": "v4.6-portfolio-citation-control",
     "goal": "Pursue 100,000 portfolio citation/impression opportunities in six months while preserving truthful evidence, contextual usefulness, and measured backlink quality.",
