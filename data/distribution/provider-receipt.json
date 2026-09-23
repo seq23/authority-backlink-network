@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-22T15-41-32.942017Z-35749065962",
-  "attempted_at": "2026-09-22T15:41:32.942017Z",
+  "receipt_id": "2026-09-23T15-43-16.599992Z-35883544539",
+  "attempted_at": "2026-09-23T15:43:16.599992Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "57343ca4537bfbf42c3bc9afaa2fa68ac8cc38bcbec180e19b11ff5f8687cd90",
-        "url_count": 110
+        "sha256": "e0ad743b3e03858f53e572f68b62c20bb901f7c24db2b5bb71ba4c306dc3d4a9",
+        "url_count": 111
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 110,
-        "offered_urls": 110,
+        "submitted_urls": 111,
+        "offered_urls": 111,
         "batches": [
           {
-            "urls": 110,
+            "urls": 111,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 83,
-        "verified": 83,
+        "checked": 84,
+        "verified": 84,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1132,6 +1144,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4791,7 +4816,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-22T15-41-32.942017Z-35749065962.json"
+    "history": "data/distribution/receipts/2026-09-23T15-43-16.599992Z-35883544539.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
