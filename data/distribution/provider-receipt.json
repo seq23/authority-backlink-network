@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-23T15-43-16.599992Z-35883544539",
-  "attempted_at": "2026-09-23T15:43:16.599992Z",
+  "receipt_id": "2026-09-24T15-43-01.708091Z-36022134332",
+  "attempted_at": "2026-09-24T15:43:01.708091Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "e0ad743b3e03858f53e572f68b62c20bb901f7c24db2b5bb71ba4c306dc3d4a9",
-        "url_count": 111
+        "sha256": "d2c08c4802934af77dbb9cb5ab052d2b928e3de4e12dc653107126b622a66ae1",
+        "url_count": 112
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 111,
-        "offered_urls": 111,
+        "submitted_urls": 112,
+        "offered_urls": 112,
         "batches": [
           {
-            "urls": 111,
+            "urls": 112,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 84,
-        "verified": 84,
+        "checked": 85,
+        "verified": 85,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1157,6 +1157,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4816,7 +4829,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-23T15-43-16.599992Z-35883544539.json"
+    "history": "data/distribution/receipts/2026-09-24T15-43-01.708091Z-36022134332.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
