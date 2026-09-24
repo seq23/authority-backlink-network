@@ -1,50 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-23T18:30:45+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 8,
+  "run_at": "2026-09-24T12:26:05+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 7,
-  "dropped_as_ungroundable": 1,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "Looking for experts, participants to speak about Art Hives",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking ophthalmologist/cornea specialist for story on FDA eye drop recalls",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Astronomers / Astrophysicists to comment on the daddy Jupiter memes",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Interior Design Essentials",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking a U.S.-based pediatric dermatologist to provide expert commentary on Baby Eczema",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "When Does A DIY Debt Payoff Plan Stop Being Realistic?",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "Cybersecurity Leaders: How are you giving clients greater peace of mind?",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Education Leaders: How are you helping learning adapt to the student?",
-      "why": "She would have to invent education credentials, leadership role in an EdTech organization, and student-focused products or programs."
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
