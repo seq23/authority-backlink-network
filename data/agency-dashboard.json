@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-23",
+  "as_of": "2026-09-24",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 8,
     "approved_target_urls": 84,
     "serviced_target_urls": 64,
-    "backlink_rows": 620,
-    "unique_source_editorials": 589,
+    "backlink_rows": 621,
+    "unique_source_editorials": 590,
     "live_verified_rows": 356,
     "indexed_rows": 1
   },
@@ -706,10 +706,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 36,
+      "backlink_count": 37,
       "live_verified_count": 19,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
+          "source_title": "Founder Operating Systems: Checklist-Driven Prep Guide For Careful Decision-Makers",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-09-24",
+          "release_date": "2026-09-24",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
