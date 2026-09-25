@@ -1,54 +1,54 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-24T18:31:05+00:00",
+  "run_at": "2026-09-25T12:26:04+00:00",
   "messages_read": 1,
   "digests_read": 1,
   "queries_ingested": 9,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 9,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 8,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
   "drops": [
     {
-      "summary": "Access to affordable hormone replacement therapy",
-      "why": "excluded: 'physician'"
-    },
-    {
-      "summary": "Retail and brand leaders for NRF Week 2027 AI commerce panel",
+      "summary": "Seeking: graduates with a master's in sports management or professionals working in the field",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking senior commercial real estate owners, CEOs, founders, and principals for CRE Power Players, an Authority Magazin",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Urgently Seeking Tips on Energizing Attendees at Meetings & Events",
+      "summary": "Seeking: graduates with an MFA",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Looking for Southern Interior Designers on Items to Buy at the Dollar Tree",
+      "summary": "Shopping Edit: What to pack for a ski trip this winter",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Vintage or Antiques Experts OR Interior Designers on Valuable Antique Chairs",
+      "summary": "Sources who are knowledgeable in AI and Machine Learning OR in foreign propaganda and corruption through an online means",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Looking for Vintage and Antiques Experts on Christmas and Holiday Decor",
+      "summary": "Professional Organizers: Share Your Favorite Organizing Products",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking experts: Why do corpses move and make noise?",
+      "summary": "Christmas Gift Guide: Seeking literary and lifestyle gifts for book lovers (newsletter + social feature)",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Where do Arizona residents most love to travel, and why?",
+      "summary": "Gifts for the Fashionista Woman",
       "why": "matches no declared beat"
+    },
+    {
+      "summary": "Looking for US Legal Expert to speak on recent Section 504 ruling",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Alternatives to AI Use in Modern Business",
+      "why": "She would have to claim her team avoids AI, describe team size, or characterize her business operations methods as AI-free alternatives."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
