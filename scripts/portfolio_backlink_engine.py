@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
 from affiliation import rel_attr
-from lib import lastmod_ledger, site_urls
+from lib import lastmod_ledger, meta_description, site_urls
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -60,6 +60,24 @@ def paragraph_for_factor(factor:str,idx:int)->str:
  ]
  return f"<p><strong>{html.escape(factor)}</strong> {openers[idx%len(openers)]} {closers[idx%len(closers)]}</p>"
 
+def seed_description(article) -> str:
+ """The page's own short answer when its first sentence fits 110-160 characters,
+ otherwise a title-led summary of what the page contains.
+
+ This was one mould around title.lower() for all 32 seed pages, which ran to
+ 161-189 characters on the longer titles (Bing and search snippets truncate
+ past 160). lib.meta_description raises rather than return anything outside
+ the bounds, so a new seed article cannot publish a bad one either.
+ """
+ title=article['title']
+ first=re.split(r'(?<=[.!?])\s+',article['direct_answer'].strip())[0]
+ return meta_description.first_fitting([
+  first,
+  f"{title}: the decision factors, questions to ask and common mistakes, with one disclosed related resource.",
+  f"{title}: the decision factors, the questions worth asking and the common mistakes to avoid.",
+  f"{title}: decision factors, questions to ask and common mistakes.",
+ ], f"seed article {article.get('id')}")
+
 def render(article,pub):
  title=article['title']; direct=article['direct_answer']; target=article['target_url']; anchor=article['anchor']; today=article['date']; topic_context=target_topic_context(article)
  factors=''.join(paragraph_for_factor(x,i) for i,x in enumerate(article['decision_factors']))
@@ -90,7 +108,7 @@ def render(article,pub):
   {'@type':'FAQPage','mainEntity':[{'@type':'Question','name':title,'acceptedAnswer':{'@type':'Answer','text':direct}}]},
  ]}
  return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, answer-first guide to {html.escape(title.lower())}, with decision factors, questions, mistakes, and a transparent related resource."><link rel="canonical" href="{html.escape(page_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(seed_description(article))}"><link rel="canonical" href="{html.escape(page_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body data-backlink-seed-id="{html.escape(article['id'])}"><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(direct)}</p><p><em>Updated {today}. This article is designed to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
 <p class="topic-context"><strong>Topic context:</strong> {html.escape(topic_context)}.</p>
 <h2>What this decision is really about</h2><p>{html.escape(direct)} The useful test is whether the plan still makes sense after responsibilities, exclusions, evidence, timing, and failure paths are visible. A polished promise is not enough; the operating details have to survive real-world use.</p><p>Start by writing the intended outcome in one sentence. Then identify the person who owns the decision, the people affected by it, the facts that are known, the facts still missing, and the point at which a qualified professional or provider must be consulted. This prevents a simple resource page from being mistaken for individualized advice.</p>

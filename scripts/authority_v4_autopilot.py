@@ -18,6 +18,7 @@ from lib import lastmod_ledger, site_urls
 from affiliation import rel_attr
 from byline import entity_for
 from lib import page_composer
+from lib import meta_description
 from lib import social_platforms
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -408,6 +409,28 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
 # with a cluster name substituted in.
 
 
+_TAKEN_TITLES: dict[str, set[str]] = {}
+_TITLE_RE = re.compile(r'<title>(.*?)</title>', re.S | re.I)
+
+
+def taken_titles(pub_key):
+    """Every <title> already published by this publication, casefolded.
+
+    Read from the tree rather than from state['published_titles'], because the
+    state ledger does not record which publication a title belongs to and does
+    not cover pages written by the other generators.
+    """
+    if pub_key not in _TAKEN_TITLES:
+        site = ROOT / PANTRY['publications'][pub_key]['site_path']
+        titles = set()
+        for path in site.rglob('*.html'):
+            m = _TITLE_RE.search(path.read_text(encoding='utf-8', errors='replace'))
+            if m:
+                titles.add(html.unescape(m.group(1).strip()).casefold())
+        _TAKEN_TITLES[pub_key] = titles
+    return _TAKEN_TITLES[pub_key]
+
+
 def generate_page(brief):
     pub = PANTRY['publications'][brief['publication']]
     title = brief['title']
@@ -498,8 +521,16 @@ def generate_page(brief):
     if faq_node:
         graph.append(faq_node)
     schema = {'@context': 'https://schema.org', '@graph': graph}
+    # Was one mould for every page ("A practical, human-first resource for
+    # {audience} comparing {cluster} without fake rankings or forced answers."),
+    # which Bing reported as duplicate descriptions wherever audience and cluster
+    # repeated. lib.meta_description builds it from everything the title is built
+    # from plus the audience, inside the 110-160 character bounds, or raises.
+    description = meta_description.daily_description(
+        cluster=cluster, audience=audience, fmt=brief['format'],
+        intent=brief['intent'], modifier=brief['modifier'])
     page = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="A practical, human-first resource for {html.escape(audience)} comparing {html.escape(cluster)} without fake rankings or forced answers."><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
 <body><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{html.escape(title)}</h1>
 {body_html}</article></main></body></html>'''
     return slug, page
@@ -541,6 +572,14 @@ def score_page(html_text, brief):
         score -= 30; hard_fails.append('unsafe_claim_or_fake_review_language')
     if brief.get('target_url', brief['target_domain']) not in html_text:
         score -= 20; hard_fails.append('missing_target_citation')
+    # generate_page() builds these inside the bounds; this catches the optional
+    # rewrite pass returning a page whose head no longer does.
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html_text)
+    if not desc or not meta_description.fits(html.unescape(desc.group(1))):
+        score -= 20; hard_fails.append('meta_description_out_of_bounds')
+    title = re.search(r'<title>(.*?)</title>', html_text, re.S)
+    if not title or len(html.unescape(title.group(1).strip())) < meta_description.TITLE_MIN:
+        score -= 20; hard_fails.append('title_too_short')
     return max(0, min(100, score)), words, warnings, hard_fails
 
 
@@ -765,6 +804,14 @@ def main():
             if brief['signature'] in state.get('published_signatures', []):
                 attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_signature'})
                 continue
+            if brief['title'].casefold() in taken_titles(pub_key):
+                # The signature includes the audience; the title does not. Two
+                # briefs differing only in audience used to publish the same
+                # <title> (memphis-local 2026-07-19 and 2026-08-22). A title is
+                # the page's identity to a search engine, so a repeat is a
+                # refusal, never a second page.
+                attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_title'})
+                continue
             slug, page = generate_page(brief)
             score, words, warnings, hard_fails = score_page(page, brief)
             rewrite_status = 'not_needed'
@@ -817,6 +864,7 @@ def main():
         state['published_hashes'].append(chash)
         state['published_signatures'].append(brief['signature'])
         state['published_titles'].append(brief['title'])
+        taken_titles(pub_key).add(brief['title'].casefold())
         pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': brief.get('brand_id',''), 'target_domain': brief['target_domain'], 'target_url': brief.get('target_url'), 'anchor': brief.get('anchor'), 'brand': brief['brand'], 'social_hooks': brief.get('social_hooks', []), 'destination_type': brief.get('destination_type',''), 'product_id': brief.get('product_id',''), 'product_name': brief.get('product_name',''), 'target_route': brief.get('target_route',''), 'campaign_id': brief.get('campaign_id',''), 'preferred_domain': brief.get('preferred_domain',''), 'used_preferred_domain': brief.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)

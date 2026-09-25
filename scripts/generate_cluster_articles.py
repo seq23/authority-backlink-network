@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from affiliation import rel_attr  # noqa: E402
 from byline import entity_for  # noqa: E402
-from lib import site_urls  # noqa: E402
+from lib import meta_description, site_urls  # noqa: E402
 
 CONTENT_DIR = ROOT / "content-bank/cluster-articles"
 LEDGER = ROOT / "data/link-registry.json"
@@ -188,6 +188,7 @@ def render(article: dict) -> str:
     # Extensionless, from the shared helper: the .html form 308s to this one.
     url = site_urls.page_url(domain, f"daily/{filename}")
     approved_link(article["target_brand_id"], article["target_url"])
+    meta_description.require(article["meta_description"], f"cluster article {article['id']}")
 
     sections = article["sections"]
     lead_sections = render_sections(sections[:1])

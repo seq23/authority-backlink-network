@@ -51,6 +51,8 @@ import json
 import re
 from pathlib import Path
 
+from lib import meta_description
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -1024,7 +1026,16 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
             breadcrumb_schema(trail),
         ],
     }
-    description = (f"{hub['summary']} {len(members)} pages from {pub_title}.")[:300]
+    # This was the summary plus "N pages from <publication>.", cut at 300, which
+    # ran to 164-211 characters on four hubs. The count suffix is the part that
+    # can give way; the summary never is. Raises if no form fits 110-160.
+    n = len(members)
+    description = meta_description.first_fitting([
+        f"{hub['summary']} {n} pages from {pub_title}.",
+        f"{hub['summary']} {n} pages in this topic.",
+        f"{hub['summary']} {n} pages.",
+        hub['summary'],
+    ], f"topic hub {hub.get('slug')}")
 
     return (
         '<!doctype html>\n<html lang="en">\n<head>'

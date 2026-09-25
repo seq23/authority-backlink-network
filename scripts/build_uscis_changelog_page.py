@@ -60,6 +60,14 @@ STALE_AFTER_DAYS = 14
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from lib import meta_description  # noqa: E402
+
+# Module level so scripts/sync_meta_descriptions.py reads the same string the
+# page is built with, and bounded at import so neither can carry a bad one.
+DESCRIPTION = meta_description.require(
+    "A dated record of changes to the USCIS filing-fee and form-edition pages. "
+    "Each entry quotes the agency's text, links its source and gives the date checked.",
+    "USCIS changelog")
 from build_site_navigation import repeated_absolute_anchors  # noqa: E402
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
@@ -102,10 +110,7 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
     header, footer, clarity = chrome(lane)
 
     title = "USCIS Form and Fee Changelog"
-    description = (
-        "A dated record of what changed on the USCIS filing-fee and form-edition "
-        "pages, and when. Every entry quotes the agency's own text, links the page "
-        "it was read from, and carries the date it was checked.")
+    description = DESCRIPTION
 
     # ---------------------------------------------------------------- sources
     source_rows = []

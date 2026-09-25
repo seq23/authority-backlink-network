@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from lib import meta_description  # noqa: E402
 DATASET_PATH = ROOT / "data/memphis-wedding-cost-2026.json"
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -174,6 +175,15 @@ def chrome(lane: str) -> tuple[str, str, str]:
     return header.group(0), footer.group(0), (clarity.group(0) if clarity else "")
 
 
+def describe(dataset: dict) -> str:
+    """The page's meta description, shared with scripts/sync_meta_descriptions.py."""
+    return meta_description.require(
+        f"Published prices from {len(dataset['vendors'])} Memphis-area wedding and event "
+        f"vendors, collected {dataset['collection_window']['start']}, and what they imply "
+        "about cost by guest count, with a full price table.",
+        "memphis-local wedding cost dataset")
+
+
 def build_page(dataset: dict) -> str:
     lane = dataset["lane"]
     pub = PUBLICATIONS[lane]
@@ -190,10 +200,7 @@ def build_page(dataset: dict) -> str:
     fx_low, fx_high = fixed_total(dataset)
     guest_rows = [totals(dataset, n) for n in dataset["derivation"]["guest_counts"]]
 
-    description = (
-        f"Published prices from {vendor_count} Memphis-area wedding and event vendors, "
-        f"collected {window['start']}, and what they imply about cost by guest count. "
-        "Method, sample size and exclusions stated; full table and CSV on the page.")
+    description = describe(dataset)
 
     dataset_ld = {
         "@context": "https://schema.org",

@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 86,
+    "runtime_operators": 88,
     "release_operators": 10,
     "workflow_operators": 8,
     "approved_target_urls": 84,
@@ -403,6 +403,12 @@
       "category": "Other"
     },
     {
+      "operator": "pages:sync-meta-descriptions",
+      "command": "npm run pages:sync-meta-descriptions",
+      "implementation": "python3 scripts/sync_meta_descriptions.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "pages:uscis-changelog",
       "command": "npm run pages:uscis-changelog",
       "implementation": "python3 scripts/build_uscis_changelog_page.py --write",
@@ -520,6 +526,12 @@
       "operator": "validate:journalist-query-lane",
       "command": "npm run validate:journalist-query-lane",
       "implementation": "python3 scripts/validators/validate_journalist_query_lane.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:meta-description-bounds",
+      "command": "npm run validate:meta-description-bounds",
+      "implementation": "python3 scripts/validators/validate_meta_description_bounds.py",
       "category": "Validation / release"
     },
     {
@@ -9534,7 +9546,7 @@
         {
           "source_path": "sites/memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
-          "source_title": "Wedding-Day Timeline: Plain-English Mistakes To Avoid For Careful Decision-Makers",
+          "source_title": "Wedding-Day Timeline: Plain-English Mistakes To Avoid For A Maid Or Matron Of Honor",
           "publication": "Memphis Vendor Library",
           "publication_id": "memphis",
           "scheduled_content_date": "2026-08-22",

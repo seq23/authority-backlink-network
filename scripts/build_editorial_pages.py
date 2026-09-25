@@ -52,6 +52,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from byline import entity_for, parent_company, subsidiary_clause  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
+from lib import meta_description  # noqa: E402
 
 # The exact sentence hostile_review.py requires on any page mentioning a
 # regulated subject. These pages all mention "legal" and "contract", so it is
@@ -316,7 +317,8 @@ produces a public record.</p>
     schema["@graph"].append(publisher_node)
     schema["@graph"][0]["publishingPrinciples"] = home + "/editorial-standards"
     return "masthead.html", url, title, \
-        "Ownership, accountability and editorial contact for " + pub["title"] + ".", schema, body
+        "Who owns, writes and edits " + pub["title"] + ", the projects it is affiliated "\
+        "with, and how to reach the editorial desk about anything published here.", schema, body
 
 
 def standards_page(pub, ed, pubed, editor_addr, corrections_addr) -> tuple:
@@ -463,8 +465,8 @@ covers sourcing, automated production and affiliation. The
                              "How to report an error and every correction issued.",
                              pub["title"], home, pub.get("mission", ""))
     return "corrections.html", url, title, \
-        "How to report an error in " + pub["title"] + ", and the full log of corrections "\
-        "issued.", schema, body
+        "How to report an error in " + pub["title"] + ", how the editorial desk reviews "\
+        "and fixes it, and the full public log of every correction issued.", schema, body
 
 
 def pubed_corrections(ed, pub_id) -> list:
@@ -545,7 +547,8 @@ declined automatically.</p>
                              "Byline policy and current contributors.",
                              pub["title"], home, pub.get("mission", ""))
     return "contributors.html", url, title, \
-        "Byline policy, contributor requirements and how to write for " + pub["title"] + ".", \
+        "The byline policy for " + pub["title"] + ", what a contributor must disclose "\
+        "before writing, and how to pitch an idea to the editorial desk.", \
         schema, body
 
 
@@ -691,6 +694,7 @@ def main() -> int:
                 builders.append(author_page(c, pub, ed, allowed))
 
         for rel_name, url, title, description, schema, body in builders:
+            meta_description.require(description, f"{pub['folder']}/{rel_name}")
             page = page_shell(title=title, description=description, url=url,
                               folder=pub["folder"], pub_title=pub["title"], domain=domain,
                               editor_addr=editor_addr, schema=schema, body=body)
