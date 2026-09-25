@@ -43,6 +43,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from lib import meta_description  # noqa: E402
 DATA = ROOT / "data/compiled/cfpb-consumer-reporting-companies-2025.json"
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
@@ -55,10 +56,10 @@ PUBLISHED = "2026-08-28"
 
 TITLE = "Consumer Reporting Companies: the CFPB's 2025 List, Compiled"
 H1 = "Every Consumer Reporting Company on the CFPB's 2025 List"
-DESCRIPTION = ("The Consumer Financial Protection Bureau's 2025 list of consumer "
-               "reporting companies, transcribed into one page: every company, its "
-               "category, whether it provides a free report, whether it offers a "
-               "security freeze, and where to write.")
+DESCRIPTION = ("The CFPB's 2025 list of consumer reporting companies on one page, with "
+               "each company's category, free-report and security-freeze policy, and "
+               "where to write.")
+meta_description.require(DESCRIPTION, "consumer reporting companies directory")
 
 DISCLAIMER = ("This page is informational. It is not legal, medical, mental-health, "
               "immigration, financial, or professional advice.")
@@ -406,7 +407,7 @@ def build(data: dict) -> str:
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(TITLE)} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(TITLE, pub["title"], SLUG))}</title>\n'
         f'<meta name="description" content="{esc(DESCRIPTION)}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'

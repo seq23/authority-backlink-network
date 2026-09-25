@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 86,
+    "runtime_operators": 88,
     "release_operators": 10,
     "workflow_operators": 8,
     "approved_target_urls": 84,
@@ -403,6 +403,12 @@
       "category": "Other"
     },
     {
+      "operator": "pages:sync-meta",
+      "command": "npm run pages:sync-meta",
+      "implementation": "python3 scripts/sync_page_meta.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "pages:uscis-changelog",
       "command": "npm run pages:uscis-changelog",
       "implementation": "python3 scripts/build_uscis_changelog_page.py --write",
@@ -532,6 +538,12 @@
       "operator": "validate:operator-doc-currency",
       "command": "npm run validate:operator-doc-currency",
       "implementation": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:page-meta-bounds",
+      "command": "npm run validate:page-meta-bounds",
+      "implementation": "python3 scripts/validators/validate_page_meta_bounds.py",
       "category": "Validation / release"
     },
     {
@@ -9534,7 +9546,7 @@
         {
           "source_path": "sites/memphis-local/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers.html",
-          "source_title": "Wedding-Day Timeline: Plain-English Mistakes To Avoid For Careful Decision-Makers",
+          "source_title": "Wedding-Day Timeline: Plain-English Mistakes To Avoid For A Maid Or Matron Of Honor",
           "publication": "Memphis Vendor Library",
           "publication_id": "memphis",
           "scheduled_content_date": "2026-08-22",

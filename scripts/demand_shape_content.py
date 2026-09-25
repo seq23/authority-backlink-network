@@ -185,9 +185,9 @@ FOUNDER_PAGES = [
         "title": "An AI Delegation Checklist for Operators",
         "h1": "An AI Delegation Checklist for Operators",
         "eyebrow": "Checklist grounded in a published framework",
-        "description": ("Before handing a recurring task to an AI system, work through these "
-                        "checks on reversibility, review, disclosure and failure, mapped to the "
-                        "NIST AI Risk Management Framework."),
+        "description": ("Checks to run before handing a recurring task to an AI system: "
+                        "reversibility, review, disclosure and failure, mapped to the NIST AI Risk "
+                        "Management Framework."),
         "direct_answer": (
             "Delegate a task to an AI system only after you can answer four things: how a "
             "wrong output would be noticed, who reviews it before it reaches anyone outside "
@@ -499,8 +499,8 @@ FOUNDER_PAGES = [
         "h1": "What to Ask an Event Production Vendor About Safety Standards",
         "eyebrow": "Checklist against an accredited standards programme",
         "description": ("The questions that separate a production vendor working to published "
-                        "entertainment technology standards from one improvising, and where those "
-                        "standards actually come from."),
+                        "entertainment technology standards from one improvising, and who "
+                        "publishes those standards."),
         "direct_answer": (
             "Ask which published standards the vendor works to, who on the crew is responsible "
             "for rigging and power, and what the plan is when something fails. The entertainment "
@@ -808,9 +808,9 @@ MEMPHIS_PAGES = [
         "title": "A Food Safety Checklist for a Grazing Table",
         "h1": "A Food Safety Checklist for a Grazing Table",
         "eyebrow": "Checklist grounded in the FDA Food Code",
-        "description": ("A grazing table sits out for hours, which is exactly the condition food "
-                        "safety rules exist for. What to plan, what to ask a caterer, and where the "
-                        "actual rules come from."),
+        "description": ("A grazing table sits out for hours, the exact condition food safety "
+                        "rules exist for: what to plan, what to ask a caterer and where the actual "
+                        "rules come from."),
         "direct_answer": (
             "The risk in a grazing table is time and temperature: it is designed to sit out and "
             "be picked at, which is the opposite of how perishable food is meant to be held. The "
@@ -1413,6 +1413,8 @@ PROFESSIONAL_PAGES = [
         "slug": "uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
         "published": PUBLISHED,
         "title": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
+        # <title> only; the heading keeps the full form. Bing flags titles over 70.
+        "seo_title": "USCIS Medical Exam Costs and Why the Envelope Stays Sealed",
         "h1": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
         "eyebrow": "Cost structure and procedure, from the agency",
         "description": ("Who sets the fee for a Form I-693 immigration medical examination, why the "
@@ -1569,9 +1571,9 @@ PROFESSIONAL_PAGES = [
         "title": "Comparing Recovery Residences by Level of Support",
         "h1": "Comparing Recovery Residences by Level of Support",
         "eyebrow": "Comparison against a national standard",
-        "description": ("Recovery residences are described by four levels of support under the NARR "
-                        "Standard. What the levels framework is, what to ask, and where the national "
-                        "helpline is."),
+        "description": ("The four NARR levels of support for recovery residences: what the levels "
+                        "framework means, what to ask a residence, and where to find the national "
+                        "helpline."),
         "direct_answer": (
             "Recovery residences are not interchangeable, and the vocabulary for telling them "
             "apart already exists. The National Alliance for Recovery Residences publishes a "
@@ -1724,8 +1726,8 @@ PROFESSIONAL_PAGES = [
         "title": "Answering a Lender Document Request Without Restarting the File",
         "h1": "Answering a Lender Document Request Without Restarting the File",
         "eyebrow": "Checklist for loan applicants",
-        "description": ("Why underwriters ask for the documents they ask for, how to answer a request "
-                        "completely the first time, and which federal resources explain the underlying ratios."),
+        "description": ("Why underwriters ask for the documents they do, how to answer a request fully "
+                        "the first time, and which federal resources explain the underlying ratios."),
         "direct_answer": (
             "A lender document request is usually not suspicion; it is an underwriter reconciling "
             "your file against published requirements. Answer it completely the first time, in one "

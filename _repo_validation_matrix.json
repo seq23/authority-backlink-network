@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "7c875bab0e5ac4eec7bfc75211199225b30f11278de3d99131a92520d0b5110a",
+  "plan_sha256": "0d72295586a95e06060e4dbe8829d0e7480bca155ce575635982fbe571b9a03f",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,11 +13,11 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 48,
+  "count": 49,
   "counts_by_severity": {
     "HARD_FAIL": 45,
     "SOFT_WARNING": 1,
-    "STRONG_WARNING": 2
+    "STRONG_WARNING": 3
   },
   "unclassified": [],
   "validators": [
@@ -333,6 +333,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "A page that ships two governance footers ships two identical /masthead anchors, which build_site_navigation.py's duplicate-anchor audit blocks the release on and which validation/repair.py would otherwise 'fix' by deleting an anchor and leaving its text as bare words. Run 34231670721 went red exactly here: the USCIS changelog published its first entry, that entry's <blockquote><footer> citation attribution became the first <footer> in the document, and install_editorial_chrome.py -- which searched for a bare <footer> and took the first hit -- installed the governance footer inside the blockquote while leaving the real page footer alone. The shape was unreachable while the changelog had zero entries, so a scan of sites/ reported PASS every day until the day it published. This guard is therefore behavioural: it feeds install() the shapes that trigger the defect and reads the output, as well as scanning the tree. It fails if it examined zero fixtures or zero pages.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "page_meta_bounds",
+      "severity": "STRONG_WARNING",
+      "classified": true,
+      "rationale": "Bing Webmaster and Site Scan, 25 Sep 2026: rule 118 (description too short) on founderoperatorlibrary.com/, /about and memphisvendorlibrary.com/, plus 25 more short, 60 over-long (161-238) and 62 duplicate-description groups from the daily generator's one sentence mould, one duplicate <title> (memphis daily 2026-07-19 / 2026-08-22), and titles over 70 characters on 398 pages. Bounds: title 30-70, description 110-160, both unique per publication. A title or description of the wrong length or a repeat is a page-quality defect, not corruption, so page findings warn and never block: the hard guard is at source, where lib/meta_description.py makes every generator raise rather than write either outside its bounds, and the autopilot gives a page the first unused in-bounds <title> or refuses the brief. This check fails hard only when it goes inert (zero pages, titles or descriptions examined) or when that source contract breaks (a pantry edge combination cannot be described in bounds, or the autopilot's duplicate refusal is removed).",
       "profiles": [
         "changed",
         "full",

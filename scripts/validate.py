@@ -64,6 +64,7 @@ COMMANDS = {
     "validation_receipt_severity_truth": [sys.executable, "scripts/validators/validate_validation_receipt_severity_truth.py"],
     "page_chrome_page_footer": [sys.executable, "scripts/validators/validate_page_chrome_targets_page_footer.py"],
     "generated_text_writes_portable": [sys.executable, "scripts/validators/validate_generated_text_writes_are_portable.py"],
+    "page_meta_bounds": [sys.executable, "scripts/validators/validate_page_meta_bounds.py"],
 }
 
 

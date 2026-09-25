@@ -60,6 +60,15 @@ STALE_AFTER_DAYS = 14
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from lib import meta_description  # noqa: E402
+
+# Module level so scripts/sync_page_meta.py reads the same string the
+# page is built with, and bounded at import so neither can carry a bad one.
+TITLE = "USCIS Form and Fee Changelog"
+DESCRIPTION = meta_description.require(
+    "A dated record of changes to the USCIS filing-fee and form-edition pages. "
+    "Each entry quotes the agency's text, links its source and gives the date checked.",
+    "USCIS changelog")
 from build_site_navigation import repeated_absolute_anchors  # noqa: E402
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S | re.I)
@@ -101,11 +110,8 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
     url = f"https://{domain}{CANONICAL_PATH}"
     header, footer, clarity = chrome(lane)
 
-    title = "USCIS Form and Fee Changelog"
-    description = (
-        "A dated record of what changed on the USCIS filing-fee and form-edition "
-        "pages, and when. Every entry quotes the agency's own text, links the page "
-        "it was read from, and carries the date it was checked.")
+    title = TITLE
+    description = DESCRIPTION
 
     # ---------------------------------------------------------------- sources
     source_rows = []
@@ -355,7 +361,7 @@ def build_page(tracked: dict, entries: list[dict], state: dict) -> str:
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(title)} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(title, pub["title"], "USCIS changelog"))}</title>\n'
         f'<meta name="description" content="{esc(description)}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'

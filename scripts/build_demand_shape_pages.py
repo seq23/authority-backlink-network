@@ -45,6 +45,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.page_chrome import page_footer_match  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
+from lib import meta_description  # noqa: E402
 PUBLICATIONS = {p["id"]: p for p in json.loads(
     (ROOT / "data/publications.json").read_text(encoding="utf-8"))}
 SOURCES = {s["id"]: s for s in json.loads(
@@ -208,11 +209,12 @@ def build_page(page: dict) -> str:
         blocks.append(f'<script type="application/ld+json">{json.dumps(faq_ld, ensure_ascii=False)}</script>')
 
     body = "".join(RENDERERS[s["type"]](s, lane) for s in page["sections"])
+    meta_description.require(page["description"], page.get("slug") or page["title"])
 
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(page["title"])} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(page.get("seo_title") or page["title"], pub["title"], page["slug"]))}</title>\n'
         f'<meta name="description" content="{esc(page["description"])}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'
