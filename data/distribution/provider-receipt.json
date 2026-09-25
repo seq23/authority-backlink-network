@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-24T15-43-01.708091Z-36022134332",
-  "attempted_at": "2026-09-24T15:43:01.708091Z",
+  "receipt_id": "2026-09-25T15-42-15.007640Z-36155884073",
+  "attempted_at": "2026-09-25T15:42:15.007640Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "d2c08c4802934af77dbb9cb5ab052d2b928e3de4e12dc653107126b622a66ae1",
-        "url_count": 112
+        "sha256": "54e37699dbe044cd668498042f88673974dffb72c047637c6ddf151134237a10",
+        "url_count": 113
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 112,
-        "offered_urls": 112,
+        "submitted_urls": 113,
+        "offered_urls": 113,
         "batches": [
           {
-            "urls": 112,
+            "urls": 113,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 85,
-        "verified": 85,
+        "checked": 86,
+        "verified": 86,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1170,6 +1170,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
+            "target_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+            "anchor": "AI coach vs human coach comparison",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4829,7 +4842,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-24T15-43-01.708091Z-36022134332.json"
+    "history": "data/distribution/receipts/2026-09-25T15-42-15.007640Z-36155884073.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
