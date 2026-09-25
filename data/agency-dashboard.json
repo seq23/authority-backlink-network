@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-24",
+  "as_of": "2026-09-25",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 8,
     "approved_target_urls": 84,
     "serviced_target_urls": 64,
-    "backlink_rows": 621,
-    "unique_source_editorials": 590,
+    "backlink_rows": 622,
+    "unique_source_editorials": 591,
     "live_verified_rows": 357,
     "indexed_rows": 1
   },
@@ -7901,10 +7901,30 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 4,
+      "backlink_count": 5,
       "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book.html",
+          "source_title": "Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-09-25",
+          "release_date": "2026-09-25",
+          "anchor": "AI coach vs human coach comparison",
+          "campaign_id": "bhpc-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html",

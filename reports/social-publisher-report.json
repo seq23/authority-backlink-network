@@ -45,7 +45,7 @@
       "used_this_run": true,
       "receipt": {
         "available": true,
-        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 4})",
+        "reason": "ready: Buffer channel 'sequoia_ta12767' (6a936b7accaf649a674276b2), 1 post(s) of headroom, bound by free_plan_queue_depth (ceilings: {'buffer_daily_rate': 46, 'free_plan_queue_depth': 1, 'network_policy_daily': 3})",
         "halted": null,
         "already_scheduled_in_buffer": 0,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
@@ -54,13 +54,13 @@
         "channel_service": "twitter",
         "buffer_daily_limit_discovered": 50,
         "buffer_used_today": 4,
-        "policy_daily_limit": 4,
+        "policy_daily_limit": 3,
         "free_plan_queue_depth_limit": 10,
         "queued_in_buffer_now": 8,
         "ceilings_discovered": {
           "buffer_daily_rate": 46,
           "free_plan_queue_depth": 1,
-          "network_policy_daily": 4
+          "network_policy_daily": 3
         },
         "binding_ceiling": "free_plan_queue_depth",
         "queue_depth_probe": {
@@ -69,9 +69,9 @@
           "error": null,
           "horizon_days": 14,
           "by_day": {
-            "2026-09-25": 3,
+            "2026-09-25": 2,
             "2026-09-26": 4,
-            "2026-09-27": 1,
+            "2026-09-27": 2,
             "2026-09-28": 0,
             "2026-09-29": 0,
             "2026-09-30": 0,
@@ -126,7 +126,7 @@
   },
   "spent_today": {
     "linkedin": 0,
-    "x": 1
+    "x": 2
   },
   "halted_platforms": {},
   "already_scheduled_in_buffer": 0,
@@ -147,30 +147,30 @@
   "still_postable_after_run": 1058,
   "attempts": [
     {
-      "index": 503,
+      "index": 1476,
       "platform": "x",
       "brand": null,
-      "attempt_count": 2,
-      "preview": "Useful citation, not fake ranking: Letters Of Explanation: Human-First Resource Roundup For First-Time Buyers.\n\nhttps://"
+      "attempt_count": 1,
+      "preview": "New resource: Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book. Better questions, f"
     }
   ],
   "successes": [
     {
-      "index": 503,
+      "index": 1476,
       "platform": "x",
       "brand": null,
-      "id": "6ab677b24be5473030b44877",
+      "id": "6ab68650a14029bcc7341915",
       "via": "buffer",
       "published": false,
       "buffer_status": "scheduled",
-      "due_at": "2026-09-27T13:34:00.000Z"
+      "due_at": "2026-09-27T14:18:00.000Z"
     }
   ],
   "failures": [],
   "skipped": [],
   "posted_today": {
     "linkedin": 0,
-    "x": 0
+    "x": 1
   },
   "brand_rotation_policy": {
     "quota_count": 15,

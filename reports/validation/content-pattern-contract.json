@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-09-24T14:33:46.217Z",
+  "generated_at": "2026-09-25T14:33:42.556Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 636,
+  "pages_checked": 637,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -53,15 +53,15 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 535,
+      "pages_missing": 536,
       "coverage_pct": 15.9,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 51,
-      "coverage_pct": 92,
+      "pages_missing": 52,
+      "coverage_pct": 91.8,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -149,6 +149,7 @@
       "founder-operator/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call.html",
       "founder-operator/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
+      "founder-operator/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -163,8 +164,7 @@
       "memphis-local/index.html",
       "memphis-local/masthead.html",
       "memphis-local/topics/event-and-room-styling.html",
-      "memphis-local/topics/grazing-tables-and-vendors.html",
-      "memphis-local/topics/porch-and-seasonal-styling.html"
+      "memphis-local/topics/grazing-tables-and-vendors.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",
