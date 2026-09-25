@@ -214,7 +214,7 @@ def build_page(page: dict) -> str:
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(page["title"])} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(page.get("seo_title") or page["title"], pub["title"], page["slug"]))}</title>\n'
         f'<meta name="description" content="{esc(page["description"])}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'

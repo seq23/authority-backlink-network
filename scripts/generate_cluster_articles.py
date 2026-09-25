@@ -204,7 +204,7 @@ def render(article: dict) -> str:
         f'{rel_attr(article["target_url"])}>{esc(article["anchor"])}</a>'
     )
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(article['title'])}</title><meta name="description" content="{esc(article['meta_description'])}"><link rel="canonical" href="{esc(url)}"><link rel="stylesheet" href="../styles.css">{TABLE_CSS}{schema_graph(article, pub, url)}{clarity_tag(domain)}</head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(meta_description.require_title(article.get('seo_title') or article['title'], article['id']))}</title><meta name="description" content="{esc(article['meta_description'])}"><link rel="canonical" href="{esc(url)}"><link rel="stylesheet" href="../styles.css">{TABLE_CSS}{schema_graph(article, pub, url)}{clarity_tag(domain)}</head>
 <body data-cluster-id="{esc(article['id'])}"><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{esc(article['title'])}</h1><p class="dek"><strong>Short answer:</strong> {esc(article['answer'])}</p><p><em>Updated {article['date']}. Topic cluster: {esc(article['cluster'])}. This article is written to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
 {lead_sections}
 {render_table(article['table'])}

@@ -171,7 +171,7 @@ def page_shell(*, title: str, description: str, url: str, folder: str, pub_title
         '<!doctype html>\n<html lang="en">\n<head>'
         '<meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        f"<title>{esc(title)} | {esc(pub_title)}</title>"
+        f"<title>{esc(meta_description.site_title(title, pub_title, url))}</title>"
         f'<meta name="description" content="{esc(description)}">'
         f'<link rel="canonical" href="{esc(url)}">'
         '<link rel="stylesheet" href="/styles.css">'

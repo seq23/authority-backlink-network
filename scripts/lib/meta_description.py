@@ -19,14 +19,76 @@ truncate, and two further defects:
   Avoid For Careful Decision-Makers").
 
 Every generator in this repository takes its bounds from here, and
-scripts/validators/validate_meta_description_bounds.py checks the published tree
+scripts/validators/validate_page_meta_bounds.py checks the published tree
 against the same constants, so the rule cannot exist twice and drift.
 """
 from __future__ import annotations
 
 DESC_MIN = 110
 DESC_MAX = 160
+# Bing Site Scan reports "title too long" above 70 characters.
 TITLE_MIN = 30
+TITLE_MAX = 70
+
+
+def title_fits(title: str) -> bool:
+    return TITLE_MIN <= len(title) <= TITLE_MAX
+
+
+def require_title(title: str, where: str) -> str:
+    if not title_fits(title):
+        raise ValueError(
+            f"{where}: <title> is {len(title)} characters; it must be "
+            f"{TITLE_MIN}-{TITLE_MAX}: {title!r}")
+    return title
+
+
+def site_title(name: str, site: str, where: str) -> str:
+    """`name | site` when that fits, otherwise the page's own name alone.
+
+    The site-name suffix is the part that gives way: it is the same on every
+    page, so it is the least informative 20-30 characters of a title that is
+    about to be truncated.
+    """
+    full = f"{name} | {site}"
+    if title_fits(full):
+        return full
+    return require_title(name, where)
+
+
+def _tc(phrase: str) -> str:
+    """Capitalise each word without lowering the rest ("HR leader" -> "HR Leader")."""
+    return " ".join(w[:1].upper() + w[1:] for w in phrase.split(" "))
+
+
+def daily_title_candidates(*, cluster: str, audience: str, fmt: str, intent: str,
+                           modifier: str) -> list[str]:
+    """<title> forms for a pantry-composed daily page, most specific first.
+
+    The first is the page's heading ("Cluster: Modifier Format Intent"), which
+    runs to 114 characters. The rest drop the modifier or swap the intent for
+    the audience, so a caller can take the first one that fits 30-70 and that
+    the publication has not already used.
+    """
+    c, m, f, i = cluster.title(), modifier.title(), fmt.title(), intent.title()
+    who = f"For {_article(audience).capitalize()} {_tc(audience)}"
+    forms = [
+        f"{c}: {m} {f} {i}",
+        f"{c}: {f} {i}",
+        f"{c}: {m} {f} {who}",
+        f"{c}: {f} {who}",
+        f"{c}: {m} {f}",
+        f"{c}: {f}",
+    ]
+    return list(dict.fromkeys(forms))
+
+
+def pick_title(candidates: list[str], taken: set[str]) -> str | None:
+    """The first candidate inside the bounds whose casefold is not in `taken`."""
+    for candidate in candidates:
+        if title_fits(candidate) and candidate.casefold() not in taken:
+            return candidate
+    return None
 
 
 def fits(description: str) -> bool:

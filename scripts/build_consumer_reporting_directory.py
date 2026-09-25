@@ -407,7 +407,7 @@ def build(data: dict) -> str:
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(TITLE)} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(TITLE, pub["title"], SLUG))}</title>\n'
         f'<meta name="description" content="{esc(DESCRIPTION)}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'

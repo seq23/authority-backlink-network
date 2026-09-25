@@ -176,7 +176,7 @@ def chrome(lane: str) -> tuple[str, str, str]:
 
 
 def describe(dataset: dict) -> str:
-    """The page's meta description, shared with scripts/sync_meta_descriptions.py."""
+    """The page's meta description, shared with scripts/sync_page_meta.py."""
     return meta_description.require(
         f"Published prices from {len(dataset['vendors'])} Memphis-area wedding and event "
         f"vendors, collected {dataset['collection_window']['start']}, and what they imply "
@@ -462,7 +462,7 @@ def build_page(dataset: dict) -> str:
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'<title>{esc(dataset["title"])} | {esc(pub["title"])}</title>\n'
+        f'<title>{esc(meta_description.site_title(dataset["title"], pub["title"], dataset["slug"]))}</title>\n'
         f'<meta name="description" content="{esc(description)}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'

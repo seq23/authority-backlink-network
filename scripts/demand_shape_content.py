@@ -1413,6 +1413,8 @@ PROFESSIONAL_PAGES = [
         "slug": "uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
         "published": PUBLISHED,
         "title": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
+        # <title> only; the heading keeps the full form. Bing flags titles over 70.
+        "seo_title": "USCIS Medical Exam Costs and Why the Envelope Stays Sealed",
         "h1": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
         "eyebrow": "Cost structure and procedure, from the agency",
         "description": ("Who sets the fee for a Form I-693 immigration medical examination, why the "

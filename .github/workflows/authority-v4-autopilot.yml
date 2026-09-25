@@ -44,12 +44,12 @@ jobs:
           MEMPHIS_PUBLICATION_DOMAIN: ${{ vars.MEMPHIS_PUBLICATION_DOMAIN }}
           PROFESSIONAL_PUBLICATION_DOMAIN: ${{ vars.PROFESSIONAL_PUBLICATION_DOMAIN }}
         run: python3 scripts/authority_v4_autopilot.py
-      - name: Carry source description changes onto existing pages
+      - name: Carry source title and description changes onto existing pages
         # The scaffold generators never rewrite a page once it exists, so a
-        # description fixed in its source (content-bank, demand_shape_content,
+        # title or description fixed in its source (content-bank, demand_shape_content,
         # a builder's DESCRIPTION) would otherwise never reach the live page.
-        # Idempotent; touches only the description. See the script's header.
-        run: python3 scripts/sync_meta_descriptions.py --write
+        # Idempotent; touches only the <title> and description. See its header.
+        run: python3 scripts/sync_page_meta.py --write
       - name: Give the new pages a path in and a canonical that serves 200
         # Without this the three pages generated above are orphans the moment
         # they are written, which is the state that put all three publications

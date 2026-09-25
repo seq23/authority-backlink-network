@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bring every published page's meta description into line with its source.
+"""Bring every published page's <title> and meta description into line with its source.
 
 Why this exists
 ---------------
@@ -8,33 +8,37 @@ because build_site_navigation.py, add_external_citations.py and
 install_editorial_chrome.py have since written into it and a rewrite from the
 template would delete their work (see the comments in build_demand_shape_pages.py,
 build_wedding_cost_dataset_page.py and portfolio_backlink_engine.plan_seed_writes).
-So fixing a description in a generator changed nothing that was already live,
-and Bing kept reporting the old one (25 Sep 2026: rule 118 on both homepages and
-founderoperatorlibrary.com/about; 62 duplicate-description groups from the daily
-mould; descriptions of 161-238 characters on 60 more pages).
+So fixing a title or description in a generator changed nothing that was
+already live, and Bing kept reporting the old one (25 Sep 2026: rule 118 on both
+homepages and founderoperatorlibrary.com/about; 62 duplicate-description groups
+from the daily mould; descriptions of 161-238 characters on 60 more pages;
+titles over 70 characters on 398 pages).
 
-This script owns exactly one thing on an existing page: the description, in the
-<meta name="description"> tag and in any JSON-LD "description" that carried the
-same text. It asks each page's generator what the description should be:
+This script owns exactly two things on an existing page: the <title>, and the
+description in the <meta name="description"> tag and in any JSON-LD
+"description" that carried the same text. Headings, JSON-LD headlines, slugs
+and links are left alone. It asks each page's generator what they should be:
 
-  autopilot daily pages     lib.meta_description.daily_description(), from the
-                            cluster and audience in the page's own JSON-LD and
-                            the modifier/format/intent its title was built from
-  backlink seed pages       portfolio_backlink_engine.seed_description()
-  cluster articles          content-bank/cluster-articles/*.json meta_description
-  demand-shape pages        demand_shape_content.PAGES description
-  data pages                the DESCRIPTION / describe() of their builders
-  hand-authored pages       HAND_AUTHORED below -- these pages have no generator,
-                            so this table is their source
+  autopilot daily pages     lib.meta_description.daily_description() and
+                            daily_title_candidates(), from the cluster and
+                            audience in the page's JSON-LD and the modifier,
+                            format and intent its <h1> was composed from
+  backlink seed pages       portfolio_backlink_engine.seed_description(), and
+                            the article's seo_title or title
+  cluster articles          content-bank/cluster-articles/*.json
+  demand-shape pages        demand_shape_content.PAGES
+  data pages                the TITLE / DESCRIPTION / describe() of their builders
+  hand-authored pages       HAND_AUTHORED and HAND_TITLES below -- these pages
+                            have no generator, so those tables are their source
 
 Editorial pages and topic hubs are not listed: build_editorial_pages.py and
 build_site_navigation.py rewrite those pages on every autopilot run.
 
 Idempotent. `--check` (the default) lists drift and exits 1 if there is any;
-`--write` applies it. scripts/validators/validate_meta_description_bounds.py
+`--write` applies it. scripts/validators/validate_page_meta_bounds.py
 runs the same planner, so a source edit that was never synced fails CI.
 
-    python3 scripts/sync_meta_descriptions.py [--write]
+    python3 scripts/sync_page_meta.py [--write]
 """
 from __future__ import annotations
 
@@ -43,6 +47,7 @@ import itertools
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +58,7 @@ from lib.text_io import write_lf  # noqa: E402
 
 META_RE = re.compile(r'(<meta name="description" content=")([^"]*)(")')
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
+H1_RE = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
 LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 SEED_RE = re.compile(r'data-backlink-seed-id="([^"]+)"')
 
@@ -136,6 +142,13 @@ DAILY_PARTS_OVERRIDE = {
 }
 
 
+# <title> for hand-uploaded pages whose own title is outside 30-70 characters.
+HAND_TITLES = {
+    "sites/professional-resources/workplace-burnout-and-boundaries.html":
+        "Workplace Burnout and Boundaries Resources",
+}
+
+
 def _publications() -> dict[str, dict]:
     return {p["id"]: p for p in json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))}
 
@@ -160,29 +173,67 @@ def _article_node(text: str) -> dict | None:
     return None
 
 
-def expected_descriptions() -> tuple[dict[str, str], list[str]]:
-    """{repo-relative path: description its source says it should carry}, and
-    the daily pages whose source could not be identified."""
+def _pantry_parts(text: str, rel: str, suffixes: dict) -> tuple | None:
+    """(cluster, audience, modifier, format, intent) of a pantry-composed page,
+    read from its own JSON-LD and from its <h1>, which keeps the composed title
+    even where the <title> has been shortened. None if it is not one."""
+    node = _article_node(text) or {}
+    cluster = node.get("about") if isinstance(node.get("about"), str) else None
+    audience = (node.get("audience") or {}).get("audienceType")
+    h1 = H1_RE.search(text)
+    heading = html.unescape(re.sub(r"<[^>]+>", "", h1.group(1)).strip()) if h1 else ""
+    prefix = f"{cluster.title()}: " if cluster else None
+    parts = DAILY_PARTS_OVERRIDE.get(rel) or (
+        suffixes.get(heading[len(prefix):]) if prefix and heading.startswith(prefix) else None)
+    if not (cluster and audience and parts):
+        return None
+    return (cluster, audience, *parts)
+
+
+def _current(text: str) -> tuple[str, str]:
+    t = TITLE_RE.search(text)
+    d = META_RE.search(text)
+    return (html.unescape(t.group(1).strip()) if t else "",
+            html.unescape(d.group(2)) if d else "")
+
+
+def expected_meta() -> tuple[dict[str, dict], list[str]]:
+    """{repo-relative path: {"description": ..., "title": ...}} as each page's
+    source says it should read, and the daily pages no source was found for.
+
+    "title" is only present for pages whose <title> this script owns.
+    """
     pubs = _publications()
-    expected: dict[str, str] = dict(HAND_AUTHORED)
+    expected: dict[str, dict] = {rel: {"description": d} for rel, d in HAND_AUTHORED.items()}
+    for rel, t in HAND_TITLES.items():
+        expected.setdefault(rel, {})["title"] = t
+
+    def put(rel: str, description: str, title: str) -> None:
+        expected[rel] = {"description": description, "title": title}
 
     # Data and demand-shape pages.
     import build_consumer_reporting_directory as crd
     import build_uscis_changelog_page as uscis
     import build_wedding_cost_dataset_page as wedding
     from demand_shape_content import PAGES
-    expected[f"{pubs['professional']['folder']}/{crd.SLUG}"] = crd.DESCRIPTION
-    expected[f"{pubs['professional']['folder']}{uscis.CANONICAL_PATH}.html"] = uscis.DESCRIPTION
+    prof, memphis = pubs["professional"], pubs["memphis"]
+    put(f"{prof['folder']}/{crd.SLUG}", crd.DESCRIPTION,
+        meta_description.site_title(crd.TITLE, prof["title"], crd.SLUG))
+    put(f"{prof['folder']}{uscis.CANONICAL_PATH}.html", uscis.DESCRIPTION,
+        meta_description.site_title(uscis.TITLE, prof["title"], "USCIS changelog"))
     dataset = json.loads(wedding.DATASET_PATH.read_text(encoding="utf-8"))
-    expected[f"{pubs['memphis']['folder']}/{dataset['slug']}"] = wedding.describe(dataset)
+    put(f"{memphis['folder']}/{dataset['slug']}", wedding.describe(dataset),
+        meta_description.site_title(dataset["title"], memphis["title"], dataset["slug"]))
     for page in PAGES:
-        expected[f"{pubs[page['lane']]['folder']}/{page['slug']}"] = page["description"]
+        pub = pubs[page["lane"]]
+        put(f"{pub['folder']}/{page['slug']}", page["description"],
+            meta_description.site_title(page.get("seo_title") or page["title"], pub["title"], page["slug"]))
 
     # Cluster articles.
     for path in sorted((ROOT / "content-bank/cluster-articles").glob("*.json")):
         for a in json.loads(path.read_text(encoding="utf-8"))["articles"]:
-            rel = f"{pubs[a['publication']]['folder']}/daily/{a['date']}-{a['slug']}.html"
-            expected[rel] = a["meta_description"]
+            put(f"{pubs[a['publication']]['folder']}/daily/{a['date']}-{a['slug']}.html",
+                a["meta_description"], a.get("seo_title") or a["title"])
 
     # Seed pages and pantry-composed daily pages, identified from the page itself.
     import portfolio_backlink_engine as seed_engine
@@ -193,85 +244,127 @@ def expected_descriptions() -> tuple[dict[str, str], list[str]]:
                 for m, f, i in itertools.product(mods, fmts, intents)}
     unidentified: list[str] = []
     for pub in pubs.values():
-        for path in sorted((ROOT / pub["folder"] / "daily").glob("*.html")):
+        folder = ROOT / pub["folder"]
+        pantry_pages: list[tuple[str, tuple, str]] = []
+        for path in sorted((folder / "daily").glob("*.html")):
             rel = path.relative_to(ROOT).as_posix()
             if rel in expected:
                 continue
             text = path.read_text(encoding="utf-8")
             seed_id = SEED_RE.search(text)
             if seed_id and seed_id.group(1) in seeds:
-                expected[rel] = seed_engine.seed_description(seeds[seed_id.group(1)])
+                a = seeds[seed_id.group(1)]
+                put(rel, seed_engine.seed_description(a), a.get("seo_title") or a["title"])
                 continue
-            node = _article_node(text) or {}
-            cluster = node.get("about") if isinstance(node.get("about"), str) else None
-            audience = (node.get("audience") or {}).get("audienceType")
-            title = html.unescape(TITLE_RE.search(text).group(1).strip()) if TITLE_RE.search(text) else ""
-            prefix = f"{cluster.title()}: " if cluster else None
-            parts = DAILY_PARTS_OVERRIDE.get(rel) or (
-                suffixes.get(title[len(prefix):]) if prefix and title.startswith(prefix) else None)
-            if not (cluster and audience and parts):
+            parts = _pantry_parts(text, rel, suffixes)
+            if not parts:
                 unidentified.append(rel)
                 continue
-            m, f, i = parts
-            expected[rel] = meta_description.daily_description(
-                cluster=cluster, audience=audience, fmt=f, intent=i, modifier=m)
+            cluster, audience, m, f, i = parts
+            expected[rel] = {"description": meta_description.daily_description(
+                cluster=cluster, audience=audience, fmt=f, intent=i, modifier=m)}
+            pantry_pages.append((rel, parts, _current(text)[0]))
+
+        # <title> for pantry pages. Every other page's title is fixed by its own
+        # source (above) or by a generator that rewrites it (editorial pages,
+        # topic hubs), so those are taken first. A pantry page keeps a title
+        # that is already inside the bounds and unique; the rest get the first
+        # daily_title_candidates() form that is -- the same rule the autopilot
+        # applies to a new page, so a rerun changes nothing.
+        pantry_rels = {rel for rel, _, _ in pantry_pages}
+        titles: dict[str, str] = {}
+        for path in folder.rglob("*.html"):
+            rel = path.relative_to(ROOT).as_posix()
+            if rel in pantry_rels:
+                continue
+            titles[rel] = expected.get(rel, {}).get("title") or _current(path.read_text(encoding="utf-8"))[0]
+        taken = {t.casefold() for t in titles.values()}
+        counts = Counter([t.casefold() for t in titles.values()] + [cur.casefold() for _, _, cur in pantry_pages])
+        pending = []
+        for rel, parts, cur in pantry_pages:
+            if meta_description.title_fits(cur) and counts[cur.casefold()] == 1:
+                expected[rel]["title"] = cur
+                taken.add(cur.casefold())
+            else:
+                pending.append((rel, parts, cur))
+        for rel, parts, cur in pending:
+            cluster, audience, m, f, i = parts
+            pick = meta_description.pick_title(meta_description.daily_title_candidates(
+                cluster=cluster, audience=audience, fmt=f, intent=i, modifier=m), taken)
+            if pick is None:
+                raise ValueError(f"{rel}: no <title> form is {meta_description.TITLE_MIN}-"
+                                 f"{meta_description.TITLE_MAX} characters and unused on this site")
+            expected[rel]["title"] = pick
+            taken.add(pick.casefold())
     return expected, unidentified
 
 
-def apply(text: str, new: str) -> str:
+def apply(text: str, want: dict) -> str:
     """The page with its description replaced in the meta tag and in any JSON-LD
-    field that held the same text."""
-    m = META_RE.search(text)
-    if not m:
-        raise ValueError("no <meta name=\"description\">")
-    old = html.unescape(m.group(2))
-    text = text[:m.start(2)] + html.escape(new) + text[m.end(2):]
-    if old != new:
-        for enc in {json.dumps(old), json.dumps(old, ensure_ascii=False)}:
-            text = text.replace(f'"description": {enc}', f'"description": {json.dumps(new, ensure_ascii=False)}')
+    field that held the same text, and its <title> replaced if one is given.
+    Headings, JSON-LD headlines and links are left alone."""
+    if want.get("description"):
+        m = META_RE.search(text)
+        if not m:
+            raise ValueError("no <meta name=\"description\">")
+        new = want["description"]
+        old = html.unescape(m.group(2))
+        text = text[:m.start(2)] + html.escape(new) + text[m.end(2):]
+        if old != new:
+            for enc in {json.dumps(old), json.dumps(old, ensure_ascii=False)}:
+                text = text.replace(f'"description": {enc}',
+                                    f'"description": {json.dumps(new, ensure_ascii=False)}')
+    if want.get("title"):
+        t = TITLE_RE.search(text)
+        text = text[:t.start(1)] + html.escape(want["title"], quote=False) + text[t.end(1):]
     return text
 
 
-def plan() -> tuple[list[tuple[str, str, str]], list[str], list[str]]:
-    """(drift rows [(rel, current, expected)], missing files, unidentified dailies)."""
-    expected, unidentified = expected_descriptions()
+def plan() -> tuple[list[tuple[str, str, str, str]], list[str], list[str]]:
+    """(drift rows [(rel, field, current, expected)], missing files, unidentified dailies)."""
+    expected, unidentified = expected_meta()
     drift, missing = [], []
     for rel, want in sorted(expected.items()):
-        meta_description.require(want, rel)
+        if want.get("description"):
+            meta_description.require(want["description"], rel)
+        if want.get("title"):
+            meta_description.require_title(want["title"], rel)
         path = ROOT / rel
         if not path.exists():
             missing.append(rel)
             continue
-        m = META_RE.search(path.read_text(encoding="utf-8"))
-        current = html.unescape(m.group(2)) if m else ""
-        if current != want:
-            drift.append((rel, current, want))
+        cur_title, cur_desc = _current(path.read_text(encoding="utf-8"))
+        if want.get("description") and cur_desc != want["description"]:
+            drift.append((rel, "description", cur_desc, want["description"]))
+        if want.get("title") and cur_title != want["title"]:
+            drift.append((rel, "title", cur_title, want["title"]))
     return drift, missing, unidentified
 
 
 def main() -> int:
     write = "--write" in sys.argv
-    expected, _ = expected_descriptions()
+    expected, _ = expected_meta()
     drift, missing, unidentified = plan()
-    print(f"META DESCRIPTION SYNC: {len(expected)} page(s) with a known source")
+    print(f"PAGE META SYNC: {len(expected)} page(s) with a known source")
     for rel in missing:
         print(f"  MISSING {rel} (a source names a page that does not exist)")
     for rel in unidentified:
         print(f"  UNIDENTIFIED {rel} (no generator recognised; checked for bounds only)")
-    for rel, current, want in drift:
-        print(f"  {'WROTE' if write else 'DRIFT'} {rel}: {len(current)} -> {len(want)} characters")
-        if write:
+    for rel, field, current, want in drift:
+        print(f"  {'WROTE' if write else 'DRIFT'} {rel} {field}: {len(current)} -> {len(want)} characters")
+    if write:
+        for rel in sorted({row[0] for row in drift}):
             path = ROOT / rel
-            write_lf(path, apply(path.read_text(encoding="utf-8"), want))
+            write_lf(path, apply(path.read_text(encoding="utf-8"), expected[rel]))
     if not expected:
-        print("META DESCRIPTION SYNC: FAIL - zero pages have a known source")
+        print("PAGE META SYNC: FAIL - zero pages have a known source")
         return 1
     if missing:
         return 1
     if drift and not write:
-        print(f"META DESCRIPTION SYNC: {len(drift)} page(s) out of step; run with --write")
+        print(f"PAGE META SYNC: {len(drift)} field(s) out of step; run with --write")
         return 1
-    print(f"META DESCRIPTION SYNC: {'wrote ' + str(len(drift)) if write else 'in step'}")
+    print(f"PAGE META SYNC: {'wrote ' + str(len(drift)) + ' field(s)' if write else 'in step'}")
     return 0
 
 

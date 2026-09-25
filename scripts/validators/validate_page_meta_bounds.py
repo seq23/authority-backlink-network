@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Titles and meta descriptions: long enough, short enough, and unique per site.
+"""Titles (30-70) and meta descriptions (110-160): in bounds and unique per site.
 
 What this stops happening again
 -------------------------------
@@ -12,11 +12,14 @@ Bing Webmaster, 25 Sep 2026, on the three publications this repo serves:
             sentence mould, and one duplicate <title> on memphisvendorlibrary.com
             (daily 2026-07-19 and 2026-08-22), because the generator's title
             left out the audience that distinguished the two briefs.
+  site scan title too long (over 70) on 398 pages: the composed daily title
+            runs to 114 characters, and a "| Site" suffix pushed others over.
 
 The fix is at source: lib/meta_description.py holds the bounds, every generator
 builds or checks its description against it and raises rather than write a bad
-one, authority_v4_autopilot.py refuses a title the publication already has, and
-sync_meta_descriptions.py carries a source change onto pages that already exist.
+one, authority_v4_autopilot.py gives each page the first <title> form that fits
+and is unused (or refuses the brief), and sync_page_meta.py carries a source
+change onto pages that already exist.
 This validator checks the published tree against the same constants.
 
 Severity
@@ -28,9 +31,10 @@ hard is this check going inert or its generator contract breaking:
 
   zero       no pages, titles or descriptions examined
   contract   daily_description() cannot describe some pantry combination, or
-             the autopilot no longer refuses a duplicate title
+             the autopilot no longer refuses a duplicate heading or a brief
+             with no unused in-bounds <title>
 
-    python3 scripts/validators/validate_meta_description_bounds.py
+    python3 scripts/validators/validate_page_meta_bounds.py
 """
 from __future__ import annotations
 
@@ -78,8 +82,9 @@ def scan_pages() -> tuple[dict, list[dict]]:
                 counts["titles"] += 1
             if desc:
                 counts["descriptions"] += 1
-            if len(title) < md.TITLE_MIN:
-                findings.append({"page": rel, "defect": "title_too_short", "length": len(title)})
+            if not md.title_fits(title):
+                findings.append({"page": rel, "defect": "title_out_of_bounds", "length": len(title),
+                                 "bounds": [md.TITLE_MIN, md.TITLE_MAX]})
             if not md.fits(desc):
                 findings.append({"page": rel, "defect": "description_out_of_bounds",
                                  "length": len(desc), "bounds": [md.DESC_MIN, md.DESC_MAX]})
@@ -119,20 +124,22 @@ def contract_failures() -> tuple[list[str], int]:
     if "meta_description.daily_description(" not in src:
         failures.append("authority_v4_autopilot.py no longer builds its description with "
                         "lib.meta_description.daily_description()")
-    if not re.search(r"brief\['title'\]\.casefold\(\) in taken_titles\(pub_key\)", src) \
+    if "brief['seo_title'] = seo_title_for(brief, pub_key)" not in src \
+            or not re.search(r"brief\['title'\]\.casefold\(\) in taken\(pub_key\)\['headings'\] "
+                             r"or not brief\['seo_title'\]", src) \
             or "'duplicate_title'" not in src:
-        failures.append("authority_v4_autopilot.py no longer refuses a title the "
-                        "publication has already published")
+        failures.append("authority_v4_autopilot.py no longer refuses a heading the "
+                        "publication already has, or a brief with no unused 30-70 character <title>")
     return failures, exercised
 
 
 def main() -> int:
     counts, findings = scan_pages()
     contract, exercised = contract_failures()
-    import sync_meta_descriptions
-    drift, missing, _ = sync_meta_descriptions.plan()
-    for rel, current, want in drift:
-        findings.append({"page": rel, "defect": "description_not_synced_from_source",
+    import sync_page_meta
+    drift, missing, _ = sync_page_meta.plan()
+    for rel, field, current, want in drift:
+        findings.append({"page": rel, "defect": f"{field}_not_synced_from_source",
                          "current": current, "source": want})
     for rel in missing:
         findings.append({"page": rel, "defect": "source_names_missing_page"})
@@ -146,12 +153,12 @@ def main() -> int:
 
     status = "FAIL" if hard else ("PASS_WITH_STRONG_WARNING" if findings else "PASS")
     print(json.dumps({
-        "validator": "meta_description_bounds",
+        "validator": "page_meta_bounds",
         "status": status,
         "hard_failures": len(hard),
         "strong_warnings": len(findings),
         "soft_warnings": 0,
-        "bounds": {"description": [md.DESC_MIN, md.DESC_MAX], "title_min": md.TITLE_MIN},
+        "bounds": {"description": [md.DESC_MIN, md.DESC_MAX], "title": [md.TITLE_MIN, md.TITLE_MAX]},
         "examined": counts,
         "pantry_edge_combinations_exercised": exercised,
         "hard": hard,

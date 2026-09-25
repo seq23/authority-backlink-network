@@ -1041,7 +1041,7 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
         '<!doctype html>\n<html lang="en">\n<head>'
         '<meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        f'<title>{esc(title)} | {esc(pub_title)}</title>'
+        f'<title>{esc(meta_description.site_title(title, pub_title, hub.get("slug", title)))}</title>'
         f'<meta name="description" content="{attr(description)}">'
         f'<link rel="canonical" href="{attr(url)}">'
         '<link rel="stylesheet" href="/styles.css">'

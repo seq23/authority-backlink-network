@@ -403,9 +403,9 @@
       "category": "Other"
     },
     {
-      "operator": "pages:sync-meta-descriptions",
-      "command": "npm run pages:sync-meta-descriptions",
-      "implementation": "python3 scripts/sync_meta_descriptions.py --write",
+      "operator": "pages:sync-meta",
+      "command": "npm run pages:sync-meta",
+      "implementation": "python3 scripts/sync_page_meta.py --write",
       "category": "Other"
     },
     {
@@ -529,12 +529,6 @@
       "category": "Validation / release"
     },
     {
-      "operator": "validate:meta-description-bounds",
-      "command": "npm run validate:meta-description-bounds",
-      "implementation": "python3 scripts/validators/validate_meta_description_bounds.py",
-      "category": "Validation / release"
-    },
-    {
       "operator": "validate:no-manual-lane",
       "command": "npm run validate:no-manual-lane",
       "implementation": "python3 scripts/validators/validate_no_manual_lane.py",
@@ -544,6 +538,12 @@
       "operator": "validate:operator-doc-currency",
       "command": "npm run validate:operator-doc-currency",
       "implementation": "node scripts/validators/validate_operator_doc_currency.mjs docs/runbooks",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:page-meta-bounds",
+      "command": "npm run validate:page-meta-bounds",
+      "implementation": "python3 scripts/validators/validate_page_meta_bounds.py",
       "category": "Validation / release"
     },
     {

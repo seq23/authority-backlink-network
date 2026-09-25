@@ -409,26 +409,44 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
 # with a cluster name substituted in.
 
 
-_TAKEN_TITLES: dict[str, set[str]] = {}
+_TAKEN: dict[str, dict[str, set[str]]] = {}
 _TITLE_RE = re.compile(r'<title>(.*?)</title>', re.S | re.I)
+_H1_RE = re.compile(r'<h1[^>]*>(.*?)</h1>', re.S | re.I)
 
 
-def taken_titles(pub_key):
-    """Every <title> already published by this publication, casefolded.
+def taken(pub_key):
+    """Every <title> and every <h1> this publication already publishes, casefolded.
 
     Read from the tree rather than from state['published_titles'], because the
     state ledger does not record which publication a title belongs to and does
     not cover pages written by the other generators.
     """
-    if pub_key not in _TAKEN_TITLES:
+    if pub_key not in _TAKEN:
         site = ROOT / PANTRY['publications'][pub_key]['site_path']
-        titles = set()
+        seen = {'titles': set(), 'headings': set()}
         for path in site.rglob('*.html'):
-            m = _TITLE_RE.search(path.read_text(encoding='utf-8', errors='replace'))
-            if m:
-                titles.add(html.unescape(m.group(1).strip()).casefold())
-        _TAKEN_TITLES[pub_key] = titles
-    return _TAKEN_TITLES[pub_key]
+            text = path.read_text(encoding='utf-8', errors='replace')
+            for key, rx in (('titles', _TITLE_RE), ('headings', _H1_RE)):
+                m = rx.search(text)
+                if m:
+                    seen[key].add(html.unescape(re.sub(r'<[^>]+>', '', m.group(1)).strip()).casefold())
+        _TAKEN[pub_key] = seen
+    return _TAKEN[pub_key]
+
+
+def seo_title_for(brief, pub_key):
+    """The page's <title>: the first form that fits 30-70 characters and that
+    the publication has not used. None when there is no such form.
+
+    The heading stays the full composed title (it is also what the slug and the
+    ledgers carry); only the <title> is shortened, because Bing reports titles
+    over 70 characters and the composed form runs to 114.
+    """
+    return meta_description.pick_title(
+        meta_description.daily_title_candidates(
+            cluster=brief['cluster'], audience=brief['audience'], fmt=brief['format'],
+            intent=brief['intent'], modifier=brief['modifier']),
+        taken(pub_key)['titles'])
 
 
 def generate_page(brief):
@@ -530,7 +548,7 @@ def generate_page(brief):
         cluster=cluster, audience=audience, fmt=brief['format'],
         intent=brief['intent'], modifier=brief['modifier'])
     page = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(brief.get('seo_title') or title)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{html.escape(canonical_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema)}</script></head>
 <body><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{html.escape(title)}</h1>
 {body_html}</article></main></body></html>'''
     return slug, page
@@ -578,8 +596,8 @@ def score_page(html_text, brief):
     if not desc or not meta_description.fits(html.unescape(desc.group(1))):
         score -= 20; hard_fails.append('meta_description_out_of_bounds')
     title = re.search(r'<title>(.*?)</title>', html_text, re.S)
-    if not title or len(html.unescape(title.group(1).strip())) < meta_description.TITLE_MIN:
-        score -= 20; hard_fails.append('title_too_short')
+    if not title or not meta_description.title_fits(html.unescape(title.group(1).strip())):
+        score -= 20; hard_fails.append('title_out_of_bounds')
     return max(0, min(100, score)), words, warnings, hard_fails
 
 
@@ -804,7 +822,8 @@ def main():
             if brief['signature'] in state.get('published_signatures', []):
                 attempt_findings.append({'attempt': attempt, 'reason': 'duplicate_signature'})
                 continue
-            if brief['title'].casefold() in taken_titles(pub_key):
+            brief['seo_title'] = seo_title_for(brief, pub_key)
+            if brief['title'].casefold() in taken(pub_key)['headings'] or not brief['seo_title']:
                 # The signature includes the audience; the title does not. Two
                 # briefs differing only in audience used to publish the same
                 # <title> (memphis-local 2026-07-19 and 2026-08-22). A title is
@@ -864,7 +883,8 @@ def main():
         state['published_hashes'].append(chash)
         state['published_signatures'].append(brief['signature'])
         state['published_titles'].append(brief['title'])
-        taken_titles(pub_key).add(brief['title'].casefold())
+        taken(pub_key)['headings'].add(brief['title'].casefold())
+        taken(pub_key)['titles'].add(brief['seo_title'].casefold())
         pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': brief.get('brand_id',''), 'target_domain': brief['target_domain'], 'target_url': brief.get('target_url'), 'anchor': brief.get('anchor'), 'brand': brief['brand'], 'social_hooks': brief.get('social_hooks', []), 'destination_type': brief.get('destination_type',''), 'product_id': brief.get('product_id',''), 'product_name': brief.get('product_name',''), 'target_route': brief.get('target_route',''), 'campaign_id': brief.get('campaign_id',''), 'preferred_domain': brief.get('preferred_domain',''), 'used_preferred_domain': brief.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)
