@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-25T15-42-15.007640Z-36155884073",
-  "attempted_at": "2026-09-25T15:42:15.007640Z",
+  "receipt_id": "2026-09-26T15-41-44.578342Z-36252800556",
+  "attempted_at": "2026-09-26T15:41:44.578342Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "54e37699dbe044cd668498042f88673974dffb72c047637c6ddf151134237a10",
+        "sha256": "73747fed85097af7a3254dd849fcc6ff677d2005b0983505cff1accbc28f8dd7",
         "url_count": 113
       },
       "indexnow": {
@@ -51,21 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 1,
-        "inspected_urls": 1,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -1201,7 +1189,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "6d91088f4370cb4db5cfdeebfd5023329312e945cc5776ad07708edfa8514885",
+        "sha256": "ec32408cd90eb9180abad2ae05b51ecc744a2f4f358289eb9688795efbe2eacd",
         "url_count": 105
       },
       "indexnow": {
@@ -4842,7 +4830,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-25T15-42-15.007640Z-36155884073.json"
+    "history": "data/distribution/receipts/2026-09-26T15-41-44.578342Z-36252800556.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
