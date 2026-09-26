@@ -44,6 +44,15 @@ Set under:
 
 - `BUFFER_ACCESS_TOKEN`
 
+Rotated 25 Sep 2026: the old key ("twinkey", expiring 28 Sep) was regenerated in the Buffer
+account seq.taylor@gmail.com (Buffer → Settings → API); the new key **expires 25 Sep 2027**.
+Buffer's free plan allows ONE key per account, so this same key is also the vault credential
+`buffer-access-token` used by sheila-creator-dashboard staging. To renew: Regenerate in Buffer,
+save to a 0600 file, `python3 -m repo_operator.cli vault set buffer-access-token --from-file <f>`
+(in ~/repo-tools/agent), `gh secret set BUFFER_ACCESS_TOKEN -R seq23/authority-backlink-network < <f>`,
+paste it on the dashboard's staging Connect screen, `rm -P <f>`. As of that date the account's
+three channels are TikTok, Instagram and YouTube test channels; it has no X channel.
+
 This is the credential that carries X. X's own API is pay-per-use (about $0.20 for a post
 carrying a URL, and every post here carries one), so it is switched off and contacted zero
 times; Buffer publishes to the same X profile from its free plan at no per-post cost. The
