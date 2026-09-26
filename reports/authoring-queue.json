@@ -1,34 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-25",
+  "run_at": "2026-09-26",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 2,
-    "allowance": 1,
-    "window_start": "2026-09-19",
-    "window_end": "2026-09-25"
+    "published_in_window": 3,
+    "allowance": 0,
+    "window_start": "2026-09-20",
+    "window_end": "2026-09-26"
   },
-  "deferred": 2,
+  "deferred": 3,
   "queue": [
     {
+      "publication": "founder-operator",
+      "cluster": "daily discipline frameworks",
+      "audience": "solo founder",
+      "format": "FAQ answer page",
+      "intent": "for first-time buyers",
+      "modifier": "low-risk",
+      "intended_title": "Daily Discipline Frameworks: Low-Risk Faq Answer Page For First-Time Buyers",
+      "target_brand": "A Player Mode",
+      "target_url": "https://www.aplayermode.com/",
+      "signature": "f90ca492f36f2d9106b1e0b78c4c0df70ae6d0b0d533a70376cc85cf7cfce8e9",
+      "deferred_on": "2026-09-26",
+      "reason": "weekly_publication_cap"
+    },
+    {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-25",
+      "deferred_on": "2026-09-26",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "dental decision resources",
-      "audience": "horse buyer",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "patient preparing questions",
       "format": "question checklist",
-      "intent": "for busy operators",
-      "modifier": "comparison-friendly",
-      "intended_title": "Dental Decision Resources: Comparison-Friendly Question Checklist For Busy Operators",
+      "intent": "for people who need a starting point",
+      "modifier": "human-first",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Human-First Question Checklist For People Who Need A Starting Point",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/",
-      "signature": "84040b3793b7799ed98420de6a69e42c8300d14c509a6caa6107d01ce1df8cb6",
-      "deferred_on": "2026-09-25",
+      "signature": "b912f58f62186eb8e3a831d5bb3fea5a848c081889fe8c876e84ec96b8dcc373",
+      "deferred_on": "2026-09-26",
       "reason": "weekly_publication_cap"
     }
   ]
