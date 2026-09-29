@@ -9,6 +9,43 @@
   ],
   "entries": [
     {
+      "id": "2026-09-29-uscis-federal-register",
+      "date_observed": "2026-09-29",
+      "checked_at": "2026-09-29T13:29:43+00:00",
+      "source_id": "uscis-federal-register",
+      "source_url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "source_title": "USCIS documents in the Federal Register",
+      "publisher": "Office of the Federal Register",
+      "headline": "CNMI worker petition notice removed; biographic information notice added",
+      "summary": "The page previously listed a September 14, 2026 notice (FR Doc. 2026-18671) regarding a 60-day comment period for extending the information collection related to petitions for CNMI-Only Nonimmigrant Transition Workers and semiannual reports for CW-1 employers. The page now lists a September 28, 2026 notice (FR Doc. 2026-19756) regarding a 60-day comment period for extending the information collection related to biographic information (registration). Both are Paperwork Reduction Act notices inviting public comment on currently approved collections.",
+      "quotes": [
+        {
+          "side": "removed",
+          "text": "2026-09-14 | Notice | FR Doc. 2026-18671 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Petition for CNMI-Only Nonimmigrant Transition Worker and Semiannual Report for CW-1 Employers"
+        },
+        {
+          "side": "added",
+          "text": "2026-09-28 | Notice | FR Doc. 2026-19756 | Extension, Without Change, of a Currently Approved Collection: Biographic Information (Registration)"
+        }
+      ],
+      "evidence": {
+        "previous_snapshot_sha256": "f99c2441502b945d5033643626e421f92ed8f9194fa8e7f40bb033729ca6de08",
+        "current_snapshot_sha256": "0bd3b648dfc49acdd177135cc2d77385a66d0df0c04c42033378701b8f9a213a",
+        "previous_captured": "2026-09-22T13:23:52+00:00",
+        "added": [
+          "2026-09-28 | Notice | FR Doc. 2026-19756 | Extension, Without Change, of a Currently Approved Collection: Biographic Information (Registration)",
+          "FR Doc. 2026-19756 action: 60-day notice.",
+          "FR Doc. 2026-19756 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ],
+        "removed": [
+          "2026-09-14 | Notice | FR Doc. 2026-18671 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Petition for CNMI-Only Nonimmigrant Transition Worker and Semiannual Report for CW-1 Employers",
+          "FR Doc. 2026-18671 action: 60-Day notice.",
+          "FR Doc. 2026-18671 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e., the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ]
+      },
+      "model": "anthropic/claude-sonnet-4.5"
+    },
+    {
       "id": "2026-09-22-uscis-federal-register",
       "date_observed": "2026-09-22",
       "checked_at": "2026-09-22T13:23:52+00:00",
