@@ -1,48 +1,34 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-29",
+  "run_at": "2026-09-30",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 3,
-    "allowance": 0,
-    "window_start": "2026-09-23",
-    "window_end": "2026-09-29"
+    "published_in_window": 2,
+    "allowance": 1,
+    "window_start": "2026-09-24",
+    "window_end": "2026-09-30"
   },
-  "deferred": 3,
+  "deferred": 2,
   "queue": [
     {
-      "publication": "founder-operator",
-      "cluster": "team accountability",
-      "audience": "operator",
-      "format": "resource roundup",
-      "intent": "before you choose",
-      "modifier": "practical",
-      "intended_title": "Team Accountability: Practical Resource Roundup Before You Choose",
-      "target_brand": "A Player Mode",
-      "target_url": "https://www.aplayermode.com/",
-      "signature": "07fa42b2f341fbfe29953cecd2a497b5ae6d2058bfe9fb2e7c1b20468fb2a641",
-      "deferred_on": "2026-09-29",
-      "reason": "weekly_publication_cap"
-    },
-    {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-29",
+      "deferred_on": "2026-09-30",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "preparing records before a specialist appointment",
-      "audience": "healthcare team lead",
-      "format": "prep guide",
-      "intent": "for people who need a starting point",
-      "modifier": "GEO-ready",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Geo-Ready Prep Guide For People Who Need A Starting Point",
+      "audience": "horse buyer",
+      "format": "resource roundup",
+      "intent": "before you choose",
+      "modifier": "AEO-ready",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Aeo-Ready Resource Roundup Before You Choose",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
-      "signature": "f7be90f83fee27be2f8c93f684f711b82d4da274e71370c50d594b57b2575642",
-      "deferred_on": "2026-09-29",
+      "signature": "6674dc6cb444cfd294cd6f90be3576b9f8de829d0daf16d9ba12de0b95c05b4b",
+      "deferred_on": "2026-09-30",
       "reason": "weekly_publication_cap"
     }
   ]

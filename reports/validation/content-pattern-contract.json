@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-09-29T14:34:29.018Z",
+  "generated_at": "2026-09-30T14:36:53.874Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 637,
+  "pages_checked": 638,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -53,22 +53,22 @@
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 536,
-      "coverage_pct": 15.9,
+      "pages_missing": 537,
+      "coverage_pct": 15.8,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 52,
-      "coverage_pct": 91.8,
+      "pages_missing": 53,
+      "coverage_pct": 91.7,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
       "id": "faq",
       "blocking": false,
       "pages_missing": 59,
-      "coverage_pct": 90.7,
+      "coverage_pct": 90.8,
       "why": "no FAQ block or FAQPage schema (agent request #9)"
     },
     {
@@ -150,6 +150,7 @@
       "founder-operator/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
       "founder-operator/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
       "founder-operator/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book.html",
+      "founder-operator/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -163,8 +164,7 @@
       "memphis-local/editorial-standards.html",
       "memphis-local/index.html",
       "memphis-local/masthead.html",
-      "memphis-local/topics/event-and-room-styling.html",
-      "memphis-local/topics/grazing-tables-and-vendors.html"
+      "memphis-local/topics/event-and-room-styling.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

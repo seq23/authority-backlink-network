@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-09-29",
+  "as_of": "2026-09-30",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 8,
     "approved_target_urls": 84,
     "serviced_target_urls": 64,
-    "backlink_rows": 622,
-    "unique_source_editorials": 591,
+    "backlink_rows": 623,
+    "unique_source_editorials": 592,
     "live_verified_rows": 358,
     "indexed_rows": 1
   },
@@ -718,10 +718,30 @@
       "product_id": "",
       "product_name": "",
       "campaign_ids": [],
-      "backlink_count": 37,
+      "backlink_count": 38,
       "live_verified_count": 20,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers.html",
+          "source_title": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-09-30",
+          "release_date": "2026-09-30",
+          "anchor": "A Player Mode",
+          "campaign_id": "",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
