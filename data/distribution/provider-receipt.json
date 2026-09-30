@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-29T15-45-42.385013Z-36592582152",
-  "attempted_at": "2026-09-29T15:45:42.385013Z",
+  "receipt_id": "2026-09-30T15-47-10.371738Z-36739295556",
+  "attempted_at": "2026-09-30T15:47:10.371738Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "73747fed85097af7a3254dd849fcc6ff677d2005b0983505cff1accbc28f8dd7",
-        "url_count": 113
+        "sha256": "01a29668a25177a0dbe08c73322bb9c77fa2788ac72ef55e66b384e8329c1e83",
+        "url_count": 114
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 113,
-        "offered_urls": 113,
+        "submitted_urls": 114,
+        "offered_urls": 114,
         "batches": [
           {
-            "urls": 113,
+            "urls": 114,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 86,
-        "verified": 86,
+        "checked": 87,
+        "verified": 87,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1171,6 +1183,19 @@
             "anchor": "AI coach vs human coach comparison",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4830,7 +4855,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-29T15-45-42.385013Z-36592582152.json"
+    "history": "data/distribution/receipts/2026-09-30T15-47-10.371738Z-36739295556.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
