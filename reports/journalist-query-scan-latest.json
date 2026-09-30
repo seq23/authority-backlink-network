@@ -1,17 +1,58 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-09-30T12:30:42+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-09-30T18:32:14+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 9,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "What Is the Future of the Earnings Call? Seeking IR Perspectives",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Insights on this topic; From the Oscars to Big Brother: The Culture Markets",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Unforeseen costs of financial procrastination?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "How is your company using hyper-specialization to outcompete AI mediocrity?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Chocolate and candy experts: how to keep homemade fudge from failing",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "ISO Expert: best bread machine tip for home bakers",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Eating for the Winter Season",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Cold Water Plunges and Ice Baths",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking cruise itineraries and destinations for Famadillo",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Should businesses yield to warning signs and slow AI progress?",
+      "why": "She would have to invent claims about AI products, AI business operations, team involvement with AI technology, or positions on AI development pace."
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
