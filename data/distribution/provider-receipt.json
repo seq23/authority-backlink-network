@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-09-30T15-47-10.371738Z-36739295556",
-  "attempted_at": "2026-09-30T15:47:10.371738Z",
+  "receipt_id": "2026-10-01T15-45-05.616338Z-36886621850",
+  "attempted_at": "2026-10-01T15:45:05.616338Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "01a29668a25177a0dbe08c73322bb9c77fa2788ac72ef55e66b384e8329c1e83",
-        "url_count": 114
+        "sha256": "f51b2e3e96bfcedf741f041a6d6a8c9de4c1caafd427c547547e6f1de9565151",
+        "url_count": 115
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 114,
-        "offered_urls": 114,
+        "submitted_urls": 115,
+        "offered_urls": 115,
         "batches": [
           {
-            "urls": 114,
+            "urls": 115,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+            "url": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 87,
-        "verified": 87,
+        "checked": 88,
+        "verified": 88,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1196,6 +1196,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4855,7 +4868,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-09-30T15-47-10.371738Z-36739295556.json"
+    "history": "data/distribution/receipts/2026-10-01T15-45-05.616338Z-36886621850.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,

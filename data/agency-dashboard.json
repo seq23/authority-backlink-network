@@ -11,7 +11,7 @@
     "serviced_target_urls": 64,
     "backlink_rows": 624,
     "unique_source_editorials": 593,
-    "live_verified_rows": 359,
+    "live_verified_rows": 360,
     "indexed_rows": 1
   },
   "publication_operators": [
@@ -719,7 +719,7 @@
       "product_name": "",
       "campaign_ids": [],
       "backlink_count": 39,
-      "live_verified_count": 21,
+      "live_verified_count": 22,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -733,10 +733,10 @@
           "anchor": "A Player Mode",
           "campaign_id": "",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -753,7 +753,7 @@
           "anchor": "A Player Mode",
           "campaign_id": "",
           "status": "published",
-          "lifecycle_stage": "source_discovered",
+          "lifecycle_stage": "live_verified",
           "repository_rendered": true,
           "deployed": true,
           "live_verified": true,
