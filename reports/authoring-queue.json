@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-09-30",
+  "run_at": "2026-10-01",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 2,
     "allowance": 1,
-    "window_start": "2026-09-24",
-    "window_end": "2026-09-30"
+    "window_start": "2026-09-25",
+    "window_end": "2026-10-01"
   },
   "deferred": 2,
   "queue": [
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-09-30",
+      "deferred_on": "2026-10-01",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "preparing records before a specialist appointment",
-      "audience": "horse buyer",
-      "format": "resource roundup",
-      "intent": "before you choose",
-      "modifier": "AEO-ready",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Aeo-Ready Resource Roundup Before You Choose",
+      "cluster": "dental decision resources",
+      "audience": "professional services buyer",
+      "format": "planning checklist",
+      "intent": "when you need to ask better questions",
+      "modifier": "human-first",
+      "intended_title": "Dental Decision Resources: Human-First Planning Checklist When You Need To Ask Better Questions",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
-      "signature": "6674dc6cb444cfd294cd6f90be3576b9f8de829d0daf16d9ba12de0b95c05b4b",
-      "deferred_on": "2026-09-30",
+      "target_url": "https://dentistryguides.com/",
+      "signature": "853548b616e84d2f5f0b836eb332da5ad51a3736819b3dca478713c0d1867977",
+      "deferred_on": "2026-10-01",
       "reason": "weekly_publication_cap"
     }
   ]
