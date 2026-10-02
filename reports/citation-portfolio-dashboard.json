@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-10-01",
+  "as_of": "2026-10-02",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 360,
+    "authority_backlinks": 361,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 81,
-    "live_verified": 359,
-    "discoverable": 359,
+    "live_verified": 360,
+    "discoverable": 360,
     "indexed": 1,
     "ai_cited": 0
   },
@@ -113,7 +113,7 @@
       "brand_id": "aplayer-mode",
       "brand_name": "A Player Mode",
       "growth_status": "growth",
-      "authority_backlinks": 22,
+      "authority_backlinks": 23,
       "owned_manifest_surfaces": 1,
       "monthly_authority_target": 15,
       "monthly_verified_backlink_target": 12,
@@ -218,18 +218,18 @@
     "theaccidentguides.com": 3,
     "hormonesivhair.com": 3,
     "uscisexam.com": 4,
-    "aplayermode.com": 22,
+    "aplayermode.com": 23,
     "dentistryguides.com": 2
   },
   "by_publication": {
     "unknown": 15,
-    "founder": 84,
+    "founder": 85,
     "professional": 204,
     "memphis": 57
   },
   "lifecycle": {
     "approved_destination": 241,
-    "live_verified": 358,
+    "live_verified": 359,
     "source_discovered": 1,
     "published_in_repository": 1
   },
@@ -444,8 +444,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 359,
-    "live_verified_backlinks": 359,
+    "rendered_backlinks": 360,
+    "live_verified_backlinks": 360,
     "indexed_referring_pages": 1,
     "verified_external_citations": 0
   }

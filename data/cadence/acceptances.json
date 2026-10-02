@@ -244,6 +244,21 @@
       "accepted_urls": [
         "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay"
       ]
+    },
+    {
+      "accepted_at": "2026-10-02",
+      "reason": "Authority V4.2 autopilot run 37020945990 on 2026-10-02: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 643,
+      "accepted_count": 1,
+      "accepted_editorial": 1,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 318,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers"
+      ]
     }
   ]
 }

@@ -485,7 +485,8 @@
     "de2f8e62dc1a6e949f43e54bc46f8d2544a24394b2e9cfe1f631d6853f354bab",
     "4d8a30fba1662b8d1d75b68e5603ee4462c28c9729fffc8c61f87571dcba642e",
     "2b5da90ce397daefc23b8ba166ca4b14e6a105ea5fae763f4fe42db2955e5bd5",
-    "22784191f9971674563c1d448171b20741531597e79cd41d465e1ca83c13813c"
+    "22784191f9971674563c1d448171b20741531597e79cd41d465e1ca83c13813c",
+    "5128ebca257449423d4e085890ae94c76c6f2a84e4c87d68f052e94e47e72c3a"
   ],
   "published_signatures": [
     "8d39a6227e62e03c656c7ce99e5b8b686ef8ea98e1741d227e0279f8780d52dc",
@@ -972,7 +973,8 @@
     "d34ea6fb88cb94b9595c10fb04427e9a624320110a774ef7e6a4abf8c5511693",
     "6449cae10c2379c12df145fd44e8056a1aa3c45651b52bb9a7dfb3ccdae8be66",
     "fd4882d060db43af319fc630ea6d896a403bbc8f4250e323b14959267cf62ab0",
-    "cadea42e258de01c5a5244a7fba6e649cec00a0149def9c00a9edc04e84e25da"
+    "cadea42e258de01c5a5244a7fba6e649cec00a0149def9c00a9edc04e84e25da",
+    "838efa4d91981de6e2a2d01e2c10085eded08ab0db9a7926e81b830a62072b31"
   ],
   "published_titles": [
     "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers",
@@ -1459,7 +1461,8 @@
     "Founder Operating Systems: Checklist-Driven Prep Guide For Careful Decision-Makers",
     "Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book",
     "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers",
-    "Ai Workforce Design: Editorial Comparison Guide Before You Pay"
+    "Ai Workforce Design: Editorial Comparison Guide Before You Pay",
+    "Team Accountability: Practical Red-Flag Checklist For Careful Decision-Makers"
   ],
   "history": [
     {
@@ -4886,6 +4889,58 @@
         "avg_quality": 88.0,
         "duplicate_warnings": 0,
         "hard_fails": 1
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "release_date": "2026-10-02",
+      "day_index": 98,
+      "target_volume": 3,
+      "generated": 1,
+      "published": 1,
+      "scores": [
+        88
+      ],
+      "duplicate_warnings": 0,
+      "hard_fails": 0,
+      "self_heal_recoveries": 0,
+      "self_heal_attempts": 0,
+      "blocked_slots": [],
+      "social_enqueued": {
+        "published_pages": 1,
+        "platforms_enabled": [],
+        "platforms_distributing": [
+          "x"
+        ],
+        "platforms_routed": [
+          "x"
+        ],
+        "platforms_paused": {
+          "linkedin": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"drop linkedin for now its not important\", and \"i might bring linkedin back at anytime\". LinkedIn is paused on purpose and is expected to come back. It is NOT off because LINKEDIN_ACCESS_TOKEN / LINKEDIN_AUTHOR_URN are missing from repository secrets -- that absence follows from this decision rather than causing it. This record exists so \"paused by choice\", \"on but uncredentialled\" and \"on and posting\" are three visibly different states instead of one blank secret."
+          },
+          "x": {
+            "paused_on": "2026-08-29",
+            "paused_by": "owner",
+            "paused_reason": "owner_decision_2026-08-29: \"im not funding X so find a $0 workaround or kill it.\" X's API is pay-per-use with no free tier -- every write this repository has ever made answered HTTP 402 problems/credits-depleted, starting with the very first request, and nothing has ever posted. At roughly $0.20 per post with a URL, eight a day is about $48/month. The owner has decided not to pay it. This is NOT a dormant pause: X is off for API POSTING only, and distribution continues through the delivery route below. That is what pause_mode \"delivery_route\" means and why it is not \"dormant\" like LinkedIn. It used to mean a sheet the owner worked through herself; that was retired on 2026-08-29 when she said \"this means i manually have to do it? i will never do it honestly\", and Buffer replaced it entirely. Nothing in this repository asks her to do anything now."
+          }
+        },
+        "pages_enqueued_by_platform": {
+          "x": 1
+        },
+        "pages_missing_by_platform": {
+          "x": []
+        },
+        "pages_enqueued_for_social": 1,
+        "pages_missing_social": []
+      },
+      "stats_before": {
+        "pass_rate": 1.0,
+        "avg_quality": 88.0,
+        "duplicate_warnings": 0,
+        "hard_fails": 0
       }
     }
   ]
