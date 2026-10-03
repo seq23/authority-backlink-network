@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-02T15-45-15.124534Z-37029116876",
-  "attempted_at": "2026-10-02T15:45:15.124534Z",
+  "receipt_id": "2026-10-03T16-53-42.535769Z-37138502572",
+  "attempted_at": "2026-10-03T16:53:42.535769Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "97edcd68872dd44e36d1293828542b2728754765ce3029f4631565f9049fc99e",
+        "sha256": "5d00ed6dcdec2c45c257179528bf087b3e6a19dd178f9e8d63897d4e8964a0e6",
         "url_count": 116
       },
       "indexnow": {
@@ -51,21 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 1,
-        "inspected_urls": 1,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -4881,7 +4869,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-02T15-45-15.124534Z-37029116876.json"
+    "history": "data/distribution/receipts/2026-10-03T16-53-42.535769Z-37138502572.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
