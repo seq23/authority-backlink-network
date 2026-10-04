@@ -1,48 +1,48 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-03",
+  "run_at": "2026-10-04",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-09-27",
-    "window_end": "2026-10-03"
+    "window_start": "2026-09-28",
+    "window_end": "2026-10-04"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "cluster": "AI execution systems",
-      "audience": "high-performing professional",
-      "format": "decision guide",
-      "intent": "before you choose",
-      "modifier": "human-first",
-      "intended_title": "Ai Execution Systems: Human-First Decision Guide Before You Choose",
+      "cluster": "AI coaching workflows",
+      "audience": "marketing lead",
+      "format": "comparison guide",
+      "intent": "for busy operators",
+      "modifier": "beginner-safe",
+      "intended_title": "Ai Coaching Workflows: Beginner-Safe Comparison Guide For Busy Operators",
       "target_brand": "Billionaire High Performance Coach",
       "target_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
-      "signature": "3cc0fd89d87bbc42ad7a32d05c01bd7afe5b400fd63855b74b743d23b0d88bcb",
-      "deferred_on": "2026-10-03",
+      "signature": "25874c37a87af5b397822ed8c46cc6bd095b6585b0c2a80291441c6743f58cf5",
+      "deferred_on": "2026-10-04",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-10-03",
+      "deferred_on": "2026-10-04",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "nonprofit executive",
-      "format": "budget/planning note",
-      "intent": "before you book",
-      "modifier": "GEO-ready",
-      "intended_title": "Dental Decision Resources: Geo-Ready Budget/Planning Note Before You Book",
+      "audience": "barn owner",
+      "format": "prep guide",
+      "intent": "for first-time buyers",
+      "modifier": "plain-English",
+      "intended_title": "Dental Decision Resources: Plain-English Prep Guide For First-Time Buyers",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/guides/",
-      "signature": "58c83cfa4fb9accbb01553d118aa0c3bea7a43dfe6df73198117785285af2e28",
-      "deferred_on": "2026-10-03",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "0e3125ad979cde2de49e81c4560820e66042b7b944269f75fdda8160169d3b4e",
+      "deferred_on": "2026-10-04",
       "reason": "weekly_publication_cap"
     }
   ]
