@@ -1,54 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-05T12:28:54+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 9,
+  "run_at": "2026-10-05T18:35:19+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 9,
+  "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "HR and benefits managers: what employees actually ask about disability coverage",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "One change you made to adapt CRO and LPO tactics for the AI era",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Gift guide: products the whole family can enjoy together this Christmas",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "ISO chefs to comment on the use of acid in holiday dishes",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Hudson Valley Stories-Please share!",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Aquatic Vet or Zoo/Aquarium Staff to Chat About Schooling Freshwater Fish Pets",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Need comments from environmental experts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Golf experts for golf gift guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Was that travel fee required — or did someone just say it was?",
-      "why": "excluded: 'attorney'"
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
