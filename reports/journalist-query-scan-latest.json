@@ -1,17 +1,58 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-05T18:35:19+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-10-06T12:26:32+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
+  "dropped_by_beat_filter": 10,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Seeking Single Black Women Around 60 for National Magazine Feature on Reinvention, Love & What Comes Next",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Low Testosterone: Age or Adiposity?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Medical experts needed for information on endometriosis blood tests",
+      "why": "excluded: 'diagnosis'"
+    },
+    {
+      "summary": "Memory care community representatives to discuss making move-in days easier for residents with dementia",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking someone having an issue with a financial product",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Need experts for a hummingbird article",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking stories: When someone tells you something hard",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Travel Products for 4th Annual Holiday Gift Guide",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "GLP-1 and protein-forward menus: expert comment needed for catering trade magazine",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking experts to explain why product operating models often fail",
+      "why": "matches no declared beat"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
