@@ -112228,12 +112228,12 @@
       "path": "sites/professional-resources/uscis-form-and-fee-changelog.html",
       "publication": "professional-resources",
       "route": "/uscis-form-and-fee-changelog.html",
-      "source_hash": "d6a32385c1e4fd8afdf004dab2ed758ab526b457642ac61c205c09321ddf68ca",
+      "source_hash": "bc784a4e4d5283c16ad4255beaf86d14a89eb088f2151ac7a34b5dcaff397533",
       "title": "USCIS Form and Fee Changelog | Professional Resource Library",
       "h1": [
         "USCIS Form and Fee Changelog"
       ],
-      "word_count": 3453,
+      "word_count": 3621,
       "canonical": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
       "meta_description": "A dated record of changes to the USCIS filing-fee and form-edition pages. Each entry quotes the agency's text, links its source and gives the date checked.",
       "html_lang": "en",
@@ -112257,6 +112257,10 @@
         {
           "href": "https://www.uscis.gov/forms/all-forms",
           "anchor": "USCIS All Forms"
+        },
+        {
+          "href": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+          "anchor": "Office of the Federal Register: USCIS documents in the Federal Register, as observed 2026-10-06"
         },
         {
           "href": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
@@ -112526,7 +112530,7 @@
         }
       ],
       "schema_count": 3,
-      "duplicate_fingerprint": "61d43ad96bb7a19454a86d54a29ceeff80af602d94ed4e6897cb237b7dbccdea",
+      "duplicate_fingerprint": "be43174a3f46abc4c39d462dcab783eacd95ec7a1c2314da2cb699c961e6f545",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",

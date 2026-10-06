@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "total_links": 25188,
+  "total_links": 25189,
   "violations": [],
   "target_domains": [
     "aplayermode.com",
@@ -223653,6 +223653,15 @@
       "href": "https://www.uscis.gov/forms/all-forms",
       "domain": "uscis.gov",
       "anchor": "USCIS All Forms",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/professional-resources/uscis-form-and-fee-changelog.html",
+      "publication": "professional",
+      "href": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "domain": "federalregister.gov",
+      "anchor": "Office of the Federal Register: USCIS documents in the Federal Register, as observed 2026-10-06",
       "external": true,
       "violation": ""
     },
