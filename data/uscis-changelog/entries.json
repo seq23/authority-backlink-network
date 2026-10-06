@@ -9,6 +9,43 @@
   ],
   "entries": [
     {
+      "id": "2026-10-06-uscis-federal-register",
+      "date_observed": "2026-10-06",
+      "checked_at": "2026-10-06T13:27:26+00:00",
+      "source_id": "uscis-federal-register",
+      "source_url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "source_title": "USCIS documents in the Federal Register",
+      "publisher": "Office of the Federal Register",
+      "headline": "Notice for I-140 form removed; notice for I-90 form added",
+      "summary": "The page previously listed a September 14, 2026 notice (FR Doc. 2026-18672) for a 60-day comment period on extending the information collection for the Immigrant Petition for Alien Workers form. The page now lists an October 6, 2026 notice (FR Doc. 2026-20422) for a 60-day comment period on extending the information collection for the Application To Replace Permanent Resident Card form.",
+      "quotes": [
+        {
+          "side": "removed",
+          "text": "2026-09-14 | Notice | FR Doc. 2026-18672 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Immigrant Petition for Alien Workers"
+        },
+        {
+          "side": "added",
+          "text": "2026-10-06 | Notice | FR Doc. 2026-20422 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application To Replace Permanent Resident Card"
+        }
+      ],
+      "evidence": {
+        "previous_snapshot_sha256": "0bd3b648dfc49acdd177135cc2d77385a66d0df0c04c42033378701b8f9a213a",
+        "current_snapshot_sha256": "52e2afbebc4ef4d15b066ede34627ffd62d24f274bea80da7cf4925d7c3bcc0a",
+        "previous_captured": "2026-09-29T13:29:43+00:00",
+        "added": [
+          "2026-10-06 | Notice | FR Doc. 2026-20422 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application To Replace Permanent Resident Card",
+          "FR Doc. 2026-20422 action: 60-Day notice.",
+          "FR Doc. 2026-20422 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ],
+        "removed": [
+          "2026-09-14 | Notice | FR Doc. 2026-18672 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Immigrant Petition for Alien Workers",
+          "FR Doc. 2026-18672 action: 60-Day notice.",
+          "FR Doc. 2026-18672 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information or new collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ]
+      },
+      "model": "anthropic/claude-sonnet-4.5"
+    },
+    {
       "id": "2026-09-29-uscis-federal-register",
       "date_observed": "2026-09-29",
       "checked_at": "2026-09-29T13:29:43+00:00",
