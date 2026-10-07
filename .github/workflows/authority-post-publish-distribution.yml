@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   distribute:
+    timeout-minutes: 11  # ~3x median 3.5m over 8 green runs; fault detector, not a budget
     if: >-
       ${{
         github.event_name != 'workflow_run' ||
