@@ -48,6 +48,7 @@ concurrency:
 
 jobs:
   scan:
+    timeout-minutes: 5  # ~3x median 0.3m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
