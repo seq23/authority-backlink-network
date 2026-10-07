@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-06T15-44-24.379979Z-37489959779",
-  "attempted_at": "2026-10-06T15:44:24.379979Z",
+  "receipt_id": "2026-10-07T15-50-27.316304Z-37647128961",
+  "attempted_at": "2026-10-07T15:50:27.316304Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "5d00ed6dcdec2c45c257179528bf087b3e6a19dd178f9e8d63897d4e8964a0e6",
-        "url_count": 116
+        "sha256": "060edceb5de76a6867f06efde39082d62a0cad6b7a8b21e0bc7d55d812ceda39",
+        "url_count": 117
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 116,
-        "offered_urls": 116,
+        "submitted_urls": 117,
+        "offered_urls": 117,
         "batches": [
           {
-            "urls": 116,
+            "urls": 117,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 89,
-        "verified": 89,
+        "checked": 90,
+        "verified": 90,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1210,6 +1222,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4869,7 +4894,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-06T15-44-24.379979Z-37489959779.json"
+    "history": "data/distribution/receipts/2026-10-07T15-50-27.316304Z-37647128961.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
