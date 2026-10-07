@@ -259,6 +259,21 @@
       "accepted_urls": [
         "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers"
       ]
+    },
+    {
+      "accepted_at": "2026-10-07",
+      "reason": "Authority V4.2 autopilot run 37637875044 on 2026-10-07: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 644,
+      "accepted_count": 1,
+      "accepted_editorial": 1,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 319,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign"
+      ]
     }
   ]
 }

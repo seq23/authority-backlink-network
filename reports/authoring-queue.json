@@ -1,48 +1,34 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-06",
+  "run_at": "2026-10-07",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 3,
-    "allowance": 0,
-    "window_start": "2026-09-30",
-    "window_end": "2026-10-06"
+    "published_in_window": 2,
+    "allowance": 1,
+    "window_start": "2026-10-01",
+    "window_end": "2026-10-07"
   },
-  "deferred": 3,
+  "deferred": 2,
   "queue": [
     {
-      "publication": "founder-operator",
-      "cluster": "founder operating systems",
-      "audience": "operator",
-      "format": "buyer guide",
-      "intent": "for people who need a starting point",
-      "modifier": "plain-English",
-      "intended_title": "Founder Operating Systems: Plain-English Buyer Guide For People Who Need A Starting Point",
-      "target_brand": "Billionaire High Performance Coach",
-      "target_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
-      "signature": "cfe57bb4bb63df16370da95f75b103b15ec6d28124d8559c255c602faca1d499",
-      "deferred_on": "2026-10-06",
-      "reason": "weekly_publication_cap"
-    },
-    {
       "publication": "memphis-local",
-      "deferred_on": "2026-10-06",
+      "deferred_on": "2026-10-07",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "equine professional",
-      "format": "prep guide",
-      "intent": "before you choose",
-      "modifier": "resource-backed",
-      "intended_title": "Dental Decision Resources: Resource-Backed Prep Guide Before You Choose",
+      "audience": "HR leader",
+      "format": "timeline guide",
+      "intent": "when you need to ask better questions",
+      "modifier": "operator-grade",
+      "intended_title": "Dental Decision Resources: Operator-Grade Timeline Guide When You Need To Ask Better Questions",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/",
-      "signature": "3cd0ab1a8a3d83a786e7f6cb201c8a89125c134c5a8b36362c53a56319dabb80",
-      "deferred_on": "2026-10-06",
+      "signature": "4e390cf0ed25845cc5f405ebd85c9cf7dff079f885d88899d64b278727a5183f",
+      "deferred_on": "2026-10-07",
       "reason": "weekly_publication_cap"
     }
   ]
