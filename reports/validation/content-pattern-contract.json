@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "validator": "content-pattern-contract",
-  "generated_at": "2026-10-07T16:48:34.040Z",
+  "generated_at": "2026-10-08T14:37:28.433Z",
   "enforcement": "block",
   "scanned_root": "sites",
-  "pages_checked": 641,
+  "pages_checked": 642,
   "status": "PASS",
   "blocking_failures": 0,
   "summary": [
@@ -47,21 +47,21 @@
       "id": "comparison_table",
       "blocking": false,
       "pages_missing": 60,
-      "coverage_pct": 90.6,
+      "coverage_pct": 90.7,
       "why": "no comparison or cost table (agent request #2, 529 occurrences)"
     },
     {
       "id": "concrete_numbers",
       "blocking": false,
-      "pages_missing": 549,
-      "coverage_pct": 14.4,
+      "pages_missing": 550,
+      "coverage_pct": 14.3,
       "why": "no concrete cost or timeline figures (agent request #5, 365 occurrences)"
     },
     {
       "id": "named_sources",
       "blocking": false,
-      "pages_missing": 56,
-      "coverage_pct": 91.3,
+      "pages_missing": 57,
+      "coverage_pct": 91.1,
       "why": "no link to a verified outside source - the page cites only domains this network owns"
     },
     {
@@ -154,6 +154,7 @@
       "founder-operator/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay.html",
       "founder-operator/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers.html",
       "founder-operator/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign.html",
+      "founder-operator/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
       "founder-operator/editorial-standards.html",
       "founder-operator/index.html",
       "founder-operator/masthead.html",
@@ -163,8 +164,7 @@
       "founder-operator/topics/hiring-and-lean-team-stack.html",
       "founder-operator/topics/virtual-event-production.html",
       "memphis-local/contributors.html",
-      "memphis-local/corrections.html",
-      "memphis-local/editorial-standards.html"
+      "memphis-local/corrections.html"
     ],
     "faq": [
       "founder-operator/ai-executive-coaching-resources.html",

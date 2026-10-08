@@ -110,8 +110,8 @@
   "route_only_platforms": [
     "x"
   ],
-  "still_postable_after_run": 1060,
-  "deferred_waiting_for_delivery_route": 479,
+  "still_postable_after_run": 1061,
+  "deferred_waiting_for_delivery_route": 480,
   "hand_post_history": {
     "note": "Historical only: what the owner posted to X by hand before Buffer carried it. Read on every run so those posts are never sent again. Nothing updates it and nothing asks her to.",
     "marked_posted_through": null,
@@ -122,5 +122,5 @@
   },
   "status": "deferred_waiting_for_delivery_route",
   "production_blocked": false,
-  "stop_reason": "No platform posts through its API right now, and none was contacted: zero requests were made. The delivery route for x could not carry anything this run, so 479 entries stayed 'queued_for_auto_post' and go out on a later run as the route frees up. Nothing is stranded, nothing is lost, and nothing is asked of anybody."
+  "stop_reason": "No platform posts through its API right now, and none was contacted: zero requests were made. The delivery route for x could not carry anything this run, so 480 entries stayed 'queued_for_auto_post' and go out on a later run as the route frees up. Nothing is stranded, nothing is lost, and nothing is asked of anybody."
 }

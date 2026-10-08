@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -9,8 +9,8 @@
     "workflow_operators": 8,
     "approved_target_urls": 84,
     "serviced_target_urls": 64,
-    "backlink_rows": 626,
-    "unique_source_editorials": 595,
+    "backlink_rows": 627,
+    "unique_source_editorials": 596,
     "live_verified_rows": 362,
     "indexed_rows": 1
   },
@@ -7713,10 +7713,30 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 13,
+      "backlink_count": 14,
       "live_verified_count": 7,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
+          "source_title": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-10-08",
+          "release_date": "2026-10-08",
+          "anchor": "Billionaire High Performance Coach",
+          "campaign_id": "bhpc-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",

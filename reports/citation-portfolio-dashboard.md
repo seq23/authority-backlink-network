@@ -1,12 +1,12 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-10-07
+As of: 2026-10-08
 
 - Registered brands: 16
 - Authority publications: 3
-- Repository-rendered authority backlinks: 362
+- Repository-rendered authority backlinks: 363
 - Owned product-repo surfaces imported: 81
-- Live verified backlinks: 361
+- Live verified backlinks: 362
 - Indexed referring pages with evidence: 1
 
 ## By brand
@@ -19,7 +19,7 @@ As of: 2026-10-07
 | Hormone Optimization Guides | growth | 3 | 3 | 18 |
 | Neuro Evaluation Guides | growth | 4 | 3 | 15 |
 | USCIS Exam Guides | growth | 4 | 3 | 15 |
-| Billionaire High Performance Coach | standard | 10 | 4 | 10 |
+| Billionaire High Performance Coach | standard | 11 | 4 | 10 |
 | A Player Mode | growth | 24 | 1 | 15 |
 | Virtual Agency OS | growth | 32 | 9 | 15 |
 | West Peek Productions | standard | 24 | 1 | 10 |

@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-07",
+  "run_at": "2026-10-08",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 2,
     "allowance": 1,
-    "window_start": "2026-10-01",
-    "window_end": "2026-10-07"
+    "window_start": "2026-10-02",
+    "window_end": "2026-10-08"
   },
   "deferred": 2,
   "queue": [
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-10-07",
+      "deferred_on": "2026-10-08",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "HR leader",
-      "format": "timeline guide",
-      "intent": "when you need to ask better questions",
-      "modifier": "operator-grade",
-      "intended_title": "Dental Decision Resources: Operator-Grade Timeline Guide When You Need To Ask Better Questions",
+      "audience": "immigration medical exam applicant",
+      "format": "operator playbook",
+      "intent": "when timing matters",
+      "modifier": "low-risk",
+      "intended_title": "Dental Decision Resources: Low-Risk Operator Playbook When Timing Matters",
       "target_brand": "The Dentistry Guides",
-      "target_url": "https://dentistryguides.com/",
-      "signature": "4e390cf0ed25845cc5f405ebd85c9cf7dff079f885d88899d64b278727a5183f",
-      "deferred_on": "2026-10-07",
+      "target_url": "https://dentistryguides.com/guides/",
+      "signature": "1a90f6e549b25f39e1f85cf67056c0cae584985fd486076ae6ed6422c0052437",
+      "deferred_on": "2026-10-08",
       "reason": "weekly_publication_cap"
     }
   ]
