@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-07T15-50-27.316304Z-37647128961",
-  "attempted_at": "2026-10-07T15:50:27.316304Z",
+  "receipt_id": "2026-10-08T15-47-23.332134Z-37803548519",
+  "attempted_at": "2026-10-08T15:47:23.332134Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "060edceb5de76a6867f06efde39082d62a0cad6b7a8b21e0bc7d55d812ceda39",
-        "url_count": 117
+        "sha256": "9e7523fe743a7e0de489657b5bd8fb4e23146c6a992396fcb2b0e7c136f6d31d",
+        "url_count": 118
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 117,
-        "offered_urls": 117,
+        "submitted_urls": 118,
+        "offered_urls": 118,
         "batches": [
           {
-            "urls": 117,
+            "urls": 118,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
+            "url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 90,
-        "verified": 90,
+        "checked": 91,
+        "verified": 91,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1235,6 +1235,19 @@
             "anchor": "A Player Mode",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
+            "target_url": "https://billionairehighperformancecoach.com/",
+            "anchor": "Billionaire High Performance Coach",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4894,7 +4907,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-07T15-50-27.316304Z-37647128961.json"
+    "history": "data/distribution/receipts/2026-10-08T15-47-23.332134Z-37803548519.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,

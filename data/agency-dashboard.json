@@ -11,7 +11,7 @@
     "serviced_target_urls": 64,
     "backlink_rows": 627,
     "unique_source_editorials": 596,
-    "live_verified_rows": 362,
+    "live_verified_rows": 363,
     "indexed_rows": 1
   },
   "publication_operators": [
@@ -733,7 +733,7 @@
           "anchor": "A Player Mode",
           "campaign_id": "",
           "status": "published",
-          "lifecycle_stage": "source_discovered",
+          "lifecycle_stage": "live_verified",
           "repository_rendered": true,
           "deployed": true,
           "live_verified": true,
@@ -7714,7 +7714,7 @@
         "bhpc-authority"
       ],
       "backlink_count": 14,
-      "live_verified_count": 7,
+      "live_verified_count": 8,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -7728,10 +7728,10 @@
           "anchor": "Billionaire High Performance Coach",
           "campaign_id": "bhpc-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
