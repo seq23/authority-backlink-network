@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-08T15-47-23.332134Z-37803548519",
-  "attempted_at": "2026-10-08T15:47:23.332134Z",
+  "receipt_id": "2026-10-09T15-46-03.112525Z-37954107410",
+  "attempted_at": "2026-10-09T15:46:03.112525Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "9e7523fe743a7e0de489657b5bd8fb4e23146c6a992396fcb2b0e7c136f6d31d",
-        "url_count": 118
+        "sha256": "1a3999e7b0f9e3c07196c1b5ca7f2d3a5557e9ce03be8e367c0f251fb9a9a547",
+        "url_count": 119
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 118,
-        "offered_urls": 118,
+        "submitted_urls": 119,
+        "offered_urls": 119,
         "batches": [
           {
-            "urls": 118,
+            "urls": 119,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -55,7 +55,7 @@
         "inspected_urls": 1,
         "results": [
           {
-            "url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
+            "url": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
             "status": "SUCCESS",
             "http_status": 200,
             "verdict": "NEUTRAL",
@@ -69,8 +69,8 @@
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 91,
-        "verified": 91,
+        "checked": 92,
+        "verified": 92,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -1248,6 +1248,19 @@
             "anchor": "Billionaire High Performance Coach",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+            "target_url": "https://www.aplayermode.com/",
+            "anchor": "A Player Mode",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -4907,7 +4920,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-08T15-47-23.332134Z-37803548519.json"
+    "history": "data/distribution/receipts/2026-10-09T15-46-03.112525Z-37954107410.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
