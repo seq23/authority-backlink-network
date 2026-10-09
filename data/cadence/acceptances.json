@@ -289,6 +289,21 @@
       "accepted_urls": [
         "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po"
       ]
+    },
+    {
+      "accepted_at": "2026-10-09",
+      "reason": "Authority V4.2 autopilot run 37945665156 on 2026-10-09: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 646,
+      "accepted_count": 1,
+      "accepted_editorial": 1,
+      "accepted_navigation": 0,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 321,
+      "accepted_urls": [
+        "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions"
+      ]
     }
   ]
 }

@@ -2,13 +2,13 @@
   "schema": "authority-page-validation-v1",
   "mode": "release",
   "status": "PASS_WITH_SOFT_WARNING",
-  "pages_examined": 648,
+  "pages_examined": 649,
   "hard_failures": 0,
   "strong_warnings": 0,
   "soft_warnings": 3,
   "cache": {
     "hits": 535,
-    "misses": 113,
+    "misses": 114,
     "enabled": true
   },
   "repairs_applied": 0,
@@ -70,12 +70,12 @@
       "path": "sites/founder-operator/about.html",
       "publication": "founder-operator",
       "route": "/about.html",
-      "source_hash": "313ab56ce34b6678b081244b7e016b8cdf93d3cddd8a14919c5734340149e961",
+      "source_hash": "7c5e7e2e1b20849a2ed2f603819fd187010a76fe662f4696da6b29b315f72d4f",
       "title": "About Founder Operator Library | Founder Operator Library",
       "h1": [
         "About Founder Operator Library"
       ],
-      "word_count": 999,
+      "word_count": 1000,
       "canonical": "https://founderoperatorlibrary.com/about",
       "meta_description": "About Founder Operator Library: who owns and edits it, the editorial policy its guides follow, and how affiliated citations are chosen and disclosed.",
       "html_lang": "en",
@@ -153,6 +153,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -195,10 +199,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -244,7 +244,7 @@
         }
       ],
       "schema_count": 2,
-      "duplicate_fingerprint": "b6a75c7f9ea868aed2344ba2652ff961344e3fa592b0e96a7fab8a6b6fdb8066",
+      "duplicate_fingerprint": "59d322c31c15d36b4ce79136a0355beecdfae8bddb6387b6266d1268d43d5807",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -255,12 +255,12 @@
       "path": "sites/founder-operator/ai-delegation-risk-checklist.html",
       "publication": "founder-operator",
       "route": "/ai-delegation-risk-checklist.html",
-      "source_hash": "36167ca38d4dd6636e12e40f933a45116ef1356618cb645fc97d57022c94d5d7",
+      "source_hash": "33ffc86b312f236e0c4fd03c374509e755c1fd8fbe1346fa7d5fa9df6b88e159",
       "title": "An AI Delegation Checklist for Operators | Founder Operator Library",
       "h1": [
         "An AI Delegation Checklist for Operators"
       ],
-      "word_count": 2078,
+      "word_count": 2079,
       "canonical": "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
       "meta_description": "Checks to run before handing a recurring task to an AI system: reversibility, review, disclosure and failure, mapped to the NIST AI Risk Management Framework.",
       "html_lang": "en",
@@ -358,6 +358,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -400,10 +404,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/editorial-standards",
@@ -457,7 +457,7 @@
         }
       ],
       "schema_count": 3,
-      "duplicate_fingerprint": "df01734cf49f4832def3c648bb11492b2085495a746409144a600bd80c166e4a",
+      "duplicate_fingerprint": "20fb94ea7d69b64f1c4681fd53af888e0930255bf994b9a9ee06b2e46149397f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -468,12 +468,12 @@
       "path": "sites/founder-operator/ai-executive-coaching-resources.html",
       "publication": "founder-operator",
       "route": "/ai-executive-coaching-resources.html",
-      "source_hash": "00dd42bd51c881606792ffc3054c0f4c23b251eaeba5e90cba6b8599b49203b0",
+      "source_hash": "bc933eeaa257227c8681e09416703aeb6bb643a6d610d89deedf622450a926e1",
       "title": "AI Executive Coaching Resources | Founder Operator Library",
       "h1": [
         "AI Executive Coaching Resources"
       ],
-      "word_count": 1241,
+      "word_count": 1242,
       "canonical": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "meta_description": "Comparing AI coaching, accountability systems and human coaching: when a structured AI operating system helps with planning, sequencing and review.",
       "html_lang": "en",
@@ -575,6 +575,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -617,10 +621,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -666,7 +666,7 @@
         }
       ],
       "schema_count": 2,
-      "duplicate_fingerprint": "37beba409349c708fc26b553080411774ec83b13941495795afec44f4db99566",
+      "duplicate_fingerprint": "ccadfa28110a8b44023d249e2e9c663fd0e391510b856d44975dee1acba306af",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -677,12 +677,12 @@
       "path": "sites/founder-operator/ai-marketing-operations-resources.html",
       "publication": "founder-operator",
       "route": "/ai-marketing-operations-resources.html",
-      "source_hash": "15a59aae4b081ed84c69e459fd4727e7bbc6e0aac736ef030d0e49f35115b0bf",
+      "source_hash": "83b076733ed031240ee0c55b6dfd7c5de0c936eabd6054bef436d917d43d4e8a",
       "title": "AI Marketing Operations Resources | Founder Operator Library",
       "h1": [
         "AI Marketing Operations Resources"
       ],
-      "word_count": 1231,
+      "word_count": 1232,
       "canonical": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
       "meta_description": "Where AI speeds up marketing research, drafts, repurposing and reporting, and where strategy, positioning and judgment still need a person to own them.",
       "html_lang": "en",
@@ -788,6 +788,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -830,10 +834,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -879,7 +879,7 @@
         }
       ],
       "schema_count": 2,
-      "duplicate_fingerprint": "d1202c43af57f8f204e0a38d23be4c8a71679cc417103880d10c52986d08419f",
+      "duplicate_fingerprint": "855b6d1258a3de84a49c1b4f8daf9ccab527346afc0d1081fd7b5c55eeb8051d",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -890,12 +890,12 @@
       "path": "sites/founder-operator/contractor-vs-employee-lean-team-comparison.html",
       "publication": "founder-operator",
       "route": "/contractor-vs-employee-lean-team-comparison.html",
-      "source_hash": "45d350d37f5691e08f84e21c96ff1fcc0efaf1be61f32b977bd567fb5bda7ba8",
+      "source_hash": "529e0d61f218c65e4c5bea5ea0aaca7e38e3149855a03fddd61c67c17b3a76bf",
       "title": "Contractor or Employee: Comparing Two Ways to Staff a Lean Team",
       "h1": [
         "Contractor or Employee: Comparing Two Ways to Staff a Lean Team"
       ],
-      "word_count": 2038,
+      "word_count": 2039,
       "canonical": "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
       "meta_description": "A side-by-side comparison of contractor and employee engagements for a small operating team, and why the choice is a legal test rather than a preference.",
       "html_lang": "en",
@@ -993,6 +993,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -1035,10 +1039,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/editorial-standards",
@@ -1092,7 +1092,7 @@
         }
       ],
       "schema_count": 3,
-      "duplicate_fingerprint": "29d95693728d20be4bfac533aa024a00094937e0bd33cd9707d80beda475e698",
+      "duplicate_fingerprint": "3f09c75a220acc83c24dcd282be0ac9e553e30eafbdd624daad27a8b4d1bf9f9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -1381,7 +1381,7 @@
       "path": "sites/founder-operator/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book.html",
-      "source_hash": "f941588f85854739ed6a6875da61d287395fbc42bfa0a03773e5a575df617d9e",
+      "source_hash": "a4750f98c64ea8b8343793a89beda65d8d043f40052d66624cd6a48ac7d08d6c",
       "title": "Automation Without Chaos: Geo-Ready Framework Before You Book",
       "h1": [
         "Automation Without Chaos: Geo-Ready Framework Before You Book"
@@ -1506,7 +1506,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "248a013caaacb3278548a3c7ecdb8c07ce7b7632706971f23843293a7abbdf0b",
+      "duplicate_fingerprint": "b605944bcc45ac1eddd01fb12f9d4b851728bb038b1becc83989385346e7bf5d",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -1517,7 +1517,7 @@
       "path": "sites/founder-operator/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers.html",
-      "source_hash": "3d8608d8241dc77fafcab34a91e398e62cae20bb52a7b014efb90da880ef9973",
+      "source_hash": "52119ec5f95918d505438565eae9c5024e312e0af11bea30ae649547808dc693",
       "title": "Ai Execution Systems: Local/Resource Directory For First-Time Buyers",
       "h1": [
         "Ai Execution Systems: Decision-Focused Local/Resource Directory For First-Time Buyers"
@@ -1654,7 +1654,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "e4a8bca9afd4f9087949bdce4b0ca3a9213fe66a5be9f24ccd950736f8e0eca5",
+      "duplicate_fingerprint": "5ab9816ad26955a948cea9dc2fac16cf75cb5167d9c2799b8a09a5ca0a144d37",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -1805,7 +1805,7 @@
       "path": "sites/founder-operator/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book.html",
-      "source_hash": "a383db790598ec0c29798c3c93c26b05f04c5cfa6b9c3024eb7bb95e32c6bb51",
+      "source_hash": "de2208e472a69a284ee48b12a92565c72f37303476686914e6dedff409a1030d",
       "title": "Executive Broadcast Planning: Comparison Guide Before You Book",
       "h1": [
         "Executive Broadcast Planning: Checklist-Driven Comparison Guide Before You Book"
@@ -1942,7 +1942,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "3b88e8bd4aa15765172dcbbfce206b71a1994d08dd244b01a5712a84018b6128",
+      "duplicate_fingerprint": "443eb719c41f8d70d26593b12e2a8c6c4f3d98a2e647690eb5896db9f5d55034",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -1953,7 +1953,7 @@
       "path": "sites/founder-operator/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign.html",
-      "source_hash": "e913dd3c386aa3f47c1d2002e6582d87c1a692ff9ac2d0c47a6a80d53db7324b",
+      "source_hash": "4e9a08742401611ff502bc262178f038c3a1eb0283d93fb88baa098cb59c5f29",
       "title": "Ai Coaching Workflows: Operator-Grade Faq Answer Page Before You Sign",
       "h1": [
         "Ai Coaching Workflows: Operator-Grade Faq Answer Page Before You Sign"
@@ -2078,7 +2078,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "4057fa0336e4f04c7977026d8d7f697bbbfe9473a4b0e5b8f2780285f53e659b",
+      "duplicate_fingerprint": "cf2e61789185d3d6c718aa6ae74f38c91649a5f93fd741623220febe7642eb21",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2089,12 +2089,12 @@
       "path": "sites/founder-operator/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers.html",
-      "source_hash": "9d785cad21729ee044501a128e8db302d1758fe4d7d4c70a4ee9d51493928c9a",
+      "source_hash": "56ff043f4e68dd90c5fa4b2d7352473d85a36deccc112c673dd2636164bb7051",
       "title": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory",
       "h1": [
         "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
       ],
-      "word_count": 1186,
+      "word_count": 1188,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
       "meta_description": "A no-fluff local and resource directory on meeting operating rhythms for a high-performing professional, written for careful decision-makers.",
       "html_lang": "en",
@@ -2106,6 +2106,10 @@
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
           "anchor": "Founder operating rhythms"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
@@ -2152,10 +2156,6 @@
           "anchor": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign"
         },
         {
-          "href": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
-          "anchor": "Team Accountability: Comparison-Friendly Local/Resource Directory Before You Book"
-        },
-        {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
           "anchor": "All founder operating rhythms"
         },
@@ -2206,7 +2206,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "8b1791804b14827a3552bbad5c4367969f55492e61a570b5f7e09ec5ee28c7b8",
+      "duplicate_fingerprint": "16d87b1d5e3cf7743759b5c7d442c551daf46731cbeccd3cbdea013f83991f92",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2217,12 +2217,12 @@
       "path": "sites/founder-operator/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers.html",
-      "source_hash": "dca78da8b25b345cfa675870e9415fb6c1ff53d31deb1154c1ead87db42c5716",
+      "source_hash": "4db3bafa362961c0af4e25bf4ba73eb13b519dc886a256ddf6f549a840da2070",
       "title": "Founder Operating Systems: Operator Playbook For A Chief Of Staff",
       "h1": [
         "Founder Operating Systems: Beginner-Safe Operator Playbook For Careful Decision-Makers"
       ],
-      "word_count": 1196,
+      "word_count": 1200,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers",
       "meta_description": "A beginner-safe operator playbook on founder operating systems for a chief of staff, written for careful decision-makers: what to compare and what to ask.",
       "html_lang": "en",
@@ -2242,6 +2242,10 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
@@ -2280,10 +2284,6 @@
           "anchor": "Review Cadences: Low-Risk Buyer Guide When Timing Matters"
         },
         {
-          "href": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
-          "anchor": "Review Cadences: No-Fluff Framework Before You Book"
-        },
-        {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
           "anchor": "All founder operating rhythms"
         },
@@ -2334,7 +2334,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "075cec80859ead775a85c2e7441295d7d76334490ccb2bb04ac15eaf8adf0024",
+      "duplicate_fingerprint": "09d3743370ee4f11ed3836d8bbe67505c7de169262be4a27d831cc795ae9908d",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2345,7 +2345,7 @@
       "path": "sites/founder-operator/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign.html",
-      "source_hash": "1d26a243b6c2a81b70d7646eeb6bd73e3a363121e3dd9a8b4a9838896c3ccfe2",
+      "source_hash": "a78842fed88e2d1bde6a0cf9daa9b5a871d378a4b2b535a674591f749cbf8df8",
       "title": "Startup Resource Libraries: Prep Guide Before You Sign",
       "h1": [
         "Startup Resource Libraries: Decision-Focused Prep Guide Before You Sign"
@@ -2466,7 +2466,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "4adfcd8fe8d1806ebd47ac171b3bc81a182e091b8992ecd1b3579e0cbcc74706",
+      "duplicate_fingerprint": "037f74c49cf9d4158389e00c9141d4ceff64ad61f3f6311e37ecf57f14253046",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2477,7 +2477,7 @@
       "path": "sites/founder-operator/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call.html",
-      "source_hash": "0bea723ec05a4365d6cbac364c5503f51182da9bbb40c4386dfe95f97817d958",
+      "source_hash": "021ba944d1b98a986a789d115ef1ba85f2397c41370babc0732309e859fdd7d9",
       "title": "Ai Delegation: Beginner-Safe Question Checklist Before You Call",
       "h1": [
         "Ai Delegation: Beginner-Safe Question Checklist Before You Call"
@@ -2602,7 +2602,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f02e52a51dfcc3b1c80899ee34653e71d4d7454d287cdbafce4c7c714dce32db",
+      "duplicate_fingerprint": "7ba87fc84bd766710b1f6cb40741a6225f514c8912883816d1c97c300fa4d03f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2741,7 +2741,7 @@
       "path": "sites/founder-operator/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call.html",
-      "source_hash": "4ccb2300ecdff309d342c3ec2cc67dda6016ae71d9ca73e49981ee805b9118d5",
+      "source_hash": "57c4893d00d408f4efc678051b25227a41590e788d7f276937a873768ce6cc4a",
       "title": "Tool Stacks For Lean Teams: Planning Checklist Before You Call",
       "h1": [
         "Tool Stacks For Lean Teams: Operator-Grade Planning Checklist Before You Call"
@@ -2874,7 +2874,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "7a337f56012654b05aee8a71237be694e3a388dadb48d18d2a9cb9b5d88c38f2",
+      "duplicate_fingerprint": "d51f580c0eb55c708636667e46a1a8a0fdf4d4f6ae760658a837e1cc9484b890",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -2885,7 +2885,7 @@
       "path": "sites/founder-operator/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers.html",
-      "source_hash": "68071740e5acb499439ff072a58e77ca3f86524fe7e7d3b17725301b60f135b0",
+      "source_hash": "21a730f53e3aa9b045a48ef54dacb164eae27d648eae3f85c69967c5778f8548",
       "title": "Startup Resource Libraries: Framework For First-Time Buyers",
       "h1": [
         "Startup Resource Libraries: Checklist-Driven Framework For First-Time Buyers"
@@ -3006,7 +3006,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "ac83066835c1f5f01ffe6734b3aed64efa0db583b2f7a2f11bb9a0819664c9af",
+      "duplicate_fingerprint": "fc3cafc766db09db3136fceb92817e34cebf3d57871d9b95cca628b3fde9491a",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3157,7 +3157,7 @@
       "path": "sites/founder-operator/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign.html",
-      "source_hash": "5fa024446e697a3859d3a20d25d0495c8b77055b84413f211d602c888d9e9118",
+      "source_hash": "e7af15f7314da3769353acbfd32653d934b19caa1b2ec6e1054e0fae1e2f29b5",
       "title": "Calendar Protection: Human-First Operator Playbook Before You Sign",
       "h1": [
         "Calendar Protection: Human-First Operator Playbook Before You Sign"
@@ -3204,6 +3204,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -3218,10 +3222,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
           "anchor": "Productivity Recovery After Missed Days: Decision-Focused Buyer Guide Before You Pay"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
-          "anchor": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -3274,7 +3274,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "d842bb7634fbb47500ef8e7733d6d0b28b221bb00c8a307902586ce537c098d4",
+      "duplicate_fingerprint": "1c2546b5b1f97e07f4af20ecbd8cf1b3cb1d3e3c8e4d974b8f3a8a4195aed3ce",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3285,7 +3285,7 @@
       "path": "sites/founder-operator/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay.html",
-      "source_hash": "f1edc746eec435020833c758d3aec4f9a82ff6a434698f0c747a55280c69ef31",
+      "source_hash": "f8f4c5d664f9708eac43b197b0c44064ccb3b83f17ad9a6f59b9ef5850cf8053",
       "title": "Tool Stacks For Lean Teams: 2026-Ready Prep Guide Before You Pay",
       "h1": [
         "Tool Stacks For Lean Teams: 2026-Ready Prep Guide Before You Pay"
@@ -3418,7 +3418,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "0efabf752800a4cca4af9be46e1fa1a686cce1190172717b19826df7517b8d4a",
+      "duplicate_fingerprint": "6c1da97186624d3be8d10f54a9805ecb5b3d67baad04d2d16b1fef9c9de47f2c",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3429,7 +3429,7 @@
       "path": "sites/founder-operator/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers.html",
-      "source_hash": "03fd887efb53e3493d492058e87af944a2d08ead7a9a6a4143777de70d0b8395",
+      "source_hash": "cbe76d62a6fdfcf63cb111928426c01585f026d7cdfc355fabd0c1f768e3c480",
       "title": "Chief Of Staff Systems: Red-Flag Checklist For First-Time Buyers",
       "h1": [
         "Chief Of Staff Systems: Aeo-Ready Red-Flag Checklist For First-Time Buyers"
@@ -3550,7 +3550,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "fc812a0ca863a64d9bc188193c30caef09d94840a46cb3a53578abd4cf5ca33d",
+      "duplicate_fingerprint": "69fe0e0aa654bc6497002690aeeba44aacbf7729952269abbc7d6dcfbfae0e23",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3561,7 +3561,7 @@
       "path": "sites/founder-operator/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions.html",
-      "source_hash": "e12797edd03a34b428d455df7e03a55c7fe8b03392ecdd5ea04a3175d55ef704",
+      "source_hash": "2ab510cea07e05349d2aaab9809c1f464fbfb9fd938403cf951df342fa90391a",
       "title": "Automation Without Chaos: Timeline Guide For A Venture-backed Founder",
       "h1": [
         "Automation Without Chaos: No-Fluff Timeline Guide When You Need To Ask Better Questions"
@@ -3698,7 +3698,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "812c71b3c8ccd6b2b9419599fc250fcf4185300697541d0de02a5cffe766e96c",
+      "duplicate_fingerprint": "3df2c5ee5e306bf3cde3205d3a06d6255e5a192a6f934529f911b9537c6ca9d0",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3709,7 +3709,7 @@
       "path": "sites/founder-operator/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters.html",
-      "source_hash": "d52808ec3361aebb23e1952394bda5ae0be7eb434d7e132fedea2f7b13d154af",
+      "source_hash": "8c7e0b8483e8e0118f1e59f305c6ceafc53d1d34fad16d24bb5635c49e157f79",
       "title": "Executive Broadcast Planning: Comparison Guide When Timing Matters",
       "h1": [
         "Executive Broadcast Planning: Decision-Focused Comparison Guide When Timing Matters"
@@ -3846,7 +3846,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "7a624477fca62ab2425a93bc6d44dac572a2895b16732b7acc4ba91f7d141934",
+      "duplicate_fingerprint": "0b61c51a87cbd54a824ae1a1634eebb2aeb5d1e59096548cd6707d6e6ea3346d",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -3857,7 +3857,7 @@
       "path": "sites/founder-operator/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay.html",
-      "source_hash": "bafb701a3e61c9f816e80dafb2c2bba82f8f59e6402504637db9de791448531e",
+      "source_hash": "bb7c945d9b2eaaa7d4200fbbb6bda98310e5bc9b048c9e5a8a221884a3cdd855",
       "title": "Ai Execution Systems: 2026-Ready Red-Flag Checklist Before You Pay",
       "h1": [
         "Ai Execution Systems: 2026-Ready Red-Flag Checklist Before You Pay"
@@ -3994,7 +3994,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "5398a443a9879814c4fb6fbe5ca5bbe6956869ab23299718480886898c7209cb",
+      "duplicate_fingerprint": "4ba57e09d4815d879365a5de804cd85d59eacfa4dad860302ec627bdaa3e14ef",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4005,7 +4005,7 @@
       "path": "sites/founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
-      "source_hash": "d132260ce18c7354de905af5ae060564449ba9498271ca89ab72d31145efb53a",
+      "source_hash": "5f06d7ed91d178a9d64f402afd71454c059917ef302d2ca599dc070b5b2b601e",
       "title": "Virtual Event Production: Aeo-Ready Buyer Guide For A Creator-founder",
       "h1": [
         "Virtual Event Production: Aeo-Ready Buyer Guide For People Who Need A Starting Point"
@@ -4142,7 +4142,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f672fcb7bb60088de620a742a916930ad492e51619c34020b20adfebcd7a1856",
+      "duplicate_fingerprint": "acf89f56c4aab86470937405dcf010429d524c879a9ab491d0d0fccc8a18d0fb",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4153,12 +4153,12 @@
       "path": "sites/founder-operator/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q.html",
-      "source_hash": "9f3c6c1689a94c0aaaa999fb5b09e6dfd9d890c680537c388b45549906b96150",
+      "source_hash": "509a81c4c33cacc06c708e8088f2f395ab62e69b119ebf90048f81d40c93f3ea",
       "title": "Daily Discipline Frameworks: Resource Roundup For A Marketing Lead",
       "h1": [
         "Daily Discipline Frameworks: Resource-Backed Resource Roundup When You Need To Ask Better Questions"
       ],
-      "word_count": 1536,
+      "word_count": 1537,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q",
       "meta_description": "A resource-backed resource roundup on daily discipline frameworks for a marketing lead, written when you need to ask better questions.",
       "html_lang": "en",
@@ -4200,6 +4200,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -4226,10 +4230,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
           "anchor": "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
-          "anchor": "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -4282,7 +4282,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "68a41747d8cbbcd0a43491802e575ae66fbebbca82270a33e10e5a69386b2052",
+      "duplicate_fingerprint": "e95155b9fdc27520283d5bdae1350f238fdef10d95ec99e4180983c302dfa1b2",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4293,7 +4293,7 @@
       "path": "sites/founder-operator/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters.html",
-      "source_hash": "9ac5f5869b237cf669fa575fe58781b70ba05c00ad910159372ff1bbb20f76ff",
+      "source_hash": "481ac5143c4aa0dfa7610396864396ff3d6abf057ddaac3da839b34f719e6f64",
       "title": "Community As A Service: Question Checklist When Timing Matters",
       "h1": [
         "Community As A Service: Practical Question Checklist When Timing Matters"
@@ -4410,7 +4410,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "9b9906b84fb0a1d2d1674047aa11e5e4848aa9304bb3c82b85c88704d08aa1c1",
+      "duplicate_fingerprint": "5de73019e4ebf825ed306b027d62a3fab4cb6641677bf49a0050c538dfaad116",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4421,7 +4421,7 @@
       "path": "sites/founder-operator/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers.html",
-      "source_hash": "a131dfb8a64c518275bc590112b33e685a534bb773df5624b974f5cf196fe0c0",
+      "source_hash": "b5a387988635c706f14eaf1517a17fe1998e72702e61f824089089cc2e73e873",
       "title": "Executive Broadcast Planning: Framework For First-Time Buyers",
       "h1": [
         "Executive Broadcast Planning: Editorial Framework For First-Time Buyers"
@@ -4558,7 +4558,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "228961a1743a9db2085f87b012e7211fa70b8a2a4076cf9ad264bcf310a23c7f",
+      "duplicate_fingerprint": "7db95ab1735f71f66c4627e96ff4df9d29c3e588786b603ecd9dda56bf9a11cd",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4569,7 +4569,7 @@
       "path": "sites/founder-operator/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book.html",
-      "source_hash": "2b053803385d2a75312a2829dbdc51a52d863f61b8e670eaea79ebe17fc1158f",
+      "source_hash": "dfcb6b2e21be16d42942a3dbae1202184577019fd50fe0ee3c00ab5228309e04",
       "title": "Virtual Event Production: Aeo-Ready Timeline Guide Before You Book",
       "h1": [
         "Virtual Event Production: Aeo-Ready Timeline Guide Before You Book"
@@ -4706,7 +4706,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "68065fb122da031a64c67e9779f478d8b423207731ec48157054da17930410bc",
+      "duplicate_fingerprint": "d7b1aae786ee96c308416e9bcb5bbc52e9c9414413da7e35aa4b71b48b2ba9ef",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4717,7 +4717,7 @@
       "path": "sites/founder-operator/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose.html",
-      "source_hash": "6d15897f79c854579d19d4fc68613d2267429aad3c0679b0608d61d055c125f0",
+      "source_hash": "7718659f21269aac8eb917f7e4cbfb96719ee85277f74a1173605f56a65a4664",
       "title": "Managed Community Operations: Resource Roundup Before You Choose",
       "h1": [
         "Managed Community Operations: Aeo-Ready Resource Roundup Before You Choose"
@@ -4834,7 +4834,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f96031c65a399c083013dde85302dae6e254714ffd53b58800b7ac6823a1a75a",
+      "duplicate_fingerprint": "96f903e1977aaa8511a7d0314c83d27b85e5819d582e4ff0ca67b6a005c8198f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4845,7 +4845,7 @@
       "path": "sites/founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
-      "source_hash": "12ade09f27a7a241c27e3a48f22bc0c1e928211697a2b85ff7ebc5855b32b616",
+      "source_hash": "9689923295277452add43617c9c2f3a809ac6a63272d04e563012d323e6f74c1",
       "title": "Virtual Event Production: Mistakes To Avoid When Timing Matters",
       "h1": [
         "Virtual Event Production: Citation-Friendly Mistakes To Avoid When Timing Matters"
@@ -4982,7 +4982,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "d3fa6dbb71ae389b6280e35987ef67434f1e7d4fc3480341741c3fbbb2b3fd4f",
+      "duplicate_fingerprint": "d5046bf3cb3a6c8727f674a0a8e80c59bb04dde807161c908282166779cb2ea6",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -4993,7 +4993,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-a-practical-framework-for-measuring-community-roi.html",
-      "source_hash": "7ce0d3c66c610d130515908949f6aec170dac00c3446e2d70468f77c54117f6f",
+      "source_hash": "f20df9988f54cb44e0a8e6732b729ff70210a80462a3a446e8acacf927d6d8f7",
       "title": "A Practical Framework for Measuring Community ROI",
       "h1": [
         "A Practical Framework for Measuring Community ROI"
@@ -5122,7 +5122,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "02dd8a61334b3c28d16b32edff84c1e6a16dc825110181032fba6a2d649a3d1c",
+      "duplicate_fingerprint": "5a6116a930a6d5406165145148f15a4db52fb55b6a4aa992a103be5850f6508b",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5133,7 +5133,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators.html",
-      "source_hash": "df1b90d75dd88babd04b93a28c8e57b636b8c5ce8df597c1289ce5ba37fd0187",
+      "source_hash": "50172e1ee7efb2f67922a1cb9884c543a19376608553a13c116548ee12749357",
       "title": "Automation Without Chaos: Local/Resource Directory For Busy Operators",
       "h1": [
         "Automation Without Chaos: Operator-Grade Local/Resource Directory For Busy Operators"
@@ -5270,7 +5270,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "5e94020bed4f5783a3fbc134ae965f3f28621c8ed8e998852fe82f923e927bbe",
+      "duplicate_fingerprint": "bc5bbd24dbad2b83a29e0f8e4b43c7cf9fe821468a08569d3fb3e34af738ace9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5281,7 +5281,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features.html",
-      "source_hash": "588c7e9ad7db8923c6fb87d535684b40df96ab13458086de4d72e45b607ee94b",
+      "source_hash": "9ee8d85819be4b90f5c117940743900b2a10e80bfcdb724c5553ec0ccd456033",
       "title": "How to Choose a Community Platform Without Starting With Features",
       "h1": [
         "How to Choose a Community Platform Without Starting With Features"
@@ -5410,7 +5410,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "4117060a83ae37df230457053b456a5a1d372d543beabbd8b979c71b285ab4ae",
+      "duplicate_fingerprint": "2da7dc9c758e1d2a0be709fe5dc22f67592e1dd0f67acb0de4dafc5b1b6f4b6f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5421,7 +5421,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-      "source_hash": "60e64727be6b624a59e72e461681fce194419f51e2b05993e3548f7c8a63829b",
+      "source_hash": "96d39b273ad93b4e55af759fbdbd6eefea04044a40cf16abe0ac630108c4e142",
       "title": "How to Evaluate a Virtual Event Production Partner",
       "h1": [
         "How to Evaluate a Virtual Event Production Partner"
@@ -5550,7 +5550,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "eeaaebb16d5b9f914ac3c86a2e3d95ffb2e2153223a4d95ccfcdfdde453f5c25",
+      "duplicate_fingerprint": "53edda8e65110f03e45f6d933cc277281ef3d853930dc5a2f1bc200b569c5131",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5561,7 +5561,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team.html",
-      "source_hash": "53b3822dd120986606e7ccb42f65d7b13a1e2bb9c6ccaeb97b5374d6787f595b",
+      "source_hash": "472edc59f06a6822a773d97018b37962d93e91c3fe30ccdca88de8f02e924c47",
       "title": "Managed Community Operations vs an In-House Community Team",
       "h1": [
         "Managed Community Operations vs an In-House Community Team"
@@ -5690,7 +5690,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "d0461fe7bbca3e5de2d8f87178788a6d4dc4c13cae3cf9b5c01f33bd9ccc37d9",
+      "duplicate_fingerprint": "a657c6730c3d2c0bd98f4c07a0a5e8b5b91c1f92091744b5a4abbae3b1fa73b4",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5701,7 +5701,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs.html",
-      "source_hash": "99356cd5700dc95edba1b0c23b65fb11c8b916a580d36935e920abd71bc2d6da",
+      "source_hash": "0c48968fde00cfc0442db977bc638ba5b8c875db6fa8b0555dcd490090ffd670",
       "title": "The Roles a Serious Community Program Actually Needs",
       "h1": [
         "The Roles a Serious Community Program Actually Needs"
@@ -5830,7 +5830,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "0ff8c610eb4c759cf811d5604b89587368eaf56959cb5876855e2c60a96ccab2",
+      "duplicate_fingerprint": "3d9aeb3ab2104a72560b3702c1eaabcb51a23692a04be47b22bb8d49ce39f4f6",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5841,7 +5841,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-what-community-as-a-service-actually-covers.html",
-      "source_hash": "a5ba1b7e2271d6f7ac2c3e90ee5868552ee9fb16881e8cc9824786d89e35badc",
+      "source_hash": "eea1181839053233b427a91711fc5ab41f591d7a3b02df1afd0ddef93f40a865",
       "title": "What Community as a Service Actually Covers",
       "h1": [
         "What Community as a Service Actually Covers"
@@ -5970,7 +5970,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "fe1ee505beb1f5dfd4f076234a28d1161909121ffe08869b00c478b8bc93f03b",
+      "duplicate_fingerprint": "6af2571de4bf753e6fbadf5a84069460e9f9c20160096b80ee6737c00057868b",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -5981,7 +5981,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-what-virtual-event-production-actually-includes.html",
-      "source_hash": "246db2c5fe776cec41a0d7e2f411a324ea94b5026f08ac4086baf8967770aeac",
+      "source_hash": "818ccafa9be0a1630fd5c3fe78652504fe3d2d1965b08f7c7fb24decb7980b5a",
       "title": "What Virtual Event Production Actually Includes",
       "h1": [
         "What Virtual Event Production Actually Includes"
@@ -6118,7 +6118,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "847a2a50725d1d612db78bf817f4f90685a7e2ec3ad5469bca3a14972c035916",
+      "duplicate_fingerprint": "d469348b280eacb97ec1a2dea59f685eaf2a1c2c2f7a96571f63b6c922f8a77c",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6129,7 +6129,7 @@
       "path": "sites/founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
-      "source_hash": "9fafe60eaddf30d7318b2d914121177d92077dffc41c428a048f2fa114a12ee8",
+      "source_hash": "80e8d02732441db741c67a4e00eee09e7e8d65391faae1e8b6e345dd145bd6ef",
       "title": "When a Managed Community Operations Partner Makes Sense",
       "h1": [
         "When a Managed Community Operations Partner Makes Sense"
@@ -6258,7 +6258,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "eb51d7802ffa78e77615ae83d2e004d7d058194f0271cb27f44442fcbd0eca1a",
+      "duplicate_fingerprint": "6c57d07f3fe78e095318ee4323b69c2d7830940766ab9d944c750cffce5bf392",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6269,7 +6269,7 @@
       "path": "sites/founder-operator/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po.html",
-      "source_hash": "0154a23c9ff940a1ba90e5fad0352ffca501e07b4e65f5756f1fd3a304a9f4f2",
+      "source_hash": "32adc9418604b01c93b8c91830e6b6d56ef952e3ea3215023ebea7b39d045fd8",
       "title": "Community Platform Selection: Operator Playbook For A Solo Founder",
       "h1": [
         "Community Platform Selection: Geo-Ready Operator Playbook For People Who Need A Starting Point"
@@ -6386,7 +6386,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "cfed5c03b2b6af2f85e624fec28af1324261501fe53fd4460df94ce5c930ddfd",
+      "duplicate_fingerprint": "8dd33b9a244a979aed0218364df959b9f18ca604e7b972c4536277a390c5406d",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6397,7 +6397,7 @@
       "path": "sites/founder-operator/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
-      "source_hash": "499d4da5f624443892e40c4334574a90d3a4248feda0b8fc42cd34c9d1029959",
+      "source_hash": "f17c154036ca13a108f8ddc003d62aa42e4820f0d0124bac34c8551a9ec9413f",
       "title": "Virtual Event Production: Aeo-Ready Faq Answer Page Before You Pay",
       "h1": [
         "Virtual Event Production: Aeo-Ready Faq Answer Page Before You Pay"
@@ -6534,7 +6534,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "eb19b1f7e86e996f39fbd63e0847b866d852783e4c53d5920c3ec5ee8dd11472",
+      "duplicate_fingerprint": "f00ea35c4c94e67fc56459bb115bfac3dc898c0ab3a0e7877a02c19a16dd09f7",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6545,7 +6545,7 @@
       "path": "sites/founder-operator/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay.html",
-      "source_hash": "e4f1773b0445f23a617a40b1ebb2a26664a28574c6ef2656415e867c5f5658d7",
+      "source_hash": "72324069e1f860ce6d96ad31c14d4724efbfa556cd5633d892dc938f0f95e21f",
       "title": "Tool Stacks For Lean Teams: Local/Resource Directory Before You Pay",
       "h1": [
         "Tool Stacks For Lean Teams: Practical Local/Resource Directory Before You Pay"
@@ -6678,7 +6678,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "b3d5e8b50b155b6bf3611dc07319b28cd77a855ca1a6bc1aeb66a34c37da4966",
+      "duplicate_fingerprint": "ef1ee5b52fb1478d0d92c6ec064afe4803bc81f7b026c67b32f8cfd665d00ff9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6689,7 +6689,7 @@
       "path": "sites/founder-operator/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio.html",
-      "source_hash": "9c9c9389988d01c63af0cc91e15375b3920e4f8c3a98162e491c6ab89b739cdc",
+      "source_hash": "5bc9611e0e2974fdf599e004b86019d71e1821f67dc65765f517552a88389a3c",
       "title": "Executive Broadcast Planning: Comparison Guide For A Marketing Lead",
       "h1": [
         "Executive Broadcast Planning: No-Fluff Comparison Guide When You Need To Ask Better Questions"
@@ -6826,7 +6826,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "2a0240f60204103210ff6767065625e826af9138b71ca59f902314a41552eb4d",
+      "duplicate_fingerprint": "b19eb19a800f7b859cec6b88a77c7c2dad9c897d10ff3465fc26495a1de0b099",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -6965,12 +6965,12 @@
       "path": "sites/founder-operator/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters.html",
-      "source_hash": "9ee03384899332c1162421fb2b78e19aa8153f72eb612e56c724b2e8387aba4d",
+      "source_hash": "a679a4f0f3087a1d6c035a95d574ddc4209c35760d19c2a4a90758e28b8cb789",
       "title": "Team Accountability: Low-Risk Framework When Timing Matters",
       "h1": [
         "Team Accountability: Low-Risk Framework When Timing Matters"
       ],
-      "word_count": 1471,
+      "word_count": 1468,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters",
       "meta_description": "A low-risk framework on team accountability for an operator, written when timing matters: what to compare, what to ask and which mistakes to avoid.",
       "html_lang": "en",
@@ -7036,12 +7036,12 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
-          "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
-          "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
-          "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
+          "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+          "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -7094,7 +7094,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "41bcdf5189f2daf1ce779fdea09d82384d453ae1839163e41b0f1322f9e2eb12",
+      "duplicate_fingerprint": "2e8590e310f3223814538bb04a7be8d7008a7d63557a7b7716becc4220c4f55a",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7105,7 +7105,7 @@
       "path": "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
-      "source_hash": "7d5dd3bcb7fe88f746e9feb4917e0dbc605a284c48811a8ec5af1801ff1dc954",
+      "source_hash": "a5434bcd909d92468adf64424d1702e42871c006836c659f6401579df4c603e9",
       "title": "Executive Broadcast Planning: Framework For A Marketing Lead",
       "h1": [
         "Executive Broadcast Planning: Comparison-Friendly Framework For First-Time Buyers"
@@ -7242,7 +7242,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "bd109f8ee1887b7176a97f3d870d0a60c24bd3e7a177731f9ced80839ac47b72",
+      "duplicate_fingerprint": "4f67fb00b92c33fcd379c1443ff5e829089d4f563c14a4df2fe438a81efd0ee6",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7381,7 +7381,7 @@
       "path": "sites/founder-operator/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker.html",
-      "source_hash": "cd6ade53d0285e4405bcfaead9e656dfefc64001e5cd7dce7ad443e4a4ea60b2",
+      "source_hash": "3c659013a4d308fb9a10be041f6866dcc6cf05aa0dfb013e340a722767447401",
       "title": "Executive Broadcast Planning: Plain-English Budget/Planning Note",
       "h1": [
         "Executive Broadcast Planning: Plain-English Budget/Planning Note For Careful Decision-Makers"
@@ -7518,7 +7518,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "c8c09ac658b389c6fe361999693ed494e8aa3e172fa83f59c57624a464bcf036",
+      "duplicate_fingerprint": "33533dad51a3be3d9b53ec63367459274947a10c3f7b872281b59fb0fa9912c9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7529,12 +7529,12 @@
       "path": "sites/founder-operator/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book.html",
-      "source_hash": "d29cbd477f3a447a78dd33362781e584568baf820e21a3d9f31ed8ebca86f09d",
+      "source_hash": "48677d11e9fb9cf796a616e24c3164841e84a4ddc31e53df4ef9f268144e018b",
       "title": "Team Accountability: Local/Resource Directory Before You Book",
       "h1": [
         "Team Accountability: Comparison-Friendly Local/Resource Directory Before You Book"
       ],
-      "word_count": 1467,
+      "word_count": 1469,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
       "meta_description": "A comparison-friendly local and resource directory on team accountability for a creator-founder, written before you book: what to compare and what to ask.",
       "html_lang": "en",
@@ -7604,8 +7604,8 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
-          "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -7658,7 +7658,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "63d65eee2b6c23decfb9321a2833e374f88ef74463bca5e9afc551794b8a61cc",
+      "duplicate_fingerprint": "0fc129f92440eb94cc141428697a4dd648d4b6b3d5cdfa48c93ca1adfcd3a2cf",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7669,7 +7669,7 @@
       "path": "sites/founder-operator/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign.html",
-      "source_hash": "a500aecd296ce4f2c9c681a1dfc5487d1bd6acb01e54a39d4e68e6f7b56c9d97",
+      "source_hash": "ff34b329ca963d33d905ec94d02ac26e8af230b068e7d2fbcb9f6bd2c156a5ae",
       "title": "Tool Stacks For Lean Teams: Beginner-Safe Buyer Guide Before You Sign",
       "h1": [
         "Tool Stacks For Lean Teams: Beginner-Safe Buyer Guide Before You Sign"
@@ -7802,7 +7802,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "c247ef69766a9742c2e30dc5481d2755c9b5c8f585481c376aab057f540ef413",
+      "duplicate_fingerprint": "596d90cae60384126673d93a410f9f965ebc19ac6f7f9806e7c09dd97e2bbfd7",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7813,7 +7813,7 @@
       "path": "sites/founder-operator/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay.html",
-      "source_hash": "63ecd9d71ad721f066c928e60625ebf2f78517d997913e816c5f56f975fad828",
+      "source_hash": "dac3bc096a260ff569fe9c6f8f8b734a5b50932049efd6986bbeafe39d35049d",
       "title": "Calendar Protection: Plain-English Budget/Planning Note Before You Pay",
       "h1": [
         "Calendar Protection: Plain-English Budget/Planning Note Before You Pay"
@@ -7856,6 +7856,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -7874,10 +7878,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
           "anchor": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
-          "anchor": "Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -7930,7 +7930,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "52cbc83bd79ca2d4290b0bac97bf7a3dbdeccf99f94c671178c28e1bab60a1fd",
+      "duplicate_fingerprint": "50c1c1827805e3e9031fb6bab226e699fc593960dcba9dce1fa6cccd2baea2a2",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -7941,7 +7941,7 @@
       "path": "sites/founder-operator/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators.html",
-      "source_hash": "c411b4ab2fe14f0a4882e001974b7a0403fb90e9e4a5ced13aadb39ca869c114",
+      "source_hash": "26c548540c6a60ca13315b64fa0a18596f838f5b31ab5f23f2ff62f806685cd5",
       "title": "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory",
       "h1": [
         "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory For Busy Operators"
@@ -8078,7 +8078,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "be81b88c275ed56ff97ee1ad78dd9b3fd938be4dbf74b2b66c2b1915fba6128b",
+      "duplicate_fingerprint": "7a9eaec5388f6e10784f22cbdc8dcbd4e96a6948c9c4a42e1664909ee09d9697",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8089,7 +8089,7 @@
       "path": "sites/founder-operator/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay.html",
-      "source_hash": "39bbecd47b22d10a1f685e31cd52c87b935fc7f4e0c3df3490c62ec10452e24d",
+      "source_hash": "71f9a5fff6756479825bbf6fd7079721c6afb18335fc4fc8f59d14c83e95c436",
       "title": "Calendar Protection: 2026-Ready Resource Roundup Before You Pay",
       "h1": [
         "Calendar Protection: 2026-Ready Resource Roundup Before You Pay"
@@ -8140,6 +8140,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -8150,10 +8154,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
           "anchor": "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
-          "anchor": "Productivity Recovery After Missed Days: Decision-Focused Buyer Guide Before You Pay"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -8206,7 +8206,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "3e20710884e207a2b80ea03b01095d5c51bde411494dfb36a8e70c596a5f2637",
+      "duplicate_fingerprint": "d0b972998cf067d861f9e9b836b173e8a71e28236bb6e75813aad057d24871fd",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8217,7 +8217,7 @@
       "path": "sites/founder-operator/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi.html",
-      "source_hash": "511021381aabae99e3286d54097adb11ef6a5879f3e34c4180abe1a91fc2b7d3",
+      "source_hash": "d29316afda21b744822997d086f5e830dc085de81d4142125a2afdaa250c8919",
       "title": "Automation Without Chaos: Resource Roundup For A Chief Of Staff",
       "h1": [
         "Automation Without Chaos: Beginner-Safe Resource Roundup For People Who Need A Starting Point"
@@ -8342,7 +8342,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "a425e3545e01f784c567396e33dac0662beaabc91098ae174bb4b8e43c021b7c",
+      "duplicate_fingerprint": "fbeaddf1b536ec1172f22f7627d64e7317578006fd5a37fc4dc95a48cd429043",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8353,7 +8353,7 @@
       "path": "sites/founder-operator/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay.html",
-      "source_hash": "d8301f277abc419a47ef1ef03c9d61a0e6d6018ff8dac97521f42f40b6567bc3",
+      "source_hash": "345e15f5221316e2077088d5471a5a67e9d192785d679d42fb196fcf97bf153a",
       "title": "Tool Stacks For Lean Teams: Editorial Comparison Guide Before You Pay",
       "h1": [
         "Tool Stacks For Lean Teams: Editorial Comparison Guide Before You Pay"
@@ -8486,7 +8486,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f3e674df4119ebb7954f570b058ed682d22cb5c0c33dc5a4fff46a5d37e331f6",
+      "duplicate_fingerprint": "da275ecd2168ded979f7cd1bb800cd20f49dae2881349f68fc4443d3bc8728b9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8497,7 +8497,7 @@
       "path": "sites/founder-operator/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay.html",
-      "source_hash": "0e91059c01ff10a7c359a9fdaab536b8554269effe2c7a0e9a704935147d937f",
+      "source_hash": "0ac065e10868517425ae0ff617d00d4d8d44fd65d75e2d35435b46e788b961a5",
       "title": "Ai Workforce Design: Plain-English Buyer Guide Before You Pay",
       "h1": [
         "Ai Workforce Design: Plain-English Buyer Guide Before You Pay"
@@ -8634,7 +8634,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "c6f9166908412e4901606c49aede5654c3e74c0eaf75f8053d94da3f6055f040",
+      "duplicate_fingerprint": "85e4a7011c337ecb744c9a46113507b59ea87e2a5288b36501fa4a7eb99d6267",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8645,7 +8645,7 @@
       "path": "sites/founder-operator/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",
-      "source_hash": "a45abeef3f54551e43fc21d37b6731ff152bd46619f305fec3c831793678c644",
+      "source_hash": "ead65946e0ab868f888629c24c3172d90bf51a1d24eee850c5d73132f07f3f90",
       "title": "Executive Broadcast Planning: Faq Answer Page For Busy Operators",
       "h1": [
         "Executive Broadcast Planning: Editorial Faq Answer Page For Busy Operators"
@@ -8782,7 +8782,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "7726c6528367e114c074ba05eb6b144d3e81cf9f1d17e16a99582342f087d0c2",
+      "duplicate_fingerprint": "4d69642379da6133ba573f5ffa283159e627ecb58131289f512def10b1bad0a2",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8793,7 +8793,7 @@
       "path": "sites/founder-operator/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html",
-      "source_hash": "36d1ab089b031a83df4461b1dc7c20c4f0e412e51172e1082d40c1e4ea08e23e",
+      "source_hash": "ee87e185fd9ff5df98b10c4f52c9edf0b9a8b83edafeca956b8e1d9f8493e53e",
       "title": "Automation Without Chaos: Resource Roundup When Timing Matters",
       "h1": [
         "Automation Without Chaos: 2026-Ready Resource Roundup When Timing Matters"
@@ -8918,7 +8918,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "a6178426221c12ccdca0b19c1880356911f8ebd201f7999cccf51dc27f2c2517",
+      "duplicate_fingerprint": "b9006f3a495eb28cb9158e616129347698d30f71698688c81ea983b6da846afb",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -8929,7 +8929,7 @@
       "path": "sites/founder-operator/daily/2026-08-14-community-retention-plain-english-framework-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-14-community-retention-plain-english-framework-before-you-call.html",
-      "source_hash": "0d53c9cfdc26137a22f1510370251cddda3435152cbe5bc44506a50448f2b64e",
+      "source_hash": "8543c1ce63d930e69de1df93822e78d5c1bebcaa6cfc9602a93f976d0aa533ce",
       "title": "Community Retention: Plain-English Framework Before You Call",
       "h1": [
         "Community Retention: Plain-English Framework Before You Call"
@@ -9058,7 +9058,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "009c984b06280829f3aeec4864c33f2572e10baade2ddee4ee625b59b1f30e34",
+      "duplicate_fingerprint": "aec6cda66e1390d04ceccd6b386f393b5ba42aafc36544d5ebbb883907973bfa",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9197,7 +9197,7 @@
       "path": "sites/founder-operator/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
-      "source_hash": "a091b7a2c7380a131b6f56465a1534e1f39bfd5dd6e8bb4e08a9a571f461a787",
+      "source_hash": "a4f9677d7312c351f497806230a6af72202ba7b6db6fb75be1d41f02839425f2",
       "title": "Virtual Event Production: Mistakes To Avoid For A Chief Of Staff",
       "h1": [
         "Virtual Event Production: Citation-Friendly Mistakes To Avoid For Careful Decision-Makers"
@@ -9334,7 +9334,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f43edeb1058535da136835febf7e48487aceb43d40a5b78a56b9e55f3bf52207",
+      "duplicate_fingerprint": "0fa8369a8d324b1f1a6f04415acc5436db8660fac5f81eed378573fcecd0135f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9345,7 +9345,7 @@
       "path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
-      "source_hash": "a551ad34e8001e8f27c03aa5714c734afd076cb7079c7e86f37186f2827daac7",
+      "source_hash": "367f4b2c7416549a8d5130a872e4b0fc95c212ba0ad8dc05ec8987db363bc580",
       "title": "Virtual Event Production: Resource Roundup Before You Call",
       "h1": [
         "Virtual Event Production: Decision-Focused Resource Roundup Before You Call"
@@ -9482,7 +9482,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "67e9ee8d17147d160e62990138c4ffe2439b8e7a8d757033792f2b00a6dc8fff",
+      "duplicate_fingerprint": "610b97f264b7c4e79ffff18364278dfe2e1017011141d1f8d9ae181142e5b5fe",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9493,7 +9493,7 @@
       "path": "sites/founder-operator/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators.html",
-      "source_hash": "5c80c0f9a4ff3ed160f42f216872381c1092bfdcc24a143b7a9833f534eca3d5",
+      "source_hash": "30ac86264743dd485b4cb2250cfb18e649284cf8af6841173fc6f64c6c8b4530",
       "title": "Executive Broadcast Planning: Red-Flag Checklist For Busy Operators",
       "h1": [
         "Executive Broadcast Planning: Operator-Grade Red-Flag Checklist For Busy Operators"
@@ -9630,7 +9630,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "2c01fcbd9d5e0ad8071fe7fde87b9dd40ae508691dea31fbd751ab6ab31405b5",
+      "duplicate_fingerprint": "00ef59187826b34ac70ea6174d8c2a113d6595aa8c9fba209b09d421a9199472",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9641,7 +9641,7 @@
       "path": "sites/founder-operator/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point.html",
-      "source_hash": "736234b1606c6983d2bc8890e513225ba3f9775f8848adfb226c136de55b785c",
+      "source_hash": "6ae039bede679405885c7fddd3ea2cec3903cb8e47fc96fb4c2618e5c377e265",
       "title": "Community As A Service: Framework For People Who Need A Starting Point",
       "h1": [
         "Community As A Service: Low-Risk Framework For People Who Need A Starting Point"
@@ -9758,7 +9758,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "1eaa841a3250655dc1765e8b26837944fceca76be49f52a11685088d9f56e798",
+      "duplicate_fingerprint": "b2a0a7fa7ec8bc70b79b85d75361a054273a304a209aea2500c4adf9a8e0bc15",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9769,7 +9769,7 @@
       "path": "sites/founder-operator/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest.html",
-      "source_hash": "4dee9996d9af83ea8649c003c09973d81d659fcdbb5ddab1b22701d0e1daa4ed",
+      "source_hash": "6e73f7444a0554a6ee7597e18828a197cc6d2f83ffda399f76f580f30f37d1d3",
       "title": "Executive Broadcast Planning: Operator Playbook For A Solo Founder",
       "h1": [
         "Executive Broadcast Planning: Geo-Ready Operator Playbook When You Need To Ask Better Questions"
@@ -9906,7 +9906,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "7ef328327e829cede94d47cfee15a6512760768abcf85ad88d7d838ea8dafff5",
+      "duplicate_fingerprint": "8bafd05786a9c85992cda5157397840810a38e042e664621c27e1b81909b800e",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -9917,7 +9917,7 @@
       "path": "sites/founder-operator/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi.html",
-      "source_hash": "3b0386f3a94efbea1e821e483ceb848f0d68e0c1ee705ceb687e2fb343d1be4c",
+      "source_hash": "995a14f21a285b76c6cf93007df314cd43336995c4c6c7ea254026a13dc3b21c",
       "title": "Automation Without Chaos: Geo-Ready Budget/Planning Note",
       "h1": [
         "Automation Without Chaos: Geo-Ready Budget/Planning Note For People Who Need A Starting Point"
@@ -10054,7 +10054,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "2fafe2d6eb0c0eddc9b4994ffe3ec97ba2f8b814ef6eef9c40eb90c519808428",
+      "duplicate_fingerprint": "43565ccb19be3e8ea3f93400e0500e174a2223227f984121d271391708b14d15",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10065,7 +10065,7 @@
       "path": "sites/founder-operator/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay.html",
-      "source_hash": "90f42b55a1c70f95abcdf67dfc089b16a1b57a5c40a74d2b811c296b07bad683",
+      "source_hash": "dff3d83789eed43e45ab4807e8dbe828192fb704234f2a8de19eb472375f0975",
       "title": "Community Retention: 2026-Ready Operator Playbook Before You Pay",
       "h1": [
         "Community Retention: 2026-Ready Operator Playbook Before You Pay"
@@ -10194,7 +10194,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "0fd5fd52569805de6dddac950d595d93071fb3f259621afc9b7574abfa16bf73",
+      "duplicate_fingerprint": "8d759e73e9ba077381ddf54a931055aa2998c2e9a8b286003712af391c13f9a3",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10205,7 +10205,7 @@
       "path": "sites/founder-operator/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book.html",
-      "source_hash": "85803fad5a12005561d00da4ef3704413181ba3ef410f63b06f6240733f5c10f",
+      "source_hash": "e595a99afeee9abef32e822f6ed105e183452225166c6ab47b4277f3ab8b9971",
       "title": "Daily Discipline Frameworks: Resource Roundup Before You Book",
       "h1": [
         "Daily Discipline Frameworks: Citation-Friendly Resource Roundup Before You Book"
@@ -10256,6 +10256,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -10278,10 +10282,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
           "anchor": "Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
-          "anchor": "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -10334,7 +10334,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "2607a5651496b19dd6ae57a1afec84d235b2125b98c39fcab3808c717b9fda43",
+      "duplicate_fingerprint": "7b0fd46d4d59aef735fde4a9b29b205c6498789a30839608e9953bd42b7e94cc",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10345,7 +10345,7 @@
       "path": "sites/founder-operator/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call.html",
-      "source_hash": "91b89601538c6d653cd4e3494f1cf6eb15bb3167b57e4805f9c0cf2107dcd834",
+      "source_hash": "56314c8a66797f3d0c778d1c2c93f1f13a35fc01a5a24847bd42cadb76eae6a3",
       "title": "Managed Community Operations: Decision Guide Before You Call",
       "h1": [
         "Managed Community Operations: 2026-Ready Decision Guide Before You Call"
@@ -10474,7 +10474,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "3b9d54d51f26506f19c3178c7ca0ee0c0029cd08cee0277cd853b14f46c503fd",
+      "duplicate_fingerprint": "483b699368a9c9db4c9f5774d8a135873ae82417a10d1701748212ef5df0ce82",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10485,7 +10485,7 @@
       "path": "sites/founder-operator/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options.html",
-      "source_hash": "c1b1d7cb17450edc6ca5bb48487988b0b663362eeff55870055abaedc520a77d",
+      "source_hash": "4c517b6817d7c1ad8466cc34347b96035f8df7daf824ed68a1ec51323ea11ffc",
       "title": "Chief Of Staff Systems: Budget/Planning Note For A VC Platform Lead",
       "h1": [
         "Chief Of Staff Systems: Plain-English Budget/Planning Note When You Are Comparing Options"
@@ -10606,7 +10606,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "5b20e4f20807daf1c7b1ee3fafb7f582af5567d1e3b5eab7bbed1ee88c78f3fb",
+      "duplicate_fingerprint": "555592ec940ce3a5ac88c4669288226aaf04bf714b422e45815099ad8c221658",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10617,7 +10617,7 @@
       "path": "sites/founder-operator/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo.html",
-      "source_hash": "0ebdbb5f3e02f07c74c92db0c7900ee3c9f8b8f0a39f936b45433230928f10be",
+      "source_hash": "2ff88aadb2410dc2eca5270109dd0232745c508fde76e1198ea95adc1caf2328",
       "title": "Community Moderation Strategy: Local/Resource Directory",
       "h1": [
         "Community Moderation Strategy: Comparison-Friendly Local/Resource Directory Before You Choose"
@@ -10734,7 +10734,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "86eccab00563bece0935a96cd0d10f466817bf47d1f492f5bcb55335ec45c130",
+      "duplicate_fingerprint": "d6cc91400666a49dc097fe7d6d6656a750b3346f0a398490a836796aaf2c512c",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10745,7 +10745,7 @@
       "path": "sites/founder-operator/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book.html",
-      "source_hash": "a1d25bd943aaffef5389a8adf406d2768a7b44ced44c0160f9f4e58c71f11c52",
+      "source_hash": "93d9ca7d1efa96f856425c9da2c0968a80edb00f61f6395830d98f67dafa15e1",
       "title": "Executive Broadcast Planning: Budget/Planning Note Before You Book",
       "h1": [
         "Executive Broadcast Planning: 2026-Ready Budget/Planning Note Before You Book"
@@ -10882,7 +10882,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f7355dcfd74b7f3cfd7e51903b1db62ec1b5bb4f25b5ad7568ef27e61ef0202c",
+      "duplicate_fingerprint": "97b12902fcf01b3fe5817521227e07e37e9375b4ab79bbeb3df097af94424577",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -10893,7 +10893,7 @@
       "path": "sites/founder-operator/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview.html",
-      "source_hash": "dfb7de8994ee7775a35b069d3ee6c9cfc74d8ceeb82c8ad8d5ed8342defec69e",
+      "source_hash": "98c93206d81827543243e2ec48c6bab7327463b251d31f672e3f430782c304f8",
       "title": "How to Design a Work Sample That Replaces a Fifth Interview",
       "h1": [
         "How to Design a Work Sample That Replaces a Fifth Interview"
@@ -11026,7 +11026,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "786ea6dd2a1358f7e3411e69433b61d4bab91cebef8ee9d0354597e6c8ff77ea",
+      "duplicate_fingerprint": "94581d431c2610dbebfa10588cceb8e66e7c12a57d0ddf0aee3243b986b7acdd",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11037,7 +11037,7 @@
       "path": "sites/founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
-      "source_hash": "c8adf08ff9c7ba924afc67871145bf9b6d3126038c211625e29cb11943f9e625",
+      "source_hash": "85992da4102dacaf46d8c163d07bf629687c0c37373460b544f85857ecbd3266",
       "title": "What a Role Scorecard Should Contain Before You Open a Req",
       "h1": [
         "What a Role Scorecard Should Contain Before You Open a Req"
@@ -11170,7 +11170,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "779bd0095b8e69020aa9cbc85f57822ef3f32a8bb8737901d7c5544ba8580b9c",
+      "duplicate_fingerprint": "50c1e41f815ba0c5205ce50c5c153a9f5b818f42474ef0ce035d1002d6cc13e9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11181,7 +11181,7 @@
       "path": "sites/founder-operator/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign.html",
-      "source_hash": "6d84da9a86290551c293299aa0395e221f9487ff26494443489d7976d66687d6",
+      "source_hash": "2c2368b3efc5daa9988c77452eeca519fcc260ffb119e6be7dcb89fc21fbb54e",
       "title": "Automation Without Chaos: Low-Risk Operator Playbook Before You Sign",
       "h1": [
         "Automation Without Chaos: Low-Risk Operator Playbook Before You Sign"
@@ -11318,7 +11318,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "a7ea421d40c3e566ea9b4c7011197beec9583a78cc0f2e597b9b6e7931ebcc90",
+      "duplicate_fingerprint": "70cd59f089dc6aafe45953cd437f5e49b1e2b884871c65fed83e3cb8166954af",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11329,7 +11329,7 @@
       "path": "sites/founder-operator/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit.html",
-      "source_hash": "013ffcdf44a2c477f645a125f22f05065b17b1438c030dfe44c794286b0059aa",
+      "source_hash": "476f0f53c4f2ba3cbac999edc94ee6030af09f2e1bf4640bc50cc707e2cc1f6e",
       "title": "How to Build a 90-Day Onboarding Plan That Produces Evidence of Fit",
       "h1": [
         "How to Build a 90-Day Onboarding Plan That Produces Evidence of Fit"
@@ -11462,7 +11462,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "48cc61c8971bdf2d0ae8f8986f0b8c35cd45cf51459fd18c217702e44297e1e1",
+      "duplicate_fingerprint": "c4333769b78f45411c2fa7e403ade282803e488aadda1d236d7f714db795e705",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11473,7 +11473,7 @@
       "path": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
-      "source_hash": "92e518f00c29cae24bc7bfdab833fe01f97c66814a996cf8cd5c46c0ece25d0c",
+      "source_hash": "f601d6a4008fc94eb8467f59f086de8e1092a04c78afa1e0c13138f53f29c835",
       "title": "How to Tell a Performance Problem From a Role Design Problem",
       "h1": [
         "How to Tell a Performance Problem From a Role Design Problem"
@@ -11606,7 +11606,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "eb72caac861c71a2618bc11788148a3763fdb5e4d51af616a735c3f36b6603cc",
+      "duplicate_fingerprint": "fce31d690cda1b07990be05c6a7a580625f65c6d80e7074fd8f8eef2d33fa025",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11617,7 +11617,7 @@
       "path": "sites/founder-operator/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach.html",
-      "source_hash": "321a14f705192ef7046925ead7e071d9b78d8f2c02ab58a52ed16bbe477ada97",
+      "source_hash": "aada3da16d148f572b91ddb694b5920222d133ea96a7e8c75317adcdaf4276bd",
       "title": "What an AI Coach Can and Cannot Do Compared With a Human Coach",
       "h1": [
         "What an AI Coach Can and Cannot Do Compared With a Human Coach"
@@ -11754,7 +11754,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "cb3fc83f3bb064c4fd0377753255fd3f817db0ba020731172ec8a2957b6514e0",
+      "duplicate_fingerprint": "2c61a69bf4e39da24c1d2fb87b4e9233bfb8384d8c692773f7b41ad6cc1e5d0c",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11765,7 +11765,7 @@
       "path": "sites/founder-operator/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html",
-      "source_hash": "74c979f5a4ef352732d6162b138a4b802efb2828368b7dc58d518f084a290cbd",
+      "source_hash": "a2ea0cec0ef17a44c312de2e380b11440a1a0c2c0228e0b9990b6bf7fdeb595d",
       "title": "Putting AI in a Weekly Operating Review Without Losing Accountability",
       "h1": [
         "Where to Put AI in a Weekly Operating Review Without Losing Accountability"
@@ -11902,7 +11902,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "bfdbddced6402d498514985cf1b636f3eadf51d14ab9a304e4ca205475d36037",
+      "duplicate_fingerprint": "23cff5f0253dd9c440582bc9fdc5fe3f6fe3a855f8eff9b4215d4512863e7390",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -11913,7 +11913,7 @@
       "path": "sites/founder-operator/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first.html",
-      "source_hash": "1a5ff240bbfd75a6e75ccb6411ed24521900901ac244e65134bff35f76ab22e2",
+      "source_hash": "0346dfeb353a80ad95f7d433f5544260e6f1bef8c122563678270ef8c8fab8ac",
       "title": "How to Decide Which Recurring Tasks to Automate First",
       "h1": [
         "How to Decide Which Recurring Tasks to Automate First"
@@ -12050,7 +12050,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "4e2f577b310bc4b0116da206e546adabdd19b7f33eb2e4d58b2675e42fd58704",
+      "duplicate_fingerprint": "d7c3f237e4450df71023af9ca3932096ab2bb7ba9217df8ff7b3d5506ecac616",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12061,7 +12061,7 @@
       "path": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
-      "source_hash": "3f9ec2cc114cfcbd0fc8be0c2b92e2443669497b7e169bf7b309f7143138aa66",
+      "source_hash": "40371b58ad0961bfcd58c0434072fbbf0bdd9bdc4cc1c3efc86ad6c4b82606a4",
       "title": "How to Write a Delegation Brief a Person or a Tool Can Both Execute",
       "h1": [
         "How to Write a Delegation Brief a Person or a Tool Can Both Execute"
@@ -12198,7 +12198,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "cca1a79501613730e99ef3ccff18d7fccefdad8256fb5868a4d3edf9d5d687c9",
+      "duplicate_fingerprint": "ee69af25ffce1325f6c55540caf6d7d1dbcf5649302135cf07aee03d98b6e2ed",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12209,7 +12209,7 @@
       "path": "sites/founder-operator/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event.html",
-      "source_hash": "3c1c7c7546734888e2c159c40e580ee11bf167d3092524118f32459be39c4726",
+      "source_hash": "414a74c739ef6ad6476096632d84195fd0009d6448cf26e5e8d56661cb9110f1",
       "title": "What Actually Drives the Cost of a Virtual Event",
       "h1": [
         "What Actually Drives the Cost of a Virtual Event"
@@ -12346,7 +12346,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "98bcc555323a327d12c5cb239aeb08cbb65df79034cf78bbbb65038142a4cbfa",
+      "duplicate_fingerprint": "2846a52e1e4b0657d46c28d8987c2574ec183888149570da209d4bd6fb9bb139",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12357,7 +12357,7 @@
       "path": "sites/founder-operator/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
-      "source_hash": "806d42c475def2f871860db0bb3d67a6221795749d64477aba1a65dfb3548030",
+      "source_hash": "d5d24a52a57734bf506583089093a7b62ebcda8de15d64c4f81a02e457b02e20",
       "title": "What Belongs in a Run of Show Document",
       "h1": [
         "What Belongs in a Run of Show Document"
@@ -12494,7 +12494,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "cc6017f07aca0c97f814d882560eb58298fa6828a6bd270b257a5b018b3658c6",
+      "duplicate_fingerprint": "047cc95629f6f6a3bcbecb8f0f0d5fe8cd5933fdb702b96c52abcf8c05a56dc3",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12505,7 +12505,7 @@
       "path": "sites/founder-operator/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
-      "source_hash": "55e85753775395ccb067fdb764eadffe706551507fff4364cf2429c6e2710f31",
+      "source_hash": "a11b5efc609501ceefeb2e287c342bcf74d5fde0013f16b55a69be385b971ce8",
       "title": "How to Run Rehearsals for a Remote Speaker Lineup",
       "h1": [
         "How to Run Rehearsals for a Remote Speaker Lineup"
@@ -12642,7 +12642,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "faf5b2dd7609be1000b49746c21dd480c962c1a18894978302f18152b4c8da94",
+      "duplicate_fingerprint": "ba2325b2c9e77f236b1796bcb138c19057bc7d7c704924097ed0edff084de246",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12653,7 +12653,7 @@
       "path": "sites/founder-operator/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
       "publication": "founder-operator",
       "route": "/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
-      "source_hash": "7f3e040ce1ba597278f0027845a82dba46d784fb3ca9940d36592a4f0c73769d",
+      "source_hash": "e892d3f1f40ee02e3f0c3c27038b41b57f0fd0a5ab0a88f71c51670af19ae8c9",
       "title": "Webinar vs Virtual Conference vs Hybrid Broadcast: Scope Compared",
       "h1": [
         "Webinar vs Virtual Conference vs Hybrid Broadcast: How the Scope Differs"
@@ -12790,7 +12790,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "b78d31f0d1fb406cb66bd4f2ddbe46e1ff40e8cc15e0c557b8ec8f17d5dc4fb7",
+      "duplicate_fingerprint": "68cb3ed0b6c47adcd8806e9c5e4a1cc68f749f0b0e1ff53aae0320bc75c31eb9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12801,7 +12801,7 @@
       "path": "sites/founder-operator/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform.html",
-      "source_hash": "40d0162de990fbdc79bbdfdccf0b62551ba71e5f84e58ca4e35d1d04afeed35d",
+      "source_hash": "71bd434a95fd60d75aca983fb25a19c5eb7721dacd56221e8c00908175d892e7",
       "title": "How to Write a Community Charter Before Choosing a Platform",
       "h1": [
         "How to Write a Community Charter Before Choosing a Platform"
@@ -12930,7 +12930,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "e17ab4961b1965b01711bd52fcf24ede752e6cfeefe1c1e228e55c5540714a90",
+      "duplicate_fingerprint": "2146d4c25d8cb4719a46f9faef398ed88624a0ff7e702d5227bcec82cc943508",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -12941,7 +12941,7 @@
       "path": "sites/founder-operator/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html",
-      "source_hash": "bb7a370c731043b2b68acd0ff72083d370151b97a9dbe4e6e54fe40542e8a2b2",
+      "source_hash": "6d2aaa52797e698cfa661597698a206bab565220922cba2257f75d444919b2ca",
       "title": "What a Community Moderation Policy Needs to Cover",
       "h1": [
         "What a Community Moderation Policy Needs to Cover"
@@ -13070,7 +13070,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "4cce3352d1bb1720d02471f3a69ff610b412221b8c8d97f0dbddfc8fb2de413a",
+      "duplicate_fingerprint": "15dd13048de074e8f8204e668d0881b5852185bd554c588eb8168d684b8f2715",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13081,7 +13081,7 @@
       "path": "sites/founder-operator/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership.html",
-      "source_hash": "e2edbbd96ba6f1f8ca6e03bf9f5f6b2e43c050d6576114a4c1a6b2a89821a86c",
+      "source_hash": "c1d819aa2203520050aa3cfcd845de1f38c50daf2f51da667d4d17f264c8c6d9",
       "title": "How to Design the First 30 Days of Community Membership",
       "h1": [
         "How to Design the First 30 Days of Community Membership"
@@ -13210,7 +13210,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "01b45f249a3de00f0566850c7a1e311f7461991cbda92a591c6f83098952a374",
+      "duplicate_fingerprint": "9b075e11e7388a3ec3a0127bb2f1cc619d718bc122bdd0e91916772fd930a221",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13221,7 +13221,7 @@
       "path": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
-      "source_hash": "3024ccfc4518394fa20ebc556c4f769638616ed667afb5a493eb656317f7115b",
+      "source_hash": "39ae278125716f0577d5a80b36deeb10adfca244f1db7fec02fb87ccc5cfb9dc",
       "title": "Which Community Metrics to Report Monthly and Which to Ignore",
       "h1": [
         "Which Community Metrics to Report Monthly and Which to Ignore"
@@ -13350,7 +13350,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "004e21f4a77dfe1fc3ca2bf1f9aed9983f4207e7def95997c0ddde8ea33e5382",
+      "duplicate_fingerprint": "b8b90768435365835fd8548cfb58e5ea7c437027bd0d640bc16a84d5ab9d8ca5",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13493,12 +13493,12 @@
       "path": "sites/founder-operator/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters.html",
-      "source_hash": "7c7237e268d0dd1edfd290ff7f7fb491647072fe20b6420d83dd923cad791359",
+      "source_hash": "21af61fcd21916dde54dfd8b4d04a8315ffd23d44ebc54ab03e4ca1d6aedfb85",
       "title": "Founder Operating Systems: Budget/Planning Note When Timing Matters",
       "h1": [
         "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
       ],
-      "word_count": 1359,
+      "word_count": 1362,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
       "meta_description": "A 2026-ready budget and planning note on founder operating systems for an event producer, written when timing matters: what to compare and what to ask.",
       "html_lang": "en",
@@ -13536,6 +13536,10 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
@@ -13566,10 +13570,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
           "anchor": "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
-          "anchor": "Review Cadences: Low-Risk Buyer Guide When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -13614,7 +13614,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "ed79ae2e90bb0328342758ea955d41f6f901443709994154ceba2fc369d777d7",
+      "duplicate_fingerprint": "b4f0696ab195f44beaa6ff0ed7407186a7f4acee092eab64fde452d71631666f",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13625,7 +13625,7 @@
       "path": "sites/founder-operator/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters.html",
-      "source_hash": "2286b0473d8db2cecf72d4aac4a00496b926a0bdca42aa7b011aa68de88b6029",
+      "source_hash": "abb704d9f69f685be646d722aa02fa055386189995aeed8e0af0f12c1a369ea1",
       "title": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters",
       "h1": [
         "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
@@ -13746,7 +13746,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "527f84325a4c22ac48f62d10a645f514177c2275a8d3cd4174338fcd2da2506f",
+      "duplicate_fingerprint": "778fd584260782b5e54cf913093e1f45c14a472bb45b871a0a6cc3bbe1e535ba",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13757,7 +13757,7 @@
       "path": "sites/founder-operator/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose.html",
-      "source_hash": "198605f559a6309e13f14babad5acf489cb89d7282caae2337bf97089e359e8a",
+      "source_hash": "4dcf366f831d73ada95b6eab01e4180862b51a00acbf78f92f0ff0ba39f2fac7",
       "title": "Ai Workforce Design: Low-Risk Prep Guide Before You Choose",
       "h1": [
         "Ai Workforce Design: Low-Risk Prep Guide Before You Choose"
@@ -13878,7 +13878,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "f747bcc80433f9ac387aea639751c8e5e9ffc6b6dab5aaec4190521d8c0b4f74",
+      "duplicate_fingerprint": "5f4ed4cf0979922fe6e4ef7d7228d82813bef68c7787f9a25cac709b7c705468",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -13889,7 +13889,7 @@
       "path": "sites/founder-operator/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call.html",
-      "source_hash": "ed4d1759d364c317421c53f1ba7ac2ccd978a293d9f01c9fa95f4f731d818999",
+      "source_hash": "cb8ee56c4f0d9e5e267e790bba20aab3c1ed959efc2287e530045a7742ecc96a",
       "title": "Ai Workforce Design: Beginner-Safe Resource Roundup Before You Call",
       "h1": [
         "Ai Workforce Design: Beginner-Safe Resource Roundup Before You Call"
@@ -14010,7 +14010,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "893681ac469118996cef6381c011e5176c46d7d331818ec751425074d0fc2832",
+      "duplicate_fingerprint": "576a6d038183b721c0c485fd875ddd0545cfe61b96f4a100185d44ac8881ff48",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -14021,7 +14021,7 @@
       "path": "sites/founder-operator/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point.html",
-      "source_hash": "0b0594421f3cc2557e5d066fab43100675e5f557bfe2d1e59c7439ab92069c8d",
+      "source_hash": "070c945f7df4a3520fe81287e969e61edba689971619a71ad9abc82cf5f6df40",
       "title": "Ai Delegation: Faq Answer Page For People Who Need A Starting Point",
       "h1": [
         "Ai Delegation: Geo-Ready Faq Answer Page For People Who Need A Starting Point"
@@ -14142,7 +14142,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "cbad05c1100625da90bee267794241e1584565f04205f9289794c0b5f3e2ba63",
+      "duplicate_fingerprint": "5513cfda6f93016819fc5cbf972850b374acc2c447852b3d98160ef0f7751d62",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -14153,12 +14153,12 @@
       "path": "sites/founder-operator/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers.html",
-      "source_hash": "eb8dcd81eb9f59a06503fc46b658df8377525075033fc57046f98c07a4c33a20",
+      "source_hash": "78c7be6d9736e956b81dc757a72b45cd8b33ef729e874cc53db3a3c815055c92",
       "title": "Founder Operating Systems: Prep Guide For Careful Decision-Makers",
       "h1": [
         "Founder Operating Systems: Checklist-Driven Prep Guide For Careful Decision-Makers"
       ],
-      "word_count": 1330,
+      "word_count": 1333,
       "canonical": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
       "meta_description": "A checklist-driven prep guide on founder operating systems for an event producer, written for careful decision-makers: what to compare and what to ask.",
       "html_lang": "en",
@@ -14186,6 +14186,10 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
@@ -14226,10 +14230,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
           "anchor": "Review Cadences: No-Fluff Framework Before You Book"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
-          "anchor": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -14274,7 +14274,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "07c549b9cfd2231b8ec683757aa34db3cd49a3701cb103171d55da1c5150a1fa",
+      "duplicate_fingerprint": "0dda7494242ec90366e14026081838ebe107a0c79532864fb923169a76a4e8d9",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -14549,7 +14549,7 @@
       "path": "sites/founder-operator/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay.html",
       "publication": "founder-operator",
       "route": "/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay.html",
-      "source_hash": "63a05fd67037f13b2412f881dd409c505199ae40da609c26602342cc61c7c672",
+      "source_hash": "2f5be1f722b34a61d656994d23a231275e0acba183436149c2d290e440f7d033",
       "title": "Ai Workforce Design: Editorial Comparison Guide Before You Pay",
       "h1": [
         "Ai Workforce Design: Editorial Comparison Guide Before You Pay"
@@ -14670,7 +14670,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "278ade5796d5e7cb5998237d66e52c72e4380954d396385c6a035fee79011393",
+      "duplicate_fingerprint": "770c10580f147fe13de5fffa525c7c0d1b334945c22ccfb4b00bbe624fd8a9a2",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -14681,7 +14681,7 @@
       "path": "sites/founder-operator/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers.html",
       "publication": "founder-operator",
       "route": "/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers.html",
-      "source_hash": "6d594bfc6cc8c7675e703b8639173f0cf7f599c824688365218c052d5263da1e",
+      "source_hash": "53a77dd0dc52aa73e64e9c4831ca47dcb93ae28b70483de58d01359f96da47e4",
       "title": "Team Accountability: Red-Flag Checklist For Careful Decision-Makers",
       "h1": [
         "Team Accountability: Practical Red-Flag Checklist For Careful Decision-Makers"
@@ -14748,16 +14748,16 @@
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
           "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
         },
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
-          "anchor": "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose"
         },
         {
           "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
@@ -14802,7 +14802,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "e21a805d87cc55a1730e8725e242ea6c81d721e9d78184da9849a08fd67ab3fa",
+      "duplicate_fingerprint": "626a1a6f2cdc934561c439f302a5a7f97f266f8414338b376f0c1b065fd95a15",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -14813,7 +14813,7 @@
       "path": "sites/founder-operator/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign.html",
       "publication": "founder-operator",
       "route": "/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign.html",
-      "source_hash": "69d5a1d1e9e423c72c3e4c40ee62b941fa58907f5fd6a557db6204981fc659f7",
+      "source_hash": "44983eb1f9004d5d5bc798419be8c6a76477b8372095e48e64ee5199ec01e743",
       "title": "Hiring Standards For Small Teams: Faq Answer Page Before You Sign",
       "h1": [
         "Hiring Standards For Small Teams: Editorial Faq Answer Page Before You Sign"
@@ -14934,7 +14934,7 @@
       ],
       "internal_links": [],
       "schema_count": 2,
-      "duplicate_fingerprint": "918b3958140e435cac49ec393f2e6087ccee23d61db75ab4b77077101980c624",
+      "duplicate_fingerprint": "3b2fa20c27f54dfee5ffd7030bf7358c9abf8277ea3aad2a4cf36822949f5633",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -15074,6 +15074,138 @@
       "cache_status": "MISS"
     },
     {
+      "path": "sites/founder-operator/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
+      "publication": "founder-operator",
+      "route": "/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions.html",
+      "source_hash": "13d8be03a6c06ced0fb99a2f90179998fa2f4fcdc2e7cbc3e160e6f54225d5fd",
+      "title": "Operator Playbooks: Framework When You Need To Ask Better Questions",
+      "h1": [
+        "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+      ],
+      "word_count": 1349,
+      "canonical": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "meta_description": "An AEO-ready framework on operator playbooks for an agency owner, written when you need to ask better questions: what to compare and what to ask.",
+      "html_lang": "en",
+      "external_links": [
+        {
+          "href": "https://founderoperatorlibrary.com/",
+          "anchor": "Founder Operator Library"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
+          "anchor": "Founder operating rhythms"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/editorial-standards",
+          "anchor": "How citations get chosen"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/masthead",
+          "anchor": "every project this publication is affiliated with"
+        },
+        {
+          "href": "https://www.aplayermode.com/",
+          "anchor": "A Player Mode"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+          "anchor": "Operator Playbooks: Low-Risk Budget/Planning Note For First-Time Buyers"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
+          "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
+          "anchor": "Personal Board Of Directors: Comparison-Friendly Local/Resource Directory Before You Choose"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
+          "anchor": "Productivity Recovery After Missed Days: Decision-Focused Buyer Guide Before You Pay"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
+          "anchor": "Productivity Recovery After Missed Days: Editorial Buyer Guide For First-Time Buyers"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
+          "anchor": "Productivity Recovery After Missed Days: Editorial Planning Checklist Before You Book"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
+          "anchor": "Productivity Recovery After Missed Days: Human-First Resource Roundup Before You Sign"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
+          "anchor": "Review Cadences: Beginner-Safe Decision Guide When You Are Comparing Options"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
+          "anchor": "Review Cadences: Low-Risk Buyer Guide When Timing Matters"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
+          "anchor": "Review Cadences: No-Fluff Framework Before You Book"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
+          "anchor": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
+          "anchor": "Team Accountability: Comparison-Friendly Local/Resource Directory Before You Book"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
+          "anchor": "All founder operating rhythms"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/virtual-event-production",
+          "anchor": "Virtual event production and executive broadcast"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/community-operations",
+          "anchor": "Community programs and managed operations"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/ai-execution-and-delegation",
+          "anchor": "AI execution, delegation and operating cadence"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
+          "anchor": "The lean team's operating stack"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/about",
+          "anchor": "About Founder Operator Library"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/masthead",
+          "anchor": "Masthead"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/editorial-standards",
+          "anchor": "Editorial standards"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/corrections",
+          "anchor": "Corrections"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/contributors",
+          "anchor": "Contributors"
+        }
+      ],
+      "internal_links": [],
+      "schema_count": 2,
+      "duplicate_fingerprint": "a80923b659bd1c16c5a6e4faaad20482047141f6e22c8d1332f04ca1a208ce7f",
+      "findings": [],
+      "repair_count": 0,
+      "status": "PASS",
+      "repairs": [],
+      "cache_status": "MISS"
+    },
+    {
       "cache_status": "HIT",
       "canonical": "https://founderoperatorlibrary.com/editorial-standards",
       "duplicate_fingerprint": "ed57ce14b07012a1e6c7e58a1cc9cd89e6809174c01786f288861f90680ee486",
@@ -15154,12 +15286,12 @@
       "path": "sites/founder-operator/event-production-safety-standards-questions.html",
       "publication": "founder-operator",
       "route": "/event-production-safety-standards-questions.html",
-      "source_hash": "0ad4d35a05a6aaaac4d1ef367ae2afa99f3174c9a662aab96149de49935d6eb0",
+      "source_hash": "544dfcb3c180b066af781a9e1946139c7ef47ab342cc53c5042c6a29fd2bbdc7",
       "title": "What to Ask an Event Production Vendor About Safety Standards",
       "h1": [
         "What to Ask an Event Production Vendor About Safety Standards"
       ],
-      "word_count": 1951,
+      "word_count": 1952,
       "canonical": "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
       "meta_description": "The questions that separate a production vendor working to published entertainment technology standards from one improvising, and who publishes those standards.",
       "html_lang": "en",
@@ -15253,6 +15385,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -15295,10 +15431,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/editorial-standards",
@@ -15352,7 +15484,7 @@
         }
       ],
       "schema_count": 3,
-      "duplicate_fingerprint": "9aeb034d47949675f68b170907381a07de4b88e77599ebd29886bb7d1c96c5b6",
+      "duplicate_fingerprint": "b4efc23c81535c92bea26b5da31f4d902ebc5b8903327068943693622c57a6e6",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -15363,12 +15495,12 @@
       "path": "sites/founder-operator/founder-execution-systems.html",
       "publication": "founder-operator",
       "route": "/founder-execution-systems.html",
-      "source_hash": "efbbc31972c2b35a5c982c16438fe84ce09964d661a36408a6809606185619ae",
+      "source_hash": "591f7df11943a81828b683d9d191fa78b4c45aff21ce2169db59c85ff4e2785f",
       "title": "Founder Execution Systems | Founder Operator Library",
       "h1": [
         "Founder Execution Systems"
       ],
-      "word_count": 1211,
+      "word_count": 1212,
       "canonical": "https://founderoperatorlibrary.com/founder-execution-systems",
       "meta_description": "Founder execution systems: operating rhythms, daily agendas, review loops and minimum viable execution days that recover fast after an imperfect day.",
       "html_lang": "en",
@@ -15470,6 +15602,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -15512,10 +15648,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -15561,7 +15693,7 @@
         }
       ],
       "schema_count": 2,
-      "duplicate_fingerprint": "1350ff6d751ce20c2d6bd77a3e1f88ddae5b60314e5cc9c70cf6de3bac05ddc4",
+      "duplicate_fingerprint": "048445704f307569420e3672fc1f33f33909cf4b52e231620f9090504f40598a",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -15572,12 +15704,12 @@
       "path": "sites/founder-operator/index.html",
       "publication": "founder-operator",
       "route": "/",
-      "source_hash": "2135ac67916bf5bf633896b32d176210fb42d86e810513f2b05d82b240b61685",
+      "source_hash": "37559647fde7189764a46f7c7c65c33e47b2998a197d421c0a89295aaa515a9f",
       "title": "Founder Operator Library | Founder Operator Library",
       "h1": [
         "Founder Operator Library"
       ],
-      "word_count": 1147,
+      "word_count": 1148,
       "canonical": "https://founderoperatorlibrary.com/",
       "meta_description": "Founder Operator Library: practical guides for founders and operators on AI execution, delegation, lean-team hiring, operating rhythms and virtual events.",
       "html_lang": "en",
@@ -15627,6 +15759,10 @@
           "anchor": "The lean team's operating stack"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -15669,10 +15805,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -15718,7 +15850,7 @@
         }
       ],
       "schema_count": 1,
-      "duplicate_fingerprint": "76ba7f391389bf2d11502bbd89396b75df43a2c18bfcfa7931721a23e5b50779",
+      "duplicate_fingerprint": "77f0214f16d4506b0f46abc8545e0ff9169cfc5a1adaf93e30ca4db806d2aa4b",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -16206,14 +16338,14 @@
       "path": "sites/founder-operator/topics/founder-operating-rhythms.html",
       "publication": "founder-operator",
       "route": "/topics/founder-operating-rhythms.html",
-      "source_hash": "d5f84f0afe649eff283589e3d533837f76a43211d65196c5e94d5f565ecb4699",
+      "source_hash": "338d85943dc2a0f7acf2d8fa2d8ef70db289fad403cd818568fc1adc5c638929",
       "title": "Founder operating rhythms | Founder Operator Library",
       "h1": [
         "Founder operating rhythms"
       ],
-      "word_count": 1499,
+      "word_count": 1532,
       "canonical": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
-      "meta_description": "Review cadences, calendar protection, accountability and recovery after the week gets away from you. 23 pages from Founder Operator Library.",
+      "meta_description": "Review cadences, calendar protection, accountability and recovery after the week gets away from you. 24 pages from Founder Operator Library.",
       "html_lang": "en",
       "external_links": [
         {
@@ -16255,6 +16387,10 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
           "anchor": "Meeting Operating Rhythms: No-Fluff Local/Resource Directory For Careful Decision-Makers"
+        },
+        {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
         },
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
@@ -16403,7 +16539,7 @@
       ],
       "internal_links": [],
       "schema_count": 1,
-      "duplicate_fingerprint": "e366c25fae6376757d9db31c4d2db36cf53d27e22d702ff98f3f9ab1e1708b0f",
+      "duplicate_fingerprint": "c8bc186a66b96108567e2385e20d21b13eb1c72275611f2a1bf94849855d71bd",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -16790,12 +16926,12 @@
       "path": "sites/founder-operator/virtual-event-production-buyers-guide.html",
       "publication": "founder-operator",
       "route": "/virtual-event-production-buyers-guide.html",
-      "source_hash": "4d96dfa6859da24a16e27431b77a16e29e75ee48e57c4d65296942c8fd12b7e3",
+      "source_hash": "dbedb8c04d3f77056ff8aa6cd37a28f8b50c9aaa16f623bd45a904435983a4d7",
       "title": "Virtual Event Production Buyers Guide | Founder Operator Library",
       "h1": [
         "Virtual Event Production Buyers Guide"
       ],
-      "word_count": 1246,
+      "word_count": 1247,
       "canonical": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
       "meta_description": "How teams should compare virtual event production partners before a high-stakes webinar, summit, or executive broadcast.",
       "html_lang": "en",
@@ -16905,6 +17041,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -16947,10 +17087,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/masthead",
@@ -16996,7 +17132,7 @@
         }
       ],
       "schema_count": 2,
-      "duplicate_fingerprint": "d7c840d02bdd1e35320101186d671eae839e4d95e10db340c8f48cd30b9c1cfe",
+      "duplicate_fingerprint": "7c0d495a5b47dad5d8b68107038b7930db091ea39f5a9c8876cdac02c73b9c71",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",
@@ -17007,12 +17143,12 @@
       "path": "sites/founder-operator/virtual-event-production-cost-drivers.html",
       "publication": "founder-operator",
       "route": "/virtual-event-production-cost-drivers.html",
-      "source_hash": "42eb025c877c70df3a54e47384deb5b185f5529ead00dd21b8cdd9f06019b4fe",
+      "source_hash": "1a5fa08e33c05f278c7bdf540dfd11b7f27284780cad8b54af0695a000c54293",
       "title": "What Actually Drives the Cost of a Virtual Event Production",
       "h1": [
         "What Actually Drives the Cost of a Virtual Event Production"
       ],
-      "word_count": 2236,
+      "word_count": 2237,
       "canonical": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
       "meta_description": "The eight variables that move a virtual event production quote, why two bids for the same event differ, and what to put in writing before you sign.",
       "html_lang": "en",
@@ -17110,6 +17246,10 @@
           "anchor": "Who is responsible for Founder Operator Library"
         },
         {
+          "href": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
+          "anchor": "Operator Playbooks: Aeo-Ready Framework When You Need To Ask Better Questions"
+        },
+        {
           "href": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
           "anchor": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point"
         },
@@ -17152,10 +17292,6 @@
         {
           "href": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
           "anchor": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters"
-        },
-        {
-          "href": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-          "anchor": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters"
         },
         {
           "href": "https://founderoperatorlibrary.com/editorial-standards",
@@ -17209,7 +17345,7 @@
         }
       ],
       "schema_count": 3,
-      "duplicate_fingerprint": "1e97ccdd4ceabc61bc3eeb1ea59799ad147303816e077986f628599cc2f83ab9",
+      "duplicate_fingerprint": "a46bae2b62141064760c7effa6c77a232b90a690148dc6e1d2ab06b83ff94f35",
       "findings": [],
       "repair_count": 0,
       "status": "PASS",

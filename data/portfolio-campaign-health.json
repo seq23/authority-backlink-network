@@ -1,6 +1,6 @@
 {
   "schema": "authority-campaign-health-v1",
-  "as_of": "2026-10-08",
+  "as_of": "2026-10-09",
   "truth_boundary": "Rendered coverage is owned-network inventory, not live or indexed proof.",
   "campaigns": [
     {
@@ -176,7 +176,7 @@
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
       "rendered": 9,
-      "live_verified": 8,
+      "live_verified": 9,
       "indexed": 0,
       "distinct_destinations": 2,
       "distinct_anchors": 2,
