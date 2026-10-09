@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-08T18:33:44+00:00",
+  "run_at": "2026-10-09T12:25:55+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 8,
+  "queries_ingested": 7,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
+  "dropped_by_beat_filter": 7,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,37 +14,33 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Doctor for story on headaches with neck pain",
+      "summary": "Memory care community reps. to discuss supporting residents during medical appointments",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Licensed Commercial Architect with Data Center Experience",
+      "summary": "Memory care community reps. on recognizing pain in residents who can’t self-report.",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Do Daycare Charge Deposits/Registration Fees? Daycare Professionals and Others Needed",
+      "summary": "Seeking Home Renters to Share (Anonymous) Stories",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking: psychology master's graduates or psychology faculty",
+      "summary": "Seeking: DNP graduates, practicing nurse practitioners",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Salem, MA Businesses Wanted for On-Camera Interviews: The Economic Impact of Halloween",
+      "summary": "Seeking Stocking Stuffers for Famadillo’s Holiday Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Holiday Gift Guide (Family, Kids, Teens, Mom/Dad, Family Dog)",
+      "summary": "Seeking Holiday Gifts for Moms and Women for Famadillo’s Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Holiday Gift Guide 2026",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Perspectives: Senate-Passed Healthcare Cybersecurity Bill Would End HIPAA's Flexibility",
+      "summary": "Apartment Living: Space-Saving Products and Everyday Essentials",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
