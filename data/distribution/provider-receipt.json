@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-09T15-46-03.112525Z-37954107410",
-  "attempted_at": "2026-10-09T15:46:03.112525Z",
+  "receipt_id": "2026-10-10T15-43-20.920387Z-38064719736",
+  "attempted_at": "2026-10-10T15:43:20.920387Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "1a3999e7b0f9e3c07196c1b5ca7f2d3a5557e9ce03be8e367c0f251fb9a9a547",
+        "sha256": "22b5a3e0053930395a48b9ee58b87403619658978e038f8999a936e2273fa73a",
         "url_count": 119
       },
       "indexnow": {
@@ -51,21 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 1,
-        "inspected_urls": 1,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -4920,7 +4908,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-09T15-46-03.112525Z-37954107410.json"
+    "history": "data/distribution/receipts/2026-10-10T15-43-20.920387Z-38064719736.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
