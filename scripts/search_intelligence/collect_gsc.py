@@ -223,6 +223,15 @@ def collect(c: Client, site: dict, now: str) -> tuple[bool, str]:
                   f"{cov['inspected_total']}/{cov['sitemap_url_count']} indexed={b.get('indexed', 0)} {b} | {'; '.join(notes)}")
 
 
+def status(now: str, hosts: dict) -> None:
+    """data/search_intelligence/collection_status.json: when the collector last ran and
+    what each host's outcome was. The validator reads it so a NAMED STOP (stale
+    truth with a stated reason) is distinguishable from a collector that stopped
+    running at all."""
+    prev = (read_json(SI / "collection_status.json") or {}).get("hosts", {})
+    write_json(SI / "collection_status.json", {"schema_version": "1.0", "ran_at": now, "hosts": {**prev, **hosts}})
+
+
 def main() -> int:
     args = sys.argv[1:]
     only = args[1] if args[:1] == ["--only"] else None
@@ -230,17 +239,20 @@ def main() -> int:
     if not chosen:
         print(f"no site selected from data/search_intelligence/sites.json (--only {only})", file=sys.stderr)
         return 1
+    now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     token, how = google_access_token()
     if not token:
-        print(f"NAMED STOP: Search Console credential unavailable ({how}); set GSC_SERVICE_ACCOUNT_JSON. "
-              "data/search_intelligence/<host>/ files left as they were.")
+        stop = (f"NAMED STOP: Search Console credential unavailable ({how}); set GSC_SERVICE_ACCOUNT_JSON. "
+                "data/search_intelligence/<host>/ files left as they were.")
+        print(stop)
+        status(now, {s["host"]: {"state": "NAMED_STOP", "line": stop} for s in chosen})
         return 0
-    now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     c = Client(token)
     with cf.ThreadPoolExecutor(len(chosen)) as pool:
         results = list(pool.map(lambda s: collect(c, s, now), chosen))
     for _, line in results:
         print(line)
+    status(now, {s["host"]: {"state": "OK" if ok else "NAMED_STOP", "line": line} for s, (ok, line) in zip(chosen, results)})
     if not any(ok for ok, _ in results):
         print("collect_gsc: a credential exists and no property was readable; nothing written", file=sys.stderr)
         return 1

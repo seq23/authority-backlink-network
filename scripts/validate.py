@@ -74,6 +74,8 @@ COMMANDS = {
     "indexnow_key": [sys.executable, "scripts/validators/validate_indexnow_key.py"],
     "portfolio_link_policy": [sys.executable, "scripts/validators/validate_portfolio_link_policy.py"],
     "no_parent_company": [sys.executable, "scripts/validators/validate_no_parent_company.py"],
+    "search_intelligence": [sys.executable, "scripts/validators/validate_search_intelligence.py"],
+    "measured_urls_resolve": [sys.executable, "scripts/validators/validate_measured_urls_resolve.py"],
 }
 
 

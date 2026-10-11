@@ -14,7 +14,7 @@
         "python3 scripts/social_publisher.py": true
       },
       "secrets": {
-        "GEMINI_API_KEY": true,
+        "OPENROUTER_API_KEY": true,
         "LINKEDIN_ACCESS_TOKEN": true,
         "LINKEDIN_AUTHOR_URN": true,
         "X_API_KEY": true,
@@ -130,8 +130,7 @@
       },
       "vars": {
         "SOS_IMAP_PORT": true,
-        "SOS_IMAP_FOLDER": true,
-        "JOURNALIST_QUERY_MODEL": true
+        "SOS_IMAP_FOLDER": true
       },
       "guards": {
         "contents: write": true,
@@ -156,9 +155,7 @@
       "secrets": {
         "OPENROUTER_API_KEY": true
       },
-      "vars": {
-        "USCIS_CHANGELOG_MODEL": true
-      },
+      "vars": {},
       "guards": {
         "contents: write": true,
         "issues: write": true,

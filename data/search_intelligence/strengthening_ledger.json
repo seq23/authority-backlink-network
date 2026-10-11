@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
+  "counts": {
+    "no_page": 4,
+    "strengthened": 12
+  },
+  "entries": [
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "community cost metric @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 29,
+      "weighted_position": 56.7,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "changes": {
+        "title": "Community Metrics: Which to Report Monthly and Which to Ignore",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 4,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "execution support for founders @ /founder-execution-systems",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 27,
+      "weighted_position": 6.1,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
+      "page": "/founder-execution-systems",
+      "file": "sites/founder-operator/founder-execution-systems.html",
+      "changes": {
+        "title": "Execution Support for Founders: Systems, Agendas and Review Loops",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "founder operator @ /",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 25,
+      "weighted_position": 5.9,
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
+      "page": "/",
+      "file": "sites/founder-operator/index.html",
+      "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "performance problem identification @ /daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 10,
+      "weighted_position": 30.4,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
+      "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
+      "changes": {
+        "title": "Performance Problem or Role Design Problem? How to Tell",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "ai coaching guide @ /ai-executive-coaching-resources",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 7,
+      "weighted_position": 15.5,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
+      "page": "/ai-executive-coaching-resources",
+      "file": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "changes": {
+        "title": "AI Coaching Guide: Comparing AI and Human Executive Coaching",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "company masthead @ /masthead",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 6,
+      "weighted_position": 11.0,
+      "status": "no_page",
+      "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
+      "page": "/masthead",
+      "file": "sites/founder-operator/masthead.html",
+      "changes": null
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "Grazing Table vs Buffet vs Passed Appetizers: How the Setup Differs @ /daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 35,
+      "weighted_position": 7.0,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
+      "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
+      "file": "sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
+      "changes": {
+        "title": "Grazing Table vs Buffet vs Passed Appetizers: Which Setup Fits",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "What to Confirm With a Hotel Before Booking an In-Room Decor Setup @ /daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 25,
+      "weighted_position": 7.7,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
+      "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
+      "changes": {
+        "title": "Hotel Room Decoration Setup: What to Confirm Before You Book",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "Memphis Grazing Table Resources @ /memphis-grazing-table-resources",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 8,
+      "weighted_position": 10.2,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/memphis-grazing-table-resources.html",
+      "page": "/memphis-grazing-table-resources",
+      "file": "sites/memphis-local/memphis-grazing-table-resources.html",
+      "changes": {
+        "title": "Memphis Grazing Tables: What to Clarify Before You Book",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "About Memphis Vendor Library @ /about",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 5,
+      "weighted_position": 2.0,
+      "status": "no_page",
+      "reason": "lands on /about, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
+      "page": "/about",
+      "file": "sites/memphis-local/about.html",
+      "changes": null
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "Memphis Vendor Library @ /",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 5,
+      "weighted_position": 2.2,
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
+      "page": "/",
+      "file": "sites/memphis-local/index.html",
+      "changes": null
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "cfpb equifax work number antitrust data broker consumer reporting 2024 2025 @ /consumer-reporting-companies-directory",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 447,
+      "weighted_position": 10.0,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page": "/consumer-reporting-companies-directory",
+      "file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "changes": {
+        "title": "CFPB List of Consumer Reporting Agencies (2025), All 64 Companies",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing @ /daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 70,
+      "weighted_position": 8.3,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
+      "page": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
+      "changes": {
+        "title": "Horse Lease Types: Full, Half and Free Lease Terms in Writing",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "equine legal advice @ /equine-legal-resource-library",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 28,
+      "weighted_position": 47.6,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
+      "page": "/equine-legal-resource-library",
+      "file": "sites/professional-resources/equine-legal-resource-library.html",
+      "changes": {
+        "title": "Equine Legal Advice: What to Prepare Before Talking to Counsel",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "burnout and boundaries @ /workplace-burnout-and-boundaries",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 14,
+      "weighted_position": 38.8,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "page": "/workplace-burnout-and-boundaries",
+      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "changes": {
+        "title": "Burnout and Boundaries at Work: A Practical Starting Point",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "What Records to Gather Before a Neuropsychological Evaluation @ /daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 12,
+      "weighted_position": 5.8,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
+      "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
+      "changes": {
+        "title": "Neuropsychological Evaluation: Records to Gather Beforehand",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 3,
+        "linked_from_homepage": true
+      }
+    }
+  ]
+}

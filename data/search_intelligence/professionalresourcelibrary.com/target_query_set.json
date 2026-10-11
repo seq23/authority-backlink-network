@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0",
+  "host": "professionalresourcelibrary.com",
+  "gsc_window": "2026-09-11..2026-10-08",
+  "gsc_collected_at": "2026-10-11T17:06:00+00:00",
+  "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
+  "max_targets": 500,
+  "target_count": 34,
+  "site_impressions": 647,
+  "query_row_impressions": 76,
+  "anonymised_impressions": 571,
+  "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
+  "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
+  "dropped_count": 0,
+  "dropped": [],
+  "targets": [
+    {
+      "target_id": "abn_sq_cf24a51b40c8",
+      "query": "cfpb equifax work number antitrust data broker consumer reporting 2024 2025",
+      "source": "gsc_export",
+      "impressions": 15,
+      "clicks": 0,
+      "average_position": 4.4,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 15,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_bdb011b37dd4",
+      "query": "equine legal advice",
+      "source": "gsc_export",
+      "impressions": 7,
+      "clicks": 0,
+      "average_position": 58.4,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 7,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_4d7775c7f7d2",
+      "query": "equine legal",
+      "source": "gsc_export",
+      "impressions": 5,
+      "clicks": 0,
+      "average_position": 56.4,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 5,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_81549a8fbb5f",
+      "query": "burnout and boundaries",
+      "source": "gsc_export",
+      "impressions": 4,
+      "clicks": 0,
+      "average_position": 45,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 4,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/workplace-burnout-and-boundaries",
+      "landing_file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_468f28b1579e",
+      "query": "boundaries and burnout",
+      "source": "gsc_export",
+      "impressions": 3,
+      "clicks": 0,
+      "average_position": 47.7,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/workplace-burnout-and-boundaries",
+      "landing_file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_653398de9960",
+      "query": "cfpb list of consumer reporting agencies",
+      "source": "gsc_export",
+      "impressions": 3,
+      "clicks": 0,
+      "average_position": 35.7,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_a52451823734",
+      "query": "datax mobile apps",
+      "source": "gsc_export",
+      "impressions": 3,
+      "clicks": 0,
+      "average_position": 54,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_dc26ba6a90b0",
+      "query": "equine legal solutions",
+      "source": "gsc_export",
+      "impressions": 3,
+      "clicks": 0,
+      "average_position": 44.3,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_65dc2348230f",
+      "query": "fama social media screening employment deep history 2025 2026",
+      "source": "gsc_export",
+      "impressions": 3,
+      "clicks": 0,
+      "average_position": 7.7,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 3,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_f7a7cc898d40",
+      "query": "equine law advice",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 60,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_e43c2d688780",
+      "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best regulatory standing? for each company, give me pros and cons in the context of regulatory standing.",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 9.5,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_9b51f7824cb9",
+      "query": "list of consumer reporting agencies",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 64.5,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_e8fdb1e4ed18",
+      "query": "personal injury research",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 45,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/personal-injury-research-resources",
+      "landing_file": "sites/professional-resources/personal-injury-research-resources.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_f08e4e0c124d",
+      "query": "secondary credit bureaus list pdf",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 27,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_763cfbdb86ce",
+      "query": "15 usc 1821",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 27,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": false
+    },
+    {
+      "target_id": "abn_sq_f88ccce9bb95",
+      "query": "833-878-3967",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 5,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_43e564bc6877",
+      "query": "adpselect screening login",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 40,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_aca2cd755ff9",
+      "query": "askcertegy login",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 6,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_6184a35d3cce",
+      "query": "consumer report companies",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 76,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_4b0971fd853d",
+      "query": "consumer reporting agencies list",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 62,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_ec78c0a29261",
+      "query": "consumer reporting agency list",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 58,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_ba0dd04b11b4",
+      "query": "consumer reporting companies",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 69,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_adca1be34911",
+      "query": "deposit statement",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 79,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/topics/bank-statement-and-deposit-letters",
+      "landing_file": "sites/professional-resources/topics/bank-statement-and-deposit-letters.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_5e6c3549348f",
+      "query": "form i-910",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 57,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/uscis-medical-exam-resources",
+      "landing_file": "sites/professional-resources/uscis-medical-exam-resources.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_fedfafc3de28",
+      "query": "horse contracts",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 31,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/topics/equine-contracts",
+      "landing_file": "sites/professional-resources/topics/equine-contracts.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_d15a2ac9ffca",
+      "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best company culture? for each company, give me pros and cons in the context of company culture.",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 11,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_fc31c6ac2adb",
+      "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best financial health & stability. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of financial health & stability.",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 10,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_bc6bcc716972",
+      "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best regulatory standing. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of regulatory standing.",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 8,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_772964e95bc1",
+      "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for recommendations for private label & co-brand credit card companies. list some companies, and tell me for each why would you, or wouldn't you, recommend them.",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 8,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_3aaec4a4ca28",
+      "query": "list of consumer reporting companies",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 67,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_dc8433f6fad0",
+      "query": "list of credit reporting agencies",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 82,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_b4594d813978",
+      "query": "pnc employment verification phone number",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 1,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/consumer-reporting-companies-directory",
+      "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_ea3fa17d81d6",
+      "query": "tiers of recovery",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 74,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "landing_file": "sites/professional-resources/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_4a657084ea6d",
+      "query": "what are the best equine law resources for horse owners?",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 10,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:06:00+00:00"
+      },
+      "landing_route": "/equine-legal-resource-library",
+      "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    }
+  ]
+}

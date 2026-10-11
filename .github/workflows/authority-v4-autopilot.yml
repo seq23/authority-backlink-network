@@ -96,6 +96,11 @@ jobs:
         # a builder's DESCRIPTION) would otherwise never reach the live page.
         # Idempotent; touches only the <title> and description. See its header.
         run: python3 scripts/sync_page_meta.py --write
+      - name: Strengthen the pages measured demand qualifies
+        # data/search_intelligence/strengthened_pages.json: query-first title,
+        # definition, question H2s, one FAQPage, homepage links. Before the
+        # navigation and chrome steps so their output wraps it; idempotent.
+        run: python3 scripts/search_intelligence/apply_strengthening.py --write
       - name: Give the new pages a path in and a canonical that serves 200
         # Without this the three pages generated above are orphans the moment
         # they are written, which is the state that put all three publications
@@ -132,6 +137,8 @@ jobs:
           python3 scripts/portfolio_backlink_engine.py health
       - name: Refresh owner agency dashboard
         run: python3 scripts/build_agency_dashboard.py
+      - name: Rebuild the measured search plan against today's tree
+        run: python3 scripts/search_intelligence/build_search_plan.py --write
       - name: Validate generated release
         run: python3 scripts/validate.py release
       - name: Auto-post social queue (non-blocking)
