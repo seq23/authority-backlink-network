@@ -53,6 +53,7 @@ COMMANDS = {
     "social_pause_modes": [sys.executable, "scripts/validators/validate_social_pause_modes.py"],
     "buffer_route": [sys.executable, "scripts/validators/validate_buffer_route.py"],
     "citation_probe_wiring": [sys.executable, "scripts/validators/validate_citation_probe_wiring.py"],
+    "zero_paid_llm": ["node", "scripts/validators/validate_zero_paid_llm.js"],
     "social_queue_priority": [sys.executable, "scripts/prioritize_social_queue.py", "--check"],
     "affiliate_rel_disclosure": [sys.executable, "scripts/backfill_rel_attributes.py", "--check"],
     "wedding_cost_dataset": [sys.executable, "scripts/validators/validate_wedding_cost_dataset.py"],

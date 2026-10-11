@@ -58,6 +58,15 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Prove the free router (receipt names the key label, never the key)
+        # FREE_LLM_RECEIPT carries outcome (free_model_answered /
+        # credential_refused / no_free_model_answered), model, cost_usd and
+        # key_label/key_info from GET /api/v1/auth/key. Fails only on a
+        # non-zero reported cost.
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python3 scripts/llm/free_router.py --selftest
+
       - name: Scan the day's queries and draft the ones she can actually answer
         env:
           # Ingestion. Source of Sources delivers by email and has no API --
@@ -69,9 +78,8 @@ jobs:
           SOS_IMAP_USER: ${{ secrets.SOS_IMAP_USER }}
           SOS_IMAP_PASSWORD: ${{ secrets.SOS_IMAP_PASSWORD }}
           SOS_IMAP_FOLDER: ${{ vars.SOS_IMAP_FOLDER || 'INBOX' }}
-          # Drafting. Already set on this repository.
+          # Drafting, through the $0-only free router (owner policy, 11 Oct 2026).
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          JOURNALIST_QUERY_MODEL: ${{ vars.JOURNALIST_QUERY_MODEL || 'anthropic/claude-sonnet-4.5' }}
           # Used by `gh issue create` to hand the digest to the owner. GitHub
           # mails her; this reaches her, never a journalist.
           GH_TOKEN: ${{ github.token }}

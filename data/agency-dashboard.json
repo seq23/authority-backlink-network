@@ -4,9 +4,9 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 100,
+    "runtime_operators": 102,
     "release_operators": 10,
-    "workflow_operators": 8,
+    "workflow_operators": 9,
     "approved_target_urls": 118,
     "serviced_target_urls": 92,
     "backlink_rows": 628,
@@ -349,6 +349,12 @@
       "category": "Other"
     },
     {
+      "operator": "llm:free-selftest",
+      "command": "npm run llm:free-selftest",
+      "implementation": "node scripts/llm/free_router.js --selftest",
+      "category": "Other"
+    },
+    {
       "operator": "measure:affiliate-fit",
       "command": "npm run measure:affiliate-fit",
       "implementation": "python3 scripts/measure_affiliate_topical_fit.py",
@@ -655,6 +661,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:zero-paid-llm",
+      "command": "npm run validate:zero-paid-llm",
+      "implementation": "node scripts/validators/validate_zero_paid_llm.js",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validation:matrix",
       "command": "npm run validation:matrix",
       "implementation": "python3 scripts/generate_validation_matrix.py",
@@ -744,6 +756,13 @@
         "0 12 * * 1-5",
         "15 18 * * 1-5"
       ],
+      "manual_dispatch": true
+    },
+    {
+      "name": "Paid Citation Probe (owner-confirmed only)",
+      "path": ".github/workflows/paid-citation-probe.yml",
+      "scheduled": false,
+      "cron": [],
       "manual_dispatch": true
     },
     {

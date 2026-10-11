@@ -12,7 +12,7 @@ REPORT_DIR.mkdir(exist_ok=True)
 required = {
     'authority-v4-autopilot.yml': {
         'commands': ['python3 scripts/authority_v4_autopilot.py','python3 scripts/validate.py release','python3 scripts/social_publisher.py'],
-        'secrets': ['GEMINI_API_KEY','LINKEDIN_ACCESS_TOKEN','LINKEDIN_AUTHOR_URN','X_API_KEY','X_API_SECRET','X_ACCESS_TOKEN','X_ACCESS_TOKEN_SECRET'],
+        'secrets': ['OPENROUTER_API_KEY','LINKEDIN_ACCESS_TOKEN','LINKEDIN_AUTHOR_URN','X_API_KEY','X_API_SECRET','X_ACCESS_TOKEN','X_ACCESS_TOKEN_SECRET'],
         'vars': ['DAILY_PAGE_LIMIT','ENABLE_LINKEDIN_POSTING','ENABLE_X_POSTING','LINKEDIN_DAILY_LIMIT','X_DAILY_LIMIT'],
         'must_have': ['contents: write','issues: write','actions/cache@v4','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2']
     },
@@ -37,13 +37,13 @@ required = {
     'journalist-query-scan.yml': {
         'commands': ['python3 scripts/journalist_query_scan.py','python3 scripts/validators/validate_journalist_query_lane.py'],
         'secrets': ['SOS_IMAP_HOST','SOS_IMAP_USER','SOS_IMAP_PASSWORD','OPENROUTER_API_KEY'],
-        'vars': ['SOS_IMAP_PORT','SOS_IMAP_FOLDER','JOURNALIST_QUERY_MODEL'],
+        'vars': ['SOS_IMAP_PORT','SOS_IMAP_FOLDER'],
         'must_have': ['contents: write','issues: write','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2','named_outcome']
     },
     'uscis-changelog.yml': {
         'commands': ['python3 scripts/uscis_changelog.py','python3 scripts/validators/validate_uscis_changelog.py','python3 scripts/validate.py release'],
         'secrets': ['OPENROUTER_API_KEY'],
-        'vars': ['USCIS_CHANGELOG_MODEL'],
+        'vars': [],
         'must_have': ['contents: write','issues: write','stefanzweifel/git-auto-commit-action@v5','dacbd/create-issue-action@v2','named_outcome']
     }
 }

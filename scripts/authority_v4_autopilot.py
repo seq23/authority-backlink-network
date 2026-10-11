@@ -616,29 +616,36 @@ def score_page(html_text, brief):
 
 
 def maybe_gemini_rewrite(title, html_text):
-    if os.getenv('ENABLE_GEMINI_REWRITE', 'false').lower() != 'true':
+    """Optional editorial rewrite (off unless ENABLE_LLM_REWRITE is true).
+
+    Owner policy, 11 Oct 2026: nothing paid. This used Gemini; it now asks only
+    $0 OpenRouter models via scripts/llm/free_router.py. The name is kept so
+    existing callers and backfills stay wired.
+    """
+    flag = os.getenv('ENABLE_LLM_REWRITE') or os.getenv('ENABLE_GEMINI_REWRITE') or 'false'
+    if flag.lower() != 'true':
         return html_text, 'disabled'
-    key = os.getenv('GEMINI_API_KEY')
-    if not key:
-        return html_text, 'missing_key'
-    model = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash-lite')
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent / 'llm'))
+    from free_router import FreeRouterCostViolation, free_chat
     prompt_file = ROOT/'prompts/human_pov_editorial.md'
     base_prompt = prompt_file.read_text(encoding='utf-8') if prompt_file.exists() else 'Rewrite with practical editorial clarity. Do not fabricate.'
     prompt = base_prompt + "\nRewrite this HTML article in a clearer editorial voice while preserving links, disclaimers, schema, and factual caution. Return full HTML only.\nTITLE:" + title + "\nHTML:\n" + html_text[:18000]
-    url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}'
-    payload = json.dumps({'contents': [{'parts': [{'text': prompt}]}]}).encode()
-    req = urllib.request.Request(url, data=payload, headers={'Content-Type': 'application/json'})
     try:
-        with urllib.request.urlopen(req, timeout=45) as r:
-            data = json.loads(r.read().decode())
-        text = data['candidates'][0]['content']['parts'][0]['text'].strip()
-        text = re.sub(r'^```(?:html)?\s*', '', text, flags=re.I).strip()
-        text = re.sub(r'\s*```$', '', text).strip()
-        if '<html' in text.lower() and '</html>' in text.lower():
-            return text, 'rewritten'
-        return html_text, 'bad_response'
+        r = free_chat([{'role': 'user', 'content': prompt}], max_tokens=12000, temperature=0.3,
+                      purpose='authority_v4_rewrite', timeout=120)
+    except FreeRouterCostViolation:
+        raise
     except Exception as e:
         return html_text, 'failed:' + str(e)[:120]
+    if not r['ok']:
+        return html_text, 'free_router_stop:' + r['stop']
+    text = r['content'].strip()
+    text = re.sub(r'^```(?:html)?\s*', '', text, flags=re.I).strip()
+    text = re.sub(r'\s*```$', '', text).strip()
+    if '<html' in text.lower() and '</html>' in text.lower():
+        return text, 'rewritten'
+    return html_text, 'bad_response'
 
 
 def update_sitemap(site_path, domain):
