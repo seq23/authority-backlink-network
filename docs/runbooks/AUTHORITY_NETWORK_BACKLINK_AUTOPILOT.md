@@ -167,3 +167,14 @@ npm run validate:release
 ```
 
 Provider/live proof is only complete after deployed domains and production credentials are configured. Local and mocked provider validation proves the implementation path, not production provider state.
+
+## Measured search loop (owner-approved 11 Oct 2026)
+
+The daily workflow (`authority-v4-autopilot.yml`) now starts with a `search` job, then publishes:
+
+- `scripts/search_intelligence/collect_gsc.py` writes, per host in `data/search_intelligence/sites.json`: `<host>/gsc_truth.json` (rolling 28-day query x page), `<host>/query_history.json`, `<host>/gsc_sitemaps.json` (submitted only if missing) and `<host>/index_coverage.json` (URL Inspection, 150 URLs/host/day, 8 parallel, oldest first). A missing credential is a NAMED STOP recorded in `collection_status.json`.
+- `scripts/search_intelligence/build_search_plan.py --write` writes `<host>/target_query_set.json` (measured queries only; unmeasured subjects dropped with a reason), `<host>/demand_families.json` (impressions-weighted rule), `<host>/consolidation_candidates.json` (list only) and `strengthening_ledger.json`.
+- `scripts/search_intelligence/apply_strengthening.py --write` writes `strengthened_pages.json` into the pages (query-first title, definition, question H2s, one FAQPage only where the Q&A is visible, facts) and links them from each homepage. To strengthen another page, add an entry there; never hand-edit the blocks.
+- `data/search_intelligence/publishing_freeze.json`: while `enabled` is true the autopilot writes a new page only when its subject answers a measured query; anything else waits in `held_pages.json` and publishes on the first run after its query is measured.
+- Guards: `scripts/validators/validate_search_intelligence.py`, `scripts/validators/validate_measured_urls_resolve.py` (both HARD_FAIL, in `validate.py changed/release/full`).
+- Refresh the truth without publishing: `gh workflow run authority-v4-autopilot.yml -f search_only=true`.
