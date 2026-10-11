@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "host": "founderoperatorlibrary.com",
+  "gsc_window": "2026-09-11..2026-10-08",
+  "gsc_collected_at": "2026-10-11T17:20:38+00:00",
+  "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
+  "max_targets": 500,
+  "target_count": 11,
+  "site_impressions": 113,
+  "query_row_impressions": 29,
+  "anonymised_impressions": 84,
+  "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
+  "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
+  "dropped_count": 0,
+  "dropped": [],
+  "targets": [
+    {
+      "target_id": "abn_sq_5bf397a5fb11",
+      "query": "community cost metric",
+      "source": "gsc_export",
+      "impressions": 7,
+      "clicks": 0,
+      "average_position": 50.9,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 7,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_80782556167a",
+      "query": "community reports",
+      "source": "gsc_export",
+      "impressions": 6,
+      "clicks": 0,
+      "average_position": 80.3,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 6,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_de8345866cf5",
+      "query": "community metrics",
+      "source": "gsc_export",
+      "impressions": 4,
+      "clicks": 0,
+      "average_position": 67.8,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 4,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_4da728b61a79",
+      "query": "founder operator",
+      "source": "gsc_export",
+      "impressions": 4,
+      "clicks": 0,
+      "average_position": 3.5,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 4,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/",
+      "landing_file": "sites/founder-operator/index.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_ba7b3243292c",
+      "query": "virtual event rfp",
+      "source": "gsc_export",
+      "impressions": 2,
+      "clicks": 0,
+      "average_position": 88,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 2,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/virtual-event-production-buyers-guide",
+      "landing_file": "sites/founder-operator/virtual-event-production-buyers-guide.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_34fdd7f320fd",
+      "query": "ai coaching guide",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 40,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/ai-executive-coaching-resources",
+      "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_4086975a8be6",
+      "query": "company masthead",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 25,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/masthead",
+      "landing_file": "sites/founder-operator/masthead.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_30fb061111ff",
+      "query": "execution support for founders",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 33,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/founder-execution-systems",
+      "landing_file": "sites/founder-operator/founder-execution-systems.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_644f41ee5e23",
+      "query": "moderation and community management",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 84,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
+      "landing_file": "sites/founder-operator/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_a04344d168cf",
+      "query": "performance problem identification",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 43,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "landing_file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_eb66e44328c1",
+      "query": "sprylabs",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 7,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-11..2026-10-08",
+        "collected_at": "2026-10-11T17:20:38+00:00"
+      },
+      "landing_route": "/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
+      "landing_file": "sites/founder-operator/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html",
+      "page_answers_query": false
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "schema_version": "1.0",
+  "note": "Hand-authored strengthening for pages whose demand family qualifies in data/search_intelligence/<host>/demand_families.json (owner-approved 11 Oct 2026). scripts/search_intelligence/apply_strengthening.py writes each entry into its page on every autopilot run (query-first <title> and description, a definition paragraph under the H1, question H2s with visible answers, a facts list, a FAQPage only when the page had none and only from the visible Q&A here) and links every strengthened page from its homepage. scripts/sync_page_meta.py takes the title and description from here, so the two never disagree. No entry adds an outbound link: portfolio links stay under data/portfolio-link-policy.json.",
+  "pages": [
+    {
+      "host": "founderoperatorlibrary.com",
+      "route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "title": "Community Metrics: Which to Report Monthly and Which to Ignore",
+      "description": "Community metrics worth a monthly report: new-member retention, unanswered questions, participation concentration and one business outcome.",
+      "definition": "A community metric is a number about a member community that would change a decision if it moved. Four earn a monthly report: whether new members stay, whether questions get answered, how concentrated participation is, and one measure tied to the reason the organization funds the community.",
+      "questions": [
+        {
+          "q": "What community metrics should a monthly report include?",
+          "a": "Four: the share of new members still active after a fixed period, the rate of questions that go unanswered, how much participation comes from the most active handful of members, and one outcome tied to why the community is funded, such as product decisions informed by member feedback."
+        },
+        {
+          "q": "Which community metrics are vanity numbers?",
+          "a": "Total members and total posts. Total members only ever rises because it is cumulative and people leave quietly; total posts rises when one enthusiastic member has a busy month. Neither would change a decision, so neither belongs in the report."
+        },
+        {
+          "q": "How do you measure what a community costs against what it returns?",
+          "a": "Name the decision the community is funded to inform, count the decisions it actually informed in the period, and set that against the hours and tools spent running it. Without a written failure condition the comparison is advocacy rather than measurement."
+        }
+      ],
+      "facts": [
+        "Every metric needs a written definition precise enough that someone else would compute the same figure, and a fixed reporting period.",
+        "Each headline number is reported next to its counter-signal: the way it could rise while the community got worse.",
+        "A metric that improves because its definition changed costs the credibility of every other number in the report.",
+        "Data collection must be covered by what members were told at signup."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "route": "/founder-execution-systems",
+      "file": "sites/founder-operator/founder-execution-systems.html",
+      "title": "Execution Support for Founders: Systems, Agendas and Review Loops",
+      "description": "Execution support for founders: what an execution system is, the daily agenda and weekly review it runs on, and how to recover from a missed day.",
+      "definition": "Founder execution support is the set of routines that turn a founder's priorities into finished work: a short daily agenda, a weekly review that compares plan to outcome, and a minimum viable day for when the plan breaks. A good system reduces ambiguity and recovers quickly after imperfect days.",
+      "questions": [
+        {
+          "q": "What does an execution system for founders include?",
+          "a": "Three parts: a daily agenda limited to the few outcomes that matter that day, a weekly review that compares what was planned with what finished and why, and a minimum viable day that defines the smallest set of actions that still counts as progress when the day goes wrong."
+        },
+        {
+          "q": "How is execution support different from coaching?",
+          "a": "Coaching works on goals, judgement and behaviour over months. Execution support works on the operating rhythm itself: the agenda, the review and the handoffs. Many founders need the rhythm first, because coaching insights fade without a system that turns them into scheduled work."
+        },
+        {
+          "q": "What should a founder review every week?",
+          "a": "What was planned, what finished, what slipped and the single reason it slipped, then the one change to next week's plan that addresses that reason. A review that only lists tasks completed measures effort, not execution."
+        }
+      ],
+      "facts": [
+        "A daily agenda that lists more outcomes than can finish that day trains the habit of carrying work forward.",
+        "A minimum viable day is defined in advance, so a bad day still produces progress instead of a restart.",
+        "The weekly review is the feedback loop: without it a plan is never compared with what actually happened."
+      ],
+      "faq_schema": true
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "route": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
+      "title": "Performance Problem or Role Design Problem? How to Tell",
+      "description": "Tell a performance problem from a role design problem with the substitution test, the warning signs, and what to do with each diagnosis.",
+      "definition": "Performance problem identification is the step of deciding whether a missed outcome comes from the person or from the role. The substitution test settles most cases: if the strongest operator you know, given the same brief, authority and constraints, would also miss, the role is the problem.",
+      "questions": [
+        {
+          "q": "How do you identify a performance problem?",
+          "a": "Confirm the missed outcome is written in the role's scorecard, run the substitution test with one other person, and check whether the standard was communicated before the miss. If a strong substitute would succeed under the same conditions, it is a performance problem."
+        },
+        {
+          "q": "What are the signs of a role design problem?",
+          "a": "Previous holders of the role struggled in the same way; the person has named the same specific blocker for weeks and nobody has tested it; or success depends on influence over people the role has no authority over, and nobody said so when the role was defined."
+        },
+        {
+          "q": "What should a manager do once the cause is clear?",
+          "a": "For role design, change the design first: narrow the outcomes, grant the missing decision right or split the role, then set a fresh review window. For performance, name the outcome being missed and what improvement looks like, and follow the documented process with HR or counsel."
+        }
+      ],
+      "facts": [
+        "Repetition across people is the strongest signal: two holders of a role struggling the same way points at the role.",
+        "A brief that quietly contains two jobs, or an outcome that depends on a decision the role cannot make, are the common design faults.",
+        "A standard communicated only after the miss cannot be the basis of a performance conversation."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "route": "/ai-executive-coaching-resources",
+      "file": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "title": "AI Coaching Guide: Comparing AI and Human Executive Coaching",
+      "description": "An AI coaching guide for executives: what an AI coaching system can and cannot do, how it compares with a human coach, and what to ask first.",
+      "definition": "AI executive coaching is a structured software system that helps a leader plan, sequence work, review progress and stay consistent, using prompts and check-ins rather than a human coach's judgement. It suits operating rhythm and accountability; it is not therapy, and it does not replace advice from a qualified professional.",
+      "questions": [
+        {
+          "q": "What can an AI coaching system do for an executive?",
+          "a": "It can hold a planning routine in place: prompt a daily agenda, run a weekly review, keep commitments visible and ask the same questions consistently. Its strength is consistency and availability, not insight into a specific organization's politics or a leader's history."
+        },
+        {
+          "q": "When is a human coach the better choice?",
+          "a": "When the work is about judgement, relationships or a career decision with real stakes, a human coach who can read context and push back is the better fit. Many leaders use both: a system for the daily rhythm and a person for the hard conversations."
+        },
+        {
+          "q": "What should you check before choosing an AI coaching tool?",
+          "a": "What happens to the information you enter and who can see it, whether the tool adapts to your actual calendar and priorities or only issues generic prompts, how it handles a missed week, and whether it says clearly what it is not, such as therapy or medical advice."
+        }
+      ],
+      "facts": [
+        "AI coaching is strongest at repetition: the same review questions asked on the same schedule.",
+        "Anything entered into a coaching tool is data; its retention and access terms belong in the comparison.",
+        "AI coaching is not therapy, medical, legal or financial advice."
+      ],
+      "faq_schema": true
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "route": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
+      "file": "sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
+      "title": "Grazing Table vs Buffet vs Passed Appetizers: Which Setup Fits",
+      "description": "Grazing table, buffet or passed appetizers: how each setup uses floor space, staff and guest flow, which events each suits, and how to combine them.",
+      "definition": "A grazing table is a single styled surface that guests approach freely; a buffet is a served line with plates and controlled portions; passed appetizers are carried to guests by staff. The three differ most in floor space, staffing and how they move guests through a room.",
+      "questions": [
+        {
+          "q": "Is a grazing table cheaper than a buffet?",
+          "a": "Not reliably. A grazing table needs almost no staff during the event, but it is priced as a styled installation; a buffet costs more in staffing and equipment and less in presentation. Compare itemised quotes for the same guest count and service window rather than the format names."
+        },
+        {
+          "q": "When are passed appetizers the better choice?",
+          "a": "When guests are standing and mingling, the floor has no room for a service area, or the food accompanies drinks rather than replacing a meal. Staff can also be briefed on which guests have dietary requirements."
+        },
+        {
+          "q": "Can you combine a grazing table with a buffet or passed appetizers?",
+          "a": "Yes, and most well-run events do: passed appetizers during arrival, then a grazing table or buffet once guests settle. Decide in advance when the second service starts, who announces it and what happens to the first."
+        }
+      ],
+      "facts": [
+        "A grazing table needs approach room on more than one side or it becomes a bottleneck.",
+        "A buffet needs a queue path that does not cut through the middle of the room.",
+        "A grazing table suits arrivals spread over 60 minutes or more; a buffet suits feeding many people a full meal at once."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "route": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
+      "title": "Hotel Room Decoration Setup: What to Confirm Before You Book",
+      "description": "Before booking a hotel room decoration setup, confirm in writing: outside vendors allowed, room access, prohibited items, and who pays for damage.",
+      "definition": "A hotel room decoration setup is decor a vendor installs inside a guest room before the guests arrive, such as balloons, florals or a styled table. Because the room belongs to the hotel, the booking depends on four written confirmations: vendor permission, room access, prohibited items and responsibility for cleanup and damage.",
+      "questions": [
+        {
+          "q": "Do hotels allow outside decorators in guest rooms?",
+          "a": "Some do, some only allow approved vendors, and some refuse outright; the same property can differ by shift. Ask the hotel directly and get the answer in writing before paying a decorator a deposit."
+        },
+        {
+          "q": "How does a decorator get into the room before check-in?",
+          "a": "One of three ways: the guest checks in and lets the vendor in, hotel staff escort the vendor, or the vendor is on an approved list and is given access directly. Confirm which one the hotel will use, and for what time."
+        },
+        {
+          "q": "What decorations do hotels commonly prohibit?",
+          "a": "Open flames such as candles, confetti and glitter that are hard to clean, adhesives on walls, and anything near smoke detectors. Ask for the property's list rather than assuming, and confirm who pays any cleaning or damage charge."
+        }
+      ],
+      "facts": [
+        "Room access, not the decor itself, is what most often decides whether an in-room setup works.",
+        "Get vendor permission, access, prohibitions and the damage policy from the hotel in writing before booking anyone.",
+        "Cleanup responsibility and any damage charge should be agreed between the guest, the hotel and the vendor in advance."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "route": "/memphis-grazing-table-resources",
+      "file": "sites/memphis-local/memphis-grazing-table-resources.html",
+      "title": "Memphis Grazing Tables: What to Clarify Before You Book",
+      "description": "Booking a grazing table in Memphis: what a quote should include, styling-only versus food-included setups, and who handles food safety.",
+      "definition": "A grazing table is an abundant, styled spread of foods such as cheeses, fruit, charcuterie and breads that guests serve themselves over a long window. In Memphis, as anywhere, a grazing booking can be styling only or include food sourcing, and the quote should say which, along with who is responsible for food safety.",
+      "questions": [
+        {
+          "q": "What should a grazing table quote include?",
+          "a": "Guest count, table length or surface size, the food list or food budget, whether food sourcing is included or the vendor styles food you provide, setup and breakdown times, rentals such as boards and risers, and the delivery fee."
+        },
+        {
+          "q": "Who is responsible for food safety at a grazing table?",
+          "a": "Whoever sources and handles the food. Ask the vendor how long food can stay out, how perishable items are held, and whether they hold the food handling permits the venue or local health rules require."
+        },
+        {
+          "q": "How far ahead should you book a grazing table in Memphis?",
+          "a": "Book once the guest count and venue are fixed, because both set the size and the access window. Weekend dates in wedding and holiday seasons fill first, so confirm availability before finalizing other vendors."
+        }
+      ],
+      "facts": [
+        "A grazing setup can be styling only or include food sourcing; the quote must say which.",
+        "Setup time and venue access window decide whether a large table is possible at all.",
+        "Food safety responsibility follows whoever sources and handles the food."
+      ],
+      "faq_schema": true
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "route": "/consumer-reporting-companies-directory",
+      "file": "sites/professional-resources/consumer-reporting-companies-directory.html",
+      "title": "CFPB List of Consumer Reporting Agencies (2025), All 64 Companies",
+      "description": "The CFPB's 2025 list of consumer reporting agencies: 64 companies in 11 categories, from Equifax and The Work Number to tenant and bank-account screening.",
+      "definition": "A consumer reporting company, also called a consumer reporting agency, is a business that collects information about people and sells reports used to decide on credit, jobs, housing, insurance or bank accounts. The Consumer Financial Protection Bureau's 2025 list names 64 of them across 11 categories.",
+      "questions": [
+        {
+          "q": "How many consumer reporting agencies are on the CFPB list?",
+          "a": "The 2025 edition names 64 companies in 11 categories: the three nationwide credit bureaus, Equifax, Experian and TransUnion, plus 61 specialty companies covering employment, tenant, bank account, insurance, medical and other screening."
+        },
+        {
+          "q": "Is The Work Number a consumer reporting agency?",
+          "a": "Yes. The CFPB lists The Work Number under Employment Screening. It provides employment and income information to employers and to government agencies, and the listing on this page gives its contact details as the CFPB published them."
+        },
+        {
+          "q": "Which consumer reporting company has my tenant or bank account file?",
+          "a": "Start from the decision that went against you. A denied apartment points to the 10 tenant screening companies on the list; a refused checking account points to the deposit account and payments screening companies. Request the file from the company that supplied the report."
+        }
+      ],
+      "facts": [
+        "64 companies across 11 categories in the CFPB's 2025 list; 24 of them are employment screening companies.",
+        "10 companies are listed under tenant screening and 6 under deposit account and payments screening.",
+        "Under the Fair Credit Reporting Act a consumer who disputes an item generally gets an investigation within 30 days."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "route": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
+      "title": "Horse Lease Types: Full, Half and Free Lease Terms in Writing",
+      "description": "Full, half and free horse leases compared: who pays, who decides and who carries the risk in each, plus the ten terms every lease should put in writing.",
+      "definition": "A horse lease is an agreement that lets someone use a horse they do not own. In a full lease one lessee usually has exclusive use and pays most costs; in a half lease two people share use and costs; in a free lease no lease fee is paid but the lessee typically carries the horse's upkeep.",
+      "questions": [
+        {
+          "q": "What is the difference between a full lease and a half lease?",
+          "a": "A full lease usually gives one lessee exclusive use of the horse and most of its costs; a half lease splits riding days and costs between two people, usually the owner and one lessee. The labels are informal, so the written terms decide who actually pays and decides."
+        },
+        {
+          "q": "Is a free horse lease really free?",
+          "a": "No lease fee changes hands, but the lessee normally pays board, farrier, routine veterinary care and insurance. Free leases cause the most serious disputes because people skip the paperwork, then a large veterinary bill arrives with no agreement on who pays."
+        },
+        {
+          "q": "What should every horse lease agreement say?",
+          "a": "Who may ride and under what supervision, where the horse is kept, who makes routine and emergency veterinary decisions, a spending threshold for consulting the owner, itemised costs, insurance, injury responsibility, notice to end, return condition, and signatures with dates."
+        }
+      ],
+      "facts": [
+        "Full, half and free lease are shorthand, not legal categories: two leases with the same label can allocate cost and risk differently.",
+        "A dated record of the horse's condition at handover prevents most return disputes.",
+        "Whether waivers or a state equine activity statute limit liability is a question for an attorney in that state."
+      ],
+      "faq_schema": false
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "route": "/equine-legal-resource-library",
+      "file": "sites/professional-resources/equine-legal-resource-library.html",
+      "title": "Equine Legal Advice: What to Prepare Before Talking to Counsel",
+      "description": "Equine legal questions on sales, boarding, leases and liability: what equine law covers, which documents to gather, and what to ask an attorney.",
+      "definition": "Equine law is the set of contract, liability and regulatory rules that apply to owning, selling, boarding, leasing and riding horses. Equine legal advice comes from an attorney licensed in the relevant state; this page helps owners organise the documents and questions to bring to that conversation.",
+      "questions": [
+        {
+          "q": "When do you need equine legal advice?",
+          "a": "Before signing a purchase, lease or boarding agreement with real money or risk attached, when a horse is injured or causes an injury in someone else's care, and when a dispute over ownership, payment or a horse's condition cannot be settled from the written terms."
+        },
+        {
+          "q": "What documents should you bring to an equine attorney?",
+          "a": "The signed agreement and any drafts, the bill of sale or registration papers, veterinary and pre-purchase examination records, board and payment records, insurance policies, and dated messages that show what each party agreed or reported."
+        },
+        {
+          "q": "What is 15 U.S.C. 1821?",
+          "a": "It is the definitions section of the federal Horse Protection Act, the law that prohibits soring, the practice of causing pain to a horse's legs to exaggerate its gait. It governs shows, exhibitions, sales and auctions of horses rather than private contracts."
+        }
+      ],
+      "facts": [
+        "Most U.S. states have an equine activity liability statute, and its protections often depend on posted warning signs and specific contract language.",
+        "The federal Horse Protection Act, 15 U.S.C. 1821 to 1831, prohibits soring in horse shows, exhibitions, sales and auctions.",
+        "A sale of a horse is generally treated as a sale of goods, so the written terms on warranties and condition matter."
+      ],
+      "faq_schema": true
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "route": "/workplace-burnout-and-boundaries",
+      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "title": "Burnout and Boundaries at Work: A Practical Starting Point",
+      "description": "Burnout and boundaries at work: what burnout is, how to tell an individual problem from a system problem, and how to agree a boundary that holds.",
+      "definition": "Burnout is an occupational phenomenon the World Health Organization describes as resulting from chronic workplace stress that has not been successfully managed: exhaustion, mental distance from the job, and reduced effectiveness. Boundaries are the agreed limits on hours, availability and scope that keep that stress manageable.",
+      "questions": [
+        {
+          "q": "How are burnout and boundaries connected?",
+          "a": "Burnout grows from chronic stress that is not managed, and unclear boundaries are a common source of it: open-ended availability, scope that keeps growing, and no agreed point at which work stops. Boundaries make the load visible, so it can be negotiated rather than absorbed."
+        },
+        {
+          "q": "Is burnout an individual problem or a workplace problem?",
+          "a": "Often both, but check the system first. If several people in the same role or team show the same exhaustion, the workload, staffing or expectations are the likelier cause, and individual coping strategies alone will not fix it."
+        },
+        {
+          "q": "How do you set a boundary at work?",
+          "a": "Name the specific limit, such as response hours or the number of projects you can own, explain the trade-off it protects, and agree it with your manager in writing. A boundary that has not been agreed tends to be overridden the first busy week."
+        }
+      ],
+      "facts": [
+        "The World Health Organization's ICD-11 classifies burnout as an occupational phenomenon, not a medical condition.",
+        "Its three dimensions are exhaustion, increased mental distance from the job, and reduced professional efficacy.",
+        "This page is educational and does not diagnose; persistent distress is a reason to speak with a licensed clinician."
+      ],
+      "faq_schema": true
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "route": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
+      "title": "Neuropsychological Evaluation: Records to Gather Beforehand",
+      "description": "Before a neuropsychological evaluation, gather school and past testing records, work history, medical history and observations from people who know you.",
+      "definition": "A neuropsychological evaluation is a set of standardised tests, given by a licensed neuropsychologist, that measures thinking skills such as attention, memory, language and reasoning. The tests measure current performance; records gathered beforehand supply the history that explains it.",
+      "questions": [
+        {
+          "q": "What records should you bring to a neuropsychological evaluation?",
+          "a": "School reports and any past testing or support plans, work or academic history showing where difficulties appear, medical and medication history, and written observations from people who see the person day to day, such as a partner, parent or teacher."
+        },
+        {
+          "q": "Why do past records matter if the tests measure performance now?",
+          "a": "Because the same score means different things depending on history. Records show whether a difficulty is longstanding or recent, whether it appears in one setting or several, and what has already been tried."
+        },
+        {
+          "q": "How early should you start gathering records?",
+          "a": "As soon as the evaluation is booked. School and medical records can take weeks to request, and the clinician may ask for them before the testing day."
+        }
+      ],
+      "facts": [
+        "Gathering records is non-clinical work a family or individual can do entirely on their own.",
+        "Past testing and support plans, such as a school's individualized education program, are among the most useful records.",
+        "A current medication list matters because medication can affect performance on the day of testing."
+      ],
+      "faq_schema": false
+    }
+  ]
+}

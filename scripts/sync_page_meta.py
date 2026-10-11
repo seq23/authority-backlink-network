@@ -296,6 +296,14 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
                                  f"{meta_description.TITLE_MAX} characters and unused on this site")
             expected[rel]["title"] = pick
             taken.add(pick.casefold())
+
+    # Search-strengthened pages (data/search_intelligence/strengthened_pages.json,
+    # written by scripts/search_intelligence/apply_strengthening.py) take their
+    # query-first title and description from that ledger, over any generator
+    # source above: the measured query is the newer and better-evidenced source.
+    strengthened = json.loads((ROOT / "data/search_intelligence/strengthened_pages.json").read_text(encoding="utf-8"))
+    for entry in strengthened.get("pages", []):
+        expected[entry["file"]] = {"title": entry["title"], "description": entry["description"]}
     return expected, unidentified
 
 

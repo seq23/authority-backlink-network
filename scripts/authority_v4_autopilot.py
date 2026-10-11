@@ -22,6 +22,7 @@ from byline import entity_for
 from lib import page_composer
 from lib import meta_description
 from lib import social_platforms
+from search_intelligence import measured as search_measured
 
 ROOT = Path(__file__).resolve().parents[1]
 PANTRY = json.loads((ROOT/'content-bank/yearly-pantry.json').read_text(encoding='utf-8'))
@@ -31,6 +32,13 @@ GROWTH_BY_BRAND = {x['brand_id']: x for x in GROWTH.get('profiles', [])}
 CAMPAIGNS = json.loads((ROOT/'data/portfolio-backlink-campaigns.json').read_text(encoding='utf-8')) if (ROOT/'data/portfolio-backlink-campaigns.json').exists() else {'campaigns': []}
 CAMPAIGN_BY_ID = {x['id']: x for x in CAMPAIGNS.get('campaigns', [])}
 STATE_PATH = ROOT/'data/autopilot-state.json'
+# Publishing freeze (data/search_intelligence/publishing_freeze.json, owner-
+# approved 11 Oct 2026): while FREEZE.enabled is true a new page is written only
+# when its subject answers a measured Search Console query for its host
+# (search_measured.measured_target). An unmeasured page is HELD in
+# data/search_intelligence/held_pages.json, not marked processed, and released
+# by the first run after its query gets a number.
+FREEZE = search_measured.freeze()
 REPORT_DIR = ROOT/'reports'
 REPORT_DIR.mkdir(exist_ok=True)
 TODAY = os.getenv('BUILD_DATE') or date.today().isoformat()
@@ -828,11 +836,36 @@ def main():
     if not jobs:
         print("CADENCE: nothing to publish today. This is success, not a failure - the library is at its declared rate.")
     write_authoring_queue(deferred_jobs, state, cadence)
-    for i, (pub_key, target_override) in enumerate(jobs):
+    held_ledger = search_measured.read_json(search_measured.HELD_PATH, None) or {'schema_version': '1.0', 'held': [], 'released': []}
+    held_ledger.setdefault('held', []); held_ledger.setdefault('released', [])
+    released_now = []
+    if FREEZE.get('enabled') is True:
+        # A held brief whose subject is now measured takes a slot first: it is
+        # the page the freeze was waiting to publish.
+        still_held = []
+        for entry in held_ledger['held']:
+            host = entry.get('host', '')
+            hit = search_measured.measured_target(host, f"{entry['brief']['title']} {entry['brief']['cluster']}")
+            if hit and len(released_now) < len(jobs):
+                released_now.append((entry, hit))
+            else:
+                still_held.append(entry)
+        held_ledger['held'] = still_held
+        slots = len(jobs)  # releases take today's slots; they never add to the cadence allowance
+        jobs = ([(e['brief']['publication'], None, e['brief']) for e, _ in released_now]
+                + [(p, t, None) for p, t in jobs])[:slots]
+    else:
+        jobs = [(p, t, None) for p, t in jobs]
+    release_hits = {e['brief']['signature']: (e, hit) for e, hit in released_now}
+    freeze_held = []
+    for i, (pub_key, target_override, preset_brief) in enumerate(jobs):
         accepted = None
         attempt_findings = []
         for attempt in range(max_self_heal_attempts):
-            brief = build_brief(pub_key, i, state, attempt=attempt, target_override=target_override)
+            if preset_brief is not None and attempt == 0:
+                brief = dict(preset_brief)
+            else:
+                brief = build_brief(pub_key, i, state, attempt=attempt, target_override=target_override)
             if brief is None:
                 # No approved link for this target belongs on the subject that
                 # was drawn. Retry with a fresh seed; if every attempt refuses,
@@ -887,6 +920,24 @@ def main():
             continue
 
         brief, slug, page, score, words, warnings, rewrite_status, chash, site_path, fname, output_path, accepted_attempt = accepted
+        site_cfg = search_measured.site_for_folder(site_path) or {}
+        hit = search_measured.measured_target(site_cfg.get('host', ''), f"{brief['title']} {brief['cluster']}")
+        if FREEZE.get('enabled') is True and not hit:
+            # Held, not discarded and not marked processed: the signature stays
+            # out of published_signatures, so nothing else blocks it later.
+            if not any(h['brief']['signature'] == brief['signature'] for h in held_ledger['held']):
+                held_ledger['held'].append({'held_at': TODAY, 'host': site_cfg.get('host', ''), 'publication': pub_key,
+                                            'title': brief['title'], 'seo_title': brief.get('seo_title'),
+                                            'reason': 'publishing_freeze: no Search Console query for this host is answered by the title and cluster',
+                                            'brief': brief})
+            freeze_held.append(brief['title'])
+            generated.append({'publication': pub_key, 'slot': i, 'status': 'held_by_publishing_freeze', 'title': brief['title']})
+            continue
+        if FREEZE.get('enabled') is True:
+            held_ledger['released'].append({'released_at': TODAY, 'host': site_cfg.get('host', ''), 'publication': pub_key,
+                                            'path': str((Path(site_path)/'daily'/fname).as_posix()), 'title': brief['title'],
+                                            'measured_query': hit['query'], 'impressions': hit['impressions'],
+                                            'source': hit['source'], 'was_held': brief['signature'] in release_hits})
         if accepted_attempt > 0:
             self_heal_recoveries += 1
         item = {
@@ -909,6 +960,15 @@ def main():
         pub_item = {**item, 'path': str((Path(site_path)/'daily'/fname).as_posix()), 'target_brand_id': brief.get('brand_id',''), 'target_domain': brief['target_domain'], 'target_url': brief.get('target_url'), 'anchor': brief.get('anchor'), 'brand': brief['brand'], 'social_hooks': brief.get('social_hooks', []), 'destination_type': brief.get('destination_type',''), 'product_id': brief.get('product_id',''), 'product_name': brief.get('product_name',''), 'target_route': brief.get('target_route',''), 'campaign_id': brief.get('campaign_id',''), 'preferred_domain': brief.get('preferred_domain',''), 'used_preferred_domain': brief.get('used_preferred_domain',False)}
         published.append(pub_item)
         scores.append(score)
+
+    if FREEZE.get('enabled') is True:
+        held_ledger['held'] = held_ledger['held'][-300:]
+        held_ledger.update({'freeze_enabled': True, 'rule': FREEZE.get('rule', ''),
+                            'held_count': len(held_ledger['held']), 'released_count': len(held_ledger['released'])})
+        write_json(search_measured.HELD_PATH, held_ledger)
+        if freeze_held:
+            print(f"NAMED STOP: publishing freeze held {len(freeze_held)} page(s) with no measured query; they publish "
+                  f"automatically once their query has a Search Console number (data/search_intelligence/publishing_freeze.json).")
 
     for _, pub in PANTRY['publications'].items():
         domain = os.getenv(pub['domain_env']) or pub['default_domain']
@@ -1038,7 +1098,7 @@ def main():
     except Exception:
         pass
 
-    run = {'date': TODAY, 'release_date': RELEASE_DATE, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'self_heal_recoveries': self_heal_recoveries, 'self_heal_attempts': self_heal_attempts, 'blocked_slots': blocked_slots, 'social_enqueued': social_enqueued, 'stats_before': stats}
+    run = {'date': TODAY, 'release_date': RELEASE_DATE, 'day_index': day_index, 'target_volume': volume, 'generated': len(generated), 'published': len(published), 'scores': scores, 'duplicate_warnings': duplicate_warnings, 'hard_fails': hard_fail_count, 'self_heal_recoveries': self_heal_recoveries, 'self_heal_attempts': self_heal_attempts, 'blocked_slots': blocked_slots, 'held_by_publishing_freeze': freeze_held, 'social_enqueued': social_enqueued, 'stats_before': stats}
     state.setdefault('history', []).append(run)
     write_json(STATE_PATH, state)
     write_json(REPORT_DIR/'v4-autopilot-report.json', {'status': 'ok', 'run': run, 'generated': generated, 'published': published, 'scaling_policy': SCALING})

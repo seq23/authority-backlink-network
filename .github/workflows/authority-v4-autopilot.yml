@@ -2,6 +2,11 @@ name: Authority Network V4.2 Autopilot + Social Auto-Post
 
 on:
   workflow_dispatch:
+    inputs:
+      search_only:
+        description: 'Measure search truth (Search Console + URL Inspection) and commit it, without publishing or posting'
+        type: boolean
+        default: false
   schedule:
     - cron: '22 14 * * *'
 
@@ -14,11 +19,50 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The measured search loop (data/search_intelligence/, owner-approved 11 Oct
+  # 2026). Runs first so the day's publishing freeze and page strengthening read
+  # today's Search Console numbers, and commits its own truth so a later failure
+  # in the publishing job never loses a day of measurement.
+  search:
+    timeout-minutes: 15  # 3 hosts in parallel, 150 inspections each at 8-way; ~3m expected
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Measure Search Console truth, index coverage and sitemap registration
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 scripts/search_intelligence/collect_gsc.py
+      - name: Commit search truth
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Search intelligence: Search Console truth and index coverage"
+          file_pattern: "data/search_intelligence/**"
+      - name: Build measured targets, demand families and consolidation candidates
+        run: python3 scripts/search_intelligence/build_search_plan.py --write
+      - name: Validate the search loop
+        run: |
+          python3 scripts/validators/validate_search_intelligence.py
+          python3 scripts/validators/validate_measured_urls_resolve.py
+      - name: Commit the measured plan
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Search intelligence: measured targets, demand families, consolidation candidates"
+          file_pattern: "data/search_intelligence/**"
+
   autopilot:
+    needs: search
+    if: ${{ !inputs.search_only }}
     timeout-minutes: 18  # ~3x median 6.0m over 8 green runs; fault detector, not a budget
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # The search job above has just pushed today's truth; the triggering
+          # SHA would not contain it.
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -52,6 +96,11 @@ jobs:
         # a builder's DESCRIPTION) would otherwise never reach the live page.
         # Idempotent; touches only the <title> and description. See its header.
         run: python3 scripts/sync_page_meta.py --write
+      - name: Strengthen the pages measured demand qualifies
+        # data/search_intelligence/strengthened_pages.json: query-first title,
+        # definition, question H2s, one FAQPage, homepage links. Before the
+        # navigation and chrome steps so their output wraps it; idempotent.
+        run: python3 scripts/search_intelligence/apply_strengthening.py --write
       - name: Give the new pages a path in and a canonical that serves 200
         # Without this the three pages generated above are orphans the moment
         # they are written, which is the state that put all three publications
@@ -88,6 +137,8 @@ jobs:
           python3 scripts/portfolio_backlink_engine.py health
       - name: Refresh owner agency dashboard
         run: python3 scripts/build_agency_dashboard.py
+      - name: Rebuild the measured search plan against today's tree
+        run: python3 scripts/search_intelligence/build_search_plan.py --write
       - name: Validate generated release
         run: python3 scripts/validate.py release
       - name: Auto-post social queue (non-blocking)

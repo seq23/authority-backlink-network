@@ -61,7 +61,9 @@
       "no_parent_company",
       "definition_speakable",
       "indexnow_key",
-      "generated_text_writes_portable"
+      "generated_text_writes_portable",
+      "search_intelligence",
+      "measured_urls_resolve"
     ],
     "release": [
       "json",
@@ -118,7 +120,9 @@
       "no_parent_company",
       "definition_speakable",
       "indexnow_key",
-      "generated_text_writes_portable"
+      "generated_text_writes_portable",
+      "search_intelligence",
+      "measured_urls_resolve"
     ],
     "full": [
       "json",
@@ -176,7 +180,9 @@
       "no_parent_company",
       "definition_speakable",
       "indexnow_key",
-      "generated_text_writes_portable"
+      "generated_text_writes_portable",
+      "search_intelligence",
+      "measured_urls_resolve"
     ],
     "cache-self-test": [
       "python",
@@ -419,6 +425,14 @@
     "no_parent_company": {
       "severity": "HARD_FAIL",
       "rationale": "11 Oct 2026, owner decision: every page's byline read '<Publication> Editorial Desk, a subsidiary of Spry Labs' and the JSON-LD carried parentOrganization Spry Labs. Blocks 'Spry Labs' anywhere under sites/ (pages, llms*.txt, sitemaps, JSON-LD), any JSON-LD parentOrganization, an editorial company described as a subsidiary, a parent_company in data/editorial.json, and 'Spry Labs' in any generator or data file outside the retired-disclosure repair list. Fails hard on zero published files."
+    },
+    "search_intelligence": {
+      "severity": "HARD_FAIL",
+      "rationale": "11 Oct 2026, owner-approved measured search loop: Search Console truth and URL Inspection coverage are collected daily per host, targets carry a source and a number, every qualifying demand family is strengthened or carries its reason, no page holds two FAQPages, and the publishing freeze holds unmeasured pages. A plan built on stale or unsourced numbers is false evidence, and a frozen generator that publishes anyway is unsafe publication. A credential only the owner holds is a recorded NAMED STOP, not a failure. Fails on zero hosts, pages or families examined."
+    },
+    "measured_urls_resolve": {
+      "severity": "HARD_FAIL",
+      "rationale": "11 Oct 2026: a URL Search Console shows in results or reports through URL Inspection is the page with the most to lose; one that no longer resolves (no file, no _redirects rule) throws away exactly the impressions the loop exists to grow. A broken required journey. Fails on zero URLs examined."
     }
   },
   "severity_matrix_policy": {
