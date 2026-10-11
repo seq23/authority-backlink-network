@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-10T15-43-20.920387Z-38064719736",
-  "attempted_at": "2026-10-10T15:43:20.920387Z",
+  "receipt_id": "2026-10-11T13-21-38.521074Z-38142812950",
+  "attempted_at": "2026-10-11T13:21:38.521074Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "22b5a3e0053930395a48b9ee58b87403619658978e038f8999a936e2273fa73a",
+        "sha256": "c1e8f4fe5aed5537791279730db854ea344287f398a0cb9750381999c76f4235",
         "url_count": 119
       },
       "indexnow": {
@@ -1267,7 +1267,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "ec32408cd90eb9180abad2ae05b51ecc744a2f4f358289eb9688795efbe2eacd",
+        "sha256": "50d2b231c94b88956d9ffb3052785aa42fd3f11a90fc91b06c31357de5d02f26",
         "url_count": 105
       },
       "indexnow": {
@@ -2187,7 +2187,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "997c8da0cfd50657d2f6a2443bc6cb8449ba20bc0c6434dcfb7ee20d0ffc67be",
+        "sha256": "67c7b0b6267a4fc99c1a55195707eabfdc52ef57bd4225ecae4a3519d1088792",
         "url_count": 422
       },
       "indexnow": {
@@ -4908,7 +4908,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-10T15-43-20.920387Z-38064719736.json"
+    "history": "data/distribution/receipts/2026-10-11T13-21-38.521074Z-38142812950.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
