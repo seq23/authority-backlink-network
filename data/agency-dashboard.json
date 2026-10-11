@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 94,
+    "runtime_operators": 95,
     "release_operators": 10,
     "workflow_operators": 8,
     "approved_target_urls": 84,
@@ -604,6 +604,12 @@
       "operator": "validate:social-meta",
       "command": "npm run validate:social-meta",
       "implementation": "python3 scripts/validators/validate_social_meta.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:title-suffix",
+      "command": "npm run validate:title-suffix",
+      "implementation": "python3 scripts/validators/validate_title_suffix.py",
       "category": "Validation / release"
     },
     {

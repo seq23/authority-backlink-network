@@ -47,8 +47,9 @@ def render_404(source: Path, domain: str, pub: dict) -> str:
         re.findall(r"<style[\s\S]*?</style>", index, re.I)
         + re.findall(r'<link[^>]+rel=["\']stylesheet["\'][^>]*>', index, re.I)
     )
-    title_match = re.search(r"<title>([^<]*)</title>", index, re.I)
-    site_name = re.split(r"\s+[|\u2014-]\s+", title_match.group(1))[0].strip() if title_match else domain
+    # The publication's own name, from data. It was once split off the
+    # homepage <title>, which broke when that title became "<Name>: <what>".
+    site_name = pub.get("title") or domain
     # The PAGE footer, not the first <footer> in the document. `<footer>` is
     # also the element a citation attribution uses inside <blockquote>, so the
     # first match on a page that publishes quotes -- the USCIS changelog, and

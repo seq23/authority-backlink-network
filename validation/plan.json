@@ -54,6 +54,7 @@
       "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
+      "title_suffix",
       "jsonld_types",
       "definition_speakable",
       "indexnow_key",
@@ -107,6 +108,7 @@
       "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
+      "title_suffix",
       "jsonld_types",
       "definition_speakable",
       "indexnow_key",
@@ -161,6 +163,7 @@
       "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
+      "title_suffix",
       "jsonld_types",
       "definition_speakable",
       "indexnow_key",
@@ -379,6 +382,10 @@
     "social_meta": {
       "severity": "HARD_FAIL",
       "rationale": "10 Oct 2026: no page on the three publications had og:description, og:image or twitter:card, so every shared link rendered as a bare URL. lib/head_seo.py renders a complete set from the page's own title, meta description and canonical, pointing at the publication's own 1200x630 og.png. Blocks when a tag is missing or duplicated, when og:description drifts from the meta description, og:url from the canonical, og:type from the page kind, or when the card image is missing or the wrong size. Fails hard on zero pages or zero article pages examined."
+    },
+    "title_suffix": {
+      "severity": "HARD_FAIL",
+      "rationale": "11 Oct 2026: all three homepages published '<Publication> | <Publication>' as their <title>, og:title and WebPage name. lib/head_seo.py now renders each homepage <title> from data/publications.json as '<Publication>: <home_descriptor>' (30-65 characters, name once) and lib/meta_description.site_title() refuses a suffix that repeats the page name. Blocks when any page's <title> is 'X | X', a homepage <title> differs from that rendering or is out of bounds, or its og:title, twitter:title or WebPage name drift from it. Fails hard on zero pages or a publication with no homepage examined."
     },
     "jsonld_types": {
       "severity": "HARD_FAIL",
