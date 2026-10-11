@@ -43,13 +43,57 @@ def require_title(title: str, where: str) -> str:
     return title
 
 
+# A homepage title is "<Publication>: <what it is>". 65, not 70, so the
+# descriptor survives Google's ~600px cut on every publication name we carry.
+HOME_TITLE_MIN = 30
+HOME_TITLE_MAX = 65
+
+
+def same_name(a: str, b: str) -> bool:
+    return " ".join(a.split()).casefold() == " ".join(b.split()).casefold()
+
+
+def doubled_suffix(title: str) -> bool:
+    """True for "X | X": the site-name suffix repeats the page title.
+
+    11 Oct 2026: all three homepages published "<Publication> | <Publication>".
+    """
+    head, sep, tail = title.rpartition(" | ")
+    return bool(sep) and same_name(head, tail)
+
+
+def home_title(pub: dict) -> str:
+    """The homepage <title>: "<Publication>: <descriptor>", 30-65 characters.
+
+    The descriptor is data (data/publications.json `home_descriptor`), a 4-7
+    word restatement of the publication's `definition`.
+    """
+    name = pub["title"]
+    desc = " ".join((pub.get("home_descriptor") or "").split())
+    if not desc:
+        raise ValueError(f"data/publications.json: '{pub.get('id')}' has no `home_descriptor`")
+    if not 4 <= len(desc.split()) <= 7:
+        raise ValueError(f"'{pub.get('id')}' home_descriptor must be 4-7 words: {desc!r}")
+    if name.casefold() in desc.casefold():
+        raise ValueError(f"'{pub.get('id')}' home_descriptor repeats the publication name")
+    title = f"{name}: {desc}"
+    if not HOME_TITLE_MIN <= len(title) <= HOME_TITLE_MAX:
+        raise ValueError(
+            f"'{pub.get('id')}' homepage <title> is {len(title)} characters; it must be "
+            f"{HOME_TITLE_MIN}-{HOME_TITLE_MAX}: {title!r}")
+    return title
+
+
 def site_title(name: str, site: str, where: str) -> str:
     """`name | site` when that fits, otherwise the page's own name alone.
 
     The site-name suffix is the part that gives way: it is the same on every
     page, so it is the least informative 20-30 characters of a title that is
-    about to be truncated.
+    about to be truncated. It is also dropped when it would only repeat the
+    page's own name ("X | X").
     """
+    if same_name(name, site):
+        return require_title(name, where)
     full = f"{name} | {site}"
     if title_fits(full):
         return full

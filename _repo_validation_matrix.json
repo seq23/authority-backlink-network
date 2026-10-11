@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "18c66d29a010c7ef80da61ea5737177c3d9d8a2240aea7f0b5183cae775320ee",
+  "plan_sha256": "b771f5011207ce8810880e857f5fb553bd6176c4f1eb1eb4a016d366f86f12ae",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 54,
+  "count": 55,
   "counts_by_severity": {
-    "HARD_FAIL": 50,
+    "HARD_FAIL": 51,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -560,6 +560,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Unsafe publication to live accounts: a daily limit outside the safe band either risks irreversible suspension of the X/LinkedIn accounts the authority network depends on, or restores a cap so low the queue never drains, which is a silent decision not to distribute.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "title_suffix",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "11 Oct 2026: all three homepages published '<Publication> | <Publication>' as their <title>, og:title and WebPage name. lib/head_seo.py now renders each homepage <title> from data/publications.json as '<Publication>: <home_descriptor>' (30-65 characters, name once) and lib/meta_description.site_title() refuses a suffix that repeats the page name. Blocks when any page's <title> is 'X | X', a homepage <title> differs from that rendering or is out of bounds, or its og:title, twitter:title or WebPage name drift from it. Fails hard on zero pages or a publication with no homepage examined.",
       "profiles": [
         "changed",
         "full",

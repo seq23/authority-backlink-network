@@ -257,9 +257,28 @@ def install_head(text: str, **kw) -> str:
         text = rx.sub("", text)
     if kw.get("is_home"):
         text = install_definition(text, kw["definition"])
+        text = install_home_title(text, kw["pub"])
     kw.pop("definition", None)
     block = render_block(text=text, **kw)
     return HEAD_END_RE.sub(lambda _m: block + "</head>", text, count=1)
+
+
+def install_home_title(text: str, pub: dict) -> str:
+    """The homepage <title> is rendered from data, never hand-kept.
+
+    11 Oct 2026: the three homepages published "<Publication> | <Publication>".
+    og:title, twitter:title and the WebPage `name` are read from this <title>
+    by render_block(), so they follow it. The WebSite node keeps the bare
+    publication name: that is the site name search engines show.
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from meta_description import home_title
+    title = esc(home_title(pub))
+    if not TITLE_RE.search(text):
+        raise SystemExit(f"{pub.get('id')}: homepage has no <title> to replace")
+    return TITLE_RE.sub(lambda _m: f"<title>{title}</title>", text, count=1)
 
 
 def install_definition(text: str, definition: str) -> str:

@@ -94,6 +94,7 @@
     "validate:selfheal-wiring": "python3 scripts/validators/validate_selfheal_wiring.py",
     "validate:social-enqueue-completeness": "python3 scripts/validators/validate_social_enqueue_completeness.py",
     "validate:social-meta": "python3 scripts/validators/validate_social_meta.py",
+    "validate:title-suffix": "python3 scripts/validators/validate_title_suffix.py",
     "validate:uscis-changelog": "python3 scripts/validators/validate_uscis_changelog.py",
     "validate:wedding-cost-dataset": "python3 scripts/validators/validate_wedding_cost_dataset.py",
     "validation:matrix": "python3 scripts/generate_validation_matrix.py"

@@ -67,6 +67,7 @@ COMMANDS = {
     "page_meta_bounds": [sys.executable, "scripts/validators/validate_page_meta_bounds.py"],
     "favicon_manifest": [sys.executable, "scripts/validators/validate_favicon_manifest.py"],
     "social_meta": [sys.executable, "scripts/validators/validate_social_meta.py"],
+    "title_suffix": [sys.executable, "scripts/validators/validate_title_suffix.py"],
     "jsonld_types": [sys.executable, "scripts/validators/validate_jsonld_types.py"],
     "definition_speakable": [sys.executable, "scripts/validators/validate_definition_speakable.py"],
     "indexnow_key": [sys.executable, "scripts/validators/validate_indexnow_key.py"],
