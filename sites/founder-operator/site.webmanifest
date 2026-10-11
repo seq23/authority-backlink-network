@@ -1,0 +1,22 @@
+{
+  "name": "Founder Operator Library",
+  "short_name": "Founder",
+  "description": "A practical publication for founders, operators, and teams using AI, systems, event production, and executive operating rhythms.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

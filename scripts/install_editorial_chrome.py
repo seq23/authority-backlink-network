@@ -45,6 +45,14 @@ What it installs
    which is the point: they used to disagree on 552 pages. See
    normalise_jsonld_author().
 
+5. The <head> block from scripts/lib/head_seo.py: favicon.ico / svg /
+   apple-touch-icon / manifest links, complete og: and twitter: tags pointing at
+   this publication's own og.png, a WebSite node (plus a BreadcrumbList where a
+   generator emitted none), and on the homepage a 40-60 word "<Publication> is
+   ..." definition directly under the H1 covered by a WebPage
+   SpeakableSpecification. The image files themselves come from
+   scripts/build_brand_assets.py.
+
 Two hard constraints on the markup
 ----------------------------------
 * The <footer> and <header> tags must stay BARE, with no attributes.
@@ -73,6 +81,7 @@ from affiliation import affiliated_domains, host_of, is_affiliated  # noqa: E402
 from byline import entity_for, subsidiary_clause  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
 from lib.page_chrome import page_footer_html, replace_page_footer  # noqa: E402
+from lib import head_seo  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SITES = ROOT / "sites"
@@ -194,7 +203,6 @@ def affiliated_names_on(text: str, names_by_domain: dict) -> list:
     return out
 
 
-FAVICON_LINK = '<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
 HEAD_END_RE = re.compile(r"</head>", re.I)
 
 # The legacy inline table block from scripts/generate_cluster_articles.py. It
@@ -334,7 +342,7 @@ def normalise_jsonld_author(text: str, pub_title: str) -> str:
 
 def install(text: str, pub_title: str, domain: str, editor_addr: str,
             names_by_domain: dict, disclosure: str = "",
-            retired_disclosures: tuple = ()) -> str:
+            retired_disclosures: tuple = (), head: dict = None) -> str:
     # --- legacy inline table CSS -----------------------------------------
     text = LEGACY_TABLE_CSS_RE.sub("", text)
 
@@ -347,11 +355,12 @@ def install(text: str, pub_title: str, domain: str, editor_addr: str,
     # two are produced from one call to byline.entity_for() and cannot drift.
     text = normalise_jsonld_author(text, pub_title)
 
-    # --- favicon ----------------------------------------------------------
-    # Each publication ships its own /favicon.svg. It is the identity marker a
-    # reader actually sees most often, and all three previously had none.
-    if 'rel="icon"' not in text and HEAD_END_RE.search(text):
-        text = HEAD_END_RE.sub(FAVICON_LINK + "</head>", text, count=1)
+    # --- head: icons, social card, site graph, homepage definition -------
+    # Each publication ships its own icon set and social card. The whole block
+    # is owned by lib/head_seo.py (one module, read by the validators too) and
+    # replaced wholesale, which also removes the legacy lone favicon link.
+    if head:
+        text = head_seo.install_head(text, **head)
 
     # --- footer -----------------------------------------------------------
     footer = render_footer(pub_title, domain, editor_addr)
@@ -409,6 +418,7 @@ def main() -> int:
                 original, pub["title"], domain, editor_addr, names_by_domain,
                 disclosure=pub.get("disclosure", ""),
                 retired_disclosures=tuple(pub.get("retired_disclosures") or ()),
+                head=head_seo.head_context(pub, folder, rel, path),
             )
 
             # Nothing installed may point off-domain. Check only what we added.

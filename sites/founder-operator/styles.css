@@ -482,6 +482,11 @@ footer {
 }
 footer p { max-width: var(--measure); margin: 0 0 10px; }
 footer a { color: var(--ink-on-dark); }
+/* The publisher byline sits inside the dark footer on the homepage. Its own
+   rule paints it --ink-muted, a light-surface token: 2.99:1 on --surface-inset,
+   the one Lighthouse accessibility failure measured on 10 Oct 2026. */
+footer .byline, footer .byline__role { color: var(--ink-on-dark-muted); }
+footer .byline a { color: var(--ink-on-dark); }
 
 .editorial-nav {
   display: flex;

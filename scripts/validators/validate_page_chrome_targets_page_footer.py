@@ -155,8 +155,20 @@ def check_derived_404() -> tuple[int, list[str]]:
             INDEX_WITH_CONTENT_FOOTER % {
                 "t": PUB_TITLE, "d": DOMAIN, "mark": GOVERNANCE_MARK},
             encoding="utf-8")
-        out = derived.render_404(source, DOMAIN)
+        # The real publication record and stylesheet: render_404() now renders
+        # the managed <head> (lib/head_seo.py) for the page as well, from the
+        # publication's own palette.
+        pub = next(p for p in json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
+                   if p["working_domain"] == DOMAIN)
+        (source / "styles.css").write_text(
+            (ROOT / pub["folder"] / "styles.css").read_text(encoding="utf-8"), encoding="utf-8")
+        out = derived.render_404(source, DOMAIN, pub)
         checked += 1
+        if out.count("<!-- seo:head -->") != 1 or f'content="https://{DOMAIN}/404.html"' not in out:
+            failures.append(
+                "HARD_FAIL derived 404: render_404() did not render exactly one managed "
+                "head block with this page's own og:url, so it and "
+                "install_editorial_chrome.py would rewrite 404.html on alternate builds.")
 
         total, inside = governance_footers_outside_main(out)
         if total != 1:
