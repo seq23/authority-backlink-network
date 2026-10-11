@@ -8,8 +8,8 @@ lib/head_seo.py adds them; this checks the published tree:
 
   every page      all JSON-LD parses; one WebSite node named for THIS
                   publication at https://<its domain>/, published by its own
-                  editorial company (byline.entity_for) with parentOrganization
-                  Spry Labs
+                  editorial company (byline.entity_for) with no
+                  parentOrganization
   homepage        a WebPage with a SpeakableSpecification
   inner pages     a BreadcrumbList (404.html, noindex, exempt)
   og:type article an Article-family node (the Article nodes are kept as-is)
@@ -33,7 +33,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from lib import head_seo as hs  # noqa: E402
-from byline import entity_for, parent_company  # noqa: E402
+from byline import entity_for  # noqa: E402
 
 BODY_RE = re.compile(r"<body[^>]*>(.*)</body>", re.S | re.I)
 SCRIPT_RE = re.compile(r"<script\b.*?</script>", re.S | re.I)
@@ -46,7 +46,6 @@ def norm(s: str) -> str:
 def main() -> int:
     pubs = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
     entities = {p["id"]: entity_for(p["title"]) for p in pubs}
-    parent = parent_company()
     failures, pages, faq_pages, crumbs = [], 0, 0, 0
     for pub, folder, path, rel, text in hs.published_pages(ROOT):
         pages += 1
@@ -63,9 +62,8 @@ def main() -> int:
         if len(sites) != 1 or sites[0].get("name") != pub["title"] or sites[0].get("url") != hs.site_url(domain):
             failures.append(f"{rel}: want one WebSite node named {pub['title']!r} at {hs.site_url(domain)}")
         publishers = [n for n in nodes if n.get("@id") == hs.publisher_id(domain) and n.get("name")]
-        if not publishers or any(n.get("name") != mine or (parent and (n.get("parentOrganization") or {}).get("name") != parent)
-                                 for n in publishers):
-            failures.append(f"{rel}: site-graph publisher is not {mine!r} under {parent!r}")
+        if not publishers or any(n.get("name") != mine or "parentOrganization" in n for n in publishers):
+            failures.append(f"{rel}: site-graph publisher is not {mine!r} standing alone (no parentOrganization)")
         if is_home:
             speak = [n for n in nodes if "WebPage" in hs.node_types(n) and n.get("speakable")]
             if not speak:

@@ -50,7 +50,7 @@ from urllib.parse import urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from byline import entity_for, parent_company, subsidiary_clause  # noqa: E402
+from byline import entity_for  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
 from lib import meta_description  # noqa: E402
 
@@ -145,12 +145,11 @@ def editorial_footer(pub_title: str, domain: str, editor_addr: str) -> str:
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
         f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
-        f"edited by <strong>{esc(entity_for(pub_title))}</strong>{esc(subsidiary_clause())}. Pages here "
+        f"edited by <strong>{esc(entity_for(pub_title))}</strong>. Pages here "
         f"carry that byline and no other: this publication names no individual author, "
         f"and never attributes a page to someone who did not write it.</p>"
         f"<p>{esc(entity_for(pub_title))} is under common ownership with several of the projects this "
-        f"publication cites. Those citations are labelled on the page and carry "
-        f"<code>rel=\"sponsored nofollow\"</code>, so they pass no ranking signal. "
+        f"publication cites. Those citations are labelled on the page. "
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
         f"and no listing that can be bought.</p>"
         f"<p>&copy; 2026 {esc(pub_title)}. {esc(ADVICE_BOUNDARY)}</p>"
@@ -231,7 +230,7 @@ def masthead_page(pub, ed, pubed, brands, editor_addr, corrections_addr) -> tupl
 <p class="dek">Ownership, accountability and how to reach the desk about anything on this site.</p>
 <h2>Short answer</h2>
 <p>{esc(pub['title'])} is written, edited and published by <strong>{esc(byline)}</strong>, the
-editorial company for this publication{esc(subsidiary_clause())}. That company is the byline on
+editorial company for this publication. That company is the byline on
 every page here. It is under common ownership with several of the projects this publication
 cites, which is disclosed here, in every page footer, and next to every affiliated link, because
 a reader who finds out later has been misled, and a reader who is told up front can weigh it.</p>
@@ -245,7 +244,7 @@ is wrong, and for the standards on the <a href="{esc(home)}/editorial-standards"
 and AI-use standards</a> page.</dd>
 <dt>Corporate relationship</dt>
 <dd>{esc(byline)} is the editorial company for {esc(pub['title'])} and nothing else. Every
-publication in this group has an editorial company of its own{esc(subsidiary_clause())}. No other
+publication in this group has an editorial company of its own. No other
 corporate detail is published here: this page states the relationship and stops, rather than
 dressing it up with particulars that nobody has established.</dd>
 <dt>Named staff</dt>
@@ -273,8 +272,7 @@ companies are commonly owned. They are therefore not independent of each other a
 to be. What they are independent of is any payment for coverage: nothing on this site can be
 bought, and no listing, mention or placement is for sale at any price.</p>
 <p>The projects below are commonly owned with this publication. Where a page cites one, the
-citation is labelled on the page and carries <code>rel="sponsored nofollow"</code> so it passes
-no ranking signal to the destination. This publication publishes no rankings, no awards and no
+citation is labelled on the page as an affiliated project. This publication publishes no rankings, no awards and no
 scored comparisons, so an affiliated project cannot be ranked above anything.</p>
 <table>
 <thead><tr><th>Affiliated project</th><th>What it is</th><th>Relationship</th></tr></thead>
@@ -311,9 +309,6 @@ produces a public record.</p>
         "@id": home + "/masthead#publisher-entity",
         "description": f"The editorial company that writes, edits and publishes {pub['title']}.",
     }
-    parent = parent_company()
-    if parent:
-        publisher_node["parentOrganization"] = {"@type": "Organization", "name": parent}
     schema["@graph"].append(publisher_node)
     schema["@graph"][0]["publishingPrinciples"] = home + "/editorial-standards"
     return "masthead.html", url, title, \
@@ -357,8 +352,7 @@ hand-checked -- would be false. What the automated system does:</p>
 
 <h2>Affiliation and conflicts of interest</h2>
 <p>{esc(pub['disclosure'])}</p>
-<p>Every affiliated citation is labelled where it appears, carries
-<code>rel="sponsored nofollow"</code>, and is listed by name on the
+<p>Every affiliated citation is labelled where it appears and is listed by name on the
 <a href="{esc(home)}/masthead">ownership disclosure</a>. Affiliation determines nothing about placement,
 because there is no placement to determine: this publication runs no rankings, no scored
 comparisons and no awards. A reader who distrusts an affiliated citation can disregard it and

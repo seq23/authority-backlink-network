@@ -57,6 +57,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 
 import measure_affiliate_topical_fit as fit  # noqa: E402
 from lib import page_composer  # noqa: E402
@@ -76,7 +77,9 @@ UPDATED_RE = re.compile(r"<em>Last updated: (\d{4}-\d{2}-\d{2})\.")
 NOTE_RE = re.compile(r"<h2>Editorial note</h2><p>.*?</p>", re.S)
 META_RE = re.compile(r'<p class="meta">.*?</p>', re.S)
 LD_RE = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
-SPONSORED_RE = re.compile(r'<a\s+href="([^"]+)"\s+rel="sponsored nofollow">(.*?)</a>', re.S | re.I)
+# rel is optional: portfolio links are followed (no rel) since 11 Oct 2026;
+# client links still carry rel="sponsored nofollow".
+SPONSORED_RE = re.compile(r'<a\s+href="(https?://[^"]+)"(?:\s+rel="[^"]*")?>(.*?)</a>', re.S | re.I)
 
 
 def unesc(text: str) -> str:
@@ -279,7 +282,7 @@ def main() -> int:
         for attrs in fit.A_RE.findall(text):
             href = fit.HREF_RE.search(attrs)
             rel = fit.REL_RE.search(attrs)
-            if not href or not rel or "sponsored" not in rel.group(1):
+            if not href or not is_affiliated(href.group(1)):
                 continue
             host = fit.norm(fit.urlparse(href.group(1)).netloc)
             if host in seen:

@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "decided": "2026-10-11",
+  "decided_by": "owner",
+  "decision": "Editorial links from these publications to the owner's portfolio domains are plain followed links: no nofollow, no sponsored, no ugc. rel=\"sponsored nofollow\" stays only on links that are genuinely paid or affiliate (client work, tagged affiliate URLs) and on untrusted third parties. Read by scripts/affiliation.py (the one rule that writes rel) and by scripts/validators/validate_portfolio_link_policy.py (the guard).",
+  "owner_portfolio_domains": [
+    "aplayermode.com",
+    "approvalprep.com",
+    "weddingchecklistpdf.com",
+    "weddingbudgetspreadsheet.com",
+    "weddingtimelinetemplate.com",
+    "weddingseatingchartmaker.com",
+    "theindustryguides.com",
+    "theaccidentguides.com",
+    "dentistryguides.com",
+    "neuroevalguides.com",
+    "hormonesivhair.com",
+    "uscisexam.com",
+    "horselegalguide.com",
+    "porchandparty901.com",
+    "billionairehighperformancecoach.com",
+    "spryexecutiveos.com",
+    "virtualagency-os.com",
+    "westpeekproductions.com",
+    "detoxdenver.org",
+    "time-2-read.com"
+  ],
+  "caps": {
+    "max_target_domain_share_of_site_portfolio_links": 0.25,
+    "max_links_per_target_url_per_site": 10,
+    "why": "Measured 11 Oct 2026: 141 of professionalresourcelibrary.com's 178 portfolio links went to approvalprep.com (79%), and 26 founder-operator pages all linked the same A Player Mode homepage. No target domain may take more than a quarter of one site's portfolio links, and no single URL more than ten, so the links read as citations spread across subjects rather than a pipe into one site.",
+    "campaign_floors": "A campaign in data/portfolio-backlink-campaigns.json keeps at least its minimum_rendered_coverage links: those rows are kept before any other link to the same domain competes for the domain's quota."
+  },
+  "nofollow_required_url_patterns": [
+    "[?&](tag|ref|aff|affiliate|affid|aff_id)=",
+    "^https?://(www\\.)?(amzn\\.to|amazon\\.[a-z.]+)/",
+    "^https?://(www\\.)?(shareasale|impact|partnerize|awin1|clickbank)\\."
+  ],
+  "retired_link_claims_note": "Sentences already published in page bodies that state portfolio links carry rel=\"sponsored nofollow\" or pass no ranking signal. Both stopped being true on 11 Oct 2026. scripts/install_editorial_chrome.py rewrites each `old` to its `new` (raw and HTML-escaped) on every page, and each `new` is exactly what scripts/lib/page_composer.py now composes, so a re-rendered page and a corrected page are the same bytes. Never delete an entry: pages still carrying it would stop being corrected.",
+  "retired_link_claims": [
+    {
+      "old": ", the link is marked <code>rel=\"sponsored nofollow\"</code>, and it is here on topic fit",
+      "new": ", and it is here on topic fit"
+    },
+    {
+      "old": "It carries <code>rel=\"sponsored nofollow\"</code> because it is an affiliated project",
+      "new": "It is an affiliated project"
+    },
+    {
+      "old": "The link is marked <code>rel=\"sponsored nofollow\"</code> and the affiliation is disclosed",
+      "new": "The affiliation is disclosed"
+    },
+    {
+      "old": "Affiliation is disclosed, the link carries <code>rel=\"sponsored nofollow\"</code>, and it is included",
+      "new": "Affiliation is disclosed, and it is included"
+    },
+    {
+      "old": " The link carries rel=sponsored nofollow, so it passes no ranking signal.",
+      "new": ""
+    },
+    {
+      "old": "the link is disclosed and carries <code>rel=\"sponsored nofollow\"</code>, so it passes no ranking signal.",
+      "new": "the link is disclosed."
+    }
+  ],
+  "campaign_destinations": {
+    "_why": "A campaign whose whole point is one page links that page. wpp-community-authority exists to send readers to West Peek Productions' community page, not its homepage.",
+    "wpp-community-authority": "https://westpeekproductions.com/community-as-a-service/"
+  }
+}

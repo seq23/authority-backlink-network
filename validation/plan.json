@@ -56,6 +56,8 @@
       "social_meta",
       "title_suffix",
       "jsonld_types",
+      "portfolio_link_policy",
+      "no_parent_company",
       "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable"
@@ -110,6 +112,8 @@
       "social_meta",
       "title_suffix",
       "jsonld_types",
+      "portfolio_link_policy",
+      "no_parent_company",
       "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable"
@@ -165,6 +169,8 @@
       "social_meta",
       "title_suffix",
       "jsonld_types",
+      "portfolio_link_policy",
+      "no_parent_company",
       "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable"
@@ -389,7 +395,7 @@
     },
     "jsonld_types": {
       "severity": "HARD_FAIL",
-      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (Spry Labs parent), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined."
+      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (no parent organisation), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined."
     },
     "definition_speakable": {
       "severity": "HARD_FAIL",
@@ -398,6 +404,14 @@
     "indexnow_key": {
       "severity": "HARD_FAIL",
       "rationale": "The IndexNow lane reported NOT_CONFIGURED until the key was committed to data/indexnow_key.txt; on 10 Oct 2026 every batch answered HTTP 200. IndexNow verifies ownership by fetching https://<host>/<key>.txt, so a publication root that stops serving the key silently voids every submission. Blocks when the key is invalid, any publication root lacks <key>.txt with the exact key, a publication has no sitemap URLs to submit, or post_publish_distribution.py or its workflow stops reading the key, building keyLocation or posting to api.indexnow.org."
+    },
+    "portfolio_link_policy": {
+      "severity": "HARD_FAIL",
+      "rationale": "11 Oct 2026, owner decision: links to the owner's portfolio domains are followed (no nofollow/sponsored/ugc); client and tagged-affiliate links keep rel=\"sponsored nofollow\". Blocks a wrong rel either way, a portfolio link in footer/nav/header/aside chrome, a target domain over 25% of a site's portfolio links or a URL over 10 links per site (measured: approvalprep.com held 141 of professionalresourcelibrary.com's 178), a link to a URL not in data/portfolio-deep-targets.json or whose anchor is not that page's title, and the autopilot/workflow no longer routing through the rebalancer. Fails hard on zero pages or zero portfolio links."
+    },
+    "no_parent_company": {
+      "severity": "HARD_FAIL",
+      "rationale": "11 Oct 2026, owner decision: every page's byline read '<Publication> Editorial Desk, a subsidiary of Spry Labs' and the JSON-LD carried parentOrganization Spry Labs. Blocks 'Spry Labs' anywhere under sites/ (pages, llms*.txt, sitemaps, JSON-LD), any JSON-LD parentOrganization, an editorial company described as a subsidiary, a parent_company in data/editorial.json, and 'Spry Labs' in any generator or data file outside the retired-disclosure repair list. Fails hard on zero published files."
     }
   },
   "severity_matrix_policy": {

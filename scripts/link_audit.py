@@ -2,6 +2,8 @@
 """Audit outbound links against multi-domain brand and product-route registries."""
 import json, html, pathlib, re, sys
 from urllib.parse import urlparse
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from affiliation import is_portfolio, nofollow_required  # noqa: E402
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 brands=json.loads((ROOT/'data/brands.json').read_text())
 publications=json.loads((ROOT/'data/publications.json').read_text())
@@ -70,8 +72,12 @@ for path in sorted((ROOT/'sites').rglob('*.html')):
             rel_tokens = set()
             m_rel = re.search(r'rel="([^"]*)"', open_tag, re.I)
             if m_rel: rel_tokens = {t.lower() for t in m_rel.group(1).split()}
-            if domain in affiliated_all and not {'sponsored','nofollow'} <= rel_tokens:
+            # Owner decision 11 Oct 2026 (data/portfolio-link-policy.json): portfolio
+            # links are followed; client and tagged-affiliate links stay sponsored+nofollow.
+            if nofollow_required(href) and not {'sponsored','nofollow'} <= rel_tokens:
                 row['violation']='affiliated_link_missing_sponsored_nofollow'; errors.append(row)
+            elif is_portfolio(href) and rel_tokens & {'nofollow','sponsored','ugc'}:
+                row['violation']='portfolio_link_not_followed'; errors.append(row)
         links.append(row)
 
 ledger_path=ROOT/'data/link-registry.json'; ledger=json.loads(ledger_path.read_text()) if ledger_path.exists() else []

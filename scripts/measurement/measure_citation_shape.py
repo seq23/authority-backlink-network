@@ -25,7 +25,6 @@ Usage:
 """
 
 from __future__ import annotations
-
 import argparse
 import collections
 import html
@@ -33,6 +32,9 @@ import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from affiliation import is_affiliated, nofollow_required  # noqa: E402
 
 # --------------------------------------------------------------------------
 # A) EVIDENCE SIDE
@@ -277,9 +279,9 @@ def analyse_page(path, root):
         rel = (REL_RE.search(attrs).group(1).lower() if REL_RE.search(attrs) else "")
         if 'data-source="external-authority"' in attrs:
             authoritative.append(href)
-        if "sponsored" in rel:
+        if is_affiliated(href):
             affiliated.append(href)
-            if "nofollow" not in rel:
+            if nofollow_required(href) and not {"sponsored", "nofollow"} <= set(rel.split()):
                 bad_rel.append(href)
 
     h1 = strip_tags(H1_RE.search(raw).group(1)) if H1_RE.search(raw) else ""

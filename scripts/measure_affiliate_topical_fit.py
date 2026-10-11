@@ -54,6 +54,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 
 A_RE = re.compile(r"<a\s+([^>]*)>", re.I)
 HREF_RE = re.compile(r'href="([^"]+)"')
@@ -131,7 +132,7 @@ def main() -> int:
         for attrs in A_RE.findall(path.read_text(encoding="utf-8", errors="ignore")):
             href = HREF_RE.search(attrs)
             rel = REL_RE.search(attrs)
-            if not href or not rel or "sponsored" not in rel.group(1):
+            if not href or not is_affiliated(href.group(1)):
                 continue
             host = norm(urlparse(href.group(1)).netloc)
             if host in seen:

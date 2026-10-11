@@ -1,0 +1,3584 @@
+{
+  "schema_version": "1.0",
+  "built_by": "scripts/build_portfolio_deep_targets.py",
+  "rule": "Each entry answered HTTP 200 on its own host when built; its anchor is the page's own <title>. Deep pages come from each target repo's measured target set; homepages are kept only as a last resort for topic matching.",
+  "targets": {
+    "aplayermode.com": [
+      {
+        "url": "https://aplayermode.com/",
+        "title": "A Player Mode",
+        "home": true,
+        "queries": [
+          "a player mode"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "approvalprep.com": [
+      {
+        "url": "https://approvalprep.com/business-funding-prep-kit/",
+        "title": "Business Funding Prep Kit",
+        "home": false,
+        "queries": [
+          "build a business funding packet"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/complete-approvalprep-bundle/",
+        "title": "Complete ApprovalPrep Bundle",
+        "home": false,
+        "queries": [
+          "get the full document library"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/credit-letter-kit/",
+        "title": "Credit Letter Kit",
+        "home": false,
+        "queries": [
+          "create a credit dispute letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/documents-needed-for-car-loan/",
+        "title": "Documents Needed for a Car Loan",
+        "home": false,
+        "queries": [
+          "what documents a car lender may ask for"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/employment-verification-form/",
+        "title": "Employment Verification Form",
+        "home": false,
+        "queries": [
+          "employment verification form"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/employment-verification-letter-template/",
+        "title": "Employment Verification Letter Template",
+        "home": false,
+        "queries": [
+          "employment verification letter template"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/employment-verification-letter/",
+        "title": "Letter of Verification of Employment: Template and Fields",
+        "home": false,
+        "queries": [
+          "employment verification letter",
+          "letter of verification of employment"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/goodwill-letter-credit/",
+        "title": "Goodwill Letter for Credit: Which Items It Can Reach",
+        "home": false,
+        "queries": [
+          "goodwill letter credit"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/how-to-get-approved-for-an-apartment/",
+        "title": "Apartment Pre-Approval: How to Get Approved for an Apartment",
+        "home": false,
+        "queries": [
+          "pre approval apartment"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/how-to-write-a-letter-of-explanation/",
+        "title": "How to Write a Letter of Explanation",
+        "home": false,
+        "queries": [
+          "how to write a letter of explanation"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/income-employment-letter-kit/",
+        "title": "Income + Employment Letter Kit",
+        "home": false,
+        "queries": [
+          "create a proof-of-income letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/landlord-reference-letter/",
+        "title": "Landlord Reference Letter",
+        "home": false,
+        "queries": [
+          "landlord reference letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/",
+        "title": "Letter of Explanation Generator",
+        "home": false,
+        "queries": [
+          "create a letter of explanation",
+          "letter of explanation"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/credit/",
+        "title": "Credit Letter of Explanation",
+        "home": false,
+        "queries": [
+          "how to explain a credit problem"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/mortgage/",
+        "title": "Letter of Explanation for a Mortgage",
+        "home": false,
+        "queries": [
+          "letter of explanation for mortgage"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/sample/",
+        "title": "Letter of Explanation Sample",
+        "home": false,
+        "queries": [
+          "letter of explanation sample"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-of-explanation/template/",
+        "title": "Letter of Explanation Template",
+        "home": false,
+        "queries": [
+          "letter of explanation template"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/letter-writing-studio/",
+        "title": "Free Letter Writing Studio",
+        "home": false,
+        "queries": [
+          "draft your letter for free"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/life-admin-letter-kit/",
+        "title": "Life Admin Letter Kit",
+        "home": false,
+        "queries": [
+          "create an address explanation letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/loan-prep-letter-kit/",
+        "title": "Loan Prep Letter Kit",
+        "home": false,
+        "queries": [
+          "create a loan explanation letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/methodology/",
+        "title": "Methodology: How ApprovalPrep Helps You Prepare Paperwork",
+        "home": false,
+        "queries": [
+          "how approval prep document kits work"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/mortgage-document-checklist/",
+        "title": "Mortgage Document Checklist",
+        "home": false,
+        "queries": [
+          "what to prepare for a mortgage review"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/not-a-credit-repair-company/",
+        "title": "Not a Credit Repair Company",
+        "home": false,
+        "queries": [
+          "what approval prep does and does not do"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/pricing/",
+        "title": "ApprovalPrep Pricing: Compare All Eight Document Prep Kits",
+        "home": false,
+        "queries": [
+          "compare approval prep document kits"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://approvalprep.com/",
+        "title": "ApprovalPrep",
+        "home": true,
+        "queries": [
+          "approval prep"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "billionairehighperformancecoach.com": [
+      {
+        "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach",
+        "title": "AI Coach vs Human Coach: Which Is Better?",
+        "home": false,
+        "queries": [
+          "ai coach vs human coach comparison"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/ai-vs-human-executive-coach-pros-cons-for-entrepreneurs",
+        "title": "AI vs Human Executive Coach: Pros and Cons for Entrepreneurs",
+        "home": false,
+        "queries": [
+          "ai accountability system for entrepreneurs and career acceleration",
+          "ai accountability system for entrepreneurs and weight loss adherence"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-facing-decision-fatigue-and-needs-accountability-support",
+        "title": "Accountability for a founder facing decision fatigue",
+        "home": false,
+        "queries": [
+          "ai accountability system for decision-fatigue users and fitness consistency",
+          "ai accountability system for decision-fatigue users and goal tracking",
+          "ai accountability system for decision-fatigue users and workout execution"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-trying-to-build-consistency-and-needs-accountability-support",
+        "title": "Accountability for a founder trying to build consistency",
+        "home": false,
+        "queries": [
+          "ai accountability system for body goal users and habit consistency",
+          "ai accountability system for consistency strugglers and behavior reframing",
+          "ai accountability system for people with many projects and fitness consistency",
+          "ai accountability system for students and early-career professionals and fitness consistency"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-accountability-support",
+        "title": "Accountability for a founder working without a chief of staff",
+        "home": false,
+        "queries": [
+          "ai accountability system for body goal users and calendar control",
+          "ai accountability system for busy parents and chief-of-staff operating rhythm",
+          "ai accountability system for creators and fitness consistency",
+          "ai accountability system for overplanners and fitness consistency"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-missed-day-recovery-support",
+        "title": "Missed-day recovery for a founder working without a chief of staff",
+        "home": false,
+        "queries": [
+          "ai accountability system for missed-day recovery users and behavior reframing",
+          "ai accountability system for missed-day recovery users and nutrition discipline"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/brand-defense/is-billionaire-high-performance-coach-real-for-students",
+        "title": "Is Billionaire High Performance Coach real for students?",
+        "home": false,
+        "queries": [
+          "ai system for students and early-career professionals struggling with performance routines"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/chatgpt-prompts-for-weekly-review-and-planning",
+        "title": "ChatGPT Prompts for Weekly Review and Planning",
+        "home": false,
+        "queries": [
+          "ai accountability system for athletes and weekly review"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/comparisons/bhpc-vs-torch",
+        "title": "BHPC vs Torch: Coaching Alternative for Execution Systems",
+        "home": false,
+        "queries": [
+          "behavioral self-regulation system vs traditional coaching for body goal users"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/use-cases/phase4/a-player-mode-for-a-executive-who-is-trying-to-build-consistency",
+        "title": "A-player mode for a executive who is trying to build consistency",
+        "home": false,
+        "queries": [
+          "ai system for body goal users struggling with fitness consistency"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-behavioral-follow-through",
+        "title": "BHPC vs accountability app for behavioral follow-through",
+        "home": false,
+        "queries": [
+          "ai accountability system for athletes and performance routines",
+          "ai accountability system for busy parents and performance routines",
+          "ai accountability system for consistency strugglers and performance routines",
+          "ai accountability system for creators and performance routines",
+          "ai accountability system for entrepreneurs and behavior reframing",
+          "ai accountability system for entrepreneurs and performance routines",
+          "ai accountability system for founders and behavior reframing",
+          "ai accountability system for founders and performance routines",
+          "ai accountability system for operators and performance routines",
+          "ai accountability system for overplanners and performance routines",
+          "ai accountability system for people with many projects and performance routines",
+          "ai accountability system for students and early-career professionals and performance routines"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-chief-of-staff-support",
+        "title": "BHPC vs accountability app for chief-of-staff support",
+        "home": false,
+        "queries": [
+          "accountability partner vs traditional coaching for entrepreneurs",
+          "accountability partner vs traditional coaching for founders"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-decision-fatigue",
+        "title": "BHPC vs accountability app for decision fatigue",
+        "home": false,
+        "queries": [
+          "accountability partner vs traditional coaching for consistency strugglers",
+          "accountability partner vs traditional coaching for decision-fatigue users",
+          "ai accountability system for decision-fatigue users and nutrition discipline"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-execution-review",
+        "title": "BHPC vs accountability app for execution review",
+        "home": false,
+        "queries": [
+          "ai accountability system for body goal users and workout execution",
+          "ai accountability system for overplanners and workout execution",
+          "ai system for body goal users struggling with workout execution",
+          "best accountability partner for athletes who need workout execution",
+          "best accountability partner for body goal users who need workout execution"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-missed-day-recovery",
+        "title": "BHPC vs accountability app for missed-day recovery",
+        "home": false,
+        "queries": [
+          "accountability partner vs traditional coaching for missed-day recovery users",
+          "accountability partner vs traditional coaching for students and early-career professionals",
+          "ai accountability system for athletes and missed-day recovery",
+          "ai accountability system for body goal users and missed-day recovery",
+          "ai accountability system for busy parents and missed-day recovery",
+          "ai accountability system for missed-day recovery users and fitness consistency",
+          "ai accountability system for missed-day recovery users and workout execution"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-planner-for-accountability",
+        "title": "Billionaire High Performance Coach vs planner for accountability",
+        "home": false,
+        "queries": [
+          "best accountability partner for athletes who need performance routines"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-planner-for-behavioral-follow-through",
+        "title": "BHPC vs planner for behavioral follow-through",
+        "home": false,
+        "queries": [
+          "ai system for overplanners struggling with performance routines",
+          "ai system for people with many projects struggling with performance routines",
+          "behavioral self-regulation system vs traditional coaching for overplanners",
+          "behavioral self-regulation system vs traditional coaching for people with many projects"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/whitepapers/state-of-accountability-and-consistency",
+        "title": "State of Accountability And Consistency: Execution Patterns, AI…",
+        "home": false,
+        "queries": [
+          "ai accountability system for consistency strugglers and workout execution"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/",
+        "title": "Billionaire High Performance Coach OS",
+        "home": true,
+        "queries": [
+          "billionaire high performance coach"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "dentistryguides.com": [
+      {
+        "url": "https://dentistryguides.com/guides/how-to-choose/",
+        "title": "What Should I Look For When Choosing a Dentist",
+        "home": false,
+        "queries": [
+          "best dental practice selection guide",
+          "choose right dentist guide",
+          "choosing a dentist",
+          "choosing it for dentists",
+          "choosing the right dentist",
+          "dental care selection tips",
+          "dental procedure decision making",
+          "dental recommendation",
+          "dentist selection guide",
+          "dentist selection tips",
+          "how do i choose a dentist",
+          "how do i choose the right dental provider"
+        ],
+        "measured_weight": 43
+      },
+      {
+        "url": "https://dentistryguides.com/guides/",
+        "title": "Dental Treatment Guides: Costs and Options",
+        "home": false,
+        "queries": [
+          "dental decision guides",
+          "dental faq",
+          "dental reconstruction guide",
+          "dental treatment guide",
+          "dentist guidelines",
+          "dentistry guidelines"
+        ],
+        "measured_weight": 8
+      },
+      {
+        "url": "https://dentistryguides.com/guides/dental-procedure-cost-comparison/",
+        "title": "Comparing Dental Procedures: What Drives the Price Difference",
+        "home": false,
+        "queries": [
+          "dental procedure cost comparison"
+        ],
+        "measured_weight": 4
+      },
+      {
+        "url": "https://dentistryguides.com/guides/dental-implants/",
+        "title": "Dental Implants: Cost, Recovery and Candidacy",
+        "home": false,
+        "queries": [
+          "best way to compare dental implant options",
+          "dental implant comparison guide"
+        ],
+        "measured_weight": 2
+      },
+      {
+        "url": "https://dentistryguides.com/guides/sedation-dentistry/",
+        "title": "Sedation Dentistry: Options, Safety and Cost",
+        "home": false,
+        "queries": [
+          "sedation dentistry guide"
+        ],
+        "measured_weight": 2
+      },
+      {
+        "url": "https://dentistryguides.com/guides/veneers/",
+        "title": "Veneers: Cost, Longevity and Alternatives",
+        "home": false,
+        "queries": [
+          "cosmetic dental veneers guide"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://dentistryguides.com/guides/questions-to-ask/",
+        "title": "Questions to Ask Before Major Dental Work",
+        "home": false,
+        "queries": [
+          "questions before major dental work"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://dentistryguides.com/",
+        "title": "The Dentistry Guides: Compare Dentists and Dental Costs",
+        "home": true,
+        "queries": [
+          "dental guides",
+          "dentist guide",
+          "dentistry guide",
+          "the dentistry guides"
+        ],
+        "measured_weight": 3
+      }
+    ],
+    "hormonesivhair.com": [
+      {
+        "url": "https://hormonesivhair.com/guides/hormone-replacement-therapy-near-me/",
+        "title": "Hormone Replacement Therapy Near You: What to Verify Before You Book",
+        "home": false,
+        "queries": [
+          "hormone replacement therapy near me"
+        ],
+        "measured_weight": 8100
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/trt-red-flags/",
+        "title": "TRT Red Flags: Hidden Fees, Rotating Providers, No Lab Monitoring",
+        "home": false,
+        "queries": [
+          "what red flags should i watch for when evaluating trt providers — things like hidden fees, rotating providers, or lack of lab monitoring?"
+        ],
+        "measured_weight": 7
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/who-is-a-good-candidate-for-trt/",
+        "title": "Who Is a Good Candidate for TRT?",
+        "home": false,
+        "queries": [
+          "suitable candidate for trt"
+        ],
+        "measured_weight": 6
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/",
+        "title": "TRT, Peptide, IV and Hair Loss Guides",
+        "home": false,
+        "queries": [
+          "hormone and wellness clinic evaluation guides",
+          "what's better, a peptide clinic subscription or a one-time purchase plan?"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/trt-telehealth-vs-local-clinic/",
+        "title": "TRT Telehealth vs Local Clinic",
+        "home": false,
+        "queries": [
+          "trt telehealth consult"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+        "title": "IV Hydration Red Flags: What to Check Before a Drip",
+        "home": false,
+        "queries": [
+          "iv hydration red flags"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://hormonesivhair.com/",
+        "title": "Hormone Optimization Guides: TRT, Peptides, IV and Hair",
+        "home": true,
+        "queries": [
+          "hormone optimization guides"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "horselegalguide.com": [
+      {
+        "url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+        "title": "What Should Be Included in a Horse Boarding Agreement?",
+        "home": false,
+        "queries": [
+          "horse boarding agreement checklist"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+        "title": "Contract Review vs DIY Horse Agreement",
+        "home": false,
+        "queries": [
+          "contract review versus a diy horse agreement"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+        "title": "Horse purchase agreement vs bill of sale",
+        "home": false,
+        "queries": [
+          "horse purchase agreement versus bill of sale"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+        "title": "What Should I Do If I Receive a Demand Letter?",
+        "home": false,
+        "queries": [
+          "steps to prepare after receiving a demand letter"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://horselegalguide.com/",
+        "title": "Horse Legal Guide: Equine Law Questions Answered",
+        "home": true,
+        "queries": [
+          "horse legal guide"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "neuroevalguides.com": [
+      {
+        "url": "https://neuroevalguides.com/guides/hospital-vs-private-neuropsych-testing/",
+        "title": "Hospital vs Private Neuropsych Testing: The Cost Difference",
+        "home": false,
+        "queries": [
+          "hospital vs private neuropsych testing"
+        ],
+        "measured_weight": 5
+      },
+      {
+        "url": "https://neuroevalguides.com/guides/",
+        "title": "ADHD, Autism and Neuropsych Guides",
+        "home": false,
+        "queries": [
+          "neuro evaluation guides"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+        "title": "Questions to Ask Before Neuro Testing",
+        "home": false,
+        "queries": [
+          "questions before neuro testing"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://neuroevalguides.com/",
+        "title": "Neuro Evaluation Guides: ADHD, Autism and Neuropsych Testing",
+        "home": true,
+        "queries": [
+          "neuro evaluation guides"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "porchandparty901.com": [
+      {
+        "url": "https://porchandparty901.com/services/birthday-party-planner-memphis",
+        "title": "Birthday Party Planner in Memphis",
+        "home": false,
+        "queries": [
+          "birthday party",
+          "birthday party planner",
+          "birthday party planner near me",
+          "event management near me",
+          "event management services",
+          "event management services near me",
+          "event planner near me",
+          "event planning for parties",
+          "event planning for parties near me",
+          "event planning services",
+          "event planning services near me",
+          "party planner"
+        ],
+        "measured_weight": 7
+      },
+      {
+        "url": "https://porchandparty901.com/corporate/corporate-event-decor-memphis",
+        "title": "Corporate Event Decor in Memphis",
+        "home": false,
+        "queries": [
+          "corporate party"
+        ],
+        "measured_weight": 2
+      },
+      {
+        "url": "https://porchandparty901.com/faq/how-much-does-a-balloon-garland-cost-in-memphis",
+        "title": "How Much Does a Balloon Garland Cost in Memphis?",
+        "home": false,
+        "queries": [
+          "balloon business",
+          "balloon party"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://porchandparty901.com/services/party-decor-memphis",
+        "title": "Memphis Party Decor",
+        "home": false,
+        "queries": [
+          "bachelorette party ideas",
+          "bachelorette party planner"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://porchandparty901.com/pricing",
+        "title": "Memphis Event Decor Pricing",
+        "home": false,
+        "queries": [
+          "porch & party pricing information"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://porchandparty901.com/services/grazing-tables-memphis",
+        "title": "Grazing Tables Memphis",
+        "home": false,
+        "queries": [
+          "grazing tables in memphis"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://porchandparty901.com/services/hotel-room-decor-memphis",
+        "title": "Hotel Room Decor Memphis",
+        "home": false,
+        "queries": [
+          "hotel-room decor in memphis"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://porchandparty901.com/services/porch-decorating",
+        "title": "Seasonal Porch Decorating in Memphis",
+        "home": false,
+        "queries": [
+          "memphis porch decorating services"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://porchandparty901.com/",
+        "title": "Memphis Birthday Party Planner & Decor Setups",
+        "home": true,
+        "queries": [
+          "porch & party"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "spryexecutiveos.com": [
+      {
+        "url": "https://spryexecutiveos.com/billionaire-high-performance-coach-vs-coaching/",
+        "title": "the structured AI accountability system Vs Coaching",
+        "home": false,
+        "queries": [
+          "accountability partner vs traditional coaching for athletes",
+          "accountability partner vs traditional coaching for body goal users",
+          "accountability partner vs traditional coaching for busy parents",
+          "accountability partner vs traditional coaching for creators",
+          "accountability partner vs traditional coaching for operators",
+          "accountability partner vs traditional coaching for overplanners",
+          "accountability partner vs traditional coaching for people with many projects",
+          "accountability partner vs traditional coaching for upwardly mobile executives"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://spryexecutiveos.com/how-to-use-ai-for-executive-coaching-and-accountability",
+        "title": "How to Use AI for Executive Coaching and Accountability",
+        "home": false,
+        "queries": [
+          "ai accountability system for athletes and accountability",
+          "ai accountability system for athletes and behavior reframing",
+          "ai accountability system for athletes and calendar control",
+          "ai accountability system for athletes and career acceleration",
+          "ai accountability system for athletes and chief-of-staff operating rhythm",
+          "ai accountability system for athletes and decision making",
+          "ai accountability system for athletes and delegation",
+          "ai accountability system for athletes and emotional reset",
+          "ai accountability system for athletes and execution",
+          "ai accountability system for athletes and executive assistant workflows",
+          "ai accountability system for athletes and habit consistency",
+          "ai accountability system for athletes and multi-project management"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://spryexecutiveos.com/insights/how-chatgpt-can-improve-personal-accountability-and-goal-tracking",
+        "title": "How ChatGPT can improve personal accountability and goal tracking",
+        "home": false,
+        "queries": [
+          "ai accountability system for athletes and goal tracking",
+          "ai accountability system for body goal users and goal tracking",
+          "ai accountability system for consistency strugglers and goal tracking"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://spryexecutiveos.com/using-chatgpt-as-a-full-time-executive-coach-and-daily-accountability-partner",
+        "title": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
+        "home": false,
+        "queries": [
+          "ai accountability system for athletes and daily planning",
+          "ai accountability system for busy parents and daily planning"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "theaccidentguides.com": [
+      {
+        "url": "https://theaccidentguides.com/guides/",
+        "title": "Personal Injury Guides: Claims, Fees and Lawyers",
+        "home": false,
+        "queries": [
+          "personal injury educational guides",
+          "personal injury guide"
+        ],
+        "measured_weight": 40
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/questions-to-ask-a-personal-injury-lawyer/",
+        "title": "Questions to Ask a Personal Injury Lawyer",
+        "home": false,
+        "queries": [
+          "accident lawyer questions",
+          "ask injury lawyer",
+          "how to talk to a personal injury lawyer",
+          "how to talk to personal injury lawyer",
+          "personal injury law questions",
+          "personal injury lawyer questions",
+          "personal injury questions",
+          "questions for personal injury lawyer",
+          "questions to ask a personal injury lawyer",
+          "questions to ask a potential personal injury lawyer",
+          "questions to ask car accident attorney catastrophic injury cases",
+          "questions to ask injury lawyer"
+        ],
+        "measured_weight": 20
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/evidence-checklist-after-an-accident/",
+        "title": "Evidence Checklist After an Accident",
+        "home": false,
+        "queries": [
+          "accident evidence checklist",
+          "car accident evidence checklist",
+          "car accident evidence checklist virginia",
+          "create a checklist of evidence to ther after a motorcycle accident",
+          "evidence checklist",
+          "hampton roads crash evidence checklist",
+          "personal injury evidence checklist",
+          "post-accident injury checklist"
+        ],
+        "measured_weight": 17
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/when-to-call-a-personal-injury-lawyer/",
+        "title": "When to Call a Personal Injury Lawyer",
+        "home": false,
+        "queries": [
+          "how often should i hear from my personal injury attorney",
+          "when is the best time to contact a personal injury attorney",
+          "when should i call an injury lawyer",
+          "when should i contact a personal injury lawyer",
+          "when should you contact a personal injury lawyer",
+          "when to call a personal injury lawyer",
+          "when to contact a personal injury lawyer"
+        ],
+        "measured_weight": 17
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/personal-injury-lawyer-red-flags/",
+        "title": "Personal Injury Lawyer Red Flags",
+        "home": false,
+        "queries": [
+          "signs you should consult a personal injury lawyer"
+        ],
+        "measured_weight": 5
+      },
+      {
+        "url": "https://theaccidentguides.com/faq/",
+        "title": "FAQ: Common Questions Answered",
+        "home": false,
+        "queries": [
+          "interactive personal injury guide"
+        ],
+        "measured_weight": 4
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/personal-injury-fees-explained/",
+        "title": "Personal Injury Fees Explained",
+        "home": false,
+        "queries": [
+          "average contingency fee for personal injury lawyer",
+          "average personal injury attorney fees",
+          "how are expenses handled in personal injury legal fees",
+          "how much do personal injury attorneys charge",
+          "how much do personal injury lawyers cost",
+          "how much does a personal injury lawyer cost",
+          "how much does personal injury lawyer charge",
+          "injury attorney fees",
+          "personal injury attorney fees",
+          "personal injury case lead cost",
+          "personal injury claim costs",
+          "personal injury costs"
+        ],
+        "measured_weight": 3
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/truck-accidents/",
+        "title": "Truck Accident Claims: Carriers, Logs and Evidence",
+        "home": false,
+        "queries": [
+          "truck accident claims guide"
+        ],
+        "measured_weight": 2
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/what-a-fair-settlement-figure-is-made-of/",
+        "title": "What a Fair Settlement Figure Is Made Of",
+        "home": false,
+        "queries": [
+          "figure settlements"
+        ],
+        "measured_weight": 2
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/burn-injury/",
+        "title": "Burn Injury Claims: Evidence, Costs and Lawyers",
+        "home": false,
+        "queries": [
+          "burn injury claim",
+          "burn injury claims"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/motorcycle-accidents/",
+        "title": "Motorcycle Accident Claims: Bias, Evidence and Fault",
+        "home": false,
+        "queries": [
+          "motorbike accident claims"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/premises-liability/",
+        "title": "Premises Liability Claims: Owner Duties and Proof",
+        "home": false,
+        "queries": [
+          "premises liability guide"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/spinal-cord-injury/",
+        "title": "Spinal Cord Injury Claims: Records and Future Care",
+        "home": false,
+        "queries": [
+          "spinal cord injury claim"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://theaccidentguides.com/personal-injury/",
+        "title": "Personal injury",
+        "home": false,
+        "queries": [
+          "personal injury state guide hub"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://theaccidentguides.com/",
+        "title": "The Accident Guides: Personal Injury Claims Explained",
+        "home": true,
+        "queries": [
+          "the accident guides"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "theindustryguides.com": [
+      {
+        "url": "https://theindustryguides.com/methodology",
+        "title": "Editorial Methodology and Update Policy",
+        "home": false,
+        "queries": [
+          "the industry guides methodology"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://theindustryguides.com/tools/",
+        "title": "Tools (Scripts + Checklists)",
+        "home": false,
+        "queries": [
+          "provider comparison tools"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://theindustryguides.com/",
+        "title": "The Industry Guides",
+        "home": true,
+        "queries": [
+          "the industry guides"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "uscisexam.com": [
+      {
+        "url": "https://uscisexam.com/guides/citizenship-test/",
+        "title": "The Citizenship Test: Which Version You Take Is Decided by One Date",
+        "home": false,
+        "queries": [
+          "citizenship test 2026"
+        ],
+        "measured_weight": 170
+      },
+      {
+        "url": "https://uscisexam.com/guides/",
+        "title": "USCIS Medical Exam Guides: Form I-693",
+        "home": false,
+        "queries": [
+          "uscis medical exam guides"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://uscisexam.com/guides/costs-and-timeframes/",
+        "title": "USCIS Medical Exam Costs and Timeframes: General Information",
+        "home": false,
+        "queries": [
+          "uscis medical exam costs and timeframes"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://uscisexam.com/",
+        "title": "USCIS Exam Guides: Form I-693 Medical Exam Explained",
+        "home": true,
+        "queries": [
+          "civil surgeon near me",
+          "uscis civil surgeon",
+          "uscis exam guides"
+        ],
+        "measured_weight": 5400
+      }
+    ],
+    "virtualagency-os.com": [
+      {
+        "url": "https://virtualagency-os.com/learn/",
+        "title": "Learn: Virtual Events and AI Marketing",
+        "home": false,
+        "queries": [
+          "virtual agency os learning library"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+        "title": "Virtual event production cost",
+        "home": false,
+        "queries": [
+          "virtual event production cost guide"
+        ],
+        "measured_weight": 0
+      },
+      {
+        "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+        "title": "What is virtual event production?",
+        "home": false,
+        "queries": [
+          "what virtual event production means"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "weddingbudgetspreadsheet.com": [
+      {
+        "url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+        "title": "Wedding Budget Spreadsheet",
+        "home": false,
+        "queries": [
+          "wedding budget calculator",
+          "wedding budget spreadsheet",
+          "wedding budget template"
+        ],
+        "measured_weight": 2400
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/wedding-cost-per-guest",
+        "title": "Wedding cost per guest: what 50, 80, 100, and 150 guests actually cost",
+        "home": false,
+        "queries": [
+          "average cost of a wedding for 100 people",
+          "average cost of wedding for 150 guests",
+          "average cost of wedding for 50 guests",
+          "average wedding cost for 50 guests",
+          "how much does a 100 person wedding cost",
+          "how much does a 150 person wedding cost",
+          "how much does a wedding for 100 people cost",
+          "wedding cost for 100 people"
+        ],
+        "measured_weight": 2
+      }
+    ],
+    "weddingchecklistpdf.com": [
+      {
+        "url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+        "title": "Wedding Checklist PDF",
+        "home": false,
+        "queries": [
+          "printable wedding checklist",
+          "wedding checklist pdf",
+          "wedding planning timeline"
+        ],
+        "measured_weight": 5400
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/printable-wedding-checklist",
+        "title": "Printable Wedding Checklist: Every Task, Owner and Deadline",
+        "home": false,
+        "queries": [
+          "printable wedding checklist",
+          "printable wedding checklists",
+          "printable wedding planning checklist",
+          "wedding checklist printable",
+          "wedding planning checklist pdf"
+        ],
+        "measured_weight": 6
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/guides",
+        "title": "Wedding Checklist PDF Guides",
+        "home": false,
+        "queries": [
+          "destination wedding checklist pdf",
+          "wedding ceremony checklist pdf",
+          "wedding checklist pdf",
+          "wedding planning checklist pdf"
+        ],
+        "measured_weight": 3
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/guides/elopement-planning-checklist",
+        "title": "Elopement Planning Checklist: Licence, Witnesses, Permits",
+        "home": false,
+        "queries": [
+          "elopement planning checklist"
+        ],
+        "measured_weight": 1
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/free-wedding-planner",
+        "title": "Free Wedding Planner",
+        "home": false,
+        "queries": [
+          "free dream wedding builder"
+        ],
+        "measured_weight": 0
+      }
+    ],
+    "weddingseatingchartmaker.com": [
+      {
+        "url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+        "title": "Wedding Seating Chart Maker",
+        "home": false,
+        "queries": [
+          "seating chart maker",
+          "wedding seating chart",
+          "wedding seating chart maker"
+        ],
+        "measured_weight": 9900
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/guides/wedding-seating-chart-template",
+        "title": "Wedding Seating Chart Template",
+        "home": false,
+        "queries": [
+          "wedding seating chart template"
+        ],
+        "measured_weight": 2900
+      }
+    ],
+    "weddingtimelinetemplate.com": [
+      {
+        "url": "https://weddingtimelinetemplate.com/products/timeline-template",
+        "title": "Wedding Timeline Template",
+        "home": false,
+        "queries": [
+          "wedding day timeline",
+          "wedding timeline template"
+        ],
+        "measured_weight": 2900
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+        "title": "Wedding Day Timeline Template",
+        "home": false,
+        "queries": [
+          "wedding day timeline template"
+        ],
+        "measured_weight": 1300
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/guides/wedding-rehearsal-timeline",
+        "title": "Wedding Rehearsal Timeline",
+        "home": false,
+        "queries": [
+          "wedding rehearsal timeline"
+        ],
+        "measured_weight": 70
+      }
+    ],
+    "westpeekproductions.com": [
+      {
+        "url": "https://westpeekproductions.com/virtual-event-planning-checklist",
+        "title": "Virtual Event Planning Checklist",
+        "home": false,
+        "queries": [
+          "virtual event production checklist"
+        ],
+        "measured_weight": 42
+      },
+      {
+        "url": "https://westpeekproductions.com/community-as-a-service/",
+        "title": "Can Your Business Build a Community?",
+        "home": false,
+        "queries": [
+          "community as a service",
+          "what is community operations"
+        ],
+        "measured_weight": 15
+      },
+      {
+        "url": "https://westpeekproductions.com/",
+        "title": "West Peek Productions",
+        "home": true,
+        "queries": [
+          "silver peak productions",
+          "west peak",
+          "west peek productions",
+          "westmark productions",
+          "westpeak",
+          "westpeak consultants",
+          "westwind productions"
+        ],
+        "measured_weight": 37
+      }
+    ]
+  },
+  "dropped": [
+    {
+      "url": "https://weddingbudgetspreadsheet.com/build",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingbudgetspreadsheet.com/products/checklist-pdf",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingbudgetspreadsheet.com/products/seating-chart-maker",
+      "status": 200,
+      "final": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingbudgetspreadsheet.com/products/timeline-template",
+      "status": 200,
+      "final": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingchecklistpdf.com/products/budget-spreadsheet",
+      "status": 200,
+      "final": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingchecklistpdf.com/products/seating-chart-maker",
+      "status": 200,
+      "final": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingchecklistpdf.com/products/timeline-template",
+      "status": 200,
+      "final": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingseatingchartmaker.com/build",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingseatingchartmaker.com/products/budget-spreadsheet",
+      "status": 200,
+      "final": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingseatingchartmaker.com/products/checklist-pdf",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingseatingchartmaker.com/products/timeline-template",
+      "status": 200,
+      "final": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingtimelinetemplate.com/build",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingtimelinetemplate.com/products/budget-spreadsheet",
+      "status": 200,
+      "final": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingtimelinetemplate.com/products/checklist-pdf",
+      "status": 200,
+      "final": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://weddingtimelinetemplate.com/products/seating-chart-maker",
+      "status": 200,
+      "final": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/hybrid-event-platform",
+      "status": 404,
+      "final": "https://westpeekproductions.com/hybrid-event-platform",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-hybrid-event-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-hybrid-event-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/best-virtual-event-platforms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/best-virtual-event-platforms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-management",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-management",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy-2026",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy-2026",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy-best-practices",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy-best-practices",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/audience-growth-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/audience-growth-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/audience-growth-strategy-for-startups",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/audience-growth-strategy-for-startups",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-audience-growth-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-audience-growth-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/learn/what-is-virtual-event-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/learn/what-is-virtual-event-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-event-production-for-saas",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-event-production-for-saas",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-common-failure-points",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-common-failure-points",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-for-small-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-for-small-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-mistakes",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-mistakes",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-consultant-vs-automation-agency-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-best-practices",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-best-practices",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-comparison",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-comparison",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-founders",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-founders",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-how-to-measure-success",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-how-to-measure-success",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-what-a-good-engagement-includes",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-what-a-good-engagement-includes",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-why-it-fails",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-why-it-fails",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/webinar-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/webinar-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-webinar-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-webinar-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-for-manufacturing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-for-manufacturing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-for-saas",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-for-saas",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/how-to-host-a-virtual-event",
+      "status": 404,
+      "final": "https://westpeekproductions.com/how-to-host-a-virtual-event",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-planning",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-planning",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-best-practices",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-best-practices",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-small-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-for-small-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/outsourced-community-management-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/outsourced-community-management-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-outsourced-community-management",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-outsourced-community-management",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-content-operations-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-content-operations-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/content-marketing-operations-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/content-marketing-operations-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/content-marketing-operations-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/content-marketing-operations-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/query-atlas/content-marketing-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/query-atlas/content-marketing-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-for-startups",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-for-startups",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-how-to-choose",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-how-to-choose",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-content-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-content-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-content-operations-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-content-operations-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-ai-content-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-ai-content-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-best-practices",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-best-practices",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-content-marketing-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-content-marketing-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-for-professional-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-for-professional-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-for-nonprofits",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-for-nonprofits",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-messaging-architecture",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-messaging-architecture",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-brand-messaging-architecture",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-brand-messaging-architecture",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/host-virtual-events",
+      "status": 404,
+      "final": "https://westpeekproductions.com/host-virtual-events",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-for-nonprofits",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-for-nonprofits",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-red-flags",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-red-flags",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-associations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-associations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-community-organizations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-community-organizations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-creative-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-for-creative-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-how-to-measure-success",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-how-to-measure-success",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-why-it-fails",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-why-it-fails",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-creative-agency-vs-production-company",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-creative-agency-vs-production-company",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/investor-event-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/investor-event-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/insights/webinar-production-checklist-for-founders-with-no-time",
+      "status": 404,
+      "final": "https://westpeekproductions.com/insights/webinar-production-checklist-for-founders-with-no-time",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/webinar-production-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/webinar-production-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-virtual-event-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-virtual-event-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/integrated-agency-vs-specialist-agencies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/integrated-agency-vs-specialist-agencies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-host-a-virtual-event",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-host-a-virtual-event",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-integrated-agency-vs-specialist-agencies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-integrated-agency-vs-specialist-agencies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/event-run-of-show",
+      "status": 404,
+      "final": "https://westpeekproductions.com/event-run-of-show",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-best-practices",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-best-practices",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-case-pattern",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-case-pattern",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-comparison",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-comparison",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-how-to-choose",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-how-to-choose",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-associations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-associations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-creative-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-creative-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-nonprofits",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-for-nonprofits",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-how-to-measure-success",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-how-to-measure-success",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-strategy-consulting-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-strategy-consulting-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-strategy-consulting-how-to-choose",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-strategy-consulting-how-to-choose",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-strategy-consulting-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-strategy-consulting-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-strategy-consulting-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-strategy-consulting-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/how-west-peek-helps",
+      "status": 404,
+      "final": "https://westpeekproductions.com/how-west-peek-helps",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-campaign-narrative-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-campaign-narrative-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-creative-strategy-consulting",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-creative-strategy-consulting",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-marketing-workflows-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-marketing-workflows-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-case-pattern",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-case-pattern",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-for-nonprofits",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-for-nonprofits",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-for-startups",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-for-startups",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-creative-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-creative-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-knowledge-systems-for-marketing-operating-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-knowledge-systems-for-marketing-operating-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-operating-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-operating-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/campaign-narrative-strategy-for-founders",
+      "status": 404,
+      "final": "https://westpeekproductions.com/campaign-narrative-strategy-for-founders",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-narrative-strategy-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-narrative-strategy-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-for-startups",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-for-startups",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/learn/how-community-as-a-service-works",
+      "status": 404,
+      "final": "https://westpeekproductions.com/learn/how-community-as-a-service-works",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-for-founders",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-for-founders",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-ai-marketing-workflows",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-ai-marketing-workflows",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-operations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-operations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/learn/virtual-event-production-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/learn/virtual-event-production-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-operating-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-operating-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/online-conference-platforms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/online-conference-platforms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/content-marketing-operations-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/content-marketing-operations-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-for-saas-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-for-saas-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-ai-creative-workflows",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-ai-creative-workflows",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/answers/what-is-community-as-a-service",
+      "status": 404,
+      "final": "https://westpeekproductions.com/answers/what-is-community-as-a-service",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-direction-agency-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-direction-agency-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/event-marketing-strategy-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/event-marketing-strategy-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-workflow-consulting-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-workflow-consulting-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-as-a-service-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-as-a-service-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-as-a-service-for-saas-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-as-a-service-for-saas-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-engagement-strategy-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-engagement-strategy-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/customer-community-strategy-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/customer-community-strategy-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/marketing-strategy-consulting-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/marketing-strategy-consulting-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-as-a-service",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-as-a-service",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-agency-vs-marketing-agency-roi-factors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-agency-vs-marketing-agency-roi-factors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/community-marketing-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/community-marketing-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-for-venture-backed-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-for-venture-backed-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-strategy-consulting-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-strategy-consulting-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-how-to-choose",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-how-to-choose",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-programming",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-programming",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-building-for-brands-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-building-for-brands-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-nonprofits",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-nonprofits",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-small-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-for-small-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-how-to-choose",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-how-to-choose",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-operations-questions-to-ask",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-operations-questions-to-ask",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-how-to-brief-a-partner",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-agency-vs-production-company-how-to-brief-a-partner",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-moderation-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-moderation-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-content-operations-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-content-operations-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/executive-broadcast-production-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/executive-broadcast-production-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/hybrid-event-production-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/hybrid-event-production-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-storytelling-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-storytelling-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-strategy-consulting-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-strategy-consulting-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-community-organizations",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-community-organizations",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-creative-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-creative-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-executive-leadership-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-executive-leadership-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-consultant-vs-automation-agency-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/executive-broadcast-production-common-failure-points",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/executive-broadcast-production-common-failure-points",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-operations-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-operations-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-narrative-strategy-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-narrative-strategy-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/hybrid-event-production-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/hybrid-event-production-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-for-government",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-for-government",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-audit",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-audit",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-messaging-architecture-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-messaging-architecture-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-direction-agency-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-direction-agency-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-as-a-service-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-as-a-service-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-programming-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-programming-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-implementation-guide",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-implementation-guide",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-run-of-show-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-run-of-show-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/founder-storytelling-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/founder-storytelling-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-process",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-process",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/marketing-strategy-consulting-roi-factors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/marketing-strategy-consulting-roi-factors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/presentation-storytelling-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/presentation-storytelling-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-conference-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-conference-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-summit-production-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-summit-production-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-launch-strategy",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-launch-strategy",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-platform-selection",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-platform-selection",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-production-production-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-production-production-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-summit-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-summit-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-creative-workflows-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-creative-workflows-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-operating-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-operating-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-narrative-strategy-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-narrative-strategy-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-storytelling-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-storytelling-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-strategy-consulting-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-strategy-consulting-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/content-marketing-operations-comparison",
+      "status": 404,
+      "final": "https://westpeekproductions.com/content-marketing-operations-comparison",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-strategy-consulting-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-strategy-consulting-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/insights/how-to-operationalize-automations-so-they-survive-team-turnover",
+      "status": 404,
+      "final": "https://westpeekproductions.com/insights/how-to-operationalize-automations-so-they-survive-team-turnover",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/learn/how-ai-is-used-in-marketing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/learn/how-ai-is-used-in-marketing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/pillars/ai-workflows",
+      "status": 404,
+      "final": "https://westpeekproductions.com/pillars/ai-workflows",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-content-operations-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-content-operations-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/audience-growth-strategy-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/audience-growth-strategy-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-agency-vs-marketing-agency-for-creative-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-agency-vs-marketing-agency-for-creative-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-positioning-strategy-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/campaign-narrative-strategy-for-saas-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/campaign-narrative-strategy-for-saas-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-monetization-strategy-template",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-monetization-strategy-template",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-platform-selection-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-platform-selection-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/content-marketing-operations-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/content-marketing-operations-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/customer-community-strategy-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/customer-community-strategy-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/customer-community-strategy-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/customer-community-strategy-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-vs-in-house-team",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-vs-in-house-team",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-pricing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-pricing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/hybrid-event-production-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/hybrid-event-production-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/investor-storytelling-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/investor-storytelling-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/investor-storytelling-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/investor-storytelling-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-for-marketing-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-for-marketing-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-event-production-producer-roles",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-event-production-producer-roles",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-brand-agency-vs-marketing-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-brand-agency-vs-marketing-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/agency-rfp-questions-comparison",
+      "status": 404,
+      "final": "https://westpeekproductions.com/agency-rfp-questions-comparison",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/agency-rfp-questions-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/agency-rfp-questions-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-creative-workflows-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-creative-workflows-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-marketing-workflows-pricing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-marketing-workflows-pricing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/ai-workflow-consulting-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/ai-workflow-consulting-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/answers/marketing-ops-for-small-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/answers/marketing-ops-for-small-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/audience-growth-strategy-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/audience-growth-strategy-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-agency-vs-marketing-agency-consultant",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-agency-vs-marketing-agency-consultant",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-positioning-strategy-questions-to-ask",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-positioning-strategy-questions-to-ask",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/brand-strategy-consulting-pricing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/brand-strategy-consulting-pricing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/campaign-narrative-strategy-for-startups",
+      "status": 404,
+      "final": "https://westpeekproductions.com/campaign-narrative-strategy-for-startups",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/community-marketing-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/community-marketing-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/corporate-storytelling-examples",
+      "status": 404,
+      "final": "https://westpeekproductions.com/corporate-storytelling-examples",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/creative-agency-vs-production-company-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/creative-agency-vs-production-company-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/multi-speaker-event-production",
+      "status": 404,
+      "final": "https://westpeekproductions.com/multi-speaker-event-production",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/pillars/storytelling",
+      "status": 404,
+      "final": "https://westpeekproductions.com/pillars/storytelling",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/podcast-strategy-consulting",
+      "status": 404,
+      "final": "https://westpeekproductions.com/podcast-strategy-consulting",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/agency-rfp-questions-for-creative-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/agency-rfp-questions-for-creative-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/agency-rfp-questions-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/agency-rfp-questions-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/ai-content-operations-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/ai-content-operations-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/audience-growth-strategy-how-to-compare-vendors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/audience-growth-strategy-how-to-compare-vendors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/brand-agency-vs-marketing-agency",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/brand-agency-vs-marketing-agency",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/campaign-narrative-strategy-case-pattern",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/campaign-narrative-strategy-case-pattern",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-moderation-strategy-roi-factors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-moderation-strategy-roi-factors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/community-roi-measurement-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/community-roi-measurement-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/creative-operations-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/creative-operations-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/customer-community-strategy-for-enterprise-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/customer-community-strategy-for-enterprise-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-audience-engagement-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-audience-engagement-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-for-financial-services-teams",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-for-financial-services-teams",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/event-marketing-strategy-when-to-hire",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/event-marketing-strategy-when-to-hire",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/founder-storytelling-timeline",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/founder-storytelling-timeline",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-pricing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-pricing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-scope-of-work",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/how-to-choose-a-creative-agency-scope-of-work",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-for-saas-companies",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-for-saas-companies",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-operating-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-operating-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-workflow",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/human-in-the-loop-ai-systems-workflow",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/hybrid-event-production-services",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/hybrid-event-production-services",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-case-pattern",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-case-pattern",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-roi-factors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-roi-factors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-strategy-framework",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-strategy-framework",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-what-a-good-engagement-includes",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/integrated-agency-vs-specialist-agencies-what-a-good-engagement-includes",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-measurement",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/launch-marketing-strategy-measurement",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/podcast-strategy-consulting-for-professional-services-firms",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/podcast-strategy-consulting-for-professional-services-firms",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/rebrand-strategy-roi-factors",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/rebrand-strategy-roi-factors",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/startup-brand-strategy-deliverables",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/startup-brand-strategy-deliverables",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-event-production-for-finance",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-event-production-for-finance",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-summit-production-2026",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-summit-production-2026",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/virtual-summit-production-checklist",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/virtual-summit-production-checklist",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/webinar-production-cost",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/webinar-production-cost",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-marketing",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-marketing",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-community-staffing-model",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-community-staffing-model",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-corporate-storytelling",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-corporate-storytelling",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/programmatic/what-is-presentation-storytelling",
+      "status": 404,
+      "final": "https://westpeekproductions.com/programmatic/what-is-presentation-storytelling",
+      "reason": "not 200 on its own host"
+    },
+    {
+      "url": "https://westpeekproductions.com/virtual-event-trends-2026",
+      "status": 404,
+      "final": "https://westpeekproductions.com/virtual-event-trends-2026",
+      "reason": "not 200 on its own host"
+    }
+  ]
+}

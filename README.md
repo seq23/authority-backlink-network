@@ -209,7 +209,7 @@ scratch directory belonging to a session that no longer existed.
 Repair tools, likewise reachable and likewise manual:
 
 ```bash
-npm run links:backfill-rel                       # add a missing rel="sponsored nofollow"
+npm run links:backfill-rel                       # rel per data/portfolio-link-policy.json (portfolio followed, clients sponsored nofollow)
 npm run pages:debloat                            # dry run; :write to apply
 npm run pages:retrofit-recommendation-summary -- --apply
 npm run pages:backfill-missed-days               # operator recovery for skipped publish days
