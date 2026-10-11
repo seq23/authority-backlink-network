@@ -4,9 +4,9 @@ As of: 2026-10-11
 
 - Registered brands: 16
 - Authority publications: 3
-- Repository-rendered authority backlinks: 364
+- Repository-rendered authority backlinks: 152
 - Owned product-repo surfaces imported: 81
-- Live verified backlinks: 364
+- Live verified backlinks: 152
 - Indexed referring pages with evidence: 1
 
 ## By brand
@@ -19,13 +19,13 @@ As of: 2026-10-11
 | Hormone Optimization Guides | growth | 3 | 3 | 18 |
 | Neuro Evaluation Guides | growth | 4 | 3 | 15 |
 | USCIS Exam Guides | growth | 4 | 3 | 15 |
-| Billionaire High Performance Coach | standard | 11 | 4 | 10 |
-| A Player Mode | growth | 25 | 1 | 15 |
-| Virtual Agency OS | growth | 32 | 9 | 15 |
-| West Peek Productions | standard | 24 | 1 | 10 |
-| Horse Legal Guide | growth | 14 | 5 | 18 |
+| Billionaire High Performance Coach | standard | 9 | 4 | 10 |
+| A Player Mode | growth | 10 | 1 | 15 |
+| Virtual Agency OS | growth | 10 | 9 | 15 |
+| West Peek Productions | standard | 10 | 1 | 10 |
+| Horse Legal Guide | growth | 9 | 5 | 18 |
 | Hicks Consulting | growth | 15 | 7 | 18 |
-| Porch & Party | standard | 33 | 6 | 10 |
-| Approval Prep | priority | 139 | 18 | 150 |
-| Dream Wedding Builder | launch | 34 | 8 | 60 |
+| Porch & Party | standard | 10 | 6 | 10 |
+| Approval Prep | priority | 9 | 18 | 150 |
+| Dream Wedding Builder | launch | 33 | 8 | 60 |
 | Dianne's Place Recovery Services | launch | 18 | 4 | 18 |

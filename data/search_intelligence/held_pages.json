@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "held": [],
+  "released": [],
+  "freeze_enabled": true,
+  "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
+  "held_count": 0,
+  "released_count": 0
+}
