@@ -1,0 +1,22 @@
+{
+  "name": "Memphis Vendor Library",
+  "short_name": "Memphis",
+  "description": "A local-first consumer publication covering Memphis vendors, weddings, parties, celebrations, hosting, event logistics, and broadly useful planning guidance where geography does not materially change the answer.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#fdfaf4",
+  "theme_color": "#a33f24",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

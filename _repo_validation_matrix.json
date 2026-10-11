@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "0d72295586a95e06060e4dbe8829d0e7480bca155ce575635982fbe571b9a03f",
+  "plan_sha256": "18c66d29a010c7ef80da61ea5737177c3d9d8a2240aea7f0b5183cae775320ee",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 49,
+  "count": 54,
   "counts_by_severity": {
-    "HARD_FAIL": 45,
+    "HARD_FAIL": 50,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -186,6 +186,17 @@
       ]
     },
     {
+      "id": "definition_speakable",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "10 Oct 2026: no homepage said in one paragraph what the publication is, so an answer engine had nothing self-contained to quote. Each homepage now carries a 40-60 word '<Publication> is ...' paragraph directly under the H1, rendered from data/publications.json plus the publication's own editorial company, and a WebPage SpeakableSpecification whose selector must resolve to exactly that element. Blocks on a missing, moved, hand-edited or out-of-bounds definition or an unresolvable selector. Fails hard on zero homepages examined.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "deterministic_build",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -241,6 +252,17 @@
       ]
     },
     {
+      "id": "favicon_manifest",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "10 Oct 2026: /favicon.ico answered 404 on memphisvendorlibrary.com, professionalresourcelibrary.com and founderoperatorlibrary.com, with no apple-touch-icon and no web manifest. scripts/build_brand_assets.py writes the set per publication from its own palette and lib/head_seo.py links it on every page through install_editorial_chrome.py. A missing file is a live 404 on every page, so this blocks: every page must link favicon.ico, favicon.svg, apple-touch-icon.png and site.webmanifest exactly once, and each publication must serve all of them at the declared sizes. Fails hard on zero pages examined.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
       "id": "generated_text_writes_portable",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -256,6 +278,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Unsafe publication; already separates advisory fit notes from failures.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "indexnow_key",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "The IndexNow lane reported NOT_CONFIGURED until the key was committed to data/indexnow_key.txt; on 10 Oct 2026 every batch answered HTTP 200. IndexNow verifies ownership by fetching https://<host>/<key>.txt, so a publication root that stops serving the key silently voids every submission. Blocks when the key is invalid, any publication root lacks <key>.txt with the exact key, a publication has no sitemap URLs to submit, or post_publish_distribution.py or its workflow stops reading the key, building keyLocation or posting to api.indexnow.org.",
       "profiles": [
         "changed",
         "full",
@@ -289,6 +322,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Malformed JSON is corruption; every downstream registry reads it.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "jsonld_types",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (Spry Labs parent), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined.",
       "profiles": [
         "changed",
         "full",
@@ -472,6 +516,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Measured opportunity that produces nothing, silently. The autopilot published up to 12 pages a day and then enqueued social distribution with published[:LINKEDIN_DAILY_LIMIT] and x_pool[:X_DAILY_LIMIT]; because x_pool was built item-outer/template-inner, all 5 X slots went to published[0]. Exactly one page a day reached the queue on either platform and 428 of 474 published pages were never queued at all - not deferred, not logged, not visible in any report. Daily platform rate limits remain enforced in scripts/social_publisher.py, which leaves unposted items queued_for_auto_post so they roll to the next run: a cap that defers is fine, a cap that drops is not. This blocks if an enqueue-time slice is reintroduced, or if any governed run publishes pages that never enter the queue.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "social_meta",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "10 Oct 2026: no page on the three publications had og:description, og:image or twitter:card, so every shared link rendered as a bare URL. lib/head_seo.py renders a complete set from the page's own title, meta description and canonical, pointing at the publication's own 1200x630 og.png. Blocks when a tag is missing or duplicated, when og:description drifts from the meta description, og:url from the canonical, og:type from the page kind, or when the card image is missing or the wrong size. Fails hard on zero pages or zero article pages examined.",
       "profiles": [
         "changed",
         "full",

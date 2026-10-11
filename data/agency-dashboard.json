@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-10-10",
+  "as_of": "2026-10-11",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 88,
+    "runtime_operators": 94,
     "release_operators": 10,
     "workflow_operators": 8,
     "approved_target_urls": 84,
@@ -226,6 +226,12 @@
       "operator": "baseline",
       "command": "npm run baseline",
       "implementation": "node scripts/baseline.mjs",
+      "category": "Other"
+    },
+    {
+      "operator": "brand:assets",
+      "command": "npm run brand:assets",
+      "implementation": "python3 scripts/build_brand_assets.py --write",
       "category": "Other"
     },
     {
@@ -505,6 +511,12 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:definition-speakable",
+      "command": "npm run validate:definition-speakable",
+      "implementation": "python3 scripts/validators/validate_definition_speakable.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:demand-backed-pages",
       "command": "npm run validate:demand-backed-pages",
       "implementation": "python3 scripts/validate_demand_backed_pages.py",
@@ -523,9 +535,27 @@
       "category": "Validation / release"
     },
     {
+      "operator": "validate:favicon-manifest",
+      "command": "npm run validate:favicon-manifest",
+      "implementation": "python3 scripts/validators/validate_favicon_manifest.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:indexnow-key",
+      "command": "npm run validate:indexnow-key",
+      "implementation": "python3 scripts/validators/validate_indexnow_key.py",
+      "category": "Validation / release"
+    },
+    {
       "operator": "validate:journalist-query-lane",
       "command": "npm run validate:journalist-query-lane",
       "implementation": "python3 scripts/validators/validate_journalist_query_lane.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:jsonld-types",
+      "command": "npm run validate:jsonld-types",
+      "implementation": "python3 scripts/validators/validate_jsonld_types.py",
       "category": "Validation / release"
     },
     {
@@ -568,6 +598,12 @@
       "operator": "validate:social-enqueue-completeness",
       "command": "npm run validate:social-enqueue-completeness",
       "implementation": "python3 scripts/validators/validate_social_enqueue_completeness.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:social-meta",
+      "command": "npm run validate:social-meta",
+      "implementation": "python3 scripts/validators/validate_social_meta.py",
       "category": "Validation / release"
     },
     {

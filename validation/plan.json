@@ -52,6 +52,11 @@
       "validation_receipt_severity_truth",
       "page_chrome_page_footer",
       "page_meta_bounds",
+      "favicon_manifest",
+      "social_meta",
+      "jsonld_types",
+      "definition_speakable",
+      "indexnow_key",
       "generated_text_writes_portable"
     ],
     "release": [
@@ -100,6 +105,11 @@
       "validation_receipt_severity_truth",
       "page_chrome_page_footer",
       "page_meta_bounds",
+      "favicon_manifest",
+      "social_meta",
+      "jsonld_types",
+      "definition_speakable",
+      "indexnow_key",
       "generated_text_writes_portable"
     ],
     "full": [
@@ -149,6 +159,11 @@
       "validation_receipt_severity_truth",
       "page_chrome_page_footer",
       "page_meta_bounds",
+      "favicon_manifest",
+      "social_meta",
+      "jsonld_types",
+      "definition_speakable",
+      "indexnow_key",
       "generated_text_writes_portable"
     ],
     "cache-self-test": [
@@ -356,6 +371,26 @@
     "page_meta_bounds": {
       "severity": "STRONG_WARNING",
       "rationale": "Bing Webmaster and Site Scan, 25 Sep 2026: rule 118 (description too short) on founderoperatorlibrary.com/, /about and memphisvendorlibrary.com/, plus 25 more short, 60 over-long (161-238) and 62 duplicate-description groups from the daily generator's one sentence mould, one duplicate <title> (memphis daily 2026-07-19 / 2026-08-22), and titles over 70 characters on 398 pages. Bounds: title 30-70, description 110-160, both unique per publication. A title or description of the wrong length or a repeat is a page-quality defect, not corruption, so page findings warn and never block: the hard guard is at source, where lib/meta_description.py makes every generator raise rather than write either outside its bounds, and the autopilot gives a page the first unused in-bounds <title> or refuses the brief. This check fails hard only when it goes inert (zero pages, titles or descriptions examined) or when that source contract breaks (a pantry edge combination cannot be described in bounds, or the autopilot's duplicate refusal is removed)."
+    },
+    "favicon_manifest": {
+      "severity": "HARD_FAIL",
+      "rationale": "10 Oct 2026: /favicon.ico answered 404 on memphisvendorlibrary.com, professionalresourcelibrary.com and founderoperatorlibrary.com, with no apple-touch-icon and no web manifest. scripts/build_brand_assets.py writes the set per publication from its own palette and lib/head_seo.py links it on every page through install_editorial_chrome.py. A missing file is a live 404 on every page, so this blocks: every page must link favicon.ico, favicon.svg, apple-touch-icon.png and site.webmanifest exactly once, and each publication must serve all of them at the declared sizes. Fails hard on zero pages examined."
+    },
+    "social_meta": {
+      "severity": "HARD_FAIL",
+      "rationale": "10 Oct 2026: no page on the three publications had og:description, og:image or twitter:card, so every shared link rendered as a bare URL. lib/head_seo.py renders a complete set from the page's own title, meta description and canonical, pointing at the publication's own 1200x630 og.png. Blocks when a tag is missing or duplicated, when og:description drifts from the meta description, og:url from the canonical, og:type from the page kind, or when the card image is missing or the wrong size. Fails hard on zero pages or zero article pages examined."
+    },
+    "jsonld_types": {
+      "severity": "HARD_FAIL",
+      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (Spry Labs parent), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined."
+    },
+    "definition_speakable": {
+      "severity": "HARD_FAIL",
+      "rationale": "10 Oct 2026: no homepage said in one paragraph what the publication is, so an answer engine had nothing self-contained to quote. Each homepage now carries a 40-60 word '<Publication> is ...' paragraph directly under the H1, rendered from data/publications.json plus the publication's own editorial company, and a WebPage SpeakableSpecification whose selector must resolve to exactly that element. Blocks on a missing, moved, hand-edited or out-of-bounds definition or an unresolvable selector. Fails hard on zero homepages examined."
+    },
+    "indexnow_key": {
+      "severity": "HARD_FAIL",
+      "rationale": "The IndexNow lane reported NOT_CONFIGURED until the key was committed to data/indexnow_key.txt; on 10 Oct 2026 every batch answered HTTP 200. IndexNow verifies ownership by fetching https://<host>/<key>.txt, so a publication root that stops serving the key silently voids every submission. Blocks when the key is invalid, any publication root lacks <key>.txt with the exact key, a publication has no sitemap URLs to submit, or post_publish_distribution.py or its workflow stops reading the key, building keyLocation or posting to api.indexnow.org."
     }
   },
   "severity_matrix_policy": {
