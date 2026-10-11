@@ -48,8 +48,9 @@ def main() -> int:
             continue
         para = html.unescape(m.group(1))
         n = hs.word_count(para)
-        if text.count(f'id="{hs.DEFINITION_ID}"') != 1:
-            failures.append(f"{rel}: #{hs.DEFINITION_ID} appears {text.count(f'id=\"{hs.DEFINITION_ID}\"')} times")
+        occurrences = text.count('id="' + hs.DEFINITION_ID + '"')
+        if occurrences != 1:
+            failures.append(f"{rel}: #{hs.DEFINITION_ID} appears {occurrences} times")
         if not para.startswith(pub["title"] + " is "):
             failures.append(f"{rel}: definition does not begin {pub['title']!r} is ...")
         if not hs.DEFINITION_MIN_WORDS <= n <= hs.DEFINITION_MAX_WORDS:
