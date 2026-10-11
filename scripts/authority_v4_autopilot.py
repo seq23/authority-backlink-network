@@ -12,10 +12,12 @@ from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
 from lib import lastmod_ledger, site_urls
+from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 # rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
 # sites below used it without importing it, so every run of this script died
 # with NameError: name 'rel_attr' is not defined.
-from affiliation import rel_attr
+from affiliation import rel_attr, is_portfolio
+import rebalance_portfolio_links as rebalance
 from byline import entity_for
 from lib import page_composer
 from lib import meta_description
@@ -282,7 +284,7 @@ def brands_at_share_cap(pub_key):
         for attrs in _SPONSORED_A.findall(path.read_text(encoding='utf-8', errors='ignore')):
             href = _HREF.search(attrs)
             rel = _REL.search(attrs)
-            if not href or not rel or 'sponsored' not in rel.group(1):
+            if not href or not is_affiliated(href.group(1)):
                 continue
             host = urlparse(href.group(1)).netloc.lower().removeprefix('www.')
             if host in brands:
@@ -384,6 +386,18 @@ def build_brief(pub_key, slot, state, attempt=0, target_override=None):
     brand = target_cfg.get('brand', target_domain)
     brand_id = target_cfg.get('brand_id', '')
     title = f"{cluster.title()}: {modifier.title()} {fmt.title()} {intent.title()}"
+    if is_portfolio(target_url):
+        # Owner decision 11 Oct 2026 (data/portfolio-link-policy.json): a portfolio
+        # link is a followed editorial link to a page the target site is
+        # strengthening, anchored on that page's own title, and no URL takes more
+        # than its per-site cap. Decline the slot when the domain has no room.
+        site_folder = PANTRY['publications'][pub_key]['site_path'].split('/', 1)[1]
+        deep = rebalance.choose_for_new_page(site_folder, target_domain, f'{cluster} {title}',
+                                             target_cfg.get('campaign_id', ''))
+        if deep is None:
+            return None
+        target_url, anchor = deep['url'], deep['title']
+        target_domain = urlparse(target_url).netloc.replace('www.', '')
     signature = hashlib.sha256(f'{pub_key}|{cluster}|{audience}|{fmt}|{intent}|{modifier}|{target_url}|{anchor}|{brand_id}'.encode()).hexdigest()
     return {
         'publication': pub_key, 'cluster': cluster, 'audience': audience, 'format': fmt,

@@ -30,7 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from lib import head_seo as hs  # noqa: E402
-from byline import entity_for, subsidiary_clause  # noqa: E402
+from byline import entity_for  # noqa: E402
 
 AFTER_H1_RE = re.compile(r"</h1>\s*<p id=\"" + hs.DEFINITION_ID + r"\" class=\"definition\">(.*?)</p>", re.S | re.I)
 
@@ -57,7 +57,7 @@ def main() -> int:
             failures.append(f"{rel}: definition is {n} words, want {hs.DEFINITION_MIN_WORDS}-{hs.DEFINITION_MAX_WORDS}")
         if entity not in para:
             failures.append(f"{rel}: definition does not name {entity!r}")
-        if para != hs.definition_text(pub, entity, subsidiary_clause()):
+        if para != hs.definition_text(pub, entity):
             failures.append(f"{rel}: definition differs from data/publications.json -- re-run install_editorial_chrome.py")
         selectors = []
         for node in hs.jsonld_nodes(text):

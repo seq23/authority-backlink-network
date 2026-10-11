@@ -23,6 +23,18 @@
       {
         "url": "https://theindustryguides.com/tools/",
         "anchor": "provider comparison tools"
+      },
+      {
+        "url": "https://theindustryguides.com/methodology",
+        "destination_type": "educational_guide",
+        "anchor": "Editorial Methodology and Update Policy",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "the industry guides methodology"
+        ]
       }
     ],
     "forbidden": [
@@ -56,6 +68,52 @@
       {
         "url": "https://theaccidentguides.com/personal-injury/",
         "anchor": "personal injury state guide hub"
+      },
+      {
+        "url": "https://theaccidentguides.com/faq/",
+        "destination_type": "educational_guide",
+        "anchor": "FAQ: Common Questions Answered",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "interactive personal injury guide"
+        ]
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/evidence-checklist-after-an-accident/",
+        "destination_type": "educational_guide",
+        "anchor": "Evidence Checklist After an Accident",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "accident evidence checklist",
+          "car accident evidence checklist",
+          "car accident evidence checklist virginia",
+          "create a checklist of evidence to ther after a motorcycle accident",
+          "evidence checklist",
+          "hampton roads crash evidence checklist"
+        ]
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/questions-to-ask-a-personal-injury-lawyer/",
+        "destination_type": "educational_guide",
+        "anchor": "Questions to Ask a Personal Injury Lawyer",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "accident lawyer questions",
+          "ask injury lawyer",
+          "how to talk to a personal injury lawyer",
+          "how to talk to personal injury lawyer",
+          "personal injury law questions",
+          "personal injury lawyer questions"
+        ]
       }
     ],
     "forbidden": [
@@ -89,6 +147,23 @@
       {
         "url": "https://dentistryguides.com/guides/questions-to-ask/",
         "anchor": "questions before major dental work"
+      },
+      {
+        "url": "https://dentistryguides.com/guides/how-to-choose/",
+        "destination_type": "educational_guide",
+        "anchor": "What Should I Look For When Choosing a Dentist",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "best dental practice selection guide",
+          "choose right dentist guide",
+          "choosing a dentist",
+          "choosing it for dentists",
+          "choosing the right dentist",
+          "dental care selection tips"
+        ]
       }
     ],
     "forbidden": [
@@ -121,6 +196,18 @@
       {
         "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
         "anchor": "IV hydration red flags"
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/hormone-replacement-therapy-near-me/",
+        "destination_type": "educational_guide",
+        "anchor": "Hormone Replacement Therapy Near You: What to Verify Before You Book",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "hormone replacement therapy near me"
+        ]
       }
     ],
     "forbidden": [
@@ -215,6 +302,146 @@
       {
         "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
         "anchor": "AI coach vs human coach comparison"
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach",
+        "destination_type": "educational_guide",
+        "anchor": "AI Coach vs Human Coach: Which Is Better?",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai coach vs human coach comparison"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/ai-vs-human-executive-coach-pros-cons-for-entrepreneurs",
+        "destination_type": "educational_guide",
+        "anchor": "AI vs Human Executive Coach: Pros and Cons for Entrepreneurs",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for entrepreneurs and career acceleration",
+          "ai accountability system for entrepreneurs and weight loss adherence"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-facing-decision-fatigue-and-needs-accountability-support",
+        "destination_type": "educational_guide",
+        "anchor": "Accountability for a founder facing decision fatigue",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for decision-fatigue users and fitness consistency",
+          "ai accountability system for decision-fatigue users and goal tracking",
+          "ai accountability system for decision-fatigue users and workout execution"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-trying-to-build-consistency-and-needs-accountability-support",
+        "destination_type": "educational_guide",
+        "anchor": "Accountability for a founder trying to build consistency",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for body goal users and habit consistency",
+          "ai accountability system for consistency strugglers and behavior reframing",
+          "ai accountability system for people with many projects and fitness consistency",
+          "ai accountability system for students and early-career professionals and fitness consistency"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-accountability-support",
+        "destination_type": "educational_guide",
+        "anchor": "Accountability for a founder working without a chief of staff",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for body goal users and calendar control",
+          "ai accountability system for busy parents and chief-of-staff operating rhythm",
+          "ai accountability system for creators and fitness consistency",
+          "ai accountability system for overplanners and fitness consistency"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-missed-day-recovery-support",
+        "destination_type": "educational_guide",
+        "anchor": "Missed-day recovery for a founder working without a chief of staff",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for missed-day recovery users and behavior reframing",
+          "ai accountability system for missed-day recovery users and nutrition discipline"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/comparisons/bhpc-vs-torch",
+        "destination_type": "educational_guide",
+        "anchor": "BHPC vs Torch: Coaching Alternative for Execution Systems",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "behavioral self-regulation system vs traditional coaching for body goal users"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/use-cases/phase4/a-player-mode-for-a-executive-who-is-trying-to-build-consistency",
+        "destination_type": "educational_guide",
+        "anchor": "A-player mode for a executive who is trying to build consistency",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai system for body goal users struggling with fitness consistency"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-behavioral-follow-through",
+        "destination_type": "educational_guide",
+        "anchor": "BHPC vs accountability app for behavioral follow-through",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for athletes and performance routines",
+          "ai accountability system for busy parents and performance routines",
+          "ai accountability system for consistency strugglers and performance routines",
+          "ai accountability system for creators and performance routines",
+          "ai accountability system for entrepreneurs and behavior reframing",
+          "ai accountability system for entrepreneurs and performance routines"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-missed-day-recovery",
+        "destination_type": "educational_guide",
+        "anchor": "BHPC vs accountability app for missed-day recovery",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "accountability partner vs traditional coaching for missed-day recovery users",
+          "accountability partner vs traditional coaching for students and early-career professionals",
+          "ai accountability system for athletes and missed-day recovery",
+          "ai accountability system for body goal users and missed-day recovery",
+          "ai accountability system for busy parents and missed-day recovery",
+          "ai accountability system for missed-day recovery users and fitness consistency"
+        ]
       }
     ],
     "forbidden": [
@@ -307,6 +534,31 @@
         ],
         "campaign_id": "wpp-community-authority",
         "destination_type": "official_commercial_destination"
+      },
+      {
+        "url": "https://westpeekproductions.com/community-as-a-service/",
+        "destination_type": "educational_guide",
+        "anchor": "Can Your Business Build a Community?",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "community as a service",
+          "what is community operations"
+        ]
+      },
+      {
+        "url": "https://westpeekproductions.com/virtual-event-planning-checklist",
+        "destination_type": "educational_guide",
+        "anchor": "Virtual Event Planning Checklist",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "virtual event production checklist"
+        ]
       }
     ],
     "forbidden": [
@@ -523,6 +775,97 @@
         "topics": [
           "event decor budget",
           "decor pricing"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/corporate/corporate-event-decor-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "Corporate Event Decor in Memphis",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "corporate party"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/faq/how-much-does-a-balloon-garland-cost-in-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "How Much Does a Balloon Garland Cost in Memphis?",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "balloon business",
+          "balloon party"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/pricing",
+        "destination_type": "educational_guide",
+        "anchor": "Memphis Event Decor Pricing",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "porch & party pricing information"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/birthday-party-planner-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "Birthday Party Planner in Memphis",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "birthday party",
+          "birthday party planner",
+          "birthday party planner near me",
+          "event management near me",
+          "event management services",
+          "event management services near me"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/hotel-room-decor-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "Hotel Room Decor Memphis",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "hotel-room decor in memphis"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/party-decor-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "Memphis Party Decor",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "bachelorette party ideas",
+          "bachelorette party planner"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/services/porch-decorating",
+        "destination_type": "educational_guide",
+        "anchor": "Seasonal Porch Decorating in Memphis",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "memphis porch decorating services"
         ]
       }
     ],
@@ -800,6 +1143,18 @@
           "truthful document preparation"
         ],
         "product_message": "Understand the boundaries: no credit repair, third-party contact, fake documents, professional advice, or approval promises."
+      },
+      {
+        "url": "https://approvalprep.com/goodwill-letter-credit/",
+        "destination_type": "educational_guide",
+        "anchor": "Goodwill Letter for Credit: Which Items It Can Reach",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "goodwill letter credit"
+        ]
       }
     ],
     "forbidden": [
@@ -1429,6 +1784,122 @@
           "plus-ones"
         ],
         "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+      },
+      {
+        "url": "https://weddingbudgetspreadsheet.com/wedding-cost-per-guest",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding cost per guest: what 50, 80, 100, and 150 guests actually cost",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "average cost of a wedding for 100 people",
+          "average cost of wedding for 150 guests",
+          "average cost of wedding for 50 guests",
+          "average wedding cost for 50 guests",
+          "how much does a 100 person wedding cost",
+          "how much does a 150 person wedding cost"
+        ],
+        "route": "/wedding-cost-per-guest"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/free-wedding-planner",
+        "destination_type": "educational_guide",
+        "anchor": "Free Wedding Planner",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "free dream wedding builder"
+        ],
+        "route": "/free-wedding-planner"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/guides",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Checklist PDF Guides",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "destination wedding checklist pdf",
+          "wedding ceremony checklist pdf",
+          "wedding checklist pdf",
+          "wedding planning checklist pdf"
+        ],
+        "route": "/guides"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/guides/elopement-planning-checklist",
+        "destination_type": "educational_guide",
+        "anchor": "Elopement Planning Checklist: Licence, Witnesses, Permits",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "elopement planning checklist"
+        ],
+        "route": "/guides/elopement-planning-checklist"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/printable-wedding-checklist",
+        "destination_type": "educational_guide",
+        "anchor": "Printable Wedding Checklist: Every Task, Owner and Deadline",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "printable wedding checklist",
+          "printable wedding checklists",
+          "printable wedding planning checklist",
+          "wedding checklist printable",
+          "wedding planning checklist pdf"
+        ],
+        "route": "/printable-wedding-checklist"
+      },
+      {
+        "url": "https://weddingseatingchartmaker.com/guides/wedding-seating-chart-template",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Seating Chart Template",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "wedding seating chart template"
+        ],
+        "route": "/guides/wedding-seating-chart-template"
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Day Timeline Template",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "wedding day timeline template"
+        ],
+        "route": "/guides/wedding-day-timeline-template"
+      },
+      {
+        "url": "https://weddingtimelinetemplate.com/guides/wedding-rehearsal-timeline",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Rehearsal Timeline",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "wedding rehearsal timeline"
+        ],
+        "route": "/guides/wedding-rehearsal-timeline"
       }
     ],
     "forbidden": [

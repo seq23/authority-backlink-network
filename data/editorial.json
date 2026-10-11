@@ -17,8 +17,8 @@
     "  3. Any invented corporate detail. No registration number, incorporation",
     "     date, address, phone number, credential or award is recorded here or",
     "     published anywhere, because none has been supplied. The only corporate",
-    "     facts asserted are the two below: each publication has its own",
-    "     editorial company, and that company is a subsidiary of Spry Labs.",
+    "     fact asserted is that each publication has its own editorial company.",
+    "     No parent company is named (withdrawn by the owner, 11 Oct 2026).",
     "",
     "scripts/build_editorial_pages.py turns this into the masthead, editorial",
     "standards, corrections and contributors pages on each site."
@@ -27,9 +27,8 @@
   "publisher_entity": {
     "entity_suffix": "Editorial Desk",
     "role": "Publisher and responsible editorial company",
-    "parent_company": "Spry Labs",
     "applies_to": ["founder", "memphis", "professional"],
-    "note": "Each of these publications is published by its own editorial company, named after the publication and operating as a subsidiary of Spry Labs. The editorial companies are under common ownership with each other and with several of the projects these publications cite. That common ownership is disclosed on every masthead, in every page footer and next to every affiliated link rather than obscured.",
+    "note": "Each of these publications is published by its own editorial company, named after the publication. The editorial companies are under common ownership with each other and with several of the projects these publications cite. That common ownership is disclosed on every masthead, in every page footer and next to every affiliated link rather than obscured.",
     "accountability": "Accountability sits with the editorial company, which is reachable at the editorial and corrections addresses on every page. No individual member of staff is named on this site, and no page claims a named author who did not write it."
   },
 

@@ -2,6 +2,12 @@
 
 **Prepared:** 2026-08-24 · WO-1 · **Not sent.** For human review before any client conversation.
 
+> **Superseded in part, 11 Oct 2026 (owner decision).** Links to the owner's portfolio
+> domains are now followed editorial links, capped at 25% of a site's portfolio links per
+> target domain and 10 per URL; client and tagged-affiliate links keep `sponsored nofollow`.
+> See `data/portfolio-link-policy.json`. The figures below are the dated measurement that
+> preceded that decision.
+
 ## What changed
 
 Every outbound link from this network to an affiliated property now carries

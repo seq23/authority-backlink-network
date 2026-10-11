@@ -71,6 +71,8 @@ COMMANDS = {
     "jsonld_types": [sys.executable, "scripts/validators/validate_jsonld_types.py"],
     "definition_speakable": [sys.executable, "scripts/validators/validate_definition_speakable.py"],
     "indexnow_key": [sys.executable, "scripts/validators/validate_indexnow_key.py"],
+    "portfolio_link_policy": [sys.executable, "scripts/validators/validate_portfolio_link_policy.py"],
+    "no_parent_company": [sys.executable, "scripts/validators/validate_no_parent_company.py"],
 }
 
 

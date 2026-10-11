@@ -21,7 +21,7 @@ comment markers and is replaced wholesale, and any legacy icon / og / twitter
 tag outside the markers is removed first, so a re-run changes nothing.
 
 Identity: every schema node this adds names the publication's OWN editorial
-company (byline.entity_for) as publisher, with Spry Labs as its parent. No node
+company (byline.entity_for) as publisher, with no parent organisation. No node
 names a person, and no node is shared between publications.
 """
 from __future__ import annotations
@@ -161,15 +161,12 @@ def publisher_id(domain: str) -> str:
     return f"https://{domain}/masthead#publisher-entity"
 
 
-def publisher_node(entity: str, parent: str, domain: str, pub_title: str) -> dict:
-    node = {"@type": "Organization", "@id": publisher_id(domain), "name": entity,
+def publisher_node(entity: str, domain: str, pub_title: str) -> dict:
+    return {"@type": "Organization", "@id": publisher_id(domain), "name": entity,
             "description": f"The editorial company that writes, edits and publishes {pub_title}."}
-    if parent:
-        node["parentOrganization"] = {"@type": "Organization", "name": parent}
-    return node
 
 
-def definition_text(pub: dict, entity: str, subsidiary: str) -> str:
+def definition_text(pub: dict, entity: str) -> str:
     """The homepage answer: '<Publication> is ...', 40-60 words.
 
     The description is data (data/publications.json `definition`); the closing
@@ -179,11 +176,11 @@ def definition_text(pub: dict, entity: str, subsidiary: str) -> str:
     body = (pub.get("definition") or "").strip()
     if not body:
         raise SystemExit(f"data/publications.json: publication '{pub.get('id')}' has no `definition`.")
-    return f"{body} It is published by {entity}, its own editorial company{subsidiary}."
+    return f"{body} It is published by {entity}, its own editorial company."
 
 
-def render_block(*, text: str, pub: dict, domain: str, entity: str, parent: str,
-                 subsidiary: str, theme_color: str, is_home: bool, is_404: bool,
+def render_block(*, text: str, pub: dict, domain: str, entity: str,
+                 theme_color: str, is_home: bool, is_404: bool,
                  rel: str) -> str:
     title_m, desc_m, canon_m = TITLE_RE.search(text), DESC_RE.search(text), CANON_RE.search(text)
     missing = [n for n, m in (("<title>", title_m), ("meta description", desc_m)) if not m]
@@ -221,7 +218,7 @@ def render_block(*, text: str, pub: dict, domain: str, entity: str, parent: str,
     lines += [f'<meta name="{k}" content="{esc(v)}">' for k, v in tw]
 
     website_id = f"https://{domain}/#website"
-    publisher = publisher_node(entity, parent, domain, pub["title"])
+    publisher = publisher_node(entity, domain, pub["title"])
     graph = [{
         "@type": "WebSite", "@id": website_id, "name": pub["title"],
         "url": site_url(domain), "inLanguage": "en-US",
@@ -368,13 +365,12 @@ def head_context(pub: dict, folder, rel: str, path) -> dict:
     scripts/deterministic_build.py (404.html, which it rebuilds from scratch),
     so the two writers of 404.html render the same head and never fight.
     """
-    from byline import entity_for, parent_company, subsidiary_clause
+    from byline import entity_for
     entity = entity_for(pub["title"])
     return {
         "pub": pub, "domain": pub["working_domain"], "entity": entity,
-        "parent": parent_company(), "subsidiary": subsidiary_clause(),
         "theme_color": palette((folder / "styles.css").read_text(encoding="utf-8"))["--accent"],
         "rel": rel, "is_home": path == folder / "index.html",
         "is_404": path == folder / "404.html",
-        "definition": definition_text(pub, entity, subsidiary_clause()),
+        "definition": definition_text(pub, entity),
     }

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Backfill rel="sponsored nofollow" on already-published affiliated links.
+"""Bring every published outbound link's rel into line with scripts/affiliation.py.
+
+Owner decision 11 Oct 2026 (data/portfolio-link-policy.json): links to the
+owner's portfolio domains are followed, so nofollow/sponsored/ugc are REMOVED
+from them; client and tagged-affiliate links still gain rel="sponsored nofollow".
+Both directions go through affiliation.rel_tokens_for(), the same rule every
+generator uses.
 
 Idempotent: an anchor that already carries both tokens is left byte-identical, so
 this can run repeatedly and inside the build without churn.
@@ -22,7 +28,7 @@ from __future__ import annotations
 import os, re, sys, json
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from affiliation import is_affiliated, REL_VALUE
+from affiliation import is_affiliated, is_portfolio, is_paid_affiliate_url, rel_tokens_for
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRY = "--dry-run" in sys.argv or "--check" in sys.argv
@@ -42,16 +48,18 @@ REL = re.compile(r'\srel="([^"]*)"', re.I)
 
 def fix_attrs(attrs: str) -> tuple[str, bool]:
     m = HREF.search(attrs)
-    if not m or not is_affiliated(m.group(1)):
+    if not m:
+        return attrs, False
+    url = m.group(1)
+    if not (is_affiliated(url) or is_portfolio(url) or is_paid_affiliate_url(url)):
         return attrs, False
     rm = REL.search(attrs)
     existing = rm.group(1).split() if rm else []
-    merged = list(existing)
-    for t in REL_VALUE.split():
-        if t not in merged:
-            merged.append(t)
+    merged = rel_tokens_for(url, " ".join(existing))
     if merged == existing:
         return attrs, False
+    if not merged:
+        return REL.sub("", attrs, count=1), True
     rel = ' rel="' + " ".join(merged) + '"'
     return (REL.sub(rel, attrs, count=1) if rm else attrs.rstrip() + rel), True
 
@@ -111,7 +119,7 @@ def main() -> int:
             "strong_warnings": 0,
             "soft_warnings": 0,
             "pages_scanned": scanned,
-            "links_missing_rel": changed_links,
+            "links_with_wrong_rel": changed_links,
             "pages_affected": changed_files,
             "remedy": "npm run links:backfill-rel",
         }, indent=2))

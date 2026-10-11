@@ -73,6 +73,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 
 import measure_affiliate_topical_fit as fit  # noqa: E402
 import repair_offtopic_affiliate_links as repair  # noqa: E402
@@ -141,7 +142,7 @@ def survey() -> tuple[dict, dict, dict]:
         for attrs in fit.A_RE.findall(path.read_text(encoding="utf-8", errors="ignore")):
             href = fit.HREF_RE.search(attrs)
             rel = fit.REL_RE.search(attrs)
-            if not href or not rel or "sponsored" not in rel.group(1):
+            if not href or not is_affiliated(href.group(1)):
                 continue
             brand = brands.get(fit.norm(urlparse(href.group(1)).netloc))
             if brand:

@@ -26,11 +26,13 @@ its JSON-LD author are the same expression evaluated twice.
 
 What may and may not be asserted here
 -------------------------------------
-Exactly two factual claims are published about these entities, and both were
-supplied by the owner:
+Exactly one factual claim is published about these entities, supplied by the
+owner: each publication has its own editorial company, named after it.
 
-  1. Each publication has its own editorial company, named after it.
-  2. That company is a subsidiary of Spry Labs.
+No parent company is named anywhere -- not in the byline, the masthead, the
+footer or JSON-LD (no parentOrganization). The owner withdrew the parent-company
+claim on 11 Oct 2026; validate_no_parent_company.py fails the build if one
+reappears in published output.
 
 Nothing else about them is known, so nothing else is stated. No staff name, job
 title, credential, headshot, biography, registration number, incorporation date,
@@ -49,11 +51,8 @@ DEFAULT_EDITORIAL_PATH = "data/editorial.json"
 
 
 @lru_cache(maxsize=8)
-def _publisher_entity(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> tuple:
-    """(entity_suffix, parent_company) from data/editorial.json.
-
-    Returns a tuple rather than the dict so it stays hashable under lru_cache.
-    """
+def _publisher_entity(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> str:
+    """entity_suffix from data/editorial.json."""
     with open(editorial_path, encoding="utf-8") as fh:
         editorial = json.load(fh)
     entity = editorial.get("publisher_entity")
@@ -62,14 +61,18 @@ def _publisher_entity(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> tuple:
             f"{editorial_path}: no publisher_entity block. The byline is derived "
             "from it; refusing to fall back to a hardcoded name."
         )
+    if "parent_company" in entity:
+        raise SystemExit(
+            f"{editorial_path}: publisher_entity.parent_company is withdrawn (owner, 11 Oct "
+            "2026). Each publication's editorial company is published with no parent."
+        )
     suffix = (entity.get("entity_suffix") or "").strip()
-    parent = (entity.get("parent_company") or "").strip()
     if not suffix:
         raise SystemExit(f"{editorial_path}: publisher_entity.entity_suffix is empty.")
-    return suffix, parent
+    return suffix
 
 
-def _resolve(editorial_path: str) -> tuple:
+def _resolve(editorial_path: str) -> str:
     # Callers run from several working directories. Accept the path as given,
     # then fall back to the repo root next to this file.
     if os.path.exists(editorial_path):
@@ -79,12 +82,7 @@ def _resolve(editorial_path: str) -> tuple:
 
 
 def entity_suffix(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> str:
-    return _resolve(editorial_path)[0]
-
-
-def parent_company(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> str:
-    """The company these editorial companies are subsidiaries of. May be ''."""
-    return _resolve(editorial_path)[1]
+    return _resolve(editorial_path)
 
 
 def entity_for(pub_title: str, editorial_path: str = DEFAULT_EDITORIAL_PATH) -> str:
@@ -96,19 +94,10 @@ def entity_for(pub_title: str, editorial_path: str = DEFAULT_EDITORIAL_PATH) -> 
     return f"{pub_title.strip()} {entity_suffix(editorial_path)}"
 
 
-def subsidiary_clause(editorial_path: str = DEFAULT_EDITORIAL_PATH) -> str:
-    """', a subsidiary of Spry Labs' -- or '' if no parent is recorded.
-
-    Returned with the leading comma so a caller can drop it into a sentence and
-    still read correctly when no parent company is on file.
-    """
-    parent = parent_company(editorial_path)
-    return f", a subsidiary of {parent}" if parent else ""
-
 
 if __name__ == "__main__":  # pragma: no cover - operator convenience
     import pathlib
     root = pathlib.Path(__file__).resolve().parents[1]
     pubs = json.loads((root / "data/publications.json").read_text(encoding="utf-8"))
     for pub in pubs:
-        print(f"{pub['id']:<14} {entity_for(pub['title'])}{subsidiary_clause()}")
+        print(f"{pub['id']:<14} {entity_for(pub['title'])}")

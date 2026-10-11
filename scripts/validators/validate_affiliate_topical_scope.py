@@ -66,6 +66,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
+from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 
 import measure_affiliate_topical_fit as fit  # noqa: E402
 
@@ -133,7 +134,7 @@ for path in sorted((ROOT / "sites").rglob("*.html")):
     for attrs in fit.A_RE.findall(text):
         href = fit.HREF_RE.search(attrs)
         rel = fit.REL_RE.search(attrs)
-        if not href or not rel or "sponsored" not in rel.group(1):
+        if not href or not is_affiliated(href.group(1)):
             continue
         from urllib.parse import urlparse
         host = fit.norm(urlparse(href.group(1)).netloc)

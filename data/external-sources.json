@@ -4,7 +4,7 @@
   "why": "Before this registry every outbound link on all three publications pointed at a domain inside the network, and all 543 affiliated links carry rel=\"sponsored nofollow\" by design. A publication that cites only itself and passes no equity looks exactly like a link farm and gives an answer engine no reason to treat it as a source. These entries are the outside evidence the pages stand on.",
   "rules": {
     "verification": "Every entry was fetched over the network and returned HTTP 200. An entry may not be added from memory. If a URL cannot be verified it is not listed, and the page states what is unknown instead of citing it.",
-    "no_rel_sponsored": "These are editorial citations, not affiliated placements. They must NOT carry rel=\"sponsored\" - that would misdeclare an unpaid citation of a government agency as a paid placement. The sponsored+nofollow rule applies to affiliated network targets only.",
+    "no_rel_sponsored": "These are editorial citations, not affiliated placements. They must NOT carry rel=\"sponsored\" - that would misdeclare an unpaid citation of a government agency as a paid placement. The sponsored+nofollow rule applies only to client and tagged-affiliate destinations (data/portfolio-link-policy.json); owner portfolio links are followed.",
     "lane_separation": "A source may only be cited by the publications listed in its `lanes`. The professional publication additionally separates its subject areas, so `topics` are used to keep equine, workplace mental-health, immigration, and regulated-clinic material from citing each other's sources.",
     "stability": "Entries use the URL the server actually resolved to, so a citation does not open on a redirect."
   },

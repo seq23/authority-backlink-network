@@ -19,6 +19,12 @@ I counted every absolute anchor in `sites/`:
 | → to the publications' own domains (internal) | 20,484 |
 | → **to any domain outside the portfolio** | **0** |
 
+> **Superseded in part, 11 Oct 2026 (owner decision).** Links to the owner's portfolio
+> domains are now followed editorial links, capped at 25% of a site's portfolio links per
+> target domain and 10 per URL; client and tagged-affiliate links keep `sponsored nofollow`.
+> See `data/portfolio-link-policy.json`. The figures below are the dated measurement that
+> preceded that decision.
+
 Two facts follow, and they point in opposite directions.
 
 **The disclosure is correct.** All 571 affiliated links are labelled and carry

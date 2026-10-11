@@ -288,19 +288,19 @@ ANSWER_WORDS = (40, 60)
 
 CITATION_VARIANTS = [
     "{link} is the one affiliated destination this page cites, covering {category}. The "
-    "citation is disclosed, the link is marked <code>rel=\"sponsored nofollow\"</code>, and it is "
+    "citation is disclosed, and it is "
     "here on topic fit — not because every reader of a {fmt} on {cluster} needs it.",
 
     "The single outbound citation on this page goes to {link}, which covers {category}. It "
-    "carries <code>rel=\"sponsored nofollow\"</code> because it is an affiliated project in the "
+    "is an affiliated project in the "
     "same network as {pub}, not an independent recommendation.",
 
-    "One affiliated destination is cited here: {link}, covering {category}. The link is "
-    "marked <code>rel=\"sponsored nofollow\"</code> and the affiliation is disclosed in the "
+    "One affiliated destination is cited here: {link}, covering {category}. The "
+    "affiliation is disclosed in the "
     "editorial note below. Whether it fits {cluster} in your case is yours to judge.",
 
-    "This page cites {link} — {category} — and nothing else. Affiliation is disclosed, the "
-    "link carries <code>rel=\"sponsored nofollow\"</code>, and it is included because the "
+    "This page cites {link} — {category} — and nothing else. Affiliation is disclosed, and "
+    "it is included because the "
     "destination is registered for this topic area, not because it is being ranked against "
     "anything.",
 ]
@@ -569,8 +569,7 @@ def faq_items(f: dict) -> list[dict]:
             "q": "Is the outbound link on this page paid or independent?",
             "a": (f"It is affiliated, and it is disclosed. The page cites {f['brand_name']}, which "
                   f"covers {f.get('brand_category') or 'a related topic area'} and sits in the same "
-                  f"network as {f['pub_title']}. The link carries rel=sponsored nofollow, so it "
-                  f"passes no ranking signal."),
+                  f"network as {f['pub_title']}."),
         })
     boundary = compliance_phrase(f.get("brand_compliance", ""))
     if has_citation(f):
@@ -1066,8 +1065,7 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
         f'the same ground for different situations.</p>'
         f'<p>Every page states its own scope before it states anything else: what it '
         f'covers, who it is written for, the one affiliated resource it cites, and where '
-        f'it stops. Where a page cites an affiliated destination the link is disclosed and '
-        f'carries <code>rel="sponsored nofollow"</code>, so it passes no ranking signal. '
+        f'it stops. Where a page cites an affiliated destination the link is disclosed. '
         f'The links on this page are internal to {esc(pub_title)} and are ordinary '
         f'followed links.</p>'
         f'<h2>Pages in {esc(title.lower())}</h2>'

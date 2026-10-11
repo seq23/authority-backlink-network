@@ -78,7 +78,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from affiliation import affiliated_domains, host_of, is_affiliated  # noqa: E402
-from byline import entity_for, subsidiary_clause  # noqa: E402
+from byline import entity_for  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
 from lib.page_chrome import page_footer_html, replace_page_footer  # noqa: E402
 from lib import head_seo  # noqa: E402
@@ -147,12 +147,11 @@ def render_footer(pub_title: str, domain: str, editor_addr: str) -> str:
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
         f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
-        f"edited by <strong>{esc(entity)}</strong>{esc(subsidiary_clause())}. Pages here "
+        f"edited by <strong>{esc(entity)}</strong>. Pages here "
         f"carry that byline and no other: this publication names no individual author, "
         f"and never attributes a page to someone who did not write it.</p>"
         f"<p>{esc(entity)} is under common ownership with several of the projects this "
-        f"publication cites. Those citations are labelled on the page and carry "
-        f'<code>rel="sponsored nofollow"</code>, so they pass no ranking signal. '
+        f"publication cites. Those citations are labelled on the page. "
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
         f"and no listing that can be bought.</p>"
         f"<p>&copy; 2026 {esc(pub_title)}. {esc(ADVICE_BOUNDARY)}</p>"
@@ -179,8 +178,7 @@ def render_disclosure(pub_title: str, domain: str, names: list) -> str:
         f"<strong>{esc(entity_for(pub_title))}</strong>, the editorial company that publishes "
         f"{esc(pub_title)}. That is a genuine conflict of interest, and it is why you are "
         f"reading it here rather than discovering it somewhere else.</p>"
-        f'<p>The citation carries <code>rel="sponsored nofollow"</code>, so it sends no '
-        f"ranking signal to the destination. Nothing on this page is ranked, scored, or paid "
+        f"<p>Nothing on this page is ranked, scored, or paid "
         f"for, and no mention here can be bought. If the affiliated resource is not the right "
         f"fit for you, the rest of the page still answers the question without it &mdash; that "
         f"is the test every page here has to pass. "
@@ -340,11 +338,39 @@ def normalise_jsonld_author(text: str, pub_title: str) -> str:
     return LDJSON_RE.sub(repl, text)
 
 
+def retired_link_claims() -> list:
+    """(old, new) pairs from data/portfolio-link-policy.json `retired_link_claims`."""
+    policy = load("data/portfolio-link-policy.json")
+    return [(c["old"], c["new"]) for c in policy.get("retired_link_claims", [])]
+
+
+def refresh_link_claims(text: str, claims: list) -> str:
+    """Rewrite a published sentence that says portfolio links are nofollowed.
+
+    Owner decision 11 Oct 2026: portfolio links are followed. Sentences baked
+    into page bodies at publication time still said they carried
+    rel="sponsored nofollow" and passed no ranking signal; leaving them would be
+    a false statement on 500+ pages. Literal substitution, same contract as
+    refresh_disclosure_sentence(): no heading, structure or argument moves.
+    Idempotent: once corrected there is nothing left to match.
+    """
+    for old, new in claims:
+        text = text.replace(old, new)
+        text = text.replace(esc(old), esc(new))
+        text = text.replace(json.dumps(old)[1:-1], json.dumps(new)[1:-1])
+    return text
+
+
 def install(text: str, pub_title: str, domain: str, editor_addr: str,
             names_by_domain: dict, disclosure: str = "",
-            retired_disclosures: tuple = (), head: dict = None) -> str:
+            retired_disclosures: tuple = (), head: dict = None,
+            link_claims: tuple = ()) -> str:
     # --- legacy inline table CSS -----------------------------------------
     text = LEGACY_TABLE_CSS_RE.sub("", text)
+
+    # --- withdrawn "links are nofollowed" sentences in the page body ------
+    if link_claims:
+        text = refresh_link_claims(text, list(link_claims))
 
     # --- withdrawn ownership sentence in the page body --------------------
     if disclosure:
@@ -396,6 +422,7 @@ def main() -> int:
     brands = load("data/brands.json")
     editorial = load("data/editorial.json")
     names_by_domain = brand_name_by_domain(brands)
+    claims = tuple(retired_link_claims())
 
     changed, unchanged, skipped = [], 0, []
 
@@ -419,6 +446,7 @@ def main() -> int:
                 disclosure=pub.get("disclosure", ""),
                 retired_disclosures=tuple(pub.get("retired_disclosures") or ()),
                 head=head_seo.head_context(pub, folder, rel, path),
+                link_claims=claims,
             )
 
             # Nothing installed may point off-domain. Check only what we added.

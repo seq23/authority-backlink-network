@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "b771f5011207ce8810880e857f5fb553bd6176c4f1eb1eb4a016d366f86f12ae",
+  "plan_sha256": "c5cd509239a8a30e8450a8432396c1e013492b5a2e682323490b8d211fa304ab",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 55,
+  "count": 57,
   "counts_by_severity": {
-    "HARD_FAIL": 51,
+    "HARD_FAIL": 53,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -332,7 +332,7 @@
       "id": "jsonld_types",
       "severity": "HARD_FAIL",
       "classified": true,
-      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (Spry Labs parent), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined.",
+      "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (no parent organisation), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined.",
       "profiles": [
         "changed",
         "full",
@@ -366,6 +366,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "A lane whose only consumer will never consume it. Until 2026-08-29 a run that could not post to X wrote the day's highest-value posts to reports/social-drafts.md for the owner to paste in herself and mark done with one field in data/social-draft-ledger.json. Shown what that asked of her she said \"this means i manually have to do it? i will never do it honestly\", so every run was producing a standing instruction that would never be followed -- worse than none, because the report kept presenting a growing pile of posts as pending work. Buffer carries the same posts to the same X profile from a free plan for nothing, so the manual lane was DELETED rather than left dormant, and this validator keeps it deleted. It drives the real publisher with Buffer's transport stubbed and every network path counted, and blocks if the retired files are back in the tree or still imported, if any run writes a sheet for a person to act on (watched at the directory level, not by trusting a path constant), if any surface instructs the owner to post or to mark anything, if the report stops counting what the route could not carry, if the free plan's standing queue-depth allowance is exceeded or is found by being refused at it rather than discovered before the request, if that depth is not read from Buffer at runtime, if a post the route could not take is dropped, retired or parked anywhere instead of staying queued_for_auto_post and going out on the NEXT run (proved across two consecutive runs against the same queue), if a post at or before marked_posted_through is sent again or that record is rewritten, if a post drafted and never posted is held back from Buffer, if X's own pay-per-use API is contacted even once, or if switching the route off resurrects a manual lane rather than leaving the entries to wait. It fails if it exercises zero properties.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "no_parent_company",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "11 Oct 2026, owner decision: every page's byline read '<Publication> Editorial Desk, a subsidiary of Spry Labs' and the JSON-LD carried parentOrganization Spry Labs. Blocks 'Spry Labs' anywhere under sites/ (pages, llms*.txt, sitemaps, JSON-LD), any JSON-LD parentOrganization, an editorial company described as a subsidiary, a parent_company in data/editorial.json, and 'Spry Labs' in any generator or data file outside the retired-disclosure repair list. Fails hard on zero published files.",
       "profiles": [
         "changed",
         "full",
@@ -426,6 +437,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Wrong-domain routing and affiliation-disclosure integrity across 476 published backlinks.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "portfolio_link_policy",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "11 Oct 2026, owner decision: links to the owner's portfolio domains are followed (no nofollow/sponsored/ugc); client and tagged-affiliate links keep rel=\"sponsored nofollow\". Blocks a wrong rel either way, a portfolio link in footer/nav/header/aside chrome, a target domain over 25% of a site's portfolio links or a URL over 10 links per site (measured: approvalprep.com held 141 of professionalresourcelibrary.com's 178), a link to a URL not in data/portfolio-deep-targets.json or whose anchor is not that page's title, and the autopilot/workflow no longer routing through the rebalancer. Fails hard on zero pages or zero portfolio links.",
       "profiles": [
         "changed",
         "full",
