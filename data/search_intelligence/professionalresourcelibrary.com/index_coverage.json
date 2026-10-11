@@ -3,14 +3,14 @@
   "truth_source": "google_search_console_url_inspection",
   "host": "professionalresourcelibrary.com",
   "site_url": "sc-domain:professionalresourcelibrary.com",
-  "collected_at": "2026-10-11T17:20:38+00:00",
+  "collected_at": "2026-10-11T17:28:47+00:00",
   "state": "OK",
   "named_stop": null,
   "sitemap_url_count": 422,
   "inspected_this_run": 150,
   "errors_this_run": 0,
-  "inspected_total": 299,
-  "never_inspected": 123,
+  "inspected_total": 422,
+  "never_inspected": 0,
   "quota": {
     "daily_limit_per_property": 2000,
     "cap_per_host_per_day": 150,
@@ -19,10 +19,12 @@
   "rotation": "homepage, then never-inspected sitemap URLs in sitemap order, then oldest inspection first",
   "summary": {
     "by_coverage_state": {
-      "Submitted and indexed": 299
+      "Discovered - currently not indexed": 1,
+      "Submitted and indexed": 421
     },
     "buckets": {
-      "indexed": 299
+      "discovered_not_indexed": 1,
+      "indexed": 421
     }
   },
   "truth_boundary": "URL Inspection reports Google's index state per URL at inspected_at; impressions come from gsc_truth.json.",
@@ -36,7 +38,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/",
       "userCanonical": "https://professionalresourcelibrary.com/",
-      "inspected_at": "2026-10-11T17:20:38+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/about",
@@ -47,7 +49,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/about",
       "userCanonical": "https://professionalresourcelibrary.com/about",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
@@ -58,7 +60,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "userCanonical": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/contributors",
@@ -69,7 +71,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/contributors",
       "userCanonical": "https://professionalresourcelibrary.com/contributors",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/corrections",
@@ -80,7 +82,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/corrections",
       "userCanonical": "https://professionalresourcelibrary.com/corrections",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/credit-report-dispute-letter-checklist",
@@ -91,7 +93,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/credit-report-dispute-letter-checklist",
       "userCanonical": "https://professionalresourcelibrary.com/credit-report-dispute-letter-checklist",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers",
@@ -102,7 +104,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-06-27-compassion-fatigue-resources-beginner-safe-comparison-guide-for-careful-decision-makers",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign",
@@ -113,7 +115,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers",
@@ -124,7 +126,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-06-29-high-achieving-women-and-burnout-practical-faq-answer-page-for-first-time-buyers",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos",
@@ -135,7 +137,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-06-30-organizational-mental-health-training-decision-focused-red-flag-checklist-before-you-choos",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh",
@@ -146,7 +148,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-01-organizational-mental-health-training-plain-english-local-resource-directory-for-people-wh",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book",
@@ -157,7 +159,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-02-dental-decision-resources-no-fluff-timeline-guide-before-you-book",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
@@ -168,7 +170,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers",
@@ -179,7 +181,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-04-compassion-fatigue-resources-aeo-ready-decision-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option",
@@ -190,7 +192,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-05-compassion-fatigue-resources-operator-grade-resource-roundup-when-you-are-comparing-option",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose",
@@ -201,7 +203,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-06-how-to-prepare-for-consults-aeo-ready-operator-playbook-before-you-choose",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose",
@@ -212,7 +214,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-07-trauma-informed-leadership-no-fluff-decision-guide-before-you-choose",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options",
@@ -223,7 +225,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-08-workplace-burnout-resources-geo-ready-mistakes-to-avoid-when-you-are-comparing-options",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose",
@@ -234,7 +236,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-09-uscis-civil-surgeon-appointment-prep-comparison-friendly-framework-before-you-choose",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m",
@@ -245,7 +247,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-compassion-fatigue-resources-citation-friendly-budget-planning-note-for-careful-decision-m",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book",
@@ -256,7 +258,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-letters-of-explanation-plain-english-timeline-guide-before-you-book",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a",
@@ -267,7 +269,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-comparison-friendly-budget-planning-note-for-people-who-need-a",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign",
@@ -278,7 +280,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-multiple-application-issues-no-fluff-timeline-guide-before-you-sign",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters",
@@ -289,7 +291,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-proof-of-residency-letter-2026-ready-faq-answer-page-when-timing-matters",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters",
@@ -300,7 +302,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-application-packet-beginner-safe-red-flag-checklist-when-timing-matters",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose",
@@ -311,7 +313,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-10-rental-history-explanation-human-first-decision-guide-before-you-choose",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay",
@@ -322,7 +324,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-07-11-apartment-application-paperwork-beginner-safe-comparison-guide-before-you-pay",
-      "inspected_at": "2026-10-11T17:06:00+00:00"
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     },
     {
       "url": "https://professionalresourcelibrary.com/daily/2026-07-11-bank-statement-explanation-editorial-planning-checklist-before-you-choose",
@@ -3315,6 +3317,1359 @@
       "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book",
       "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-debt-validation-letters-practical-mistakes-to-avoid-before-you-book",
       "inspected_at": "2026-10-11T17:20:38+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T17:40:14Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-multiple-application-issues-human-first-faq-answer-page-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:28:35Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:49:13Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-17-trauma-informed-leadership-human-first-budget-planning-note-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:27:46Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-car-loan-explanation-geo-ready-buyer-guide-for-busy-operators",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T05:42:02Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-debt-validation-letters-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:21:18Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:37:40Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-large-deposit-explanation-operator-grade-timeline-guide-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-09T09:48:11Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-life-admin-letters-geo-ready-red-flag-checklist-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:28:48Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-loan-explanation-letters-resource-backed-prep-guide-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:57:33Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-18-self-service-document-creation-checklist-driven-faq-answer-page-before-you-book",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:11:45Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-apartment-application-paperwork-resource-backed-prep-guide-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:39:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-business-funding-packet-2026-ready-resource-roundup-for-people-who-need-a-starting-point",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:33:48Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-complete-document-library-no-fluff-local-resource-directory-when-you-are-comparing-options",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:22:08Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-job-gap-explanation-resource-backed-faq-answer-page-when-you-are-comparing-options",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:31:04Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-personal-loan-documents-2026-ready-prep-guide-when-you-are-comparing-options",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:07:30Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-proof-of-income-letters-editorial-budget-planning-note-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:22:03Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-19-self-employed-income-explanation-human-first-planning-checklist-for-careful-decision-maker",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:16:10Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-bank-statement-explanation-plain-english-budget-planning-note-before-you-call",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:40:54Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-business-ownership-documents-aeo-ready-budget-planning-note-before-you-call",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-25T06:21:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-credit-dispute-letters-geo-ready-comparison-guide-for-people-who-need-a-starting-point",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:49:38Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-high-achieving-women-and-burnout-no-fluff-mistakes-to-avoid-for-careful-decision-makers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:33:15Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-large-deposit-explanation-geo-ready-decision-guide-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:18:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-name-mismatch-explanation-2026-ready-framework-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-19T16:51:18Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-20-proof-of-residency-letter-no-fluff-operator-playbook-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:43:53Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-application-document-checklists-no-fluff-resource-roundup-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:34:20Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-business-funding-documents-comparison-friendly-timeline-guide-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-11T12:58:09Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-complete-document-library-low-risk-timeline-guide-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:02:08Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-loan-explanation-letters-aeo-ready-faq-answer-page-before-you-book",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:25:29Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-multiple-application-issues-editorial-operator-playbook-for-careful-decision-makers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-03T02:24:09Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-name-mismatch-explanation-low-risk-question-checklist-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:50:19Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-21-rental-history-explanation-decision-focused-timeline-guide-for-busy-operators",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-application-issue-explanation-aeo-ready-prep-guide-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:35:54Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-application-issue-explanation-aeo-ready-prep-guide-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-application-issue-explanation-aeo-ready-prep-guide-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-11T11:17:48Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-business-funding-packet-comparison-friendly-red-flag-checklist-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:25:38Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-community-reintegration-aeo-ready-framework-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:27:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-goodwill-letters-editorial-resource-roundup-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:02:28Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-letters-of-explanation-2026-ready-planning-checklist-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:07:51Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-mortgage-explanation-low-risk-faq-answer-page-for-careful-decision-makers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:03:59Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-22-proof-of-income-letters-beginner-safe-framework-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T18:20:22Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-bank-statement-explanation-practical-question-checklist-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:41:00Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-boarding-barn-contract-issues-operator-grade-prep-guide-for-busy-operators",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-11T00:40:33Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T17:42:39Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-goodwill-letters-resource-backed-mistakes-to-avoid-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:13:00Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-comparison-friendly-operator-playbook-for-careful-decision-maker",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T14:17:11Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:25:04Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-23-lender-document-request-2026-ready-resource-roundup-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:12:02Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-address-issue-explanation-editorial-comparison-guide-for-people-who-need-a-starting-point",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:35:50Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-boarding-agreement-questions-human-first-planning-checklist-for-people-who-need-a-starting",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-09T12:14:01Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-business-ownership-documents-aeo-ready-planning-checklist-for-people-who-need-a-starting-p",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:40:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-dispute-letters-operator-grade-framework-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:25:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-credit-report-errors-low-risk-framework-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T18:10:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-letters-of-explanation-beginner-safe-operator-playbook-for-busy-operators",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:32:21Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-24-self-service-document-creation-no-fluff-timeline-guide-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-car-loan-explanation-plain-english-decision-guide-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:08:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-car-loan-explanation-plain-english-decision-guide-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-car-loan-explanation-plain-english-decision-guide-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-04T01:14:12Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:19:17Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-letters-of-explanation-citation-friendly-red-flag-checklist-for-people-who-need-a-starting",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:52:25Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-life-admin-letters-beginner-safe-resource-roundup-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T17:56:10Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-citation-friendly-buyer-guide-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:25:50Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-loan-application-packet-editorial-decision-guide-for-careful-decision-makers",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T19:24:10Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-proof-of-income-for-renting-no-fluff-red-flag-checklist-for-people-who-need-a-starting-poi",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:33:12Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-04T00:54:25Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-application-issue-explanation-geo-ready-question-checklist-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:31:28Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:14:07Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-dispute-letters-aeo-ready-timeline-guide-for-people-who-need-a-starting-point",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:21:18Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-credit-rental-income-and-loan-letters-beginner-safe-comparison-guide-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:36:26Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-30T03:38:20Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-life-admin-letters-resource-backed-buyer-guide-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T19:01:56Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-proof-of-income-documents-human-first-framework-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:09:18Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-rental-application-packet-checklist-driven-prep-guide-before-you-book",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T15:00:38Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:26:47Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-business-funding-packet-aeo-ready-faq-answer-page-when-you-are-comparing-options",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:11:30Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-business-ownership-documents-plain-english-mistakes-to-avoid-for-people-who-need-a-startin",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:48:12Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-cash-flow-explanation-resource-backed-question-checklist-before-you-book",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:52:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-horse-contract-preparation-geo-ready-red-flag-checklist-for-busy-operators",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:01:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-identity-records-explanation-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:36:22Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-income-change-explanation-citation-friendly-budget-planning-note-before-you-sign",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T07:56:09Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-letters-of-explanation-aeo-ready-local-resource-directory-before-you-choose",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T05:41:06Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T09:33:22Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:07:46Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-28-what-to-ask-about-house-rules-before-moving-into-recovery-housing",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:45:19Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-28-what-to-ask-about-house-rules-before-moving-into-recovery-housing",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-28-what-to-ask-about-house-rules-before-moving-into-recovery-housing",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:39:06Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-29-how-to-plan-the-first-30-days-after-moving-into-recovery-housing",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:34:53Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T15:50:38Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:21:25Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-11T15:36:37Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-11T05:53:57Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T06:35:21Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T15:33:58Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-09-01-what-to-organize-in-the-first-week-after-a-collision",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T05:57:46Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:19:16Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-10T04:34:56Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+      "userCanonical": "https://professionalresourcelibrary.com/daily/2026-09-09-decision-frameworks-for-sensitive-services-comparison-friendly-red-flag-checklist-for-firs",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/dental-decision-resources",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-29T03:06:25Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/dental-decision-resources",
+      "userCanonical": "https://professionalresourcelibrary.com/dental-decision-resources",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/editorial-standards",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T16:26:03Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/editorial-standards",
+      "userCanonical": "https://professionalresourcelibrary.com/editorial-standards",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/equine-legal-resource-library",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-02T17:02:34Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/equine-legal-resource-library",
+      "userCanonical": "https://professionalresourcelibrary.com/equine-legal-resource-library",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/hormone-wellness-clinic-research",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-19T15:51:49Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/hormone-wellness-clinic-research",
+      "userCanonical": "https://professionalresourcelibrary.com/hormone-wellness-clinic-research",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T11:53:34Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
+      "userCanonical": "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/lender-document-request-checklist",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:25:42Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/lender-document-request-checklist",
+      "userCanonical": "https://professionalresourcelibrary.com/lender-document-request-checklist",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/masthead",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-10T07:48:59Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/masthead",
+      "userCanonical": "https://professionalresourcelibrary.com/masthead",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/neuro-evaluation-research",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-07-16T02:49:24Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/neuro-evaluation-research",
+      "userCanonical": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/personal-injury-research-resources",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-09T03:02:13Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/personal-injury-research-resources",
+      "userCanonical": "https://professionalresourcelibrary.com/personal-injury-research-resources",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:18:34Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
+      "userCanonical": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/regulated-service-provider-research",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-31T11:42:07Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/regulated-service-provider-research",
+      "userCanonical": "https://professionalresourcelibrary.com/regulated-service-provider-research",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/application-problems",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:43:37Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/application-problems",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/application-problems",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/bank-statement-and-deposit-letters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-09T16:57:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/bank-statement-and-deposit-letters",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/bank-statement-and-deposit-letters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:51:10Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/credit-reports-and-disputes",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T10:03:47Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/credit-reports-and-disputes",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/credit-reports-and-disputes",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/document-preparation",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:52:39Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/document-preparation",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/document-preparation",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/equine-contracts",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-26T05:21:53Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/equine-contracts",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/equine-contracts",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/identity-and-address-records",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:23:55Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/identity-and-address-records",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/identity-and-address-records",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-02T03:08:35Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/letters-of-explanation",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T16:44:50Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/letters-of-explanation",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/letters-of-explanation",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/loan-application-packets",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-01T18:26:02Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/loan-application-packets",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/loan-application-packets",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/loan-type-explanations",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:47:23Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/loan-type-explanations",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/loan-type-explanations",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/proof-of-income-and-residency",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:32:34Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/proof-of-income-and-residency",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/proof-of-income-and-residency",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/recovery-housing",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:30:50Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/recovery-housing",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/recovery-housing",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/regulated-provider-research",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:46:37Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/regulated-provider-research",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/regulated-provider-research",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/rental-applications",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T08:26:30Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/rental-applications",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/rental-applications",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/topics/workplace-mental-health",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-26T03:51:53Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/topics/workplace-mental-health",
+      "userCanonical": "https://professionalresourcelibrary.com/topics/workplace-mental-health",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
+      "bucket": "discovered_not_indexed",
+      "coverageState": "Discovered - currently not indexed",
+      "verdict": "NEUTRAL",
+      "lastCrawlTime": null,
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "googleCanonical": null,
+      "userCanonical": null,
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-25T22:22:21Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
+      "userCanonical": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-08-28T12:16:46Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
+      "userCanonical": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-10-02T02:20:51Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
+      "userCanonical": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy",
+      "bucket": "indexed",
+      "coverageState": "Submitted and indexed",
+      "verdict": "PASS",
+      "lastCrawlTime": "2026-09-09T05:41:24Z",
+      "pageFetchState": "SUCCESSFUL",
+      "googleCanonical": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy",
+      "userCanonical": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy",
+      "inspected_at": "2026-10-11T17:28:47+00:00"
     }
   ]
 }
