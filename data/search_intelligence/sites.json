@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "note": "The three publications this repo serves, one row each. Every search-intelligence script (collect_gsc.py, build_search_plan.py, apply_strengthening.py), the publishing freeze in authority_v4_autopilot.py and scripts/validators/validate_search_intelligence.py read this list, so there is one. Per-host truth lives in data/search_intelligence/<host>/.",
+  "sites": [
+    { "publication": "founder", "host": "founderoperatorlibrary.com", "gsc_site": "sc-domain:founderoperatorlibrary.com", "folder": "sites/founder-operator" },
+    { "publication": "memphis", "host": "memphisvendorlibrary.com", "gsc_site": "sc-domain:memphisvendorlibrary.com", "folder": "sites/memphis-local" },
+    { "publication": "professional", "host": "professionalresourcelibrary.com", "gsc_site": "sc-domain:professionalresourcelibrary.com", "folder": "sites/professional-resources" }
+  ]
+}
