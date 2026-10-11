@@ -41,6 +41,7 @@
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
+      "zero_paid_llm",
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
@@ -97,6 +98,7 @@
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
+      "zero_paid_llm",
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
@@ -154,6 +156,7 @@
       "social_pause_modes",
       "buffer_route",
       "citation_probe_wiring",
+      "zero_paid_llm",
       "social_queue_priority",
       "affiliate_rel_disclosure",
       "wedding_cost_dataset",
@@ -316,6 +319,10 @@
     "social_rate_limits": {
       "severity": "HARD_FAIL",
       "rationale": "Unsafe publication to live accounts: a daily limit outside the safe band either risks irreversible suspension of the X/LinkedIn accounts the authority network depends on, or restores a cap so low the queue never drains, which is a silent decision not to distribute."
+    },
+    "zero_paid_llm": {
+      "severity": "HARD_FAIL",
+      "rationale": "Owner policy, 11 Oct 2026: nothing paid. Real money leaves the account silently: journalist drafting and the USCIS changelog called anthropic/claude-sonnet-4.5 on schedule, and the citation probe paid for grounded answers daily. This blocks a non-$0 model in config/llm_routing.json, a snapshot with no date, any script calling a model provider outside scripts/llm/free_router, a probe lane with a schedule or without confirm_paid, and a scheduled workflow passing a non-router model key or naming a paid model."
     },
     "citation_probe_wiring": {
       "severity": "HARD_FAIL",

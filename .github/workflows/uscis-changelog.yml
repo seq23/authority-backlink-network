@@ -49,7 +49,6 @@ jobs:
         # outage costs a week of latency and never a lost change.
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          USCIS_CHANGELOG_MODEL: ${{ vars.USCIS_CHANGELOG_MODEL || 'anthropic/claude-sonnet-4.5' }}
         run: python3 scripts/uscis_changelog.py
 
       - name: Render the published changelog

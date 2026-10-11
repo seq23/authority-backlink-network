@@ -102,7 +102,9 @@
     "validate:title-suffix": "python3 scripts/validators/validate_title_suffix.py",
     "validate:uscis-changelog": "python3 scripts/validators/validate_uscis_changelog.py",
     "validate:wedding-cost-dataset": "python3 scripts/validators/validate_wedding_cost_dataset.py",
-    "validation:matrix": "python3 scripts/generate_validation_matrix.py"
+    "validation:matrix": "python3 scripts/generate_validation_matrix.py",
+    "llm:free-selftest": "node scripts/llm/free_router.js --selftest",
+    "validate:zero-paid-llm": "node scripts/validators/validate_zero_paid_llm.js"
   },
   "devDependencies": {}
 }

@@ -25,11 +25,19 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
 
 const ROOT = process.cwd();
 const argv = process.argv.slice(2);
 const arg = (name, dflt) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : dflt; };
 const DRY = argv.includes('--dry-run');
+
+// Owner policy, 11 Oct 2026: "nothing should be paid ... cut the probes". This
+// probe pays a model to observe this loop's own output, so it runs only from
+// paid-citation-probe.yml dispatched with confirm_paid=true. Otherwise it is a
+// named stop that writes nothing. --dry-run spends nothing and stays open.
+const { paidProbeGate } = createRequire(import.meta.url)('./llm/free_router.js');
+if (!DRY && !paidProbeGate('scripts/llm_citation_probe.mjs (answer-engine citation probe)')) process.exit(0);
 const MODE = arg('--mode', process.env.CITATION_PROBE_MODE || 'knowledge');
 const GROUNDED = MODE === 'grounded';
 const LIMIT = Number(arg('--limit', '25'));

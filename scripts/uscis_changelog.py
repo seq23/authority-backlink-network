@@ -67,6 +67,13 @@ import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "llm"))
+from free_router import FreeRouterCostViolation, free_chat  # noqa: E402
+
+
+class FreeRouterStop(RuntimeError):
+    """The free router returned a named stop (no key, key refused, no free model)."""
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -79,8 +86,10 @@ SNAPSHOTS = LANE / "snapshots"
 RECEIPT = ROOT / "reports/uscis-changelog-latest.json"
 KEY_FILE = Path.home() / "GitHub/how-we-know/.secrets/openrouter_key.txt"
 
-API = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "anthropic/claude-sonnet-4.5"
+# Owner policy, 11 Oct 2026: nothing paid. Was anthropic/claude-sonnet-4.5;
+# every call now goes through scripts/llm/free_router.py ($0 models only, in
+# config/llm_routing.json). --model is kept for the receipt label only.
+DEFAULT_MODEL = "free-router"
 
 # Two consecutive misses is the line. One miss is a bad afternoon at an agency
 # whose site is genuinely flaky; two in a row means the URL moved or the fetch
@@ -314,22 +323,13 @@ def api_key() -> str | None:
 
 
 def call_openrouter(messages: list[dict], model: str, key: str, timeout: int = 180) -> dict:
-    body = json.dumps({
-        "model": model,
-        "messages": messages,
-        "max_tokens": 2000,
-        "temperature": 0.0,
-        "response_format": {"type": "json_object"},
-        "usage": {"include": True},
-    }).encode()
-    req = urllib.request.Request(API, data=body, method="POST", headers={
-        "Authorization": f"Bearer {key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://professionalresourcelibrary.com/",
-        "X-Title": "Professional Resource Library - USCIS changelog",
-    })
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read())
+    """Free-only: routes through scripts/llm/free_router.py; never a paid model."""
+    r = free_chat(messages, max_tokens=4000, temperature=0.0 if "uscis_changelog" == "uscis_changelog" else 0.2,
+                  purpose="uscis_changelog", timeout=timeout, key=key, response_format={"type": "json_object"})
+    if not r["ok"]:
+        raise FreeRouterStop(r["stop"])
+    return {"model": r["model"], "choices": [{"finish_reason": r["finish_reason"],
+                                            "message": {"content": r["content"]}}]}
 
 
 PROMPT = """You are a copy editor comparing two versions of one page on uscis.gov.
@@ -398,6 +398,10 @@ def ask_model(source: dict, d: dict, model: str, key: str) -> tuple[dict | None,
         removed=block(d["removed"]), added=block(d["added"]))}]
     try:
         payload = call_openrouter(messages, model, key)
+    except FreeRouterCostViolation:
+        raise  # a non-zero cost fails the run loudly; never swallowed
+    except FreeRouterStop as exc:
+        return None, f"OPENROUTER_UNAVAILABLE: {exc}"
     except Exception as exc:  # noqa: BLE001 - an API outage must not take the lane down
         return None, f"OPENROUTER_UNAVAILABLE: {type(exc).__name__}"
     try:

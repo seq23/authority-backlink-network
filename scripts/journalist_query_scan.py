@@ -59,6 +59,13 @@ from datetime import date, datetime, timedelta, timezone
 from email import policy
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "llm"))
+from free_router import FreeRouterCostViolation, free_chat  # noqa: E402
+
+
+class FreeRouterStop(RuntimeError):
+    """The free router returned a named stop (no key, key refused, no free model)."""
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -85,8 +92,10 @@ CLASS_OUTAGE = "outage"
 DEFAULT_STOP_CLASS = CLASS_OUTAGE
 KEY_FILE = Path.home() / "GitHub/how-we-know/.secrets/openrouter_key.txt"
 
-API = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "anthropic/claude-sonnet-4.5"
+# Owner policy, 11 Oct 2026: nothing paid. Was anthropic/claude-sonnet-4.5;
+# every call now goes through scripts/llm/free_router.py ($0 models only, in
+# config/llm_routing.json). --model is kept for the receipt label only.
+DEFAULT_MODEL = "free-router"
 
 FENCE_RE = re.compile(r"^\s*```(?:json)?\s*(.*?)\s*```\s*$", re.S)
 # An ISO date is ONE number, not three. Without the first alternative, the date
@@ -473,16 +482,13 @@ def api_key() -> str | None:
 
 
 def call_openrouter(messages: list[dict], model: str, key: str, timeout: int = 180) -> dict:
-    body = json.dumps({"model": model, "messages": messages, "max_tokens": 1500,
-                       "temperature": 0.2, "usage": {"include": True}}).encode()
-    req = urllib.request.Request(API, data=body, method="POST", headers={
-        "Authorization": f"Bearer {key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://memphisvendorlibrary.com/",
-        "X-Title": "Authority Network - journalist query drafting",
-    })
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read())
+    """Free-only: routes through scripts/llm/free_router.py; never a paid model."""
+    r = free_chat(messages, max_tokens=4000, temperature=0.0 if "journalist_query_scan" == "uscis_changelog" else 0.2,
+                  purpose="journalist_query_scan", timeout=timeout, key=key)
+    if not r["ok"]:
+        raise FreeRouterStop(r["stop"])
+    return {"model": r["model"], "choices": [{"finish_reason": r["finish_reason"],
+                                            "message": {"content": r["content"]}}]}
 
 
 def strip_fence(content: str) -> str:
@@ -546,6 +552,10 @@ def draft_for(query: dict, ledger: dict, beats: dict, model: str, key: str) -> t
         max_words=beats["max_draft_words"])}]
     try:
         payload = call_openrouter(messages, model, key)
+    except FreeRouterCostViolation:
+        raise  # a non-zero cost fails the run loudly; never swallowed
+    except FreeRouterStop as exc:
+        return None, f"OPENROUTER_UNAVAILABLE: {exc}"
     except Exception as exc:  # noqa: BLE001 - an API outage must not take the lane down
         return None, f"OPENROUTER_UNAVAILABLE: {type(exc).__name__}"
     try:

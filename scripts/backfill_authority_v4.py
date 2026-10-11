@@ -74,6 +74,7 @@ def main() -> None:
             "ABSOLUTE_MAX_PAGES_PER_DAY": str(args.expected_per_day),
             "MIN_BASE_PUBLISH_SCORE": os.getenv("MIN_BASE_PUBLISH_SCORE", "60"),
             "ENABLE_GEMINI_REWRITE": "false",
+            "ENABLE_LLM_REWRITE": "false",
             "SELF_HEAL_MAX_ATTEMPTS": str(args.self_heal_attempts),
         }
         proc = subprocess.run([sys.executable, "scripts/authority_v4_autopilot.py"], cwd=ROOT, env=env, text=True, capture_output=True)

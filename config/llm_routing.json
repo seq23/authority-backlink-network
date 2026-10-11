@@ -1,0 +1,80 @@
+{
+  "policy": {
+    "max_cost_usd": 0,
+    "paid_fallback": false,
+    "decided": "2026-10-11",
+    "owner_instruction": "nothing should be paid ... cut the probes and make them free.",
+    "on_no_free_model": "named stop NO_FREE_MODEL_ANSWERED, exit 0 with FREE_LLM_RECEIPT; never a paid model",
+    "on_credential_refused": "named stop OPENROUTER_KEY_DISABLED_OR_INVALID"
+  },
+  "provider": "openrouter",
+  "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "free_models": [
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "google/gemma-4-31b-it:free",
+    "openrouter/free"
+  ],
+  "selection": "Strongest $0/$0 instruct models with >=32k context from the snapshot below, ordered by capability; live-tested 2026-10-11 (nemotron-3-ultra and -super answered at cost 0; gemma-4-31b was upstream-rate-limited; openrouter/free is OpenRouter's $0-only meta-router as the last resort). thinkingmachines/inkling:free was excluded: it returned 403 for this account.",
+  "pricing_snapshot": {
+    "fetched_at": "2026-10-11",
+    "source": "https://openrouter.ai/api/v1/models (unauthenticated)",
+    "filter": "pricing.prompt == \"0\" && pricing.completion == \"0\" && context_length >= 32768",
+    "models": {
+      "nvidia/nemotron-3-ultra-550b-a55b:free": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "context_length": 1000000
+      },
+      "nvidia/nemotron-3-super-120b-a12b:free": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "context_length": 262144
+      },
+      "google/gemma-4-31b-it:free": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "context_length": 262144
+      },
+      "openrouter/free": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "context_length": 200000
+      }
+    }
+  },
+  "paid_probe_lanes": [
+    {
+      "script": "scripts/llm_citation_probe.mjs",
+      "workflow": ".github/workflows/paid-citation-probe.yml",
+      "purpose": "asks a grounded model whether answer engines cite the authority publications"
+    }
+  ],
+  "free_router_consumers": [
+    {
+      "script": "scripts/journalist_query_scan.py",
+      "invoked_by": [
+        "python3 scripts/journalist_query_scan.py"
+      ],
+      "purpose": "drafts first-hand pitch replies to reporter queries (send stays human)"
+    },
+    {
+      "script": "scripts/uscis_changelog.py",
+      "invoked_by": [
+        "python3 scripts/uscis_changelog.py"
+      ],
+      "purpose": "describes a diff of a tracked USCIS page, quotes verified against the diff"
+    },
+    {
+      "script": "scripts/authority_v4_autopilot.py",
+      "invoked_by": [
+        "python3 scripts/authority_v4_autopilot.py"
+      ],
+      "purpose": "optional editorial rewrite, off unless ENABLE_LLM_REWRITE=true"
+    }
+  ]
+}

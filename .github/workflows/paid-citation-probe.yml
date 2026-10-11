@@ -1,0 +1,67 @@
+name: Paid Citation Probe (owner-confirmed only)
+
+# Owner policy, 11 Oct 2026: "nothing should be paid ... cut the probes and make
+# them free." The citation probe pays a model to observe whether answer engines
+# cite these publications - it scores the loop's own output, so it is off every
+# schedule. A human may run it once by dispatching with confirm_paid=true;
+# anything else is a named stop. Guarded by
+# scripts/validators/validate_zero_paid_llm.js.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_paid:
+        description: "Run the paid citation probe once (costs money)"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: authority-network-social-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refuse unless confirm_paid is true
+        id: gate
+        env:
+          CONFIRM: ${{ inputs.confirm_paid }}
+        run: |
+          if [ "$CONFIRM" != "true" ]; then
+            echo "NAMED_STOP: PAID_PROBE_DISABLED_BY_OWNER_POLICY - the citation probe is off by owner policy; dispatch with confirm_paid=true to run it once."
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.gate.outputs.allowed == 'true'
+        uses: actions/checkout@v7
+      - if: steps.gate.outputs.allowed == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Observe whether answer engines cite us (paid)
+        if: steps.gate.outputs.allowed == 'true'
+        continue-on-error: true
+        env:
+          CONFIRM_PAID: "true"
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CITATION_PROBE_MODE: grounded
+        run: node scripts/llm_citation_probe.mjs --limit 25
+      - name: Commit observations
+        if: steps.gate.outputs.allowed == 'true'
+        run: |
+          git config user.name "authority-paid-citation-probe"
+          git config user.email "actions@github.com"
+          git add data/signals
+          if git diff --cached --quiet; then
+            echo "No observation changes to commit."
+          else
+            git commit -m "chore: record owner-confirmed citation observation"
+            git push origin HEAD:main
+          fi

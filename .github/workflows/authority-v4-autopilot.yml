@@ -34,9 +34,10 @@ jobs:
           DAILY_PAGE_LIMIT: ${{ vars.DAILY_PAGE_LIMIT || '3' }}
           ABSOLUTE_MAX_PAGES_PER_DAY: ${{ vars.ABSOLUTE_MAX_PAGES_PER_DAY || '9' }}
           MIN_BASE_PUBLISH_SCORE: ${{ vars.MIN_BASE_PUBLISH_SCORE || '72' }}
-          ENABLE_GEMINI_REWRITE: ${{ vars.ENABLE_GEMINI_REWRITE || 'false' }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash-lite' }}
+          # Optional rewrite goes through the $0-only free router (owner policy,
+          # 11 Oct 2026); Gemini is no longer called.
+          ENABLE_LLM_REWRITE: ${{ vars.ENABLE_LLM_REWRITE || vars.ENABLE_GEMINI_REWRITE || 'false' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           LINKEDIN_DAILY_LIMIT: ${{ vars.LINKEDIN_DAILY_LIMIT || '3' }}
           X_DAILY_LIMIT: ${{ vars.X_DAILY_LIMIT || '8' }}
           SOCIAL_RUN_LIMIT: ${{ vars.SOCIAL_RUN_LIMIT || '3' }}
@@ -128,16 +129,6 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Observe whether answer engines cite us
-        # The probe shipped in seven repos and was invoked by none, so no
-        # citation observation was ever taken. Grounded mode reads the pages
-        # the answer was actually built from; knowledge mode would only show
-        # whether a model memorised the brand, which is not a citation.
-        continue-on-error: true
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          CITATION_PROBE_MODE: grounded
-        run: node scripts/llm_citation_probe.mjs --limit 25
       # The cap is applied inside the generator, before anything is written.
       # This is the second, independent check that it held - and the point where
       # a publish that did stay inside the cap is recorded, so the ledger the

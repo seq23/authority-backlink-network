@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "c5cd509239a8a30e8450a8432396c1e013492b5a2e682323490b8d211fa304ab",
+  "plan_sha256": "092fe07f5b0740b212ca8dcfe4f3aa11db8e2e75033230b548bbb869e744027d",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 57,
+  "count": 58,
   "counts_by_severity": {
-    "HARD_FAIL": 53,
+    "HARD_FAIL": 54,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -638,6 +638,17 @@
       "classified": true,
       "rationale": "Workflow safety: a broken trace means release automation cannot be reasoned about. It also carries the plumbing contract for the two citation lanes (journalist query scan, USCIS changelog), which is what turned them red on 2026-09-02 while both lanes themselves worked. Two distinct defects, both guarded here. First, a COMMIT PATHSPEC THAT CAN MATCH NOTHING: git-auto-commit-action exits 128 on it, and the journalist lane's pattern named an empty digests directory, so the designed, correct, most common outcome of that lane -- a day with nothing worth surfacing -- turned the workflow red. Every pathspec on both lanes is now checked against git ls-files. Second, TWO LANES PUSHING TO MAIN WITHOUT A SHARED CONCURRENCY GROUP: git-auto-commit-action does not rebase, so dispatching both at once produced a non-fast-forward push and a red run on a lane that had done its work perfectly. Both must declare the same group with cancel-in-progress false. It also blocks continue-on-error and '|| true' on those lanes, because a legitimate named stop must be green on purpose and never green by suppression. It fails if it examined zero commit pathspecs.",
       "profiles": [
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "zero_paid_llm",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Owner policy, 11 Oct 2026: nothing paid. Real money leaves the account silently: journalist drafting and the USCIS changelog called anthropic/claude-sonnet-4.5 on schedule, and the citation probe paid for grounded answers daily. This blocks a non-$0 model in config/llm_routing.json, a snapshot with no date, any script calling a model provider outside scripts/llm/free_router, a probe lane with a schedule or without confirm_paid, and a scheduled workflow passing a non-router model key or naming a paid model.",
+      "profiles": [
+        "changed",
         "full",
         "release"
       ]
