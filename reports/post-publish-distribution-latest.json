@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-11T15-43-18.422914Z-38152426013",
-  "attempted_at": "2026-10-11T15:43:18.422914Z",
+  "receipt_id": "2026-10-12T20-13-29.762455Z-38302764395",
+  "attempted_at": "2026-10-12T20:13:29.762455Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -578,7 +578,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "254a3bc5192ef5ebf9f14001bdd3380b91f0f73c3ad8f11348a692e42694de80",
+        "sha256": "21dcb888152556acc84575cba96159f36d306ae3cd8d2a3c8b9ecec7225ac363",
         "url_count": 105
       },
       "indexnow": {
@@ -1186,7 +1186,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "6ba643ce0c68a3a80562a327c2a32bb8604a4f02e385d21e606474d4303d955b",
+        "sha256": "6763b8e9548b2f411be7b0a7b0be66cd79f0b7ca0c5aed87a42f33a8de998293",
         "url_count": 422
       },
       "indexnow": {
@@ -2152,7 +2152,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-11T15-43-18.422914Z-38152426013.json"
+    "history": "data/distribution/receipts/2026-10-12T20-13-29.762455Z-38302764395.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
