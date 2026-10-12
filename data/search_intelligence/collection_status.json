@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "ran_at": "2026-10-12T14:43:50+00:00",
+  "ran_at": "2026-10-12T20:09:42+00:00",
   "hosts": {
     "founderoperatorlibrary.com": {
       "state": "OK",
-      "line": "founderoperatorlibrary.com: rows=11 impressions=112 clicks=2 | coverage +119 -> 119/119 indexed=116 {'crawled_not_indexed': 3, 'indexed': 116} | sitemap REGISTERED"
+      "line": "founderoperatorlibrary.com: rows=11 impressions=112 clicks=2 | coverage +119 -> 119/119 indexed=117 {'crawled_not_indexed': 2, 'indexed': 117} | sitemap REGISTERED"
     },
     "memphisvendorlibrary.com": {
       "state": "OK",
-      "line": "memphisvendorlibrary.com: rows=0 impressions=96 clicks=1 | coverage +105 -> 105/105 indexed=93 {'crawled_not_indexed': 1, 'discovered_not_indexed': 7, 'indexed': 93, 'unknown': 4} | sitemap REGISTERED"
+      "line": "memphisvendorlibrary.com: rows=0 impressions=96 clicks=1 | coverage +105 -> 105/105 indexed=93 {'crawled_not_indexed': 1, 'discovered_not_indexed': 8, 'indexed': 93, 'unknown': 3} | sitemap REGISTERED"
     },
     "professionalresourcelibrary.com": {
       "state": "OK",
