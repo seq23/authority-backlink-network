@@ -22,7 +22,11 @@ that each part is real, per host in data/search_intelligence/sites.json:
   plan        target_query_set / demand_families / consolidation_candidates /
               strengthening_ledger equal what build_search_plan.py computes now.
   families    every qualifying family is strengthened or carries a reason
-              (no_page / intent_mismatch); none is left not_strengthened.
+              (no_page / intent_mismatch / underivable); none is left
+              not_strengthened. underivable is measured and non-blocking, and
+              is re-checked: a page derive_strengthening.py could strengthen
+              from its own questions may not carry it. A derived entry's listed
+              questions must still be visible headings on its page.
               Every strengthened page renders exactly as apply_strengthening.py
               would write it, carries the definition and >= 3 question H2s, and
               is linked from its homepage.
@@ -51,6 +55,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import measured as m  # noqa: E402
 import build_search_plan as plan_mod  # noqa: E402
 import apply_strengthening as strengthen  # noqa: E402
+import derive_strengthening as derive  # noqa: E402
 
 MAX_AGE_DAYS = 4
 LD_RE = re.compile(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', re.S)
@@ -76,7 +81,7 @@ def faq_nodes(text: str) -> list[dict]:
 
 def main() -> int:
     fail: list[str] = []
-    stats = {"hosts": 0, "targets": 0, "families": 0, "qualifying": 0, "strengthened_pages": 0, "pages_scanned": 0}
+    stats = {"hosts": 0, "targets": 0, "families": 0, "qualifying": 0, "strengthened_pages": 0, "derived_pages": 0, "underivable": 0, "pages_scanned": 0}
     sites = m.sites()
     status = m.read_json(m.SI / "collection_status.json", {}) or {}
     if not status.get("ran_at") or age_days(status["ran_at"]) > MAX_AGE_DAYS:
@@ -150,7 +155,14 @@ def main() -> int:
                 fail.append(f"families {h}: {f['family']!r} has no status/reason")
             if f["qualifies"]:
                 stats["qualifying"] += 1
-                if f["status"] not in ("strengthened", "no_page", "intent_mismatch"):
+                if f["status"] == "underivable":
+                    # Measured, non-blocking -- but only when it is true: a page
+                    # that can supply its own questions must have been derived.
+                    stats["underivable"] += 1
+                    if derive.derivable(ROOT / f["file"]) if f.get("file") else False:
+                        fail.append(f"families {h}: {f['family']!r} is recorded underivable but {f['file']} carries "
+                                    f"{derive.MIN_QUESTIONS}+ question headings; derive_strengthening.py must strengthen it")
+                elif f["status"] not in ("strengthened", "no_page", "intent_mismatch"):
                     fail.append(f"families {h}: qualifying family {f['family']!r} is {f['status']}: {f['reason']}")
 
     # The plan is rebuilt by the workflow after every change to the tree, so it
@@ -204,6 +216,15 @@ def main() -> int:
         if 'data-strengthened="definition"' not in text or len(entry["questions"]) < 3 or \
                 text.count('data-block="search-strengthening"') != 1:
             fail.append(f"strengthening: {entry['file']} lacks the definition, the question H2s, or has the block twice")
+        if entry.get("derived_from_page"):
+            stats["derived_pages"] += 1
+            # The list near the top points at answers the page must still give.
+            visible = {q["q"].casefold() for q in derive.page_questions(text)}
+            gone = [q["q"] for q in entry["questions"] if q["q"].casefold() not in visible]
+            if gone:
+                fail.append(f"strengthening: {entry['file']} lists questions it no longer answers as headings: {gone[:3]}")
+            if entry.get("faq_schema"):
+                fail.append(f"faqpage: {entry['file']} is derived and may not add a FAQPage")
         url = m.ROOT / site["folder"] / "index.html"
         rel_page = Path(entry["file"]).relative_to(site["folder"]).as_posix()
         from lib import site_urls  # noqa: PLC0415

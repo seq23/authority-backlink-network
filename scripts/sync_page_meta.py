@@ -302,7 +302,11 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
     # query-first title and description from that ledger, over any generator
     # source above: the measured query is the newer and better-evidenced source.
     strengthened = json.loads((ROOT / "data/search_intelligence/strengthened_pages.json").read_text(encoding="utf-8"))
+    # Entries derived from the page itself (derive_strengthening.py) own no
+    # title or description, so the generator sources above keep them.
     for entry in strengthened.get("pages", []):
+        if entry.get("derived_from_page"):
+            continue
         expected[entry["file"]] = {"title": entry["title"], "description": entry["description"]}
     return expected, unidentified
 
