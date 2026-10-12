@@ -19,6 +19,12 @@ strengthened page by its title (<section data-block="search-strengthened-links">
 No outbound link is added: portfolio links stay governed by
 data/portfolio-link-policy.json and rebalance_portfolio_links.py.
 
+An entry with "derived_from_page": true (written by derive_strengthening.py from
+the page's own dek and question headings) keeps the page's <title> and
+description, MOVES the dek into the definition slot (data-from="dek", so
+build_search_plan still counts those words as the page's own), and lists the
+page's own questions near the top without repeating their answers.
+
 Idempotent: every block it writes is removed and re-rendered from the entry, so
 the autopilot runs it on every pass (after the generators, before the editorial
 chrome) and a rerun changes nothing. `--check` exits 1 if any page differs from
@@ -41,7 +47,7 @@ from sync_page_meta import apply as apply_meta  # noqa: E402
 from lib import site_urls  # noqa: E402
 
 LEDGER = m.SI / "strengthened_pages.json"
-DEF_RE = re.compile(r'<p class="definition" data-strengthened="definition">.*?</p>', re.S)
+DEF_RE = re.compile(r'<p class="definition" data-strengthened="definition"[^>]*>.*?</p>', re.S)
 SEC_RE = re.compile(r'<section data-block="search-strengthening">.*?</section>', re.S)
 FAQ_RE = re.compile(r'<script type="application/ld\+json" data-strengthened="faq">.*?</script>', re.S)
 HOME_RE = re.compile(r'<section data-block="search-strengthened-links">.*?</section>', re.S)
@@ -65,15 +71,28 @@ def faq_node(entry: dict) -> dict:
 
 
 def render_page(text: str, entry: dict) -> str:
-    text = apply_meta(strip_blocks(text), {"title": entry["title"], "description": entry["description"]})
+    derived = bool(entry.get("derived_from_page"))
+    text = strip_blocks(text)
+    if not derived:
+        text = apply_meta(text, {"title": entry["title"], "description": entry["description"]})
+    elif entry.get("definition_source"):
+        text = text.replace(entry["definition_source"], "", 1)
     h1 = text.find("</h1>")
     if h1 < 0:
         raise ValueError(f"{entry['file']}: no </h1>")
     at = h1 + len("</h1>")
-    text = text[:at] + f'<p class="definition" data-strengthened="definition">{e(entry["definition"])}</p>' + text[at:]
-    qa = "".join(f"<h2>{e(q['q'])}</h2><p>{e(q['a'])}</p>" for q in entry["questions"])
-    facts = "".join(f"<li>{e(f)}</li>" for f in entry["facts"])
-    block = f'<section data-block="search-strengthening">{qa}<h2>The facts in one place</h2><ul>{facts}</ul></section>'
+    if derived and entry.get("definition_html"):
+        definition = f'<p class="definition" data-strengthened="definition" data-from="dek">{entry["definition_html"]}</p>'
+    else:
+        definition = f'<p class="definition" data-strengthened="definition">{e(entry["definition"])}</p>'
+    text = text[:at] + definition + text[at:]
+    if derived:
+        listed = "".join(f"<li>{e(q['q'])}</li>" for q in entry["questions"])
+        block = f'<section data-block="search-strengthening"><h2>Questions this page answers</h2><ul>{listed}</ul></section>'
+    else:
+        qa = "".join(f"<h2>{e(q['q'])}</h2><p>{e(q['a'])}</p>" for q in entry["questions"])
+        facts = "".join(f"<li>{e(f)}</li>" for f in entry["facts"])
+        block = f'<section data-block="search-strengthening">{qa}<h2>The facts in one place</h2><ul>{facts}</ul></section>'
     first = text.find("</section>", at)
     cut = first + len("</section>") if first >= 0 else text.find("</main>")
     text = text[:cut] + block + text[cut:]
@@ -91,12 +110,23 @@ def render_page(text: str, entry: dict) -> str:
     return text
 
 
+def link_title(entry: dict) -> str:
+    """A hand-authored entry is linked by its own query-first title. A derived
+    entry owns no title, and its page's own title is already the anchor the
+    homepage navigation uses for it -- the same (href, words) twice is a
+    DUPLICATE_EXTERNAL_LINK the repair pass would strip -- so it is linked by
+    the first question it answers, which is how readers search for it."""
+    if entry.get("derived_from_page"):
+        return entry["questions"][0]["q"]
+    return entry["title"]
+
+
 def render_home(text: str, site: dict, pages: list[dict]) -> str:
     text = HOME_RE.sub("", text)
     if not pages:
         return text
     items = "".join(
-        f'<li><a href="{e(site_urls.page_url(site["host"], Path(p["file"]).relative_to(site["folder"]).as_posix()))}">{e(p["title"])}</a></li>'
+        f'<li><a href="{e(site_urls.page_url(site["host"], Path(p["file"]).relative_to(site["folder"]).as_posix()))}">{e(link_title(p))}</a></li>'
         for p in pages)
     block = (f'<section data-block="search-strengthened-links"><h2>Most-read guides</h2>'
              f'<p>The pages readers find most often in search, kept current.</p><ul>{items}</ul></section>')

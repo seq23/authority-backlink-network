@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
-    "no_page": 4,
-    "strengthened": 12
+    "no_page": 3,
+    "strengthened": 13
   },
   "entries": [
     {
@@ -24,7 +24,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 4,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -34,8 +35,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 27,
-      "weighted_position": 6.1,
+      "impressions": 25,
+      "weighted_position": 6.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -46,7 +47,8 @@
         "question_h2s": 3,
         "faqpage": true,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -56,8 +58,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 25,
-      "weighted_position": 5.9,
+      "impressions": 24,
+      "weighted_position": 5.8,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -82,7 +84,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -92,8 +95,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 7,
-      "weighted_position": 15.5,
+      "impressions": 8,
+      "weighted_position": 14.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -104,7 +107,8 @@
         "question_h2s": 3,
         "faqpage": true,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -127,8 +131,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 35,
-      "weighted_position": 7.0,
+      "impressions": 37,
+      "weighted_position": 7.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -139,7 +143,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -148,8 +153,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 25,
-      "weighted_position": 7.7,
+      "impressions": 28,
+      "weighted_position": 7.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -160,7 +165,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -181,7 +187,30 @@
         "question_h2s": 3,
         "faqpage": true,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
+      }
+    },
+    {
+      "host": "memphisvendorlibrary.com",
+      "family": "How to Time a Surprise Room Setup Around Check-In @ /daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 7,
+      "weighted_position": 6.7,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)",
+      "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
+      "changes": {
+        "title": "How to Time a Surprise Room Setup Around Check-In",
+        "definition": true,
+        "question_h2s": 4,
+        "faqpage": false,
+        "facts": 0,
+        "linked_from_homepage": true,
+        "source": "derived_from_page"
       }
     },
     {
@@ -199,28 +228,14 @@
       "changes": null
     },
     {
-      "host": "memphisvendorlibrary.com",
-      "family": "Memphis Vendor Library @ /",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 5,
-      "weighted_position": 2.2,
-      "status": "no_page",
-      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
-      "page": "/",
-      "file": "sites/memphis-local/index.html",
-      "changes": null
-    },
-    {
       "host": "professionalresourcelibrary.com",
       "family": "cfpb equifax work number antitrust data broker consumer reporting 2024 2025 @ /consumer-reporting-companies-directory",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 447,
-      "weighted_position": 10.0,
+      "impressions": 445,
+      "weighted_position": 10.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -231,7 +246,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -240,7 +256,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 70,
+      "impressions": 73,
       "weighted_position": 8.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -252,7 +268,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -273,17 +290,18 @@
         "question_h2s": 3,
         "faqpage": true,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
       "host": "professionalresourcelibrary.com",
-      "family": "burnout and boundaries @ /workplace-burnout-and-boundaries",
+      "family": "boundaries and burnout @ /workplace-burnout-and-boundaries",
       "basis": [
         "top_demand"
       ],
-      "impressions": 14,
-      "weighted_position": 38.8,
+      "impressions": 13,
+      "weighted_position": 37.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/workplace-burnout-and-boundaries.html",
       "page": "/workplace-burnout-and-boundaries",
@@ -294,7 +312,8 @@
         "question_h2s": 3,
         "faqpage": true,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     },
     {
@@ -315,7 +334,8 @@
         "question_h2s": 3,
         "faqpage": false,
         "facts": 3,
-        "linked_from_homepage": true
+        "linked_from_homepage": true,
+        "source": "hand_authored"
       }
     }
   ]

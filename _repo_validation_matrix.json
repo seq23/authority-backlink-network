@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "66d21da40a87177e273c67d52cc84afdc27e4337130aec996beab126baf557fb",
+  "plan_sha256": "b29daba7539edb0b98c32422be2ce1720bb0fb718030f492c7f829ac3d12b7ca",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 60,
+  "count": 61,
   "counts_by_severity": {
-    "HARD_FAIL": 56,
+    "HARD_FAIL": 57,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -516,6 +516,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "11 Oct 2026, owner-approved measured search loop: Search Console truth and URL Inspection coverage are collected daily per host, targets carry a source and a number, every qualifying demand family is strengthened or carries its reason, no page holds two FAQPages, and the publishing freeze holds unmeasured pages. A plan built on stale or unsourced numbers is false evidence, and a frozen generator that publishes anyway is unsafe publication. A credential only the owner holds is a recorded NAMED STOP, not a failure. Fails on zero hosts, pages or families examined.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "search_strengthening_loop",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "12 Oct 2026: fresh Search Console truth qualified a demand family no hand-authored entry covered, the validator failed it as not_strengthened, and the truth was committed without its plan, so every later release validation on main saw a stale plan. The loop now strengthens what it qualifies in the same run, from the page's own dek and questions, before it builds the plan and validates, and commits truth, plan and pages in one step. This blocks when dropping a qualifying entry does not make the loop re-derive it, when a derived render is not idempotent or duplicates the dek or the answers or rewrites the title, when a qualifying family is left not_strengthened or falsely underivable, and when the workflow validates before deriving or commits the truth apart from the plan. Fails on zero qualifying families examined.",
       "profiles": [
         "changed",
         "full",

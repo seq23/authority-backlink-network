@@ -33,7 +33,9 @@ A family qualifies for strengthening when
       has >= 2 impressions, and its impression-weighted position is <= 95.
 A qualifying family is strengthened on its page when the page is an article or
 a topic hub and the intent matches; the homepage, editorial pages and off-page
-families record the reason instead.
+families record the reason instead. With no hand-authored entry the loop derives
+one from the page's own dek and question headings (derive_strengthening.py); a
+page too thin for that is recorded as underivable, measured, non-blocking.
 
 Deterministic: no wall clock. Same inputs, same files, so
 scripts/validators/validate_search_intelligence.py recomputes and compares.
@@ -51,6 +53,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import measured as m  # noqa: E402
+import derive_strengthening as derive  # noqa: E402
 
 RULE = {"top_n": 5, "max_position": 95, "min_family_impressions": 2,
         "ranking_position": 15, "ranking_min_impressions": 2, "intent_token_share": 0.5}
@@ -203,7 +206,10 @@ def build_families(site: dict, truth: dict, strengthened: dict) -> list[dict]:
             fam["strengthened_pages"] = [fam["page"]]
             entry = strengthened.get((site["host"], fam["page"]))
             if entry:
-                fam["status"], fam["reason"] = "strengthened", f"data/search_intelligence/strengthened_pages.json -> {fam['file']}"
+                fam["status"], fam["reason"] = "strengthened", f"data/search_intelligence/strengthened_pages.json -> {fam['file']}" + \
+                    (" (derived from the page's own dek and questions)" if entry.get("derived_from_page") else "")
+            elif not derive.derivable(m.ROOT / fam["file"]):
+                fam["status"], fam["reason"] = "underivable", f"{fam['file']} has fewer than {derive.MIN_QUESTIONS} visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
             else:
                 fam["status"], fam["reason"] = "not_strengthened", f"{fam['file']} qualifies and has no entry in data/search_intelligence/strengthened_pages.json"
     return fams
@@ -266,7 +272,8 @@ def plan() -> dict[str, dict]:
                                "changes": None if f["status"] != "strengthened" else {
                                    "title": e["title"], "definition": bool(e.get("definition")),
                                    "question_h2s": len(e.get("questions", [])), "faqpage": e.get("faq_schema", False),
-                                   "facts": len(e.get("facts", [])), "linked_from_homepage": True}})
+                                   "facts": len(e.get("facts", [])), "linked_from_homepage": True,
+                                   "source": "derived_from_page" if e.get("derived_from_page") else "hand_authored"}})
     for (host, route), e in sorted(strengthened.items()):
         if not any(x["host"] == host and x["page"] == route and x["status"] == "strengthened" for x in ledger):
             ledger.append({"host": host, "family": None, "basis": [], "status": "strengthened_without_qualifying_family",

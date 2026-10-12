@@ -32,25 +32,34 @@ jobs:
         with:
           python-version: '3.11'
       - name: Measure Search Console truth, index coverage and sitemap registration
+        id: collect
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: python3 scripts/search_intelligence/collect_gsc.py
-      - name: Commit search truth
+      - name: Strengthen what qualifies, then build the measured plan
+        # Today's truth can qualify a family no entry covers yet. The loop
+        # strengthens it in this run, from the page's own dek and questions
+        # (derive_strengthening.py), before the plan is built and validated, so
+        # the validator never fails an outcome nothing in the loop produces.
+        run: |
+          python3 scripts/search_intelligence/derive_strengthening.py --write
+          python3 scripts/search_intelligence/apply_strengthening.py --write
+          python3 scripts/search_intelligence/build_search_plan.py --write
+      - name: Commit search truth, the measured plan and strengthened pages together
+        # One commit, before validation: main never holds today's truth with
+        # yesterday's plan (12 Oct 2026: the truth landed alone, the plan did
+        # not, and every later `validate.py release` on main saw 13 stale-plan
+        # failures). always(): a failure after collection never loses the day's
+        # measurement.
+        if: ${{ always() && steps.collect.outcome == 'success' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Search intelligence: Search Console truth and index coverage"
-          file_pattern: "data/search_intelligence/**"
-      - name: Build measured targets, demand families and consolidation candidates
-        run: python3 scripts/search_intelligence/build_search_plan.py --write
+          commit_message: "Search intelligence: Search Console truth, measured plan, strengthening"
+          file_pattern: "data/search_intelligence/** sites/**"
       - name: Validate the search loop
         run: |
           python3 scripts/validators/validate_search_intelligence.py
           python3 scripts/validators/validate_measured_urls_resolve.py
-      - name: Commit the measured plan
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Search intelligence: measured targets, demand families, consolidation candidates"
-          file_pattern: "data/search_intelligence/**"
 
   autopilot:
     needs: search
@@ -100,7 +109,9 @@ jobs:
         # data/search_intelligence/strengthened_pages.json: query-first title,
         # definition, question H2s, one FAQPage, homepage links. Before the
         # navigation and chrome steps so their output wraps it; idempotent.
-        run: python3 scripts/search_intelligence/apply_strengthening.py --write
+        run: |
+          python3 scripts/search_intelligence/derive_strengthening.py --write
+          python3 scripts/search_intelligence/apply_strengthening.py --write
       - name: Give the new pages a path in and a canonical that serves 200
         # Without this the three pages generated above are orphans the moment
         # they are written, which is the state that put all three publications
