@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-11",
-  "end_date": "2026-10-08",
+  "start_date": "2026-09-12",
+  "end_date": "2026-10-09",
   "window_days": 28,
-  "collected_at": "2026-10-11T17:28:47+00:00",
+  "collected_at": "2026-10-12T14:43:50+00:00",
   "totals": {
     "clicks": 2,
-    "impressions": 113,
-    "ctr": 0.0177,
-    "position": 20.7
+    "impressions": 112,
+    "ctr": 0.0179,
+    "position": 20.9
   },
   "query_count": 11,
   "page_count": 27,
   "row_count": 11,
-  "query_row_impressions": 29,
+  "query_row_impressions": 30,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -37,20 +37,20 @@
       "position": 80.3
     },
     {
+      "query": "founder operator",
+      "page": "https://founderoperatorlibrary.com/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 3.8
+    },
+    {
       "query": "community metrics",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
       "position": 67.8
-    },
-    {
-      "query": "founder operator",
-      "page": "https://founderoperatorlibrary.com/",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 3.5
     },
     {
       "query": "virtual event rfp",
@@ -125,18 +125,18 @@
       "position": 80.3
     },
     {
+      "query": "founder operator",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 3.8
+    },
+    {
       "query": "community metrics",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
       "position": 67.8
-    },
-    {
-      "query": "founder operator",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 3.5
     },
     {
       "query": "virtual event rfp",
@@ -199,16 +199,16 @@
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 1,
-      "impressions": 27,
-      "ctr": 0.037,
-      "position": 5.1
+      "impressions": 25,
+      "ctr": 0.04,
+      "position": 5.2
     },
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 25,
+      "impressions": 24,
       "ctr": 0,
-      "position": 6.4
+      "position": 6.3
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -220,9 +220,9 @@
     {
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 8,
       "ctr": 0,
-      "position": 11.4
+      "position": 11
     },
     {
       "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
@@ -295,6 +295,13 @@
       "position": 9
     },
     {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 47
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
       "clicks": 0,
       "impressions": 2,
@@ -356,13 +363,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 84
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",

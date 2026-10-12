@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 1,
+  "snapshot_count": 2,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -34,6 +34,74 @@
           4,
           0,
           3.5
+        ],
+        "virtual event rfp": [
+          2,
+          0,
+          88
+        ],
+        "ai coaching guide": [
+          1,
+          0,
+          40
+        ],
+        "company masthead": [
+          1,
+          0,
+          25
+        ],
+        "execution support for founders": [
+          1,
+          0,
+          33
+        ],
+        "moderation and community management": [
+          1,
+          0,
+          84
+        ],
+        "performance problem identification": [
+          1,
+          0,
+          43
+        ],
+        "sprylabs": [
+          1,
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-12T14:43:50+00:00",
+      "start_date": "2026-09-12",
+      "end_date": "2026-10-09",
+      "totals": {
+        "clicks": 2,
+        "impressions": 112,
+        "ctr": 0.0179,
+        "position": 20.9
+      },
+      "queries": {
+        "community cost metric": [
+          7,
+          0,
+          50.9
+        ],
+        "community reports": [
+          6,
+          0,
+          80.3
+        ],
+        "founder operator": [
+          5,
+          0,
+          3.8
+        ],
+        "community metrics": [
+          4,
+          0,
+          67.8
         ],
         "virtual event rfp": [
           2,
