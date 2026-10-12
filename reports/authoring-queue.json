@@ -1,48 +1,57 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-11",
+  "run_at": "2026-10-12",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 3,
     "allowance": 0,
-    "window_start": "2026-10-05",
-    "window_end": "2026-10-11"
+    "window_start": "2026-10-06",
+    "window_end": "2026-10-12"
   },
   "deferred": 3,
   "queue": [
     {
       "publication": "founder-operator",
-      "deferred_on": "2026-10-11",
-      "reason": "no_topically_eligible_affiliated_link"
+      "cluster": "automation without chaos",
+      "audience": "VC platform lead",
+      "format": "framework",
+      "intent": "when you need to ask better questions",
+      "modifier": "practical",
+      "intended_title": "Automation Without Chaos: Practical Framework When You Need To Ask Better Questions",
+      "target_brand": "Virtual Agency OS",
+      "target_url": "https://virtualagency-os.com/learn/",
+      "signature": "9841726aeff658c3eeb842af417e1e2d8ef49494b70e98828c11f73a3011c464",
+      "deferred_on": "2026-10-12",
+      "reason": "weekly_publication_cap"
     },
     {
       "publication": "memphis-local",
-      "cluster": "reception schedule",
-      "audience": "parent helping pay",
-      "format": "budget/planning note",
-      "intent": "for people who need a starting point",
-      "modifier": "resource-backed",
-      "intended_title": "Reception Schedule: Resource-Backed Budget/Planning Note For People Who Need A Starting Point",
+      "cluster": "taxes and gratuities",
+      "audience": "maid or matron of honor",
+      "format": "buyer guide",
+      "intent": "before you choose",
+      "modifier": "plain-English",
+      "intended_title": "Taxes And Gratuities: Plain-English Buyer Guide Before You Choose",
       "target_brand": "Dream Wedding Builder",
-      "target_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
-      "signature": "9527c12867fb990050104e49d908a621807c4f75fc759eb1266a645ec1ef5efe",
-      "deferred_on": "2026-10-11",
+      "target_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "signature": "1583ff857c384e6ad74ea5dfb51b482a1566313b73017cbba21f5375ca29b7b7",
+      "deferred_on": "2026-10-12",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "professional-resources",
       "cluster": "preparing records before a specialist appointment",
-      "audience": "dental patient",
-      "format": "local/resource directory",
-      "intent": "for busy operators",
-      "modifier": "low-risk",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Local/Resource Directory For Busy Operators",
+      "audience": "professional services buyer",
+      "format": "resource roundup",
+      "intent": "before you book",
+      "modifier": "AEO-ready",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Aeo-Ready Resource Roundup Before You Book",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "bbf68f48162e1f000cfff97a47f8cf53bdd7d2ff8d0d1702eeea9e2925896050",
-      "deferred_on": "2026-10-11",
+      "signature": "0112474dc05f78d671291b477c1e263946e8f150bec199ab3e89992ab7197606",
+      "deferred_on": "2026-10-12",
       "reason": "weekly_publication_cap"
     }
   ]
