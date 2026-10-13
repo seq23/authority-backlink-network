@@ -3,7 +3,8 @@
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
     "no_page": 3,
-    "strengthened": 13
+    "strengthened": 13,
+    "underivable": 1
   },
   "entries": [
     {
@@ -30,13 +31,28 @@
     },
     {
       "host": "founderoperatorlibrary.com",
+      "family": "founder operator @ /",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 26,
+      "weighted_position": 6.0,
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
+      "page": "/",
+      "file": "sites/founder-operator/index.html",
+      "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
       "family": "execution support for founders @ /founder-execution-systems",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 25,
-      "weighted_position": 6.3,
+      "impressions": 20,
+      "weighted_position": 7.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -50,21 +66,6 @@
         "linked_from_homepage": true,
         "source": "hand_authored"
       }
-    },
-    {
-      "host": "founderoperatorlibrary.com",
-      "family": "founder operator @ /",
-      "basis": [
-        "ranking_page",
-        "top_demand"
-      ],
-      "impressions": 24,
-      "weighted_position": 5.8,
-      "status": "no_page",
-      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
-      "page": "/",
-      "file": "sites/founder-operator/index.html",
-      "changes": null
     },
     {
       "host": "founderoperatorlibrary.com",
@@ -153,8 +154,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 28,
-      "weighted_position": 7.9,
+      "impressions": 32,
+      "weighted_position": 7.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -175,8 +176,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 8,
-      "weighted_position": 10.2,
+      "impressions": 9,
+      "weighted_position": 10.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/memphis-grazing-table-resources.html",
       "page": "/memphis-grazing-table-resources",
@@ -234,8 +235,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 445,
-      "weighted_position": 10.4,
+      "impressions": 444,
+      "weighted_position": 9.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -278,8 +279,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 28,
-      "weighted_position": 47.6,
+      "impressions": 29,
+      "weighted_position": 46.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -300,8 +301,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 13,
-      "weighted_position": 37.9,
+      "impressions": 14,
+      "weighted_position": 36.5,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/workplace-burnout-and-boundaries.html",
       "page": "/workplace-burnout-and-boundaries",
@@ -337,6 +338,20 @@
         "linked_from_homepage": true,
         "source": "hand_authored"
       }
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": "horse contracts @ /topics/equine-contracts",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 6,
+      "weighted_position": 16.6,
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/equine-contracts.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
+      "page": "/topics/equine-contracts",
+      "file": "sites/professional-resources/topics/equine-contracts.html",
+      "changes": null
     }
   ]
 }

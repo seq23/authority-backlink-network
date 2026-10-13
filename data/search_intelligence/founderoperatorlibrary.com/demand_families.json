@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-09-12..2026-10-09",
-  "gsc_collected_at": "2026-10-12T20:09:42+00:00",
+  "gsc_window": "2026-09-13..2026-10-10",
+  "gsc_collected_at": "2026-10-13T14:39:04+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -63,18 +63,49 @@
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html"
     },
     {
+      "family": "founder operator @ /",
+      "intent": "page",
+      "page": "/",
+      "page_kind": "home",
+      "file": "sites/founder-operator/index.html",
+      "page_title": "Founder Operator Library",
+      "impressions": 26,
+      "visible_query_impressions": 5,
+      "anonymised_impressions": 21,
+      "weighted_position": 6.0,
+      "page_impressions": 26,
+      "page_position": 6.5,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "founder operator",
+          "impressions": 5,
+          "position": 3.8
+        }
+      ],
+      "rank": 2,
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "qualifies": true,
+      "strengthened_pages": [],
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query"
+    },
+    {
       "family": "execution support for founders @ /founder-execution-systems",
       "intent": "page",
       "page": "/founder-execution-systems",
       "page_kind": "article",
       "file": "sites/founder-operator/founder-execution-systems.html",
       "page_title": "Founder Execution Systems",
-      "impressions": 25,
+      "impressions": 20,
       "visible_query_impressions": 1,
-      "anonymised_impressions": 24,
-      "weighted_position": 6.3,
-      "page_impressions": 25,
-      "page_position": 5.2,
+      "anonymised_impressions": 19,
+      "weighted_position": 7.2,
+      "page_impressions": 20,
+      "page_position": 5.8,
       "query_count": 1,
       "queries": [
         {
@@ -83,7 +114,7 @@
           "position": 33
         }
       ],
-      "rank": 2,
+      "rank": 3,
       "basis": [
         "ranking_page",
         "top_demand"
@@ -94,37 +125,6 @@
       ],
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html"
-    },
-    {
-      "family": "founder operator @ /",
-      "intent": "page",
-      "page": "/",
-      "page_kind": "home",
-      "file": "sites/founder-operator/index.html",
-      "page_title": "Founder Operator Library",
-      "impressions": 24,
-      "visible_query_impressions": 5,
-      "anonymised_impressions": 19,
-      "weighted_position": 5.8,
-      "page_impressions": 24,
-      "page_position": 6.3,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "founder operator",
-          "impressions": 5,
-          "position": 3.8
-        }
-      ],
-      "rank": 3,
-      "basis": [
-        "ranking_page",
-        "top_demand"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [],
-      "status": "no_page",
-      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query"
     },
     {
       "family": "performance problem identification @ /daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",

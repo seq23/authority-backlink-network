@@ -3,20 +3,30 @@
   "host": "professionalresourcelibrary.com",
   "status": "LIST_ONLY_NO_REDIRECTS",
   "decision_input_for": "Fold a page into its topic hub when URL Inspection keeps it out of the index and Search Console shows it no impressions for the whole 28-day window. Nothing here redirects or deletes; the list is evidence for that decision.",
-  "gsc_window": "2026-09-12..2026-10-09",
-  "coverage_collected_at": "2026-10-12T20:09:42+00:00",
+  "gsc_window": "2026-09-13..2026-10-10",
+  "coverage_collected_at": "2026-10-13T14:39:04+00:00",
   "inspected_url_count": 422,
-  "candidate_count": 1,
+  "candidate_count": 2,
   "candidates_by_hub": {
-    "/topics/application-problems": 1
+    "/topics/application-problems": 2
   },
   "rows": [
+    {
+      "url": "https://professionalresourcelibrary.com/dental-decision-resources",
+      "file": "sites/professional-resources/dental-decision-resources.html",
+      "coverage_state": "Crawled - currently not indexed",
+      "bucket": "crawled_not_indexed",
+      "inspected_at": "2026-10-13T14:39:04+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/application-problems",
+      "fold_rule": "the topic hub that already lists the page"
+    },
     {
       "url": "https://professionalresourcelibrary.com/uscis-form-and-fee-changelog",
       "file": "sites/professional-resources/uscis-form-and-fee-changelog.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-11T17:28:47+00:00",
+      "inspected_at": "2026-10-13T14:39:04+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/application-problems",
       "fold_rule": "the topic hub that already lists the page"
