@@ -66,11 +66,19 @@ jobs:
         # installs. Running navigation last is the order that converges: proved
         # here by running the whole sequence three times and getting an identical
         # tree from the second run onwards.
+        #
+        # Chrome runs AGAIN after navigation. Navigation regenerates the topic
+        # hubs wholesale, and on 13 Oct 2026 its rewrite left 28 pages without
+        # the icon/manifest head block, so validate_release went red. Every page
+        # writer now installs that block itself (head_seo.install_head_for_path);
+        # this last pass also restores the footer chrome on the rebuilt hubs.
+        # tests/test_page_writers_keep_head.py runs these steps in this order.
         run: |
           python3 scripts/build_editorial_pages.py --write
           python3 scripts/build_robots.py --write
           python3 scripts/install_editorial_chrome.py --write
           python3 scripts/build_site_navigation.py --write
+          python3 scripts/install_editorial_chrome.py --write
 
       - name: Validate the entries against their stored evidence
         id: validate_entries
