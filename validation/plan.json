@@ -64,6 +64,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "search_strengthening_loop",
+      "page_writers_keep_head",
       "measured_urls_resolve"
     ],
     "release": [
@@ -124,6 +125,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "search_strengthening_loop",
+      "page_writers_keep_head",
       "measured_urls_resolve"
     ],
     "full": [
@@ -185,6 +187,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "search_strengthening_loop",
+      "page_writers_keep_head",
       "measured_urls_resolve"
     ],
     "cache-self-test": [
@@ -428,6 +431,10 @@
     "no_parent_company": {
       "severity": "HARD_FAIL",
       "rationale": "11 Oct 2026, owner decision: every page's byline read '<Publication> Editorial Desk, a subsidiary of Spry Labs' and the JSON-LD carried parentOrganization Spry Labs. Blocks 'Spry Labs' anywhere under sites/ (pages, llms*.txt, sitemaps, JSON-LD), any JSON-LD parentOrganization, an editorial company described as a subsidiary, a parent_company in data/editorial.json, and 'Spry Labs' in any generator or data file outside the retired-disclosure repair list. Fails hard on zero published files."
+    },
+    "page_writers_keep_head": {
+      "severity": "HARD_FAIL",
+      "rationale": "13 Oct 2026: the weekly USCIS changelog run went red at validate_release because build_site_navigation.py ran after install_editorial_chrome.py and rewrote 28 pages with a head lacking the icon/manifest block, which only the chrome pass installed. Every page writer now installs that block itself. This runs each workflow's page-writing steps in their real order, and every writer last after the chrome pass, in a scratch copy, then the favicon validator; it blocks when any order publishes a page without the block. Fails on zero workflows, writer steps or scenarios."
     },
     "search_strengthening_loop": {
       "severity": "HARD_FAIL",

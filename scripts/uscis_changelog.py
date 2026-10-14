@@ -678,6 +678,15 @@ def run(offline: bool, model: str) -> dict:
             "run rather than lost."
             if any(o["status"] == "NAMED_STOP_NO_API_KEY" for o in outcomes) else
             "OFFLINE_NO_OBSERVATION" if offline else
+            # Rule 0. Every source unreachable (today: all best-effort, so none
+            # of them trips BLIND or SOURCES_UNREACHABLE) used to fall through to
+            # "NO CHANGE: 0 of N ... none changed", a sentence that claims a
+            # comparison nobody made. Zero observed is its own named stop.
+            (f"NAMED STOP NO_SOURCE_REACHABLE: 0 of {len(tracked['sources'])} tracked "
+             f"source(s) could be fetched this run, so nothing was compared and this "
+             f"run makes no statement about whether anything changed. Each source's "
+             f"reason is in the outcomes below; the snapshots were not touched.")
+            if not checked and outcomes else
             f"{len(new_entries)} entr{'y' if len(new_entries) == 1 else 'ies'} published"
             if new_entries else
             "BASELINE_CAPTURED: a first snapshot was taken of "
@@ -713,6 +722,10 @@ def main() -> int:
     for o in receipt["outcomes"]:
         print(f"  [{o['status']}] {o['source']}: {o.get('detail', o.get('headline', ''))}")
     print(f"  receipt: {RECEIPT.relative_to(ROOT)}")
+    if receipt["named_outcome"].startswith("NAMED STOP NO_SOURCE_REACHABLE"):
+        # Said on its own line so a green run is never read as "checked, unchanged".
+        print(f"  NAMED STOP: 0 of {receipt['sources_declared']} sources reachable; "
+              f"nothing observed this run")
 
     if receipt["blind_sources"]:
         print(f"  HARD_FAIL blind for {MAX_CONSECUTIVE_FAILURES}+ consecutive checks: "

@@ -55,7 +55,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from lib import page_composer, site_urls  # noqa: E402
+from lib import head_seo, page_composer, site_urls  # noqa: E402
 from lib.text_io import write_lf  # noqa: E402
 
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
@@ -691,6 +691,10 @@ def neighbours(rows: list[dict], index: int, span: int = SIBLING_SPAN) -> list[d
 
 
 def write_if_changed(path: Path, text: str, write: bool) -> int:
+    # Every page this script writes carries the managed <head> block itself, so
+    # running navigation after install_editorial_chrome.py cannot strip it.
+    if path.suffix == ".html":
+        text = head_seo.install_head_for_path(path, text, ROOT)
     if path.exists() and path.read_text(encoding="utf-8", errors="ignore") == text:
         return 0
     if write:

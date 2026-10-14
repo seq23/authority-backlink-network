@@ -52,7 +52,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from byline import entity_for  # noqa: E402
 from lib.contact_link import mailto_link  # noqa: E402
-from lib import meta_description  # noqa: E402
+from lib import head_seo, meta_description  # noqa: E402
 
 # The exact sentence hostile_review.py requires on any page mentioning a
 # regulated subject. These pages all mention "legal" and "contract", so it is
@@ -702,6 +702,9 @@ def main() -> int:
                     raise SystemExit(f"{rel_path}: outbound host '{host}' is not allowlisted "
                                      f"({found})")
             assert_publishable(rel_path, page)
+            # The managed <head> block (icons, manifest, social card) is written
+            # here, not left to a later chrome pass a workflow may not run.
+            page = head_seo.install_head_for_path(target, page, ROOT)
 
             if target.exists() and target.read_text(encoding="utf-8") == page:
                 unchanged.append(rel_path)

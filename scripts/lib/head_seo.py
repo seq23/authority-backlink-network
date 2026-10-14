@@ -374,3 +374,34 @@ def head_context(pub: dict, folder, rel: str, path) -> dict:
         "is_404": path == folder / "404.html",
         "definition": definition_text(pub, entity),
     }
+
+
+def install_head_for_path(path, text: str, root=None) -> str:
+    """install_head() for a page about to be written to `path`, publication resolved from the path.
+
+    Every script that writes a whole published page calls this immediately before
+    the write (scripts/build_site_navigation.py, scripts/build_editorial_pages.py,
+    scripts/build_uscis_changelog_page.py, scripts/deterministic_build.py), so no
+    ordering of workflow steps can leave a page without the icon / manifest /
+    social block. On 13 Oct 2026 the weekly USCIS changelog run went red because
+    build_site_navigation.py ran after install_editorial_chrome.py and rewrote 28
+    pages with a head that lacked it; the chrome pass was the only installer.
+
+    Returns `text` unchanged for a path outside every publication folder, for an
+    /agency/ page (never chromed), and for a fragment with no </head>.
+    """
+    from pathlib import Path
+    path = Path(path).resolve()
+    root = Path(root).resolve() if root else Path(__file__).resolve().parents[2]
+    pubs = json.loads((root / "data/publications.json").read_text(encoding="utf-8"))
+    for pub in pubs:
+        folder = (root / pub["folder"]).resolve()
+        try:
+            path.relative_to(folder)
+        except ValueError:
+            continue
+        rel = str(path.relative_to(root))
+        if "/agency/" in "/" + rel or not HEAD_END_RE.search(text):
+            return text
+        return install_head(text, **head_context(pub, folder, rel, path))
+    return text
