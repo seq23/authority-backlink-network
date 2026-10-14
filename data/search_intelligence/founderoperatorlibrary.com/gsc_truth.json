@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-13",
-  "end_date": "2026-10-10",
+  "start_date": "2026-09-14",
+  "end_date": "2026-10-11",
   "window_days": 28,
-  "collected_at": "2026-10-13T14:39:04+00:00",
+  "collected_at": "2026-10-14T14:32:39+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 109,
-    "ctr": 0.0092,
-    "position": 21.5
+    "impressions": 111,
+    "ctr": 0.009,
+    "position": 21.2
   },
   "query_count": 11,
   "page_count": 27,
   "row_count": 11,
-  "query_row_impressions": 30,
+  "query_row_impressions": 31,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -40,9 +40,9 @@
       "query": "founder operator",
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 3.8
+      "position": 4.2
     },
     {
       "query": "community metrics",
@@ -127,9 +127,9 @@
     {
       "query": "founder operator",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 3.8
+      "position": 4.2
     },
     {
       "query": "community metrics",
@@ -199,16 +199,16 @@
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 26,
+      "impressions": 27,
       "ctr": 0,
-      "position": 6.5
+      "position": 6.4
     },
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 0,
-      "impressions": 20,
+      "impressions": 19,
       "ctr": 0,
-      "position": 5.8
+      "position": 5.6
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -225,6 +225,13 @@
       "position": 11
     },
     {
+      "page": "https://founderoperatorlibrary.com/masthead",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 7.9
+    },
+    {
       "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
       "clicks": 0,
       "impressions": 6,
@@ -232,11 +239,11 @@
       "position": 7
     },
     {
-      "page": "https://founderoperatorlibrary.com/masthead",
+      "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
       "impressions": 6,
       "ctr": 0,
-      "position": 8.2
+      "position": 3.7
     },
     {
       "page": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
@@ -251,13 +258,6 @@
       "impressions": 5,
       "ctr": 0,
       "position": 3.8
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 3
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",

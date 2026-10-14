@@ -3,7 +3,7 @@
   "truth_source": "google_search_console_url_inspection",
   "host": "memphisvendorlibrary.com",
   "site_url": "sc-domain:memphisvendorlibrary.com",
-  "collected_at": "2026-10-13T14:39:04+00:00",
+  "collected_at": "2026-10-14T14:32:39+00:00",
   "state": "OK",
   "named_stop": null,
   "sitemap_url_count": 105,
@@ -20,15 +20,15 @@
   "summary": {
     "by_coverage_state": {
       "Crawled - currently not indexed": 1,
-      "Discovered - currently not indexed": 9,
+      "Discovered - currently not indexed": 7,
       "Submitted and indexed": 93,
-      "URL is unknown to Google": 2
+      "URL is unknown to Google": 4
     },
     "buckets": {
       "crawled_not_indexed": 1,
-      "discovered_not_indexed": 9,
+      "discovered_not_indexed": 7,
       "indexed": 93,
-      "unknown": 2
+      "unknown": 4
     }
   },
   "truth_boundary": "URL Inspection reports Google's index state per URL at inspected_at; impressions come from gsc_truth.json.",
@@ -42,7 +42,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/",
       "userCanonical": "https://memphisvendorlibrary.com/",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/about",
@@ -53,29 +53,29 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/about",
       "userCanonical": "https://memphisvendorlibrary.com/about",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/contributors",
-      "bucket": "discovered_not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "bucket": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/corrections",
-      "bucket": "discovered_not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "bucket": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers",
@@ -86,7 +86,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-06-27-grazing-tables-2026-ready-timeline-guide-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign",
@@ -97,7 +97,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point",
@@ -108,7 +108,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-06-29-party-decor-vendors-operator-grade-operator-playbook-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign",
@@ -119,7 +119,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-06-30-corporate-event-styling-comparison-friendly-budget-planning-note-before-you-sign",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-01-fall-porch-setups-checklist-driven-framework-before-you-choose",
@@ -130,7 +130,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-01-fall-porch-setups-checklist-driven-framework-before-you-choose",
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose",
@@ -141,7 +141,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-02-grazing-tables-human-first-prep-guide-before-you-choose",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose",
@@ -152,7 +152,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-03-memphis-event-vendors-citation-friendly-timeline-guide-before-you-choose",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question",
@@ -163,7 +163,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-04-birthday-room-setups-resource-backed-comparison-guide-when-you-need-to-ask-better-question",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters",
@@ -174,7 +174,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-05-corporate-event-styling-decision-focused-comparison-guide-when-timing-matters",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose",
@@ -185,7 +185,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-06-event-budget-planning-aeo-ready-mistakes-to-avoid-before-you-choose",
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-07-porch-decorating-aeo-ready-faq-answer-page-for-first-time-buyers",
@@ -196,7 +196,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-07-porch-decorating-aeo-ready-faq-answer-page-for-first-time-buyers",
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose",
@@ -207,7 +207,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-08-neighborhood-vendor-guides-resource-backed-resource-roundup-before-you-choose",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-09-hotel-room-decorations-aeo-ready-decision-guide-before-you-sign",
@@ -218,7 +218,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-09-hotel-room-decorations-aeo-ready-decision-guide-before-you-sign",
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators",
@@ -229,7 +229,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-10-event-budget-planning-operator-grade-local-resource-directory-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers",
@@ -240,7 +240,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-11-memphis-giftable-experiences-aeo-ready-decision-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers",
@@ -251,7 +251,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-12-wedding-day-timeline-plain-english-planning-checklist-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay",
@@ -262,7 +262,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-13-wedding-budget-planning-checklist-driven-question-checklist-before-you-pay",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators",
@@ -273,7 +273,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-14-wedding-planning-tools-citation-friendly-faq-answer-page-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call",
@@ -284,7 +284,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-15-wedding-day-timeline-beginner-safe-prep-guide-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign",
@@ -295,7 +295,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-16-wedding-day-timeline-operator-grade-framework-before-you-sign",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-17-wedding-planning-tools-operator-grade-comparison-guide-before-you-pay",
@@ -306,7 +306,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-17-wedding-planning-tools-operator-grade-comparison-guide-before-you-pay",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-17-wedding-planning-tools-operator-grade-comparison-guide-before-you-pay",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-18-wedding-planning-tools-beginner-safe-planning-checklist-for-busy-operators",
@@ -317,7 +317,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-18-wedding-planning-tools-beginner-safe-planning-checklist-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-18-wedding-planning-tools-beginner-safe-planning-checklist-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
@@ -328,7 +328,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-19-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-20-wedding-checklist-planning-operator-grade-comparison-guide-when-timing-matters",
@@ -339,7 +339,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-20-wedding-checklist-planning-operator-grade-comparison-guide-when-timing-matters",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-20-wedding-checklist-planning-operator-grade-comparison-guide-when-timing-matters",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-21-wedding-seating-chart-citation-friendly-operator-playbook-for-careful-decision-makers",
@@ -350,7 +350,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-21-wedding-seating-chart-citation-friendly-operator-playbook-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-21-wedding-seating-chart-citation-friendly-operator-playbook-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-22-wedding-checklist-planning-operator-grade-local-resource-directory-when-you-need-to-ask-be",
@@ -361,7 +361,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-22-wedding-checklist-planning-operator-grade-local-resource-directory-when-you-need-to-ask-be",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-22-wedding-checklist-planning-operator-grade-local-resource-directory-when-you-need-to-ask-be",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-23-wedding-budget-planning-2026-ready-faq-answer-page-before-you-call",
@@ -372,7 +372,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-23-wedding-budget-planning-2026-ready-faq-answer-page-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-23-wedding-budget-planning-2026-ready-faq-answer-page-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart",
@@ -383,7 +383,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch",
@@ -394,7 +394,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-couples-can-prevent-a-wedding-payment-crunch",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing",
@@ -405,7 +405,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use",
@@ -416,7 +416,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote",
@@ -427,7 +427,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
@@ -438,7 +438,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-wedding-planning-tools-resource-backed-decision-guide-for-first-time-buyers",
@@ -449,7 +449,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-wedding-planning-tools-resource-backed-decision-guide-for-first-time-buyers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-wedding-planning-tools-resource-backed-decision-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist",
@@ -460,7 +460,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-24-what-belongs-on-a-date-based-wedding-planning-checklist",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-25-wedding-budget-planning-checklist-driven-buyer-guide-when-you-need-to-ask-better-questions",
@@ -471,7 +471,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-25-wedding-budget-planning-checklist-driven-buyer-guide-when-you-need-to-ask-better-questions",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-25-wedding-budget-planning-checklist-driven-buyer-guide-when-you-need-to-ask-better-questions",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-26-wedding-planning-tools-practical-budget-planning-note-for-busy-operators",
@@ -482,7 +482,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-26-wedding-planning-tools-practical-budget-planning-note-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-26-wedding-planning-tools-practical-budget-planning-note-for-busy-operators.html",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-27-wedding-seating-chart-geo-ready-red-flag-checklist-when-you-are-comparing-options",
@@ -493,7 +493,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-27-wedding-seating-chart-geo-ready-red-flag-checklist-when-you-are-comparing-options",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-27-wedding-seating-chart-geo-ready-red-flag-checklist-when-you-are-comparing-options",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-28-wedding-checklist-planning-beginner-safe-question-checklist-before-you-book",
@@ -504,7 +504,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-28-wedding-checklist-planning-beginner-safe-question-checklist-before-you-book",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-28-wedding-checklist-planning-beginner-safe-question-checklist-before-you-book",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-29-wedding-checklist-planning-no-fluff-faq-answer-page-before-you-call",
@@ -515,7 +515,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-29-wedding-checklist-planning-no-fluff-faq-answer-page-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-29-wedding-checklist-planning-no-fluff-faq-answer-page-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call",
@@ -526,7 +526,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-30-wedding-planning-tools-checklist-driven-question-checklist-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-07-31-wedding-planning-tools-geo-ready-red-flag-checklist-for-people-who-need-a-starting-point",
@@ -537,7 +537,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-07-31-wedding-planning-tools-geo-ready-red-flag-checklist-for-people-who-need-a-starting-point",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-07-31-wedding-planning-tools-geo-ready-red-flag-checklist-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-01-wedding-seating-chart-operator-grade-local-resource-directory-when-you-need-to-ask-better",
@@ -548,7 +548,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-01-wedding-seating-chart-operator-grade-local-resource-directory-when-you-need-to-ask-better",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-01-wedding-seating-chart-operator-grade-local-resource-directory-when-you-need-to-ask-better",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-02-wedding-checklist-planning-human-first-resource-roundup-before-you-call",
@@ -559,7 +559,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-02-wedding-checklist-planning-human-first-resource-roundup-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-02-wedding-checklist-planning-human-first-resource-roundup-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point",
@@ -570,7 +570,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-03-wedding-day-timeline-beginner-safe-timeline-guide-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-04-wedding-planning-tools-citation-friendly-question-checklist-for-busy-operators",
@@ -581,7 +581,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-04-wedding-planning-tools-citation-friendly-question-checklist-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-04-wedding-planning-tools-citation-friendly-question-checklist-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay",
@@ -592,7 +592,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-05-wedding-day-timeline-2026-ready-local-resource-directory-before-you-pay",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers",
@@ -603,7 +603,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-06-wedding-budget-planning-aeo-ready-mistakes-to-avoid-for-first-time-buyers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers",
@@ -614,7 +614,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-07-wedding-planning-tools-geo-ready-comparison-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book",
@@ -625,7 +625,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-09-wedding-day-timeline-comparison-friendly-decision-guide-before-you-book",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers",
@@ -636,7 +636,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-10-wedding-seating-chart-human-first-buyer-guide-for-first-time-buyers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book",
@@ -647,7 +647,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-11-wedding-planning-tools-operator-grade-resource-roundup-before-you-book",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-12-wedding-seating-chart-practical-budget-planning-note-before-you-choose",
@@ -658,7 +658,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-12-wedding-seating-chart-practical-budget-planning-note-before-you-choose",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-12-wedding-seating-chart-practical-budget-planning-note-before-you-choose",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-13-wedding-budget-planning-comparison-friendly-question-checklist-before-you-choose",
@@ -669,7 +669,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-13-wedding-budget-planning-comparison-friendly-question-checklist-before-you-choose",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-13-wedding-budget-planning-comparison-friendly-question-checklist-before-you-choose",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers",
@@ -680,7 +680,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-14-wedding-budget-planning-citation-friendly-prep-guide-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point",
@@ -691,7 +691,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators",
@@ -702,7 +702,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-16-wedding-planning-tools-operator-grade-decision-guide-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call",
@@ -713,7 +713,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters",
@@ -724,7 +724,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-18-wedding-planning-tools-operator-grade-red-flag-checklist-when-timing-matters",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters",
@@ -735,7 +735,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-19-wedding-budget-planning-plain-english-question-checklist-when-timing-matters",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers",
@@ -746,7 +746,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay",
@@ -757,7 +757,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-21-wedding-day-timeline-2026-ready-decision-guide-before-you-pay",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
@@ -768,7 +768,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-22-wedding-day-timeline-plain-english-mistakes-to-avoid-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call",
@@ -779,7 +779,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-23-wedding-budget-planning-beginner-safe-decision-guide-before-you-call",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options",
@@ -790,7 +790,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-24-wedding-seating-chart-checklist-driven-timeline-guide-when-you-are-comparing-options",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-budget-planning-comparison-friendly-budget-planning-note-for-busy-operators",
@@ -801,7 +801,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-budget-planning-comparison-friendly-budget-planning-note-for-busy-operators",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-budget-planning-comparison-friendly-budget-planning-note-for-busy-operators",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-day-timeline-beginner-safe-framework-when-you-need-to-ask-better-questions",
@@ -812,7 +812,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-day-timeline-beginner-safe-framework-when-you-need-to-ask-better-questions",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-25-wedding-day-timeline-beginner-safe-framework-when-you-need-to-ask-better-questions",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-26-how-sun-wind-and-humidity-change-outdoor-decor-material-choices",
@@ -823,7 +823,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-how-sun-wind-and-humidity-change-outdoor-decor-material-choices",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-how-sun-wind-and-humidity-change-outdoor-decor-material-choices",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display",
@@ -834,7 +834,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers",
@@ -845,7 +845,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-26-wedding-seating-chart-human-first-budget-planning-note-for-careful-decision-makers",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want",
@@ -856,18 +856,18 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-09-24T10:47:37Z",
+      "lastCrawlTime": "2026-10-14T03:11:33Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-wedding-checklist-planning-beginner-safe-comparison-guide-when-you-are-comparing-options",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service",
@@ -878,7 +878,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
@@ -889,7 +889,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -900,7 +900,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room",
@@ -911,7 +911,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify",
@@ -922,7 +922,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -933,7 +933,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-30-questions-to-ask-a-grazing-table-vendor-about-food-handling",
@@ -944,29 +944,29 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-30-questions-to-ask-a-grazing-table-vendor-about-food-handling",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-30-questions-to-ask-a-grazing-table-vendor-about-food-handling",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-08-27T02:18:49Z",
+      "lastCrawlTime": "2026-10-13T22:03:41Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-09-27T16:46:15Z",
+      "lastCrawlTime": "2026-10-14T05:41:34Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration",
@@ -977,7 +977,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different",
@@ -988,18 +988,18 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different",
       "userCanonical": "https://memphisvendorlibrary.com/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/editorial-standards",
-      "bucket": "unknown",
-      "coverageState": "URL is unknown to Google",
+      "bucket": "discovered_not_indexed",
+      "coverageState": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/grazing-table-food-safety-checklist",
@@ -1010,7 +1010,7 @@
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/masthead",
@@ -1021,7 +1021,7 @@
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-event-rental-vs-purchase-comparison",
@@ -1032,40 +1032,40 @@
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-event-vendor-quote-cost-drivers",
-      "bucket": "discovered_not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "bucket": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-grazing-table-resources",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-09-26T10:51:35Z",
+      "lastCrawlTime": "2026-10-13T23:18:41Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/memphis-grazing-table-resources",
       "userCanonical": "https://memphisvendorlibrary.com/memphis-grazing-table-resources",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-outdoor-event-weather-planning",
-      "bucket": "discovered_not_indexed",
-      "coverageState": "Discovered - currently not indexed",
+      "bucket": "unknown",
+      "coverageState": "URL is unknown to Google",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-party-decor-vendors",
@@ -1076,7 +1076,7 @@
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
@@ -1087,29 +1087,29 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
       "userCanonical": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/memphis-wedding-cost-by-guest-count-2026",
-      "bucket": "unknown",
-      "coverageState": "URL is unknown to Google",
+      "bucket": "discovered_not_indexed",
+      "coverageState": "Discovered - currently not indexed",
       "verdict": "NEUTRAL",
       "lastCrawlTime": null,
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/seasonal-home-styling-memphis",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-10-02T22:47:27Z",
+      "lastCrawlTime": "2026-10-14T00:41:38Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/seasonal-home-styling-memphis",
       "userCanonical": "https://memphisvendorlibrary.com/seasonal-home-styling-memphis",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/event-and-room-styling",
@@ -1120,7 +1120,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/event-and-room-styling",
       "userCanonical": "https://memphisvendorlibrary.com/topics/event-and-room-styling",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/grazing-tables-and-vendors",
@@ -1131,7 +1131,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/grazing-tables-and-vendors",
       "userCanonical": "https://memphisvendorlibrary.com/topics/grazing-tables-and-vendors",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/porch-and-seasonal-styling",
@@ -1142,7 +1142,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/porch-and-seasonal-styling",
       "userCanonical": "https://memphisvendorlibrary.com/topics/porch-and-seasonal-styling",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/wedding-and-event-budgets",
@@ -1153,7 +1153,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/wedding-and-event-budgets",
       "userCanonical": "https://memphisvendorlibrary.com/topics/wedding-and-event-budgets",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/wedding-day-timelines",
@@ -1164,7 +1164,7 @@
       "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
       "googleCanonical": null,
       "userCanonical": null,
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/wedding-planning-tools",
@@ -1175,7 +1175,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/wedding-planning-tools",
       "userCanonical": "https://memphisvendorlibrary.com/topics/wedding-planning-tools",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     },
     {
       "url": "https://memphisvendorlibrary.com/topics/wedding-seating-charts",
@@ -1186,7 +1186,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://memphisvendorlibrary.com/topics/wedding-seating-charts",
       "userCanonical": "https://memphisvendorlibrary.com/topics/wedding-seating-charts",
-      "inspected_at": "2026-10-13T14:39:04+00:00"
+      "inspected_at": "2026-10-14T14:32:39+00:00"
     }
   ]
 }

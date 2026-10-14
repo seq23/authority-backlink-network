@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "professionalresourcelibrary.com",
-  "gsc_window": "2026-09-13..2026-10-10",
-  "gsc_collected_at": "2026-10-13T14:39:04+00:00",
+  "gsc_window": "2026-09-14..2026-10-11",
+  "gsc_collected_at": "2026-10-14T14:32:39+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -27,18 +27,18 @@
       "page_kind": "article",
       "file": "sites/professional-resources/consumer-reporting-companies-directory.html",
       "page_title": "Every Consumer Reporting Company on the CFPB's 2025 List",
-      "impressions": 444,
-      "visible_query_impressions": 44,
-      "anonymised_impressions": 400,
-      "weighted_position": 9.6,
-      "page_impressions": 444,
-      "page_position": 8.3,
+      "impressions": 438,
+      "visible_query_impressions": 47,
+      "anonymised_impressions": 391,
+      "weighted_position": 9.7,
+      "page_impressions": 438,
+      "page_position": 8.4,
       "query_count": 22,
       "queries": [
         {
           "query": "cfpb equifax work number antitrust data broker consumer reporting 2024 2025",
-          "impressions": 16,
-          "position": 4.3
+          "impressions": 17,
+          "position": 4.5
         },
         {
           "query": "cfpb list of consumer reporting agencies",
@@ -52,8 +52,13 @@
         },
         {
           "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best regulatory standing? for each company, give me pros and cons in the context of regulatory standing.",
+          "impressions": 3,
+          "position": 9.3
+        },
+        {
+          "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best company leadership & executive visibility. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of company leadership & executive visibility.",
           "impressions": 2,
-          "position": 9.5
+          "position": 9
         },
         {
           "query": "list of consumer reporting agencies",
@@ -104,11 +109,6 @@
           "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best company leadership & executive visibility? for each company, give me pros and cons in the context of company leadership & executive visibility.",
           "impressions": 1,
           "position": 6
-        },
-        {
-          "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best company leadership & executive visibility. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of company leadership & executive visibility.",
-          "impressions": 1,
-          "position": 8
         },
         {
           "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best financial health & stability. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of financial health & stability.",
@@ -165,12 +165,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page_title": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing",
-      "impressions": 73,
+      "impressions": 74,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 73,
-      "weighted_position": 8.3,
-      "page_impressions": 73,
-      "page_position": 8.3,
+      "anonymised_impressions": 74,
+      "weighted_position": 8.2,
+      "page_impressions": 74,
+      "page_position": 8.2,
       "query_count": 0,
       "queries": [],
       "rank": 2,
@@ -191,12 +191,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/equine-legal-resource-library.html",
       "page_title": "Equine Legal Resource Library",
-      "impressions": 29,
-      "visible_query_impressions": 18,
-      "anonymised_impressions": 11,
-      "weighted_position": 46.8,
-      "page_impressions": 30,
-      "page_position": 36.7,
+      "impressions": 26,
+      "visible_query_impressions": 17,
+      "anonymised_impressions": 9,
+      "weighted_position": 47.7,
+      "page_impressions": 27,
+      "page_position": 38.3,
       "query_count": 5,
       "queries": [
         {
@@ -216,8 +216,8 @@
         },
         {
           "query": "equine law advice",
-          "impressions": 2,
-          "position": 60
+          "impressions": 1,
+          "position": 62
         },
         {
           "query": "what are the best equine law resources for horse owners?",
@@ -680,18 +680,18 @@
       "reason": "rank 21 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers @ /daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
+      "family": "What to Settle Before Signing a Horse Boarding Agreement @ /horse-boarding-agreement-preparation-checklist",
       "intent": "page",
-      "page": "/daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
+      "page": "/horse-boarding-agreement-preparation-checklist",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers.html",
-      "page_title": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers",
+      "file": "sites/professional-resources/horse-boarding-agreement-preparation-checklist.html",
+      "page_title": "What to Settle Before Signing a Horse Boarding Agreement",
       "impressions": 3,
       "visible_query_impressions": 0,
       "anonymised_impressions": 3,
-      "weighted_position": 8.0,
+      "weighted_position": 7.7,
       "page_impressions": 3,
-      "page_position": 8,
+      "page_position": 7.7,
       "query_count": 0,
       "queries": [],
       "rank": 22,
@@ -702,12 +702,12 @@
       "reason": "rank 22 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Loan application packets and lender document requests @ /topics/loan-application-packets",
+      "family": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers @ /daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
       "intent": "page",
-      "page": "/topics/loan-application-packets",
-      "page_kind": "hub",
-      "file": "sites/professional-resources/topics/loan-application-packets.html",
-      "page_title": "Loan application packets and lender document requests",
+      "page": "/daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers.html",
+      "page_title": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers",
       "impressions": 3,
       "visible_query_impressions": 0,
       "anonymised_impressions": 3,
@@ -724,6 +724,28 @@
       "reason": "rank 23 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
+      "family": "Loan application packets and lender document requests @ /topics/loan-application-packets",
+      "intent": "page",
+      "page": "/topics/loan-application-packets",
+      "page_kind": "hub",
+      "file": "sites/professional-resources/topics/loan-application-packets.html",
+      "page_title": "Loan application packets and lender document requests",
+      "impressions": 3,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 3,
+      "weighted_position": 8.0,
+      "page_impressions": 3,
+      "page_position": 8,
+      "query_count": 0,
+      "queries": [],
+      "rank": 24,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 24 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
       "family": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed @ /uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
       "intent": "page",
       "page": "/uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
@@ -738,12 +760,12 @@
       "page_position": 11,
       "query_count": 0,
       "queries": [],
-      "rank": 24,
+      "rank": 25,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 24 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 25 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Workplace burnout and mental-health support @ /topics/workplace-mental-health",
@@ -760,12 +782,12 @@
       "page_position": 35.7,
       "query_count": 0,
       "queries": [],
-      "rank": 25,
+      "rank": 26,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 25 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 26 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers @ /daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
@@ -782,12 +804,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 26,
+      "rank": 27,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 26 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 27 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Multiple Application Issues: No-Fluff Decision Guide For People Who Need A Starting Point @ /daily/2026-07-15-multiple-application-issues-no-fluff-decision-guide-for-people-who-need-a-starting-point",
@@ -804,12 +826,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 27,
+      "rank": 28,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 27 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 28 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Records to Organize Before a Horse Sale Closes @ /daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
@@ -826,12 +848,12 @@
       "page_position": 4.5,
       "query_count": 0,
       "queries": [],
-      "rank": 28,
+      "rank": 29,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 28 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 29 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Apartment Denial Review: Operator-Grade Comparison Guide Before You Choose @ /daily/2026-07-14-apartment-denial-review-operator-grade-comparison-guide-before-you-choose",
@@ -846,28 +868,6 @@
       "weighted_position": 6.0,
       "page_impressions": 2,
       "page_position": 6,
-      "query_count": 0,
-      "queries": [],
-      "rank": 29,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 29 of 68 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "What to Settle Before Signing a Horse Boarding Agreement @ /horse-boarding-agreement-preparation-checklist",
-      "intent": "page",
-      "page": "/horse-boarding-agreement-preparation-checklist",
-      "page_kind": "article",
-      "file": "sites/professional-resources/horse-boarding-agreement-preparation-checklist.html",
-      "page_title": "What to Settle Before Signing a Horse Boarding Agreement",
-      "impressions": 2,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 2,
-      "weighted_position": 8.5,
-      "page_impressions": 2,
-      "page_position": 8.5,
       "query_count": 0,
       "queries": [],
       "rank": 30,
@@ -1708,8 +1708,8 @@
       "visible_query_impressions": 1,
       "anonymised_impressions": 0,
       "weighted_position": 27.0,
-      "page_impressions": 30,
-      "page_position": 36.7,
+      "page_impressions": 27,
+      "page_position": 38.3,
       "query_count": 1,
       "queries": [
         {
