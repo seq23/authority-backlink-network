@@ -1,11 +1,11 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-13",
-    "release_date": "2026-10-13",
-    "day_index": 109,
+    "date": "2026-10-14",
+    "release_date": "2026-10-14",
+    "day_index": 110,
     "target_volume": 3,
-    "generated": 0,
+    "generated": 1,
     "published": 0,
     "scores": [],
     "duplicate_warnings": 0,
@@ -13,7 +13,9 @@
     "self_heal_recoveries": 0,
     "self_heal_attempts": 0,
     "blocked_slots": [],
-    "held_by_publishing_freeze": [],
+    "held_by_publishing_freeze": [
+      "Virtual Event Production: Citation-Friendly Planning Checklist For People Who Need A Starting Point"
+    ],
     "social_enqueued": {
       "published_pages": 0,
       "platforms_enabled": [],
@@ -51,7 +53,14 @@
       "hard_fails": 0
     }
   },
-  "generated": [],
+  "generated": [
+    {
+      "publication": "founder-operator",
+      "slot": 0,
+      "status": "held_by_publishing_freeze",
+      "title": "Virtual Event Production: Citation-Friendly Planning Checklist For People Who Need A Starting Point"
+    }
+  ],
   "published": [],
   "scaling_policy": {
     "version": "v4.6-portfolio-citation-control",

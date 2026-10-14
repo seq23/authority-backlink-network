@@ -1,9 +1,44 @@
 {
   "schema_version": "1.0",
-  "held": [],
+  "held": [
+    {
+      "held_at": "2026-10-14",
+      "host": "founderoperatorlibrary.com",
+      "publication": "founder-operator",
+      "title": "Virtual Event Production: Citation-Friendly Planning Checklist For People Who Need A Starting Point",
+      "seo_title": "Virtual Event Production: Planning Checklist For A Creator-founder",
+      "reason": "publishing_freeze: no Search Console query for this host is answered by the title and cluster",
+      "brief": {
+        "publication": "founder-operator",
+        "cluster": "virtual event production",
+        "audience": "creator-founder",
+        "format": "planning checklist",
+        "intent": "for people who need a starting point",
+        "modifier": "citation-friendly",
+        "title": "Virtual Event Production: Citation-Friendly Planning Checklist For People Who Need A Starting Point",
+        "target_domain": "virtualagency-os.com",
+        "target_url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+        "anchor": "Virtual event production cost",
+        "brand_id": "virtual-agency-os",
+        "brand": "Virtual Agency OS",
+        "social_hooks": [],
+        "ctas": [],
+        "destination_type": "",
+        "product_id": "",
+        "product_name": "",
+        "product_message": "",
+        "target_route": "",
+        "preferred_domain": "",
+        "campaign_id": "virtual-agency-os-authority",
+        "used_preferred_domain": false,
+        "signature": "77370544b72287985b0b84a101faac40d93871eca0a089d7a9fdcfaca83925bf",
+        "seo_title": "Virtual Event Production: Planning Checklist For A Creator-founder"
+      }
+    }
+  ],
   "released": [],
   "freeze_enabled": true,
   "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
-  "held_count": 0,
+  "held_count": 1,
   "released_count": 0
 }
