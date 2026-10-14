@@ -1,17 +1,58 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-13T18:35:21+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-10-14T12:25:46+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 9,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Looking for podcast guests to talk advanced energy in Tennessee",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Gift Guide Request/Organic Spa",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Home Renters to Share (Anonymous) Stories",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Christmas Kids Gift Guide",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Holiday Gift Guide: Canadian Products and Quebec City Gifts",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Expert tips wanted: your best budgeting tips",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Expert tips wanted: your best baking tips",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "How AI is changing IT services in finance",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Best Hotels, Restaurants, Spas and Activities in Chicago",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "What Great Healthcare SaaS Companies Understand About Go-To-Market Strategy",
+      "why": "The query seeks healthcare SaaS founders/CEOs to discuss go-to-market strategy; the available facts cover Memphis wedding vendor pricing, USCIS fee tracking, and desk-research methodology — none estab"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
