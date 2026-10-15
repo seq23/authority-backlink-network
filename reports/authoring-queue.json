@@ -1,43 +1,29 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-14",
+  "run_at": "2026-10-15",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 2,
-    "allowance": 1,
-    "window_start": "2026-10-08",
-    "window_end": "2026-10-14"
+    "published_in_window": 1,
+    "allowance": 2,
+    "window_start": "2026-10-09",
+    "window_end": "2026-10-15"
   },
-  "deferred": 2,
+  "deferred": 1,
   "queue": [
-    {
-      "publication": "memphis-local",
-      "cluster": "plus-ones",
-      "audience": "florist",
-      "format": "resource roundup",
-      "intent": "when you are comparing options",
-      "modifier": "GEO-ready",
-      "intended_title": "Plus-Ones: Geo-Ready Resource Roundup When You Are Comparing Options",
-      "target_brand": "Dream Wedding Builder",
-      "target_url": "https://weddingseatingchartmaker.com/guides/wedding-seating-chart-template",
-      "signature": "37ea99ad0dfb02867693df85884cb9b8ffbaa89eb9d7c2615d5d5ca89754376b",
-      "deferred_on": "2026-10-14",
-      "reason": "weekly_publication_cap"
-    },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "immigration medical exam applicant",
-      "format": "budget/planning note",
-      "intent": "before you book",
-      "modifier": "beginner-safe",
-      "intended_title": "Dental Decision Resources: Beginner-Safe Budget/Planning Note Before You Book",
+      "audience": "patient preparing questions",
+      "format": "question checklist",
+      "intent": "before you choose",
+      "modifier": "human-first",
+      "intended_title": "Dental Decision Resources: Human-First Question Checklist Before You Choose",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "12540fe70541fc283563e9f49bd920f23f18d91467ee6e798c7a294d3c5eba55",
-      "deferred_on": "2026-10-14",
+      "signature": "8e275cc109f9789e568403a3ae89015097da909d89521e597ede9b072e0892e4",
+      "deferred_on": "2026-10-15",
       "reason": "weekly_publication_cap"
     }
   ]

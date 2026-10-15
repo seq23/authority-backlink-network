@@ -34,11 +34,45 @@
         "signature": "77370544b72287985b0b84a101faac40d93871eca0a089d7a9fdcfaca83925bf",
         "seo_title": "Virtual Event Production: Planning Checklist For A Creator-founder"
       }
+    },
+    {
+      "held_at": "2026-10-15",
+      "host": "memphisvendorlibrary.com",
+      "publication": "memphis-local",
+      "title": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters",
+      "seo_title": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters",
+      "reason": "publishing_freeze: no Search Console query for this host is answered by the title and cluster",
+      "brief": {
+        "publication": "memphis-local",
+        "cluster": "meal selections",
+        "audience": "parent helping pay",
+        "format": "resource roundup",
+        "intent": "when timing matters",
+        "modifier": "AEO-ready",
+        "title": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters",
+        "target_domain": "weddingseatingchartmaker.com",
+        "target_url": "https://weddingseatingchartmaker.com/guides/wedding-seating-chart-template",
+        "anchor": "Wedding Seating Chart Template",
+        "brand_id": "dream-wedding-builder",
+        "brand": "Dream Wedding Builder",
+        "social_hooks": [],
+        "ctas": [],
+        "destination_type": "paid_product",
+        "product_id": "wedding-seating-chart-maker",
+        "product_name": "Wedding Seating Chart Maker",
+        "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose.",
+        "target_route": "/products/seating-chart-maker",
+        "preferred_domain": "weddingseatingchartmaker.com",
+        "campaign_id": "dream-planning-tools",
+        "used_preferred_domain": true,
+        "signature": "20d7664b13dc57ee068527d1021c2115964a912f5a39a3b0ffec3594565780a5",
+        "seo_title": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters"
+      }
     }
   ],
   "released": [],
   "freeze_enabled": true,
   "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
-  "held_count": 1,
+  "held_count": 2,
   "released_count": 0
 }
