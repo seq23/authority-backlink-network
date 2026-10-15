@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-09-14..2026-10-11",
-  "gsc_collected_at": "2026-10-14T14:32:39+00:00",
+  "gsc_window": "2026-09-15..2026-10-12",
+  "gsc_collected_at": "2026-10-15T14:33:21+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -21,37 +21,68 @@
   },
   "families": [
     {
-      "family": "community cost metric @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "family": "founder operator @ /",
+      "intent": "page",
+      "page": "/",
+      "page_kind": "home",
+      "file": "sites/founder-operator/index.html",
+      "page_title": "Founder Operator Library",
+      "impressions": 28,
+      "visible_query_impressions": 6,
+      "anonymised_impressions": 22,
+      "weighted_position": 5.9,
+      "page_impressions": 28,
+      "page_position": 6.3,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "founder operator",
+          "impressions": 6,
+          "position": 4.2
+        }
+      ],
+      "rank": 1,
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "qualifies": true,
+      "strengthened_pages": [],
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query"
+    },
+    {
+      "family": "community reports @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "intent": "page",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "page_kind": "article",
       "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page_title": "Which Community Metrics to Report Monthly and Which to Ignore",
-      "impressions": 29,
-      "visible_query_impressions": 17,
+      "impressions": 26,
+      "visible_query_impressions": 14,
       "anonymised_impressions": 12,
-      "weighted_position": 56.7,
-      "page_impressions": 29,
-      "page_position": 44.5,
+      "weighted_position": 56.3,
+      "page_impressions": 26,
+      "page_position": 43.3,
       "query_count": 3,
       "queries": [
-        {
-          "query": "community cost metric",
-          "impressions": 7,
-          "position": 50.9
-        },
         {
           "query": "community reports",
           "impressions": 6,
           "position": 80.3
         },
         {
+          "query": "community cost metric",
+          "impressions": 5,
+          "position": 50.8
+        },
+        {
           "query": "community metrics",
-          "impressions": 4,
-          "position": 67.8
+          "impressions": 3,
+          "position": 69.7
         }
       ],
-      "rank": 1,
+      "rank": 2,
       "basis": [
         "top_demand"
       ],
@@ -63,60 +94,22 @@
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html"
     },
     {
-      "family": "founder operator @ /",
-      "intent": "page",
-      "page": "/",
-      "page_kind": "home",
-      "file": "sites/founder-operator/index.html",
-      "page_title": "Founder Operator Library",
-      "impressions": 27,
-      "visible_query_impressions": 6,
-      "anonymised_impressions": 21,
-      "weighted_position": 5.9,
-      "page_impressions": 27,
-      "page_position": 6.4,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "founder operator",
-          "impressions": 6,
-          "position": 4.2
-        }
-      ],
-      "rank": 2,
-      "basis": [
-        "ranking_page",
-        "top_demand"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [],
-      "status": "no_page",
-      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query"
-    },
-    {
-      "family": "execution support for founders @ /founder-execution-systems",
+      "family": "Founder Execution Systems @ /founder-execution-systems",
       "intent": "page",
       "page": "/founder-execution-systems",
       "page_kind": "article",
       "file": "sites/founder-operator/founder-execution-systems.html",
       "page_title": "Founder Execution Systems",
-      "impressions": 19,
-      "visible_query_impressions": 1,
-      "anonymised_impressions": 18,
-      "weighted_position": 7.0,
-      "page_impressions": 19,
-      "page_position": 5.6,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "execution support for founders",
-          "impressions": 1,
-          "position": 33
-        }
-      ],
+      "impressions": 17,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 17,
+      "weighted_position": 4.0,
+      "page_impressions": 17,
+      "page_position": 4,
+      "query_count": 0,
+      "queries": [],
       "rank": 3,
       "basis": [
-        "ranking_page",
         "top_demand"
       ],
       "qualifies": true,
@@ -133,18 +126,18 @@
       "page_kind": "article",
       "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
       "page_title": "How to Tell a Performance Problem From a Role Design Problem",
-      "impressions": 10,
-      "visible_query_impressions": 1,
+      "impressions": 11,
+      "visible_query_impressions": 2,
       "anonymised_impressions": 9,
-      "weighted_position": 30.4,
-      "page_impressions": 10,
-      "page_position": 29,
+      "weighted_position": 33.6,
+      "page_impressions": 11,
+      "page_position": 30.8,
       "query_count": 1,
       "queries": [
         {
           "query": "performance problem identification",
-          "impressions": 1,
-          "position": 43
+          "impressions": 2,
+          "position": 46
         }
       ],
       "rank": 4,
@@ -316,6 +309,28 @@
       "reason": "rank 10 of 27 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
+      "family": "What a Role Scorecard Should Contain Before You Open a Req @ /daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
+      "intent": "page",
+      "page": "/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
+      "page_kind": "article",
+      "file": "sites/founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
+      "page_title": "What a Role Scorecard Should Contain Before You Open a Req",
+      "impressions": 4,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 4,
+      "weighted_position": 5.2,
+      "page_impressions": 4,
+      "page_position": 5.2,
+      "query_count": 0,
+      "queries": [],
+      "rank": 11,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 11 of 27 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
       "family": "Webinar vs Virtual Conference vs Hybrid Broadcast: How the Scope Differs @ /daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
       "intent": "page",
       "page": "/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
@@ -328,28 +343,6 @@
       "weighted_position": 9.0,
       "page_impressions": 4,
       "page_position": 9,
-      "query_count": 0,
-      "queries": [],
-      "rank": 11,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 11 of 27 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "What a Role Scorecard Should Contain Before You Open a Req @ /daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
-      "intent": "page",
-      "page": "/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
-      "page_kind": "article",
-      "file": "sites/founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
-      "page_title": "What a Role Scorecard Should Contain Before You Open a Req",
-      "impressions": 3,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 3,
-      "weighted_position": 5.3,
-      "page_impressions": 3,
-      "page_position": 5.3,
       "query_count": 0,
       "queries": [],
       "rank": 12,

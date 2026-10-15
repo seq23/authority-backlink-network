@@ -9,12 +9,27 @@
   "entries": [
     {
       "host": "founderoperatorlibrary.com",
-      "family": "community cost metric @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "family": "founder operator @ /",
+      "basis": [
+        "ranking_page",
+        "top_demand"
+      ],
+      "impressions": 28,
+      "weighted_position": 5.9,
+      "status": "no_page",
+      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
+      "page": "/",
+      "file": "sites/founder-operator/index.html",
+      "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "community reports @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "basis": [
         "top_demand"
       ],
-      "impressions": 29,
-      "weighted_position": 56.7,
+      "impressions": 26,
+      "weighted_position": 56.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -31,28 +46,12 @@
     },
     {
       "host": "founderoperatorlibrary.com",
-      "family": "founder operator @ /",
+      "family": "Founder Execution Systems @ /founder-execution-systems",
       "basis": [
-        "ranking_page",
         "top_demand"
       ],
-      "impressions": 27,
-      "weighted_position": 5.9,
-      "status": "no_page",
-      "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
-      "page": "/",
-      "file": "sites/founder-operator/index.html",
-      "changes": null
-    },
-    {
-      "host": "founderoperatorlibrary.com",
-      "family": "execution support for founders @ /founder-execution-systems",
-      "basis": [
-        "ranking_page",
-        "top_demand"
-      ],
-      "impressions": 19,
-      "weighted_position": 7.0,
+      "impressions": 17,
+      "weighted_position": 4.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -73,8 +72,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 10,
-      "weighted_position": 30.4,
+      "impressions": 11,
+      "weighted_position": 33.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
       "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -132,8 +131,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 42,
-      "weighted_position": 7.0,
+      "impressions": 43,
+      "weighted_position": 7.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -172,12 +171,13 @@
     },
     {
       "host": "memphisvendorlibrary.com",
-      "family": "Memphis Grazing Table Resources @ /memphis-grazing-table-resources",
+      "family": "grazing tables @ /memphis-grazing-table-resources",
       "basis": [
+        "ranking_page",
         "top_demand"
       ],
-      "impressions": 10,
-      "weighted_position": 10.1,
+      "impressions": 12,
+      "weighted_position": 9.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/memphis-grazing-table-resources.html",
       "page": "/memphis-grazing-table-resources",
@@ -235,8 +235,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 438,
-      "weighted_position": 9.7,
+      "impressions": 428,
+      "weighted_position": 9.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -257,8 +257,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 74,
-      "weighted_position": 8.2,
+      "impressions": 76,
+      "weighted_position": 8.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
@@ -280,7 +280,7 @@
         "top_demand"
       ],
       "impressions": 26,
-      "weighted_position": 47.7,
+      "weighted_position": 46.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -323,7 +323,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 12,
+      "impressions": 13,
       "weighted_position": 5.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
