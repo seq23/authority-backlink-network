@@ -1,60 +1,22 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-15",
-    "release_date": "2026-10-15",
-    "day_index": 111,
+    "date": "2026-10-16",
+    "release_date": "2026-10-16",
+    "day_index": 112,
     "target_volume": 3,
-    "generated": 2,
+    "generated": 3,
     "published": 0,
     "scores": [],
     "duplicate_warnings": 0,
-    "hard_fails": 1,
+    "hard_fails": 0,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 8,
-    "blocked_slots": [
-      {
-        "slot": 0,
-        "publication": "founder-operator",
-        "attempts": 8,
-        "findings": [
-          {
-            "attempt": 0,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 1,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 2,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 3,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 4,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 5,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 6,
-            "reason": "no_topically_eligible_affiliated_link"
-          },
-          {
-            "attempt": 7,
-            "reason": "no_topically_eligible_affiliated_link"
-          }
-        ]
-      }
-    ],
+    "self_heal_attempts": 1,
+    "blocked_slots": [],
     "held_by_publishing_freeze": [
-      "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters"
+      "Virtual Event Production Economics: Checklist-Driven Comparison Guide Before You Sign",
+      "Organizing A Wedding Plan: Beginner-Safe Budget/Planning Note Before You Pay",
+      "Dental Decision Resources: Plain-English Buyer Guide Before You Call"
     ],
     "social_enqueued": {
       "published_pages": 0,
@@ -87,34 +49,30 @@
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 0.8,
+      "pass_rate": 0.5,
       "avg_quality": 88.0,
       "duplicate_warnings": 0,
-      "hard_fails": 0
+      "hard_fails": 1
     }
   },
   "generated": [
     {
       "publication": "founder-operator",
       "slot": 0,
-      "status": "blocked_after_self_heal",
-      "repair_attempts": 8,
-      "hard_fails": [
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link",
-        "no_topically_eligible_affiliated_link"
-      ]
+      "status": "held_by_publishing_freeze",
+      "title": "Virtual Event Production Economics: Checklist-Driven Comparison Guide Before You Sign"
     },
     {
       "publication": "memphis-local",
       "slot": 1,
       "status": "held_by_publishing_freeze",
-      "title": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters"
+      "title": "Organizing A Wedding Plan: Beginner-Safe Budget/Planning Note Before You Pay"
+    },
+    {
+      "publication": "professional-resources",
+      "slot": 2,
+      "status": "held_by_publishing_freeze",
+      "title": "Dental Decision Resources: Plain-English Buyer Guide Before You Call"
     }
   ],
   "published": [],
