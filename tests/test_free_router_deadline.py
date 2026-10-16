@@ -125,7 +125,7 @@ def main() -> int:
         if took > budget + 5:
             problems.append(f"took {took:.1f}s for a {budget}s budget")
         if problems:
-            print(f"FAIL [{name}]: " + "; ".join(problems))
+            print(f"FAIL [{name}]: " + "; ".join(problems) + f" | attempts: {r['attempts']}")
             failures += 1
         else:
             print(f"PASS [{name}] in {took:.1f}s")

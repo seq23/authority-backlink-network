@@ -96,7 +96,9 @@ def _http(url: str, key: str, body: dict | None, timeout: float) -> tuple[int, d
         sock.settimeout(remaining())
         resp = conn.getresponse()
         status, chunks = resp.status, []
-        while True:
+        # The response closes itself (and, once detached, the socket) when the
+        # body is complete, so test that before touching the socket again.
+        while not resp.isclosed():
             sock.settimeout(remaining())
             chunk = resp.read1(65536)
             if not chunk:
