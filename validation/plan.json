@@ -65,6 +65,7 @@
       "search_intelligence",
       "search_strengthening_loop",
       "page_writers_keep_head",
+      "free_router_deadline",
       "measured_urls_resolve"
     ],
     "release": [
@@ -126,6 +127,7 @@
       "search_intelligence",
       "search_strengthening_loop",
       "page_writers_keep_head",
+      "free_router_deadline",
       "measured_urls_resolve"
     ],
     "full": [
@@ -188,6 +190,7 @@
       "search_intelligence",
       "search_strengthening_loop",
       "page_writers_keep_head",
+      "free_router_deadline",
       "measured_urls_resolve"
     ],
     "cache-self-test": [
@@ -431,6 +434,10 @@
     "no_parent_company": {
       "severity": "HARD_FAIL",
       "rationale": "11 Oct 2026, owner decision: every page's byline read '<Publication> Editorial Desk, a subsidiary of Spry Labs' and the JSON-LD carried parentOrganization Spry Labs. Blocks 'Spry Labs' anywhere under sites/ (pages, llms*.txt, sitemaps, JSON-LD), any JSON-LD parentOrganization, an editorial company described as a subsidiary, a parent_company in data/editorial.json, and 'Spry Labs' in any generator or data file outside the retired-disclosure repair list. Fails hard on zero published files."
+    },
+    "free_router_deadline": {
+      "severity": "HARD_FAIL",
+      "rationale": "16 Oct 2026: Journalist Query Scan run 38900376756 was cancelled at its 5-minute job timeout. The selftest's first free model held the request open for five minutes (OpenRouter drips keep-alive whitespace on slow non-streaming requests) and urllib's timeout bounds each socket read, not the request, so nothing ever timed out. free_router.py now enforces a wall-clock budget per call and per attempt and records FREE_ROUTER_DEADLINE_EXCEEDED. This runs free_chat against a local stub that drips forever or stays silent, under a hard 20s timeout, and blocks unless every scenario returns its named outcome inside the budget. Fails on zero scenarios."
     },
     "page_writers_keep_head": {
       "severity": "HARD_FAIL",
