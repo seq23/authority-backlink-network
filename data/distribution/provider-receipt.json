@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-15T15-45-08.509430Z-38762958732",
-  "attempted_at": "2026-10-15T15:45:08.509430Z",
+  "receipt_id": "2026-10-16T15-42-38.300324Z-38926048855",
+  "attempted_at": "2026-10-16T15:42:38.300324Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -578,7 +578,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "21dcb888152556acc84575cba96159f36d306ae3cd8d2a3c8b9ecec7225ac363",
+        "sha256": "c0d5ae861dbe38dcf1acee11a7ce9704fe6e15cc7d4cb03d7e0a195b3aa786d4",
         "url_count": 105
       },
       "indexnow": {
@@ -2152,7 +2152,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-15T15-45-08.509430Z-38762958732.json"
+    "history": "data/distribution/receipts/2026-10-16T15-42-38.300324Z-38926048855.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
