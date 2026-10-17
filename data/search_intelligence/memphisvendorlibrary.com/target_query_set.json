@@ -11,7 +11,7 @@
   "anonymised_impressions": 132,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
-  "dropped_count": 2,
+  "dropped_count": 3,
   "dropped": [
     {
       "query": "Meal Selections: Aeo-Ready Resource Roundup When Timing Matters",
@@ -20,6 +20,11 @@
     },
     {
       "query": "Organizing A Wedding Plan: Beginner-Safe Budget/Planning Note Before You Pay",
+      "source": "autopilot_brief_held_by_freeze",
+      "reason": "no Search Console impressions for this subject: no measured number, so not a target"
+    },
+    {
+      "query": "Wedding Planning Sequence: Editorial Budget/Planning Note For Busy Operators",
       "source": "autopilot_brief_held_by_freeze",
       "reason": "no Search Console impressions for this subject: no measured number, so not a target"
     }
