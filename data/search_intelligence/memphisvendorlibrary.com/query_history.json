@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 7,
+  "snapshot_count": 8,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -97,6 +97,24 @@
         "impressions": 133,
         "ctr": 0.0075,
         "position": 8.1
+      },
+      "queries": {
+        "grazing tables": [
+          1,
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-18T14:30:17+00:00",
+      "start_date": "2026-09-18",
+      "end_date": "2026-10-15",
+      "totals": {
+        "clicks": 1,
+        "impressions": 148,
+        "ctr": 0.0068,
+        "position": 7.9
       },
       "queries": {
         "grazing tables": [

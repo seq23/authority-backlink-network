@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
-  "gsc_window": "2026-09-17..2026-10-14",
-  "gsc_collected_at": "2026-10-17T14:29:36+00:00",
+  "gsc_window": "2026-09-18..2026-10-15",
+  "gsc_collected_at": "2026-10-18T14:30:17+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -12,10 +12,10 @@
     "ranking_min_impressions": 2,
     "intent_token_share": 0.5
   },
-  "family_count": 17,
+  "family_count": 16,
   "qualifying_count": 5,
   "status_counts": {
-    "not_top_family": 12,
+    "not_top_family": 11,
     "strengthened": 5
   },
   "families": [
@@ -26,12 +26,12 @@
       "page_kind": "article",
       "file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page_title": "What to Confirm With a Hotel Before Booking an In-Room Decor Setup",
-      "impressions": 54,
+      "impressions": 69,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 54,
-      "weighted_position": 7.0,
-      "page_impressions": 54,
-      "page_position": 7,
+      "anonymised_impressions": 69,
+      "weighted_position": 6.7,
+      "page_impressions": 69,
+      "page_position": 6.7,
       "query_count": 0,
       "queries": [],
       "rank": 1,
@@ -72,6 +72,32 @@
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html"
     },
     {
+      "family": "How to Time a Surprise Room Setup Around Check-In @ /daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "intent": "page",
+      "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "page_kind": "article",
+      "file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
+      "page_title": "How to Time a Surprise Room Setup Around Check-In",
+      "impressions": 7,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 7,
+      "weighted_position": 6.6,
+      "page_impressions": 7,
+      "page_position": 6.6,
+      "query_count": 0,
+      "queries": [],
+      "rank": 3,
+      "basis": [
+        "top_demand"
+      ],
+      "qualifies": true,
+      "strengthened_pages": [
+        "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in"
+      ],
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)"
+    },
+    {
       "family": "grazing tables @ /memphis-grazing-table-resources",
       "intent": "page",
       "page": "/memphis-grazing-table-resources",
@@ -92,7 +118,7 @@
           "position": 9
         }
       ],
-      "rank": 3,
+      "rank": 4,
       "basis": [
         "ranking_page",
         "top_demand"
@@ -103,32 +129,6 @@
       ],
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/memphis-grazing-table-resources.html"
-    },
-    {
-      "family": "How to Time a Surprise Room Setup Around Check-In @ /daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
-      "intent": "page",
-      "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
-      "page_kind": "article",
-      "file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
-      "page_title": "How to Time a Surprise Room Setup Around Check-In",
-      "impressions": 6,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 6,
-      "weighted_position": 6.2,
-      "page_impressions": 6,
-      "page_position": 6.2,
-      "query_count": 0,
-      "queries": [],
-      "rank": 4,
-      "basis": [
-        "top_demand"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [
-        "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in"
-      ],
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)"
     },
     {
       "family": "How to Brief Decor for a Venue You Have Not Seen @ /daily/2026-08-31-how-to-brief-decor-for-a-venue-you-have-not-seen",
@@ -176,7 +176,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 6 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 6 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Wedding Planning Tools: No-Fluff Buyer Guide For People Who Need A Starting Point @ /daily/2026-08-15-wedding-planning-tools-no-fluff-buyer-guide-for-people-who-need-a-starting-point",
@@ -198,7 +198,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 7 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 7 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "About Memphis Vendor Library @ /about",
@@ -220,7 +220,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 8 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 8 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Compare Two Event Decor Quotes That Look Different @ /daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different",
@@ -242,7 +242,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 9 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 9 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Memphis Porch Decorating Resources @ /memphis-porch-decorating-resources",
@@ -264,7 +264,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 10 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 10 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Wedding seating charts @ /topics/wedding-seating-charts",
@@ -286,7 +286,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 11 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 11 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Wedding Budget Planning: Beginner-Safe Operator Playbook For Careful Decision-Makers @ /daily/2026-08-20-wedding-budget-planning-beginner-safe-operator-playbook-for-careful-decision-makers",
@@ -308,7 +308,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 12 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 12 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Rented or Purchased Decor: The Questions That Decide Which You Want @ /daily/2026-08-27-rented-or-purchased-decor-the-questions-that-decide-which-you-want",
@@ -330,7 +330,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 13 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 13 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What a Grazing Table Brief Should Specify @ /daily/2026-08-29-what-a-grazing-table-brief-should-specify",
@@ -352,29 +352,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 14 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "How to Plan Install and Takedown for a Seasonal Porch Display @ /daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display",
-      "intent": "page",
-      "page": "/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display",
-      "page_kind": "article",
-      "file": "sites/memphis-local/daily/2026-08-26-how-to-plan-install-and-takedown-for-a-seasonal-porch-display.html",
-      "page_title": "How to Plan Install and Takedown for a Seasonal Porch Display",
-      "impressions": 1,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 1,
-      "weighted_position": 11.0,
-      "page_impressions": 1,
-      "page_position": 11,
-      "query_count": 0,
-      "queries": [],
-      "rank": 15,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 15 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 14 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Seasonal Home Styling in Memphis @ /seasonal-home-styling-memphis",
@@ -391,12 +369,12 @@
       "page_position": 11,
       "query_count": 0,
       "queries": [],
-      "rank": 16,
+      "rank": 15,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 16 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 15 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Wedding Checklist Planning: Editorial Red-Flag Checklist Before You Call @ /daily/2026-08-17-wedding-checklist-planning-editorial-red-flag-checklist-before-you-call",
@@ -413,12 +391,12 @@
       "page_position": 28,
       "query_count": 0,
       "queries": [],
-      "rank": 17,
+      "rank": 16,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 17 of 17 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 16 of 16 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     }
   ]
 }

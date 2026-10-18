@@ -3,7 +3,8 @@
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
     "no_page": 2,
-    "strengthened": 14,
+    "strengthened": 13,
+    "strengthened_without_qualifying_family": 1,
     "underivable": 1
   },
   "entries": [
@@ -13,8 +14,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 29,
-      "weighted_position": 50.3,
+      "impressions": 31,
+      "weighted_position": 49.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -37,7 +38,7 @@
         "top_demand"
       ],
       "impressions": 28,
-      "weighted_position": 5.9,
+      "weighted_position": 6.0,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -72,8 +73,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 10,
-      "weighted_position": 5.0,
+      "impressions": 9,
+      "weighted_position": 5.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -90,35 +91,13 @@
     },
     {
       "host": "founderoperatorlibrary.com",
-      "family": "ai act coach @ /ai-executive-coaching-resources",
+      "family": "company masthead @ /masthead",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
       "impressions": 9,
-      "weighted_position": 19.6,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
-      "page": "/ai-executive-coaching-resources",
-      "file": "sites/founder-operator/ai-executive-coaching-resources.html",
-      "changes": {
-        "title": "AI Coaching Guide: Comparing AI and Human Executive Coaching",
-        "definition": true,
-        "question_h2s": 3,
-        "faqpage": true,
-        "facts": 3,
-        "linked_from_homepage": true,
-        "source": "hand_authored"
-      }
-    },
-    {
-      "host": "founderoperatorlibrary.com",
-      "family": "company masthead @ /masthead",
-      "basis": [
-        "ranking_page"
-      ],
-      "impressions": 8,
-      "weighted_position": 9.6,
+      "weighted_position": 9.2,
       "status": "no_page",
       "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
       "page": "/masthead",
@@ -131,8 +110,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 54,
-      "weighted_position": 7.0,
+      "impressions": 69,
+      "weighted_position": 6.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -171,6 +150,28 @@
     },
     {
       "host": "memphisvendorlibrary.com",
+      "family": "How to Time a Surprise Room Setup Around Check-In @ /daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 7,
+      "weighted_position": 6.6,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)",
+      "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
+      "changes": {
+        "title": "How to Time a Surprise Room Setup Around Check-In",
+        "definition": true,
+        "question_h2s": 4,
+        "faqpage": false,
+        "facts": 0,
+        "linked_from_homepage": true,
+        "source": "derived_from_page"
+      }
+    },
+    {
+      "host": "memphisvendorlibrary.com",
       "family": "grazing tables @ /memphis-grazing-table-resources",
       "basis": [
         "ranking_page",
@@ -190,28 +191,6 @@
         "facts": 3,
         "linked_from_homepage": true,
         "source": "hand_authored"
-      }
-    },
-    {
-      "host": "memphisvendorlibrary.com",
-      "family": "How to Time a Surprise Room Setup Around Check-In @ /daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 6,
-      "weighted_position": 6.2,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)",
-      "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
-      "file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
-      "changes": {
-        "title": "How to Time a Surprise Room Setup Around Check-In",
-        "definition": true,
-        "question_h2s": 4,
-        "faqpage": false,
-        "facts": 0,
-        "linked_from_homepage": true,
-        "source": "derived_from_page"
       }
     },
     {
@@ -243,8 +222,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 401,
-      "weighted_position": 9.9,
+      "impressions": 389,
+      "weighted_position": 10.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -265,7 +244,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 80,
+      "impressions": 81,
       "weighted_position": 8.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -287,8 +266,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 28,
-      "weighted_position": 44.6,
+      "impressions": 29,
+      "weighted_position": 44.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -360,6 +339,15 @@
       "page": "/topics/equine-contracts",
       "file": "sites/professional-resources/topics/equine-contracts.html",
       "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": null,
+      "basis": [],
+      "status": "strengthened_without_qualifying_family",
+      "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
+      "page": "/ai-executive-coaching-resources",
+      "file": "sites/founder-operator/ai-executive-coaching-resources.html"
     }
   ]
 }
