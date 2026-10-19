@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-18T15-41-08.725616Z-39141520836",
-  "attempted_at": "2026-10-18T15:41:08.725616Z",
+  "receipt_id": "2026-10-19T20-41-41.416580Z-39321311252",
+  "attempted_at": "2026-10-19T20:41:41.416580Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "c8f01fa2635158b2dd65d0bb81caa0bc208a01778842121f81cec7c09d57642f",
+        "sha256": "e37ffe58c1bd21af574d643e6136650947a58d56b6203b5731823ee5f6cb9f8e",
         "url_count": 119
       },
       "indexnow": {
@@ -2152,7 +2152,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-18T15-41-08.725616Z-39141520836.json"
+    "history": "data/distribution/receipts/2026-10-19T20-41-41.416580Z-39321311252.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
