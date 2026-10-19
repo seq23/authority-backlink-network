@@ -1,6 +1,6 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-19T12:26:46+00:00",
+  "run_at": "2026-10-19T18:33:11+00:00",
   "messages_read": 1,
   "digests_read": 1,
   "queries_ingested": 9,
@@ -14,40 +14,40 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Psychologist or behavioral scientist commentary on new survey showing how AI impacts decision making",
+      "summary": "Person acting as a caregiver for a family member in Chicagoland",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking hospital leaders and researchers on measuring the business value of healthcare AI",
+      "summary": "Expert Quote Request for Article that explores how hawks, ospreys, falcons and other birds of prey are turning Chicago's",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Daily Mom Holiday Editorial Features",
+      "summary": "Seeking Insights on Better Networking for Meeting Planners",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking US-based landscapers or gardening experts to discuss autumn plantings",
+      "summary": "Seeking Insights on 'Challenging the Status Quo' with Association Event Planning",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Stylish Gifts for People Who Love Their Home",
+      "summary": "Seeking Insights on Leadership from Association Planners and Directors",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking podcast guests to discuss hospital digital transformation, implementation challenges, and measurable outcomes",
-      "why": "excluded: 'investment'"
-    },
-    {
-      "summary": "Making Meeting/Event Plans Confidently During Uncertain Times",
+      "summary": "TV Segment Request: Christmas Gifts For Teens",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Beware of border delays at arrival",
+      "summary": "Seeking Pediatrician or Neonatologist for babies sleeping on their side",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Why managed furnished apartment rentals are on the upswing",
       "why": "excluded: 'attorney'"
     },
     {
-      "summary": "How Health-Tech Companies Can Shorten The Road From Innovation To Adoption",
-      "why": "The query seeks health-tech founders/CEOs with first-hand experience shortening innovation-to-adoption cycles in healthcare; the available facts cover only Memphis wedding-vendor pricing and USCIS for"
+      "summary": "Seeking experts on hospital control over technology, data, and vendor relationships",
+      "why": "The available facts concern wedding vendor pricing in Memphis and USCIS form-change tracking, not hospital technology leadership, procurement, vendor dependence, data portability, or healthcare IT dec"
     }
   ],
   "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
