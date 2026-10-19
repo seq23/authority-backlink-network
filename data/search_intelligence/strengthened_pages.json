@@ -402,6 +402,38 @@
       "faq_schema": false,
       "definition_source": "<p class=\"dek\"><strong>Short answer:</strong> Photographs hide the four things that matter most: ceiling height, where the power is, what the lighting actually does, and where people will stand. Get those in numbers and in writing from the venue, take a video walkthrough rather than stills, and ask your vendor what they would check if they were standing in the room.</p>",
       "definition_html": "<strong>Short answer:</strong> Photographs hide the four things that matter most: ceiling height, where the power is, what the lighting actually does, and where people will stand. Get those in numbers and in writing from the venue, take a video walkthrough rather than stills, and ask your vendor what they would check if they were standing in the room."
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "route": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
+      "file": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
+      "derived_from_page": true,
+      "derived_for_family": "How to Write a Delegation Brief a Person or a Tool Can Both Execute @ /daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
+      "title": "How to Write a Delegation Brief a Person or a Tool Can Both Execute",
+      "description": "A delegation brief that works for an assistant also works for an AI tool: the six elements it needs, a template table, and what fails when one is missing.",
+      "definition": "Short answer: A brief that either a person or a tool can execute needs six things: the outcome, the definition of done, the constraints, the inputs and where they live, the decision rights, and what to do when stuck. Most briefs contain the first and skip the rest, which is why the result comes back wrong and nobody can say why.",
+      "questions": [
+        {
+          "q": "Is this not just over-specifying the work?",
+          "a": "Specifying the completion condition is not the same as specifying the method. A good brief is tight about outcome, constraints, and done, and deliberately silent about approach. If your brief tells the recipient how to do it step by step, you have written instructions rather than a delegation."
+        },
+        {
+          "q": "How much detail does a tool need compared with a person?",
+          "a": "More on inputs and constraints, because it cannot walk over and ask. Less on relationship context, which it cannot use anyway. A useful habit is to write the brief for the tool first, then hand the same brief to a person and see which parts they find redundant."
+        },
+        {
+          "q": "What should never be delegated to a tool?",
+          "a": "Anything where the cost of a confident, plausible error is high and the error is hard to detect: financial figures presented as final, legal wording, anything involving another person's private information, and communications sent under someone else's name without review."
+        },
+        {
+          "q": "How do I stop the review from becoming a rewrite?",
+          "a": "Review against the written definition of done before you read for taste. If your objection is not covered by the definition, that is a note for the next brief rather than a correction to this one. Rewriting silently is how delegation reverts to doing the work yourself."
+        }
+      ],
+      "facts": [],
+      "faq_schema": false,
+      "definition_source": "<p class=\"dek\"><strong>Short answer:</strong> A brief that either a person or a tool can execute needs six things: the outcome, the definition of done, the constraints, the inputs and where they live, the decision rights, and what to do when stuck. Most briefs contain the first and skip the rest, which is why the result comes back wrong and nobody can say why.</p>",
+      "definition_html": "<strong>Short answer:</strong> A brief that either a person or a tool can execute needs six things: the outcome, the definition of done, the constraints, the inputs and where they live, the decision rights, and what to do when stuck. Most briefs contain the first and skip the rest, which is why the result comes back wrong and nobody can say why."
     }
   ]
 }

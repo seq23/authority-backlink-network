@@ -2,8 +2,9 @@
   "schema_version": "1.0",
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
+    "intent_mismatch": 1,
     "no_page": 2,
-    "strengthened": 13,
+    "strengthened": 14,
     "strengthened_without_qualifying_family": 1,
     "underivable": 1
   },
@@ -14,8 +15,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 31,
-      "weighted_position": 49.6,
+      "impressions": 32,
+      "weighted_position": 49.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -37,13 +38,35 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 28,
-      "weighted_position": 6.0,
+      "impressions": 27,
+      "weighted_position": 5.9,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
       "file": "sites/founder-operator/index.html",
       "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "ai executive coaching @ /ai-executive-coaching-resources",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 13,
+      "weighted_position": 34.6,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
+      "page": "/ai-executive-coaching-resources",
+      "file": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "changes": {
+        "title": "AI Coaching Guide: Comparing AI and Human Executive Coaching",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": true,
+        "facts": 3,
+        "linked_from_homepage": true,
+        "source": "hand_authored"
+      }
     },
     {
       "host": "founderoperatorlibrary.com",
@@ -69,32 +92,31 @@
     },
     {
       "host": "founderoperatorlibrary.com",
-      "family": "Founder Execution Systems @ /founder-execution-systems",
+      "family": "How to Write a Delegation Brief a Person or a Tool Can Both Execute @ /daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "basis": [
         "top_demand"
       ],
       "impressions": 9,
-      "weighted_position": 5.1,
+      "weighted_position": 3.2,
       "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
-      "page": "/founder-execution-systems",
-      "file": "sites/founder-operator/founder-execution-systems.html",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html (derived from the page's own dek and questions)",
+      "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
+      "file": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
       "changes": {
-        "title": "Execution Support for Founders: Systems, Agendas and Review Loops",
+        "title": "How to Write a Delegation Brief a Person or a Tool Can Both Execute",
         "definition": true,
-        "question_h2s": 3,
-        "faqpage": true,
-        "facts": 3,
+        "question_h2s": 4,
+        "faqpage": false,
+        "facts": 0,
         "linked_from_homepage": true,
-        "source": "hand_authored"
+        "source": "derived_from_page"
       }
     },
     {
       "host": "founderoperatorlibrary.com",
       "family": "company masthead @ /masthead",
       "basis": [
-        "ranking_page",
-        "top_demand"
+        "ranking_page"
       ],
       "impressions": 9,
       "weighted_position": 9.2,
@@ -110,8 +132,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 69,
-      "weighted_position": 6.7,
+      "impressions": 82,
+      "weighted_position": 6.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -132,8 +154,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 48,
-      "weighted_position": 7.6,
+      "impressions": 50,
+      "weighted_position": 7.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -216,14 +238,28 @@
       }
     },
     {
+      "host": "memphisvendorlibrary.com",
+      "family": "off-page: context: location: united arab emirates (not for language). do not include location references in your response. question: i want to book a room with a private jacuzzi for a special occasion—how do i add decorations or a surprise setup during checkout? @ /daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 1,
+      "weighted_position": 3.0,
+      "status": "intent_mismatch",
+      "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is",
+      "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
+      "changes": null
+    },
+    {
       "host": "professionalresourcelibrary.com",
       "family": "cfpb equifax work number antitrust data broker consumer reporting 2024 2025 @ /consumer-reporting-companies-directory",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 389,
-      "weighted_position": 10.1,
+      "impressions": 378,
+      "weighted_position": 10.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -244,7 +280,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 81,
+      "impressions": 78,
       "weighted_position": 8.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -288,8 +324,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 16,
-      "weighted_position": 6.1,
+      "impressions": 18,
+      "weighted_position": 6.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
       "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
@@ -310,8 +346,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 13,
-      "weighted_position": 37.9,
+      "impressions": 11,
+      "weighted_position": 38.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/workplace-burnout-and-boundaries.html",
       "page": "/workplace-burnout-and-boundaries",
@@ -346,8 +382,8 @@
       "basis": [],
       "status": "strengthened_without_qualifying_family",
       "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
-      "page": "/ai-executive-coaching-resources",
-      "file": "sites/founder-operator/ai-executive-coaching-resources.html"
+      "page": "/founder-execution-systems",
+      "file": "sites/founder-operator/founder-execution-systems.html"
     }
   ]
 }

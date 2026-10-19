@@ -4,22 +4,30 @@
   "state": "OK",
   "host": "memphisvendorlibrary.com",
   "site_url": "sc-domain:memphisvendorlibrary.com",
-  "start_date": "2026-09-18",
-  "end_date": "2026-10-15",
+  "start_date": "2026-09-19",
+  "end_date": "2026-10-16",
   "window_days": 28,
-  "collected_at": "2026-10-18T14:30:17+00:00",
+  "collected_at": "2026-10-19T20:00:40+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 148,
-    "ctr": 0.0068,
-    "position": 7.9
+    "impressions": 164,
+    "ctr": 0.0061,
+    "position": 7.5
   },
-  "query_count": 1,
+  "query_count": 2,
   "page_count": 16,
-  "row_count": 1,
-  "query_row_impressions": 1,
+  "row_count": 2,
+  "query_row_impressions": 2,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
+    {
+      "query": "context: location: united arab emirates (not for language). do not include location references in your response. question: i want to book a room with a private jacuzzi for a special occasion—how do i add decorations or a surprise setup during checkout?",
+      "page": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
     {
       "query": "grazing tables",
       "page": "https://memphisvendorlibrary.com/memphis-grazing-table-resources",
@@ -30,6 +38,13 @@
     }
   ],
   "by_query": [
+    {
+      "query": "context: location: united arab emirates (not for language). do not include location references in your response. question: i want to book a room with a private jacuzzi for a special occasion—how do i add decorations or a surprise setup during checkout?",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
     {
       "query": "grazing tables",
       "clicks": 0,
@@ -42,16 +57,16 @@
     {
       "page": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
       "clicks": 0,
-      "impressions": 69,
+      "impressions": 83,
       "ctr": 0,
-      "position": 6.7
+      "position": 6.4
     },
     {
       "page": "https://memphisvendorlibrary.com/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
       "clicks": 1,
-      "impressions": 48,
-      "ctr": 0.0208,
-      "position": 7.6
+      "impressions": 50,
+      "ctr": 0.02,
+      "position": 7.3
     },
     {
       "page": "https://memphisvendorlibrary.com/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",

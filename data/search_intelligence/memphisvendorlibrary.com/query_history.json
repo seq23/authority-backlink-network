@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 8,
+  "snapshot_count": 9,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -117,6 +117,29 @@
         "position": 7.9
       },
       "queries": {
+        "grazing tables": [
+          1,
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-19T20:00:40+00:00",
+      "start_date": "2026-09-19",
+      "end_date": "2026-10-16",
+      "totals": {
+        "clicks": 1,
+        "impressions": 164,
+        "ctr": 0.0061,
+        "position": 7.5
+      },
+      "queries": {
+        "context: location: united arab emirates (not for language). do not include location references in your response. question: i want to book a room with a private jacuzzi for a special occasion—how do i add decorations or a surprise setup during checkout?": [
+          1,
+          0,
+          3
+        ],
         "grazing tables": [
           1,
           0,

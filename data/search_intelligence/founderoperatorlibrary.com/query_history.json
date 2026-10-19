@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 8,
+  "snapshot_count": 9,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -535,6 +535,89 @@
           1,
           0,
           20
+        ],
+        "community cost metric": [
+          1,
+          0,
+          54
+        ],
+        "company masthead": [
+          1,
+          0,
+          25
+        ],
+        "moderation and community management": [
+          1,
+          0,
+          84
+        ],
+        "monthly metrics": [
+          1,
+          0,
+          46
+        ],
+        "sprylabs": [
+          1,
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-19T20:00:40+00:00",
+      "start_date": "2026-09-19",
+      "end_date": "2026-10-16",
+      "totals": {
+        "clicks": 1,
+        "impressions": 114,
+        "ctr": 0.0088,
+        "position": 23.0
+      },
+      "queries": {
+        "community reports": [
+          6,
+          0,
+          79.7
+        ],
+        "founder operator": [
+          5,
+          0,
+          4.8
+        ],
+        "ai executive coaching": [
+          3,
+          0,
+          21.7
+        ],
+        "community metrics": [
+          3,
+          0,
+          69.7
+        ],
+        "executive ai coaching": [
+          2,
+          0,
+          76.5
+        ],
+        "performance problem identification": [
+          2,
+          0,
+          46
+        ],
+        "virtual event rfp": [
+          2,
+          0,
+          88
+        ],
+        "ai act coach": [
+          1,
+          0,
+          36
+        ],
+        "ai coaching guide": [
+          1,
+          0,
+          40
         ],
         "community cost metric": [
           1,

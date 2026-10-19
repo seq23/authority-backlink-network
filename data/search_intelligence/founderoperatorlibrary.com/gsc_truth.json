@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-18",
-  "end_date": "2026-10-15",
+  "start_date": "2026-09-19",
+  "end_date": "2026-10-16",
   "window_days": 28,
-  "collected_at": "2026-10-18T14:30:17+00:00",
+  "collected_at": "2026-10-19T20:00:40+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 108,
-    "ctr": 0.0093,
-    "position": 21.3
+    "impressions": 114,
+    "ctr": 0.0088,
+    "position": 23.0
   },
-  "query_count": 13,
-  "page_count": 24,
-  "row_count": 13,
-  "query_row_impressions": 26,
+  "query_count": 14,
+  "page_count": 25,
+  "row_count": 14,
+  "query_row_impressions": 30,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -37,12 +37,28 @@
       "position": 4.8
     },
     {
+      "query": "ai executive coaching",
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 21.7
+    },
+    {
       "query": "community metrics",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 69.7
+    },
+    {
+      "query": "executive ai coaching",
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 76.5
     },
     {
       "query": "performance problem identification",
@@ -75,14 +91,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 40
-    },
-    {
-      "query": "ai executive coaching",
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 20
     },
     {
       "query": "community cost metric",
@@ -141,11 +149,25 @@
       "position": 4.8
     },
     {
+      "query": "ai executive coaching",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 21.7
+    },
+    {
       "query": "community metrics",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 69.7
+    },
+    {
+      "query": "executive ai coaching",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 76.5
     },
     {
       "query": "performance problem identification",
@@ -174,13 +196,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 40
-    },
-    {
-      "query": "ai executive coaching",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 20
     },
     {
       "query": "community cost metric",
@@ -222,16 +237,23 @@
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 1,
-      "impressions": 31,
-      "ctr": 0.0323,
-      "position": 37.5
+      "impressions": 32,
+      "ctr": 0.0312,
+      "position": 37.8
     },
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 28,
+      "impressions": 27,
       "ctr": 0,
-      "position": 6.2
+      "position": 6.1
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 26
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -241,11 +263,11 @@
       "position": 30.8
     },
     {
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 15.6
+      "position": 3.2
     },
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
@@ -260,13 +282,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 7.2
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 3
     },
     {
       "page": "https://founderoperatorlibrary.com/about",
@@ -351,6 +366,13 @@
       "impressions": 2,
       "ctr": 0,
       "position": 3
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/contributors",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 75
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
