@@ -1,17 +1,54 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-16T18:29:35+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-10-19T12:26:46+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 9,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 8,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Psychologist or behavioral scientist commentary on new survey showing how AI impacts decision making",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking hospital leaders and researchers on measuring the business value of healthcare AI",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Daily Mom Holiday Editorial Features",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking US-based landscapers or gardening experts to discuss autumn plantings",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Stylish Gifts for People Who Love Their Home",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking podcast guests to discuss hospital digital transformation, implementation challenges, and measurable outcomes",
+      "why": "excluded: 'investment'"
+    },
+    {
+      "summary": "Making Meeting/Event Plans Confidently During Uncertain Times",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Beware of border delays at arrival",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "How Health-Tech Companies Can Shorten The Road From Innovation To Adoption",
+      "why": "The query seeks health-tech founders/CEOs with first-hand experience shortening innovation-to-adoption cycles in healthcare; the available facts cover only Memphis wedding-vendor pricing and USCIS for"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
