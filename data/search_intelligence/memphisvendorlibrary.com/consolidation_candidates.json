@@ -3,8 +3,8 @@
   "host": "memphisvendorlibrary.com",
   "status": "LIST_ONLY_NO_REDIRECTS",
   "decision_input_for": "Fold a page into its topic hub when URL Inspection keeps it out of the index and Search Console shows it no impressions for the whole 28-day window. Nothing here redirects or deletes; the list is evidence for that decision.",
-  "gsc_window": "2026-09-19..2026-10-16",
-  "coverage_collected_at": "2026-10-19T20:00:40+00:00",
+  "gsc_window": "2026-09-20..2026-10-17",
+  "coverage_collected_at": "2026-10-20T18:32:52+00:00",
   "inspected_url_count": 105,
   "candidate_count": 12,
   "candidates_by_hub": {
@@ -17,7 +17,7 @@
       "file": "sites/memphis-local/daily/2026-06-28-halloween-porch-styling-operator-grade-operator-playbook-before-you-sign.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/porch-and-seasonal-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -27,17 +27,7 @@
       "file": "sites/memphis-local/contributors.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
-      "impressions_28d": 0,
-      "fold_into_hub": "/topics/event-and-room-styling",
-      "fold_rule": "the topic hub that already lists the page"
-    },
-    {
-      "url": "https://memphisvendorlibrary.com/corrections",
-      "file": "sites/memphis-local/corrections.html",
-      "coverage_state": "Discovered - currently not indexed",
-      "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -47,17 +37,7 @@
       "file": "sites/memphis-local/editorial-standards.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
-      "impressions_28d": 0,
-      "fold_into_hub": "/topics/event-and-room-styling",
-      "fold_rule": "the topic hub that already lists the page"
-    },
-    {
-      "url": "https://memphisvendorlibrary.com/grazing-table-food-safety-checklist",
-      "file": "sites/memphis-local/grazing-table-food-safety-checklist.html",
-      "coverage_state": "Discovered - currently not indexed",
-      "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -67,7 +47,7 @@
       "file": "sites/memphis-local/memphis-event-rental-vs-purchase-comparison.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -77,7 +57,7 @@
       "file": "sites/memphis-local/memphis-event-vendor-quote-cost-drivers.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -87,7 +67,7 @@
       "file": "sites/memphis-local/memphis-outdoor-event-weather-planning.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -97,7 +77,7 @@
       "file": "sites/memphis-local/memphis-party-decor-vendors.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -107,7 +87,7 @@
       "file": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -117,7 +97,27 @@
       "file": "sites/memphis-local/topics/wedding-day-timelines.html",
       "coverage_state": "Discovered - currently not indexed",
       "bucket": "discovered_not_indexed",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/event-and-room-styling",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://memphisvendorlibrary.com/corrections",
+      "file": "sites/memphis-local/corrections.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/event-and-room-styling",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://memphisvendorlibrary.com/grazing-table-food-safety-checklist",
+      "file": "sites/memphis-local/grazing-table-food-safety-checklist.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -127,7 +127,7 @@
       "file": "sites/memphis-local/masthead.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-10-19T20:00:40+00:00",
+      "inspected_at": "2026-10-20T18:32:52+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"

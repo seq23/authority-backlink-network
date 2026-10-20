@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "host": "professionalresourcelibrary.com",
-  "gsc_window": "2026-09-19..2026-10-16",
-  "gsc_collected_at": "2026-10-19T20:00:40+00:00",
+  "gsc_window": "2026-09-20..2026-10-17",
+  "gsc_collected_at": "2026-10-20T18:32:52+00:00",
   "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
   "max_targets": 500,
   "target_count": 41,
-  "site_impressions": 601,
-  "query_row_impressions": 79,
-  "anonymised_impressions": 522,
+  "site_impressions": 593,
+  "query_row_impressions": 82,
+  "anonymised_impressions": 511,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
   "dropped_count": 4,
@@ -45,8 +45,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 17,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -62,11 +62,28 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 8,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/equine-legal-resource-library",
       "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_33da94ed1a61",
+      "query": "funding documents",
+      "source": "gsc_export",
+      "impressions": 5,
+      "clicks": 0,
+      "average_position": 24.8,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 5,
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
+      },
+      "landing_route": "/topics/business-funding-documents",
+      "landing_file": "sites/professional-resources/topics/business-funding-documents.html",
       "page_answers_query": true
     },
     {
@@ -79,8 +96,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/equine-legal-resource-library",
       "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
@@ -96,8 +113,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 4,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/equine-legal-resource-library",
       "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
@@ -113,8 +130,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -130,8 +147,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -147,8 +164,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/workplace-burnout-and-boundaries",
       "landing_file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
@@ -164,8 +181,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/workplace-burnout-and-boundaries",
       "landing_file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
@@ -181,28 +198,11 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
-      "page_answers_query": true
-    },
-    {
-      "target_id": "abn_sq_33da94ed1a61",
-      "query": "funding documents",
-      "source": "gsc_export",
-      "impressions": 2,
-      "clicks": 0,
-      "average_position": 24.5,
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 2,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
-      },
-      "landing_route": "/topics/business-funding-documents",
-      "landing_file": "sites/professional-resources/topics/business-funding-documents.html",
       "page_answers_query": true
     },
     {
@@ -215,8 +215,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -232,8 +232,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -249,8 +249,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -266,8 +266,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -283,8 +283,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -300,8 +300,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -317,8 +317,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -334,8 +334,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -351,8 +351,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/topics/bank-statement-and-deposit-letters",
       "landing_file": "sites/professional-resources/topics/bank-statement-and-deposit-letters.html",
@@ -368,8 +368,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/equine-legal-resource-library",
       "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
@@ -385,8 +385,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/uscis-medical-exam-resources",
       "landing_file": "sites/professional-resources/uscis-medical-exam-resources.html",
@@ -402,8 +402,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/topics/equine-contracts",
       "landing_file": "sites/professional-resources/topics/equine-contracts.html",
@@ -419,8 +419,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -436,8 +436,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -453,8 +453,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -470,8 +470,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -487,8 +487,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -504,8 +504,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -521,8 +521,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -538,8 +538,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -555,8 +555,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -572,8 +572,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -589,8 +589,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -606,8 +606,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -623,8 +623,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/personal-injury-research-resources",
       "landing_file": "sites/professional-resources/personal-injury-research-resources.html",
@@ -640,8 +640,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -657,8 +657,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -674,8 +674,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/workplace-burnout-and-boundaries",
       "landing_file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
@@ -691,8 +691,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
       "landing_file": "sites/professional-resources/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html",
@@ -708,8 +708,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/equine-legal-resource-library",
       "landing_file": "sites/professional-resources/equine-legal-resource-library.html",
@@ -725,8 +725,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/consumer-reporting-companies-directory",
       "landing_file": "sites/professional-resources/consumer-reporting-companies-directory.html",

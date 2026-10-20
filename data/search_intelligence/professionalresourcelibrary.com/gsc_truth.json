@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "professionalresourcelibrary.com",
   "site_url": "sc-domain:professionalresourcelibrary.com",
-  "start_date": "2026-09-19",
-  "end_date": "2026-10-16",
+  "start_date": "2026-09-20",
+  "end_date": "2026-10-17",
   "window_days": 28,
-  "collected_at": "2026-10-19T20:00:40+00:00",
+  "collected_at": "2026-10-20T18:32:52+00:00",
   "totals": {
     "clicks": 5,
-    "impressions": 601,
-    "ctr": 0.0083,
-    "position": 11.2
+    "impressions": 593,
+    "ctr": 0.0084,
+    "position": 11.5
   },
   "query_count": 41,
-  "page_count": 54,
+  "page_count": 53,
   "row_count": 41,
-  "query_row_impressions": 79,
+  "query_row_impressions": 82,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -35,6 +35,14 @@
       "impressions": 8,
       "ctr": 0,
       "position": 53.4
+    },
+    {
+      "query": "funding documents",
+      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 24.8
     },
     {
       "query": "equine legal",
@@ -91,14 +99,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 81
-    },
-    {
-      "query": "funding documents",
-      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 24.5
     },
     {
       "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best company leadership & executive visibility. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of company leadership & executive visibility.",
@@ -365,6 +365,13 @@
       "position": 53.4
     },
     {
+      "query": "funding documents",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 24.8
+    },
+    {
       "query": "equine legal",
       "clicks": 0,
       "impressions": 4,
@@ -412,13 +419,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 81
-    },
-    {
-      "query": "funding documents",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 24.5
     },
     {
       "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best company leadership & executive visibility. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of company leadership & executive visibility.",
@@ -642,16 +642,16 @@
     {
       "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "clicks": 0,
-      "impressions": 378,
+      "impressions": 370,
       "ctr": 0,
-      "position": 9.2
+      "position": 9.3
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
       "clicks": 1,
-      "impressions": 78,
-      "ctr": 0.0128,
-      "position": 8.2
+      "impressions": 76,
+      "ctr": 0.0132,
+      "position": 8.1
     },
     {
       "page": "https://professionalresourcelibrary.com/equine-legal-resource-library",
@@ -670,9 +670,9 @@
     {
       "page": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
       "clicks": 0,
-      "impressions": 11,
+      "impressions": 12,
       "ctr": 0,
-      "position": 29.9
+      "position": 33.8
     },
     {
       "page": "https://professionalresourcelibrary.com/contributors",
@@ -689,18 +689,25 @@
       "position": 10
     },
     {
-      "page": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 18.7
-    },
-    {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 8.4
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 20.4
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 24.8
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/equine-contracts",
@@ -850,13 +857,6 @@
       "position": 44.5
     },
     {
-      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 24.5
-    },
-    {
       "page": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
       "clicks": 1,
       "impressions": 2,
@@ -897,13 +897,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-questions-to-ask-before-choosing-a-recovery-residence",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",

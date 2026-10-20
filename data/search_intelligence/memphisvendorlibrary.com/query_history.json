@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 9,
+  "snapshot_count": 10,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -139,6 +139,34 @@
           1,
           0,
           3
+        ],
+        "grazing tables": [
+          1,
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-20T18:32:52+00:00",
+      "start_date": "2026-09-20",
+      "end_date": "2026-10-17",
+      "totals": {
+        "clicks": 1,
+        "impressions": 176,
+        "ctr": 0.0057,
+        "position": 7.5
+      },
+      "queries": {
+        "context: location: united arab emirates (not for language). do not include location references in your response. question: i want to book a room with a private jacuzzi for a special occasion—how do i add decorations or a surprise setup during checkout?": [
+          1,
+          0,
+          3
+        ],
+        "context: location: united states (not for language). do not include location references in your response. question: i want to arrange a surprise amenity for someone in my madrid hotel reservation—how do i request it and when should i do it?": [
+          1,
+          0,
+          6
         ],
         "grazing tables": [
           1,

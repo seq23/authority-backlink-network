@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-09-19..2026-10-16",
-  "gsc_collected_at": "2026-10-19T20:00:40+00:00",
+  "gsc_window": "2026-09-20..2026-10-17",
+  "gsc_collected_at": "2026-10-20T18:32:52+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -12,11 +12,11 @@
     "ranking_min_impressions": 2,
     "intent_token_share": 0.5
   },
-  "family_count": 25,
+  "family_count": 26,
   "qualifying_count": 6,
   "status_counts": {
     "no_page": 2,
-    "not_top_family": 19,
+    "not_top_family": 20,
     "strengthened": 4
   },
   "families": [
@@ -27,18 +27,18 @@
       "page_kind": "article",
       "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page_title": "Which Community Metrics to Report Monthly and Which to Ignore",
-      "impressions": 32,
-      "visible_query_impressions": 11,
+      "impressions": 33,
+      "visible_query_impressions": 12,
       "anonymised_impressions": 21,
-      "weighted_position": 49.4,
-      "page_impressions": 32,
-      "page_position": 37.8,
+      "weighted_position": 52.1,
+      "page_impressions": 33,
+      "page_position": 40.5,
       "query_count": 4,
       "queries": [
         {
           "query": "community reports",
-          "impressions": 6,
-          "position": 79.7
+          "impressions": 7,
+          "position": 79.9
         },
         {
           "query": "community metrics",
@@ -74,12 +74,12 @@
       "page_kind": "home",
       "file": "sites/founder-operator/index.html",
       "page_title": "Founder Operator Library",
-      "impressions": 27,
+      "impressions": 26,
       "visible_query_impressions": 5,
-      "anonymised_impressions": 22,
-      "weighted_position": 5.9,
-      "page_impressions": 27,
-      "page_position": 6.1,
+      "anonymised_impressions": 21,
+      "weighted_position": 5.8,
+      "page_impressions": 26,
+      "page_position": 6.0,
       "query_count": 1,
       "queries": [
         {
@@ -105,23 +105,23 @@
       "page_kind": "article",
       "file": "sites/founder-operator/ai-executive-coaching-resources.html",
       "page_title": "AI Executive Coaching Resources",
-      "impressions": 13,
-      "visible_query_impressions": 7,
+      "impressions": 15,
+      "visible_query_impressions": 9,
       "anonymised_impressions": 6,
-      "weighted_position": 34.6,
-      "page_impressions": 13,
-      "page_position": 26,
+      "weighted_position": 37.3,
+      "page_impressions": 15,
+      "page_position": 28.7,
       "query_count": 4,
       "queries": [
         {
           "query": "ai executive coaching",
-          "impressions": 3,
-          "position": 21.7
+          "impressions": 4,
+          "position": 21.2
         },
         {
           "query": "executive ai coaching",
-          "impressions": 2,
-          "position": 76.5
+          "impressions": 3,
+          "position": 75.3
         },
         {
           "query": "ai act coach",
@@ -146,38 +146,6 @@
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html"
     },
     {
-      "family": "performance problem identification @ /daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
-      "intent": "page",
-      "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
-      "page_kind": "article",
-      "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
-      "page_title": "How to Tell a Performance Problem From a Role Design Problem",
-      "impressions": 11,
-      "visible_query_impressions": 2,
-      "anonymised_impressions": 9,
-      "weighted_position": 33.6,
-      "page_impressions": 11,
-      "page_position": 30.8,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "performance problem identification",
-          "impressions": 2,
-          "position": 46
-        }
-      ],
-      "rank": 4,
-      "basis": [
-        "top_demand"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [
-        "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem"
-      ],
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html"
-    },
-    {
       "family": "How to Write a Delegation Brief a Person or a Tool Can Both Execute @ /daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "intent": "page",
       "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -192,7 +160,7 @@
       "page_position": 3.2,
       "query_count": 0,
       "queries": [],
-      "rank": 5,
+      "rank": 4,
       "basis": [
         "top_demand"
       ],
@@ -218,12 +186,16 @@
       "page_position": 5.1,
       "query_count": 0,
       "queries": [],
-      "rank": 6,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 6 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "rank": 5,
+      "basis": [
+        "top_demand"
+      ],
+      "qualifies": true,
+      "strengthened_pages": [
+        "/founder-execution-systems"
+      ],
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html"
     },
     {
       "family": "company masthead @ /masthead",
@@ -246,7 +218,7 @@
           "position": 25
         }
       ],
-      "rank": 7,
+      "rank": 6,
       "basis": [
         "ranking_page"
       ],
@@ -254,6 +226,34 @@
       "strengthened_pages": [],
       "status": "no_page",
       "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer"
+    },
+    {
+      "family": "performance problem identification @ /daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "intent": "page",
+      "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "page_kind": "article",
+      "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
+      "page_title": "How to Tell a Performance Problem From a Role Design Problem",
+      "impressions": 8,
+      "visible_query_impressions": 2,
+      "anonymised_impressions": 6,
+      "weighted_position": 33.2,
+      "page_impressions": 8,
+      "page_position": 29,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "performance problem identification",
+          "impressions": 2,
+          "position": 46
+        }
+      ],
+      "rank": 7,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 7 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "About Founder Operator Library @ /about",
@@ -275,7 +275,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 8 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 8 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "virtual event rfp @ /virtual-event-production-buyers-guide",
@@ -303,7 +303,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 9 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 9 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "AI Marketing Operations Resources @ /ai-marketing-operations-resources",
@@ -325,29 +325,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 10 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "What a Role Scorecard Should Contain Before You Open a Req @ /daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
-      "intent": "page",
-      "page": "/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
-      "page_kind": "article",
-      "file": "sites/founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
-      "page_title": "What a Role Scorecard Should Contain Before You Open a Req",
-      "impressions": 3,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 3,
-      "weighted_position": 4.0,
-      "page_impressions": 3,
-      "page_position": 4,
-      "query_count": 0,
-      "queries": [],
-      "rank": 11,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 11 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 10 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Editorial standards for Founder Operator Library @ /editorial-standards",
@@ -364,12 +342,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 12,
+      "rank": 11,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 12 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 11 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Ai Delegation: Aeo-Ready Timeline Guide When Timing Matters @ /daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
@@ -386,12 +364,12 @@
       "page_position": 8.3,
       "query_count": 0,
       "queries": [],
-      "rank": 13,
+      "rank": 12,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 13 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 12 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Team Accountability: Checklist-Driven Comparison Guide Before You Sign @ /daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
@@ -408,12 +386,12 @@
       "page_position": 8.7,
       "query_count": 0,
       "queries": [],
-      "rank": 14,
+      "rank": 13,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 14 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 13 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Founder Operating Systems: Checklist-Driven Prep Guide For Careful Decision-Makers @ /daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
@@ -430,12 +408,56 @@
       "page_position": 3,
       "query_count": 0,
       "queries": [],
+      "rank": 14,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 14 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "What a Role Scorecard Should Contain Before You Open a Req @ /daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
+      "intent": "page",
+      "page": "/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
+      "page_kind": "article",
+      "file": "sites/founder-operator/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req.html",
+      "page_title": "What a Role Scorecard Should Contain Before You Open a Req",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 3.5,
+      "page_impressions": 2,
+      "page_position": 3.5,
+      "query_count": 0,
+      "queries": [],
       "rank": 15,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 15 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 15 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "What Actually Drives the Cost of a Virtual Event Production @ /virtual-event-production-cost-drivers",
+      "intent": "page",
+      "page": "/virtual-event-production-cost-drivers",
+      "page_kind": "article",
+      "file": "sites/founder-operator/virtual-event-production-cost-drivers.html",
+      "page_title": "What Actually Drives the Cost of a Virtual Event Production",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 4.5,
+      "page_impressions": 2,
+      "page_position": 4.5,
+      "query_count": 0,
+      "queries": [],
+      "rank": 16,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 16 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Founder Operating Systems: 2026-Ready Budget/Planning Note When Timing Matters @ /daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
@@ -452,12 +474,12 @@
       "page_position": 8.5,
       "query_count": 0,
       "queries": [],
-      "rank": 16,
+      "rank": 17,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 16 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 17 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Ai Workforce Design: Beginner-Safe Resource Roundup Before You Call @ /daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
@@ -474,12 +496,12 @@
       "page_position": 9.5,
       "query_count": 0,
       "queries": [],
-      "rank": 17,
+      "rank": 18,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 17 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 18 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Webinar vs Virtual Conference vs Hybrid Broadcast: How the Scope Differs @ /daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
@@ -496,12 +518,12 @@
       "page_position": 13,
       "query_count": 0,
       "queries": [],
-      "rank": 18,
+      "rank": 19,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 18 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 19 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "moderation and community management @ /daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
@@ -524,12 +546,12 @@
           "position": 84
         }
       ],
-      "rank": 19,
+      "rank": 20,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 19 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 20 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Design the First 30 Days of Community Membership @ /daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
@@ -546,12 +568,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 20,
+      "rank": 21,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 20 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 21 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What an AI Coach Can and Cannot Do Compared With a Human Coach @ /daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
@@ -568,12 +590,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 21,
+      "rank": 22,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 21 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 22 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "off-page: sprylabs @ /daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
@@ -596,12 +618,12 @@
           "position": 7
         }
       ],
-      "rank": 22,
+      "rank": 23,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 22 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 23 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Build a 90-Day Onboarding Plan That Produces Evidence of Fit @ /daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit",
@@ -618,12 +640,12 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 23,
+      "rank": 24,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 23 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 24 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Actually Drives the Cost of a Virtual Event @ /daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event",
@@ -640,12 +662,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 24,
+      "rank": 25,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 24 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 25 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Contributors and byline policy @ /contributors",
@@ -662,12 +684,12 @@
       "page_position": 75,
       "query_count": 0,
       "queries": [],
-      "rank": 25,
+      "rank": 26,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 25 of 25 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 26 of 26 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
-  "gsc_window": "2026-09-19..2026-10-16",
-  "gsc_collected_at": "2026-10-19T20:00:40+00:00",
+  "gsc_window": "2026-09-20..2026-10-17",
+  "gsc_collected_at": "2026-10-20T18:32:52+00:00",
   "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
   "max_targets": 500,
-  "target_count": 2,
-  "site_impressions": 164,
-  "query_row_impressions": 2,
-  "anonymised_impressions": 162,
+  "target_count": 3,
+  "site_impressions": 176,
+  "query_row_impressions": 3,
+  "anonymised_impressions": 173,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
   "dropped_count": 5,
@@ -50,12 +50,29 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
       "landing_file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page_answers_query": false
+    },
+    {
+      "target_id": "abn_sq_56bd57e4c28b",
+      "query": "context: location: united states (not for language). do not include location references in your response. question: i want to arrange a surprise amenity for someone in my madrid hotel reservation—how do i request it and when should i do it?",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 6,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
+      },
+      "landing_route": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
+      "landing_file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
+      "page_answers_query": true
     },
     {
       "target_id": "abn_sq_b24182883caf",
@@ -67,8 +84,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-19..2026-10-16",
-        "collected_at": "2026-10-19T20:00:40+00:00"
+        "window": "2026-09-20..2026-10-17",
+        "collected_at": "2026-10-20T18:32:52+00:00"
       },
       "landing_route": "/memphis-grazing-table-resources",
       "landing_file": "sites/memphis-local/memphis-grazing-table-resources.html",
