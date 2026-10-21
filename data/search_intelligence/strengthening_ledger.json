@@ -4,8 +4,8 @@
   "counts": {
     "intent_mismatch": 1,
     "no_page": 2,
-    "strengthened": 14,
-    "strengthened_without_qualifying_family": 1,
+    "strengthened": 13,
+    "strengthened_without_qualifying_family": 2,
     "underivable": 1
   },
   "entries": [
@@ -16,7 +16,7 @@
         "top_demand"
       ],
       "impressions": 33,
-      "weighted_position": 52.1,
+      "weighted_position": 51.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -38,7 +38,7 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 26,
+      "impressions": 27,
       "weighted_position": 5.8,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
@@ -52,8 +52,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 15,
-      "weighted_position": 37.3,
+      "impressions": 17,
+      "weighted_position": 38.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -74,8 +74,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 9,
-      "weighted_position": 3.2,
+      "impressions": 11,
+      "weighted_position": 4.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html (derived from the page's own dek and questions)",
       "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -92,31 +92,10 @@
     },
     {
       "host": "founderoperatorlibrary.com",
-      "family": "Founder Execution Systems @ /founder-execution-systems",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 9,
-      "weighted_position": 5.1,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
-      "page": "/founder-execution-systems",
-      "file": "sites/founder-operator/founder-execution-systems.html",
-      "changes": {
-        "title": "Execution Support for Founders: Systems, Agendas and Review Loops",
-        "definition": true,
-        "question_h2s": 3,
-        "faqpage": true,
-        "facts": 3,
-        "linked_from_homepage": true,
-        "source": "hand_authored"
-      }
-    },
-    {
-      "host": "founderoperatorlibrary.com",
       "family": "company masthead @ /masthead",
       "basis": [
-        "ranking_page"
+        "ranking_page",
+        "top_demand"
       ],
       "impressions": 9,
       "weighted_position": 9.2,
@@ -132,8 +111,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 89,
-      "weighted_position": 6.4,
+      "impressions": 93,
+      "weighted_position": 6.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -150,12 +129,13 @@
     },
     {
       "host": "memphisvendorlibrary.com",
-      "family": "Grazing Table vs Buffet vs Passed Appetizers: How the Setup Differs @ /daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
+      "family": "grazing table vs buffet @ /daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
       "basis": [
+        "ranking_page",
         "top_demand"
       ],
-      "impressions": 53,
-      "weighted_position": 7.4,
+      "impressions": 56,
+      "weighted_position": 7.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -259,8 +239,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 370,
-      "weighted_position": 11.0,
+      "impressions": 362,
+      "weighted_position": 11.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -281,7 +261,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 76,
+      "impressions": 75,
       "weighted_position": 8.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -385,6 +365,15 @@
       "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
       "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
       "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html"
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": null,
+      "basis": [],
+      "status": "strengthened_without_qualifying_family",
+      "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
+      "page": "/founder-execution-systems",
+      "file": "sites/founder-operator/founder-execution-systems.html"
     }
   ]
 }

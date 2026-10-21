@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "professionalresourcelibrary.com",
   "site_url": "sc-domain:professionalresourcelibrary.com",
-  "start_date": "2026-09-20",
-  "end_date": "2026-10-17",
+  "start_date": "2026-09-21",
+  "end_date": "2026-10-18",
   "window_days": 28,
-  "collected_at": "2026-10-20T18:32:52+00:00",
+  "collected_at": "2026-10-21T18:46:06+00:00",
   "totals": {
     "clicks": 5,
-    "impressions": 593,
-    "ctr": 0.0084,
-    "position": 11.5
+    "impressions": 591,
+    "ctr": 0.0085,
+    "position": 12.1
   },
-  "query_count": 41,
-  "page_count": 53,
-  "row_count": 41,
-  "query_row_impressions": 82,
+  "query_count": 42,
+  "page_count": 55,
+  "row_count": 42,
+  "query_row_impressions": 85,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -40,9 +40,9 @@
       "query": "funding documents",
       "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 7,
       "ctr": 0,
-      "position": 24.8
+      "position": 34.1
     },
     {
       "query": "equine legal",
@@ -291,6 +291,14 @@
       "impressions": 1,
       "ctr": 0,
       "position": 72
+    },
+    {
+      "query": "make ready disputes",
+      "page": "https://professionalresourcelibrary.com/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
     },
     {
       "query": "personal injury research",
@@ -367,9 +375,9 @@
     {
       "query": "funding documents",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 7,
       "ctr": 0,
-      "position": 24.8
+      "position": 34.1
     },
     {
       "query": "equine legal",
@@ -589,6 +597,13 @@
       "position": 72
     },
     {
+      "query": "make ready disputes",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
       "query": "personal injury research",
       "clicks": 0,
       "impressions": 1,
@@ -642,15 +657,15 @@
     {
       "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "clicks": 0,
-      "impressions": 370,
+      "impressions": 362,
       "ctr": 0,
-      "position": 9.3
+      "position": 9.5
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
       "clicks": 1,
-      "impressions": 76,
-      "ctr": 0.0132,
+      "impressions": 75,
+      "ctr": 0.0133,
       "position": 8.1
     },
     {
@@ -677,9 +692,16 @@
     {
       "page": "https://professionalresourcelibrary.com/contributors",
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 6.9
+      "position": 7.2
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 34.1
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-07-27-proof-of-income-for-renting-2026-ready-decision-guide-before-you-choose",
@@ -701,13 +723,6 @@
       "impressions": 5,
       "ctr": 0,
       "position": 20.4
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 24.8
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/equine-contracts",
@@ -773,6 +788,13 @@
       "position": 7.7
     },
     {
+      "page": "https://professionalresourcelibrary.com/topics/bank-statement-and-deposit-letters",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 58
+    },
+    {
       "page": "https://professionalresourcelibrary.com/topics/loan-application-packets",
       "clicks": 0,
       "impressions": 3,
@@ -829,6 +851,13 @@
       "position": 4.5
     },
     {
+      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5
+    },
+    {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
       "clicks": 0,
       "impressions": 2,
@@ -848,13 +877,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 10.5
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/topics/bank-statement-and-deposit-letters",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 44.5
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
@@ -899,11 +921,18 @@
       "position": 6
     },
     {
-      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",
+      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-what-recovery-housing-is-designed-to-provide",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 2
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-07-27-loan-application-packet-practical-comparison-guide-for-careful-decision-makers",
@@ -939,13 +968,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 7
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/daily/2026-08-04-credit-explanation-letters-citation-friendly-framework-before-you-sign",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 3
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
@@ -995,6 +1017,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 5
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/topics/application-problems",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/document-preparation",
