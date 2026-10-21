@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-20",
-    "release_date": "2026-10-20",
-    "day_index": 116,
+    "date": "2026-10-21",
+    "release_date": "2026-10-21",
+    "day_index": 117,
     "target_volume": 3,
     "generated": 3,
     "published": 0,
@@ -11,12 +11,12 @@
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 0,
+    "self_heal_attempts": 1,
     "blocked_slots": [],
     "held_by_publishing_freeze": [
-      "Automation Without Chaos: Aeo-Ready Buyer Guide Before You Call",
-      "Reception Table Assignments: Practical Buyer Guide Before You Call",
-      "Dental Decision Resources: Low-Risk Question Checklist For First-Time Buyers"
+      "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory For People Who Need A Starting Point",
+      "Wedding Planning Gaps: Beginner-Safe Prep Guide For Careful Decision-Makers",
+      "Preparing Records Before A Specialist Appointment: Human-First Buyer Guide Before You Pay"
     ],
     "social_enqueued": {
       "published_pages": 0,
@@ -49,7 +49,7 @@
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 0.16666666666666666,
+      "pass_rate": 0.1,
       "avg_quality": 88.0,
       "duplicate_warnings": 0,
       "hard_fails": 3
@@ -60,19 +60,19 @@
       "publication": "founder-operator",
       "slot": 0,
       "status": "held_by_publishing_freeze",
-      "title": "Automation Without Chaos: Aeo-Ready Buyer Guide Before You Call"
+      "title": "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory For People Who Need A Starting Point"
     },
     {
       "publication": "memphis-local",
       "slot": 1,
       "status": "held_by_publishing_freeze",
-      "title": "Reception Table Assignments: Practical Buyer Guide Before You Call"
+      "title": "Wedding Planning Gaps: Beginner-Safe Prep Guide For Careful Decision-Makers"
     },
     {
       "publication": "professional-resources",
       "slot": 2,
       "status": "held_by_publishing_freeze",
-      "title": "Dental Decision Resources: Low-Risk Question Checklist For First-Time Buyers"
+      "title": "Preparing Records Before A Specialist Appointment: Human-First Buyer Guide Before You Pay"
     }
   ],
   "published": [],
