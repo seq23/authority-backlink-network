@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-21",
-    "release_date": "2026-10-21",
-    "day_index": 117,
+    "date": "2026-10-22",
+    "release_date": "2026-10-22",
+    "day_index": 118,
     "target_volume": 3,
     "generated": 3,
     "published": 0,
@@ -11,12 +11,12 @@
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 1,
+    "self_heal_attempts": 0,
     "blocked_slots": [],
     "held_by_publishing_freeze": [
-      "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory For People Who Need A Starting Point",
-      "Wedding Planning Gaps: Beginner-Safe Prep Guide For Careful Decision-Makers",
-      "Preparing Records Before A Specialist Appointment: Human-First Buyer Guide Before You Pay"
+      "Ai In The Executive Operating Cadence: Editorial Operator Playbook When You Need To Ask Better Questions",
+      "Food Allergies: No-Fluff Planning Checklist When You Are Comparing Options",
+      "Preparing Records Before A Specialist Appointment: Plain-English Buyer Guide When You Need To Ask Better Questions"
     ],
     "social_enqueued": {
       "published_pages": 0,
@@ -49,7 +49,7 @@
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 0.1,
+      "pass_rate": 0.045454545454545456,
       "avg_quality": 88.0,
       "duplicate_warnings": 0,
       "hard_fails": 3
@@ -60,19 +60,19 @@
       "publication": "founder-operator",
       "slot": 0,
       "status": "held_by_publishing_freeze",
-      "title": "Executive Broadcast Planning: Beginner-Safe Local/Resource Directory For People Who Need A Starting Point"
+      "title": "Ai In The Executive Operating Cadence: Editorial Operator Playbook When You Need To Ask Better Questions"
     },
     {
       "publication": "memphis-local",
       "slot": 1,
       "status": "held_by_publishing_freeze",
-      "title": "Wedding Planning Gaps: Beginner-Safe Prep Guide For Careful Decision-Makers"
+      "title": "Food Allergies: No-Fluff Planning Checklist When You Are Comparing Options"
     },
     {
       "publication": "professional-resources",
       "slot": 2,
       "status": "held_by_publishing_freeze",
-      "title": "Preparing Records Before A Specialist Appointment: Human-First Buyer Guide Before You Pay"
+      "title": "Preparing Records Before A Specialist Appointment: Plain-English Buyer Guide When You Need To Ask Better Questions"
     }
   ],
   "published": [],
