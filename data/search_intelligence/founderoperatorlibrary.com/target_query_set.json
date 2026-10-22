@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-09-21..2026-10-18",
-  "gsc_collected_at": "2026-10-21T18:46:06+00:00",
+  "gsc_window": "2026-09-22..2026-10-19",
+  "gsc_collected_at": "2026-10-22T18:39:07+00:00",
   "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
   "max_targets": 500,
-  "target_count": 14,
-  "site_impressions": 118,
-  "query_row_impressions": 34,
-  "anonymised_impressions": 84,
+  "target_count": 15,
+  "site_impressions": 129,
+  "query_row_impressions": 37,
+  "anonymised_impressions": 92,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
   "dropped_count": 5,
@@ -50,8 +50,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 8,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
@@ -61,14 +61,31 @@
       "target_id": "abn_sq_f84c2a5f1f10",
       "query": "ai executive coaching",
       "source": "gsc_export",
+      "impressions": 6,
+      "clicks": 0,
+      "average_position": 20.8,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 6,
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
+      },
+      "landing_route": "/ai-executive-coaching-resources",
+      "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_6d835acadc55",
+      "query": "executive ai coaching",
+      "source": "gsc_export",
       "impressions": 5,
       "clicks": 0,
-      "average_position": 21,
+      "average_position": 73.2,
       "measurement": {
         "metric": "impressions_28d",
         "value": 5,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/ai-executive-coaching-resources",
       "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
@@ -84,28 +101,11 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 5,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/",
       "landing_file": "sites/founder-operator/index.html",
-      "page_answers_query": true
-    },
-    {
-      "target_id": "abn_sq_6d835acadc55",
-      "query": "executive ai coaching",
-      "source": "gsc_export",
-      "impressions": 4,
-      "clicks": 0,
-      "average_position": 74,
-      "measurement": {
-        "metric": "impressions_28d",
-        "value": 4,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
-      },
-      "landing_route": "/ai-executive-coaching-resources",
-      "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
       "page_answers_query": true
     },
     {
@@ -118,8 +118,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
       "landing_file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
@@ -135,8 +135,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 2,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/virtual-event-production-buyers-guide",
       "landing_file": "sites/founder-operator/virtual-event-production-buyers-guide.html",
@@ -152,8 +152,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/ai-executive-coaching-resources",
       "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
@@ -169,8 +169,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/ai-executive-coaching-resources",
       "landing_file": "sites/founder-operator/ai-executive-coaching-resources.html",
@@ -186,8 +186,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
@@ -203,8 +203,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
@@ -220,11 +220,28 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/masthead",
       "landing_file": "sites/founder-operator/masthead.html",
+      "page_answers_query": true
+    },
+    {
+      "target_id": "abn_sq_0092732d14e2",
+      "query": "founder support for product execution",
+      "source": "gsc_export",
+      "impressions": 1,
+      "clicks": 0,
+      "average_position": 13,
+      "measurement": {
+        "metric": "impressions_28d",
+        "value": 1,
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
+      },
+      "landing_route": "/founder-execution-systems",
+      "landing_file": "sites/founder-operator/founder-execution-systems.html",
       "page_answers_query": true
     },
     {
@@ -237,8 +254,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
       "landing_file": "sites/founder-operator/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover.html",
@@ -254,8 +271,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "landing_file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
@@ -271,8 +288,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-21..2026-10-18",
-        "collected_at": "2026-10-21T18:46:06+00:00"
+        "window": "2026-09-22..2026-10-19",
+        "collected_at": "2026-10-22T18:39:07+00:00"
       },
       "landing_route": "/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
       "landing_file": "sites/founder-operator/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters.html",

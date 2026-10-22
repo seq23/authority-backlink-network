@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-21",
-  "end_date": "2026-10-18",
+  "start_date": "2026-09-22",
+  "end_date": "2026-10-19",
   "window_days": 28,
-  "collected_at": "2026-10-21T18:46:06+00:00",
+  "collected_at": "2026-10-22T18:39:07+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 118,
-    "ctr": 0.0085,
-    "position": 23.9
+    "impressions": 129,
+    "ctr": 0.0078,
+    "position": 23.4
   },
-  "query_count": 14,
-  "page_count": 26,
-  "row_count": 14,
-  "query_row_impressions": 34,
+  "query_count": 15,
+  "page_count": 29,
+  "row_count": 15,
+  "query_row_impressions": 37,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -32,9 +32,17 @@
       "query": "ai executive coaching",
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 20.8
+    },
+    {
+      "query": "executive ai coaching",
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 21
+      "position": 73.2
     },
     {
       "query": "founder operator",
@@ -43,14 +51,6 @@
       "impressions": 5,
       "ctr": 0,
       "position": 4.8
-    },
-    {
-      "query": "executive ai coaching",
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 74
     },
     {
       "query": "performance problem identification",
@@ -109,6 +109,14 @@
       "position": 25
     },
     {
+      "query": "founder support for product execution",
+      "page": "https://founderoperatorlibrary.com/founder-execution-systems",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
       "query": "moderation and community management",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
       "clicks": 0,
@@ -144,9 +152,16 @@
     {
       "query": "ai executive coaching",
       "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 20.8
+    },
+    {
+      "query": "executive ai coaching",
+      "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 21
+      "position": 73.2
     },
     {
       "query": "founder operator",
@@ -154,13 +169,6 @@
       "impressions": 5,
       "ctr": 0,
       "position": 4.8
-    },
-    {
-      "query": "executive ai coaching",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 74
     },
     {
       "query": "performance problem identification",
@@ -212,6 +220,13 @@
       "position": 25
     },
     {
+      "query": "founder support for product execution",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
       "query": "moderation and community management",
       "clicks": 0,
       "impressions": 1,
@@ -239,7 +254,7 @@
       "clicks": 1,
       "impressions": 33,
       "ctr": 0.0303,
-      "position": 40.2
+      "position": 41.4
     },
     {
       "page": "https://founderoperatorlibrary.com/",
@@ -251,16 +266,23 @@
     {
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 17,
+      "impressions": 19,
       "ctr": 0,
-      "position": 30.6
+      "position": 32.2
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
-      "impressions": 11,
+      "impressions": 16,
       "ctr": 0,
-      "position": 4
+      "position": 4.2
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/founder-execution-systems",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 5.9
     },
     {
       "page": "https://founderoperatorlibrary.com/masthead",
@@ -275,13 +297,6 @@
       "impressions": 8,
       "ctr": 0,
       "position": 29
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/founder-execution-systems",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 5
     },
     {
       "page": "https://founderoperatorlibrary.com/about",
@@ -415,6 +430,27 @@
       "impressions": 1,
       "ctr": 0,
       "position": 2
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
     }
   ]
 }
