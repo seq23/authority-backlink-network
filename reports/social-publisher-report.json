@@ -53,7 +53,7 @@
       "used_this_run": false,
       "receipt": {
         "available": false,
-        "reason": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['instagram', 'tiktok', 'youtube']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+        "reason": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['facebook']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
         "halted": null,
         "already_scheduled_in_buffer": 0,
         "organization_id": "6a1331f15351f4a7ea38e3d5",
@@ -78,32 +78,16 @@
         },
         "channels_connected": [
           {
-            "id": "6ab709b2ea19ca0bdeedc8c0",
-            "name": "Sequoia Taylor",
-            "service": "youtube",
-            "isLocked": false,
-            "isDisconnected": false,
-            "isQueuePaused": false
-          },
-          {
-            "id": "6ab70970ea19ca0bdeedc778",
-            "name": "seq23",
-            "service": "instagram",
-            "isLocked": false,
-            "isDisconnected": false,
-            "isQueuePaused": false
-          },
-          {
-            "id": "6a1337eec687a22dd420b43f",
-            "name": "iamcindymercer",
-            "service": "tiktok",
+            "id": "6ada7f3c778b240e2f92d877",
+            "name": "Porch & Party",
+            "service": "facebook",
             "isLocked": false,
             "isDisconnected": false,
             "isQueuePaused": false
           }
         ]
       },
-      "why_not_used": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['instagram', 'tiktok', 'youtube']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
+      "why_not_used": "no x channel is connected to this Buffer account. Buffer calls it twitter; the channels connected are ['facebook']. Connect the X profile at buffer.com -> Channels -> New Channel and this route starts carrying posts on the next run with no code change.",
       "x_api_requests_made": 0
     }
   },
