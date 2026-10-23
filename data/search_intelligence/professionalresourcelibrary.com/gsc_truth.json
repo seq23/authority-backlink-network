@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "professionalresourcelibrary.com",
   "site_url": "sc-domain:professionalresourcelibrary.com",
-  "start_date": "2026-09-22",
-  "end_date": "2026-10-19",
+  "start_date": "2026-09-23",
+  "end_date": "2026-10-20",
   "window_days": 28,
-  "collected_at": "2026-10-22T18:39:07+00:00",
+  "collected_at": "2026-10-23T18:30:09+00:00",
   "totals": {
     "clicks": 5,
-    "impressions": 578,
-    "ctr": 0.0087,
-    "position": 12.3
+    "impressions": 526,
+    "ctr": 0.0095,
+    "position": 13.4
   },
-  "query_count": 42,
-  "page_count": 54,
+  "query_count": 41,
+  "page_count": 55,
   "row_count": 42,
-  "query_row_impressions": 86,
+  "query_row_impressions": 90,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -29,20 +29,20 @@
       "position": 4.5
     },
     {
+      "query": "funding documents",
+      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 40.5
+    },
+    {
       "query": "equine legal advice",
       "page": "https://professionalresourcelibrary.com/equine-legal-resource-library",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
       "position": 50.8
-    },
-    {
-      "query": "funding documents",
-      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 36.2
     },
     {
       "query": "equine legal",
@@ -99,6 +99,22 @@
       "impressions": 2,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "query": "personal injury research",
+      "page": "https://professionalresourcelibrary.com/personal-injury-research-resources",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 47.5
+    },
+    {
+      "query": "tiers of recovery",
+      "page": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 84.5
     },
     {
       "query": "833-878-3967",
@@ -269,14 +285,6 @@
       "position": 67
     },
     {
-      "query": "list of consumer reporting companies",
-      "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 67
-    },
-    {
       "query": "list of credit reporting agencies",
       "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "clicks": 0,
@@ -301,14 +309,6 @@
       "position": 83
     },
     {
-      "query": "personal injury research",
-      "page": "https://professionalresourcelibrary.com/personal-injury-research-resources",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 48
-    },
-    {
       "query": "pnc employment verification phone number",
       "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "clicks": 0,
@@ -326,11 +326,11 @@
     },
     {
       "query": "tiers of recovery",
-      "page": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
+      "page": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 74
+      "position": 45
     },
     {
       "query": "what are the best equine law resources for horse owners?",
@@ -366,18 +366,18 @@
       "position": 4.5
     },
     {
+      "query": "funding documents",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 40.5
+    },
+    {
       "query": "equine legal advice",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
       "position": 50.8
-    },
-    {
-      "query": "funding documents",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 36.2
     },
     {
       "query": "equine legal",
@@ -408,6 +408,13 @@
       "position": 9.3
     },
     {
+      "query": "tiers of recovery",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 71.3
+    },
+    {
       "query": "burnout and boundaries",
       "clicks": 0,
       "impressions": 2,
@@ -427,6 +434,13 @@
       "impressions": 2,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "query": "personal injury research",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 47.5
     },
     {
       "query": "833-878-3967",
@@ -576,13 +590,6 @@
       "position": 67
     },
     {
-      "query": "list of consumer reporting companies",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 67
-    },
-    {
       "query": "list of credit reporting agencies",
       "clicks": 0,
       "impressions": 1,
@@ -604,13 +611,6 @@
       "position": 83
     },
     {
-      "query": "personal injury research",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 48
-    },
-    {
       "query": "pnc employment verification phone number",
       "clicks": 0,
       "impressions": 1,
@@ -623,13 +623,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 50
-    },
-    {
-      "query": "tiers of recovery",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 74
     },
     {
       "query": "what are the best equine law resources for horse owners?",
@@ -657,30 +650,37 @@
     {
       "page": "https://professionalresourcelibrary.com/consumer-reporting-companies-directory",
       "clicks": 0,
-      "impressions": 344,
+      "impressions": 282,
       "ctr": 0,
-      "position": 9.6
+      "position": 10.3
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
       "clicks": 1,
       "impressions": 75,
       "ctr": 0.0133,
-      "position": 8.0
+      "position": 7.9
     },
     {
       "page": "https://professionalresourcelibrary.com/equine-legal-resource-library",
       "clicks": 0,
-      "impressions": 29,
+      "impressions": 28,
       "ctr": 0,
-      "position": 35.5
+      "position": 35.6
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
       "clicks": 2,
-      "impressions": 19,
-      "ctr": 0.1053,
+      "impressions": 20,
+      "ctr": 0.1,
       "position": 6.2
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 40.5
     },
     {
       "page": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries",
@@ -692,16 +692,9 @@
     {
       "page": "https://professionalresourcelibrary.com/contributors",
       "clicks": 0,
-      "impressions": 10,
-      "ctr": 0,
-      "position": 7.5
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/topics/business-funding-documents",
-      "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 36.2
+      "position": 7.9
     },
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-07-27-proof-of-income-for-renting-2026-ready-decision-guide-before-you-choose",
@@ -720,9 +713,23 @@
     {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
       "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 32.8
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/personal-injury-research-resources",
+      "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 20.4
+      "position": 24.4
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/equine-contracts",
@@ -739,13 +746,6 @@
       "position": 1.2
     },
     {
-      "page": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 6.5
-    },
-    {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
       "clicks": 0,
       "impressions": 4,
@@ -758,13 +758,6 @@
       "impressions": 4,
       "ctr": 0,
       "position": 3.5
-    },
-    {
-      "page": "https://professionalresourcelibrary.com/personal-injury-research-resources",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 18.8
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/workplace-mental-health",
@@ -793,6 +786,13 @@
       "impressions": 3,
       "ctr": 0,
       "position": 6.7
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 4.7
     },
     {
       "page": "https://professionalresourcelibrary.com/horse-boarding-agreement-preparation-checklist",
@@ -844,13 +844,6 @@
       "position": 2
     },
     {
-      "page": "https://professionalresourcelibrary.com/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 4.5
-    },
-    {
       "page": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",
       "clicks": 0,
       "impressions": 2,
@@ -877,6 +870,27 @@
       "impressions": 2,
       "ctr": 0,
       "position": 10.5
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 25
+    },
+    {
+      "page": "https://professionalresourcelibrary.com/topics/document-preparation",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3
     },
     {
       "page": "https://professionalresourcelibrary.com/topics/income-and-employment-letters",
@@ -963,13 +977,6 @@
       "position": 7
     },
     {
-      "page": "https://professionalresourcelibrary.com/daily/2026-08-02-personal-loan-documents-checklist-driven-question-checklist-for-careful-decision-makers",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 7
-    },
-    {
       "page": "https://professionalresourcelibrary.com/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
       "clicks": 0,
       "impressions": 1,
@@ -1012,13 +1019,6 @@
       "position": 9
     },
     {
-      "page": "https://professionalresourcelibrary.com/recovery-residence-levels-of-support-comparison",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5
-    },
-    {
       "page": "https://professionalresourcelibrary.com/topics/application-problems",
       "clicks": 0,
       "impressions": 1,
@@ -1026,11 +1026,11 @@
       "position": 45
     },
     {
-      "page": "https://professionalresourcelibrary.com/topics/document-preparation",
+      "page": "https://professionalresourcelibrary.com/topics/letters-of-explanation",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 4
+      "position": 3
     }
   ]
 }

@@ -15,8 +15,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 33,
-      "weighted_position": 52.2,
+      "impressions": 36,
+      "weighted_position": 51.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -38,8 +38,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 27,
-      "weighted_position": 5.8,
+      "impressions": 26,
+      "weighted_position": 5.9,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -52,8 +52,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 19,
-      "weighted_position": 40.0,
+      "impressions": 21,
+      "weighted_position": 41.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -92,13 +92,27 @@
     },
     {
       "host": "founderoperatorlibrary.com",
-      "family": "founder support for product execution @ /founder-execution-systems",
+      "family": "company masthead @ /masthead",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
       "impressions": 9,
-      "weighted_position": 6.7,
+      "weighted_position": 9.2,
+      "status": "no_page",
+      "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
+      "page": "/masthead",
+      "file": "sites/founder-operator/masthead.html",
+      "changes": null
+    },
+    {
+      "host": "founderoperatorlibrary.com",
+      "family": "founder support for product execution @ /founder-execution-systems",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 8,
+      "weighted_position": 7.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -112,20 +126,6 @@
         "linked_from_homepage": true,
         "source": "hand_authored"
       }
-    },
-    {
-      "host": "founderoperatorlibrary.com",
-      "family": "company masthead @ /masthead",
-      "basis": [
-        "ranking_page"
-      ],
-      "impressions": 9,
-      "weighted_position": 9.2,
-      "status": "no_page",
-      "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
-      "page": "/masthead",
-      "file": "sites/founder-operator/masthead.html",
-      "changes": null
     },
     {
       "host": "memphisvendorlibrary.com",
@@ -156,7 +156,7 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 56,
+      "impressions": 53,
       "weighted_position": 7.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
@@ -261,8 +261,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 344,
-      "weighted_position": 11.3,
+      "impressions": 282,
+      "weighted_position": 12.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -284,7 +284,7 @@
         "top_demand"
       ],
       "impressions": 75,
-      "weighted_position": 8.0,
+      "weighted_position": 7.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
@@ -305,8 +305,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 29,
-      "weighted_position": 43.4,
+      "impressions": 28,
+      "weighted_position": 43.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -327,7 +327,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 19,
+      "impressions": 20,
       "weighted_position": 6.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
