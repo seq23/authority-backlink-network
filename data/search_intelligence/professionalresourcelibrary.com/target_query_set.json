@@ -11,7 +11,7 @@
   "anonymised_impressions": 436,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
-  "dropped_count": 7,
+  "dropped_count": 8,
   "dropped": [
     {
       "query": "Dental Decision Resources: Plain-English Buyer Guide Before You Call",
@@ -45,6 +45,11 @@
     },
     {
       "query": "Preparing Records Before A Specialist Appointment: Plain-English Buyer Guide When You Need To Ask Better Questions",
+      "source": "autopilot_brief_held_by_freeze",
+      "reason": "no Search Console impressions for this subject: no measured number, so not a target"
+    },
+    {
+      "query": "Dental Decision Resources: Plain-English Budget/Planning Note When You Need To Ask Better Questions",
       "source": "autopilot_brief_held_by_freeze",
       "reason": "no Search Console impressions for this subject: no measured number, so not a target"
     }

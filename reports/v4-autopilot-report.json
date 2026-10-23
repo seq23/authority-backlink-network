@@ -1,22 +1,61 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-22",
-    "release_date": "2026-10-22",
-    "day_index": 118,
+    "date": "2026-10-23",
+    "release_date": "2026-10-23",
+    "day_index": 119,
     "target_volume": 3,
     "generated": 3,
     "published": 0,
     "scores": [],
     "duplicate_warnings": 0,
-    "hard_fails": 0,
+    "hard_fails": 1,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 0,
-    "blocked_slots": [],
+    "self_heal_attempts": 8,
+    "blocked_slots": [
+      {
+        "slot": 0,
+        "publication": "founder-operator",
+        "attempts": 8,
+        "findings": [
+          {
+            "attempt": 0,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 1,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 2,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 3,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 4,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 5,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 6,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 7,
+            "reason": "no_topically_eligible_affiliated_link"
+          }
+        ]
+      }
+    ],
     "held_by_publishing_freeze": [
-      "Ai In The Executive Operating Cadence: Editorial Operator Playbook When You Need To Ask Better Questions",
-      "Food Allergies: No-Fluff Planning Checklist When You Are Comparing Options",
-      "Preparing Records Before A Specialist Appointment: Plain-English Buyer Guide When You Need To Ask Better Questions"
+      "Taxes And Gratuities: Citation-Friendly Decision Guide Before You Pay",
+      "Dental Decision Resources: Plain-English Budget/Planning Note When You Need To Ask Better Questions"
     ],
     "social_enqueued": {
       "published_pages": 0,
@@ -49,8 +88,8 @@
       "pages_missing_social": []
     },
     "stats_before": {
-      "pass_rate": 0.045454545454545456,
-      "avg_quality": 88.0,
+      "pass_rate": 0.0,
+      "avg_quality": 85,
       "duplicate_warnings": 0,
       "hard_fails": 3
     }
@@ -59,20 +98,30 @@
     {
       "publication": "founder-operator",
       "slot": 0,
-      "status": "held_by_publishing_freeze",
-      "title": "Ai In The Executive Operating Cadence: Editorial Operator Playbook When You Need To Ask Better Questions"
+      "status": "blocked_after_self_heal",
+      "repair_attempts": 8,
+      "hard_fails": [
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link"
+      ]
     },
     {
       "publication": "memphis-local",
       "slot": 1,
       "status": "held_by_publishing_freeze",
-      "title": "Food Allergies: No-Fluff Planning Checklist When You Are Comparing Options"
+      "title": "Taxes And Gratuities: Citation-Friendly Decision Guide Before You Pay"
     },
     {
       "publication": "professional-resources",
       "slot": 2,
       "status": "held_by_publishing_freeze",
-      "title": "Preparing Records Before A Specialist Appointment: Plain-English Buyer Guide When You Need To Ask Better Questions"
+      "title": "Dental Decision Resources: Plain-English Budget/Planning Note When You Need To Ask Better Questions"
     }
   ],
   "published": [],
