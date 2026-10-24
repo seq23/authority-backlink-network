@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-23",
+  "run_at": "2026-10-24",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 0,
     "allowance": 3,
-    "window_start": "2026-10-17",
-    "window_end": "2026-10-23"
+    "window_start": "2026-10-18",
+    "window_end": "2026-10-24"
   },
   "deferred": 0,
   "queue": []
