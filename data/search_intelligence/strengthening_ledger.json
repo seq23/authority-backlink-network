@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
-    "intent_mismatch": 1,
+    "intent_mismatch": 2,
     "no_page": 2,
-    "strengthened": 14,
-    "strengthened_without_qualifying_family": 1,
-    "underivable": 1
+    "strengthened": 13,
+    "strengthened_without_qualifying_family": 2,
+    "underivable": 2
   },
   "entries": [
     {
@@ -38,8 +38,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 26,
-      "weighted_position": 5.9,
+      "impressions": 28,
+      "weighted_position": 6.8,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -52,8 +52,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 21,
-      "weighted_position": 41.1,
+      "impressions": 23,
+      "weighted_position": 39.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -133,7 +133,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 93,
+      "impressions": 92,
       "weighted_position": 6.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
@@ -261,8 +261,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 282,
-      "weighted_position": 12.0,
+      "impressions": 256,
+      "weighted_position": 12.5,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -283,7 +283,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 75,
+      "impressions": 76,
       "weighted_position": 7.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -306,7 +306,7 @@
         "top_demand"
       ],
       "impressions": 28,
-      "weighted_position": 43.8,
+      "weighted_position": 43.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -327,8 +327,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 20,
-      "weighted_position": 6.2,
+      "impressions": 19,
+      "weighted_position": 5.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
       "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
@@ -345,25 +345,17 @@
     },
     {
       "host": "professionalresourcelibrary.com",
-      "family": "burnout and boundaries @ /workplace-burnout-and-boundaries",
+      "family": "funding documents @ /topics/business-funding-documents",
       "basis": [
         "top_demand"
       ],
-      "impressions": 11,
-      "weighted_position": 38.3,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/workplace-burnout-and-boundaries.html",
-      "page": "/workplace-burnout-and-boundaries",
-      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
-      "changes": {
-        "title": "Burnout and Boundaries at Work: A Practical Starting Point",
-        "definition": true,
-        "question_h2s": 3,
-        "faqpage": true,
-        "facts": 3,
-        "linked_from_homepage": true,
-        "source": "hand_authored"
-      }
+      "impressions": 13,
+      "weighted_position": 43.6,
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
+      "page": "/topics/business-funding-documents",
+      "file": "sites/professional-resources/topics/business-funding-documents.html",
+      "changes": null
     },
     {
       "host": "professionalresourcelibrary.com",
@@ -380,6 +372,20 @@
       "changes": null
     },
     {
+      "host": "professionalresourcelibrary.com",
+      "family": "off-page: yes @ /topics/letters-of-explanation",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 1,
+      "weighted_position": 1.0,
+      "status": "intent_mismatch",
+      "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is",
+      "page": "/topics/letters-of-explanation",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "changes": null
+    },
+    {
       "host": "founderoperatorlibrary.com",
       "family": null,
       "basis": [],
@@ -387,6 +393,15 @@
       "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
       "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
       "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html"
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": null,
+      "basis": [],
+      "status": "strengthened_without_qualifying_family",
+      "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
+      "page": "/workplace-burnout-and-boundaries",
+      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html"
     }
   ]
 }

@@ -4,22 +4,30 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-23",
-  "end_date": "2026-10-20",
+  "start_date": "2026-09-24",
+  "end_date": "2026-10-21",
   "window_days": 28,
-  "collected_at": "2026-10-23T18:30:09+00:00",
+  "collected_at": "2026-10-24T17:29:34+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 135,
-    "ctr": 0.0074,
-    "position": 24.2
+    "impressions": 141,
+    "ctr": 0.0071,
+    "position": 23.8
   },
   "query_count": 15,
-  "page_count": 29,
+  "page_count": 31,
   "row_count": 15,
-  "query_row_impressions": 41,
+  "query_row_impressions": 45,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
+    {
+      "query": "ai executive coaching",
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 22.6
+    },
     {
       "query": "community reports",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -27,14 +35,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 79.7
-    },
-    {
-      "query": "ai executive coaching",
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 20.7
     },
     {
       "query": "executive ai coaching",
@@ -48,9 +48,9 @@
       "query": "founder operator",
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 4.8
+      "position": 5.5
     },
     {
       "query": "monthly metrics",
@@ -85,14 +85,6 @@
       "position": 36
     },
     {
-      "query": "ai coaching guide",
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 40
-    },
-    {
       "query": "community cost metric",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 0,
@@ -125,6 +117,14 @@
       "position": 13
     },
     {
+      "query": "foundr operators",
+      "page": "https://founderoperatorlibrary.com/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 17
+    },
+    {
       "query": "moderation and community management",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
       "clicks": 0,
@@ -143,18 +143,18 @@
   ],
   "by_query": [
     {
+      "query": "ai executive coaching",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 22.6
+    },
+    {
       "query": "community reports",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
       "position": 79.7
-    },
-    {
-      "query": "ai executive coaching",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 20.7
     },
     {
       "query": "executive ai coaching",
@@ -166,9 +166,9 @@
     {
       "query": "founder operator",
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 4.8
+      "position": 5.5
     },
     {
       "query": "monthly metrics",
@@ -199,13 +199,6 @@
       "position": 36
     },
     {
-      "query": "ai coaching guide",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 40
-    },
-    {
       "query": "community cost metric",
       "clicks": 0,
       "impressions": 1,
@@ -234,6 +227,13 @@
       "position": 13
     },
     {
+      "query": "foundr operators",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 17
+    },
+    {
       "query": "moderation and community management",
       "clicks": 0,
       "impressions": 1,
@@ -259,16 +259,16 @@
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 26,
+      "impressions": 28,
       "ctr": 0,
-      "position": 6.2
+      "position": 6.7
     },
     {
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 21,
+      "impressions": 23,
       "ctr": 0,
-      "position": 34.2
+      "position": 33.0
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -432,6 +432,13 @@
       "position": 10
     },
     {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 17
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
       "clicks": 0,
       "impressions": 1,
@@ -444,6 +451,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 11
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/topics/ai-execution-and-delegation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
     },
     {
       "page": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
