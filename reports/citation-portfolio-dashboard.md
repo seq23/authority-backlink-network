@@ -1,6 +1,6 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-10-24
+As of: 2026-10-25
 
 - Registered brands: 16
 - Authority publications: 3

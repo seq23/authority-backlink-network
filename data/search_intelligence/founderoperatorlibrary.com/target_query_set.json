@@ -11,7 +11,7 @@
   "anonymised_impressions": 100,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
-  "dropped_count": 6,
+  "dropped_count": 7,
   "dropped": [
     {
       "query": "Virtual Event Production: Citation-Friendly Planning Checklist For People Who Need A Starting Point",
@@ -40,6 +40,11 @@
     },
     {
       "query": "Ai In The Executive Operating Cadence: Editorial Operator Playbook When You Need To Ask Better Questions",
+      "source": "autopilot_brief_held_by_freeze",
+      "reason": "no Search Console impressions for this subject: no measured number, so not a target"
+    },
+    {
+      "query": "Virtual Event Production Economics: Decision-Focused Mistakes To Avoid Before You Pay",
       "source": "autopilot_brief_held_by_freeze",
       "reason": "no Search Console impressions for this subject: no measured number, so not a target"
     }
