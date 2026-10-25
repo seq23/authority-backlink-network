@@ -1,10 +1,16 @@
 {
   "schema": "authority-citation-control-v1",
-  "status": "PASS",
-  "hard_failures": 0,
+  "status": "FAIL",
+  "hard_failures": 5,
   "strong_warnings": 0,
   "soft_warnings": 0,
-  "rendered_links_verified": 147,
-  "failures": [],
+  "rendered_links_verified": 142,
+  "failures": [
+    "link[523] target URL not rendered in source: https://westpeekproductions.com/community-as-a-service/",
+    "link[525] target URL not rendered in source: https://westpeekproductions.com/community-as-a-service/",
+    "link[531] target URL not rendered in source: https://porchandparty901.com/pricing",
+    "link[532] target URL not rendered in source: https://porchandparty901.com/services/hotel-room-decor-memphis",
+    "link[550] target URL not rendered in source: https://www.hicksconsulting.org/faq/"
+  ],
   "warnings": []
 }

@@ -113,6 +113,94 @@ def render_list(block: dict) -> str:
     return f"<h2>{esc(block['h2'])}</h2>{intro}<{tag}>{items}</{tag}>"
 
 
+# Search Readiness checklist item d2: "Numbered steps for processes, tables for
+# comparisons, bullet lists for options." A list snippet is extracted from a
+# literal <ol>, never from prose, and on 25 Oct 2026 every how-to page in all
+# three publications carried its procedure in paragraphs only: six pages on
+# founderoperatorlibrary.com and memphisvendorlibrary.com failed the item live.
+#
+# The fix is NOT to renumber `checklist`. Those blocks are genuinely unordered
+# -- "Send these details when you request a quote", "What to confirm in an
+# individual tech check" -- and the same checklist item says a set of options or
+# conditions belongs in a bullet list. Numbering them would have satisfied the
+# check and mislabelled the content, which is the shape of defect this network's
+# validators exist to refuse.
+#
+# So a how-to article carries its procedure as its own authored, ordered block,
+# and `guard()` below refuses to render one without it.
+def render_steps(block: dict) -> str:
+    items = "".join(f"<li>{esc(x)}</li>" for x in block["items"])
+    intro = f"<p>{esc(block['intro'])}</p>" if block.get("intro") else ""
+    return f"<h2>{esc(block['h2'])}</h2>{intro}<ol>{items}</ol>"
+
+
+# A page is a process page when its own visible heading or its <title> says so.
+# Both are checked because the two can differ: item b1 capped <title> at 65
+# characters on 25 Oct 2026, and two articles' seo_title lost the words "how to"
+# while their h1 kept them. The page is still a how-to; the audit samples titles,
+# the reader reads the h1, and both should find the steps.
+PROCESS_RE = re.compile(r"\bhow to\b", re.I)
+COMPARISON_RE = re.compile(r"\bvs\.?\b|\bversus\b", re.I)
+
+
+def is_process(article: dict) -> bool:
+    return bool(PROCESS_RE.search(article["title"])
+                or PROCESS_RE.search(article.get("seo_title") or ""))
+
+
+def is_comparison(article: dict) -> bool:
+    return bool(COMPARISON_RE.search(article["title"])
+                or COMPARISON_RE.search(article.get("seo_title") or ""))
+
+
+# The recommendation_summary block: a one-sentence statement of what the page
+# recommends, in the page's own words, placed above the first section where an
+# answer engine reaches it.
+#
+# It used to be installed only by scripts/retrofit_recommendation_summary.js,
+# after this generator had written the page. That made it fragile in one
+# direction and harmful in the other. Fragile, because re-rendering an article
+# silently dropped the block from all 46 cluster pages -- this generator writes
+# the page whole. Harmful, because that script is not idempotent on a page which
+# already has one: re-run on the published tree it relocated 63 blocks out of
+# the opening and down into a later section, behind a table, and replaced their
+# sentence with a weaker one lifted from further down the page.
+#
+# So the block is built here, from `answer`, which is the article's own recorded
+# recommendation. `first_sentence` reproduces that script's rule exactly -- the
+# first sentence boundary at or after 40 characters, with a leading label
+# dropped -- so the bytes it emits for the 46 existing pages are the bytes
+# already published, and the retrofit script has nothing left to do on them.
+LABEL_PREFIX = re.compile(
+    r"^(short answer|quick answer|direct answer|answer|bottom line|summary|tl;?dr)\s*[:\u2014-]\s*",
+    re.I,
+)
+SENTENCE_RE = re.compile(r"^(.{40,}?[.!?])(\s|$)", re.S)
+
+
+def first_sentence(text: str, max_len: int = 320) -> str:
+    t = LABEL_PREFIX.sub("", str(text or "").strip())
+    if not t:
+        return ""
+    m = SENTENCE_RE.match(t)
+    s = m.group(1) if m else t
+    return s if len(s) <= max_len else ""
+
+
+def render_recommendation_summary(article: dict) -> str:
+    rec = first_sentence(article["answer"])
+    if not rec:
+        # The retrofit script's rule: a block that announces a gap is worse than
+        # no block. A sentence too long to carry is left out rather than cut.
+        return ""
+    return (
+        '<div class="info-panel recommendation-summary" '
+        'data-content-block="recommendation_summary" id="recommendation-summary">'
+        "<h2>What this page recommends</h2>"
+        f'<p class="recommendation-summary__answer">{esc(rec)}</p></div>'
+    )
+
+
 def render_faq(faq: list[dict]) -> str:
     blocks = "".join(f"<h3>{esc(x['q'])}</h3><p>{esc(x['a'])}</p>" for x in faq)
     return f'<section class="faq"><h2>Frequently asked questions</h2>{blocks}</section>'
@@ -193,6 +281,12 @@ def render(article: dict) -> str:
     sections = article["sections"]
     lead_sections = render_sections(sections[:1])
     rest_sections = render_sections(sections[1:])
+    # The procedure sits directly under the opening section, above the table:
+    # a reader looking for the steps should not have to scroll past a table and
+    # a checklist, and a list snippet is extracted from the first <ol> found.
+    steps_html = render_steps(article["steps"]) if article.get("steps") else ""
+    summary_html = render_recommendation_summary(article)
+
     disclosure = " ".join(
         [pub["disclosure"], article["disclaimer"], BOUNDARY, AFFILIATION]
     )
@@ -206,7 +300,8 @@ def render(article: dict) -> str:
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(meta_description.require_title(article.get('seo_title') or article['title'], article['id']))}</title><meta name="description" content="{esc(article['meta_description'])}"><link rel="canonical" href="{esc(url)}"><link rel="stylesheet" href="../styles.css">{TABLE_CSS}{schema_graph(article, pub, url)}{clarity_tag(domain)}</head>
 <body data-cluster-id="{esc(article['id'])}"><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{esc(article['title'])}</h1><p class="dek"><strong>Short answer:</strong> {esc(article['answer'])}</p><p><em>Updated {article['date']}. Topic cluster: {esc(article['cluster'])}. This article is written to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
-{lead_sections}
+{summary_html}{lead_sections}
+{steps_html}
 {render_table(article['table'])}
 {render_list(article['checklist'])}
 {rest_sections}
@@ -250,6 +345,26 @@ def guard(article: dict, page: str) -> None:
     words = len(re.findall(r"\b[\w'-]+\b", re.sub(r"<[^>]+>", " ", page)))
     if words < 470:
         raise SystemExit(f"{article['slug']}: only {words} words; editorial target is 450+")
+    # Search Readiness item d2, enforced where the page is built rather than
+    # checked after the fact. A how-to article without an authored `steps` block
+    # cannot be rendered, and the assertion is made against the rendered page so
+    # that a steps block which somehow produced no <ol> also fails.
+    if is_process(article) and "<ol>" not in page:
+        # Two ways to satisfy this, and both are already in use: an authored
+        # `steps` block, or a `checklist` marked "ordered": true where the
+        # checklist genuinely IS the procedure. Nine of the nineteen how-to
+        # articles took the second route before this guard existed; the ten that
+        # failed the item on 25 Oct 2026 took neither.
+        raise SystemExit(
+            f"{article['slug']}: the title says 'how to' but the page renders no "
+            f"ordered list (Search Readiness d2). Give the article a `steps` block, "
+            f'or set "ordered": true on its checklist if that list is the procedure.'
+        )
+    if is_comparison(article) and "<table" not in page:
+        raise SystemExit(
+            f"{article['slug']}: the title is a comparison, so the page needs a table "
+            f"(Search Readiness d2)"
+        )
 
 
 def ledger_row(article: dict, rel_path: str) -> dict:
@@ -293,7 +408,17 @@ def main() -> None:
     for source in sorted(CONTENT_DIR.glob("*.json")):
         articles.extend(json.loads(source.read_text(encoding="utf-8"))["articles"])
     ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
-    existing = {(r.get("source_path"), r.get("target_url")) for r in ledger}
+    # Keyed on the page, not on (page, target_url). A cluster article renders
+    # exactly one affiliated editorial link, so one page is one ledger row --
+    # and the row's target_url is not this generator's to match on, because
+    # scripts/rebalance_portfolio_links.py owns it after the fact and retargets
+    # it to honour the portfolio quotas. With target_url in the key, every
+    # re-render of an already-rebalanced page missed its own row and appended a
+    # second one: regenerating all 46 articles on 25 Oct 2026 added 24 duplicate
+    # rows, and would have added 24 more on the next run. The docstring above
+    # has always claimed this script adds no duplicate ledger rows; now it does
+    # not.
+    existing = {r.get("source_path") for r in ledger}
 
     seen_slugs: set[str] = set()
     written, added = [], 0
@@ -311,10 +436,9 @@ def main() -> None:
         if not path.exists() or path.read_text(encoding="utf-8") != page:
             path.write_text(page, encoding="utf-8")
         written.append(rel_path)
-        key = (rel_path, article["target_url"])
-        if key not in existing:
+        if rel_path not in existing:
             ledger.append(ledger_row(article, rel_path))
-            existing.add(key)
+            existing.add(rel_path)
             added += 1
 
     LEDGER.write_text(json.dumps(ledger, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
