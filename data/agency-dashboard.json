@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 102,
+    "runtime_operators": 104,
     "release_operators": 10,
     "workflow_operators": 9,
     "approved_target_urls": 118,
@@ -319,6 +319,12 @@
       "category": "Other"
     },
     {
+      "operator": "hosts:canonical",
+      "command": "npm run hosts:canonical",
+      "implementation": "python3 scripts/build_host_canonicalization.py --write",
+      "category": "Other"
+    },
+    {
       "operator": "links:backfill-rel",
       "command": "npm run links:backfill-rel",
       "implementation": "python3 scripts/backfill_rel_attributes.py",
@@ -562,6 +568,12 @@
       "operator": "validate:favicon-manifest",
       "command": "npm run validate:favicon-manifest",
       "implementation": "python3 scripts/validators/validate_favicon_manifest.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:host-canonicalization",
+      "command": "npm run validate:host-canonicalization",
+      "implementation": "python3 scripts/validators/validate_host_canonicalization.py",
       "category": "Validation / release"
     },
     {

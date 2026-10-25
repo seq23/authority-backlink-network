@@ -66,7 +66,9 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
-      "measured_urls_resolve"
+      "measured_urls_resolve",
+      "host_canonicalization",
+      "host_canonicalization_behaviour"
     ],
     "release": [
       "json",
@@ -128,7 +130,9 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
-      "measured_urls_resolve"
+      "measured_urls_resolve",
+      "host_canonicalization",
+      "host_canonicalization_behaviour"
     ],
     "full": [
       "json",
@@ -191,7 +195,9 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
-      "measured_urls_resolve"
+      "measured_urls_resolve",
+      "host_canonicalization",
+      "host_canonicalization_behaviour"
     ],
     "cache-self-test": [
       "python",
@@ -454,6 +460,14 @@
     "measured_urls_resolve": {
       "severity": "HARD_FAIL",
       "rationale": "11 Oct 2026: a URL Search Console shows in results or reports through URL Inspection is the page with the most to lose; one that no longer resolves (no file, no _redirects rule) throws away exactly the impressions the loop exists to grow. A broken required journey. Fails on zero URLs examined."
+    },
+    "host_canonicalization": {
+      "severity": "HARD_FAIL",
+      "rationale": "Two hosts serving one publication split its search signals and nothing inside the repository shows it: both answer 200 and every page looks right. Checklist item a1."
+    },
+    "host_canonicalization_behaviour": {
+      "severity": "HARD_FAIL",
+      "rationale": "A middleware that redirects the canonical host to itself takes the whole publication offline in a loop, and one that drops the path sends every deep link to the homepage. Running the real file is the only way to tell."
     }
   },
   "severity_matrix_policy": {
