@@ -24,11 +24,22 @@ against the same constants, so the rule cannot exist twice and drift.
 """
 from __future__ import annotations
 
-DESC_MIN = 110
+# Tightened 25 Oct 2026 to the owner's Search Readiness Checklist, which is
+# stricter than the Bing site scan these bounds were first written from and is
+# what now audits these publications every Monday:
+#
+#   item b1  "Title 30-65 characters, unique, the query first, the site name
+#            once" -- 214 pages were 66-70 characters, inside the old bound and
+#            outside this one.
+#   item b2  "Meta description 120-160 characters" -- four pages were 113-119.
+#
+# 65 rather than 70 because a title is only worth the part that survives
+# Google's ~600px cut, and 120 rather than 110 because a snippet shorter than
+# that leaves the engine to write its own from the page.
+DESC_MIN = 120
 DESC_MAX = 160
-# Bing Site Scan reports "title too long" above 70 characters.
 TITLE_MIN = 30
-TITLE_MAX = 70
+TITLE_MAX = 65
 
 
 def title_fits(title: str) -> bool:
@@ -111,8 +122,16 @@ def daily_title_candidates(*, cluster: str, audience: str, fmt: str, intent: str
 
     The first is the page's heading ("Cluster: Modifier Format Intent"), which
     runs to 114 characters. The rest drop the modifier or swap the intent for
-    the audience, so a caller can take the first one that fits 30-70 and that
-    the publication has not already used.
+    the audience, so a caller can take the first one that fits TITLE_MIN-
+    TITLE_MAX and that the publication has not already used.
+
+    The last three drop the format rather than the intent. They exist because
+    tightening TITLE_MAX to 65 (25 Oct 2026) left clusters whose every
+    format-bearing form was over the bound and whose one short form
+    ("Cluster: Format") a sibling page had already taken -- a long cluster name
+    with a long format, such as "Apartment Application Paperwork" and "Budget
+    Planning Note Before You Book" at 69 characters. Dropping the format keeps
+    the cluster and the reader's intent, which is the part a searcher typed.
     """
     c, m, f, i = cluster.title(), modifier.title(), fmt.title(), intent.title()
     who = f"For {_article(audience).capitalize()} {_tc(audience)}"
@@ -123,6 +142,9 @@ def daily_title_candidates(*, cluster: str, audience: str, fmt: str, intent: str
         f"{c}: {f} {who}",
         f"{c}: {m} {f}",
         f"{c}: {f}",
+        f"{c}: {m} {i}",
+        f"{c}: {i}",
+        f"{c}: {who}",
     ]
     return list(dict.fromkeys(forms))
 

@@ -14,7 +14,12 @@
  *      invokes a probe script or sets CONFIRM_PAID;
  *   E. a scheduled workflow passes a model key other than OPENROUTER_API_KEY,
  *      or passes OPENROUTER_API_KEY anywhere but a step that runs a registered
- *      free-router consumer.
+ *      free-router consumer;
+ *   F. the rule is not where the next agent in this repository will read it:
+ *      docs/cost/zero-paid-llm.md and a "nothing paid" line in CLAUDE.md that
+ *      points at it. Added 25 Oct 2026 for Search Readiness item i10 -- a rule
+ *      no code reads is a wish, and until this check existed CLAUDE.md did not
+ *      exist at all.
  * Usage: node validate_zero_paid_llm.js [repo-root]
  */
 const fs = require('fs');
@@ -31,6 +36,18 @@ const PROVIDER_URL = /openrouter\.ai\/api|generativelanguage\.googleapis\.com|ap
 const PAID_MODEL_SLUG = /\b(anthropic\/claude[\w.-]*|openai\/gpt[\w.-]*|google\/gemini[\w.-]*|perplexity\/[\w.-]+)\b/;
 const OTHER_MODEL_KEYS = /\b(GEMINI_API_KEY|GOOGLE_GEMINI_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|PERPLEXITY_API_KEY)\b/;
 const ROUTERS = ['scripts/llm/free_router.js', 'scripts/llm/free_router.py'];
+
+// ------------------------------------------------- F. the rule is written down
+// Item i10: the policy has to be findable where an agent starts reading, not
+// only in the validator that enforces it.
+for (const doc of ['docs/cost/zero-paid-llm.md', 'CLAUDE.md']) {
+  if (!exists(doc)) fail(`${doc} is missing: the zero-paid rule has to be written where it is read`);
+}
+if (exists('CLAUDE.md')) {
+  const claude = read('CLAUDE.md');
+  if (!/nothing paid/i.test(claude)) fail('CLAUDE.md does not say "nothing paid"');
+  if (!claude.includes('docs/cost/zero-paid-llm.md')) fail('CLAUDE.md does not point at docs/cost/zero-paid-llm.md');
+}
 
 // ---------------------------------------------------------------- A. config
 let cfg = null;

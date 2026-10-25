@@ -1,0 +1,57 @@
+name: Post-Deploy Live Check
+
+# Checklist item h4. Every other check in this repository reads files in git.
+# The three publications are served by Cloudflare Pages with a Pages middleware,
+# a _redirects file, a _headers file and three custom-domain bindings in front
+# of them, and none of those are in the tree a validator reads. A green build
+# and a correct edge are different claims.
+#
+# It runs AFTER a push to main, so Pages is usually still building when it
+# starts: the script re-runs itself until the new deploy is live or the wait
+# runs out, rather than failing on deploy lag. Daily as well, because the edge
+# can change without a commit -- a custom domain unbound, a DNS record edited,
+# an expiring certificate.
+#
+# Spends nothing: plain HTTPS GETs, no model, no paid API.
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '41 16 * * *'
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: 'Check only this domain (blank = all three)'
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  live-check:
+    # The script's own wait is 12 minutes; this is the fault detector around it,
+    # not a budget.
+    timeout-minutes: 25
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: What the edge is serving
+        run: |
+          python3 scripts/post_deploy_live_check.py \
+            --wait-seconds "${WAIT}" \
+            ${DOMAIN:+--domain "$DOMAIN"} \
+            | tee post-deploy-live-check.json
+        env:
+          # A scheduled or dispatched run checks the edge as it stands now, so
+          # it waits for nothing; only a push has a deploy to wait for.
+          WAIT: ${{ github.event_name == 'push' && '720' || '0' }}
+          DOMAIN: ${{ inputs.domain }}
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: post-deploy-live-check
+          path: post-deploy-live-check.json

@@ -99,6 +99,12 @@ HAND_AUTHORED = {
     "sites/memphis-local/seasonal-home-styling-memphis.html":
         "Seasonal front-door and porch refreshes in Memphis for fall, Halloween, Christmas "
         "and events, and how weather, materials and storage shape the quote.",
+    # The one homepage this table did not own, so its 113-character description
+    # (checklist item b2, 25 Oct 2026) had no source to fix. The other two
+    # homepages were already here.
+    "sites/professional-resources/index.html":
+        "Professional Resource Library: what to ask a regulated legal, medical, dental, "
+        "immigration, equine or workplace mental-health provider before you commit.",
     "sites/professional-resources/about.html":
         "About Professional Resource Library: who owns and edits it, its editorial policy, "
         "and the limits that keep its legal, medical and financial pages educational.",
@@ -207,6 +213,26 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
     expected: dict[str, dict] = {rel: {"description": d} for rel, d in HAND_AUTHORED.items()}
     for rel, t in HAND_TITLES.items():
         expected.setdefault(rel, {})["title"] = t
+
+    # A hand-authored page's <title> is its own name plus the site-name suffix
+    # when both fit, and its name alone when they do not -- site_title()'s rule,
+    # the one every generator already follows. Without this the suffix was the
+    # only thing keeping four professional-resources pages over the 65-character
+    # bound (checklist item b1, 25 Oct 2026): "About Professional Resource
+    # Library | Professional Resource Library" is 67 characters of which 29 are
+    # the publication's name twice. Reading the page's current title rather
+    # than a table means a renamed page needs no entry here, and a title that
+    # already fits is left byte-identical.
+    for rel in HAND_AUTHORED:
+        if rel in HAND_TITLES:
+            continue
+        pub = next((p for p in pubs.values() if rel.startswith(p["folder"] + "/")), None)
+        path = ROOT / rel
+        if pub is None or not path.exists():
+            continue
+        name = _current(path.read_text(encoding="utf-8"))[0]
+        name = name.removesuffix(f" | {pub['title']}").strip() or name
+        expected.setdefault(rel, {})["title"] = meta_description.site_title(name, pub["title"], rel)
 
     def put(rel: str, description: str, title: str) -> None:
         expected[rel] = {"description": description, "title": title}

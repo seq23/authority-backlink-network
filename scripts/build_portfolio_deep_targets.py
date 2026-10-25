@@ -18,6 +18,8 @@ has one, so a dirty working tree is never the source):
                             data/search_intelligence/strengthened_pages.json
     WPP-llm                 data/seo/measured_targets.json
     sprylabs-hpc-site       data/search_intelligence/target_query_set.json
+    hicks-consulting-canonical
+                            data/search_intelligence/target_query_set.json
 
 plus every deep URL this repository's own pantry already approves (the targets
 with no measured set: A Player Mode, Virtual Agency OS, Horse Legal Guide, The
@@ -65,11 +67,24 @@ SOURCES = [
     ("local-guides-generator", "data/search_intelligence/strengthened_pages.json", None),
     ("WPP-llm", "data/seo/measured_targets.json", "westpeekproductions.com"),
     ("sprylabs-hpc-site", "data/search_intelligence/target_query_set.json", None),
+    # 25 Oct 2026: the owner reclassified hicksconsulting.org from a client
+    # property to a grid repo, so its links are followed editorial links and it
+    # needs a catalogue like every other portfolio domain -- without one the
+    # rebalancer's capacity for it is zero and it unlinks every citation.
+    ("hicks-consulting-canonical", "data/search_intelligence/target_query_set.json", "hicksconsulting.org"),
 ]
 ROUTE_KEYS = ("expected_owned_route", "owner_route", "owned_route", "route", "expected_owned_url",
               "url", "page", "pages")
 # Pages that are never an editorial destination.
 EXCLUDE_PATH = re.compile(r"^/(privacy|terms|cookie|legal|contact|login|account|cart|checkout|states/)", re.I)
+# A candidate whose URL or title names the parent company is never a
+# destination. These publications name no parent (see
+# scripts/validators/validate_no_parent_company.py, which hard-fails on the
+# string anywhere in a generator or a data file): on 25 Oct 2026 a refresh
+# admitted billionairehighperformancecoach.com/spry-labs, whose <title> carries
+# it, and the validator caught the catalogue rather than a page -- which is the
+# guard working, and also a candidate this builder should never have offered.
+EXCLUDE_PARENT = re.compile(r"spry[\s-]*labs", re.I)
 TITLE_RE = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
 MAX_PER_DOMAIN = 25
 UA = "Mozilla/5.0 (compatible; AuthorityNetworkLinkCheck/1.0)"
@@ -168,7 +183,7 @@ def main() -> int:
 
     by_url: dict[str, dict] = {}
     for h, path, q, weight in raw:
-        if h not in portfolio or EXCLUDE_PATH.match(path):
+        if h not in portfolio or EXCLUDE_PATH.match(path) or EXCLUDE_PARENT.search(path):
             continue
         canonical_host = h
         url = f"https://{canonical_host}{path}"
@@ -195,6 +210,13 @@ def main() -> int:
         final_url = final if final.startswith("https://") else row["url"]
         title = clean_title(m.group(1))
         if not title:
+            continue
+        # The anchor IS the page's <title>, so a page titled for the parent
+        # company would put that name on these publications. Checked here as
+        # well as on the URL: the title is only known after the fetch.
+        if EXCLUDE_PARENT.search(title):
+            dropped.append({"url": row["url"], "status": status, "final": final,
+                            "reason": "title names the parent company"})
             continue
         bucket = targets.setdefault(row["domain"], [])
         if any(t["url"] == final_url for t in bucket) or len(bucket) >= MAX_PER_DOMAIN:

@@ -1876,6 +1876,9 @@ PROFESSIONAL_PAGES = [
         "slug": "workplace-mental-health-training-vs-therapy.html",
         "published": PUBLISHED,
         "title": "Workplace Mental Health Training and Therapy Are Not the Same Purchase",
+        # <title> only: the heading above is 70 characters and the Search Readiness
+        # bound is 65 (checklist item b1).
+        "seo_title": "Workplace Mental Health Training vs Therapy: What Differs",
         "h1": "Workplace Mental Health Training and Therapy Are Not the Same Purchase",
         "eyebrow": "Comparison for employers scoping a programme",
         "description": ("What workplace wellbeing training can and cannot do, where clinical care and "
