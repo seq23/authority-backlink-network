@@ -1027,9 +1027,18 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
     }
     # This was the summary plus "N pages from <publication>.", cut at 300, which
     # ran to 164-211 characters on four hubs. The count suffix is the part that
-    # can give way; the summary never is. Raises if no form fits 110-160.
+    # can give way; the summary never is. Raises if no form fits the bounds.
+    #
+    # The two longest rungs were added 25 Oct 2026 with DESC_MIN at 120
+    # (checklist item b2): memphisvendorlibrary.com/topics/wedding-seating-charts
+    # came out at 118 characters, and every rung below it was shorter still.
+    # Checked against all 28 hubs in data/topic-taxonomy.json, each publication
+    # title and 1-119 member pages: every combination has a rung inside 120-160.
     n = len(members)
     description = meta_description.first_fitting([
+        f"{hub['summary']} {n} pages from {pub_title}, grouped by the decision each one helps with.",
+        f"{hub['summary']} {n} pages from {pub_title}, grouped by the decision they help with.",
+        f"{hub['summary']} {n} pages from {pub_title}, grouped by decision.",
         f"{hub['summary']} {n} pages from {pub_title}.",
         f"{hub['summary']} {n} pages in this topic.",
         f"{hub['summary']} {n} pages.",

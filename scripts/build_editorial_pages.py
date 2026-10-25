@@ -383,9 +383,11 @@ it publishes.</p>
     schema = web_page_schema("WebPage", title, url,
                              "Sourcing, production, AI use, affiliation and corrections policy.",
                              pub["title"], home, pub.get("mission", ""))
+    # 120-160 characters for every publication name we carry: the shortest,
+    # "Memphis Vendor Library", put the previous sentence at 117 (checklist b2).
     return "editorial-standards.html", url, title, \
-        "Sourcing standards, AI-use disclosure, conflict-of-interest policy and corrections "\
-        "policy for " + pub["title"] + ".", schema, body
+        "Sourcing standards, AI-use disclosure, conflict-of-interest policy, and how a "\
+        "correction is requested, logged and published at " + pub["title"] + ".", schema, body
 
 
 def corrections_page(pub, ed, corrections_addr) -> tuple:

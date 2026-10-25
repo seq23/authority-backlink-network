@@ -43,15 +43,47 @@
       ],
       "table": {
         "caption": "Job description vs role scorecard: what each document is for",
-        "headers": ["Element", "Job description", "Role scorecard"],
+        "headers": [
+          "Element",
+          "Job description",
+          "Role scorecard"
+        ],
         "rows": [
-          ["Primary content", "Activities and responsibilities", "Outcomes and the evidence for them"],
-          ["Audience", "Candidates and job boards", "The hiring panel, then the hire"],
-          ["Written by", "Whoever owns the req, often alone", "The panel together, before the req opens"],
-          ["Handles disagreement", "Hides it behind broad phrasing", "Surfaces it while it is still cheap"],
-          ["Decision rights", "Usually absent or implied by title", "Stated explicitly, including escalation points"],
-          ["Life after offer", "Rarely reopened", "Re-read on a set cadence, edited by the hire"],
-          ["Failure test", "Hard to fail on paper", "A clear miss can be described in one sentence"]
+          [
+            "Primary content",
+            "Activities and responsibilities",
+            "Outcomes and the evidence for them"
+          ],
+          [
+            "Audience",
+            "Candidates and job boards",
+            "The hiring panel, then the hire"
+          ],
+          [
+            "Written by",
+            "Whoever owns the req, often alone",
+            "The panel together, before the req opens"
+          ],
+          [
+            "Handles disagreement",
+            "Hides it behind broad phrasing",
+            "Surfaces it while it is still cheap"
+          ],
+          [
+            "Decision rights",
+            "Usually absent or implied by title",
+            "Stated explicitly, including escalation points"
+          ],
+          [
+            "Life after offer",
+            "Rarely reopened",
+            "Re-read on a set cadence, edited by the hire"
+          ],
+          [
+            "Failure test",
+            "Hard to fail on paper",
+            "A clear miss can be described in one sentence"
+          ]
         ]
       },
       "checklist": {
@@ -129,13 +161,43 @@
       ],
       "table": {
         "caption": "Three work-sample formats and what each one measures",
-        "headers": ["Format", "Best signal", "Main risk", "Typical time budget"],
+        "headers": [
+          "Format",
+          "Best signal",
+          "Main risk",
+          "Typical time budget"
+        ],
         "rows": [
-          ["Live pairing or working session", "How the candidate thinks under discussion", "Measures composure while observed as much as skill", "60 to 90 minutes"],
-          ["Short take-home task", "Judgment about scope and tradeoffs", "Selects for candidates with spare time", "1 to 3 hours"],
-          ["Paid trial engagement", "Real behaviour over several days", "Hardest to schedule; needs a contract and clear IP terms", "1 to 5 days"],
-          ["Portfolio walkthrough", "Depth of past work and honesty about their own role in it", "Past work may not resemble your constraints", "45 to 60 minutes"],
-          ["Written critique of an existing artifact", "Standards and ability to give feedback", "Rewards fluency in writing over doing", "45 to 90 minutes"]
+          [
+            "Live pairing or working session",
+            "How the candidate thinks under discussion",
+            "Measures composure while observed as much as skill",
+            "60 to 90 minutes"
+          ],
+          [
+            "Short take-home task",
+            "Judgment about scope and tradeoffs",
+            "Selects for candidates with spare time",
+            "1 to 3 hours"
+          ],
+          [
+            "Paid trial engagement",
+            "Real behaviour over several days",
+            "Hardest to schedule; needs a contract and clear IP terms",
+            "1 to 5 days"
+          ],
+          [
+            "Portfolio walkthrough",
+            "Depth of past work and honesty about their own role in it",
+            "Past work may not resemble your constraints",
+            "45 to 60 minutes"
+          ],
+          [
+            "Written critique of an existing artifact",
+            "Standards and ability to give feedback",
+            "Rewards fluency in writing over doing",
+            "45 to 90 minutes"
+          ]
         ]
       },
       "checklist": {
@@ -213,14 +275,49 @@
       ],
       "table": {
         "caption": "A three-phase onboarding structure and the evidence each phase produces",
-        "headers": ["Phase", "Rough window", "Goal", "Evidence it produces"],
+        "headers": [
+          "Phase",
+          "Rough window",
+          "Goal",
+          "Evidence it produces"
+        ],
         "rows": [
-          ["Orientation", "Weeks 1 to 3", "Understand how work arrives and who decides", "A written summary of one system, plus a list of what confused them"],
-          ["First delivery", "Weeks 4 to 8", "Carry one small piece of work end to end", "A shipped change and a short retrospective on what got in the way"],
-          ["First ownership", "Weeks 9 to 13", "Own a real outcome with a real deadline", "A result measured against a scorecard outcome"],
-          ["Checkpoint 1", "End of week 3", "Correct misunderstandings early", "Written notes from both sides"],
-          ["Checkpoint 2", "End of week 8", "Assess judgment on real work", "Rubric-scored review of the delivery"],
-          ["Checkpoint 3", "End of week 13", "Two-way assessment of fit", "Updated scorecard with the hire's own edits"]
+          [
+            "Orientation",
+            "Weeks 1 to 3",
+            "Understand how work arrives and who decides",
+            "A written summary of one system, plus a list of what confused them"
+          ],
+          [
+            "First delivery",
+            "Weeks 4 to 8",
+            "Carry one small piece of work end to end",
+            "A shipped change and a short retrospective on what got in the way"
+          ],
+          [
+            "First ownership",
+            "Weeks 9 to 13",
+            "Own a real outcome with a real deadline",
+            "A result measured against a scorecard outcome"
+          ],
+          [
+            "Checkpoint 1",
+            "End of week 3",
+            "Correct misunderstandings early",
+            "Written notes from both sides"
+          ],
+          [
+            "Checkpoint 2",
+            "End of week 8",
+            "Assess judgment on real work",
+            "Rubric-scored review of the delivery"
+          ],
+          [
+            "Checkpoint 3",
+            "End of week 13",
+            "Two-way assessment of fit",
+            "Updated scorecard with the hire's own edits"
+          ]
         ]
       },
       "checklist": {
@@ -255,7 +352,8 @@
           "q": "How does this relate to a formal probation period?",
           "a": "It is not the same thing. Probationary periods, if you use them, carry specific legal meaning and documentation requirements that vary by jurisdiction. Treat the 90-day plan as a management tool and confirm any formal probation structure with a qualified employment attorney or HR advisor."
         }
-      ]
+      ],
+      "seo_title": "90-Day Onboarding Plan: Producing Evidence of Fit"
     },
     {
       "id": "cl-fo-roledesign",
@@ -299,14 +397,49 @@
       ],
       "table": {
         "caption": "Diagnostic: what the same symptom means under four different causes",
-        "headers": ["Signal you observe", "Points to performance", "Points to role design", "First thing to check"],
+        "headers": [
+          "Signal you observe",
+          "Points to performance",
+          "Points to role design",
+          "First thing to check"
+        ],
         "rows": [
-          ["Outcomes are missed repeatedly", "Only this person has missed them", "Previous holders missed the same ones", "The record of the last two people in the role"],
-          ["Work stalls waiting on others", "Escalation was available and unused", "The role has no standing to escalate", "Whether the escalation path is written down anywhere"],
-          ["Quality is inconsistent", "Standards were clear and agreed", "Standards were never written", "Whether a rubric or definition of done exists"],
-          ["The person seems overloaded", "Prioritization was possible and not attempted", "The brief contains two jobs", "The scorecard against a week of actual calendar time"],
-          ["Decisions keep getting reversed", "Decisions were made without consultation", "Decision rights were never allocated", "Who believes they own the decision, asked separately"],
-          ["The role's outcomes no longer matter", "Not a performance question at all", "Not a design question either; context changed", "Whether anyone told the person the priority moved"]
+          [
+            "Outcomes are missed repeatedly",
+            "Only this person has missed them",
+            "Previous holders missed the same ones",
+            "The record of the last two people in the role"
+          ],
+          [
+            "Work stalls waiting on others",
+            "Escalation was available and unused",
+            "The role has no standing to escalate",
+            "Whether the escalation path is written down anywhere"
+          ],
+          [
+            "Quality is inconsistent",
+            "Standards were clear and agreed",
+            "Standards were never written",
+            "Whether a rubric or definition of done exists"
+          ],
+          [
+            "The person seems overloaded",
+            "Prioritization was possible and not attempted",
+            "The brief contains two jobs",
+            "The scorecard against a week of actual calendar time"
+          ],
+          [
+            "Decisions keep getting reversed",
+            "Decisions were made without consultation",
+            "Decision rights were never allocated",
+            "Who believes they own the decision, asked separately"
+          ],
+          [
+            "The role's outcomes no longer matter",
+            "Not a performance question at all",
+            "Not a design question either; context changed",
+            "Whether anyone told the person the priority moved"
+          ]
         ]
       },
       "checklist": {
@@ -385,16 +518,52 @@
       ],
       "table": {
         "caption": "AI coaching tools vs human coaches across the dimensions that usually decide it",
-        "headers": ["Dimension", "AI coaching tool", "Human coach"],
+        "headers": [
+          "Dimension",
+          "AI coaching tool",
+          "Human coach"
+        ],
         "rows": [
-          ["Availability", "Any hour, no scheduling", "Booked sessions, commonly 45 to 60 minutes, weekly or monthly"],
-          ["Marginal cost per question", "Effectively zero, so small questions get asked", "High enough that questions get batched"],
-          ["Notices what you avoid", "Only what you put in the prompt", "Central to the value of the relationship"],
-          ["Accountability pressure", "Low; no social cost to breaking a commitment", "Higher; the commitment was made to a person"],
-          ["Consistency of method", "Applies the same framework every time", "Varies with the coach's read of the moment"],
-          ["Confidentiality", "Depends entirely on the vendor's data policy, which you must read", "Usually governed by an explicit agreement"],
-          ["Rehearsal of hard conversations", "Strong, because there is no impression to manage", "Strong, but people self-censor more"],
-          ["Pattern recognition over months", "Limited to what is retained and re-supplied", "Accumulates naturally across the relationship"]
+          [
+            "Availability",
+            "Any hour, no scheduling",
+            "Booked sessions, commonly 45 to 60 minutes, weekly or monthly"
+          ],
+          [
+            "Marginal cost per question",
+            "Effectively zero, so small questions get asked",
+            "High enough that questions get batched"
+          ],
+          [
+            "Notices what you avoid",
+            "Only what you put in the prompt",
+            "Central to the value of the relationship"
+          ],
+          [
+            "Accountability pressure",
+            "Low; no social cost to breaking a commitment",
+            "Higher; the commitment was made to a person"
+          ],
+          [
+            "Consistency of method",
+            "Applies the same framework every time",
+            "Varies with the coach's read of the moment"
+          ],
+          [
+            "Confidentiality",
+            "Depends entirely on the vendor's data policy, which you must read",
+            "Usually governed by an explicit agreement"
+          ],
+          [
+            "Rehearsal of hard conversations",
+            "Strong, because there is no impression to manage",
+            "Strong, but people self-censor more"
+          ],
+          [
+            "Pattern recognition over months",
+            "Limited to what is retained and re-supplied",
+            "Accumulates naturally across the relationship"
+          ]
         ]
       },
       "checklist": {
@@ -438,7 +607,7 @@
       "cluster": "AI in the executive operating cadence",
       "slug": "where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
       "title": "Where to Put AI in a Weekly Operating Review Without Losing Accountability",
-      "seo_title": "Putting AI in a Weekly Operating Review Without Losing Accountability",
+      "seo_title": "AI in a Weekly Operating Review, Without Losing Accountability",
       "meta_description": "AI belongs in the preparation and follow-up of an operating review, not in the judgment. A stage-by-stage table showing what to automate and what to keep human.",
       "answer": "Put AI in the preparation and the follow-up: assembling the numbers, drafting the summary, extracting commitments, chasing what slipped. Keep it out of the judgment layer, where someone has to say what is true and own the call. The test is whether a name is attached to the decision afterwards.",
       "campaign_id": "bhpc-authority",
@@ -473,16 +642,61 @@
       ],
       "table": {
         "caption": "Weekly operating review: what to automate, what to keep human, and why",
-        "headers": ["Stage", "Automate?", "Reason", "Guardrail"],
+        "headers": [
+          "Stage",
+          "Automate?",
+          "Reason",
+          "Guardrail"
+        ],
         "rows": [
-          ["Pulling numbers from source systems", "Yes", "Repetitive and verifiable against the source", "Owner named next to each number"],
-          ["Assembling the pre-read pack", "Yes", "High effort, low judgment", "Circulated at least 24 hours ahead"],
-          ["Writing the context paragraph", "Partly", "A draft saves time; the framing is a judgment call", "Reviewed by the owner before it goes out"],
-          ["Deciding what a bad number means", "No", "This is the point of the meeting", "A named person states a view on the record"],
-          ["Deciding what to do about it", "No", "Accountability cannot be delegated to a tool", "The decision is recorded with an owner"],
-          ["Extracting commitments into a list", "Yes", "Mechanical, and errors are easy to spot", "Each owner confirms their own item"],
-          ["Chasing items that slipped", "Yes", "Nobody does this reliably by hand", "Escalation still goes to a person"],
-          ["Writing the external summary", "Partly", "Draft is fine; the send is a judgment call", "A human sends it and owns the wording"]
+          [
+            "Pulling numbers from source systems",
+            "Yes",
+            "Repetitive and verifiable against the source",
+            "Owner named next to each number"
+          ],
+          [
+            "Assembling the pre-read pack",
+            "Yes",
+            "High effort, low judgment",
+            "Circulated at least 24 hours ahead"
+          ],
+          [
+            "Writing the context paragraph",
+            "Partly",
+            "A draft saves time; the framing is a judgment call",
+            "Reviewed by the owner before it goes out"
+          ],
+          [
+            "Deciding what a bad number means",
+            "No",
+            "This is the point of the meeting",
+            "A named person states a view on the record"
+          ],
+          [
+            "Deciding what to do about it",
+            "No",
+            "Accountability cannot be delegated to a tool",
+            "The decision is recorded with an owner"
+          ],
+          [
+            "Extracting commitments into a list",
+            "Yes",
+            "Mechanical, and errors are easy to spot",
+            "Each owner confirms their own item"
+          ],
+          [
+            "Chasing items that slipped",
+            "Yes",
+            "Nobody does this reliably by hand",
+            "Escalation still goes to a person"
+          ],
+          [
+            "Writing the external summary",
+            "Partly",
+            "Draft is fine; the send is a judgment call",
+            "A human sends it and owns the wording"
+          ]
         ]
       },
       "checklist": {
@@ -560,14 +774,42 @@
       ],
       "table": {
         "caption": "The six elements of a delegation brief and what happens when each is missing",
-        "headers": ["Element", "What it answers", "Failure mode when omitted"],
+        "headers": [
+          "Element",
+          "What it answers",
+          "Failure mode when omitted"
+        ],
         "rows": [
-          ["Outcome", "What is different in the world when this is done", "Activity gets delivered instead of a result"],
-          ["Definition of done", "How we both know it is finished", "Endless revision against unstated preferences"],
-          ["Constraints", "Budget, tone, length, deadline, what not to touch", "Work that is good but unusable"],
-          ["Inputs and their location", "What to use and where to find it", "Time lost hunting, or invented source material"],
-          ["Decision rights", "What the recipient may decide alone", "Constant check-ins, or unilateral surprises"],
-          ["Stuck protocol", "Who to ask, and after how long", "Silent waiting from a person, confident guessing from a tool"]
+          [
+            "Outcome",
+            "What is different in the world when this is done",
+            "Activity gets delivered instead of a result"
+          ],
+          [
+            "Definition of done",
+            "How we both know it is finished",
+            "Endless revision against unstated preferences"
+          ],
+          [
+            "Constraints",
+            "Budget, tone, length, deadline, what not to touch",
+            "Work that is good but unusable"
+          ],
+          [
+            "Inputs and their location",
+            "What to use and where to find it",
+            "Time lost hunting, or invented source material"
+          ],
+          [
+            "Decision rights",
+            "What the recipient may decide alone",
+            "Constant check-ins, or unilateral surprises"
+          ],
+          [
+            "Stuck protocol",
+            "Who to ask, and after how long",
+            "Silent waiting from a person, confident guessing from a tool"
+          ]
         ]
       },
       "checklist": {
@@ -602,7 +844,8 @@
           "q": "How do I stop the review from becoming a rewrite?",
           "a": "Review against the written definition of done before you read for taste. If your objection is not covered by the definition, that is a note for the next brief rather than a correction to this one. Rewriting silently is how delegation reverts to doing the work yourself."
         }
-      ]
+      ],
+      "seo_title": "Delegation Brief a Person or a Tool Can Both Execute"
     },
     {
       "id": "cl-fo-automatefirst",
@@ -647,13 +890,43 @@
       ],
       "table": {
         "caption": "Scoring a task for automation across four dimensions",
-        "headers": ["Dimension", "Score it high when", "Score it low when", "Weight it carries"],
+        "headers": [
+          "Dimension",
+          "Score it high when",
+          "Score it low when",
+          "Weight it carries"
+        ],
         "rows": [
-          ["Frequency", "It recurs daily or weekly, counted rather than estimated", "It happens a few times a year", "Sets the size of the prize"],
-          ["Stability", "The rules have not changed in months and exceptions are rare", "Someone explains an exception most weeks", "Sets the maintenance cost"],
-          ["Verifiability", "A wrong result is obvious immediately", "A wrong result looks exactly like a right one", "Sets how much you can trust it"],
-          ["Consequence", "A mistake is embarrassing but cheap to reverse", "A mistake reaches a customer, a regulator, or a bank", "Holds veto power over the other three"],
-          ["Ownership", "One named person will maintain it", "It is nobody's job after launch", "Determines whether it survives a year"]
+          [
+            "Frequency",
+            "It recurs daily or weekly, counted rather than estimated",
+            "It happens a few times a year",
+            "Sets the size of the prize"
+          ],
+          [
+            "Stability",
+            "The rules have not changed in months and exceptions are rare",
+            "Someone explains an exception most weeks",
+            "Sets the maintenance cost"
+          ],
+          [
+            "Verifiability",
+            "A wrong result is obvious immediately",
+            "A wrong result looks exactly like a right one",
+            "Sets how much you can trust it"
+          ],
+          [
+            "Consequence",
+            "A mistake is embarrassing but cheap to reverse",
+            "A mistake reaches a customer, a regulator, or a bank",
+            "Holds veto power over the other three"
+          ],
+          [
+            "Ownership",
+            "One named person will maintain it",
+            "It is nobody's job after launch",
+            "Determines whether it survives a year"
+          ]
         ]
       },
       "checklist": {
@@ -733,16 +1006,61 @@
       ],
       "table": {
         "caption": "Virtual event cost drivers, ranked by how much they typically move the total",
-        "headers": ["Driver", "What increases it", "What reduces it", "Often discovered late?"],
+        "headers": [
+          "Driver",
+          "What increases it",
+          "What reduces it",
+          "Often discovered late?"
+        ],
         "rows": [
-          ["Live production complexity", "Multiple tracks, live demos, frequent presenter switches", "Single track, pre-recorded segments played to schedule", "No"],
-          ["Speaker preparation", "Many speakers, each needing a check and a rehearsal", "Fewer speakers with longer slots", "Sometimes"],
-          ["Rehearsal load", "Full dress rehearsals with the whole lineup", "Staged rehearsals by segment", "No"],
-          ["Accessibility services", "Live captioning, interpretation, accessible materials, short notice", "Booked early with the rest of the scope", "Yes"],
-          ["Graphics and playback", "Custom motion graphics, lower thirds per speaker", "A template applied consistently", "Sometimes"],
-          ["Platform and licensing", "Large audience tiers, add-on modules", "Standard tier that matches actual attendance", "No"],
-          ["Moderation and chat staffing", "Active Q and A across several rooms", "One room with a defined Q and A window", "Yes"],
-          ["Post-event deliverables", "Edited clips, transcripts, analytics, fast turnaround", "Raw recording delivered as-is", "Yes"]
+          [
+            "Live production complexity",
+            "Multiple tracks, live demos, frequent presenter switches",
+            "Single track, pre-recorded segments played to schedule",
+            "No"
+          ],
+          [
+            "Speaker preparation",
+            "Many speakers, each needing a check and a rehearsal",
+            "Fewer speakers with longer slots",
+            "Sometimes"
+          ],
+          [
+            "Rehearsal load",
+            "Full dress rehearsals with the whole lineup",
+            "Staged rehearsals by segment",
+            "No"
+          ],
+          [
+            "Accessibility services",
+            "Live captioning, interpretation, accessible materials, short notice",
+            "Booked early with the rest of the scope",
+            "Yes"
+          ],
+          [
+            "Graphics and playback",
+            "Custom motion graphics, lower thirds per speaker",
+            "A template applied consistently",
+            "Sometimes"
+          ],
+          [
+            "Platform and licensing",
+            "Large audience tiers, add-on modules",
+            "Standard tier that matches actual attendance",
+            "No"
+          ],
+          [
+            "Moderation and chat staffing",
+            "Active Q and A across several rooms",
+            "One room with a defined Q and A window",
+            "Yes"
+          ],
+          [
+            "Post-event deliverables",
+            "Edited clips, transcripts, analytics, fast turnaround",
+            "Raw recording delivered as-is",
+            "Yes"
+          ]
         ]
       },
       "checklist": {
@@ -821,16 +1139,52 @@
       ],
       "table": {
         "caption": "Run of show columns and what each one prevents",
-        "headers": ["Column", "What it contains", "What it prevents"],
+        "headers": [
+          "Column",
+          "What it contains",
+          "What it prevents"
+        ],
         "rows": [
-          ["Clock time", "Absolute time, not just elapsed", "Ambiguity across time zones and late starts"],
-          ["Duration", "Planned length of the segment", "Silent overrun that eats the next segment"],
-          ["On screen", "Exactly what the audience sees", "A held slide left up during a live speaker"],
-          ["Audio source", "Who is unmuted and what is playing", "Open microphones and missing playback audio"],
-          ["Trigger owner", "The named person who starts the cue", "Two people acting, or nobody acting"],
-          ["Speaker state", "Who is on camera, backstage, or standing by", "A presenter appearing before they are ready"],
-          ["Fallback", "What happens if this cue fails", "Dead air while someone improvises"],
-          ["Chat and Q and A", "Who is watching and what they are watching for", "Unmoderated chat during a sensitive segment"]
+          [
+            "Clock time",
+            "Absolute time, not just elapsed",
+            "Ambiguity across time zones and late starts"
+          ],
+          [
+            "Duration",
+            "Planned length of the segment",
+            "Silent overrun that eats the next segment"
+          ],
+          [
+            "On screen",
+            "Exactly what the audience sees",
+            "A held slide left up during a live speaker"
+          ],
+          [
+            "Audio source",
+            "Who is unmuted and what is playing",
+            "Open microphones and missing playback audio"
+          ],
+          [
+            "Trigger owner",
+            "The named person who starts the cue",
+            "Two people acting, or nobody acting"
+          ],
+          [
+            "Speaker state",
+            "Who is on camera, backstage, or standing by",
+            "A presenter appearing before they are ready"
+          ],
+          [
+            "Fallback",
+            "What happens if this cue fails",
+            "Dead air while someone improvises"
+          ],
+          [
+            "Chat and Q and A",
+            "Who is watching and what they are watching for",
+            "Unmoderated chat during a sensitive segment"
+          ]
         ]
       },
       "checklist": {
@@ -909,16 +1263,61 @@
       ],
       "table": {
         "caption": "Three virtual formats compared across the variables that decide feasibility",
-        "headers": ["Variable", "Webinar", "Virtual conference", "Hybrid broadcast"],
+        "headers": [
+          "Variable",
+          "Webinar",
+          "Virtual conference",
+          "Hybrid broadcast"
+        ],
         "rows": [
-          ["Tracks", "One", "Several, often simultaneous", "One main room, sometimes with breakouts"],
-          ["Typical crew roles", "Host, producer, moderator", "Programme manager, per-track producers, technical director", "All of the conference roles plus on-site audio and camera"],
-          ["Speaker preparation load", "Low; one or two people", "High; scales with speaker count", "High, plus an on-site briefing"],
-          ["Rehearsal", "One tech check", "Per-track rehearsals plus a transitions rehearsal", "On-site rehearsal with the room audio in place"],
-          ["Main failure surface", "The single stream", "A room nobody is watching", "Room audio and the remote audience feeling ignored"],
-          ["Accessibility considerations", "Captioning on one stream", "Captioning per track, plus accessible materials", "Captioning on the stream and in the room"],
-          ["Realistic lead time", "Shortest of the three", "Weeks of speaker coordination", "Longest; venue and technical survey required"],
-          ["Best suited to", "Explaining one thing clearly", "Serving several audiences at once", "An in-person moment that a remote audience must share"]
+          [
+            "Tracks",
+            "One",
+            "Several, often simultaneous",
+            "One main room, sometimes with breakouts"
+          ],
+          [
+            "Typical crew roles",
+            "Host, producer, moderator",
+            "Programme manager, per-track producers, technical director",
+            "All of the conference roles plus on-site audio and camera"
+          ],
+          [
+            "Speaker preparation load",
+            "Low; one or two people",
+            "High; scales with speaker count",
+            "High, plus an on-site briefing"
+          ],
+          [
+            "Rehearsal",
+            "One tech check",
+            "Per-track rehearsals plus a transitions rehearsal",
+            "On-site rehearsal with the room audio in place"
+          ],
+          [
+            "Main failure surface",
+            "The single stream",
+            "A room nobody is watching",
+            "Room audio and the remote audience feeling ignored"
+          ],
+          [
+            "Accessibility considerations",
+            "Captioning on one stream",
+            "Captioning per track, plus accessible materials",
+            "Captioning on the stream and in the room"
+          ],
+          [
+            "Realistic lead time",
+            "Shortest of the three",
+            "Weeks of speaker coordination",
+            "Longest; venue and technical survey required"
+          ],
+          [
+            "Best suited to",
+            "Explaining one thing clearly",
+            "Serving several audiences at once",
+            "An in-person moment that a remote audience must share"
+          ]
         ]
       },
       "checklist": {
@@ -997,13 +1396,43 @@
       ],
       "table": {
         "caption": "Three rehearsal stages, who attends, and what each one is for",
-        "headers": ["Stage", "Who attends", "Rough duration", "What it must confirm"],
+        "headers": [
+          "Stage",
+          "Who attends",
+          "Rough duration",
+          "What it must confirm"
+        ],
         "rows": [
-          ["Individual tech check", "One speaker plus one producer", "15 to 20 minutes", "Camera, microphone, lighting, connection, screen share, and the exact buttons they will use"],
-          ["Content run", "Speaker plus producer, or a small group", "Length of the segment plus 15 minutes", "Timing, slide behaviour, embedded media, and text legibility on a stream"],
-          ["Transitions rehearsal", "Production team, speakers for entry and exit only", "60 to 90 minutes", "Every switch, cue, and fallback in the run of show"],
-          ["Platform dry run", "Production team only", "30 minutes", "Permissions, backstage flow, recording, captioning, and chat controls"],
-          ["Day-of check", "Everyone, staggered", "10 minutes per speaker", "Nothing changed since rehearsal on the speaker's own setup"]
+          [
+            "Individual tech check",
+            "One speaker plus one producer",
+            "15 to 20 minutes",
+            "Camera, microphone, lighting, connection, screen share, and the exact buttons they will use"
+          ],
+          [
+            "Content run",
+            "Speaker plus producer, or a small group",
+            "Length of the segment plus 15 minutes",
+            "Timing, slide behaviour, embedded media, and text legibility on a stream"
+          ],
+          [
+            "Transitions rehearsal",
+            "Production team, speakers for entry and exit only",
+            "60 to 90 minutes",
+            "Every switch, cue, and fallback in the run of show"
+          ],
+          [
+            "Platform dry run",
+            "Production team only",
+            "30 minutes",
+            "Permissions, backstage flow, recording, captioning, and chat controls"
+          ],
+          [
+            "Day-of check",
+            "Everyone, staggered",
+            "10 minutes per speaker",
+            "Nothing changed since rehearsal on the speaker's own setup"
+          ]
         ]
       },
       "checklist": {
@@ -1082,14 +1511,42 @@
       ],
       "table": {
         "caption": "The four charter questions, a weak answer, and what a usable answer looks like",
-        "headers": ["Question", "Weak answer", "Usable answer"],
+        "headers": [
+          "Question",
+          "Weak answer",
+          "Usable answer"
+        ],
         "rows": [
-          ["Who is this for?", "Our customers", "Operations leads at companies past their first twenty staff"],
-          ["What does a member get?", "Updates and announcements", "Peers facing the same problem this quarter, and direct access to the team who builds it"],
-          ["What does the organization get?", "Engagement", "Earlier signal on why people churn in month three"],
-          ["What is this not?", "Left unstated", "Not a support channel, not a sales pipeline, and not where roadmap commitments are made"],
-          ["Who decides?", "Whoever is loudest", "A named owner, with an escalation path for policy questions"],
-          ["When do we reconsider?", "Never revisited", "A stated review date and the conditions that would trigger a change"]
+          [
+            "Who is this for?",
+            "Our customers",
+            "Operations leads at companies past their first twenty staff"
+          ],
+          [
+            "What does a member get?",
+            "Updates and announcements",
+            "Peers facing the same problem this quarter, and direct access to the team who builds it"
+          ],
+          [
+            "What does the organization get?",
+            "Engagement",
+            "Earlier signal on why people churn in month three"
+          ],
+          [
+            "What is this not?",
+            "Left unstated",
+            "Not a support channel, not a sales pipeline, and not where roadmap commitments are made"
+          ],
+          [
+            "Who decides?",
+            "Whoever is loudest",
+            "A named owner, with an escalation path for policy questions"
+          ],
+          [
+            "When do we reconsider?",
+            "Never revisited",
+            "A stated review date and the conditions that would trigger a change"
+          ]
         ]
       },
       "checklist": {
@@ -1168,14 +1625,49 @@
       ],
       "table": {
         "caption": "A graduated moderation ladder: what each rung is for and who applies it",
-        "headers": ["Rung", "Typical trigger", "Who can apply it", "Recorded?"],
+        "headers": [
+          "Rung",
+          "Typical trigger",
+          "Who can apply it",
+          "Recorded?"
+        ],
         "rows": [
-          ["Private note", "A first, minor, probably unintentional breach", "Any moderator", "Yes, briefly"],
-          ["Public correction in thread", "A breach others saw, where the norm needs restating", "Any moderator", "Yes"],
-          ["Content removal with explanation", "Content that cannot stay, but the member can", "Any moderator", "Yes, with the content preserved in the record"],
-          ["Temporary restriction", "Repeated breaches after a note", "Lead moderator", "Yes, with an end date"],
-          ["Removal from the community", "Serious or persistent breach", "Community owner", "Yes, with the full history"],
-          ["Immediate removal, no ladder", "Harassment, threats, or illegal content", "Community owner, escalated at once", "Yes, and escalated outside the moderation team"]
+          [
+            "Private note",
+            "A first, minor, probably unintentional breach",
+            "Any moderator",
+            "Yes, briefly"
+          ],
+          [
+            "Public correction in thread",
+            "A breach others saw, where the norm needs restating",
+            "Any moderator",
+            "Yes"
+          ],
+          [
+            "Content removal with explanation",
+            "Content that cannot stay, but the member can",
+            "Any moderator",
+            "Yes, with the content preserved in the record"
+          ],
+          [
+            "Temporary restriction",
+            "Repeated breaches after a note",
+            "Lead moderator",
+            "Yes, with an end date"
+          ],
+          [
+            "Removal from the community",
+            "Serious or persistent breach",
+            "Community owner",
+            "Yes, with the full history"
+          ],
+          [
+            "Immediate removal, no ladder",
+            "Harassment, threats, or illegal content",
+            "Community owner, escalated at once",
+            "Yes, and escalated outside the moderation team"
+          ]
         ]
       },
       "checklist": {
@@ -1255,14 +1747,49 @@
       ],
       "table": {
         "caption": "A 30-day member sequence: what each phase must achieve and how it fails",
-        "headers": ["Phase", "Member's real question", "What must happen", "Common failure"],
+        "headers": [
+          "Phase",
+          "Member's real question",
+          "What must happen",
+          "Common failure"
+        ],
         "rows": [
-          ["First 10 minutes", "Are these my people?", "They see a recent thread where someone like them got help", "They land on a wall of announcements"],
-          ["First 24 hours", "Is it safe to say something?", "A low-cost prompt they can answer in one line", "An open invitation to introduce themselves at length"],
-          ["First week", "Did anyone notice me?", "Their first post gets a real response within a day", "Their introduction sits unanswered"],
-          ["Second week", "Is there anything here for me specifically?", "They are pointed at one conversation matched to their stated problem", "Generic content with no routing"],
-          ["First month", "Is this worth a slot in my week?", "A recurring anchor they can plan around", "Activity that is real but unpredictable"],
-          ["End of month one", "Was this useful?", "One human note asking exactly that", "Silence, or an automated survey"]
+          [
+            "First 10 minutes",
+            "Are these my people?",
+            "They see a recent thread where someone like them got help",
+            "They land on a wall of announcements"
+          ],
+          [
+            "First 24 hours",
+            "Is it safe to say something?",
+            "A low-cost prompt they can answer in one line",
+            "An open invitation to introduce themselves at length"
+          ],
+          [
+            "First week",
+            "Did anyone notice me?",
+            "Their first post gets a real response within a day",
+            "Their introduction sits unanswered"
+          ],
+          [
+            "Second week",
+            "Is there anything here for me specifically?",
+            "They are pointed at one conversation matched to their stated problem",
+            "Generic content with no routing"
+          ],
+          [
+            "First month",
+            "Is this worth a slot in my week?",
+            "A recurring anchor they can plan around",
+            "Activity that is real but unpredictable"
+          ],
+          [
+            "End of month one",
+            "Was this useful?",
+            "One human note asking exactly that",
+            "Silence, or an automated survey"
+          ]
         ]
       },
       "checklist": {
@@ -1342,16 +1869,61 @@
       ],
       "table": {
         "caption": "Community metrics: what each answers, and how each one misleads",
-        "headers": ["Metric", "Question it answers", "How it misleads", "Report monthly?"],
+        "headers": [
+          "Metric",
+          "Question it answers",
+          "How it misleads",
+          "Report monthly?"
+        ],
         "rows": [
-          ["Total members", "How many people have ever joined", "Cumulative and never falls, so it hides decline", "No"],
-          ["Total posts", "How much was written", "One enthusiastic member can carry it", "No"],
-          ["New member retention", "Does onboarding work", "Sensitive to the definition of active, so fix the definition", "Yes"],
-          ["Unanswered question rate", "Are members getting what they came for", "Depends on classifying what counts as a question", "Yes"],
-          ["Participation concentration", "Is the community resilient or dependent on a few people", "Slow-moving, so read the trend not the level", "Yes"],
-          ["Returning members per week", "Is there a habit", "Seasonal and event-driven; note the events", "Yes"],
-          ["Time to first response", "Does a newcomer feel noticed", "An average hides the worst cases; use a percentile", "Yes"],
-          ["Outcomes for the organization", "What did this produce that the business used", "Requires manual tracking, so it gets dropped", "Yes"]
+          [
+            "Total members",
+            "How many people have ever joined",
+            "Cumulative and never falls, so it hides decline",
+            "No"
+          ],
+          [
+            "Total posts",
+            "How much was written",
+            "One enthusiastic member can carry it",
+            "No"
+          ],
+          [
+            "New member retention",
+            "Does onboarding work",
+            "Sensitive to the definition of active, so fix the definition",
+            "Yes"
+          ],
+          [
+            "Unanswered question rate",
+            "Are members getting what they came for",
+            "Depends on classifying what counts as a question",
+            "Yes"
+          ],
+          [
+            "Participation concentration",
+            "Is the community resilient or dependent on a few people",
+            "Slow-moving, so read the trend not the level",
+            "Yes"
+          ],
+          [
+            "Returning members per week",
+            "Is there a habit",
+            "Seasonal and event-driven; note the events",
+            "Yes"
+          ],
+          [
+            "Time to first response",
+            "Does a newcomer feel noticed",
+            "An average hides the worst cases; use a percentile",
+            "Yes"
+          ],
+          [
+            "Outcomes for the organization",
+            "What did this produce that the business used",
+            "Requires manual tracking, so it gets dropped",
+            "Yes"
+          ]
         ]
       },
       "checklist": {

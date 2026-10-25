@@ -44,16 +44,52 @@
       ],
       "table": {
         "caption": "What to bring to a first equine legal consultation",
-        "headers": ["Item", "What it should contain", "Why the attorney needs it"],
+        "headers": [
+          "Item",
+          "What it should contain",
+          "Why the attorney needs it"
+        ],
         "rows": [
-          ["One-page timeline", "Dated events in order, with the source of each fact", "Establishes the sequence without spending consultation time"],
-          ["Written agreements", "Contracts, bills of sale, leases, and boarding agreements", "Shows what was actually agreed rather than remembered"],
-          ["Informal correspondence", "Full exports of texts, emails, and messages, unedited", "Often where the real terms were discussed"],
-          ["Money record", "Payments, invoices, receipts, and how each was described", "Payment characterisation frequently decides the dispute"],
-          ["Veterinary and farrier records", "Dated records relevant to the horse's condition", "Establishes condition at specific points in time"],
-          ["Registration and ownership papers", "Registration, transfer paperwork, and microchip records", "Identifies the animal and the chain of ownership"],
-          ["Insurance documents", "Policies, claims made, and correspondence with the insurer", "Coverage may change the practical options"],
-          ["Your acceptable outcomes", "A short ranked list of what you would settle for", "Focuses advice on what you actually want"]
+          [
+            "One-page timeline",
+            "Dated events in order, with the source of each fact",
+            "Establishes the sequence without spending consultation time"
+          ],
+          [
+            "Written agreements",
+            "Contracts, bills of sale, leases, and boarding agreements",
+            "Shows what was actually agreed rather than remembered"
+          ],
+          [
+            "Informal correspondence",
+            "Full exports of texts, emails, and messages, unedited",
+            "Often where the real terms were discussed"
+          ],
+          [
+            "Money record",
+            "Payments, invoices, receipts, and how each was described",
+            "Payment characterisation frequently decides the dispute"
+          ],
+          [
+            "Veterinary and farrier records",
+            "Dated records relevant to the horse's condition",
+            "Establishes condition at specific points in time"
+          ],
+          [
+            "Registration and ownership papers",
+            "Registration, transfer paperwork, and microchip records",
+            "Identifies the animal and the chain of ownership"
+          ],
+          [
+            "Insurance documents",
+            "Policies, claims made, and correspondence with the insurer",
+            "Coverage may change the practical options"
+          ],
+          [
+            "Your acceptable outcomes",
+            "A short ranked list of what you would settle for",
+            "Focuses advice on what you actually want"
+          ]
         ]
       },
       "checklist": {
@@ -132,16 +168,61 @@
       ],
       "table": {
         "caption": "Three lease structures compared across the terms that cause disputes",
-        "headers": ["Term", "Full lease", "Half lease", "Free lease"],
+        "headers": [
+          "Term",
+          "Full lease",
+          "Half lease",
+          "Free lease"
+        ],
         "rows": [
-          ["Typical use", "Exclusive use by the lessee", "Shared on a written schedule", "Use transferred without a lease fee"],
-          ["Lease fee", "Usually paid", "Usually paid or shared", "None, which is the defining feature"],
-          ["Routine costs", "Commonly the lessee's", "Split by written proportion", "Frequently the lessee's, but often unstated"],
-          ["Veterinary decisions", "Needs a stated authority and spending limit", "Needs a tie-breaker when one party is unreachable", "Most often left undefined and most often disputed"],
-          ["Location", "May allow relocation if stated", "Usually fixed at one facility", "Varies; state it explicitly"],
-          ["Insurance", "State who insures and who is named", "State who insures and who is named", "Commonly overlooked entirely"],
-          ["Ending it", "Needs a notice period in writing", "Needs a notice period in writing", "Most likely to end abruptly without terms"],
-          ["Condition at return", "Needs a dated record at handover", "Needs a dated record at handover", "Needs a dated record at handover"]
+          [
+            "Typical use",
+            "Exclusive use by the lessee",
+            "Shared on a written schedule",
+            "Use transferred without a lease fee"
+          ],
+          [
+            "Lease fee",
+            "Usually paid",
+            "Usually paid or shared",
+            "None, which is the defining feature"
+          ],
+          [
+            "Routine costs",
+            "Commonly the lessee's",
+            "Split by written proportion",
+            "Frequently the lessee's, but often unstated"
+          ],
+          [
+            "Veterinary decisions",
+            "Needs a stated authority and spending limit",
+            "Needs a tie-breaker when one party is unreachable",
+            "Most often left undefined and most often disputed"
+          ],
+          [
+            "Location",
+            "May allow relocation if stated",
+            "Usually fixed at one facility",
+            "Varies; state it explicitly"
+          ],
+          [
+            "Insurance",
+            "State who insures and who is named",
+            "State who insures and who is named",
+            "Commonly overlooked entirely"
+          ],
+          [
+            "Ending it",
+            "Needs a notice period in writing",
+            "Needs a notice period in writing",
+            "Most likely to end abruptly without terms"
+          ],
+          [
+            "Condition at return",
+            "Needs a dated record at handover",
+            "Needs a dated record at handover",
+            "Needs a dated record at handover"
+          ]
         ]
       },
       "checklist": {
@@ -178,7 +259,8 @@
           "q": "What is the most commonly omitted term?",
           "a": "The emergency veterinary decision, specifically who may authorise treatment and up to what amount when the owner cannot be reached. It is the term least likely to be discussed in advance and most likely to matter at 2am, and it takes one sentence to fix."
         }
-      ]
+      ],
+      "seo_title": "Full, Half or Free Horse Lease: What Each Needs in Writing"
     },
     {
       "id": "cl-pro-horsesale",
@@ -222,16 +304,52 @@
       ],
       "table": {
         "caption": "The six record sets to assemble before a horse sale closes",
-        "headers": ["Record set", "What it should contain", "Which side it protects"],
+        "headers": [
+          "Record set",
+          "What it should contain",
+          "Which side it protects"
+        ],
         "rows": [
-          ["Identity and registration", "Registration papers, transfer paperwork, microchip and passport records", "Both; establishes which animal was sold"],
-          ["Veterinary history", "Available records, plus any pre-purchase examination report and imaging", "Both; establishes known condition at a date"],
-          ["Written sale terms", "Purchase agreement, bill of sale, and any trial or contingency terms", "Both; establishes what was actually agreed"],
-          ["Payment record", "Deposits, instalments, and how each payment was described at the time", "Both; deposit characterisation is often disputed"],
-          ["Disclosures", "A written record of conditions, vices, or history disclosed, dated and acknowledged", "Chiefly the seller"],
-          ["Condition at transfer", "Dated photographs and, where relevant, a veterinary note on the day", "Chiefly the buyer"],
-          ["Correspondence", "Full exports of messages discussing the horse, unedited", "Both; often where representations were made"],
-          ["Insurance", "Policies in force, and the date coverage transfers", "Both; a gap in coverage at transfer is common"]
+          [
+            "Identity and registration",
+            "Registration papers, transfer paperwork, microchip and passport records",
+            "Both; establishes which animal was sold"
+          ],
+          [
+            "Veterinary history",
+            "Available records, plus any pre-purchase examination report and imaging",
+            "Both; establishes known condition at a date"
+          ],
+          [
+            "Written sale terms",
+            "Purchase agreement, bill of sale, and any trial or contingency terms",
+            "Both; establishes what was actually agreed"
+          ],
+          [
+            "Payment record",
+            "Deposits, instalments, and how each payment was described at the time",
+            "Both; deposit characterisation is often disputed"
+          ],
+          [
+            "Disclosures",
+            "A written record of conditions, vices, or history disclosed, dated and acknowledged",
+            "Chiefly the seller"
+          ],
+          [
+            "Condition at transfer",
+            "Dated photographs and, where relevant, a veterinary note on the day",
+            "Chiefly the buyer"
+          ],
+          [
+            "Correspondence",
+            "Full exports of messages discussing the horse, unedited",
+            "Both; often where representations were made"
+          ],
+          [
+            "Insurance",
+            "Policies in force, and the date coverage transfers",
+            "Both; a gap in coverage at transfer is common"
+          ]
         ]
       },
       "checklist": {
@@ -313,16 +431,52 @@
       ],
       "table": {
         "caption": "Veterinary terms a boarding agreement should settle before an emergency",
-        "headers": ["Term", "What to write", "What happens without it"],
+        "headers": [
+          "Term",
+          "What to write",
+          "What happens without it"
+        ],
         "rows": [
-          ["Authority to call a vet", "The barn may obtain care if the owner is unreachable after a stated effort", "Hesitation, or action that is later disputed"],
-          ["Contact effort required", "A specific attempt standard, such as 30 minutes across two numbers", "Disagreement about whether the owner was really unreachable"],
-          ["Spending threshold", "An amount the barn may authorise without further approval", "An invoice the owner says they never agreed to"],
-          ["Preferred veterinarian", "The owner's practice, plus what happens if unavailable", "A call to whoever answers, questioned afterwards"],
-          ["Emergency contact", "A named second person with the same written authority", "One unanswered phone stops everything"],
-          ["Billing route", "Whether the barn pays and rebills, or the vet bills the owner", "The barn fronts costs and waits months"],
-          ["Repayment terms", "When reimbursement is due and in what form", "A boarding relationship that ends badly over money"],
-          ["Record of the event", "A dated note of what happened and who was contacted", "Two conflicting recollections and no document"]
+          [
+            "Authority to call a vet",
+            "The barn may obtain care if the owner is unreachable after a stated effort",
+            "Hesitation, or action that is later disputed"
+          ],
+          [
+            "Contact effort required",
+            "A specific attempt standard, such as 30 minutes across two numbers",
+            "Disagreement about whether the owner was really unreachable"
+          ],
+          [
+            "Spending threshold",
+            "An amount the barn may authorise without further approval",
+            "An invoice the owner says they never agreed to"
+          ],
+          [
+            "Preferred veterinarian",
+            "The owner's practice, plus what happens if unavailable",
+            "A call to whoever answers, questioned afterwards"
+          ],
+          [
+            "Emergency contact",
+            "A named second person with the same written authority",
+            "One unanswered phone stops everything"
+          ],
+          [
+            "Billing route",
+            "Whether the barn pays and rebills, or the vet bills the owner",
+            "The barn fronts costs and waits months"
+          ],
+          [
+            "Repayment terms",
+            "When reimbursement is due and in what form",
+            "A boarding relationship that ends badly over money"
+          ],
+          [
+            "Record of the event",
+            "A dated note of what happened and who was contacted",
+            "Two conflicting recollections and no document"
+          ]
         ]
       },
       "checklist": {
@@ -404,18 +558,62 @@
       ],
       "table": {
         "caption": "Questions to ask about a resident agreement, and why each matters",
-        "headers": ["Area", "The question", "Why it matters"],
+        "headers": [
+          "Area",
+          "The question",
+          "Why it matters"
+        ],
         "rows": [
-          ["Daily expectations", "What is required each day and each week?", "Structure varies widely and fit is individual"],
-          ["Meetings and programme", "Is attendance required, and is it verified?", "Requirements differ between residences"],
-          ["Employment", "Is work required, and within what period?", "Affects planning for someone leaving treatment"],
-          ["Money", "What is owed, how often, and what does it include?", "Unstated exclusions cause early strain"],
-          ["Deposits", "Is one held, and under what conditions is it returned?", "Frequently unclear until someone leaves"],
-          ["Testing", "How is testing conducted and how are results handled?", "Practices and privacy protections differ"],
-          ["Medication", "How is prescribed medication stored and managed?", "Policies vary and matter for continuity of care"],
-          ["Guests and absences", "What are the rules for visitors and nights away?", "A common source of accidental breaches"],
-          ["Ending a stay", "What results in a warning, and what ends a stay immediately?", "The question people most regret not asking"],
-          ["Concerns", "Who does a resident raise a problem with?", "Tells you whether there is a process at all"]
+          [
+            "Daily expectations",
+            "What is required each day and each week?",
+            "Structure varies widely and fit is individual"
+          ],
+          [
+            "Meetings and programme",
+            "Is attendance required, and is it verified?",
+            "Requirements differ between residences"
+          ],
+          [
+            "Employment",
+            "Is work required, and within what period?",
+            "Affects planning for someone leaving treatment"
+          ],
+          [
+            "Money",
+            "What is owed, how often, and what does it include?",
+            "Unstated exclusions cause early strain"
+          ],
+          [
+            "Deposits",
+            "Is one held, and under what conditions is it returned?",
+            "Frequently unclear until someone leaves"
+          ],
+          [
+            "Testing",
+            "How is testing conducted and how are results handled?",
+            "Practices and privacy protections differ"
+          ],
+          [
+            "Medication",
+            "How is prescribed medication stored and managed?",
+            "Policies vary and matter for continuity of care"
+          ],
+          [
+            "Guests and absences",
+            "What are the rules for visitors and nights away?",
+            "A common source of accidental breaches"
+          ],
+          [
+            "Ending a stay",
+            "What results in a warning, and what ends a stay immediately?",
+            "The question people most regret not asking"
+          ],
+          [
+            "Concerns",
+            "Who does a resident raise a problem with?",
+            "Tells you whether there is a process at all"
+          ]
         ]
       },
       "checklist": {
@@ -497,16 +695,52 @@
       ],
       "table": {
         "caption": "Preparing for an intake conversation: both directions",
-        "headers": ["Category", "Have ready for them", "Ask them"],
+        "headers": [
+          "Category",
+          "Have ready for them",
+          "Ask them"
+        ],
         "rows": [
-          ["Identity and referral", "Identification and any discharge or referral paperwork", "What documentation do you require before arrival?"],
-          ["Health and medication", "A current medication list from the prescriber", "How is prescribed medication stored and managed here?"],
-          ["Money", "What you can pay and how often", "What is owed, what does it include, and what is extra?"],
-          ["Work and transport", "Current employment status and how you would get there", "Is employment expected, and by when?"],
-          ["Legal obligations", "Court dates, supervision requirements, or reporting duties", "Have you supported residents with similar obligations?"],
-          ["Support network", "Who is supporting you and how to reach them", "What will you share with family, and what will you not?"],
-          ["Timing", "When you would need to move in", "How soon is a place available, and is there a waiting list?"],
-          ["Fit", "An honest account of what has and has not worked before", "What kind of resident does this house work best for?"]
+          [
+            "Identity and referral",
+            "Identification and any discharge or referral paperwork",
+            "What documentation do you require before arrival?"
+          ],
+          [
+            "Health and medication",
+            "A current medication list from the prescriber",
+            "How is prescribed medication stored and managed here?"
+          ],
+          [
+            "Money",
+            "What you can pay and how often",
+            "What is owed, what does it include, and what is extra?"
+          ],
+          [
+            "Work and transport",
+            "Current employment status and how you would get there",
+            "Is employment expected, and by when?"
+          ],
+          [
+            "Legal obligations",
+            "Court dates, supervision requirements, or reporting duties",
+            "Have you supported residents with similar obligations?"
+          ],
+          [
+            "Support network",
+            "Who is supporting you and how to reach them",
+            "What will you share with family, and what will you not?"
+          ],
+          [
+            "Timing",
+            "When you would need to move in",
+            "How soon is a place available, and is there a waiting list?"
+          ],
+          [
+            "Fit",
+            "An honest account of what has and has not worked before",
+            "What kind of resident does this house work best for?"
+          ]
         ]
       },
       "checklist": {
@@ -586,16 +820,52 @@
       ],
       "table": {
         "caption": "Using the levels framework when comparing residences",
-        "headers": ["Question", "What it tells you", "What it does not tell you"],
+        "headers": [
+          "Question",
+          "What it tells you",
+          "What it does not tell you"
+        ],
         "rows": [
-          ["Which level do you describe yourself as?", "How the residence is staffed and structured", "Whether the house is well run"],
-          ["Is there staff on site, and when?", "Practical availability of support", "The quality of that support"],
-          ["Is any clinical service provided here or elsewhere?", "Whether treatment is on site or referred out", "Whether the clinical care is a fit for the person"],
-          ["Are you certified, and by which organization?", "That an external body has assessed the residence", "Day-to-day life in the house"],
-          ["Is the certification current?", "Whether the assessment is recent", "Anything about how rules are applied"],
-          ["How are house decisions made?", "Whether the house is peer-governed or staff-directed", "How that works in practice"],
-          ["What is the expected length of stay?", "Whether the structure matches the plan", "Whether an extension is realistic"],
-          ["What happens if someone needs more support?", "Whether there is a transfer or step-up path", "How often that path is actually used"]
+          [
+            "Which level do you describe yourself as?",
+            "How the residence is staffed and structured",
+            "Whether the house is well run"
+          ],
+          [
+            "Is there staff on site, and when?",
+            "Practical availability of support",
+            "The quality of that support"
+          ],
+          [
+            "Is any clinical service provided here or elsewhere?",
+            "Whether treatment is on site or referred out",
+            "Whether the clinical care is a fit for the person"
+          ],
+          [
+            "Are you certified, and by which organization?",
+            "That an external body has assessed the residence",
+            "Day-to-day life in the house"
+          ],
+          [
+            "Is the certification current?",
+            "Whether the assessment is recent",
+            "Anything about how rules are applied"
+          ],
+          [
+            "How are house decisions made?",
+            "Whether the house is peer-governed or staff-directed",
+            "How that works in practice"
+          ],
+          [
+            "What is the expected length of stay?",
+            "Whether the structure matches the plan",
+            "Whether an extension is realistic"
+          ],
+          [
+            "What happens if someone needs more support?",
+            "Whether there is a transfer or step-up path",
+            "How often that path is actually used"
+          ]
         ]
       },
       "checklist": {
@@ -677,16 +947,61 @@
       ],
       "table": {
         "caption": "A 30-day practical plan after moving into recovery housing",
-        "headers": ["Period", "Focus", "Specific actions", "Who can help"],
+        "headers": [
+          "Period",
+          "Focus",
+          "Specific actions",
+          "Who can help"
+        ],
         "rows": [
-          ["Days 1 to 3", "Arrival and house expectations", "Read the agreement again, learn the routine, meet housemates, confirm what is owed and when", "House staff or peer leader"],
-          ["Week 1", "Continuity of care", "Confirm prescriber, next appointment, prescription filling, and medication storage", "Treating clinician and discharge coordinator"],
-          ["Week 1", "Documents", "Start replacing identification, birth certificate, or social security card if needed", "Family, with the person present where required"],
-          ["Week 2", "Transport", "Map routes to work, appointments, and meetings using what is actually available", "House staff and family"],
-          ["Week 2", "Support network", "Establish meeting attendance and local contacts", "Peers and house community"],
-          ["Weeks 3 to 4", "Income", "Job search or return to work, aligned with transport and house expectations", "Employment services, family"],
-          ["Weeks 3 to 4", "Money plan", "Map what is owed against when income actually arrives", "Family, house staff"],
-          ["Day 30", "Review", "What worked, what did not, and what the next 30 days need", "The resident, with support"]
+          [
+            "Days 1 to 3",
+            "Arrival and house expectations",
+            "Read the agreement again, learn the routine, meet housemates, confirm what is owed and when",
+            "House staff or peer leader"
+          ],
+          [
+            "Week 1",
+            "Continuity of care",
+            "Confirm prescriber, next appointment, prescription filling, and medication storage",
+            "Treating clinician and discharge coordinator"
+          ],
+          [
+            "Week 1",
+            "Documents",
+            "Start replacing identification, birth certificate, or social security card if needed",
+            "Family, with the person present where required"
+          ],
+          [
+            "Week 2",
+            "Transport",
+            "Map routes to work, appointments, and meetings using what is actually available",
+            "House staff and family"
+          ],
+          [
+            "Week 2",
+            "Support network",
+            "Establish meeting attendance and local contacts",
+            "Peers and house community"
+          ],
+          [
+            "Weeks 3 to 4",
+            "Income",
+            "Job search or return to work, aligned with transport and house expectations",
+            "Employment services, family"
+          ],
+          [
+            "Weeks 3 to 4",
+            "Money plan",
+            "Map what is owed against when income actually arrives",
+            "Family, house staff"
+          ],
+          [
+            "Day 30",
+            "Review",
+            "What worked, what did not, and what the next 30 days need",
+            "The resident, with support"
+          ]
         ]
       },
       "checklist": {
@@ -766,17 +1081,57 @@
       ],
       "table": {
         "caption": "What to specify in the brief, and what happens if you do not",
-        "headers": ["Element", "What to state", "Consequence of omitting it"],
+        "headers": [
+          "Element",
+          "What to state",
+          "Consequence of omitting it"
+        ],
         "rows": [
-          ["Audience", "Role and level of everyone in the room", "One session that suits neither managers nor staff"],
-          ["Objective", "The behaviour that should differ afterwards", "A session that cannot be evaluated"],
-          ["Context", "What prompted this, and what has already been tried", "A repeat of a session the room has already had"],
-          ["Boundaries", "That this is education, not treatment or assessment", "Participants placed in an inappropriate position"],
-          ["Disclosure handling", "That no one should be expected to disclose personal health information", "A session that creates a privacy problem"],
-          ["Support route", "Where a participant affected by the material can go", "Material surfaced with nowhere to take it"],
-          ["Follow-up", "What happens after the session, and who owns it", "A one-off event with no durable effect"],
-          ["Evaluation", "How success will be measured and when", "Satisfaction scores standing in for outcomes"],
-          ["Constraints", "Time available, format, accessibility needs, and budget", "Proposals that cannot be compared"]
+          [
+            "Audience",
+            "Role and level of everyone in the room",
+            "One session that suits neither managers nor staff"
+          ],
+          [
+            "Objective",
+            "The behaviour that should differ afterwards",
+            "A session that cannot be evaluated"
+          ],
+          [
+            "Context",
+            "What prompted this, and what has already been tried",
+            "A repeat of a session the room has already had"
+          ],
+          [
+            "Boundaries",
+            "That this is education, not treatment or assessment",
+            "Participants placed in an inappropriate position"
+          ],
+          [
+            "Disclosure handling",
+            "That no one should be expected to disclose personal health information",
+            "A session that creates a privacy problem"
+          ],
+          [
+            "Support route",
+            "Where a participant affected by the material can go",
+            "Material surfaced with nowhere to take it"
+          ],
+          [
+            "Follow-up",
+            "What happens after the session, and who owns it",
+            "A one-off event with no durable effect"
+          ],
+          [
+            "Evaluation",
+            "How success will be measured and when",
+            "Satisfaction scores standing in for outcomes"
+          ],
+          [
+            "Constraints",
+            "Time available, format, accessibility needs, and budget",
+            "Proposals that cannot be compared"
+          ]
         ]
       },
       "checklist": {
@@ -857,17 +1212,57 @@
       ],
       "table": {
         "caption": "Preparing a workload conversation",
-        "headers": ["Stage", "Do", "Avoid"],
+        "headers": [
+          "Stage",
+          "Do",
+          "Avoid"
+        ],
         "rows": [
-          ["Before", "List what specifically changed, with dates", "Relying on a general impression that someone seems stressed"],
-          ["Before", "Establish what you can actually reprioritise or reassign", "Opening a conversation you have no authority to act on"],
-          ["Before", "Check what support the organization offers and how to reach it", "Improvising a referral in the moment"],
-          ["Opening", "Name the observable change in the work", "Opening with a question about how they are coping"],
-          ["Middle", "Bring a proposal and ask them to correct it", "Asking only what would help and leaving it there"],
-          ["Middle", "Say plainly what cannot change and who decides", "Implying everything is possible"],
-          ["If health arises", "Listen, do not probe, and route to real support", "Speculating about diagnosis or offering clinical opinions"],
-          ["Close", "Agree specific changes, owners, and a check-back date", "Ending on goodwill with nothing written down"],
-          ["After", "Do the thing you agreed, visibly", "Letting the agreed change quietly not happen"]
+          [
+            "Before",
+            "List what specifically changed, with dates",
+            "Relying on a general impression that someone seems stressed"
+          ],
+          [
+            "Before",
+            "Establish what you can actually reprioritise or reassign",
+            "Opening a conversation you have no authority to act on"
+          ],
+          [
+            "Before",
+            "Check what support the organization offers and how to reach it",
+            "Improvising a referral in the moment"
+          ],
+          [
+            "Opening",
+            "Name the observable change in the work",
+            "Opening with a question about how they are coping"
+          ],
+          [
+            "Middle",
+            "Bring a proposal and ask them to correct it",
+            "Asking only what would help and leaving it there"
+          ],
+          [
+            "Middle",
+            "Say plainly what cannot change and who decides",
+            "Implying everything is possible"
+          ],
+          [
+            "If health arises",
+            "Listen, do not probe, and route to real support",
+            "Speculating about diagnosis or offering clinical opinions"
+          ],
+          [
+            "Close",
+            "Agree specific changes, owners, and a check-back date",
+            "Ending on goodwill with nothing written down"
+          ],
+          [
+            "After",
+            "Do the thing you agreed, visibly",
+            "Letting the agreed change quietly not happen"
+          ]
         ]
       },
       "checklist": {
@@ -948,16 +1343,52 @@
       ],
       "table": {
         "caption": "What to measure, what it shows, and what it cannot show",
-        "headers": ["Measure", "What it indicates", "Its main limitation"],
+        "headers": [
+          "Measure",
+          "What it indicates",
+          "Its main limitation"
+        ],
         "rows": [
-          ["Attendance", "That the session was delivered", "Says nothing about effect"],
-          ["Immediate satisfaction", "Quality of delivery", "Uncorrelated with behaviour change"],
-          ["Aggregate take-up of support routes", "Whether people know about and will use support", "Rising take-up can be good news or a warning"],
-          ["Manager behaviour after training", "Whether the trained behaviour actually occurs", "Requires a defined observable behaviour"],
-          ["Workload decisions made", "Whether the organization changed anything", "Needs a baseline recorded beforehand"],
-          ["Aggregate absence", "A long-run organizational signal", "Moves for many unrelated reasons"],
-          ["Aggregate turnover", "A long-run organizational signal", "Lags by months and has many causes"],
-          ["Repeat survey items", "Change in reported experience over time", "Sensitive to wording, timing, and who responds"]
+          [
+            "Attendance",
+            "That the session was delivered",
+            "Says nothing about effect"
+          ],
+          [
+            "Immediate satisfaction",
+            "Quality of delivery",
+            "Uncorrelated with behaviour change"
+          ],
+          [
+            "Aggregate take-up of support routes",
+            "Whether people know about and will use support",
+            "Rising take-up can be good news or a warning"
+          ],
+          [
+            "Manager behaviour after training",
+            "Whether the trained behaviour actually occurs",
+            "Requires a defined observable behaviour"
+          ],
+          [
+            "Workload decisions made",
+            "Whether the organization changed anything",
+            "Needs a baseline recorded beforehand"
+          ],
+          [
+            "Aggregate absence",
+            "A long-run organizational signal",
+            "Moves for many unrelated reasons"
+          ],
+          [
+            "Aggregate turnover",
+            "A long-run organizational signal",
+            "Lags by months and has many causes"
+          ],
+          [
+            "Repeat survey items",
+            "Change in reported experience over time",
+            "Sensitive to wording, timing, and who responds"
+          ]
         ]
       },
       "checklist": {
@@ -994,7 +1425,8 @@
           "q": "How long before we should expect to see anything?",
           "a": "Behavioural indicators tied directly to training can move within weeks; organizational indicators such as absence and turnover lag by months and have many other causes. Plan a follow-up at least 3 months out, and resist reading an early movement in a lagging indicator as an effect of the programme."
         }
-      ]
+      ],
+      "seo_title": "Did a Workplace Wellbeing Program Change Anything?"
     },
     {
       "id": "cl-pro-confidentiality",
@@ -1003,7 +1435,7 @@
       "cluster": "workplace wellbeing scoping",
       "slug": "what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
       "title": "What to Ask About Confidentiality Before Using a Workplace Support Program",
-      "seo_title": "Confidentiality Questions Before Using a Workplace Support Program",
+      "seo_title": "Confidentiality Questions Before Using Workplace Support",
       "meta_description": "Employer-funded support programs vary in what the employer sees. The questions to ask about records, reporting, referrals, and limits before you use one.",
       "answer": "Ask four questions before using an employer-funded support programme: who holds the records, what the employer receives and at what level of aggregation, what circumstances would cause information to be shared, and what happens to your file if you leave. The answers vary by programme and by jurisdiction, and they are reasonable to ask before the first session rather than after.",
       "campaign_id": "hicks-workplace-wellbeing",
@@ -1040,16 +1472,52 @@
       ],
       "table": {
         "caption": "Questions to ask about an employer-funded support programme",
-        "headers": ["Question", "Why it matters", "What a clear answer sounds like"],
+        "headers": [
+          "Question",
+          "Why it matters",
+          "What a clear answer sounds like"
+        ],
         "rows": [
-          ["Who holds the records?", "Determines who can access them", "A named provider or department, stated plainly"],
-          ["What does my employer receive?", "The most common source of hesitation", "A description of exactly what is reported and how"],
-          ["Could I be identified in aggregate reporting?", "Small teams make aggregates identifying", "An explanation of the minimum group size used"],
-          ["What are the limits of confidentiality?", "Every service has some", "A plain-language description of the circumstances"],
-          ["Does my manager learn that I used it?", "Frequently assumed either way", "A direct yes or no, with the reason"],
-          ["What happens on a referral?", "Information often travels with a referral", "What is passed on, and whether you control it"],
-          ["How long are records kept?", "Rarely mentioned and easy to answer", "A stated retention period"],
-          ["What happens if I leave the organization?", "Affects access and retention", "A clear statement about the file"]
+          [
+            "Who holds the records?",
+            "Determines who can access them",
+            "A named provider or department, stated plainly"
+          ],
+          [
+            "What does my employer receive?",
+            "The most common source of hesitation",
+            "A description of exactly what is reported and how"
+          ],
+          [
+            "Could I be identified in aggregate reporting?",
+            "Small teams make aggregates identifying",
+            "An explanation of the minimum group size used"
+          ],
+          [
+            "What are the limits of confidentiality?",
+            "Every service has some",
+            "A plain-language description of the circumstances"
+          ],
+          [
+            "Does my manager learn that I used it?",
+            "Frequently assumed either way",
+            "A direct yes or no, with the reason"
+          ],
+          [
+            "What happens on a referral?",
+            "Information often travels with a referral",
+            "What is passed on, and whether you control it"
+          ],
+          [
+            "How long are records kept?",
+            "Rarely mentioned and easy to answer",
+            "A stated retention period"
+          ],
+          [
+            "What happens if I leave the organization?",
+            "Affects access and retention",
+            "A clear statement about the file"
+          ]
         ]
       },
       "checklist": {
@@ -1132,17 +1600,57 @@
       ],
       "table": {
         "caption": "First-week record set after a collision",
-        "headers": ["Record", "Where it comes from", "Why early matters"],
+        "headers": [
+          "Record",
+          "Where it comes from",
+          "Why early matters"
+        ],
         "rows": [
-          ["Official report reference", "The responding agency", "The reference is needed to request the full report"],
-          ["Photographs of the scene", "Taken at the time, or as soon as possible", "Conditions change within hours"],
-          ["Photographs of the vehicles", "Before repair or disposal", "Repairs remove the evidence"],
-          ["Party and witness contacts", "Collected at the scene", "Witnesses become unreachable quickly"],
-          ["Nearby camera footage", "Businesses or residences nearby", "Footage is frequently overwritten within days"],
-          ["Medical records", "Every provider seen, from the first visit", "Establishes timing of symptoms and treatment"],
-          ["Insurance correspondence", "Every letter, email, and a note of every call", "Verbal exchanges are otherwise unrecorded"],
-          ["Your own dated account", "Written by you in the first week", "Contemporaneous notes carry different weight"],
-          ["Expenses", "Receipts for costs incurred", "Small receipts are lost within weeks"]
+          [
+            "Official report reference",
+            "The responding agency",
+            "The reference is needed to request the full report"
+          ],
+          [
+            "Photographs of the scene",
+            "Taken at the time, or as soon as possible",
+            "Conditions change within hours"
+          ],
+          [
+            "Photographs of the vehicles",
+            "Before repair or disposal",
+            "Repairs remove the evidence"
+          ],
+          [
+            "Party and witness contacts",
+            "Collected at the scene",
+            "Witnesses become unreachable quickly"
+          ],
+          [
+            "Nearby camera footage",
+            "Businesses or residences nearby",
+            "Footage is frequently overwritten within days"
+          ],
+          [
+            "Medical records",
+            "Every provider seen, from the first visit",
+            "Establishes timing of symptoms and treatment"
+          ],
+          [
+            "Insurance correspondence",
+            "Every letter, email, and a note of every call",
+            "Verbal exchanges are otherwise unrecorded"
+          ],
+          [
+            "Your own dated account",
+            "Written by you in the first week",
+            "Contemporaneous notes carry different weight"
+          ],
+          [
+            "Expenses",
+            "Receipts for costs incurred",
+            "Small receipts are lost within weeks"
+          ]
         ]
       },
       "checklist": {
@@ -1223,16 +1731,52 @@
       ],
       "table": {
         "caption": "Comparing two written dental treatment plans",
-        "headers": ["Axis", "What to ask both practices", "What a difference usually means"],
+        "headers": [
+          "Axis",
+          "What to ask both practices",
+          "What a difference usually means"
+        ],
         "rows": [
-          ["Problem definition", "In one sentence, what is this plan solving?", "The two practices framed the problem differently"],
-          ["Procedure codes", "Please provide codes for each item", "Different procedures, not different pricing of the same one"],
-          ["Sequence and visits", "How many visits, over what period?", "Different time horizons or different urgency"],
-          ["Materials and components", "What materials are used and why?", "A durability or appearance tradeoff you should be told about"],
-          ["Contingent steps", "Which items depend on findings during treatment?", "One plan is presented as fixed and is not"],
-          ["Alternatives", "What else could be done, including waiting?", "One practice considered options the other did not"],
-          ["If it does not work", "What is the fallback, and who bears the cost?", "Different risk allocation"],
-          ["Insurance assumptions", "What does this assume about my coverage?", "The gap is in the assumption, not the treatment"]
+          [
+            "Problem definition",
+            "In one sentence, what is this plan solving?",
+            "The two practices framed the problem differently"
+          ],
+          [
+            "Procedure codes",
+            "Please provide codes for each item",
+            "Different procedures, not different pricing of the same one"
+          ],
+          [
+            "Sequence and visits",
+            "How many visits, over what period?",
+            "Different time horizons or different urgency"
+          ],
+          [
+            "Materials and components",
+            "What materials are used and why?",
+            "A durability or appearance tradeoff you should be told about"
+          ],
+          [
+            "Contingent steps",
+            "Which items depend on findings during treatment?",
+            "One plan is presented as fixed and is not"
+          ],
+          [
+            "Alternatives",
+            "What else could be done, including waiting?",
+            "One practice considered options the other did not"
+          ],
+          [
+            "If it does not work",
+            "What is the fallback, and who bears the cost?",
+            "Different risk allocation"
+          ],
+          [
+            "Insurance assumptions",
+            "What does this assume about my coverage?",
+            "The gap is in the assumption, not the treatment"
+          ]
         ]
       },
       "checklist": {
@@ -1314,16 +1858,52 @@
       ],
       "table": {
         "caption": "Records to gather before a neuropsychological evaluation",
-        "headers": ["Category", "Examples", "What it contributes"],
+        "headers": [
+          "Category",
+          "Examples",
+          "What it contributes"
+        ],
         "rows": [
-          ["Developmental and school", "Report cards, prior testing, support or education plans", "Establishes whether the pattern is longstanding"],
-          ["Past evaluations", "Any previous psychological or educational assessment reports", "Provides a comparison point over time"],
-          ["Current academic or work", "Performance reviews, accommodation requests, specific examples", "Shows the conditions under which difficulty appears"],
-          ["Medical history", "Relevant diagnoses, injuries, and treatment history", "Identifies factors that affect cognition"],
-          ["Medication", "A current list from the prescriber, with recent changes noted", "Medication effects are part of the picture"],
-          ["Sleep and daily routine", "A short description of a typical week", "Context that is easy to overlook and easy to provide"],
-          ["Observations from others", "Short written accounts from people who see the person daily", "Fills the gap self-report cannot cover"],
-          ["Your questions", "What you want the evaluation to answer", "Lets the clinician confirm the scope is right"]
+          [
+            "Developmental and school",
+            "Report cards, prior testing, support or education plans",
+            "Establishes whether the pattern is longstanding"
+          ],
+          [
+            "Past evaluations",
+            "Any previous psychological or educational assessment reports",
+            "Provides a comparison point over time"
+          ],
+          [
+            "Current academic or work",
+            "Performance reviews, accommodation requests, specific examples",
+            "Shows the conditions under which difficulty appears"
+          ],
+          [
+            "Medical history",
+            "Relevant diagnoses, injuries, and treatment history",
+            "Identifies factors that affect cognition"
+          ],
+          [
+            "Medication",
+            "A current list from the prescriber, with recent changes noted",
+            "Medication effects are part of the picture"
+          ],
+          [
+            "Sleep and daily routine",
+            "A short description of a typical week",
+            "Context that is easy to overlook and easy to provide"
+          ],
+          [
+            "Observations from others",
+            "Short written accounts from people who see the person daily",
+            "Fills the gap self-report cannot cover"
+          ],
+          [
+            "Your questions",
+            "What you want the evaluation to answer",
+            "Lets the clinician confirm the scope is right"
+          ]
         ]
       },
       "checklist": {
@@ -1405,17 +1985,57 @@
       ],
       "table": {
         "caption": "Preparing for the immigration medical examination",
-        "headers": ["Item", "What to do", "Why"],
+        "headers": [
+          "Item",
+          "What to do",
+          "Why"
+        ],
         "rows": [
-          ["Finding a physician", "Use the USCIS list of designated civil surgeons", "Only a designated civil surgeon can complete Form I-693"],
-          ["Booking", "Ask the office exactly what to bring", "Requirements differ between offices"],
-          ["Identification", "Bring government-issued photo identification", "Standard requirement at nearly every office"],
-          ["Vaccination records", "Bring all records, including those from other countries", "The most common cause of a second visit"],
-          ["Incomplete records", "Say so when booking, not at the appointment", "Gives the office time to advise you"],
-          ["Medications", "Bring a current list from the prescriber", "Reconstruction from memory is unreliable"],
-          ["Forms", "Complete only what the office asks you to complete", "Offices differ in what they prepare in advance"],
-          ["The sealed envelope", "Do not open it", "Opening it can require the examination to be repeated"],
-          ["Current requirements", "Check the USCIS website or ask an immigration attorney", "Forms and rules change over time"]
+          [
+            "Finding a physician",
+            "Use the USCIS list of designated civil surgeons",
+            "Only a designated civil surgeon can complete Form I-693"
+          ],
+          [
+            "Booking",
+            "Ask the office exactly what to bring",
+            "Requirements differ between offices"
+          ],
+          [
+            "Identification",
+            "Bring government-issued photo identification",
+            "Standard requirement at nearly every office"
+          ],
+          [
+            "Vaccination records",
+            "Bring all records, including those from other countries",
+            "The most common cause of a second visit"
+          ],
+          [
+            "Incomplete records",
+            "Say so when booking, not at the appointment",
+            "Gives the office time to advise you"
+          ],
+          [
+            "Medications",
+            "Bring a current list from the prescriber",
+            "Reconstruction from memory is unreliable"
+          ],
+          [
+            "Forms",
+            "Complete only what the office asks you to complete",
+            "Offices differ in what they prepare in advance"
+          ],
+          [
+            "The sealed envelope",
+            "Do not open it",
+            "Opening it can require the examination to be repeated"
+          ],
+          [
+            "Current requirements",
+            "Check the USCIS website or ask an immigration attorney",
+            "Forms and rules change over time"
+          ]
         ]
       },
       "checklist": {
