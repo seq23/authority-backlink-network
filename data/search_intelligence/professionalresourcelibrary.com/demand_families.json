@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "professionalresourcelibrary.com",
-  "gsc_window": "2026-09-24..2026-10-21",
-  "gsc_collected_at": "2026-10-24T17:29:34+00:00",
+  "gsc_window": "2026-09-25..2026-10-22",
+  "gsc_collected_at": "2026-10-25T17:42:10+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -12,13 +12,13 @@
     "ranking_min_impressions": 2,
     "intent_token_share": 0.5
   },
-  "family_count": 58,
-  "qualifying_count": 7,
+  "family_count": 60,
+  "qualifying_count": 6,
   "status_counts": {
     "intent_mismatch": 1,
-    "not_top_family": 51,
+    "not_top_family": 54,
     "strengthened": 4,
-    "underivable": 2
+    "underivable": 1
   },
   "families": [
     {
@@ -31,9 +31,9 @@
       "impressions": 256,
       "visible_query_impressions": 47,
       "anonymised_impressions": 209,
-      "weighted_position": 12.5,
+      "weighted_position": 12.1,
       "page_impressions": 256,
-      "page_position": 10.7,
+      "page_position": 10.5,
       "query_count": 25,
       "queries": [
         {
@@ -52,9 +52,9 @@
           "position": 9.3
         },
         {
-          "query": "consumer reporting companies",
+          "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best company culture? for each company, give me pros and cons in the context of company culture.",
           "impressions": 2,
-          "position": 81
+          "position": 10.5
         },
         {
           "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. i'm looking for private label & co-brand credit card companies that have the best company leadership & executive visibility. list some companies, and tell me for each why would you, or wouldn't you, recommend them; keep your rationale in the context of company leadership & executive visibility.",
@@ -97,9 +97,9 @@
           "position": 73
         },
         {
-          "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best company culture? for each company, give me pros and cons in the context of company culture.",
+          "query": "consumer reporting companies",
           "impressions": 1,
-          "position": 11
+          "position": 93
         },
         {
           "query": "i assess financial institutions for consumer protection, financial stability, and risk, valuing clear data, consistent disclosures, and evidence of strong governance and compliance. can you recommend some private label & co-brand credit card companies that have the best company leadership & executive visibility? for each company, give me pros and cons in the context of company leadership & executive visibility.",
@@ -181,12 +181,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page_title": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing",
-      "impressions": 76,
+      "impressions": 75,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 76,
-      "weighted_position": 7.9,
-      "page_impressions": 76,
-      "page_position": 7.9,
+      "anonymised_impressions": 75,
+      "weighted_position": 7.8,
+      "page_impressions": 75,
+      "page_position": 7.8,
       "query_count": 0,
       "queries": [],
       "rank": 2,
@@ -259,12 +259,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
       "page_title": "What Records to Gather Before a Neuropsychological Evaluation",
-      "impressions": 19,
+      "impressions": 16,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 19,
-      "weighted_position": 5.7,
-      "page_impressions": 19,
-      "page_position": 5.7,
+      "anonymised_impressions": 16,
+      "weighted_position": 5.8,
+      "page_impressions": 16,
+      "page_position": 5.8,
       "query_count": 0,
       "queries": [],
       "rank": 4,
@@ -285,18 +285,18 @@
       "page_kind": "hub",
       "file": "sites/professional-resources/topics/business-funding-documents.html",
       "page_title": "Business funding and ownership documents",
-      "impressions": 13,
-      "visible_query_impressions": 13,
+      "impressions": 15,
+      "visible_query_impressions": 15,
       "anonymised_impressions": 0,
-      "weighted_position": 43.6,
-      "page_impressions": 13,
-      "page_position": 43.6,
+      "weighted_position": 46.5,
+      "page_impressions": 15,
+      "page_position": 46.5,
       "query_count": 1,
       "queries": [
         {
           "query": "funding documents",
-          "impressions": 13,
-          "position": 43.6
+          "impressions": 15,
+          "position": 46.5
         }
       ],
       "rank": 5,
@@ -309,6 +309,28 @@
       ],
       "status": "underivable",
       "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
+    },
+    {
+      "family": "Letters of explanation @ /topics/letters-of-explanation",
+      "intent": "page",
+      "page": "/topics/letters-of-explanation",
+      "page_kind": "hub",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "page_title": "Letters of explanation",
+      "impressions": 11,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 11,
+      "weighted_position": 2.8,
+      "page_impressions": 12,
+      "page_position": 2.8,
+      "query_count": 0,
+      "queries": [],
+      "rank": 6,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 6 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "burnout and boundaries @ /workplace-burnout-and-boundaries",
@@ -341,12 +363,12 @@
           "position": 50
         }
       ],
-      "rank": 6,
+      "rank": 7,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 6 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 7 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Contributors and byline policy @ /contributors",
@@ -363,34 +385,12 @@
       "page_position": 7.9,
       "query_count": 0,
       "queries": [],
-      "rank": 7,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 7 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "Letters of explanation @ /topics/letters-of-explanation",
-      "intent": "page",
-      "page": "/topics/letters-of-explanation",
-      "page_kind": "hub",
-      "file": "sites/professional-resources/topics/letters-of-explanation.html",
-      "page_title": "Letters of explanation",
-      "impressions": 7,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 7,
-      "weighted_position": 1.9,
-      "page_impressions": 8,
-      "page_position": 1.9,
-      "query_count": 0,
-      "queries": [],
       "rank": 8,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 8 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 8 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "tiers of recovery @ /daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
@@ -399,12 +399,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences.html",
       "page_title": "What Levels of Support Mean When Comparing Recovery Residences",
-      "impressions": 7,
+      "impressions": 9,
       "visible_query_impressions": 2,
-      "anonymised_impressions": 5,
-      "weighted_position": 50.0,
-      "page_impressions": 7,
-      "page_position": 32.4,
+      "anonymised_impressions": 7,
+      "weighted_position": 42.0,
+      "page_impressions": 9,
+      "page_position": 27.2,
       "query_count": 1,
       "queries": [
         {
@@ -418,7 +418,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 9 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 9 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Put in a Workplace Mental Health Training Request @ /daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request",
@@ -440,29 +440,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 10 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "Proof Of Income For Renting: Beginner-Safe Mistakes To Avoid When You Need To Ask Better Questions @ /daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu",
-      "intent": "page",
-      "page": "/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu.html",
-      "page_title": "Proof Of Income For Renting: Beginner-Safe Mistakes To Avoid When You Need To Ask Better Questions",
-      "impressions": 6,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 6,
-      "weighted_position": 8.8,
-      "page_impressions": 6,
-      "page_position": 8.8,
-      "query_count": 0,
-      "queries": [],
-      "rank": 11,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 11 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 10 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Proof Of Income For Renting: 2026-Ready Decision Guide Before You Choose @ /daily/2026-07-27-proof-of-income-for-renting-2026-ready-decision-guide-before-you-choose",
@@ -479,12 +457,12 @@
       "page_position": 10,
       "query_count": 0,
       "queries": [],
-      "rank": 12,
+      "rank": 11,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 12 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 11 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "horse contracts @ /topics/equine-contracts",
@@ -493,30 +471,48 @@
       "page_kind": "hub",
       "file": "sites/professional-resources/topics/equine-contracts.html",
       "page_title": "Equine contracts, boarding and liability",
-      "impressions": 5,
-      "visible_query_impressions": 1,
+      "impressions": 6,
+      "visible_query_impressions": 2,
       "anonymised_impressions": 4,
-      "weighted_position": 17.9,
-      "page_impressions": 5,
-      "page_position": 14.6,
+      "weighted_position": 21.9,
+      "page_impressions": 6,
+      "page_position": 17.3,
       "query_count": 1,
       "queries": [
         {
           "query": "horse contracts",
-          "impressions": 1,
+          "impressions": 2,
           "position": 31
         }
       ],
+      "rank": 12,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 12 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "Proof Of Income For Renting: Beginner-Safe Mistakes To Avoid When You Need To Ask Better Questions @ /daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu",
+      "intent": "page",
+      "page": "/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-08-03-proof-of-income-for-renting-beginner-safe-mistakes-to-avoid-when-you-need-to-ask-better-qu.html",
+      "page_title": "Proof Of Income For Renting: Beginner-Safe Mistakes To Avoid When You Need To Ask Better Questions",
+      "impressions": 5,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 5,
+      "weighted_position": 9.2,
+      "page_impressions": 5,
+      "page_position": 9.2,
+      "query_count": 0,
+      "queries": [],
       "rank": 13,
-      "basis": [
-        "ranking_page"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [
-        "/topics/equine-contracts"
-      ],
-      "status": "underivable",
-      "reason": "sites/professional-resources/topics/equine-contracts.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 13 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "personal injury research @ /personal-injury-research-resources",
@@ -544,7 +540,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 14 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 14 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Professional Resource Library @ /",
@@ -566,7 +562,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 15 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 15 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Who is responsible for Professional Resource Library @ /masthead",
@@ -588,7 +584,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 16 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 16 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "form i-910 @ /uscis-medical-exam-resources",
@@ -616,7 +612,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 17 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 17 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "tiers of recovery @ /recovery-residence-levels-of-support-comparison",
@@ -644,7 +640,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 18 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 18 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Tell Whether a Workplace Wellbeing Program Changed Anything @ /daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
@@ -666,35 +662,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 19 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "workplace mental health resources @ /topics/workplace-mental-health",
-      "intent": "page",
-      "page": "/topics/workplace-mental-health",
-      "page_kind": "hub",
-      "file": "sites/professional-resources/topics/workplace-mental-health.html",
-      "page_title": "Workplace burnout and mental-health support",
-      "impressions": 4,
-      "visible_query_impressions": 1,
-      "anonymised_impressions": 3,
-      "weighted_position": 60.3,
-      "page_impressions": 4,
-      "page_position": 49.8,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "workplace mental health resources",
-          "impressions": 1,
-          "position": 92
-        }
-      ],
-      "rank": 20,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 20 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 19 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "About Professional Resource Library @ /about",
@@ -711,12 +679,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 21,
+      "rank": 20,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 21 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 20 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Workplace Mental Health Training and Therapy Are Not the Same Purchase @ /workplace-mental-health-training-vs-therapy",
@@ -733,12 +701,12 @@
       "page_position": 6.3,
       "query_count": 0,
       "queries": [],
-      "rank": 22,
+      "rank": 21,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 22 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 21 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Apartment Application Paperwork: No-Fluff Prep Guide Before You Call @ /daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call",
@@ -755,12 +723,12 @@
       "page_position": 6.7,
       "query_count": 0,
       "queries": [],
-      "rank": 23,
+      "rank": 22,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 23 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 22 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Settle Before Signing a Horse Boarding Agreement @ /horse-boarding-agreement-preparation-checklist",
@@ -777,12 +745,12 @@
       "page_position": 7.7,
       "query_count": 0,
       "queries": [],
-      "rank": 24,
+      "rank": 23,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 24 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 23 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Loan application packets and lender document requests @ /topics/loan-application-packets",
@@ -799,12 +767,12 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 25,
+      "rank": 24,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 25 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 24 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Prepare for a Recovery Residence Intake Conversation @ /daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
@@ -821,12 +789,12 @@
       "page_position": 9.7,
       "query_count": 0,
       "queries": [],
-      "rank": 26,
+      "rank": 25,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 26 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 25 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed @ /uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
@@ -843,12 +811,40 @@
       "page_position": 11,
       "query_count": 0,
       "queries": [],
+      "rank": 26,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 26 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "workplace mental health resources @ /topics/workplace-mental-health",
+      "intent": "page",
+      "page": "/topics/workplace-mental-health",
+      "page_kind": "hub",
+      "file": "sites/professional-resources/topics/workplace-mental-health.html",
+      "page_title": "Workplace burnout and mental-health support",
+      "impressions": 3,
+      "visible_query_impressions": 1,
+      "anonymised_impressions": 2,
+      "weighted_position": 54.9,
+      "page_impressions": 3,
+      "page_position": 36.3,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "workplace mental health resources",
+          "impressions": 1,
+          "position": 92
+        }
+      ],
       "rank": 27,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 27 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 27 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "deposit statement @ /topics/bank-statement-and-deposit-letters",
@@ -876,7 +872,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 28 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 28 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Multiple Application Issues: No-Fluff Decision Guide For People Who Need A Starting Point @ /daily/2026-07-15-multiple-application-issues-no-fluff-decision-guide-for-people-who-need-a-starting-point",
@@ -898,7 +894,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 29 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 29 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Document preparation and life admin @ /topics/document-preparation",
@@ -920,7 +916,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 30 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 30 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Records to Organize Before a Horse Sale Closes @ /daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
@@ -942,7 +938,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 31 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 31 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Horse Purchase Agreement vs Bill of Sale: Why the Difference Matters @ /daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters",
@@ -964,7 +960,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 32 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 32 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Ask Before Scheduling Neuropsychological or ADHD Testing @ /daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",
@@ -986,7 +982,29 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 33 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 33 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "Bank Statement Explanation: Aeo-Ready Prep Guide When You Are Comparing Options @ /daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options",
+      "intent": "page",
+      "page": "/daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options.html",
+      "page_title": "Bank Statement Explanation: Aeo-Ready Prep Guide When You Are Comparing Options",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 5.5,
+      "page_impressions": 2,
+      "page_position": 5.5,
+      "query_count": 0,
+      "queries": [],
+      "rank": 34,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 34 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Apartment Denial Review: Operator-Grade Comparison Guide Before You Choose @ /daily/2026-07-14-apartment-denial-review-operator-grade-comparison-guide-before-you-choose",
@@ -1003,12 +1021,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 34,
+      "rank": 35,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 34 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 35 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Organize Records Before a USCIS Medical Examination @ /daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
@@ -1025,12 +1043,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 35,
+      "rank": 36,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 35 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 36 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Income, employment and self-employment letters @ /topics/income-and-employment-letters",
@@ -1047,12 +1065,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 36,
+      "rank": 37,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 36 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 37 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Compare Two Dental Treatment Plans for the Same Problem @ /daily/2026-09-01-how-to-compare-two-dental-treatment-plans-for-the-same-problem",
@@ -1069,12 +1087,12 @@
       "page_position": 10.5,
       "query_count": 0,
       "queries": [],
-      "rank": 37,
+      "rank": 38,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 37 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 38 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "application issues @ /topics/application-problems",
@@ -1097,12 +1115,40 @@
           "position": 29
         }
       ],
-      "rank": 38,
+      "rank": 39,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 38 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 39 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "make ready disputes @ /daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
+      "intent": "page",
+      "page": "/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
+      "page_title": "Credit Dispute Letters: Geo-Ready Red-Flag Checklist When You Are Comparing Options",
+      "impressions": 2,
+      "visible_query_impressions": 2,
+      "anonymised_impressions": 0,
+      "weighted_position": 85.0,
+      "page_impressions": 2,
+      "page_position": 85,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "make ready disputes",
+          "impressions": 2,
+          "position": 85
+        }
+      ],
+      "rank": 40,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 40 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "off-page: yes @ /topics/letters-of-explanation",
@@ -1115,8 +1161,8 @@
       "visible_query_impressions": 1,
       "anonymised_impressions": 0,
       "weighted_position": 1.0,
-      "page_impressions": 8,
-      "page_position": 1.9,
+      "page_impressions": 12,
+      "page_position": 2.8,
       "query_count": 1,
       "queries": [
         {
@@ -1125,7 +1171,7 @@
           "position": 1
         }
       ],
-      "rank": 39,
+      "rank": 41,
       "basis": [
         "ranking_page"
       ],
@@ -1133,28 +1179,6 @@
       "strengthened_pages": [],
       "status": "intent_mismatch",
       "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is"
-    },
-    {
-      "family": "Bank Statement Explanation: Aeo-Ready Prep Guide When You Are Comparing Options @ /daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options",
-      "intent": "page",
-      "page": "/daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options.html",
-      "page_title": "Bank Statement Explanation: Aeo-Ready Prep Guide When You Are Comparing Options",
-      "impressions": 1,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 1,
-      "weighted_position": 2.0,
-      "page_impressions": 1,
-      "page_position": 2,
-      "query_count": 0,
-      "queries": [],
-      "rank": 40,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 40 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Credit Report Issues: Human-First Question Checklist Before You Sign @ /daily/2026-07-19-credit-report-issues-human-first-question-checklist-before-you-sign",
@@ -1171,12 +1195,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 41,
+      "rank": 42,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 41 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 42 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Proof Of Residency Letter: Human-First Prep Guide Before You Call @ /daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call",
@@ -1193,12 +1217,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 42,
+      "rank": 43,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 42 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 43 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Recovery Housing Is Designed to Provide @ /daily/2026-07-24-what-recovery-housing-is-designed-to-provide",
@@ -1215,12 +1239,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 43,
+      "rank": 44,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 43 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 44 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay @ /daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
@@ -1237,12 +1261,12 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 44,
+      "rank": 45,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 44 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 45 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers @ /daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
@@ -1259,12 +1283,12 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 45,
+      "rank": 46,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 45 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 46 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Trauma-Informed Leadership: Practical Red-Flag Checklist Before You Call @ /daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call",
@@ -1281,20 +1305,20 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 46,
+      "rank": 47,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 46 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 47 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Loan Application Packet: Practical Comparison Guide For Careful Decision-Makers @ /daily/2026-07-27-loan-application-packet-practical-comparison-guide-for-careful-decision-makers",
+      "family": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay @ /daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
       "intent": "page",
-      "page": "/daily/2026-07-27-loan-application-packet-practical-comparison-guide-for-careful-decision-makers",
+      "page": "/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-27-loan-application-packet-practical-comparison-guide-for-careful-decision-makers.html",
-      "page_title": "Loan Application Packet: Practical Comparison Guide For Careful Decision-Makers",
+      "file": "sites/professional-resources/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html",
+      "page_title": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
@@ -1303,12 +1327,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 47,
+      "rank": 48,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 47 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 48 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call @ /daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
@@ -1325,12 +1349,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 48,
+      "rank": 49,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 48 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 49 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Questions to Answer Before Signing a Horse Boarding Agreement @ /daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement",
@@ -1347,12 +1371,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 49,
+      "rank": 50,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 49 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 50 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Full Approval Prep Bundle: Aeo-Ready Question Checklist When You Are Comparing Options @ /daily/2026-08-01-full-approval-prep-bundle-aeo-ready-question-checklist-when-you-are-comparing-options",
@@ -1369,12 +1393,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 50,
+      "rank": 51,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 50 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 51 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Identity Records Explanation: Human-First Question Checklist Before You Book @ /daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book",
@@ -1391,12 +1415,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 51,
+      "rank": 52,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 51 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 52 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Large Deposit Explanation: Low-Risk Framework Before You Pay @ /daily/2026-07-17-large-deposit-explanation-low-risk-framework-before-you-pay",
@@ -1413,12 +1437,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 52,
+      "rank": 53,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 52 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 53 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers @ /daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
@@ -1435,12 +1459,12 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 53,
+      "rank": 54,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 53 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 54 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Ask About Confidentiality Before Using a Workplace Support Program @ /daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
@@ -1457,12 +1481,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 54,
+      "rank": 55,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 54 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 55 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Look for in a Workplace Mental-Health Speaker @ /daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker",
@@ -1479,12 +1503,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 55,
+      "rank": 56,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 55 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 56 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Car Loan Explanation: Citation-Friendly Decision Guide Before You Choose @ /daily/2026-08-26-car-loan-explanation-citation-friendly-decision-guide-before-you-choose",
@@ -1501,12 +1525,56 @@
       "page_position": 10,
       "query_count": 0,
       "queries": [],
-      "rank": 56,
+      "rank": 57,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 56 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 57 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "Bank Statement Explanation: No-Fluff Buyer Guide For Careful Decision-Makers @ /daily/2026-07-20-bank-statement-explanation-no-fluff-buyer-guide-for-careful-decision-makers",
+      "intent": "page",
+      "page": "/daily/2026-07-20-bank-statement-explanation-no-fluff-buyer-guide-for-careful-decision-makers",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-20-bank-statement-explanation-no-fluff-buyer-guide-for-careful-decision-makers.html",
+      "page_title": "Bank Statement Explanation: No-Fluff Buyer Guide For Careful Decision-Makers",
+      "impressions": 1,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 1,
+      "weighted_position": 11.0,
+      "page_impressions": 1,
+      "page_position": 11,
+      "query_count": 0,
+      "queries": [],
+      "rank": 58,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 58 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "How to Prepare Questions Before Speaking With a Personal Injury Lawyer @ /daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer",
+      "intent": "page",
+      "page": "/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-24-how-to-prepare-questions-before-speaking-with-a-personal-injury-lawyer.html",
+      "page_title": "How to Prepare Questions Before Speaking With a Personal Injury Lawyer",
+      "impressions": 1,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 1,
+      "weighted_position": 11.0,
+      "page_impressions": 1,
+      "page_position": 11,
+      "query_count": 0,
+      "queries": [],
+      "rank": 59,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 59 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Apartment Application Paperwork: Beginner-Safe Resource Roundup For First-Time Buyers @ /daily/2026-07-12-apartment-application-paperwork-beginner-safe-resource-roundup-for-first-time-buyers",
@@ -1523,40 +1591,12 @@
       "page_position": 42,
       "query_count": 0,
       "queries": [],
-      "rank": 57,
+      "rank": 60,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 57 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "make ready disputes @ /daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
-      "intent": "page",
-      "page": "/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options.html",
-      "page_title": "Credit Dispute Letters: Geo-Ready Red-Flag Checklist When You Are Comparing Options",
-      "impressions": 1,
-      "visible_query_impressions": 1,
-      "anonymised_impressions": 0,
-      "weighted_position": 83.0,
-      "page_impressions": 1,
-      "page_position": 83,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "make ready disputes",
-          "impressions": 1,
-          "position": 83
-        }
-      ],
-      "rank": 58,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 58 of 58 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 60 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     }
   ]
 }
