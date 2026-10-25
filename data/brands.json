@@ -114,6 +114,23 @@
           "personal injury law questions",
           "personal injury lawyer questions"
         ]
+      },
+      {
+        "url": "https://theaccidentguides.com/guides/personal-injury-fees-explained/",
+        "destination_type": "educational_guide",
+        "anchor": "How Much Does a Personal Injury Lawyer Cost? Fees Explained",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "average contingency fee for personal injury lawyer",
+          "average personal injury attorney fees",
+          "cost of personal injury lawyer",
+          "how are expenses handled in personal injury legal fees",
+          "how much do accident lawyers charge",
+          "how much do personal injury attorneys charge"
+        ]
       }
     ],
     "forbidden": [
@@ -164,6 +181,18 @@
           "choosing the right dentist",
           "dental care selection tips"
         ]
+      },
+      {
+        "url": "https://dentistryguides.com/guides/dental-implants/",
+        "destination_type": "educational_guide",
+        "anchor": "Dental Implants: Cost, Recovery and Candidacy",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "best way to compare dental implant options"
+        ]
       }
     ],
     "forbidden": [
@@ -208,6 +237,19 @@
         "measured_queries": [
           "hormone replacement therapy near me"
         ]
+      },
+      {
+        "url": "https://hormonesivhair.com/guides/trt-red-flags/",
+        "destination_type": "educational_guide",
+        "anchor": "TRT Red Flags: Hidden Fees, Rotating Providers, No Lab Monitoring",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "what red flags should i watch for when evaluating trt providers — things like hidden fees, rotating providers, or lack of lab monitoring?",
+          "what's the process for getting a low testosterone diagnosis — do i need a referral or can i go directly to a trt clinic?"
+        ]
       }
     ],
     "forbidden": [
@@ -241,6 +283,18 @@
       {
         "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
         "anchor": "questions before neuro testing"
+      },
+      {
+        "url": "https://neuroevalguides.com/guides/neuropsych-testing-cost-by-state/",
+        "destination_type": "educational_guide",
+        "anchor": "Neuropsych Testing Cost by State: Billed Rates vs Medicare",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "neuropsychological testing cost"
+        ]
       }
     ],
     "forbidden": [
@@ -441,6 +495,33 @@
           "ai accountability system for body goal users and missed-day recovery",
           "ai accountability system for busy parents and missed-day recovery",
           "ai accountability system for missed-day recovery users and fitness consistency"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/best-ai-coaching-tools",
+        "destination_type": "educational_guide",
+        "anchor": "Best AI Coaching Tools and Software: How to Compare Them",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai tools for team coaching",
+          "how to compare ai career coaching apps versus human coaches?",
+          "what's the best ai operating system framework for coaches"
+        ]
+      },
+      {
+        "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-chief-of-staff-support",
+        "destination_type": "educational_guide",
+        "anchor": "BHPC vs accountability app for chief-of-staff support",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "accountability partner vs traditional coaching for entrepreneurs",
+          "accountability partner vs traditional coaching for founders"
         ]
       }
     ],
@@ -866,6 +947,18 @@
         "source": "data/portfolio-deep-targets.json",
         "measured_queries": [
           "memphis porch decorating services"
+        ]
+      },
+      {
+        "url": "https://porchandparty901.com/guides/porch-decorating-packages-memphis",
+        "destination_type": "educational_guide",
+        "anchor": "Porch Decorating Service Prices in Memphis (2026)",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "porch decorating service"
         ]
       }
     ],
@@ -1900,6 +1993,32 @@
           "wedding rehearsal timeline"
         ],
         "route": "/guides/wedding-rehearsal-timeline"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Checklist PDF ($9): Printable, Editable Planning Checklist",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "wedding planning checklist pdf"
+        ],
+        "route": "/"
+      },
+      {
+        "url": "https://weddingchecklistpdf.com/wedding-checklist",
+        "destination_type": "educational_guide",
+        "anchor": "Wedding Checklist: The Complete Planning Roadmap",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "wedding planning checklist pdf"
+        ],
+        "route": "/wedding-checklist"
       }
     ],
     "forbidden": [

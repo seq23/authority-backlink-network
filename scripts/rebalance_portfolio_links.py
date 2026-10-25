@@ -166,6 +166,22 @@ def campaign_floors() -> dict[str, int]:
     return {c["id"]: int(c.get("minimum_rendered_coverage", 0)) for c in doc.get("campaigns", [])}
 
 
+def campaign_destination_floors() -> dict[str, int]:
+    """{campaign id: minimum_distinct_destinations}.
+
+    The count floor above says how many links a campaign keeps; this says how
+    many different pages they may not collapse onto. Both are asserted by
+    tests/test_portfolio_backlink_system.py, and until 25 Oct 2026 this one was
+    asserted and nothing honoured it: the spread penalty below is site-wide, so
+    two links of one campaign could both take the destination with the best fit
+    whenever the runner-up scored more than the penalty lower.
+    dentistry-guides-authority went from two destinations to one that way, the
+    moment a nineteenth portfolio domain changed the quota arithmetic.
+    """
+    doc = json.loads((ROOT / "data/portfolio-backlink-campaigns.json").read_text(encoding="utf-8"))
+    return {c["id"]: int(c.get("minimum_distinct_destinations", 0)) for c in doc.get("campaigns", [])}
+
+
 def survey(site: Path) -> list[dict]:
     """Every portfolio link on a site: page, element span, url, domain, subject."""
     import measure_affiliate_topical_fit as fitmod
@@ -203,6 +219,8 @@ def plan_site(rows: list[dict]) -> list[dict]:
     capacity = {d: min(len(rs), per_url * len(deep_targets().get(d, []))) for d, rs in by_domain.items()}
     quota = domain_quota({d: c for d, c in capacity.items() if c > 0}, share)
     floors = campaign_floors()
+    dest_floors = campaign_destination_floors()
+    campaign_used: dict[str, set] = defaultdict(set)
     for d, rs in by_domain.items():
         order = sorted(rs, key=lambda r: (-r["fit"], 0 if r["article"] else 1,
                                           "".join(chr(255 - ord(ch)) for ch in r["name"])))
@@ -223,14 +241,28 @@ def plan_site(rows: list[dict]) -> list[dict]:
             # Spread: each earlier use of a URL on this site costs it 2 points, so
             # equally good pages share the links instead of one page taking them all.
             ranked = sorted(r["ranked"], key=lambda st: (-(st[0] - 2 * used[st[1]["url"]]), st[1]["url"]))
-            for score, t in ranked:
-                if used[t["url"]] >= per_url or t["url"] in on_page[r["path"]]:
-                    continue
-                used[t["url"]] += 1
-                on_page[r["path"]].add(t["url"])
-                r.update(action="keep", new_url=t["url"], new_anchor=t["title"])
-                kept += 1
-                break
+            # A campaign still short of its distinct-destination floor takes a
+            # page it has not used yet, before fit. Fit decides WHICH unused
+            # page; it cannot decide to use none. Once the floor is met the
+            # campaign chooses on fit like any other link.
+            campaign = r["campaign"]
+            need_spread = (campaign
+                           and len(campaign_used[campaign]) < dest_floors.get(campaign, 0))
+            passes = ([[st for st in ranked if st[1]["url"] not in campaign_used[campaign]]]
+                      if need_spread else []) + [ranked]
+            for candidates in passes:
+                for score, t in candidates:
+                    if used[t["url"]] >= per_url or t["url"] in on_page[r["path"]]:
+                        continue
+                    used[t["url"]] += 1
+                    on_page[r["path"]].add(t["url"])
+                    if campaign:
+                        campaign_used[campaign].add(t["url"])
+                    r.update(action="keep", new_url=t["url"], new_anchor=t["title"])
+                    kept += 1
+                    break
+                if r["action"] == "keep":
+                    break
     return rows
 
 

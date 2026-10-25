@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "validator": "external-source-verification",
-  "generated_at": "2026-09-03T03:13:01+00:00",
+  "generated_at": "2026-10-25T21:42:36+00:00",
   "sources_checked": 120,
   "verified": 120,
   "receipts": [
@@ -1207,8 +1207,8 @@
       "outcome": "verified"
     }
   ],
-  "brand_links_checked": 118,
-  "brand_links_verified": 118,
+  "brand_links_checked": 127,
+  "brand_links_verified": 127,
   "brand_link_receipts": [
     {
       "id": "brand:the-industry-guides:theindustryguides.com/",
@@ -1217,7 +1217,7 @@
       "http_status": 200,
       "resolved_url": "https://theindustryguides.com/",
       "observed_title": "The Industry Guides | Source-Backed Guides and Provider Routing",
-      "checked_at": "2026-09-03T03:13:02+00:00",
+      "checked_at": "2026-10-25T21:42:36+00:00",
       "outcome": "verified"
     },
     {
@@ -1226,8 +1226,8 @@
       "publisher": "The Industry Guides",
       "http_status": 200,
       "resolved_url": "https://theindustryguides.com/methodology",
-      "observed_title": "Methodology",
-      "checked_at": "2026-09-03T03:13:02+00:00",
+      "observed_title": "Editorial Methodology and Update Policy",
+      "checked_at": "2026-10-25T21:42:36+00:00",
       "outcome": "verified"
     },
     {
@@ -1236,818 +1236,8 @@
       "publisher": "The Industry Guides",
       "http_status": 200,
       "resolved_url": "https://theindustryguides.com/tools/",
-      "observed_title": "Tools (Scripts + Checklists)",
-      "checked_at": "2026-09-03T03:13:02+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:accident-guides:theaccidentguides.com/",
-      "url": "https://theaccidentguides.com/",
-      "publisher": "The Accident Guides",
-      "http_status": 200,
-      "resolved_url": "https://theaccidentguides.com/",
-      "observed_title": "The Accident Guides",
-      "checked_at": "2026-09-03T03:13:03+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:accident-guides:theaccidentguides.com/guides/",
-      "url": "https://theaccidentguides.com/guides/",
-      "publisher": "The Accident Guides",
-      "http_status": 200,
-      "resolved_url": "https://theaccidentguides.com/guides/",
-      "observed_title": "Guides | The Accident Guides",
-      "checked_at": "2026-09-03T03:13:03+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:accident-guides:theaccidentguides.com/personal-injury/",
-      "url": "https://theaccidentguides.com/personal-injury/",
-      "publisher": "The Accident Guides",
-      "http_status": 200,
-      "resolved_url": "https://theaccidentguides.com/personal-injury/",
-      "observed_title": "Personal injury \u2014 browse by state",
-      "checked_at": "2026-09-03T03:13:04+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dentistry-guides:dentistryguides.com/",
-      "url": "https://dentistryguides.com/",
-      "publisher": "The Dentistry Guides",
-      "http_status": 200,
-      "resolved_url": "https://dentistryguides.com/",
-      "observed_title": "The Dentistry Guides",
-      "checked_at": "2026-09-03T03:13:04+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dentistry-guides:dentistryguides.com/guides/",
-      "url": "https://dentistryguides.com/guides/",
-      "publisher": "The Dentistry Guides",
-      "http_status": 200,
-      "resolved_url": "https://dentistryguides.com/guides/",
-      "observed_title": "Guides | The Dentistry Guides",
-      "checked_at": "2026-09-03T03:13:04+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dentistry-guides:dentistryguides.com/guides/questions-to-ask/",
-      "url": "https://dentistryguides.com/guides/questions-to-ask/",
-      "publisher": "The Dentistry Guides",
-      "http_status": 200,
-      "resolved_url": "https://dentistryguides.com/guides/questions-to-ask/",
-      "observed_title": "Questions to Ask Before Major Dental Work",
-      "checked_at": "2026-09-03T03:13:04+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hormones-iv-hair:hormonesivhair.com/",
-      "url": "https://hormonesivhair.com/",
-      "publisher": "Hormone Optimization Guides",
-      "http_status": 200,
-      "resolved_url": "https://hormonesivhair.com/",
-      "observed_title": "Hormone Optimization Guides",
-      "checked_at": "2026-09-03T03:13:04+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hormones-iv-hair:hormonesivhair.com/guides/",
-      "url": "https://hormonesivhair.com/guides/",
-      "publisher": "Hormone Optimization Guides",
-      "http_status": 200,
-      "resolved_url": "https://hormonesivhair.com/guides/",
-      "observed_title": "Guides | Hormone Optimization Guides",
-      "checked_at": "2026-09-03T03:13:05+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hormones-iv-hair:hormonesivhair.com/guides/iv-hydration-red-flags/",
-      "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
-      "publisher": "Hormone Optimization Guides",
-      "http_status": 200,
-      "resolved_url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
-      "observed_title": "IV Hydration Red Flags",
-      "checked_at": "2026-09-03T03:13:05+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:neuro-eval-guides:neuroevalguides.com/",
-      "url": "https://neuroevalguides.com/",
-      "publisher": "Neuro Evaluation Guides",
-      "http_status": 200,
-      "resolved_url": "https://neuroevalguides.com/",
-      "observed_title": "Neuro Evaluation Guides",
-      "checked_at": "2026-09-03T03:13:05+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:neuro-eval-guides:neuroevalguides.com/guides/",
-      "url": "https://neuroevalguides.com/guides/",
-      "publisher": "Neuro Evaluation Guides",
-      "http_status": 200,
-      "resolved_url": "https://neuroevalguides.com/guides/",
-      "observed_title": "Guides | Neuro Evaluation Guides",
-      "checked_at": "2026-09-03T03:13:05+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:neuro-eval-guides:neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
-      "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
-      "publisher": "Neuro Evaluation Guides",
-      "http_status": 200,
-      "resolved_url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
-      "observed_title": "Questions to Ask Before Neuro Testing",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:uscis-exam-guides:uscisexam.com/",
-      "url": "https://uscisexam.com/",
-      "publisher": "USCIS Exam Guides",
-      "http_status": 200,
-      "resolved_url": "https://uscisexam.com/",
-      "observed_title": "USCIS Exam Guides",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:uscis-exam-guides:uscisexam.com/guides/",
-      "url": "https://uscisexam.com/guides/",
-      "publisher": "USCIS Exam Guides",
-      "http_status": 200,
-      "resolved_url": "https://uscisexam.com/guides/",
-      "observed_title": "Guides | USCIS Exam Guides",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:uscis-exam-guides:uscisexam.com/guides/costs-and-timeframes/",
-      "url": "https://uscisexam.com/guides/costs-and-timeframes/",
-      "publisher": "USCIS Exam Guides",
-      "http_status": 200,
-      "resolved_url": "https://uscisexam.com/guides/costs-and-timeframes/",
-      "observed_title": "USCIS Medical Exam Costs and Timeframes: General Information",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:bhpc:billionairehighperformancecoach.com/",
-      "url": "https://billionairehighperformancecoach.com/",
-      "publisher": "Billionaire High Performance Coach",
-      "http_status": 200,
-      "resolved_url": "https://billionairehighperformancecoach.com/",
-      "observed_title": "Billionaire High Performance Coach OS | Personal Executive Operating System | Spry Page",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:bhpc:billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
-      "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
-      "publisher": "Billionaire High Performance Coach",
-      "http_status": 200,
-      "resolved_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach",
-      "observed_title": "AI Coach vs Human Coach: Which Is Better? \u2014 Billionaire High Performance Coach",
-      "checked_at": "2026-09-03T03:13:06+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:aplayer-mode:aplayermode.com/",
-      "url": "https://www.aplayermode.com/",
-      "publisher": "A Player Mode",
-      "http_status": 200,
-      "resolved_url": "https://billionairehighperformancecoach.com/download",
-      "observed_title": "Billionaire High Performance Coach \u2014 Download the AI Executive OS",
-      "checked_at": "2026-09-03T03:13:07+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/",
-      "url": "https://virtualagency-os.com/learn/",
-      "publisher": "Virtual Agency OS",
-      "http_status": 200,
-      "resolved_url": "https://virtualagency-os.com/learn/",
-      "observed_title": "Learn | Virtual Agency OS",
-      "checked_at": "2026-09-03T03:13:07+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/what-is-virtual-event-production",
-      "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
-      "publisher": "Virtual Agency OS",
-      "http_status": 200,
-      "resolved_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
-      "observed_title": "What is virtual event production? | Virtual Agency OS",
-      "checked_at": "2026-09-03T03:13:07+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/virtual-event-production-cost",
-      "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
-      "publisher": "Virtual Agency OS",
-      "http_status": 200,
-      "resolved_url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
-      "observed_title": "Virtual event production cost | Virtual Agency OS",
-      "checked_at": "2026-09-03T03:13:07+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:west-peek-productions:westpeekproductions.com/",
-      "url": "https://www.westpeekproductions.com/",
-      "publisher": "West Peek Productions",
-      "http_status": 200,
-      "resolved_url": "https://www.westpeekproductions.com/",
-      "observed_title": "West Peek Productions | Community-as-a-Service & Creative Agency",
-      "checked_at": "2026-09-03T03:13:07+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:horse-legal-guide:horselegalguide.com/",
-      "url": "https://horselegalguide.com/",
-      "publisher": "Horse Legal Guide",
-      "http_status": 200,
-      "resolved_url": "https://horselegalguide.com/",
-      "observed_title": "Horse Legal Guide",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:horse-legal-guide:horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
-      "url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
-      "publisher": "Horse Legal Guide",
-      "http_status": 200,
-      "resolved_url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
-      "observed_title": "What Should Be Included in a Horse Boarding Agreement?",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:horse-legal-guide:horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
-      "url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
-      "publisher": "Horse Legal Guide",
-      "http_status": 200,
-      "resolved_url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
-      "observed_title": "Horse purchase agreement vs bill of sale",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:horse-legal-guide:horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
-      "url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
-      "publisher": "Horse Legal Guide",
-      "http_status": 200,
-      "resolved_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
-      "observed_title": "Contract Review vs DIY Horse Agreement",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:horse-legal-guide:horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
-      "url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
-      "publisher": "Horse Legal Guide",
-      "http_status": 200,
-      "resolved_url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
-      "observed_title": "What Should I Do If I Receive a Demand Letter?",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/",
-      "url": "https://www.hicksconsulting.org/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/",
-      "observed_title": "Hicks Consulting | Therapy for Individuals & Mental Health Trainings for Organizations",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/resources/",
-      "url": "https://www.hicksconsulting.org/resources/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/resources/",
-      "observed_title": "Resources | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:08+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/corporate-speaking/",
-      "url": "https://www.hicksconsulting.org/corporate-speaking/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/corporate-speaking/",
-      "observed_title": "Organizational Trainings | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/organizational-training-inquiry/",
-      "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
-      "observed_title": "Organizational Training Inquiry | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/therapy/",
-      "url": "https://www.hicksconsulting.org/therapy/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/therapy/",
-      "observed_title": "Virtual Therapy Serving Memphis &amp; Tennessee | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/coaching/",
-      "url": "https://www.hicksconsulting.org/coaching/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/coaching/",
-      "observed_title": "Virtual Coaching | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:hicks-consulting:hicksconsulting.org/faq/",
-      "url": "https://www.hicksconsulting.org/faq/",
-      "publisher": "Hicks Consulting",
-      "http_status": 200,
-      "resolved_url": "https://www.hicksconsulting.org/faq/",
-      "observed_title": "FAQ | Hicks Consulting",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/",
-      "url": "https://porchandparty901.com/",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/",
-      "observed_title": "Memphis Porch Decorating, Hotel Decor &amp; Party Setups | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:09+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/services/porch-decorating.html",
-      "url": "https://porchandparty901.com/services/porch-decorating.html",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/services/porch-decorating",
-      "observed_title": "Seasonal Porch Decorating in Memphis | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:10+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/services/party-decor-memphis.html",
-      "url": "https://porchandparty901.com/services/party-decor-memphis.html",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/services/party-decor-memphis",
-      "observed_title": "Memphis Party Decor | Celebration Setups | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:10+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/services/hotel-room-decor-memphis.html",
-      "url": "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/services/hotel-room-decor-memphis",
-      "observed_title": "Hotel Room Decor Memphis | Birthday &amp; Romantic Setups | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:10+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/services/grazing-tables-memphis.html",
-      "url": "https://porchandparty901.com/services/grazing-tables-memphis.html",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/services/grazing-tables-memphis",
-      "observed_title": "Grazing Tables Memphis | Styled Event Presentation | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:10+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:porch-party:porchandparty901.com/pricing.html",
-      "url": "https://porchandparty901.com/pricing.html",
-      "publisher": "Porch & Party",
-      "http_status": 200,
-      "resolved_url": "https://porchandparty901.com/pricing",
-      "observed_title": "Memphis Event Decor Pricing | Porch &amp; Party",
-      "checked_at": "2026-09-03T03:13:10+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/letter-of-explanation",
-      "url": "https://approvalprep.com/letter-of-explanation",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/letter-of-explanation/",
-      "observed_title": "Letter of Explanation Generator - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:11+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/income-employment-letter-kit",
-      "url": "https://approvalprep.com/income-employment-letter-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/income-employment-letter-kit/",
-      "observed_title": "Income + Employment Letter Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:11+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/credit-letter-kit",
-      "url": "https://approvalprep.com/credit-letter-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/credit-letter-kit/",
-      "observed_title": "Credit Letter Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:11+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/rental-application-kit",
-      "url": "https://approvalprep.com/rental-application-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/rental-application-kit/",
-      "observed_title": "Rental Application Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:11+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/loan-prep-letter-kit",
-      "url": "https://approvalprep.com/loan-prep-letter-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/loan-prep-letter-kit/",
-      "observed_title": "Loan Prep Letter Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:12+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/business-funding-prep-kit",
-      "url": "https://approvalprep.com/business-funding-prep-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/business-funding-prep-kit/",
-      "observed_title": "Business Funding Prep Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:12+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/life-admin-letter-kit",
-      "url": "https://approvalprep.com/life-admin-letter-kit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/life-admin-letter-kit/",
-      "observed_title": "Life Admin Letter Kit - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:12+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/complete-approvalprep-bundle",
-      "url": "https://approvalprep.com/complete-approvalprep-bundle",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/complete-approvalprep-bundle/",
-      "observed_title": "Complete ApprovalPrep Bundle - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:12+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/letter-writing-studio",
-      "url": "https://approvalprep.com/letter-writing-studio",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/letter-writing-studio/",
-      "observed_title": "Free Letter Writing Studio - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:13+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/letter-of-explanation/credit",
-      "url": "https://approvalprep.com/letter-of-explanation/credit",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/letter-of-explanation/credit/",
-      "observed_title": "Credit Letter of Explanation - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:13+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/rental-application-checklist",
-      "url": "https://approvalprep.com/rental-application-checklist",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/rental-application-checklist/",
-      "observed_title": "Rental Application Checklist - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:13+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/documents-needed-for-car-loan",
-      "url": "https://approvalprep.com/documents-needed-for-car-loan",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/documents-needed-for-car-loan/",
-      "observed_title": "Documents Needed for a Car Loan - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:13+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/sba-loan-checklist",
-      "url": "https://approvalprep.com/sba-loan-checklist",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/sba-loan-checklist/",
-      "observed_title": "SBA Loan Checklist - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:14+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/mortgage-document-checklist",
-      "url": "https://approvalprep.com/mortgage-document-checklist",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/mortgage-document-checklist/",
-      "observed_title": "Mortgage Document Checklist - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:14+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/",
-      "url": "https://approvalprep.com/",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/",
-      "observed_title": "ApprovalPrep - Self-Service Credit Repair Letters and Approval Prep",
-      "checked_at": "2026-09-03T03:13:14+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/pricing",
-      "url": "https://approvalprep.com/pricing",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/pricing/",
-      "observed_title": "Pricing - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:14+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/methodology",
-      "url": "https://approvalprep.com/methodology",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/methodology/",
-      "observed_title": "Methodology - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:15+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:approval-prep:approvalprep.com/not-a-credit-repair-company",
-      "url": "https://approvalprep.com/not-a-credit-repair-company",
-      "publisher": "Approval Prep",
-      "http_status": 200,
-      "resolved_url": "https://approvalprep.com/not-a-credit-repair-company/",
-      "observed_title": "Not a Credit Repair Company - ApprovalPrep",
-      "checked_at": "2026-09-03T03:13:15+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/build",
-      "url": "https://weddingchecklistpdf.com/build",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:15+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/build",
-      "url": "https://weddingbudgetspreadsheet.com/build",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:15+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/build",
-      "url": "https://weddingtimelinetemplate.com/build",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:16+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/build",
-      "url": "https://weddingseatingchartmaker.com/build",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:16+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/checklist-pdf",
-      "url": "https://weddingchecklistpdf.com/products/checklist-pdf",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
-      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:16+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/checklist-pdf",
-      "url": "https://weddingbudgetspreadsheet.com/products/checklist-pdf",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
-      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:17+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/checklist-pdf",
-      "url": "https://weddingtimelinetemplate.com/products/checklist-pdf",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
-      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:17+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/checklist-pdf",
-      "url": "https://weddingseatingchartmaker.com/products/checklist-pdf",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
-      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:17+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/budget-spreadsheet",
-      "url": "https://weddingchecklistpdf.com/products/budget-spreadsheet",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:17+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:18+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/budget-spreadsheet",
-      "url": "https://weddingtimelinetemplate.com/products/budget-spreadsheet",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:18+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/budget-spreadsheet",
-      "url": "https://weddingseatingchartmaker.com/products/budget-spreadsheet",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
-      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:18+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/timeline-template",
-      "url": "https://weddingchecklistpdf.com/products/timeline-template",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
-      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:18+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/timeline-template",
-      "url": "https://weddingbudgetspreadsheet.com/products/timeline-template",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
-      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:18+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/timeline-template",
-      "url": "https://weddingtimelinetemplate.com/products/timeline-template",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
-      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:19+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/timeline-template",
-      "url": "https://weddingseatingchartmaker.com/products/timeline-template",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
-      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:19+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/seating-chart-maker",
-      "url": "https://weddingchecklistpdf.com/products/seating-chart-maker",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:19+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/seating-chart-maker",
-      "url": "https://weddingbudgetspreadsheet.com/products/seating-chart-maker",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:19+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/seating-chart-maker",
-      "url": "https://weddingtimelinetemplate.com/products/seating-chart-maker",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:19+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/seating-chart-maker",
-      "url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "publisher": "Dream Wedding Builder",
-      "http_status": 200,
-      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
-      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool | Dream Wedding Builder",
-      "checked_at": "2026-09-03T03:13:20+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:diannes-place:diannesplacerecoveryservices.com/recovery-housing/",
-      "url": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
-      "publisher": "Dianne's Place Recovery Services",
-      "http_status": 200,
-      "resolved_url": "https://www.diannesplacerecoveryservices.com/recovery-housing",
-      "observed_title": "Recovery Housing | Dianne&#039;s Place Recovery Services",
-      "checked_at": "2026-09-03T03:13:21+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:diannes-place:diannesplacerecoveryservices.com/referrals/",
-      "url": "https://www.diannesplacerecoveryservices.com/referrals/",
-      "publisher": "Dianne's Place Recovery Services",
-      "http_status": 200,
-      "resolved_url": "https://www.diannesplacerecoveryservices.com/referrals",
-      "observed_title": "Referrals | Dianne&#039;s Place Recovery Services",
-      "checked_at": "2026-09-03T03:13:22+00:00",
-      "outcome": "verified"
-    },
-    {
-      "id": "brand:diannes-place:diannesplacerecoveryservices.com/resources/",
-      "url": "https://www.diannesplacerecoveryservices.com/resources/",
-      "publisher": "Dianne's Place Recovery Services",
-      "http_status": 200,
-      "resolved_url": "https://www.diannesplacerecoveryservices.com/resources",
-      "observed_title": "Resources | Dianne&#039;s Place Recovery Services",
-      "checked_at": "2026-09-03T03:13:23+00:00",
+      "observed_title": "Tools (Scripts + Checklists) | The Industry Guides",
+      "checked_at": "2026-10-25T21:42:36+00:00",
       "outcome": "verified"
     },
     {
@@ -2057,7 +1247,37 @@
       "http_status": 200,
       "resolved_url": "https://theindustryguides.com/methodology",
       "observed_title": "Editorial Methodology and Update Policy",
-      "checked_at": "2026-10-11T14:57:27+00:00",
+      "checked_at": "2026-10-25T21:42:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:accident-guides:theaccidentguides.com/",
+      "url": "https://theaccidentguides.com/",
+      "publisher": "The Accident Guides",
+      "http_status": 200,
+      "resolved_url": "https://theaccidentguides.com/",
+      "observed_title": "The Accident Guides: Personal Injury Claims Explained",
+      "checked_at": "2026-10-25T21:42:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:accident-guides:theaccidentguides.com/guides/",
+      "url": "https://theaccidentguides.com/guides/",
+      "publisher": "The Accident Guides",
+      "http_status": 200,
+      "resolved_url": "https://theaccidentguides.com/guides/",
+      "observed_title": "Personal Injury Guides: Claims and Fees | The Accident Guides",
+      "checked_at": "2026-10-25T21:42:36+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:accident-guides:theaccidentguides.com/personal-injury/",
+      "url": "https://theaccidentguides.com/personal-injury/",
+      "publisher": "The Accident Guides",
+      "http_status": 200,
+      "resolved_url": "https://theaccidentguides.com/personal-injury/",
+      "observed_title": "Personal injury \u2014 browse by state",
+      "checked_at": "2026-10-25T21:42:37+00:00",
       "outcome": "verified"
     },
     {
@@ -2067,7 +1287,7 @@
       "http_status": 200,
       "resolved_url": "https://theaccidentguides.com/faq/",
       "observed_title": "FAQ: Common Questions Answered | The Accident Guides",
-      "checked_at": "2026-10-11T14:57:28+00:00",
+      "checked_at": "2026-10-25T21:42:37+00:00",
       "outcome": "verified"
     },
     {
@@ -2076,8 +1296,8 @@
       "publisher": "The Accident Guides",
       "http_status": 200,
       "resolved_url": "https://theaccidentguides.com/guides/evidence-checklist-after-an-accident/",
-      "observed_title": "Evidence Checklist After an Accident",
-      "checked_at": "2026-10-11T14:57:28+00:00",
+      "observed_title": "Accident Evidence Checklist: Photos, Records, Witnesses",
+      "checked_at": "2026-10-25T21:42:37+00:00",
       "outcome": "verified"
     },
     {
@@ -2087,7 +1307,47 @@
       "http_status": 200,
       "resolved_url": "https://theaccidentguides.com/guides/questions-to-ask-a-personal-injury-lawyer/",
       "observed_title": "Questions to Ask a Personal Injury Lawyer",
-      "checked_at": "2026-10-11T14:57:28+00:00",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:accident-guides:theaccidentguides.com/guides/personal-injury-fees-explained/",
+      "url": "https://theaccidentguides.com/guides/personal-injury-fees-explained/",
+      "publisher": "The Accident Guides",
+      "http_status": 200,
+      "resolved_url": "https://theaccidentguides.com/guides/personal-injury-fees-explained/",
+      "observed_title": "How Much Does a Personal Injury Lawyer Cost? Fees Explained",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dentistry-guides:dentistryguides.com/",
+      "url": "https://dentistryguides.com/",
+      "publisher": "The Dentistry Guides",
+      "http_status": 200,
+      "resolved_url": "https://dentistryguides.com/",
+      "observed_title": "The Dentistry Guides: Compare Dentists and Dental Costs",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dentistry-guides:dentistryguides.com/guides/",
+      "url": "https://dentistryguides.com/guides/",
+      "publisher": "The Dentistry Guides",
+      "http_status": 200,
+      "resolved_url": "https://dentistryguides.com/guides/",
+      "observed_title": "Dental Treatment Guides: Costs and Options | The Dentistry Guides",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dentistry-guides:dentistryguides.com/guides/questions-to-ask/",
+      "url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "publisher": "The Dentistry Guides",
+      "http_status": 200,
+      "resolved_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "observed_title": "Questions to Ask Before Major Dental Work",
+      "checked_at": "2026-10-25T21:42:37+00:00",
       "outcome": "verified"
     },
     {
@@ -2096,8 +1356,48 @@
       "publisher": "The Dentistry Guides",
       "http_status": 200,
       "resolved_url": "https://dentistryguides.com/guides/how-to-choose/",
-      "observed_title": "What Should I Look For When Choosing a Dentist",
-      "checked_at": "2026-10-11T14:57:29+00:00",
+      "observed_title": "How to Choose a Dentist: 5-Factor Selection Guide and Checklist",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dentistry-guides:dentistryguides.com/guides/dental-implants/",
+      "url": "https://dentistryguides.com/guides/dental-implants/",
+      "publisher": "The Dentistry Guides",
+      "http_status": 200,
+      "resolved_url": "https://dentistryguides.com/guides/dental-implants/",
+      "observed_title": "Dental Implants: Cost, Recovery and Candidacy",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hormones-iv-hair:hormonesivhair.com/",
+      "url": "https://hormonesivhair.com/",
+      "publisher": "Hormone Optimization Guides",
+      "http_status": 200,
+      "resolved_url": "https://hormonesivhair.com/",
+      "observed_title": "Hormone Optimization Guides: TRT, Menopause HRT, Peptides, IV",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hormones-iv-hair:hormonesivhair.com/guides/",
+      "url": "https://hormonesivhair.com/guides/",
+      "publisher": "Hormone Optimization Guides",
+      "http_status": 200,
+      "resolved_url": "https://hormonesivhair.com/guides/",
+      "observed_title": "TRT, Peptide, IV and Hair Guides | Hormone Optimization Guides",
+      "checked_at": "2026-10-25T21:42:37+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hormones-iv-hair:hormonesivhair.com/guides/iv-hydration-red-flags/",
+      "url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+      "publisher": "Hormone Optimization Guides",
+      "http_status": 200,
+      "resolved_url": "https://hormonesivhair.com/guides/iv-hydration-red-flags/",
+      "observed_title": "IV Hydration Red Flags: What to Check Before a Drip",
+      "checked_at": "2026-10-25T21:42:38+00:00",
       "outcome": "verified"
     },
     {
@@ -2106,8 +1406,108 @@
       "publisher": "Hormone Optimization Guides",
       "http_status": 200,
       "resolved_url": "https://hormonesivhair.com/guides/hormone-replacement-therapy-near-me/",
-      "observed_title": "Hormone Replacement Therapy Near You: What to Verify Before You Book",
-      "checked_at": "2026-10-11T14:57:29+00:00",
+      "observed_title": "Hormone Replacement Therapy Near You: What to Verify First",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hormones-iv-hair:hormonesivhair.com/guides/trt-red-flags/",
+      "url": "https://hormonesivhair.com/guides/trt-red-flags/",
+      "publisher": "Hormone Optimization Guides",
+      "http_status": 200,
+      "resolved_url": "https://hormonesivhair.com/guides/trt-red-flags/",
+      "observed_title": "TRT Red Flags: Hidden Fees, Rotating Providers, No Lab Monitoring",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:neuro-eval-guides:neuroevalguides.com/",
+      "url": "https://neuroevalguides.com/",
+      "publisher": "Neuro Evaluation Guides",
+      "http_status": 200,
+      "resolved_url": "https://neuroevalguides.com/",
+      "observed_title": "Neuro Evaluation Guides: ADHD and Autism Evaluations and Therapy",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:neuro-eval-guides:neuroevalguides.com/guides/",
+      "url": "https://neuroevalguides.com/guides/",
+      "publisher": "Neuro Evaluation Guides",
+      "http_status": 200,
+      "resolved_url": "https://neuroevalguides.com/guides/",
+      "observed_title": "ADHD, Autism and Neuropsych Guides | Neuro Evaluation Guides",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:neuro-eval-guides:neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+      "url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+      "publisher": "Neuro Evaluation Guides",
+      "http_status": 200,
+      "resolved_url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+      "observed_title": "Questions to Ask Before Neuro Testing",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:neuro-eval-guides:neuroevalguides.com/guides/neuropsych-testing-cost-by-state/",
+      "url": "https://neuroevalguides.com/guides/neuropsych-testing-cost-by-state/",
+      "publisher": "Neuro Evaluation Guides",
+      "http_status": 200,
+      "resolved_url": "https://neuroevalguides.com/guides/neuropsych-testing-cost-by-state/",
+      "observed_title": "Neuropsych Testing Cost by State: Billed Rates vs Medicare",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:uscis-exam-guides:uscisexam.com/",
+      "url": "https://uscisexam.com/",
+      "publisher": "USCIS Exam Guides",
+      "http_status": 200,
+      "resolved_url": "https://uscisexam.com/",
+      "observed_title": "USCIS Exam Guides: Form I-693 Medical Exam Explained",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:uscis-exam-guides:uscisexam.com/guides/",
+      "url": "https://uscisexam.com/guides/",
+      "publisher": "USCIS Exam Guides",
+      "http_status": 200,
+      "resolved_url": "https://uscisexam.com/guides/",
+      "observed_title": "USCIS Medical Exam Guides: Form I-693 | USCIS Exam Guides",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:uscis-exam-guides:uscisexam.com/guides/costs-and-timeframes/",
+      "url": "https://uscisexam.com/guides/costs-and-timeframes/",
+      "publisher": "USCIS Exam Guides",
+      "http_status": 200,
+      "resolved_url": "https://uscisexam.com/guides/costs-and-timeframes/",
+      "observed_title": "USCIS Medical Exam Costs and Timeframes: General Information",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:bhpc:billionairehighperformancecoach.com/",
+      "url": "https://billionairehighperformancecoach.com/",
+      "publisher": "Billionaire High Performance Coach",
+      "http_status": 200,
+      "resolved_url": "https://billionairehighperformancecoach.com/",
+      "observed_title": "Billionaire High Performance Coach OS",
+      "checked_at": "2026-10-25T21:42:38+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:bhpc:billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+      "url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach.html",
+      "publisher": "Billionaire High Performance Coach",
+      "http_status": 200,
+      "resolved_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach",
+      "observed_title": "AI Coach vs Human Coach: Which One You Need and When",
+      "checked_at": "2026-10-25T21:42:39+00:00",
       "outcome": "verified"
     },
     {
@@ -2116,8 +1516,8 @@
       "publisher": "Billionaire High Performance Coach",
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/ai-coach-vs-human-coach",
-      "observed_title": "AI Coach vs Human Coach: Which Is Better?",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "observed_title": "AI Coach vs Human Coach: Which One You Need and When",
+      "checked_at": "2026-10-25T21:42:39+00:00",
       "outcome": "verified"
     },
     {
@@ -2127,7 +1527,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/ai-vs-human-executive-coach-pros-cons-for-entrepreneurs",
       "observed_title": "AI vs Human Executive Coach: Pros and Cons for Entrepreneurs",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "checked_at": "2026-10-25T21:42:39+00:00",
       "outcome": "verified"
     },
     {
@@ -2137,7 +1537,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-facing-decision-fatigue-and-needs-accountability-support",
       "observed_title": "Accountability for a founder facing decision fatigue",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2147,7 +1547,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-trying-to-build-consistency-and-needs-accountability-support",
       "observed_title": "Accountability for a founder trying to build consistency",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2157,7 +1557,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-accountability-support",
       "observed_title": "Accountability for a founder working without a chief of staff",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2167,7 +1567,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/answers/phase4/what-should-a-founder-do-when-working-without-a-chief-of-staff-and-needs-missed-day-recovery-support",
       "observed_title": "Missed-day recovery for a founder working without a chief of staff",
-      "checked_at": "2026-10-11T14:57:31+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2176,8 +1576,8 @@
       "publisher": "Billionaire High Performance Coach",
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/comparisons/bhpc-vs-torch",
-      "observed_title": "BHPC vs Torch: Coaching Alternative for Execution Systems",
-      "checked_at": "2026-10-11T14:57:32+00:00",
+      "observed_title": "Torch Coaching Alternatives: Torch and Hone vs AI Coaching",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2187,7 +1587,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/use-cases/phase4/a-player-mode-for-a-executive-who-is-trying-to-build-consistency",
       "observed_title": "A-player mode for a executive who is trying to build consistency",
-      "checked_at": "2026-10-11T14:57:32+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2197,7 +1597,7 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-behavioral-follow-through",
       "observed_title": "BHPC vs accountability app for behavioral follow-through",
-      "checked_at": "2026-10-11T14:57:32+00:00",
+      "checked_at": "2026-10-25T21:42:40+00:00",
       "outcome": "verified"
     },
     {
@@ -2207,7 +1607,77 @@
       "http_status": 200,
       "resolved_url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-missed-day-recovery",
       "observed_title": "BHPC vs accountability app for missed-day recovery",
-      "checked_at": "2026-10-11T14:57:32+00:00",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:bhpc:billionairehighperformancecoach.com/best-ai-coaching-tools",
+      "url": "https://billionairehighperformancecoach.com/best-ai-coaching-tools",
+      "publisher": "Billionaire High Performance Coach",
+      "http_status": 200,
+      "resolved_url": "https://billionairehighperformancecoach.com/best-ai-coaching-tools",
+      "observed_title": "Best AI Coaching Tools and Software: How to Compare Them",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:bhpc:billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-chief-of-staff-support",
+      "url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-chief-of-staff-support",
+      "publisher": "Billionaire High Performance Coach",
+      "http_status": 200,
+      "resolved_url": "https://billionairehighperformancecoach.com/vs/phase4/billionaire-high-performance-coach-vs-accountability-app-for-chief-of-staff-support",
+      "observed_title": "BHPC vs accountability app for chief-of-staff support",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:aplayer-mode:aplayermode.com/",
+      "url": "https://www.aplayermode.com/",
+      "publisher": "A Player Mode",
+      "http_status": 200,
+      "resolved_url": "https://aplayermode.com/",
+      "observed_title": "A Player Mode | Your five-person executive team",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/",
+      "url": "https://virtualagency-os.com/learn/",
+      "publisher": "Virtual Agency OS",
+      "http_status": 200,
+      "resolved_url": "https://virtualagency-os.com/learn/",
+      "observed_title": "Learn: Virtual Events and AI Marketing | Virtual Agency OS",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/what-is-virtual-event-production",
+      "url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+      "publisher": "Virtual Agency OS",
+      "http_status": 200,
+      "resolved_url": "https://virtualagency-os.com/learn/what-is-virtual-event-production",
+      "observed_title": "Virtual Events Production: What It Includes and What It Costs",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:virtual-agency-os:virtualagency-os.com/learn/virtual-event-production-cost",
+      "url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+      "publisher": "Virtual Agency OS",
+      "http_status": 200,
+      "resolved_url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+      "observed_title": "Virtual event production cost | Virtual Agency OS",
+      "checked_at": "2026-10-25T21:42:41+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:west-peek-productions:westpeekproductions.com/",
+      "url": "https://www.westpeekproductions.com/",
+      "publisher": "West Peek Productions",
+      "http_status": 200,
+      "resolved_url": "https://www.westpeekproductions.com/",
+      "observed_title": "West Peek Productions | Community-as-a-Service & Creative Agency",
+      "checked_at": "2026-10-25T21:42:42+00:00",
       "outcome": "verified"
     },
     {
@@ -2217,7 +1687,7 @@
       "http_status": 200,
       "resolved_url": "https://westpeekproductions.com/community-as-a-service/",
       "observed_title": "Can Your Business Build a Community? | Free 3-Minute Quiz",
-      "checked_at": "2026-10-11T14:57:33+00:00",
+      "checked_at": "2026-10-25T21:42:42+00:00",
       "outcome": "verified"
     },
     {
@@ -2227,7 +1697,187 @@
       "http_status": 200,
       "resolved_url": "https://westpeekproductions.com/virtual-event-planning-checklist",
       "observed_title": "Virtual Event Planning Checklist | West Peek Productions",
-      "checked_at": "2026-10-11T14:57:33+00:00",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:horse-legal-guide:horselegalguide.com/",
+      "url": "https://horselegalguide.com/",
+      "publisher": "Horse Legal Guide",
+      "http_status": 200,
+      "resolved_url": "https://horselegalguide.com/",
+      "observed_title": "Equine Law Advice &amp; Answers for Horse Owners | Horse Legal Guide",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:horse-legal-guide:horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+      "url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+      "publisher": "Horse Legal Guide",
+      "http_status": 200,
+      "resolved_url": "https://horselegalguide.com/boarding/what-should-be-included-in-a-horse-boarding-agreement/",
+      "observed_title": "What Should Be Included in a Horse Boarding Agreement?",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:horse-legal-guide:horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+      "url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+      "publisher": "Horse Legal Guide",
+      "http_status": 200,
+      "resolved_url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+      "observed_title": "Horse purchase agreement vs bill of sale",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:horse-legal-guide:horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+      "url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+      "publisher": "Horse Legal Guide",
+      "http_status": 200,
+      "resolved_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+      "observed_title": "Contract Review vs DIY Horse Agreement",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:horse-legal-guide:horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+      "url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+      "publisher": "Horse Legal Guide",
+      "http_status": 200,
+      "resolved_url": "https://horselegalguide.com/disputes/what-should-i-do-if-i-receive-a-demand-letter/",
+      "observed_title": "What Should I Do If I Receive a Demand Letter?",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/",
+      "url": "https://www.hicksconsulting.org/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/",
+      "observed_title": "Hicks Consulting | Monika Hicks, LCSW | Therapy for Memphis, TN",
+      "checked_at": "2026-10-25T21:42:42+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/resources/",
+      "url": "https://www.hicksconsulting.org/resources/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/resources/",
+      "observed_title": "Emotional Wellness Resources | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/corporate-speaking/",
+      "url": "https://www.hicksconsulting.org/corporate-speaking/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/corporate-speaking/",
+      "observed_title": "Organizational Trainings | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/organizational-training-inquiry/",
+      "url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/organizational-training-inquiry/",
+      "observed_title": "Organizational Training Inquiry | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/therapy/",
+      "url": "https://www.hicksconsulting.org/therapy/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/therapy/",
+      "observed_title": "Virtual Therapy Serving Memphis &amp; Tennessee | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/coaching/",
+      "url": "https://www.hicksconsulting.org/coaching/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/coaching/",
+      "observed_title": "Virtual Coaching | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:hicks-consulting:hicksconsulting.org/faq/",
+      "url": "https://www.hicksconsulting.org/faq/",
+      "publisher": "Hicks Consulting",
+      "http_status": 200,
+      "resolved_url": "https://www.hicksconsulting.org/faq/",
+      "observed_title": "Frequently Asked Questions | Hicks Consulting",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/",
+      "url": "https://porchandparty901.com/",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/",
+      "observed_title": "Memphis Porch Decorating, Party Planning, Grazing Tables &amp; Game Rentals | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/services/porch-decorating.html",
+      "url": "https://porchandparty901.com/services/porch-decorating.html",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/services/porch-decorating",
+      "observed_title": "Seasonal Porch Decorating in Memphis | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:43+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/services/party-decor-memphis.html",
+      "url": "https://porchandparty901.com/services/party-decor-memphis.html",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/services/party-decor-memphis",
+      "observed_title": "Memphis Party Decor | Celebration Setups | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:44+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/services/hotel-room-decor-memphis.html",
+      "url": "https://porchandparty901.com/services/hotel-room-decor-memphis.html",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/services/hotel-room-decor-memphis",
+      "observed_title": "Hotel Room Setups in Memphis | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:44+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/services/grazing-tables-memphis.html",
+      "url": "https://porchandparty901.com/services/grazing-tables-memphis.html",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/services/grazing-tables-memphis",
+      "observed_title": "Grazing Tables Memphis | Styled Event Presentation | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:44+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/pricing.html",
+      "url": "https://porchandparty901.com/pricing.html",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/pricing",
+      "observed_title": "Memphis Event Decor Pricing | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2237,7 +1887,7 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/corporate/corporate-event-decor-memphis",
       "observed_title": "Corporate Event Decor in Memphis | Porch & Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2247,7 +1897,7 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/faq/how-much-does-a-balloon-garland-cost-in-memphis",
       "observed_title": "How Much Does a Balloon Garland Cost in Memphis? | Porch & Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2257,7 +1907,7 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/pricing",
       "observed_title": "Memphis Event Decor Pricing | Porch &amp; Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2267,7 +1917,7 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/services/birthday-party-planner-memphis",
       "observed_title": "Birthday Party Planner in Memphis | Porch &amp; Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2276,8 +1926,8 @@
       "publisher": "Porch & Party",
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/services/hotel-room-decor-memphis",
-      "observed_title": "Hotel Room Decor Memphis | Birthday &amp; Romantic Setups | Porch &amp; Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "observed_title": "Hotel Room Setups in Memphis | Porch &amp; Party",
+      "checked_at": "2026-10-25T21:42:44+00:00",
       "outcome": "verified"
     },
     {
@@ -2287,7 +1937,7 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/services/party-decor-memphis",
       "observed_title": "Memphis Party Decor | Celebration Setups | Porch &amp; Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:45+00:00",
       "outcome": "verified"
     },
     {
@@ -2297,7 +1947,197 @@
       "http_status": 200,
       "resolved_url": "https://porchandparty901.com/services/porch-decorating",
       "observed_title": "Seasonal Porch Decorating in Memphis | Porch &amp; Party",
-      "checked_at": "2026-10-11T14:57:37+00:00",
+      "checked_at": "2026-10-25T21:42:45+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:porch-party:porchandparty901.com/guides/porch-decorating-packages-memphis",
+      "url": "https://porchandparty901.com/guides/porch-decorating-packages-memphis",
+      "publisher": "Porch & Party",
+      "http_status": 200,
+      "resolved_url": "https://porchandparty901.com/guides/porch-decorating-packages-memphis",
+      "observed_title": "Porch Decorating Service Prices in Memphis (2026) | Porch & Party",
+      "checked_at": "2026-10-25T21:42:45+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/letter-of-explanation",
+      "url": "https://approvalprep.com/letter-of-explanation",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/letter-of-explanation/",
+      "observed_title": "Letter of Explanation Generator - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:45+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/income-employment-letter-kit",
+      "url": "https://approvalprep.com/income-employment-letter-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/income-employment-letter-kit/",
+      "observed_title": "Income + Employment Letter Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:45+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/credit-letter-kit",
+      "url": "https://approvalprep.com/credit-letter-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/credit-letter-kit/",
+      "observed_title": "Credit Letter Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:46+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/rental-application-kit",
+      "url": "https://approvalprep.com/rental-application-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/rental-application-kit/",
+      "observed_title": "Rental Application Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:46+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/loan-prep-letter-kit",
+      "url": "https://approvalprep.com/loan-prep-letter-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/loan-prep-letter-kit/",
+      "observed_title": "Loan Prep Letter Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:46+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/business-funding-prep-kit",
+      "url": "https://approvalprep.com/business-funding-prep-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/business-funding-prep-kit/",
+      "observed_title": "Business Funding Prep Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:46+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/life-admin-letter-kit",
+      "url": "https://approvalprep.com/life-admin-letter-kit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/life-admin-letter-kit/",
+      "observed_title": "Life Admin Letter Kit - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:47+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/complete-approvalprep-bundle",
+      "url": "https://approvalprep.com/complete-approvalprep-bundle",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/complete-approvalprep-bundle/",
+      "observed_title": "Complete ApprovalPrep Bundle - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:47+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/letter-writing-studio",
+      "url": "https://approvalprep.com/letter-writing-studio",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/letter-writing-studio/",
+      "observed_title": "Free Letter Writing Studio - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:47+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/letter-of-explanation/credit",
+      "url": "https://approvalprep.com/letter-of-explanation/credit",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/letter-of-explanation/credit/",
+      "observed_title": "Credit Letter of Explanation - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:47+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/rental-application-checklist",
+      "url": "https://approvalprep.com/rental-application-checklist",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/rental-application-checklist/",
+      "observed_title": "Rental Application Checklist - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:48+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/documents-needed-for-car-loan",
+      "url": "https://approvalprep.com/documents-needed-for-car-loan",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/documents-needed-for-car-loan/",
+      "observed_title": "Documents Needed for a Car Loan - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:48+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/sba-loan-checklist",
+      "url": "https://approvalprep.com/sba-loan-checklist",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/sba-loan-checklist/",
+      "observed_title": "Does the SBA Check Your Bank Statements? SBA Loan Checklist",
+      "checked_at": "2026-10-25T21:42:48+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/mortgage-document-checklist",
+      "url": "https://approvalprep.com/mortgage-document-checklist",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/mortgage-document-checklist/",
+      "observed_title": "Mortgage Document Checklist - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:48+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/",
+      "url": "https://approvalprep.com/",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/",
+      "observed_title": "ApprovalPrep - Self-Service Credit Repair Letters and Approval Prep",
+      "checked_at": "2026-10-25T21:42:48+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/pricing",
+      "url": "https://approvalprep.com/pricing",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/pricing/",
+      "observed_title": "ApprovalPrep Pricing: Compare All Eight Document Prep Kits",
+      "checked_at": "2026-10-25T21:42:49+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/methodology",
+      "url": "https://approvalprep.com/methodology",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/methodology/",
+      "observed_title": "Methodology: How ApprovalPrep Helps You Prepare Paperwork",
+      "checked_at": "2026-10-25T21:42:49+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:approval-prep:approvalprep.com/not-a-credit-repair-company",
+      "url": "https://approvalprep.com/not-a-credit-repair-company",
+      "publisher": "Approval Prep",
+      "http_status": 200,
+      "resolved_url": "https://approvalprep.com/not-a-credit-repair-company/",
+      "observed_title": "Not a Credit Repair Company - ApprovalPrep",
+      "checked_at": "2026-10-25T21:42:49+00:00",
       "outcome": "verified"
     },
     {
@@ -2307,7 +2147,207 @@
       "http_status": 200,
       "resolved_url": "https://approvalprep.com/goodwill-letter-credit/",
       "observed_title": "Goodwill Letter for Credit: Which Items It Can Reach - ApprovalPrep",
-      "checked_at": "2026-10-11T14:57:41+00:00",
+      "checked_at": "2026-10-25T21:42:49+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/build",
+      "url": "https://weddingchecklistpdf.com/build",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "checked_at": "2026-10-25T21:42:50+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/build",
+      "url": "https://weddingbudgetspreadsheet.com/build",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "checked_at": "2026-10-25T21:42:50+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/build",
+      "url": "https://weddingtimelinetemplate.com/build",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "checked_at": "2026-10-25T21:42:51+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/build",
+      "url": "https://weddingseatingchartmaker.com/build",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
+      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "checked_at": "2026-10-25T21:42:52+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/checklist-pdf",
+      "url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:52+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/checklist-pdf",
+      "url": "https://weddingbudgetspreadsheet.com/products/checklist-pdf",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:52+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/checklist-pdf",
+      "url": "https://weddingtimelinetemplate.com/products/checklist-pdf",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:53+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/checklist-pdf",
+      "url": "https://weddingseatingchartmaker.com/products/checklist-pdf",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/products/checklist-pdf",
+      "observed_title": "Wedding Checklist PDF - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:53+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/budget-spreadsheet",
+      "url": "https://weddingchecklistpdf.com/products/budget-spreadsheet",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:53+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:53+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/budget-spreadsheet",
+      "url": "https://weddingtimelinetemplate.com/products/budget-spreadsheet",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:54+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/budget-spreadsheet",
+      "url": "https://weddingseatingchartmaker.com/products/budget-spreadsheet",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingbudgetspreadsheet.com/products/budget-spreadsheet",
+      "observed_title": "Wedding Budget Spreadsheet - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:54+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/timeline-template",
+      "url": "https://weddingchecklistpdf.com/products/timeline-template",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:54+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/timeline-template",
+      "url": "https://weddingbudgetspreadsheet.com/products/timeline-template",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:55+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/timeline-template",
+      "url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:55+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/timeline-template",
+      "url": "https://weddingseatingchartmaker.com/products/timeline-template",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+      "observed_title": "Wedding Timeline Template - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:55+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/products/seating-chart-maker",
+      "url": "https://weddingchecklistpdf.com/products/seating-chart-maker",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:56+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingbudgetspreadsheet.com/products/seating-chart-maker",
+      "url": "https://weddingbudgetspreadsheet.com/products/seating-chart-maker",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:56+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingtimelinetemplate.com/products/seating-chart-maker",
+      "url": "https://weddingtimelinetemplate.com/products/seating-chart-maker",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:56+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingseatingchartmaker.com/products/seating-chart-maker",
+      "url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingseatingchartmaker.com/products/seating-chart-maker",
+      "observed_title": "Wedding Seating Chart Maker - Editable Wedding Planning Tool",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2317,7 +2357,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingbudgetspreadsheet.com/wedding-cost-per-guest",
       "observed_title": "Wedding cost per guest: what 50, 80, 100, and 150 guests actually cost",
-      "checked_at": "2026-10-11T14:57:47+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2327,7 +2367,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
       "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
-      "checked_at": "2026-10-11T14:57:47+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2337,7 +2377,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/guides",
       "observed_title": "Wedding Checklist PDF Guides | Dream Wedding Builder",
-      "checked_at": "2026-10-11T14:57:47+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2347,7 +2387,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/guides/elopement-planning-checklist",
       "observed_title": "Elopement Planning Checklist: Licence, Witnesses, Permits",
-      "checked_at": "2026-10-11T14:57:48+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2357,7 +2397,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/printable-wedding-checklist",
       "observed_title": "Printable Wedding Checklist: Every Task, Owner and Deadline",
-      "checked_at": "2026-10-11T14:57:48+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2367,7 +2407,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingseatingchartmaker.com/guides/wedding-seating-chart-template",
       "observed_title": "Wedding Seating Chart Template | Dream Wedding Builder",
-      "checked_at": "2026-10-11T14:57:48+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2377,7 +2417,7 @@
       "http_status": 200,
       "resolved_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
       "observed_title": "Wedding Day Timeline Template | Dream Wedding Builder",
-      "checked_at": "2026-10-11T14:57:48+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },
     {
@@ -2387,8 +2427,59 @@
       "http_status": 200,
       "resolved_url": "https://weddingtimelinetemplate.com/guides/wedding-rehearsal-timeline",
       "observed_title": "Wedding Rehearsal Timeline | Dream Wedding Builder",
-      "checked_at": "2026-10-11T14:57:48+00:00",
+      "checked_at": "2026-10-25T21:42:57+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/",
+      "url": "https://weddingchecklistpdf.com/",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/",
+      "observed_title": "Wedding Checklist PDF ($9): Printable, Editable Planning Checklist",
+      "checked_at": "2026-10-25T21:42:58+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:dream-wedding-builder:weddingchecklistpdf.com/wedding-checklist",
+      "url": "https://weddingchecklistpdf.com/wedding-checklist",
+      "publisher": "Dream Wedding Builder",
+      "http_status": 200,
+      "resolved_url": "https://weddingchecklistpdf.com/wedding-checklist",
+      "observed_title": "Wedding Checklist: The Complete Planning Roadmap",
+      "checked_at": "2026-10-25T21:42:58+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:diannes-place:diannesplacerecoveryservices.com/recovery-housing/",
+      "url": "https://www.diannesplacerecoveryservices.com/recovery-housing/",
+      "publisher": "Dianne's Place Recovery Services",
+      "http_status": 200,
+      "resolved_url": "https://www.diannesplacerecoveryservices.com/recovery-housing",
+      "observed_title": "Recovery Housing | Dianne&#039;s Place Recovery Services",
+      "checked_at": "2026-10-25T21:42:59+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:diannes-place:diannesplacerecoveryservices.com/referrals/",
+      "url": "https://www.diannesplacerecoveryservices.com/referrals/",
+      "publisher": "Dianne's Place Recovery Services",
+      "http_status": 200,
+      "resolved_url": "https://www.diannesplacerecoveryservices.com/referrals",
+      "observed_title": "Referrals | Dianne&#039;s Place Recovery Services",
+      "checked_at": "2026-10-25T21:43:00+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "brand:diannes-place:diannesplacerecoveryservices.com/resources/",
+      "url": "https://www.diannesplacerecoveryservices.com/resources/",
+      "publisher": "Dianne's Place Recovery Services",
+      "http_status": 200,
+      "resolved_url": "https://www.diannesplacerecoveryservices.com/resources",
+      "observed_title": "Resources | Dianne&#039;s Place Recovery Services",
+      "checked_at": "2026-10-25T21:43:00+00:00",
       "outcome": "verified"
     }
-  ]
+  ],
+  "note": "The `receipts` array is the run that last reached every editorial source. `brand_link_receipts` is from 2026-10-25T21:42:36+00:00, when the affiliated destinations were refreshed; the editorial sources were not rewritten in that run because consumer.ftc.gov and www.ftc.gov answered 403 to a plain user agent and 404 to a browser one from the operator's own IP. That is the FTC refusing the fetch, not eight articles that stopped existing, and overwriting a verified receipt with a refusal would report a defect in this repository that is not in it."
 }

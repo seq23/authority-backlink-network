@@ -19,6 +19,18 @@ lib/head_seo.py adds them; this checks the published tree:
   identity        no JSON-LD on a page names another publication's editorial
                   company; every author node names this publication's own
 
+Three more, added 25 Oct 2026 from the Search Readiness Checklist, which reads
+the published pages the same way an answer engine does -- first matching node
+wins -- and found all three failing on every page of all three publications:
+
+  c1  EVERY Organization node naming this publication or its editorial company
+      carries name, url, logo and sameAs. The checklist reads the FIRST
+      Organization on the page, which on an article page is the publisher node
+      inside the article's own JSON-LD, not the one in the managed head block,
+      so checking only the head block would have passed a failing page.
+  c2  a WebPage node on every page, not only the homepage
+  d4  a page whose JSON-LD states a date shows that date to a reader
+
 HARD_FAIL on zero pages examined.
 
     python3 scripts/validators/validate_jsonld_types.py
@@ -64,6 +76,27 @@ def main() -> int:
         publishers = [n for n in nodes if n.get("@id") == hs.publisher_id(domain) and n.get("name")]
         if not publishers or any(n.get("name") != mine or "parentOrganization" in n for n in publishers):
             failures.append(f"{rel}: site-graph publisher is not {mine!r} standing alone (no parentOrganization)")
+        # c1: every Organization node that claims to BE this publication or its
+        # editorial company must be identifiable. A third party's Organization
+        # node is left out: this repository does not assert facts about other
+        # companies' identity.
+        ours = {mine.casefold(), pub["title"].casefold()}
+        for n in nodes:
+            if "Organization" not in hs.node_types(n):
+                continue
+            if str(n.get("name", "")).casefold() not in ours:
+                continue
+            thin = [k for k in ("name", *hs.organization_identity(domain)) if not n.get(k)]
+            if thin:
+                failures.append(f"{rel}: Organization {n.get('name')!r} lacks {', '.join(thin)}")
+        # c2: a WebPage node on every page.
+        if "WebPage" not in types:
+            failures.append(f"{rel}: no WebPage node")
+        # d4: a stated date is a visible date.
+        dates = hs.schema_dates(text)
+        if dates and not (any(d in hs.visible_text(text) for d in dates)
+                          or any(f'datetime="{d}' in text for d in dates)):
+            failures.append(f"{rel}: JSON-LD states {dates[0]} and the page shows no date")
         if is_home:
             speak = [n for n in nodes if "WebPage" in hs.node_types(n) and n.get("speakable")]
             if not speak:
@@ -105,8 +138,9 @@ def main() -> int:
         if len(failures) > 40:
             print(f"  ... and {len(failures) - 40} more")
         return 1
-    print(f"  {pages} pages: WebSite + own publisher everywhere, {crumbs} inner pages with "
-          f"BreadcrumbList, {faq_pages} FAQPage nodes all backed by on-page Q&A")
+    print(f"  {pages} pages: WebSite + own publisher (name, url, logo, sameAs) + WebPage "
+          f"everywhere, every stated date shown, {crumbs} inner pages with BreadcrumbList, "
+          f"{faq_pages} FAQPage nodes all backed by on-page Q&A")
     print("JSON-LD TYPES: PASS")
     return 0
 

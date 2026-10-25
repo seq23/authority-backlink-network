@@ -161,9 +161,38 @@ def publisher_id(domain: str) -> str:
     return f"https://{domain}/masthead#publisher-entity"
 
 
+# The editorial company's own pages: where it is identified, and the image that
+# stands for it. Search Readiness checklist item c1 asks every Organization node
+# for name, url, logo and sameAs; on 25 Oct 2026 every page on all three
+# publications had name alone.
+#
+# sameAs is the one that cannot be invented. These publications have no social
+# profiles, no Wikipedia entry and no company register page, and schema.org's
+# sameAs is "a reference Web page that unambiguously indicates the item's
+# identity" -- so it points at the two pages that do exactly that and no
+# further: `url` is the masthead, which names the editorial company and its
+# policies, and sameAs is contributors, which names who writes under it, and
+# about, which says who owns and edits the publication. A LinkedIn URL invented
+# to fill the field would be a false claim about an entity on a publication
+# whose only asset is being believed.
+ORG_URL_PATH = "/masthead"
+ORG_SAMEAS_PATHS = ("/contributors", "/about")
+ORG_LOGO = "icon-512.png"
+
+
+def organization_identity(domain: str) -> dict:
+    """url, logo and sameAs for the editorial company of `domain`."""
+    return {
+        "url": f"https://{domain}{ORG_URL_PATH}",
+        "logo": f"https://{domain}/{ORG_LOGO}",
+        "sameAs": [f"https://{domain}{path}" for path in ORG_SAMEAS_PATHS],
+    }
+
+
 def publisher_node(entity: str, domain: str, pub_title: str) -> dict:
     return {"@type": "Organization", "@id": publisher_id(domain), "name": entity,
-            "description": f"The editorial company that writes, edits and publishes {pub_title}."}
+            "description": f"The editorial company that writes, edits and publishes {pub_title}.",
+            **organization_identity(domain)}
 
 
 def definition_text(pub: dict, entity: str) -> str:
@@ -225,15 +254,21 @@ def render_block(*, text: str, pub: dict, domain: str, entity: str,
         "publisher": {"@id": publisher["@id"]},
     }, publisher]
     existing = types_on(text)
+    # A WebPage node on EVERY page, not only the homepage. Checklist item c2
+    # ("WebPage on every page") failed on /about across all three publications,
+    # which had the WebSite and the BreadcrumbList but nothing tying the page
+    # itself to the site. The homepage's node additionally carries the
+    # SpeakableSpecification over its definition paragraph.
+    webpage = {
+        "@type": "WebPage", "@id": f"{url}#webpage", "url": url, "name": title,
+        "description": description, "inLanguage": "en-US",
+        "isPartOf": {"@id": website_id}, "publisher": {"@id": publisher["@id"]},
+    }
     if is_home:
-        graph.append({
-            "@type": "WebPage", "@id": f"{url}#webpage", "url": url, "name": title,
-            "description": description, "inLanguage": "en-US",
-            "isPartOf": {"@id": website_id}, "publisher": {"@id": publisher["@id"]},
-            "speakable": {"@type": "SpeakableSpecification",
-                          "cssSelector": [SPEAKABLE_SELECTOR]},
-        })
-    elif not is_404 and "BreadcrumbList" not in existing:
+        webpage["speakable"] = {"@type": "SpeakableSpecification",
+                                "cssSelector": [SPEAKABLE_SELECTOR]}
+    graph.append(webpage)
+    if not is_home and not is_404 and "BreadcrumbList" not in existing:
         h1 = H1_RE.search(text)
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": pub["title"], "item": site_url(domain)},
@@ -243,6 +278,113 @@ def render_block(*, text: str, pub: dict, domain: str, entity: str,
     lines.append(f'<script type="application/ld+json" id="{SITE_GRAPH_ID}">{ld}</script>')
     lines.append(BLOCK_END)
     return "\n".join(lines) + "\n"
+
+
+UPDATED_RE = re.compile(r'<p class="updated"[^>]*>.*?</p>\n?', re.S | re.I)
+MAIN_END_RE = re.compile(r"</main>", re.I)
+SCRIPT_ANY_RE = re.compile(r"<script\b.*?</script>", re.S | re.I)
+BODY_RE = re.compile(r"<body[^>]*>(.*)</body>", re.S | re.I)
+ISO_DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
+def schema_dates(text: str) -> list:
+    """Every datePublished / dateModified in the page's JSON-LD, as YYYY-MM-DD."""
+    out = []
+    for node in jsonld_nodes(text):
+        for key in ("dateModified", "datePublished"):
+            value = node.get(key)
+            if isinstance(value, str) and ISO_DATE_RE.match(value):
+                out.append(value[:10])
+    return out
+
+
+def visible_text(text: str) -> str:
+    body = BODY_RE.search(text)
+    return TAG_RE.sub(" ", SCRIPT_ANY_RE.sub(" ", body.group(1) if body else text))
+
+
+def install_updated_line(text: str) -> str:
+    """Show the page's schema date on the page, for pages that do not already.
+
+    Checklist item d4 -- "Published and updated dates visible" -- failed on 32
+    pages on 25 Oct 2026: the homepages, every /about and every hand-authored
+    hub declared datePublished and dateModified in JSON-LD and showed neither
+    anywhere a reader or an answer engine could see it. A date that exists only
+    in markup is the freshness claim nobody can check.
+
+    The date is the page's own dateModified (or datePublished), so this states
+    what the page already asserts rather than inventing a fresher one -- the
+    faked-freshness problem d4 exists to stop. Pages that already show one of
+    their schema dates, the daily pages among them, are left byte-identical.
+    Idempotent: its own line is replaced, not stacked.
+    """
+    dates = schema_dates(text)
+    if not dates:
+        return text
+    text = UPDATED_RE.sub("", text)
+    if any(d in visible_text(text) for d in dates):
+        return text
+    if not MAIN_END_RE.search(text):
+        return text
+    day = dates[0]
+    line = (f'<p class="updated meta">Last updated: '
+            f'<time datetime="{day}">{day}</time>.</p>\n')
+    return MAIN_END_RE.sub(lambda _m: line + "</main>", text, count=1)
+
+
+def install_organization_identity(text: str, entity: str, pub_title: str, domain: str) -> str:
+    """Give url, logo and sameAs to the publication's own Organization nodes.
+
+    Checklist item c1 reads the FIRST Organization node on the page, and on an
+    Article page that is the publisher node inside the article's own JSON-LD --
+    written by scripts/lib/page_composer.py and four other generators, each
+    inlining `{"@type": "Organization", "name": <entity>}` and nothing else. So
+    completing publisher_node() in the managed head block was not enough: this
+    completes the nodes in the page's own JSON-LD too, wherever they came from,
+    which also means a new generator cannot reintroduce a thin one.
+
+    Only nodes naming THIS publication or its editorial company are touched. An
+    Organization node for a cited third party is left exactly as it is: filling
+    in its url and logo would be this repository asserting identity facts about
+    someone else's company.
+
+    Idempotent, and it rewrites a JSON-LD block only when a field is actually
+    missing, so pages that are already complete keep their bytes.
+    """
+    identity = organization_identity(domain)
+    ours = {entity.casefold(), pub_title.casefold()}
+
+    def complete(node):
+        """True if anything changed in `node` or below it."""
+        changed = False
+        if isinstance(node, dict):
+            if ("Organization" in node_types(node)
+                    and str(node.get("name", "")).casefold() in ours):
+                for key, value in identity.items():
+                    if not node.get(key):
+                        node[key] = value
+                        changed = True
+            for value in node.values():
+                changed = complete(value) or changed
+        elif isinstance(node, list):
+            for value in node:
+                changed = complete(value) or changed
+        return changed
+
+    out = []
+    last = 0
+    for m in LDJSON_ANY_RE.finditer(text):
+        try:
+            data = json.loads(m.group(1))
+        except json.JSONDecodeError:
+            continue
+        if not complete(data):
+            continue
+        out.append(text[last:m.start(1)])
+        out.append(json.dumps(data, ensure_ascii=False))
+        last = m.end(1)
+    out.append(text[last:])
+    return "".join(out)
 
 
 def install_head(text: str, **kw) -> str:
@@ -256,6 +398,8 @@ def install_head(text: str, **kw) -> str:
         text = install_definition(text, kw["definition"])
         text = install_home_title(text, kw["pub"])
     kw.pop("definition", None)
+    text = install_organization_identity(text, kw["entity"], kw["pub"]["title"], kw["domain"])
+    text = install_updated_line(text)
     block = render_block(text=text, **kw)
     return HEAD_END_RE.sub(lambda _m: block + "</head>", text, count=1)
 
