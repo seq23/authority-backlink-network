@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "host": "memphisvendorlibrary.com",
-  "gsc_window": "2026-09-25..2026-10-22",
-  "gsc_collected_at": "2026-10-25T17:42:10+00:00",
+  "gsc_window": "2026-09-26..2026-10-23",
+  "gsc_collected_at": "2026-10-26T15:15:20+00:00",
   "measurement_rule": "Every target carries its source (gsc_export) and a positive measured number (28-day impressions). Anything without a number is dropped with its reason, never kept with a null.",
   "max_targets": 500,
   "target_count": 4,
-  "site_impressions": 175,
+  "site_impressions": 169,
   "query_row_impressions": 6,
-  "anonymised_impressions": 169,
+  "anonymised_impressions": 163,
   "anonymised_note": "Search Console withholds rare queries. Their impressions are counted in site totals and by page, and carried into demand families by page; there is no query string to target.",
   "truth_boundary": "A target is a query this loop observes. Its number is the measurement that admitted it, not evidence of ranking or citation.",
   "dropped_count": 11,
@@ -80,8 +80,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 3,
-        "window": "2026-09-25..2026-10-22",
-        "collected_at": "2026-10-25T17:42:10+00:00"
+        "window": "2026-09-26..2026-10-23",
+        "collected_at": "2026-10-26T15:15:20+00:00"
       },
       "landing_route": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
       "landing_file": "sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
@@ -97,8 +97,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-25..2026-10-22",
-        "collected_at": "2026-10-25T17:42:10+00:00"
+        "window": "2026-09-26..2026-10-23",
+        "collected_at": "2026-10-26T15:15:20+00:00"
       },
       "landing_route": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
       "landing_file": "sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
@@ -114,8 +114,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-25..2026-10-22",
-        "collected_at": "2026-10-25T17:42:10+00:00"
+        "window": "2026-09-26..2026-10-23",
+        "collected_at": "2026-10-26T15:15:20+00:00"
       },
       "landing_route": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
       "landing_file": "sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html",
@@ -131,8 +131,8 @@
       "measurement": {
         "metric": "impressions_28d",
         "value": 1,
-        "window": "2026-09-25..2026-10-22",
-        "collected_at": "2026-10-25T17:42:10+00:00"
+        "window": "2026-09-26..2026-10-23",
+        "collected_at": "2026-10-26T15:15:20+00:00"
       },
       "landing_route": "/memphis-grazing-table-resources",
       "landing_file": "sites/memphis-local/memphis-grazing-table-resources.html",

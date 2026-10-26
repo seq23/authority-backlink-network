@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "professionalresourcelibrary.com",
-  "gsc_window": "2026-09-25..2026-10-22",
-  "gsc_collected_at": "2026-10-25T17:42:10+00:00",
+  "gsc_window": "2026-09-26..2026-10-23",
+  "gsc_collected_at": "2026-10-26T15:15:20+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -17,8 +17,8 @@
   "status_counts": {
     "intent_mismatch": 1,
     "not_top_family": 54,
-    "strengthened": 4,
-    "underivable": 1
+    "strengthened": 3,
+    "underivable": 2
   },
   "families": [
     {
@@ -28,12 +28,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/consumer-reporting-companies-directory.html",
       "page_title": "Every Consumer Reporting Company on the CFPB's 2025 List",
-      "impressions": 256,
+      "impressions": 249,
       "visible_query_impressions": 47,
-      "anonymised_impressions": 209,
-      "weighted_position": 12.1,
-      "page_impressions": 256,
-      "page_position": 10.5,
+      "anonymised_impressions": 202,
+      "weighted_position": 12.4,
+      "page_impressions": 249,
+      "page_position": 10.7,
       "query_count": 25,
       "queries": [
         {
@@ -181,11 +181,11 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page_title": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing",
-      "impressions": 75,
+      "impressions": 72,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 75,
+      "anonymised_impressions": 72,
       "weighted_position": 7.8,
-      "page_impressions": 75,
+      "page_impressions": 72,
       "page_position": 7.8,
       "query_count": 0,
       "queries": [],
@@ -207,12 +207,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/equine-legal-resource-library.html",
       "page_title": "Equine Legal Resource Library",
-      "impressions": 28,
+      "impressions": 27,
       "visible_query_impressions": 18,
-      "anonymised_impressions": 10,
-      "weighted_position": 43.7,
-      "page_impressions": 28,
-      "page_position": 35.6,
+      "anonymised_impressions": 9,
+      "weighted_position": 44.4,
+      "page_impressions": 27,
+      "page_position": 36.9,
       "query_count": 5,
       "queries": [
         {
@@ -253,18 +253,18 @@
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html"
     },
     {
-      "family": "What Records to Gather Before a Neuropsychological Evaluation @ /daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "family": "Letters of explanation @ /topics/letters-of-explanation",
       "intent": "page",
-      "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
-      "page_title": "What Records to Gather Before a Neuropsychological Evaluation",
-      "impressions": 16,
+      "page": "/topics/letters-of-explanation",
+      "page_kind": "hub",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "page_title": "Letters of explanation",
+      "impressions": 22,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 16,
-      "weighted_position": 5.8,
-      "page_impressions": 16,
-      "page_position": 5.8,
+      "anonymised_impressions": 22,
+      "weighted_position": 2.4,
+      "page_impressions": 23,
+      "page_position": 2.4,
       "query_count": 0,
       "queries": [],
       "rank": 4,
@@ -273,10 +273,10 @@
       ],
       "qualifies": true,
       "strengthened_pages": [
-        "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation"
+        "/topics/letters-of-explanation"
       ],
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html"
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
     },
     {
       "family": "funding documents @ /topics/business-funding-documents",
@@ -285,18 +285,18 @@
       "page_kind": "hub",
       "file": "sites/professional-resources/topics/business-funding-documents.html",
       "page_title": "Business funding and ownership documents",
-      "impressions": 15,
-      "visible_query_impressions": 15,
+      "impressions": 17,
+      "visible_query_impressions": 17,
       "anonymised_impressions": 0,
-      "weighted_position": 46.5,
-      "page_impressions": 15,
-      "page_position": 46.5,
+      "weighted_position": 49.0,
+      "page_impressions": 17,
+      "page_position": 49,
       "query_count": 1,
       "queries": [
         {
           "query": "funding documents",
-          "impressions": 15,
-          "position": 46.5
+          "impressions": 17,
+          "position": 49
         }
       ],
       "rank": 5,
@@ -311,18 +311,18 @@
       "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
     },
     {
-      "family": "Letters of explanation @ /topics/letters-of-explanation",
+      "family": "What Records to Gather Before a Neuropsychological Evaluation @ /daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
       "intent": "page",
-      "page": "/topics/letters-of-explanation",
-      "page_kind": "hub",
-      "file": "sites/professional-resources/topics/letters-of-explanation.html",
-      "page_title": "Letters of explanation",
-      "impressions": 11,
+      "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
+      "page_title": "What Records to Gather Before a Neuropsychological Evaluation",
+      "impressions": 14,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 11,
-      "weighted_position": 2.8,
-      "page_impressions": 12,
-      "page_position": 2.8,
+      "anonymised_impressions": 14,
+      "weighted_position": 6.1,
+      "page_impressions": 14,
+      "page_position": 6.1,
       "query_count": 0,
       "queries": [],
       "rank": 6,
@@ -339,18 +339,18 @@
       "page_kind": "article",
       "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
       "page_title": "Workplace Burnout and Boundaries Resources",
-      "impressions": 11,
+      "impressions": 12,
       "visible_query_impressions": 4,
-      "anonymised_impressions": 7,
-      "weighted_position": 38.3,
-      "page_impressions": 11,
-      "page_position": 32.6,
+      "anonymised_impressions": 8,
+      "weighted_position": 36.1,
+      "page_impressions": 12,
+      "page_position": 31.2,
       "query_count": 3,
       "queries": [
         {
           "query": "burnout and boundaries",
           "impressions": 2,
-          "position": 46
+          "position": 41
         },
         {
           "query": "boundaries and burnout",
@@ -369,28 +369,6 @@
       "strengthened_pages": [],
       "status": "not_top_family",
       "reason": "rank 7 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "Contributors and byline policy @ /contributors",
-      "intent": "page",
-      "page": "/contributors",
-      "page_kind": "editorial",
-      "file": "sites/professional-resources/contributors.html",
-      "page_title": "Contributors and byline policy",
-      "impressions": 9,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 9,
-      "weighted_position": 7.9,
-      "page_impressions": 9,
-      "page_position": 7.9,
-      "query_count": 0,
-      "queries": [],
-      "rank": 8,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 8 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "tiers of recovery @ /daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
@@ -413,6 +391,28 @@
           "position": 94
         }
       ],
+      "rank": 8,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 8 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "Contributors and byline policy @ /contributors",
+      "intent": "page",
+      "page": "/contributors",
+      "page_kind": "editorial",
+      "file": "sites/professional-resources/contributors.html",
+      "page_title": "Contributors and byline policy",
+      "impressions": 7,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 7,
+      "weighted_position": 8.4,
+      "page_impressions": 7,
+      "page_position": 8.4,
+      "query_count": 0,
+      "queries": [],
       "rank": 9,
       "basis": [],
       "qualifies": false,
@@ -615,34 +615,6 @@
       "reason": "rank 17 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "tiers of recovery @ /recovery-residence-levels-of-support-comparison",
-      "intent": "page",
-      "page": "/recovery-residence-levels-of-support-comparison",
-      "page_kind": "article",
-      "file": "sites/professional-resources/recovery-residence-levels-of-support-comparison.html",
-      "page_title": "Comparing Recovery Residences by Level of Support",
-      "impressions": 4,
-      "visible_query_impressions": 2,
-      "anonymised_impressions": 2,
-      "weighted_position": 35.6,
-      "page_impressions": 4,
-      "page_position": 26.2,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "tiers of recovery",
-          "impressions": 2,
-          "position": 45
-        }
-      ],
-      "rank": 18,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 18 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
       "family": "How to Tell Whether a Workplace Wellbeing Program Changed Anything @ /daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
       "intent": "page",
       "page": "/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
@@ -657,12 +629,12 @@
       "page_position": 37.8,
       "query_count": 0,
       "queries": [],
-      "rank": 19,
+      "rank": 18,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 19 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 18 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "About Professional Resource Library @ /about",
@@ -679,12 +651,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 20,
+      "rank": 19,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 20 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 19 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Workplace Mental Health Training and Therapy Are Not the Same Purchase @ /workplace-mental-health-training-vs-therapy",
@@ -701,34 +673,12 @@
       "page_position": 6.3,
       "query_count": 0,
       "queries": [],
-      "rank": 21,
+      "rank": 20,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 21 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "Apartment Application Paperwork: No-Fluff Prep Guide Before You Call @ /daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call",
-      "intent": "page",
-      "page": "/daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call.html",
-      "page_title": "Apartment Application Paperwork: No-Fluff Prep Guide Before You Call",
-      "impressions": 3,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 3,
-      "weighted_position": 6.7,
-      "page_impressions": 3,
-      "page_position": 6.7,
-      "query_count": 0,
-      "queries": [],
-      "rank": 22,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 22 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 20 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Settle Before Signing a Horse Boarding Agreement @ /horse-boarding-agreement-preparation-checklist",
@@ -745,12 +695,12 @@
       "page_position": 7.7,
       "query_count": 0,
       "queries": [],
-      "rank": 23,
+      "rank": 21,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 23 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 21 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Loan application packets and lender document requests @ /topics/loan-application-packets",
@@ -767,12 +717,12 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 24,
+      "rank": 22,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 24 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 22 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Prepare for a Recovery Residence Intake Conversation @ /daily/2026-08-28-how-to-prepare-for-a-recovery-residence-intake-conversation",
@@ -789,12 +739,12 @@
       "page_position": 9.7,
       "query_count": 0,
       "queries": [],
-      "rank": 25,
+      "rank": 23,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 25 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 23 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed @ /uscis-medical-exam-what-it-costs-and-the-sealed-envelope",
@@ -811,12 +761,40 @@
       "page_position": 11,
       "query_count": 0,
       "queries": [],
-      "rank": 26,
+      "rank": 24,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 26 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 24 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "tiers of recovery @ /recovery-residence-levels-of-support-comparison",
+      "intent": "page",
+      "page": "/recovery-residence-levels-of-support-comparison",
+      "page_kind": "article",
+      "file": "sites/professional-resources/recovery-residence-levels-of-support-comparison.html",
+      "page_title": "Comparing Recovery Residences by Level of Support",
+      "impressions": 3,
+      "visible_query_impressions": 2,
+      "anonymised_impressions": 1,
+      "weighted_position": 41.1,
+      "page_impressions": 3,
+      "page_position": 33.3,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "tiers of recovery",
+          "impressions": 2,
+          "position": 45
+        }
+      ],
+      "rank": 25,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 25 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "workplace mental health resources @ /topics/workplace-mental-health",
@@ -839,12 +817,12 @@
           "position": 92
         }
       ],
-      "rank": 27,
+      "rank": 26,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 27 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 26 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "deposit statement @ /topics/bank-statement-and-deposit-letters",
@@ -867,12 +845,12 @@
           "position": 79
         }
       ],
-      "rank": 28,
+      "rank": 27,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 28 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 27 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Multiple Application Issues: No-Fluff Decision Guide For People Who Need A Starting Point @ /daily/2026-07-15-multiple-application-issues-no-fluff-decision-guide-for-people-who-need-a-starting-point",
@@ -889,12 +867,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 29,
+      "rank": 28,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 29 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 28 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Document preparation and life admin @ /topics/document-preparation",
@@ -911,34 +889,12 @@
       "page_position": 3,
       "query_count": 0,
       "queries": [],
-      "rank": 30,
+      "rank": 29,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 30 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "What Records to Organize Before a Horse Sale Closes @ /daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
-      "intent": "page",
-      "page": "/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
-      "page_title": "What Records to Organize Before a Horse Sale Closes",
-      "impressions": 2,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 2,
-      "weighted_position": 4.5,
-      "page_impressions": 2,
-      "page_position": 4.5,
-      "query_count": 0,
-      "queries": [],
-      "rank": 31,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 31 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 29 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Horse Purchase Agreement vs Bill of Sale: Why the Difference Matters @ /daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters",
@@ -955,12 +911,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 32,
+      "rank": 30,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 32 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 30 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What to Ask Before Scheduling Neuropsychological or ADHD Testing @ /daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing",
@@ -977,12 +933,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 33,
+      "rank": 31,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 33 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 31 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Bank Statement Explanation: Aeo-Ready Prep Guide When You Are Comparing Options @ /daily/2026-07-16-bank-statement-explanation-aeo-ready-prep-guide-when-you-are-comparing-options",
@@ -999,12 +955,12 @@
       "page_position": 5.5,
       "query_count": 0,
       "queries": [],
-      "rank": 34,
+      "rank": 32,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 34 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 32 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Apartment Denial Review: Operator-Grade Comparison Guide Before You Choose @ /daily/2026-07-14-apartment-denial-review-operator-grade-comparison-guide-before-you-choose",
@@ -1021,12 +977,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 35,
+      "rank": 33,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 35 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 33 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Organize Records Before a USCIS Medical Examination @ /daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination",
@@ -1041,6 +997,50 @@
       "weighted_position": 6.0,
       "page_impressions": 2,
       "page_position": 6,
+      "query_count": 0,
+      "queries": [],
+      "rank": 34,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 34 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "What to Look for in a Workplace Mental-Health Speaker @ /daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker",
+      "intent": "page",
+      "page": "/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
+      "page_title": "What to Look for in a Workplace Mental-Health Speaker",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 6.0,
+      "page_impressions": 2,
+      "page_position": 6,
+      "query_count": 0,
+      "queries": [],
+      "rank": 35,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 35 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "Apartment Application Paperwork: No-Fluff Prep Guide Before You Call @ /daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call",
+      "intent": "page",
+      "page": "/daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-07-21-apartment-application-paperwork-no-fluff-prep-guide-before-you-call.html",
+      "page_title": "Apartment Application Paperwork: No-Fluff Prep Guide Before You Call",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 7.5,
+      "page_impressions": 2,
+      "page_position": 7.5,
       "query_count": 0,
       "queries": [],
       "rank": 36,
@@ -1161,8 +1161,8 @@
       "visible_query_impressions": 1,
       "anonymised_impressions": 0,
       "weighted_position": 1.0,
-      "page_impressions": 12,
-      "page_position": 2.8,
+      "page_impressions": 23,
+      "page_position": 2.4,
       "query_count": 1,
       "queries": [
         {
@@ -1247,18 +1247,18 @@
       "reason": "rank 44 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay @ /daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
+      "family": "What Records to Organize Before a Horse Sale Closes @ /daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
       "intent": "page",
-      "page": "/daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
+      "page": "/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa.html",
-      "page_title": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay",
+      "file": "sites/professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
+      "page_title": "What Records to Organize Before a Horse Sale Closes",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
-      "weighted_position": 4.0,
+      "weighted_position": 3.0,
       "page_impressions": 1,
-      "page_position": 4,
+      "page_position": 3,
       "query_count": 0,
       "queries": [],
       "rank": 45,
@@ -1269,12 +1269,12 @@
       "reason": "rank 45 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers @ /daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
+      "family": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay @ /daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
       "intent": "page",
-      "page": "/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
+      "page": "/daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
-      "page_title": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers",
+      "file": "sites/professional-resources/daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa.html",
+      "page_title": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
@@ -1291,12 +1291,12 @@
       "reason": "rank 46 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Trauma-Informed Leadership: Practical Red-Flag Checklist Before You Call @ /daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call",
+      "family": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers @ /daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
       "intent": "page",
-      "page": "/daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call",
+      "page": "/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call.html",
-      "page_title": "Trauma-Informed Leadership: Practical Red-Flag Checklist Before You Call",
+      "file": "sites/professional-resources/daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers.html",
+      "page_title": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
@@ -1313,18 +1313,18 @@
       "reason": "rank 47 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay @ /daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
+      "family": "Trauma-Informed Leadership: Practical Red-Flag Checklist Before You Call @ /daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call",
       "intent": "page",
-      "page": "/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
+      "page": "/daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html",
-      "page_title": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay",
+      "file": "sites/professional-resources/daily/2026-07-31-trauma-informed-leadership-practical-red-flag-checklist-before-you-call.html",
+      "page_title": "Trauma-Informed Leadership: Practical Red-Flag Checklist Before You Call",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
-      "weighted_position": 5.0,
+      "weighted_position": 4.0,
       "page_impressions": 1,
-      "page_position": 5,
+      "page_position": 4,
       "query_count": 0,
       "queries": [],
       "rank": 48,
@@ -1335,12 +1335,12 @@
       "reason": "rank 48 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call @ /daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
+      "family": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay @ /daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
       "intent": "page",
-      "page": "/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
+      "page": "/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call.html",
-      "page_title": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call",
+      "file": "sites/professional-resources/daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay.html",
+      "page_title": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,
@@ -1357,6 +1357,28 @@
       "reason": "rank 49 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
+      "family": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call @ /daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
+      "intent": "page",
+      "page": "/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call.html",
+      "page_title": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call",
+      "impressions": 1,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 1,
+      "weighted_position": 5.0,
+      "page_impressions": 1,
+      "page_position": 5,
+      "query_count": 0,
+      "queries": [],
+      "rank": 50,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 50 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
       "family": "Questions to Answer Before Signing a Horse Boarding Agreement @ /daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement",
       "intent": "page",
       "page": "/daily/2026-07-24-questions-to-answer-before-signing-a-horse-boarding-agreement",
@@ -1371,12 +1393,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 50,
+      "rank": 51,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 50 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 51 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Full Approval Prep Bundle: Aeo-Ready Question Checklist When You Are Comparing Options @ /daily/2026-08-01-full-approval-prep-bundle-aeo-ready-question-checklist-when-you-are-comparing-options",
@@ -1393,12 +1415,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 51,
+      "rank": 52,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 51 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 52 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Identity Records Explanation: Human-First Question Checklist Before You Book @ /daily/2026-08-10-identity-records-explanation-human-first-question-checklist-before-you-book",
@@ -1415,12 +1437,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 52,
+      "rank": 53,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 52 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 53 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Large Deposit Explanation: Low-Risk Framework Before You Pay @ /daily/2026-07-17-large-deposit-explanation-low-risk-framework-before-you-pay",
@@ -1437,12 +1459,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 53,
+      "rank": 54,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 53 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 54 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Credit Dispute Letters: Citation-Friendly Faq Answer Page For First-Time Buyers @ /daily/2026-07-20-credit-dispute-letters-citation-friendly-faq-answer-page-for-first-time-buyers",
@@ -1459,28 +1481,6 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 54,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 54 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "What to Ask About Confidentiality Before Using a Workplace Support Program @ /daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
-      "intent": "page",
-      "page": "/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
-      "page_title": "What to Ask About Confidentiality Before Using a Workplace Support Program",
-      "impressions": 1,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 1,
-      "weighted_position": 9.0,
-      "page_impressions": 1,
-      "page_position": 9,
-      "query_count": 0,
-      "queries": [],
       "rank": 55,
       "basis": [],
       "qualifies": false,
@@ -1489,12 +1489,12 @@
       "reason": "rank 55 of 60 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "What to Look for in a Workplace Mental-Health Speaker @ /daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker",
+      "family": "What to Ask About Confidentiality Before Using a Workplace Support Program @ /daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
       "intent": "page",
-      "page": "/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker",
+      "page": "/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program",
       "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-      "page_title": "What to Look for in a Workplace Mental-Health Speaker",
+      "file": "sites/professional-resources/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
+      "page_title": "What to Ask About Confidentiality Before Using a Workplace Support Program",
       "impressions": 1,
       "visible_query_impressions": 0,
       "anonymised_impressions": 1,

@@ -4,9 +4,9 @@
   "counts": {
     "intent_mismatch": 2,
     "no_page": 2,
-    "strengthened": 13,
-    "strengthened_without_qualifying_family": 2,
-    "underivable": 1
+    "strengthened": 12,
+    "strengthened_without_qualifying_family": 3,
+    "underivable": 2
   },
   "entries": [
     {
@@ -37,8 +37,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 29,
-      "weighted_position": 38.5,
+      "impressions": 31,
+      "weighted_position": 39.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -60,8 +60,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 27,
-      "weighted_position": 6.9,
+      "impressions": 26,
+      "weighted_position": 7.1,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -97,8 +97,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 10,
-      "weighted_position": 9.2,
+      "impressions": 11,
+      "weighted_position": 8.5,
       "status": "no_page",
       "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
       "page": "/masthead",
@@ -133,8 +133,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 91,
-      "weighted_position": 6.3,
+      "impressions": 87,
+      "weighted_position": 6.2,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
       "page": "/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
@@ -156,7 +156,7 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 53,
+      "impressions": 52,
       "weighted_position": 9.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
@@ -261,8 +261,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 256,
-      "weighted_position": 12.1,
+      "impressions": 249,
+      "weighted_position": 12.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -283,7 +283,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 75,
+      "impressions": 72,
       "weighted_position": 7.8,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -305,8 +305,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 28,
-      "weighted_position": 43.7,
+      "impressions": 27,
+      "weighted_position": 44.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -323,25 +323,17 @@
     },
     {
       "host": "professionalresourcelibrary.com",
-      "family": "What Records to Gather Before a Neuropsychological Evaluation @ /daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "family": "Letters of explanation @ /topics/letters-of-explanation",
       "basis": [
         "top_demand"
       ],
-      "impressions": 16,
-      "weighted_position": 5.8,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
-      "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
-      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html",
-      "changes": {
-        "title": "Neuropsychological Evaluation: Records to Gather Beforehand",
-        "definition": true,
-        "question_h2s": 3,
-        "faqpage": false,
-        "facts": 3,
-        "linked_from_homepage": true,
-        "source": "hand_authored"
-      }
+      "impressions": 22,
+      "weighted_position": 2.4,
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
+      "page": "/topics/letters-of-explanation",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "changes": null
     },
     {
       "host": "professionalresourcelibrary.com",
@@ -349,8 +341,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 15,
-      "weighted_position": 46.5,
+      "impressions": 17,
+      "weighted_position": 49.0,
       "status": "underivable",
       "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
       "page": "/topics/business-funding-documents",
@@ -379,6 +371,15 @@
       "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
       "page": "/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
       "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html"
+    },
+    {
+      "host": "professionalresourcelibrary.com",
+      "family": null,
+      "basis": [],
+      "status": "strengthened_without_qualifying_family",
+      "reason": "listed in strengthened_pages.json but no family qualifies it in this window; kept, never reverted",
+      "page": "/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
+      "file": "sites/professional-resources/daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation.html"
     },
     {
       "host": "professionalresourcelibrary.com",
