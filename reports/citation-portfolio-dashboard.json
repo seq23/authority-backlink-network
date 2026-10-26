@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-26",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -30,11 +30,11 @@
   "totals": {
     "registered_brands": 16,
     "authority_publications": 3,
-    "authority_backlinks": 152,
+    "authority_backlinks": 147,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 81,
-    "live_verified": 152,
-    "discoverable": 152,
+    "live_verified": 147,
+    "discoverable": 147,
     "indexed": 1,
     "ai_cited": 0
   },
@@ -153,7 +153,7 @@
       "brand_id": "hicks-consulting",
       "brand_name": "Hicks Consulting",
       "growth_status": "growth",
-      "authority_backlinks": 15,
+      "authority_backlinks": 12,
       "owned_manifest_surfaces": 7,
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 14,
@@ -163,7 +163,7 @@
       "brand_id": "porch-party",
       "brand_name": "Porch & Party",
       "growth_status": "standard",
-      "authority_backlinks": 10,
+      "authority_backlinks": 9,
       "owned_manifest_surfaces": 6,
       "monthly_authority_target": 10,
       "monthly_verified_backlink_target": 8,
@@ -183,7 +183,7 @@
       "brand_id": "dream-wedding-builder",
       "brand_name": "Dream Wedding Builder",
       "growth_status": "launch",
-      "authority_backlinks": 33,
+      "authority_backlinks": 32,
       "owned_manifest_surfaces": 8,
       "monthly_authority_target": 60,
       "monthly_verified_backlink_target": 48,
@@ -204,18 +204,18 @@
     "billionairehighperformancecoach.com": 9,
     "neuroevalguides.com": 4,
     "westpeekproductions.com": 10,
-    "weddingbudgetspreadsheet.com": 11,
+    "weddingbudgetspreadsheet.com": 10,
     "weddingtimelinetemplate.com": 7,
     "weddingseatingchartmaker.com": 9,
     "weddingchecklistpdf.com": 6,
     "diannesplacerecoveryservices.com": 18,
-    "hicksconsulting.org": 15,
+    "hicksconsulting.org": 12,
     "horselegalguide.com": 9,
     "theindustryguides.com": 3,
     "theaccidentguides.com": 3,
     "hormonesivhair.com": 3,
     "uscisexam.com": 4,
-    "porchandparty901.com": 10,
+    "porchandparty901.com": 9,
     "virtualagency-os.com": 10,
     "approvalprep.com": 9,
     "dentistryguides.com": 2,
@@ -224,12 +224,12 @@
   "by_publication": {
     "unknown": 3,
     "founder": 37,
-    "memphis": 43,
-    "professional": 69
+    "memphis": 41,
+    "professional": 66
   },
   "lifecycle": {
-    "approved_destination": 453,
-    "live_verified": 152
+    "approved_destination": 458,
+    "live_verified": 147
   },
   "campaign_health": [
     {
