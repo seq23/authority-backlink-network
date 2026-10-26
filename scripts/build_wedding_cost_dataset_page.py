@@ -44,6 +44,18 @@ PUBLICATIONS = {p["id"]: p for p in json.loads(
 SOURCES_BY_URL = {s["url"].rstrip("/"): s for s in json.loads(
     (ROOT / "data/external-sources.json").read_text(encoding="utf-8"))["sources"]}
 
+SCALING_POLICY = json.loads(
+    (ROOT / "content-bank/scaling-policy.json").read_text(encoding="utf-8"))
+# Search Readiness item g3. The owner's checklist caps how many times one target
+# URL may be linked from a single page; this generator does not spend any of that
+# allowance, because it emits exactly one outbound link per distinct source no
+# matter how many prices that source publishes. The cap is read rather than
+# assumed so that `validate_citation_link_repeats.py` and this generator cannot
+# disagree about what the limit is.
+MAX_LINKS_PER_TARGET_URL = int(
+    SCALING_POLICY.get("hard_limits", {})
+    .get("max_outbound_links_per_target_url_per_page", 10))
+
 DISCLAIMER = ("This page is informational. It is not legal, medical, mental-health, "
               "immigration, financial, or professional advice.")
 
@@ -137,6 +149,142 @@ UNIT_LABELS = {
     "order_minimum": "order minimum",
     "minimum": "minimum",
 }
+
+
+# ---------------------------------------------------------------------------
+# Source citations: one outbound link per source, however many prices it carries
+# ---------------------------------------------------------------------------
+#
+# Why this is not simply `<a href="{row.source_url}">` on every row
+# -----------------------------------------------------------------
+# It was, until 2026-10-26. A caterer that publishes thirteen prices on one
+# catering page put thirteen identical anchors to that one URL on this page, and
+# a party rental company with a single price list put ten. Search Readiness item
+# g3 caps a target URL at ten links from one page, because 141 links from one
+# site to one target is the footprint of a scheme rather than of a citation, and
+# the shape is the same whether the intent is honest or not. The thirteen were
+# honest -- the price really is printed there, thirteen times -- but a reader
+# gains nothing from the thirteenth anchor to a page they have already been
+# offered, and a crawler reads the repetition, not the honesty.
+#
+# So provenance and linking are separated. Every row still names the exact
+# source for its figure and still reaches it in one click, via an in-page anchor
+# into the sources list; the sources list carries the one outbound link. Nothing
+# about which price came from where is lost: the CSV, the schema.org `citation`
+# array and the sources list all still carry the full source URL per row, and
+# validate_wedding_cost_dataset.py still requires every source used for a price
+# to be linked from the page.
+#
+# The count this produces is one per distinct source URL, not "ten", so the page
+# does not sit just under the cap waiting for the dataset to grow past it.
+
+
+def source_order(rows: list[dict]) -> list[str]:
+    """The distinct source URLs, in the order a reader first meets them."""
+    seen: list[str] = []
+    for row in rows:
+        url = row["source_url"]
+        if url not in seen:
+            seen.append(url)
+    return seen
+
+
+def source_anchor_ids(rows: list[dict]) -> dict[str, str]:
+    """Stable in-page anchor id per distinct source URL."""
+    return {url: f"source-{i}" for i, url in enumerate(source_order(rows), start=1)}
+
+
+def render_source_cells(rows: list[dict], vendors: dict[str, dict],
+                        anchors: dict[str, str] | None = None) -> list[str]:
+    """The Source cell for each row: an in-page anchor, never an outbound link.
+
+    This is the only code that renders a Source cell, and it is exercised
+    directly by `validate_citation_link_repeats.py`, which feeds it rows that
+    all share one source URL and fails if any cell comes back with an off-site
+    href. A dedupe visible only in today's output is a dedupe that can be
+    deleted without anything noticing until the next crawl.
+
+    `anchors` is passed in by the page build because ids are numbered across the
+    whole dataset while the tables render one category at a time; a category
+    slice numbering its own ids would point rows at ids that do not exist.
+    """
+    if anchors is None:
+        anchors = source_anchor_ids(rows)
+    cells = []
+    for row in rows:
+        label = f'{vendors[row["vendor"]]["name"]}: {row["item"]}'
+        cells.append(f'<a href="#{anchors[row["source_url"]]}">{esc(label)}</a>')
+    return cells
+
+
+def render_sources_section(rows: list[dict], vendors: dict[str, dict]) -> str:
+    """The one place on the page that links out to each source."""
+    anchors = source_anchor_ids(rows)
+    items = []
+    for url in source_order(rows):
+        source = SOURCES_BY_URL[url.rstrip("/")]
+        used_by = [r for r in rows if r["source_url"] == url]
+        vendor_names = sorted({vendors[r["vendor"]]["name"] for r in used_by})
+        prices = len(used_by)
+        items.append(
+            f'<li id="{anchors[url]}">'
+            f'<a href="{esc(url)}" data-source="external-authority" rel="noopener">'
+            f'{esc(source["publisher"])}: {esc(source["title"])}</a> '
+            f'&mdash; {prices} published price(s) '
+            f'for {esc(", ".join(vendor_names))}, read '
+            f'{esc(used_by[0]["observed"])}.</li>')
+    return (
+        '<section data-block="source-list"><h2>Where every figure came from</h2>'
+        '<p>One entry per source page, with the number of prices this dataset takes '
+        'from it. Each row in the table above links to the entry for its own figure, '
+        'and the entry links the vendor page the price is printed on. The links are '
+        'ordinary editorial citations: nothing was paid for a listing, no vendor is '
+        'ranked, and no vendor was told it would appear.</p>'
+        f'<ol class="source-list">{"".join(items)}</ol></section>')
+
+
+def block_re(name: str) -> re.Pattern[str]:
+    return re.compile(rf'<section data-block="{name}">.*?</section>', re.S | re.I)
+
+
+# The blocks this generator owns on an already-published page. Everything else
+# on that page belongs to build_site_navigation.py, install_editorial_chrome.py,
+# apply_strengthening.py or add_external_citations.py, and a wholesale rewrite
+# would delete their work -- which is why main() has never replaced a page that
+# exists. It still does not. It replaces these two sections by name, the same
+# way add_external_citations.py and apply_strengthening.py replace theirs, so a
+# change to how sources are cited reaches the published page without touching
+# anything another generator wrote.
+OWNED_BLOCKS = ("external-sources", "source-list")
+
+
+def sync_owned_blocks(current: str, generated: str) -> str:
+    """Put this generator's blocks from `generated` into `current`, in place.
+
+    Idempotent: re-running on a synced page returns it unchanged. A block the
+    page does not carry yet is appended after the last block it does, so the
+    sources list lands directly below the table that points into it.
+    """
+    out = current
+    for name in OWNED_BLOCKS:
+        fresh = block_re(name).search(generated)
+        if not fresh:
+            continue
+        existing = block_re(name).search(out)
+        if existing:
+            out = out[:existing.start()] + fresh.group(0) + out[existing.end():]
+            continue
+        after = None
+        for earlier in OWNED_BLOCKS:
+            if earlier == name:
+                break
+            found = block_re(earlier).search(out)
+            if found:
+                after = found
+        if after is None:
+            continue
+        out = out[:after.end()] + "\n" + fresh.group(0) + out[after.end():]
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -382,6 +530,10 @@ def build_page(dataset: dict) -> str:
     for row in dataset["rows"]:
         by_category.setdefault(row["category"], []).append(row)
 
+    # Anchor ids are assigned over the whole dataset, not per category, so the
+    # id a row links to is the same id the sources list publishes.
+    page_anchor_ids = source_anchor_ids(dataset["rows"])
+
     table_blocks = []
     for category in sorted(by_category):
         rows = by_category[category]
@@ -400,19 +552,18 @@ def build_page(dataset: dict) -> str:
                 f'<td>{row_price_cell(r)}</td>'
                 f'<td>{esc(UNIT_LABELS[r["unit"]])}</td>'
                 f'<td>{esc(r["includes"])}</td>'
-                f'<td><a href="{esc(r["source_url"])}" data-source="external-authority" '
-                f'rel="noopener">{esc(vendors[r["vendor"]]["name"])}: '
-                f'{esc(r["item"])}</a>'
-                f'</td><td>{esc(r["observed"])}</td></tr>'
-                for r in rows)
+                f'<td>{cell}</td><td>{esc(r["observed"])}</td></tr>'
+                for r, cell in zip(
+                    rows, render_source_cells(rows, vendors, page_anchor_ids)))
             + '</tbody></table></div>')
 
     parts.append(
         '<section data-block="external-sources"><h2>The underlying table</h2>'
-        '<p>Every price in this dataset, with the page it is printed on and the date it '
-        'was read. The vendor links are ordinary editorial citations: nothing was paid '
-        'for a listing here, no vendor is ranked, and no vendor was told it would '
-        'appear. Prices change; check the source before relying on a figure.</p>'
+        '<p>Every price in this dataset, with the source it is printed on and the date '
+        'it was read. The Source cell links to that source\'s entry in '
+        '<a href="#source-1">Where every figure came from</a> below, which links the '
+        'vendor page itself. Prices change; check the source before relying on a '
+        'figure.</p>'
         f'<p><a href="{esc(csv_path)}">Download the full dataset as CSV</a> '
         f'&mdash; {row_count} rows, the same data as the tables below.</p>'
         + "".join(table_blocks)
@@ -420,11 +571,17 @@ def build_page(dataset: dict) -> str:
         'publication, none paid to be included, and inclusion depended only on whether '
         'the vendor publishes a price.</p></section>')
 
+    # The one place on the page that links out to a source. Every row above
+    # reaches its own source through here, so one source page gets one link from
+    # this page whether it supplies one price or thirteen.
+    parts.append(render_sources_section(dataset["rows"], vendors))
+
     # --- reproduce it -------------------------------------------------------
     parts.append(
         '<section><h2>How to check or reproduce this</h2><ol>'
-        '<li>Open any source link in the table. The figure quoted here should appear on '
-        'that page.</li>'
+        '<li>Follow any row\'s Source cell to its entry in <a href="#source-1">Where '
+        'every figure came from</a>, then open the vendor page it links. The figure '
+        'quoted here should appear on that page.</li>'
         '<li>If it has changed, the price moved after the observation date shown in the '
         'row. That is expected, and it is why the date is published next to every '
         'figure.</li>'
@@ -529,6 +686,12 @@ def main() -> int:
             changes.append(target)
             if args.write:
                 write_lf(target, content)
+        elif target is page_path:
+            synced = sync_owned_blocks(current, content)
+            if synced != current:
+                changes.append(target)
+                if args.write:
+                    write_lf(target, synced)
 
     vendor_count = len(dataset["vendors"])
     print("WEDDING COST DATASET PAGE")

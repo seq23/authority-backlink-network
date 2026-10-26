@@ -74,6 +74,7 @@
     "validate:all": "npm run validate:release && npm run validate:demand-backed-pages",
     "validate:analytics-separation": "python3 scripts/validators/validate_analytics_separation.py",
     "validate:brand-link-concentration": "python3 scripts/validators/validate_brand_link_concentration.py",
+    "validate:citation-link-repeats": "python3 scripts/validators/validate_citation_link_repeats.py",
     "validate:cache:self-test": "python3 scripts/validate.py cache-self-test",
     "validate:cadence-integrity": "node scripts/validators/validate_cadence_gate_integrity.js",
     "validate:changed": "python3 scripts/validate.py changed",
