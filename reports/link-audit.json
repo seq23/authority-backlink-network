@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "total_links": 24645,
+  "total_links": 24667,
   "violations": [],
   "target_domains": [
     "aplayermode.com",
@@ -60129,6 +60129,15 @@
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
+      "href": "#source-1",
+      "domain": "",
+      "anchor": "Where every figure came from",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
       "href": "/data/memphis-wedding-cost-by-guest-count-2026.csv",
       "domain": "",
       "anchor": "Download the full dataset as CSV",
@@ -60138,280 +60147,631 @@
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://sweetlalas.com/cakes/wedding-cakes/",
-      "domain": "sweetlalas.com",
+      "href": "#source-16",
+      "domain": "",
       "anchor": "Sweet LaLa&#x27;s Bakery: Wedding cake, starting price per serving",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://sweetlalas.com/cakes/wedding-cakes/",
-      "domain": "sweetlalas.com",
+      "href": "#source-16",
+      "domain": "",
       "anchor": "Sweet LaLa&#x27;s Bakery: Filling",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://sweetlalas.com/cakes/wedding-cakes/",
-      "domain": "sweetlalas.com",
+      "href": "#source-16",
+      "domain": "",
       "anchor": "Sweet LaLa&#x27;s Bakery: Cake tasting",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://sweetlalas.com/cakes/wedding-cakes/",
-      "domain": "sweetlalas.com",
+      "href": "#source-16",
+      "domain": "",
       "anchor": "Sweet LaLa&#x27;s Bakery: Delivery, starting price",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.cravesweetshop.com/copy-of-get-a-quote",
-      "domain": "cravesweetshop.com",
+      "href": "#source-17",
+      "domain": "",
       "anchor": "Crave Sweet Shop: Wedding cake, starting price per serving",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.cravesweetshop.com/copy-of-get-a-quote",
-      "domain": "cravesweetshop.com",
+      "href": "#source-17",
+      "domain": "",
       "anchor": "Crave Sweet Shop: Standard cupcake",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.jcakesyum.com/cake-f-a-q-s",
-      "domain": "jcakesyum.com",
+      "href": "#source-18",
+      "domain": "",
       "anchor": "J&#x27;s Cakes: Custom cake, stated average minimum spend",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ Shoulder Plate, 50 to 99 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ Shoulder Plate, 100 to 149 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ Shoulder Plate, 150 or more guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ or Fried Chicken Plate, 50 to 99 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ or Fried Chicken Plate, 100 to 149 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): BBQ or Fried Chicken Plate, 150 or more guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Rib Plate (6-8 bones), 50 to 99 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Rib Plate (6-8 bones), 100 to 149 guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Rib Plate (6-8 bones), 150 or more guests",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Iced tea or lemonade",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Soft drinks",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Cakes and pies",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.commissarybbq.com/full-service-catering",
-      "domain": "commissarybbq.com",
+      "href": "#source-12",
+      "domain": "",
       "anchor": "The Commissary (Germantown Commissary): Homemade banana pudding or brownie",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.corkysbbq.com/catering-private-party-rooms/",
-      "domain": "corkysbbq.com",
+      "href": "#source-13",
+      "domain": "",
       "anchor": "Corky&#x27;s BBQ: Private party room, stated average per person",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.bainbarbecue.com/catering",
-      "domain": "bainbarbecue.com",
+      "href": "#source-14",
+      "domain": "",
       "anchor": "Bain Barbecue &amp; Bakery: Minimum catering order",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.bainbarbecue.com/catering",
-      "domain": "bainbarbecue.com",
+      "href": "#source-14",
+      "domain": "",
       "anchor": "Bain Barbecue &amp; Bakery: BBQ package with sides, bread and sauces",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.offthesquarecatering.com/",
-      "domain": "offthesquarecatering.com",
+      "href": "#source-15",
+      "domain": "",
       "anchor": "Off The Square Catering: Server",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.offthesquarecatering.com/",
-      "domain": "offthesquarecatering.com",
+      "href": "#source-15",
+      "domain": "",
       "anchor": "Off The Square Catering: Bartender (ABC certified)",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.offthesquarecatering.com/",
-      "domain": "offthesquarecatering.com",
+      "href": "#source-15",
+      "domain": "",
       "anchor": "Off The Square Catering: Drop-off delivery and pick up",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.memphisweddingdjma.com/about.html",
-      "domain": "memphisweddingdjma.com",
+      "href": "#source-8",
+      "domain": "",
       "anchor": "DJ Mark Anderson: Reception DJ service",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.tcbnco.com/pages/wedding",
-      "domain": "tcbnco.com",
+      "href": "#source-19",
+      "domain": "",
       "anchor": "TCB &amp; Co: Full-service wedding florals, minimum",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://bellalucaphotography.com/pricemain",
-      "domain": "bellalucaphotography.com",
+      "href": "#source-1",
+      "domain": "",
       "anchor": "Bella Luca Photography: Photo Luca 2",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://bellalucaphotography.com/pricemain",
-      "domain": "bellalucaphotography.com",
+      "href": "#source-1",
+      "domain": "",
       "anchor": "Bella Luca Photography: Photo Bella",
-      "external": true,
+      "external": false,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://bellalucaphotography.com/pricemain",
-      "domain": "bellalucaphotography.com",
+      "href": "#source-1",
+      "domain": "",
       "anchor": "Bella Luca Photography: Photo Bella 2",
-      "external": true,
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-1",
+      "domain": "",
+      "anchor": "Bella Luca Photography: Photo Bella 3",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-2",
+      "domain": "",
+      "anchor": "Shelby Renee Photo: The Glass Slipper",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-2",
+      "domain": "",
+      "anchor": "Shelby Renee Photo: The Wish Upon A Star",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-2",
+      "domain": "",
+      "anchor": "Shelby Renee Photo: The Happily Ever After",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-3",
+      "domain": "",
+      "anchor": "Tracye Pulliam Photography &amp; Weddings: Wedding collections, starting price",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-4",
+      "domain": "",
+      "anchor": "For the Love Birds Photography: Weddings, starting price",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-4",
+      "domain": "",
+      "anchor": "For the Love Birds Photography: Elopements, starting price",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-5",
+      "domain": "",
+      "anchor": "Sonum May Photography: Elopement Coverage",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-5",
+      "domain": "",
+      "anchor": "Sonum May Photography: Half Day Coverage",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-5",
+      "domain": "",
+      "anchor": "Sonum May Photography: Full Day Coverage",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-5",
+      "domain": "",
+      "anchor": "Sonum May Photography: Weekend Coverage",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-5",
+      "domain": "",
+      "anchor": "Sonum May Photography: All-In Collection",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-6",
+      "domain": "",
+      "anchor": "Elizabeth Hoard Photography: Stated average investment range",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-7",
+      "domain": "",
+      "anchor": "Emily Holmes Weddings: Traditional wedding day, stated average",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-7",
+      "domain": "",
+      "anchor": "Emily Holmes Weddings: Intimate celebration, stated average",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-20",
+      "domain": "",
+      "anchor": "The Hardin House: Full service planning, starting price",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-20",
+      "domain": "",
+      "anchor": "The Hardin House: Two Month Planning Package",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-20",
+      "domain": "",
+      "anchor": "The Hardin House: Wedding Weekend Planning (day-of coordination)",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-20",
+      "domain": "",
+      "anchor": "The Hardin House: Consultation",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-20",
+      "domain": "",
+      "anchor": "The Hardin House: Bridal assistant",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: White folding chair with metal leg",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: White wood folding chair",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Padded black banquet chair",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: 60 inch round table",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: 72 inch round table",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Poly linen, 120 inch round",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Poly linen, 132 inch round",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Dance floor section, 3ft by 4ft",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Portable bar",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-21",
+      "domain": "",
+      "anchor": "Affordable Party Rentals: Staging section, 4ft by 4ft",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-9",
+      "domain": "",
+      "anchor": "Woodruff-Fontaine House Museum: Carriage House + Front Lawn + Garden",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-9",
+      "domain": "",
+      "anchor": "Woodruff-Fontaine House Museum: Carriage House + Garden",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Keel Avenue rental fee, Monday to Thursday",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Keel Avenue rental fee, Sunday",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Keel Avenue rental fee, Friday to Saturday",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Front Street rental fee, Friday to Saturday",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Additional rental hour",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-10",
+      "domain": "",
+      "anchor": "The Kent: Getting-ready suite beverages and light lunch",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "#source-11",
+      "domain": "",
+      "anchor": "Memphis Botanic Garden: Additional venue hour beyond the included two",
+      "external": false,
       "violation": ""
     },
     {
@@ -60419,7 +60779,7 @@
       "publication": "memphis",
       "href": "https://bellalucaphotography.com/pricemain",
       "domain": "bellalucaphotography.com",
-      "anchor": "Bella Luca Photography: Photo Bella 3",
+      "anchor": "Bella Luca Photography: Wedding Pricing Options",
       "external": true,
       "violation": ""
     },
@@ -60428,25 +60788,7 @@
       "publication": "memphis",
       "href": "https://www.shelbyreneephoto.com/2025wed",
       "domain": "shelbyreneephoto.com",
-      "anchor": "Shelby Renee Photo: The Glass Slipper",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.shelbyreneephoto.com/2025wed",
-      "domain": "shelbyreneephoto.com",
-      "anchor": "Shelby Renee Photo: The Wish Upon A Star",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.shelbyreneephoto.com/2025wed",
-      "domain": "shelbyreneephoto.com",
-      "anchor": "Shelby Renee Photo: The Happily Ever After",
+      "anchor": "Shelby Renee Photo: Wedding Pricing",
       "external": true,
       "violation": ""
     },
@@ -60455,7 +60797,7 @@
       "publication": "memphis",
       "href": "https://tracyep.com/wedding-pricing/",
       "domain": "tracyep.com",
-      "anchor": "Tracye Pulliam Photography &amp; Weddings: Wedding collections, starting price",
+      "anchor": "Tracye Pulliam Photography &amp; Weddings: Wedding Pricing",
       "external": true,
       "violation": ""
     },
@@ -60464,16 +60806,7 @@
       "publication": "memphis",
       "href": "https://forthelovebirds.com/pricing",
       "domain": "forthelovebirds.com",
-      "anchor": "For the Love Birds Photography: Weddings, starting price",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://forthelovebirds.com/pricing",
-      "domain": "forthelovebirds.com",
-      "anchor": "For the Love Birds Photography: Elopements, starting price",
+      "anchor": "For the Love Birds Photography: Pricing",
       "external": true,
       "violation": ""
     },
@@ -60482,43 +60815,7 @@
       "publication": "memphis",
       "href": "https://pricing.sonummayphotography.com/",
       "domain": "pricing.sonummayphotography.com",
-      "anchor": "Sonum May Photography: Elopement Coverage",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://pricing.sonummayphotography.com/",
-      "domain": "pricing.sonummayphotography.com",
-      "anchor": "Sonum May Photography: Half Day Coverage",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://pricing.sonummayphotography.com/",
-      "domain": "pricing.sonummayphotography.com",
-      "anchor": "Sonum May Photography: Full Day Coverage",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://pricing.sonummayphotography.com/",
-      "domain": "pricing.sonummayphotography.com",
-      "anchor": "Sonum May Photography: Weekend Coverage",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://pricing.sonummayphotography.com/",
-      "domain": "pricing.sonummayphotography.com",
-      "anchor": "Sonum May Photography: All-In Collection",
+      "anchor": "Sonum May Photography: Wedding Collections",
       "external": true,
       "violation": ""
     },
@@ -60527,7 +60824,7 @@
       "publication": "memphis",
       "href": "https://www.elizabethhoardphotography.com/pricing",
       "domain": "elizabethhoardphotography.com",
-      "anchor": "Elizabeth Hoard Photography: Stated average investment range",
+      "anchor": "Elizabeth Hoard Photography: Wedding Pricing and Packages",
       "external": true,
       "violation": ""
     },
@@ -60536,151 +60833,16 @@
       "publication": "memphis",
       "href": "https://www.emilyholmesweddings.com/wedding-experience",
       "domain": "emilyholmesweddings.com",
-      "anchor": "Emily Holmes Weddings: Traditional wedding day, stated average",
+      "anchor": "Emily Holmes Weddings: Wedding Experience",
       "external": true,
       "violation": ""
     },
     {
       "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "publication": "memphis",
-      "href": "https://www.emilyholmesweddings.com/wedding-experience",
-      "domain": "emilyholmesweddings.com",
-      "anchor": "Emily Holmes Weddings: Intimate celebration, stated average",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.thehardinhouse.com/info",
-      "domain": "thehardinhouse.com",
-      "anchor": "The Hardin House: Full service planning, starting price",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.thehardinhouse.com/info",
-      "domain": "thehardinhouse.com",
-      "anchor": "The Hardin House: Two Month Planning Package",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.thehardinhouse.com/info",
-      "domain": "thehardinhouse.com",
-      "anchor": "The Hardin House: Wedding Weekend Planning (day-of coordination)",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.thehardinhouse.com/info",
-      "domain": "thehardinhouse.com",
-      "anchor": "The Hardin House: Consultation",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.thehardinhouse.com/info",
-      "domain": "thehardinhouse.com",
-      "anchor": "The Hardin House: Bridal assistant",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: White folding chair with metal leg",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: White wood folding chair",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Padded black banquet chair",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: 60 inch round table",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: 72 inch round table",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Poly linen, 120 inch round",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Poly linen, 132 inch round",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Dance floor section, 3ft by 4ft",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Portable bar",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.affordablepartyrentals.com/pricing.html",
-      "domain": "affordablepartyrentals.com",
-      "anchor": "Affordable Party Rentals: Staging section, 4ft by 4ft",
+      "href": "https://www.memphisweddingdjma.com/about.html",
+      "domain": "memphisweddingdjma.com",
+      "anchor": "DJ Mark Anderson: Wedding DJs Memphis TN",
       "external": true,
       "violation": ""
     },
@@ -60689,16 +60851,7 @@
       "publication": "memphis",
       "href": "https://www.woodruff-fontaine.org/weddings-venue-rental",
       "domain": "woodruff-fontaine.org",
-      "anchor": "Woodruff-Fontaine House Museum: Carriage House + Front Lawn + Garden",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://www.woodruff-fontaine.org/weddings-venue-rental",
-      "domain": "woodruff-fontaine.org",
-      "anchor": "Woodruff-Fontaine House Museum: Carriage House + Garden",
+      "anchor": "Woodruff-Fontaine House Museum: Weddings &amp; Event Rental",
       "external": true,
       "violation": ""
     },
@@ -60707,52 +60860,7 @@
       "publication": "memphis",
       "href": "https://thekentmemphis.com/pricing/",
       "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Keel Avenue rental fee, Monday to Thursday",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://thekentmemphis.com/pricing/",
-      "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Keel Avenue rental fee, Sunday",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://thekentmemphis.com/pricing/",
-      "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Keel Avenue rental fee, Friday to Saturday",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://thekentmemphis.com/pricing/",
-      "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Front Street rental fee, Friday to Saturday",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://thekentmemphis.com/pricing/",
-      "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Additional rental hour",
-      "external": true,
-      "violation": ""
-    },
-    {
-      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
-      "publication": "memphis",
-      "href": "https://thekentmemphis.com/pricing/",
-      "domain": "thekentmemphis.com",
-      "anchor": "The Kent: Getting-ready suite beverages and light lunch",
+      "anchor": "The Kent: Pricing",
       "external": true,
       "violation": ""
     },
@@ -60761,7 +60869,97 @@
       "publication": "memphis",
       "href": "https://membg.org/rentals/",
       "domain": "membg.org",
-      "anchor": "Memphis Botanic Garden: Additional venue hour beyond the included two",
+      "anchor": "Memphis Botanic Garden: Weddings &amp; Private Events",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.commissarybbq.com/full-service-catering",
+      "domain": "commissarybbq.com",
+      "anchor": "The Commissary: Full-Service BBQ Catering",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.corkysbbq.com/catering-private-party-rooms/",
+      "domain": "corkysbbq.com",
+      "anchor": "Corky&#x27;s BBQ: Catering &amp; Private Party Rooms",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.bainbarbecue.com/catering",
+      "domain": "bainbarbecue.com",
+      "anchor": "Bain Barbecue &amp; Bakery: Catering",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.offthesquarecatering.com/",
+      "domain": "offthesquarecatering.com",
+      "anchor": "Off The Square Catering: Off The Square Catering",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://sweetlalas.com/cakes/wedding-cakes/",
+      "domain": "sweetlalas.com",
+      "anchor": "Sweet LaLa&#x27;s Bakery: Wedding Cakes",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.cravesweetshop.com/copy-of-get-a-quote",
+      "domain": "cravesweetshop.com",
+      "anchor": "Crave Sweet Shop: Get a Quote",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.jcakesyum.com/cake-f-a-q-s",
+      "domain": "jcakesyum.com",
+      "anchor": "J&#x27;s Cakes: Cake FAQs",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.tcbnco.com/pages/wedding",
+      "domain": "tcbnco.com",
+      "anchor": "TCB &amp; Co: Wedding Florist Memphis",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.thehardinhouse.com/info",
+      "domain": "thehardinhouse.com",
+      "anchor": "The Hardin House: Services",
+      "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
+      "publication": "memphis",
+      "href": "https://www.affordablepartyrentals.com/pricing.html",
+      "domain": "affordablepartyrentals.com",
+      "anchor": "Affordable Party Rentals: Pricing",
       "external": true,
       "violation": ""
     },

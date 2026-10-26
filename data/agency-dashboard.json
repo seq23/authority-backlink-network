@@ -1,10 +1,10 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-26",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 104,
+    "runtime_operators": 105,
     "release_operators": 10,
     "workflow_operators": 10,
     "approved_target_urls": 127,
@@ -532,6 +532,12 @@
       "operator": "validate:cadence-integrity",
       "command": "npm run validate:cadence-integrity",
       "implementation": "node scripts/validators/validate_cadence_gate_integrity.js",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:citation-link-repeats",
+      "command": "npm run validate:citation-link-repeats",
+      "implementation": "python3 scripts/validators/validate_citation_link_repeats.py",
       "category": "Validation / release"
     },
     {
