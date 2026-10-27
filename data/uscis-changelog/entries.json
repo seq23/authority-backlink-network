@@ -9,6 +9,57 @@
   ],
   "entries": [
     {
+      "id": "2026-10-27-uscis-federal-register",
+      "date_observed": "2026-10-27",
+      "checked_at": "2026-10-27T18:38:54+00:00",
+      "source_id": "uscis-federal-register",
+      "source_url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "source_title": "USCIS documents in the Federal Register",
+      "publisher": "Office of the Federal Register",
+      "headline": "Two September 2026 PRA notices replaced by two October 2026 PRA notices",
+      "summary": "The page previously listed two 60-day Paperwork Reduction Act notices published on September 14, 2026, concerning Form I-191 and Form I-730. It now lists two 60-day PRA notices published on October 23, 2026, concerning Form I-485 and Form I-131.",
+      "quotes": [
+        {
+          "side": "removed",
+          "text": "2026-09-14 | Notice | FR Doc. 2026-18674 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application for Relief Under Former Section 212(c) of the Immigration and Nationality Act"
+        },
+        {
+          "side": "removed",
+          "text": "2026-09-14 | Notice | FR Doc. 2026-18673 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Refugee/Asylee Relative Petition"
+        },
+        {
+          "side": "added",
+          "text": "2026-10-23 | Notice | FR Doc. 2026-21698 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application To Register Permanent Residence or Adjust Status"
+        },
+        {
+          "side": "added",
+          "text": "2026-10-23 | Notice | FR Doc. 2026-21684 | Agency Information Collection Activities; Revision of a Currently Approved Collection: Application for Travel Documents, Parole Documents, and Arrival/Departure Records"
+        }
+      ],
+      "evidence": {
+        "previous_snapshot_sha256": "52e2afbebc4ef4d15b066ede34627ffd62d24f274bea80da7cf4925d7c3bcc0a",
+        "current_snapshot_sha256": "5ecaeaff49a7b46f9988c9cf5d675b14a3052bbcb529ebcbe77ce4862871bf9a",
+        "previous_captured": "2026-10-20T13:26:03+00:00",
+        "added": [
+          "2026-10-23 | Notice | FR Doc. 2026-21698 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application To Register Permanent Residence or Adjust Status",
+          "FR Doc. 2026-21698 action: 60-Day notice.",
+          "FR Doc. 2026-21698 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments.",
+          "2026-10-23 | Notice | FR Doc. 2026-21684 | Agency Information Collection Activities; Revision of a Currently Approved Collection: Application for Travel Documents, Parole Documents, and Arrival/Departure Records",
+          "FR Doc. 2026-21684 action: 60-Day notice.",
+          "FR Doc. 2026-21684 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed revision of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e., the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ],
+        "removed": [
+          "2026-09-14 | Notice | FR Doc. 2026-18674 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application for Relief Under Former Section 212(c) of the Immigration and Nationality Act",
+          "FR Doc. 2026-18674 action: 60-day notice.",
+          "FR Doc. 2026-18674 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments.",
+          "2026-09-14 | Notice | FR Doc. 2026-18673 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Refugee/Asylee Relative Petition",
+          "FR Doc. 2026-18673 action: 60-Day notice.",
+          "FR Doc. 2026-18673 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ]
+      },
+      "model": "free-router"
+    },
+    {
       "id": "2026-10-06-uscis-federal-register",
       "date_observed": "2026-10-06",
       "checked_at": "2026-10-06T13:27:26+00:00",
