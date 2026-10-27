@@ -1,22 +1,61 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-26",
-    "release_date": "2026-10-26",
-    "day_index": 122,
+    "date": "2026-10-27",
+    "release_date": "2026-10-27",
+    "day_index": 123,
     "target_volume": 3,
     "generated": 3,
     "published": 0,
     "scores": [],
     "duplicate_warnings": 0,
-    "hard_fails": 0,
+    "hard_fails": 1,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 2,
-    "blocked_slots": [],
+    "self_heal_attempts": 8,
+    "blocked_slots": [
+      {
+        "slot": 0,
+        "publication": "founder-operator",
+        "attempts": 8,
+        "findings": [
+          {
+            "attempt": 0,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 1,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 2,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 3,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 4,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 5,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 6,
+            "reason": "no_topically_eligible_affiliated_link"
+          },
+          {
+            "attempt": 7,
+            "reason": "no_topically_eligible_affiliated_link"
+          }
+        ]
+      }
+    ],
     "held_by_publishing_freeze": [
-      "Tool Stacks For Lean Teams: Editorial Prep Guide When Timing Matters",
-      "Vendor Schedule: No-Fluff Question Checklist Before You Sign",
-      "Dental Decision Resources: No-Fluff Local/Resource Directory Before You Pay"
+      "Wedding-Day Timeline: Human-First Decision Guide When You Are Comparing Options",
+      "Dental Decision Resources: Decision-Focused Buyer Guide For Busy Operators"
     ],
     "social_enqueued": {
       "published_pages": 0,
@@ -59,20 +98,30 @@
     {
       "publication": "founder-operator",
       "slot": 0,
-      "status": "held_by_publishing_freeze",
-      "title": "Tool Stacks For Lean Teams: Editorial Prep Guide When Timing Matters"
+      "status": "blocked_after_self_heal",
+      "repair_attempts": 8,
+      "hard_fails": [
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link",
+        "no_topically_eligible_affiliated_link"
+      ]
     },
     {
       "publication": "memphis-local",
       "slot": 1,
       "status": "held_by_publishing_freeze",
-      "title": "Vendor Schedule: No-Fluff Question Checklist Before You Sign"
+      "title": "Wedding-Day Timeline: Human-First Decision Guide When You Are Comparing Options"
     },
     {
       "publication": "professional-resources",
       "slot": 2,
       "status": "held_by_publishing_freeze",
-      "title": "Dental Decision Resources: No-Fluff Local/Resource Directory Before You Pay"
+      "title": "Dental Decision Resources: Decision-Focused Buyer Guide For Busy Operators"
     }
   ],
   "published": [],
