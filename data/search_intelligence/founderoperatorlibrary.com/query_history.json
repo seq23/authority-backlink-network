@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 16,
+  "snapshot_count": 17,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -1189,6 +1189,94 @@
           8,
           0,
           71.8
+        ],
+        "founder operator": [
+          5,
+          0,
+          5.6
+        ],
+        "monthly metrics": [
+          2,
+          0,
+          46.5
+        ],
+        "performance problem identification": [
+          2,
+          0,
+          46
+        ],
+        "virtual event rfp": [
+          2,
+          0,
+          88
+        ],
+        "ai act coach": [
+          1,
+          0,
+          36
+        ],
+        "community cost metric": [
+          1,
+          0,
+          16
+        ],
+        "community metrics": [
+          1,
+          0,
+          71
+        ],
+        "company masthead": [
+          1,
+          0,
+          25
+        ],
+        "founder support for product execution": [
+          1,
+          0,
+          13
+        ],
+        "foundr operators": [
+          1,
+          0,
+          17
+        ],
+        "moderation and community management": [
+          1,
+          0,
+          84
+        ],
+        "sprylabs": [
+          1,
+          0,
+          7
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-27T14:38:20+00:00",
+      "start_date": "2026-09-27",
+      "end_date": "2026-10-24",
+      "totals": {
+        "clicks": 1,
+        "impressions": 157,
+        "ctr": 0.0064,
+        "position": 24.8
+      },
+      "queries": {
+        "ai executive coaching": [
+          16,
+          0,
+          24
+        ],
+        "community reports": [
+          9,
+          0,
+          79.7
+        ],
+        "executive ai coaching": [
+          9,
+          0,
+          72.1
         ],
         "founder operator": [
           5,
