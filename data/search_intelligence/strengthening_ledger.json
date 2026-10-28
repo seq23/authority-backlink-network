@@ -15,8 +15,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 39,
-      "weighted_position": 49.9,
+      "impressions": 37,
+      "weighted_position": 49.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -37,8 +37,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 33,
-      "weighted_position": 40.1,
+      "impressions": 34,
+      "weighted_position": 41.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -60,8 +60,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 26,
-      "weighted_position": 7.1,
+      "impressions": 24,
+      "weighted_position": 7.2,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -74,8 +74,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 16,
-      "weighted_position": 4.2,
+      "impressions": 15,
+      "weighted_position": 4.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html (derived from the page's own dek and questions)",
       "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -98,7 +98,7 @@
         "top_demand"
       ],
       "impressions": 11,
-      "weighted_position": 8.5,
+      "weighted_position": 8.8,
       "status": "no_page",
       "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
       "page": "/masthead",
@@ -111,8 +111,8 @@
       "basis": [
         "ranking_page"
       ],
-      "impressions": 9,
-      "weighted_position": 7.1,
+      "impressions": 8,
+      "weighted_position": 7.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -261,8 +261,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 239,
-      "weighted_position": 12.1,
+      "impressions": 233,
+      "weighted_position": 12.3,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -283,8 +283,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 72,
-      "weighted_position": 7.8,
+      "impressions": 74,
+      "weighted_position": 7.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
@@ -301,12 +301,26 @@
     },
     {
       "host": "professionalresourcelibrary.com",
+      "family": "Letters of explanation @ /topics/letters-of-explanation",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 26,
+      "weighted_position": 2.5,
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
+      "page": "/topics/letters-of-explanation",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "changes": null
+    },
+    {
+      "host": "professionalresourcelibrary.com",
       "family": "equine legal advice @ /equine-legal-resource-library",
       "basis": [
         "top_demand"
       ],
       "impressions": 25,
-      "weighted_position": 45.8,
+      "weighted_position": 46.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -323,26 +337,12 @@
     },
     {
       "host": "professionalresourcelibrary.com",
-      "family": "Letters of explanation @ /topics/letters-of-explanation",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 23,
-      "weighted_position": 2.6,
-      "status": "underivable",
-      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
-      "page": "/topics/letters-of-explanation",
-      "file": "sites/professional-resources/topics/letters-of-explanation.html",
-      "changes": null
-    },
-    {
-      "host": "professionalresourcelibrary.com",
       "family": "funding documents @ /topics/business-funding-documents",
       "basis": [
         "top_demand"
       ],
-      "impressions": 19,
-      "weighted_position": 51.1,
+      "impressions": 21,
+      "weighted_position": 52.5,
       "status": "underivable",
       "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
       "page": "/topics/business-funding-documents",
@@ -351,12 +351,12 @@
     },
     {
       "host": "professionalresourcelibrary.com",
-      "family": "off-page: yes @ /topics/letters-of-explanation",
+      "family": "off-page: cec @ /topics/letters-of-explanation",
       "basis": [
         "ranking_page"
       ],
-      "impressions": 1,
-      "weighted_position": 1.0,
+      "impressions": 2,
+      "weighted_position": 2.0,
       "status": "intent_mismatch",
       "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is",
       "page": "/topics/letters-of-explanation",

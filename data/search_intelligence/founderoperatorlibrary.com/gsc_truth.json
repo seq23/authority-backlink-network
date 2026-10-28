@@ -4,29 +4,37 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-27",
-  "end_date": "2026-10-24",
+  "start_date": "2026-09-28",
+  "end_date": "2026-10-25",
   "window_days": 28,
-  "collected_at": "2026-10-27T14:38:20+00:00",
+  "collected_at": "2026-10-28T14:28:42+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 157,
+    "impressions": 156,
     "ctr": 0.0064,
-    "position": 24.8
+    "position": 25.1
   },
-  "query_count": 15,
+  "query_count": 14,
   "page_count": 32,
-  "row_count": 15,
-  "query_row_impressions": 53,
+  "row_count": 14,
+  "query_row_impressions": 54,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
       "query": "ai executive coaching",
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 16,
+      "impressions": 17,
       "ctr": 0,
-      "position": 24
+      "position": 24.1
+    },
+    {
+      "query": "executive ai coaching",
+      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 72.1
     },
     {
       "query": "community reports",
@@ -35,14 +43,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 79.7
-    },
-    {
-      "query": "executive ai coaching",
-      "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 72.1
     },
     {
       "query": "founder operator",
@@ -74,7 +74,7 @@
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 88
+      "position": 87
     },
     {
       "query": "ai act coach",
@@ -91,14 +91,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 16
-    },
-    {
-      "query": "community metrics",
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 71
     },
     {
       "query": "company masthead",
@@ -145,9 +137,16 @@
     {
       "query": "ai executive coaching",
       "clicks": 0,
-      "impressions": 16,
+      "impressions": 17,
       "ctr": 0,
-      "position": 24
+      "position": 24.1
+    },
+    {
+      "query": "executive ai coaching",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 72.1
     },
     {
       "query": "community reports",
@@ -155,13 +154,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 79.7
-    },
-    {
-      "query": "executive ai coaching",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 72.1
     },
     {
       "query": "founder operator",
@@ -189,7 +181,7 @@
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 88
+      "position": 87
     },
     {
       "query": "ai act coach",
@@ -204,13 +196,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 16
-    },
-    {
-      "query": "community metrics",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 71
     },
     {
       "query": "company masthead",
@@ -252,51 +237,51 @@
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 1,
-      "impressions": 39,
-      "ctr": 0.0256,
-      "position": 40.3
+      "impressions": 37,
+      "ctr": 0.027,
+      "position": 40.5
     },
     {
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 33,
+      "impressions": 34,
       "ctr": 0,
-      "position": 36.2
+      "position": 37.9
     },
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 26,
+      "impressions": 24,
       "ctr": 0,
-      "position": 7.0
+      "position": 7.1
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
-      "impressions": 16,
+      "impressions": 15,
       "ctr": 0,
-      "position": 4.2
+      "position": 4.4
     },
     {
       "page": "https://founderoperatorlibrary.com/masthead",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 6.9
+      "position": 7.2
     },
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 8,
       "ctr": 0,
-      "position": 6.4
+      "position": 6.8
     },
     {
       "page": "https://founderoperatorlibrary.com/about",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 8.7
+      "position": 8.9
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -308,16 +293,9 @@
     {
       "page": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 5,
       "ctr": 0,
-      "position": 41.7
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 6.2
+      "position": 48.2
     },
     {
       "page": "https://founderoperatorlibrary.com/editorial-standards",
@@ -327,18 +305,18 @@
       "position": 6.8
     },
     {
+      "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6.3
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 3.5
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 13
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
@@ -348,25 +326,11 @@
       "position": 47
     },
     {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 9
-    },
-    {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 8.5
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 9
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
@@ -397,6 +361,13 @@
       "position": 9
     },
     {
+      "page": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
       "clicks": 0,
       "impressions": 1,
@@ -425,6 +396,13 @@
       "position": 3
     },
     {
+      "page": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
       "clicks": 0,
       "impressions": 1,
@@ -432,11 +410,18 @@
       "position": 2
     },
     {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
