@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import measured as m  # noqa: E402
 from sync_page_meta import apply as apply_meta  # noqa: E402
-from lib import site_urls  # noqa: E402
+from lib import site_urls, meta_description  # noqa: E402
 
 LEDGER = m.SI / "strengthened_pages.json"
 DEF_RE = re.compile(r'<p class="definition" data-strengthened="definition"[^>]*>.*?</p>', re.S)
@@ -74,7 +74,12 @@ def render_page(text: str, entry: dict) -> str:
     derived = bool(entry.get("derived_from_page"))
     text = strip_blocks(text)
     if not derived:
-        text = apply_meta(text, {"title": entry["title"], "description": entry["description"]})
+        pubs = json.loads((m.ROOT / "data/publications.json").read_text())
+        pub = next(p for p in pubs if entry["file"].startswith(p["folder"] + "/"))
+        titles = json.loads((m.ROOT / "data/page-title-overrides.json").read_text())
+        title = meta_description.site_title(titles.get(entry["file"], entry["title"]),
+                                            pub["title"], entry["file"])
+        text = apply_meta(text, {"title": title, "description": entry["description"]})
     elif entry.get("definition_source"):
         text = text.replace(entry["definition_source"], "", 1)
     h1 = text.find("</h1>")

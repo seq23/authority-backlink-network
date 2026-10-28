@@ -23,6 +23,7 @@ What it checks
 3. No id looks like a placeholder (see PLACEHOLDER_PATTERNS).
 4. Every published page's injected Clarity map contains ONLY its own domain, so
    one publication cannot report sessions into another's project.
+5. No editorial page without a form or checkout link carries a Clarity tag.
 
 Exit 1 on any failure. Wired into validation/plan.json as HARD_FAIL.
 """
@@ -33,6 +34,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from lib.analytics_scope import form_or_buy, MANAGED  # noqa: E402
 
 # A Clarity project id is a short lowercase alphanumeric string. Anything that
 # reads like a stand-in must not reach a release.
@@ -82,7 +85,10 @@ def main() -> int:
     for pub in pubs:
         domain = pub["working_domain"].lower().replace("www.", "")
         for path in sorted((ROOT / pub["folder"]).rglob("*.html")):
-            found = CLARITY_MAP_RE.search(path.read_text(encoding="utf-8"))
+            text = path.read_text(encoding="utf-8")
+            if (MANAGED.search(text) or re.search(r'clarity\.ms|clarity\.js|/clarity[-.]|microsoft clarity', text, re.I)) and not form_or_buy(text, "https://" + domain + "/"):
+                leaks.append(f"{path.relative_to(ROOT)}: Clarity on a page without a form or buy link")
+            found = CLARITY_MAP_RE.search(text)
             if not found:
                 continue
             try:
