@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""No <title> repeats its own site-name suffix; homepage titles say what the site is.
+"""Every <title> names its publication once; homepages say what the site is.
 
 Why: on 11 Oct 2026 all three homepages published "<Publication> | <Publication>"
 ("Memphis Vendor Library | Memphis Vendor Library"), a title that tells a
@@ -39,6 +39,8 @@ def main() -> int:
         if not m:
             continue
         title = html.unescape(hs.plain(m.group(1)))
+        if title.casefold().count(pub["title"].casefold()) != 1:
+            failures.append(f"{rel}: <title> must name {pub['title']!r} exactly once")
         if md.doubled_suffix(title):
             failures.append(f"{rel}: <title> repeats its suffix: {title!r}")
         if path != folder / "index.html":
@@ -66,7 +68,7 @@ def main() -> int:
         for f in failures[:40]:
             print("  " + f)
         return 1
-    print(f"PASS title_suffix: {pages} pages, no doubled suffix; {homes} homepage titles in "
+    print(f"PASS title_suffix: {pages} pages name their own site once; {homes} homepage titles in "
           f"{md.HOME_TITLE_MIN}-{md.HOME_TITLE_MAX} chars")
     return 0
 

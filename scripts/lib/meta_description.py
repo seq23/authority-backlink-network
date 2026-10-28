@@ -96,19 +96,49 @@ def home_title(pub: dict) -> str:
 
 
 def site_title(name: str, site: str, where: str) -> str:
-    """`name | site` when that fits, otherwise the page's own name alone.
+    """Keep the publication name once, inside the same 65-character budget.
 
-    The site-name suffix is the part that gives way: it is the same on every
-    page, so it is the least informative 20-30 characters of a title that is
-    about to be truncated. It is also dropped when it would only repeat the
-    page's own name ("X | X").
+    Dated topic pages use daily_site_title() instead, so shortening cannot
+    drop the subject of the article.
     """
-    if same_name(name, site):
+    name = " ".join(name.split())
+    if name.casefold().endswith((" | " + site).casefold()):
+        name = name[:-(len(site) + 3)].strip()
+    if site.casefold() in name.casefold():
+        if len(name) < TITLE_MIN and same_name(name, "About " + site):
+            name = "About the " + site
         return require_title(name, where)
-    full = f"{name} | {site}"
-    if title_fits(full):
-        return full
-    return require_title(name, where)
+    suffix = f" | {site}"
+    if len(name + suffix) > TITLE_MAX:
+        budget = TITLE_MAX - len(suffix)
+        # An ellipsis makes the shortening explicit; never cut through a word.
+        if len(name) > budget:
+            words = name.split()
+            while words and len(" ".join(words)) > budget - 1:
+                words.pop()
+            while words and words[-1].casefold() in {"a", "an", "the", "and", "or", "for", "to", "of", "with", "before", "after"}:
+                words.pop()
+            if not words:
+                raise ValueError(f"{where}: supply a concise editorial title for {name!r}")
+            name = " ".join(words).rstrip(" :;,.-") + "…"
+    return require_title(name + suffix, where)
+
+
+def daily_site_title(cluster: str, site: str, where: str) -> str:
+    """The complete topic and source archive date, followed by the brand.
+
+    Topic aliases are editorial data, never a word-cut of the search query.
+    A new topic that cannot fit fails loudly until it has an editorial alias.
+    """
+    import json
+    import re
+    from pathlib import Path
+    subjects = json.loads((Path(__file__).resolve().parents[2] / "data/title-subjects.json").read_text())
+    subject = subjects.get(cluster, _tc(cluster))
+    date = re.search(r"(?:^|/)daily/(\d{4}-\d{2}-\d{2})-", where)
+    if not date:
+        raise ValueError(f"{where}: daily title needs its archive date")
+    return require_title(f"{subject} {date.group(1)} | {site}", where)
 
 
 def _tc(phrase: str) -> str:

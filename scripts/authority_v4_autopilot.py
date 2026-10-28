@@ -457,18 +457,19 @@ def taken(pub_key):
 
 
 def seo_title_for(brief, pub_key):
-    """The page's <title>: the first form that fits 30-70 characters and that
-    the publication has not used. None when there is no such form.
+    """A complete topic, archive date and own brand in 30-65 characters.
 
-    The heading stays the full composed title (it is also what the slug and the
-    ledgers carry); only the <title> is shortened, because Bing reports titles
-    over 70 characters and the composed form runs to 114.
+    Refuse a repeated title or a topic needing a shorter editorial alias.
+    The full heading and the slug remain unchanged.
     """
-    return meta_description.pick_title(
-        meta_description.daily_title_candidates(
-            cluster=brief['cluster'], audience=brief['audience'], fmt=brief['format'],
-            intent=brief['intent'], modifier=brief['modifier']),
-        taken(pub_key)['titles'])
+    pub = next(p for p in json.loads((ROOT / 'data/publications.json').read_text())
+               if p['folder'] == PANTRY['publications'][pub_key]['site_path'])
+    rel = f"{pub['folder']}/daily/{TODAY}-{slugify(brief['title'])}.html"
+    try:
+        candidates = [meta_description.daily_site_title(brief['cluster'], pub['title'], rel)]
+    except ValueError:
+        return None
+    return meta_description.pick_title(candidates, taken(pub_key)['titles'])
 
 
 def generate_page(brief):

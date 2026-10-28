@@ -391,12 +391,28 @@ def install_head(text: str, **kw) -> str:
     """Replace the managed head block (and any legacy copy of its tags)."""
     if not HEAD_END_RE.search(text):
         return text
+    from lib.analytics_scope import install as install_analytics
+    text = install_analytics(text, kw["domain"])
     text = BLOCK_RE.sub("", text)
     for rx in LEGACY_TAG_RES:
         text = rx.sub("", text)
     if kw.get("is_home"):
         text = install_definition(text, kw["definition"])
         text = install_home_title(text, kw["pub"])
+    elif not kw.get("is_404"):
+        from lib.meta_description import site_title, daily_site_title
+        from pathlib import Path
+        overrides = json.loads((Path(__file__).resolve().parents[2] / "data/page-title-overrides.json").read_text())
+        current = TITLE_RE.search(text)
+        name = overrides.get(kw["rel"], plain(current.group(1))) if current else ""
+        topic = next((n.get("about") for n in jsonld_nodes(text)
+                      if n.get("@type") == "Article" and isinstance(n.get("about"), str)
+                      and isinstance(n.get("audience"), dict) and n["audience"].get("audienceType")), None)
+        if topic and kw["rel"] not in overrides:
+            title = daily_site_title(topic, kw["pub"]["title"], kw["rel"])
+        else:
+            title = site_title(name, kw["pub"]["title"], kw["rel"])
+        text = TITLE_RE.sub(lambda _m: "<title>" + esc(title) + "</title>", text, count=1)
     kw.pop("definition", None)
     text = install_organization_identity(text, kw["entity"], kw["pub"]["title"], kw["domain"])
     text = install_updated_line(text)

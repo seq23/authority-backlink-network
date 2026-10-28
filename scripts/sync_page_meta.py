@@ -269,6 +269,7 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
     suffixes = {f"{m.title()} {f.title()} {i.title()}": (m, f, i)
                 for m, f, i in itertools.product(mods, fmts, intents)}
     unidentified: list[str] = []
+    daily_subjects: dict[str, str] = {}
     for pub in pubs.values():
         folder = ROOT / pub["folder"]
         pantry_pages: list[tuple[str, tuple, str]] = []
@@ -287,6 +288,7 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
                 unidentified.append(rel)
                 continue
             cluster, audience, m, f, i = parts
+            daily_subjects[rel] = cluster
             expected[rel] = {"description": meta_description.daily_description(
                 cluster=cluster, audience=audience, fmt=f, intent=i, modifier=m)}
             pantry_pages.append((rel, parts, _current(text)[0]))
@@ -334,6 +336,17 @@ def expected_meta() -> tuple[dict[str, dict], list[str]]:
         if entry.get("derived_from_page"):
             continue
         expected[entry["file"]] = {"title": entry["title"], "description": entry["description"]}
+    overrides = json.loads((ROOT / "data/page-title-overrides.json").read_text())
+    for rel, want in expected.items():
+        if not want.get("title"):
+            continue
+        pub = next(p for p in pubs.values() if rel.startswith(p["folder"] + "/"))
+        if rel == pub["folder"] + "/index.html":
+            want["title"] = meta_description.home_title(pub)
+        elif rel in daily_subjects and rel not in overrides:
+            want["title"] = meta_description.daily_site_title(daily_subjects[rel], pub["title"], rel)
+        else:
+            want["title"] = meta_description.site_title(overrides.get(rel, want["title"]), pub["title"], rel)
     return expected, unidentified
 
 

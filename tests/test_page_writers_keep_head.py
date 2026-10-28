@@ -30,6 +30,8 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from lib import analytics_scope, meta_description  # noqa: E402
 
 # Scripts that write whole published pages. A workflow line that runs one of
 # these with --write is a page-writing step.
@@ -72,6 +74,38 @@ def run_scenario(name: str, steps: list[str], work: Path) -> None:
     if v.returncode != 0:
         fails.append(f"{name}: after {' -> '.join(steps)} the favicon validator failed "
                      f"({len(bad)} lines; first: {bad[:2]})")
+    for validator in ("validate_title_suffix.py", "validate_analytics_separation.py"):
+        result = subprocess.run([sys.executable, "scripts/validators/" + validator],
+                                cwd=work, capture_output=True, text=True)
+        if result.returncode:
+            fails.append(f"{name}: {validator}: {result.stdout[-1000:]} {result.stderr[-500:]}")
+
+
+# Render both sides of the conversion boundary. A footer contact link and
+# commented/script examples must not opt an editorial page into recording.
+base = '<html><head></head><body>{}</body></html>'
+for domain, project in json.loads((ROOT / "data/clarity_projects.json").read_text())["projects"].items():
+    for content in ('<form action="/submit"><input name="message"></form>',
+                    '<a href="https://shop.gumroad.com/l/guide">Buy</a>',
+                    '<a href="/checkout">Checkout</a>'):
+        rendered = analytics_scope.install(base.format(content), domain)
+        assert f'"{domain}":"{project}"' in rendered
+        assert rendered.count('data-clarity-loader') == 1
+        assert rendered.count('data-ai-referrer-tag') == 1
+        assert analytics_scope.install(rendered, domain) == rendered
+        editorial = rendered.replace(content, '<a href="/contact">Contact</a>')
+        assert 'clarity.ms' not in analytics_scope.install(editorial, domain)
+    for content in ('<!-- <form></form> -->', '<script>const x="<form>";</script>',
+                    '<a href="https://gumroad.com.example.invalid/product">Read</a>'):
+        assert 'clarity.ms' not in analytics_scope.install(base.format(content), domain)
+
+pubs = json.loads((ROOT / "data/publications.json").read_text())
+for pub in pubs:
+    title = meta_description.daily_site_title('credit report errors', pub['title'],
+                                              pub['folder'] + '/daily/2026-07-17-example.html')
+    assert title == f"Credit Report Errors 2026-07-17 | {pub['title']}"
+    assert 30 <= len(title) <= 65
+    assert meta_description.site_title(title, pub['title'], 'example') == title
 
 
 with tempfile.TemporaryDirectory() as tmp:
