@@ -1,54 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-28T12:18:33+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 9,
+  "run_at": "2026-10-28T18:24:23+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 9,
+  "dropped_by_beat_filter": 0,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "What marketing results surprised you most in the past year – and why?",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "SEEKING: Staff at Ohio colleges who can speak to online degrees",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Need to talk to New Yorkers who are racing to establish Florida residency",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Looking for Bird Experts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Looking to speak with Animal Experts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Senior Leaders at Large Companies, Associations, and Nonprofits",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Products for a Disaster Preparedness Feature",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Holiday gift guide samples — coffee, boys gifts, dog stocking stuffers, gamer gifts",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking an RDN and MD: Why you may wake up craving sugar",
-      "why": "excluded: 'physician'"
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (9 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
