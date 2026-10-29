@@ -1,12 +1,12 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-29T12:19:08+00:00",
+  "run_at": "2026-10-29T18:24:24+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 8,
+  "queries_ingested": 10,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
+  "dropped_by_beat_filter": 10,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
@@ -14,37 +14,45 @@
   "stops": [],
   "drops": [
     {
-      "summary": "Impact of Federal/State Bans on Gender-Affirming Care For Youth",
+      "summary": "Looking for people from the UK who have had to go abroad to become parents through surrogacy",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Occupational health experts: biggest mistakes employees make after workplace injuries",
+      "summary": "Arizona for Corporate Leadership Programs & Corporate Retreats",
       "why": "matches no declared beat"
     },
     {
-      "summary": "What marketing results surprised you most in the past year – and why?",
+      "summary": "Experts' opinions: DOE conditional loan commitment for Constellation",
       "why": "matches no declared beat"
     },
     {
-      "summary": "What Should You Check Before Reducing A Proposed Debt Relief Deposit?",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "New Year's Product Guide: Exercise Gear, Health Tech, Kitchen/Meal Prep, Fitness Apparel/Footwear, Sleep/Recovery, Dieta",
+      "summary": "Contractors Needed For Mic.com Article",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Thanksgiving Foods for Famadillo’s 2026 Holiday Roundup",
+      "summary": "LAST CALL - Christmas Gift Guides 2026",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Seeking an RDN and MD: Why you may wake up craving sugar",
-      "why": "excluded: 'physician'"
+      "summary": "Shopping Edit: The Best Fall/Winter Perfumes to buy right now",
+      "why": "matches no declared beat"
     },
     {
-      "summary": "Men's Holiday Gift Guide 2026",
+      "summary": "We're looking for CROs, CMOs, VPs of Sales or Marketing, RevOps leaders, and CEOs who can speak to: • What you deployed ",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "**Seeking personal wish lists for a generational gift guide** (Individual Submissions)",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Social connection is a big issue.",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Luxury Holiday Gift Guide 2026",
       "why": "matches no declared beat"
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
