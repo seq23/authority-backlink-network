@@ -11,34 +11,12 @@
   "entries": [
     {
       "host": "founderoperatorlibrary.com",
-      "family": "community reports @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 37,
-      "weighted_position": 49.7,
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
-      "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-      "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
-      "changes": {
-        "title": "Community Metrics: Which to Report Monthly and Which to Ignore",
-        "definition": true,
-        "question_h2s": 3,
-        "faqpage": false,
-        "facts": 4,
-        "linked_from_homepage": true,
-        "source": "hand_authored"
-      }
-    },
-    {
-      "host": "founderoperatorlibrary.com",
       "family": "ai executive coaching @ /ai-executive-coaching-resources",
       "basis": [
         "top_demand"
       ],
-      "impressions": 34,
-      "weighted_position": 41.0,
+      "impressions": 36,
+      "weighted_position": 41.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -55,12 +33,34 @@
     },
     {
       "host": "founderoperatorlibrary.com",
+      "family": "community reports @ /daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 34,
+      "weighted_position": 52.5,
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
+      "changes": {
+        "title": "Community Metrics: Which to Report Monthly and Which to Ignore",
+        "definition": true,
+        "question_h2s": 3,
+        "faqpage": false,
+        "facts": 4,
+        "linked_from_homepage": true,
+        "source": "hand_authored"
+      }
+    },
+    {
+      "host": "founderoperatorlibrary.com",
       "family": "founder operator @ /",
       "basis": [
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 24,
+      "impressions": 23,
       "weighted_position": 7.2,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
@@ -111,8 +111,8 @@
       "basis": [
         "ranking_page"
       ],
-      "impressions": 8,
-      "weighted_position": 7.6,
+      "impressions": 9,
+      "weighted_position": 9.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -262,7 +262,7 @@
         "top_demand"
       ],
       "impressions": 233,
-      "weighted_position": 12.3,
+      "weighted_position": 12.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -305,8 +305,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 26,
-      "weighted_position": 2.5,
+      "impressions": 42,
+      "weighted_position": 2.4,
       "status": "underivable",
       "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
       "page": "/topics/letters-of-explanation",
@@ -319,8 +319,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 25,
-      "weighted_position": 46.0,
+      "impressions": 24,
+      "weighted_position": 46.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html",
       "page": "/equine-legal-resource-library",
@@ -355,8 +355,8 @@
       "basis": [
         "ranking_page"
       ],
-      "impressions": 2,
-      "weighted_position": 2.0,
+      "impressions": 3,
+      "weighted_position": 2.7,
       "status": "intent_mismatch",
       "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is",
       "page": "/topics/letters-of-explanation",
