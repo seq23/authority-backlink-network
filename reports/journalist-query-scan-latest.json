@@ -1,17 +1,50 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-28T18:24:23+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-10-29T12:19:08+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 8,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
+  "dropped_by_beat_filter": 8,
   "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "Impact of Federal/State Bans on Gender-Affirming Care For Youth",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Occupational health experts: biggest mistakes employees make after workplace injuries",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "What marketing results surprised you most in the past year – and why?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "What Should You Check Before Reducing A Proposed Debt Relief Deposit?",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "New Year's Product Guide: Exercise Gear, Health Tech, Kitchen/Meal Prep, Fitness Apparel/Footwear, Sleep/Recovery, Dieta",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Thanksgiving Foods for Famadillo’s 2026 Holiday Roundup",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking an RDN and MD: Why you may wake up craving sugar",
+      "why": "excluded: 'physician'"
+    },
+    {
+      "summary": "Men's Holiday Gift Guide 2026",
+      "why": "matches no declared beat"
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
