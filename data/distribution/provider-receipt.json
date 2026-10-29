@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-28T15-40-59.505474Z-40718093251",
-  "attempted_at": "2026-10-28T15:40:59.505474Z",
+  "receipt_id": "2026-10-29T15-40-08.835876Z-40903621513",
+  "attempted_at": "2026-10-29T15:40:08.835876Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -1160,7 +1160,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "d86af840e32f5fb4d7faf2e3152afa3f0965715a09bcd4c0e51e4ae4fa98c480",
+        "sha256": "f6a8bdf2192378634152fe2c8dbc39d263abcbc56fd82a298ff540d76a7c919e",
         "url_count": 422
       },
       "indexnow": {
@@ -2087,7 +2087,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-28T15-40-59.505474Z-40718093251.json"
+    "history": "data/distribution/receipts/2026-10-29T15-40-08.835876Z-40903621513.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
