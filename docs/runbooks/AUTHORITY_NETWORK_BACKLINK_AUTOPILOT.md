@@ -42,6 +42,7 @@ Governed campaigns cover:
 - Hicks Consulting
 - Horse Legal Guide
 - Dianne's Place Recovery Services
+- Glory By Us (glorybyus.com): registered target in Professional Resource Library with a priority lane (`content-bank/scaling-policy.json`); its pages queue in `data/search_intelligence/held_pages.json` under the publishing freeze until a measured query releases them, so it has no campaign floor yet. Followed links; claim boundary in `data/brands.json` `prohibited_claim_patterns`
 
 Community as a Service backlink routing is locked:
 

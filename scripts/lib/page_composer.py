@@ -149,6 +149,7 @@ COMPLIANCE_PHRASE = {
     "mental-health-YMYL": "mental-health",
     "consumer-finance-documentation-YMYL": "consumer-finance",
     "addiction-recovery-housing-YMYL": "recovery-housing",
+    "cosmetic-claims": "cosmetic hair-care",
     "local-service": "local-service",
     "consumer-commercial": "commercial",
     "medium": "commercial",

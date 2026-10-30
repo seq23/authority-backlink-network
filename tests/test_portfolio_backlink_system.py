@@ -17,7 +17,7 @@ brand_ids = {b['id'] for b in brands}
 required = {
     'the-industry-guides','accident-guides','dentistry-guides','hormones-iv-hair','neuro-eval-guides','uscis-exam-guides',
     'virtual-agency-os','west-peek-productions','bhpc','approval-prep','dream-wedding-builder','porch-party',
-    'hicks-consulting','horse-legal-guide','diannes-place'
+    'hicks-consulting','horse-legal-guide','diannes-place','glory-by-us'
 }
 assert required <= brand_ids, f'missing governed brands: {sorted(required-brand_ids)}'
 
@@ -60,6 +60,39 @@ assert all('westpeekproductions.com' in r['target_url'] for r in coverage['wpp-c
 floors = {'dream-planning-tools':6,'dianne-recovery-resources':4,'hicks-workplace-wellbeing':4,'horse-equine-legal':4}
 for cid, floor in floors.items():
     assert len(coverage[cid]) >= floor, f'{cid}: immediate gap-closure floor not met'
+
+# glorybyus.com is served like a portfolio site (owner decision, 30 Oct 2026):
+# followed links, every destination catalogued, and a cosmetic claim boundary
+# that hostile_review.py enforces on every page citing it.
+import sys as _sys
+_sys.path.insert(0, str(ROOT / 'scripts'))
+from affiliation import is_portfolio as _is_portfolio  # noqa: E402
+glory = next(b for b in brands if b['id'] == 'glory-by-us')
+assert glory['approved_publications'] == ['professional']
+assert len(glory.get('prohibited_claim_patterns', [])) >= 5, 'glory-by-us: cosmetic claim boundary missing'
+_deep = {t['url'].rstrip('/') for t in json.loads((ROOT / 'data/portfolio-deep-targets.json').read_text(encoding='utf-8'))['targets'].get('glorybyus.com', [])}
+for l in glory['approved_links']:
+    assert _is_portfolio(l['url']), f"glory-by-us link not followed: {l['url']}"
+    assert l['url'].rstrip('/') in _deep, f"glory-by-us link not in deep-target catalogue: {l['url']}"
+    assert l.get('topics') and '*' not in l['topics'], f"glory-by-us link without topic scope: {l['url']}"
+_pantry = json.loads((ROOT / 'content-bank/yearly-pantry.json').read_text(encoding='utf-8'))['publications']['professional-resources']
+_target = next(t for t in _pantry['targets'] if isinstance(t, dict) and t.get('brand_id') == 'glory-by-us')
+_hubs = json.loads((ROOT / 'data/topic-taxonomy.json').read_text(encoding='utf-8'))['publications']['professional']['hubs']
+_mapped = {c for h in _hubs for c in h['clusters']}
+assert len(_target['eligible_clusters']) >= 4
+assert set(_target['eligible_clusters']) <= set(_pantry['clusters']) & _mapped, 'glory-by-us cluster not in pantry/taxonomy'
+for l in _target['approved_links']:
+    assert set(l['topics']) <= set(_target['eligible_clusters']), f"glory-by-us link topic outside its scope: {l['url']}"
+_lanes = json.loads((ROOT / 'content-bank/scaling-policy.json').read_text(encoding='utf-8'))['priority_targets']
+assert any(r['brand_id'] == 'glory-by-us' and r.get('until_rendered_coverage') for r in _lanes), 'glory-by-us priority lane missing'
+# Pages for it publish through the 11 Oct 2026 publishing freeze like every
+# other target. Any page that does link it must stay inside the claim boundary.
+_claims = [re.compile(p) for p in glory['prohibited_claim_patterns']]
+for r in links:
+    if r.get('target_domain') == 'glorybyus.com' and r.get('status') == 'published':
+        _text = (ROOT / r['source_path']).read_text(encoding='utf-8').lower()
+        for _p in _claims:
+            assert not _p.search(_text), f"{r['source_path']}: prohibited glory-by-us claim {_p.pattern}"
 
 # The registry stores the anchor as plain text; the page renders it as HTML,
 # so "&" is "&amp;" on the page (rebalance_portfolio_links.py and the backlink

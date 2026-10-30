@@ -281,6 +281,20 @@ for pub, folder in PUB_FOLDERS.items():
                     continue
                 errors.append(f'{rel}: banned phrase: {phrase}')
 
+        # Brand-scoped claim boundaries, read from data/brands.json
+        # `prohibited_claim_patterns`. A cosmetic brand (glorybyus.com) becomes
+        # a drug in the FDA's reading the moment a page citing it says a product
+        # cures, treats, regrows or stops hair loss, so any page that links such
+        # a brand must not carry those claims anywhere in its text.
+        linked_brand_ids = {TARGET_DOMAIN_TO_BRAND.get(d, {}).get('id') for d, _, _ in outbound_targets}
+        for b in brands:
+            if b.get('id') not in linked_brand_ids:
+                continue
+            for pattern in b.get('prohibited_claim_patterns', []):
+                hit = re.search(pattern, lower)
+                if hit:
+                    errors.append(f"{rel}: prohibited {b['id']} claim: {hit.group(0)!r}")
+
         # Sensitive pages need disclaimer language.
         if any(term in lower for term in SENSITIVE_TERMS):
             if REQUIRED_DISCLOSURE_SNIPPETS[1] not in lower:

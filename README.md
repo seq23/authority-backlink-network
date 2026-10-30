@@ -56,6 +56,7 @@ The targets are locked in `data/brands.json` and `data/link-registry.json`:
 - horselegalguide.com
 - hicksconsulting.org
 - porchandparty901.com
+- glorybyus.com
 
 No other backlink/citation target is configured.
 
@@ -65,7 +66,7 @@ No other backlink/citation target is configured.
 - Canonical guide sites must not link back to The Industry Guides.
 - The founder publication can only cite the founder/operator targets.
 - The Memphis publication can only cite Porch & Party from this network.
-- The professional publication can only cite regulated/professional targets.
+- The professional publication can only cite regulated/professional targets, plus Glory By Us for cosmetic scalp-care education.
 - No fake rankings, fake reviews, fake independence, comment spam, PBNs, or doorway pages.
 
 ## How to use

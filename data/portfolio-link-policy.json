@@ -24,7 +24,8 @@
     "virtualagency-os.com",
     "westpeekproductions.com",
     "detoxdenver.org",
-    "time-2-read.com"
+    "time-2-read.com",
+    "glorybyus.com"
   ],
   "caps": {
     "max_target_domain_share_of_site_portfolio_links": 0.25,
@@ -68,5 +69,6 @@
     "_why": "A campaign whose whole point is one page links that page. wpp-community-authority exists to send readers to West Peek Productions' community page, not its homepage.",
     "wpp-community-authority": "https://westpeekproductions.com/community-as-a-service/"
   },
-  "hicks_consulting_note": "hicksconsulting.org joined owner_portfolio_domains on 25 Oct 2026. It had been treated as a client property whose Search Console was not ours to risk, so its links carried rel=\"sponsored nofollow\". The owner reclassified it that day: it is a grid repo (hicks-consulting-canonical), not a client repo, and the Search Readiness audit reads the grid repo list as the portfolio list -- checklist item g1 failed on two professionalresourcelibrary.com pages whose links to it were rel=\"nofollow sponsored\". diannesplace.org is NOT in the grid repo list and stays client: its links keep rel=\"sponsored nofollow\"."
+  "hicks_consulting_note": "hicksconsulting.org joined owner_portfolio_domains on 25 Oct 2026. It had been treated as a client property whose Search Console was not ours to risk, so its links carried rel=\"sponsored nofollow\". The owner reclassified it that day: it is a grid repo (hicks-consulting-canonical), not a client repo, and the Search Readiness audit reads the grid repo list as the portfolio list -- checklist item g1 failed on two professionalresourcelibrary.com pages whose links to it were rel=\"nofollow sponsored\". diannesplace.org is NOT in the grid repo list and stays client: its links keep rel=\"sponsored nofollow\".",
+  "glory_by_us_note": "glorybyus.com joined owner_portfolio_domains on 30 Oct 2026 by owner decision: the network is under separate ownership and serves this Shopify hair-care store the same way it serves the grid sites, so its links are followed editorial links governed by the same caps and deep-target catalogue. Its destinations are the live homepage, the Wave Hair Products collection and the product pages in its sitemap; its claim boundary is in data/brands.json prohibited_claim_patterns, enforced by scripts/hostile_review.py."
 }

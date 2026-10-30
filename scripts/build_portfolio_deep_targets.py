@@ -145,6 +145,15 @@ def pantry_links():
                 url = str((link or {}).get("url", ""))
                 if url.startswith("http"):
                     yield host_of(url), urlparse(url).path or "/", str(link.get("anchor", "")), 0
+                    # The pantry's own topic routing for this link is a query too.
+                    # Without it a product page titled "Hydrating Peppermint
+                    # Conditioner" shares no word with the cluster "conditioning
+                    # textured hair" it was approved for, every deep target on the
+                    # domain scores 0, and the rebalancer falls back to URL order --
+                    # a brush page on a conditioning article (glorybyus.com, 30 Oct 2026).
+                    for topic in link.get("topics") or []:
+                        if topic and topic != "*":
+                            yield host_of(url), urlparse(url).path or "/", str(topic), 0
 
 
 def fetch(url: str):

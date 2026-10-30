@@ -97,6 +97,16 @@
       "until_rendered_coverage": 4,
       "start_immediately": true,
       "quality_policy": "Equine legal education only; no legal advice."
+    },
+    {
+      "brand_id": "glory-by-us",
+      "campaign_id": "glory-by-us-scalp-care",
+      "publication": "professional-resources",
+      "pages_per_day": 1,
+      "until_rendered_coverage": 6,
+      "start_immediately": true,
+      "quality_policy": "Cosmetic scalp-care, wave-routine and label-reading education only; never a cure, treatment, regrowth or hair-loss claim.",
+      "_why": "Held by data/search_intelligence/publishing_freeze.json like every new page since 12 Oct 2026: each day this lane queues one glory-by-us brief in held_pages.json, and the first run after professionalresourcelibrary.com has a measured Search Console query its title answers publishes it. No campaign floor is declared in data/portfolio-backlink-campaigns.json until a page can render."
     }
   ],
   "city_vendor_expansion": {
