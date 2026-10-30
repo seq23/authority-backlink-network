@@ -2080,5 +2080,105 @@
       "clinical outcomes",
       "emergency care"
     ]
+  },
+  {
+    "id": "glory-by-us",
+    "name": "Glory By Us",
+    "domain": "glorybyus.com",
+    "domains": [
+      "glorybyus.com"
+    ],
+    "url": "https://glorybyus.com",
+    "lane": "professional",
+    "category": "organic natural hair-care products focused on scalp health, wave routines and textured-hair conditioning",
+    "compliance": "cosmetic-claims",
+    "link_policy": "Cosmetic hair-care and scalp-care education only. Products may be described as cleansing, conditioning, softening, removing styling residue or supporting scalp health in a cosmetic sense. Never describe a product as curing, treating, regrowing, or stopping or preventing hair loss, or as treating any scalp condition; persistent scalp symptoms are signposted to a dermatologist. Organic, vegan or certification wording only where the product page itself states it.",
+    "approved_publications": [
+      "professional"
+    ],
+    "approved_links": [
+      {
+        "url": "https://glorybyus.com/",
+        "anchor": "Glory By Us",
+        "topics": [
+          "scalp care routines",
+          "natural and organic hair product labels"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/collections/wave-hair-products",
+        "anchor": "Wave Hair Products",
+        "topics": [
+          "wave hair care routines",
+          "scalp care routines"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/scalp-health-varsity-set",
+        "anchor": "Scalp Health Varsity Set",
+        "topics": [
+          "scalp care routines",
+          "wave hair care routines"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+        "anchor": "Rosemary Myrrh Shampoo & Body Bar",
+        "topics": [
+          "cleansing and product buildup",
+          "hair product ingredient labels"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/hydrating-conditioner",
+        "anchor": "Hydrating Peppermint Conditioner",
+        "topics": [
+          "conditioning textured hair",
+          "hair product ingredient labels"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/glory-set",
+        "anchor": "Big 3 Hydration Set",
+        "topics": [
+          "conditioning textured hair",
+          "scalp care routines"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/pomade-paste",
+        "anchor": "Pomade Paste",
+        "topics": [
+          "wave hair care routines"
+        ]
+      },
+      {
+        "url": "https://glorybyus.com/products/brush-your-hair",
+        "anchor": "Brush (Your Hair)",
+        "topics": [
+          "wave hair care routines"
+        ]
+      }
+    ],
+    "forbidden": [
+      "cures",
+      "treats hair loss",
+      "regrows hair",
+      "stops hair loss",
+      "prevents hair loss",
+      "reverses thinning",
+      "treats dandruff",
+      "medical advice",
+      "guaranteed results"
+    ],
+    "prohibited_claim_patterns": [
+      "\\bcur(?:e|es|ed|ing)\\b",
+      "\\bregrow\\w*",
+      "\\btreat(?:s|ed|ing|ment|ments)?\\b[^.]{0,40}\\b(?:hair loss|thinning|balding|alopecia|dandruff|eczema|psoriasis|dermatitis|scalp condition|scalp disease)",
+      "\\b(?:stop|stops|stopping|prevent|prevents|preventing|reverse|reverses|reversing|halt|halts)\\b[^.]{0,30}\\b(?:hair loss|thinning|shedding|balding)",
+      "\\b(?:awaken|awakens|revive|revives|reactivate|reactivates)\\b[^.]{0,25}\\bfollicles?\\b",
+      "\\b(?:promote|promotes|stimulate|stimulates|boost|boosts|accelerate|accelerates)\\b[^.]{0,25}\\bhair growth\\b"
+    ],
+    "_prohibited_claim_patterns_note": "Enforced by scripts/hostile_review.py on every page that links this brand: FDA treats a hair product making a drug claim (cure, treat, regrow, stop or prevent hair loss) as a drug, so none of these may appear on a page that cites it. \"Supports scalp health\" in a cosmetic context is the permitted register."
   }
 ]

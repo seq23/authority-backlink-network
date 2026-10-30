@@ -1967,7 +1967,13 @@
         "equine legal research",
         "horse contract preparation",
         "boarding agreement questions",
-        "horse dispute preparation"
+        "horse dispute preparation",
+        "scalp care routines",
+        "wave hair care routines",
+        "cleansing and product buildup",
+        "conditioning textured hair",
+        "hair product ingredient labels",
+        "natural and organic hair product labels"
       ],
       "targets": [
         {
@@ -2697,6 +2703,84 @@
               "topics": [
                 "recovery housing boundaries",
                 "medical disclaimer"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "glory-by-us",
+          "brand": "Glory By Us",
+          "domain": "glorybyus.com",
+          "campaign_id": "glory-by-us-scalp-care",
+          "eligible_clusters": [
+            "scalp care routines",
+            "wave hair care routines",
+            "cleansing and product buildup",
+            "conditioning textured hair",
+            "hair product ingredient labels",
+            "natural and organic hair product labels"
+          ],
+          "approved_links": [
+            {
+              "url": "https://glorybyus.com/",
+              "anchor": "Glory By Us",
+              "topics": [
+                "scalp care routines",
+                "natural and organic hair product labels"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/collections/wave-hair-products",
+              "anchor": "Wave Hair Products",
+              "topics": [
+                "wave hair care routines",
+                "scalp care routines"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/scalp-health-varsity-set",
+              "anchor": "Scalp Health Varsity Set",
+              "topics": [
+                "scalp care routines",
+                "wave hair care routines"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+              "anchor": "Rosemary Myrrh Shampoo & Body Bar",
+              "topics": [
+                "cleansing and product buildup",
+                "hair product ingredient labels"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/hydrating-conditioner",
+              "anchor": "Hydrating Peppermint Conditioner",
+              "topics": [
+                "conditioning textured hair",
+                "hair product ingredient labels"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/glory-set",
+              "anchor": "Big 3 Hydration Set",
+              "topics": [
+                "conditioning textured hair",
+                "scalp care routines"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/pomade-paste",
+              "anchor": "Pomade Paste",
+              "topics": [
+                "wave hair care routines"
+              ]
+            },
+            {
+              "url": "https://glorybyus.com/products/brush-your-hair",
+              "anchor": "Brush (Your Hair)",
+              "topics": [
+                "wave hair care routines"
               ]
             }
           ]

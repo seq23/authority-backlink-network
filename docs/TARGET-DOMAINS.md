@@ -13,6 +13,7 @@
 - horselegalguide.com — Horse Legal Guide
 - hicksconsulting.org — Hicks Consulting
 - porchandparty901.com — Porch & Party
+- glorybyus.com — Glory By Us (Shopify; organic natural hair care and scalp health) — Professional Resource Library, cosmetic scalp-care education only. Never cure, treat, regrow, or stop/prevent hair-loss wording; "supports scalp health" in a cosmetic sense is the register.
 
 - `approvalprep.com` — Approval Prep — Professional Resource Library — self-service letters, document organization, and application-readiness tools. No credit repair, legal/financial advice, third-party contact, fake documents, or approval guarantees.
 

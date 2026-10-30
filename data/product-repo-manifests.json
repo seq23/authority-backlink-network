@@ -1257,6 +1257,122 @@
           "source_path": "commercial-destination"
         }
       ]
+    },
+    {
+      "brand_id": "glory-by-us",
+      "source_repo_key": "glorybyus-shopify-live",
+      "source_artifact": "https://glorybyus.com/sitemap.xml (Shopify product and collection sitemaps, fetched 2026-10-30)",
+      "source_sha256": "f6273a8f951683a05681267737c70180137305ed644adfb46c2bddae0ff7ac32",
+      "manifest_url": "https://glorybyus.com/sitemap.xml",
+      "status": "imported_snapshot",
+      "last_imported_at": "2026-10-30",
+      "surface_count": 8,
+      "surfaces": [
+        {
+          "canonical_url": "https://glorybyus.com/",
+          "topic": "Glory By Us",
+          "content_type": "homepage",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "scalp care routines",
+          "status": "published",
+          "source_path": "shopify:/"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/collections/wave-hair-products",
+          "topic": "Wave Hair Products",
+          "content_type": "collection",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wave hair care routines",
+          "status": "published",
+          "source_path": "shopify:/collections/wave-hair-products"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/scalp-health-varsity-set",
+          "topic": "Scalp Health Varsity Set",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "scalp care routines",
+          "status": "published",
+          "source_path": "shopify:/products/scalp-health-varsity-set"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+          "topic": "Rosemary Myrrh Shampoo & Body Bar",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "cleansing and product buildup",
+          "status": "published",
+          "source_path": "shopify:/products/sweet-potato-shampoo-body-bar-copy-1"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/hydrating-conditioner",
+          "topic": "Hydrating Peppermint Conditioner",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "conditioning textured hair",
+          "status": "published",
+          "source_path": "shopify:/products/hydrating-conditioner"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/glory-set",
+          "topic": "Big 3 Hydration Set",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "conditioning textured hair",
+          "status": "published",
+          "source_path": "shopify:/products/glory-set"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/pomade-paste",
+          "topic": "Pomade Paste",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wave hair care routines",
+          "status": "published",
+          "source_path": "shopify:/products/pomade-paste"
+        },
+        {
+          "canonical_url": "https://glorybyus.com/products/brush-your-hair",
+          "topic": "Brush (Your Hair)",
+          "content_type": "product",
+          "publication_date": null,
+          "indexability": "index",
+          "schema_types": [
+            "WebPage"
+          ],
+          "cluster": "wave hair care routines",
+          "status": "published",
+          "source_path": "shopify:/products/brush-your-hair"
+        }
+      ]
     }
   ]
 }
