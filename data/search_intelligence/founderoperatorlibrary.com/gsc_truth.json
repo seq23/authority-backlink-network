@@ -4,29 +4,29 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-09-29",
-  "end_date": "2026-10-26",
+  "start_date": "2026-09-30",
+  "end_date": "2026-10-27",
   "window_days": 28,
-  "collected_at": "2026-10-29T14:29:23+00:00",
+  "collected_at": "2026-10-30T14:09:30+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 161,
-    "ctr": 0.0062,
-    "position": 26.5
+    "impressions": 166,
+    "ctr": 0.006,
+    "position": 26.2
   },
-  "query_count": 15,
-  "page_count": 33,
-  "row_count": 15,
-  "query_row_impressions": 58,
+  "query_count": 14,
+  "page_count": 32,
+  "row_count": 14,
+  "query_row_impressions": 59,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
       "query": "ai executive coaching",
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 19,
       "ctr": 0,
-      "position": 23.4
+      "position": 23
     },
     {
       "query": "executive ai coaching",
@@ -53,6 +53,14 @@
       "position": 5.2
     },
     {
+      "query": "monthly metrics",
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 47.7
+    },
+    {
       "query": "founder support for product execution",
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 0,
@@ -67,14 +75,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 86.5
-    },
-    {
-      "query": "monthly metrics",
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 46.5
     },
     {
       "query": "performance problem identification",
@@ -107,14 +107,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 16
-    },
-    {
-      "query": "company masthead",
-      "page": "https://founderoperatorlibrary.com/masthead",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 25
     },
     {
       "query": "foundr operators",
@@ -145,9 +137,9 @@
     {
       "query": "ai executive coaching",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 19,
       "ctr": 0,
-      "position": 23.4
+      "position": 23
     },
     {
       "query": "executive ai coaching",
@@ -171,6 +163,13 @@
       "position": 5.2
     },
     {
+      "query": "monthly metrics",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 47.7
+    },
+    {
       "query": "founder support for product execution",
       "clicks": 0,
       "impressions": 2,
@@ -183,13 +182,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 86.5
-    },
-    {
-      "query": "monthly metrics",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 46.5
     },
     {
       "query": "performance problem identification",
@@ -220,13 +212,6 @@
       "position": 16
     },
     {
-      "query": "company masthead",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 25
-    },
-    {
       "query": "foundr operators",
       "clicks": 0,
       "impressions": 1,
@@ -252,28 +237,28 @@
     {
       "page": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "clicks": 0,
-      "impressions": 36,
+      "impressions": 38,
       "ctr": 0,
-      "position": 38.1
+      "position": 37.1
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 1,
-      "impressions": 34,
-      "ctr": 0.0294,
-      "position": 43.6
+      "impressions": 35,
+      "ctr": 0.0286,
+      "position": 43.8
     },
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 23,
+      "impressions": 25,
       "ctr": 0,
       "position": 7.1
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
-      "impressions": 15,
+      "impressions": 14,
       "ctr": 0,
       "position": 4.4
     },
@@ -282,7 +267,7 @@
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 7.2
+      "position": 5.3
     },
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
@@ -306,18 +291,18 @@
       "position": 34.3
     },
     {
+      "page": "https://founderoperatorlibrary.com/editorial-standards",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 4.8
+    },
+    {
       "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 38.4
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/editorial-standards",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 5.6
     },
     {
       "page": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
@@ -332,6 +317,13 @@
       "impressions": 3,
       "ctr": 0,
       "position": 25
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/corrections",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
@@ -376,13 +368,6 @@
       "position": 75
     },
     {
-      "page": "https://founderoperatorlibrary.com/corrections",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
       "page": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers",
       "clicks": 0,
       "impressions": 1,
@@ -423,13 +408,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 2
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
