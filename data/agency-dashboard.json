@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-10-29",
+  "as_of": "2026-10-30",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -8,7 +8,7 @@
     "release_operators": 10,
     "workflow_operators": 10,
     "approved_target_urls": 127,
-    "serviced_target_urls": 95,
+    "serviced_target_urls": 94,
     "backlink_rows": 628,
     "unique_source_editorials": 597,
     "live_verified_rows": 147,
@@ -8251,10 +8251,31 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 0,
-      "live_verified_count": 0,
+      "backlink_count": 1,
+      "live_verified_count": 1,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
+          "source_title": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-10-08",
+          "release_date": "2026-10-08",
+          "anchor": "Accountability for a founder trying to build consistency",
+          "campaign_id": "bhpc-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        }
+      ]
     },
     {
       "brand_id": "bhpc",
@@ -8270,10 +8291,30 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 2,
+      "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
+          "source_title": "How to Write a Delegation Brief a Person or a Tool Can Both Execute",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-29",
+          "release_date": "2026-08-29",
+          "anchor": "Accountability for a founder working without a chief of staff",
+          "campaign_id": "bhpc-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
         {
           "source_path": "sites/founder-operator/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability.html",
@@ -8329,31 +8370,10 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 0,
+      "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": [
-        {
-          "source_path": "sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html",
-          "source_title": "How to Write a Delegation Brief a Person or a Tool Can Both Execute",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-08-29",
-          "release_date": "2026-08-29",
-          "anchor": "Best AI Coaching Tools and Software: How to Compare Them",
-          "campaign_id": "bhpc-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        }
-      ]
+      "backlinks": []
     },
     {
       "brand_id": "bhpc",
@@ -8407,31 +8427,10 @@
       "campaign_ids": [
         "bhpc-authority"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 0,
+      "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": [
-        {
-          "source_path": "sites/founder-operator/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po.html",
-          "source_title": "Personal Board Of Directors: Checklist-Driven Buyer Guide For People Who Need A Starting Point",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-10-08",
-          "release_date": "2026-10-08",
-          "anchor": "BHPC vs accountability app for behavioral follow-through",
-          "campaign_id": "bhpc-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        }
-      ]
+      "backlinks": []
     },
     {
       "brand_id": "bhpc",
@@ -10589,30 +10588,10 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 3,
-      "live_verified_count": 1,
+      "backlink_count": 2,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
-        {
-          "source_path": "sites/professional-resources/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
-          "source_title": "How Organizations Can Respond to Burnout Before It Becomes a Crisis",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "Hicks Consulting",
-          "campaign_id": "hicks-workplace-wellbeing",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
-        },
         {
           "source_path": "sites/professional-resources/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-06-28-decision-frameworks-for-sensitive-services-human-first-question-checklist-before-you-sign.html",
@@ -10669,18 +10648,18 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 2,
-      "live_verified_count": 2,
+      "backlink_count": 1,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
-          "source_title": "What to Ask About Confidentiality Before Using a Workplace Support Program",
+          "source_path": "sites/professional-resources/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html",
+          "source_title": "How to Prepare a Manager for a Workload Conversation",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-31",
-          "release_date": "2026-08-31",
+          "scheduled_content_date": "2026-08-30",
+          "release_date": "2026-08-30",
           "anchor": "Virtual Coaching",
           "campaign_id": "hicks-workplace-wellbeing",
           "status": "published",
@@ -10692,26 +10671,6 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 88
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
-          "source_title": "Therapy, Coaching, and Workplace Education Are Different Services",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "Virtual Coaching",
-          "campaign_id": "hicks-workplace-wellbeing",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
         }
       ]
     },
@@ -10729,18 +10688,18 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 3,
-      "live_verified_count": 2,
+      "backlink_count": 4,
+      "live_verified_count": 3,
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html",
-          "source_title": "What to Put in a Workplace Mental Health Training Request",
+          "source_path": "sites/professional-resources/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
+          "source_title": "How to Tell Whether a Workplace Wellbeing Program Changed Anything",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-30",
-          "release_date": "2026-08-30",
+          "scheduled_content_date": "2026-08-31",
+          "release_date": "2026-08-31",
           "anchor": "Organizational Trainings",
           "campaign_id": "hicks-workplace-wellbeing",
           "status": "published",
@@ -10754,9 +10713,9 @@
           "score": 88
         },
         {
-          "source_path": "sites/professional-resources/workplace-burnout-and-boundaries.html",
-          "source_url": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries.html",
-          "source_title": "Workplace Burnout and Boundaries Resources",
+          "source_path": "sites/professional-resources/workplace-mental-health-training-vs-therapy.html",
+          "source_url": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy.html",
+          "source_title": "Workplace Mental Health Training and Therapy Are Not the Same Purchase",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-27",
@@ -10792,6 +10751,26 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 80
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
+          "source_title": "What to Look for in a Workplace Mental-Health Speaker",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
+          "anchor": "Organizational Trainings",
+          "campaign_id": "hicks-workplace-wellbeing",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
         }
       ]
     },
@@ -10809,34 +10788,14 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 2,
-      "live_verified_count": 2,
+      "backlink_count": 1,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-30-how-to-prepare-a-manager-for-a-workload-conversation.html",
-          "source_title": "How to Prepare a Manager for a Workload Conversation",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-08-30",
-          "release_date": "2026-08-30",
-          "anchor": "Frequently Asked Questions",
-          "campaign_id": "hicks-workplace-wellbeing",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters.html",
-          "source_title": "Workplace Burnout Resources: Decision-Focused Faq Answer Page When Timing Matters",
+          "source_path": "sites/professional-resources/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers.html",
+          "source_title": "Compassion Fatigue Resources: Resource-Backed Operator Playbook For First-Time Buyers",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-25",
@@ -10869,14 +10828,34 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 2,
+      "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-look-for-in-a-workplace-mental-health-speaker.html",
-          "source_title": "What to Look for in a Workplace Mental-Health Speaker",
+          "source_path": "sites/professional-resources/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-30-what-to-put-in-a-workplace-mental-health-training-request.html",
+          "source_title": "What to Put in a Workplace Mental Health Training Request",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-30",
+          "release_date": "2026-08-30",
+          "anchor": "Organizational Training Inquiry",
+          "campaign_id": "hicks-workplace-wellbeing",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
+          "source_title": "How to Scope Organizational Wellbeing Training",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-07-24",
@@ -10909,14 +10888,14 @@
       "campaign_ids": [
         "hicks-workplace-wellbeing"
       ],
-      "backlink_count": 5,
-      "live_verified_count": 3,
+      "backlink_count": 6,
+      "live_verified_count": 4,
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
-          "source_title": "How to Tell Whether a Workplace Wellbeing Program Changed Anything",
+          "source_path": "sites/professional-resources/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-31-what-to-ask-about-confidentiality-before-using-a-workplace-support-program.html",
+          "source_title": "What to Ask About Confidentiality Before Using a Workplace Support Program",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-31",
@@ -10934,9 +10913,29 @@
           "score": 88
         },
         {
-          "source_path": "sites/professional-resources/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-compassion-fatigue-resources-resource-backed-operator-playbook-for-first-time-buyers.html",
-          "source_title": "Compassion Fatigue Resources: Resource-Backed Operator Playbook For First-Time Buyers",
+          "source_path": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+          "source_url": "https://professionalresourcelibrary.com/workplace-burnout-and-boundaries.html",
+          "source_title": "Workplace Burnout and Boundaries Resources",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
+          "anchor": "Emotional Wellness Resources",
+          "campaign_id": "hicks-workplace-wellbeing",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": null
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-25-workplace-burnout-resources-decision-focused-faq-answer-page-when-timing-matters.html",
+          "source_title": "Workplace Burnout Resources: Decision-Focused Faq Answer Page When Timing Matters",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-25",
@@ -10994,9 +10993,9 @@
           "score": 80
         },
         {
-          "source_path": "sites/professional-resources/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-scope-organizational-wellbeing-training.html",
-          "source_title": "How to Scope Organizational Wellbeing Training",
+          "source_path": "sites/professional-resources/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-organizations-can-respond-to-burnout-before-it-becomes-a-crisis.html",
+          "source_title": "How Organizations Can Respond to Burnout Before It Becomes a Crisis",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-07-24",
@@ -11034,13 +11033,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/workplace-mental-health-training-vs-therapy.html",
-          "source_url": "https://professionalresourcelibrary.com/workplace-mental-health-training-vs-therapy.html",
-          "source_title": "Workplace Mental Health Training and Therapy Are Not the Same Purchase",
+          "source_path": "sites/professional-resources/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-therapy-coaching-and-workplace-education-are-different-services.html",
+          "source_title": "Therapy, Coaching, and Workplace Education Are Different Services",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
           "anchor": "Virtual Therapy Serving Memphis & Tennessee",
           "campaign_id": "hicks-workplace-wellbeing",
           "status": "published",
@@ -11051,7 +11050,7 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": null
+          "score": 92
         },
         {
           "source_path": "",
@@ -11854,26 +11853,6 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/neuro-evaluation-research.html",
-          "source_url": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
-          "source_title": "Neuro Evaluation Research",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
-          "anchor": "Neuro Evaluation Guides: ADHD and Autism Evaluations and Therapy",
-          "campaign_id": "neuro-eval-guides-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": null
-        },
-        {
           "source_path": "sites/professional-resources/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-18-family-recovery-support-decision-focused-red-flag-checklist-for-first-time-buyers.html",
           "source_title": "Family Recovery Support: Decision-Focused Red-Flag Checklist For First-Time Buyers",
@@ -11908,6 +11887,26 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+          "source_title": "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-07-03",
+          "release_date": "2026-07-03",
+          "anchor": "Neuro Evaluation Guides: ADHD and Autism Evaluations and Therapy",
+          "campaign_id": "neuro-eval-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -11969,10 +11968,30 @@
       "campaign_ids": [
         "neuro-eval-guides-authority"
       ],
-      "backlink_count": 3,
-      "live_verified_count": 1,
+      "backlink_count": 4,
+      "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/neuro-evaluation-research.html",
+          "source_url": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
+          "source_title": "Neuro Evaluation Research",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
+          "anchor": "ADHD, Autism and Neuropsych Guides",
+          "campaign_id": "neuro-eval-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": null
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html",
@@ -11994,13 +12013,13 @@
           "score": 80
         },
         {
-          "source_path": "sites/professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
-          "source_title": "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
+          "source_path": "sites/professional-resources/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
+          "source_title": "What to Ask Before Scheduling Neuropsychological or ADHD Testing",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-07-03",
-          "release_date": "2026-07-03",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
           "anchor": "ADHD, Autism and Neuropsych Guides",
           "campaign_id": "neuro-eval-guides-authority",
           "status": "published",
@@ -12011,7 +12030,7 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": 88
+          "score": 92
         },
         {
           "source_path": "",
@@ -12089,8 +12108,8 @@
       "campaign_ids": [
         "neuro-eval-guides-authority"
       ],
-      "backlink_count": 2,
-      "live_verified_count": 1,
+      "backlink_count": 1,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -12112,26 +12131,6 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 80
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-what-to-ask-before-scheduling-neuropsychological-or-adhd-testing.html",
-          "source_title": "What to Ask Before Scheduling Neuropsychological or ADHD Testing",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "Questions to Ask Before Neuro Testing",
-          "campaign_id": "neuro-eval-guides-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
         }
       ]
     },
@@ -14410,13 +14409,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/uscis-medical-exam-resources.html",
-          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html",
-          "source_title": "USCIS Medical Exam Resources",
+          "source_path": "sites/professional-resources/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
+          "source_title": "How to Organize Records Before a USCIS Medical Examination",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
+          "scheduled_content_date": "2026-09-02",
+          "release_date": "2026-09-02",
           "anchor": "USCIS Medical Exam Guides: Form I-693",
           "campaign_id": "uscis-exam-guides-authority",
           "status": "published",
@@ -14427,7 +14426,7 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": null
+          "score": 88
         },
         {
           "source_path": "sites/professional-resources/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html",
@@ -14510,13 +14509,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-09-02-how-to-organize-records-before-a-uscis-medical-examination.html",
-          "source_title": "How to Organize Records Before a USCIS Medical Examination",
+          "source_path": "sites/professional-resources/uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
+          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
+          "source_title": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-09-02",
-          "release_date": "2026-09-02",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
           "anchor": "USCIS Medical Exam Costs and Timeframes: General Information",
           "campaign_id": "uscis-exam-guides-authority",
           "status": "published",
@@ -14527,12 +14526,12 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": 88
+          "score": null
         },
         {
-          "source_path": "sites/professional-resources/uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
-          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-what-it-costs-and-the-sealed-envelope.html",
-          "source_title": "The USCIS Medical Exam: What Sets the Cost and Why the Envelope Stays Sealed",
+          "source_path": "sites/professional-resources/uscis-medical-exam-resources.html",
+          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html",
+          "source_title": "USCIS Medical Exam Resources",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-27",
@@ -14570,13 +14569,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/founder-operator/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
-          "source_title": "What Belongs in a Run of Show Document",
+          "source_path": "sites/founder-operator/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
+          "source_title": "Webinar vs Virtual Conference vs Hybrid Broadcast: How the Scope Differs",
           "publication": "Founder Operator Library",
           "publication_id": "founder",
-          "scheduled_content_date": "2026-08-30",
-          "release_date": "2026-08-30",
+          "scheduled_content_date": "2026-08-31",
+          "release_date": "2026-08-31",
           "anchor": "Learn: Virtual Events and AI Marketing",
           "campaign_id": "virtual-agency-os-authority",
           "status": "published",
@@ -14710,6 +14709,26 @@
           "score": 80
         },
         {
+          "source_path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
+          "source_title": "Virtual Event Production: Decision-Focused Resource Roundup Before You Call",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-17",
+          "release_date": "2026-08-17",
+          "anchor": "Learn: Virtual Events and AI Marketing",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
           "source_path": "sites/founder-operator/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators.html",
           "source_title": "Executive Broadcast Planning: Editorial Faq Answer Page For Busy Operators",
@@ -14784,26 +14803,6 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 80
-        },
-        {
-          "source_path": "sites/founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
-          "source_title": "Virtual Event Production: Aeo-Ready Buyer Guide For People Who Need A Starting Point",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-07-17",
-          "release_date": "2026-08-08",
-          "anchor": "Learn: Virtual Events and AI Marketing",
-          "campaign_id": "virtual-agency-os-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -15050,26 +15049,6 @@
           "score": 80
         },
         {
-          "source_path": "sites/founder-operator/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call.html",
-          "source_title": "Virtual Event Production: Decision-Focused Resource Roundup Before You Call",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-08-17",
-          "release_date": "2026-08-17",
-          "anchor": "Virtual event production cost",
-          "campaign_id": "virtual-agency-os-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 80
-        },
-        {
           "source_path": "sites/founder-operator/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers.html",
           "source_title": "Executive Broadcast Planning: Comparison-Friendly Framework For First-Time Buyers",
@@ -15128,6 +15107,26 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 80
+        },
+        {
+          "source_path": "sites/founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
+          "source_title": "Virtual Event Production: Citation-Friendly Mistakes To Avoid When Timing Matters",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-07-23",
+          "release_date": "2026-08-08",
+          "anchor": "Virtual event production cost",
+          "campaign_id": "virtual-agency-os-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
         }
       ]
     },
@@ -15150,13 +15149,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/founder-operator/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs.html",
-          "source_title": "Webinar vs Virtual Conference vs Hybrid Broadcast: How the Scope Differs",
+          "source_path": "sites/founder-operator/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document.html",
+          "source_title": "What Belongs in a Run of Show Document",
           "publication": "Founder Operator Library",
           "publication_id": "founder",
-          "scheduled_content_date": "2026-08-31",
-          "release_date": "2026-08-31",
+          "scheduled_content_date": "2026-08-30",
+          "release_date": "2026-08-30",
           "anchor": "Virtual Events Production: What It Includes and What It Costs",
           "campaign_id": "virtual-agency-os-authority",
           "status": "published",
@@ -15250,12 +15249,12 @@
           "score": 80
         },
         {
-          "source_path": "sites/founder-operator/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters.html",
-          "source_title": "Virtual Event Production: Citation-Friendly Mistakes To Avoid When Timing Matters",
+          "source_path": "sites/founder-operator/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point.html",
+          "source_title": "Virtual Event Production: Aeo-Ready Buyer Guide For People Who Need A Starting Point",
           "publication": "Founder Operator Library",
           "publication_id": "founder",
-          "scheduled_content_date": "2026-07-23",
+          "scheduled_content_date": "2026-07-17",
           "release_date": "2026-08-08",
           "anchor": "Virtual Events Production: What It Includes and What It Costs",
           "campaign_id": "virtual-agency-os-authority",
