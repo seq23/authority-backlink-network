@@ -102,3 +102,82 @@ def measured_target(host: str, subject: str) -> dict | None:
         if len(need) >= 2 and need <= have and (best is None or t["impressions"] > best["impressions"]):
             best = t
     return best
+
+
+# Owner exceptions to the publishing freeze (publishing_freeze.json
+# `owner_exceptions`). The freeze itself is not loosened: an exception is a
+# named, dated record of the owner's own words that lets at most `max_articles`
+# pages linking ONE brand publish without a measured query, on ONE host, on or
+# after the day she decided it. A page claims an exception by its released
+# record in held_pages.json carrying `owner_exception: <id>`; anything else
+# dated on/after `since` still needs a measured query with impressions.
+EXCEPTION_FIELDS = ("id", "brand_id", "target_domain", "host", "max_articles", "decided", "owner_words")
+
+
+def exception_problems(exc: dict) -> list[str]:
+    """Why an owner-exception entry is not a usable record, or []."""
+    out = [f"owner_exception {exc.get('id', '?')}: missing {k}" for k in EXCEPTION_FIELDS if not exc.get(k)]
+    if not out:
+        n = exc["max_articles"]
+        if not isinstance(n, int) or isinstance(n, bool) or n < 1:
+            out.append(f"owner_exception {exc['id']}: max_articles must be a positive integer")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(exc["decided"])):
+            out.append(f"owner_exception {exc['id']}: decided must be an ISO date")
+    return out
+
+
+def freeze_violations(fz: dict, released: list[dict], pages: list[tuple[str, str, str]]) -> list[str]:
+    """Every way the dated daily pages break the publishing freeze.
+
+    pages: (rel_path, host, page_html) for each daily page. A page dated
+    on/after `since` passes only with a released record that carries a measured
+    query with impressions, or one that names a valid owner exception whose
+    brand, host and date it matches, whose target domain it links, and whose
+    article cap it stays inside.
+    """
+    if fz.get("enabled") is not True:
+        return []
+    fail: list[str] = []
+    since = fz.get("since", "")
+    exceptions = {}
+    for exc in fz.get("owner_exceptions", []) or []:
+        problems = exception_problems(exc)
+        fail += problems
+        if not problems:
+            exceptions[exc["id"]] = exc
+    by_path = {r.get("path"): r for r in released}
+    used: dict[str, list[str]] = {}
+    for rel, host, page in pages:
+        day = Path(rel).name[:10]
+        if day < since:
+            continue
+        r = by_path.get(rel)
+        if r and r.get("measured_query") and (r.get("impressions") or 0) > 0:
+            continue
+        exc_id = (r or {}).get("owner_exception")
+        if not exc_id:
+            fail.append(f"freeze: {rel} was published on/after {since} without a measured query in held_pages.json")
+            continue
+        exc = exceptions.get(exc_id)
+        if exc is None:
+            fail.append(f"freeze: {rel} claims owner exception {exc_id!r}, which publishing_freeze.json does not hold")
+            continue
+        domain = re.escape(exc["target_domain"])
+        why = []
+        if r.get("target_brand_id") != exc["brand_id"]:
+            why.append(f"brand {r.get('target_brand_id')!r} is not {exc['brand_id']!r}")
+        if host != exc["host"]:
+            why.append(f"host {host!r} is not {exc['host']!r}")
+        if day < exc["decided"]:
+            why.append(f"dated {day}, before the owner decided on {exc['decided']}")
+        if not re.search(rf'href="https?://(?:www\.)?{domain}[/"]', page):
+            why.append(f"does not link {exc['target_domain']}")
+        if why:
+            fail.append(f"freeze: {rel} is outside owner exception {exc_id}: " + "; ".join(why))
+            continue
+        used.setdefault(exc_id, []).append(rel)
+    for exc_id, rels in used.items():
+        cap = exceptions[exc_id]["max_articles"]
+        if len(rels) > cap:
+            fail.append(f"freeze: owner exception {exc_id} allows {cap} article(s); {len(rels)} claim it: {sorted(rels)}")
+    return fail

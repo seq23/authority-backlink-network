@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "validator": "external-source-verification",
   "generated_at": "2026-10-25T21:42:36+00:00",
-  "sources_checked": 120,
-  "verified": 120,
+  "sources_checked": 125,
+  "verified": 125,
   "receipts": [
     {
       "id": "uscis-i-693",
@@ -1205,6 +1205,56 @@
       "observed_title": "Federal Register :: Agencies - U.S. Citizenship and Immigration Services",
       "checked_at": "2026-09-03T03:13:01+00:00",
       "outcome": "verified"
+    },
+    {
+      "id": "aad-healthy-hair-tips",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+      "publisher": "American Academy of Dermatology",
+      "http_status": 200,
+      "resolved_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+      "observed_title": "Tips for healthy hair",
+      "checked_at": "2026-10-30T23:09:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "aad-black-hair-everyday-care",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/care-african-american",
+      "publisher": "American Academy of Dermatology",
+      "http_status": 200,
+      "resolved_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/care-african-american",
+      "observed_title": "Black hair: Tips for everyday care",
+      "checked_at": "2026-10-30T23:09:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "aad-habits-that-damage-hair",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/habits-that-damage-hair",
+      "publisher": "American Academy of Dermatology",
+      "http_status": 200,
+      "resolved_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/habits-that-damage-hair",
+      "observed_title": "10 hair care habits that can damage your hair",
+      "checked_at": "2026-10-30T23:09:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-cosmetic-drug-or-soap",
+      "url": "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap",
+      "observed_title": "Is It a Cosmetic, a Drug, or Both? (Or Is It Soap?) | FDA",
+      "checked_at": "2026-10-30T23:09:28+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "fda-organic-cosmetics",
+      "url": "https://www.fda.gov/cosmetics/cosmetics-labeling-claims/organic-cosmetics",
+      "publisher": "U.S. Food and Drug Administration",
+      "http_status": 200,
+      "resolved_url": "https://www.fda.gov/cosmetics/cosmetics-labeling-claims/organic-cosmetics",
+      "observed_title": "&quot;Organic&quot; Cosmetics | FDA",
+      "checked_at": "2026-10-30T23:09:29+00:00",
+      "outcome": "verified"
     }
   ],
   "brand_links_checked": 135,
@@ -1276,7 +1326,7 @@
       "publisher": "The Accident Guides",
       "http_status": 200,
       "resolved_url": "https://theaccidentguides.com/personal-injury/",
-      "observed_title": "Personal injury \u2014 browse by state",
+      "observed_title": "Personal injury — browse by state",
       "checked_at": "2026-10-25T21:42:37+00:00",
       "outcome": "verified"
     },
@@ -2156,7 +2206,7 @@
       "publisher": "Dream Wedding Builder",
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "observed_title": "Free Wedding Planner — constraint-first planning in your browser",
       "checked_at": "2026-10-25T21:42:50+00:00",
       "outcome": "verified"
     },
@@ -2166,7 +2216,7 @@
       "publisher": "Dream Wedding Builder",
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "observed_title": "Free Wedding Planner — constraint-first planning in your browser",
       "checked_at": "2026-10-25T21:42:50+00:00",
       "outcome": "verified"
     },
@@ -2176,7 +2226,7 @@
       "publisher": "Dream Wedding Builder",
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "observed_title": "Free Wedding Planner — constraint-first planning in your browser",
       "checked_at": "2026-10-25T21:42:51+00:00",
       "outcome": "verified"
     },
@@ -2186,7 +2236,7 @@
       "publisher": "Dream Wedding Builder",
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "observed_title": "Free Wedding Planner — constraint-first planning in your browser",
       "checked_at": "2026-10-25T21:42:52+00:00",
       "outcome": "verified"
     },
@@ -2366,7 +2416,7 @@
       "publisher": "Dream Wedding Builder",
       "http_status": 200,
       "resolved_url": "https://weddingchecklistpdf.com/free-wedding-planner",
-      "observed_title": "Free Wedding Planner \u2014 constraint-first planning in your browser",
+      "observed_title": "Free Wedding Planner — constraint-first planning in your browser",
       "checked_at": "2026-10-25T21:42:57+00:00",
       "outcome": "verified"
     },

@@ -288,10 +288,47 @@ def ledger_row(article: dict, rel_path: str) -> dict:
     }
 
 
+HELD = ROOT / "data/search_intelligence/held_pages.json"
+FREEZE = ROOT / "data/search_intelligence/publishing_freeze.json"
+SITES = ROOT / "data/search_intelligence/sites.json"
+
+
+def record_freeze_exception(article: dict, rel_path: str, held: dict) -> bool:
+    """Record an owner-exception release in held_pages.json `released`.
+
+    An article that names `freeze_exception` publishes under the owner's dated
+    exception in publishing_freeze.json, never by loosening the freeze; the
+    validator (measured.freeze_violations) then checks brand, host, date, the
+    link and the cap against that entry. Refuses an id the freeze file lacks.
+    Returns True when a new record was added.
+    """
+    exc_id = article["freeze_exception"]
+    fz = json.loads(FREEZE.read_text(encoding="utf-8"))
+    if exc_id not in {e.get("id") for e in fz.get("owner_exceptions", [])}:
+        raise SystemExit(f"{article['id']}: freeze_exception {exc_id!r} is not in publishing_freeze.json owner_exceptions")
+    if any(r.get("path") == rel_path for r in held["released"]):
+        return False
+    folder = PUBLICATIONS[article["publication"]]["folder"]
+    host = next(s["host"] for s in json.loads(SITES.read_text(encoding="utf-8"))["sites"] if s["folder"] == folder)
+    held["released"].append({
+        "released_at": article["date"], "host": host, "publication": article["publication"],
+        "path": rel_path, "title": article["title"], "target_brand_id": article["target_brand_id"],
+        "target_url": article["target_url"], "owner_exception": exc_id,
+        "measured_query": None, "impressions": 0, "source": "owner_exception", "was_held": False,
+    })
+    return True
+
+
 def main() -> None:
+    # With file arguments only those content files render, so adding one file
+    # does not rewrite the 46 earlier articles over their later chrome passes.
+    sources = [Path(a).resolve() for a in sys.argv[1:]] or sorted(CONTENT_DIR.glob("*.json"))
     articles = []
-    for source in sorted(CONTENT_DIR.glob("*.json")):
+    for source in sources:
         articles.extend(json.loads(source.read_text(encoding="utf-8"))["articles"])
+    held = json.loads(HELD.read_text(encoding="utf-8"))
+    held.setdefault("released", [])
+    held_added = 0
     ledger = json.loads(LEDGER.read_text(encoding="utf-8"))
     existing = {(r.get("source_path"), r.get("target_url")) for r in ledger}
 
@@ -311,6 +348,8 @@ def main() -> None:
         if not path.exists() or path.read_text(encoding="utf-8") != page:
             path.write_text(page, encoding="utf-8")
         written.append(rel_path)
+        if article.get("freeze_exception"):
+            held_added += record_freeze_exception(article, rel_path, held)
         key = (rel_path, article["target_url"])
         if key not in existing:
             ledger.append(ledger_row(article, rel_path))
@@ -318,6 +357,9 @@ def main() -> None:
             added += 1
 
     LEDGER.write_text(json.dumps(ledger, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if held_added:
+        held["released_count"] = len(held["released"])
+        HELD.write_text(json.dumps(held, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     by_pub: dict[str, int] = {}
     for article in articles:
         by_pub[article["publication"]] = by_pub.get(article["publication"], 0) + 1
@@ -326,6 +368,7 @@ def main() -> None:
         "articles": len(written),
         "by_publication": by_pub,
         "new_ledger_rows": added,
+        "owner_exception_releases": held_added,
     }, indent=2))
 
 

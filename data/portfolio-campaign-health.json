@@ -210,6 +210,19 @@
       "destination_floor": 2,
       "coverage_status": "HEALTHY_RENDERED",
       "external_outcome_proven": true
+    },
+    {
+      "campaign_id": "glory-by-us-scalp-care",
+      "brand_id": "glory-by-us",
+      "rendered": 3,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 3,
+      "distinct_anchors": 3,
+      "rendered_floor": 3,
+      "destination_floor": 3,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
     }
   ]
 }

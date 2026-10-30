@@ -35,7 +35,12 @@ that each part is real, per host in data/search_intelligence/sites.json:
               visible questions.
   freeze      publishing_freeze.json `enabled` is a boolean, the autopilot reads
               it, and while enabled every daily page dated on/after `since` was
-              released with a measured query (held_pages.json `released`).
+              released with a measured query (held_pages.json `released`), or
+              claims a valid owner exception (publishing_freeze.json
+              `owner_exceptions`: one brand, one host, a date, the owner's
+              words, at most `max_articles` pages; see
+              measured.freeze_violations, pinned by
+              tests/test_freeze_owner_exception.py).
 
 Rule 0: zero hosts, zero pages scanned, or zero families examined is a FAIL.
 
@@ -249,16 +254,10 @@ def main() -> int:
     auto = (ROOT / "scripts/authority_v4_autopilot.py").read_text(encoding="utf-8")
     if "search_measured.freeze()" not in auto or "FREEZE.get('enabled') is True" not in auto or "measured_target(" not in auto:
         fail.append("freeze: scripts/authority_v4_autopilot.py no longer reads the publishing freeze")
-    if fz.get("enabled") is True:
-        since = fz.get("since", "")
-        released = {r["path"]: r for r in (m.read_json(m.HELD_PATH, {}) or {}).get("released", [])}
-        for site in sites:
-            for p in sorted((ROOT / site["folder"] / "daily").glob("*.html")):
-                if p.name[:10] >= since:
-                    rel = p.relative_to(ROOT).as_posix()
-                    r = released.get(rel)
-                    if not r or not r.get("measured_query") or not (r.get("impressions") or 0) > 0:
-                        fail.append(f"freeze: {rel} was published on/after {since} without a measured query in held_pages.json")
+    released = (m.read_json(m.HELD_PATH, {}) or {}).get("released", [])
+    daily = [(p.relative_to(ROOT).as_posix(), site["host"], p.read_text(encoding="utf-8", errors="ignore"))
+             for site in sites for p in sorted((ROOT / site["folder"] / "daily").glob("*.html"))]
+    fail += m.freeze_violations(fz, released, daily)
 
     if stats["hosts"] == 0 or stats["pages_scanned"] == 0 or stats["families"] == 0:
         fail.append(f"rule0: examined nothing ({stats})")
