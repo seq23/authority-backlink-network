@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import html
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -59,17 +61,42 @@ floors = {'dream-planning-tools':6,'dianne-recovery-resources':4,'hicks-workplac
 for cid, floor in floors.items():
     assert len(coverage[cid]) >= floor, f'{cid}: immediate gap-closure floor not met'
 
+# The registry stores the anchor as plain text; the page renders it as HTML,
+# so "&" is "&amp;" on the page (rebalance_portfolio_links.py and the backlink
+# engine both html.escape it). A raw substring test against the HTML fails on
+# any anchor with an "&", which is what kept the autopilot red from 28 Oct 2026
+# ("Virtual Therapy Serving Memphis & Tennessee"). The check below is stricter
+# than the old substring test: one <a> element must carry exactly this href AND
+# exactly this anchor text.
+ANCHOR_RE = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.I | re.S)
+HREF_RE = re.compile(r'\bhref\s*=\s*(["\'])(.*?)\1', re.I | re.S)
+TAG_RE = re.compile(r'<[^>]+>')
+
+
+def rendered_links(text):
+    for attrs, inner in ANCHOR_RE.findall(text):
+        href = HREF_RE.search(attrs)
+        if href:
+            yield (html.unescape(href.group(2)),
+                   ' '.join(html.unescape(TAG_RE.sub('', inner)).split()))
+
+
 seed_ids = {x['id'] for x in seed}
+seed_rows_checked = 0
 for row in published:
     if row.get('seed_article_id'):
+        seed_rows_checked += 1
         assert row['seed_article_id'] in seed_ids
         path = ROOT / row['source_path']
         text = path.read_text(encoding='utf-8')
         assert '<link rel="canonical"' in text
         assert '<meta name="description"' in text
         assert 'Affiliation disclosed:' in text
-        assert row['target_url'] in text
-        assert row['anchor'] in text
+        anchor = ' '.join(row['anchor'].split())
+        assert (row['target_url'], anchor) in set(rendered_links(text)), (
+            f"{row.get('id')}: {row['source_path']} has no <a href={row['target_url']!r}> "
+            f"with anchor text {row['anchor']!r}")
+assert seed_rows_checked > 0, 'no seed-article backlinks examined: registry or filter is broken'
 
 print(json.dumps({
     'status':'PASS',
@@ -77,6 +104,7 @@ print(json.dumps({
     'campaigns':len(campaigns),
     'published_backlinks':len(published),
     'seed_articles':len(seed),
+    'seed_rows_checked':seed_rows_checked,
     'community_rendered':len(community),
     'community_destinations':len({r['target_url'] for r in community}),
 }))
