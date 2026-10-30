@@ -1,58 +1,46 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-10-29T18:24:24+00:00",
+  "run_at": "2026-10-30T12:18:53+00:00",
   "messages_read": 1,
   "digests_read": 1,
-  "queries_ingested": 10,
+  "queries_ingested": 7,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 10,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 5,
+  "dropped_as_ungroundable": 2,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
   "drops": [
     {
-      "summary": "Looking for people from the UK who have had to go abroad to become parents through surrogacy",
+      "summary": "Seeking Graduate Nursing Faculty and Nurse Education Experts",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Arizona for Corporate Leadership Programs & Corporate Retreats",
+      "summary": "Whose Name Should Be On A Debt Relief Agreement?",
+      "why": "excluded: 'attorney'"
+    },
+    {
+      "summary": "Looking for Animal and Pest Experts",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Experts' opinions: DOE conditional loan commitment for Constellation",
+      "summary": "Last call - Christmas Kids Gift Guide",
       "why": "matches no declared beat"
     },
     {
-      "summary": "Contractors Needed For Mic.com Article",
+      "summary": "Best Protein Powders for Muscle Growth",
       "why": "matches no declared beat"
     },
     {
-      "summary": "LAST CALL - Christmas Gift Guides 2026",
-      "why": "matches no declared beat"
+      "summary": "U.S.-based dog behavior expert needed re: tips for flying w/a puppy",
+      "why": "She would have had to invent expertise as a certified dog behavior expert (CDBC, CAAB, or DACVB) and first-hand knowledge of puppy air travel, crate training, veterinary supplements, and airport secur"
     },
     {
-      "summary": "Shopping Edit: The Best Fall/Winter Perfumes to buy right now",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "We're looking for CROs, CMOs, VPs of Sales or Marketing, RevOps leaders, and CEOs who can speak to: • What you deployed ",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "**Seeking personal wish lists for a generational gift guide** (Individual Submissions)",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Social connection is a big issue.",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Luxury Holiday Gift Guide 2026",
-      "why": "matches no declared beat"
+      "summary": "IT security experts: what cyber risks do most small businesses overlook?",
+      "why": "The available facts cover wedding cost datasets, USCIS form tracking, and research methodology — none address cybersecurity risks, small business IT security, or any technology security topic."
     }
   ],
-  "named_outcome": "NO RELEVANT QUERIES: 10 queries were read from 1 digest(s) and every one was dropped (10 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "named_outcome": "NO RELEVANT QUERIES: 7 queries were read from 1 digest(s) and every one was dropped (5 off-beat, 2 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
