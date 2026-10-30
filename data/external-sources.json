@@ -2204,6 +2204,97 @@
         "filing fees"
       ],
       "supports": "Every rule and notice USCIS publishes, each with its publication date and Federal Register document number. The primary source the form and fee changelog watches."
+    },
+    {
+      "id": "aad-healthy-hair-tips",
+      "domain": "aad.org",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+      "title": "Tips for healthy hair",
+      "topics": [
+        "hair care",
+        "scalp",
+        "shampoo",
+        "conditioner",
+        "wash"
+      ],
+      "supports": "Washing frequency by hair type, shampoo on the scalp, conditioner after washing, gentle detangling, and common reasons for flakes.",
+      "publisher": "American Academy of Dermatology",
+      "publisher_type": "professional_association",
+      "lanes": [
+        "professional"
+      ]
+    },
+    {
+      "id": "aad-black-hair-everyday-care",
+      "domain": "aad.org",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/care-african-american",
+      "title": "Black hair: Tips for everyday care",
+      "topics": [
+        "hair care",
+        "scalp",
+        "shampoo",
+        "conditioner",
+        "wash"
+      ],
+      "supports": "Washing once a week or every other week to keep product from building up, conditioner every wash, and styling tension guidance.",
+      "publisher": "American Academy of Dermatology",
+      "publisher_type": "professional_association",
+      "lanes": [
+        "professional"
+      ]
+    },
+    {
+      "id": "aad-habits-that-damage-hair",
+      "domain": "aad.org",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/habits-that-damage-hair",
+      "title": "10 hair care habits that can damage your hair",
+      "topics": [
+        "hair care",
+        "brushing",
+        "styling",
+        "hold"
+      ],
+      "supports": "Brushing only to style, long-hold styling products and tight styles as habits that can damage hair.",
+      "publisher": "American Academy of Dermatology",
+      "publisher_type": "professional_association",
+      "lanes": [
+        "professional"
+      ]
+    },
+    {
+      "id": "fda-cosmetic-drug-or-soap",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap",
+      "title": "Is It a Cosmetic, a Drug, or Both? (Or Is It Soap?)",
+      "topics": [
+        "hair care",
+        "cosmetics",
+        "shampoo",
+        "labels"
+      ],
+      "supports": "The legal definitions of cosmetic, drug and soap, and how intended use and claims decide which applies.",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "lanes": [
+        "professional"
+      ]
+    },
+    {
+      "id": "fda-organic-cosmetics",
+      "domain": "fda.gov",
+      "url": "https://www.fda.gov/cosmetics/cosmetics-labeling-claims/organic-cosmetics",
+      "title": "\"Organic\" Cosmetics",
+      "topics": [
+        "cosmetics",
+        "labels",
+        "organic"
+      ],
+      "supports": "FDA has no definition of organic for cosmetics; USDA's National Organic Program does; an ingredient's source does not determine its safety.",
+      "publisher": "U.S. Food and Drug Administration",
+      "publisher_type": "us_federal_agency",
+      "lanes": [
+        "professional"
+      ]
     }
   ]
 }

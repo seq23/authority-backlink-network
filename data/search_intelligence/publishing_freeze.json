@@ -4,6 +4,21 @@
   "since": "2026-10-12",
   "reason": "Search Console, 28 days to 8 Oct 2026: 240 impressions and 1 click across the three publications, while the autopilot added pages drawn from the yearly pantry against no measured query. The loop strengthens pages that already earn impressions; no new page publishes until its subject answers a query with a measured number.",
   "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
-  "read_by": ["scripts/authority_v4_autopilot.py"],
-  "validated_by": "scripts/validators/validate_search_intelligence.py (freeze_flag)"
+  "read_by": [
+    "scripts/authority_v4_autopilot.py"
+  ],
+  "validated_by": "scripts/validators/validate_search_intelligence.py (freeze), tests/test_freeze_owner_exception.py (owner exceptions)",
+  "owner_exceptions": [
+    {
+      "id": "glory-by-us-starters-2026-10-30",
+      "brand_id": "glory-by-us",
+      "target_domain": "glorybyus.com",
+      "host": "professionalresourcelibrary.com",
+      "max_articles": 3,
+      "decided": "2026-10-30",
+      "owner_words": "Yes, publish 3 now",
+      "scope": "Glory By Us only: three starter articles on Professional Resource Library, one per topic cluster (scalp care routines, wave hair care routines, cleansing and product buildup), linking the homepage, the Wave Hair Products collection and one product page. Content-bank source: content-bank/cluster-articles/glory-by-us-starters.json. The freeze stays exactly as strict for every other brand and article, and for any fourth Glory By Us article."
+    }
+  ],
+  "_owner_exceptions_note": "An owner exception does not loosen the freeze. measured.freeze_violations admits a page without a measured query only when its released record in held_pages.json names an exception here and the page matches that exception's brand, host and date, links its target domain, and stays inside max_articles. Pinned by tests/test_freeze_owner_exception.py."
 }

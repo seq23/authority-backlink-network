@@ -31,7 +31,10 @@ for m in manifest_rows:
         assert m.get('surfaces'), f"{m.get('brand_id')}: no imported surfaces"
 
 campaign_by_id = {c['id']: c for c in campaigns}
-assert len(campaign_by_id) == 16
+# 17 since 30 Oct 2026: glory-by-us-scalp-care, the campaign its three
+# owner-exception starter articles publish under.
+assert len(campaign_by_id) == 17
+assert campaign_by_id['glory-by-us-scalp-care']['brand_id'] == 'glory-by-us'
 health_by_id = {h['campaign_id']: h for h in health}
 assert set(campaign_by_id) == set(health_by_id)
 assert all(h['coverage_status'] == 'HEALTHY_RENDERED' for h in health), 'all campaigns must meet rendered gap-closure floors'

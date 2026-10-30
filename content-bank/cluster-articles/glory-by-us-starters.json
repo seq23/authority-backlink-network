@@ -1,0 +1,393 @@
+{
+  "publication": "professional",
+  "note": "Three Glory By Us starter articles, published 30 Oct 2026 under the owner's dated exception to the publishing freeze (data/search_intelligence/publishing_freeze.json owner_exceptions, id glory-by-us-starters-2026-10-30: \"Yes, publish 3 now\"). One per topic cluster. Every factual claim is attributed in prose to a page registered in data/external-sources.json (American Academy of Dermatology, U.S. Food and Drug Administration). Cosmetic register only: the brand's prohibited_claim_patterns in data/brands.json apply to every sentence. Render only this file: python3 scripts/generate_cluster_articles.py content-bank/cluster-articles/glory-by-us-starters.json",
+  "articles": [
+    {
+      "id": "cl-pro-glory-scalp-routine",
+      "publication": "professional",
+      "date": "2026-10-30",
+      "freeze_exception": "glory-by-us-starters-2026-10-30",
+      "cluster": "scalp care routines",
+      "slug": "how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
+      "title": "How to Build a Scalp Care Routine, and What an Organic Label on a Hair Product Means",
+      "seo_title": "Scalp Care Routine by Hair Type",
+      "meta_description": "How often to wash by hair type, where shampoo and conditioner go, what an organic label on a hair product means, and when to see a dermatologist.",
+      "answer": "Match the wash schedule to how quickly your scalp gets oily, put shampoo on the scalp rather than the full length, condition after every wash, and handle hair gently while it is wet. The American Academy of Dermatology suggests shampooing dry, textured, curly or thick hair when needed and at least every 2 to 3 weeks, and its guidance for Black hair suggests once a week or every other week so product does not build up. On labels, organic is a USDA-defined claim, not an FDA safety standard.",
+      "campaign_id": "glory-by-us-scalp-care",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/",
+      "anchor": "Glory By Us",
+      "link_context": "For an example of a hair-care range built around the scalp, with a shampoo bar, a conditioner, a pomade and brushes sold for wave and textured-hair routines, see",
+      "disclaimer": "This is general cosmetic hair-care information drawn from published dermatology and FDA guidance. It does not diagnose anything, and a scalp that itches, flakes heavily, hurts, or changes in appearance should be seen by a board-certified dermatologist.",
+      "sections": [
+        {
+          "h2": "Start with how fast your scalp gets oily, not with a product",
+          "paras": [
+            "A scalp routine is mostly a schedule. The American Academy of Dermatology, in its guidance titled Tips for healthy hair, says to wash hair based on how often it gets dirty or oily: someone with straight hair and an oily scalp may want to shampoo every day, while dry, textured, curly or thick hair can be shampooed when needed, at least once every 2 to 3 weeks.",
+            "The Academy's separate page on everyday care for Black hair is more specific for tightly coiled hair: wash once a week or every other week, which helps keep hair-care products from building up, and build-up can be drying to the hair. Those two pieces of guidance agree on the principle. The right interval is the shortest one that keeps the scalp clean without leaving the hair dry.",
+            "Write the interval down for a month. Most people who say their scalp is never comfortable have never kept the wash day fixed long enough to see what the scalp does on day three versus day ten."
+          ]
+        },
+        {
+          "h2": "Shampoo is for the scalp; conditioner is for the length",
+          "paras": [
+            "The same Academy guidance says to apply shampoo to the scalp instead of the entire length of the hair. That cleanses away built-up product, dead skin and excess oil where they collect, without drying the length more than necessary.",
+            "Conditioner follows every wash. The Academy says conditioner moisturizes and detangles hair and makes it easier to manage; fine or straight hair needs it on the ends, while dry or curly hair needs it along the full length. Its page on Black hair adds that the ends are the oldest and most fragile part of the hair and should always be coated."
+          ]
+        },
+        {
+          "h2": "Gentle handling is part of the routine, not an extra",
+          "paras": [
+            "Hair is delicate when it is wet. The Academy recommends a wide-tooth comb rather than a brush for detangling wet hair, combing thick curly hair in the shower before the conditioner is rinsed out, and blotting with a towel or t-shirt rather than rubbing hair dry.",
+            "Tension matters as much as product. For braids, cornrows and weaves, the Academy's advice is plain: if it hurts while the hair is being styled, ask the stylist to stop and redo it, because pain equals damage. Its list of hair-care habits that can damage hair also includes pulling hair back tightly and using styling products with long-lasting hold, and suggests looser styles that do not pull."
+          ]
+        },
+        {
+          "h2": "Reading a hair product label, including the word organic",
+          "paras": [
+            "Under the Federal Food, Drug, and Cosmetic Act, as the FDA explains on its page Is It a Cosmetic, a Drug, or Both?, a cosmetic is a product applied for cleansing, beautifying, promoting attractiveness or altering appearance. Cleansing shampoos are named in that definition.",
+            "A product whose intended use is to affect the structure or function of the body, or to address a disease, is a drug, and the FDA notes that claims alone can make a product a drug. That is a useful reading test for any scalp product: words about cleansing, conditioning, softening and removing residue describe a cosmetic. Promises about the body itself belong to a different category with different rules, and they are a reason to look more carefully rather than less.",
+            "Organic is the label word shoppers ask about most. The FDA's page on organic cosmetics says the FDA has no definition of organic for cosmetics; the term is defined and certified under the U.S. Department of Agriculture's National Organic Program, and a cosmetic labeled organic must meet both the USDA's rules for that claim and the FDA's cosmetic rules. The same page says an ingredient's source does not determine its safety, and that many plants contain substances that can be irritating or allergenic, so a botanical or organic product still deserves a patch test."
+          ]
+        },
+        {
+          "h2": "When a routine is not the answer",
+          "paras": [
+            "Flakes are common and often routine-related: the Academy lists not shampooing often enough, or not using the right conditioner, oil or scalp moisturizer for the hair type, as common reasons for them. A change of schedule is a reasonable first step.",
+            "Persistent itching, tenderness, redness, patches, or any change in the texture or appearance of the hair are different. The Academy advises seeing a board-certified dermatologist when hair changes, and says that even slight noticeable thinning is worth having looked at early. No shampoo, conditioner or oil is a substitute for that visit."
+          ]
+        }
+      ],
+      "table": {
+        "caption": "A scalp routine by step, with what the guidance says and where it comes from",
+        "headers": [
+          "Step",
+          "What to do",
+          "How often",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Wash",
+            "Shampoo when the scalp is oily or dirty; massage it into the scalp",
+            "Oily, straight hair: up to daily. Dry, textured, curly or thick: when needed, at least every 2 to 3 weeks",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Wash (tightly coiled hair)",
+            "Wash on a fixed day so product does not build up",
+            "Once a week or every other week",
+            "AAD, Black hair: Tips for everyday care"
+          ],
+          [
+            "Condition",
+            "Ends for fine or straight hair; full length for dry or curly hair",
+            "After every shampoo",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Detangle",
+            "Wide-tooth comb, ends first, working upward; in the shower for thick curly hair",
+            "Whenever the hair is wet",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Dry",
+            "Blot with a towel or t-shirt instead of rubbing",
+            "Every wash",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Style",
+            "Avoid styles that hurt or pull; ask a stylist to redo anything painful",
+            "Every styling session",
+            "AAD, Black hair: Tips for everyday care"
+          ],
+          [
+            "Choose products",
+            "Read the label for cosmetic uses; read organic as a USDA-defined claim, not a safety guarantee",
+            "Whenever a product changes",
+            "FDA, Organic cosmetics"
+          ],
+          [
+            "Check in",
+            "See a board-certified dermatologist about any change in texture or appearance",
+            "As soon as a change appears",
+            "AAD, Black hair: Tips for everyday care"
+          ]
+        ]
+      },
+      "checklist": {
+        "h2": "A four-week scalp routine log",
+        "intro": "Keeping a short record turns a vague sense that the scalp is never right into something you can change one variable at a time.",
+        "ordered": true,
+        "items": [
+          "Pick a wash day and keep it fixed for four weeks.",
+          "Note how the scalp feels on day two, day five and the day before the next wash: oily, tight, itchy or comfortable.",
+          "Put shampoo on the scalp only, and conditioner on the ends or the full length depending on hair type.",
+          "Write down every styling product used and how long it stays in.",
+          "Note any style that felt tight or painful while it was being done.",
+          "At the end of four weeks, move the wash day earlier or later by a few days if the log shows a pattern.",
+          "Book a board-certified dermatologist for anything that hurts, spreads, or changes the look of the hair."
+        ]
+      },
+      "faq": [
+        {
+          "q": "How often should textured or curly hair be washed?",
+          "a": "The American Academy of Dermatology suggests shampooing dry, textured, curly or thick hair when needed, at least once every 2 to 3 weeks, and its guidance for Black hair suggests once a week or every other week to keep product from building up."
+        },
+        {
+          "q": "Should shampoo go on the whole head of hair?",
+          "a": "The Academy recommends applying shampoo to the scalp rather than the entire length, which cleanses where oil and product collect without drying the rest of the hair more than necessary."
+        },
+        {
+          "q": "Is conditioner needed every time?",
+          "a": "Yes, according to the Academy: conditioner after every wash moisturizes and detangles, and the ends, as the oldest part of the hair, should always be coated."
+        },
+        {
+          "q": "Does an organic label mean a hair product is safer?",
+          "a": "No. The FDA says an ingredient's source does not determine its safety, and that organic is defined by the USDA's National Organic Program rather than by the FDA."
+        },
+        {
+          "q": "When should a scalp problem go to a dermatologist?",
+          "a": "When it persists after a change in routine, hurts, spreads, or comes with any change in the texture or appearance of the hair. The Academy recommends a board-certified dermatologist for those."
+        }
+      ]
+    },
+    {
+      "id": "cl-pro-glory-wave-routine",
+      "publication": "professional",
+      "date": "2026-10-30",
+      "freeze_exception": "glory-by-us-starters-2026-10-30",
+      "cluster": "wave hair care routines",
+      "slug": "what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
+      "title": "What a Wave Hair Routine Involves: Washing, Conditioning, Brushing, and Covering",
+      "seo_title": "Wave Hair Routine, Step by Step",
+      "meta_description": "The four parts of a wave hair routine, what dermatology guidance says about brushing, tension, hold products and wash days, and what to buy and skip.",
+      "answer": "A wave routine has four parts: a regular wash day, conditioner after every wash, brushing to lay the pattern, and covering the hair to keep it in place. The American Academy of Dermatology's general guidance applies to each part: brush only to style rather than for a set number of strokes, avoid tension that hurts, use long-hold products sparingly, and wash often enough that product does not build up.",
+      "campaign_id": "glory-by-us-scalp-care",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/collections/wave-hair-products",
+      "anchor": "Wave Hair Products",
+      "link_context": "For an example of the four categories a wave routine draws on in one place, a cleansing bar, a conditioner, a pomade, a brush and a durag, see Glory By Us's collection of",
+      "disclaimer": "This is general cosmetic hair-care information drawn from published dermatology guidance. It does not diagnose anything, and tenderness, bumps, or changes in the hair or scalp should be seen by a board-certified dermatologist.",
+      "sections": [
+        {
+          "h2": "What a wave routine is actually doing",
+          "paras": [
+            "Waves are a pattern laid into short, naturally curly or coily hair by brushing it consistently in the same direction and keeping it pressed in place between sessions. The routine is the same four steps in a loop: cleanse, condition, brush, cover. What changes from one person to the next is the timing, not the steps.",
+            "Because the routine repeats daily, its small habits add up. That is why general hair-care guidance from dermatologists is more useful here than it first appears: almost every wave step is one of the everyday habits the American Academy of Dermatology writes about."
+          ]
+        },
+        {
+          "h2": "Wash day and conditioner",
+          "paras": [
+            "Brushed-in product, pomade and the oils the scalp produces all collect on short, dense hair. The Academy's everyday-care guidance for Black hair suggests washing once a week or every other week, which helps keep products from building up, and notes that build-up can be drying to the hair.",
+            "Conditioner belongs on every wash. The Academy recommends conditioner every time the hair is washed, and says that for dry or curly hair it should go along the full length. Moisture and slip also make brushing easier on the hair, which matters in a routine where brushing is daily."
+          ]
+        },
+        {
+          "h2": "Brushing: purpose over repetitions",
+          "paras": [
+            "The Academy's list of 10 hair-care habits that can damage hair includes brushing for a set count, calling 100 strokes a day a myth, and recommends brushing and combing only to style, without pulling or tugging. For a wave routine, that translates into brushing with a purpose: enough passes to lay the pattern in the direction you want, with steady, even pressure rather than force.",
+            "Brush choice is a matter of hair length and preference. Softer bristles are commonly used on shorter hair and firmer ones on longer hair. Whatever the brush, if the scalp feels sore or the hair snaps, the pressure or the frequency is too high."
+          ]
+        },
+        {
+          "h2": "Hold products and covering",
+          "paras": [
+            "Pomades and pastes help the pattern stay laid. The Academy lists styling products with long-lasting hold among the habits that can damage hair, so the practical rule is to use the least amount that does the job and to wash it out on wash day rather than layering it for weeks.",
+            "Covering the hair with a durag or wave cap keeps the brushed pattern pressed in place overnight. There is no dermatology guidance specific to durags, so the general rule on tension is the one to follow: the Academy says that styling which hurts is causing damage. A cover should be snug enough to stay put and loose enough to leave no deep marks and no tenderness in the morning."
+          ]
+        }
+      ],
+      "table": {
+        "caption": "The four parts of a wave routine and what the guidance says about each",
+        "headers": [
+          "Part",
+          "Typical practice",
+          "What dermatology guidance adds",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Cleanse",
+            "A fixed wash day to clear brushed-in product",
+            "Once a week or every other week helps keep product from building up",
+            "AAD, Black hair: Tips for everyday care"
+          ],
+          [
+            "Condition",
+            "Conditioner after cleansing, worked through before brushing",
+            "Use conditioner every time the hair is washed",
+            "AAD, Black hair: Tips for everyday care"
+          ],
+          [
+            "Brush",
+            "Daily brushing in one direction to lay the pattern",
+            "Brush only to style; 100 strokes a day is a myth; avoid pulling and tugging",
+            "AAD, 10 hair-care habits that can damage your hair"
+          ],
+          [
+            "Hold",
+            "A small amount of pomade or paste to keep the pattern laid",
+            "Long-lasting hold products are on the list of damaging habits; use sparingly",
+            "AAD, 10 hair-care habits that can damage your hair"
+          ],
+          [
+            "Cover",
+            "A durag or wave cap overnight and after brushing",
+            "Styling that hurts is causing damage; keep tension comfortable",
+            "AAD, Black hair: Tips for everyday care"
+          ]
+        ]
+      },
+      "checklist": {
+        "h2": "Before you buy anything for a wave routine",
+        "intro": "Most of the cost of a wave routine is in replacing products that did not suit the hair. These questions narrow it down first.",
+        "ordered": false,
+        "items": [
+          "Which day will be wash day, and will you actually keep it every week or two?",
+          "Does the conditioner give enough slip to brush through without snagging?",
+          "Is the brush firmness right for the current length of the hair?",
+          "How much pomade does the pattern need on day one versus day five?",
+          "Does the durag or cap leave marks or soreness in the morning?",
+          "Does the label describe cleansing, conditioning and hold, which are cosmetic uses, rather than promises about the body?"
+        ]
+      },
+      "faq": [
+        {
+          "q": "How often should hair be washed in a wave routine?",
+          "a": "The American Academy of Dermatology's guidance for Black hair suggests once a week or every other week, which helps keep products from building up on the hair."
+        },
+        {
+          "q": "Is brushing more always better for waves?",
+          "a": "No. The Academy calls 100 strokes a day a myth and recommends brushing only to style, without pulling or tugging. Brush enough to lay the pattern, with steady pressure."
+        },
+        {
+          "q": "Is it fine to leave pomade in for days?",
+          "a": "The Academy lists long-lasting hold products among habits that can damage hair. Use the least that holds the pattern and wash it out on wash day."
+        },
+        {
+          "q": "How tight should a durag be?",
+          "a": "Snug enough to stay on and loose enough to leave no deep marks or tenderness. The Academy's general rule on styling is that if it hurts, it is causing damage."
+        }
+      ]
+    },
+    {
+      "id": "cl-pro-glory-product-buildup",
+      "publication": "professional",
+      "date": "2026-10-30",
+      "freeze_exception": "glory-by-us-starters-2026-10-30",
+      "cluster": "cleansing and product buildup",
+      "slug": "product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
+      "title": "Product Buildup on the Scalp: How Often to Wash and How to Read a Shampoo Label",
+      "seo_title": "Scalp Product Buildup Explained",
+      "meta_description": "What product buildup is, how often to wash to keep it off the scalp, and how FDA rules separate cosmetic shampoos, soap bars and drug claims.",
+      "answer": "Buildup is styling product, oil and dead skin collecting at the scalp between washes. The American Academy of Dermatology recommends shampooing the scalp rather than the full length, and for textured hair a wash once a week or every other week to keep product from building up. On labels, the FDA treats a cleansing shampoo as a cosmetic, and claims about changing the body make a product a drug.",
+      "campaign_id": "glory-by-us-scalp-care",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+      "anchor": "Rosemary Myrrh Shampoo & Body Bar",
+      "link_context": "For an example of a cleansing bar sold for both scalp and body, made with rosemary and myrrh extracts in an olive, coconut, shea, castor and sweet almond oil base and described by its maker as vegan, see the",
+      "disclaimer": "This is general cosmetic hair-care and labeling information drawn from published dermatology and FDA guidance. It does not diagnose anything, and flaking, itching or redness that does not settle with a change in routine should be seen by a board-certified dermatologist.",
+      "sections": [
+        {
+          "h2": "What buildup is and why it matters",
+          "paras": [
+            "Product buildup is what collects at the scalp between washes: styling products, oils, the scalp's own sebum and dead skin. The American Academy of Dermatology's guidance, Tips for healthy hair, describes shampoo's job in exactly those terms, as washing away built-up products, dead skin and excess oil.",
+            "Buildup is not only cosmetic. The Academy's everyday-care page for Black hair says that product build-up can be drying to the hair, and its general guidance lists not shampooing often enough among the common reasons for flakes. A scalp that feels coated, itchy by the end of the week, or flaky right before wash day is often telling you the interval is too long."
+          ]
+        },
+        {
+          "h2": "How often to wash to keep it off",
+          "paras": [
+            "The Academy's guidance ties washing frequency to how quickly the hair gets oily: someone with straight hair and an oily scalp may shampoo daily, while dry, textured, curly or thick hair can be washed when needed, at least once every 2 to 3 weeks. For Black hair specifically, it suggests once a week or every other week to keep product from building up.",
+            "Where the shampoo goes matters as much as how often. The Academy recommends applying it to the scalp instead of the entire length, so the scalp gets clean without the length being dried out. Conditioner then goes on after every wash."
+          ]
+        },
+        {
+          "h2": "Reading the label: cosmetic, drug, or soap",
+          "paras": [
+            "The FDA's page Is It a Cosmetic, a Drug, or Both? (Or Is It Soap?) explains that the Federal Food, Drug, and Cosmetic Act defines cosmetics by their intended use, including cleansing and beautifying, and names cleansing shampoos as an example. A product whose intended use is to affect the structure or function of the body, or to address disease, is a drug. The FDA uses antidandruff shampoo as its example of a product that is both a cosmetic and a drug, and says such products must meet the requirements for both.",
+            "The same page explains that intended use can be established by the claims a seller makes, including on the internet. For a shopper, that gives a simple reading rule: words about cleansing, conditioning, softness and removing residue describe a cosmetic. Promises about what a product does to the body describe something else, and deserve a closer look.",
+            "Bars are a special case. The FDA explains that a product made mainly of alkali salts of fatty acids and sold only as soap falls under the Consumer Product Safety Commission rather than the FDA, but a bar of the same composition that is also sold for cosmetic uses, such as moisturizing, is regulated as a cosmetic. A shampoo and body bar sold for conditioning and cleansing hair sits on the cosmetic side of that line."
+          ]
+        }
+      ],
+      "table": {
+        "caption": "Signs of buildup, what to change first, and the guidance behind it",
+        "headers": [
+          "What you notice",
+          "Likely factor",
+          "What to change first",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Scalp feels coated or heavy before wash day",
+            "Product and oil collecting between washes",
+            "Shorten the wash interval; shampoo the scalp, not the length",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Flakes near the end of the week",
+            "Not shampooing often enough, or the wrong conditioner or scalp moisturizer",
+            "Wash more often and review the conditioner and oils used",
+            "AAD, Tips for healthy hair"
+          ],
+          [
+            "Hair feels dry even though the scalp is oily",
+            "Shampoo on the full length; build-up drying the hair",
+            "Shampoo on the scalp only; condition after every wash",
+            "AAD, Black hair: Tips for everyday care"
+          ],
+          [
+            "Pomade or gel still visible after a wash",
+            "Long-hold product layered over several days",
+            "Use less hold product and wash it out on wash day",
+            "AAD, 10 hair-care habits that can damage your hair"
+          ],
+          [
+            "A label promises a change to the body",
+            "A drug-type claim on a product sold as a cosmetic",
+            "Read it as a reason for more scrutiny",
+            "FDA, Is It a Cosmetic, a Drug, or Both?"
+          ]
+        ]
+      },
+      "checklist": {
+        "h2": "A wash-day checklist for buildup",
+        "intro": "One wash done in this order clears more than two done in a hurry.",
+        "ordered": true,
+        "items": [
+          "Detangle gently before wetting if the hair is long enough to knot.",
+          "Wet the hair and scalp thoroughly before any product goes on.",
+          "Work the shampoo or bar lather into the scalp with the fingertips, not the nails.",
+          "Rinse until the water runs clear and the scalp no longer feels slick.",
+          "Condition the ends, or the full length for dry or curly hair, and detangle with a wide-tooth comb while it is in.",
+          "Rinse, blot with a towel or t-shirt, and apply only as much hold product as the style needs.",
+          "Patch test any new product on a small area first, and stop using anything that stings or itches."
+        ]
+      },
+      "faq": [
+        {
+          "q": "How do I know if I have product buildup?",
+          "a": "A coated or heavy feel before wash day, flakes near the end of the week, and dry-feeling hair despite an oily scalp are common signs. The American Academy of Dermatology lists infrequent shampooing among the common reasons for flakes."
+        },
+        {
+          "q": "How often should I wash to keep buildup off?",
+          "a": "The Academy suggests washing dry, textured, curly or thick hair when needed and at least every 2 to 3 weeks, and once a week or every other week for Black hair to keep product from building up."
+        },
+        {
+          "q": "Should shampoo go on the full length of the hair?",
+          "a": "The American Academy of Dermatology recommends applying shampoo to the scalp instead of the entire length, which clears buildup where it collects without drying the rest of the hair."
+        },
+        {
+          "q": "Is a shampoo bar a soap or a cosmetic?",
+          "a": "The FDA explains that a bar sold only as soap falls under the Consumer Product Safety Commission, while one also sold for cosmetic uses such as moisturizing or conditioning is regulated as a cosmetic."
+        }
+      ]
+    }
+  ]
+}

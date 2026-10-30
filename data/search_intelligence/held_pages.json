@@ -1226,9 +1226,52 @@
       }
     }
   ],
-  "released": [],
+  "released": [
+    {
+      "released_at": "2026-10-30",
+      "host": "professionalresourcelibrary.com",
+      "publication": "professional",
+      "path": "sites/professional-resources/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
+      "title": "How to Build a Scalp Care Routine, and What an Organic Label on a Hair Product Means",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/",
+      "owner_exception": "glory-by-us-starters-2026-10-30",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-30",
+      "host": "professionalresourcelibrary.com",
+      "publication": "professional",
+      "path": "sites/professional-resources/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering.html",
+      "title": "What a Wave Hair Routine Involves: Washing, Conditioning, Brushing, and Covering",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/collections/wave-hair-products",
+      "owner_exception": "glory-by-us-starters-2026-10-30",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-30",
+      "host": "professionalresourcelibrary.com",
+      "publication": "professional",
+      "path": "sites/professional-resources/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label.html",
+      "title": "Product Buildup on the Scalp: How Often to Wash and How to Read a Shampoo Label",
+      "target_brand_id": "glory-by-us",
+      "target_url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+      "owner_exception": "glory-by-us-starters-2026-10-30",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    }
+  ],
   "freeze_enabled": true,
   "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
   "held_count": 36,
-  "released_count": 0
+  "released_count": 3
 }

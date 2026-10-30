@@ -169,6 +169,20 @@ HUB_SOURCES: dict[str, list[str]] = {
 # recorded on the page by the generator, so this is as precise as the hub map
 # and separates subjects the hub merges.
 CLUSTER_SOURCES: dict[str, list[str]] = {
+    # Scalp and hair-care clusters (Glory By Us, glorybyus.com): dermatology
+    # guidance for routine claims, FDA for what a cosmetic label may claim.
+    "scalp care routines": ["aad-healthy-hair-tips", "aad-black-hair-everyday-care",
+                            "aad-habits-that-damage-hair", "fda-cosmetic-drug-or-soap"],
+    "wave hair care routines": ["aad-black-hair-everyday-care", "aad-habits-that-damage-hair",
+                                "aad-healthy-hair-tips"],
+    "cleansing and product buildup": ["aad-healthy-hair-tips", "aad-black-hair-everyday-care",
+                                      "fda-cosmetic-drug-or-soap", "fda-organic-cosmetics"],
+    "conditioning textured hair": ["aad-healthy-hair-tips", "aad-black-hair-everyday-care",
+                                   "aad-habits-that-damage-hair"],
+    "hair product ingredient labels": ["fda-cosmetic-drug-or-soap", "fda-organic-cosmetics",
+                                       "aad-healthy-hair-tips"],
+    "natural and organic hair product labels": ["fda-organic-cosmetics", "fda-cosmetic-drug-or-soap",
+                                                "aad-healthy-hair-tips"],
     "neuropsych evaluation research": ["apa-testing-and-assessment",
                                        "aacn-clinical-neuropsychology",
                                        "eeoc-disability-resources"],

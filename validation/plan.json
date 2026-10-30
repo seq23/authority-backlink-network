@@ -64,6 +64,7 @@
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
+      "freeze_owner_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -129,6 +130,7 @@
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
+      "freeze_owner_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -195,6 +197,7 @@
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
+      "freeze_owner_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -475,6 +478,10 @@
     "host_canonicalization_behaviour": {
       "severity": "HARD_FAIL",
       "rationale": "A middleware that redirects the canonical host to itself takes the whole publication offline in a loop, and one that drops the path sends every deep link to the homepage. Running the real file is the only way to tell."
+    },
+    "freeze_owner_exception": {
+      "severity": "HARD_FAIL",
+      "rationale": "30 Oct 2026, owner: \"Yes, publish 3 now\" -- three Glory By Us starter articles may publish under the 11 Oct publishing freeze without a measured query. The exception is a named, dated entry in publishing_freeze.json owner_exceptions, never a looser freeze. This blocks when the entry or its three pages drift, when a fourth article, another brand, another host, a page dated before the decision, a page not linking the brand, an unknown or removed entry, or a malformed entry would pass, when an unmeasured page without an exception would pass, and when the autopilot reads owner_exceptions. Fails on zero exception pages examined."
     }
   },
   "severity_matrix_policy": {
