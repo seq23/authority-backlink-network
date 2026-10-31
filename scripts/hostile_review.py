@@ -53,6 +53,23 @@ ALL_PUBLICATION_DOMAINS = {d.replace('www.', '') for d in PUBLICATION_DOMAINS.va
 # Listed explicitly so the lock stays a real allowlist rather than being widened.
 INFRASTRUCTURE_DOMAINS = {'clarity.ms', 'www.clarity.ms'}
 
+# The editorial companies' own identity profiles, from data/entities/*.json.
+# These are the `sameAs` hosts in the publisher Organization node -- an identity
+# reference, not an editorial citation, which is why they belong in the lock and
+# not in the target registry. Read from the entity files rather than hard-coded,
+# so the allowance appears and disappears with the profile itself: when
+# scripts/entity_backlink_watch.py drops a dead profile, the domain stops being
+# allowed in the same commit. Without this, adding the first real external
+# profile (31 Oct 2026, Search Readiness k3) made every page of all three
+# publications fail the domain lock.
+ENTITY_IDENTITY_DOMAINS = set()
+for _entity_path in sorted((ROOT / 'data/entities').glob('*.json')):
+    _entity = json.loads(_entity_path.read_text())
+    for _item in list(_entity.get('sameAs') or []) + list(_entity.get('profiles_pending') or []):
+        _url = _item if isinstance(_item, str) else _item.get('url', '')
+        if _url:
+            ENTITY_IDENTITY_DOMAINS.add(_early_norm_domain(_url))
+
 # Verified non-affiliated authoritative sources, from data/external-sources.json.
 # Until these existed every outbound link on all three publications pointed at a
 # domain inside this network, which is what a link farm looks like from outside.
@@ -67,7 +84,8 @@ for _s in external_sources['sources']:
     EXTERNAL_SOURCE_LANES.setdefault(_early_norm_domain(_s['url']), set()).update(_s['lanes'])
 
 ALLOWED_EXTERNAL_DOMAINS = (ALL_TARGET_DOMAINS | ALL_PUBLICATION_DOMAINS
-                            | INFRASTRUCTURE_DOMAINS | EXTERNAL_SOURCE_DOMAINS)
+                            | INFRASTRUCTURE_DOMAINS | EXTERNAL_SOURCE_DOMAINS
+                            | ENTITY_IDENTITY_DOMAINS)
 
 ALLOWED_PUB_TARGETS = {}
 for b in brands:

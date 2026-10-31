@@ -122,15 +122,25 @@ def rank_targets(domain: str, subject: set[str], original_url: str = "",
     `campaign_destinations`) is offered that page only.
     """
     pinned = link_policy().get("campaign_destinations", {}).get(campaign) if campaign else None
+    offered = deep_targets().get(domain, [])
+    # data/portfolio-deep-targets.json `rule`: "homepages are kept only as a last
+    # resort for topic matching." A -2 penalty was not last resort: a homepage
+    # whose title happened to share two subject words still outscored every deep
+    # page with no overlap, and that is how professionalresourcelibrary.com came
+    # to send EVERY portfolio link on its sampled pages to a homepage (Search
+    # Readiness item g2, 31 Oct 2026) while the two sibling publications passed.
+    # A homepage is now offered only when its domain has no deep page at all
+    # (aplayermode.com today), so "last resort" is what the code does.
+    deep_only = [t for t in offered if not t.get("home")]
+    if deep_only:
+        offered = deep_only
     out = []
-    for t in deep_targets().get(domain, []):
+    for t in offered:
         if pinned and norm_url(t["url"]) != norm_url(pinned):
             continue
         # No bonus for the URL the page already carries: the choice must depend
         # only on the page's subject, so a second run reproduces the first.
         score = fit(subject, t) * 2
-        if t.get("home"):
-            score -= 2
         out.append((score, t))
     out.sort(key=lambda x: (-x[0], x[1]["url"]))
     return out
