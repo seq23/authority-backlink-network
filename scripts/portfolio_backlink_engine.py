@@ -221,6 +221,27 @@ def plan_seed_writes()->list[dict]:
  return plans
 
 
+def record_freeze_exception(article,rel,held):
+ """Record a seed page published under an owner exception to the freeze.
+
+ The page is admitted by data/search_intelligence/publishing_freeze.json
+ `owner_exceptions`, never by loosening the freeze: measured.freeze_violations
+ checks the released record against that entry's brand, host, date, slugs and
+ cap. Refuses an exception id the freeze file does not hold. Returns 1 when a
+ new record was added.
+ """
+ exc_id=article['freeze_exception']
+ exc=next((e for e in read('data/search_intelligence/publishing_freeze.json',{}).get('owner_exceptions',[]) if e.get('id')==exc_id),None)
+ if exc is None: raise SystemExit(f"{article['id']}: freeze_exception {exc_id!r} is not in publishing_freeze.json owner_exceptions")
+ if article['slug'] not in exc.get('slugs',[article['slug']]): raise SystemExit(f"{article['id']}: slug {article['slug']!r} is not named by owner exception {exc_id}")
+ if any(r.get('path')==rel for r in held['released']): return 0
+ folder=rel.rsplit('/daily/',1)[0]
+ host=next(x['host'] for x in read('data/search_intelligence/sites.json',{}).get('sites',[]) if x['folder']==folder)
+ held['released'].append({'released_at':article['date'],'host':host,'publication':article['publication'],'path':rel,'title':article['title'],
+   'target_brand_id':article['target_brand_id'],'target_url':article['target_url'],'owner_exception':exc_id,
+   'measured_query':None,'impressions':0,'source':'owner_exception','was_held':False})
+ return 1
+
 def seed():
  data=read('data/backlink-seed-articles.json',{'articles':[]}); links=read('data/link-registry.json',[]); pubs,_=publication_maps(); existing={x.get('seed_article_id') for x in links}; made=[]
  plans=plan_seed_writes(); by_id={p['article_id']:p for p in plans}
@@ -237,12 +258,16 @@ def seed():
   # Rule 0: no stage exits 0 having done nothing.
   print(json.dumps({'status':'FAIL','reason':'no seed articles in data/backlink-seed-articles.json; a seed run that plans zero pages is a broken input, not a clean tree'},indent=2))
   raise SystemExit(1)
+ held=read('data/search_intelligence/held_pages.json',{}); held.setdefault('released',[]); released_now=0
  for a in data['articles']:
   pub=pubs[a['publication']]; rel=f"{pub['folder']}/daily/{a['date']}-{a['slug']}.html"; path=ROOT/rel; plan=by_id[a['id']]
   path.parent.mkdir(parents=True,exist_ok=True)
   if plan['action'] in ('create','refresh'): path.write_text(plan['page'],encoding='utf-8')
   if a['id'] not in existing:
    links.append({'id':'bl-'+stable_id(a['id'],a['target_url']),'date':a['date'],'seed_article_id':a['id'],'source_path':rel,'source_publication':a['publication'],'target_brand_id':a['target_brand_id'],'campaign_id':a['campaign_id'],'target_domain':norm_domain(a['target_url']),'target_url':a['target_url'],'anchor':a['anchor'],'brand':next((b['name'] for b in read('data/brands.json',[]) if b['id']==a['target_brand_id']),a['target_brand_id']),'link_type':'affiliated-editorial-backlink','status':'published','lifecycle_stage':'published_in_repository','score':92,'evidence':{'repository_rendered':True,'deployed':False,'live_verified':False,'discoverable':False,'indexed':False,'search_visibility_observed':False,'ai_cited':False},'truth_boundary':'Owned-network rendered backlink; not independent, live, indexed, or cited without evidence.'}); made.append(rel)
+  if a.get('freeze_exception'): released_now+=record_freeze_exception(a,rel,held)
+ if released_now:
+  held['released_count']=len(held['released']); write('data/search_intelligence/held_pages.json',held)
  write('data/link-registry.json',links); refresh_assets(); health()
  print(json.dumps({'status':'PASS','seed_articles':len(plans),'created':counts['create'],'refreshed':counts['refresh'],
                    'preserved_enriched':counts['preserve'],'new_ledger_records':len(made),'pages':made},indent=2))

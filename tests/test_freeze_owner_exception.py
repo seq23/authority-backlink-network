@@ -53,8 +53,14 @@ expect = {"brand_id": "glory-by-us", "target_domain": "glorybyus.com", "host": "
 for k, v in expect.items():
     if exc.get(k) != v:
         fails.append(f"owner exception {EXC_ID}: {k} is {exc.get(k)!r}, expected {v!r}")
-if len(fz.get("owner_exceptions", [])) != 1:
-    fails.append(f"exactly one owner exception is approved; found {len(fz.get('owner_exceptions', []))}")
+# Every owner exception she has approved, by id; a new entry fails here until
+# its own decision is recorded and pinned (31 Oct 2026: the four grid-backlink
+# entries, pinned by tests/test_freeze_grid_backlinks_exception.py).
+APPROVED = {EXC_ID, "grid-backlinks-memphis-senior-care-2026-10-31", "grid-backlinks-time-2-read-2026-10-31",
+            "grid-backlinks-how-we-know-2026-10-31", "grid-backlinks-spry-executive-os-2026-10-31"}
+ids = [e.get("id") for e in fz.get("owner_exceptions", [])]
+if sorted(ids) != sorted(APPROVED):
+    fails.append(f"owner exceptions must be exactly the approved {sorted(APPROVED)}; found {ids}")
 
 claimed = [r for r in released if r.get("owner_exception") == EXC_ID]
 if len(claimed) != 3:

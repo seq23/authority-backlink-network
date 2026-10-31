@@ -711,7 +711,11 @@
         "wedding planning tools",
         "baby shower decor setups",
         "Memphis wedding venue costs",
-        "balloon garland and arch pricing"
+        "balloon garland and arch pricing",
+        "Memphis assisted living",
+        "Memphis memory care",
+        "paying for senior care",
+        "kids reading routines"
       ],
       "targets": [
         {
@@ -1329,6 +1333,81 @@
                 "plus-ones"
               ],
               "product_message": "Use Wedding Seating Chart Maker when the planning problem matches this product's purpose."
+            }
+          ]
+        },
+        {
+          "brand_id": "memphis-senior-care",
+          "brand": "Memphis Senior Care Homes",
+          "domain": "memphisseniorcarehomes.com",
+          "campaign_id": "memphis-senior-care-authority",
+          "eligible_clusters": [
+            "Memphis assisted living",
+            "Memphis memory care",
+            "paying for senior care"
+          ],
+          "approved_links": [
+            {
+              "url": "https://memphisseniorcarehomes.com/",
+              "anchor": "Memphis Senior Care Homes",
+              "topics": [
+                "Memphis assisted living",
+                "Memphis memory care",
+                "paying for senior care"
+              ]
+            },
+            {
+              "url": "https://memphisseniorcarehomes.com/assisted-living-memphis-tn/",
+              "anchor": "assisted living in Memphis",
+              "topics": [
+                "Memphis assisted living"
+              ]
+            },
+            {
+              "url": "https://memphisseniorcarehomes.com/memory-care-memphis-tn/",
+              "anchor": "memory care in Memphis",
+              "topics": [
+                "Memphis memory care"
+              ]
+            },
+            {
+              "url": "https://memphisseniorcarehomes.com/guides/when-the-money-runs-out-tenncare-choices/",
+              "anchor": "when assisted living money runs out",
+              "topics": [
+                "paying for senior care"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "time-2-read",
+          "brand": "Time2Read",
+          "domain": "time-2-read.com",
+          "campaign_id": "time-2-read-authority",
+          "eligible_clusters": [
+            "kids reading routines"
+          ],
+          "approved_links": [
+            {
+              "url": "https://time-2-read.com/",
+              "anchor": "Time2Read",
+              "topics": [
+                "kids reading routines"
+              ]
+            },
+            {
+              "url": "https://time-2-read.com/is-reading-20-minutes-a-day-enough",
+              "anchor": "is reading 20 minutes a day enough",
+              "topics": [
+                "kids reading routines"
+              ]
+            },
+            {
+              "url": "https://time-2-read.com/20-minute-reading-log",
+              "anchor": "printable 20-minute reading log",
+              "topics": [
+                "kids reading routines"
+              ]
             }
           ]
         }

@@ -78,6 +78,7 @@ COMMANDS = {
     "search_intelligence": [sys.executable, "scripts/validators/validate_search_intelligence.py"],
     "search_strengthening_loop": [sys.executable, "tests/test_search_strengthening_loop.py"],
     "freeze_owner_exception": [sys.executable, "tests/test_freeze_owner_exception.py"],
+    "freeze_grid_backlinks_exception": [sys.executable, "tests/test_freeze_grid_backlinks_exception.py"],
     "page_writers_keep_head": [sys.executable, "tests/test_page_writers_keep_head.py"],
     "free_router_deadline": [sys.executable, "tests/test_free_router_deadline.py"],
     "measured_urls_resolve": [sys.executable, "scripts/validators/validate_measured_urls_resolve.py"],

@@ -8,9 +8,9 @@
     "release_operators": 10,
     "workflow_operators": 11,
     "approved_target_urls": 151,
-    "serviced_target_urls": 97,
-    "backlink_rows": 631,
-    "unique_source_editorials": 600,
+    "serviced_target_urls": 102,
+    "backlink_rows": 636,
+    "unique_source_editorials": 605,
     "live_verified_rows": 147,
     "indexed_rows": 1
   },
@@ -12106,7 +12106,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "how-we-know-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -12123,7 +12125,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "how-we-know-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -12140,11 +12144,34 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
-      "backlink_count": 0,
+      "campaign_ids": [
+        "how-we-know-authority"
+      ],
+      "backlink_count": 1,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim.html",
+          "source_title": "Measured or Inferred? How to Read a Scientific Claim",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "Inferred from a proxy: what that means",
+          "campaign_id": "how-we-know-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "how-we-know",
@@ -12157,7 +12184,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "how-we-know-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -12174,11 +12203,34 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
-      "backlink_count": 0,
+      "campaign_ids": [
+        "memphis-senior-care-authority"
+      ],
+      "backlink_count": 1,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
+          "source_title": "Paying for Assisted Living in Memphis When Savings Run Low",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "Memphis Senior Care Homes: Assisted Living and Memory Care",
+          "campaign_id": "memphis-senior-care-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "memphis-senior-care",
@@ -12191,11 +12243,34 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
-      "backlink_count": 0,
+      "campaign_ids": [
+        "memphis-senior-care-authority"
+      ],
+      "backlink_count": 1,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide.html",
+          "source_title": "Assisted Living or Memory Care in Memphis: How Families Decide",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "Assisted Living in Memphis, TN",
+          "campaign_id": "memphis-senior-care-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "memphis-senior-care",
@@ -12208,7 +12283,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "memphis-senior-care-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -12225,7 +12302,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "memphis-senior-care-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -13620,7 +13699,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "spry-executive-os-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -13637,7 +13718,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "spry-executive-os-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -13654,7 +13737,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "spry-executive-os-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -13671,7 +13756,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "spry-executive-os-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -13688,11 +13775,34 @@
       "destination_type": "educational_guide",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
-      "backlink_count": 0,
+      "campaign_ids": [
+        "spry-executive-os-authority"
+      ],
+      "backlink_count": 1,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/founder-operator/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable.html",
+          "source_title": "A Daily Check-In System That Keeps a Lean Team Accountable",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
+          "campaign_id": "spry-executive-os-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "accident-guides",
@@ -14743,7 +14853,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "time-2-read-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
@@ -14760,11 +14872,34 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
-      "backlink_count": 0,
+      "campaign_ids": [
+        "time-2-read-authority"
+      ],
+      "backlink_count": 1,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home.html",
+          "source_title": "How to Build a 20-Minute Reading Habit at Home",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "Free Printable 20-Minute Reading Log and Timer",
+          "campaign_id": "time-2-read-authority",
+          "status": "published",
+          "lifecycle_stage": "published_in_repository",
+          "repository_rendered": true,
+          "deployed": false,
+          "live_verified": false,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "time-2-read",
@@ -14777,7 +14912,9 @@
       "destination_type": "",
       "product_id": "",
       "product_name": "",
-      "campaign_ids": [],
+      "campaign_ids": [
+        "time-2-read-authority"
+      ],
       "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,

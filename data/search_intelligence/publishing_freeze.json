@@ -7,7 +7,7 @@
   "read_by": [
     "scripts/authority_v4_autopilot.py"
   ],
-  "validated_by": "scripts/validators/validate_search_intelligence.py (freeze), tests/test_freeze_owner_exception.py (owner exceptions)",
+  "validated_by": "scripts/validators/validate_search_intelligence.py (freeze), tests/test_freeze_owner_exception.py and tests/test_freeze_grid_backlinks_exception.py (owner exceptions)",
   "owner_exceptions": [
     {
       "id": "glory-by-us-starters-2026-10-30",
@@ -18,6 +18,63 @@
       "decided": "2026-10-30",
       "owner_words": "Yes, publish 3 now",
       "scope": "Glory By Us only: three starter articles on Professional Resource Library, one per topic cluster (scalp care routines, wave hair care routines, cleansing and product buildup), linking the homepage, the Wave Hair Products collection and one product page. Content-bank source: content-bank/cluster-articles/glory-by-us-starters.json. The freeze stays exactly as strict for every other brand and article, and for any fourth Glory By Us article."
+    },
+    {
+      "id": "grid-backlinks-memphis-senior-care-2026-10-31",
+      "brand_id": "memphis-senior-care",
+      "target_domain": "memphisseniorcarehomes.com",
+      "host": "memphisvendorlibrary.com",
+      "max_articles": 2,
+      "decided": "2026-10-31",
+      "owner_words": "Yes, publish all 5",
+      "slugs": [
+        "assisted-living-or-memory-care-in-memphis-how-families-decide",
+        "paying-for-assisted-living-in-memphis-when-savings-run-low"
+      ],
+      "decision": "grid-backlinks-2026-10-31",
+      "scope": "One of four entries for one owner decision (31 Oct 2026, \"Yes, publish all 5\"): the five staged grid backlink seed pages first staged in PR #132. This entry admits only the 2 named page(s) linking Memphis Senior Care Homes; the freeze stays exactly as strict for every other page and brand."
+    },
+    {
+      "id": "grid-backlinks-time-2-read-2026-10-31",
+      "brand_id": "time-2-read",
+      "target_domain": "time-2-read.com",
+      "host": "memphisvendorlibrary.com",
+      "max_articles": 1,
+      "decided": "2026-10-31",
+      "owner_words": "Yes, publish all 5",
+      "slugs": [
+        "how-to-build-a-20-minute-reading-habit-at-home"
+      ],
+      "decision": "grid-backlinks-2026-10-31",
+      "scope": "One of four entries for one owner decision (31 Oct 2026, \"Yes, publish all 5\"): the five staged grid backlink seed pages first staged in PR #132. This entry admits only the 1 named page(s) linking Time2Read; the freeze stays exactly as strict for every other page and brand."
+    },
+    {
+      "id": "grid-backlinks-how-we-know-2026-10-31",
+      "brand_id": "how-we-know",
+      "target_domain": "howweknowdeep.com",
+      "host": "professionalresourcelibrary.com",
+      "max_articles": 1,
+      "decided": "2026-10-31",
+      "owner_words": "Yes, publish all 5",
+      "slugs": [
+        "measured-inferred-or-reconstructed-how-to-read-a-scientific-claim"
+      ],
+      "decision": "grid-backlinks-2026-10-31",
+      "scope": "One of four entries for one owner decision (31 Oct 2026, \"Yes, publish all 5\"): the five staged grid backlink seed pages first staged in PR #132. This entry admits only the 1 named page(s) linking How We Know; the freeze stays exactly as strict for every other page and brand."
+    },
+    {
+      "id": "grid-backlinks-spry-executive-os-2026-10-31",
+      "brand_id": "spry-executive-os",
+      "target_domain": "spryexecutiveos.com",
+      "host": "founderoperatorlibrary.com",
+      "max_articles": 1,
+      "decided": "2026-10-31",
+      "owner_words": "Yes, publish all 5",
+      "slugs": [
+        "a-daily-check-in-system-that-keeps-a-lean-team-accountable"
+      ],
+      "decision": "grid-backlinks-2026-10-31",
+      "scope": "One of four entries for one owner decision (31 Oct 2026, \"Yes, publish all 5\"): the five staged grid backlink seed pages first staged in PR #132. This entry admits only the 1 named page(s) linking Spry Executive OS; the freeze stays exactly as strict for every other page and brand."
     }
   ],
   "_owner_exceptions_note": "An owner exception does not loosen the freeze. measured.freeze_violations admits a page without a measured query only when its released record in held_pages.json names an exception here and the page matches that exception's brand, host and date, links its target domain, and stays inside max_articles. Pinned by tests/test_freeze_owner_exception.py."
