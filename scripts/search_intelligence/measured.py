@@ -108,7 +108,9 @@ def measured_target(host: str, subject: str) -> dict | None:
 # `owner_exceptions`). The freeze itself is not loosened: an exception is a
 # named, dated record of the owner's own words that lets at most `max_articles`
 # pages linking ONE brand publish without a measured query, on ONE host, on or
-# after the day she decided it. A page claims an exception by its released
+# after the day she decided it. An entry may also name `slugs`: then only pages
+# whose filename slug (after the YYYY-MM-DD- date) is listed may claim it, and
+# the list must be exactly max_articles long. A page claims an exception by its released
 # record in held_pages.json carrying `owner_exception: <id>`; anything else
 # dated on/after `since` still needs a measured query with impressions.
 EXCEPTION_FIELDS = ("id", "brand_id", "target_domain", "host", "max_articles", "decided", "owner_words")
@@ -123,6 +125,13 @@ def exception_problems(exc: dict) -> list[str]:
             out.append(f"owner_exception {exc['id']}: max_articles must be a positive integer")
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(exc["decided"])):
             out.append(f"owner_exception {exc['id']}: decided must be an ISO date")
+        if "slugs" in exc:
+            slugs = exc["slugs"]
+            if (not isinstance(slugs, list) or not slugs or len(set(slugs)) != len(slugs)
+                    or not all(isinstance(x, str) and x for x in slugs)):
+                out.append(f"owner_exception {exc['id']}: slugs must be a non-empty list of distinct page slugs")
+            elif isinstance(n, int) and len(slugs) != n:
+                out.append(f"owner_exception {exc['id']}: names {len(slugs)} slug(s) but max_articles is {n}")
     return out
 
 
@@ -172,6 +181,8 @@ def freeze_violations(fz: dict, released: list[dict], pages: list[tuple[str, str
             why.append(f"dated {day}, before the owner decided on {exc['decided']}")
         if not re.search(rf'href="https?://(?:www\.)?{domain}[/"]', page):
             why.append(f"does not link {exc['target_domain']}")
+        if "slugs" in exc and Path(rel).stem[11:] not in exc["slugs"]:
+            why.append(f"slug {Path(rel).stem[11:]!r} is not one of the {len(exc['slugs'])} page(s) the owner named")
         if why:
             fail.append(f"freeze: {rel} is outside owner exception {exc_id}: " + "; ".join(why))
             continue

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "9510ee97583088a3705ef2f1d3b1cfc773682a0a6e84a9082942d0eccbc4e96c",
+  "plan_sha256": "6a3a315640c28946f283d876d342f83ce3b71aa37829590e7663e1c638cbee9d",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 71,
+  "count": 72,
   "counts_by_severity": {
-    "HARD_FAIL": 67,
+    "HARD_FAIL": 68,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -311,6 +311,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "16 Oct 2026: Journalist Query Scan run 38900376756 was cancelled at its 5-minute job timeout. The selftest's first free model held the request open for five minutes (OpenRouter drips keep-alive whitespace on slow non-streaming requests) and urllib's timeout bounds each socket read, not the request, so nothing ever timed out. free_router.py now enforces a wall-clock budget per call and per attempt and records FREE_ROUTER_DEADLINE_EXCEEDED. This runs free_chat against a local stub that drips forever or stays silent, under a hard 20s timeout, and blocks unless every scenario returns its named outcome inside the budget. Fails on zero scenarios.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "freeze_grid_backlinks_exception",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "31 Oct 2026, owner: \"Yes, publish all 5\" -- a one-time exception for the five grid backlink seed pages staged in PR #132 (memphisseniorcarehomes.com x2, time-2-read.com, howweknowdeep.com, spryexecutiveos.com). Recorded as four publishing_freeze.json owner_exceptions sharing decision grid-backlinks-2026-10-31, each naming its pages by slug. Blocks when the entries or the five pages drift, when a page lacks its target link or its publication's own editorial byline or names the parent company, when an unnamed slug, a widened or empty slugs list or a pre-decision page would pass, and when an unmeasured page without an exception would pass. Fails on zero exception pages examined.",
       "profiles": [
         "changed",
         "full",

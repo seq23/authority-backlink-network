@@ -1268,10 +1268,80 @@
       "impressions": 0,
       "source": "owner_exception",
       "was_held": false
+    },
+    {
+      "released_at": "2026-10-31",
+      "host": "memphisvendorlibrary.com",
+      "publication": "memphis",
+      "path": "sites/memphis-local/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide.html",
+      "title": "Assisted Living or Memory Care in Memphis: How Families Decide",
+      "target_brand_id": "memphis-senior-care",
+      "target_url": "https://memphisseniorcarehomes.com/assisted-living-memphis-tn/",
+      "owner_exception": "grid-backlinks-memphis-senior-care-2026-10-31",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-31",
+      "host": "memphisvendorlibrary.com",
+      "publication": "memphis",
+      "path": "sites/memphis-local/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home.html",
+      "title": "How to Build a 20-Minute Reading Habit at Home",
+      "target_brand_id": "time-2-read",
+      "target_url": "https://time-2-read.com/is-reading-20-minutes-a-day-enough",
+      "owner_exception": "grid-backlinks-time-2-read-2026-10-31",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-31",
+      "host": "professionalresourcelibrary.com",
+      "publication": "professional",
+      "path": "sites/professional-resources/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim.html",
+      "title": "Measured or Inferred? How to Read a Scientific Claim",
+      "target_brand_id": "how-we-know",
+      "target_url": "https://howweknowdeep.com/methods/",
+      "owner_exception": "grid-backlinks-how-we-know-2026-10-31",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-31",
+      "host": "founderoperatorlibrary.com",
+      "publication": "founder",
+      "path": "sites/founder-operator/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable.html",
+      "title": "A Daily Check-In System That Keeps a Lean Team Accountable",
+      "target_brand_id": "spry-executive-os",
+      "target_url": "https://spryexecutiveos.com/accountability-system/daily-check-in-system/",
+      "owner_exception": "grid-backlinks-spry-executive-os-2026-10-31",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
+    },
+    {
+      "released_at": "2026-10-31",
+      "host": "memphisvendorlibrary.com",
+      "publication": "memphis",
+      "path": "sites/memphis-local/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
+      "title": "Paying for Assisted Living in Memphis When Savings Run Low",
+      "target_brand_id": "memphis-senior-care",
+      "target_url": "https://memphisseniorcarehomes.com/guides/when-the-money-runs-out-tenncare-choices/",
+      "owner_exception": "grid-backlinks-memphis-senior-care-2026-10-31",
+      "measured_query": null,
+      "impressions": 0,
+      "source": "owner_exception",
+      "was_held": false
     }
   ],
   "freeze_enabled": true,
   "rule": "A new autopilot page is written only when its title and cluster contain every content token (at least two) of a target in data/search_intelligence/<host>/target_query_set.json, i.e. a query with Search Console impressions in the rolling 28 days. Anything else is held in data/search_intelligence/held_pages.json with its full brief, not marked processed, and the first run after its query is measured publishes it in one of that day's slots.",
   "held_count": 36,
-  "released_count": 3
+  "released_count": 8
 }

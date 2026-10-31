@@ -31,10 +31,14 @@ for m in manifest_rows:
         assert m.get('surfaces'), f"{m.get('brand_id')}: no imported surfaces"
 
 campaign_by_id = {c['id']: c for c in campaigns}
-# 17 since 30 Oct 2026: glory-by-us-scalp-care, the campaign its three
-# owner-exception starter articles publish under.
-assert len(campaign_by_id) == 17
+# 17 since 30 Oct 2026 (glory-by-us-scalp-care, its three owner-exception
+# starter articles); # 21 since 31 Oct 2026: the four grid-backlink campaigns whose five seed pages
+# publish under the owner's one-time exception ("Yes, publish all 5").
+assert len(campaign_by_id) == 21
 assert campaign_by_id['glory-by-us-scalp-care']['brand_id'] == 'glory-by-us'
+for cid, bid in (('memphis-senior-care-authority', 'memphis-senior-care'), ('time-2-read-authority', 'time-2-read'),
+                 ('how-we-know-authority', 'how-we-know'), ('spry-executive-os-authority', 'spry-executive-os')):
+    assert campaign_by_id[cid]['brand_id'] == bid, f'{cid}: brand_id {campaign_by_id[cid].get("brand_id")!r}, expected {bid!r}'
 health_by_id = {h['campaign_id']: h for h in health}
 assert set(campaign_by_id) == set(health_by_id)
 assert all(h['coverage_status'] == 'HEALTHY_RENDERED' for h in health), 'all campaigns must meet rendered gap-closure floors'

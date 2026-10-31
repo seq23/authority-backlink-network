@@ -65,6 +65,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "freeze_owner_exception",
+      "freeze_grid_backlinks_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -135,6 +136,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "freeze_owner_exception",
+      "freeze_grid_backlinks_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -206,6 +208,7 @@
       "generated_text_writes_portable",
       "search_intelligence",
       "freeze_owner_exception",
+      "freeze_grid_backlinks_exception",
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
@@ -494,6 +497,10 @@
     "freeze_owner_exception": {
       "severity": "HARD_FAIL",
       "rationale": "30 Oct 2026, owner: \"Yes, publish 3 now\" -- three Glory By Us starter articles may publish under the 11 Oct publishing freeze without a measured query. The exception is a named, dated entry in publishing_freeze.json owner_exceptions, never a looser freeze. This blocks when the entry or its three pages drift, when a fourth article, another brand, another host, a page dated before the decision, a page not linking the brand, an unknown or removed entry, or a malformed entry would pass, when an unmeasured page without an exception would pass, and when the autopilot reads owner_exceptions. Fails on zero exception pages examined."
+    },
+    "freeze_grid_backlinks_exception": {
+      "severity": "HARD_FAIL",
+      "rationale": "31 Oct 2026, owner: \"Yes, publish all 5\" -- a one-time exception for the five grid backlink seed pages staged in PR #132 (memphisseniorcarehomes.com x2, time-2-read.com, howweknowdeep.com, spryexecutiveos.com). Recorded as four publishing_freeze.json owner_exceptions sharing decision grid-backlinks-2026-10-31, each naming its pages by slug. Blocks when the entries or the five pages drift, when a page lacks its target link or its publication's own editorial byline or names the parent company, when an unnamed slug, a widened or empty slugs list or a pre-decision page would pass, and when an unmeasured page without an exception would pass. Fails on zero exception pages examined."
     },
     "entity_graph": {
       "severity": "HARD_FAIL",

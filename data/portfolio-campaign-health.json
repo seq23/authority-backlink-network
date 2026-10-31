@@ -223,6 +223,58 @@
       "destination_floor": 3,
       "coverage_status": "HEALTHY_RENDERED",
       "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "memphis-senior-care-authority",
+      "brand_id": "memphis-senior-care",
+      "rendered": 2,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 2,
+      "distinct_anchors": 2,
+      "rendered_floor": 2,
+      "destination_floor": 2,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "time-2-read-authority",
+      "brand_id": "time-2-read",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "how-we-know-authority",
+      "brand_id": "how-we-know",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "spry-executive-os-authority",
+      "brand_id": "spry-executive-os",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
     }
   ]
 }
