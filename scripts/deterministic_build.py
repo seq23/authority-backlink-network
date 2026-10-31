@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from lib import lastmod_ledger, site_urls
+from lib import lastmod_ledger, llms_text, site_urls
 from lib.page_chrome import page_footer_html
 from lib import head_seo
 
@@ -132,7 +132,7 @@ def build_into(out: Path) -> tuple[dict[str, str], dict[str, str]]:
         url_hashes.update(page_hashes)
         newest = max(lastmods.values()) if lastmods else today
         sitemap = site_urls.render_sitemap({loc: lastmods[loc] for loc in page_hashes})
-        llms = f"# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n"
+        llms = llms_text.render(pub, domain, newest)
         not_found = render_404(source, domain, pub)
         for name, value in (("sitemap.xml", sitemap), ("llms.txt", llms), ("404.html", not_found)):
             path = target / name

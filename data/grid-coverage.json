@@ -1,0 +1,37 @@
+{
+  "_README": [
+    "Every grid side-business and own-business domain the network must deliver backlinks to.",
+    "Copied from boss-os src/shared/boss/searchReadiness/sites.json (grid_repos, category side_business/own_business, minus the three",
+    "network publications). scripts/validators/validate_grid_backlink_coverage.py fails the release when one of these has no",
+    "published, rendered link-registry row and no named stop below; when a sibling boss-os checkout is present it also fails",
+    "if this list has drifted from the registry. Client sites are excluded: they are not side businesses."
+  ],
+  "source": "boss-os/src/shared/boss/searchReadiness/sites.json",
+  "domains": [
+    "aplayermode.com",
+    "approvalprep.com",
+    "billionairehighperformancecoach.com",
+    "dentistryguides.com",
+    "hormonesivhair.com",
+    "howweknowdeep.com",
+    "memphisseniorcarehomes.com",
+    "neuroevalguides.com",
+    "porchandparty901.com",
+    "spryexecutiveos.com",
+    "theaccidentguides.com",
+    "theindustryguides.com",
+    "time-2-read.com",
+    "uscisexam.com",
+    "virtualagency-os.com",
+    "weddingbudgetspreadsheet.com",
+    "weddingchecklistpdf.com",
+    "weddingseatingchartmaker.com",
+    "weddingtimelinetemplate.com"
+  ],
+  "named_stops": {
+    "memphisseniorcarehomes.com": "0 rendered network links. Held by the publishing freeze (11 Oct 2026): campaign and seed pages are staged in content-bank/staged-backlink-campaigns.json; they publish on an owner exception in data/search_intelligence/publishing_freeze.json, or automatically via the autopilot once a measured query admits a page on this brand's clusters.",
+    "time-2-read.com": "0 rendered network links. Held by the publishing freeze (11 Oct 2026): campaign and seed pages are staged in content-bank/staged-backlink-campaigns.json; they publish on an owner exception in data/search_intelligence/publishing_freeze.json, or automatically via the autopilot once a measured query admits a page on this brand's clusters.",
+    "howweknowdeep.com": "0 rendered network links. Held by the publishing freeze (11 Oct 2026): campaign and seed pages are staged in content-bank/staged-backlink-campaigns.json; they publish on an owner exception in data/search_intelligence/publishing_freeze.json, or automatically via the autopilot once a measured query admits a page on this brand's clusters.",
+    "spryexecutiveos.com": "0 rendered network links. Held by the publishing freeze (11 Oct 2026): campaign and seed pages are staged in content-bank/staged-backlink-campaigns.json; they publish on an owner exception in data/search_intelligence/publishing_freeze.json, or automatically via the autopilot once a measured query admits a page on this brand's clusters."
+  }
+}

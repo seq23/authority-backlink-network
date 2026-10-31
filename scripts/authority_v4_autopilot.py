@@ -11,7 +11,7 @@ import cadence_allowance
 from datetime import date, datetime, timezone
 from urllib.parse import urlparse
 from lib.authority_core import atomic_write_json, read_json
-from lib import lastmod_ledger, site_urls
+from lib import lastmod_ledger, llms_text, site_urls
 from affiliation import is_affiliated  # noqa: E402  (selects by destination, not rel)
 # rel_attr marks affiliated outbound links rel="sponsored nofollow". Both call
 # sites below used it without importing it, so every run of this script died
@@ -681,7 +681,10 @@ def update_sitemap(site_path, domain):
     lastmod_ledger.save(lastmod_ledger.merge(hashes, ledger, RELEASE_DATE))
     newest = max(lastmods.values()) if lastmods else RELEASE_DATE
     sitemap = site_urls.render_sitemap({loc: lastmods[loc] for loc in hashes})
-    llms = f'# {domain}\n\nThis site contains editorial resource pages for humans and answer engines. Updated {newest}.\n\nSitemap: https://{domain}/sitemap.xml\n'
+    pub_meta = next((p for p in json.loads((ROOT/'data/publications.json').read_text(encoding='utf-8')) if p['working_domain'] == domain), None)
+    if pub_meta is None:
+        raise SystemExit(f'update_sitemap: {domain} is not a publication in data/publications.json')
+    llms = llms_text.render(pub_meta, domain, newest)
     tmp = site/'sitemap.xml.tmp'
     with tmp.open('w', encoding='utf-8', newline='\n') as handle:
         handle.write(sitemap)

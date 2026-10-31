@@ -1,0 +1,24 @@
+{
+  "_README": [
+    "The editorial company that publishes this publication, as search engines and answer engines should know it.",
+    "scripts/lib/head_seo.py reads this file for every Organization node naming this publication or its editorial company;",
+    "scripts/validators/validate_entity_graph.py fails the release if a page disagrees with it;",
+    "scripts/entity_backlink_watch.py checks each sameAs weekly and self-heals this file.",
+    "sameAs lists ONLY real, independently hosted profiles that resolve now. Never this site's own pages (that is not an",
+    "independent identity) and never an invented profile. A profile named but not yet claimed goes in profiles_pending;",
+    "the weekly watch promotes it once it resolves and links back.",
+    "parentOrganization is null by owner decision (11 Oct 2026): each publication is published by its own editorial",
+    "company and names no parent. scripts/validators/validate_no_parent_company.py blocks one on any page."
+  ],
+  "@id": "https://professionalresourcelibrary.com/masthead#publisher-entity",
+  "name": "Professional Resource Library Editorial Desk",
+  "publication": "Professional Resource Library",
+  "url": "https://professionalresourcelibrary.com/masthead",
+  "logo": "https://professionalresourcelibrary.com/icon-512.png",
+  "description": "The editorial company that writes, edits and publishes Professional Resource Library.",
+  "editorial_policy": "https://professionalresourcelibrary.com/editorial-standards",
+  "sameAs": [],
+  "parentOrganization": null,
+  "founder": null,
+  "profiles_pending": []
+}

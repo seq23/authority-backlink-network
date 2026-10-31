@@ -1,0 +1,61 @@
+name: Entity authority watch
+# Weekly: every sameAs profile in data/entities/*.json still resolves and links
+# back (self-heal: dead ones removed, pending ones promoted, via a pull request
+# that passes the same release validation as any change); every earned mention
+# in data/earned-mentions.json still resolves and still names its brand; the
+# Wikidata gate is re-evaluated. Named stops are printed to the run log and kept
+# in reports/.
+on:
+  schedule:
+    - cron: '30 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  watch:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check sameAs profiles and self-heal the entity files
+        run: python3 scripts/entity_backlink_watch.py --write
+      - name: Re-check earned mentions
+        run: python3 scripts/earned_mentions.py check
+      - name: Re-evaluate the Wikidata gate
+        run: python3 scripts/earned_mentions.py wikidata-gate
+      - name: Rebuild pages from the healed entity files
+        run: |
+          if git diff --quiet -- data/entities data/earned-mentions.json; then exit 0; fi
+          python3 scripts/sync_page_meta.py --write
+          python3 scripts/install_editorial_chrome.py --write
+          python3 scripts/deterministic_build.py --write
+          python3 scripts/validators/validate_entity_graph.py
+          python3 scripts/validators/validate_earned_mentions.py
+      - name: Open a pull request with the self-heal
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/entities data/earned-mentions.json; then
+            echo "No entity or ledger change this week."; exit 0
+          fi
+          branch="work/entity-watch-$(date -u +%F)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/entities data/earned-mentions.json sites
+          git commit -m "entity watch: self-heal sameAs and earned-mention checks $(date -u +%F)" -m "See reports/entity-backlink-watch.json in the run artifacts."
+          git push origin "$branch"
+          gh pr create --title "Entity watch self-heal $(date -u +%F)" --body "Weekly entity watch: dead sameAs removed / pending profiles promoted / earned-mention checks recorded. Release validation runs on this PR."
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: entity-authority-watch
+          path: |
+            reports/entity-backlink-watch.json
+            reports/earned-mentions.json

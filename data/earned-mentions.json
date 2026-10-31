@@ -1,0 +1,10 @@
+{
+  "_README": [
+    "Earned mentions: third-party articles that cite or quote a brand because a journalist-query response landed.",
+    "One row per landed article. Add with: python3 scripts/earned_mentions.py add --url <article> --outlet <name> --brand-domain <domain> [--query-id <id>]",
+    "The weekly .github/workflows/entity-authority-watch.yml re-fetches every row and records whether it still resolves and still names the brand.",
+    "This ledger is the ONLY evidence base for a Wikidata item: scripts/earned_mentions.py wikidata-gate marks a brand eligible only with >= 2",
+    "independent earned URLs (distinct outlet hosts, none on a portfolio or network domain). Wikipedia stays earned-only: nobody writes a brand's own article."
+  ],
+  "mentions": []
+}

@@ -83,6 +83,10 @@ COMMANDS = {
     "measured_urls_resolve": [sys.executable, "scripts/validators/validate_measured_urls_resolve.py"],
     "host_canonicalization": [sys.executable, "scripts/validators/validate_host_canonicalization.py"],
     "host_canonicalization_behaviour": [sys.executable, "tests/test_host_canonicalization.py"],
+    "entity_graph": [sys.executable, "scripts/validators/validate_entity_graph.py"],
+    "grid_backlink_coverage": [sys.executable, "scripts/validators/validate_grid_backlink_coverage.py"],
+    "earned_mentions": [sys.executable, "scripts/validators/validate_earned_mentions.py"],
+    "entity_backlink_watch_behaviour": [sys.executable, "tests/test_entity_backlink_watch.py"],
 }
 
 
