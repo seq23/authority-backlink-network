@@ -2180,5 +2180,201 @@
       "\\b(?:promote|promotes|stimulate|stimulates|boost|boosts|accelerate|accelerates)\\b[^.]{0,25}\\bhair growth\\b"
     ],
     "_prohibited_claim_patterns_note": "Enforced by scripts/hostile_review.py on every page that links this brand: FDA treats a hair product making a drug claim (cure, treat, regrow, stop or prevent hair loss) as a drug, so none of these may appear on a page that cites it. \"Supports scalp health\" in a cosmetic context is the permitted register."
+  },
+  {
+    "id": "memphis-senior-care",
+    "name": "Memphis Senior Care Homes",
+    "domain": "memphisseniorcarehomes.com",
+    "url": "https://memphisseniorcarehomes.com",
+    "lane": "memphis",
+    "category": "Memphis assisted living and memory care directory",
+    "compliance": "medium",
+    "link_policy": "Can be cited for Memphis-area assisted living, memory care and paying-for-care questions; never as medical, legal or financial advice.",
+    "approved_publications": [
+      "memphis"
+    ],
+    "forbidden": [
+      "medical advice",
+      "guaranteed placement",
+      "financial advice"
+    ],
+    "approved_links": [
+      {
+        "url": "https://memphisseniorcarehomes.com/",
+        "anchor": "Memphis Senior Care Homes",
+        "topics": [
+          "Memphis assisted living",
+          "Memphis memory care",
+          "paying for senior care"
+        ]
+      },
+      {
+        "url": "https://memphisseniorcarehomes.com/assisted-living-memphis-tn/",
+        "anchor": "assisted living in Memphis",
+        "topics": [
+          "Memphis assisted living"
+        ]
+      },
+      {
+        "url": "https://memphisseniorcarehomes.com/memory-care-memphis-tn/",
+        "anchor": "memory care in Memphis",
+        "topics": [
+          "Memphis memory care"
+        ]
+      },
+      {
+        "url": "https://memphisseniorcarehomes.com/guides/when-the-money-runs-out-tenncare-choices/",
+        "anchor": "when assisted living money runs out",
+        "topics": [
+          "paying for senior care"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "time-2-read",
+    "name": "Time2Read",
+    "domain": "time-2-read.com",
+    "url": "https://time-2-read.com",
+    "lane": "memphis",
+    "category": "Interactive reading app for kids",
+    "compliance": "low",
+    "link_policy": "Can be cited for family reading routines and reading-time habits; no learning-outcome guarantees.",
+    "approved_publications": [
+      "memphis"
+    ],
+    "forbidden": [
+      "guaranteed reading level",
+      "medical advice"
+    ],
+    "approved_links": [
+      {
+        "url": "https://time-2-read.com/",
+        "anchor": "Time2Read",
+        "topics": [
+          "kids reading routines"
+        ]
+      },
+      {
+        "url": "https://time-2-read.com/is-reading-20-minutes-a-day-enough",
+        "anchor": "is reading 20 minutes a day enough",
+        "topics": [
+          "kids reading routines"
+        ]
+      },
+      {
+        "url": "https://time-2-read.com/20-minute-reading-log",
+        "anchor": "printable 20-minute reading log",
+        "topics": [
+          "kids reading routines"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "how-we-know",
+    "name": "How We Know",
+    "domain": "howweknowdeep.com",
+    "url": "https://howweknowdeep.com",
+    "lane": "professional",
+    "category": "Deep-sea science explainers: how each claim is known",
+    "compliance": "low",
+    "link_policy": "Can be cited for how scientific claims are measured, inferred or reconstructed; never as professional advice.",
+    "approved_publications": [
+      "professional"
+    ],
+    "forbidden": [
+      "medical advice"
+    ],
+    "approved_links": [
+      {
+        "url": "https://howweknowdeep.com/",
+        "anchor": "How We Know",
+        "topics": [
+          "how scientific claims are known"
+        ]
+      },
+      {
+        "url": "https://howweknowdeep.com/methods/",
+        "anchor": "how deep-sea facts are known",
+        "topics": [
+          "how scientific claims are known"
+        ]
+      },
+      {
+        "url": "https://howweknowdeep.com/methods/inferred-from-proxy/",
+        "anchor": "claims inferred from a proxy",
+        "topics": [
+          "how scientific claims are known"
+        ]
+      },
+      {
+        "url": "https://howweknowdeep.com/methods/measured-by-instrument/",
+        "anchor": "claims measured by instrument",
+        "topics": [
+          "how scientific claims are known"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spry-executive-os",
+    "name": "Spry Executive OS",
+    "domain": "spryexecutiveos.com",
+    "url": "https://spryexecutiveos.com",
+    "lane": "founder",
+    "category": "Executive operating system: accountability, planning and review templates",
+    "compliance": "medium",
+    "link_policy": "Can be cited for accountability systems, planning templates and review cadences; no wealth or mental-health promises.",
+    "approved_publications": [
+      "founder"
+    ],
+    "forbidden": [
+      "guaranteed results",
+      "therapy",
+      "financial advice"
+    ],
+    "approved_links": [
+      {
+        "url": "https://spryexecutiveos.com/",
+        "anchor": "Spry Executive OS",
+        "topics": [
+          "founder operating systems"
+        ]
+      },
+      {
+        "url": "https://spryexecutiveos.com/accountability-system/",
+        "anchor": "an accountability system",
+        "topics": [
+          "team accountability"
+        ]
+      },
+      {
+        "url": "https://spryexecutiveos.com/accountability-system/daily-check-in-system/",
+        "anchor": "a daily check-in system",
+        "topics": [
+          "daily discipline frameworks"
+        ]
+      },
+      {
+        "url": "https://spryexecutiveos.com/90-day-plan-template/",
+        "anchor": "a 90-day plan template",
+        "topics": [
+          "review cadences"
+        ]
+      },
+      {
+        "url": "https://spryexecutiveos.com/using-chatgpt-as-a-full-time-executive-coach-and-daily-accountability-partner",
+        "destination_type": "educational_guide",
+        "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
+        "topics": [
+          "*"
+        ],
+        "source": "data/portfolio-deep-targets.json",
+        "measured_queries": [
+          "ai accountability system for athletes and daily planning"
+        ]
+      }
+    ]
   }
 ]

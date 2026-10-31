@@ -264,6 +264,48 @@
               "destination_type": "official_commercial_destination"
             }
           ]
+        },
+        {
+          "brand_id": "spry-executive-os",
+          "brand": "Spry Executive OS",
+          "domain": "spryexecutiveos.com",
+          "campaign_id": "spry-executive-os-authority",
+          "eligible_clusters": [
+            "team accountability",
+            "daily discipline frameworks",
+            "review cadences",
+            "founder operating systems"
+          ],
+          "approved_links": [
+            {
+              "url": "https://spryexecutiveos.com/",
+              "anchor": "Spry Executive OS",
+              "topics": [
+                "founder operating systems"
+              ]
+            },
+            {
+              "url": "https://spryexecutiveos.com/accountability-system/",
+              "anchor": "an accountability system",
+              "topics": [
+                "team accountability"
+              ]
+            },
+            {
+              "url": "https://spryexecutiveos.com/accountability-system/daily-check-in-system/",
+              "anchor": "a daily check-in system",
+              "topics": [
+                "daily discipline frameworks"
+              ]
+            },
+            {
+              "url": "https://spryexecutiveos.com/90-day-plan-template/",
+              "anchor": "a 90-day plan template",
+              "topics": [
+                "review cadences"
+              ]
+            }
+          ]
         }
       ],
       "tone": "practical, operator-led, direct, low-fluff",
@@ -1973,7 +2015,8 @@
         "cleansing and product buildup",
         "conditioning textured hair",
         "hair product ingredient labels",
-        "natural and organic hair product labels"
+        "natural and organic hair product labels",
+        "how scientific claims are known"
       ],
       "targets": [
         {
@@ -2781,6 +2824,45 @@
               "anchor": "Brush (Your Hair)",
               "topics": [
                 "wave hair care routines"
+              ]
+            }
+          ]
+        },
+        {
+          "brand_id": "how-we-know",
+          "brand": "How We Know",
+          "domain": "howweknowdeep.com",
+          "campaign_id": "how-we-know-authority",
+          "eligible_clusters": [
+            "how scientific claims are known"
+          ],
+          "approved_links": [
+            {
+              "url": "https://howweknowdeep.com/",
+              "anchor": "How We Know",
+              "topics": [
+                "how scientific claims are known"
+              ]
+            },
+            {
+              "url": "https://howweknowdeep.com/methods/",
+              "anchor": "how deep-sea facts are known",
+              "topics": [
+                "how scientific claims are known"
+              ]
+            },
+            {
+              "url": "https://howweknowdeep.com/methods/inferred-from-proxy/",
+              "anchor": "claims inferred from a proxy",
+              "topics": [
+                "how scientific claims are known"
+              ]
+            },
+            {
+              "url": "https://howweknowdeep.com/methods/measured-by-instrument/",
+              "anchor": "claims measured by instrument",
+              "topics": [
+                "how scientific claims are known"
               ]
             }
           ]

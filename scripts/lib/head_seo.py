@@ -161,32 +161,40 @@ def publisher_id(domain: str) -> str:
     return f"https://{domain}/masthead#publisher-entity"
 
 
-# The editorial company's own pages: where it is identified, and the image that
-# stands for it. Search Readiness checklist item c1 asks every Organization node
-# for name, url, logo and sameAs; on 25 Oct 2026 every page on all three
-# publications had name alone.
+# The editorial company's identity: where it is identified, the image that
+# stands for it, and the independent profiles that confirm it. Search Readiness
+# checklist item c1 asks every Organization node for name, url and logo.
 #
-# sameAs is the one that cannot be invented. These publications have no social
-# profiles, no Wikipedia entry and no company register page, and schema.org's
-# sameAs is "a reference Web page that unambiguously indicates the item's
-# identity" -- so it points at the two pages that do exactly that and no
-# further: `url` is the masthead, which names the editorial company and its
-# policies, and sameAs is contributors, which names who writes under it, and
-# about, which says who owns and edits the publication. A LinkedIn URL invented
-# to fill the field would be a false claim about an entity on a publication
-# whose only asset is being believed.
+# sameAs is the one that cannot be invented. Until 31 Oct 2026 it pointed at
+# this site's own /contributors and /about pages: a site vouching for itself,
+# which reconciles the entity against nothing (authority audit, 30 Oct 2026).
+# It now comes from data/entities/<domain>.json, which holds only real,
+# independently hosted profiles that resolve -- and while there are none, the
+# key is left off entirely: an absent sameAs is true, a self-referential one is
+# noise. scripts/validators/validate_entity_graph.py holds every page to the
+# entity file; scripts/entity_backlink_watch.py keeps the file itself honest.
 ORG_URL_PATH = "/masthead"
-ORG_SAMEAS_PATHS = ("/contributors", "/about")
 ORG_LOGO = "icon-512.png"
+ENTITY_DIR = "data/entities"
+
+
+def entity_record(domain: str, root=None) -> dict:
+    """data/entities/<domain>.json -- the one definition of the editorial company."""
+    from pathlib import Path
+    base = Path(root) if root else Path(__file__).resolve().parents[2]
+    path = base / ENTITY_DIR / f"{domain}.json"
+    if not path.exists():
+        raise SystemExit(f"{path.relative_to(base)}: missing. Every publication needs its entity file.")
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def organization_identity(domain: str) -> dict:
-    """url, logo and sameAs for the editorial company of `domain`."""
-    return {
-        "url": f"https://{domain}{ORG_URL_PATH}",
-        "logo": f"https://{domain}/{ORG_LOGO}",
-        "sameAs": [f"https://{domain}{path}" for path in ORG_SAMEAS_PATHS],
-    }
+    """url, logo and (only when real profiles exist) sameAs for the editorial company of `domain`."""
+    entity = entity_record(domain)
+    identity = {"url": entity["url"], "logo": entity["logo"]}
+    if entity.get("sameAs"):
+        identity["sameAs"] = list(entity["sameAs"])
+    return identity
 
 
 def publisher_node(entity: str, domain: str, pub_title: str) -> dict:
@@ -333,7 +341,7 @@ def install_updated_line(text: str) -> str:
 
 
 def install_organization_identity(text: str, entity: str, pub_title: str, domain: str) -> str:
-    """Give url, logo and sameAs to the publication's own Organization nodes.
+    """Give url and logo, and the entity file's sameAs, to the publication's own Organization nodes.
 
     Checklist item c1 reads the FIRST Organization node on the page, and on an
     Article page that is the publisher node inside the article's own JSON-LD --
@@ -361,9 +369,21 @@ def install_organization_identity(text: str, entity: str, pub_title: str, domain
             if ("Organization" in node_types(node)
                     and str(node.get("name", "")).casefold() in ours):
                 for key, value in identity.items():
+                    if key == "sameAs":
+                        continue
                     if not node.get(key):
                         node[key] = value
                         changed = True
+                # sameAs is not filled in, it is SET: the entity file is the
+                # whole truth, so a stale or self-referential list already on
+                # the page is replaced, and removed when there are no profiles.
+                same_as = identity.get("sameAs")
+                if same_as and node.get("sameAs") != same_as:
+                    node["sameAs"] = list(same_as)
+                    changed = True
+                elif not same_as and "sameAs" in node:
+                    del node["sameAs"]
+                    changed = True
             for value in node.values():
                 changed = complete(value) or changed
         elif isinstance(node, list):

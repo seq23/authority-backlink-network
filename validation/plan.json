@@ -70,7 +70,11 @@
       "free_router_deadline",
       "measured_urls_resolve",
       "host_canonicalization",
-      "host_canonicalization_behaviour"
+      "host_canonicalization_behaviour",
+      "entity_graph",
+      "grid_backlink_coverage",
+      "earned_mentions",
+      "entity_backlink_watch_behaviour"
     ],
     "release": [
       "json",
@@ -136,7 +140,11 @@
       "free_router_deadline",
       "measured_urls_resolve",
       "host_canonicalization",
-      "host_canonicalization_behaviour"
+      "host_canonicalization_behaviour",
+      "entity_graph",
+      "grid_backlink_coverage",
+      "earned_mentions",
+      "entity_backlink_watch_behaviour"
     ],
     "full": [
       "json",
@@ -203,7 +211,11 @@
       "free_router_deadline",
       "measured_urls_resolve",
       "host_canonicalization",
-      "host_canonicalization_behaviour"
+      "host_canonicalization_behaviour",
+      "entity_graph",
+      "grid_backlink_coverage",
+      "earned_mentions",
+      "entity_backlink_watch_behaviour"
     ],
     "cache-self-test": [
       "python",
@@ -482,6 +494,22 @@
     "freeze_owner_exception": {
       "severity": "HARD_FAIL",
       "rationale": "30 Oct 2026, owner: \"Yes, publish 3 now\" -- three Glory By Us starter articles may publish under the 11 Oct publishing freeze without a measured query. The exception is a named, dated entry in publishing_freeze.json owner_exceptions, never a looser freeze. This blocks when the entry or its three pages drift, when a fourth article, another brand, another host, a page dated before the decision, a page not linking the brand, an unknown or removed entry, or a malformed entry would pass, when an unmeasured page without an exception would pass, and when the autopilot reads owner_exceptions. Fails on zero exception pages examined."
+    },
+    "entity_graph": {
+      "severity": "HARD_FAIL",
+      "rationale": "Authority audit 30 Oct 2026: the publications' sameAs was self-referential (their own /contributors and /about). Every Organization node naming a publication or its editorial company must carry exactly data/entities/<domain>.json sameAs (no own-host or network-host URL), the entity's logo and description; llms.txt must name the entity, its description, editorial policy URL and beats; /editorial-policy must be served. Fails hard on zero organization nodes."
+    },
+    "grid_backlink_coverage": {
+      "severity": "HARD_FAIL",
+      "rationale": "Authority audit 30 Oct 2026: four grid side businesses had 0 published network backlinks and nothing said so. Every domain in data/grid-coverage.json needs a published registry row whose source page really carries the link, or a named stop; compares the list with the boss-os grid registry when a sibling checkout exists. Fails hard on an empty list."
+    },
+    "earned_mentions": {
+      "severity": "HARD_FAIL",
+      "rationale": "The earned-mention ledger (data/earned-mentions.json) is the only evidence base for a Wikidata item. Rows must be well formed and never on an owned or network domain; the Wikidata gate is exercised on four fixed cases every run so it never checks zero items."
+    },
+    "entity_backlink_watch_behaviour": {
+      "severity": "HARD_FAIL",
+      "rationale": "The weekly entity watch's self-heal (drop dead sameAs, promote resolving pending profiles, named stop for missing link-back, unverifiable for JS-rendered profiles) proven against a fake network on every run."
     }
   },
   "severity_matrix_policy": {
