@@ -340,6 +340,21 @@
         "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low",
         "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim"
       ]
+    },
+    {
+      "accepted_at": "2026-10-31",
+      "reason": "Authority V4.2 autopilot run 41210117715 on 2026-10-31: the generator capped itself to data/cadence/policy.json:new_pages_per_week before writing, and the cadence gate cleared before this step, so what is being accepted is a publish that stayed inside the declared rate.",
+      "urls_total_after": 655,
+      "accepted_count": 1,
+      "accepted_editorial": 0,
+      "accepted_navigation": 1,
+      "weekly_cap": 3,
+      "over_cap_by": 0,
+      "maintainable_ceiling": 325,
+      "library_over_ceiling_by": 330,
+      "accepted_urls": [
+        "https://memphisvendorlibrary.com/topics/family-care-and-home-routines"
+      ]
     }
   ]
 }

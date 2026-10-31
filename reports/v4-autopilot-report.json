@@ -1,23 +1,19 @@
 {
   "status": "ok",
   "run": {
-    "date": "2026-10-30",
-    "release_date": "2026-10-30",
-    "day_index": 126,
-    "target_volume": 3,
-    "generated": 3,
+    "date": "2026-10-31",
+    "release_date": "2026-10-31",
+    "day_index": 127,
+    "target_volume": 4,
+    "generated": 0,
     "published": 0,
     "scores": [],
     "duplicate_warnings": 0,
     "hard_fails": 0,
     "self_heal_recoveries": 0,
-    "self_heal_attempts": 4,
+    "self_heal_attempts": 0,
     "blocked_slots": [],
-    "held_by_publishing_freeze": [
-      "Automation Without Chaos: Geo-Ready Buyer Guide For Careful Decision-Makers",
-      "Reception Table Assignments: Geo-Ready Planning Checklist Before You Call",
-      "Dental Decision Resources: 2026-Ready Question Checklist When Timing Matters"
-    ],
+    "held_by_publishing_freeze": [],
     "social_enqueued": {
       "published_pages": 0,
       "platforms_enabled": [],
@@ -52,29 +48,10 @@
       "pass_rate": 0.0,
       "avg_quality": 85,
       "duplicate_warnings": 0,
-      "hard_fails": 6
+      "hard_fails": 5
     }
   },
-  "generated": [
-    {
-      "publication": "founder-operator",
-      "slot": 0,
-      "status": "held_by_publishing_freeze",
-      "title": "Automation Without Chaos: Geo-Ready Buyer Guide For Careful Decision-Makers"
-    },
-    {
-      "publication": "memphis-local",
-      "slot": 1,
-      "status": "held_by_publishing_freeze",
-      "title": "Reception Table Assignments: Geo-Ready Planning Checklist Before You Call"
-    },
-    {
-      "publication": "professional-resources",
-      "slot": 2,
-      "status": "held_by_publishing_freeze",
-      "title": "Dental Decision Resources: 2026-Ready Question Checklist When Timing Matters"
-    }
-  ],
+  "generated": [],
   "published": [],
   "scaling_policy": {
     "version": "v4.6-portfolio-citation-control",
@@ -175,6 +152,16 @@
         "until_rendered_coverage": 4,
         "start_immediately": true,
         "quality_policy": "Equine legal education only; no legal advice."
+      },
+      {
+        "brand_id": "glory-by-us",
+        "campaign_id": "glory-by-us-scalp-care",
+        "publication": "professional-resources",
+        "pages_per_day": 1,
+        "until_rendered_coverage": 6,
+        "start_immediately": true,
+        "quality_policy": "Cosmetic scalp-care, wave-routine and label-reading education only; never a cure, treatment, regrowth or hair-loss claim.",
+        "_why": "Held by data/search_intelligence/publishing_freeze.json like every new page since 12 Oct 2026: each day this lane queues one glory-by-us brief in held_pages.json, and the first run after professionalresourcelibrary.com has a measured Search Console query its title answers publishes it. No campaign floor is declared in data/portfolio-backlink-campaigns.json until a page can render."
       }
     ],
     "city_vendor_expansion": {

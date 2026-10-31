@@ -1,11 +1,11 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-10-30
+As of: 2026-10-31
 
-- Registered brands: 16
+- Registered brands: 21
 - Authority publications: 3
-- Repository-rendered authority backlinks: 147
-- Owned product-repo surfaces imported: 81
+- Repository-rendered authority backlinks: 155
+- Owned product-repo surfaces imported: 89
 - Live verified backlinks: 147
 - Indexed referring pages with evidence: 1
 
@@ -29,3 +29,8 @@ As of: 2026-10-30
 | Approval Prep | priority | 9 | 18 | 150 |
 | Dream Wedding Builder | launch | 32 | 8 | 60 |
 | Dianne's Place Recovery Services | launch | 18 | 4 | 18 |
+| Glory By Us | launch | 3 | 8 | 12 |
+| Memphis Senior Care Homes | standard | 2 | 0 | 4 |
+| Time2Read | standard | 1 | 0 | 4 |
+| How We Know | standard | 1 | 0 | 4 |
+| Spry Executive OS | standard | 1 | 0 | 4 |

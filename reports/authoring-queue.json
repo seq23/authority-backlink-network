@@ -1,15 +1,72 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-10-30",
+  "run_at": "2026-10-31",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
-    "published_in_window": 0,
-    "allowance": 3,
-    "window_start": "2026-10-24",
-    "window_end": "2026-10-30"
+    "published_in_window": 8,
+    "allowance": 0,
+    "window_start": "2026-10-25",
+    "window_end": "2026-10-31"
   },
-  "deferred": 0,
-  "queue": []
+  "deferred": 4,
+  "queue": [
+    {
+      "publication": "professional-resources",
+      "cluster": "cleansing and product buildup",
+      "audience": "organizational leader",
+      "format": "buyer guide",
+      "intent": "when you need to ask better questions",
+      "modifier": "GEO-ready",
+      "intended_title": "Cleansing And Product Buildup: Geo-Ready Buyer Guide When You Need To Ask Better Questions",
+      "target_brand": "Glory By Us",
+      "target_url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+      "signature": "9266f43f3e475e64336464387398fe193eac14b9a067d412d996ce7490ddb946",
+      "deferred_on": "2026-10-31",
+      "reason": "weekly_publication_cap"
+    },
+    {
+      "publication": "founder-operator",
+      "cluster": "virtual event production",
+      "audience": "executive assistant",
+      "format": "planning checklist",
+      "intent": "for people who need a starting point",
+      "modifier": "no-fluff",
+      "intended_title": "Virtual Event Production: No-Fluff Planning Checklist For People Who Need A Starting Point",
+      "target_brand": "Virtual Agency OS",
+      "target_url": "https://virtualagency-os.com/learn/virtual-event-production-cost",
+      "signature": "017e577ad2151c5a144cbd05318ae71026d4addccf007f8e39e6d72bb4fae82b",
+      "deferred_on": "2026-10-31",
+      "reason": "weekly_publication_cap"
+    },
+    {
+      "publication": "memphis-local",
+      "cluster": "vendor schedule",
+      "audience": "wedding planner",
+      "format": "question checklist",
+      "intent": "when you need to ask better questions",
+      "modifier": "checklist-driven",
+      "intended_title": "Vendor Schedule: Checklist-Driven Question Checklist When You Need To Ask Better Questions",
+      "target_brand": "Dream Wedding Builder",
+      "target_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+      "signature": "db4b304749377147d3d62e87df784fbb59b99cb5fe3bd273c9ae07e8d18e4553",
+      "deferred_on": "2026-10-31",
+      "reason": "weekly_publication_cap"
+    },
+    {
+      "publication": "professional-resources",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "dental patient",
+      "format": "planning checklist",
+      "intent": "when you need to ask better questions",
+      "modifier": "2026-ready",
+      "intended_title": "Preparing Records Before A Specialist Appointment: 2026-Ready Planning Checklist When You Need To Ask Better Questions",
+      "target_brand": "The Dentistry Guides",
+      "target_url": "https://dentistryguides.com/guides/questions-to-ask/",
+      "signature": "8cb4b931defa4bfa6678ecc5afc31f272c4290732b33003b4dffd1b65fd4e1c7",
+      "deferred_on": "2026-10-31",
+      "reason": "weekly_publication_cap"
+    }
+  ]
 }

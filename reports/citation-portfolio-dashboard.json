@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-10-30",
+  "as_of": "2026-10-31",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -28,11 +28,11 @@
     "citation_impression_objective": "Combined opportunity metric; not a claim of 100,000 independent backlinks."
   },
   "totals": {
-    "registered_brands": 16,
+    "registered_brands": 21,
     "authority_publications": 3,
-    "authority_backlinks": 147,
+    "authority_backlinks": 155,
     "approved_destinations_waiting_for_context": 23,
-    "owned_manifest_surfaces": 81,
+    "owned_manifest_surfaces": 89,
     "live_verified": 147,
     "discoverable": 147,
     "indexed": 1,
@@ -198,6 +198,56 @@
       "monthly_authority_target": 18,
       "monthly_verified_backlink_target": 12,
       "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "glory-by-us",
+      "brand_name": "Glory By Us",
+      "growth_status": "launch",
+      "authority_backlinks": 3,
+      "owned_manifest_surfaces": 8,
+      "monthly_authority_target": 12,
+      "monthly_verified_backlink_target": 8,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "memphis-senior-care",
+      "brand_name": "Memphis Senior Care Homes",
+      "growth_status": "standard",
+      "authority_backlinks": 2,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 4,
+      "monthly_verified_backlink_target": 4,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "time-2-read",
+      "brand_name": "Time2Read",
+      "growth_status": "standard",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 4,
+      "monthly_verified_backlink_target": 4,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "how-we-know",
+      "brand_name": "How We Know",
+      "growth_status": "standard",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 4,
+      "monthly_verified_backlink_target": 4,
+      "target_variance_blocks_release": false
+    },
+    {
+      "brand_id": "spry-executive-os",
+      "brand_name": "Spry Executive OS",
+      "growth_status": "standard",
+      "authority_backlinks": 1,
+      "owned_manifest_surfaces": 0,
+      "monthly_authority_target": 4,
+      "monthly_verified_backlink_target": 4,
+      "target_variance_blocks_release": false
     }
   ],
   "by_domain": {
@@ -219,17 +269,23 @@
     "virtualagency-os.com": 10,
     "approvalprep.com": 9,
     "dentistryguides.com": 2,
-    "aplayermode.com": 10
+    "aplayermode.com": 10,
+    "glorybyus.com": 3,
+    "memphisseniorcarehomes.com": 2,
+    "time-2-read.com": 1,
+    "howweknowdeep.com": 1,
+    "spryexecutiveos.com": 1
   },
   "by_publication": {
     "unknown": 3,
-    "founder": 37,
-    "memphis": 41,
-    "professional": 66
+    "founder": 38,
+    "memphis": 44,
+    "professional": 70
   },
   "lifecycle": {
     "approved_destination": 458,
-    "live_verified": 147
+    "live_verified": 147,
+    "published_in_repository": 8
   },
   "campaign_health": [
     {
@@ -439,6 +495,71 @@
       "destination_floor": 2,
       "coverage_status": "HEALTHY_RENDERED",
       "external_outcome_proven": true
+    },
+    {
+      "campaign_id": "glory-by-us-scalp-care",
+      "brand_id": "glory-by-us",
+      "rendered": 3,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 3,
+      "distinct_anchors": 3,
+      "rendered_floor": 3,
+      "destination_floor": 3,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "memphis-senior-care-authority",
+      "brand_id": "memphis-senior-care",
+      "rendered": 2,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 2,
+      "distinct_anchors": 2,
+      "rendered_floor": 2,
+      "destination_floor": 2,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "time-2-read-authority",
+      "brand_id": "time-2-read",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "how-we-know-authority",
+      "brand_id": "how-we-know",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
+    },
+    {
+      "campaign_id": "spry-executive-os-authority",
+      "brand_id": "spry-executive-os",
+      "rendered": 1,
+      "live_verified": 0,
+      "indexed": 0,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
+      "rendered_floor": 1,
+      "destination_floor": 1,
+      "coverage_status": "HEALTHY_RENDERED",
+      "external_outcome_proven": false
     }
   ],
   "distribution_observation": {
