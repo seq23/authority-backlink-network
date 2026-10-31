@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
   "row_format": "query: [impressions_28d, clicks_28d, position]",
-  "snapshot_count": 20,
+  "snapshot_count": 21,
   "snapshots": [
     {
       "collected_at": "2026-10-11T17:28:47+00:00",
@@ -1524,6 +1524,89 @@
       "queries": {
         "ai executive coaching": [
           19,
+          0,
+          23
+        ],
+        "executive ai coaching": [
+          11,
+          0,
+          72
+        ],
+        "community reports": [
+          9,
+          0,
+          79.7
+        ],
+        "founder operator": [
+          4,
+          0,
+          5.2
+        ],
+        "monthly metrics": [
+          3,
+          0,
+          47.7
+        ],
+        "founder support for product execution": [
+          2,
+          0,
+          14
+        ],
+        "i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010?": [
+          2,
+          0,
+          86.5
+        ],
+        "performance problem identification": [
+          2,
+          0,
+          46
+        ],
+        "virtual event rfp": [
+          2,
+          0,
+          87
+        ],
+        "ai act coach": [
+          1,
+          0,
+          36
+        ],
+        "community cost metric": [
+          1,
+          0,
+          16
+        ],
+        "foundr operators": [
+          1,
+          0,
+          17
+        ],
+        "moderation and community management": [
+          1,
+          0,
+          84
+        ],
+        "operating guidance": [
+          1,
+          0,
+          69
+        ]
+      }
+    },
+    {
+      "collected_at": "2026-10-31T14:26:20+00:00",
+      "start_date": "2026-10-01",
+      "end_date": "2026-10-28",
+      "totals": {
+        "clicks": 1,
+        "impressions": 170,
+        "ctr": 0.0059,
+        "position": 26.0
+      },
+      "queries": {
+        "ai executive coaching": [
+          21,
           0,
           23
         ],

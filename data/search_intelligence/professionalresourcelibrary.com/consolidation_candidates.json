@@ -3,12 +3,13 @@
   "host": "professionalresourcelibrary.com",
   "status": "LIST_ONLY_NO_REDIRECTS",
   "decision_input_for": "Fold a page into its topic hub when URL Inspection keeps it out of the index and Search Console shows it no impressions for the whole 28-day window. Nothing here redirects or deletes; the list is evidence for that decision.",
-  "gsc_window": "2026-09-30..2026-10-27",
-  "coverage_collected_at": "2026-10-30T14:29:14+00:00",
-  "inspected_url_count": 422,
-  "candidate_count": 4,
+  "gsc_window": "2026-10-01..2026-10-28",
+  "coverage_collected_at": "2026-10-31T14:26:20+00:00",
+  "inspected_url_count": 426,
+  "candidate_count": 8,
   "candidates_by_hub": {
-    "/topics/application-problems": 4
+    "/topics/application-problems": 4,
+    "/topics/regulated-provider-research": 4
   },
   "rows": [
     {
@@ -49,6 +50,46 @@
       "inspected_at": "2026-10-30T14:29:14+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/application-problems",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
+      "file": "sites/professional-resources/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-31T14:26:20+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/regulated-provider-research",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
+      "file": "sites/professional-resources/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-31T14:26:20+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/regulated-provider-research",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
+      "file": "sites/professional-resources/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-31T14:26:20+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/regulated-provider-research",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim",
+      "file": "sites/professional-resources/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim.html",
+      "coverage_state": "URL is unknown to Google",
+      "bucket": "unknown",
+      "inspected_at": "2026-10-31T14:26:20+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/regulated-provider-research",
       "fold_rule": "the topic hub that already lists the page"
     }
   ]

@@ -15,8 +15,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 38,
-      "weighted_position": 40.1,
+      "impressions": 40,
+      "weighted_position": 39.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/ai-executive-coaching-resources.html",
       "page": "/ai-executive-coaching-resources",
@@ -37,8 +37,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 35,
-      "weighted_position": 52.6,
+      "impressions": 36,
+      "weighted_position": 51.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -60,8 +60,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 25,
-      "weighted_position": 7.2,
+      "impressions": 24,
+      "weighted_position": 7.1,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -74,8 +74,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 14,
-      "weighted_position": 4.4,
+      "impressions": 17,
+      "weighted_position": 4.6,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html (derived from the page's own dek and questions)",
       "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -96,8 +96,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 11,
-      "weighted_position": 5.3,
+      "impressions": 12,
+      "weighted_position": 5.6,
       "status": "no_page",
       "reason": "lands on /masthead, an editorial-governance page (masthead/about/standards); its content is the publisher's disclosure, not a search answer",
       "page": "/masthead",
@@ -110,8 +110,8 @@
       "basis": [
         "ranking_page"
       ],
-      "impressions": 9,
-      "weighted_position": 9.1,
+      "impressions": 8,
+      "weighted_position": 9.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -155,8 +155,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 50,
-      "weighted_position": 9.6,
+      "impressions": 48,
+      "weighted_position": 9.7,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -201,8 +201,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 6,
-      "weighted_position": 11.3,
+      "impressions": 5,
+      "weighted_position": 11.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/memphis-grazing-table-resources.html",
       "page": "/memphis-grazing-table-resources",
@@ -260,7 +260,7 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 226,
+      "impressions": 212,
       "weighted_position": 12.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
@@ -282,7 +282,7 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 70,
+      "impressions": 64,
       "weighted_position": 8.0,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
@@ -304,8 +304,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 43,
-      "weighted_position": 2.5,
+      "impressions": 48,
+      "weighted_position": 2.4,
       "status": "underivable",
       "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
       "page": "/topics/letters-of-explanation",
