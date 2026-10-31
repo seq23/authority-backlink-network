@@ -8,10 +8,10 @@
     "release_operators": 10,
     "workflow_operators": 11,
     "approved_target_urls": 151,
-    "serviced_target_urls": 102,
+    "serviced_target_urls": 101,
     "backlink_rows": 636,
     "unique_source_editorials": 605,
-    "live_verified_rows": 147,
+    "live_verified_rows": 155,
     "indexed_rows": 1
   },
   "publication_operators": [
@@ -9473,31 +9473,10 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 0,
+      "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": [
-        {
-          "source_path": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-          "source_url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
-          "source_title": "The Minimum Information to Gather Before Comparing Wedding Vendors",
-          "publication": "Memphis Vendor Library",
-          "publication_id": "memphis",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "Wedding Checklist PDF ($9): Printable, Editable Planning Checklist",
-          "campaign_id": "dream-planning-tools",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
-        }
-      ]
+      "backlinks": []
     },
     {
       "brand_id": "dream-wedding-builder",
@@ -9532,8 +9511,8 @@
       "campaign_ids": [
         "dream-planning-tools"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 2,
+      "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -9555,6 +9534,26 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 80
+        },
+        {
+          "source_path": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+          "source_title": "The Minimum Information to Gather Before Comparing Wedding Vendors",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
+          "anchor": "Free Wedding Planner",
+          "campaign_id": "dream-planning-tools",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
         }
       ]
     },
@@ -10640,31 +10639,10 @@
       "campaign_ids": [
         "glory-by-us-scalp-care"
       ],
-      "backlink_count": 1,
+      "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": [
-        {
-          "source_path": "sites/professional-resources/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
-          "source_title": "How to Build a Scalp Care Routine, and What an Organic Label on a Hair Product Means",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-10-30",
-          "release_date": "2026-10-30",
-          "anchor": "GLORY BY US – Glory By Us",
-          "campaign_id": "glory-by-us-scalp-care",
-          "status": "published",
-          "lifecycle_stage": "published_in_repository",
-          "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        }
-      ]
+      "backlinks": []
     },
     {
       "brand_id": "glory-by-us",
@@ -10681,7 +10659,7 @@
         "glory-by-us-scalp-care"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -10695,10 +10673,10 @@
           "anchor": "Wave Hair Products",
           "campaign_id": "glory-by-us-scalp-care",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -10739,10 +10717,31 @@
       "campaign_ids": [
         "glory-by-us-scalp-care"
       ],
-      "backlink_count": 0,
-      "live_verified_count": 0,
+      "backlink_count": 1,
+      "live_verified_count": 1,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/professional-resources/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means.html",
+          "source_title": "How to Build a Scalp Care Routine, and What an Organic Label on a Hair Product Means",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-10-30",
+          "release_date": "2026-10-30",
+          "anchor": "Big 3 Hydration Set",
+          "campaign_id": "glory-by-us-scalp-care",
+          "status": "published",
+          "lifecycle_stage": "source_discovered",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        }
+      ]
     },
     {
       "brand_id": "glory-by-us",
@@ -10816,7 +10815,7 @@
         "glory-by-us-scalp-care"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -10830,10 +10829,10 @@
           "anchor": "Rosemary Myrrh Shampoo & Body Bar",
           "campaign_id": "glory-by-us-scalp-care",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -11695,8 +11694,8 @@
       "campaign_ids": [
         "horse-equine-legal"
       ],
-      "backlink_count": 6,
-      "live_verified_count": 1,
+      "backlink_count": 5,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -11718,26 +11717,6 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": null
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html",
-          "source_title": "Who Pays for What When a Boarded Horse Needs the Vet",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
-          "anchor": "Equine Law Advice & Answers for Horse Owners",
-          "campaign_id": "horse-equine-legal",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
         },
         {
           "source_path": "sites/professional-resources/daily/2026-08-26-what-to-gather-before-a-first-call-with-an-equine-attorney.html",
@@ -11895,8 +11874,8 @@
       "campaign_ids": [
         "horse-equine-legal"
       ],
-      "backlink_count": 5,
-      "live_verified_count": 3,
+      "backlink_count": 6,
+      "live_verified_count": 4,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -11920,9 +11899,9 @@
           "score": null
         },
         {
-          "source_path": "sites/professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
-          "source_title": "What Records to Organize Before a Horse Sale Closes",
+          "source_path": "sites/professional-resources/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet.html",
+          "source_title": "Who Pays for What When a Boarded Horse Needs the Vet",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
           "scheduled_content_date": "2026-08-27",
@@ -11980,6 +11959,26 @@
           "score": 80
         },
         {
+          "source_path": "sites/professional-resources/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",
+          "source_title": "Horse Contract Preparation: Plain-English Decision Guide For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-05",
+          "release_date": "2026-08-08",
+          "anchor": "Contract Review vs DIY Horse Agreement",
+          "campaign_id": "horse-equine-legal",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
           "source_path": "sites/professional-resources/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-when-a-horse-contract-needs-more-than-a-template.html",
           "source_title": "When a Horse Contract Needs More Than a Template",
@@ -12020,13 +12019,13 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers.html",
-          "source_title": "Horse Contract Preparation: Plain-English Decision Guide For First-Time Buyers",
+          "source_path": "sites/professional-resources/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes.html",
+          "source_title": "What Records to Organize Before a Horse Sale Closes",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-05",
-          "release_date": "2026-08-08",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
           "anchor": "Horse purchase agreement vs bill of sale",
           "campaign_id": "horse-equine-legal",
           "status": "published",
@@ -12037,7 +12036,7 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": 80
+          "score": 88
         },
         {
           "source_path": "sites/professional-resources/daily/2026-07-24-horse-purchase-agreement-vs-bill-of-sale-why-the-difference-matters.html",
@@ -12154,7 +12153,7 @@
         "how-we-know-authority"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -12168,10 +12167,10 @@
           "anchor": "Inferred from a proxy: what that means",
           "campaign_id": "how-we-know-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -12212,31 +12211,10 @@
       "campaign_ids": [
         "memphis-senior-care-authority"
       ],
-      "backlink_count": 1,
+      "backlink_count": 0,
       "live_verified_count": 0,
       "indexed_count": 0,
-      "backlinks": [
-        {
-          "source_path": "sites/memphis-local/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
-          "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
-          "source_title": "Paying for Assisted Living in Memphis When Savings Run Low",
-          "publication": "Memphis Vendor Library",
-          "publication_id": "memphis",
-          "scheduled_content_date": "2026-10-31",
-          "release_date": "2026-10-31",
-          "anchor": "Memphis Senior Care Homes: Assisted Living and Memory Care",
-          "campaign_id": "memphis-senior-care-authority",
-          "status": "published",
-          "lifecycle_stage": "published_in_repository",
-          "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
-        }
-      ]
+      "backlinks": []
     },
     {
       "brand_id": "memphis-senior-care",
@@ -12253,7 +12231,7 @@
         "memphis-senior-care-authority"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -12267,10 +12245,10 @@
           "anchor": "Assisted Living in Memphis, TN",
           "campaign_id": "memphis-senior-care-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -12292,10 +12270,31 @@
       "campaign_ids": [
         "memphis-senior-care-authority"
       ],
-      "backlink_count": 0,
-      "live_verified_count": 0,
+      "backlink_count": 1,
+      "live_verified_count": 1,
       "indexed_count": 0,
-      "backlinks": []
+      "backlinks": [
+        {
+          "source_path": "sites/memphis-local/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
+          "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
+          "source_title": "Paying for Assisted Living in Memphis When Savings Run Low",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-10-31",
+          "release_date": "2026-10-31",
+          "anchor": "When Assisted Living Money Runs Out",
+          "campaign_id": "memphis-senior-care-authority",
+          "status": "published",
+          "lifecycle_stage": "source_discovered",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        }
+      ]
     },
     {
       "brand_id": "memphis-senior-care",
@@ -12330,8 +12329,8 @@
       "campaign_ids": [
         "neuro-eval-guides-authority"
       ],
-      "backlink_count": 5,
-      "live_verified_count": 1,
+      "backlink_count": 4,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -12369,26 +12368,6 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
-          "source_title": "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-07-03",
-          "release_date": "2026-07-03",
-          "anchor": "Neuro Evaluation Guides: ADHD and Autism Evaluations and Therapy",
-          "campaign_id": "neuro-eval-guides-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -12455,26 +12434,6 @@
       "indexed_count": 0,
       "backlinks": [
         {
-          "source_path": "sites/professional-resources/neuro-evaluation-research.html",
-          "source_url": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
-          "source_title": "Neuro Evaluation Research",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
-          "anchor": "ADHD, Autism and Neuropsych Guides",
-          "campaign_id": "neuro-eval-guides-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": null
-        },
-        {
           "source_path": "sites/professional-resources/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-08-09-how-to-organize-a-proof-of-income-packet-resource-backed-faq-answer-page-before-you-book.html",
           "source_title": "How To Organize A Proof-Of-Income Packet: Resource-Backed Faq Answer Page Before You Book",
@@ -12513,6 +12472,26 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 92
+        },
+        {
+          "source_path": "sites/professional-resources/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers.html",
+          "source_title": "Neuropsych Evaluation Research: Aeo-Ready Comparison Guide For First-Time Buyers",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-07-03",
+          "release_date": "2026-07-03",
+          "anchor": "ADHD, Autism and Neuropsych Guides",
+          "campaign_id": "neuro-eval-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
         },
         {
           "source_path": "",
@@ -12590,10 +12569,30 @@
       "campaign_ids": [
         "neuro-eval-guides-authority"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 0,
+      "backlink_count": 2,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/professional-resources/neuro-evaluation-research.html",
+          "source_url": "https://professionalresourcelibrary.com/neuro-evaluation-research.html",
+          "source_title": "Neuro Evaluation Research",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
+          "anchor": "Questions to Ask Before Neuro Testing",
+          "campaign_id": "neuro-eval-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": null
+        },
         {
           "source_path": "sites/professional-resources/daily/2026-07-25-how-to-explain-a-late-payment-editorial-framework-before-you-call.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-25-how-to-explain-a-late-payment-editorial-framework-before-you-call.html",
@@ -12630,8 +12629,8 @@
       "campaign_ids": [
         "porch-party-authority"
       ],
-      "backlink_count": 20,
-      "live_verified_count": 1,
+      "backlink_count": 19,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -12669,26 +12668,6 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": null
-        },
-        {
-          "source_path": "sites/memphis-local/memphis-porch-decorating-resources.html",
-          "source_url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources.html",
-          "source_title": "Memphis Porch Decorating Resources",
-          "publication": "Memphis Vendor Library",
-          "publication_id": "memphis",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
-          "anchor": "Memphis Porch Decorating, Party Planning, Grazing Tables & Game Rentals",
-          "campaign_id": "porch-party-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -13109,10 +13088,30 @@
       "campaign_ids": [
         "porch-party-authority"
       ],
-      "backlink_count": 1,
-      "live_verified_count": 1,
+      "backlink_count": 2,
+      "live_verified_count": 2,
       "indexed_count": 0,
       "backlinks": [
+        {
+          "source_path": "sites/memphis-local/memphis-porch-decorating-resources.html",
+          "source_url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources.html",
+          "source_title": "Memphis Porch Decorating Resources",
+          "publication": "Memphis Vendor Library",
+          "publication_id": "memphis",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
+          "anchor": "Porch Decorating Service Prices in Memphis (2026)",
+          "campaign_id": "porch-party-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": null
+        },
         {
           "source_path": "sites/memphis-local/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html",
           "source_url": "https://memphisvendorlibrary.com/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html",
@@ -13785,7 +13784,7 @@
         "spry-executive-os-authority"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -13799,10 +13798,10 @@
           "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
           "campaign_id": "spry-executive-os-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -14882,7 +14881,7 @@
         "time-2-read-authority"
       ],
       "backlink_count": 1,
-      "live_verified_count": 0,
+      "live_verified_count": 1,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -14896,10 +14895,10 @@
           "anchor": "Free Printable 20-Minute Reading Log and Timer",
           "campaign_id": "time-2-read-authority",
           "status": "published",
-          "lifecycle_stage": "published_in_repository",
+          "lifecycle_stage": "source_discovered",
           "repository_rendered": true,
-          "deployed": false,
-          "live_verified": false,
+          "deployed": true,
+          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -15105,6 +15104,26 @@
           "score": 88
         },
         {
+          "source_path": "sites/professional-resources/uscis-medical-exam-resources.html",
+          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html",
+          "source_title": "USCIS Medical Exam Resources",
+          "publication": "Professional Resource Library",
+          "publication_id": "professional",
+          "scheduled_content_date": "2026-08-27",
+          "release_date": "2026-08-27",
+          "anchor": "USCIS Medical Exam Guides: Form I-693",
+          "campaign_id": "uscis-exam-guides-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": null
+        },
+        {
           "source_path": "sites/professional-resources/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html",
           "source_url": "https://professionalresourcelibrary.com/daily/2026-07-26-how-to-prepare-for-consults-aeo-ready-red-flag-checklist-when-timing-matters.html",
           "source_title": "How To Prepare For Consults: Aeo-Ready Red-Flag Checklist When Timing Matters",
@@ -15123,26 +15142,6 @@
           "search_visibility_observed": false,
           "ai_cited": false,
           "score": 80
-        },
-        {
-          "source_path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
-          "source_title": "How to Prepare for a USCIS Immigration Medical Exam",
-          "publication": "Professional Resource Library",
-          "publication_id": "professional",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "USCIS Medical Exam Guides: Form I-693",
-          "campaign_id": "uscis-exam-guides-authority",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
         },
         {
           "source_path": "",
@@ -15205,13 +15204,13 @@
           "score": null
         },
         {
-          "source_path": "sites/professional-resources/uscis-medical-exam-resources.html",
-          "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources.html",
-          "source_title": "USCIS Medical Exam Resources",
+          "source_path": "sites/professional-resources/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
+          "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam.html",
+          "source_title": "How to Prepare for a USCIS Immigration Medical Exam",
           "publication": "Professional Resource Library",
           "publication_id": "professional",
-          "scheduled_content_date": "2026-08-27",
-          "release_date": "2026-08-27",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
           "anchor": "USCIS Medical Exam Costs and Timeframes: General Information",
           "campaign_id": "uscis-exam-guides-authority",
           "status": "published",
@@ -15222,7 +15221,7 @@
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
-          "score": null
+          "score": 92
         }
       ]
     },
@@ -16021,8 +16020,8 @@
         "wpp-commercial",
         "wpp-community-authority"
       ],
-      "backlink_count": 6,
-      "live_verified_count": 6,
+      "backlink_count": 10,
+      "live_verified_count": 10,
       "indexed_count": 0,
       "backlinks": [
         {
@@ -16106,6 +16105,66 @@
           "score": 88
         },
         {
+          "source_path": "sites/founder-operator/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
+          "source_title": "How to Run Rehearsals for a Remote Speaker Lineup",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-31",
+          "release_date": "2026-08-31",
+          "anchor": "Can Your Business Build a Community?",
+          "campaign_id": "wpp-commercial",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 88
+        },
+        {
+          "source_path": "sites/founder-operator/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
+          "source_title": "Virtual Event Production: Citation-Friendly Mistakes To Avoid For Careful Decision-Makers",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-08-16",
+          "release_date": "2026-08-16",
+          "anchor": "Can Your Business Build a Community?",
+          "campaign_id": "wpp-commercial",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
+          "source_path": "sites/founder-operator/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
+          "source_title": "Virtual Event Production: Aeo-Ready Faq Answer Page Before You Pay",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-07-26",
+          "release_date": "2026-08-08",
+          "anchor": "Can Your Business Build a Community?",
+          "campaign_id": "wpp-commercial",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 80
+        },
+        {
           "source_path": "sites/founder-operator/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense.html",
           "source_title": "When a Managed Community Operations Partner Makes Sense",
@@ -16135,6 +16194,26 @@
           "release_date": "2026-07-24",
           "anchor": "Can Your Business Build a Community?",
           "campaign_id": "wpp-community-authority",
+          "status": "published",
+          "lifecycle_stage": "live_verified",
+          "repository_rendered": true,
+          "deployed": true,
+          "live_verified": true,
+          "indexed": false,
+          "search_visibility_observed": false,
+          "ai_cited": false,
+          "score": 92
+        },
+        {
+          "source_path": "sites/founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
+          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
+          "source_title": "How to Evaluate a Virtual Event Production Partner",
+          "publication": "Founder Operator Library",
+          "publication_id": "founder",
+          "scheduled_content_date": "2026-07-24",
+          "release_date": "2026-07-24",
+          "anchor": "Can Your Business Build a Community?",
+          "campaign_id": "wpp-commercial",
           "status": "published",
           "lifecycle_stage": "live_verified",
           "repository_rendered": true,
@@ -16182,30 +16261,10 @@
         "wpp-commercial",
         "wpp-community-authority"
       ],
-      "backlink_count": 19,
-      "live_verified_count": 4,
+      "backlink_count": 15,
+      "live_verified_count": 0,
       "indexed_count": 0,
       "backlinks": [
-        {
-          "source_path": "sites/founder-operator/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup.html",
-          "source_title": "How to Run Rehearsals for a Remote Speaker Lineup",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-08-31",
-          "release_date": "2026-08-31",
-          "anchor": "West Peek Productions",
-          "campaign_id": "wpp-commercial",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 88
-        },
         {
           "source_path": "sites/founder-operator/virtual-event-production-cost-drivers.html",
           "source_url": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers.html",
@@ -16347,26 +16406,6 @@
           "score": 80
         },
         {
-          "source_path": "sites/founder-operator/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers.html",
-          "source_title": "Virtual Event Production: Citation-Friendly Mistakes To Avoid For Careful Decision-Makers",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-08-16",
-          "release_date": "2026-08-16",
-          "anchor": "West Peek Productions",
-          "campaign_id": "wpp-commercial",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 80
-        },
-        {
           "source_path": "sites/founder-operator/daily/2026-08-14-community-retention-plain-english-framework-before-you-call.html",
           "source_url": "https://founderoperatorlibrary.com/daily/2026-08-14-community-retention-plain-english-framework-before-you-call.html",
           "source_title": "Community Retention: Plain-English Framework Before You Call",
@@ -16401,26 +16440,6 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 80
-        },
-        {
-          "source_path": "sites/founder-operator/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay.html",
-          "source_title": "Virtual Event Production: Aeo-Ready Faq Answer Page Before You Pay",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-07-26",
-          "release_date": "2026-08-08",
-          "anchor": "West Peek Productions",
-          "campaign_id": "wpp-commercial",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,
@@ -16481,26 +16500,6 @@
           "repository_rendered": false,
           "deployed": false,
           "live_verified": false,
-          "indexed": false,
-          "search_visibility_observed": false,
-          "ai_cited": false,
-          "score": 92
-        },
-        {
-          "source_path": "sites/founder-operator/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-          "source_url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner.html",
-          "source_title": "How to Evaluate a Virtual Event Production Partner",
-          "publication": "Founder Operator Library",
-          "publication_id": "founder",
-          "scheduled_content_date": "2026-07-24",
-          "release_date": "2026-07-24",
-          "anchor": "West Peek Productions",
-          "campaign_id": "wpp-commercial",
-          "status": "published",
-          "lifecycle_stage": "live_verified",
-          "repository_rendered": true,
-          "deployed": true,
-          "live_verified": true,
           "indexed": false,
           "search_visibility_observed": false,
           "ai_cited": false,

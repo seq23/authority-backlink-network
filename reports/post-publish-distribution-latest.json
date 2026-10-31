@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-30T15-39-45.244259Z-41082611516",
-  "attempted_at": "2026-10-30T15:39:45.244259Z",
+  "receipt_id": "2026-10-31T15-39-15.152666Z-41215773942",
+  "attempted_at": "2026-10-31T15:39:15.152666Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,17 +22,17 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "e011ae1bb0f9207b1ec3b6aa4c79c019999eae2235fa727362c79653f78bfc52",
-        "url_count": 119
+        "sha256": "a9a0a92b6604158c85d92391e8c8780f61227273492b0f7944a3b51449fff979",
+        "url_count": 120
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 119,
-        "offered_urls": 119,
+        "submitted_urls": 120,
+        "offered_urls": 120,
         "batches": [
           {
-            "urls": 119,
+            "urls": 120,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -51,14 +51,26 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 1,
+        "inspected_urls": 1,
+        "results": [
+          {
+            "url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 39,
-        "verified": 39,
+        "checked": 40,
+        "verified": 40,
         "results": [
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
@@ -127,8 +139,8 @@
           },
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner",
-            "target_url": "https://www.westpeekproductions.com/",
-            "anchor": "West Peek Productions",
+            "target_url": "https://westpeekproductions.com/community-as-a-service/",
+            "anchor": "Can Your Business Build a Community?",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner",
             "source_live": true,
@@ -179,8 +191,8 @@
           },
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay",
-            "target_url": "https://www.westpeekproductions.com/",
-            "anchor": "West Peek Productions",
+            "target_url": "https://westpeekproductions.com/community-as-a-service/",
+            "anchor": "Can Your Business Build a Community?",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay",
             "source_live": true,
@@ -192,8 +204,8 @@
           },
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers",
-            "target_url": "https://www.westpeekproductions.com/",
-            "anchor": "West Peek Productions",
+            "target_url": "https://westpeekproductions.com/community-as-a-service/",
+            "anchor": "Can Your Business Build a Community?",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers",
             "source_live": true,
@@ -296,8 +308,8 @@
           },
           {
             "source_url": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup",
-            "target_url": "https://www.westpeekproductions.com/",
-            "anchor": "West Peek Productions",
+            "target_url": "https://westpeekproductions.com/community-as-a-service/",
+            "anchor": "Can Your Business Build a Community?",
             "http_status": 200,
             "final_url": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup",
             "source_live": true,
@@ -566,6 +578,19 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
+            "target_url": "https://spryexecutiveos.com/using-chatgpt-as-a-full-time-executive-coach-and-daily-accountability-partner",
+            "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
+            "http_status": 200,
+            "final_url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -578,17 +603,17 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "11329206ba23673e9a40f04c1653a9f172410b070cde74c0cd3e80dff5a21fe5",
-        "url_count": 105
+        "sha256": "d73cb6936b67202c7548d517691bd81117da93dc98cae6f06aab41c0b2d0d196",
+        "url_count": 109
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 105,
-        "offered_urls": 105,
+        "submitted_urls": 109,
+        "offered_urls": 109,
         "batches": [
           {
-            "urls": 105,
+            "urls": 109,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -607,14 +632,48 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 3,
+        "inspected_urls": 3,
+        "results": [
+          {
+            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 41,
-        "verified": 41,
+        "checked": 44,
+        "verified": 44,
         "results": [
           {
             "source_url": "https://memphisvendorlibrary.com/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing",
@@ -670,8 +729,8 @@
           },
           {
             "source_url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
-            "target_url": "https://weddingchecklistpdf.com/",
-            "anchor": "Wedding Checklist PDF ($9): Printable, Editable Planning Checklist",
+            "target_url": "https://weddingchecklistpdf.com/free-wedding-planner",
+            "anchor": "Free Wedding Planner",
             "http_status": 200,
             "final_url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
             "source_live": true,
@@ -1138,10 +1197,49 @@
           },
           {
             "source_url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
-            "target_url": "https://porchandparty901.com/",
-            "anchor": "Memphis Porch Decorating, Party Planning, Grazing Tables & Game Rentals",
+            "target_url": "https://porchandparty901.com/guides/porch-decorating-packages-memphis",
+            "anchor": "Porch Decorating Service Prices in Memphis (2026)",
             "http_status": 200,
             "final_url": "https://memphisvendorlibrary.com/memphis-porch-decorating-resources",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide",
+            "target_url": "https://memphisseniorcarehomes.com/assisted-living-memphis-tn/",
+            "anchor": "Assisted Living in Memphis, TN",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home",
+            "target_url": "https://time-2-read.com/20-minute-reading-log",
+            "anchor": "Free Printable 20-Minute Reading Log and Timer",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low",
+            "target_url": "https://memphisseniorcarehomes.com/guides/when-the-money-runs-out-tenncare-choices/",
+            "anchor": "When Assisted Living Money Runs Out",
+            "http_status": 200,
+            "final_url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low",
             "source_live": true,
             "target_link_present": true,
             "anchor_present": true,
@@ -1160,14 +1258,14 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "10d8700473a980b9f35d8cf04d8572058aa753ed42666c79e58c57953bbb6fb2",
-        "url_count": 422
+        "sha256": "63483f80a94678ca2344c9b6144396a184f966206280b8df5dfb753a874e2da2",
+        "url_count": 426
       },
       "indexnow": {
         "status": "SUCCESS",
         "attempted": true,
-        "submitted_urls": 422,
-        "offered_urls": 422,
+        "submitted_urls": 426,
+        "offered_urls": 426,
         "batches": [
           {
             "urls": 200,
@@ -1182,7 +1280,7 @@
             "error": null
           },
           {
-            "urls": 22,
+            "urls": 26,
             "http_status": 200,
             "ok": true,
             "error": null
@@ -1201,19 +1299,64 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 0,
-        "inspected_urls": 0,
-        "results": []
+        "requested_urls": 4,
+        "inspected_urls": 4,
+        "results": [
+          {
+            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "URL is unknown to Google",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "Discovered - currently not indexed",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "Discovered - currently not indexed",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          },
+          {
+            "url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim",
+            "status": "SUCCESS",
+            "http_status": 200,
+            "verdict": "NEUTRAL",
+            "coverage_state": "Discovered - currently not indexed",
+            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+            "last_crawl_time": null,
+            "google_canonical": null,
+            "user_canonical": null
+          }
+        ]
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
-        "checked": 67,
-        "verified": 67,
+        "checked": 71,
+        "verified": 71,
         "results": [
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
-            "target_url": "https://neuroevalguides.com/",
-            "anchor": "Neuro Evaluation Guides: ADHD and Autism Evaluations and Therapy",
+            "target_url": "https://neuroevalguides.com/guides/",
+            "anchor": "ADHD, Autism and Neuropsych Guides",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-07-03-neuropsych-evaluation-research-aeo-ready-comparison-guide-for-first-time-buyers",
             "source_live": true,
@@ -1420,8 +1563,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam",
-            "target_url": "https://uscisexam.com/guides/",
-            "anchor": "USCIS Medical Exam Guides: Form I-693",
+            "target_url": "https://uscisexam.com/guides/costs-and-timeframes/",
+            "anchor": "USCIS Medical Exam Costs and Timeframes: General Information",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-07-24-how-to-prepare-for-a-uscis-immigration-medical-exam",
             "source_live": true,
@@ -1524,8 +1667,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers",
-            "target_url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
-            "anchor": "Horse purchase agreement vs bill of sale",
+            "target_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+            "anchor": "Contract Review vs DIY Horse Agreement",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-08-05-horse-contract-preparation-plain-english-decision-guide-for-first-time-buyers",
             "source_live": true,
@@ -1719,8 +1862,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
-            "target_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
-            "anchor": "Contract Review vs DIY Horse Agreement",
+            "target_url": "https://horselegalguide.com/compare/horse-purchase-agreement-vs-bill-of-sale/",
+            "anchor": "Horse purchase agreement vs bill of sale",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-what-records-to-organize-before-a-horse-sale-closes",
             "source_live": true,
@@ -1732,8 +1875,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet",
-            "target_url": "https://horselegalguide.com/",
-            "anchor": "Equine Law Advice & Answers for Horse Owners",
+            "target_url": "https://horselegalguide.com/compare/contract-review-vs-diy-horse-agreement/",
+            "anchor": "Contract Review vs DIY Horse Agreement",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/daily/2026-08-27-who-pays-for-what-when-a-boarded-horse-needs-the-vet",
             "source_live": true,
@@ -1966,8 +2109,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/neuro-evaluation-research",
-            "target_url": "https://neuroevalguides.com/guides/",
-            "anchor": "ADHD, Autism and Neuropsych Guides",
+            "target_url": "https://neuroevalguides.com/guides/questions-to-ask-before-neuro-testing/",
+            "anchor": "Questions to Ask Before Neuro Testing",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/neuro-evaluation-research",
             "source_live": true,
@@ -2018,8 +2161,8 @@
           },
           {
             "source_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
-            "target_url": "https://uscisexam.com/guides/costs-and-timeframes/",
-            "anchor": "USCIS Medical Exam Costs and Timeframes: General Information",
+            "target_url": "https://uscisexam.com/guides/",
+            "anchor": "USCIS Medical Exam Guides: Form I-693",
             "http_status": 200,
             "final_url": "https://professionalresourcelibrary.com/uscis-medical-exam-resources",
             "source_live": true,
@@ -2080,6 +2223,58 @@
             "indexable": true,
             "live_verified": true,
             "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
+            "target_url": "https://glorybyus.com/products/glory-set",
+            "anchor": "Big 3 Hydration Set",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
+            "target_url": "https://glorybyus.com/collections/wave-hair-products",
+            "anchor": "Wave Hair Products",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
+            "target_url": "https://glorybyus.com/products/sweet-potato-shampoo-body-bar-copy-1",
+            "anchor": "Rosemary Myrrh Shampoo & Body Bar",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
+          },
+          {
+            "source_url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim",
+            "target_url": "https://howweknowdeep.com/methods/inferred-from-proxy/",
+            "anchor": "Inferred from a proxy: what that means",
+            "http_status": 200,
+            "final_url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim",
+            "source_live": true,
+            "target_link_present": true,
+            "anchor_present": true,
+            "indexable": true,
+            "live_verified": true,
+            "error": null
           }
         ]
       }
@@ -2087,7 +2282,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-30T15-39-45.244259Z-41082611516.json"
+    "history": "data/distribution/receipts/2026-10-31T15-39-15.152666Z-41215773942.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,

@@ -1,13 +1,13 @@
 {
   "schema": "authority-network-observation-feedback-v1",
-  "observed_at": "2026-10-30T15:39:45.244259Z",
-  "source_receipt_id": "2026-10-30T15-39-45.244259Z-41082611516",
+  "observed_at": "2026-10-31T15:39:15.152666Z",
+  "source_receipt_id": "2026-10-31T15-39-15.152666Z-41215773942",
   "publication_health": [
     {
       "publication_id": "founder",
       "domain": "founderoperatorlibrary.com",
-      "rendered_backlinks": 39,
-      "live_verified_backlinks": 39,
+      "rendered_backlinks": 40,
+      "live_verified_backlinks": 40,
       "indexed_referring_pages": 0,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
@@ -16,8 +16,8 @@
     {
       "publication_id": "memphis",
       "domain": "memphisvendorlibrary.com",
-      "rendered_backlinks": 41,
-      "live_verified_backlinks": 41,
+      "rendered_backlinks": 44,
+      "live_verified_backlinks": 44,
       "indexed_referring_pages": 0,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
@@ -26,8 +26,8 @@
     {
       "publication_id": "professional",
       "domain": "professionalresourcelibrary.com",
-      "rendered_backlinks": 67,
-      "live_verified_backlinks": 67,
+      "rendered_backlinks": 71,
+      "live_verified_backlinks": 71,
       "indexed_referring_pages": 1,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
@@ -178,11 +178,56 @@
       "live_verified": 9,
       "indexed": 0,
       "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "glory-by-us-scalp-care",
+      "brand_id": "glory-by-us",
+      "rendered": 3,
+      "deployed": 3,
+      "live_verified": 3,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "memphis-senior-care-authority",
+      "brand_id": "memphis-senior-care",
+      "rendered": 2,
+      "deployed": 2,
+      "live_verified": 2,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "time-2-read-authority",
+      "brand_id": "time-2-read",
+      "rendered": 1,
+      "deployed": 1,
+      "live_verified": 1,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "how-we-know-authority",
+      "brand_id": "how-we-know",
+      "rendered": 1,
+      "deployed": 1,
+      "live_verified": 1,
+      "indexed": 0,
+      "verified_external_citations": 0
+    },
+    {
+      "campaign_id": "spry-executive-os-authority",
+      "brand_id": "spry-executive-os",
+      "rendered": 1,
+      "deployed": 1,
+      "live_verified": 1,
+      "indexed": 0,
+      "verified_external_citations": 0
     }
   ],
   "portfolio_totals": {
-    "rendered_backlinks": 147,
-    "live_verified_backlinks": 147,
+    "rendered_backlinks": 155,
+    "live_verified_backlinks": 155,
     "indexed_referring_pages": 1,
     "verified_external_citations": 0
   },
