@@ -73,6 +73,7 @@
       "host_canonicalization",
       "host_canonicalization_behaviour",
       "entity_graph",
+      "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
       "entity_backlink_watch_behaviour"
@@ -144,6 +145,7 @@
       "host_canonicalization",
       "host_canonicalization_behaviour",
       "entity_graph",
+      "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
       "entity_backlink_watch_behaviour"
@@ -216,6 +218,7 @@
       "host_canonicalization",
       "host_canonicalization_behaviour",
       "entity_graph",
+      "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
       "entity_backlink_watch_behaviour"
@@ -517,6 +520,10 @@
     "entity_backlink_watch_behaviour": {
       "severity": "HARD_FAIL",
       "rationale": "The weekly entity watch's self-heal (drop dead sameAs, promote resolving pending profiles, named stop for missing link-back, unverifiable for JS-rendered profiles) proven against a fake network on every run."
+    },
+    "entity_watch_wiring": {
+      "severity": "HARD_FAIL",
+      "rationale": "The weekly entity backlink watch shipped on 31 Oct 2026 (#132) with its script, its behaviour test, the entity:watch npm lane and a CLAUDE.md row naming entity-backlink-watch.yml by name -- and no workflow. Nothing had ever started it, so no sameAs was ever checked, no dead profile dropped and no profiles_pending entry could ever be promoted however long it had been live: the loop existed, the documentation described it in the present tense, and nothing invoked it. Search Readiness k6 measures exactly that. This blocks on no entity-backlink-watch workflow, on one with no schedule or no workflow_dispatch, on one that never invokes the script or runs it read-only, on one that heals data/entities without rebuilding the published tree from it and revalidating, on CLAUDE.md dropping the workflow name, on head_seo.py no longer reading data/entities, and on a publication with no entity file. Zero workflows or zero entity files hard-fail rather than pass vacuously."
     }
   },
   "severity_matrix_policy": {

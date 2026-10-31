@@ -4,7 +4,7 @@
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
-    "runtime_operators": 111,
+    "runtime_operators": 112,
     "release_operators": 10,
     "workflow_operators": 11,
     "approved_target_urls": 151,
@@ -587,6 +587,12 @@
       "operator": "validate:entity-graph",
       "command": "npm run validate:entity-graph",
       "implementation": "python3 scripts/validators/validate_entity_graph.py",
+      "category": "Validation / release"
+    },
+    {
+      "operator": "validate:entity-watch-wiring",
+      "command": "npm run validate:entity-watch-wiring",
+      "implementation": "python3 scripts/validators/validate_entity_watch_wiring.py",
       "category": "Validation / release"
     },
     {
