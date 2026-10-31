@@ -31,6 +31,14 @@ Blocks (HARD_FAIL):
   llms.txt names the entity, carries its description and the editorial policy
   URL, and /editorial-policy is served (a _redirects rule or a page).
 
+  the weekly watch itself: .github/workflows/entity-backlink-watch.yml exists at
+  exactly that name (the owner's Search Readiness checklist, item k6, looks the
+  workflow up by file name: the file used to be entity-authority-watch.yml and
+  k6 read as "no entity-backlink-watch workflow" while the watch was running
+  every week), carries a schedule and workflow_dispatch, and runs
+  scripts/entity_backlink_watch.py. Its cron fires on Sunday, so a green run
+  always exists before the Monday 06:00 Central audit reads it.
+
 Rule 0: zero publications, or zero Organization nodes checked, is a FAIL.
 """
 from __future__ import annotations
@@ -85,8 +93,37 @@ def check_entity(pub: dict, domains: set[str], failures: list[str]) -> dict | No
     return entity
 
 
+WATCH_WORKFLOW = ".github/workflows/entity-backlink-watch.yml"
+WATCH_SCRIPT = "scripts/entity_backlink_watch.py"
+
+
+def check_watch_workflow(failures: list[str]) -> int:
+    """k6 finds the weekly watch by file name, so the name is part of the contract."""
+    path = ROOT / WATCH_WORKFLOW
+    if not path.exists():
+        others = sorted(p.name for p in (ROOT / ".github/workflows").glob("*entity*"))
+        failures.append(f"{WATCH_WORKFLOW}: missing"
+                        + (f" (found {', '.join(others)}: the checklist reads this one by name)" if others else ""))
+        return 0
+    text = path.read_text(encoding="utf-8")
+    crons = re.findall(r"^\s*-\s*cron:\s*['\"]([^'\"]+)['\"]", text, re.M)
+    if "schedule:" not in text or not crons:
+        failures.append(f"{WATCH_WORKFLOW}: no schedule")
+    if "workflow_dispatch" not in text:
+        failures.append(f"{WATCH_WORKFLOW}: no workflow_dispatch")
+    if WATCH_SCRIPT not in text:
+        failures.append(f"{WATCH_WORKFLOW}: does not run {WATCH_SCRIPT}")
+    for cron in crons:
+        parts = cron.split()
+        if len(parts) != 5 or parts[4] not in {"0", "7", "SUN", "sun"}:
+            failures.append(f"{WATCH_WORKFLOW}: cron {cron!r} does not fire on Sunday; the Monday "
+                            "06:00 Central audit needs a green run already recorded")
+    return len(crons)
+
+
 def main() -> int:
     failures: list[str] = []
+    crons = check_watch_workflow(failures)
     pubs = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
     domains = {p["working_domain"] for p in pubs}
     entities = {}
@@ -152,6 +189,7 @@ def main() -> int:
     status = "FAIL" if failures else "PASS"
     print(json.dumps({"validator": "entity_graph", "status": status, "publications": len(entities),
                       "pages": pages, "organization_nodes": checked_nodes,
+                      "watch_workflow": WATCH_WORKFLOW, "watch_crons": crons,
                       "failures": failures[:50], "failure_count": len(failures)}, indent=2))
     return 1 if failures else 0
 
