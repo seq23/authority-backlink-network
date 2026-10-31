@@ -797,11 +797,11 @@
       "manual_dispatch": true
     },
     {
-      "name": "Entity authority watch",
-      "path": ".github/workflows/entity-authority-watch.yml",
+      "name": "Entity backlink watch",
+      "path": ".github/workflows/entity-backlink-watch.yml",
       "scheduled": true,
       "cron": [
-        "30 13 * * 1"
+        "30 13 * * 0"
       ],
       "manual_dispatch": true
     },

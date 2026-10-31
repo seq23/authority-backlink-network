@@ -1,5 +1,5 @@
-name: Entity authority watch
-# Weekly: every sameAs profile in data/entities/*.json still resolves and links
+name: Entity backlink watch
+# Weekly, Sundays: every sameAs profile in data/entities/*.json still resolves and links
 # back (self-heal: dead ones removed, pending ones promoted, via a pull request
 # that passes the same release validation as any change); every earned mention
 # in data/earned-mentions.json still resolves and still names its brand; the
@@ -7,7 +7,9 @@ name: Entity authority watch
 # in reports/.
 on:
   schedule:
-    - cron: '30 13 * * 1'
+    # Sunday, so a green run always exists before the owner's Monday 06:00 Central
+    # Search Readiness audit reads it (checklist k6: green and under eight days old).
+    - cron: '30 13 * * 0'
   workflow_dispatch:
 
 permissions:
@@ -55,7 +57,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: entity-authority-watch
+          name: entity-backlink-watch
           path: |
             reports/entity-backlink-watch.json
             reports/earned-mentions.json
