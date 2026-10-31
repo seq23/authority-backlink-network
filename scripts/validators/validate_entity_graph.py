@@ -87,6 +87,20 @@ def check_entity(pub: dict, domains: set[str], failures: list[str]) -> dict | No
                 failures.append(f"{rel}: {field} entry {url!r} is not an https URL")
             elif host(entry) in domains:
                 failures.append(f"{rel}: {field} {entry} is on a network host -- self-reference, not an identity")
+    # Search Readiness item k3: at least one independently hosted profile that
+    # really resolves. Until 31 Oct 2026 all three entity files shipped
+    # `sameAs: []`, so c1 read "Organization lacks sameAs" and k3 read "no
+    # external profile" on every page of every publication for as long as the
+    # audit had run. An empty sameAs was allowed here because the alternative
+    # was inventing a profile; the real answer was the one the passing grid
+    # sites already use -- this network's own public source repository, which
+    # resolves and names each publication. Empty is now a release failure, so
+    # the identity cannot quietly go back to vouching for nothing.
+    if not same_as:
+        failures.append(
+            f"{rel}: sameAs is empty -- the editorial company has no independent profile to be "
+            f"reconciled against (Search Readiness k3). Add a real, resolving, externally hosted "
+            f"profile that names {domain}; a profile not yet claimed goes in profiles_pending.")
     pending_urls = {p if isinstance(p, str) else p.get("url") for p in pending}
     for url in set(same_as) & pending_urls:
         failures.append(f"{rel}: {url} is in both sameAs and profiles_pending")
