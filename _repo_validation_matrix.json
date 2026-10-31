@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "6a3a315640c28946f283d876d342f83ce3b71aa37829590e7663e1c638cbee9d",
+  "plan_sha256": "65c5b44cc3544c0fda5f6964f9b37ad035ec406180ce9254c5edcf68410da26c",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 72,
+  "count": 73,
   "counts_by_severity": {
-    "HARD_FAIL": 68,
+    "HARD_FAIL": 69,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 3
   },
@@ -267,6 +267,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Authority audit 30 Oct 2026: the publications' sameAs was self-referential (their own /contributors and /about). Every Organization node naming a publication or its editorial company must carry exactly data/entities/<domain>.json sameAs (no own-host or network-host URL), the entity's logo and description; llms.txt must name the entity, its description, editorial policy URL and beats; /editorial-policy must be served. Fails hard on zero organization nodes.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "entity_watch_wiring",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "The weekly entity backlink watch shipped on 31 Oct 2026 (#132) with its script, its behaviour test, the entity:watch npm lane and a CLAUDE.md row naming entity-backlink-watch.yml by name -- and no workflow. Nothing had ever started it, so no sameAs was ever checked, no dead profile dropped and no profiles_pending entry could ever be promoted however long it had been live: the loop existed, the documentation described it in the present tense, and nothing invoked it. Search Readiness k6 measures exactly that. This blocks on no entity-backlink-watch workflow, on one with no schedule or no workflow_dispatch, on one that never invokes the script or runs it read-only, on one that heals data/entities without rebuilding the published tree from it and revalidating, on CLAUDE.md dropping the workflow name, on head_seo.py no longer reading data/entities, and on a publication with no entity file. Zero workflows or zero entity files hard-fail rather than pass vacuously.",
       "profiles": [
         "changed",
         "full",

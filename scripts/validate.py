@@ -88,6 +88,7 @@ COMMANDS = {
     "grid_backlink_coverage": [sys.executable, "scripts/validators/validate_grid_backlink_coverage.py"],
     "earned_mentions": [sys.executable, "scripts/validators/validate_earned_mentions.py"],
     "entity_backlink_watch_behaviour": [sys.executable, "tests/test_entity_backlink_watch.py"],
+    "entity_watch_wiring": [sys.executable, "scripts/validators/validate_entity_watch_wiring.py"],
 }
 
 

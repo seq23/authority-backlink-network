@@ -89,6 +89,7 @@
     "validate:demand-backed-pages": "python3 scripts/validate_demand_backed_pages.py",
     "validate:earned-mentions": "python3 scripts/validators/validate_earned_mentions.py",
     "validate:entity-graph": "python3 scripts/validators/validate_entity_graph.py",
+    "validate:entity-watch-wiring": "python3 scripts/validators/validate_entity_watch_wiring.py",
     "validate:external-citation-coverage": "python3 scripts/validators/validate_external_citation_coverage.py",
     "validate:external-sources": "python3 scripts/verify_external_sources.py",
     "validate:favicon-manifest": "python3 scripts/validators/validate_favicon_manifest.py",
