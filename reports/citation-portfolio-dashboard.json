@@ -1,6 +1,6 @@
 {
   "schema": "authority-portfolio-dashboard-v1",
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "objective": {
     "target": 100000,
     "window_days": 180,
@@ -33,8 +33,8 @@
     "authority_backlinks": 155,
     "approved_destinations_waiting_for_context": 23,
     "owned_manifest_surfaces": 89,
-    "live_verified": 147,
-    "discoverable": 147,
+    "live_verified": 155,
+    "discoverable": 155,
     "indexed": 1,
     "ai_cited": 0
   },
@@ -285,7 +285,7 @@
   "lifecycle": {
     "approved_destination": 458,
     "live_verified": 147,
-    "published_in_repository": 8
+    "source_discovered": 8
   },
   "campaign_health": [
     {
@@ -320,8 +320,8 @@
       "rendered": 5,
       "live_verified": 5,
       "indexed": 0,
-      "distinct_destinations": 2,
-      "distinct_anchors": 2,
+      "distinct_destinations": 1,
+      "distinct_anchors": 1,
       "rendered_floor": 2,
       "destination_floor": 1,
       "coverage_status": "HEALTHY_RENDERED",
@@ -333,8 +333,8 @@
       "rendered": 32,
       "live_verified": 32,
       "indexed": 0,
-      "distinct_destinations": 12,
-      "distinct_anchors": 12,
+      "distinct_destinations": 11,
+      "distinct_anchors": 11,
       "rendered_floor": 6,
       "destination_floor": 5,
       "coverage_status": "HEALTHY_RENDERED",
@@ -372,8 +372,8 @@
       "rendered": 9,
       "live_verified": 9,
       "indexed": 0,
-      "distinct_destinations": 5,
-      "distinct_anchors": 5,
+      "distinct_destinations": 4,
+      "distinct_anchors": 4,
       "rendered_floor": 4,
       "destination_floor": 4,
       "coverage_status": "HEALTHY_RENDERED",
@@ -489,8 +489,8 @@
       "rendered": 9,
       "live_verified": 9,
       "indexed": 0,
-      "distinct_destinations": 7,
-      "distinct_anchors": 7,
+      "distinct_destinations": 6,
+      "distinct_anchors": 6,
       "rendered_floor": 2,
       "destination_floor": 2,
       "coverage_status": "HEALTHY_RENDERED",
@@ -563,8 +563,8 @@
     }
   ],
   "distribution_observation": {
-    "rendered_backlinks": 147,
-    "live_verified_backlinks": 147,
+    "rendered_backlinks": 155,
+    "live_verified_backlinks": 155,
     "indexed_referring_pages": 1,
     "verified_external_citations": 0
   }
