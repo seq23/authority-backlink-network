@@ -14,9 +14,10 @@ name: USCIS Form and Fee Changelog
 on:
   workflow_dispatch:
   schedule:
-    # Tuesday morning UTC. USCIS posts form and fee updates on weekdays, so a
+    # Tuesday 08:11 CT. USCIS posts form and fee updates on weekdays, so a
     # Monday run would carry a weekend's worth of nothing.
-    - cron: '11 13 * * 2'
+    - cron: '11 8 * * 2'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: write

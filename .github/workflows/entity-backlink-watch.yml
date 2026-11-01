@@ -9,7 +9,8 @@ on:
   schedule:
     # Sunday, so a green run always exists before the owner's Monday 06:00 Central
     # Search Readiness audit reads it (checklist k6: green and under eight days old).
-    - cron: '30 13 * * 0'
+    - cron: '30 8 * * 0'  # America/Chicago, all year
+      timezone: America/Chicago
   workflow_dispatch:
 
 permissions:

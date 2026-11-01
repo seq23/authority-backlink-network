@@ -50,7 +50,7 @@ File: `.github/workflows/authority-v4-autopilot.yml`
 Triggers:
 
 - manual `workflow_dispatch`
-- daily schedule at `22 14 * * *` UTC
+- daily schedule at `22 9 * * *` America/Chicago
 
 Inputs:
 
@@ -120,7 +120,7 @@ File: `.github/workflows/social-autopost.yml`
 Triggers:
 
 - manual `workflow_dispatch`
-- daily schedule at `17 16 * * *` UTC
+- daily schedule at `17 11 * * *` America/Chicago
 
 Inputs:
 

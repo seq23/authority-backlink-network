@@ -5,7 +5,7 @@
 Trigger:
 
 - Manual: `workflow_dispatch`
-- Scheduled: daily cron at `22 14 * * *`
+- Scheduled: daily cron at `22 9 * * *` (America/Chicago, all year)
 
 Permissions:
 
