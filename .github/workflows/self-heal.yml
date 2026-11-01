@@ -13,7 +13,7 @@ name: Bounded Self-Healing
 on:
   workflow_dispatch:
   schedule:
-    - cron: '34 11 * * 3'  # America/Chicago, all year
+    - cron: '20 10 * * 3'  # America/Chicago, all year
       timezone: America/Chicago
 
 permissions:
