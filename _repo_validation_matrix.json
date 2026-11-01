@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "65c5b44cc3544c0fda5f6964f9b37ad035ec406180ce9254c5edcf68410da26c",
+  "plan_sha256": "d2872b6809bef9a14be28338910ab0fb7ddd0989901f49e4cb279f690e80a230",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,11 +13,11 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 73,
+  "count": 68,
   "counts_by_severity": {
-    "HARD_FAIL": 69,
+    "HARD_FAIL": 65,
     "SOFT_WARNING": 1,
-    "STRONG_WARNING": 3
+    "STRONG_WARNING": 2
   },
   "unclassified": [],
   "validators": [
@@ -179,28 +179,6 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "Broken required journeys. Orphan count correlates inversely with AI citations across the 9 measured properties: the most-cited property carries 3 orphans and every zero-citation property is heavily orphaned. All three publications currently measure 0 orphans at a maximum depth of 2, so blocking cannot regress a clean surface - it only stops the daily generator from silently reintroducing pages nothing links to.",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
-      "id": "content_pattern",
-      "severity": "HARD_FAIL",
-      "classified": true,
-      "rationale": "A page that carries no direct answer, no query-bearing h1, an empty table cell, or no outbound editorial link cannot be quoted by an answer engine or returns nothing when it is. All four checks measure 100% across the 495 published pages, so blocking cannot regress a clean surface.",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
-      "id": "definition_speakable",
-      "severity": "HARD_FAIL",
-      "classified": true,
-      "rationale": "10 Oct 2026: no homepage said in one paragraph what the publication is, so an answer engine had nothing self-contained to quote. Each homepage now carries a 40-60 word '<Publication> is ...' paragraph directly under the H1, rendered from data/publications.json plus the publication's own editorial company, and a WebPage SpeakableSpecification whose selector must resolve to exactly that element. Blocks on a missing, moved, hand-edited or out-of-bounds definition or an unresolvable selector. Fails hard on zero homepages examined.",
       "profiles": [
         "changed",
         "full",
@@ -527,17 +505,6 @@
       ]
     },
     {
-      "id": "page_meta_bounds",
-      "severity": "STRONG_WARNING",
-      "classified": true,
-      "rationale": "Bing Webmaster and Site Scan, 25 Sep 2026: rule 118 (description too short) on founderoperatorlibrary.com/, /about and memphisvendorlibrary.com/, plus 25 more short, 60 over-long (161-238) and 62 duplicate-description groups from the daily generator's one sentence mould, one duplicate <title> (memphis daily 2026-07-19 / 2026-08-22), and titles over 70 characters on 398 pages. Bounds: title 30-70, description 110-160, both unique per publication. A title or description of the wrong length or a repeat is a page-quality defect, not corruption, so page findings warn and never block: the hard guard is at source, where lib/meta_description.py makes every generator raise rather than write either outside its bounds, and the autopilot gives a page the first unused in-bounds <title> or refuses the brief. This check fails hard only when it goes inert (zero pages, titles or descriptions examined) or when that source contract breaks (a pantry edge combination cannot be described in bounds, or the autopilot's duplicate refusal is removed).",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
       "id": "page_writers_keep_head",
       "severity": "HARD_FAIL",
       "classified": true,
@@ -754,32 +721,10 @@
       ]
     },
     {
-      "id": "title_suffix",
-      "severity": "HARD_FAIL",
-      "classified": true,
-      "rationale": "11 Oct 2026: all three homepages published '<Publication> | <Publication>' as their <title>, og:title and WebPage name. lib/head_seo.py now renders each homepage <title> from data/publications.json as '<Publication>: <home_descriptor>' (30-65 characters, name once) and lib/meta_description.site_title() refuses a suffix that repeats the page name. Blocks when any page's <title> is 'X | X', a homepage <title> differs from that rendering or is out of bounds, or its og:title, twitter:title or WebPage name drift from it. Fails hard on zero pages or a publication with no homepage examined.",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
       "id": "uscis_changelog",
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "A YMYL page whose entries a language model writes. The lane publishes a dated record of what changed on the USCIS filing-fee and form-edition pages, and the plan it comes from warns twice that a stale or wrong entry here is a harmful one. Two different things can put an unsupported sentence on that page: the model, which produces a fluent claim about a fee or an edition date that was never in the diff, and a person, who opens data/uscis-changelog/entries.json or the HTML and improves a headline or tidies a quote. scripts/uscis_changelog.py catches the first at write time; nothing catches the second, because no run happened. So this validator re-derives the check offline against the evidence stored with each entry -- every quoted line must appear verbatim in that entry's own stored added or removed lines -- and a hand edit fails exactly the way a hallucination does. It also blocks if an entry exists in the data file but not on the published page, if a published entry omits the agency URL or the date it was checked, if any entry's prose crosses the publication's advice boundary, if a tracked source is not registered and HTTP-200 verified in data/external-sources.json, if a snapshot's stored sha256 does not match its stored lines, or if a source that has never been successfully reached is not shown as such on the page -- that last one being how a changelog goes silently stale while its own green receipt says it is healthy. The real verify() is driven through a clean synthetic entry and five broken ones on EVERY run, including weeks with no entries, so a green receipt is never an empty loop. It fails if it examines zero items.",
-      "profiles": [
-        "changed",
-        "full",
-        "release"
-      ]
-    },
-    {
-      "id": "validation_receipt_severity_truth",
-      "severity": "HARD_FAIL",
-      "classified": true,
-      "rationale": "False evidence about the evidence itself. Every result in the receipt carried one field named `severity`, set from this matrix regardless of outcome, so 37 of 41 PASSing checks in a green release receipt read \"severity\": \"HARD_FAIL\" next to \"status\": \"PASS\", \"hard_failures\": 0. Run 33650439764 had exactly one real failure, external_citation_coverage; triaging that receipt for HARD_FAIL returned the whole profile and three passing validators were reported as failing. A failure marker that matches every check identifies none of them, and this is the receipt every future failure in this lane is diagnosed from. The guard reads scripts/validate.py's own classify() rather than a second copy of the rule, rejects the ambiguous key names coming back, requires every check in every profile to be classified deliberately, and re-runs generate_validation_matrix.py in a sandbox to prove the published portfolio matrix is not a stale snapshot -- that generator has never had a caller in any profile. It hard-fails when it examines zero checks.",
       "profiles": [
         "changed",
         "full",

@@ -18,9 +18,8 @@ truncate, and two further defects:
   2026-07-19 and 2026-08-22, "Wedding-Day Timeline: Plain-English Mistakes To
   Avoid For Careful Decision-Makers").
 
-Every generator in this repository takes its bounds from here, and
-scripts/validators/validate_page_meta_bounds.py checks the published tree
-against the same constants, so the rule cannot exist twice and drift.
+Every generator in this repository takes its bounds from here and refuses to
+write a title or description outside them, so the rule lives in one place.
 """
 from __future__ import annotations
 

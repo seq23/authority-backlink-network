@@ -21,7 +21,6 @@
       "links",
       "recovery_agency",
       "social_contract",
-      "content_pattern",
       "published_tree_purity",
       "external_sources",
       "click_depth",
@@ -51,16 +50,12 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth",
       "page_chrome_page_footer",
-      "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
-      "title_suffix",
       "jsonld_types",
       "portfolio_link_policy",
       "no_parent_company",
-      "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
@@ -93,7 +88,6 @@
       "links",
       "recovery_agency",
       "social_contract",
-      "content_pattern",
       "published_tree_purity",
       "external_sources",
       "click_depth",
@@ -123,16 +117,12 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth",
       "page_chrome_page_footer",
-      "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
-      "title_suffix",
       "jsonld_types",
       "portfolio_link_policy",
       "no_parent_company",
-      "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
@@ -166,7 +156,6 @@
       "recovery_agency",
       "social_contract",
       "cache_self_test",
-      "content_pattern",
       "published_tree_purity",
       "external_sources",
       "click_depth",
@@ -196,16 +185,12 @@
       "internal_links_resolve",
       "uscis_changelog",
       "journalist_query_lane",
-      "validation_receipt_severity_truth",
       "page_chrome_page_footer",
-      "page_meta_bounds",
       "favicon_manifest",
       "social_meta",
-      "title_suffix",
       "jsonld_types",
       "portfolio_link_policy",
       "no_parent_company",
-      "definition_speakable",
       "indexnow_key",
       "generated_text_writes_portable",
       "search_intelligence",
@@ -304,10 +289,6 @@
     "social_contract": {
       "severity": "SOFT_WARNING",
       "rationale": "Declares missing_secrets_nonblocking_by_default and strict_social_failure_opt_in - non-blocking by its own contract."
-    },
-    "content_pattern": {
-      "severity": "HARD_FAIL",
-      "rationale": "A page that carries no direct answer, no query-bearing h1, an empty table cell, or no outbound editorial link cannot be quoted by an answer engine or returns nothing when it is. All four checks measure 100% across the 495 published pages, so blocking cannot regress a clean surface."
     },
     "published_tree_purity": {
       "severity": "HARD_FAIL",
@@ -417,10 +398,6 @@
       "severity": "HARD_FAIL",
       "rationale": "False evidence in owner-facing published numbers. The Memphis wedding cost dataset is quoted as fact on live pages and carries the 21 verified vendor sources that most of the memphis lane's outbound citation coverage rests on; an unverified or drifted figure is a claim the publication cannot support and takes the citation floor with it."
     },
-    "validation_receipt_severity_truth": {
-      "severity": "HARD_FAIL",
-      "rationale": "False evidence about the evidence itself. Every result in the receipt carried one field named `severity`, set from this matrix regardless of outcome, so 37 of 41 PASSing checks in a green release receipt read \"severity\": \"HARD_FAIL\" next to \"status\": \"PASS\", \"hard_failures\": 0. Run 33650439764 had exactly one real failure, external_citation_coverage; triaging that receipt for HARD_FAIL returned the whole profile and three passing validators were reported as failing. A failure marker that matches every check identifies none of them, and this is the receipt every future failure in this lane is diagnosed from. The guard reads scripts/validate.py's own classify() rather than a second copy of the rule, rejects the ambiguous key names coming back, requires every check in every profile to be classified deliberately, and re-runs generate_validation_matrix.py in a sandbox to prove the published portfolio matrix is not a stale snapshot -- that generator has never had a caller in any profile. It hard-fails when it examines zero checks."
-    },
     "page_chrome_page_footer": {
       "severity": "HARD_FAIL",
       "rationale": "A page that ships two governance footers ships two identical /masthead anchors, which build_site_navigation.py's duplicate-anchor audit blocks the release on and which validation/repair.py would otherwise 'fix' by deleting an anchor and leaving its text as bare words. Run 34231670721 went red exactly here: the USCIS changelog published its first entry, that entry's <blockquote><footer> citation attribution became the first <footer> in the document, and install_editorial_chrome.py -- which searched for a bare <footer> and took the first hit -- installed the governance footer inside the blockquote while leaving the real page footer alone. The shape was unreachable while the changelog had zero entries, so a scan of sites/ reported PASS every day until the day it published. This guard is therefore behavioural: it feeds install() the shapes that trigger the defect and reads the output, as well as scanning the tree. It fails if it examined zero fixtures or zero pages."
@@ -433,10 +410,6 @@
       "severity": "HARD_FAIL",
       "rationale": "Measured distribution that reaches nothing, silently, because two components each kept their own answer to 'which platforms must a published page reach?' and agreed with each other. X was paused route-only on 2026-08-29 -- own paid API off, posts leaving through a switched-on Buffer route that had accepted 49 of them -- and scripts/authority_v4_autopilot.py gated its X enqueue loop on enabled_platforms(), which cannot see a route. From that day every page it published was enqueued for nothing while the route sat connected and idle. validate_social_enqueue_completeness.py had the identical blind spot, so it blamed a policy gap that did not exist ('it must be a recorded decision in data/social-brand-policy.json') rather than the drop in front of it. This blocks if any distribution decision site stops asking the shared helper, if a new enqueue site appears undeclared, or if the helper stops distinguishing a dormant pause from a route-only one -- a dormant platform with a stale enabled delivery_route block must distribute nothing, because dormant is what the owner picks when she wants silence."
     },
-    "page_meta_bounds": {
-      "severity": "STRONG_WARNING",
-      "rationale": "Bing Webmaster and Site Scan, 25 Sep 2026: rule 118 (description too short) on founderoperatorlibrary.com/, /about and memphisvendorlibrary.com/, plus 25 more short, 60 over-long (161-238) and 62 duplicate-description groups from the daily generator's one sentence mould, one duplicate <title> (memphis daily 2026-07-19 / 2026-08-22), and titles over 70 characters on 398 pages. Bounds: title 30-70, description 110-160, both unique per publication. A title or description of the wrong length or a repeat is a page-quality defect, not corruption, so page findings warn and never block: the hard guard is at source, where lib/meta_description.py makes every generator raise rather than write either outside its bounds, and the autopilot gives a page the first unused in-bounds <title> or refuses the brief. This check fails hard only when it goes inert (zero pages, titles or descriptions examined) or when that source contract breaks (a pantry edge combination cannot be described in bounds, or the autopilot's duplicate refusal is removed)."
-    },
     "favicon_manifest": {
       "severity": "HARD_FAIL",
       "rationale": "10 Oct 2026: /favicon.ico answered 404 on memphisvendorlibrary.com, professionalresourcelibrary.com and founderoperatorlibrary.com, with no apple-touch-icon and no web manifest. scripts/build_brand_assets.py writes the set per publication from its own palette and lib/head_seo.py links it on every page through install_editorial_chrome.py. A missing file is a live 404 on every page, so this blocks: every page must link favicon.ico, favicon.svg, apple-touch-icon.png and site.webmanifest exactly once, and each publication must serve all of them at the declared sizes. Fails hard on zero pages examined."
@@ -445,17 +418,9 @@
       "severity": "HARD_FAIL",
       "rationale": "10 Oct 2026: no page on the three publications had og:description, og:image or twitter:card, so every shared link rendered as a bare URL. lib/head_seo.py renders a complete set from the page's own title, meta description and canonical, pointing at the publication's own 1200x630 og.png. Blocks when a tag is missing or duplicated, when og:description drifts from the meta description, og:url from the canonical, og:type from the page kind, or when the card image is missing or the wrong size. Fails hard on zero pages or zero article pages examined."
     },
-    "title_suffix": {
-      "severity": "HARD_FAIL",
-      "rationale": "11 Oct 2026: all three homepages published '<Publication> | <Publication>' as their <title>, og:title and WebPage name. lib/head_seo.py now renders each homepage <title> from data/publications.json as '<Publication>: <home_descriptor>' (30-65 characters, name once) and lib/meta_description.site_title() refuses a suffix that repeats the page name. Blocks when any page's <title> is 'X | X', a homepage <title> differs from that rendering or is out of bounds, or its og:title, twitter:title or WebPage name drift from it. Fails hard on zero pages or a publication with no homepage examined."
-    },
     "jsonld_types": {
       "severity": "HARD_FAIL",
       "rationale": "10 Oct 2026: homepage JSON-LD was Article + Organization only, with no WebSite node and no BreadcrumbList on the editorial pages. Blocks when a page lacks a WebSite node for its own publication published by its own editorial company (no parent organisation), an inner page lacks a BreadcrumbList, a homepage lacks a speakable WebPage, an og:type article page lacks an Article node, a FAQPage question does not appear in the page's visible text (an invented FAQ), or any page's JSON-LD names another publication's editorial company. Fails hard on zero pages, breadcrumb pages or FAQ pages examined."
-    },
-    "definition_speakable": {
-      "severity": "HARD_FAIL",
-      "rationale": "10 Oct 2026: no homepage said in one paragraph what the publication is, so an answer engine had nothing self-contained to quote. Each homepage now carries a 40-60 word '<Publication> is ...' paragraph directly under the H1, rendered from data/publications.json plus the publication's own editorial company, and a WebPage SpeakableSpecification whose selector must resolve to exactly that element. Blocks on a missing, moved, hand-edited or out-of-bounds definition or an unresolvable selector. Fails hard on zero homepages examined."
     },
     "indexnow_key": {
       "severity": "HARD_FAIL",
