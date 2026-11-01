@@ -8,7 +8,8 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '22 14 * * *'
+    - cron: '22 9 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: write

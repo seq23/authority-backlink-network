@@ -10,10 +10,14 @@ on:
     # SOCIAL_RUN_LIMIT (a slice per run) and SOCIAL_POST_MIN_INTERVAL_SECONDS
     # (jittered spacing inside a run), the same daily volume lands as scattered
     # activity. Minutes are deliberately not round.
-    - cron: '23 13 * * *'
-    - cron: '17 16 * * *'
-    - cron: '41 19 * * *'
-    - cron: '9 22 * * *'
+    - cron: '23 8 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
+    - cron: '17 11 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
+    - cron: '41 14 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
+    - cron: '9 17 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: write

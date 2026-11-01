@@ -3,7 +3,7 @@
 ## Workflow: Authority Network V4.2 Autopilot + Social Auto-Post
 
 Trigger:
-- Daily schedule: `22 14 * * *`
+- Daily schedule: `22 9 * * *` (America/Chicago)
 - Manual `workflow_dispatch`
 
 Data path:
@@ -44,7 +44,7 @@ Data path:
 ## Workflow: Social Auto-Post Only
 
 Trigger:
-- Daily schedule: `17 16 * * *`
+- Daily schedule: `17 11 * * *` (America/Chicago)
 - Manual `workflow_dispatch`
 
 Data path:

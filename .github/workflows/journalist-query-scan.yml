@@ -28,11 +28,13 @@ on:
     # 6:30am digest and never seen the 1:30pm one until the next day, by which
     # point half of its deadlines are gone.
     #
-    # 12:00 UTC is 8:00am ET; 18:15 UTC is 2:15pm ET. Both sit shortly after a
+    # 07:00 CT is 8:00am ET; 13:15 CT is 2:15pm ET (both all year, timezone-pinned). Both sit shortly after a
     # send. Re-reading a digest is safe: queries are deduplicated by identity
     # across runs, so the same one is never surfaced twice.
-    - cron: '0 12 * * 1-5'
-    - cron: '15 18 * * 1-5'
+    - cron: '0 7 * * 1-5'  # America/Chicago, all year
+      timezone: America/Chicago
+    - cron: '15 13 * * 1-5'  # America/Chicago, all year
+      timezone: America/Chicago
 
 permissions:
   contents: write

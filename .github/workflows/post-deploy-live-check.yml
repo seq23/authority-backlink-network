@@ -18,7 +18,8 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '41 16 * * *'
+    - cron: '41 11 * * *'  # America/Chicago, all year
+      timezone: America/Chicago
   workflow_dispatch:
     inputs:
       domain:

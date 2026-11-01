@@ -1,6 +1,6 @@
 {
   "schema": "authority-agency-dashboard-v1",
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-01",
   "truth_boundary": "Repository backlink rows prove owned-network editorial placement only. Live, indexed, search-visible, or AI-cited states require their own evidence flags.",
   "summary": {
     "publication_operators": 3,
@@ -782,7 +782,7 @@
       "path": ".github/workflows/authority-post-publish-distribution.yml",
       "scheduled": true,
       "cron": [
-        "37 15 * * *"
+        "37 10 * * *"
       ],
       "manual_dispatch": true
     },
@@ -791,7 +791,7 @@
       "path": ".github/workflows/authority-v4-autopilot.yml",
       "scheduled": true,
       "cron": [
-        "22 14 * * *"
+        "22 9 * * *"
       ],
       "manual_dispatch": true
     },
@@ -807,7 +807,7 @@
       "path": ".github/workflows/entity-backlink-watch.yml",
       "scheduled": true,
       "cron": [
-        "30 13 * * 0"
+        "30 8 * * 0"
       ],
       "manual_dispatch": true
     },
@@ -823,8 +823,8 @@
       "path": ".github/workflows/journalist-query-scan.yml",
       "scheduled": true,
       "cron": [
-        "0 12 * * 1-5",
-        "15 18 * * 1-5"
+        "0 7 * * 1-5",
+        "15 13 * * 1-5"
       ],
       "manual_dispatch": true
     },
@@ -840,7 +840,7 @@
       "path": ".github/workflows/post-deploy-live-check.yml",
       "scheduled": true,
       "cron": [
-        "41 16 * * *"
+        "41 11 * * *"
       ],
       "manual_dispatch": true
     },
@@ -849,7 +849,7 @@
       "path": ".github/workflows/self-heal.yml",
       "scheduled": true,
       "cron": [
-        "34 16 * * 3"
+        "34 11 * * 3"
       ],
       "manual_dispatch": true
     },
@@ -858,10 +858,10 @@
       "path": ".github/workflows/social-autopost.yml",
       "scheduled": true,
       "cron": [
-        "23 13 * * *",
-        "17 16 * * *",
-        "41 19 * * *",
-        "9 22 * * *"
+        "23 8 * * *",
+        "17 11 * * *",
+        "41 14 * * *",
+        "9 17 * * *"
       ],
       "manual_dispatch": true
     },
@@ -870,7 +870,7 @@
       "path": ".github/workflows/uscis-changelog.yml",
       "scheduled": true,
       "cron": [
-        "11 13 * * 2"
+        "11 8 * * 2"
       ],
       "manual_dispatch": true
     }
