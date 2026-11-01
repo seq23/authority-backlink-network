@@ -3,28 +3,50 @@
   "entities": [
     {
       "entity": "founderoperatorlibrary.com",
-      "sameAs": [],
+      "sameAs": [
+        {
+          "url": "https://github.com/seq23/authority-backlink-network",
+          "http": 200,
+          "state": "ok",
+          "platform": "github.com",
+          "edit_field": "Organisation > Settings > URL"
+        }
+      ],
       "profiles_pending": [],
       "removed_dead": [],
       "promoted": []
     },
     {
       "entity": "memphisvendorlibrary.com",
-      "sameAs": [],
+      "sameAs": [
+        {
+          "url": "https://github.com/seq23/authority-backlink-network",
+          "http": 200,
+          "state": "ok",
+          "platform": "github.com",
+          "edit_field": "Organisation > Settings > URL"
+        }
+      ],
       "profiles_pending": [],
       "removed_dead": [],
       "promoted": []
     },
     {
       "entity": "professionalresourcelibrary.com",
-      "sameAs": [],
+      "sameAs": [
+        {
+          "url": "https://github.com/seq23/authority-backlink-network",
+          "http": 200,
+          "state": "ok",
+          "platform": "github.com",
+          "edit_field": "Organisation > Settings > URL"
+        }
+      ],
       "profiles_pending": [],
       "removed_dead": [],
       "promoted": []
     }
   ],
   "changed": [],
-  "named_stops": [
-    "NAMED STOP entity-watch: no entity has a sameAs or pending profile yet; nothing to verify."
-  ]
+  "named_stops": []
 }
