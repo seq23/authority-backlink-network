@@ -13,7 +13,7 @@ schedule); see the notes below for what moved.
 | Journalist Query Scan | `journalist-query-scan.yml` | Mon–Fri 07:00 CT | `0 7 * * 1-5` |
 | Journalist Query Scan | `journalist-query-scan.yml` | Mon–Fri 13:15 CT | `15 13 * * 1-5` |
 | Post-Deploy Live Check | `post-deploy-live-check.yml` | every day 11:41 CT | `41 11 * * *` |
-| Bounded Self-Healing | `self-heal.yml` | Wed 11:34 CT | `34 11 * * 3` |
+| Bounded Self-Healing | `self-heal.yml` | Wed 10:20 CT | `20 10 * * 3` |
 | Social Auto-Post Only | `social-autopost.yml` | every day 08:23 CT | `23 8 * * *` |
 | Social Auto-Post Only | `social-autopost.yml` | every day 11:17 CT | `17 11 * * *` |
 | Social Auto-Post Only | `social-autopost.yml` | every day 14:41 CT | `41 14 * * *` |
@@ -28,4 +28,5 @@ schedule); see the notes below for what moved.
   self-healing are not upkeep and keep their own days.
 
 ## Notes
-- Nothing moved day on 1 Nov 2026; every job keeps the Central time it ran at all summer, now pinned.
+- Every other job keeps the Central time it ran at all summer, now pinned.
+- Bounded Self-Healing joins the Wednesday 10:00–10:30 CT self-healing sweep (p-n-p 10:00, Dream Wedding 10:10, backlink network 10:20, WPP 10:30).

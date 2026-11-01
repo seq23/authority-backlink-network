@@ -849,7 +849,7 @@
       "path": ".github/workflows/self-heal.yml",
       "scheduled": true,
       "cron": [
-        "34 11 * * 3"
+        "20 10 * * 3"
       ],
       "manual_dispatch": true
     },
