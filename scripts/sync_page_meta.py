@@ -35,8 +35,7 @@ Editorial pages and topic hubs are not listed: build_editorial_pages.py and
 build_site_navigation.py rewrite those pages on every autopilot run.
 
 Idempotent. `--check` (the default) lists drift and exits 1 if there is any;
-`--write` applies it. scripts/validators/validate_page_meta_bounds.py
-runs the same planner, so a source edit that was never synced fails CI.
+`--write` applies it; the daily autopilot runs `--write` after publishing.
 
     python3 scripts/sync_page_meta.py [--write]
 """

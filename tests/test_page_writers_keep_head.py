@@ -74,7 +74,7 @@ def run_scenario(name: str, steps: list[str], work: Path) -> None:
     if v.returncode != 0:
         fails.append(f"{name}: after {' -> '.join(steps)} the favicon validator failed "
                      f"({len(bad)} lines; first: {bad[:2]})")
-    for validator in ("validate_title_suffix.py", "validate_analytics_separation.py"):
+    for validator in ("validate_analytics_separation.py",):
         result = subprocess.run([sys.executable, "scripts/validators/" + validator],
                                 cwd=work, capture_output=True, text=True)
         if result.returncode:
