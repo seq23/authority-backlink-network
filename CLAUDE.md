@@ -13,6 +13,10 @@ projects, one per folder under `sites/`:
 for the repo-operator entry points, and `docs/WHAT-THIS-SYSTEM-IS.md` for what
 the network is for.
 
+## Company brain
+
+Read `~/Brains/spry.md` before any work (business facts, priorities, voice, settled decisions). New business facts go to the brain via Boss OS, not into this repo or memory. Repo how-tos stay in `docs/`.
+
 ## Nothing paid
 
 **Owner policy, 11 Oct 2026: "nothing should be paid … cut the probes and make
