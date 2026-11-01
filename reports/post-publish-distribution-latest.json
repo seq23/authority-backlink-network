@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-10-31T15-39-15.152666Z-41215773942",
-  "attempted_at": "2026-10-31T15:39:15.152666Z",
+  "receipt_id": "2026-11-01T16-40-50.766480Z-41327441259",
+  "attempted_at": "2026-11-01T16:40:50.766480Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -51,21 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 1,
-        "inspected_urls": 1,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -632,43 +620,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 3,
-        "inspected_urls": 3,
-        "results": [
-          {
-            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -1299,54 +1253,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 4,
-        "inspected_urls": 4,
-        "results": [
-          {
-            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-how-to-build-a-scalp-care-routine-and-what-an-organic-label-on-a-hair-product-means",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "URL is unknown to Google",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-what-a-wave-hair-routine-involves-washing-conditioning-brushing-and-covering",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "Discovered - currently not indexed",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/daily/2026-10-30-product-buildup-on-the-scalp-how-often-to-wash-and-how-to-read-a-shampoo-label",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "Discovered - currently not indexed",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          },
-          {
-            "url": "https://professionalresourcelibrary.com/daily/2026-10-31-measured-inferred-or-reconstructed-how-to-read-a-scientific-claim",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "Discovered - currently not indexed",
-            "indexing_state": "INDEXING_STATE_UNSPECIFIED",
-            "last_crawl_time": null,
-            "google_canonical": null,
-            "user_canonical": null
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -2282,7 +2191,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-10-31T15-39-15.152666Z-41215773942.json"
+    "history": "data/distribution/receipts/2026-11-01T16-40-50.766480Z-41327441259.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
