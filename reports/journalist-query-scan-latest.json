@@ -1,54 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-11-02T13:05:12+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 9,
+  "run_at": "2026-11-02T19:19:26+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 8,
-  "dropped_as_ungroundable": 1,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "Skincare Classics That Outperform Today's Expensive Beauty Products",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "U.S.-based dog behavior expert needed re: tips for flying w/a puppy",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Colorful Watch Dials Are Having a Moment - Picks that aren't outrageously priced",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "The most luxurious new spas to try in 2027",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Planner, sticker, pen and desk gifts for a Gift Guide for the Planner Addict",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Stocking Stuffers for Women",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Experts on Muslim Religious Freedom in U.S. Prisons",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "Strikes, protests and your travel insurance",
-      "why": "excluded: 'attorney'"
-    },
-    {
-      "summary": "E-commerce founders: Is AI search recommending your brand? (LinkedIn Live)",
-      "why": "The available facts describe wedding cost datasets and USCIS changelog publications, not e-commerce founding, revenue, Shopify sales, or AI search recommendation experience."
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 9 queries were read from 1 digest(s) and every one was dropped (8 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
