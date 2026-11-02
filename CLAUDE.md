@@ -61,7 +61,7 @@ here in code rather than in prose:
 | Item | Rule | Where |
 |---|---|---|
 | a1 | one canonical host; every other host 301s to it | `scripts/build_host_canonicalization.py`, `validate_host_canonicalization.py`, `tests/test_host_canonicalization.py` |
-| b1, b2 | `<title>` 30–65, meta description 120–160, unique per site | `scripts/lib/meta_description.py` (generators refuse out-of-bounds; no page validator) |
+| b1, b2 | `<title>` 30–65, meta description 120–160, unique per site | `scripts/lib/meta_description.py` (generators trim over-length; refuse only under 75% of a floor, owner ruling 2 Nov 2026; `tests/test_meta_length_never_blocks.py`) |
 | c1, c2, d4 | Organization with name/url/logo, WebPage on every page, a stated date is a visible date | `scripts/lib/head_seo.py`, `validate_jsonld_types.py` |
 | entity | `data/entities/<domain>.json` is the one definition of each editorial company: sameAs holds only real independent profiles (empty until one exists; never the site's own pages), no parent; llms.txt and `/editorial-policy` derive from it | `scripts/lib/head_seo.py`, `scripts/lib/llms_text.py`, `validate_entity_graph.py`, weekly `entity-backlink-watch.yml` (`scripts/entity_backlink_watch.py`) |
 | delivery | every grid side business in `data/grid-coverage.json` has a rendered network backlink or a named stop | `validate_grid_backlink_coverage.py` |

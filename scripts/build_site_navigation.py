@@ -212,9 +212,7 @@ def rebuild(write: bool) -> dict:
         members, unmapped = assign_members(source, domain, hubs)
         unmapped_all += unmapped
 
-        # An empty hub carries no outbound editorial link, which is a blocking
-        # conversion_path failure in validate_content_pattern_contract.js, and it
-        # is not navigation either. A one-member hub is a redirect wearing a
+        # An empty hub carries no outbound editorial link and is not navigation. A one-member hub is a redirect wearing a
         # costume. Neither is ever generated: the taxonomy is corrected instead.
         for hub in hubs:
             count = len(members.get(hub["slug"], []))

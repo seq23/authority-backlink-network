@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "d2872b6809bef9a14be28338910ab0fb7ddd0989901f49e4cb279f690e80a230",
+  "plan_sha256": "b7a02a824af91483ec3e6f98b828fafa50e74b47b1c49436b808c68e872fee9a",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -13,9 +13,9 @@
     "note": "A validator absent from severity_matrix is treated as HARD_FAIL. Failing safe matters more than convenience: an unclassified check is one nobody has reasoned about.",
     "strict_flag": "--strict promotes STRONG_WARNING and SOFT_WARNING failures to blocking."
   },
-  "count": 68,
+  "count": 69,
   "counts_by_severity": {
-    "HARD_FAIL": 65,
+    "HARD_FAIL": 66,
     "SOFT_WARNING": 1,
     "STRONG_WARNING": 2
   },
@@ -454,6 +454,17 @@
       "severity": "HARD_FAIL",
       "classified": true,
       "rationale": "11 Oct 2026: a URL Search Console shows in results or reports through URL Inspection is the page with the most to lose; one that no longer resolves (no file, no _redirects rule) throws away exactly the impressions the loop exists to grow. A broken required journey. Fails on zero URLs examined.",
+      "profiles": [
+        "changed",
+        "full",
+        "release"
+      ]
+    },
+    {
+      "id": "meta_length_never_blocks",
+      "severity": "HARD_FAIL",
+      "classified": true,
+      "rationale": "Owner ruling 2 Nov 2026: a title or meta description never blocks a build for length. Pins scripts/lib/meta_description.py: over-long text is trimmed to the bound, never raised; 75-100% of a floor passes; under 75% still raises; the autopilot quality gate does not hard-fail an over-long head. Fails on zero cases.",
       "profiles": [
         "changed",
         "full",

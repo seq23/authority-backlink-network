@@ -68,8 +68,7 @@ def esc(text: str) -> str:
 
 # --------------------------------------------------------------------------
 # Section renderers. Every one of them is responsible for never emitting an
-# empty table cell or an empty anchor, both of which are blocking failures in
-# validate_content_pattern_contract.js.
+# empty table cell or an empty anchor: neither is citable.
 # --------------------------------------------------------------------------
 
 def render_prose(section: dict) -> str:
@@ -209,13 +208,13 @@ def build_page(page: dict) -> str:
         blocks.append(f'<script type="application/ld+json">{json.dumps(faq_ld, ensure_ascii=False)}</script>')
 
     body = "".join(RENDERERS[s["type"]](s, lane) for s in page["sections"])
-    meta_description.require(page["description"], page.get("slug") or page["title"])
+    description = meta_description.require(page["description"], page.get("slug") or page["title"])
 
     return (
         '<!doctype html>\n<html lang="en">\n<head>\n'
         '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f'<title>{esc(meta_description.site_title(page.get("seo_title") or page["title"], pub["title"], page["slug"]))}</title>\n'
-        f'<meta name="description" content="{esc(page["description"])}">\n'
+        f'<meta name="description" content="{esc(description)}">\n'
         f'<link rel="canonical" href="{esc(url)}">\n'
         '<link rel="stylesheet" href="/styles.css">\n'
         + "\n".join(blocks) + "\n"

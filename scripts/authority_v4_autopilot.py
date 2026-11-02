@@ -459,7 +459,8 @@ def taken(pub_key):
 def seo_title_for(brief, pub_key):
     """A complete topic, archive date and own brand in 30-65 characters.
 
-    Refuse a repeated title or a topic needing a shorter editorial alias.
+    Refuse a repeated title; a topic too long to fit is word-cut (keeping
+    the date and brand) until it has a shorter editorial alias.
     The full heading and the slug remain unchanged.
     """
     pub = next(p for p in json.loads((ROOT / 'data/publications.json').read_text())
@@ -613,14 +614,15 @@ def score_page(html_text, brief):
         score -= 30; hard_fails.append('unsafe_claim_or_fake_review_language')
     if brief.get('target_url', brief['target_domain']) not in html_text:
         score -= 20; hard_fails.append('missing_target_citation')
-    # generate_page() builds these inside the bounds; this catches the optional
-    # rewrite pass returning a page whose head no longer does.
+    # generate_page() builds these inside the bounds. This catches only a head
+    # with no title/description or one under 75% of the floor (owner ruling,
+    # 2 Nov 2026: over-length is trimmed by the generator, never a hard fail).
     desc = re.search(r'<meta name="description" content="([^"]*)"', html_text)
-    if not desc or not meta_description.fits(html.unescape(desc.group(1))):
-        score -= 20; hard_fails.append('meta_description_out_of_bounds')
+    if not desc or not meta_description.description_ok(html.unescape(desc.group(1))):
+        score -= 20; hard_fails.append('meta_description_missing_or_too_short')
     title = re.search(r'<title>(.*?)</title>', html_text, re.S)
-    if not title or not meta_description.title_fits(html.unescape(title.group(1).strip())):
-        score -= 20; hard_fails.append('title_out_of_bounds')
+    if not title or not meta_description.title_ok(html.unescape(title.group(1).strip())):
+        score -= 20; hard_fails.append('title_missing_or_too_short')
     return max(0, min(100, score)), words, warnings, hard_fails
 
 

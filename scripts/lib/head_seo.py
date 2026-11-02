@@ -75,7 +75,6 @@ REQUIRED_ICON_LINKS = (
 # ------------------------------------------------------- the homepage answer
 DEFINITION_ID = "publication-definition"
 SPEAKABLE_SELECTOR = "#" + DEFINITION_ID
-DEFINITION_MIN_WORDS, DEFINITION_MAX_WORDS = 40, 60
 DEFINITION_RE = re.compile(
     r'<p id="' + DEFINITION_ID + r'" class="definition">.*?</p>\n?', re.S)
 H1_END_RE = re.compile(r"</h1>\n?", re.I)
