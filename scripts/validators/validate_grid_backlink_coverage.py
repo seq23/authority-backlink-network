@@ -18,7 +18,10 @@ covered (a stale stop hides nothing but still lies).
 
 When a sibling ../boss-os checkout exists, the list is also compared with the
 grid registry it was copied from, so the two cannot drift apart unnoticed. CI
-has no sibling checkout; that comparison is skipped there and says so.
+has no sibling checkout; that comparison is skipped there and says so. Domains
+in grid-coverage.json `parked` (the owner has parked the business; the boss-os
+list has no status field to read) are left out of that comparison. A built-in
+self-test proves the comparison both ways on every run, CI included.
 
 Rule 0: an empty domain list is a FAIL.
 """
@@ -41,12 +44,37 @@ def host(url: str) -> str:
     return (urlparse(url).hostname or "").lower().removeprefix("www.")
 
 
+def grid_drift(grid: dict, domains: list[str], parked: set[str]) -> tuple[list[str], list[str]]:
+    """(missing, extra): grid businesses not in `domains`, and the reverse.
+
+    Parked businesses are not expected in `domains` and never count as drift.
+    """
+    want = {x["domain"] for x in grid.get("grid_repos", [])
+            if x.get("category") in ("side_business", "own_business")
+            and x["domain"] not in NETWORK and x["domain"] not in parked}
+    have = set(domains) - parked
+    return sorted(want - have), sorted(have - want)
+
+
+def self_test() -> list[str]:
+    """The drift check skips a parked business and still catches a real gap."""
+    grid = {"grid_repos": [{"domain": "a.com", "category": "side_business"},
+                           {"domain": "parked.com", "category": "side_business"}]}
+    bad = []
+    if grid_drift(grid, ["a.com"], {"parked.com"}) != ([], []):
+        bad.append("self-test: a parked business was reported as drift")
+    if grid_drift(grid, ["a.com"], set()) != (["parked.com"], []):
+        bad.append("self-test: an unlisted, unparked business was not reported as drift")
+    return bad
+
+
 def main(coverage_path: Path = COVERAGE, registry_path: Path = REGISTRY) -> int:
     cov = json.loads(coverage_path.read_text(encoding="utf-8"))
     domains = cov.get("domains") or []
     stops = cov.get("named_stops") or {}
+    parked = {k for k in (cov.get("parked") or {}) if not k.startswith("_")}
     rows = json.loads(registry_path.read_text(encoding="utf-8"))
-    failures, named, covered = [], [], {}
+    failures, named, covered = self_test(), [], {}
     page_cache: dict[str, str] = {}
     for d in domains:
         n = 0
@@ -70,18 +98,16 @@ def main(coverage_path: Path = COVERAGE, registry_path: Path = REGISTRY) -> int:
     grid_note = "skipped: no sibling boss-os checkout (CI)"
     if GRID.exists():
         grid = json.loads(GRID.read_text(encoding="utf-8"))
-        want = sorted(x["domain"] for x in grid.get("grid_repos", [])
-                      if x.get("category") in ("side_business", "own_business") and x["domain"] not in NETWORK)
-        if want != sorted(domains):
-            failures.append(f"data/grid-coverage.json drifted from boss-os: missing {sorted(set(want)-set(domains))}, "
-                            f"extra {sorted(set(domains)-set(want))}")
-        grid_note = "matched boss-os grid registry" if want == sorted(domains) else "DRIFT"
+        missing, extra = grid_drift(grid, domains, parked)
+        if missing or extra:
+            failures.append(f"data/grid-coverage.json drifted from boss-os: missing {missing}, extra {extra}")
+        grid_note = "DRIFT" if missing or extra else "matched boss-os grid registry"
     if not domains:
         failures.append("Rule 0: data/grid-coverage.json lists no domains")
     for line in named:
         print(line, file=sys.stderr)
     print(json.dumps({"validator": "grid_backlink_coverage", "status": "FAIL" if failures else "PASS",
-                      "domains": len(domains), "covered": covered, "named_stops": named,
+                      "domains": len(domains), "covered": covered, "named_stops": named, "parked": sorted(parked),
                       "grid_sync": grid_note, "failures": failures}, indent=2))
     return 1 if failures else 0
 

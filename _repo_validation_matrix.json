@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_from": "validation/plan.json",
-  "plan_sha256": "b7a02a824af91483ec3e6f98b828fafa50e74b47b1c49436b808c68e872fee9a",
+  "plan_sha256": "2b0623b03c033e658af985c71fe103914d8cf6e93e4d7c291598a94e02affbc2",
   "severity_definitions": {
     "hard_fail": "Only corruption, unsafe publication, false evidence, wrong-domain routing, secret exposure, broken required journeys, nondeterministic governed output, or executable failure.",
     "strong_warning": "Repairable page defects, administrative drift, or a quality issue needing attention. Never blocks by itself.",
@@ -343,7 +343,7 @@
       "id": "grid_backlink_coverage",
       "severity": "HARD_FAIL",
       "classified": true,
-      "rationale": "Authority audit 30 Oct 2026: four grid side businesses had 0 published network backlinks and nothing said so. Every domain in data/grid-coverage.json needs a published registry row whose source page really carries the link, or a named stop; compares the list with the boss-os grid registry when a sibling checkout exists. Fails hard on an empty list.",
+      "rationale": "Authority audit 30 Oct 2026: four grid side businesses had 0 published network backlinks and nothing said so. Every domain in data/grid-coverage.json needs a published registry row whose source page really carries the link, or a named stop; compares the list with the boss-os grid registry when a sibling checkout exists. Fails hard on an empty list. Parked businesses (data/grid-coverage.json `parked`) are skipped in the boss-os drift comparison; a built-in self-test proves that skip, and that a real gap is still caught, on every run.",
       "profiles": [
         "changed",
         "full",

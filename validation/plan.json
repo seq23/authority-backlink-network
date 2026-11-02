@@ -479,7 +479,7 @@
     },
     "grid_backlink_coverage": {
       "severity": "HARD_FAIL",
-      "rationale": "Authority audit 30 Oct 2026: four grid side businesses had 0 published network backlinks and nothing said so. Every domain in data/grid-coverage.json needs a published registry row whose source page really carries the link, or a named stop; compares the list with the boss-os grid registry when a sibling checkout exists. Fails hard on an empty list."
+      "rationale": "Authority audit 30 Oct 2026: four grid side businesses had 0 published network backlinks and nothing said so. Every domain in data/grid-coverage.json needs a published registry row whose source page really carries the link, or a named stop; compares the list with the boss-os grid registry when a sibling checkout exists. Fails hard on an empty list. Parked businesses (data/grid-coverage.json `parked`) are skipped in the boss-os drift comparison; a built-in self-test proves that skip, and that a real gap is still caught, on every run."
     },
     "earned_mentions": {
       "severity": "HARD_FAIL",

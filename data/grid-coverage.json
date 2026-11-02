@@ -28,5 +28,9 @@
     "weddingseatingchartmaker.com",
     "weddingtimelinetemplate.com"
   ],
-  "named_stops": {}
+  "named_stops": {},
+  "parked": {
+    "_why": "Grid businesses the owner has parked (no active work). The boss-os grid list carries no status field, so they are named here; the boss-os drift check skips them. Remove a domain from here when work on it resumes, and add it to `domains`.",
+    "heygetonmylevel.com": "Parked, no active work (owner, 1 Nov 2026, spry brain: \"we aren't doing anything w it right now\")."
+  }
 }
