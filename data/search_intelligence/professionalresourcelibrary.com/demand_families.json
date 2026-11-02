@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "professionalresourcelibrary.com",
-  "gsc_window": "2026-10-02..2026-10-29",
-  "gsc_collected_at": "2026-11-01T15:26:08+00:00",
+  "gsc_window": "2026-10-03..2026-10-30",
+  "gsc_collected_at": "2026-11-02T15:26:46+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -28,12 +28,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/consumer-reporting-companies-directory.html",
       "page_title": "Every Consumer Reporting Company on the CFPB's 2025 List",
-      "impressions": 192,
+      "impressions": 170,
       "visible_query_impressions": 43,
-      "anonymised_impressions": 149,
-      "weighted_position": 13.0,
-      "page_impressions": 192,
-      "page_position": 11.5,
+      "anonymised_impressions": 127,
+      "weighted_position": 13.8,
+      "page_impressions": 170,
+      "page_position": 12.2,
       "query_count": 21,
       "queries": [
         {
@@ -161,12 +161,12 @@
       "page_kind": "article",
       "file": "sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page_title": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing",
-      "impressions": 62,
+      "impressions": 60,
       "visible_query_impressions": 0,
-      "anonymised_impressions": 62,
+      "anonymised_impressions": 60,
       "weighted_position": 8.0,
-      "page_impressions": 62,
-      "page_position": 8.0,
+      "page_impressions": 60,
+      "page_position": 8,
       "query_count": 0,
       "queries": [],
       "rank": 2,
@@ -207,53 +207,6 @@
       "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
     },
     {
-      "family": "equine legal advice @ /equine-legal-resource-library",
-      "intent": "page",
-      "page": "/equine-legal-resource-library",
-      "page_kind": "article",
-      "file": "sites/professional-resources/equine-legal-resource-library.html",
-      "page_title": "Equine Legal Resource Library",
-      "impressions": 21,
-      "visible_query_impressions": 16,
-      "anonymised_impressions": 5,
-      "weighted_position": 48.4,
-      "page_impressions": 21,
-      "page_position": 43.3,
-      "query_count": 4,
-      "queries": [
-        {
-          "query": "equine legal advice",
-          "impressions": 8,
-          "position": 49.2
-        },
-        {
-          "query": "equine legal",
-          "impressions": 4,
-          "position": 55.2
-        },
-        {
-          "query": "equine legal solutions",
-          "impressions": 3,
-          "position": 39.3
-        },
-        {
-          "query": "equine law advice",
-          "impressions": 1,
-          "position": 67
-        }
-      ],
-      "rank": 4,
-      "basis": [
-        "top_demand"
-      ],
-      "qualifies": true,
-      "strengthened_pages": [
-        "/equine-legal-resource-library"
-      ],
-      "status": "strengthened",
-      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html"
-    },
-    {
       "family": "funding documents @ /topics/business-funding-documents",
       "intent": "page",
       "page": "/topics/business-funding-documents",
@@ -274,7 +227,7 @@
           "position": 52.5
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "basis": [
         "top_demand"
       ],
@@ -284,6 +237,53 @@
       ],
       "status": "underivable",
       "reason": "sites/professional-resources/topics/business-funding-documents.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking"
+    },
+    {
+      "family": "equine legal advice @ /equine-legal-resource-library",
+      "intent": "page",
+      "page": "/equine-legal-resource-library",
+      "page_kind": "article",
+      "file": "sites/professional-resources/equine-legal-resource-library.html",
+      "page_title": "Equine Legal Resource Library",
+      "impressions": 20,
+      "visible_query_impressions": 15,
+      "anonymised_impressions": 5,
+      "weighted_position": 47.5,
+      "page_impressions": 20,
+      "page_position": 42.4,
+      "query_count": 4,
+      "queries": [
+        {
+          "query": "equine legal advice",
+          "impressions": 7,
+          "position": 47.4
+        },
+        {
+          "query": "equine legal",
+          "impressions": 4,
+          "position": 55.2
+        },
+        {
+          "query": "equine legal solutions",
+          "impressions": 3,
+          "position": 39.3
+        },
+        {
+          "query": "equine law advice",
+          "impressions": 1,
+          "position": 67
+        }
+      ],
+      "rank": 5,
+      "basis": [
+        "top_demand"
+      ],
+      "qualifies": true,
+      "strengthened_pages": [
+        "/equine-legal-resource-library"
+      ],
+      "status": "strengthened",
+      "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/equine-legal-resource-library.html"
     },
     {
       "family": "What Records to Gather Before a Neuropsychological Evaluation @ /daily/2026-09-02-what-records-to-gather-before-a-neuropsychological-evaluation",
@@ -308,44 +308,6 @@
       "reason": "rank 6 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "boundaries and burnout @ /workplace-burnout-and-boundaries",
-      "intent": "page",
-      "page": "/workplace-burnout-and-boundaries",
-      "page_kind": "article",
-      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
-      "page_title": "Workplace Burnout and Boundaries Resources",
-      "impressions": 9,
-      "visible_query_impressions": 5,
-      "anonymised_impressions": 4,
-      "weighted_position": 44.4,
-      "page_impressions": 9,
-      "page_position": 45.9,
-      "query_count": 3,
-      "queries": [
-        {
-          "query": "boundaries and burnout",
-          "impressions": 2,
-          "position": 42
-        },
-        {
-          "query": "burnout and boundaries",
-          "impressions": 2,
-          "position": 41
-        },
-        {
-          "query": "setting boundaries after burnout",
-          "impressions": 1,
-          "position": 50
-        }
-      ],
-      "rank": 7,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 7 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
       "family": "tiers of recovery @ /daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
       "intent": "page",
       "page": "/daily/2026-08-29-what-levels-of-support-mean-when-comparing-recovery-residences",
@@ -364,6 +326,44 @@
           "query": "tiers of recovery",
           "impressions": 2,
           "position": 94
+        }
+      ],
+      "rank": 7,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 7 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "boundaries and burnout @ /workplace-burnout-and-boundaries",
+      "intent": "page",
+      "page": "/workplace-burnout-and-boundaries",
+      "page_kind": "article",
+      "file": "sites/professional-resources/workplace-burnout-and-boundaries.html",
+      "page_title": "Workplace Burnout and Boundaries Resources",
+      "impressions": 7,
+      "visible_query_impressions": 3,
+      "anonymised_impressions": 4,
+      "weighted_position": 42.6,
+      "page_impressions": 7,
+      "page_position": 45,
+      "query_count": 3,
+      "queries": [
+        {
+          "query": "boundaries and burnout",
+          "impressions": 1,
+          "position": 33
+        },
+        {
+          "query": "burnout and boundaries",
+          "impressions": 1,
+          "position": 35
+        },
+        {
+          "query": "setting boundaries after burnout",
+          "impressions": 1,
+          "position": 50
         }
       ],
       "rank": 8,
@@ -872,28 +872,6 @@
       "reason": "rank 29 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
-      "family": "How to Tell Whether a Workplace Wellbeing Program Changed Anything @ /daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
-      "intent": "page",
-      "page": "/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
-      "page_kind": "article",
-      "file": "sites/professional-resources/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
-      "page_title": "How to Tell Whether a Workplace Wellbeing Program Changed Anything",
-      "impressions": 2,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 2,
-      "weighted_position": 31.0,
-      "page_impressions": 2,
-      "page_position": 31,
-      "query_count": 0,
-      "queries": [],
-      "rank": 30,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 30 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
       "family": "application issues @ /topics/application-problems",
       "intent": "page",
       "page": "/topics/application-problems",
@@ -914,12 +892,12 @@
           "position": 29
         }
       ],
-      "rank": 31,
+      "rank": 30,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 31 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 30 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "personal injury research @ /personal-injury-research-resources",
@@ -942,12 +920,12 @@
           "position": 47
         }
       ],
-      "rank": 32,
+      "rank": 31,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 32 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 31 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "make ready disputes @ /daily/2026-07-25-credit-dispute-letters-geo-ready-red-flag-checklist-when-you-are-comparing-options",
@@ -970,12 +948,12 @@
           "position": 85
         }
       ],
-      "rank": 33,
+      "rank": 32,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 33 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 32 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "About Professional Resource Library @ /about",
@@ -992,12 +970,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 34,
+      "rank": 33,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 34 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 33 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Multiple Application Issues: No-Fluff Decision Guide For People Who Need A Starting Point @ /daily/2026-07-15-multiple-application-issues-no-fluff-decision-guide-for-people-who-need-a-starting-point",
@@ -1014,12 +992,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 35,
+      "rank": 34,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 35 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 34 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Proof Of Residency Letter: Human-First Prep Guide Before You Call @ /daily/2026-08-17-proof-of-residency-letter-human-first-prep-guide-before-you-call",
@@ -1036,12 +1014,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 36,
+      "rank": 35,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 36 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 35 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Recovery Housing Is Designed to Provide @ /daily/2026-07-24-what-recovery-housing-is-designed-to-provide",
@@ -1058,12 +1036,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 37,
+      "rank": 36,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 37 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 36 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Credit Rental Income And Loan Letters: Comparison-Friendly Question Checklist Before You Pay @ /daily/2026-07-30-credit-rental-income-and-loan-letters-comparison-friendly-question-checklist-before-you-pa",
@@ -1080,12 +1058,12 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 38,
+      "rank": 37,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 38 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 37 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Full Approval Prep Bundle: No-Fluff Red-Flag Checklist For Careful Decision-Makers @ /daily/2026-08-23-full-approval-prep-bundle-no-fluff-red-flag-checklist-for-careful-decision-makers",
@@ -1102,12 +1080,12 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 39,
+      "rank": 38,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 39 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 38 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Income Change Explanation: No-Fluff Timeline Guide Before You Pay @ /daily/2026-08-23-income-change-explanation-no-fluff-timeline-guide-before-you-pay",
@@ -1124,12 +1102,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 40,
+      "rank": 39,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 40 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 39 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Truthful Document Preparation: Beginner-Safe Timeline Guide Before You Call @ /daily/2026-08-06-truthful-document-preparation-beginner-safe-timeline-guide-before-you-call",
@@ -1144,6 +1122,28 @@
       "weighted_position": 5.0,
       "page_impressions": 1,
       "page_position": 5,
+      "query_count": 0,
+      "queries": [],
+      "rank": 40,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 40 of 53 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "How to Tell Whether a Workplace Wellbeing Program Changed Anything @ /daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
+      "intent": "page",
+      "page": "/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything",
+      "page_kind": "article",
+      "file": "sites/professional-resources/daily/2026-08-31-how-to-tell-whether-a-workplace-wellbeing-program-changed-anything.html",
+      "page_title": "How to Tell Whether a Workplace Wellbeing Program Changed Anything",
+      "impressions": 1,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 1,
+      "weighted_position": 6.0,
+      "page_impressions": 1,
+      "page_position": 6,
       "query_count": 0,
       "queries": [],
       "rank": 41,
