@@ -40,16 +40,68 @@ DESC_MAX = 160
 TITLE_MIN = 30
 TITLE_MAX = 65
 
+# Owner ruling, 2 Nov 2026 (personal brain, Settled decisions): a length bound
+# never blocks a build or a publish for a reason a reader would not notice.
+# Over a maximum never fails -- the generator trims to fit. Under a minimum
+# fails only below FLOOR_SHARE of it. The bounds above stay the target that
+# candidate selection (title_fits / fits / pick_title / first_fitting) aims for.
+FLOOR_SHARE = 0.75
+_STOPWORDS = {"a", "an", "the", "and", "or", "for", "to", "of", "with", "before", "after"}
+
+
+def below_floor(length: int, floor: int) -> bool:
+    """True only when `length` is under FLOOR_SHARE of `floor` (the one floor rule)."""
+    return length < floor * FLOOR_SHARE
+
 
 def title_fits(title: str) -> bool:
     return TITLE_MIN <= len(title) <= TITLE_MAX
 
 
+def title_ok(title: str) -> bool:
+    """Acceptable to publish: not below the 75% floor. Over is trimmed, never refused."""
+    return not below_floor(len(title), TITLE_MIN)
+
+
+def cut_words(text: str, budget: int) -> str:
+    """`text` cut at a word boundary to at most `budget` characters, with an ellipsis.
+
+    Never cuts through a word and never ends on a dangling article or
+    preposition. A single word longer than the budget is cut hard.
+    """
+    text = " ".join(text.split())
+    if len(text) <= budget:
+        return text
+    words = text.split()
+    while words and len(" ".join(words)) > budget - 1:
+        words.pop()
+    while words and words[-1].casefold() in _STOPWORDS:
+        words.pop()
+    head = " ".join(words).rstrip(" :;,.-")
+    if not head:
+        head = text[:max(budget - 1, 1)].rstrip(" :;,.-")
+    return head + "…"
+
+
+def fit_title(title: str) -> str:
+    """The title trimmed to TITLE_MAX, keeping a trailing " | <site>" suffix whole."""
+    title = " ".join(title.split())
+    if len(title) <= TITLE_MAX:
+        return title
+    head, sep, tail = title.rpartition(" | ")
+    suffix = sep + tail
+    if sep and head and len(suffix) <= TITLE_MAX - 12:
+        return cut_words(head, TITLE_MAX - len(suffix)) + suffix
+    return cut_words(title, TITLE_MAX)
+
+
 def require_title(title: str, where: str) -> str:
-    if not title_fits(title):
+    """The title trimmed to fit; raise only when it is below 75% of TITLE_MIN."""
+    title = fit_title(title)
+    if not title_ok(title):
         raise ValueError(
-            f"{where}: <title> is {len(title)} characters; it must be "
-            f"{TITLE_MIN}-{TITLE_MAX}: {title!r}")
+            f"{where}: <title> is {len(title)} characters, under 75% of the "
+            f"{TITLE_MIN}-character floor: {title!r}")
     return title
 
 
@@ -82,15 +134,18 @@ def home_title(pub: dict) -> str:
     desc = " ".join((pub.get("home_descriptor") or "").split())
     if not desc:
         raise ValueError(f"data/publications.json: '{pub.get('id')}' has no `home_descriptor`")
-    if not 4 <= len(desc.split()) <= 7:
-        raise ValueError(f"'{pub.get('id')}' home_descriptor must be 4-7 words: {desc!r}")
+    # 4-7 words is the target; more is trimmed below, fewer fails only under 75% of 4.
+    if below_floor(len(desc.split()), 4):
+        raise ValueError(f"'{pub.get('id')}' home_descriptor is under 3 words: {desc!r}")
     if name.casefold() in desc.casefold():
         raise ValueError(f"'{pub.get('id')}' home_descriptor repeats the publication name")
     title = f"{name}: {desc}"
-    if not HOME_TITLE_MIN <= len(title) <= HOME_TITLE_MAX:
+    if len(title) > HOME_TITLE_MAX:
+        title = f"{name}: " + cut_words(desc, max(HOME_TITLE_MAX - len(name) - 2, 1))
+    if below_floor(len(title), HOME_TITLE_MIN):
         raise ValueError(
-            f"'{pub.get('id')}' homepage <title> is {len(title)} characters; it must be "
-            f"{HOME_TITLE_MIN}-{HOME_TITLE_MAX}: {title!r}")
+            f"'{pub.get('id')}' homepage <title> is {len(title)} characters, under 75% "
+            f"of the {HOME_TITLE_MIN}-character floor: {title!r}")
     return title
 
 
@@ -109,25 +164,17 @@ def site_title(name: str, site: str, where: str) -> str:
         return require_title(name, where)
     suffix = f" | {site}"
     if len(name + suffix) > TITLE_MAX:
-        budget = TITLE_MAX - len(suffix)
         # An ellipsis makes the shortening explicit; never cut through a word.
-        if len(name) > budget:
-            words = name.split()
-            while words and len(" ".join(words)) > budget - 1:
-                words.pop()
-            while words and words[-1].casefold() in {"a", "an", "the", "and", "or", "for", "to", "of", "with", "before", "after"}:
-                words.pop()
-            if not words:
-                raise ValueError(f"{where}: supply a concise editorial title for {name!r}")
-            name = " ".join(words).rstrip(" :;,.-") + "…"
+        name = cut_words(name, TITLE_MAX - len(suffix))
     return require_title(name + suffix, where)
 
 
 def daily_site_title(cluster: str, site: str, where: str) -> str:
     """The complete topic and source archive date, followed by the brand.
 
-    Topic aliases are editorial data, never a word-cut of the search query.
-    A new topic that cannot fit fails loudly until it has an editorial alias.
+    Topic aliases are editorial data (data/title-subjects.json). A topic too
+    long to fit is word-cut with an ellipsis, keeping the date and the brand;
+    an editorial alias, when one is added, replaces the cut.
     """
     import json
     import re
@@ -137,7 +184,10 @@ def daily_site_title(cluster: str, site: str, where: str) -> str:
     date = re.search(r"(?:^|/)daily/(\d{4}-\d{2}-\d{2})-", where)
     if not date:
         raise ValueError(f"{where}: daily title needs its archive date")
-    return require_title(f"{subject} {date.group(1)} | {site}", where)
+    tail = f" {date.group(1)} | {site}"
+    if len(subject + tail) > TITLE_MAX:
+        subject = cut_words(subject, max(TITLE_MAX - len(tail), 1))
+    return require_title(subject + tail, where)
 
 
 def _tc(phrase: str) -> str:
@@ -179,10 +229,18 @@ def daily_title_candidates(*, cluster: str, audience: str, fmt: str, intent: str
 
 
 def pick_title(candidates: list[str], taken: set[str]) -> str | None:
-    """The first candidate inside the bounds whose casefold is not in `taken`."""
+    """The first candidate inside the bounds whose casefold is not in `taken`.
+
+    When none is inside them, the first one that is still unused once trimmed
+    and not below the 75% floor: over-length never leaves a page without a title.
+    """
     for candidate in candidates:
         if title_fits(candidate) and candidate.casefold() not in taken:
             return candidate
+    for candidate in candidates:
+        trimmed = fit_title(candidate)
+        if title_ok(trimmed) and trimmed.casefold() not in taken:
+            return trimmed
     return None
 
 
@@ -190,17 +248,43 @@ def fits(description: str) -> bool:
     return DESC_MIN <= len(description) <= DESC_MAX
 
 
+def description_ok(description: str) -> bool:
+    """Acceptable to publish: not below the 75% floor. Over is trimmed, never refused."""
+    return not below_floor(len(description), DESC_MIN)
+
+
+def fit_description(description: str) -> str:
+    """The description trimmed to DESC_MAX: at a sentence end if one lands
+    inside the bounds, else at a word boundary with an ellipsis."""
+    description = " ".join(description.split())
+    if len(description) <= DESC_MAX:
+        return description
+    window = description[:DESC_MAX]
+    end = max(window.rfind(". "), window.rfind("? "), window.rfind("! "))
+    if end + 1 >= DESC_MIN:
+        return window[:end + 1]
+    if window.endswith((".", "?", "!")) and len(window) >= DESC_MIN:
+        return window
+    return cut_words(description, DESC_MAX)
+
+
 def require(description: str, where: str) -> str:
-    """Return the description, or raise so a generator cannot write a bad one."""
-    if not fits(description):
+    """The description trimmed to fit; raise only when it is below 75% of DESC_MIN.
+
+    Callers write the returned value, so a long source text is trimmed at
+    render time rather than refused.
+    """
+    description = fit_description(description)
+    if not description_ok(description):
         raise ValueError(
-            f"{where}: meta description is {len(description)} characters; "
-            f"it must be {DESC_MIN}-{DESC_MAX}: {description!r}")
+            f"{where}: meta description is {len(description)} characters, under 75% "
+            f"of the {DESC_MIN}-character floor: {description!r}")
     return description
 
 
 def first_fitting(candidates: list[str], where: str) -> str:
-    """The first candidate inside the bounds; raise if none is.
+    """The first candidate inside the bounds; else the first one that is not
+    below the 75% floor, trimmed to fit; raise only if every one is below it.
 
     Generators list candidates most-informative first, so a page gets the
     fullest description that still fits rather than a padded or cut one.
@@ -208,8 +292,13 @@ def first_fitting(candidates: list[str], where: str) -> str:
     for candidate in candidates:
         if fits(candidate):
             return candidate
+    for candidate in candidates:
+        trimmed = fit_description(candidate)
+        if description_ok(trimmed):
+            return trimmed
     raise ValueError(
-        f"{where}: no description candidate is {DESC_MIN}-{DESC_MAX} characters: "
+        f"{where}: every description candidate is under 75% of the "
+        f"{DESC_MIN}-character floor: "
         + "; ".join(f"{len(c)}={c!r}" for c in candidates))
 
 

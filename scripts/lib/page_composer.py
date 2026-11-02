@@ -663,9 +663,8 @@ def compose_body(f: dict) -> tuple[str, list[dict]]:
     answer = compose_answer(f)
     question = question_for(f["format"], f["intent"], f["cluster"])
     items = faq_items(f)
-    # Order is load-bearing. `scripts/validators/validate_content_pattern_contract.js`
-    # reads the first <p> after </h1> and blocks the release if it is shorter than
-    # 80 characters, so the extractable answer sits there rather than under the
+    # Order is load-bearing. Answer engines read the first <p> after </h1> as the
+    # page's answer, so the extractable answer sits there rather than under the
     # question heading. The question heading follows immediately, with its own
     # one-line answer, so a retrieval system finds both shapes within the first
     # hundred words instead of one of them halfway down the page.
@@ -958,9 +957,7 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
     """A topic hub: the page that gives every member page a path in.
 
     A hub is only ever written for a topic that has members. An empty one would
-    render no links at all, which fails the conversion_path check in
-    validate_content_pattern_contract.js and, more to the point, would be a page
-    that exists to be navigation and contains none.
+    render no links at all: a page that exists to be navigation and contains none.
     """
     if not members:
         raise ValueError(f"refusing to compose an empty hub: {hub['slug']}")

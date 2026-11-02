@@ -690,7 +690,7 @@ def main() -> int:
                 builders.append(author_page(c, pub, ed, allowed))
 
         for rel_name, url, title, description, schema, body in builders:
-            meta_description.require(description, f"{pub['folder']}/{rel_name}")
+            description = meta_description.require(description, f"{pub['folder']}/{rel_name}")
             page = page_shell(title=title, description=description, url=url,
                               folder=pub["folder"], pub_title=pub["title"], domain=domain,
                               editor_addr=editor_addr, schema=schema, body=body)

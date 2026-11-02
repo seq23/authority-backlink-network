@@ -188,7 +188,8 @@ def render(article: dict) -> str:
     # Extensionless, from the shared helper: the .html form 308s to this one.
     url = site_urls.page_url(domain, f"daily/{filename}")
     approved_link(article["target_brand_id"], article["target_url"])
-    meta_description.require(article["meta_description"], f"cluster article {article['id']}")
+    article = {**article, "meta_description": meta_description.require(
+        article["meta_description"], f"cluster article {article['id']}")}
 
     sections = article["sections"]
     lead_sections = render_sections(sections[:1])

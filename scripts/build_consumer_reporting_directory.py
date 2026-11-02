@@ -56,10 +56,9 @@ PUBLISHED = "2026-08-28"
 
 TITLE = "Consumer Reporting Companies: the CFPB's 2025 List, Compiled"
 H1 = "Every Consumer Reporting Company on the CFPB's 2025 List"
-DESCRIPTION = ("The CFPB's 2025 list of consumer reporting companies on one page, with "
+DESCRIPTION = meta_description.require(("The CFPB's 2025 list of consumer reporting companies on one page, with "
                "each company's category, free-report and security-freeze policy, and "
-               "where to write.")
-meta_description.require(DESCRIPTION, "consumer reporting companies directory")
+               "where to write."), "consumer reporting companies directory")
 
 DISCLAIMER = ("This page is informational. It is not legal, medical, mental-health, "
               "immigration, financial, or professional advice.")
@@ -112,9 +111,7 @@ def cite(source_id: str, anchor: str | None = None) -> str:
 def table(headers: list[str], rows: list[list[str]], row_ids: list[str] | None = None) -> str:
     """Render a table, refusing to emit an empty cell.
 
-    An empty cell is a blocking failure in
-    scripts/validators/validate_content_pattern_contract.js, and the reason it is
-    blocking is that a half-filled row is not citable. The compiler already
+    An empty cell is refused because a half-filled row is not citable. The compiler already
     substitutes a spelled-out "not listed" for every blank source value, so
     reaching this raise means something upstream changed.
     """

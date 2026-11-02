@@ -376,9 +376,9 @@ def plan() -> tuple[list[tuple[str, str, str, str]], list[str], list[str]]:
     drift, missing = [], []
     for rel, want in sorted(expected.items()):
         if want.get("description"):
-            meta_description.require(want["description"], rel)
+            want["description"] = meta_description.require(want["description"], rel)
         if want.get("title"):
-            meta_description.require_title(want["title"], rel)
+            want["title"] = meta_description.require_title(want["title"], rel)
         path = ROOT / rel
         if not path.exists():
             missing.append(rel)

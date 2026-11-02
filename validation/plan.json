@@ -64,6 +64,7 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
+      "meta_length_never_blocks",
       "measured_urls_resolve",
       "host_canonicalization",
       "host_canonicalization_behaviour",
@@ -131,6 +132,7 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
+      "meta_length_never_blocks",
       "measured_urls_resolve",
       "host_canonicalization",
       "host_canonicalization_behaviour",
@@ -199,6 +201,7 @@
       "search_strengthening_loop",
       "page_writers_keep_head",
       "free_router_deadline",
+      "meta_length_never_blocks",
       "measured_urls_resolve",
       "host_canonicalization",
       "host_canonicalization_behaviour",
@@ -489,6 +492,10 @@
     "entity_watch_wiring": {
       "severity": "HARD_FAIL",
       "rationale": "The weekly entity backlink watch shipped on 31 Oct 2026 (#132) with its script, its behaviour test, the entity:watch npm lane and a CLAUDE.md row naming entity-backlink-watch.yml by name -- and no workflow. Nothing had ever started it, so no sameAs was ever checked, no dead profile dropped and no profiles_pending entry could ever be promoted however long it had been live: the loop existed, the documentation described it in the present tense, and nothing invoked it. Search Readiness k6 measures exactly that. This blocks on no entity-backlink-watch workflow, on one with no schedule or no workflow_dispatch, on one that never invokes the script or runs it read-only, on one that heals data/entities without rebuilding the published tree from it and revalidating, on CLAUDE.md dropping the workflow name, on head_seo.py no longer reading data/entities, and on a publication with no entity file. Zero workflows or zero entity files hard-fail rather than pass vacuously."
+    },
+    "meta_length_never_blocks": {
+      "severity": "HARD_FAIL",
+      "rationale": "Owner ruling 2 Nov 2026: a title or meta description never blocks a build for length. Pins scripts/lib/meta_description.py: over-long text is trimmed to the bound, never raised; 75-100% of a floor passes; under 75% still raises; the autopilot quality gate does not hard-fail an over-long head. Fails on zero cases."
     }
   },
   "severity_matrix_policy": {

@@ -76,6 +76,7 @@ COMMANDS = {
     "freeze_grid_backlinks_exception": [sys.executable, "tests/test_freeze_grid_backlinks_exception.py"],
     "page_writers_keep_head": [sys.executable, "tests/test_page_writers_keep_head.py"],
     "free_router_deadline": [sys.executable, "tests/test_free_router_deadline.py"],
+    "meta_length_never_blocks": [sys.executable, "tests/test_meta_length_never_blocks.py"],
     "measured_urls_resolve": [sys.executable, "scripts/validators/validate_measured_urls_resolve.py"],
     "host_canonicalization": [sys.executable, "scripts/validators/validate_host_canonicalization.py"],
     "host_canonicalization_behaviour": [sys.executable, "tests/test_host_canonicalization.py"],

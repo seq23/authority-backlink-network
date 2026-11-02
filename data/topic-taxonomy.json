@@ -2,7 +2,7 @@
   "schema": "authority-topic-taxonomy-v1",
   "note": "Which topic hub each published page belongs to, keyed on the cluster the page already records for itself: the Topic row in its scope table (autopilot pages), the cluster field in content-bank/cluster-articles/*.json (hand-authored pages), or the Topic context line (backlink seed pages). Nothing here re-topics a page; it groups clusters that were already recorded. Every cluster present in the library appears exactly once, and scripts/build_site_navigation.py fails rather than publishing if a page's cluster is unmapped, if two hubs claim one cluster, or if a hub would ship with fewer than minimum_hub_members pages.",
   "minimum_hub_members": 3,
-  "minimum_hub_members_note": "A hub with no members carries no outbound editorial link and fails the conversion_path check in validate_content_pattern_contract.js; a hub with one member is a redirect wearing a costume. The clusters below are merged until every hub is worth navigating - the smallest in this file holds 8 pages.",
+  "minimum_hub_members_note": "A hub with no members carries no outbound editorial link; a hub with one member is a redirect wearing a costume. The clusters below are merged until every hub is worth navigating - the smallest in this file holds 8 pages.",
   "publications": {
     "founder": {
       "hubs": [
