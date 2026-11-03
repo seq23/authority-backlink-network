@@ -1,62 +1,62 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-11-02",
+  "run_at": "2026-11-03",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 8,
     "allowance": 0,
-    "window_start": "2026-10-27",
-    "window_end": "2026-11-02"
+    "window_start": "2026-10-28",
+    "window_end": "2026-11-03"
   },
   "deferred": 4,
   "queue": [
     {
       "publication": "professional-resources",
-      "cluster": "wave hair care routines",
-      "audience": "horse buyer",
-      "format": "operator playbook",
-      "intent": "when timing matters",
-      "modifier": "plain-English",
-      "intended_title": "Wave Hair Care Routines: Plain-English Operator Playbook When Timing Matters",
+      "cluster": "scalp care routines",
+      "audience": "healthcare team lead",
+      "format": "comparison guide",
+      "intent": "before you call",
+      "modifier": "citation-friendly",
+      "intended_title": "Scalp Care Routines: Citation-Friendly Comparison Guide Before You Call",
       "target_brand": "Glory By Us",
       "target_url": "https://glorybyus.com/collections/wave-hair-products",
-      "signature": "6741239989dc7c3827818833539817150ff0bdacfa4715884d6782726141254b",
-      "deferred_on": "2026-11-02",
+      "signature": "54396f505e17456db24a7736b67c93779a1732e2aadc582fb424d93afa17739b",
+      "deferred_on": "2026-11-03",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "founder-operator",
-      "cluster": "virtual agency os authority",
-      "audience": "executive assistant",
-      "format": "timeline guide",
-      "intent": "before you choose",
-      "modifier": "AEO-ready",
-      "intended_title": "Virtual Agency Os Authority: Aeo-Ready Timeline Guide Before You Choose",
-      "target_brand": "Virtual Agency OS",
-      "target_url": "https://virtualagency-os.com/learn/",
-      "signature": "168c1e46bef9e5f0bee850aee0231e77beebe3a792c43f0029ef0f76a75dfc8d",
-      "deferred_on": "2026-11-02",
-      "reason": "weekly_publication_cap"
+      "deferred_on": "2026-11-03",
+      "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-11-02",
-      "reason": "no_topically_eligible_affiliated_link"
+      "cluster": "wedding-day timeline",
+      "audience": "last-minute party planner",
+      "format": "question checklist",
+      "intent": "when timing matters",
+      "modifier": "comparison-friendly",
+      "intended_title": "Wedding-Day Timeline: Comparison-Friendly Question Checklist When Timing Matters",
+      "target_brand": "Dream Wedding Builder",
+      "target_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+      "signature": "01a099764fde757232beae5d6febdbe3ae91e97f2c1c1d6808a825334d12b51f",
+      "deferred_on": "2026-11-03",
+      "reason": "weekly_publication_cap"
     },
     {
       "publication": "professional-resources",
       "cluster": "dental decision resources",
-      "audience": "horse buyer",
-      "format": "buyer guide",
-      "intent": "before you choose",
-      "modifier": "GEO-ready",
-      "intended_title": "Dental Decision Resources: Geo-Ready Buyer Guide Before You Choose",
+      "audience": "HR leader",
+      "format": "budget/planning note",
+      "intent": "when you are comparing options",
+      "modifier": "low-risk",
+      "intended_title": "Dental Decision Resources: Low-Risk Budget/Planning Note When You Are Comparing Options",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "e9643e285c978c22a97e60df88cb5605e5a585c735590426b3268a4a0b984682",
-      "deferred_on": "2026-11-02",
+      "signature": "2cbe8b10eef53d1856a60f64eed0f6f156f55e8a4f2a601d13729692ba096c8d",
+      "deferred_on": "2026-11-03",
       "reason": "weekly_publication_cap"
     }
   ]
