@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-10-03..2026-10-30",
-  "gsc_collected_at": "2026-11-02T15:26:46+00:00",
+  "gsc_window": "2026-10-04..2026-10-31",
+  "gsc_collected_at": "2026-11-03T15:25:36+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -69,18 +69,18 @@
       "page_kind": "article",
       "file": "sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page_title": "Which Community Metrics to Report Monthly and Which to Ignore",
-      "impressions": 34,
-      "visible_query_impressions": 12,
+      "impressions": 33,
+      "visible_query_impressions": 11,
       "anonymised_impressions": 22,
-      "weighted_position": 51.2,
-      "page_impressions": 34,
-      "page_position": 42.7,
+      "weighted_position": 49.5,
+      "page_impressions": 33,
+      "page_position": 41.5,
       "query_count": 3,
       "queries": [
         {
           "query": "community reports",
-          "impressions": 8,
-          "position": 80.1
+          "impressions": 7,
+          "position": 80
         },
         {
           "query": "monthly metrics",
@@ -111,12 +111,12 @@
       "page_kind": "home",
       "file": "sites/founder-operator/index.html",
       "page_title": "Founder Operator Library",
-      "impressions": 23,
+      "impressions": 22,
       "visible_query_impressions": 6,
-      "anonymised_impressions": 17,
+      "anonymised_impressions": 16,
       "weighted_position": 7.0,
-      "page_impressions": 23,
-      "page_position": 6.6,
+      "page_impressions": 22,
+      "page_position": 6.5,
       "query_count": 2,
       "queries": [
         {
@@ -323,6 +323,34 @@
       "reason": "rank 10 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
+      "family": "off-page: i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010? @ /ai-marketing-operations-resources",
+      "intent": "off_page",
+      "page": "/ai-marketing-operations-resources",
+      "page_kind": "article",
+      "file": "sites/founder-operator/ai-marketing-operations-resources.html",
+      "page_title": "AI Marketing Operations Resources",
+      "impressions": 3,
+      "visible_query_impressions": 3,
+      "anonymised_impressions": 0,
+      "weighted_position": 87.7,
+      "page_impressions": 5,
+      "page_position": 55.4,
+      "query_count": 1,
+      "queries": [
+        {
+          "query": "i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010?",
+          "impressions": 3,
+          "position": 87.7
+        }
+      ],
+      "rank": 11,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 11 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
       "family": "What Actually Drives the Cost of a Virtual Event Production @ /virtual-event-production-cost-drivers",
       "intent": "page",
       "page": "/virtual-event-production-cost-drivers",
@@ -337,12 +365,12 @@
       "page_position": 4.5,
       "query_count": 0,
       "queries": [],
-      "rank": 11,
+      "rank": 12,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 11 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 12 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Corrections policy and log for Founder Operator Library @ /corrections",
@@ -359,12 +387,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 12,
+      "rank": 13,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 12 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 13 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "AI execution, delegation and operating cadence @ /topics/ai-execution-and-delegation",
@@ -379,28 +407,6 @@
       "weighted_position": 22.5,
       "page_impressions": 2,
       "page_position": 22.5,
-      "query_count": 0,
-      "queries": [],
-      "rank": 13,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 13 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "AI Marketing Operations Resources @ /ai-marketing-operations-resources",
-      "intent": "page",
-      "page": "/ai-marketing-operations-resources",
-      "page_kind": "article",
-      "file": "sites/founder-operator/ai-marketing-operations-resources.html",
-      "page_title": "AI Marketing Operations Resources",
-      "impressions": 2,
-      "visible_query_impressions": 0,
-      "anonymised_impressions": 2,
-      "weighted_position": 46.8,
-      "page_impressions": 4,
-      "page_position": 46.8,
       "query_count": 0,
       "queries": [],
       "rank": 14,
@@ -439,6 +445,28 @@
       "reason": "rank 15 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
+      "family": "AI Marketing Operations Resources @ /ai-marketing-operations-resources",
+      "intent": "page",
+      "page": "/ai-marketing-operations-resources",
+      "page_kind": "article",
+      "file": "sites/founder-operator/ai-marketing-operations-resources.html",
+      "page_title": "AI Marketing Operations Resources",
+      "impressions": 2,
+      "visible_query_impressions": 0,
+      "anonymised_impressions": 2,
+      "weighted_position": 55.4,
+      "page_impressions": 5,
+      "page_position": 55.4,
+      "query_count": 0,
+      "queries": [],
+      "rank": 16,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 16 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
       "family": "moderation and community management @ /daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
       "intent": "page",
       "page": "/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
@@ -457,34 +485,6 @@
           "query": "moderation and community management",
           "impressions": 1,
           "position": 84
-        }
-      ],
-      "rank": 16,
-      "basis": [],
-      "qualifies": false,
-      "strengthened_pages": [],
-      "status": "not_top_family",
-      "reason": "rank 16 of 32 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
-    },
-    {
-      "family": "off-page: i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010? @ /ai-marketing-operations-resources",
-      "intent": "off_page",
-      "page": "/ai-marketing-operations-resources",
-      "page_kind": "article",
-      "file": "sites/founder-operator/ai-marketing-operations-resources.html",
-      "page_title": "AI Marketing Operations Resources",
-      "impressions": 2,
-      "visible_query_impressions": 2,
-      "anonymised_impressions": 0,
-      "weighted_position": 86.5,
-      "page_impressions": 4,
-      "page_position": 46.8,
-      "query_count": 1,
-      "queries": [
-        {
-          "query": "i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010?",
-          "impressions": 2,
-          "position": 86.5
         }
       ],
       "rank": 17,
