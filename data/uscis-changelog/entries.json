@@ -9,6 +9,57 @@
   ],
   "entries": [
     {
+      "id": "2026-11-03-uscis-federal-register",
+      "date_observed": "2026-11-03",
+      "checked_at": "2026-11-03T14:17:45+00:00",
+      "source_id": "uscis-federal-register",
+      "source_url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "source_title": "USCIS documents in the Federal Register",
+      "publisher": "Office of the Federal Register",
+      "headline": "Two 60-day PRA notices replaced by two 30-day PRA notices",
+      "summary": "The page previously listed two 60-day notices from September 14, 2026, for extensions of currently approved collections for Form I-129F and Form I-102. It now lists a 30-day notice from November 2, 2026, for an extension of a collection for civics and citizenship teachers, and a 30-day notice from October 30, 2026, for a new collection.",
+      "quotes": [
+        {
+          "side": "removed",
+          "text": "2026-09-14 | Notice | FR Doc. 2026-18679 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Petition for Alien Fiancé(e)"
+        },
+        {
+          "side": "removed",
+          "text": "FR Doc. 2026-18679 action: 60-day notice."
+        },
+        {
+          "side": "added",
+          "text": "2026-11-02 | Notice | FR Doc. 2026-22320 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application for Free Training for Civics and Citizenship Teachers of Adults; Civics and Citizenship Toolkit"
+        },
+        {
+          "side": "added",
+          "text": "FR Doc. 2026-22320 action: 30-Day notice."
+        }
+      ],
+      "evidence": {
+        "previous_snapshot_sha256": "5ecaeaff49a7b46f9988c9cf5d675b14a3052bbcb529ebcbe77ce4862871bf9a",
+        "current_snapshot_sha256": "d867a26422daf5f8f2d85620e1a867cc50779844255102035cd7b0c8988054a2",
+        "previous_captured": "2026-10-27T18:38:54+00:00",
+        "added": [
+          "2026-11-02 | Notice | FR Doc. 2026-22320 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application for Free Training for Civics and Citizenship Teachers of Adults; Civics and Citizenship Toolkit",
+          "FR Doc. 2026-22320 action: 30-Day notice.",
+          "FR Doc. 2026-22320 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and clearance in accordance with the Paperwork Reduction Act of 1995. The purpose of this notice is to allow an additional 30 days for public comments.",
+          "2026-10-30 | Notice | FR Doc. 2026-22139 | Agency Information Collection Activities; New Collection",
+          "FR Doc. 2026-22139 action: 30-Day notice.",
+          "FR Doc. 2026-22139 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and clearance in accordance with the Paperwork Reduction Act of 1995. The purpose of this notice is to allow an additional 30 days for public comments."
+        ],
+        "removed": [
+          "2026-09-14 | Notice | FR Doc. 2026-18679 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Petition for Alien Fiancé(e)",
+          "FR Doc. 2026-18679 action: 60-day notice.",
+          "FR Doc. 2026-18679 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e, the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments.",
+          "2026-09-14 | Notice | FR Doc. 2026-18675 | Agency Information Collection Activities; Extension, Without Change, of a Currently Approved Collection: Application for Replacement/Initial Nonimmigrant Arrival-Departure Document",
+          "FR Doc. 2026-18675 action: 60-day notice.",
+          "FR Doc. 2026-18675 abstract: The Department of Homeland Security (DHS), U.S. Citizenship and Immigration Services (USCIS) invites the general public and other Federal agencies to comment upon this proposed extension of a currently approved collection of information. In accordance with the Paperwork Reduction Act (PRA) of 1995, the information collection notice is published in the Federal Register to obtain comments regarding the nature of the information collection, the categories of respondents, the estimated burden (i.e. the time, effort, and resources used by the respondents to respond), the estimated cost to the respondent, and the actual information collection instruments."
+        ]
+      },
+      "model": "free-router"
+    },
+    {
       "id": "2026-10-27-uscis-federal-register",
       "date_observed": "2026-10-27",
       "checked_at": "2026-10-27T18:38:54+00:00",

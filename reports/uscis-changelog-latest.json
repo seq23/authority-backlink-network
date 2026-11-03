@@ -1,6 +1,6 @@
 {
   "schema": "uscis-changelog-run-v1",
-  "checked_at": "2026-10-27T18:38:54+00:00",
+  "checked_at": "2026-11-03T14:17:45+00:00",
   "offline": false,
   "sources_declared": 4,
   "sources_checked": 1,
@@ -10,15 +10,15 @@
       "source": "uscis-federal-register",
       "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
       "status": "ENTRY_PUBLISHED",
-      "entry_id": "2026-10-27-uscis-federal-register",
-      "headline": "Two September 2026 PRA notices replaced by two October 2026 PRA notices"
+      "entry_id": "2026-11-03-uscis-federal-register",
+      "headline": "Two 60-day PRA notices replaced by two 30-day PRA notices"
     },
     {
       "source": "uscis-filing-fees",
       "url": "https://www.uscis.gov/forms/filing-fees",
       "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
       "best_effort": true,
-      "consecutive_failures": 11,
+      "consecutive_failures": 12,
       "last_success": "2026-09-02T00:27:25+00:00",
       "detail": "https://www.uscis.gov/forms/filing-fees: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     },
@@ -27,7 +27,7 @@
       "url": "https://www.uscis.gov/forms/forms-updates",
       "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
       "best_effort": true,
-      "consecutive_failures": 11,
+      "consecutive_failures": 12,
       "last_success": "2026-09-02T00:27:25+00:00",
       "detail": "https://www.uscis.gov/forms/forms-updates: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     },
@@ -36,7 +36,7 @@
       "url": "https://www.uscis.gov/forms/all-forms",
       "status": "NAMED_STOP_BEST_EFFORT_UNREACHABLE",
       "best_effort": true,
-      "consecutive_failures": 11,
+      "consecutive_failures": 12,
       "last_success": "2026-09-02T00:27:25+00:00",
       "detail": "https://www.uscis.gov/forms/all-forms: HTTP Error 403: Forbidden (tried 3 user agent(s)) -- the snapshot was NOT advanced and this source is NOT being reported as unchanged. This source is declared best_effort, so it does not turn the run red; it is disclosed on the published page instead."
     }
