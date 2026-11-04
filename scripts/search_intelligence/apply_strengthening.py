@@ -72,7 +72,11 @@ def faq_node(entry: dict) -> dict:
 
 def render_page(text: str, entry: dict) -> str:
     derived = bool(entry.get("derived_from_page"))
+    authored = re.search(r'<p class="definition"(?: data-strengthened="definition" data-from="authored")?>(.*?)</p>', text, re.S) if derived else None
     text = strip_blocks(text)
+    # The generator now emits a definition too. The measured entry owns this
+    # slot on a strengthened page; do not stack two definitions under its H1.
+    text = re.sub(r'<p class="definition">.*?</p>', '', text, flags=re.S)
     if not derived:
         pubs = json.loads((m.ROOT / "data/publications.json").read_text())
         pub = next(p for p in pubs if entry["file"].startswith(p["folder"] + "/"))
@@ -86,7 +90,9 @@ def render_page(text: str, entry: dict) -> str:
     if h1 < 0:
         raise ValueError(f"{entry['file']}: no </h1>")
     at = h1 + len("</h1>")
-    if derived and entry.get("definition_html"):
+    if authored:
+        definition = f'<p class="definition" data-strengthened="definition" data-from="authored">{authored[1]}</p>'
+    elif derived and entry.get("definition_html"):
         definition = f'<p class="definition" data-strengthened="definition" data-from="dek">{entry["definition_html"]}</p>'
     else:
         definition = f'<p class="definition" data-strengthened="definition">{e(entry["definition"])}</p>'

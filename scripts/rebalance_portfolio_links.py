@@ -323,8 +323,19 @@ def update_registry(rows: list[dict], write: bool) -> tuple[int, int]:
             continue
         key = (row.get("source_path", ""), norm_url(row.get("target_url", "")))
         if key not in moves or not moves[key]:
-            continue
-        r = moves[key].pop(0)
+            # Regeneration can restore the authored URL before this lane runs,
+            # while the ledger still names a previously selected deep target.
+            # Reconcile against the final same-domain placement, or withdraw
+            # the stale claim when no placement remains. Never invent a link.
+            source = ROOT / row.get('source_path', '')
+            if not source.is_file() or row.get('target_url', '') in source.read_text():
+                continue
+            candidates = [r for r in rows if r['rel'] == key[0]
+                          and r['action'] == 'keep'
+                          and host_of(r['new_url']) == host_of(row.get('target_url', ''))]
+            r = candidates[0] if candidates else {'action': 'withdraw'}
+        else:
+            r = moves[key].pop(0)
         if r["action"] == "keep":
             meta_now = registered_meta(r["new_url"])
             stale = any(row.get(f, "") != meta_now.get(k, "") for f, k in (
@@ -345,8 +356,8 @@ def update_registry(rows: list[dict], write: bool) -> tuple[int, int]:
             row["status"] = "withdrawn"
             row["lifecycle_stage"] = "approved_destination"
             row["withdrawn_on"] = today
-            row["withdrawn_reason"] = ("portfolio-link-policy caps: unlinked to keep the target under "
-                                       "25% of this site's portfolio links / 10 links per URL")
+            row["withdrawn_reason"] = ("Placement absent after regeneration or portfolio-link rebalancing; "
+                                       "no live placement is claimed.")
             for k in list((row.get("evidence") or {}).keys()):
                 row["evidence"][k] = False
             withdrawn += 1

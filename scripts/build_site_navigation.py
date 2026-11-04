@@ -202,6 +202,9 @@ def rebuild(write: bool) -> dict:
     unmapped_all: list[str] = []
     empty_hubs: list[str] = []
     thin_hubs: list[str] = []
+    from lib import consolidation
+    if write:
+        consolidation.apply()
     stranded_all: list[str] = []
     written = 0
 
@@ -212,13 +215,15 @@ def rebuild(write: bool) -> dict:
         members, unmapped = assign_members(source, domain, hubs)
         unmapped_all += unmapped
 
-        # An empty hub carries no outbound editorial link and is not navigation. A one-member hub is a redirect wearing a
-        # costume. Neither is ever generated: the taxonomy is corrected instead.
+        # An empty hub still fails. Reviewed consolidation replaces the default
+        # page-count floor with the kept ledger; authored hub content answers
+        # the broader topic even when only one distinct detailed guide remains.
         for hub in hubs:
             count = len(members.get(hub["slug"], []))
+            floor = consolidation.publication(pub["id"]).get("hub_member_floors", {}).get(hub["slug"], TAXONOMY["minimum_hub_members"])
             if count == 0:
                 empty_hubs.append(f'{pub["id"]}/{hub["slug"]}')
-            elif count < TAXONOMY["minimum_hub_members"]:
+            elif count < floor:
                 thin_hubs.append(f'{pub["id"]}/{hub["slug"]} ({count})')
         if empty_hubs or thin_hubs:
             continue

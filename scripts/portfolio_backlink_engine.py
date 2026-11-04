@@ -107,7 +107,7 @@ def render(article,pub):
   {'@type':'Article','headline':title,'datePublished':today,'dateModified':today,'author':{'@type':'Organization','name':pub['title']},'publisher':{'@type':'Organization','name':pub['title']},'about':article['campaign_id'],'mainEntityOfPage':{'@type':'WebPage','@id':page_url}},
   {'@type':'FAQPage','mainEntity':[{'@type':'Question','name':title,'acceptedAnswer':{'@type':'Answer','text':direct}}]},
  ]}
- return f'''<!doctype html>
+ page = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(meta_description.require_title(article.get('seo_title') or title, article['id']))}</title><meta name="description" content="{html.escape(seed_description(article))}"><link rel="canonical" href="{html.escape(page_url)}"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head>
 <body data-backlink-seed-id="{html.escape(article['id'])}"><main class="page"><p><a href="../index.html">← Home</a></p><article><h1>{html.escape(title)}</h1><p class="dek"><strong>Short answer:</strong> {html.escape(direct)}</p><p><em>Updated {today}. This article is designed to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
 <p class="topic-context"><strong>Topic context:</strong> {html.escape(topic_context)}.</p>
@@ -118,6 +118,9 @@ def render(article,pub):
 <h2>Common mistakes</h2><ul>{mistakes}</ul>
 <h2>How to use the related resource</h2><p>The following resource is included because it directly addresses this article’s decision area. Review its scope and boundaries before using it: <a href="{html.escape(target)}"{rel_attr(target)}>{html.escape(anchor)}</a>. The link is an affiliated editorial reference, not an independent endorsement, ranking, or guarantee.</p><p>A useful next step is to compare the resource against the questions above. Confirm that the destination is current, that its stated purpose matches your situation, and that any legal, medical, financial, contractual, or clinical question is handled by an appropriately qualified person.</p>
 <h2>Editorial and affiliation note</h2><p>{disclosure}</p><p class="meta">Authority Network campaign: {html.escape(article['campaign_id'])}. Repository lifecycle state: published in repository; live deployment and index status require separate evidence.</p></article></main></body></html>'''
+ from lib.quality_seed import upgrade
+ return upgrade(page, {**article, 'quality_topic': topic_context}, pub)
+
 
 def refresh_assets():
  # <lastmod> used to be date.today() for every URL, so any run of this script

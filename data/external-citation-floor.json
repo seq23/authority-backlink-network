@@ -11,17 +11,20 @@
     "",
     "Recorded 2026-09-01, after the Memphis wedding cost dataset added 21 verified",
     "vendor sources to the memphis lane and five federal and standards-body sources",
-    "were added across the founder, memphis and professional lanes."
+    "were added across the founder, memphis and professional lanes.",
+    "2026-11-03: Founder/Memphis page floors now equal EVERY kept substantive content page in the consolidation ledger. Domain breadth floors remain unchanged. The validator derives this count each run; zero-page and zero-citation guards remain."
   ],
   "recorded": "2026-09-01",
   "floors": {
     "founder": {
-      "pages_citing_outside": 94,
-      "distinct_external_domains": 9
+      "pages_citing_outside": 33,
+      "distinct_external_domains": 9,
+      "kept_ledger": "data/page-quality-consolidation.json"
     },
     "memphis": {
-      "pages_citing_outside": 92,
-      "distinct_external_domains": 30
+      "pages_citing_outside": 33,
+      "distinct_external_domains": 30,
+      "kept_ledger": "data/page-quality-consolidation.json"
     },
     "professional": {
       "pages_citing_outside": 398,

@@ -18,6 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from lib import consolidation
+from lib.site_urls import published_pages
 from build_host_canonicalization import plan  # noqa: E402
 
 # (request URL, expected Location) with {d} the canonical domain. "next" means
@@ -61,14 +63,40 @@ def main() -> int:
                 failures.append(f"{rel}: no publication in data/publications.json owns this path")
                 continue
             domain = domains[folder]
-            urls = [url.format(d=domain) for url, _ in CASES]
+            cases = list(CASES)
+            pub = next((p for p in consolidation.publications().values() if p['domain'] == domain), None)
+            if pub:
+                from authority_v4_autopilot import build_brief
+                if build_brief(pub['folder'].split('/')[-1], 0, {}) is not None:
+                    failures.append('permutation publisher still creates a brief after consolidation')
+                existing = {r for r, _, _ in published_pages(ROOT / pub['folder'], domain) if r != '404.html'}
+                errors = consolidation.problems(pub, existing)
+                failures.extend(errors)
+                # Negative probes: a missing kept page, a revived retired asset,
+                # a missing target and a redirect chain must all be rejected.
+                if not consolidation.problems(pub, existing - {pub['kept'][0]}):
+                    failures.append('missing kept page accepted')
+                if not consolidation.problems(pub, existing | {pub['retired'][0]}):
+                    failures.append('recreated retired page accepted')
+                for destination in ('/missing-quality-destination', next(iter(pub['redirects']))):
+                    broken = {**pub, 'redirects': {**pub['redirects'], '/broken': destination}}
+                    if not consolidation.problems(broken, existing):
+                        failures.append('broken consolidation redirect accepted')
+                for source, target in pub['redirects'].items():
+                    for host in (domain, 'www.' + domain):
+                        cases.append(('https://' + host + source + '?ref=quality',
+                                      'https://' + domain + target + '?ref=quality'))
+                # The destination must pass through to a real final asset.
+                for target in set(pub['redirects'].values()):
+                    cases.append(('https://' + domain + target, 'next'))
+            urls = [url.format(d=domain) for url, _ in cases]
             proc = subprocess.run(["node", str(harness), (ROOT / rel).as_uri(), json.dumps(urls)],
                                   capture_output=True, text=True, cwd=ROOT)
             if proc.returncode != 0:
                 failures.append(f"{rel}: middleware did not run: {proc.stderr.strip()[-300:]}")
                 continue
             checked += 1
-            for (url, want_raw), (_, location, status) in zip(CASES, json.loads(proc.stdout)):
+            for (url, want_raw), (_, location, status) in zip(cases, json.loads(proc.stdout)):
                 want = want_raw.format(d=domain)
                 if want == "next":
                     if location != "next":

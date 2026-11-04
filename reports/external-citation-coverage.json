@@ -4,11 +4,11 @@
   "rel_policy": "editorial citations carry rel=\"noopener\" only; affiliated portfolio links keep rel=\"sponsored nofollow\"",
   "per_publication": {
     "founder": {
-      "pages": 103,
-      "cited": 94,
+      "pages": 42,
+      "cited": 33,
       "skipped": 9,
-      "written": 24,
-      "citations": 283,
+      "written": 20,
+      "citations": 94,
       "authored": 4,
       "distinct_domains": [
         "ada.gov",
@@ -23,11 +23,11 @@
       ]
     },
     "memphis": {
-      "pages": 103,
-      "cited": 92,
-      "skipped": 11,
-      "written": 21,
-      "citations": 337,
+      "pages": 45,
+      "cited": 30,
+      "skipped": 15,
+      "written": 19,
+      "citations": 119,
       "authored": 5,
       "distinct_domains": [
         "access-board.gov",
@@ -63,14 +63,15 @@
       ]
     },
     "professional": {
-      "pages": 418,
-      "cited": 398,
-      "skipped": 20,
-      "written": 33,
-      "citations": 1210,
-      "authored": 7,
+      "pages": 424,
+      "cited": 403,
+      "skipped": 21,
+      "written": 34,
+      "citations": 1233,
+      "authored": 8,
       "distinct_domains": [
         "988lifeline.org",
+        "aad.org",
         "aaoms.org",
         "ada.gov",
         "ada.org",
@@ -84,6 +85,7 @@
         "extension.psu.edu",
         "fda.gov",
         "fdic.gov",
+        "federalregister.gov",
         "files.consumerfinance.gov",
         "fincen.gov",
         "horsecouncil.org",
@@ -109,13 +111,14 @@
     }
   },
   "totals": {
-    "pages": 624,
-    "pages_citing": 584,
-    "citations": 1830,
-    "distinct_domains": 70
+    "pages": 511,
+    "pages_citing": 466,
+    "citations": 1446,
+    "distinct_domains": 72
   },
   "external_domains": [
     "988lifeline.org",
+    "aad.org",
     "aaoms.org",
     "access-board.gov",
     "ada.gov",
@@ -140,6 +143,7 @@
     "extension.psu.edu",
     "fda.gov",
     "fdic.gov",
+    "federalregister.gov",
     "files.consumerfinance.gov",
     "fincen.gov",
     "forthelovebirds.com",

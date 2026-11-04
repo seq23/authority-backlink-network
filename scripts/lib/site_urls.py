@@ -99,6 +99,9 @@ def published_pages(source: Path, domain: str) -> list[tuple[str, str, str]]:
                        key=lambda p: p.relative_to(source).as_posix()):
         rel = relative_path(path, source)
         text = path.read_text(encoding="utf-8", errors="ignore")
+        from lib.consolidation import retired
+        if retired("sites/" + source.name, rel):
+            continue
         if not is_publishable(rel, text):
             continue
         out.append((rel, page_url(domain, rel), text))

@@ -66,7 +66,32 @@
         "Assuming strategy automatically produces daily execution.",
         "Ignoring documentation and continuity risk."
       ],
-      "disclaimer": "This comparison is educational and does not promise lower costs, faster growth, or specific community outcomes."
+      "disclaimer": "This comparison is educational and does not promise lower costs, faster growth, or specific community outcomes.",
+      "comparison": {
+        "headers": [
+          "Question",
+          "Managed community operations",
+          "In-house team"
+        ],
+        "rows": [
+          [
+            "Who owns policy?",
+            "Confirm the internal sponsor and operator’s delegated authority.",
+            "Name the internal decision maker and escalation route."
+          ],
+          [
+            "Who covers daily work?",
+            "Confirm contracted hours, moderation coverage and handoff responsibilities.",
+            "Assign staff time, backup coverage and onboarding ownership."
+          ],
+          [
+            "How is the work reviewed?",
+            "Agree reporting deliverables and review the contract against actual member needs.",
+            "Review the charter, staffing and member outcomes in the team’s operating cadence."
+          ]
+        ]
+      },
+      "definition": "Managed community operations and an internal community team are different ways to assign recurring work. Compare the responsibilities that need internal context with those requiring additional operating capacity. Identify who owns strategy, programming, moderation, analytics and member support before deciding which work an outside partner can usefully handle."
     },
     {
       "id": "caas-platform",
@@ -132,7 +157,8 @@
         "Ignoring staff and platform costs.",
         "Changing metrics every time performance is weak."
       ],
-      "disclaimer": "This framework is for planning and measurement discipline. It does not guarantee revenue, retention, referrals, or cost savings."
+      "disclaimer": "This framework is for planning and measurement discipline. It does not guarantee revenue, retention, referrals, or cost savings.",
+      "definition": "Community return on investment connects member value, observable behaviour and business contribution. Define the outcomes the community could influence, record evidence of that influence and compare it with the resources used. Avoid attributing every renewal, referral or sale to community activity when other factors also contributed."
     },
     {
       "id": "caas-staffing",
@@ -165,7 +191,8 @@
         "Treating analytics as an end-of-quarter task.",
         "Depending on one person with no documentation or backup."
       ],
-      "disclaimer": "Staffing needs vary by audience, risk, platform, scale, and program goals. This page does not prescribe a universal team size."
+      "disclaimer": "Staffing needs vary by audience, risk, platform, scale, and program goals. This page does not prescribe a universal team size.",
+      "definition": "Community staffing assigns responsibility for strategy, programming, member experience, moderation, operations, analytics and escalation. One person may cover several roles, but each responsibility still needs an owner and a backup arrangement. Define the work and its frequency before choosing job titles, headcount or an external operations partner."
     },
     {
       "id": "caas-commercial",
@@ -264,7 +291,8 @@
         "Scheduling transitions with no travel or setup buffer.",
         "Leaving the couple responsible for day-of coordination."
       ],
-      "disclaimer": "Timelines depend on vendor contracts, venue rules, geography, and event complexity. Confirm details with the responsible professionals."
+      "disclaimer": "Timelines depend on vendor contracts, venue rules, geography, and event complexity. Confirm details with the responsible professionals.",
+      "definition": "A wedding-day timeline is a shared schedule connecting venue access, setup, preparation, photography, transportation, ceremony, reception and breakdown. It identifies dependencies, handoffs and hard venue deadlines alongside planned start times. Build it with vendor input and assign someone to communicate changes so the schedule remains usable on the day."
     },
     {
       "id": "dream-seating",
@@ -297,7 +325,8 @@
         "Using table capacity without checking floor-plan space.",
         "Printing the chart before the RSVP deadline closes."
       ],
-      "disclaimer": "This is event-planning guidance, not a guarantee that every guest preference or relationship can be accommodated."
+      "disclaimer": "This is event-planning guidance, not a guarantee that every guest preference or relationship can be accommodated.",
+      "definition": "A wedding seating chart assigns guests to tables or seats within the venue’s actual layout. Start with capacity, household groups, accessibility and meal requirements, then consider relationships and preferences. Keep unanswered invitations and unresolved placements visible so changes can be made without rebuilding the entire plan."
     },
     {
       "id": "dream-checklist",
@@ -364,7 +393,8 @@
         "Failing to record why an option was rejected."
       ],
       "disclaimer": "The builder is an organizational tool. Vendor quality, availability, pricing, and contract terms must be verified directly.",
-      "seo_title": "What to Gather Before Comparing Wedding Vendors"
+      "seo_title": "What to Gather Before Comparing Wedding Vendors",
+      "definition": "A wedding vendor brief records the date, location, guest range, budget boundaries, service scope and style priorities before quotes are requested. It also names decision makers and practical constraints. Giving vendors the same information makes proposals easier to compare and reduces repeated conversations about missing details."
     },
     {
       "id": "dream-payment-calendar",
@@ -397,7 +427,8 @@
         "Adding upgrades without updating the payment calendar.",
         "Forgetting post-event costs and returns."
       ],
-      "disclaimer": "This page provides planning education only and is not financial, legal, or contractual advice."
+      "disclaimer": "This page provides planning education only and is not financial, legal, or contractual advice.",
+      "definition": "A wedding payment calendar records deposits, instalments and final balances against the dates they are due. It helps couples see when several commitments fall together, including transport, attire and other purchases. Update it whenever a contract changes and distinguish confirmed obligations from estimates still awaiting a quote."
     },
     {
       "id": "dianne-housing",
@@ -1097,7 +1128,10 @@
         "Assuming assisted living can manage advancing dementia indefinitely."
       ],
       "disclaimer": "This is an educational planning framework. Care needs, licensing, pricing and payment options must be confirmed with the community, a physician and, where relevant, a benefits counselor.",
-      "freeze_exception": "grid-backlinks-memphis-senior-care-2026-10-31"
+      "freeze_exception": "grid-backlinks-memphis-senior-care-2026-10-31",
+      "source_ids": [
+        "medicaid-ltss"
+      ]
     },
     {
       "id": "t2r-twenty-minutes-a-day",
@@ -1109,7 +1143,7 @@
       "campaign_id": "time-2-read-authority",
       "target_url": "https://time-2-read.com/is-reading-20-minutes-a-day-enough",
       "anchor": "is reading 20 minutes a day enough",
-      "direct_answer": "A reliable home reading habit comes from a fixed time, a short visible goal and a log the child can see filling up. Twenty minutes a day is a common school target; the consistency matters more than the length of any one session, so start where the child succeeds and add minutes once the routine holds.",
+      "direct_answer": "A home reading routine is a repeatable time and place for choosing a book, reading together and recording what was read. For a twenty-minute plan, agree the session with the child and adjust the material or duration when needed. This is a planning example, not a measured reading-gain claim.",
       "decision_factors": [
         "Pick one time of day that already happens every day, such as after dinner or before bed.",
         "Keep the goal small enough that the child finishes it most days.",
@@ -1131,7 +1165,10 @@
         "Dropping the log once the first week goes well."
       ],
       "disclaimer": "This is a general family routine framework. Reading targets and any concerns about reading development should be discussed with the child's teacher or school.",
-      "freeze_exception": "grid-backlinks-time-2-read-2026-10-31"
+      "freeze_exception": "grid-backlinks-time-2-read-2026-10-31",
+      "source_ids": [
+        "ies-reading-foundations"
+      ]
     },
     {
       "id": "hwk-measured-or-inferred",
@@ -1233,7 +1270,10 @@
         "Leaving family contributions as an unspoken expectation."
       ],
       "disclaimer": "This is an educational planning framework. Eligibility rules, benefits and community policies change and must be confirmed with the program, the community and a qualified elder-law or benefits professional.",
-      "freeze_exception": "grid-backlinks-memphis-senior-care-2026-10-31"
+      "freeze_exception": "grid-backlinks-memphis-senior-care-2026-10-31",
+      "source_ids": [
+        "medicaid-ltss"
+      ]
     }
   ]
 }
