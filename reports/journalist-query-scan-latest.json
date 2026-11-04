@@ -1,17 +1,50 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-11-04T13:03:57+00:00",
-  "messages_read": 0,
-  "digests_read": 0,
-  "queries_ingested": 0,
+  "run_at": "2026-11-04T19:19:17+00:00",
+  "messages_read": 1,
+  "digests_read": 1,
+  "queries_ingested": 8,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 0,
-  "dropped_as_ungroundable": 0,
+  "dropped_by_beat_filter": 7,
+  "dropped_as_ungroundable": 1,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [],
-  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [
+    {
+      "summary": "How Do You Stress-Test A Balance Transfer Payment?",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Source for parents on how to spot holiday scams",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "LAST MINUTE INCLUSIONS - Christmas Gift Guides 2026",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking home stagers — house flippers, real estate agents, interior decorators - and your favorite under-$30 home upgrad",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Seeking Women 40+ With Personal Stories of Rediscovery, Change, and New Beginnings",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "LAST CALL!!! 2026 Holiday Gift Guide",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Must-Visit Midwest Destinations for 2027",
+      "why": "matches no declared beat"
+    },
+    {
+      "summary": "Ecommerce SEO experts: What tactic actually moved organic revenue for a store in 2026?",
+      "why": "The available facts concern wedding vendor pricing datasets and USCIS form tracking, not ecommerce SEO tactics or revenue results."
+    }
+  ],
+  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
