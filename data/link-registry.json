@@ -1270,12 +1270,12 @@
     "target_domain": "virtualagency-os.com",
     "brand": "Virtual Agency OS",
     "link_type": "owned-authority-citation",
-    "status": "withdrawn",
+    "status": "consolidated",
     "score": 88,
     "target_brand_id": "virtual-agency-os",
     "target_url": "https://virtualagency-os.com/learn/",
     "anchor": "Virtual Agency OS learning library",
-    "lifecycle_stage": "approved_destination",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -1287,7 +1287,9 @@
     "quality_action": "RETARGETED_CONTEXTUALLY",
     "campaign_id": "legacy-context-repair",
     "withdrawn_on": "2026-10-11",
-    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL"
+    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/founder-operator/topics/hiring-and-lean-team-stack.html"
   },
   {
     "date": "2026-07-08",
@@ -3197,8 +3199,8 @@
     "campaign_id": "virtual-agency-os-authority",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -3210,7 +3212,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-10-11",
-    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL"
+    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/founder-operator/topics/hiring-and-lean-team-stack.html"
   },
   {
     "date": "2026-07-12",
@@ -3234,8 +3238,8 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -3247,7 +3251,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-08-28",
-    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here."
+    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here.",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-07-12",
@@ -4231,8 +4237,8 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -4244,7 +4250,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-08-28",
-    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here."
+    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here.",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-07-15",
@@ -4562,8 +4570,8 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -4575,7 +4583,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-08-28",
-    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here."
+    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here.",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-07-16",
@@ -5560,8 +5570,8 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -5573,7 +5583,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-08-28",
-    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here."
+    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here.",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-07-19",
@@ -8188,8 +8200,8 @@
     "campaign_id": "virtual-agency-os-authority",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -8201,7 +8213,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-10-11",
-    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL"
+    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/founder-operator/topics/hiring-and-lean-team-stack.html"
   },
   {
     "date": "2026-07-27",
@@ -10554,8 +10568,8 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -10567,7 +10581,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-08-28",
-    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here."
+    "withdrawn_reason": "brand_page_share_cap: the citation was removed from the page to bring the brand back under hard_limits.max_brand_page_share_per_publication. The destination is still approved; no page currently cites it from here.",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-03",
@@ -10850,8 +10866,8 @@
     "campaign_id": "virtual-agency-os-authority",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -10863,7 +10879,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-10-11",
-    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL"
+    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/founder-operator/topics/hiring-and-lean-team-stack.html"
   },
   {
     "date": "2026-08-04",
@@ -11220,18 +11238,20 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "published",
-    "lifecycle_stage": "live_verified",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
-      "repository_rendered": true,
-      "deployed": true,
-      "live_verified": true,
-      "discoverable": true,
+      "repository_rendered": false,
+      "deployed": false,
+      "live_verified": false,
+      "discoverable": false,
       "indexed": false,
       "search_visibility_observed": false,
       "ai_cited": false
     },
-    "score": 80
+    "score": 80,
+    "pre_consolidation_status": "published",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-05",
@@ -12220,13 +12240,13 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "published",
-    "lifecycle_stage": "live_verified",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
-      "repository_rendered": true,
-      "deployed": true,
-      "live_verified": true,
-      "discoverable": true,
+      "repository_rendered": false,
+      "deployed": false,
+      "live_verified": false,
+      "discoverable": false,
       "indexed": false,
       "search_visibility_observed": false,
       "ai_cited": false
@@ -12234,7 +12254,9 @@
     "score": 80,
     "previous_target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
     "retargeted_on": "2026-10-11",
-    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title"
+    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title",
+    "pre_consolidation_status": "published",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-09",
@@ -12517,8 +12539,8 @@
     "campaign_id": "virtual-agency-os-authority",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "withdrawn",
-    "lifecycle_stage": "approved_destination",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
       "repository_rendered": false,
       "deployed": false,
@@ -12530,7 +12552,9 @@
     },
     "score": 80,
     "withdrawn_on": "2026-10-11",
-    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL"
+    "withdrawn_reason": "portfolio-link-policy caps: unlinked to keep the target under 25% of this site's portfolio links / 10 links per URL",
+    "pre_consolidation_status": "withdrawn",
+    "consolidated_to": "sites/founder-operator/topics/hiring-and-lean-team-stack.html"
   },
   {
     "date": "2026-08-10",
@@ -16220,13 +16244,13 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "published",
-    "lifecycle_stage": "live_verified",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
-      "repository_rendered": true,
-      "deployed": true,
-      "live_verified": true,
-      "discoverable": true,
+      "repository_rendered": false,
+      "deployed": false,
+      "live_verified": false,
+      "discoverable": false,
       "indexed": false,
       "search_visibility_observed": false,
       "ai_cited": false
@@ -16234,7 +16258,9 @@
     "score": 80,
     "previous_target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
     "retargeted_on": "2026-10-11",
-    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title"
+    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title",
+    "pre_consolidation_status": "published",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-21",
@@ -16555,18 +16581,20 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "published",
-    "lifecycle_stage": "live_verified",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
-      "repository_rendered": true,
-      "deployed": true,
-      "live_verified": true,
-      "discoverable": true,
+      "repository_rendered": false,
+      "deployed": false,
+      "live_verified": false,
+      "discoverable": false,
       "indexed": false,
       "search_visibility_observed": false,
       "ai_cited": false
     },
-    "score": 80
+    "score": 80,
+    "pre_consolidation_status": "published",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-22",
@@ -17657,13 +17685,13 @@
     "campaign_id": "dream-planning-tools",
     "authority_page_contract_version": "v5",
     "link_type": "affiliated-editorial-backlink",
-    "status": "published",
-    "lifecycle_stage": "live_verified",
+    "status": "consolidated",
+    "lifecycle_stage": "consolidated",
     "evidence": {
-      "repository_rendered": true,
-      "deployed": true,
-      "live_verified": true,
-      "discoverable": true,
+      "repository_rendered": false,
+      "deployed": false,
+      "live_verified": false,
+      "discoverable": false,
       "indexed": false,
       "search_visibility_observed": false,
       "ai_cited": false
@@ -17671,7 +17699,9 @@
     "score": 80,
     "previous_target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
     "retargeted_on": "2026-10-11",
-    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title"
+    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title",
+    "pre_consolidation_status": "published",
+    "consolidated_to": "sites/memphis-local/topics/wedding-day-timelines.html"
   },
   {
     "date": "2026-08-25",
@@ -21953,7 +21983,7 @@
     "campaign_id": "spry-executive-os-authority",
     "target_domain": "spryexecutiveos.com",
     "target_url": "https://spryexecutiveos.com/using-chatgpt-as-a-full-time-executive-coach-and-daily-accountability-partner",
-    "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily…",
+    "anchor": "Using ChatGPT as a Full-Time Executive Coach and Daily\u2026",
     "brand": "Spry Executive OS",
     "link_type": "affiliated-editorial-backlink",
     "status": "published",
@@ -22012,5 +22042,98 @@
     "target_route": "",
     "retargeted_on": "2026-10-31",
     "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title"
+  },
+  {
+    "date": "2026-11-03",
+    "release_date": "2026-08-08",
+    "source_path": "sites/memphis-local/topics/wedding-day-timelines.html",
+    "source_publication": "memphis",
+    "target_brand_id": "dream-wedding-builder",
+    "target_domain": "weddingtimelinetemplate.com",
+    "target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+    "anchor": "Wedding Timeline Template",
+    "brand": "Dream Wedding Builder",
+    "destination_type": "paid_product",
+    "product_id": "wedding-timeline-template",
+    "product_name": "Wedding Timeline Template",
+    "target_route": "/products/timeline-template",
+    "preferred_domain": "weddingtimelinetemplate.com",
+    "used_preferred_domain": true,
+    "publication_family_id": "city-vendor",
+    "city": "Memphis",
+    "campaign_id": "dream-planning-tools",
+    "authority_page_contract_version": "v5",
+    "link_type": "affiliated-editorial-backlink",
+    "status": "published",
+    "lifecycle_stage": "published_in_repository",
+    "evidence": {
+      "repository_rendered": true
+    },
+    "score": 80,
+    "pre_consolidation_status": "published"
+  },
+  {
+    "date": "2026-11-03",
+    "release_date": "2026-08-09",
+    "source_path": "sites/memphis-local/topics/wedding-day-timelines.html",
+    "source_publication": "memphis",
+    "target_brand_id": "dream-wedding-builder",
+    "target_domain": "weddingtimelinetemplate.com",
+    "target_url": "https://weddingtimelinetemplate.com/guides/wedding-rehearsal-timeline",
+    "anchor": "Wedding Rehearsal Timeline",
+    "brand": "Dream Wedding Builder",
+    "destination_type": "educational_guide",
+    "product_id": "",
+    "product_name": "",
+    "target_route": "/guides/wedding-rehearsal-timeline",
+    "preferred_domain": "weddingtimelinetemplate.com",
+    "used_preferred_domain": true,
+    "publication_family_id": "city-vendor",
+    "city": "Memphis",
+    "campaign_id": "dream-planning-tools",
+    "authority_page_contract_version": "v5",
+    "link_type": "affiliated-editorial-backlink",
+    "status": "published",
+    "lifecycle_stage": "published_in_repository",
+    "evidence": {
+      "repository_rendered": true
+    },
+    "score": 80,
+    "previous_target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+    "retargeted_on": "2026-10-11",
+    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title",
+    "pre_consolidation_status": "published"
+  },
+  {
+    "date": "2026-11-03",
+    "release_date": "2026-08-21",
+    "source_path": "sites/memphis-local/topics/wedding-day-timelines.html",
+    "source_publication": "memphis",
+    "target_brand_id": "dream-wedding-builder",
+    "target_domain": "weddingtimelinetemplate.com",
+    "target_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+    "anchor": "Wedding Day Timeline Template",
+    "brand": "Dream Wedding Builder",
+    "destination_type": "educational_guide",
+    "product_id": "",
+    "product_name": "",
+    "target_route": "/guides/wedding-day-timeline-template",
+    "preferred_domain": "weddingtimelinetemplate.com",
+    "used_preferred_domain": true,
+    "publication_family_id": "city-vendor",
+    "city": "Memphis",
+    "campaign_id": "dream-planning-tools",
+    "authority_page_contract_version": "v5",
+    "link_type": "affiliated-editorial-backlink",
+    "status": "published",
+    "lifecycle_stage": "published_in_repository",
+    "evidence": {
+      "repository_rendered": true
+    },
+    "score": 80,
+    "previous_target_url": "https://weddingtimelinetemplate.com/products/timeline-template",
+    "retargeted_on": "2026-10-11",
+    "retargeted_reason": "portfolio-link-policy: deep link to a page the target site is strengthening, anchor = that page's title",
+    "pre_consolidation_status": "published"
   }
 ]

@@ -67,6 +67,17 @@ assert all(r.get('lifecycle_stage') != 'published_in_repository' for r in remove
     'a removed row still claims to be rendered in the repository'
 for row in catchup:
     path = ROOT / row['source_path']
+    if row.get('status') == 'consolidated':
+        ledger = read('data/consolidation-ledger.json')
+        record = next(r for r in ledger if r['folder'] + r['from'] + '.html' == row['source_path'])
+        assert record['status'] == 301 and not path.exists()
+        assert f"{record['from']} {record['to']} 301" in (ROOT / record['folder'] / '_redirects').read_text()
+        target_text = (ROOT / row['consolidated_to']).read_text()
+        if row.get('pre_consolidation_status') == 'published':
+            assert row['target_url'] in target_text
+        elif row.get('pre_consolidation_status') in WITHDRAWN:
+            assert not any(row.get('evidence', {}).values()), 'withdrawn placement regained evidence'
+        continue
     assert path.exists(), row['source_path']
     text = path.read_text(encoding='utf-8', errors='ignore')
     if row.get('status') in WITHDRAWN:

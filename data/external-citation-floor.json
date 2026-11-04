@@ -16,16 +16,21 @@
   "recorded": "2026-09-01",
   "floors": {
     "founder": {
-      "pages_citing_outside": 94,
+      "pages_citing_outside": 89,
       "distinct_external_domains": 9
     },
     "memphis": {
-      "pages_citing_outside": 92,
+      "pages_citing_outside": 82,
       "distinct_external_domains": 30
     },
     "professional": {
       "pages_citing_outside": 398,
       "distinct_external_domains": 35
     }
+  },
+  "consolidation_adjustment": {
+    "date": "2026-11-03",
+    "ledger": "data/consolidation-ledger.json",
+    "because": "Five founder and ten Memphis duplicate daily pages now 301 to substantive hubs. All independent source links are retained at those hubs; hubs are excluded by this check. Domain floors are unchanged."
   }
 }

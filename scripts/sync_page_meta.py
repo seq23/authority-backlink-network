@@ -393,6 +393,9 @@ def plan() -> tuple[list[tuple[str, str, str, str]], list[str], list[str]]:
 
 def main() -> int:
     write = "--write" in sys.argv
+    if write:
+        from lib import search_quality
+        print(f"SEARCH QUALITY: {search_quality.apply()} generated pages repaired or folded")
     expected, _ = expected_meta()
     drift, missing, unidentified = plan()
     print(f"PAGE META SYNC: {len(expected)} page(s) with a known source")
