@@ -143,13 +143,16 @@ def render_footer(pub_title: str, domain: str, editor_addr: str) -> str:
     # link on every published page. See scripts/lib/contact_link.py.
     items += f'<li>{mailto_link(editor_addr)}</li>'
     entity = entity_for(pub_title)
+    attribution = (f'<p class="byline" data-byline="publisher">By <strong>{esc(entity)}</strong> · Publisher: {esc(pub_title)}.</p>'
+                   if pub_title != 'Professional Resource Library' else
+                   f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
+                   f"edited by <strong>{esc(entity)}</strong>. Pages here "
+                   f"carry that byline and no other: this publication names no individual author, "
+                   f"and never attributes a page to someone who did not write it.</p>")
     return (
         "<footer>"
         f'<ul class="editorial-nav">{items}</ul>'
-        f'<p class="byline" data-byline="publisher">{esc(pub_title)} is written and '
-        f"edited by <strong>{esc(entity)}</strong>. Pages here "
-        f"carry that byline and no other: this publication names no individual author, "
-        f"and never attributes a page to someone who did not write it.</p>"
+        + attribution +
         f"<p>{esc(entity)} is under common ownership with several of the projects this "
         f"publication cites. Those citations are labelled on the page. "
         f"<strong>Affiliation disclosed.</strong> No fake rankings, no paid placement, "
@@ -365,6 +368,15 @@ def install(text: str, pub_title: str, domain: str, editor_addr: str,
             names_by_domain: dict, disclosure: str = "",
             retired_disclosures: tuple = (), head: dict = None,
             link_claims: tuple = ()) -> str:
+    from lib.quality_overviews import apply as apply_overview
+    text = apply_overview(text, pub_title, domain)
+    seed_id = re.search(r'data-backlink-seed-id="([^"]+)"', text)
+    if seed_id and 'data-strengthened="definition"' not in text:
+        from lib.quality_seed import upgrade
+        from portfolio_backlink_engine import target_topic_context
+        seed = next(a for a in load('data/backlink-seed-articles.json')['articles'] if a['id'] == seed_id[1])
+        pub = next(p for p in load('data/publications.json') if p['title'] == pub_title)
+        text = upgrade(text, {**seed, 'quality_topic': target_topic_context(seed)}, pub)
     # --- legacy inline table CSS -----------------------------------------
     text = LEGACY_TABLE_CSS_RE.sub("", text)
 

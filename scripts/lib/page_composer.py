@@ -962,6 +962,13 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
     if not members:
         raise ValueError(f"refusing to compose an empty hub: {hub['slug']}")
 
+    from lib.quality_hubs import render as render_quality_hub
+    if pub['id'] in ('founder', 'memphis'):
+        quality = render_quality_hub(hub=hub, pub=pub, domain=domain, url=url,
+                                    home=home, members=members, siblings=siblings, overviews=overviews)
+        if quality:
+            return quality
+
     title = hub["title"]
     pub_title = pub["title"]
     by_cluster: dict[str, list[dict]] = {}

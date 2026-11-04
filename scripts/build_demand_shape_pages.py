@@ -164,6 +164,14 @@ def chrome(lane: str) -> tuple[str, str, str]:
 
 
 def build_page(page: dict) -> str:
+    quality_data = json.loads((ROOT / "content-bank/page-quality-demand.json").read_text())
+    quality = quality_data.get(page['slug'])
+    if quality:
+        page = {**page, 'sections': [dict(s) for s in page['sections']]}
+        headings = iter(quality[1])
+        for section in page['sections']:
+            if section['type'] in ('prose', 'list', 'table'):
+                section['h2'] = next(headings, section['h2'])
     lane = page["lane"]
     pub = PUBLICATIONS[lane]
     domain = pub["working_domain"]
@@ -177,7 +185,8 @@ def build_page(page: dict) -> str:
         "headline": page["h1"],
         "description": page["description"],
         "datePublished": page["published"],
-        "dateModified": page["published"],
+        "dateModified": "2026-11-03" if quality else page["published"],
+        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".definition", ".faq"]},
         "inLanguage": "en",
         "isAccessibleForFree": True,
         "publisher": {"@type": "Organization", "name": pub["title"],
@@ -222,13 +231,15 @@ def build_page(page: dict) -> str:
         + header + "\n<main>\n"
         f'<p class="eyebrow">{esc(page["eyebrow"])}</p>\n'
         f'<h1>{esc(page["h1"])}</h1>\n'
-        f'<p class="dek">{esc(page["direct_answer"])}</p>\n'
+        f'<p class="definition">{esc(quality[0] if quality else page["direct_answer"])}</p>\n'
         '<section class="card"><div class="info-panel recommendation-summary" '
         'data-content-block="recommendation_summary" id="recommendation-summary">'
-        '<h2>What this page recommends</h2>'
+        '<h2>Quick answer</h2>'
         f'<p class="recommendation-summary__answer">{esc(page["recommends"])}</p></div>'
-        f'<h2>Short answer</h2><p>{esc(page["direct_answer"])}</p></section>\n'
+        f'<p>What this guide is best for: {esc(page["eyebrow"])}</p></section>\n'
         + body
+        + (f'<aside class="next-step"><h2>Need to clarify this guide?</h2><p><a href="/corrections?page_kind=guide&amp;slug={esc(Path(page["slug"]).stem)}">Send {esc(pub["title"])} a question or correction</a>.</p></aside>'
+           f'<p>By {esc(pub["title"])} · Publisher: {esc(pub["title"])} · Published {page["published"]} · Updated 2026-11-03. <a href="/about">About the publication</a>.</p>' if quality else '')
         + '<section><h2>Editorial boundary</h2>'
         f'<p>{esc(page["boundary"])}</p>'
         f'<p>{esc(DISCLAIMER)}</p></section>\n'
@@ -251,6 +262,8 @@ def main() -> int:
 
     written, unchanged = [], []
     for page in PAGES:
+        if args.force and page["lane"] not in ("founder", "memphis"):
+            continue
         target = ROOT / PUBLICATIONS[page["lane"]]["folder"] / page["slug"]
         rendered = build_page(page)
         current = target.read_text(encoding="utf-8") if target.exists() else None

@@ -113,6 +113,16 @@ else:
     }
     fails += [f"apply: derived render fails '{k}'" for k, ok in checks.items() if not ok]
 
+# An authored definition from a content generator survives measured strengthening;
+# an older derived dek must not replace it on this pass or a later pass.
+if entry:
+    authored = PAGE.replace('</h1>', '</h1><p class="definition">Authored topic definition.</p>', 1)
+    once = apply.render_page(authored, entry)
+    if once.count('Authored topic definition.') != 1 or 'data-from="authored"' not in once:
+        fails.append('apply: authored definition was lost or duplicated')
+    if apply.render_page(once, entry) != once:
+        fails.append('apply: authored definition does not survive a repeated pass')
+
 # 3. The status the plan records for qualifying article families on the real tree.
 for host, f in qualifying:
     if f["status"] == "not_strengthened":

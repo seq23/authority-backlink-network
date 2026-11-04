@@ -67,6 +67,17 @@ assert all(r.get('lifecycle_stage') != 'published_in_repository' for r in remove
     'a removed row still claims to be rendered in the repository'
 for row in catchup:
     path = ROOT / row['source_path']
+    if row.get('status') == 'consolidated':
+        ledger = json.loads((ROOT/'data/page-quality-consolidation.json').read_text())
+        pub = next(p for p in ledger['publications'].values() if row['source_path'].startswith(p['folder']+'/'))
+        rel = row['source_path'].removeprefix(pub['folder']+'/')
+        assert rel in pub['retired'] and not path.exists(), 'consolidated source must stay retired'
+        target = pub['redirects']['/'+rel.removesuffix('.html')]
+        assert row['consolidated_to'] == target
+        assert (ROOT/pub['folder']/(target.lstrip('/')+'.html')).is_file(), 'consolidation destination missing'
+        assert target not in pub['redirects'], 'consolidation must not chain'
+        assert all(not value for value in row.get('evidence', {}).values()), 'retirement still claims live evidence'
+        continue
     assert path.exists(), row['source_path']
     text = path.read_text(encoding='utf-8', errors='ignore')
     if row.get('status') in WITHDRAWN:
