@@ -1,0 +1,101 @@
+{
+  "updated": "2026-11-03",
+  "answers": {
+    "bank statement explanation": "A bank statement explanation is a written account of a transaction or balance that a reviewer cannot understand from the statement alone. Identify the statement period, the entry in question, its source and the supporting record. Keep the explanation consistent with the statement; it does not replace the underlying evidence or guarantee approval.",
+    "large deposit explanation": "A large deposit explanation is a record of where a particular deposit came from and how supporting documents connect it to the account. Start with the date and amount, then identify the source and attach the relevant transaction record. Ask the reviewer which evidence is needed rather than guessing a universal deposit threshold.",
+    "community reintegration": "Community reintegration is the process of rebuilding everyday participation in housing, work, education and relationships after a period away from those routines. Compare resources by the practical support they provide, eligibility, referral steps and continuity of care. A housing listing alone does not establish treatment availability, clinical suitability or a safe transition plan.",
+    "self-employed income explanation": "A self-employed income explanation is a narrative connecting business activity to the income records a reviewer requests. List the work performed, the reporting period and the documents supporting the figures, such as tax returns or business statements. Explain differences between gross receipts and net income without treating the letter as a substitute for those records.",
+    "operator playbooks": "An operator playbook is a written procedure that connects a recurring task to an owner, a trigger, the steps to perform and evidence of completion. Before choosing a tool, document one real workflow and its exception path. A useful playbook tells a teammate what to do when the normal sequence cannot be followed.",
+    "ai workforce design": "AI workforce design is the allocation of tasks, review responsibilities and decision rights between people and automated systems. Begin with one workflow: identify its inputs, the proposed automated step, the person checking its output and the fallback when it fails. Compare tools against that workflow before buying access or delegating sensitive decisions.",
+    "wedding checklist planning": "Wedding checklist planning is the process of turning wedding decisions into tasks with owners, dependencies and due dates. Begin with the date, budget and venue constraints, then list what must be confirmed before each booking. Track the current answer and next action for each task rather than treating a downloaded checklist as a complete plan."
+  },
+  "guides": {
+    "tool stacks for lean teams": {
+      "folder": "sites/founder-operator",
+      "hub": "hiring-and-lean-team-stack",
+      "answer": "A lean team\u2019s tool stack is the set of systems used to capture work, share records, communicate and deliver results. Compare tools by the handoffs they support rather than the length of their feature lists. Start with one workflow, assign a system of record, and test export and access before adding another subscription.",
+      "sections": [
+        [
+          "How do you compare tools before paying?",
+          "Trace one request from intake to delivery. Write down where its status, files and decisions live. Compare candidates against that route: can the next person find the current record without asking the previous person? Try the same task in each candidate before committing."
+        ],
+        [
+          "What belongs in the first tool inventory?",
+          "Record the purpose, owner, users, access controls, export format and recurring charge for each existing system. Mark overlapping functions. Keep a tool when it solves a defined handoff; a duplicate feature alone is not a reason to buy another product."
+        ],
+        [
+          "When should a team remove a tool?",
+          "Before cancelling, export the records, test that another person can open them, transfer account ownership and identify integrations that depend on it. Keep the transition reversible until the replacement handles the workflow. A comparison guide and a directory answer the same selection question here, so their variants now lead to this hub."
+        ]
+      ],
+      "citations": [],
+      "sources": [
+        {
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee",
+          "anchor": "Independent contractor (self-employed) or employee?"
+        },
+        {
+          "url": "https://www.nist.gov/cyberframework",
+          "anchor": "Cybersecurity Framework"
+        },
+        {
+          "url": "https://www.sba.gov/counseling/manage-your-business/",
+          "anchor": "Manage your business"
+        }
+      ]
+    },
+    "wedding-day timeline": {
+      "folder": "sites/memphis-local",
+      "hub": "wedding-day-timelines",
+      "answer": "A wedding-day timeline is a shared schedule linking ceremony and reception events to the people, spaces and setup tasks they depend on. Build it around confirmed venue access and vendor commitments, then add travel, meals and contingency time. Share one version with named contacts so changes do not leave suppliers following different schedules.",
+      "sections": [
+        [
+          "How do you prepare before calling vendors?",
+          "Collect the ceremony start, venue access window, travel route, photography plans and reception finish. Ask each vendor which setup and departure times are fixed. Put those constraints on the schedule before arranging optional activities around them."
+        ],
+        [
+          "What commonly goes wrong with a timeline?",
+          "A ceremony time does not tell a florist when the room is available. Record access, unloading, setup and collection separately. Travel between venues also needs its own block; do not assume the photographer, couple and guests will all arrive together."
+        ],
+        [
+          "Who handles changes on the day?",
+          "Name the person who can approve a schedule change and give vendors that contact. Keep the current version in one shared place. If weather changes the ceremony location, confirm the revised setup route and tell every supplier affected, rather than only editing the couple\u2019s copy."
+        ],
+        [
+          "What should the final handoff contain?",
+          "Give each supplier their arrival point, access time, on-site contact and dependency on other work. Confirm who releases the space after the event and who collects hired items. The former preparation and mistakes-to-avoid pages covered this same planning task and now redirect here."
+        ]
+      ],
+      "citations": [
+        {
+          "url": "https://weddingtimelinetemplate.com/products/timeline-template",
+          "anchor": "Wedding Timeline Template"
+        },
+        {
+          "url": "https://weddingtimelinetemplate.com/guides/wedding-rehearsal-timeline",
+          "anchor": "Wedding Rehearsal Timeline"
+        },
+        {
+          "url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
+          "anchor": "Wedding Day Timeline Template"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.tn.gov/commerce/fire-prevention.html",
+          "anchor": "Tennessee Fire Prevention / State Fire Marshal's Office"
+        },
+        {
+          "url": "https://www.weather.gov/meg/",
+          "anchor": "Memphis, TN"
+        }
+      ]
+    }
+  },
+  "about": {
+    "sites/memphis-local": "Memphis Vendor Library is a local resource publication covering wedding planning, parties, porch styling and vendor comparisons in Memphis. It explains what to ask before booking, how to compare the scope of a quote and where to verify details. Affiliated businesses are disclosed; the publication does not present paid placements as independent rankings or reviews."
+  },
+  "category_summaries": {
+    "wedding planning tools, templates, and interactive planning resources": "wedding planning resources"
+  }
+}

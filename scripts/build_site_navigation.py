@@ -216,6 +216,10 @@ def rebuild(write: bool) -> dict:
         # costume. Neither is ever generated: the taxonomy is corrected instead.
         for hub in hubs:
             count = len(members.get(hub["slug"], []))
+            authored = any(g["hub"] == hub["slug"] for g in page_composer._load(
+                "data/search-quality-repairs.json", {}).get("guides", {}).values())
+            if authored:
+                continue
             if count == 0:
                 empty_hubs.append(f'{pub["id"]}/{hub["slug"]}')
             elif count < TAXONOMY["minimum_hub_members"]:

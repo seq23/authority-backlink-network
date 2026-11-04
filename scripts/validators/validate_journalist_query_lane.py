@@ -254,6 +254,10 @@ def drive(report: Report, tmp: Path, name: str, files: dict[str, str]) -> dict:
         (inbox / filename).write_text(content, encoding="utf-8")
 
     saved = (J.RECEIPT, J.STATE, J.DIGESTS)
+    # Fixture intake must never draft through a real local credential.
+    # These scenarios test parsing and stops, not model output.
+    saved_key = J.api_key
+    J.api_key = lambda: None
     J.RECEIPT = tmp / f"{name}-receipt.json"
     J.STATE = tmp / f"{name}-state.json"
     J.DIGESTS = tmp / f"{name}-digests"
@@ -262,6 +266,7 @@ def drive(report: Report, tmp: Path, name: str, files: dict[str, str]) -> dict:
             inbox_dir=str(inbox), no_issue=True, model=J.DEFAULT_MODEL))
     finally:
         J.RECEIPT, J.STATE, J.DIGESTS = saved
+        J.api_key = saved_key
 
 
 def check_outcomes(report: Report, tmp: Path) -> None:

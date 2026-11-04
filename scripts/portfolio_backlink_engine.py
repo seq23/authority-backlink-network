@@ -82,7 +82,7 @@ def render(article,pub):
  title=article['title']; direct=article['direct_answer']; target=article['target_url']; anchor=article['anchor']; today=article['date']; topic_context=target_topic_context(article)
  factors=''.join(paragraph_for_factor(x,i) for i,x in enumerate(article['decision_factors']))
  qlist=''.join(f'<li>{html.escape(x)}</li>' for x in article['questions'])
- mistakes=''.join(f'<li><strong>Mistake {i+1}:</strong> {html.escape(x)} A better response is to slow down, verify the missing fact, and record the decision boundary.</li>' for i,x in enumerate(article['mistakes']))
+ mistakes=''.join(f'<li><strong>Mistake {i+1}:</strong> {html.escape(x)}</li>' for i,x in enumerate(article['mistakes']))
  steps=''.join(f'<li><strong>Step {i+1}:</strong> {html.escape(x)}</li>' for i,x in enumerate([
   'Define the real decision and the person it affects.',
   'Collect the minimum facts needed to compare options on the same basis.',
