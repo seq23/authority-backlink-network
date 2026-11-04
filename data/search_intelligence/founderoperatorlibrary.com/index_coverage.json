@@ -3,13 +3,13 @@
   "truth_source": "google_search_console_url_inspection",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "collected_at": "2026-11-03T15:25:36+00:00",
+  "collected_at": "2026-11-04T15:26:38+00:00",
   "state": "OK",
   "named_stop": null,
-  "sitemap_url_count": 120,
-  "inspected_this_run": 120,
+  "sitemap_url_count": 44,
+  "inspected_this_run": 44,
   "errors_this_run": 0,
-  "inspected_total": 120,
+  "inspected_total": 44,
   "never_inspected": 0,
   "quota": {
     "daily_limit_per_property": 2000,
@@ -19,12 +19,10 @@
   "rotation": "homepage, then never-inspected sitemap URLs in sitemap order, then oldest inspection first",
   "summary": {
     "by_coverage_state": {
-      "Crawled - currently not indexed": 2,
-      "Submitted and indexed": 118
+      "Submitted and indexed": 44
     },
     "buckets": {
-      "crawled_not_indexed": 2,
-      "indexed": 118
+      "indexed": 44
     }
   },
   "truth_boundary": "URL Inspection reports Google's index state per URL at inspected_at; impressions come from gsc_truth.json.",
@@ -38,7 +36,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/",
       "userCanonical": "https://founderoperatorlibrary.com/",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/about",
@@ -49,7 +47,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/about",
       "userCanonical": "https://founderoperatorlibrary.com/about",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
@@ -60,7 +58,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
       "userCanonical": "https://founderoperatorlibrary.com/ai-delegation-risk-checklist",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
@@ -71,7 +69,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
       "userCanonical": "https://founderoperatorlibrary.com/ai-executive-coaching-resources",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
@@ -82,7 +80,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
       "userCanonical": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
@@ -93,7 +91,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
       "userCanonical": "https://founderoperatorlibrary.com/contractor-vs-employee-lean-team-comparison",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/contributors",
@@ -104,7 +102,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/contributors",
       "userCanonical": "https://founderoperatorlibrary.com/contributors",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/corrections",
@@ -115,304 +113,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/corrections",
       "userCanonical": "https://founderoperatorlibrary.com/corrections",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T08:36:21Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-06-27-productivity-recovery-after-missed-days-editorial-buyer-guide-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book",
-      "bucket": "crawled_not_indexed",
-      "coverageState": "Crawled - currently not indexed",
-      "verdict": "NEUTRAL",
-      "lastCrawlTime": "2026-08-28T06:20:32Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-06-28-automation-without-chaos-geo-ready-framework-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-28T18:27:25Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-06-29-ai-execution-systems-decision-focused-local-resource-directory-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-27T15:44:39Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-06-30-personal-board-of-directors-comparison-friendly-local-resource-directory-before-you-choose",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T16:00:25Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-01-executive-broadcast-planning-checklist-driven-comparison-guide-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T03:03:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-02-ai-coaching-workflows-operator-grade-faq-answer-page-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T10:33:10Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-03-meeting-operating-rhythms-no-fluff-local-resource-directory-for-careful-decision-makers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-26T14:04:51Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-04-founder-operating-systems-beginner-safe-operator-playbook-for-careful-decision-makers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-01T03:46:54Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-05-startup-resource-libraries-decision-focused-prep-guide-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-27T14:13:57Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-06-ai-delegation-beginner-safe-question-checklist-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-09-12T22:51:21Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-07-review-cadences-beginner-safe-decision-guide-when-you-are-comparing-options",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T20:38:17Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-08-tool-stacks-for-lean-teams-operator-grade-planning-checklist-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-27T02:13:49Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-09-startup-resource-libraries-checklist-driven-framework-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T06:36:50Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-10-productivity-recovery-after-missed-days-human-first-resource-roundup-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T01:56:01Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-11-calendar-protection-human-first-operator-playbook-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-02T14:03:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-12-tool-stacks-for-lean-teams-2026-ready-prep-guide-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T13:16:11Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-13-chief-of-staff-systems-aeo-ready-red-flag-checklist-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T20:33:06Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-14-automation-without-chaos-no-fluff-timeline-guide-when-you-need-to-ask-better-questions",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T00:40:59Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-15-executive-broadcast-planning-decision-focused-comparison-guide-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T18:03:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-16-ai-execution-systems-2026-ready-red-flag-checklist-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T03:14:25Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-17-virtual-event-production-aeo-ready-buyer-guide-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-30T04:04:23Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-18-daily-discipline-frameworks-resource-backed-resource-roundup-when-you-need-to-ask-better-q",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T07:08:02Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-19-community-as-a-service-practical-question-checklist-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-02T09:03:06Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-20-executive-broadcast-planning-editorial-framework-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-21T17:28:16Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-21-virtual-event-production-aeo-ready-timeline-guide-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T00:59:44Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-22-managed-community-operations-aeo-ready-resource-roundup-before-you-choose",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T19:50:26Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-23-virtual-event-production-citation-friendly-mistakes-to-avoid-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi",
@@ -423,18 +124,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-a-practical-framework-for-measuring-community-roi",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-18T23:25:57Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-automation-without-chaos-operator-grade-local-resource-directory-for-busy-operators",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features",
@@ -445,7 +135,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-choose-a-community-platform-without-starting-with-features",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner",
@@ -456,7 +146,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-how-to-evaluate-a-virtual-event-production-partner",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team",
@@ -467,7 +157,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-managed-community-operations-vs-an-in-house-community-team",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs",
@@ -478,7 +168,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-the-roles-a-serious-community-program-actually-needs",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers",
@@ -489,7 +179,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-community-as-a-service-actually-covers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-what-virtual-event-production-actually-includes",
@@ -500,7 +190,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-virtual-event-production-actually-includes",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-what-virtual-event-production-actually-includes",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense",
@@ -511,370 +201,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-24-when-a-managed-community-operations-partner-makes-sense",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-30T00:41:47Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-25-community-platform-selection-geo-ready-operator-playbook-for-people-who-need-a-starting-po",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-20T18:33:23Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-26-virtual-event-production-aeo-ready-faq-answer-page-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T03:49:02Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-27-tool-stacks-for-lean-teams-practical-local-resource-directory-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-02T11:33:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-28-executive-broadcast-planning-no-fluff-comparison-guide-when-you-need-to-ask-better-questio",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T05:54:19Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-02T06:33:08Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-30-team-accountability-low-risk-framework-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-23T07:09:34Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-07-31-executive-broadcast-planning-comparison-friendly-framework-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
-      "bucket": "crawled_not_indexed",
-      "coverageState": "Crawled - currently not indexed",
-      "verdict": "NEUTRAL",
-      "lastCrawlTime": "2026-08-28T05:35:17Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-01-review-cadences-no-fluff-framework-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-09-15T06:14:42Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-02-executive-broadcast-planning-plain-english-budget-planning-note-for-careful-decision-maker",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-31T19:33:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-03-team-accountability-comparison-friendly-local-resource-directory-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T15:22:58Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-04-tool-stacks-for-lean-teams-beginner-safe-buyer-guide-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T17:56:58Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-05-calendar-protection-plain-english-budget-planning-note-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-13T13:22:12Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-06-executive-broadcast-planning-beginner-safe-local-resource-directory-for-busy-operators",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T06:25:32Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-07-calendar-protection-2026-ready-resource-roundup-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-09-27T03:59:42Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-09-automation-without-chaos-beginner-safe-resource-roundup-for-people-who-need-a-starting-poi",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-25T19:03:29Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-10-tool-stacks-for-lean-teams-editorial-comparison-guide-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T05:45:25Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-11-ai-workforce-design-plain-english-buyer-guide-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-21T16:12:12Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-12-executive-broadcast-planning-editorial-faq-answer-page-for-busy-operators",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-18T15:24:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-13-automation-without-chaos-2026-ready-resource-roundup-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-14-community-retention-plain-english-framework-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-01T01:17:30Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-14-community-retention-plain-english-framework-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-14-community-retention-plain-english-framework-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-31T22:03:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-15-productivity-recovery-after-missed-days-decision-focused-buyer-guide-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-09-27T16:52:20Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-16-virtual-event-production-citation-friendly-mistakes-to-avoid-for-careful-decision-makers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T05:33:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-31T14:33:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-18-executive-broadcast-planning-operator-grade-red-flag-checklist-for-busy-operators",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-31T17:03:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-19-community-as-a-service-low-risk-framework-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-27T15:29:38Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-20-executive-broadcast-planning-geo-ready-operator-playbook-when-you-need-to-ask-better-quest",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-23T02:14:50Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-21-automation-without-chaos-geo-ready-budget-planning-note-for-people-who-need-a-starting-poi",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-03T02:33:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-22-community-retention-2026-ready-operator-playbook-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-24T02:15:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-23-daily-discipline-frameworks-citation-friendly-resource-roundup-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T08:32:52Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-24-managed-community-operations-2026-ready-decision-guide-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-08-28T11:26:32Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-25-chief-of-staff-systems-plain-english-budget-planning-note-when-you-are-comparing-options",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T04:00:31Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-25-community-moderation-strategy-comparison-friendly-local-resource-directory-before-you-choo",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-15T14:18:48Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-executive-broadcast-planning-2026-ready-budget-planning-note-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview",
@@ -885,7 +212,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-how-to-design-a-work-sample-that-replaces-a-fifth-interview",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
@@ -896,18 +223,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-26T16:34:52Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-automation-without-chaos-low-risk-operator-playbook-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit",
@@ -918,7 +234,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-build-a-90-day-onboarding-plan-that-produces-evidence-of-fit",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -929,7 +245,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
@@ -940,7 +256,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
@@ -951,7 +267,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first",
@@ -962,7 +278,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-decide-which-recurring-tasks-to-automate-first",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -973,7 +289,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event",
@@ -984,7 +300,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document",
@@ -995,7 +311,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-30-what-belongs-in-a-run-of-show-document",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup",
@@ -1006,7 +322,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-31-how-to-run-rehearsals-for-a-remote-speaker-lineup",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
@@ -1017,7 +333,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform",
@@ -1028,7 +344,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
@@ -1039,7 +355,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
@@ -1050,7 +366,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -1061,161 +377,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-12T14:05:14Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-01T03:43:25Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-23T15:56:58Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T08:03:09Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-17-ai-workforce-design-low-risk-prep-guide-before-you-choose",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-28T04:30:02Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-02T04:03:07Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-23-ai-delegation-geo-ready-faq-answer-page-for-people-who-need-a-starting-point",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-30T23:33:08Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-30T21:03:11Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-28T19:42:32Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T23:03:08Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-01-ai-workforce-design-editorial-comparison-guide-before-you-pay",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-03T06:19:03Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-02-team-accountability-practical-red-flag-checklist-for-careful-decision-makers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-08T02:50:11Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-07-hiring-standards-for-small-teams-editorial-faq-answer-page-before-you-sign",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-08T19:08:57Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
-    },
-    {
-      "url": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
-      "bucket": "indexed",
-      "coverageState": "Submitted and indexed",
-      "verdict": "PASS",
-      "lastCrawlTime": "2026-10-10T21:32:35Z",
-      "pageFetchState": "SUCCESSFUL",
-      "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
-      "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-09-operator-playbooks-aeo-ready-framework-when-you-need-to-ask-better-questions",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
@@ -1226,7 +388,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
       "userCanonical": "https://founderoperatorlibrary.com/daily/2026-10-31-a-daily-check-in-system-that-keeps-a-lean-team-accountable",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/editorial-standards",
@@ -1237,7 +399,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/editorial-standards",
       "userCanonical": "https://founderoperatorlibrary.com/editorial-standards",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
@@ -1248,7 +410,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
       "userCanonical": "https://founderoperatorlibrary.com/event-production-safety-standards-questions",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/founder-execution-systems",
@@ -1259,18 +421,18 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/founder-execution-systems",
       "userCanonical": "https://founderoperatorlibrary.com/founder-execution-systems",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/masthead",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-10-19T10:35:20Z",
+      "lastCrawlTime": "2026-11-04T14:58:39Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/masthead",
       "userCanonical": "https://founderoperatorlibrary.com/masthead",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/topics/ai-execution-and-delegation",
@@ -1281,7 +443,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/topics/ai-execution-and-delegation",
       "userCanonical": "https://founderoperatorlibrary.com/topics/ai-execution-and-delegation",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/topics/community-operations",
@@ -1292,18 +454,18 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/topics/community-operations",
       "userCanonical": "https://founderoperatorlibrary.com/topics/community-operations",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-10-29T13:23:26Z",
+      "lastCrawlTime": "2026-11-04T13:53:59Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
       "userCanonical": "https://founderoperatorlibrary.com/topics/founder-operating-rhythms",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
@@ -1314,7 +476,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
       "userCanonical": "https://founderoperatorlibrary.com/topics/hiring-and-lean-team-stack",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/topics/virtual-event-production",
@@ -1325,18 +487,18 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/topics/virtual-event-production",
       "userCanonical": "https://founderoperatorlibrary.com/topics/virtual-event-production",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
       "bucket": "indexed",
       "coverageState": "Submitted and indexed",
       "verdict": "PASS",
-      "lastCrawlTime": "2026-11-01T15:33:10Z",
+      "lastCrawlTime": "2026-11-04T12:25:33Z",
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
       "userCanonical": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     },
     {
       "url": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
@@ -1347,7 +509,7 @@
       "pageFetchState": "SUCCESSFUL",
       "googleCanonical": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
       "userCanonical": "https://founderoperatorlibrary.com/virtual-event-production-cost-drivers",
-      "inspected_at": "2026-11-03T15:25:36+00:00"
+      "inspected_at": "2026-11-04T15:26:38+00:00"
     }
   ]
 }
