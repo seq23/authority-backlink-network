@@ -1,14 +1,14 @@
 {
   "schema": "authority-network-observation-feedback-v1",
-  "observed_at": "2026-11-03T16:41:00.859337Z",
-  "source_receipt_id": "2026-11-03T16-41-00.859337Z-41676447274",
+  "observed_at": "2026-11-04T16:41:40.085448Z",
+  "source_receipt_id": "2026-11-04T16-41-40.085448Z-41869776632",
   "publication_health": [
     {
       "publication_id": "founder",
       "domain": "founderoperatorlibrary.com",
-      "rendered_backlinks": 40,
-      "live_verified_backlinks": 40,
-      "indexed_referring_pages": 0,
+      "rendered_backlinks": 42,
+      "live_verified_backlinks": 42,
+      "indexed_referring_pages": 9,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
       "gsc_inspection_status": "SUCCESS"
@@ -16,8 +16,8 @@
     {
       "publication_id": "memphis",
       "domain": "memphisvendorlibrary.com",
-      "rendered_backlinks": 44,
-      "live_verified_backlinks": 44,
+      "rendered_backlinks": 16,
+      "live_verified_backlinks": 16,
       "indexed_referring_pages": 0,
       "indexnow_status": "SUCCESS",
       "gsc_sitemap_status": "SUCCESS",
@@ -38,36 +38,36 @@
     {
       "campaign_id": "virtual-agency-os-authority",
       "brand_id": "virtual-agency-os",
-      "rendered": 10,
-      "deployed": 10,
-      "live_verified": 10,
-      "indexed": 0,
+      "rendered": 9,
+      "deployed": 9,
+      "live_verified": 9,
+      "indexed": 1,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "wpp-community-authority",
       "brand_id": "west-peek-productions",
-      "rendered": 5,
-      "deployed": 5,
-      "live_verified": 5,
-      "indexed": 0,
+      "rendered": 17,
+      "deployed": 17,
+      "live_verified": 17,
+      "indexed": 4,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "wpp-commercial",
       "brand_id": "west-peek-productions",
-      "rendered": 5,
-      "deployed": 5,
-      "live_verified": 5,
+      "rendered": 1,
+      "deployed": 1,
+      "live_verified": 1,
       "indexed": 0,
       "verified_external_citations": 0
     },
     {
       "campaign_id": "dream-planning-tools",
       "brand_id": "dream-wedding-builder",
-      "rendered": 32,
-      "deployed": 32,
-      "live_verified": 32,
+      "rendered": 5,
+      "deployed": 5,
+      "live_verified": 5,
       "indexed": 0,
       "verified_external_citations": 0
     },
@@ -155,10 +155,10 @@
     {
       "campaign_id": "bhpc-authority",
       "brand_id": "bhpc",
-      "rendered": 7,
-      "deployed": 7,
-      "live_verified": 7,
-      "indexed": 0,
+      "rendered": 13,
+      "deployed": 13,
+      "live_verified": 13,
+      "indexed": 4,
       "verified_external_citations": 0
     },
     {
@@ -173,9 +173,9 @@
     {
       "campaign_id": "porch-party-authority",
       "brand_id": "porch-party",
-      "rendered": 9,
-      "deployed": 9,
-      "live_verified": 9,
+      "rendered": 8,
+      "deployed": 8,
+      "live_verified": 8,
       "indexed": 0,
       "verified_external_citations": 0
     },
@@ -226,9 +226,9 @@
     }
   ],
   "portfolio_totals": {
-    "rendered_backlinks": 155,
-    "live_verified_backlinks": 155,
-    "indexed_referring_pages": 1,
+    "rendered_backlinks": 129,
+    "live_verified_backlinks": 129,
+    "indexed_referring_pages": 10,
     "verified_external_citations": 0
   },
   "recommended_action": "CONTINUE_YIELD_GOVERNOR",
