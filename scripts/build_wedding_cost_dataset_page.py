@@ -234,7 +234,7 @@ def render_sources_section(rows: list[dict], vendors: dict[str, dict]) -> str:
             f'for {esc(", ".join(vendor_names))}, read '
             f'{esc(used_by[0]["observed"])}.</li>')
     return (
-        '<section data-block="source-list"><h2>Where every figure came from</h2>'
+        '<section data-block="source-list"><h2>Where did each figure come from?</h2>'
         '<p>One entry per source page, with the number of prices this dataset takes '
         'from it. Each row in the table above links to the entry for its own figure, '
         'and the entry links the vendor page the price is printed on. The links are '
@@ -266,6 +266,16 @@ def sync_owned_blocks(current: str, generated: str) -> str:
     sources list lands directly below the table that points into it.
     """
     out = current
+    # Refresh this generator's introduction and closing action as well as the
+    # figures, while retaining navigation, citations and installed chrome.
+    fresh_intro = re.search(r'<h1>.*?</h1>.*?(?=<h2>What does the sample cover\?</h2>)', generated, re.S)
+    if fresh_intro:
+        out = re.sub(r'<h1>.*?</h1>.*?(?=<h2>(?:Method, sample and limits|What does the sample cover\?)</h2>)',
+                     lambda _: fresh_intro[0], out, count=1, flags=re.S)
+    fresh_end = re.search(r'(<aside class="next-step">.*?</aside><p>By .*?</p>)', generated, re.S)
+    if fresh_end:
+        out = re.sub(r'<aside class="next-step">.*?</aside><p>By .*?</p>', '', out, flags=re.S)
+        out = out.replace('</main>', fresh_end[0] + '</main>', 1)
     for name in OWNED_BLOCKS:
         fresh = block_re(name).search(generated)
         if not fresh:
@@ -359,7 +369,8 @@ def build_page(dataset: dict) -> str:
         "identifier": url,
         "version": dataset["edition"],
         "datePublished": dataset["published"],
-        "dateModified": dataset["published"],
+        "dateModified": "2026-11-03",
+        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".definition", ".faq"]},
         "inLanguage": "en",
         "isAccessibleForFree": True,
         # Expressed as text rather than a URL on purpose: hostile_review.py locks
@@ -431,12 +442,12 @@ def build_page(dataset: dict) -> str:
     parts.append(
         '<section class="card"><div class="info-panel recommendation-summary" '
         'data-content-block="recommendation_summary" id="recommendation-summary">'
-        '<h2>What this page recommends</h2>'
+        '<h2>Quick answer</h2>'
         '<p class="recommendation-summary__answer">Budget the fixed vendors first and '
         'the per-guest vendors second: in this sample the fixed block does not move '
         'with guest count at all, so the cost per guest falls steeply as the list '
         'grows, and cutting the guest list saves far less than people expect.</p></div>'
-        '<h2>Method, sample and limits</h2>'
+        '<h2>What does the sample cover?</h2>'
         f'<p><strong>Sample:</strong> {vendor_count} Memphis-area wedding and event '
         f'vendors, {row_count} individual published prices.</p>'
         f'<p><strong>Collection window:</strong> {esc(window["start"])} to '
@@ -450,7 +461,7 @@ def build_page(dataset: dict) -> str:
 
     # --- what it does not cover ---------------------------------------------
     parts.append(
-        '<section><h2>What this data does not cover</h2>'
+        '<section><h2>What does this data leave out?</h2>'
         '<p>Stated before the numbers rather than after them, because the gaps decide '
         'what the numbers can honestly be used for.</p><ul>'
         + "".join(f"<li>{esc(item)}</li>" for item in dataset["not_covered"])
@@ -458,7 +469,7 @@ def build_page(dataset: dict) -> str:
 
     # --- the headline derived table -----------------------------------------
     parts.append(
-        '<section><h2>Cost by guest count, from published Memphis prices</h2>'
+        '<section><h2>How does the worked cost change by guest count?</h2>'
         '<p>Guest count is the largest single cost driver in this category, and it is '
         'the thing national wedding sites answer worst: they publish a national average '
         'and apply a city multiplier, which is not a measurement of Memphis. The table '
@@ -495,7 +506,7 @@ def build_page(dataset: dict) -> str:
 
     # --- inputs to the derivation -------------------------------------------
     parts.append(
-        '<section><h2>The per-guest inputs</h2>'
+        '<section><h2>Which inputs vary with guest count?</h2>'
         '<p>Each line is a published Memphis price. Where a component comes from one '
         'vendor, the sample size says so.</p>'
         '<div class="table-scroll"><table><thead><tr>'
@@ -512,7 +523,7 @@ def build_page(dataset: dict) -> str:
              f'<td>{c["sample_size"]}</td></tr>')
             for c in dataset["derivation"]["per_guest_components"])
         + '</tbody></table></div>'
-        '<h2>The fixed inputs</h2>'
+        '<h2>Which inputs are fixed offers?</h2>'
         '<div class="table-scroll"><table><thead><tr>'
         '<th>Component</th><th>Low</th><th>High</th><th>Basis</th><th>Vendors</th>'
         '</tr></thead><tbody>'
@@ -578,7 +589,7 @@ def build_page(dataset: dict) -> str:
 
     # --- reproduce it -------------------------------------------------------
     parts.append(
-        '<section><h2>How to check or reproduce this</h2><ol>'
+        '<section><h2>How can I reproduce these calculations?</h2><ol>'
         '<li>Follow any row\'s Source cell to its entry in <a href="#source-1">Where '
         'every figure came from</a>, then open the vendor page it links. The figure '
         'quoted here should appear on that page.</li>'
@@ -629,12 +640,14 @@ def build_page(dataset: dict) -> str:
         '<p class="eyebrow">Original data &middot; first edition &middot; '
         f'{esc(window["start"])}</p>\n'
         f'<h1>{esc(dataset["title"])}</h1>\n'
-        f'<p class="dek">Nobody publishes rigorous Memphis-specific wedding pricing, so '
-        f'this publication collected it. {vendor_count} Memphis-area vendors publish '
+        '<p class="definition">The Memphis wedding cost dataset is a record of publicly advertised local vendor package prices, with source links and observation dates. It separates per-guest inputs from fixed offers to show the assumptions behind a worked budget. It describes the recorded sample rather than estimating every Memphis wedding or guaranteeing a current quote.</p>'
+        f'<p class="dek">This publication collected publicly advertised wedding pricing. '
+        f'{vendor_count} Memphis-area vendors publish '
         f'{row_count} prices on their own websites; this page records all of them, '
         'derives what they imply about cost by guest count, and states plainly what the '
         'sample does not cover.</p>\n'
         + "\n".join(parts) + "\n"
+        f'<aside class="next-step"><h2>Need to clarify this dataset?</h2><p><a href="/corrections?page_kind=dataset&amp;slug=memphis-wedding-cost-by-guest-count-2026">Send a source correction to {esc(pub["title"])}</a>.</p></aside><p>By {esc(pub["title"])} · Published {dataset["published"]} · Updated 2026-11-03. <a href="/about">About the publisher</a>.</p>'
         '</main>\n' + footer + '\n</body></html>\n'
     )
 

@@ -345,6 +345,9 @@ def choose_fair_target(pub_key, slot, counts):
     return max(scored, key=lambda x: x[0])[1]
 
 def build_brief(pub_key, slot, state, attempt=0, target_override=None):
+    from lib.consolidation import publication
+    if publication(pub_key).get('editorial_only'):
+        return None  # Reviewed distinct articles replace the permutation publisher.
     pub = PANTRY['publications'][pub_key]
     seed = f'{TODAY}-{pub_key}-{slot}-{attempt}-{len(state.get("published_signatures", []))}'
     if target_override is not None:
@@ -865,6 +868,10 @@ def main():
     release_hits = {e['brief']['signature']: (e, hit) for e, hit in released_now}
     freeze_held = []
     for i, (pub_key, target_override, preset_brief) in enumerate(jobs):
+        from lib.consolidation import publication
+        if publication(pub_key).get('editorial_only'):
+            blocked_slots.append({'publication': pub_key, 'reason': 'editorial_only_distinct_articles_required'})
+            continue
         accepted = None
         attempt_findings = []
         for attempt in range(max_self_heal_attempts):

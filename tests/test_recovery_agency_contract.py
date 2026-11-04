@@ -68,15 +68,15 @@ assert all(r.get('lifecycle_stage') != 'published_in_repository' for r in remove
 for row in catchup:
     path = ROOT / row['source_path']
     if row.get('status') == 'consolidated':
-        ledger = read('data/consolidation-ledger.json')
-        record = next(r for r in ledger if r['folder'] + r['from'] + '.html' == row['source_path'])
-        assert record['status'] == 301 and not path.exists()
-        assert f"{record['from']} {record['to']} 301" in (ROOT / record['folder'] / '_redirects').read_text()
-        target_text = (ROOT / row['consolidated_to']).read_text()
-        if row.get('pre_consolidation_status') == 'published':
-            assert row['target_url'] in target_text
-        elif row.get('pre_consolidation_status') in WITHDRAWN:
-            assert not any(row.get('evidence', {}).values()), 'withdrawn placement regained evidence'
+        ledger = json.loads((ROOT/'data/page-quality-consolidation.json').read_text())
+        pub = next(p for p in ledger['publications'].values() if row['source_path'].startswith(p['folder']+'/'))
+        rel = row['source_path'].removeprefix(pub['folder']+'/')
+        assert rel in pub['retired'] and not path.exists(), 'consolidated source must stay retired'
+        target = pub['redirects']['/'+rel.removesuffix('.html')]
+        assert row['consolidated_to'] == target
+        assert (ROOT/pub['folder']/(target.lstrip('/')+'.html')).is_file(), 'consolidation destination missing'
+        assert target not in pub['redirects'], 'consolidation must not chain'
+        assert all(not value for value in row.get('evidence', {}).values()), 'retirement still claims live evidence'
         continue
     assert path.exists(), row['source_path']
     text = path.read_text(encoding='utf-8', errors='ignore')

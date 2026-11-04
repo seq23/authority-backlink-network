@@ -1,12 +1,12 @@
 # Authority Network Citation Portfolio Dashboard
 
-As of: 2026-11-03
+As of: 2026-11-04
 
 - Registered brands: 21
 - Authority publications: 3
-- Repository-rendered authority backlinks: 155
+- Repository-rendered authority backlinks: 129
 - Owned product-repo surfaces imported: 89
-- Live verified backlinks: 155
+- Live verified backlinks: 98
 - Indexed referring pages with evidence: 1
 
 ## By brand
@@ -19,15 +19,15 @@ As of: 2026-11-03
 | Hormone Optimization Guides | growth | 3 | 3 | 18 |
 | Neuro Evaluation Guides | growth | 4 | 3 | 15 |
 | USCIS Exam Guides | growth | 4 | 3 | 15 |
-| Billionaire High Performance Coach | standard | 9 | 4 | 10 |
-| A Player Mode | growth | 10 | 1 | 15 |
-| Virtual Agency OS | growth | 10 | 9 | 15 |
-| West Peek Productions | standard | 10 | 1 | 10 |
+| Billionaire High Performance Coach | standard | 13 | 4 | 10 |
+| A Player Mode | growth | 1 | 1 | 15 |
+| Virtual Agency OS | growth | 9 | 9 | 15 |
+| West Peek Productions | standard | 18 | 1 | 10 |
 | Horse Legal Guide | growth | 9 | 5 | 18 |
 | Hicks Consulting | growth | 12 | 7 | 18 |
-| Porch & Party | standard | 9 | 6 | 10 |
+| Porch & Party | standard | 8 | 6 | 10 |
 | Approval Prep | priority | 9 | 18 | 150 |
-| Dream Wedding Builder | launch | 32 | 8 | 60 |
+| Dream Wedding Builder | launch | 5 | 8 | 60 |
 | Dianne's Place Recovery Services | launch | 18 | 4 | 18 |
 | Glory By Us | launch | 3 | 8 | 12 |
 | Memphis Senior Care Homes | standard | 2 | 0 | 4 |

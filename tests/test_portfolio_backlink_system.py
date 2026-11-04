@@ -61,10 +61,17 @@ community = coverage['wpp-community-authority']
 assert len(community) >= 5
 assert len({r['target_url'] for r in community}) == 1
 assert all('westpeekproductions.com' in r['target_url'] for r in community)
-assert len(coverage['wpp-commercial']) >= 2
+kept_placements = json.loads((ROOT/'data/page-quality-consolidation.json').read_text())['campaign_kept_placements']
+assert kept_placements, 'zero kept campaign placements'
+for cid, kept in kept_placements.items():
+    assert kept, f'{cid}: zero kept placements'
+    assert campaign_by_id[cid]['minimum_rendered_coverage'] == len(kept), f'{cid}: floor drifted from kept ledger'
+    actual = {(r['source_path'], r['target_url']) for r in coverage[cid]}
+    assert {(r['source_path'], r['target_url']) for r in kept} <= actual, f'{cid}: a kept placement is missing'
+assert len(coverage['wpp-commercial']) >= len(kept_placements['wpp-commercial'])
 assert all('westpeekproductions.com' in r['target_url'] for r in coverage['wpp-commercial'])
 
-floors = {'dream-planning-tools':6,'dianne-recovery-resources':4,'hicks-workplace-wellbeing':4,'horse-equine-legal':4}
+floors = {'dream-planning-tools':len(kept_placements['dream-planning-tools']),'dianne-recovery-resources':4,'hicks-workplace-wellbeing':4,'horse-equine-legal':4}
 for cid, floor in floors.items():
     assert len(coverage[cid]) >= floor, f'{cid}: immediate gap-closure floor not met'
 

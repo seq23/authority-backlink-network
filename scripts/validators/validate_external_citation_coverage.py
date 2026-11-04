@@ -48,6 +48,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
 SITES = ROOT / "sites"
 PUBLICATIONS = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
 REGISTRY = json.loads((ROOT / "data/external-sources.json").read_text(encoding="utf-8"))
@@ -168,6 +169,14 @@ def main() -> int:
             failures.append(f"HARD_FAIL {lane}: no floor recorded in "
                             f"{FLOOR_PATH.relative_to(ROOT)}")
             continue
+        if expected.get('kept_ledger'):
+            from lib.consolidation import publication
+            kept = publication(lane).get('kept', [])
+            eligible = [r for r in kept if Path(r).name not in SKIP_NAMES and not (SKIP_DIRS & set(Path(r).parts[:-1]))]
+            if not eligible:
+                failures.append(f'HARD_FAIL {lane}: empty kept content ledger')
+            if expected['pages_citing_outside'] != len(eligible):
+                failures.append(f'HARD_FAIL {lane}: citation floor does not equal the kept content ledger')
         for key in ("pages_citing_outside", "distinct_external_domains"):
             if actual[key] < expected[key]:
                 failures.append(

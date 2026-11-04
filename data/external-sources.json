@@ -2295,6 +2295,38 @@
       "lanes": [
         "professional"
       ]
+    },
+    {
+      "id": "medicaid-ltss",
+      "domain": "medicaid.gov",
+      "url": "https://www.medicaid.gov/medicaid/long-term-services-supports",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "publisher_type": "us_federal_agency",
+      "title": "Long Term Services & Supports",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "family care",
+        "cost"
+      ],
+      "supports": "The federal overview of Medicaid long-term services and supports; individual eligibility must be checked with the state program."
+    },
+    {
+      "id": "ies-reading-foundations",
+      "domain": "ies.ed.gov",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/21",
+      "publisher": "Institute of Education Sciences",
+      "publisher_type": "us_federal_agency",
+      "title": "Foundational Skills to Support Reading for Understanding in Kindergarten Through 3rd Grade",
+      "lanes": [
+        "memphis"
+      ],
+      "topics": [
+        "reading",
+        "family routines"
+      ],
+      "supports": "Evidence-based foundational reading guidance for educators; a household routine does not replace instruction or an assessment."
     }
   ]
 }

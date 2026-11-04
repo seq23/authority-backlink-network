@@ -1,62 +1,58 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-11-03",
+  "run_at": "2026-11-04",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 8,
     "allowance": 0,
-    "window_start": "2026-10-28",
-    "window_end": "2026-11-03"
+    "window_start": "2026-10-29",
+    "window_end": "2026-11-04"
   },
-  "deferred": 4,
+  "deferred": 5,
   "queue": [
     {
+      "publication": "memphis-local",
+      "deferred_on": "2026-11-04",
+      "reason": "no_topically_eligible_affiliated_link"
+    },
+    {
       "publication": "professional-resources",
-      "cluster": "scalp care routines",
-      "audience": "healthcare team lead",
-      "format": "comparison guide",
-      "intent": "before you call",
-      "modifier": "citation-friendly",
-      "intended_title": "Scalp Care Routines: Citation-Friendly Comparison Guide Before You Call",
+      "cluster": "conditioning textured hair",
+      "audience": "nonprofit executive",
+      "format": "timeline guide",
+      "intent": "for busy operators",
+      "modifier": "no-fluff",
+      "intended_title": "Conditioning Textured Hair: No-Fluff Timeline Guide For Busy Operators",
       "target_brand": "Glory By Us",
-      "target_url": "https://glorybyus.com/collections/wave-hair-products",
-      "signature": "54396f505e17456db24a7736b67c93779a1732e2aadc582fb424d93afa17739b",
-      "deferred_on": "2026-11-03",
+      "target_url": "https://glorybyus.com/products/glory-set",
+      "signature": "61768f99af311bbd32a4df57cf1d0f034a677ce7ea62eae7193ef73861508632",
+      "deferred_on": "2026-11-04",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "founder-operator",
-      "deferred_on": "2026-11-03",
+      "deferred_on": "2026-11-04",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "memphis-local",
-      "cluster": "wedding-day timeline",
-      "audience": "last-minute party planner",
-      "format": "question checklist",
-      "intent": "when timing matters",
-      "modifier": "comparison-friendly",
-      "intended_title": "Wedding-Day Timeline: Comparison-Friendly Question Checklist When Timing Matters",
-      "target_brand": "Dream Wedding Builder",
-      "target_url": "https://weddingtimelinetemplate.com/guides/wedding-day-timeline-template",
-      "signature": "01a099764fde757232beae5d6febdbe3ae91e97f2c1c1d6808a825334d12b51f",
-      "deferred_on": "2026-11-03",
-      "reason": "weekly_publication_cap"
+      "deferred_on": "2026-11-04",
+      "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "dental decision resources",
-      "audience": "HR leader",
-      "format": "budget/planning note",
+      "cluster": "preparing records before a specialist appointment",
+      "audience": "injured person researching next steps",
+      "format": "FAQ answer page",
       "intent": "when you are comparing options",
       "modifier": "low-risk",
-      "intended_title": "Dental Decision Resources: Low-Risk Budget/Planning Note When You Are Comparing Options",
+      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Faq Answer Page When You Are Comparing Options",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "2cbe8b10eef53d1856a60f64eed0f6f156f55e8a4f2a601d13729692ba096c8d",
-      "deferred_on": "2026-11-03",
+      "signature": "43676bc4331e343f5b3a14251cd206a9710837851229186c4f33c5952f8a1ede",
+      "deferred_on": "2026-11-04",
       "reason": "weekly_publication_cap"
     }
   ]

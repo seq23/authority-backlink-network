@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "source": "data/search_intelligence/<host>/demand_families.json + strengthened_pages.json",
   "counts": {
-    "intent_mismatch": 2,
+    "intent_mismatch": 3,
     "no_page": 2,
     "strengthened": 12,
     "strengthened_without_qualifying_family": 3,
@@ -37,8 +37,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 33,
-      "weighted_position": 49.5,
+      "impressions": 34,
+      "weighted_position": 53.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore.html",
       "page": "/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
@@ -60,8 +60,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 22,
-      "weighted_position": 7.0,
+      "impressions": 21,
+      "weighted_position": 6.9,
       "status": "no_page",
       "reason": "lands on the homepage: the front door is strengthened by linking the strengthened pages from it, not by rewriting it around one query",
       "page": "/",
@@ -74,8 +74,8 @@
       "basis": [
         "top_demand"
       ],
-      "impressions": 18,
-      "weighted_position": 4.8,
+      "impressions": 19,
+      "weighted_position": 4.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute.html (derived from the page's own dek and questions)",
       "page": "/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
@@ -111,7 +111,7 @@
         "ranking_page"
       ],
       "impressions": 9,
-      "weighted_position": 9.6,
+      "weighted_position": 9.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/founder-operator/founder-execution-systems.html",
       "page": "/founder-execution-systems",
@@ -127,12 +127,26 @@
       }
     },
     {
+      "host": "founderoperatorlibrary.com",
+      "family": "off-page: what operational systems do successful founders implement? @ /founder-execution-systems",
+      "basis": [
+        "ranking_page"
+      ],
+      "impressions": 1,
+      "weighted_position": 1.0,
+      "status": "intent_mismatch",
+      "reason": "fewer than half of each query's content words appear on the page: the page does not answer these queries, so rewriting it for them would change what it is",
+      "page": "/founder-execution-systems",
+      "file": "sites/founder-operator/founder-execution-systems.html",
+      "changes": null
+    },
+    {
       "host": "memphisvendorlibrary.com",
       "family": "What to Confirm With a Hotel Before Booking an In-Room Decor Setup @ /daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
       "basis": [
         "top_demand"
       ],
-      "impressions": 83,
+      "impressions": 82,
       "weighted_position": 6.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup.html",
@@ -155,8 +169,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 38,
-      "weighted_position": 9.9,
+      "impressions": 36,
+      "weighted_position": 10.1,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs.html",
       "page": "/daily/2026-08-30-grazing-table-vs-buffet-vs-passed-appetizers-how-the-setup-differs",
@@ -178,8 +192,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 8,
-      "weighted_position": 6.8,
+      "impressions": 7,
+      "weighted_position": 6.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/memphis-local/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in.html (derived from the page's own dek and questions)",
       "page": "/daily/2026-08-28-how-to-time-a-surprise-room-setup-around-check-in",
@@ -260,8 +274,8 @@
         "ranking_page",
         "top_demand"
       ],
-      "impressions": 152,
-      "weighted_position": 14.5,
+      "impressions": 142,
+      "weighted_position": 14.4,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/consumer-reporting-companies-directory.html",
       "page": "/consumer-reporting-companies-directory",
@@ -278,12 +292,26 @@
     },
     {
       "host": "professionalresourcelibrary.com",
+      "family": "Letters of explanation @ /topics/letters-of-explanation",
+      "basis": [
+        "top_demand"
+      ],
+      "impressions": 52,
+      "weighted_position": 2.3,
+      "status": "underivable",
+      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
+      "page": "/topics/letters-of-explanation",
+      "file": "sites/professional-resources/topics/letters-of-explanation.html",
+      "changes": null
+    },
+    {
+      "host": "professionalresourcelibrary.com",
       "family": "Full Lease, Half Lease, or Free Lease: What Each One Needs in Writing @ /daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
       "basis": [
         "top_demand"
       ],
-      "impressions": 58,
-      "weighted_position": 8.0,
+      "impressions": 52,
+      "weighted_position": 7.9,
       "status": "strengthened",
       "reason": "data/search_intelligence/strengthened_pages.json -> sites/professional-resources/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing.html",
       "page": "/daily/2026-08-26-full-lease-half-lease-or-free-lease-what-each-one-needs-in-writing",
@@ -297,20 +325,6 @@
         "linked_from_homepage": true,
         "source": "hand_authored"
       }
-    },
-    {
-      "host": "professionalresourcelibrary.com",
-      "family": "Letters of explanation @ /topics/letters-of-explanation",
-      "basis": [
-        "top_demand"
-      ],
-      "impressions": 51,
-      "weighted_position": 2.3,
-      "status": "underivable",
-      "reason": "sites/professional-resources/topics/letters-of-explanation.html has fewer than 3 visible question headings with answers, so derive_strengthening.py cannot strengthen it from its own text; measured here and in strengthening_ledger.json, non-blocking",
-      "page": "/topics/letters-of-explanation",
-      "file": "sites/professional-resources/topics/letters-of-explanation.html",
-      "changes": null
     },
     {
       "host": "professionalresourcelibrary.com",

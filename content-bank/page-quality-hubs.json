@@ -1,0 +1,234 @@
+{
+  "virtual-event-production": [
+    "Virtual event production is the coordination of speakers, video, audio, graphics and show cues for an audience watching remotely or across venues. A production brief turns the event format into crew responsibilities, rehearsals and fallback plans, so a buyer can compare quotes against the same deliverables.",
+    "Choose the format and speaker locations before requesting bids; compare crew responsibilities, rehearsal coverage and failure handling rather than audience size alone.",
+    [
+      "How should I compare production bids?",
+      "Put the same show specification beside each bid: live sources, presenter locations, prerecorded segments, captions, rehearsal scope and recording delivery. Ask which crew roles cover each responsibility and what happens when a source fails. A low total is difficult to interpret until those assumptions match."
+    ],
+    [
+      "What belongs in the run of show?",
+      "Give every cue an owner, trigger, source and fallback. Include what viewers should see during a delayed speaker connection and who authorizes a change. Separate the audience agenda from the technical cue sheet so the production crew can act without interpreting a promotional schedule during the broadcast."
+    ],
+    [
+      "Which standards should I check?",
+      "Ask the production provider which audiovisual and entertainment technology standards apply to the proposed equipment and venue. AVIXA and ESTA publish standards resources; their presence in a reading list is not certification of a vendor. Confirm venue restrictions separately before agreeing to staging, power or rigging work."
+    ],
+    "avixa-standards",
+    "esta-tsp"
+  ],
+  "community-operations": [
+    "Community operations is the ongoing work of welcoming members, moderating participation, answering questions and learning from a member group. It connects a written purpose to named responsibilities and observable outcomes. A useful operating plan distinguishes the benefit for members from the business reason for funding the community.",
+    "Start with a community charter, assign moderation and onboarding ownership, and report measures that would change an operating decision.",
+    [
+      "What should a community charter settle?",
+      "Write down who the community serves, what members can do there that they cannot readily do elsewhere, and what the sponsoring organization expects to learn. Define unacceptable conduct and an escalation route. Without those boundaries, a platform choice or a calendar of posts cannot resolve disagreements about purpose."
+    ],
+    [
+      "How do I choose meaningful community metrics?",
+      "Choose a reporting period and define each measure before collecting it. Look at unanswered questions, new-member participation and the distribution of contribution alongside any business outcome. Explain how a figure could improve while the experience gets worse. Total membership alone does not describe whether members are receiving useful help."
+    ],
+    [
+      "What should an outsourced operator own?",
+      "Specify response coverage, moderation authority, escalation access and reporting deliverables in the brief. Retain an internal owner who can make policy decisions and approve changes to member data handling. An outsourced team needs access and boundaries; purchasing software or staffing hours does not supply either automatically."
+    ],
+    "ftc-business-guidance",
+    "nist-cybersecurity-framework"
+  ],
+  "ai-execution-and-delegation": [
+    "AI delegation is assigning a bounded task to a software system while keeping a person accountable for the result. An executable brief states the outcome, permitted inputs, constraints and acceptance evidence. Review effort and the consequences of an incorrect output determine whether a task belongs in an AI workflow.",
+    "Begin with repeatable work whose result a person can inspect; keep permissions narrow and retain approval for consequential actions.",
+    [
+      "What makes a task suitable for AI delegation?",
+      "Describe the task rules, how often inputs change, how a wrong output would be noticed and who bears its consequences. Prefer a bounded draft or classification task with an inspectable result. Do not assume that a fluent answer demonstrates factual accuracy, permission to act or suitability for an irreversible decision."
+    ],
+    [
+      "What should I put in an AI brief?",
+      "State the desired artifact, allowed information, prohibited actions, deadline and definition of done. Name who reviews the output and what evidence they need to accept it. Include a stop condition for missing information so the system can report uncertainty instead of filling gaps with plausible details."
+    ],
+    [
+      "Where does AI belong in an operating review?",
+      "Use it to assemble inputs, identify missing fields and draft a follow-up list that an owner checks. Keep responsibility for priorities, sensitive judgments and commitments with people. NIST’s AI Risk Management Framework is a source for organizing governance questions; it does not certify an individual tool or workflow."
+    ],
+    "nist-ai-rmf",
+    "nist-ai-rmf-development"
+  ],
+  "founder-operating-rhythms": [
+    "A founder operating rhythm is a recurring process for choosing priorities, reviewing commitments and adjusting work when circumstances change. It connects a calendar to actual decisions rather than simply adding meetings. Useful rhythms name an owner, an input, a decision and a record of what will happen next.",
+    "Build the review around decisions and unresolved commitments; when a week slips, reset the next achievable action before adding a new tracking tool.",
+    [
+      "What belongs in a weekly review?",
+      "Bring the commitments made at the previous review, evidence of completion, blocked work and decisions that need an owner. End with a short list of next actions and a record of what changed. A meeting that only repeats updates can become shorter when those updates are written in advance."
+    ],
+    [
+      "How do I recover after missing a routine?",
+      "Start from current commitments rather than rebuilding an ideal history. Identify what is still relevant, close or renegotiate outdated promises and choose the next review point. A recovery plan should reduce ambiguity about the coming work; treating every missed action as an accumulating debt makes the restart harder to execute."
+    ],
+    [
+      "How should accountability be recorded?",
+      "Record a named owner, observable output and agreed check-in point for each commitment. Distinguish an unclear brief from a missed delivery and capture decisions that changed the scope. Use an operating record to improve coordination rather than treating a count of completed tasks as a judgment about a person."
+    ],
+    "sba-manage-your-business",
+    "sba-launch-your-business"
+  ],
+  "hiring-and-lean-team-stack": [
+    "A lean-team operating system is the set of role definitions, work records and tools a small team uses to deliver work. It starts with outcomes and decision authority rather than software selection. Hiring scorecards, realistic work samples and documented handoffs help separate a staffing problem from unclear role design.",
+    "Define the work and authority first, assess candidates against the same criteria, and add tools only when a handoff or record actually needs one.",
+    [
+      "What should a role scorecard contain?",
+      "Name the outcomes the role owns, decisions it can make, dependencies on other people and evidence that would show success. Compare those expectations with the authority and resources available. If the role cannot reasonably deliver its stated outcomes, adjust the job design before using the scorecard to judge a candidate."
+    ],
+    [
+      "How should I compare work samples?",
+      "Give candidates equivalent instructions, a stated time boundary and the same scoring criteria before work starts. Use a task that resembles the role without extracting usable unpaid client work. Review tradeoffs and reasoning alongside the artifact; a polished submission does not explain what resources or assumptions produced it."
+    ],
+    [
+      "When is a contractor different from an employee?",
+      "The distinction depends on the working relationship and applicable rules, not merely the label in a brief. The IRS publishes federal classification guidance; other obligations may require qualified advice. Use that source to frame questions before comparing a contractor quote with the full responsibilities and costs of employment."
+    ],
+    "irs-contractor-or-employee",
+    "sba-manage-your-business"
+  ],
+  "wedding-planning-tools": [
+    "A wedding planning tool is a record of decisions, responsibilities and deadlines for an event. A checklist tracks what remains to be settled, while a timeline, seating chart and budget handle different constraints. Choose a tool by the decision it helps make rather than the amount of detail it contains.",
+    "Anchor the checklist to your date and confirmed bookings; record an owner and the evidence needed to finish each task.",
+    [
+      "Which wedding planning tool should I start with?",
+      "Start with the unresolved decision that blocks other work. A date and venue constraint may come before a seating chart; a budget record may expose commitments before another booking. Keep the checklist as an index of those decisions, with links to the detailed records instead of copying every figure into every tool."
+    ],
+    [
+      "How do I prevent gaps between vendors?",
+      "Assign an owner to each handoff, including room access, deliveries, setup and collection. Write down who confirms that the receiving person is ready. A vendor completing its own scope does not necessarily complete the next vendor’s prerequisites; the planning record should make that dependency visible before the event week."
+    ],
+    [
+      "What should be checked before a plan is shared?",
+      "Check the event date, version, contact roles and source of each deadline. Separate a vendor’s confirmed contractual requirement from a suggested planning date. Remove private guest details from broadly shared copies. The version sent to a vendor should show the actions that vendor needs, without exposing unrelated family information."
+    ],
+    "memphis-city-government",
+    "tn-fire-prevention"
+  ],
+  "wedding-day-timelines": [
+    "A wedding-day timeline is a sequence of event cues, access windows and vendor handoffs for the wedding day. It translates a guest-facing schedule into practical responsibilities. A usable timeline records who starts each action, what must already be ready and who can approve a change when timing slips.",
+    "Build backwards from fixed venue and ceremony constraints, then confirm setup, travel and handoff assumptions with the people responsible for them.",
+    [
+      "Where should I begin a wedding-day timeline?",
+      "Identify the commitments that cannot move freely: venue access, ceremony arrangements, service windows and the end of the booking. Work back through preparation and transport from those anchors. Ask each vendor to confirm its own duration rather than borrowing a generic schedule that assumes different locations or crew responsibilities."
+    ],
+    [
+      "How do I show buffers without hiding them?",
+      "Name the purpose of each buffer, such as travel uncertainty or a room change, instead of placing unexplained gaps between events. Keep private preparation details separate from the version guests receive. A coordinator needs to know which time is a target and which is a contractual or venue constraint."
+    ],
+    [
+      "Who should change the schedule during the day?",
+      "Choose a person authorized to coordinate timing changes and record how affected vendors will hear about them. Keep a current version accessible to that person. When a cue slips, review the dependencies before moving the next item; a later food service or venue access window may not move with it."
+    ],
+    "nws-memphis",
+    "tn-fire-prevention"
+  ],
+  "wedding-and-event-budgets": [
+    "A wedding or event budget is a record of expected costs, committed payments and outstanding obligations. It separates an estimate from a signed quote and a paid invoice. Tracking scope, due dates and cancellation terms alongside totals makes it possible to compare options without treating an incomplete price as the final cost.",
+    "Compare itemized quotes on matching scope and track payment deadlines separately from the overall spending plan; use published prices only as dated evidence.",
+    [
+      "What should an event budget record?",
+      "Keep the supplier, scope, quoted amount, payment status, due date and source document together. Mark estimates clearly and show what the quote excludes. A budget should distinguish money already paid from money committed but still due, so an apparently healthy total does not conceal a payment deadline."
+    ],
+    [
+      "How should I compare two vendor quotes?",
+      "Rewrite the offers into equivalent categories such as materials, labor, delivery, setup, collection and rental return responsibilities. Ask the vendors to explain missing items rather than filling them with assumed prices. Record taxes and possible additional charges separately until the provider confirms how they apply to the actual booking."
+    ],
+    [
+      "Can published Memphis wedding prices predict my total?",
+      "Published package prices describe the provider’s stated offer at a particular time; they do not confirm availability or cover every event’s requirements. Use the sourced wedding-cost dataset to see the underlying offers, then request a current written quote for your guest count, location, date and service scope."
+    ],
+    "tn-sales-and-use-tax",
+    "tn-secretary-of-state-businesses"
+  ],
+  "wedding-seating-charts": [
+    "A wedding seating chart is a plan assigning guests to tables or seats within a confirmed room layout. It combines attendance information with table capacity, access needs and relationships. The chart becomes reliable only when it reflects the venue’s usable space and the guest list version being used for service.",
+    "Confirm layout and table capacities first, then place groups and access requirements before producing the display or sending assignments to vendors.",
+    [
+      "What needs to be settled before seating guests?",
+      "Ask the venue for the usable layout, table options, capacity limits and routes that must remain clear. Reconcile the guest list with actual responses and identify who can confirm access needs privately. A chart built on an approximate room or an outdated attendance list will require changes regardless of how attractive it looks."
+    ],
+    [
+      "Should I assign seats or just tables?",
+      "Choose the level of assignment with the venue and food-service provider. Table assignments leave more flexibility; specific seats may help coordinate a service plan when that is what the provider requires. Keep the operational record separate from the public display so sensitive notes about guests do not appear on signage."
+    ],
+    [
+      "How should late changes be handled?",
+      "Maintain a single current guest record and record changes there before updating place cards, displays or vendor copies. Give one person responsibility for distributing the revised assignments. Check table capacity and service implications when adding a guest; moving a name on the graphic does not automatically update the catering count."
+    ],
+    "tn-fire-prevention",
+    "memphis-city-government"
+  ],
+  "grazing-tables-and-vendors": [
+    "A grazing table is a shared arrangement of food that guests serve themselves from over a planned service period. Planning it requires decisions about its role in the meal, dietary requirements, replenishment and food handling. Compare it with buffet or passed service by staffing, access and the way guests will be served.",
+    "Brief the provider on guest count, service duration, meal role and venue conditions; verify food-handling arrangements with the relevant local authority.",
+    [
+      "What belongs in a grazing-table brief?",
+      "State whether the table is a meal or an accompaniment, who will attend, the service period and where it will sit. Ask how dietary needs are handled and who replenishes or clears it. A visual reference is useful for presentation, but it does not explain the serving plan or the venue’s restrictions."
+    ],
+    [
+      "How does grazing differ from a buffet?",
+      "Compare the flow of guests and the responsibilities of staff rather than choosing from photographs alone. A shared display, a plated queue and passed food place different demands on circulation and replenishment. Ask the provider how its proposal works in your room and what happens when guests arrive together."
+    ],
+    [
+      "Who confirms food-service requirements in Memphis?",
+      "Shelby County Health Department is the local source to consult about applicable food-service requirements. The FDA Food Code is a model code, not proof of a particular vendor’s permit or compliance. Ask for the provider’s relevant documentation and handling plan; this publication does not certify food safety or inspect vendors."
+    ],
+    "shelby-county-health",
+    "fda-food-code"
+  ],
+  "porch-and-seasonal-styling": [
+    "Seasonal porch styling is the design, installation and removal of an outdoor display for a home or entrance. Its scope includes measurements, exposure, attachment methods and what happens to the materials afterwards. A useful brief covers access and takedown as carefully as the look requested for installation day.",
+    "Confirm dimensions, exposure and attachment permissions before choosing materials; agree installation, weather changes and removal responsibilities in the same brief.",
+    [
+      "What should a porch-styling brief include?",
+      "Provide measurements and photographs that show door movement, walkways, outlets and the surfaces where anything would attach. Describe sun, rain and wind exposure instead of asking a provider to infer them from a styled reference image. Confirm who can authorize access and what must stay clear throughout the installation."
+    ],
+    [
+      "When should takedown be arranged?",
+      "Agree the removal plan when the installation is booked, including who removes fixings, collects rented items and handles disposal or storage. Ask what happens if weather prevents the scheduled visit. An installation price is difficult to compare if one proposal includes collection and another leaves all removal work to the customer."
+    ],
+    [
+      "How should weather affect the material choice?",
+      "Discuss exposure and manufacturer limitations with the provider before approving the design. The local National Weather Service forecast supports near-term planning; NOAA climate normals describe longer-term patterns and cannot predict conditions on installation day. Agree who makes the weather decision and how a postponement changes access and collection arrangements."
+    ],
+    "nws-memphis",
+    "noaa-climate-normals"
+  ],
+  "event-and-room-styling": [
+    "Event and room styling is the planning and installation of decorative elements within a venue’s access, attachment and removal rules. The brief combines the intended occasion with practical constraints such as load-in windows and permitted materials. Hotel setups also require the hotel’s agreement about outside vendors and room access.",
+    "Confirm the venue’s written rules and access window before booking the styling; compare quotes only after design, setup and removal responsibilities match.",
+    [
+      "What should a hotel confirm before a room setup?",
+      "Ask whether outside vendors are permitted, how room access is authorized, which materials are prohibited and when the room will be available. Keep the hotel’s confirmation with the vendor brief. A reservation alone does not establish permission for a third party to enter the room or attach decorations to its surfaces."
+    ],
+    [
+      "How do I brief a corporate or milestone event?",
+      "Describe the occasion, audience, venue, circulation, brand assets and desired focal points. Include load-in and removal windows and the contact who can approve changes. Give the provider a usable floor plan; promotional photographs can hide power locations, low ceilings or the space needed for guests to move around the installation."
+    ],
+    [
+      "How should a surprise setup be timed?",
+      "Work backwards from the reveal through the setup and vendor arrival windows, with the hotel or venue confirming when access becomes possible. Name a person to receive status updates without alerting the guest. Agree what happens if the room is released late so the surprise does not depend on an unconfirmed access assumption."
+    ],
+    "memphis-city-government",
+    "tn-fire-prevention"
+  ],
+  "family-care-and-home-routines": [
+    "Family care and home routines are practical arrangements for coordinating support, household responsibilities and everyday learning. These guides separate family planning tasks from decisions requiring qualified care advice. Start with the person’s needs, record who handles each task and keep questions about services or costs ready for the appropriate provider.",
+    "Choose the guide that matches your immediate task: comparing care arrangements, preparing cost questions or making a workable reading routine.",
+    [
+      "How should a family start comparing care options?",
+      "Write down the support needed during an ordinary day and who currently provides it. Use that record to prepare questions for providers. A guide cannot determine someone’s care needs; ask an appropriately qualified professional to assess questions about health or clinical support."
+    ],
+    [
+      "What belongs in a care cost conversation?",
+      "Ask the provider what the quoted charge includes, which services cost extra and how changes in support needs affect the agreement. Keep the written answers with the contract. Check eligibility questions directly with the relevant program rather than assuming a funding option applies to your family."
+    ],
+    [
+      "How can a reading routine fit a busy household?",
+      "Choose a repeatable time and an accessible place to keep reading materials. Agree who will join in and what happens when the usual time is missed. Adjust the arrangement to the household’s needs; the routine is a planning tool, not a promise of educational outcomes."
+    ]
+  ]
+}
