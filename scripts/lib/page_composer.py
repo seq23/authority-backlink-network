@@ -397,6 +397,9 @@ def compose_answer(f: dict) -> str:
     page's own hash, so which one wins still varies across the library, and the
     closest to the midpoint is used if none fits.
     """
+    answer = _load("content-bank/daily-topic-answers.json", {}).get(f["cluster"].lower())
+    if answer:
+        return esc(answer)
     variants = ANSWER_VARIANTS if has_citation(f) else ANSWER_VARIANTS_NO_CITATION
     rendered = [_render_answer(f, v) for v in _rotated(variants, f["title"])]
     low, high = ANSWER_WORDS

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "total_links": 20799,
+  "total_links": 20801,
   "violations": [],
   "target_domains": [
     "aplayermode.com",
@@ -12852,6 +12852,24 @@
       "domain": "memphisvendorlibrary.com",
       "anchor": "Memphis Vendor Library",
       "external": true,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/about.html",
+      "publication": "memphis",
+      "href": "/corrections?page_kind=overview&amp;slug=about",
+      "domain": "",
+      "anchor": "Send Memphis Vendor Library a question or correction",
+      "external": false,
+      "violation": ""
+    },
+    {
+      "source": "sites/memphis-local/about.html",
+      "publication": "memphis",
+      "href": "/about",
+      "domain": "",
+      "anchor": "About the publication",
+      "external": false,
       "violation": ""
     },
     {

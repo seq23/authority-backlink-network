@@ -45,6 +45,21 @@ def upgrade(page, article, pub):
             f'<h2>Editorial and affiliation note</h2><p>{e(pub["disclosure"])} {e(article["disclaimer"])} Affiliation disclosed: This page is not legal, medical, mental-health, immigration, financial, or professional advice.</p>')
     # Carry every enrichment that contains citations into the new article body.
     enrichment = re.findall(r'<section\b[^>]*data-block="(?:external-sources|external-citations)"[^>]*>.*?</section>',page,re.S)
+    # Enrichments may live outside the article. Remove their old locations
+    # before carrying one copy of each kind into the rebuilt article.
+    unique = {}
+    items = {}
+    for block in enrichment:
+        kind = re.search(r'data-block="([^"]+)"', block)[1]
+        unique.setdefault(kind, block)
+        for item in re.findall(r'<li>.*?</li>', block, re.S):
+            key = html.unescape(re.sub('<[^>]+>', '', item)).strip()
+            saved = items.setdefault(kind, {})
+            if key not in saved or '<a ' in item:
+                saved[key] = item
+    enrichment = [re.sub(r'<ul>.*?</ul>', lambda m: '<ul>' + ''.join(items[kind].values()) + '</ul>', block, count=1, flags=re.S)
+                  for kind, block in unique.items()]
+    page = re.sub(r'<section\b[^>]*data-block="(?:external-sources|external-citations)"[^>]*>.*?</section>', '', page, flags=re.S)
     sources = {s['id']: s for s in json.loads((Path(__file__).resolve().parents[2]/'data/external-sources.json').read_text())['sources']}
     if article.get('source_ids'):
         refs = []
