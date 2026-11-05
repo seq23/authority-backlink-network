@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-11-04T16-41-40.085448Z-41869776632",
-  "attempted_at": "2026-11-04T16:41:40.085448Z",
+  "receipt_id": "2026-11-05T16-40-57.612967Z-42066702840",
+  "attempted_at": "2026-11-05T16:40:57.612967Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "8ebb50b8a18abb60641fc136c81dd32129aa8454f2a5bc548ed2263fc0014693",
+        "sha256": "89af9e1dd30159f94298aa6ff71c616d2869f4d39a0cc0b2362abbb098a64cdf",
         "url_count": 44
       },
       "indexnow": {
@@ -51,109 +51,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 9,
-        "inspected_urls": 9,
-        "results": [
-          {
-            "url": "https://founderoperatorlibrary.com/founder-execution-systems",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-26T03:27:31Z",
-            "google_canonical": "https://founderoperatorlibrary.com/founder-execution-systems",
-            "user_canonical": "https://founderoperatorlibrary.com/founder-execution-systems"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-09-14T10:54:10Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-08-28-what-an-ai-coach-can-and-cannot-do-compared-with-a-human-coach"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-13T09:57:51Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-08-28-where-to-put-ai-in-a-weekly-operating-review-without-losing-accountability"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-27T12:58:55Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-09-11T14:15:09Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-08-31-webinar-vs-virtual-conference-vs-hybrid-broadcast-how-the-scope-differs"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-04T00:11:00Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-09-01-how-to-write-a-community-charter-before-choosing-a-platform"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-08T15:12:20Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-28T00:44:52Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership"
-          },
-          {
-            "url": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "PASS",
-            "coverage_state": "Submitted and indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-30T14:48:07Z",
-            "google_canonical": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
-            "user_canonical": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore"
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -717,7 +617,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "5c04b7180761da8d881db6a3e58b547bc2f00a9ee2d54f74150740081db16a59",
+        "sha256": "e650db3422e9c48041ef72be9e6c43033d1f15e10f45a2ab0cff432c6b4bf49e",
         "url_count": 47
       },
       "indexnow": {
@@ -746,32 +646,9 @@
       },
       "priority_url_inspection": {
         "status": "SUCCESS",
-        "requested_urls": 2,
-        "inspected_urls": 2,
-        "results": [
-          {
-            "url": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "Crawled - currently not indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-21T10:57:08Z",
-            "google_canonical": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup",
-            "user_canonical": "https://memphisvendorlibrary.com/daily/2026-08-28-what-to-confirm-with-a-hotel-before-booking-an-in-room-decor-setup"
-          },
-          {
-            "url": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room",
-            "status": "SUCCESS",
-            "http_status": 200,
-            "verdict": "NEUTRAL",
-            "coverage_state": "Crawled - currently not indexed",
-            "indexing_state": "INDEXING_ALLOWED",
-            "last_crawl_time": "2026-10-27T15:13:30Z",
-            "google_canonical": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room",
-            "user_canonical": "https://memphisvendorlibrary.com/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room"
-          }
-        ]
+        "requested_urls": 0,
+        "inspected_urls": 0,
+        "results": []
       },
       "live_backlink_verification": {
         "status": "SUCCESS",
@@ -997,7 +874,7 @@
         "status": "SUCCESS",
         "path": "sites/professional-resources/sitemap.xml",
         "sitemap_url": "https://professionalresourcelibrary.com/sitemap.xml",
-        "sha256": "4c3468c32fb464bc75f9358bcc1fc05e2152fe44651153836f20e261a7a0dc31",
+        "sha256": "418c43afae05c4c61ae74ba4fd4eef4f45d4921a0ee5ee036dca3d31784c07e4",
         "url_count": 426
       },
       "indexnow": {
@@ -1976,7 +1853,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-11-04T16-41-40.085448Z-41869776632.json"
+    "history": "data/distribution/receipts/2026-11-05T16-40-57.612967Z-42066702840.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
