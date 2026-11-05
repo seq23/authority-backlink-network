@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "host": "founderoperatorlibrary.com",
-  "gsc_window": "2026-10-05..2026-11-01",
-  "gsc_collected_at": "2026-11-04T15:26:38+00:00",
+  "gsc_window": "2026-10-06..2026-11-02",
+  "gsc_collected_at": "2026-11-05T15:25:59+00:00",
   "rule": "A family is a landing page plus the queries that land on it whose intent the\npage answers (at least half of the query's content tokens appear in the page's\nvisible text). Impressions Search Console reports for the page but attributes\nto no visible query (anonymised) join that family: the page's own subject is\nthe only intent on record for them. Queries the page does not answer form a\nseparate \"off-page\" family on the same page.\n\nA family qualifies for strengthening when\n  (a) ranking_page: it has visible queries and its page has >= 2 impressions at\n      average position <= 15, OR\n  (b) top_demand: it is one of the host's top 5 families by 28-day impressions,\n      has >= 2 impressions, and its impression-weighted position is <= 95.\nA qualifying family is strengthened on its page when the page is an article or\na topic hub and the intent matches; the homepage, editorial pages and off-page\nfamilies record the reason instead. With no hand-authored entry the loop derives\none from the page's own dek and question headings (derive_strengthening.py); a\npage too thin for that is recorded as underivable, measured, non-blocking.",
   "thresholds": {
     "top_n": 5,
@@ -12,12 +12,12 @@
     "ranking_min_impressions": 2,
     "intent_token_share": 0.5
   },
-  "family_count": 36,
+  "family_count": 37,
   "qualifying_count": 7,
   "status_counts": {
     "intent_mismatch": 1,
     "no_page": 2,
-    "not_top_family": 29,
+    "not_top_family": 30,
     "strengthened": 4
   },
   "families": [
@@ -73,15 +73,15 @@
       "impressions": 34,
       "visible_query_impressions": 13,
       "anonymised_impressions": 21,
-      "weighted_position": 53.1,
+      "weighted_position": 50.1,
       "page_impressions": 34,
-      "page_position": 44.2,
+      "page_position": 42.4,
       "query_count": 4,
       "queries": [
         {
           "query": "community reports",
-          "impressions": 7,
-          "position": 80
+          "impressions": 6,
+          "position": 79.8
         },
         {
           "query": "monthly metrics",
@@ -89,14 +89,14 @@
           "position": 47.7
         },
         {
+          "query": "community cost metric",
+          "impressions": 2,
+          "position": 16.5
+        },
+        {
           "query": "community metrics",
           "impressions": 2,
           "position": 79
-        },
-        {
-          "query": "community cost metric",
-          "impressions": 1,
-          "position": 16
         }
       ],
       "rank": 2,
@@ -248,7 +248,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 7 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 7 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Editorial standards for Founder Operator Library @ /editorial-standards",
@@ -270,7 +270,7 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 8 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 8 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "performance problem identification @ /daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
@@ -280,17 +280,17 @@
       "file": "sites/founder-operator/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem.html",
       "page_title": "How to Tell a Performance Problem From a Role Design Problem",
       "impressions": 5,
-      "visible_query_impressions": 3,
-      "anonymised_impressions": 2,
-      "weighted_position": 41.8,
+      "visible_query_impressions": 2,
+      "anonymised_impressions": 3,
+      "weighted_position": 36.0,
       "page_impressions": 5,
-      "page_position": 39,
+      "page_position": 30.6,
       "query_count": 1,
       "queries": [
         {
           "query": "performance problem identification",
-          "impressions": 3,
-          "position": 43.7
+          "impressions": 2,
+          "position": 44
         }
       ],
       "rank": 9,
@@ -298,7 +298,40 @@
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 9 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 9 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+    },
+    {
+      "family": "what is community operations @ /topics/community-operations",
+      "intent": "page",
+      "page": "/topics/community-operations",
+      "page_kind": "hub",
+      "file": "sites/founder-operator/topics/community-operations.html",
+      "page_title": "Community programs and managed operations",
+      "impressions": 4,
+      "visible_query_impressions": 4,
+      "anonymised_impressions": 0,
+      "weighted_position": 23.2,
+      "page_impressions": 4,
+      "page_position": 23.2,
+      "query_count": 2,
+      "queries": [
+        {
+          "query": "what is community operations",
+          "impressions": 3,
+          "position": 23.3
+        },
+        {
+          "query": "community operations meaning",
+          "impressions": 1,
+          "position": 23
+        }
+      ],
+      "rank": 10,
+      "basis": [],
+      "qualifies": false,
+      "strengthened_pages": [],
+      "status": "not_top_family",
+      "reason": "rank 10 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "virtual event rfp @ /virtual-event-production-buyers-guide",
@@ -321,12 +354,12 @@
           "position": 87
         }
       ],
-      "rank": 10,
+      "rank": 11,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 10 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 11 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "off-page: i lead marketing for a trade association. are ai chatbots now a channel we need a strategy for, the way social media was in 2010? @ /ai-marketing-operations-resources",
@@ -349,12 +382,12 @@
           "position": 87.7
         }
       ],
-      "rank": 11,
+      "rank": 12,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 11 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 12 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Actually Drives the Cost of a Virtual Event Production @ /virtual-event-production-cost-drivers",
@@ -371,12 +404,12 @@
       "page_position": 4.5,
       "query_count": 0,
       "queries": [],
-      "rank": 12,
+      "rank": 13,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 12 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 13 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Corrections policy and log for Founder Operator Library @ /corrections",
@@ -393,12 +426,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 13,
+      "rank": 14,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 13 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 14 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "AI execution, delegation and operating cadence @ /topics/ai-execution-and-delegation",
@@ -415,12 +448,12 @@
       "page_position": 22.5,
       "query_count": 0,
       "queries": [],
-      "rank": 14,
+      "rank": 15,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 14 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 15 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "AI Marketing Operations Resources @ /ai-marketing-operations-resources",
@@ -437,12 +470,12 @@
       "page_position": 55.4,
       "query_count": 0,
       "queries": [],
-      "rank": 15,
+      "rank": 16,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 15 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 16 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers @ /daily/2026-09-30-operator-playbooks-low-risk-budget-planning-note-for-first-time-buyers",
@@ -459,12 +492,12 @@
       "page_position": 1,
       "query_count": 0,
       "queries": [],
-      "rank": 16,
+      "rank": 17,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 16 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 17 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "off-page: what operational systems do successful founders implement? @ /founder-execution-systems",
@@ -487,7 +520,7 @@
           "position": 1
         }
       ],
-      "rank": 17,
+      "rank": 18,
       "basis": [
         "ranking_page"
       ],
@@ -511,12 +544,12 @@
       "page_position": 2,
       "query_count": 0,
       "queries": [],
-      "rank": 18,
+      "rank": 19,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 18 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 19 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Actually Drives the Cost of a Virtual Event @ /daily/2026-08-30-what-actually-drives-the-cost-of-a-virtual-event",
@@ -533,12 +566,12 @@
       "page_position": 3,
       "query_count": 0,
       "queries": [],
-      "rank": 19,
+      "rank": 20,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 19 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 20 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "How to Design the First 30 Days of Community Membership @ /daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
@@ -555,12 +588,12 @@
       "page_position": 4,
       "query_count": 0,
       "queries": [],
-      "rank": 20,
+      "rank": 21,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 20 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 21 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What a Role Scorecard Should Contain Before You Open a Req @ /daily/2026-08-26-what-a-role-scorecard-should-contain-before-you-open-a-req",
@@ -577,12 +610,12 @@
       "page_position": 5,
       "query_count": 0,
       "queries": [],
-      "rank": 21,
+      "rank": 22,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 21 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 22 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters @ /daily/2026-07-29-review-cadences-low-risk-buyer-guide-when-timing-matters",
@@ -599,12 +632,12 @@
       "page_position": 6,
       "query_count": 0,
       "queries": [],
-      "rank": 22,
+      "rank": 23,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 22 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 23 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call @ /daily/2026-08-17-virtual-event-production-decision-focused-resource-roundup-before-you-call",
@@ -621,12 +654,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 23,
+      "rank": 24,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 23 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 24 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call @ /daily/2026-09-18-ai-workforce-design-beginner-safe-resource-roundup-before-you-call",
@@ -643,12 +676,12 @@
       "page_position": 7,
       "query_count": 0,
       "queries": [],
-      "rank": 24,
+      "rank": 25,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 24 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 25 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What Community as a Service Actually Covers @ /daily/2026-07-24-what-community-as-a-service-actually-covers",
@@ -665,12 +698,12 @@
       "page_position": 8,
       "query_count": 0,
       "queries": [],
-      "rank": 25,
+      "rank": 26,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 25 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 26 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters @ /daily/2026-09-10-founder-operating-systems-2026-ready-budget-planning-note-when-timing-matters",
@@ -687,12 +720,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 26,
+      "rank": 27,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 26 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 27 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters @ /daily/2026-09-16-ai-delegation-aeo-ready-timeline-guide-when-timing-matters",
@@ -709,12 +742,12 @@
       "page_position": 9,
       "query_count": 0,
       "queries": [],
-      "rank": 27,
+      "rank": 28,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 27 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 28 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign @ /daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
@@ -731,12 +764,12 @@
       "page_position": 10,
       "query_count": 0,
       "queries": [],
-      "rank": 28,
+      "rank": 29,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 28 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 29 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "The lean team's operating stack @ /topics/hiring-and-lean-team-stack",
@@ -753,12 +786,12 @@
       "page_position": 10,
       "query_count": 0,
       "queries": [],
-      "rank": 29,
+      "rank": 30,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 29 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 30 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "What a Community Moderation Policy Needs to Cover @ /daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
@@ -775,12 +808,12 @@
       "page_position": 10,
       "query_count": 0,
       "queries": [],
-      "rank": 30,
+      "rank": 31,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 30 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 31 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po @ /daily/2026-10-08-personal-board-of-directors-checklist-driven-buyer-guide-for-people-who-need-a-starting-po",
@@ -797,12 +830,12 @@
       "page_position": 11,
       "query_count": 0,
       "queries": [],
-      "rank": 31,
+      "rank": 32,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 31 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 32 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book @ /daily/2026-09-25-productivity-recovery-after-missed-days-editorial-planning-checklist-before-you-book",
@@ -819,12 +852,12 @@
       "page_position": 17,
       "query_count": 0,
       "queries": [],
-      "rank": 32,
+      "rank": 33,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 32 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 33 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers @ /daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
@@ -841,12 +874,12 @@
       "page_position": 36,
       "query_count": 0,
       "queries": [],
-      "rank": 33,
+      "rank": 34,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 33 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 34 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "off-page: operating guidance @ /daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
@@ -869,12 +902,12 @@
           "position": 69
         }
       ],
-      "rank": 34,
+      "rank": 35,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 34 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 35 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "Contributors and byline policy @ /contributors",
@@ -891,12 +924,12 @@
       "page_position": 75,
       "query_count": 0,
       "queries": [],
-      "rank": 35,
+      "rank": 36,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 35 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 36 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     },
     {
       "family": "virtual event rfp @ /topics/virtual-event-production",
@@ -919,12 +952,12 @@
           "position": 97
         }
       ],
-      "rank": 36,
+      "rank": 37,
       "basis": [],
       "qualifies": false,
       "strengthened_pages": [],
       "status": "not_top_family",
-      "reason": "rank 36 of 36 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
+      "reason": "rank 37 of 37 by impressions; no visible query on a page at position <= 15 with >= 2 impressions"
     }
   ]
 }
