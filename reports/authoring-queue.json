@@ -1,58 +1,58 @@
 {
   "schema_version": "1.0",
-  "run_at": "2026-11-04",
+  "run_at": "2026-11-05",
   "note": "Slots the weekly publication cap deferred. Not discarded: each carries the angle it was going to take, so it can be written when there is room, or retired on purpose. The cap is data/cadence/policy.json:new_pages_per_week and is enforced in scripts/cadence_allowance.py before generation, not after.",
   "cadence": {
     "weekly_cap": 3,
     "window_days": 7,
     "published_in_window": 8,
     "allowance": 0,
-    "window_start": "2026-10-29",
-    "window_end": "2026-11-04"
+    "window_start": "2026-10-30",
+    "window_end": "2026-11-05"
   },
   "deferred": 5,
   "queue": [
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-11-04",
+      "deferred_on": "2026-11-05",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "conditioning textured hair",
-      "audience": "nonprofit executive",
-      "format": "timeline guide",
-      "intent": "for busy operators",
-      "modifier": "no-fluff",
-      "intended_title": "Conditioning Textured Hair: No-Fluff Timeline Guide For Busy Operators",
+      "cluster": "wave hair care routines",
+      "audience": "consumer comparing regulated providers",
+      "format": "red-flag checklist",
+      "intent": "before you sign",
+      "modifier": "beginner-safe",
+      "intended_title": "Wave Hair Care Routines: Beginner-Safe Red-Flag Checklist Before You Sign",
       "target_brand": "Glory By Us",
-      "target_url": "https://glorybyus.com/products/glory-set",
-      "signature": "61768f99af311bbd32a4df57cf1d0f034a677ce7ea62eae7193ef73861508632",
-      "deferred_on": "2026-11-04",
+      "target_url": "https://glorybyus.com/collections/wave-hair-products",
+      "signature": "e41845ad2d9e1231608b2c1ad70502d6d3b94f20e97b8b16100735f929eec27b",
+      "deferred_on": "2026-11-05",
       "reason": "weekly_publication_cap"
     },
     {
       "publication": "founder-operator",
-      "deferred_on": "2026-11-04",
+      "deferred_on": "2026-11-05",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "memphis-local",
-      "deferred_on": "2026-11-04",
+      "deferred_on": "2026-11-05",
       "reason": "no_topically_eligible_affiliated_link"
     },
     {
       "publication": "professional-resources",
-      "cluster": "preparing records before a specialist appointment",
-      "audience": "injured person researching next steps",
-      "format": "FAQ answer page",
-      "intent": "when you are comparing options",
-      "modifier": "low-risk",
-      "intended_title": "Preparing Records Before A Specialist Appointment: Low-Risk Faq Answer Page When You Are Comparing Options",
+      "cluster": "dental decision resources",
+      "audience": "nonprofit executive",
+      "format": "red-flag checklist",
+      "intent": "before you choose",
+      "modifier": "comparison-friendly",
+      "intended_title": "Dental Decision Resources: Comparison-Friendly Red-Flag Checklist Before You Choose",
       "target_brand": "The Dentistry Guides",
       "target_url": "https://dentistryguides.com/guides/",
-      "signature": "43676bc4331e343f5b3a14251cd206a9710837851229186c4f33c5952f8a1ede",
-      "deferred_on": "2026-11-04",
+      "signature": "1a827dfa69f7fd431027c0a9b1a32b5f20bd91cdd0a54b2551b66596f266d019",
+      "deferred_on": "2026-11-05",
       "reason": "weekly_publication_cap"
     }
   ]
