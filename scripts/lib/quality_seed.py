@@ -24,7 +24,7 @@ def upgrade(page, article, pub):
     resource=(f'<h2>Which related resource can I consult?</h2><p>{reference}.</p>' if reference else '')
     # FAQ answers contain the actual recorded content, never invented replies to
     # the provider-facing questions (which remain a list for the reader to ask).
-    faq = [(article['title'].rstrip('?') + '?', article['direct_answer']),
+    faq = [('What is the practical starting point?', article['direct_answer']),
            ('What should I establish before deciding?', ' '.join(factors)),
            ('Which mistakes should I avoid?', ' '.join(mistakes))]
     comparison = article.get('comparison')
@@ -33,8 +33,8 @@ def upgrade(page, article, pub):
         table = '<h2>How do the options compare?</h2><table><thead><tr>' + ''.join('<th>'+e(x)+'</th>' for x in comparison['headers']) + '</tr></thead><tbody>' + ''.join('<tr>'+''.join('<td>'+e(x)+'</td>' for x in row)+'</tr>' for row in comparison['rows']) + '</tbody></table>'
     # Existing direct answers are authored individually. They stand as the
     # definition; the quick answer is the concrete first recorded action.
-    body = (f'<h1>{e(article["title"])}</h1><p class="dek">{e(article["direct_answer"])}</p><p class="definition">{e(article.get("definition", article["direct_answer"]))}</p>'
-            f'<p>What this guide is best for: {e(article["title"])}</p>'
+    body = (f'<h1>{e(article["title"])}</h1><p class="dek">{e(article.get("definition", article["direct_answer"]))}</p><p class="definition">{e(article["direct_answer"])}</p>'
+            f'<p>What this guide is best for: {e(article["quality_topic"])}</p>'
             f'<p class="topic-context"><strong>Topic context:</strong> {e(article["quality_topic"])}.</p>'
             '<h2>What should I compare?</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in factors)+'</ul>'
             '<h2>What questions should I ask?</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in questions)+'</ul>'

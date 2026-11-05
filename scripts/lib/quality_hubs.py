@@ -45,6 +45,6 @@ def render(*, hub, pub, domain, url, home, members, siblings, overviews=None):
         f'<section class="faq"><h2>Frequently asked questions</h2>{faq}</section>'
         + (f'<h2>Where can I check the underlying requirements?</h2><ul>{refs}</ul>' if refs else '')
         + f'<aside class="next-step"><h2>Need to clarify this guide?</h2><p><a href="{e(next_url)}">Send {e(pub["title"])} a question or correction</a>.</p></aside>'
-        f'<p>By {e(entity_for(pub["title"]))} · Publisher: {e(pub["title"])} · Guide edition published November 3, 2026 · Updated <time datetime="2026-11-03">November 3, 2026</time>. <a href="/about">About this publication</a>.</p>'
+        f'<p>By <a rel="author" href="/masthead">{e(entity_for(pub["title"]))}</a> · Publisher: {e(pub["title"])} · Guide edition published November 3, 2026 · Updated <time datetime="2026-11-03">November 3, 2026</time>. <a href="/about">About this publication</a>.</p>'
         f'<p>{e(pub["disclosure"])} Affiliation disclosed: This page is not legal, medical, mental-health, immigration, financial, or professional advice.</p>'
         f'</article><nav><h2>Related topics</h2><ul>{more}</ul></nav></main></body></html>\n')
