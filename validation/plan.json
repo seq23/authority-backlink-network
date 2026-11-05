@@ -72,8 +72,7 @@
       "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
-      "entity_backlink_watch_behaviour",
-      "search_quality_repairs"
+      "entity_backlink_watch_behaviour"
     ],
     "release": [
       "json",
@@ -141,8 +140,7 @@
       "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
-      "entity_backlink_watch_behaviour",
-      "search_quality_repairs"
+      "entity_backlink_watch_behaviour"
     ],
     "full": [
       "json",
@@ -211,8 +209,7 @@
       "entity_watch_wiring",
       "grid_backlink_coverage",
       "earned_mentions",
-      "entity_backlink_watch_behaviour",
-      "search_quality_repairs"
+      "entity_backlink_watch_behaviour"
     ],
     "cache-self-test": [
       "python",
@@ -499,10 +496,6 @@
     "meta_length_never_blocks": {
       "severity": "HARD_FAIL",
       "rationale": "Owner ruling 2 Nov 2026: a title or meta description never blocks a build for length. Pins scripts/lib/meta_description.py: over-long text is trimmed to the bound, never raised; 75-100% of a floor passes; under 75% still raises; the autopilot quality gate does not hard-fail an over-long head. Fails on zero cases."
-    },
-    "search_quality_repairs": {
-      "severity": "HARD_FAIL",
-      "rationale": "Consolidated URLs must keep permanent redirects after regeneration; answer-slot updates must preserve source citations and be idempotent."
     }
   },
   "severity_matrix_policy": {

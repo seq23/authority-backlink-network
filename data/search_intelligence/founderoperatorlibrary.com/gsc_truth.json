@@ -4,20 +4,20 @@
   "state": "OK",
   "host": "founderoperatorlibrary.com",
   "site_url": "sc-domain:founderoperatorlibrary.com",
-  "start_date": "2026-10-04",
-  "end_date": "2026-10-31",
+  "start_date": "2026-10-05",
+  "end_date": "2026-11-01",
   "window_days": 28,
-  "collected_at": "2026-11-03T15:25:36+00:00",
+  "collected_at": "2026-11-04T15:26:38+00:00",
   "totals": {
     "clicks": 1,
-    "impressions": 167,
-    "ctr": 0.006,
-    "position": 25.3
+    "impressions": 169,
+    "ctr": 0.0059,
+    "position": 25.7
   },
-  "query_count": 14,
-  "page_count": 31,
-  "row_count": 14,
-  "query_row_impressions": 61,
+  "query_count": 15,
+  "page_count": 33,
+  "row_count": 16,
+  "query_row_impressions": 64,
   "truth_boundary": "Search Console is the only authority for this host's Google impressions, clicks and position. totals has no dimensions and is complete; query rows omit anonymised queries, so they sum to less.",
   "rows": [
     {
@@ -77,6 +77,14 @@
       "position": 43.7
     },
     {
+      "query": "community metrics",
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 79
+    },
+    {
       "query": "founder support for product execution",
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 0,
@@ -109,14 +117,6 @@
       "position": 17
     },
     {
-      "query": "moderation and community management",
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 84
-    },
-    {
       "query": "operating guidance",
       "page": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
       "clicks": 0,
@@ -126,11 +126,27 @@
     },
     {
       "query": "virtual event rfp",
+      "page": "https://founderoperatorlibrary.com/topics/virtual-event-production",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 97
+    },
+    {
+      "query": "virtual event rfp",
       "page": "https://founderoperatorlibrary.com/virtual-event-production-buyers-guide",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 87
+    },
+    {
+      "query": "what operational systems do successful founders implement?",
+      "page": "https://founderoperatorlibrary.com/founder-execution-systems",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
     }
   ],
   "by_query": [
@@ -184,11 +200,25 @@
       "position": 43.7
     },
     {
+      "query": "community metrics",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 79
+    },
+    {
       "query": "founder support for product execution",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 14
+    },
+    {
+      "query": "virtual event rfp",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 92
     },
     {
       "query": "ai act coach",
@@ -212,13 +242,6 @@
       "position": 17
     },
     {
-      "query": "moderation and community management",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 84
-    },
-    {
       "query": "operating guidance",
       "clicks": 0,
       "impressions": 1,
@@ -226,11 +249,11 @@
       "position": 69
     },
     {
-      "query": "virtual event rfp",
+      "query": "what operational systems do successful founders implement?",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 87
+      "position": 1
     }
   ],
   "by_page": [
@@ -244,23 +267,23 @@
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-02-which-community-metrics-to-report-monthly-and-which-to-ignore",
       "clicks": 1,
-      "impressions": 33,
-      "ctr": 0.0303,
-      "position": 41.5
+      "impressions": 34,
+      "ctr": 0.0294,
+      "position": 44.2
     },
     {
       "page": "https://founderoperatorlibrary.com/",
       "clicks": 0,
-      "impressions": 22,
+      "impressions": 21,
       "ctr": 0,
-      "position": 6.5
+      "position": 6.4
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-08-29-how-to-write-a-delegation-brief-a-person-or-a-tool-can-both-execute",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 19,
       "ctr": 0,
-      "position": 4.8
+      "position": 4.9
     },
     {
       "page": "https://founderoperatorlibrary.com/masthead",
@@ -272,9 +295,9 @@
     {
       "page": "https://founderoperatorlibrary.com/founder-execution-systems",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 10,
       "ctr": 0,
-      "position": 8.4
+      "position": 7.7
     },
     {
       "page": "https://founderoperatorlibrary.com/about",
@@ -284,18 +307,18 @@
       "position": 9.2
     },
     {
-      "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 37.5
-    },
-    {
       "page": "https://founderoperatorlibrary.com/ai-marketing-operations-resources",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 55.4
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/daily/2026-08-27-how-to-tell-a-performance-problem-from-a-role-design-problem",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 39
     },
     {
       "page": "https://founderoperatorlibrary.com/editorial-standards",
@@ -317,13 +340,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 6
-    },
-    {
-      "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 47
     },
     {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-24-founder-operating-systems-checklist-driven-prep-guide-for-careful-decision-makers",
@@ -396,6 +412,20 @@
       "position": 3
     },
     {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-01-what-a-community-moderation-policy-needs-to-cover",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/daily/2026-09-02-how-to-design-the-first-30-days-of-community-membership",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
       "page": "https://founderoperatorlibrary.com/daily/2026-09-09-team-accountability-checklist-driven-comparison-guide-before-you-sign",
       "clicks": 0,
       "impressions": 1,
@@ -450,6 +480,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "page": "https://founderoperatorlibrary.com/topics/virtual-event-production",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 97
     }
   ]
 }

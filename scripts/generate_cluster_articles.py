@@ -125,7 +125,8 @@ def schema_graph(article: dict, pub: dict, url: str) -> str:
             "headline": article["title"],
             "description": article["meta_description"],
             "datePublished": article["date"],
-            "dateModified": article["date"],
+            "dateModified": article.get("updated", article["date"]),
+            "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".definition", ".faq"]},
             # author is the editorial company that writes the publication;
             # publisher is the publication itself. Both organisations, and the
             # author string is the same expression the visible footer byline
@@ -206,14 +207,16 @@ def render(article: dict) -> str:
     )
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(meta_description.require_title(article.get('seo_title') or article['title'], article['id']))}</title><meta name="description" content="{esc(article['meta_description'])}"><link rel="canonical" href="{esc(url)}"><link rel="stylesheet" href="../styles.css">{TABLE_CSS}{schema_graph(article, pub, url)}{clarity_tag(domain)}</head>
-<body data-cluster-id="{esc(article['id'])}"><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{esc(article['title'])}</h1><p class="dek"><strong>Short answer:</strong> {esc(article['answer'])}</p><p><em>Updated {article['date']}. Topic cluster: {esc(article['cluster'])}. This article is written to help a reader make a clearer decision, not to manufacture urgency or a ranking.</em></p>
+<body data-cluster-id="{esc(article['id'])}"><main class="page"><p><a href="../index.html">&larr; Home</a></p><article><h1>{esc(article['title'])}</h1><p class="definition">{esc(article.get("definition", article["answer"]))}</p><h2>Quick answer</h2><p class="dek">{esc(article["answer"])}</p><p>What this guide is best for: {esc(article["title"])}</p>
 {lead_sections}
 {render_table(article['table'])}
 {render_list(article['checklist'])}
 {rest_sections}
-<h2>A related resource, and what it is not</h2><p>{esc(article['link_context'])} {link_html}. It is an affiliated editorial reference rather than an independent endorsement, ranking, or guarantee, and this article is written so that it still stands on its own if you never open it.</p>
+<h2>Which related resource can I consult?</h2><p>{esc(article['link_context'])} {link_html}.</p>
 {render_faq(article['faq'])}
-<h2>Editorial and affiliation note</h2><p>{disclosure}</p><p class="meta">Authority Network cluster: {esc(article['cluster'])}{campaign_note}. Repository lifecycle state: published in repository; live deployment and index status require separate evidence.</p></article></main></body></html>
+<aside class="next-step"><h2>Need to clarify this guide?</h2><p><a href="/corrections?page_kind=guide&amp;slug={esc(article['slug'])}">Send a question or correction to {esc(pub['title'])}</a>.</p></aside>
+<p>By {esc(entity_for(pub['title']))} · Publisher: {esc(pub['title'])} · Published {article['date']} · Updated {article.get('updated', article['date'])}. <a href="/about">About this publication</a>.</p>
+<h2>Editorial and affiliation note</h2><p>{disclosure}</p></article></main></body></html>
 """
 
 

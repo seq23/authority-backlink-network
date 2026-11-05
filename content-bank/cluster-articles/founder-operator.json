@@ -19,14 +19,14 @@
       "disclaimer": "This is an educational hiring-process framework, not employment-law guidance. Job requirements, classification, pay practices, and interview questions are regulated differently by jurisdiction, and should be reviewed with a qualified employment attorney or HR advisor before use.",
       "sections": [
         {
-          "h2": "Why the scorecard has to exist before the req",
+          "h2": "Why write the scorecard before opening the role?",
           "paras": [
             "The failure mode in small-team hiring is not a bad candidate. It is that three people on the hiring side are quietly holding three different jobs in their heads, and none of them discover this until a finalist splits the room. A scorecard is the artifact that forces that disagreement to happen in week zero, when it is cheap, instead of in the offer meeting, when it is expensive.",
             "It also changes what interviews are for. If the outcomes are written down, an interview stops being a conversation about impressiveness and becomes an attempt to find evidence for or against a specific claim. That is a much easier task to divide among interviewers, and a much easier one to review afterwards."
           ]
         },
         {
-          "h2": "Where scorecards go wrong",
+          "h2": "Where do scorecards go wrong?",
           "paras": [
             "The most common mistake is writing outcomes that no one could fail. \"Improve onboarding\" is not an outcome; it is a direction. If you cannot describe what a clear miss would look like, the line is not doing any work and should be rewritten or deleted.",
             "The second mistake is omitting decision rights. Two roles can share identical outcomes and be completely different jobs depending on whether the holder can change the roadmap, approve spend, or hire. Candidates read decision rights as the real seniority signal, and they are right to.",
@@ -34,7 +34,7 @@
           ]
         },
         {
-          "h2": "Using the scorecard after the hire",
+          "h2": "How do you use the scorecard after hiring?",
           "paras": [
             "A scorecard that is filed away after the offer was mostly theatre. The useful pattern is to hand it to the new hire in week one and ask them to mark anything they think is wrong, missing, or impossible given what they now know. Their edits are the first real signal you get about their judgment.",
             "Then set a review point. A re-read every 3 months is usually enough: often enough that a role that has drifted gets noticed, rare enough that nobody is renegotiating scope every week. When the reviewed scorecard no longer resembles the original, that is information about the org, not a failure of the hire."
@@ -118,7 +118,9 @@
           "q": "What if the role changes after the hire starts?",
           "a": "That is normal, and it is why the document carries a review date. Record what changed and why. A role that has drifted far from its scorecard within a quarter is usually telling you something about the organization's clarity rather than about the person filling it."
         }
-      ]
+      ],
+      "definition": "A role scorecard is a written agreement about the outcomes, authority and evidence attached to a job. A role scorecard names the outcomes the hire owns, the decisions they can make without escalating, the evidence that will show the outcomes happened, and the constraints they inherit.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-worksample",
@@ -137,14 +139,14 @@
       "disclaimer": "This is an educational hiring-process framework, not employment-law guidance. Unpaid work, contractor classification, intellectual property in submitted work, and accommodation obligations are regulated differently by jurisdiction and should be reviewed with a qualified employment attorney before you run a work sample.",
       "sections": [
         {
-          "h2": "What a work sample is actually testing",
+          "h2": "What does a work sample test?",
           "paras": [
             "Interviews test the ability to describe work. Work samples test the ability to do it. Those two abilities correlate less than most hiring panels assume, which is why a candidate can be articulate for four rounds and still be a surprise in month two.",
             "The trap is building an exercise that tests something adjacent to the job: a take-home that is really a test of free time, or a live exercise that is really a test of composure while being watched. Neither is necessarily wrong, but you should know which one you are measuring, and you should not confuse it with the job itself."
           ]
         },
         {
-          "h2": "Scoping and paying for it",
+          "h2": "How should you scope and pay for the exercise?",
           "paras": [
             "Scope the exercise to the shortest form that still produces a signal. Most roles can be assessed with a task in the range of one to three hours. Past that, you are selecting for candidates with unusual availability, which is a bias you did not intend to introduce.",
             "If the exercise takes longer than a couple of hours, pay for it at a fair rate for the work, and say so up front. Paying also changes the tone of the exchange: it makes the sample feel like a trial engagement rather than an audition, and candidates tend to treat it more seriously.",
@@ -152,7 +154,7 @@
           ]
         },
         {
-          "h2": "Scoring without inventing the criteria afterwards",
+          "h2": "How do you score against agreed criteria?",
           "paras": [
             "Write the scoring rubric before the first submission arrives, and have at least two people score independently before they talk. Criteria invented after you have read a submission will reliably describe the submission you liked.",
             "Include a debrief conversation as part of the sample. Ask the candidate what they cut, what they would do with another day, and what they assumed. That conversation is often more informative than the artifact, because it exposes how they handle constraints, which is what the job will mostly consist of."
@@ -232,7 +234,9 @@
           "q": "Can a work sample replace reference checks?",
           "a": "No. A work sample shows what someone can produce in a controlled setting. References speak to how they behaved over months inside a real organization with real constraints and colleagues. The two answer different questions and neither substitutes for the other."
         }
-      ]
+      ],
+      "definition": "A hiring work sample is a bounded exercise that shows how a candidate approaches a task resembling the role. A useful work sample recreates one real task from the role, is scoped to a fixed time budget, is given to every finalist in identical form, and is scored against criteria written before anyone submits.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-onboarding90",
@@ -251,14 +255,14 @@
       "disclaimer": "This is an educational onboarding framework, not employment-law guidance. Probationary periods, performance documentation, and termination processes are regulated differently by jurisdiction and should be reviewed with a qualified employment attorney or HR advisor.",
       "sections": [
         {
-          "h2": "What the first 90 days should produce",
+          "h2": "What should onboarding produce?",
           "paras": [
             "Most onboarding plans are a list of things the new hire will be shown. That is a plan for the organization's convenience, not a plan that produces information. A better test: at the end of each phase, is there something a third person could look at and form a view about?",
             "This matters because the alternative is a manager forming an impression from ambient signals, which is how both unfair assessments and pleasant surprises that turn out to be wrong happen. Artifacts are reviewable. Impressions are not."
           ]
         },
         {
-          "h2": "The three phases",
+          "h2": "How do the onboarding phases differ?",
           "paras": [
             "Phase one, roughly the first three weeks, is about the system: how work arrives, who decides what, where the sharp edges are. The artifact is usually written: a summary of how something works, or a list of things that confused them. Confusion notes from a newcomer are unusually valuable and expire quickly.",
             "Phase two, roughly weeks four to eight, is one small piece of real work carried from start to finish, including the unglamorous parts. Small end-to-end beats large partial: shipping something minor all the way through reveals more about how a person operates than contributing a slice of something big.",
@@ -266,7 +270,7 @@
           ]
         },
         {
-          "h2": "Checkpoints and the honest conversation",
+          "h2": "What should happen at each checkpoint?",
           "paras": [
             "Put a written checkpoint at the end of each phase, and hold it even when everything is going well. A checkpoint that only happens when there is a problem becomes a signal in itself, and people learn to dread it.",
             "The 90-day mark should include an explicit two-way conversation: what the hire has learned about the role that was not in the scorecard, and what the manager has observed. If either side is surprised at day 90, the checkpoints were not doing their job."
@@ -353,7 +357,9 @@
           "a": "It is not the same thing. Probationary periods, if you use them, carry specific legal meaning and documentation requirements that vary by jurisdiction. Treat the 90-day plan as a management tool and confirm any formal probation structure with a qualified employment attorney or HR advisor."
         }
       ],
-      "seo_title": "90-Day Onboarding Plan: Producing Evidence of Fit"
+      "seo_title": "90-Day Onboarding Plan: Producing Evidence of Fit",
+      "definition": "An onboarding plan is a staged agreement about what a new hire will learn, deliver and own. Structure the first 90 days into three phases: learn the system, ship something small end to end, then own a real outcome with documented responsibilities.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-roledesign",
@@ -372,14 +378,14 @@
       "disclaimer": "This is an educational management framework, not employment-law guidance. Performance management, documentation, discipline, and termination carry specific legal requirements that vary by jurisdiction, and should be handled with a qualified employment attorney or HR advisor.",
       "sections": [
         {
-          "h2": "The substitution test",
+          "h2": "How do you test whether the role is workable?",
           "paras": [
             "The single most useful question is a substitution: if you replaced this person with the strongest operator you know, holding the brief, the authority, and the constraints constant, would the outcome change? Managers often answer that question honestly and immediately, and are surprised by their own answer.",
             "If the outcome would not change, the role is the problem. Common causes are an outcome that depends on a decision the role cannot make, a brief that quietly contains two jobs, a capacity mismatch where the work exceeds the hours available, or a dependency on another team with no shared priority."
           ]
         },
         {
-          "h2": "Patterns that point at design rather than performance",
+          "h2": "Which patterns suggest a role-design problem?",
           "paras": [
             "Repetition across people is the strongest signal. If the last two holders of the role struggled in similar ways, the odds that you hired badly twice in the same shape are lower than the odds that the role is shaped wrong.",
             "Another signal is when the person's assessment of what is blocking them has been consistent and specific for weeks, and nobody has tested it. Vague complaints are weak evidence; a specific, repeated, checkable claim that has never been checked is a management gap.",
@@ -387,7 +393,7 @@
           ]
         },
         {
-          "h2": "What to do with each diagnosis",
+          "h2": "What should change after the review?",
           "paras": [
             "If it is role design, change the design before changing the person: narrow the outcomes, grant the missing decision right, or split the role. Then set a fresh review window so the change gets a fair test rather than being judged against the old expectations.",
             "If it is genuinely performance, be direct and specific about which outcome is being missed and what a clear improvement would look like, and follow whatever documented process your organization and jurisdiction require. Ambiguity here is unkind to the person and creates legal exposure for the organization.",
@@ -474,7 +480,9 @@
           "q": "Who should be involved in this diagnosis?",
           "a": "At minimum, one person outside the reporting line who can push back on the manager's account. Where the outcome may affect someone's employment, involve HR or a qualified employment attorney early, because process requirements differ by jurisdiction and are difficult to repair retroactively."
         }
-      ]
+      ],
+      "definition": "A role-design problem is a mismatch between expected outcomes and the authority, resources or constraints attached to a job. Role design failures show up as repeated misses across different people, blocked decisions, and outcomes that depend on authority the role does not have.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-aicoach",
@@ -493,14 +501,14 @@
       "disclaimer": "This is an educational comparison of coaching formats. Coaching is not therapy or clinical care. If you are dealing with a mental-health concern, speak with a licensed clinician rather than any coaching product, human or automated.",
       "sections": [
         {
-          "h2": "The two are not competing for the same job",
+          "h2": "Which coaching tasks require different approaches?",
           "paras": [
             "The framing of AI coaching as a cheaper substitute for human coaching gets the comparison wrong, because it assumes both are trying to do the same thing. In practice the value of a human coach is concentrated in a few moments per quarter, and most of what happens between those moments is structure, rehearsal, and prompting.",
             "Structure and rehearsal are exactly what an always-available tool is good at. What it cannot do is notice the thing you did not mention, or make you feel the cost of not doing what you said you would do."
           ]
         },
         {
-          "h2": "Where the AI version has a real advantage",
+          "h2": "Where can AI help with coaching preparation?",
           "paras": [
             "Availability is the obvious one, but the underlying advantage is the removal of social cost. People will rehearse an uncomfortable conversation six times with a machine and twice with a person, because the machine does not form an impression of them. For preparation tasks, that difference is worth a lot.",
             "It is also consistent. The same framework gets applied on a bad week as on a good one, which is genuinely useful when the point of the exercise is to keep a cadence rather than to have an insight.",
@@ -508,7 +516,7 @@
           ]
         },
         {
-          "h2": "Where the human version is not replaceable",
+          "h2": "When is human judgment needed?",
           "paras": [
             "A good human coach works with what you did not say. They notice the topic you skipped, the person you never mention, the pattern across six months of conversations. A tool works with the text you gave it, and you chose that text.",
             "Accountability is the second gap. Telling a person you will do something and then not doing it has a social cost that a chat log does not have. Whether that cost is what makes you follow through is an uncomfortable question, but it is often yes.",
@@ -598,7 +606,9 @@
           "q": "How do I tell whether either one is working?",
           "a": "Decide in advance what would change if it were working, and pick something observable rather than a feeling. Common choices are whether a specific recurring decision gets made faster, whether a commitment you keep breaking starts holding, or whether a conversation you have been postponing actually happens."
         }
-      ]
+      ],
+      "definition": "AI coaching is the use of software for structured reflection, preparation and rehearsal around a person’s goals. A human coach is better at noticing what you are avoiding, holding you accountable in a way that costs something, and reading context you did not report.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-aireview",
@@ -618,14 +628,14 @@
       "disclaimer": "This is an educational operating framework. It does not evaluate any specific AI product, and it makes no claim about the accuracy of any tool. Verify outputs before relying on them, particularly for anything with financial, legal, or personnel consequences.",
       "sections": [
         {
-          "h2": "The part of the meeting that is worth protecting",
+          "h2": "Which decisions belong in the review?",
           "paras": [
             "A weekly operating review has one irreplaceable moment: someone looks at a number that is worse than it should be and says what they think is causing it, in front of people who can disagree. Everything else in the meeting is logistics around that moment.",
             "The reason to be careful about automation is not that a tool would summarize badly. It is that a fluent summary can make the meeting feel complete without that moment happening. When the recap reads well, the pressure to say the uncomfortable thing drops."
           ]
         },
         {
-          "h2": "Preparation is where the time actually goes",
+          "h2": "How should review preparation work?",
           "paras": [
             "Most of the cost of a weekly review is assembly: pulling numbers from four places, checking they agree, writing the same context paragraph again, and reminding people what they said last week. This work is repetitive, verifiable, and low-judgment, which makes it the right place to start.",
             "Two rules make this safe. First, the assembled pack goes out before the meeting, with enough time for someone to say the numbers are wrong. Second, whoever owns each number is named next to it, so the pack has accountability attached rather than being an anonymous artifact.",
@@ -633,7 +643,7 @@
           ]
         },
         {
-          "h2": "Follow-up is where reviews usually fail",
+          "h2": "How do you make follow-up usable?",
           "paras": [
             "The classic failure of a weekly review is not the meeting; it is that commitments made in it evaporate by Wednesday. Extracting commitments into a tracked list, with an owner and a date, is mechanical work that almost never gets done reliably by hand.",
             "This is a good automation target precisely because it is unglamorous and because errors are visible: if the list says something you did not commit to, you will notice. Have the extracted list confirmed by the owner rather than assumed, and let the confirmation be one click."
@@ -731,7 +741,9 @@
           "q": "What should never go into an external tool?",
           "a": "Anything covered by a confidentiality agreement, individual performance or compensation detail, unreleased financials, and customer data governed by a contract or regulation. Check your vendor terms and your own obligations before assuming a category is fine."
         }
-      ]
+      ],
+      "definition": "An AI-assisted operating review is a decision meeting supported by software that prepares inputs and drafts follow-up records. Put AI in the preparation and the follow-up: assembling the numbers, drafting the summary, extracting commitments and identifying slipped work. People remain responsible for decisions and verification.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-delegationbrief",
@@ -750,14 +762,14 @@
       "disclaimer": "This is an educational operating framework. It does not evaluate any specific AI product and makes no claim about tool accuracy. Verify any delegated output before relying on it, particularly where money, contracts, or personal data are involved.",
       "sections": [
         {
-          "h2": "Why the same brief works for both",
+          "h2": "What does a person or tool need in the brief?",
           "paras": [
             "Delegating to a person and delegating to a tool fail for the same reason: the brief assumed context the recipient did not have. A person will usually notice the gap and ask; a tool will fill it with something plausible. That difference makes tools an unusually good test of brief quality, because the gaps come back visible.",
             "This is worth exploiting. If you write briefs for both, the ones that come back wrong from a tool are the ones that were going to waste a colleague's afternoon anyway."
           ]
         },
         {
-          "h2": "The element people skip",
+          "h2": "Which constraints should be explicit?",
           "paras": [
             "The definition of done is the element most often missing. \"Draft the update\" has no completion condition, so the recipient invents one, and the invented one is rarely yours. Compare it with: \"one page, covering the three metrics in the pack, written for the board, no recommendations.\" That version can be checked.",
             "The second most skipped element is what to do when stuck. Without it, a person waits and a tool guesses. Both are expensive. A single line, naming who to ask and how long to try first, removes most of that cost.",
@@ -765,7 +777,7 @@
           ]
         },
         {
-          "h2": "Reviewing the result without redoing the work",
+          "h2": "How do you review the result?",
           "paras": [
             "Review against the definition of done, in writing, before you react to the work. Reviewing against your unstated preferences is how delegation quietly turns back into doing it yourself, one round of feedback at a time.",
             "When the result is wrong, the useful question is which element of the brief would have prevented it. That question improves the next brief. \"They should have known\" improves nothing and, with a tool, is not even coherent."
@@ -845,7 +857,9 @@
           "a": "Review against the written definition of done before you read for taste. If your objection is not covered by the definition, that is a note for the next brief rather than a correction to this one. Rewriting silently is how delegation reverts to doing the work yourself."
         }
       ],
-      "seo_title": "Delegation Brief a Person or a Tool Can Both Execute"
+      "seo_title": "Delegation Brief a Person or a Tool Can Both Execute",
+      "definition": "A delegation brief is a written specification of an outcome, its constraints and the evidence needed to accept it. A brief that either a person or a tool can execute needs six things: the outcome, the definition of done, the constraints, the inputs and where they live, the decision rights, and what to do when stuck.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-automatefirst",
@@ -864,14 +878,14 @@
       "disclaimer": "This is an educational operations framework. It does not evaluate or endorse any specific automation product, and it makes no claim about the reliability of any tool. Test outputs before relying on them, particularly where money, contracts, or personal data are involved.",
       "sections": [
         {
-          "h2": "Frequency is the seductive wrong answer",
+          "h2": "Why is frequency alone insufficient?",
           "paras": [
             "The instinct is to automate whatever you do most. That instinct ignores maintenance. A task that recurs daily but whose rules change monthly will need attention every month, and the attention is skilled attention from whoever built it. Stability matters at least as much as frequency.",
             "The second thing frequency hides is verifiability. If you cannot tell quickly whether the output is right, automation converts a visible cost into an invisible risk. That trade is sometimes worth making, but it should be a decision rather than a side effect."
           ]
         },
         {
-          "h2": "The four dimensions, and what each one is really asking",
+          "h2": "How should you evaluate automation candidates?",
           "paras": [
             "Frequency asks how much time is on the table. Count actual occurrences over a month rather than estimating, because estimates of one's own repetitive work are usually wrong in both directions.",
             "Stability asks how often the rules change. A useful proxy: how many times in the last six months did someone have to explain an exception? Frequent exceptions mean the rules live in someone's head, and encoding them will freeze a version that was never correct.",
@@ -880,7 +894,7 @@
           ]
         },
         {
-          "h2": "Start smaller than feels worthwhile",
+          "h2": "Where should the first trial begin?",
           "paras": [
             "The first automation should be small enough that abandoning it costs nothing. Its real job is to teach you where your process is actually undefined, which you will discover in the first hour of trying to specify it.",
             "Keep the manual path working in parallel for at least a few cycles. Running both is annoying and it is also the only way to find the cases the automated path handles differently without anyone noticing.",
@@ -961,7 +975,9 @@
           "q": "Does high consequence rule out automation entirely?",
           "a": "Not necessarily, but it changes the design. High-consequence work can be automated up to a review gate, where a named person approves before anything is sent, filed, or paid. What should be avoided is high consequence combined with low verifiability and no gate."
         }
-      ]
+      ],
+      "definition": "An automation candidate is a repeatable task being assessed for software execution under defined rules and human accountability. Rank candidates on four dimensions: how often the task recurs, how stable its rules are, how easily a wrong result is spotted, and what a wrong result costs.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-vepcost",
@@ -980,14 +996,14 @@
       "disclaimer": "This is an educational scoping framework. It contains no price quotations, because pricing depends on scope, region, timing, and vendor, and any figure published here would be misleading. Ask vendors for written quotes against a written scope.",
       "sections": [
         {
-          "h2": "Why headcount is the wrong first question",
+          "h2": "Why start with scope rather than audience size?",
           "paras": [
             "Buyers usually open with audience size because it is the number they know. It matters for platform licensing and for moderation load, but it is close to irrelevant for the work that dominates a production budget: rehearsal, technical direction, graphics, and the hours around the live window.",
             "A single-track session for two thousand people can be simpler to produce than a three-track programme for two hundred, because the second one has more transitions, more speakers, more things to fail, and more rooms that need someone competent watching them."
           ]
         },
         {
-          "h2": "The drivers that actually move the number",
+          "h2": "Which production choices change the quote?",
           "paras": [
             "Live complexity is the largest. Every simultaneous track, every live demo, every switch between remote presenters is a transition that needs a person and a rehearsal. Pre-recording segments moves cost from the live window into editing, which is usually a good trade for risk and sometimes a good trade for money.",
             "Speaker preparation scales with people, not with minutes. Ten speakers with five minutes each is a bigger preparation job than two speakers with an hour each, because preparation is per-person: a tech check, a rehearsal, a briefing, and a contingency plan.",
@@ -996,7 +1012,7 @@
           ]
         },
         {
-          "h2": "How to scope so quotes are comparable",
+          "h2": "How do you make quotes comparable?",
           "paras": [
             "Write the scope before you contact anyone, send the same document to every vendor, and allow at least 5 days for a response. Quotes built against different assumptions cannot be compared, and the cheapest one is usually the one that assumed the least.",
             "Ask each vendor to state explicitly what is excluded. Exclusions are more informative than inclusions, and a vendor who writes a clear exclusions list is generally easier to work with than one whose proposal contains only good news.",
@@ -1095,7 +1111,9 @@
           "q": "What is the most commonly missed line item?",
           "a": "Post-event deliverables, followed by accessibility services. Both are usually assumed rather than specified, and both are raised late, when there is no time to shop around. Putting them in the original scope is the cheapest thing you can do."
         }
-      ]
+      ],
+      "definition": "A virtual-event production quote is a scoped offer covering the people, equipment and preparation needed to deliver a broadcast. The costs that move are live production complexity, the number of speakers who need preparation, how much is pre-recorded versus live, accessibility services, and what you expect to receive afterwards.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-runofshow",
@@ -1114,14 +1132,14 @@
       "disclaimer": "This is an educational production-planning framework. Platform features, service scope, accessibility support, and vendor responsibilities must be confirmed with the relevant provider before an event.",
       "sections": [
         {
-          "h2": "The run of show is a contract, not a schedule",
+          "h2": "What does a run of show coordinate?",
           "paras": [
             "An agenda tells the audience what is happening. A run of show tells the production team who is responsible at each second. The difference matters most in the twenty seconds around a transition, which is where nearly every visible failure of a virtual event happens.",
             "Because it assigns responsibility, it should be written by whoever will direct the show and reviewed by everyone named in it. A document that nobody named in it has read is decoration."
           ]
         },
         {
-          "h2": "The rows people forget",
+          "h2": "Which cues are easy to overlook?",
           "paras": [
             "The pre-show window is the most commonly missing section: when the room opens, what is on screen, what music plays, who is watching chat, and what the holding slide says. Audiences form their impression before the content starts.",
             "Failure paths are the second gap. Each row should have a fallback: if the video does not roll, what happens; if the presenter drops, who fills; if the demo fails, what is the alternative. Writing these takes minutes and is the difference between a recovery and a silence.",
@@ -1129,7 +1147,7 @@
           ]
         },
         {
-          "h2": "Rehearsing against the document",
+          "h2": "How do you rehearse against the document?",
           "paras": [
             "Rehearse the transitions, not the content. Speakers can be trusted to speak; the risk is in the seams. A rehearsal that runs the full programme end to end but skips the switches has rehearsed the safe part.",
             "Run at least one rehearsal with the actual people who will press the actual buttons, on the actual platform, at roughly the right time of day. Substitutions during rehearsal reliably hide problems that appear on the day.",
@@ -1219,7 +1237,9 @@
           "q": "What is the most useful thing to rehearse?",
           "a": "Transitions and failure paths. Content rehearses itself in the sense that speakers generally know their material. What nobody has practised is the ten seconds when a video does not roll, and that is precisely the moment an audience notices."
         }
-      ]
+      ],
+      "definition": "A run of show is a cue-by-cue production document assigning actions, timing, owners and fallbacks during an event. A run of show is a timed, cue-by-cue script that names who does what at each moment, including what happens when something fails.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-formatscope",
@@ -1239,14 +1259,14 @@
       "disclaimer": "This is an educational scoping framework. It contains no pricing, and platform capabilities, accessibility support, and vendor responsibilities must be confirmed with the relevant provider before committing to a format.",
       "sections": [
         {
-          "h2": "Choose the format from the goal, not the guest list",
+          "h2": "How should the event goal determine its format?",
           "paras": [
             "The format decision is usually made backwards: someone decides on a conference and then works out what it is for. The more useful order is to name the outcome first. If the goal is to explain one thing well to people who will not travel, a webinar is not the budget option, it is the correct option.",
             "Formats also imply different failure surfaces. A webinar has few things that can fail and one place to watch. A conference has many rooms, and the risk is that something goes wrong in a room nobody is watching."
           ]
         },
         {
-          "h2": "Where hybrid gets hard",
+          "h2": "What makes hybrid production more complex?",
           "paras": [
             "Hybrid is not a virtual event with a room attached. The remote audience experiences the room through a camera and a microphone, and rooms are hostile to both: audience questions are inaudible, slides are readable in the room and not on the stream, and the energy in the room does not transmit.",
             "The recurring hybrid failure is that the remote audience becomes second class, and they know it. Fixing that requires deliberate choices: a person whose whole job is the remote audience, repeating audience questions into a microphone, and a Q and A path where remote questions are asked first rather than last.",
@@ -1254,7 +1274,7 @@
           ]
         },
         {
-          "h2": "Lead time is a scope decision",
+          "h2": "How does lead time affect scope?",
           "paras": [
             "Speaker preparation, accessibility services, and platform configuration all have lead times that do not compress well. Budget at least 3 weeks of calendar time to collect availability, run tech checks, and get materials in when the lineup is large.",
             "When the date is fixed and close, the right response is to reduce format complexity rather than to compress preparation. A well-run single-track programme beats an under-rehearsed multi-track one, and the audience cannot see the programme you did not attempt."
@@ -1352,7 +1372,9 @@
           "q": "What is the shortest sensible lead time?",
           "a": "It depends less on the format than on the number of external speakers and whether accessibility services are needed, since both have booking lead times you do not control. When time is short, reduce format complexity rather than compressing preparation, because under-rehearsed complexity is what audiences actually notice."
         }
-      ]
+      ],
+      "definition": "An event-production scope is a description of the show format, technical responsibilities and preparation included in a production offer. A hybrid broadcast adds a physical room, which brings room audio, camera coverage, and the hardest problem of the three: making the remote audience feel present.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-rehearsal",
@@ -1371,14 +1393,14 @@
       "disclaimer": "This is an educational production-planning framework. Platform capabilities, accessibility support, and vendor responsibilities must be confirmed with the relevant provider before an event.",
       "sections": [
         {
-          "h2": "Why one big rehearsal fails",
+          "h2": "Why separate rehearsal stages?",
           "paras": [
             "The default is to book one rehearsal and invite everybody. It reliably goes the same way: the first speaker has a microphone problem, twenty minutes disappear, and the session ends having tested nothing that mattered while eight people watched.",
             "Staging fixes this. Tech problems get solved one-to-one, cheaply, before anyone else is in the room. By the time the group session happens, the technical baseline is known and the time can go to the thing that actually needs the group: the seams between segments."
           ]
         },
         {
-          "h2": "What each stage tests",
+          "h2": "What should each rehearsal test?",
           "paras": [
             "The tech check is short and individual. Camera, microphone, lighting, connection, screen share, and the specific mechanics of the platform being used. It should end with the speaker knowing exactly which button they will press and what they will see when they do.",
             "The content run is about timing and materials. Speakers reliably run long, and finding that out during rehearsal is much cheaper than finding out live. This is also where slide problems appear: fonts that do not travel, videos embedded in decks, and text sized for a room rather than a stream.",
@@ -1386,7 +1408,7 @@
           ]
         },
         {
-          "h2": "Handling the speaker who will not rehearse",
+          "h2": "What if a speaker cannot rehearse?",
           "paras": [
             "Some speakers will not attend a rehearsal. Rather than treating this as a discipline problem, treat it as a risk to be designed around: put them in a slot where a technical failure is recoverable, brief their assistant, and prepare a fallback that does not depend on them.",
             "Record a short walkthrough video that covers the same ground as the tech check so there is a self-serve option. It will not fully substitute, but it converts some no-shows into partially prepared speakers.",
@@ -1467,7 +1489,9 @@
           "q": "Is the transitions rehearsal really necessary?",
           "a": "It is the one that most affects how the show looks. Content is usually the part speakers have practised; the seams are the part nobody has. Skipping it saves an hour of preparation and spends it back on the day, in front of an audience."
         }
-      ]
+      ],
+      "definition": "A virtual-event rehearsal is a planned test of speaker connections, content timing and production transitions before the audience arrives. Split rehearsal into three stages rather than one long session: an individual tech check per speaker, a content run for timing and slides, and a transitions rehearsal with the production team.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-charter",
@@ -1486,14 +1510,14 @@
       "disclaimer": "This is an educational community operations framework. Community guidelines, moderation policies, data handling, and member agreements have legal implications that vary by jurisdiction and should be reviewed by qualified counsel before publication.",
       "sections": [
         {
-          "h2": "The charter exists to make later decisions cheap",
+          "h2": "What decisions should the charter resolve?",
           "paras": [
             "Community programs do not usually fail on tooling. They fail because nobody agreed what the thing was for, so every subsequent decision, from moderation to metrics to staffing, gets relitigated from scratch. A charter is the document that stops that.",
             "It is short. One page is usually enough, with a review date set 6 months out, and longer versions tend to be aspirational rather than useful. The test of a good charter is whether it lets you say no to something plausible."
           ]
         },
         {
-          "h2": "The four questions",
+          "h2": "Which questions belong in the charter?",
           "paras": [
             "Who it is for should be narrow enough to exclude someone. \"Our customers\" is not an answer, because customers at different stages want incompatible things: newcomers want orientation, experts want peers, and putting them in one undifferentiated room usually serves neither.",
             "What a member gets has to be something they cannot get from a search engine or a support ticket. Access to peers with the same problem, early information, or a route to the people who build the product are real answers. \"Updates and announcements\" is a mailing list.",
@@ -1502,7 +1526,7 @@
           ]
         },
         {
-          "h2": "Then the platform question becomes easy",
+          "h2": "When should you choose the platform?",
           "paras": [
             "With a charter in hand, platform selection is mostly about matching mechanics to the charter: whether members need to find each other by expertise, whether conversation should be searchable years later, whether identity should be real or pseudonymous, and where the members already are.",
             "The most common platform mistake is optimizing for the organization's convenience, usually integration with existing tooling, over the member's likelihood of showing up. A community in a place members do not visit is a project with an owner and no participants."
@@ -1581,7 +1605,9 @@
           "q": "Who should write it?",
           "a": "The person who will own the community, with sign-off from whoever controls the budget and from whoever will have to defend the moderation policy. Because guidelines and data handling carry legal implications, have qualified counsel review the published version before it goes out."
         }
-      ]
+      ],
+      "definition": "A community charter is a written statement of whom a member group serves, its purpose and its operating boundaries. A community charter answers four questions in writing: who this is for, what a member gets that they cannot get elsewhere, what the organization gets in return, and what the community explicitly is not.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-moderation",
@@ -1600,14 +1626,14 @@
       "disclaimer": "This is an educational community operations framework, not legal advice. Community guidelines, enforcement, data retention, and member removal have legal implications that vary by jurisdiction and by platform terms, and should be reviewed by qualified counsel before publication.",
       "sections": [
         {
-          "h2": "Behaviours, not values",
+          "h2": "Which behaviors should the policy address?",
           "paras": [
             "Most published community guidelines are a list of values: be kind, assume good faith, no self-promotion. They read well and they do not survive contact with a real case, because two moderators will draw the line in different places and members will experience that as arbitrary enforcement.",
             "The fix is to write behaviours. \"No self-promotion\" becomes \"links to your own product are fine in the introductions channel and in response to a direct question, and not in general discussion.\" That version can be applied by someone who joined last week."
           ]
         },
         {
-          "h2": "A ladder rather than a switch",
+          "h2": "How should responses escalate?",
           "paras": [
             "Policies that offer only two responses, do nothing or remove the member, produce inconsistent enforcement, because most real cases do not deserve removal and moderators are reluctant to use the only tool they have.",
             "A graduated ladder gives moderators something proportionate: a private note, a public correction, a temporary restriction, then removal. Each rung should say who can apply it, whether it is recorded, and whether the member is told.",
@@ -1615,7 +1641,7 @@
           ]
         },
         {
-          "h2": "Appeals and the written record",
+          "h2": "How do appeals and records work?",
           "paras": [
             "An appeal route matters more than it seems, because the main cost of a moderation error is not the error but the sense that there is nowhere to take it. The appeal should go to someone who did not make the original decision, and it should have a stated response time.",
             "Keep a record of each action: what happened, what was done, who decided, and what the member was told. Records make patterns visible, protect moderators from accusations of bias, and are the only way a new moderator can learn what the line actually is in practice.",
@@ -1703,7 +1729,9 @@
           "q": "Do we need legal review of the guidelines?",
           "a": "Yes. Published guidelines, enforcement practices, member removal, and record retention all carry legal implications that vary by jurisdiction and interact with your platform's own terms. Have qualified counsel review the published version before launch rather than after the first dispute."
         }
-      ]
+      ],
+      "definition": "A moderation policy is a written process for responding to conduct, assigning decisions and handling appeals in a community. A workable moderation policy names the behaviours that are out of bounds, sets a graduated ladder of responses, says who decides and who hears an appeal, and requires a written record of each action.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-memberonboarding",
@@ -1722,14 +1750,14 @@
       "disclaimer": "This is an educational community operations framework. Member data collection, welcome messaging, and any automated outreach carry privacy and marketing-consent obligations that vary by jurisdiction and should be reviewed with qualified counsel.",
       "sections": [
         {
-          "h2": "The first ten minutes",
+          "h2": "What should a member find on arrival?",
           "paras": [
             "A new member arriving in an unfamiliar space is asking one question: are these my people. They answer it by scanning, not by reading. What they need in the first ten minutes is evidence that someone with their problem is here and is being helped.",
             "This is why a wall of announcements is a poor landing experience and a visible recent thread where someone got a useful answer is a good one. It is also why a welcome message that describes the community's mission does less work than one that points at three current conversations."
           ]
         },
         {
-          "h2": "The first successful interaction",
+          "h2": "What makes a first interaction useful?",
           "paras": [
             "The strongest predictor of a member returning is having said something and had someone respond. That means the first week's design problem is not content, it is making sure that a new member's first post does not sit unanswered.",
             "Communities solve this with a small commitment rather than a clever mechanic: a named person, or a rota, responsible for making sure no introduction and no first question goes unanswered for a day. It is unglamorous and it is most of the work.",
@@ -1737,7 +1765,7 @@
           ]
         },
         {
-          "h2": "Turning a visit into a habit",
+          "h2": "How can a member find a reason to return?",
           "paras": [
             "By the end of the first month, the member either has a reason to come back on a schedule or they do not. Recurring anchors help: a weekly thread, a monthly call, a predictable rhythm they can plan around.",
             "Watch for the quiet member who reads and never posts. They are not a failure state, and they are also invisible to most engagement metrics, which is a reason to be careful about optimizing for posts. Ask what they came for before assuming they need to be activated.",
@@ -1824,7 +1852,9 @@
           "q": "How do we know whether the first 30 days is working?",
           "a": "Pick one observable measure before launch, such as the share of new members who post at least once and return in the following week. It will be imperfect, and it is still better than assessing the programme by how the space feels to the person who runs it."
         }
-      ]
+      ],
+      "definition": "Member onboarding helps a new community member find relevant people, useful activity and a first contribution. Plan for an initial welcome that explains where to start, an early successful interaction and a recurring activity worth returning to. Assign someone to notice unanswered introductions and help members find a suitable next step.",
+      "updated": "2026-11-03"
     },
     {
       "id": "cl-fo-communitymetrics",
@@ -1843,14 +1873,14 @@
       "disclaimer": "This is an educational measurement framework. It cites no benchmark figures, because published community benchmarks vary enormously by audience and platform and would be misleading applied to an individual programme. Member data collection and analytics carry privacy obligations that vary by jurisdiction.",
       "sections": [
         {
-          "h2": "The test for whether a metric belongs in the report",
+          "h2": "How do you decide whether a metric belongs?",
           "paras": [
             "Before adding a number to a monthly report, name the decision it would change. If a metric going up and going down would both produce the same response, which is usually a slide and a nod, it is decoration rather than measurement.",
             "This test eliminates most vanity numbers immediately. Total members rises whether or not the community is healthy, because it is cumulative and nobody leaves loudly. Total posts rises when one enthusiastic member has a busy month."
           ]
         },
         {
-          "h2": "What is worth reporting",
+          "h2": "Which measures help a monthly review?",
           "paras": [
             "Whether new members stay is the single most useful number, because it captures the whole onboarding chain in one measure. Define it precisely, for example the share of members who joined last month and were active again this month, and keep the definition fixed even when it is unflattering.",
             "Whether questions get answered is the second. An unanswered-question rate is easy to compute, immediately actionable, and directly connected to why members joined. It is also the number most likely to make someone do something in the week they see it.",
@@ -1859,7 +1889,7 @@
           ]
         },
         {
-          "h2": "Reporting honestly",
+          "h2": "How should uncertainty be reported?",
           "paras": [
             "Keep definitions stable. A metric that improves because the definition changed is worse than no metric, and it costs the credibility of every other number in the report.",
             "Report the counter-signal alongside the headline. If activity rose because of one thread, say so. The person receiving the report will find out eventually, and the discovery is more expensive than the disclosure.",
@@ -1958,7 +1988,9 @@
           "q": "How often should the metric set be revisited?",
           "a": "Every 6 to 12 months, and not more often, because changing definitions destroys comparability. When you do change something, restate the prior periods under the new definition so the trend line remains readable rather than starting again."
         }
-      ]
+      ],
+      "definition": "A community metric is a defined measure used to inform a decision about a member group and its operation. Report metrics that answer a question someone would act on: whether new members stay, whether questions get answered, whether participation is spread or concentrated, and whether the community is producing something the business can use.",
+      "updated": "2026-11-03"
     }
   ]
 }

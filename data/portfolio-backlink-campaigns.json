@@ -85,7 +85,7 @@
       "publication": "founder",
       "name": "West Peek Productions Commercial Services",
       "status": "active",
-      "minimum_rendered_coverage": 2,
+      "minimum_rendered_coverage": 1,
       "minimum_distinct_destinations": 1,
       "topic_keywords": [
         "managed community partner",
@@ -101,7 +101,8 @@
       "destination_urls": [
         "https://www.westpeekproductions.com/"
       ],
-      "truth_label": "affiliated_editorial_backlink"
+      "truth_label": "affiliated_editorial_backlink",
+      "coverage_floor_source": "data/page-quality-consolidation.json:campaign_kept_placements"
     },
     {
       "id": "dream-planning-tools",
@@ -109,7 +110,7 @@
       "publication": "memphis",
       "name": "Dream Wedding Planning Tools",
       "status": "temporary_priority",
-      "minimum_rendered_coverage": 6,
+      "minimum_rendered_coverage": 5,
       "minimum_distinct_destinations": 5,
       "topic_keywords": [
         "wedding budget",
@@ -164,7 +165,8 @@
         "https://weddingtimelinetemplate.com/products/timeline-template",
         "https://weddingseatingchartmaker.com/products/seating-chart-maker"
       ],
-      "truth_label": "affiliated_editorial_backlink"
+      "truth_label": "affiliated_editorial_backlink",
+      "coverage_floor_source": "data/page-quality-consolidation.json:campaign_kept_placements"
     },
     {
       "id": "dianne-recovery-resources",

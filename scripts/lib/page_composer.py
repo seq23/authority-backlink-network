@@ -397,9 +397,6 @@ def compose_answer(f: dict) -> str:
     page's own hash, so which one wins still varies across the library, and the
     closest to the midpoint is used if none fits.
     """
-    topic_answer = _load("data/search-quality-repairs.json", {}).get("answers", {}).get(f["cluster"].lower())
-    if topic_answer:
-        return esc(topic_answer)
     variants = ANSWER_VARIANTS if has_citation(f) else ANSWER_VARIANTS_NO_CITATION
     rendered = [_render_answer(f, v) for v in _rotated(variants, f["title"])]
     low, high = ANSWER_WORDS
@@ -663,9 +660,6 @@ def compose_body(f: dict) -> tuple[str, list[dict]]:
       link_topics, campaign_id, campaign_keywords, destination_type,
       product_section_html, editorial_note_html, meta_line_html
     """
-    f = dict(f)
-    f["brand_category"] = _load("data/search-quality-repairs.json", {}).get("category_summaries", {}).get(
-        f.get("brand_category"), f.get("brand_category"))
     answer = compose_answer(f)
     question = question_for(f["format"], f["intent"], f["cluster"])
     items = faq_items(f)
@@ -962,13 +956,18 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
                      overviews: list[tuple[str, str]] | None = None) -> str:
     """A topic hub: the page that gives every member page a path in.
 
-    Navigation-only hubs require members. A consolidated editorial guide can
-    stand alone: its source-backed planning sections replace the retired pages.
+    A hub is only ever written for a topic that has members. An empty one would
+    render no links at all: a page that exists to be navigation and contains none.
     """
-    guide = next((g for g in _load("data/search-quality-repairs.json", {}).get("guides", {}).values()
-                  if g["hub"] == hub["slug"]), None)
-    if not members and not guide:
+    if not members:
         raise ValueError(f"refusing to compose an empty hub: {hub['slug']}")
+
+    from lib.quality_hubs import render as render_quality_hub
+    if pub['id'] in ('founder', 'memphis'):
+        quality = render_quality_hub(hub=hub, pub=pub, domain=domain, url=url,
+                                    home=home, members=members, siblings=siblings, overviews=overviews)
+        if quality:
+            return quality
 
     title = hub["title"]
     pub_title = pub["title"]
@@ -981,20 +980,7 @@ def compose_hub_page(hub: dict, pub: dict, domain: str, url: str, home: str,
             f"covers, who it is written for, and the single disclosed affiliated resource "
             f"it cites. None of them ranks providers or quotes prices.")
 
-    if guide:
-        lead = guide["answer"]
-    sections = ([f"<h2>{esc(q)}</h2><p>{esc(a)}</p>" for q, a in guide["sections"]]
-                if guide else [])
-    if guide and guide.get("citations"):
-        citations = "".join(f'<li><a href="{attr(c["url"])}">{esc(c["anchor"])}</a></li>'
-                            for c in guide["citations"])
-        sections.append('<h2>Related affiliated planning resources</h2><ul>' + citations + '</ul>')
-    if guide and guide.get("sources"):
-        sources = "".join(f'<li><a href="{attr(c["url"])}" data-source="external-authority">{esc(c["anchor"])}</a></li>'
-                          for c in guide["sources"])
-        sections.append('<h2>Independent sources</h2><ul>' + sources + '</ul>')
-    if guide:
-        sections.insert(0, '<p><em>Updated: ' + esc(_load("data/search-quality-repairs.json", {})["updated"]) + '</em></p>')
+    sections = []
     for cluster in sorted(by_cluster, key=str.lower):
         rows = by_cluster[cluster]
         items = "".join(

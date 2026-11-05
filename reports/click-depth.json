@@ -6,15 +6,15 @@
     {
       "publication": "founder",
       "working_domain": "founderoperatorlibrary.com",
-      "pages": 115,
-      "reachable": 115,
+      "pages": 44,
+      "reachable": 44,
       "orphans": 0,
       "orphan_pct": 0.0,
       "max_depth": 2,
       "depth_histogram": {
         "0": 1,
-        "1": 29,
-        "2": 85
+        "1": 27,
+        "2": 16
       },
       "beyond_depth_3": 0,
       "beyond_depth_3_sample": [],
@@ -25,15 +25,15 @@
     {
       "publication": "memphis",
       "working_domain": "memphisvendorlibrary.com",
-      "pages": 99,
-      "reachable": 99,
+      "pages": 47,
+      "reachable": 47,
       "orphans": 0,
       "orphan_pct": 0.0,
       "max_depth": 2,
       "depth_histogram": {
         "0": 1,
         "1": 30,
-        "2": 68
+        "2": 16
       },
       "beyond_depth_3": 0,
       "beyond_depth_3_sample": [],
@@ -64,7 +64,7 @@
     }
   ],
   "totals": {
-    "pages": 640,
+    "pages": 517,
     "orphans": 0,
     "beyond_depth_3": 0
   }

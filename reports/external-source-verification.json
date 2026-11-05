@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "validator": "external-source-verification",
   "generated_at": "2026-10-25T21:42:36+00:00",
-  "sources_checked": 125,
-  "verified": 125,
+  "sources_checked": 127,
+  "verified": 127,
   "receipts": [
     {
       "id": "uscis-i-693",
@@ -1254,6 +1254,26 @@
       "resolved_url": "https://www.fda.gov/cosmetics/cosmetics-labeling-claims/organic-cosmetics",
       "observed_title": "&quot;Organic&quot; Cosmetics | FDA",
       "checked_at": "2026-10-30T23:09:29+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "medicaid-ltss",
+      "url": "https://www.medicaid.gov/medicaid/long-term-services-supports",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "http_status": 200,
+      "resolved_url": "https://www.medicaid.gov/medicaid/long-term-services-supports",
+      "observed_title": "Long Term Services & Supports | Medicaid",
+      "checked_at": "2026-11-04T05:50:14.289392+00:00",
+      "outcome": "verified"
+    },
+    {
+      "id": "ies-reading-foundations",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/21",
+      "publisher": "Institute of Education Sciences",
+      "http_status": 200,
+      "resolved_url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/21",
+      "observed_title": "WWC | Foundational Skills to Support Reading for Understanding in Kindergarten Through 3rd Grade",
+      "checked_at": "2026-11-04T05:55:18.501990+00:00",
       "outcome": "verified"
     }
   ],

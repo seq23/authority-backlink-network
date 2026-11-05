@@ -16,7 +16,6 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAN = json.loads((ROOT / "validation/plan.json").read_text(encoding="utf-8"))
 
 COMMANDS = {
-    "search_quality_repairs": [sys.executable, "tests/test_search_quality_repairs.py"],
     "json": [sys.executable, "tests/validate_json_contracts.py"],
     "python": [sys.executable, "-m", "py_compile"],
     "workflow_trace": [sys.executable, "scripts/trace_github_actions.py"],
