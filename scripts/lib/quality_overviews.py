@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def apply(text,pub_title,domain):
     canonical=re.search(r'<link rel="canonical" href="https://'+re.escape(domain)+r'/([^"/]+)">',text)
     data=json.loads((ROOT/'content-bank/page-quality-overviews.json').read_text())
-    row=data.get(canonical[1]) if canonical else None
+    row=(data.get(domain + '/' + canonical[1]) or data.get(canonical[1])) if canonical else None
     if not row:
         # These query-led overviews already get authored definitions, question
         # headings, answers and lists from apply_strengthening. Keep that lane

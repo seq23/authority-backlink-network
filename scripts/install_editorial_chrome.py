@@ -370,6 +370,15 @@ def install(text: str, pub_title: str, domain: str, editor_addr: str,
             link_claims: tuple = ()) -> str:
     from lib.quality_overviews import apply as apply_overview
     text = apply_overview(text, pub_title, domain)
+    # Refresh the existing daily answer slot from the same source used for new
+    # daily pages, retaining citations and downstream enrichments.
+    topic = re.search(r'<tr><td>Topic</td><td>([^<]*)</td></tr>', text)
+    if topic:
+        answer = load('content-bank/daily-topic-answers.json').get(html.unescape(topic[1]).lower())
+        if answer:
+            text = re.sub(r'(<p class="dek">).*?(</p>)', lambda m: m[1] + esc(answer) + m[2], text, count=1, flags=re.S)
+            text = re.sub(r'(<p class="recommendation-summary__answer">).*?(</p>)', lambda m: m[1] + esc(answer.split('. ')[0] + '.') + m[2], text, count=1, flags=re.S)
+
     seed_id = re.search(r'data-backlink-seed-id="([^"]+)"', text)
     if seed_id and 'data-strengthened="definition"' not in text:
         from lib.quality_seed import upgrade

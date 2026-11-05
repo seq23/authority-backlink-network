@@ -145,6 +145,21 @@ for row in published:
             f"with anchor text {row['anchor']!r}")
 assert seed_rows_checked > 0, 'no seed-article backlinks examined: registry or filter is broken'
 
+# Repeated chrome passes must move citation blocks, not multiply them.
+import sys
+sys.path.insert(0, str(ROOT / 'scripts'))
+from lib.quality_seed import upgrade
+from portfolio_backlink_engine import target_topic_context
+pubs = {p['id']:p for p in json.loads((ROOT/'data/publications.json').read_text())}
+article = next(a for a in seed if a['publication'] == 'founder')
+pub = pubs['founder']
+blocks = ['<section data-block="external-citations"><h2>Sources</h2><ul><li><a href="https://example.org/'+str(i)+'">Source '+str(i)+'</a></li></ul></section>' for i in range(2)]
+fixture = '<article><h1>Old body</h1>'+blocks[0]+'</article>'+blocks[1]+blocks[0]
+for _ in range(3):
+    fixture = upgrade(fixture, {**article, 'quality_topic':target_topic_context(article)}, pub)
+    assert fixture.count('data-block="external-citations"') == 1
+    assert all('https://example.org/'+str(i) in fixture for i in range(2))
+
 print(json.dumps({
     'status':'PASS',
     'brands':len(brands),
