@@ -160,6 +160,22 @@ for _ in range(3):
     assert fixture.count('data-block="external-citations"') == 1
     assert all('https://example.org/'+str(i) in fixture for i in range(2))
 
+# Every founder/memphis seed page says each lead sentence once (6 Nov 2026: the
+# answer was printed as dek, definition and again, and the topic twice).
+lead_checked = 0
+for a in seed:
+    if a['publication'] not in ('founder', 'memphis'):
+        continue
+    out = upgrade('<article><h1>Old</h1></article>', {**a, 'quality_topic': target_topic_context(a)}, pubs[a['publication']])
+    lead = out.split('<section class="faq">')[0]
+    paras = [re.sub(r'<[^>]+>', '', p).strip() for p in re.findall(r'<p\b[^>]*>(.*?)</p>', lead, re.S)]
+    assert len(paras) == len(set(paras)), f"{a['id']}: a lead paragraph repeats: {[p for p in paras if paras.count(p) > 1][:1]}"
+    topic = target_topic_context(a)
+    labels = [p for p in paras if topic in p and len(p) <= len(topic) + 40]
+    assert len(labels) == 1, f"{a['id']}: the topic label is printed {len(labels)} times: {labels}"
+    lead_checked += 1
+assert lead_checked > 0, 'no founder/memphis seed articles rendered'
+
 print(json.dumps({
     'status':'PASS',
     'brands':len(brands),
