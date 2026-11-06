@@ -1,7 +1,7 @@
 {
   "schema": "authority-network-post-publish-distribution-v1",
-  "receipt_id": "2026-11-05T16-40-57.612967Z-42066702840",
-  "attempted_at": "2026-11-05T16:40:57.612967Z",
+  "receipt_id": "2026-11-06T16-41-08.281617Z-42254476978",
+  "attempted_at": "2026-11-06T16:41:08.281617Z",
   "chain": [
     "successful_publish",
     "sitemap_refresh",
@@ -22,7 +22,7 @@
         "status": "SUCCESS",
         "path": "sites/founder-operator/sitemap.xml",
         "sitemap_url": "https://founderoperatorlibrary.com/sitemap.xml",
-        "sha256": "89af9e1dd30159f94298aa6ff71c616d2869f4d39a0cc0b2362abbb098a64cdf",
+        "sha256": "987dde91b101be1ee4f2192219c577c5fbed1ca1807c7250561cd9a0d4e3a937",
         "url_count": 44
       },
       "indexnow": {
@@ -617,7 +617,7 @@
         "status": "SUCCESS",
         "path": "sites/memphis-local/sitemap.xml",
         "sitemap_url": "https://memphisvendorlibrary.com/sitemap.xml",
-        "sha256": "e650db3422e9c48041ef72be9e6c43033d1f15e10f45a2ab0cff432c6b4bf49e",
+        "sha256": "f93c83dbe68ca710b6e77d2d16091e0cb8d5c61f1475ca5b8163ea2f6e7f7984",
         "url_count": 47
       },
       "indexnow": {
@@ -1853,7 +1853,7 @@
   ],
   "durable_receipt": {
     "latest": "data/distribution/provider-receipt.json",
-    "history": "data/distribution/receipts/2026-11-05T16-40-57.612967Z-42066702840.json"
+    "history": "data/distribution/receipts/2026-11-06T16-41-08.281617Z-42254476978.json"
   },
   "provider_success_claimed": true,
   "verified_external_citations_delta": 0,
