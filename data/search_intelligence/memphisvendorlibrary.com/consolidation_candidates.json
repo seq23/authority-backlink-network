@@ -3,17 +3,18 @@
   "host": "memphisvendorlibrary.com",
   "status": "LIST_ONLY_NO_REDIRECTS",
   "decision_input_for": "Fold a page into its topic hub when URL Inspection keeps it out of the index and Search Console shows it no impressions for the whole 28-day window. Nothing here redirects or deletes; the list is evidence for that decision.",
-  "gsc_window": "2026-10-06..2026-11-02",
-  "coverage_collected_at": "2026-11-05T15:25:59+00:00",
+  "gsc_window": "2026-10-07..2026-11-03",
+  "coverage_collected_at": "2026-11-06T15:26:09+00:00",
   "inspected_url_count": 47,
-  "candidate_count": 32,
+  "candidate_count": 34,
   "candidates_by_hub": {
     "/topics/event-and-room-styling": 16,
     "/topics/family-care-and-home-routines": 3,
-    "/topics/grazing-tables-and-vendors": 1,
+    "/topics/grazing-tables-and-vendors": 2,
     "/topics/porch-and-seasonal-styling": 2,
     "/topics/wedding-and-event-budgets": 1,
     "/topics/wedding-day-timelines": 1,
+    "/topics/wedding-planning-tools": 1,
     "/topics/wedding-seating-charts": 1,
     "none": 7
   },
@@ -23,7 +24,7 @@
       "file": "sites/memphis-local/about.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -33,7 +34,7 @@
       "file": "sites/memphis-local/daily/2026-07-24-a-calm-method-for-building-a-wedding-seating-chart.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/wedding-seating-charts",
       "fold_rule": "the topic hub that already lists the page"
@@ -43,7 +44,7 @@
       "file": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-budget-that-tracks-real-payment-timing.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/wedding-and-event-budgets",
       "fold_rule": "the topic hub that already lists the page"
@@ -53,7 +54,7 @@
       "file": "sites/memphis-local/daily/2026-07-24-how-to-build-a-wedding-day-timeline-vendors-can-actually-use.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/wedding-day-timelines",
       "fold_rule": "the topic hub that already lists the page"
@@ -63,9 +64,19 @@
       "file": "sites/memphis-local/daily/2026-07-24-how-to-scope-a-memphis-porch-decorating-project-before-requesting-a-quote.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/porch-and-seasonal-styling",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://memphisvendorlibrary.com/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors",
+      "file": "sites/memphis-local/daily/2026-07-24-the-minimum-information-to-gather-before-comparing-wedding-vendors.html",
+      "coverage_state": "Crawled - currently not indexed",
+      "bucket": "crawled_not_indexed",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/wedding-planning-tools",
       "fold_rule": "the topic hub that already lists the page"
     },
     {
@@ -73,7 +84,7 @@
       "file": "sites/memphis-local/daily/2026-08-27-what-to-check-about-your-porch-before-booking-a-decorating-service.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/porch-and-seasonal-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -83,9 +94,19 @@
       "file": "sites/memphis-local/daily/2026-08-29-how-the-brief-changes-for-a-proposal-anniversary-or-birthday-room.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
+      "fold_rule": "the topic hub that already lists the page"
+    },
+    {
+      "url": "https://memphisvendorlibrary.com/daily/2026-08-29-what-a-grazing-table-brief-should-specify",
+      "file": "sites/memphis-local/daily/2026-08-29-what-a-grazing-table-brief-should-specify.html",
+      "coverage_state": "Crawled - currently not indexed",
+      "bucket": "crawled_not_indexed",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
+      "impressions_28d": 0,
+      "fold_into_hub": "/topics/grazing-tables-and-vendors",
       "fold_rule": "the topic hub that already lists the page"
     },
     {
@@ -93,7 +114,7 @@
       "file": "sites/memphis-local/daily/2026-08-30-questions-to-ask-a-grazing-table-vendor-about-food-handling.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/grazing-tables-and-vendors",
       "fold_rule": "the topic hub that already lists the page"
@@ -103,7 +124,7 @@
       "file": "sites/memphis-local/daily/2026-08-31-what-a-corporate-event-styling-vendor-needs-from-you-before-quoting.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -113,7 +134,7 @@
       "file": "sites/memphis-local/daily/2026-09-01-how-to-sequence-decisions-for-a-graduation-or-milestone-celebration.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -123,7 +144,7 @@
       "file": "sites/memphis-local/daily/2026-09-02-how-to-compare-two-event-decor-quotes-that-look-different.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -133,7 +154,7 @@
       "file": "sites/memphis-local/memphis-porch-decorating-resources.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -143,7 +164,7 @@
       "file": "sites/memphis-local/topics/event-and-room-styling.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -153,7 +174,7 @@
       "file": "sites/memphis-local/topics/grazing-tables-and-vendors.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -163,7 +184,7 @@
       "file": "sites/memphis-local/topics/porch-and-seasonal-styling.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -173,7 +194,7 @@
       "file": "sites/memphis-local/topics/wedding-and-event-budgets.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -183,7 +204,7 @@
       "file": "sites/memphis-local/topics/wedding-planning-tools.html",
       "coverage_state": "Crawled - currently not indexed",
       "bucket": "crawled_not_indexed",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -193,7 +214,7 @@
       "file": "sites/memphis-local/contributors.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -203,7 +224,7 @@
       "file": "sites/memphis-local/corrections.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -213,7 +234,7 @@
       "file": "sites/memphis-local/daily/2026-10-31-assisted-living-or-memory-care-in-memphis-how-families-decide.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/family-care-and-home-routines",
       "fold_rule": "the topic hub that already lists the page"
@@ -223,7 +244,7 @@
       "file": "sites/memphis-local/daily/2026-10-31-how-to-build-a-20-minute-reading-habit-at-home.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/family-care-and-home-routines",
       "fold_rule": "the topic hub that already lists the page"
@@ -233,7 +254,7 @@
       "file": "sites/memphis-local/daily/2026-10-31-paying-for-assisted-living-in-memphis-when-savings-run-low.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/family-care-and-home-routines",
       "fold_rule": "the topic hub that already lists the page"
@@ -243,7 +264,7 @@
       "file": "sites/memphis-local/editorial-standards.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -253,7 +274,7 @@
       "file": "sites/memphis-local/grazing-table-food-safety-checklist.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -263,7 +284,7 @@
       "file": "sites/memphis-local/masthead.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -273,7 +294,7 @@
       "file": "sites/memphis-local/memphis-event-rental-vs-purchase-comparison.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -283,7 +304,7 @@
       "file": "sites/memphis-local/memphis-event-vendor-quote-cost-drivers.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -293,7 +314,7 @@
       "file": "sites/memphis-local/memphis-outdoor-event-weather-planning.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -303,7 +324,7 @@
       "file": "sites/memphis-local/memphis-party-decor-vendors.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -313,7 +334,7 @@
       "file": "sites/memphis-local/memphis-wedding-cost-by-guest-count-2026.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": null,
       "fold_rule": "no topic hub lists this page"
@@ -323,7 +344,7 @@
       "file": "sites/memphis-local/topics/family-care-and-home-routines.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"
@@ -333,7 +354,7 @@
       "file": "sites/memphis-local/topics/wedding-day-timelines.html",
       "coverage_state": "URL is unknown to Google",
       "bucket": "unknown",
-      "inspected_at": "2026-11-05T15:25:59+00:00",
+      "inspected_at": "2026-11-06T15:26:09+00:00",
       "impressions_28d": 0,
       "fold_into_hub": "/topics/event-and-room-styling",
       "fold_rule": "the topic hub that already lists the page"

@@ -1,18 +1,18 @@
 {
   "schema_version": "1.0",
-  "ran_at": "2026-11-05T15:25:59+00:00",
+  "ran_at": "2026-11-06T15:26:09+00:00",
   "hosts": {
     "founderoperatorlibrary.com": {
       "state": "OK",
-      "line": "founderoperatorlibrary.com: rows=18 impressions=173 clicks=1 | coverage +44 -> 44/44 indexed=44 {'indexed': 44} | sitemap REGISTERED"
+      "line": "founderoperatorlibrary.com: rows=18 impressions=175 clicks=1 | coverage +44 -> 44/44 indexed=44 {'indexed': 44} | sitemap REGISTERED"
     },
     "memphisvendorlibrary.com": {
       "state": "OK",
-      "line": "memphisvendorlibrary.com: rows=4 impressions=133 clicks=0 | coverage +47 -> 47/47 indexed=7 {'crawled_not_indexed': 25, 'indexed': 7, 'unknown': 15} | sitemap REGISTERED"
+      "line": "memphisvendorlibrary.com: rows=4 impressions=127 clicks=0 | coverage +47 -> 47/47 indexed=6 {'crawled_not_indexed': 26, 'indexed': 6, 'unknown': 15} | sitemap REGISTERED"
     },
     "professionalresourcelibrary.com": {
       "state": "OK",
-      "line": "professionalresourcelibrary.com: rows=38 impressions=374 clicks=6 | coverage +150 -> 426/426 indexed=419 {'crawled_not_indexed': 2, 'discovered_not_indexed': 4, 'indexed': 419, 'unknown': 1} | sitemap REGISTERED"
+      "line": "professionalresourcelibrary.com: rows=37 impressions=347 clicks=6 | coverage +150 -> 426/426 indexed=419 {'crawled_not_indexed': 2, 'discovered_not_indexed': 4, 'indexed': 419, 'unknown': 1} | sitemap REGISTERED"
     }
   }
 }
