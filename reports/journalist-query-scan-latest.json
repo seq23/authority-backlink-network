@@ -1,50 +1,17 @@
 {
   "schema": "journalist-query-scan-v1",
-  "run_at": "2026-11-06T13:03:50+00:00",
-  "messages_read": 1,
-  "digests_read": 1,
-  "queries_ingested": 8,
+  "run_at": "2026-11-06T19:19:11+00:00",
+  "messages_read": 0,
+  "digests_read": 0,
+  "queries_ingested": 0,
   "non_digest_messages": [],
   "already_surfaced": 0,
-  "dropped_by_beat_filter": 7,
-  "dropped_as_ungroundable": 1,
+  "dropped_by_beat_filter": 0,
+  "dropped_as_ungroundable": 0,
   "dropped_by_grounding_guard": 0,
   "surfaced": 0,
   "notified": false,
   "stops": [],
-  "drops": [
-    {
-      "summary": "When Can A Moderate DTI Still Hide An Unaffordable Payment?",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Did a women's healthcare issue motivate you to vote?",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Renters to Share (Anonymous) Stories",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Small Appliances for Holiday Gift Guide",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Top Gifts for Pets",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Last Call Holiday Gift Guide Product Submission (Kids, teens, mom/dad, and the family dog)",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Seeking Hosted Stays and Experiences for a Mom’s Getaway Feature",
-      "why": "matches no declared beat"
-    },
-    {
-      "summary": "Fortune 500 C-Suite Members Who Are Leading Organizations Through AI Transformation",
-      "why": "The query seeks Fortune 500 C-Suite executives leading AI transformation; the provided facts describe a publisher of wedding-cost and USCIS-fee datasets who runs event-production businesses, not a For"
-    }
-  ],
-  "named_outcome": "NO RELEVANT QUERIES: 8 queries were read from 1 digest(s) and every one was dropped (7 off-beat, 1 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
+  "drops": [],
+  "named_outcome": "NO RELEVANT QUERIES: 0 queries were read from 0 digest(s) and every one was dropped (0 off-beat, 0 not answerable from first-hand work, 0 drafted but ungrounded). Nothing was sent, and nothing should have been."
 }
