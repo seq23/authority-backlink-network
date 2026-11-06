@@ -33,9 +33,15 @@ def upgrade(page, article, pub):
         table = '<h2>How do the options compare?</h2><table><thead><tr>' + ''.join('<th>'+e(x)+'</th>' for x in comparison['headers']) + '</tr></thead><tbody>' + ''.join('<tr>'+''.join('<td>'+e(x)+'</td>' for x in row)+'</tr>' for row in comparison['rows']) + '</tbody></table>'
     # Existing direct answers are authored individually. They stand as the
     # definition; the quick answer is the concrete first recorded action.
-    body = (f'<h1>{e(article["title"])}</h1><p class="dek">{e(article.get("definition", article["direct_answer"]))}</p><p class="definition">{e(article["direct_answer"])}</p>'
-            f'<p>What this guide is best for: {e(article["quality_topic"])}</p>'
-            f'<p class="topic-context"><strong>Topic context:</strong> {e(article["quality_topic"])}.</p>'
+    # Each sentence is printed once: a dek only when an authored definition differs
+    # from the direct answer (it repeated the answer word for word on 11 live
+    # pages), and the topic once (it was printed as "best for" and again as
+    # "Topic context"). The one line keeps class topic-context, which
+    # build_site_navigation.py reads to place the page under its hub.
+    definition = article.get("definition")
+    dek = f'<p class="dek">{e(definition)}</p>' if definition and definition != article["direct_answer"] else ''
+    body = (f'<h1>{e(article["title"])}</h1>{dek}<p class="definition">{e(article["direct_answer"])}</p>'
+            f'<p class="topic-context">What this guide is best for: {e(article["quality_topic"])}</p>'
             '<h2>What should I compare?</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in factors)+'</ul>'
             '<h2>What questions should I ask?</h2><ul>'+''.join(f'<li>{e(x)}</li>' for x in questions)+'</ul>'
             '<section class="faq"><h2>Frequently asked questions</h2>'+''.join(f'<h3>{e(q)}</h3><p>{e(a)}</p>' for q,a in faq)+'</section>'

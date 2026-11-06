@@ -73,7 +73,7 @@ DESCRIPTION_RE = re.compile(
 # Three generators produce daily pages and each records the topic differently.
 # None of these is a guess: every one is a value the generator wrote.
 TOPIC_ROW_RE = re.compile(r"<tr><td>Topic</td><td>([^<]*)</td></tr>")
-TOPIC_CONTEXT_RE = re.compile(r"Topic context:</strong>\s*([^<.]*)")
+TOPIC_CONTEXT_RE = re.compile(r"(?:Topic context:</strong>|class=\"topic-context\">What this guide is best for:)\s*([^<.]*)")
 DATE_PREFIX_RE = re.compile(r"^\d{4}-\d\d-\d\d-")
 
 
